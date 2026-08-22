@@ -3,10 +3,14 @@
  * muted "staff map" palette in light and dark. Tiles come from our own
  * PMTiles archive in the assets bucket (ADR 0002/0004) — no external API.
  *
- * This is the provisional style; the design-system story (sand-neh.2) makes
- * rivers first-class, adds period-cartography cues, hillshade and the fort
- * symbol, and drives both themes from the token set. The palette below
- * approximates src/styles/tokens.css (MapLibre styles need literal colours).
+ * The staff-map refinements (sand-neh.2) live in refineLayers(): rivers and
+ * their names first-class from campaign zoom, railways visible, modern
+ * boundaries/country names/POIs removed (the 1914 borders layer owns them),
+ * roads receding at campaign zoom, buildings from z13. Hillshade where the
+ * ground decided events (Grand Couronné, Argonne, the Meuse heights) needs a
+ * terrain source and is a follow-up; the fort symbol is the ring in
+ * layers/places.ts. The palette below approximates src/styles/tokens.css
+ * (MapLibre styles need literal colours).
  */
 import type { LayerSpecification, StyleSpecification } from 'maplibre-gl';
 import { layersWithPartialCustomTheme, type Theme } from 'protomaps-themes-base';
@@ -111,16 +115,122 @@ export interface BuildStyleOptions {
   glyphs?: string;
 }
 
+/** Layers the staff map does without: modern boundaries and country names (the
+ *  historical-borders layer owns them), points of interest, house numbers. */
+export const DROPPED_LAYERS = new Set([
+  'boundaries_country',
+  'boundaries',
+  'places_country',
+  'places_region',
+  'pois',
+  'address_label',
+]);
+
+/**
+ * Staff-map refinements over the Protomaps layers (sand-neh.2):
+ * rivers and their names are first-class from campaign zoom, railways show
+ * from the start (they are the 1914 terrain), modern political layers go,
+ * roads recede until you zoom in, buildings wait for z13. Hillshade where the
+ * ground decided events needs a terrain source and is a follow-up.
+ */
+export function refineLayers(layers: LayerSpecification[], theme: MapTheme): LayerSpecification[] {
+  const dark = theme === 'dark';
+  const river = dark ? '#3f6073' : '#7f9aa8';
+  const rail = dark ? '#6e6142' : '#a0936f';
+  const out: LayerSpecification[] = [];
+  for (const layer of layers) {
+    if (DROPPED_LAYERS.has(layer.id)) continue;
+    const l = { ...layer } as LayerSpecification & {
+      paint?: Record<string, unknown>;
+      layout?: Record<string, unknown>;
+    };
+    switch (l.id) {
+      case 'water_river':
+        l.minzoom = 6;
+        l.paint = {
+          ...l.paint,
+          'line-color': river,
+          'line-width': [
+            'interpolate',
+            ['exponential', 1.6],
+            ['zoom'],
+            6,
+            0.8,
+            9,
+            1.6,
+            12,
+            3.2,
+            14,
+            5,
+          ],
+        };
+        break;
+      case 'water_stream':
+        l.minzoom = 11;
+        l.paint = {
+          ...l.paint,
+          'line-color': river,
+          'line-width': ['interpolate', ['linear'], ['zoom'], 11, 0.5, 14, 1.4],
+        };
+        break;
+      case 'water_waterway_label':
+        l.minzoom = 7;
+        l.layout = {
+          ...l.layout,
+          'text-font': ['Noto Sans Italic'],
+          'text-size': ['interpolate', ['linear'], ['zoom'], 7, 10, 10, 12, 13, 14],
+          'symbol-spacing': 400,
+        };
+        break;
+      case 'roads_rail':
+        l.minzoom = 6;
+        l.paint = {
+          ...l.paint,
+          'line-color': rail,
+          'line-width': ['interpolate', ['linear'], ['zoom'], 6, 0.6, 9, 1, 12, 1.6],
+          'line-dasharray': [4, 2],
+        };
+        break;
+      case 'roads_highway':
+      case 'roads_major':
+      case 'roads_highway_casing_early':
+      case 'roads_major_casing_early':
+        // modern motorways and trunk roads recede at campaign zoom
+        l.paint = {
+          ...l.paint,
+          'line-opacity': ['interpolate', ['linear'], ['zoom'], 6, 0.25, 9, 0.6, 11, 1],
+        };
+        break;
+      case 'buildings':
+        l.minzoom = 13;
+        break;
+      case 'places_locality':
+        l.layout = {
+          ...l.layout,
+          'text-size': ['interpolate', ['linear'], ['zoom'], 5, 10, 8, 13, 12, 16],
+        };
+        break;
+      default:
+        break;
+    }
+    out.push(l);
+  }
+  return out;
+}
+
 /** A complete MapLibre style: the PMTiles source + themed basemap layers. */
 export function buildStyle(opts: BuildStyleOptions = {}): StyleSpecification {
   const theme = opts.theme ?? 'light';
   const tilesUrl = opts.tilesUrl ?? DEFAULT_TILES_URL;
-  const layers = layersWithPartialCustomTheme(
-    BASEMAP_SOURCE,
+  const layers = refineLayers(
+    layersWithPartialCustomTheme(
+      BASEMAP_SOURCE,
+      theme,
+      MAP_PALETTE[theme],
+      opts.lang ?? 'en',
+    ) as LayerSpecification[],
     theme,
-    MAP_PALETTE[theme],
-    opts.lang ?? 'en',
-  ) as LayerSpecification[];
+  );
   return {
     version: 8,
     name: `sandtable-${theme}`,
