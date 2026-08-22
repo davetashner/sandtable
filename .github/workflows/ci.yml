@@ -17,13 +17,13 @@ jobs:
     name: lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: actionlint (workflow files)
         run: |
           docker run --rm -v "$PWD":/repo --workdir /repo rhysd/actionlint:latest -color
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
 
@@ -40,18 +40,18 @@ jobs:
       contents: read
       pull-requests: write # dependency-review comments on PRs
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # gitleaks scans history
 
       - name: gitleaks (secrets)
-        uses: gitleaks/gitleaks-action@v2
+        uses: gitleaks/gitleaks-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: dependency review
         if: github.event_name == 'pull_request'
-        uses: actions/dependency-review-action@v4
+        uses: actions/dependency-review-action@v5
         with:
           fail-on-severity: high
           comment-summary-in-pr: on-failure
@@ -63,14 +63,14 @@ jobs:
     name: web
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: detect app
         id: app
         run: |
           if [ -f package.json ]; then echo "present=true" >> "$GITHUB_OUTPUT"; else echo "present=false" >> "$GITHUB_OUTPUT"; echo "No package.json yet — web checks skipped."; fi
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         if: steps.app.outputs.present == 'true'
         with:
           node-version: 22
