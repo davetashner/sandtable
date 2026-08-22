@@ -30,8 +30,9 @@ coverage/
 .env.*
 !.env.example
 
-# Local tile extracts (served from the assets bucket in production)
-public/tiles/*.pmtiles
+# Local staging copy of the assets bucket (served from /assets/* in production)
+public/assets/
 
 # CDK
 infra/cdk.out/
+infra/cdk.context.json

@@ -1,0 +1,94 @@
+name: Deploy
+
+# Production deploy: every push to main (and on demand).
+#   1. infra — `cdk deploy` the hosting stack (no-op when nothing changed)
+#   2. web   — build the app, sync it to the app bucket, invalidate CloudFront
+# Credentials come from the OIDC role in repo variable AWS_ROLE_ARN; nothing
+# long-lived is stored in GitHub. See docs/decisions/0004-hosting.md.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+env:
+  STACK_NAME: SandtableHosting
+
+jobs:
+  infra:
+    name: infra (cdk deploy)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: infra
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: infra/package-lock.json
+
+      - name: install
+        run: npm ci
+
+      - name: typecheck + test
+        run: npm run typecheck && npm test
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: cdk deploy
+        run: npx cdk deploy --require-approval never --ci --progress events
+
+  web:
+    name: web (build, sync, invalidate)
+    needs: infra
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: install
+        run: npm ci
+
+      - name: build
+        run: npm run build
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: resolve stack outputs
+        id: stack
+        run: |
+          q() { aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='$1'].OutputValue" --output text; }
+          { echo "bucket=$(q AppBucketName)"; echo "distribution=$(q DistributionId)"; echo "url=$(q SiteUrl)"; } >> "$GITHUB_OUTPUT"
+
+      - name: sync to S3
+        run: bash scripts/deploy-static.sh dist "s3://${{ steps.stack.outputs.bucket }}"
+
+      - name: invalidate CloudFront
+        run: |
+          id=$(aws cloudfront create-invalidation --distribution-id "${{ steps.stack.outputs.distribution }}" --paths "/*" --query Invalidation.Id --output text)
+          echo "invalidation $id"
+          aws cloudfront wait invalidation-completed --distribution-id "${{ steps.stack.outputs.distribution }}" --id "$id"
+
+      - name: summary
+        run: echo "Deployed \`${GITHUB_SHA::7}\` → ${{ steps.stack.outputs.url }}" >> "$GITHUB_STEP_SUMMARY"

@@ -167,3 +167,11 @@ is the single-file proof of concept.
   bead; close those beads after merge.
 - Deploys assume the AWS role in repo variable `AWS_ROLE_ARN` via OIDC
   (`AWS_REGION` = us-east-1); see `docs/decisions/0004-hosting.md`.
+- Deploy workflows (`deploy.yml`, `preview.yml`, `infra.yml`): `main` deploys
+  to <https://sandtable.davetashner.com> (CDK stack `SandtableHosting` in
+  `infra/`, then build → `scripts/deploy-static.sh` → invalidate); every
+  same-repo PR gets `https://pr-<n>.sandtable.davetashner.com` via a sticky
+  comment; infra PRs get a `cdk diff` in the job summary. `/assets/*` is the
+  assets bucket (tiles, borders, media) on every deployment — Vite bundles
+  live under `app/`; in dev `/assets/*` is proxied to production unless a
+  git-ignored staging copy exists under `public/assets/`. See `infra/README.md`.

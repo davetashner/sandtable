@@ -71,7 +71,7 @@ npm run lint             # ESLint (flat config)
 npm run typecheck        # tsc -b
 npm test -- --run        # Vitest, single pass
 npm run validate:content # content checks (scripts/check-content.sh; schema validator lands in sand-a55.7)
-npm run build            # tsc -b && vite build → dist/
+npm run build            # tsc -b && vite build → dist/ (bundles under dist/app/)
 npm run format           # Prettier
 ```
 
@@ -124,3 +124,11 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
   bead; close those beads after merge.
 - Deploys assume the AWS role in repo variable `AWS_ROLE_ARN` via OIDC
   (`AWS_REGION` = us-east-1); see `docs/decisions/0004-hosting.md`.
+- Deploy workflows (`deploy.yml`, `preview.yml`, `infra.yml`): `main` deploys
+  to <https://sandtable.davetashner.com> (CDK stack `SandtableHosting` in
+  `infra/`, then build → `scripts/deploy-static.sh` → invalidate); every
+  same-repo PR gets `https://pr-<n>.sandtable.davetashner.com` via a sticky
+  comment; infra PRs get a `cdk diff` in the job summary. `/assets/*` is the
+  assets bucket (tiles, borders, media) on every deployment — Vite bundles
+  live under `app/`; in dev `/assets/*` is proxied to production unless a
+  git-ignored staging copy exists under `public/assets/`. See `infra/README.md`.

@@ -1,0 +1,105 @@
+name: Preview
+
+# Per-PR preview at https://pr-<n>.sandtable.davetashner.com.
+# The build is synced to pr-<n>/ in the preview bucket; a CloudFront function
+# maps the host label to that prefix. Removed when the PR closes.
+# Forks and Dependabot cannot assume the OIDC role, so they are skipped.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+permissions:
+  contents: read
+  id-token: write
+  pull-requests: write
+
+concurrency:
+  group: preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+env:
+  STACK_NAME: SandtableHosting
+  PR_NUMBER: ${{ github.event.pull_request.number }}
+  GH_TOKEN: ${{ github.token }}
+
+jobs:
+  deploy:
+    name: deploy preview
+    if: >-
+      github.event.action != 'closed' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: install
+        run: npm ci
+
+      - name: build
+        run: npm run build
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: resolve stack outputs
+        id: stack
+        run: |
+          if ! aws cloudformation describe-stacks --stack-name "$STACK_NAME" >/dev/null 2>&1; then
+            echo "::notice::Stack $STACK_NAME is not deployed yet — no preview for this PR."
+            echo "ready=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          q() { aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='$1'].OutputValue" --output text; }
+          pattern=$(q PreviewUrlPattern)
+          { echo "ready=true"; echo "bucket=$(q PreviewBucketName)"; echo "distribution=$(q PreviewDistributionId)"; echo "url=${pattern/<n>/$PR_NUMBER}"; } >> "$GITHUB_OUTPUT"
+
+      - name: sync to S3
+        if: steps.stack.outputs.ready == 'true'
+        run: bash scripts/deploy-static.sh dist "s3://${{ steps.stack.outputs.bucket }}/pr-$PR_NUMBER"
+
+      - name: invalidate CloudFront
+        if: steps.stack.outputs.ready == 'true'
+        run: aws cloudfront create-invalidation --distribution-id "${{ steps.stack.outputs.distribution }}" --paths "/pr-$PR_NUMBER/*" --query Invalidation.Id --output text
+
+      - name: comment on the PR
+        if: steps.stack.outputs.ready == 'true'
+        env:
+          URL: ${{ steps.stack.outputs.url }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          # shellcheck disable=SC2016 # literal backticks are markdown, not a command substitution
+          body=$(printf '🧭 **Preview:** %s — built from `%s`.\n\nUpdated on every push; removed when the PR closes.' "$URL" "${SHA::7}")
+          bash scripts/pr-sticky-comment.sh "$PR_NUMBER" "$body"
+
+  cleanup:
+    name: remove preview
+    if: >-
+      github.event.action == 'closed' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: delete pr-<n>/ and invalidate
+        run: |
+          if ! aws cloudformation describe-stacks --stack-name "$STACK_NAME" >/dev/null 2>&1; then
+            echo "::notice::Stack $STACK_NAME is not deployed — nothing to remove."; exit 0
+          fi
+          q() { aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='$1'].OutputValue" --output text; }
+          aws s3 rm --recursive "s3://$(q PreviewBucketName)/pr-$PR_NUMBER/"
+          aws cloudfront create-invalidation --distribution-id "$(q PreviewDistributionId)" --paths "/pr-$PR_NUMBER/*" --query Invalidation.Id --output text
+          bash scripts/pr-sticky-comment.sh "$PR_NUMBER" "🧭 Preview removed (PR closed)."

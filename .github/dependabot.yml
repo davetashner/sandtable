@@ -19,3 +19,13 @@ updates:
         update-types: ['minor', 'patch']
     commit-message:
       prefix: 'chore(deps)'
+
+  - package-ecosystem: npm
+    directory: /infra
+    schedule:
+      interval: weekly
+    groups:
+      cdk:
+        patterns: ['*']
+    commit-message:
+      prefix: 'chore(deps)'

@@ -1,0 +1,25 @@
+{
+  "name": "sandtable-infra",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AWS CDK stack for Sandtable static hosting (ADR 0004)",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test lib/*.test.ts",
+    "synth": "cdk synth",
+    "diff": "cdk diff",
+    "deploy": "cdk deploy --require-approval never"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "aws-cdk": "^2.1138.0",
+    "aws-cdk-lib": "^2.266.0",
+    "constructs": "^10.8.1",
+    "tsx": "^4.23.12",
+    "typescript": "^6.0.3"
+  }
+}
