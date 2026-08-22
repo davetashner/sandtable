@@ -1,0 +1,36 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "id": "media:person/churchill-winston/portrait-c1914-colorized",
+  "person": "person:churchill-winston",
+  "file": "portrait-c1914-colorized.png",
+  "width": 1085,
+  "height": 1450,
+  "colorized": true,
+  "original": {
+    "description": "Bust portrait of Winston Churchill as First Lord of the Admiralty in the dark-blue, gold-oak-leaf-collared uniform he wore in that office (Elder Brother of Trinity House), with his Sudan, India and South Africa medals; September 1914.",
+    "photographer": "unknown (agency stringer; AFP/Getty editorial scan)",
+    "date": "16 September 1914",
+    "archive": "Wikimedia Commons (from CBS News / AFP-Getty) — best-available record; Dave's working copy came from canals.org, same frame to be confirmed",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Churchill_Admiralty_Uniform_1914.jpg",
+    "user_source_url": "https://canals.org/wp-content/uploads/sites/5/2025/05/Winston-Churchill.jpg",
+    "original_dimensions": "2961 × 3859",
+    "licence": "public domain in the United States (published before 1931); confirm status outside the US"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "History Alive project licence; underlying photograph public domain (US)",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: dark-blue Trinity House uniform with gold oak-leaf collar; medal ribbons interpretive"
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Winston Churchill (1874–1965), First Lord of the Admiralty 1911–1915 — sent the Royal Naval Division to Antwerp in October 1914 and went there himself; a cross-era figure who reappears at Gallipoli, in the interwar years and in 1940. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: agency stringer, 16 Sept 1914; public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "1914:belgium-antwerp",
+    "other-fronts:gallipoli",
+    "1940:fall-of-france",
+    "thread:road-to-1914"
+  ],
+  "focal_point": { "x": 0.5, "y": 0.3 },
+  "notes": "Provided by Dave 2026-08-22. Cross-era Person — the first shared/people entry that spans both world wars."
+}

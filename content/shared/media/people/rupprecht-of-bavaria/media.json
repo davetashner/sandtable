@@ -1,0 +1,35 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "id": "media:person/rupprecht-of-bavaria/portrait-colorized",
+  "person": "person:rupprecht-of-bavaria",
+  "file": "portrait-colorized.png",
+  "width": 1085,
+  "height": 1449,
+  "colorized": true,
+  "original": {
+    "description": "Half-length outdoor portrait of Crown Prince Rupprecht of Bavaria in Bavarian general's field-grey tunic with gold epaulettes and many orders, c. 1914.",
+    "photographer": "Bernhard Dittmar (1865–1939), Munich court photographer",
+    "date": "c. 1914",
+    "archive": "Library of Congress, Prints & Photographs (Bain), digital ID ggbain.31339, via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Rupprecht_von_Bayern.jpg",
+    "original_dimensions": "342 × 535 (very small scan — the LoC master at loc.gov will be far larger; fetch it for the pipeline)",
+    "licence": "public domain — photographer died 1939; published before 1931"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization (and upscaling) from the public-domain original, 2026",
+    "licence": "History Alive project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: field-grey tunic with red piping, gold epaulettes; order ribbons interpretive"
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Rupprecht, Crown Prince of Bavaria (1869–1955), commander of the German 6th Army — the hinge at Metz; his counteroffensive in Lorraine (20 Aug) and assault on the Grand Couronné drew the left wing into battle Schlieffen meant it to avoid. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: Bernhard Dittmar, c. 1914, Library of Congress; public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "1914:formation-german-6th-army",
+    "1914:frontiers-lorraine",
+    "1914:chapter-grand-couronne",
+    "1914:right-wing-bleeds-left-wing-reinforced"
+  ],
+  "focal_point": { "x": 0.5, "y": 0.22 },
+  "notes": "Provided by Dave 2026-08-22. Pull the high-resolution LoC master (ggbain.31339) before hero use."
+}

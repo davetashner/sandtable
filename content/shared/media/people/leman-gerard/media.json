@@ -1,0 +1,34 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "id": "media:person/leman-gerard/portrait-1918-colorized",
+  "person": "person:leman-gerard",
+  "file": "portrait-1918-colorized.png",
+  "width": 1074,
+  "height": 1464,
+  "colorized": true,
+  "original": {
+    "description": "Half-length portrait of Lieutenant-General Gérard Leman, arms folded, in Belgian general's dark-blue tunic with gold Hungarian-knot cuff braid and a braided shako/képi; 1918.",
+    "photographer": "unknown (anonymous)",
+    "date": "1918",
+    "archive": "Wikimedia Commons (uploaded from roadstothegreatwar-ww1.blogspot.com — weak chain; find the archive print, likely Belgian Royal Army Museum or Agence Rol)",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:G%C3%A9rard_Leman_(1918).jpg",
+    "original_dimensions": "521 × 700",
+    "licence": "public domain — anonymous work published before 1931"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "History Alive project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: Belgian dark-blue general's uniform with gold braid — consistent with the pre-1915 dress the Liège garrison wore in August 1914"
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Gérard Leman (1851–1920), commander of the fortified position of Liège — held the ring of forts from 4 August until he was pulled unconscious from the ruins of Fort Loncin on 15 August; the delay cost the German timetable its first days. Colorized (AI-assisted) from a public-domain photograph (1918, after his release from captivity).",
+  "credit": "Original photograph: anonymous, 1918; public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "1914:liege",
+    "1914:two-clocks-first-delay",
+    "1914:vignette-fort-loncin"
+  ],
+  "focal_point": { "x": 0.5, "y": 0.25 },
+  "notes": "Provided by Dave 2026-08-22. Provenance chain is a blog upload — acceptable as PD-anonymous but trace to an archive print for the pipeline."
+}

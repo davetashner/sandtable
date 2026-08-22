@@ -1,0 +1,34 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "id": "media:person/hausen-max-von/portrait-colorized",
+  "person": "person:hausen-max-von",
+  "file": "portrait-colorized.png",
+  "width": 1085,
+  "height": 1450,
+  "colorized": true,
+  "original": {
+    "description": "Profile studio portrait of Max von Hausen in Saxon general's dark-blue full dress with aiguillette, sash and a chest of orders and stars, c. 1900.",
+    "photographer": "Hoffotograf Otto Mayer, Dresden",
+    "date": "c. 1900",
+    "archive": "Bildarchiv Austria (ÖNB) via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:MaxHausen.jpg",
+    "original_dimensions": "635 × 800",
+    "licence": "public domain — life + 70 (photographer) / published before 1931"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "History Alive project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: dark-blue full-dress tunic, gold aiguillette and collar embroidery, black-and-white Prussian/Saxon sash; order ribbons interpretive"
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Max von Hausen (1846–1922), commander of the Saxon 3rd Army — Dinant and the Meuse crossing, the Sambre with Bülow, and the night assault on Foch at the marshes of Saint-Gond; relieved, ill with typhus, after the Marne. Colorized (AI-assisted) from a public-domain photograph (c. 1900, in full dress).",
+  "credit": "Original photograph: Otto Mayer, Dresden, c. 1900, Bildarchiv Austria; public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "1914:formation-german-3rd-army",
+    "1914:frontiers-north-great-retreat",
+    "1914:marne"
+  ],
+  "focal_point": { "x": 0.55, "y": 0.25 },
+  "notes": "Provided by Dave 2026-08-22. Photograph is ~14 years before the campaign; acceptable for the Person card with the date shown."
+}

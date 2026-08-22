@@ -1,0 +1,36 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "id": "media:person/foch-ferdinand/portrait-colorized",
+  "person": "person:foch-ferdinand",
+  "file": "portrait-colorized.png",
+  "width": 1074,
+  "height": 1465,
+  "colorized": true,
+  "original": {
+    "description": "Outdoor bust portrait of Ferdinand Foch in horizon-blue service tunic with gold-oak-leaf képi, Sam Browne belt and ribbon bars; 1914–1918 (horizon blue and ribbon bars indicate 1915 or later).",
+    "photographer": "Sport & General (agency)",
+    "date": "1914–1918 (likely 1916–18)",
+    "archive": "Nationaal Archief (NL), Fotocollectie Eerste Wereldoorlog, Bestanddeelnummer 158-1095, via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Maarschalk_Ferdinand_Foch_(1851-1929),_Bestanddeelnr_158-1095_(cropped).jpg",
+    "original_dimensions": "2300 × 3266",
+    "licence": "CC0 1.0 (Nationaal Archief public-domain dedication)"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization from the CC0 original, 2026",
+    "licence": "History Alive project licence; underlying photograph CC0",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: horizon-blue tunic (1915 pattern), dark-blue képi with gold oak leaves, brown leather belt"
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Ferdinand Foch (1851–1929), commander of the new 9th Army at the Marne — held the marshes of Saint-Gond against Bülow and Hausen ('my centre is giving way, my right is retreating; situation excellent, I attack'); Supreme Allied Commander in 1918. Colorized (AI-assisted) from a public-domain photograph; the horizon-blue uniform post-dates 1914.",
+  "credit": "Original photograph: Sport & General, Nationaal Archief 158-1095, CC0 (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "1914:formation-french-9th-army",
+    "1914:marne",
+    "1914:vignette-foch-saint-gond",
+    "ww1-west:1918-hundred-days",
+    "ww1-west:armistice"
+  ],
+  "focal_point": { "x": 0.5, "y": 0.3 },
+  "notes": "Provided by Dave 2026-08-22. Excellent provenance (CC0, 2300 × 3266). Horizon blue is anachronistic for Sept 1914 — caption it when shown beside the Marne; fine for the Person card and 1918."
+}

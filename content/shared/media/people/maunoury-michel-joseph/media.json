@@ -1,0 +1,35 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "id": "media:person/maunoury-michel-joseph/portrait-colorized",
+  "person": "person:maunoury-michel-joseph",
+  "file": "portrait-colorized.png",
+  "width": 1093,
+  "height": 1438,
+  "colorized": true,
+  "original": {
+    "description": "Head-and-shoulders portrait of General Michel-Joseph Maunoury in frogged dark dolman with the Légion d'honneur at the neck.",
+    "photographer": "unknown (Bain News Service, publisher)",
+    "date": "undated (1914–1916)",
+    "archive": "Library of Congress, Prints & Photographs (Bain), digital ID ggbain.17444, via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Michel-Joseph_Maunoury.jpg",
+    "original_dimensions": "324 × 418 (tiny Commons copy — fetch the LoC master, which will be a full glass-negative scan)",
+    "licence": "public domain — published before 1931 (LoC Bain: no known restrictions)"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization (and heavy upscaling) from the public-domain original, 2026",
+    "licence": "History Alive project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: dark-blue dolman with black frogging, red Légion d'honneur ribbon; note the heavy upscale — replace with the LoC master before hero use"
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Michel-Joseph Maunoury (1847–1923), recalled from retirement to command the new 6th Army — struck Kluck's exposed flank on the Ourcq on 5–6 September 1914, the blow that opened the Marne; blinded by a bullet in 1915. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: Bain News Service, Library of Congress; public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "1914:formation-french-6th-army",
+    "1914:rail-vs-feet-redeployment",
+    "1914:marne",
+    "1914:decision-1914-09-04-directive"
+  ],
+  "focal_point": { "x": 0.52, "y": 0.3 },
+  "notes": "Provided by Dave 2026-08-22. Smallest source of the set (324 × 418) — the LoC master (ggbain.17444) must replace it in the pipeline."
+}

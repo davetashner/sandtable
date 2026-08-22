@@ -1,0 +1,36 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2). LICENCE NOTE: Bundesarchiv image under CC-BY-SA 3.0 DE — attribution string mandatory and derivative (this colorization) must carry the same licence.",
+  "id": "media:person/ludendorff-erich/portrait-1915-colorized",
+  "person": "person:ludendorff-erich",
+  "file": "portrait-1915-colorized.png",
+  "width": 1100,
+  "height": 1430,
+  "colorized": true,
+  "original": {
+    "description": "Seated bust portrait of Generalmajor Erich Ludendorff in field-grey tunic with red general's collar patches (Larisch embroidery) and Pour le Mérite, 1915.",
+    "photographer": "unknown (Bundesarchiv, Allgemeiner Deutscher Nachrichtendienst – Zentralbild)",
+    "date": "1915",
+    "archive": "Bundesarchiv, Bild 183-2005-0828-525, via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-2005-0828-525,_Erich_Ludendorff.jpg",
+    "original_dimensions": "526 × 800 (Commons copy; the cropped(b) variant Dave used is derived from this)",
+    "licence": "CC-BY-SA 3.0 DE — required attribution: \"Bundesarchiv, Bild 183-2005-0828-525 / CC-BY-SA 3.0\" (the photograph may also be PD by age, but we honour the Bundesarchiv terms)"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization from the Bundesarchiv original, 2026",
+    "licence": "CC-BY-SA 3.0 DE (share-alike inherited from the Bundesarchiv original)",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: feldgrau M1910 tunic with red piping and red collar patches, silver Larisch embroidery, black-and-silver Pour le Mérite ribbon"
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Erich Ludendorff (1865–1937) — as a staff officer at Liège on 7 August 1914 he drove to the citadel and took its surrender, then went east to Tannenberg as Hindenburg's chief of staff; by 1916 he ran the German war effort. Photographed in 1915. Colorized (AI-assisted).",
+  "credit": "Original photograph: Bundesarchiv, Bild 183-2005-0828-525 / CC-BY-SA 3.0. Colorization: History Alive, AI-assisted, 2026, CC-BY-SA 3.0 DE.",
+  "used_by": [
+    "1914:liege",
+    "1914:vignette-ludendorff-citadel",
+    "1914:eastern-cross-reference-tannenberg",
+    "ww1-east:tannenberg",
+    "ww1-west:1918-spring-offensive"
+  ],
+  "focal_point": { "x": 0.5, "y": 0.28 },
+  "notes": "Provided by Dave 2026-08-22 (via a kiddle.co mirror of the Commons cropped(b) file). The only image in the set whose licence is share-alike rather than PD — the Media schema must carry per-image licence so the credit line renders correctly."
+}

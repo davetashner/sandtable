@@ -1,0 +1,34 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "id": "media:person/castelnau-edouard-de/portrait-colorized",
+  "person": "person:castelnau-edouard-de",
+  "file": "portrait-colorized.png",
+  "width": 1098,
+  "height": 1433,
+  "colorized": true,
+  "original": {
+    "description": "Half-length studio portrait of General Noël Édouard de Curières de Castelnau in French general's full dress (dark tunic, gold oak-leaf collar, epaulettes), holding his képi; Légion d'honneur and a neck order.",
+    "photographer": "unknown",
+    "date": "25 November 1915 per the Commons summary (structured data says 1924 — discrepancy noted on the file page)",
+    "archive": "Wikimedia Commons (uploaded from French Wikipedia)",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_de_Castelnau._No%C3%ABl_%C3%89douard_Marie_Joseph_de_Curi%C3%A8res_de_Castelnau.jpg",
+    "original_dimensions": "1079 × 1409",
+    "licence": "public domain / CC0 per Commons; weak provenance chain — find the underlying Gallica/Agence Rol print for the pipeline"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "History Alive project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: dark-blue/black general's tunic, gold oak-leaf collar embroidery and epaulettes, red Légion d'honneur ribbon"
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Édouard de Castelnau (1851–1944), commander of the French 2nd Army — attacked into Lorraine under Plan XVII, was thrown back at Morhange, then held the Grand Couronné before Nancy while the Marne was fought; he lost three sons in the war. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: unknown, c. 1915; public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "1914:formation-french-2nd-army",
+    "1914:frontiers-lorraine",
+    "1914:chapter-grand-couronne"
+  ],
+  "focal_point": { "x": 0.5, "y": 0.25 },
+  "notes": "Provided by Dave 2026-08-22. Provenance is the weakest of the French set (Commons-only, undated); acceptable, but trace to an archive print."
+}

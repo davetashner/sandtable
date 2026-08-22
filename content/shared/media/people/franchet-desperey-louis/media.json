@@ -1,0 +1,35 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "id": "media:person/franchet-desperey-louis/portrait-colorized",
+  "person": "person:franchet-desperey-louis",
+  "file": "portrait-colorized.png",
+  "width": 1056,
+  "height": 1490,
+  "colorized": true,
+  "original": {
+    "description": "Profile studio portrait of Louis Franchet d'Espèrey in horizon-blue service tunic with gold-oak-leaf képi, Sam Browne belt and a row of medals (Légion d'honneur, Croix de guerre, campaign medals).",
+    "photographer": "Henri Manuel (1874–1947), Paris",
+    "date": "undated, 1915–1920s (horizon blue and Croix de guerre indicate 1915 or later)",
+    "archive": "Bibliothèque nationale de France, Gallica (btv1b8453534w, f.1) via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Franchet_d%27Esperey_-_photo_Henri_Manuel.jpg",
+    "original_dimensions": "2222 × 3161",
+    "licence": "public domain — photographer died 1947 (life + 70)"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "History Alive project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: horizon-blue tunic, dark-blue képi with gold oak leaves, brown leather belt, red Légion d'honneur and green-and-red Croix de guerre ribbons"
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Louis Franchet d'Espèrey (1856–1942), 'Desperate Frankie' to the British — led I Corps at Guise, replaced Lanrezac at the head of the 5th Army on 3 September, and drove into the gap beside the BEF at the Marne; commanded the Salonika breakthrough in 1918. Colorized (AI-assisted) from a public-domain photograph; the horizon-blue uniform post-dates 1914.",
+  "credit": "Original photograph: Henri Manuel, BnF Gallica; public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "1914:guise",
+    "1914:formation-french-5th-army",
+    "1914:marne",
+    "other-fronts:salonika-1918"
+  ],
+  "focal_point": { "x": 0.45, "y": 0.28 },
+  "notes": "Provided by Dave 2026-08-22. Strong provenance (Gallica, 2222 × 3161). Horizon blue is anachronistic for 1914 — caption it when shown beside 1914 beats."
+}

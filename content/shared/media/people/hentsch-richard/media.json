@@ -1,0 +1,35 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2). STATUS: HOLD — see colorization.status.",
+  "id": "media:person/hentsch-richard/portrait-colorized",
+  "person": "person:hentsch-richard",
+  "file": "portrait-colorized.png",
+  "width": 1048,
+  "height": 1501,
+  "colorized": true,
+  "original": {
+    "description": "Portrait of Oberst Richard Hentsch in uniform, General Staff of the German military administration of Romania, 1918 (Bucharest).",
+    "photographer": "Dr. Johannes Friedrich Rudolf von Goetz (1856–1941)",
+    "date": "1918",
+    "archive": "Deutsche Digitale Bibliothek (item PRAWRWVVS3PB4HFQ3OS44WVL5CYCIET5) via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Richard_Hentsch.jpg",
+    "archive_item_url": "https://www.deutsche-digitale-bibliothek.de/item/PRAWRWVVS3PB4HFQ3OS44WVL5CYCIET5",
+    "original_dimensions": "387 × 600",
+    "licence": "CC-BY 3.0 (attribution: Deutsche Digitale Bibliothek) and public domain in the US (pre-1931)"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization from the original, 2026",
+    "licence": "History Alive project licence with CC-BY attribution to the Deutsche Digitale Bibliothek",
+    "status": "HOLD — the colorized image shows Hentsch standing in a map room with a table of documents. The Commons original is a 387 × 600 portrait; it must be compared side by side to confirm the setting, pose and props are in the original and not AI-extended. The imagery policy (history-alive-y0u.1) forbids adding or removing elements beyond colour. If extended, re-render colour-only from the original and mark this file as a superseded illustration."
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Richard Hentsch (1869–1918), Oberstleutnant of the General Staff — sent by Moltke on 8 September 1914 to tour the army headquarters with authority to order a retreat; his visit to Bülow and Kluck on 8–9 September ended the German advance at the Marne. Photographed in 1918. Colorized (AI-assisted).",
+  "credit": "Original photograph: J. F. R. von Goetz, 1918, Deutsche Digitale Bibliothek, CC-BY 3.0 (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "1914:decision-1914-09-08-hentsch",
+    "1914:marne",
+    "1914:historiography-hentsch-authority"
+  ],
+  "focal_point": { "x": 0.5, "y": 0.2 },
+  "notes": "Provided by Dave 2026-08-22. The single image in the set that needs a fidelity check before it is used — the scene looks richer than a 387 × 600 bust portrait would support."
+}
