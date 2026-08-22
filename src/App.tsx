@@ -26,11 +26,13 @@ import {
   useViewStateControls,
 } from './engine/ClockContext.js';
 import { selectBeat } from './engine/beats.js';
+import { linksTouching } from './engine/causal.js';
 import { battleRange, enterNow, exitNow, resolveFocus, type FocusMemory } from './engine/focus.js';
 import { seed } from './packs/seed.js';
 import { BranchToggle } from './ui/BranchToggle.js';
 import { Breadcrumb } from './ui/Breadcrumb.js';
 import { Dossier, type CardChipLike } from './ui/Dossier.js';
+import { CausalView } from './ui/CausalView.js';
 import { DocumentCardView } from './ui/DocumentCardView.js';
 import { MeanwhileFilter } from './ui/MeanwhileFilter.js';
 import { ScienceCardView, SCIENCE_FIELDS } from './ui/ScienceCardView.js';
@@ -106,6 +108,7 @@ function useCard():
   | { kind: 'tech'; card: (typeof seed.tech)[number] }
   | { kind: 'science'; card: (typeof seed.science)[number] }
   | { kind: 'document'; card: (typeof seed.documents)[number] }
+  | { kind: 'causal'; card: (typeof seed.links)[number] }
   | undefined {
   const { card } = useViewState();
   if (!card) return undefined;
@@ -115,6 +118,8 @@ function useCard():
   if (science) return { kind: 'science', card: science };
   const document = seed.documents.find((d) => d.id === card);
   if (document) return { kind: 'document', card: document };
+  const link = seed.links.find((l) => l.id === card);
+  if (link) return { kind: 'causal', card: link };
   return undefined;
 }
 
@@ -244,6 +249,19 @@ function DossierSurface() {
       if (label && id !== focus?.id)
         out.push({ id, label, kind: 'battle', onClick: () => controls?.setFocus(id) });
     }
+    for (const l of linksTouching(seed.links, [
+      ...(links.events ?? []),
+      ...(links.battles ?? []),
+    ])) {
+      const from = labeller.label(l.from) ?? l.from;
+      const to = labeller.label(l.to) ?? l.to;
+      out.push({
+        id: l.id,
+        label: `${from} → ${to}`,
+        kind: 'causal',
+        onClick: () => controls?.setCard(l.id),
+      });
+    }
     return out;
   }, [beat, labeller, controls, focus?.id]);
   return (
@@ -276,6 +294,21 @@ function DossierSurface() {
               doc={card.card}
               sources={seed.sources}
               labeller={labeller}
+              onBack={() => controls?.setCard(undefined)}
+            />
+          ) : card?.kind === 'causal' ? (
+            <CausalView
+              links={seed.links}
+              focal={card.card}
+              sources={seed.sources}
+              label={(id) => labeller.label(id)}
+              onOpenLink={(id) => controls?.setCard(id)}
+              onOpenEntity={(id) => {
+                if (seed.events.some((e) => e.id === id)) return labeller.open?.(id, 'events');
+                if (seed.battles.some((b) => b.id === id)) return labeller.open?.(id, 'battles');
+                if (seed.tech.some((t) => t.id === id)) return labeller.open?.(id, 'tech');
+                return undefined;
+              }}
               onBack={() => controls?.setCard(undefined)}
             />
           ) : undefined
