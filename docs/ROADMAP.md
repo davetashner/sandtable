@@ -67,13 +67,37 @@ the Phase 0 exit gate) → deploy.
 
 ## Phase 1 in detail (the headline)
 
-Order of battle and daily routes for every army (the core dataset), a prologue
-on the plan's origins, then battle zoom-ins: Liège, Lorraine/Morhange,
-Ardennes & Charleroi, Mons & Le Cateau, Guise, Grand Couronné, and the Marne
-(hour-resolution). Two counterfactual branches (Schlieffen's concept west of
-Paris; the pocket closing), an epilogue to the trench line, the first East–West
-causal link (the two corps sent to Tannenberg), a guided-tour mode, a visual
-polish pass and a historical review pass.
+The lesson has an argument — **"a timetable the world fell behind"** — written
+first as a narrative spine with learning objectives (`history-alive-1l0.17`,
+P0) that every beat must serve. The experience opens with the July Crisis as a
+causal chain (`1l0.23`, the first showcase of the causal explorer, pulled
+forward from Phase 4) and a thirty-second opening sequence (`1l0.26`).
+
+Three persistent instruments carry the argument while the armies move:
+the **two clocks** (plan timetable vs. reality; Russian mobilization,
+`1l0.18`), **the right wing bleeds** (detached-corps tally and the
+Schlieffen-vs-Moltke force ratio, `1l0.19`), and **rail vs. feet** (railheads,
+supply gap, march distance, and Joffre's redeployment west by train, `1l0.21`).
+
+Order of battle and daily routes for every army are the core dataset. Battle
+zoom-ins are tiered: full sub-timelines for **Liège**, **Lorraine/Morhange**,
+**the Frontiers in the north & the Great Retreat** (Charleroi–Mons–Le Cateau),
+**Guise**, and **the Marne** (hour resolution); the Ardennes and the Grand
+Couronné are narrative chapters without sub-timelines. Belgium beyond Liège
+(Antwerp, Namur, Maubeuge) feeds the tally.
+
+Four **decision points** (`1l0.22`) pause the campaign — 25 Aug, 30 Aug,
+4 Sep, 8–9 Sep — and ask the viewer to choose before revealing what happened
+and what historians think. The "success" branch is framed as *what it would
+have required*, with a visible feasibility checklist. Human scale comes from a
+restrained casualty layer and sourced vignettes; authenticity from a `Document`
+entity with the actual orders. Then an epilogue to the trench line, the
+East–West cross-reference, a guided tour, a polish pass and a historical review.
+
+**Information architecture** (`history-alive-neh.5`, a P0 design decision):
+one map, one dossier, one timeline. Technology, science, documents, decisions
+and causal chains are glyphs on the timeline that open cards in the dossier —
+never additional rails. Responsive from day one.
 
 ## What exists today
 
