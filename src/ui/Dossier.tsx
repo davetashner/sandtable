@@ -9,13 +9,14 @@
  * home for cards — tech, science, documents, decision points, causal chains
  * — which will mount here as modes rather than as new panels.
  */
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useClock } from '../engine/ClockContext.js';
 import { sideToken } from '../engine/layers/colors.js';
 import { selectBeat, withFootnotes } from '../engine/beats.js';
 import type { Branch, NarrativeBeat, Side, Source } from '../packs/schema/index.js';
+import './card.css';
 import './dossier.css';
 
 export interface DossierProps {
@@ -26,9 +27,29 @@ export interface DossierProps {
   /** Battle id when inside a zoom-in (sand-a55.14); beats with that focus win. */
   focus?: string | undefined;
   packTitle?: string;
+  /** A card to show instead of the beat (ADR 0006); rendered by the caller. */
+  card?: ReactNode;
+  /** Chips for the beat's links (tech cards, battles, people…). */
+  related?: CardChipLike[];
 }
 
-export function Dossier({ beats, sources, sides, branch, focus, packTitle }: DossierProps) {
+export interface CardChipLike {
+  id: string;
+  label: string;
+  kind: string;
+  onClick?: () => void;
+}
+
+export function Dossier({
+  beats,
+  sources,
+  sides,
+  branch,
+  focus,
+  packTitle,
+  card,
+  related = [],
+}: DossierProps) {
   const { now, range } = useClock();
   const beat = useMemo(
     () => selectBeat(beats, now, branch.id, focus, range.end),
@@ -103,7 +124,9 @@ export function Dossier({ beats, sources, sides, branch, focus, packTitle }: Dos
         )}
       </header>
 
-      {beat ? (
+      {card ? (
+        card
+      ) : beat ? (
         <article className="dossier__beat" key={beat.id} aria-live="polite">
           <p className="dossier__date">{beat.dateLabel}</p>
           <h2 className="dossier__title">{beat.title}</h2>
@@ -116,6 +139,23 @@ export function Dossier({ beats, sources, sides, branch, focus, packTitle }: Dos
           <div className="dossier__body">
             <Markdown remarkPlugins={[remarkGfm]}>{markdown}</Markdown>
           </div>
+          {related.length > 0 && (
+            <ul className="card__chips dossier__related" aria-label="Related">
+              {related.map((c) => (
+                <li key={c.id}>
+                  <button
+                    type="button"
+                    className="card__chip"
+                    data-kind={c.kind}
+                    onClick={c.onClick}
+                    disabled={!c.onClick}
+                  >
+                    {c.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
         </article>
       ) : (
         <div className="dossier__empty">

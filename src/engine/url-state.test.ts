@@ -11,12 +11,16 @@ describe('view state ⇄ query string', () => {
       t: Date.UTC(1914, 7, 24, 12),
       branch: '1914:historical',
       focus: '1914:marne',
+      card: '1914:tech-x',
     });
-    expect(q).toBe('?t=1914-08-24T12:00:00Z&branch=1914:historical&focus=1914:marne');
+    expect(q).toBe(
+      '?t=1914-08-24T12:00:00Z&branch=1914:historical&focus=1914:marne&card=1914:tech-x',
+    );
     expect(parseViewState(q)).toEqual({
       t: Date.UTC(1914, 7, 24, 12),
       branch: '1914:historical',
       focus: '1914:marne',
+      card: '1914:tech-x',
     });
   });
 
@@ -74,6 +78,9 @@ describe('bindUrlState', () => {
     h.binding.setFocus(undefined);
     expect(h.writes.at(-1)).not.toMatch(/focus=/);
     expect(h.writes.at(-1)).toMatch(/branch=1914:historical/);
+    h.binding.setCard('1914:tech-x');
+    expect(h.binding.get()).toEqual({ branch: '1914:historical', card: '1914:tech-x' });
+    expect(h.writes.at(-1)).toMatch(/card=1914:tech-x$/);
   });
 
   it('throttles writes while playing', () => {

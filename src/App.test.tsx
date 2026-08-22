@@ -51,4 +51,29 @@ describe('App shell', () => {
     // the viewer moved past 1 Sep inside the battle (5 Sep), so time does not jump back
     expect(screen.getByText('Day 34')).toBeInTheDocument();
   });
+
+  it('opens a technology card from a timeline glyph and from a beat chip, and returns to the beat', async () => {
+    window.history.replaceState(null, '', '/?t=1914-08-10T00:00:00Z');
+    render(<App />);
+    // the Liège beat links the siege-artillery card as a chip
+    fireEvent.click(
+      await screen.findByRole(
+        'button',
+        { name: "Heavy siege artillery — Krupp's 42 cm and Škoda's 30.5 cm" },
+        { timeout: 8000 },
+      ),
+    );
+    expect(window.location.search).toContain('card=1914:tech-heavy-siege-artillery');
+    expect(screen.getByText('Technology · Artillery')).toBeInTheDocument();
+    expect(screen.getByRole('region', { name: 'Sources' })).toHaveTextContent(/Herwig/);
+    fireEvent.click(screen.getByRole('button', { name: /Back to the narrative/ }));
+    expect(window.location.search).not.toContain('card=');
+    expect(screen.getByRole('heading', { level: 2, name: /Liège holds/ })).toBeInTheDocument();
+    // the ⚙ glyph on the timeline opens the railways card and seeks to its moment
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Open Railways and the mobilization timetable' }),
+    );
+    expect(window.location.search).toContain('card=1914:tech-railways-mobilization');
+    expect(screen.getByText('Day 0')).toBeInTheDocument(); // 2 Aug 1914 = pack start
+  }, 15000);
 });

@@ -298,3 +298,21 @@
     display: none;
   }
 }
+
+/* card glyphs (ADR 0006): tech ⚙, science ✦, document ▢, decision ◇, battle ◆ */
+.timeline__marker-glyph {
+  font-size: 12px;
+  line-height: 12px;
+  color: var(--brass);
+  background: var(--panel);
+  border-radius: 50%;
+  padding: 0 1px;
+}
+
+.timeline__marker[data-kind='science'] .timeline__marker-glyph {
+  color: var(--french);
+}
+
+.timeline__marker:not([data-past]) .timeline__marker-glyph {
+  opacity: 0.6;
+}

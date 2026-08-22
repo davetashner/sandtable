@@ -88,10 +88,10 @@ export function useClockControls(): Clock {
 }
 
 const noopSubscribe = () => () => {};
-const EMPTY = Object.freeze({}) as { branch?: string; focus?: string };
+const EMPTY = Object.freeze({}) as { branch?: string; focus?: string; card?: string };
 
 /** Branch and focus from the URL (empty when URL sync is off). */
-export function useViewState(): { branch?: string; focus?: string } {
+export function useViewState(): { branch?: string; focus?: string; card?: string } {
   const { url } = useCtx();
   return useSyncExternalStore(
     url ? url.subscribe : noopSubscribe,
@@ -100,6 +100,9 @@ export function useViewState(): { branch?: string; focus?: string } {
   );
 }
 
-export function useViewStateControls(): Pick<UrlBinding, 'setBranch' | 'setFocus'> | null {
+export function useViewStateControls(): Pick<
+  UrlBinding,
+  'setBranch' | 'setFocus' | 'setCard'
+> | null {
   return useCtx().url;
 }

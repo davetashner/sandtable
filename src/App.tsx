@@ -10,16 +10,20 @@
 import { lazy, Suspense, useEffect, useMemo, useRef } from 'react';
 import {
   ClockProvider,
+  useClock,
   useClockControls,
   useViewState,
   useViewStateControls,
 } from './engine/ClockContext.js';
+import { selectBeat } from './engine/beats.js';
 import { battleRange, enterNow, exitNow, resolveFocus, type FocusMemory } from './engine/focus.js';
 import { seed } from './packs/seed.js';
 import { BranchToggle } from './ui/BranchToggle.js';
 import { Breadcrumb } from './ui/Breadcrumb.js';
-import { Dossier } from './ui/Dossier.js';
+import { Dossier, type CardChipLike } from './ui/Dossier.js';
+import { TechCardView, type EntityLabeller } from './ui/TechCardView.js';
 import { Timeline, type TimelineMarker, type TimelinePhase } from './ui/Timeline.js';
+import type { Links } from './packs/schema/index.js';
 
 // MapLibre + deck.gl are the heaviest dependencies; load the whole map surface
 // on demand so the shell, timeline and dossier paint first.
@@ -47,6 +51,44 @@ const MOVEMENT_SOURCE = {
 function useFocus() {
   const { focus } = useViewState();
   return resolveFocus(seed.battles, focus);
+}
+
+/** Labels and actions for entity ids, shared by cards and beat chips. */
+function useLabeller(): EntityLabeller {
+  const controls = useViewStateControls();
+  const clock = useClockControls();
+  return useMemo(
+    () => ({
+      label(id) {
+        return (
+          seed.tech.find((t) => t.id === id)?.title ??
+          seed.events.find((e) => e.id === id)?.title ??
+          seed.battles.find((b) => b.id === id)?.title ??
+          seed.formations.find((f) => f.id === id)?.name ??
+          seed.places.find((p) => p.id === id)?.name ??
+          seed.beats.find((b) => b.id === id)?.title
+        );
+      },
+      open(id, kind: keyof Links) {
+        if (kind === 'tech') return () => controls?.setCard(id);
+        if (kind === 'battles') return () => controls?.setFocus(id);
+        if (kind === 'events') {
+          const e = seed.events.find((x) => x.id === id);
+          if (!e) return undefined;
+          const at = Date.parse(e.at ?? e.timeRange!.start);
+          return () => clock.seek(at);
+        }
+        return undefined;
+      },
+    }),
+    [controls, clock],
+  );
+}
+
+/** The tech card the URL's card slot names, if any. */
+function useCard() {
+  const { card } = useViewState();
+  return card ? seed.tech.find((t) => t.id === card) : undefined;
 }
 
 /**
@@ -115,6 +157,29 @@ function MapSection() {
 function DossierSurface() {
   const branch = useBranch();
   const focus = useFocus();
+  const card = useCard();
+  const controls = useViewStateControls();
+  const labeller = useLabeller();
+  const { now, range } = useClock();
+  const beat = useMemo(
+    () => selectBeat(seed.beats, now, branch.id, focus?.id, range.end),
+    [now, branch.id, focus?.id, range.end],
+  );
+  const related = useMemo<CardChipLike[]>(() => {
+    const links = beat?.links;
+    if (!links) return [];
+    const out: CardChipLike[] = [];
+    for (const id of links.tech ?? []) {
+      const label = labeller.label(id);
+      if (label) out.push({ id, label, kind: 'tech', onClick: () => controls?.setCard(id) });
+    }
+    for (const id of links.battles ?? []) {
+      const label = labeller.label(id);
+      if (label && id !== focus?.id)
+        out.push({ id, label, kind: 'battle', onClick: () => controls?.setFocus(id) });
+    }
+    return out;
+  }, [beat, labeller, controls, focus?.id]);
   return (
     <div className="surface surface--dossier">
       <Dossier
@@ -124,6 +189,17 @@ function DossierSurface() {
         branch={branch}
         focus={focus?.id}
         packTitle={focus ? focus.title : seed.pack.title}
+        related={related}
+        card={
+          card ? (
+            <TechCardView
+              card={card}
+              sources={seed.sources}
+              labeller={labeller}
+              onBack={() => controls?.setCard(undefined)}
+            />
+          ) : undefined
+        }
       />
     </div>
   );
@@ -148,16 +224,38 @@ function TimelineSurface() {
         })),
     [branch, focusId],
   );
-  const markers = useMemo<TimelineMarker[]>(
-    () =>
-      (focus ? (focus.events ?? []) : seed.events)
-        .filter((e) => e.significance === 'major' && (!e.branch || e.branch === branch.id))
-        .map((e) => ({ id: e.id, title: e.title, at: Date.parse(e.at ?? e.timeRange!.start) })),
-    [branch, focus],
-  );
+  const controls = useViewStateControls();
+  const markers = useMemo<TimelineMarker[]>(() => {
+    const events: TimelineMarker[] = (focus ? (focus.events ?? []) : seed.events)
+      .filter((e) => e.significance === 'major' && (!e.branch || e.branch === branch.id))
+      .map((e) => ({
+        id: e.id,
+        title: e.title,
+        at: Date.parse(e.at ?? e.timeRange!.start),
+        kind: 'event' as const,
+      }));
+    const tech: TimelineMarker[] = focus
+      ? []
+      : seed.tech
+          .filter((t) => t.introduced.at)
+          .map((t) => ({
+            id: t.id,
+            title: t.title,
+            at: Date.parse(t.introduced.at!),
+            kind: 'tech' as const,
+          }));
+    return [...events, ...tech];
+  }, [branch, focus]);
   return (
     <footer className="surface surface--timeline" aria-label="Timeline">
-      <Timeline title={focus ? focus.title : seed.pack.title} phases={phases} markers={markers} />
+      <Timeline
+        title={focus ? focus.title : seed.pack.title}
+        phases={phases}
+        markers={markers}
+        onSelectMarker={(m) => {
+          if (m.kind === 'tech') controls?.setCard(m.id);
+        }}
+      />
     </footer>
   );
 }
