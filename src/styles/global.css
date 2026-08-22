@@ -119,3 +119,24 @@ h1 {
   outline: 2px solid var(--brass);
   outline-offset: 2px;
 }
+
+/* ---- dossier (placeholder until sand-a55.12) ---- */
+.dossier__title {
+  margin: 4px 0 2px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.dossier__date {
+  margin: 0 0 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--brass);
+}
+
+.surface--timeline {
+  padding: 14px 17px 10px;
+}
