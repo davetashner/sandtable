@@ -10,6 +10,7 @@
 import { lazy, Suspense, useMemo } from 'react';
 import { ClockProvider, useViewState } from './engine/ClockContext.js';
 import { seed } from './packs/seed.js';
+import { BranchToggle } from './ui/BranchToggle.js';
 import { Dossier } from './ui/Dossier.js';
 import { Timeline, type TimelineMarker, type TimelinePhase } from './ui/Timeline.js';
 
@@ -37,8 +38,10 @@ const MOVEMENT_SOURCE = {
 
 function MapSection() {
   const branch = useBranch();
+  const hypothetical = branch.kind === 'counterfactual';
   return (
-    <section className="surface surface--map">
+    <section className="surface surface--map" data-hypothetical={hypothetical || undefined}>
+      {hypothetical && <p className="hypothetical-ribbon">Hypothetical · {branch.title}</p>}
       <Suspense fallback={<p className="surface__hint surface__hint--loading">Loading the map…</p>}>
         <MapSurface
           camera={seed.pack.camera}
@@ -102,9 +105,12 @@ export function App() {
     <ClockProvider range={RANGE}>
       <div className="app">
         <header className="app__header">
-          <p className="eyebrow">Operational study · Western Front, 1914</p>
-          <h1>Sandtable</h1>
-          <p className="lede">{seed.pack.subtitle ?? seed.pack.title}</p>
+          <div className="app__header-text">
+            <p className="eyebrow">Operational study · Western Front, 1914</p>
+            <h1>Sandtable</h1>
+            <p className="lede">{seed.pack.subtitle ?? seed.pack.title}</p>
+          </div>
+          <BranchToggle branches={seed.pack.branches} defaultBranch={seed.pack.defaultBranch} />
         </header>
 
         <main className="app__main">

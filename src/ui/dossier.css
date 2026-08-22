@@ -199,3 +199,66 @@
     animation: none;
   }
 }
+
+/* about this branch (counterfactual) */
+.dossier__about summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.dossier__about summary::-webkit-details-marker {
+  display: none;
+}
+
+.dossier__about summary::after {
+  content: ' ▸';
+  color: var(--brass);
+}
+
+.dossier__about[open] summary::after {
+  content: ' ▾';
+}
+
+.dossier__about-body {
+  margin-top: 8px;
+  padding: 0 2px 8px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.dossier__about-body h3 {
+  margin: 10px 0 4px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.dossier__about-body p {
+  margin: 0 0 6px;
+}
+
+.dossier__feasibility {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 4px;
+}
+
+.dossier__feasibility li {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 6px;
+}
+
+.dossier__check {
+  font-family: var(--font-mono);
+  color: var(--army-1);
+}
+
+.dossier__feasibility li[data-met] .dossier__check {
+  color: var(--french);
+}
