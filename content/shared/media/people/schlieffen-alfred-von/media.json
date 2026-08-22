@@ -1,5 +1,5 @@
 {
-  "$comment": "Provisional manifest — the Media entity schema (history-alive-y0u.2) will formalize these fields. Licence of the colorization is UNVERIFIED (history-alive-y0u.8); do not publish until resolved.",
+  "$comment": "Provisional manifest — the Media entity schema (history-alive-y0u.2) will formalize these fields. Colorization is our own (AI-assisted, by Dave Tashner, 2026); original archive record still to be confirmed (history-alive-y0u.8).",
   "id": "media:person/schlieffen-alfred-von/portrait-c1906-colorized",
   "person": "person:schlieffen-alfred-von",
   "file": "portrait-c1906-colorized.png",
@@ -14,14 +14,15 @@
     "licence": "public domain (author died >70 years ago / published before 1930) — confirm against archive record"
   },
   "colorization": {
-    "author": "UNKNOWN — must identify",
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization from the public-domain black-and-white original, 2026",
     "source_url": null,
-    "licence": "UNVERIFIED — the colorization is a derivative work with its own copyright; confirm author and licence (or produce our own from the PD original per the imagery policy) before use",
-    "status": "pending-review"
+    "licence": "History Alive project licence (same as the rest of the content); the underlying photograph is public domain",
+    "status": "ok — label as 'colorized (AI-assisted)'; colour is interpretive except where documented (dark-blue Prussian tunic, gold epaulettes, black-and-silver Pour le Mérite ribbon)"
   },
   "content_policy": "ok — portrait, no gore",
-  "caption": "Alfred Graf von Schlieffen (1833–1913), Chief of the German General Staff 1891–1906, author of the December 1905 memorandum. Colorized.",
-  "credit": "Original: public domain. Colorization: credit to be added once the author is identified.",
+  "caption": "Alfred Graf von Schlieffen (1833–1913), Chief of the German General Staff 1891–1906, author of the December 1905 memorandum. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: public domain (archive to confirm). Colorization: History Alive, AI-assisted, 2026.",
   "used_by": [
     "1914:prologue-origins",
     "1905:consequences-memorandum",
