@@ -72,6 +72,7 @@ npm run typecheck        # tsc -b
 npm test -- --run        # Vitest, single pass
 npm run validate:content # scripts/check-content.sh + the pack validator (docs/content-model.md)
 npm run schema           # regenerate schema/*.schema.json from src/packs/schema (tests fail if stale)
+npm run borders          # rebuild content/shared/geo/borders/<year>.geojson from historical-basemaps (pinned commit)
 npm run build            # tsc -b && vite build → dist/ (bundles under dist/app/)
 npm run format           # Prettier
 ```
