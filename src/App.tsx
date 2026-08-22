@@ -8,8 +8,9 @@
  * the lazy loader lands (sand-shn.1).
  */
 import { lazy, Suspense, useMemo } from 'react';
-import { ClockProvider, useClock, useViewState } from './engine/ClockContext.js';
+import { ClockProvider, useViewState } from './engine/ClockContext.js';
 import { seed } from './packs/seed.js';
+import { Dossier } from './ui/Dossier.js';
 import { Timeline, type TimelineMarker, type TimelinePhase } from './ui/Timeline.js';
 
 // MapLibre + deck.gl are the heaviest dependencies; load the whole map surface
@@ -50,30 +51,18 @@ function MapSection() {
   );
 }
 
-function DossierPlaceholder() {
-  const { now, range } = useClock();
+function DossierSurface() {
   const branch = useBranch();
-  const beat = seed.beats.find((b) => {
-    if (b.branch && b.branch !== branch.id) return false;
-    const from = Date.parse(b.from);
-    const to = Date.parse(b.to);
-    return now >= from && (now < to || (now >= range.end && to >= range.end));
-  });
   return (
-    <aside className="surface surface--dossier" aria-label="Dossier">
-      <p className="surface__label">Dossier · {branch.title}</p>
-      {beat ? (
-        <>
-          <h2 className="dossier__title">{beat.title}</h2>
-          <p className="dossier__date">{beat.dateLabel}</p>
-        </>
-      ) : (
-        <p className="surface__hint">No narrative beat at this moment.</p>
-      )}
-      <p className="surface__hint">
-        Narrative beats, documents, tech and science cards — <code>sand-a55.12</code>.
-      </p>
-    </aside>
+    <div className="surface surface--dossier">
+      <Dossier
+        beats={seed.beats}
+        sources={seed.sources}
+        sides={seed.pack.sides}
+        branch={branch}
+        packTitle={seed.pack.title}
+      />
+    </div>
   );
 }
 
@@ -120,7 +109,7 @@ export function App() {
 
         <main className="app__main">
           <MapSection />
-          <DossierPlaceholder />
+          <DossierSurface />
         </main>
 
         <TimelineSurface />

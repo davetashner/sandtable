@@ -1,0 +1,113 @@
+/**
+ * The dossier — the right-hand narrative panel. Picks the beat that matches
+ * now × branch × focus, renders its Markdown with footnote citations resolved
+ * from the Source registry, shows the phase title and date, a hypothetical
+ * badge for counterfactual branches, the pull quote, and a legend of sides.
+ * Transitions between beats fade (and respect reduced motion). Era-agnostic.
+ *
+ * The information-architecture decision (sand-neh.5) makes this the single
+ * home for cards — tech, science, documents, decision points, causal chains
+ * — which will mount here as modes rather than as new panels.
+ */
+import { useEffect, useMemo, useState } from 'react';
+import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { useClock } from '../engine/ClockContext.js';
+import { sideToken } from '../engine/layers/colors.js';
+import { selectBeat, withFootnotes } from '../engine/beats.js';
+import type { Branch, NarrativeBeat, Side, Source } from '../packs/schema/index.js';
+import './dossier.css';
+
+export interface DossierProps {
+  beats: NarrativeBeat[];
+  sources: Source[];
+  sides: Side[];
+  branch: Branch;
+  /** Battle id when inside a zoom-in (sand-a55.14); beats with that focus win. */
+  focus?: string;
+  packTitle?: string;
+}
+
+export function Dossier({ beats, sources, sides, branch, focus, packTitle }: DossierProps) {
+  const { now, range } = useClock();
+  const beat = useMemo(
+    () => selectBeat(beats, now, branch.id, focus, range.end),
+    [beats, now, branch.id, focus, range.end],
+  );
+  const markdown = useMemo(() => (beat ? withFootnotes(beat, sources) : ''), [beat, sources]);
+  const hypothetical = branch.kind === 'counterfactual' && beat?.branch === branch.id;
+
+  // Fade on beat change.
+  const [shown, setShown] = useState(beat?.id);
+  const [entering, setEntering] = useState(false);
+  useEffect(() => {
+    if (beat?.id === shown) return;
+    setShown(beat?.id);
+    setEntering(true);
+    const t = window.setTimeout(() => setEntering(false), 260);
+    return () => window.clearTimeout(t);
+  }, [beat?.id, shown]);
+
+  const next = useMemo(() => {
+    if (beat) return undefined;
+    return beats
+      .filter((b) => (!b.branch || b.branch === branch.id) && !b.focus && Date.parse(b.from) > now)
+      .sort((a, b) => Date.parse(a.from) - Date.parse(b.from))[0];
+  }, [beat, beats, branch.id, now]);
+
+  return (
+    <aside className="dossier" aria-label="Dossier" data-entering={entering || undefined}>
+      <header className="dossier__head">
+        <p className="dossier__eyebrow">
+          {packTitle ? <span className="dossier__pack">{packTitle}</span> : null}
+          <span className="dossier__branch" data-hypothetical={hypothetical || undefined}>
+            {branch.title}
+          </span>
+        </p>
+        {hypothetical && (
+          <p className="dossier__badge" role="note">
+            Hypothetical — an authored branch, not what happened
+          </p>
+        )}
+      </header>
+
+      {beat ? (
+        <article className="dossier__beat" key={beat.id} aria-live="polite">
+          <p className="dossier__date">{beat.dateLabel}</p>
+          <h2 className="dossier__title">{beat.title}</h2>
+          {beat.pullQuote && (
+            <blockquote className="dossier__pull">
+              <p>{beat.pullQuote.text}</p>
+              <footer>— {beat.pullQuote.attribution}</footer>
+            </blockquote>
+          )}
+          <div className="dossier__body">
+            <Markdown remarkPlugins={[remarkGfm]}>{markdown}</Markdown>
+          </div>
+        </article>
+      ) : (
+        <div className="dossier__empty">
+          <p className="dossier__date">No narrative beat at this moment.</p>
+          {next && (
+            <p className="dossier__hint">
+              Next: <strong>{next.title}</strong> — {next.dateLabel}.
+            </p>
+          )}
+        </div>
+      )}
+
+      <footer className="dossier__legend" aria-label="Legend">
+        {sides.map((s) => (
+          <span key={s.id} className="dossier__side">
+            <span
+              className="dossier__swatch"
+              style={{ background: `var(${sideToken(s, sides)})` }}
+              aria-hidden="true"
+            />
+            {s.short ?? s.name}
+          </span>
+        ))}
+      </footer>
+    </aside>
+  );
+}
