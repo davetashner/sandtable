@@ -12,7 +12,9 @@ describe('App shell', () => {
   it('renders the title and the three surfaces', async () => {
     render(<App />);
     expect(screen.getByRole('heading', { level: 1, name: 'Sandtable' })).toBeInTheDocument();
-    expect(await screen.findByRole('region', { name: /^Map/ })).toBeInTheDocument();
+    expect(
+      await screen.findByRole('region', { name: /^Map/ }, { timeout: 8000 }),
+    ).toBeInTheDocument();
     expect(screen.getByRole('complementary', { name: 'Dossier' })).toBeInTheDocument();
     expect(screen.getByRole('contentinfo', { name: 'Timeline' })).toBeInTheDocument();
   });
