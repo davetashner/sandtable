@@ -278,6 +278,18 @@ export const Formation = z
       .object({
         men: z.number().int().nonnegative().optional(),
         guns: z.number().int().nonnegative().optional(),
+        corps: z.number().int().nonnegative().optional().describe('Corps-equivalents'),
+        divisions: z.number().int().nonnegative().optional().describe('Infantry divisions'),
+        asOf: When.optional(),
+        sources: Sources.optional(),
+      })
+      .strict()
+      .optional(),
+    /** Where it assembled before moving (the order of battle, sand-1l0.1). */
+    concentration: z
+      .object({
+        area: z.string().min(1).describe('In words: "Aachen–Jülich, behind the Dutch frontier"'),
+        position: LngLat.optional().describe('Representative point for the start token'),
         asOf: When.optional(),
         sources: Sources.optional(),
       })

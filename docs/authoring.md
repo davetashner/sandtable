@@ -131,12 +131,29 @@ portrait large, so the manifest's `focal_point` matters.
   "side": "de",
   "kind": "army",
   "commander": "person:albrecht-of-wurttemberg",
+  "strength": {
+    "men": 180000,
+    "corps": 5,
+    "asOf": "1914-08-17",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  "concentration": {
+    "area": "Trier–Bitburg–Luxembourg",
+    "position": [6.5, 49.85],
+    "asOf": "1914-08-17",
+    "sources": [{ "source": "source:reichsarchiv-weltkrieg-1" }]
+  },
   "sources": [{ "source": "source:herwig-2009" }]
 }
 ```
 
 `side` must be one of `pack.json#sides[].id`; `commander` must exist in the
-people registry (add them first).
+people registry (add them first). The order of battle is a tree: give a corps
+`"parent": "1914:army-de-4"` and `"kind": "corps"`; only formations with a
+route get a moving token, so corps-level entries are reference data until they
+get routes of their own. `concentration` is where the formation stood before
+it moved — the position is the start token and the first waypoint of its
+historical route should agree with it.
 
 `routes.json` — one default (historical) route per formation:
 

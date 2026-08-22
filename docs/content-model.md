@@ -121,8 +121,11 @@ generated JSON Schema; this is the intent of each.
   drives the colour family), `branches`, `defaultBranch`, `status`
   (`seed | draft | review | published`), a general bibliography.
 - **Formation** — an army, corps, division, fleet…: name, `short` token
-  label, `side`, `kind`, `commander` (a Person), `parent`, optional
-  strength with its own sources.
+  label, `side`, `kind`, `commander` (a Person), `parent` (the order of battle
+  is a tree: corps under armies, divisions under corps), optional `strength`
+  (men, guns, corps, divisions, `asOf`) and `concentration` (where it
+  assembled, in words plus a representative position and date — the start
+  token before its route begins), each with its own sources.
 - **Route** — a Formation's movement over time (see above). Required sources.
 - **Event** — a point (`at`) or a span (`timeRange`); `kind`, `significance`
   (`major` events become timeline ticks), a Place or a position, summary,
@@ -178,12 +181,14 @@ pack prefix, dangling references of every kind, `defaultBranch` not in
 waypoints, counterfactual routes starting before the divergence, duplicate
 routes per formation and branch, beats visible together overlapping, unknown
 footnote labels (beats and cast bios), missing required citations, cast
-entries naming a person or side that does not exist or the same person twice, decision `historical` not an
+entries naming a person or side that does not exist or the same person twice,
+a formation's `concentration.asOf` outside the pack range, decision `historical` not an
 option, campaign routes using battle-level formations, and the imagery policy
 on media manifests (flagged BLOCKED/UNVERIFIED/UNKNOWN/HOLD, colorized without
 saying so, Bundesarchiv without the credit string, no archive record).
 
-Warnings: formations without a historical route (non-seed packs), branches
+Warnings: formations without a historical route (non-seed packs), a
+formation's `concentration.position` outside the pack region, branches
 without beats (non-seed packs), media `person`/`used_by` pointing at entities
 that do not exist yet, thread steps with neither beat nor instant, unknown
 pack files.

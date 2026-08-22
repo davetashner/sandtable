@@ -242,6 +242,32 @@ describe('validateContent', () => {
     expect(report.content.packs[0]?.beats[0]?.body).toBe('Body text.[^herwig-2009]');
   });
 
+  it('checks a formation concentration: asOf inside the pack range (error), position inside the region (warning), sources resolve', () => {
+    const raw = fixture();
+    const c = raw.packs[0]!.collections;
+    const forms = c['formations.json']!.data as Record<string, unknown>[];
+    forms[0]!['concentration'] = {
+      area: 'Aachen',
+      position: [20, 60],
+      asOf: '1914-10-15',
+      sources: [{ source: 'source:missing' }],
+    };
+    const report = validateContent(raw);
+    const errs = report.errors.map((e) => e.message);
+    const warns = report.warnings.map((w) => w.message);
+    expect(errs).toContainEqual(
+      expect.stringMatching(/concentration\.asOf \(1914-10-15\) is outside the pack timeRange/),
+    );
+    expect(errs).toContainEqual(
+      expect.stringMatching(/concentration\.sources: citation source:missing does not exist/),
+    );
+    expect(warns).toContainEqual(
+      expect.stringMatching(/concentration\.position \[20, 60\] is outside the pack region/),
+    );
+    forms[0]!['concentration'] = { area: 'Aachen', position: [6, 50.8], asOf: '1914-08-17' };
+    expect(messages(validateContent(raw)).filter((m) => /concentration/.test(m))).toEqual([]);
+  });
+
   it('checks cast entries: person and side must exist, citations required, bio footnotes must name a source, one entry per person', () => {
     const raw = fixture();
     const c = raw.packs[0]!.collections;
