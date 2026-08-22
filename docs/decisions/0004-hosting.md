@@ -79,3 +79,16 @@ merge.
   certificates) is done by CDK through the bootstrap roles, so the policy
   stays small.
 - The account was already CDK-bootstrapped (v30) in `us-east-1`.
+
+## Domain (decided 2026-08-22)
+
+- Production: **`sandtable.davetashner.com`** (`sandtable.com` was not
+  available). The `davetashner.com` public hosted zone lives in the same AWS
+  account (Route 53, zone `Z2ONH2Z46JHXWL`), so the CDK stack creates the
+  A/AAAA alias records to CloudFront and a DNS-validated ACM certificate in
+  `us-east-1` automatically.
+- The certificate covers `sandtable.davetashner.com` and
+  `*.sandtable.davetashner.com`, so PR previews can be served at
+  `pr-<n>.sandtable.davetashner.com` (or a path prefix) from a preview bucket
+  without further DNS work.
+- No apex or `www` for now; the project page on davetashner.com links here.
