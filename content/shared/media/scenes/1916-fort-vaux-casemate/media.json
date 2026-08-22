@@ -1,0 +1,35 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2). STATUS: BLOCKED — original and licence not identified; do not publish until resolved.",
+  "id": "media:scene/1916-fort-vaux-casemate/poilus-casemate-1916-colorized",
+  "kind": "scene",
+  "people": [],
+  "file": "poilus-casemate-1916-colorized.png",
+  "width": 1376,
+  "height": 1143,
+  "colorized": true,
+  "original": {
+    "description": "French infantry in horizon blue with Adrian helmets and bonnets de police crowded into a vaulted casemate or gallery — seated and standing, one man writing at a small table with a lantern and bottle, a sergeant's chevrons visible — identified by Dave as Fort Vaux, 1916.",
+    "photographer": "UNKNOWN — must identify",
+    "date": "1916 (to confirm)",
+    "archive": "UNKNOWN — not found on Wikimedia Commons by search. Likely candidates: ECPAD (French Ministry of Armed Forces photo archive — NOT freely licensed; check the specific reference), Gallica/Agence Rol or Meurisse (PD), BDIC/La Contemporaine. Identify before use.",
+    "archive_url": null,
+    "original_dimensions": null,
+    "licence": "UNVERIFIED — if the original is ECPAD it is rights-managed and cannot be used without a licence; if Gallica/Rol it is public domain"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization, 2026",
+    "licence": "depends on the original's licence",
+    "status": "BLOCKED — no source; also verify no elements were added (the scene is busy and must match the original frame for frame)"
+  },
+  "content_policy": "ok — soldiers at rest, no gore",
+  "caption": "Poilus in a casemate, Verdun 1916 (Fort Vaux, to confirm). Colorized (AI-assisted).",
+  "credit": "Original photograph: source to be identified. Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "ww1-west:verdun",
+    "ww1-west:verdun-fort-vaux",
+    "tech:medicine-and-life-in-the-forts"
+  ],
+  "focal_point": { "x": 0.45, "y": 0.45 },
+  "notes": "Provided by Dave 2026-08-22 without an original URL. Evocative image of the horizon-blue/Adrian-helmet army of 1916 — exactly the 'uniforms & kit' contrast with the 1914 red trousers — but it cannot ship until the original and licence are found. Ask Dave for the source; otherwise reverse-image search."
+}

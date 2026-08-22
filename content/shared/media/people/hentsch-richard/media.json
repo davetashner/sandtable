@@ -7,20 +7,20 @@
   "height": 1501,
   "colorized": true,
   "original": {
-    "description": "Portrait of Oberst Richard Hentsch in uniform, General Staff of the German military administration of Romania, 1918 (Bucharest).",
-    "photographer": "Dr. Johannes Friedrich Rudolf von Goetz (1856–1941)",
+    "description": "Catalogue title (Landesarchiv BW): 'Richard Hentsch, Oberst und Generalstabschef Militärverwaltung Rumäniens, stehend in Uniform mit Orden hinter Schreibtisch, Brustbild in Halbprofil' — standing in uniform with orders behind a desk, bust-length in half-profile; mounted photograph 19.5 × 13 cm with mourning border, 1918.",
+    "photographer": "not identified (from the estate of Dr. Johannes Friedrich Rudolph von Goetz, 1856–1941, military physician)",
     "date": "1918",
-    "archive": "Deutsche Digitale Bibliothek (item PRAWRWVVS3PB4HFQ3OS44WVL5CYCIET5) via Wikimedia Commons",
+    "archive": "Landesarchiv Baden-Württemberg, Hauptstaatsarchiv Stuttgart, Militärhistorische Bildsammlung, M 703 R959N4 — via Deutsche Digitale Bibliothek and Wikimedia Commons",
     "archive_url": "https://commons.wikimedia.org/wiki/File:Richard_Hentsch.jpg",
     "archive_item_url": "https://www.deutsche-digitale-bibliothek.de/item/PRAWRWVVS3PB4HFQ3OS44WVL5CYCIET5",
-    "original_dimensions": "387 × 600",
-    "licence": "CC-BY 3.0 (attribution: Deutsche Digitale Bibliothek) and public domain in the US (pre-1931)"
+    "original_dimensions": "387 × 600 (Commons copy of a 19.5 × 13 cm print)",
+    "licence": "CC-BY 3.0 DE (attribution: Landesarchiv Baden-Württemberg, HStA Stuttgart M 703 R959N4) and public domain in the US (pre-1931)"
   },
   "colorization": {
     "author": "Dave Tashner / History Alive",
     "method": "AI-assisted colorization from the original, 2026",
     "licence": "History Alive project licence with CC-BY attribution to the Deutsche Digitale Bibliothek",
-    "status": "HOLD — the colorized image shows Hentsch standing in a map room with a table of documents. The Commons original is a 387 × 600 portrait; it must be compared side by side to confirm the setting, pose and props are in the original and not AI-extended. The imagery policy (history-alive-y0u.1) forbids adding or removing elements beyond colour. If extended, re-render colour-only from the original and mark this file as a superseded illustration."
+    "status": "HOLD (narrowed) — the archive catalogue confirms the desk and the standing pose are in the original, so the setting is not invented. It also describes the print as 'Brustbild' (bust-length), whereas the colorized image runs to the hips with hands on the table and a wall of maps behind — so confirm by a side-by-side glance that the lower half and background were not AI-extended. If they were, re-render colour-only at the original crop. Policy: colour only (history-alive-y0u.1)."
   },
   "content_policy": "ok — portrait, no gore",
   "caption": "Richard Hentsch (1869–1918), Oberstleutnant of the General Staff — sent by Moltke on 8 September 1914 to tour the army headquarters with authority to order a retreat; his visit to Bülow and Kluck on 8–9 September ended the German advance at the Marne. Photographed in 1918. Colorized (AI-assisted).",
