@@ -4,12 +4,13 @@
  * focus region is set (zoom-in), the camera fits it; when cleared, it fits
  * the campaign region again.
  */
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useClock } from '../engine/ClockContext.js';
+import { buildPlacesLayers } from '../engine/layers/places.js';
 import { useMovementLayers, type MovementSource } from '../engine/layers/useMovementLayers.js';
 import { MapView, type MapHandle } from '../engine/map/MapView.js';
 import { labelNow } from '../engine/ticks.js';
-import type { BBox, Branch, Camera } from '../packs/schema/index.js';
+import type { BBox, Branch, Camera, Place } from '../packs/schema/index.js';
 
 export interface MapSurfaceProps {
   camera: Camera;
@@ -20,6 +21,8 @@ export interface MapSurfaceProps {
   region: BBox;
   /** Battle extent while zoomed in. */
   focusRegion?: BBox | undefined;
+  /** Cities and fortresses to label. */
+  places?: Place[];
 }
 
 export function MapSurface({
@@ -29,10 +32,13 @@ export function MapSurface({
   movement,
   region,
   focusRegion,
+  places = [],
 }: MapSurfaceProps) {
   const { now, range } = useClock();
   const label = labelNow(now, range);
-  const { layers } = useMovementLayers(movement, branch);
+  const { layers: movementLayers } = useMovementLayers(movement, branch);
+  const placeLayers = useMemo(() => buildPlacesLayers({ places }), [places]);
+  const layers = useMemo(() => [...placeLayers, ...movementLayers], [placeLayers, movementLayers]);
   const handle = useRef<MapHandle | null>(null);
   const first = useRef(true);
 

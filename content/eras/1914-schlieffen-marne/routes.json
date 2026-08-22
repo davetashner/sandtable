@@ -18,7 +18,14 @@
     ],
     "confidence": "low",
     "derivation": "Seed: approximate centre of the army at the dates named in the narrative sources (Aachen assembly, Brussels 20 Aug, Mons 23 Aug, Le Cateau 26 Aug, the wheel south-east 30–31 Aug, across the Marne 3 Sep, the Ourcq 5–9 Sep, the Aisne 13 Sep). To be replaced by daily HQ and corps positions in sand-1l0.2.",
-    "sources": [{ "source": "source:herwig-2009" }, { "source": "source:reichsarchiv-weltkrieg-1" }]
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      }
+    ]
   },
   {
     "id": "1914:route-de-1-schlieffen-concept",
@@ -34,7 +41,14 @@
     ],
     "confidence": "low",
     "derivation": "Hypothetical. A schematic rendering of the 1905 memorandum's outer wheel — west of Paris, then south and east — at the march rates the historical army actually achieved. It illustrates the concept; it is not a claim about what would have happened (see the branch's feasibility checklist). Refined in sand-1l0.11.",
-    "sources": [{ "source": "source:zuber-2002" }, { "source": "source:herwig-2009" }]
+    "sources": [
+      {
+        "source": "source:zuber-2002"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
   },
   {
     "id": "1914:route-de-2",
@@ -51,7 +65,14 @@
     ],
     "confidence": "low",
     "derivation": "Seed: approximate centre of the army at named dates (Liège 16 Aug, Gembloux 20 Aug, the Sambre at Charleroi 21–23 Aug, Guise 29 Aug, the Marne at Épernay 4 Sep, Montmirail 8 Sep, the Aisne 13 Sep). Replaced in sand-1l0.2.",
-    "sources": [{ "source": "source:herwig-2009" }, { "source": "source:reichsarchiv-weltkrieg-1" }]
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      }
+    ]
   },
   {
     "id": "1914:route-bef",
@@ -68,7 +89,11 @@
     ],
     "confidence": "low",
     "derivation": "Seed: approximate centre of the BEF at named dates (concentration about Maubeuge 21 Aug, Mons 23 Aug, Le Cateau 26 Aug, Compiègne 30–31 Aug, across the Marne 3 Sep, the southernmost point near Tournan 5 Sep, the Marne recrossed at La Ferté-sous-Jouarre 9 Sep, the Aisne 13 Sep). Replaced in sand-1l0.2.",
-    "sources": [{ "source": "source:edmonds-1922" }]
+    "sources": [
+      {
+        "source": "source:edmonds-1922"
+      }
+    ]
   },
   {
     "id": "1914:route-fr-6",
@@ -82,6 +107,105 @@
     ],
     "confidence": "low",
     "derivation": "Seed: approximate centre of the army at named dates (forming about Amiens 26–27 Aug, withdrawn to the Paris camp 1 Sep, advancing on Meaux and the Ourcq 5 Sep, the Ourcq 6–9 Sep, the Aisne 13 Sep). Replaced in sand-1l0.2.",
-    "sources": [{ "source": "source:afgg-1-1" }, { "source": "source:herwig-2009" }]
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-de-3",
+    "formation": "1914:army-de-3",
+    "waypoints": [
+      [6.5, 49.9, "1914-08-13T06:00:00Z"],
+      [5.7, 50.0, "1914-08-20T12:00:00Z"],
+      [4.91, 50.26, "1914-08-23T12:00:00Z"],
+      [4.52, 49.93, "1914-08-28T12:00:00Z"],
+      [4.2, 49.4, "1914-09-02T12:00:00Z"],
+      [3.8, 48.8, "1914-09-06T12:00:00Z"],
+      [4.37, 48.96, "1914-09-10T12:00:00Z"],
+      [4.03, 49.26, "1914-09-13T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Seed: approximate centre of the Saxon 3rd Army at named dates (assembly about Trier, the Ardennes 20 Aug, the Meuse at Dinant 23 Aug, Rocroi 28 Aug, north-east of Reims 2 Sep, the marshes of Saint-Gond 6 Sep, Châlons 10 Sep, the Vesle/Aisne line 13 Sep). Stands in for the PoC's 'centre' group until the 4th and 5th Armies get their own routes in sand-1l0.2.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-fr-5",
+    "formation": "1914:army-fr-5",
+    "waypoints": [
+      [4.5, 49.6, "1914-08-15T12:00:00Z"],
+      [4.44, 50.41, "1914-08-21T12:00:00Z"],
+      [3.9, 50.1, "1914-08-24T12:00:00Z"],
+      [3.63, 49.9, "1914-08-29T12:00:00Z"],
+      [3.7, 49.5, "1914-09-02T12:00:00Z"],
+      [3.45, 48.65, "1914-09-05T12:00:00Z"],
+      [3.54, 48.87, "1914-09-09T12:00:00Z"],
+      [3.9, 49.35, "1914-09-13T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Seed: approximate centre of the French 5th Army at named dates (assembly Mézières–Rethel, the Sambre at Charleroi 21 Aug, the retreat past Maubeuge 24 Aug, Guise 29 Aug, Laon 2 Sep, south of the Marne near Sézanne 5 Sep, Montmirail 9 Sep, the Aisne 13 Sep). Replaced in sand-1l0.2.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-de-2-schlieffen-concept",
+    "formation": "1914:army-de-2",
+    "branch": "1914:schlieffen-concept",
+    "waypoints": [
+      [3.3, 49.9, "1914-08-27T12:00:00Z"],
+      [2.6, 49.25, "1914-09-01T12:00:00Z"],
+      [1.83, 48.64, "1914-09-05T12:00:00Z"],
+      [2.65, 48.53, "1914-09-09T12:00:00Z"],
+      [3.3, 48.55, "1914-09-13T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Hypothetical, schematic: the 2nd Army keeps station inside the 1st on the wide wheel — Saint-Quentin, Creil, south-west of Paris, the Seine at Melun, closing east. Illustrates the concept (see the branch's feasibility checklist); refined in sand-1l0.11.",
+    "sources": [
+      {
+        "source": "source:zuber-2002"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-de-3-schlieffen-concept",
+    "formation": "1914:army-de-3",
+    "branch": "1914:schlieffen-concept",
+    "waypoints": [
+      [4.37, 49.5, "1914-08-27T12:00:00Z"],
+      [4.03, 49.26, "1914-09-01T12:00:00Z"],
+      [4.37, 48.96, "1914-09-05T12:00:00Z"],
+      [4.07, 48.3, "1914-09-09T12:00:00Z"],
+      [3.8, 48.3, "1914-09-13T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Hypothetical, schematic: the centre pins the French armies against the fortress line — Rethel, Reims, Châlons, Troyes — while the wings close. Illustrates the concept; refined in sand-1l0.11.",
+    "sources": [
+      {
+        "source": "source:zuber-2002"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
   }
 ]

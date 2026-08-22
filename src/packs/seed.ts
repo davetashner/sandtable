@@ -12,6 +12,7 @@ import eventsJson from '../../content/eras/1914-schlieffen-marne/events.json';
 import formationsJson from '../../content/eras/1914-schlieffen-marne/formations.json';
 import packJson from '../../content/eras/1914-schlieffen-marne/pack.json';
 import routesJson from '../../content/eras/1914-schlieffen-marne/routes.json';
+import placesJson from '../../content/shared/places/places.json';
 import sourcesJson from '../../content/shared/sources/sources.json';
 import {
   Battle,
@@ -19,6 +20,7 @@ import {
   Event,
   Formation,
   Pack,
+  Place,
   Route,
   Source,
   type Battle as BattleT,
@@ -26,6 +28,7 @@ import {
   type Formation as FormationT,
   type NarrativeBeat,
   type Pack as PackT,
+  type Place as PlaceT,
   type Route as RouteT,
   type Source as SourceT,
 } from './schema/index.js';
@@ -47,6 +50,8 @@ export interface SeedPack {
   beats: NarrativeBeat[];
   /** Shared source registry (content/shared/sources). */
   sources: SourceT[];
+  /** Shared places registry (content/shared/places). */
+  places: PlaceT[];
 }
 
 function loadSeed(): SeedPack {
@@ -61,7 +66,8 @@ function loadSeed(): SeedPack {
     .map((x) => ({ ...BeatFrontMatter.parse(x.split.data), body: x.split.body, file: x.file }))
     .sort((a, b) => Date.parse(a.from) - Date.parse(b.from));
   const sources = Source.array().parse(sourcesJson);
-  return { pack, events, battles, formations, routes, beats, sources };
+  const places = Place.array().parse(placesJson);
+  return { pack, events, battles, formations, routes, beats, sources, places };
 }
 
 export const seed: SeedPack = loadSeed();

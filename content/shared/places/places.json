@@ -23,6 +23,19 @@
     "sources": [{ "source": "source:herwig-2009" }]
   },
   {
+    "id": "place:antwerp",
+    "name": "Antwerp",
+    "names": [
+      { "name": "Antwerpen", "language": "nl", "kind": "translation" },
+      { "name": "Anvers", "language": "fr", "kind": "translation" }
+    ],
+    "kind": "fortress",
+    "lngLat": [4.402, 51.219],
+    "country": "Belgium",
+    "notes": "National redoubt; the Belgian field army withdrew into it on 20 August and held until 10 October 1914.",
+    "sources": [{ "source": "source:hastings-2013" }]
+  },
+  {
     "id": "place:brussels",
     "name": "Brussels",
     "names": [
@@ -44,6 +57,44 @@
     "sources": [{ "source": "source:edmonds-1922" }]
   },
   {
+    "id": "place:charleroi",
+    "name": "Charleroi",
+    "kind": "town",
+    "lngLat": [4.444, 50.411],
+    "country": "Belgium",
+    "notes": "Bülow forced the Sambre here, 21–23 August 1914.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:luxembourg",
+    "name": "Luxembourg",
+    "kind": "city",
+    "lngLat": [6.13, 49.611],
+    "country": "Luxembourg",
+    "notes": "Occupied 2 August 1914; Moltke's headquarters from 30 August.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:aachen",
+    "name": "Aachen",
+    "names": [{ "name": "Aix-la-Chapelle", "language": "fr", "kind": "translation" }],
+    "kind": "city",
+    "lngLat": [6.084, 50.776],
+    "country": "Germany",
+    "notes": "Assembly area of the German 1st and 2nd Armies.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:cologne",
+    "name": "Cologne",
+    "names": [{ "name": "Köln", "language": "de", "kind": "translation" }],
+    "kind": "city",
+    "lngLat": [6.96, 50.938],
+    "country": "Germany",
+    "notes": "Railhead of the right wing's deployment.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
     "id": "place:le-cateau",
     "name": "Le Cateau",
     "names": [{ "name": "Le Cateau-Cambrésis", "kind": "modern" }],
@@ -51,6 +102,14 @@
     "lngLat": [3.543, 50.104],
     "country": "France",
     "sources": [{ "source": "source:edmonds-1922" }]
+  },
+  {
+    "id": "place:amiens",
+    "name": "Amiens",
+    "kind": "city",
+    "lngLat": [2.296, 49.894],
+    "country": "France",
+    "sources": [{ "source": "source:herwig-2009" }]
   },
   {
     "id": "place:paris",
@@ -62,12 +121,11 @@
     "sources": [{ "source": "source:herwig-2009" }]
   },
   {
-    "id": "place:meaux",
-    "name": "Meaux",
+    "id": "place:compiegne",
+    "name": "Compiègne",
     "kind": "town",
-    "lngLat": [2.879, 48.96],
+    "lngLat": [2.826, 49.418],
     "country": "France",
-    "notes": "On the Marne east of Paris; Maunoury's attack toward the Ourcq opened here on 5 September 1914.",
     "sources": [{ "source": "source:herwig-2009" }]
   },
   {
@@ -80,19 +138,92 @@
     "sources": [{ "source": "source:herwig-2009" }]
   },
   {
-    "id": "place:compiegne",
-    "name": "Compiègne",
+    "id": "place:meaux",
+    "name": "Meaux",
     "kind": "town",
-    "lngLat": [2.826, 49.418],
+    "lngLat": [2.879, 48.96],
+    "country": "France",
+    "notes": "On the Marne east of Paris; Maunoury's attack toward the Ourcq opened here on 5 September 1914.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:reims",
+    "name": "Reims",
+    "kind": "city",
+    "lngLat": [4.032, 49.258],
     "country": "France",
     "sources": [{ "source": "source:herwig-2009" }]
   },
   {
-    "id": "place:amiens",
-    "name": "Amiens",
-    "kind": "city",
-    "lngLat": [2.296, 49.894],
+    "id": "place:sedan",
+    "name": "Sedan",
+    "kind": "town",
+    "lngLat": [4.94, 49.702],
     "country": "France",
+    "notes": "Napoleon III's surrender in 1870; crossed by the German 4th Army in August 1914 — the 1870 thread's anchor.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:verdun",
+    "name": "Verdun",
+    "kind": "fortress",
+    "lngLat": [5.387, 49.16],
+    "country": "France",
+    "notes": "Northern anchor of the French fortress line; the hinge of the 1914 front.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:metz",
+    "name": "Metz",
+    "kind": "fortress",
+    "lngLat": [6.176, 49.12],
+    "country": "Germany",
+    "notes": "German since 1871; the hinge of the German left wing.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:nancy",
+    "name": "Nancy",
+    "kind": "city",
+    "lngLat": [6.184, 48.692],
+    "country": "France",
+    "notes": "The Grand Couronné heights held by Castelnau, 24 August – 12 September.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:toul",
+    "name": "Toul",
+    "kind": "fortress",
+    "lngLat": [5.892, 48.675],
+    "country": "France",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:epinal",
+    "name": "Épinal",
+    "kind": "fortress",
+    "lngLat": [6.45, 48.172],
+    "country": "France",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:belfort",
+    "name": "Belfort",
+    "kind": "fortress",
+    "lngLat": [6.864, 47.64],
+    "country": "France",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:strasbourg",
+    "name": "Strasbourg",
+    "names": [
+      { "name": "Straßburg", "language": "de", "kind": "translation", "period": "1871–1918" }
+    ],
+    "kind": "fortress",
+    "lngLat": [7.752, 48.573],
+    "country": "Germany",
+    "notes": "German since 1871.",
     "sources": [{ "source": "source:herwig-2009" }]
   }
 ]

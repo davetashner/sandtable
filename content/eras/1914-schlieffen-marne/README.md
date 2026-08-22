@@ -7,7 +7,8 @@ starting from the narrative spine (`sand-1l0.17`) and reaching parity with
 
 Status: **seed** (`pack.json#status`). The schema landed in `sand-a55.7` with a
 seed pack — two branches (historical and Schlieffen's concept), the sides, the
-1914 order of battle at army level, approximate routes for the 1st and 2nd
-Armies, the BEF and the French 6th Army (`confidence: low`, to be replaced by
-the daily positions of `sand-1l0.2`), seven major events and nine narrative
-beats adapted from the PoC. See `docs/content-model.md` for the file layout.
+1914 order of battle at army level, approximate routes for the German 1st,
+2nd and 3rd Armies, the BEF and the French 5th and 6th Armies plus concept
+tails for the 1st–3rd (`confidence: low`, to be replaced by the daily
+positions of `sand-1l0.2`), seven major events, the First Marne as a zoom-in
+seed, and ten narrative beats adapted from the PoC (PoC parity: `sand-a55.15`). See `docs/content-model.md` for the file layout.
