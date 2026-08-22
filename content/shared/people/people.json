@@ -136,6 +136,25 @@
     ]
   },
   {
+    "id": "person:falkenhayn-erich",
+    "name": "Erich von Falkenhayn",
+    "sortName": "Falkenhayn, Erich von",
+    "born": "1861-09-11",
+    "died": "1922-04-08",
+    "nationality": "DE",
+    "roles": [
+      { "title": "Prussian Minister of War", "from": "1913-06-07", "to": "1915-01-21" },
+      { "title": "Chief of the German General Staff", "from": "1914-09-14", "to": "1916-08-29" }
+    ],
+    "summary": "Prussian Minister of War from 1913 and Chief of the General Staff from 14 September 1914 (in Moltke's place; officially from 3 November) to August 1916. He ran the Race to the Sea and the First Battle of Ypres in the autumn of 1914, then the war of attrition that culminated at Verdun in 1916; he was dismissed after Romania entered the war and commanded in Romania and Palestine.",
+    "media": ["media:person/falkenhayn-erich/portrait-colorized"],
+    "sources": [
+      { "source": "source:strachan-2001" },
+      { "source": "source:herwig-2009", "note": "the succession to Moltke" },
+      { "source": "source:wikipedia-en", "note": "dates" }
+    ]
+  },
+  {
     "id": "person:joffre-joseph",
     "name": "Joseph Joffre",
     "sortName": "Joffre, Joseph",

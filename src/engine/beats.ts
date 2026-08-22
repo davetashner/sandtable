@@ -43,7 +43,10 @@ export function formatCitation(source: Source | undefined, slug: string, pages?:
  * body renders as a footnote with the full citation. Sources cited in the front
  * matter but not inline are still listed, so nothing a beat relies on is hidden.
  */
-export function withFootnotes(beat: NarrativeBeat, sources: Source[]): string {
+export function withFootnotes(
+  beat: Pick<NarrativeBeat, 'body' | 'sources'>,
+  sources: Source[],
+): string {
   const byId = new Map(sources.map((s) => [s.id, s]));
   const defs = beat.sources.map((c) => {
     const slug = c.source.split(':')[1] ?? c.source;

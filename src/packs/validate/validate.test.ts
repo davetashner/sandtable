@@ -242,6 +242,42 @@ describe('validateContent', () => {
     expect(report.content.packs[0]?.beats[0]?.body).toBe('Body text.[^herwig-2009]');
   });
 
+  it('checks cast entries: person and side must exist, citations required, bio footnotes must name a source, one entry per person', () => {
+    const raw = fixture();
+    const c = raw.packs[0]!.collections;
+    const entry = (over: Record<string, unknown>) => ({
+      id: '1914:cast-kluck',
+      person: 'person:kluck',
+      side: 'de',
+      role: 'Commander, 1st Army',
+      bio: 'Marched on the outer edge.[^herwig-2009]',
+      sources: [{ source: 'source:herwig-2009' }],
+      ...over,
+    });
+    c['cast.json'] = { path: 'eras/1914-test/cast.json', data: [entry({})] };
+    expect(messages(validateContent(raw)).filter((m) => /cast/.test(m))).toEqual([]);
+    c['cast.json'] = {
+      path: 'eras/1914-test/cast.json',
+      data: [
+        entry({ person: 'person:nobody', side: 'xx', bio: 'Text.[^nope]' }),
+        entry({ id: '1914:cast-kluck-2', sources: [] }),
+        entry({ id: '1914:cast-kluck-3' }),
+      ],
+    };
+    const msgs = messages(validateContent(raw));
+    expect(msgs).toContainEqual(expect.stringMatching(/person person:nobody does not exist/));
+    expect(msgs).toContainEqual(expect.stringMatching(/side xx is not a pack side/));
+    expect(msgs).toContainEqual(
+      expect.stringMatching(/footnote \[\^nope\] is not one of the entry's sources/),
+    );
+    expect(msgs).toContainEqual(
+      expect.stringMatching(/sources: at least one citation is required/),
+    );
+    expect(msgs).toContainEqual(
+      expect.stringMatching(/person person:kluck appears twice in the cast/),
+    );
+  });
+
   it('rejects schema violations with file and path', () => {
     const raw = fixture();
     (raw.packs[0]!.pack.data as { camera: unknown }).camera = { center: [200, 0], zoom: 6 };

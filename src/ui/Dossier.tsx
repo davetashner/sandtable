@@ -29,6 +29,8 @@ export interface DossierProps {
   packTitle?: string;
   /** A card to show instead of the beat (ADR 0006); rendered by the caller. */
   card?: ReactNode;
+  /** The cast strip (sand-9ts), rendered under the header in every mode. */
+  cast?: ReactNode;
   /** Chips for the beat's links (tech cards, battles, people…). */
   related?: CardChipLike[];
 }
@@ -48,6 +50,7 @@ export function Dossier({
   focus,
   packTitle,
   card,
+  cast,
   related = [],
 }: DossierProps) {
   const { now, range } = useClock();
@@ -122,6 +125,7 @@ export function Dossier({
             </div>
           </details>
         )}
+        {cast}
       </header>
 
       {card ? (

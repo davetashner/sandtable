@@ -1,0 +1,383 @@
+[
+  {
+    "id": "1914:cast-moltke-helmuth-von-younger",
+    "person": "person:moltke-helmuth-von-younger",
+    "side": "de",
+    "role": "Chief of the German General Staff; ran the campaign from OHL",
+    "bio": "Chief of the General Staff since 1906, Moltke inherited the deployment concept Schlieffen left behind and reshaped it: the march through the Netherlands was dropped, Liège was to be seized by a *coup de main* in the first days, and the left wing in Lorraine was strengthened at the expense of the sweeping right.[^mombauer-2001] On 1 August, when the Kaiser briefly hoped to send the army east alone, Moltke told him the deployment could not be reversed — the timetable, not the politics, ruled.[^tuchman-1962]\n\nHe ran the war from far behind the front — Koblenz, then Luxembourg from 30 August — with thin wireless links to the armies, and the decisions that shaped September were his: on 25 August he sent two corps from the right wing to East Prussia; on 4–5 September, too late, he ordered the 1st and 2nd Armies to turn and face Paris; on 8 September he sent Lieutenant-Colonel Hentsch to the armies with authority to order a retreat.[^herwig-2009] He broke under the strain, and on 14 September Falkenhayn took over his duties.[^strachan-2001]\n\nWhether he ruined Schlieffen's plan or inherited something that could never have worked is the central argument of the campaign's historiography.[^zuber-2002][^mombauer-2001]",
+    "sources": [
+      {
+        "source": "source:mombauer-2001"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:zuber-2002"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-schlieffen-alfred-von",
+    "person": "person:schlieffen-alfred-von",
+    "side": "de",
+    "role": "Chief of the General Staff 1891–1906; author of the 1905 memorandum",
+    "bio": "Schlieffen had been dead nineteen months when the war began. He is in this story because of a paper: the great memorandum of December 1905, written as he left office, which imagined a war against France won by a massive right wing wheeling through Belgium and northern France, passing west of Paris and pinning the French armies against their own fortress line.[^zuber-2002]\n\nWhat that paper was — an operational plan handed down to his successor, or a staff study and a plea for more divisions — is the sharpest dispute in the literature. Zuber argues there was no 'Schlieffen Plan' and that the legend was built after 1918 by officers who needed a plan that Moltke had spoiled; Mombauer, Holmes and Foley answer that Moltke inherited a real concept and altered it.[^zuber-2002][^mombauer-2001] The pack's hypothetical branch, 'Schlieffen's concept', draws the memorandum's sweep beside what actually happened, and Herwig's question — could the outer wheel ever have been marched and supplied — hangs over both.[^herwig-2009]",
+    "sources": [
+      {
+        "source": "source:zuber-2002"
+      },
+      {
+        "source": "source:mombauer-2001"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-kluck-alexander-von",
+    "person": "person:kluck-alexander-von",
+    "side": "de",
+    "role": "Commander, German 1st Army — the outer edge of the wheel",
+    "bio": "Kluck commanded the army on the extreme right, the one with the farthest to march. It met the British at Mons on 23 August and at Le Cateau on 26 August, then pressed south-west after them.[^edmonds-1922][^herwig-2009] Subordinated to Bülow's 2nd Army for ten days, he chafed at every order to close in.[^herwig-2009]\n\nOn 30–31 August, answering Bülow's call for help after Guise and hoping to roll up the French left, Kluck turned his army south-east — inside Paris rather than around it. He crossed the Marne on 3 September with his flank open to the capital; the new French 6th Army found that flank on 5 September.[^tuchman-1962][^herwig-2009] Kluck swung corps after corps back north to fight on the Ourcq, and won that fight, but the move opened a forty-kilometre gap between his army and Bülow's into which the British and the French 5th Army walked.[^herwig-2009] On 9 September he was ordered back to the Aisne.[^strachan-2001]",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-bulow-karl-von",
+    "person": "person:bulow-karl-von",
+    "side": "de",
+    "role": "Commander, German 2nd Army; Kluck's neighbour and, briefly, his superior",
+    "bio": "Bülow's 2nd Army took Namur and forced the Sambre at Charleroi on 21–23 August against Lanrezac's 5th Army, then absorbed Lanrezac's counterstroke at Guise on 29 August — the blow that made him ask Kluck to wheel inward to his support.[^herwig-2009][^strachan-2001] For ten days in August Kluck was placed under his orders, an arrangement that pleased neither man.[^herwig-2009]\n\nAt the Marne his right wing fell back behind the Petit Morin as Kluck's corps marched away north to the Ourcq, and the gap between the two armies grew. On the evening of 8 September, with Hentsch at his headquarters, he judged the 2nd Army's position untenable; on 9 September he ordered its retreat, and the 1st Army's followed.[^herwig-2009][^tuchman-1962] Whether his caution lost a battle the Germans were winning is still argued; the official history blamed him more than it blamed Moltke.[^herwig-2009]",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:tuchman-1962"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-hausen-max-von",
+    "person": "person:hausen-max-von",
+    "side": "de",
+    "role": "Commander, German 3rd (Saxon) Army",
+    "bio": "Hausen's Saxon army marched between Bülow and the Crown Prince, forcing the Meuse at Dinant on 23 August — where the army shot 674 civilians in the worst of the August killings in Belgium.[^horne-kramer-2001][^herwig-2009] At the Marne it stood opposite Foch's new 9th Army at the marshes of Saint-Gond; in the small hours of 8 September Hausen sent his Saxons forward in a bayonet attack without artillery preparation around Fère-Champenoise and drove Foch's right back several kilometres, the last German success of the battle.[^herwig-2009] It could not be exploited: the retreat order reached him on 9 September, and he himself was ill with typhus and relieved of command on 12 September.[^herwig-2009][^strachan-2001]",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:horne-kramer-2001"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-rupprecht-of-bavaria",
+    "person": "person:rupprecht-of-bavaria",
+    "side": "de",
+    "role": "Commander, German 6th Army in Lorraine — the left wing",
+    "bio": "Rupprecht, heir to the Bavarian throne, commanded the left wing that Plan XVII attacked. When the French 1st and 2nd Armies advanced into Lorraine on 14 August his orders were to give ground and draw them in; with his chief of staff Krafft von Dellmensingen he pressed OHL for permission to counter-attack instead, got it, and struck at Morhange–Sarrebourg on 20 August, throwing the French back to the Meurthe.[^herwig-2009][^strachan-2001]\n\nHe then tried to break through the Trouée de Charmes and, from 4 to 12 September, to take the Grand Couronné in front of Nancy, and failed.[^herwig-2009] Whether the left wing should have kept yielding — the 'revolving door' that would have swung the French away from the decisive right — is one of the oldest criticisms of the German conduct of the campaign.[^keegan-1998][^strachan-2001]",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:keegan-1998"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-hentsch-richard",
+    "person": "person:hentsch-richard",
+    "side": "de",
+    "role": "Head of intelligence at OHL; Moltke's emissary to the armies, 8–9 September",
+    "bio": "A lieutenant-colonel of the General Staff, Hentsch was sent by Moltke on 8 September to drive from Luxembourg to the headquarters of the five armies on the right wing and the centre, with authority — its exact extent is disputed — to coordinate a withdrawal if the gap between the 1st and 2nd Armies could not be closed.[^herwig-2009][^tuchman-1962] He found Bülow that evening already inclined to retreat; on the morning of 9 September, at Kluck's headquarters at Mareuil, he ordered the 1st Army back towards the Aisne, and the battle of the Marne ended.[^herwig-2009]\n\nA staff officer had turned back the German right wing. The army inquired into it in 1917 and found he had acted within his orders; the argument over whether he, Bülow or Moltke lost the Marne has never closed.[^herwig-2009][^strachan-2001]",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-ludendorff-erich",
+    "person": "person:ludendorff-erich",
+    "side": "de",
+    "role": "Deputy chief of staff, 2nd Army; the man who took Liège",
+    "bio": "Ludendorff had drawn up the Liège operation himself on the General Staff and went into Belgium with the 2nd Army as its deputy chief of staff to watch it work. On 5–7 August, when the brigade commander beside him was killed, he took the 14th Brigade into the city between the forts, drove to the citadel and bluffed its garrison into surrender.[^tuchman-1962][^herwig-2009] It won him the Pour le Mérite and a reputation; the forts themselves held until the heavy howitzers arrived.[^strachan-2001]\n\nOn 22 August he was sent east as chief of staff to Hindenburg's 8th Army, and his war left this theatre for Tannenberg.[^herwig-2009]",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-falkenhayn-erich",
+    "person": "person:falkenhayn-erich",
+    "side": "de",
+    "role": "Prussian Minister of War; Moltke's successor at OHL from 14 September",
+    "bio": "As Minister of War Falkenhayn had travelled with the Kaiser's headquarters since August; on 14 September, with Moltke broken by the Marne, he was given the Chief of Staff's duties — quietly at first, the change made public only in November.[^strachan-2001][^herwig-2009]\n\nHe took over a war that had just stopped moving. His attempts to turn the open flank north of the Aisne became the Race to the Sea; Antwerp fell on 10 October; and at Ypres in October and November the new reserve corps and the old army failed to break through to the Channel ports, at a cost that made the name Langemarck a legend.[^strachan-2001][^keegan-1998] By mid-November he was telling the Chancellor the war could no longer be won outright, and that a separate peace with Russia should be sought — an argument that opened the strategic debate of 1915.[^strachan-2001]",
+    "sources": [
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:keegan-1998"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-joffre-joseph",
+    "person": "person:joffre-joseph",
+    "side": "fr",
+    "role": "Commander-in-Chief of the French armies",
+    "bio": "Joffre had been chief of the general staff and commander-designate since 1911, and Plan XVII — the concentration on the frontier and the offensive into Lorraine and the Ardennes — was his. It failed between 14 and 23 August, with the worst French losses of the war.[^afgg-1-1][^herwig-2009]\n\nWhat followed made his reputation: he did not panic. Instruction générale no 2 of 25 August broke off the offensive, began the Great Retreat and ordered a new army — Maunoury's 6th — built from troops railed from Lorraine to the left of the line; he sacked dozens of generals on the way.[^afgg-1-1][^hastings-2013] On the evening of 4 September, after Gallieni had reported Kluck's open flank and pressed him to act, he fixed the counter-offensive for 6 September and went in person to make sure the British would march; the order of the day of 6 September told the armies the hour had come to hold or die.[^afgg-1-1][^herwig-2009][^tuchman-1962] Who deserves the Marne — Joffre or Gallieni — has been argued since the battle.[^tuchman-1962]",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-gallieni-joseph",
+    "person": "person:gallieni-joseph",
+    "side": "fr",
+    "role": "Military Governor of Paris from 26 August",
+    "bio": "Recalled from retirement, Gallieni was given Paris on 26 August with a garrison, an entrenched camp in poor repair and a city the government would soon leave.[^herwig-2009][^tuchman-1962] On 3 September his cavalry and aviators told him Kluck had turned south-east — marching across the front of Paris rather than round it — and on 4 September he pressed Joffre, by telephone and in person, to attack that flank with Maunoury's 6th Army, which was put under his orders.[^tuchman-1962][^herwig-2009]\n\nThe attack opened on 5 September on the Ourcq. When Maunoury needed men, Gallieni requisitioned the taxis of Paris to carry part of a division to the front on the night of 7 September — militarily a small thing, in memory the image of the battle.[^hastings-2013][^tuchman-1962] The quarrel over whether the Marne was his victory or Joffre's began in 1914 and has not ended.[^tuchman-1962]",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-maunoury-michel-joseph",
+    "person": "person:maunoury-michel-joseph",
+    "side": "fr",
+    "role": "Commander, French 6th Army — the army built to strike the German flank",
+    "bio": "A retired general recalled in August, Maunoury first commanded the short-lived Army of Lorraine and then, from 25 August, the new 6th Army that Joffre assembled from troops railed west out of Lorraine and gathered around Amiens and then Paris.[^afgg-1-1][^herwig-2009] Under Gallieni's orders it marched east from Paris on 5 September and ran into Kluck's flank guard, the IV Reserve Corps, on the Ourcq — a day earlier than Joffre intended, which told Kluck what was coming.[^herwig-2009]\n\nFor four days Maunoury's improvised army fought most of the German 1st Army as Kluck swung his corps back north; it was driven back and held, reinforced by what Gallieni could send, including the troops the taxis brought on the night of 7 September.[^afgg-1-1][^tuchman-1962] It did not win the Ourcq, but it held Kluck there while the gap opened to the east.[^herwig-2009]",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-lanrezac-charles",
+    "person": "person:lanrezac-charles",
+    "side": "fr",
+    "role": "Commander, French 5th Army until 3 September",
+    "bio": "Lanrezac, one of the army's cleverest generals, saw the German sweep through Belgium coming before Joffre did and argued in August to be allowed to face north; his 5th Army was moved to the angle of the Sambre and Meuse just in time to be hit there on 21–23 August by Bülow and Hausen.[^tuchman-1962][^herwig-2009] He broke off the battle and retreated on 23 August without warning Sir John French, who never forgave him.[^edmonds-1922][^tuchman-1962]\n\nOrdered by Joffre to turn and strike, he fought the battle of Guise on 29 August and checked Bülow — the blow that pulled Kluck inward.[^herwig-2009][^strachan-2001] It did not save him: Joffre found him defeatist and relieved him on 3 September, three days before the Marne. Whether he was a scapegoat for Plan XVII or a commander who had lost his nerve is still argued.[^tuchman-1962][^herwig-2009]",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:edmonds-1922"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-franchet-desperey-louis",
+    "person": "person:franchet-desperey-louis",
+    "side": "fr",
+    "role": "Commander, French 5th Army from 3 September",
+    "bio": "Franchet d'Espèrey commanded I Corps in Lanrezac's army and led its counter-attack at Guise on 29 August; on 3 September Joffre gave him the 5th Army in Lanrezac's place.[^herwig-2009][^tuchman-1962] Asked on 4 September whether his tired army could attack, he answered that it could on the morning of the 6th, provided the British marched with it — the reply that helped Joffre fix the day.[^tuchman-1962]\n\nAt the Marne his army drove into the gap between Kluck and Bülow, taking Montmirail and Marchais-en-Brie on 8–9 September, and pressed the German 2nd Army's right back across the Petit Morin.[^herwig-2009] The British called him 'Desperate Frankie'; he ended the war commanding the Allied armies at Salonika.[^tuchman-1962]",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-foch-ferdinand",
+    "person": "person:foch-ferdinand",
+    "side": "fr",
+    "role": "Commander, XX Corps, then the 9th Army at the Marne",
+    "bio": "Foch, the army's best-known theorist of the offensive, led XX Corps in Castelnau's 2nd Army at Morhange on 20 August, where it held while the army around it fell back.[^herwig-2009][^afgg-1-1] On 22 August his only son and his son-in-law were killed in the Ardennes.[^tuchman-1962] At the end of August Joffre gave him a detachment between the 4th and 5th Armies that became the 9th Army on 5 September.[^afgg-1-1]\n\nAt the Marne the 9th Army fought for the marshes of Saint-Gond against Bülow's left and Hausen's Saxons; on 8 September Hausen's night attack bent its right, and Foch fed in his last reserves and counter-attacked.[^herwig-2009] The signal attributed to him — 'my centre is giving way, my right is falling back, situation excellent, I attack' — is probably apocryphal, but it is what the army remembered of him.[^keegan-1998][^tuchman-1962] Four years later he was Allied supreme commander.[^keegan-1998]",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:keegan-1998"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-castelnau-edouard-de",
+    "person": "person:castelnau-edouard-de",
+    "side": "fr",
+    "role": "Commander, French 2nd Army in Lorraine",
+    "bio": "Castelnau, Joffre's former deputy and a principal author of Plan XVII, led the 2nd Army into Lorraine on 14 August and was beaten at Morhange on 20 August, when Rupprecht counter-attacked.[^afgg-1-1][^herwig-2009] One of his sons was killed in the first weeks; he lost three in the war.[^hastings-2013]\n\nHe then held the Grand Couronné — the heights east of Nancy — against Rupprecht's repeated attacks from 4 to 12 September, while the Marne was fought to the west, and kept the French right anchored on the fortress line.[^herwig-2009][^afgg-1-1] The defence of Nancy is the reason the German left did not matter at the Marne.[^strachan-2001]",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-french-john",
+    "person": "person:french-john",
+    "side": "gb",
+    "role": "Commander-in-Chief, British Expeditionary Force",
+    "bio": "Sir John French brought the BEF — two corps under Haig and Smith-Dorrien, some 100,000 men — to Maubeuge and on 23 August fought Kluck's 1st Army at Mons, the British army's first battle in Western Europe since Waterloo.[^edmonds-1922] Lanrezac's retreat left his flank in the air; at Le Cateau on 26 August Smith-Dorrien stood and fought against his wishes.[^edmonds-1922][^herwig-2009]\n\nBy 31 August he had lost confidence in his allies and proposed to pull the BEF out of the line to refit behind Paris; Kitchener came to Paris on 1 September and ordered him to stay.[^edmonds-1922][^tuchman-1962] Joffre's visit on 5 September secured his promise to attack, and from 6 to 9 September the BEF advanced — slowly — into the gap between Kluck and Bülow, then on to the Aisne.[^herwig-2009][^hastings-2013] He was replaced by Haig at the end of 1915.[^hastings-2013]",
+    "sources": [
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-churchill-winston",
+    "person": "person:churchill-winston",
+    "side": "gb",
+    "role": "First Lord of the Admiralty",
+    "bio": "Churchill's war in 1914 was at sea and at the edge of this campaign. With the First Sea Lord he kept the fleet concentrated after the July test mobilization and sent it to its war station at Scapa Flow before war was declared, so that the BEF crossed to France without loss.[^hastings-2013][^strachan-2001] The Admiralty's first weeks brought the escape of the *Goeben* to Constantinople and the action in the Heligoland Bight on 28 August.[^strachan-2001]\n\nWhen Antwerp was about to fall in early October he went there himself to stiffen the Belgian defence, sent the Royal Naval Division, and offered to resign the Admiralty to command the city; it fell on 10 October.[^hastings-2013][^strachan-2001] In the same weeks the Admiralty's new code-breaking room — Room 40 — began reading German naval signals.[^beesly-1982]",
+    "sources": [
+      {
+        "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:beesly-1982"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-albert-i-of-belgium",
+    "person": "person:albert-i-of-belgium",
+    "side": "be",
+    "role": "King of the Belgians and Commander-in-Chief of the Belgian army",
+    "bio": "Albert refused the German ultimatum of 2 August and, as the constitution made him commander-in-chief, took personal command of an army of six divisions against the invasion.[^strachan-2001][^hastings-2013] After Liège he refused to tie it to the French and drew it back on Antwerp on 20 August; its sorties from the fortress on 24–26 August and 9 September pulled German corps away from the front at the moments Kluck and Bülow could least spare them.[^herwig-2009][^strachan-2001]\n\nWhen Antwerp fell on 10 October he took the army to the Yser, opened the sea-sluices at Nieuport to flood the plain, and held the last corner of Belgium for four years.[^strachan-2001][^hastings-2013]",
+    "sources": [
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:cast-leman-gerard",
+    "person": "person:leman-gerard",
+    "side": "be",
+    "role": "Governor of the fortified position of Liège",
+    "bio": "Lieutenant-General Leman commanded the ring of twelve forts around Liège on which the German timetable first depended. He refused Emmich's demand for passage on 4 August, beat off the first assaults of 5–6 August and, when Ludendorff's brigade got into the city between the forts, withdrew to Fort Loncin to fight on from the forts themselves.[^tuchman-1962][^herwig-2009]\n\nThe forts fell one by one from 12 August, once the 42-cm and 30.5-cm howitzers were in position; on 15 August Loncin's magazine blew up and Leman was dug unconscious from the ruins and taken prisoner.[^herwig-2009][^strachan-2001] How much the defence delayed the German advance — days, or almost nothing, since the armies could not have deployed sooner in any case — is disputed; that it was the war's first stand, and that the heavy guns had just made fortresses obsolete, is not.[^herwig-2009][^tuchman-1962]",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  }
+]

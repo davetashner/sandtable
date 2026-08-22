@@ -175,6 +175,49 @@
       "person": "person:churchill-winston"
     },
     {
+      "id": "media:person/falkenhayn-erich/portrait-colorized",
+      "dir": "people/falkenhayn-erich",
+      "original": {
+        "src": "people/falkenhayn-erich/portrait-colorized.png",
+        "width": 1080,
+        "height": 1456,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/falkenhayn-erich/.derived/portrait-colorized.w320.webp",
+          "width": 320,
+          "height": 431,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/falkenhayn-erich/.derived/portrait-colorized.w640.webp",
+          "width": 640,
+          "height": 863,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/falkenhayn-erich/.derived/portrait-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1381,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1080,
+      "height": 1456,
+      "caption": "Erich von Falkenhayn (1861–1922), Prussian Minister of War from 1913 and, from 14 September 1914, Moltke's successor as Chief of the General Staff — the man who took the war to the Race to the Sea and Ypres. Colorized (AI-assisted) from a public-domain photograph by Albert Meyer, c. 1913–14.",
+      "credit": "Original photograph: Albert Meyer, Berlin, c. 1913–14; public domain (via Wikimedia Commons; Bundesarchiv Bild 146-2004-0023). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain (photographer died 1924; life + 100 years)",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Erich_von_Falkenhayn-retouched.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.27
+      },
+      "person": "person:falkenhayn-erich"
+    },
+    {
       "id": "media:person/foch-ferdinand/portrait-colorized",
       "dir": "people/foch-ferdinand",
       "original": {

@@ -85,6 +85,14 @@ h1 {
   min-height: 420px;
 }
 
+/* ≥1100: the dossier never outgrows the viewport — long cards (person
+   profiles, documents) scroll inside it instead of stretching the map row. */
+@media (min-width: 1100px) {
+  .surface--dossier {
+    max-height: calc(100vh - 32px);
+  }
+}
+
 /* 700–1100: map full width, dossier beneath (collapsible), timeline below */
 @media (max-width: 1099.98px) {
   .app__main {

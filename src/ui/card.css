@@ -71,6 +71,64 @@
   padding: 0 2px;
 }
 
+/* person profile (sand-9ts): the headshot leads */
+.card__hero {
+  margin: 8px 0 14px;
+  max-width: 320px;
+}
+
+.card__section {
+  margin-top: 10px;
+}
+
+.card__section h3 {
+  margin: 0 0 4px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.card__section p {
+  margin: 0 0 8px;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+
+/* footnotes section from remark-gfm (bios) */
+.card__body .footnotes {
+  margin-top: 14px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.card__body .footnotes h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.card__body .footnotes ol {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.card__body .footnotes li {
+  margin-bottom: 4px;
+}
+
+.card__body .footnotes li p {
+  margin: 0;
+  display: inline;
+  font-size: 12px;
+}
+
 .card__chips {
   margin: 6px 0 10px;
   padding: 0;
