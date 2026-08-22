@@ -4,9 +4,10 @@
  * focus region is set (zoom-in), the camera fits it; when cleared, it fits
  * the campaign region again.
  */
-import { useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useClock } from '../engine/ClockContext.js';
-import { buildPlacesLayers } from '../engine/layers/places.js';
+import { DEFAULT_PLACE_KINDS, buildPlacesLayers } from '../engine/layers/places.js';
+import { buildStyle, type MapTheme } from '../engine/map/style.js';
 import { useMovementLayers, type MovementSource } from '../engine/layers/useMovementLayers.js';
 import { MapView, type MapHandle } from '../engine/map/MapView.js';
 import { labelNow } from '../engine/ticks.js';
@@ -38,6 +39,20 @@ export function MapSurface({
   const label = labelNow(now, range);
   const { layers: movementLayers } = useMovementLayers(movement, branch);
   const placeLayers = useMemo(() => buildPlacesLayers({ places }), [places]);
+  // The basemap must not label the cities the pack labels itself (sand-3uq).
+  const labelledPoints = useMemo(
+    () => places.filter((p) => DEFAULT_PLACE_KINDS.includes(p.kind)).map((p) => p.lngLat),
+    [places],
+  );
+  const styleFor = useCallback(
+    (theme: MapTheme, tilesUrl?: string) =>
+      buildStyle({
+        theme,
+        ...(tilesUrl ? { tilesUrl } : {}),
+        suppressLocalityLabelsNear: labelledPoints,
+      }),
+    [labelledPoints],
+  );
   const layers = useMemo(() => [...placeLayers, ...movementLayers], [placeLayers, movementLayers]);
   const handle = useRef<MapHandle | null>(null);
   const first = useRef(true);
@@ -59,6 +74,7 @@ export function MapSurface({
       camera={camera}
       borderYear={borderYear}
       label={`Map — ${label.date}`}
+      styleFor={styleFor}
       deckLayers={layers}
       onReady={(h) => {
         handle.current = h;

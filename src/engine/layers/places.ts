@@ -25,7 +25,9 @@ export interface PlacesLayerOptions {
   onSelect?: (placeId: string) => void;
 }
 
-const DEFAULT_KINDS: Place['kind'][] = ['city', 'town', 'fortress'];
+/** Kinds drawn (dot + label) by default; MapSurface also hides basemap labels near these. */
+export const DEFAULT_PLACE_KINDS: Place['kind'][] = ['city', 'town', 'fortress'];
+const DEFAULT_KINDS = DEFAULT_PLACE_KINDS;
 
 export function buildPlacesLayers(o: PlacesLayerOptions): Layer[] {
   const kinds = new Set(o.kinds ?? DEFAULT_KINDS);
