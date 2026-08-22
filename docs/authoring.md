@@ -48,7 +48,7 @@ Every claim cites a `Source`. If the work you are citing is not yet in
   is optional but wanted for anything contestable.
 - Inline in beats: `[^tyng-1935]` — the slug after the colon. The validator
   rejects a footnote that is not among the beat's `sources`.
-- The bibliography standard and the preferred works for WWI are `sand-23b.1`.
+- The citation standard and the core bibliography are in [`docs/sources.md`](sources.md).
 
 ## 2. Add an event
 
