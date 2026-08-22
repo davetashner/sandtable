@@ -1,5 +1,5 @@
 {
-  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "$comment": "Provisional manifest — formalized by the Media entity schema (sand-y0u.2).",
   "id": "media:person/lanrezac-charles/portrait-colorized",
   "person": "person:lanrezac-charles",
   "file": "portrait-colorized.png",
@@ -16,14 +16,14 @@
     "licence": "public domain — anonymous work, copyright expired (US and EU)"
   },
   "colorization": {
-    "author": "Dave Tashner / History Alive",
+    "author": "Dave Tashner / Sandtable",
     "method": "AI-assisted colorization (and upscaling) from the public-domain original, 2026",
-    "licence": "History Alive project licence; underlying photograph public domain",
+    "licence": "Sandtable project licence; underlying photograph public domain",
     "status": "ok — label 'colorized (AI-assisted)'; documented colours: dark-blue French general's full-dress tunic, gold epaulettes/sash/collar embroidery, black bicorne with white plume (divisional/army general), red Légion d'honneur ribbon"
   },
   "content_policy": "ok — portrait, no gore",
   "caption": "Charles Lanrezac (1852–1925), commander of the French 5th Army — saw the German wheel coming before Joffre believed it, was mauled at Charleroi, counterattacked at Guise, and was dismissed on 3 September, three days before the Marne. Colorized (AI-assisted) from a public-domain photograph.",
-  "credit": "Original photograph: anonymous, reproduced in Hanotaux, Histoire illustrée de la guerre de 1914 (1916); public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "credit": "Original photograph: anonymous, reproduced in Hanotaux, Histoire illustrée de la guerre de 1914 (1916); public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
     "1914:formation-french-5th-army",
     "1914:frontiers-north-great-retreat",

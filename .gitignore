@@ -5,7 +5,7 @@
 .beads-credential-key
 .beads/proxieddb/
 
-# Media binaries live in the S3 assets bucket, not git (decision history-alive-a55.4 / y0u.1).
+# Media binaries live in the S3 assets bucket, not git (decision sand-a55.4 / y0u.1).
 # Manifests (media.json) are tracked; the files beside them are a local staging copy only.
 content/shared/media/**/*.png
 content/shared/media/**/*.jpg

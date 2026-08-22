@@ -1,5 +1,5 @@
 {
-  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "$comment": "Provisional manifest — formalized by the Media entity schema (sand-y0u.2).",
   "id": "media:person/churchill-winston/portrait-c1914-colorized",
   "person": "person:churchill-winston",
   "file": "portrait-c1914-colorized.png",
@@ -17,14 +17,14 @@
     "licence": "public domain in the United States (published before 1931); confirm status outside the US"
   },
   "colorization": {
-    "author": "Dave Tashner / History Alive",
+    "author": "Dave Tashner / Sandtable",
     "method": "AI-assisted colorization from the public-domain original, 2026",
-    "licence": "History Alive project licence; underlying photograph public domain (US)",
+    "licence": "Sandtable project licence; underlying photograph public domain (US)",
     "status": "ok — label 'colorized (AI-assisted)'; documented colours: dark-blue Trinity House uniform with gold oak-leaf collar; medal ribbons interpretive"
   },
   "content_policy": "ok — portrait, no gore",
   "caption": "Winston Churchill (1874–1965), First Lord of the Admiralty 1911–1915 — sent the Royal Naval Division to Antwerp in October 1914 and went there himself; a cross-era figure who reappears at Gallipoli, in the interwar years and in 1940. Colorized (AI-assisted) from a public-domain photograph.",
-  "credit": "Original photograph: agency stringer, 16 Sept 1914; public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "credit": "Original photograph: agency stringer, 16 Sept 1914; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
     "1914:belgium-antwerp",
     "other-fronts:gallipoli",

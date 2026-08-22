@@ -1,5 +1,5 @@
 {
-  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "$comment": "Provisional manifest — formalized by the Media entity schema (sand-y0u.2).",
   "id": "media:person/rupprecht-of-bavaria/portrait-colorized",
   "person": "person:rupprecht-of-bavaria",
   "file": "portrait-colorized.png",
@@ -16,14 +16,14 @@
     "licence": "public domain — photographer died 1939; published before 1931"
   },
   "colorization": {
-    "author": "Dave Tashner / History Alive",
+    "author": "Dave Tashner / Sandtable",
     "method": "AI-assisted colorization (and upscaling) from the public-domain original, 2026",
-    "licence": "History Alive project licence; underlying photograph public domain",
+    "licence": "Sandtable project licence; underlying photograph public domain",
     "status": "ok — label 'colorized (AI-assisted)'; documented colours: field-grey tunic with red piping, gold epaulettes; order ribbons interpretive"
   },
   "content_policy": "ok — portrait, no gore",
   "caption": "Rupprecht, Crown Prince of Bavaria (1869–1955), commander of the German 6th Army — the hinge at Metz; his counteroffensive in Lorraine (20 Aug) and assault on the Grand Couronné drew the left wing into battle Schlieffen meant it to avoid. Colorized (AI-assisted) from a public-domain photograph.",
-  "credit": "Original photograph: Bernhard Dittmar, c. 1914, Library of Congress; public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "credit": "Original photograph: Bernhard Dittmar, c. 1914, Library of Congress; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
     "1914:formation-german-6th-army",
     "1914:frontiers-lorraine",

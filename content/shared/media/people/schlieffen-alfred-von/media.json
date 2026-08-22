@@ -1,5 +1,5 @@
 {
-  "$comment": "Provisional manifest — the Media entity schema (history-alive-y0u.2) will formalize these fields. Colorization is our own (AI-assisted, by Dave Tashner, 2026); original archive record still to be confirmed (history-alive-y0u.8).",
+  "$comment": "Provisional manifest — the Media entity schema (sand-y0u.2) will formalize these fields. Colorization is our own (AI-assisted, by Dave Tashner, 2026); original archive record still to be confirmed (sand-y0u.8).",
   "id": "media:person/schlieffen-alfred-von/portrait-c1906-colorized",
   "person": "person:schlieffen-alfred-von",
   "file": "portrait-c1906-colorized.png",
@@ -16,15 +16,15 @@
     "licence": "public domain — published before 1 January 1931 (Commons: PD in the United States; note the rule-of-the-shorter-term caveat outside the US)"
   },
   "colorization": {
-    "author": "Dave Tashner / History Alive",
+    "author": "Dave Tashner / Sandtable",
     "method": "AI-assisted colorization from the public-domain black-and-white original, 2026",
     "source_url": null,
-    "licence": "History Alive project licence (same as the rest of the content); the underlying photograph is public domain",
+    "licence": "Sandtable project licence (same as the rest of the content); the underlying photograph is public domain",
     "status": "ok — label as 'colorized (AI-assisted)'; colour is interpretive except where documented (dark-blue Prussian tunic, gold epaulettes, black-and-silver Pour le Mérite ribbon)"
   },
   "content_policy": "ok — portrait, no gore",
   "caption": "Alfred Graf von Schlieffen (1833–1913), Chief of the German General Staff 1891–1906, author of the December 1905 memorandum. Colorized (AI-assisted) from a public-domain photograph.",
-  "credit": "Original photograph: public domain (archive to confirm). Colorization: History Alive, AI-assisted, 2026.",
+  "credit": "Original photograph: public domain (archive to confirm). Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
     "1914:prologue-origins",
     "1905:consequences-memorandum",

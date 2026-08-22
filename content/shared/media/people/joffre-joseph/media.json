@@ -1,5 +1,5 @@
 {
-  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "$comment": "Provisional manifest — formalized by the Media entity schema (sand-y0u.2).",
   "id": "media:person/joffre-joseph/portrait-colorized",
   "person": "person:joffre-joseph",
   "file": "portrait-colorized.png",
@@ -17,14 +17,14 @@
     "licence": "public domain (France; pre-1931)"
   },
   "colorization": {
-    "author": "Dave Tashner / History Alive",
+    "author": "Dave Tashner / Sandtable",
     "method": "AI-assisted colorization from the public-domain original, 2026",
-    "licence": "History Alive project licence; underlying photograph public domain",
+    "licence": "Sandtable project licence; underlying photograph public domain",
     "status": "ok — label 'colorized (AI-assisted)'; documented colours: dark-blue/black general's tunic, gold oak-leaf képi embroidery, red Légion d'honneur ribbon, green-and-black Croix de guerre ribbon"
   },
   "content_policy": "ok — portrait, no gore",
   "caption": "Joseph Joffre (1852–1931), Commander-in-Chief of the French armies 1914–1916 — author of Plan XVII and of the retreat and counterstroke that won the Marne. Colorized (AI-assisted) from a public-domain photograph.",
-  "credit": "Original photograph: BnF Gallica, photographer unknown; public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "credit": "Original photograph: BnF Gallica, photographer unknown; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
     "1914:prologue-plan-xvii",
     "1914:frontiers-lorraine",

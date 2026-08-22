@@ -1,4 +1,4 @@
-# History Alive — Roadmap
+# Sandtable — Roadmap
 
 An interactive history simulation and learning companion. It begins with the
 Schlieffen Plan and the 1914 campaign in the West, grows to cover all of the
@@ -33,22 +33,22 @@ is the narrative overview; the issue IDs below point into it.
 
 | Phase | Epic | Outcome |
 |---|---|---|
-| 0 | `history-alive-a55` Foundation & platform kernel | The PoC re-implemented on the real engine, on real geography, deployed. |
-| 1 | `history-alive-1l0` Schlieffen Plan & the march to the Marne | The headline experience: all armies, branches, seven battle zoom-ins, guided tour. |
-| — | `history-alive-w9t` Technology & innovation layer | Tech rail; 1914 cards first, then the rest of WWI, later WWII. |
-| — | `history-alive-9u2` Science & ideas "Meanwhile" layer | Physics 1905–1919 and more, with forward connections. |
-| 2 | `history-alive-en0` WWI Eastern Front | Tannenberg → Brest-Litovsk, cross-linked to the West. |
-| 3 | `history-alive-g80` WWI Western Front 1915–18 | Trench-line layer; Verdun, Somme, 1917, 1918 zoom-ins. |
-| 3 | `history-alive-aie` Other fronts & the war at sea | Gallipoli, Italy, Middle East, Jutland, U-boats. |
-| 4 | `history-alive-ekc` Interwar & the causal chain | Causal-chain explorer; Versailles → 1939. |
-| 5 | `history-alive-kq6` / `history-alive-c6p` WWII West / East | Opens with 1940 as the echo of 1914 (route overlay). |
-| 6 | `history-alive-shn` Learning companion & platform | Multi-era packs, tours, sources, search, authoring tools. |
-| pre | `history-alive-mny` Franco-Prussian War 1870–71 | The template for 1914: Sedan, Alsace-Lorraine, the fortress line; "Road to 1914" thread. |
-| pre | `history-alive-6dh` Russo-Japanese War 1904–05 | Port Arthur, Mukden, Tsushima; why the memorandum was written in Dec 1905; "Korea 1905–1953" thread. |
-| — | `history-alive-y0u` Imagery & media | Real archive photographs, colorized and labelled, never gory; uniforms & kit. |
-| — | `history-alive-neh` Design system | Tokens, map style, components, motion. |
-| — | `history-alive-23b` Content quality & historical review | Citation standard, fact-check workflow, historiography. |
-| — | `history-alive-pmz` Engineering quality | CI, visual regression, performance, accessibility. |
+| 0 | `sand-a55` Foundation & platform kernel | The PoC re-implemented on the real engine, on real geography, deployed. |
+| 1 | `sand-1l0` Schlieffen Plan & the march to the Marne | The headline experience: all armies, branches, seven battle zoom-ins, guided tour. |
+| — | `sand-w9t` Technology & innovation layer | Tech rail; 1914 cards first, then the rest of WWI, later WWII. |
+| — | `sand-9u2` Science & ideas "Meanwhile" layer | Physics 1905–1919 and more, with forward connections. |
+| 2 | `sand-en0` WWI Eastern Front | Tannenberg → Brest-Litovsk, cross-linked to the West. |
+| 3 | `sand-g80` WWI Western Front 1915–18 | Trench-line layer; Verdun, Somme, 1917, 1918 zoom-ins. |
+| 3 | `sand-aie` Other fronts & the war at sea | Gallipoli, Italy, Middle East, Jutland, U-boats. |
+| 4 | `sand-ekc` Interwar & the causal chain | Causal-chain explorer; Versailles → 1939. |
+| 5 | `sand-kq6` / `sand-c6p` WWII West / East | Opens with 1940 as the echo of 1914 (route overlay). |
+| 6 | `sand-shn` Learning companion & platform | Multi-era packs, tours, sources, search, authoring tools. |
+| pre | `sand-mny` Franco-Prussian War 1870–71 | The template for 1914: Sedan, Alsace-Lorraine, the fortress line; "Road to 1914" thread. |
+| pre | `sand-6dh` Russo-Japanese War 1904–05 | Port Arthur, Mukden, Tsushima; why the memorandum was written in Dec 1905; "Korea 1905–1953" thread. |
+| — | `sand-y0u` Imagery & media | Real archive photographs, colorized and labelled, never gory; uniforms & kit. |
+| — | `sand-neh` Design system | Tokens, map style, components, motion. |
+| — | `sand-23b` Content quality & historical review | Citation standard, fact-check workflow, historiography. |
+| — | `sand-pmz` Engineering quality | CI, visual regression, performance, accessibility. |
 
 Phase 0 blocks Phase 1; Phase 1 blocks 2, 3, 6 and the other fronts; Phase 3
 blocks 4; Phase 4 blocks both halves of 5. The cross-cutting epics run
@@ -58,20 +58,20 @@ alongside from the start.
 
 Five decisions are open and unblocked — they are the first things to settle:
 
-- `history-alive-a55.1` stack: Vite + TypeScript + React; MapLibre GL + deck.gl
-- `history-alive-a55.2` geography: self-hosted PMTiles + historical-basemaps borders
-- `history-alive-a55.3` scenario packs as the platform kernel
-- `history-alive-a55.4` static hosting (Cloudflare Pages or GitHub Pages) + Actions
-- `history-alive-a55.5` counterfactuals as authored branches
+- `sand-a55.1` stack: Vite + TypeScript + React; MapLibre GL + deck.gl
+- `sand-a55.2` geography: self-hosted PMTiles + historical-basemaps borders
+- `sand-a55.3` scenario packs as the platform kernel
+- `sand-a55.4` static hosting (Cloudflare Pages or GitHub Pages) + Actions
+- `sand-a55.5` counterfactuals as authored branches
 
 Then, in dependency order: scaffold → schema + timeline + map → movement layer,
-dossier, branches, focus/zoom-in → **port the PoC** (`history-alive-a55.15`,
+dossier, branches, focus/zoom-in → **port the PoC** (`sand-a55.15`,
 the Phase 0 exit gate) → deploy.
 
 ## Phase 1 in detail (the headline)
 
 The lesson has an argument — **"a timetable the world fell behind"** — written
-first as a narrative spine with learning objectives (`history-alive-1l0.17`,
+first as a narrative spine with learning objectives (`sand-1l0.17`,
 P0) that every beat must serve. The experience opens with the July Crisis as a
 causal chain (`1l0.23`, the first showcase of the causal explorer, pulled
 forward from Phase 4) and a thirty-second opening sequence (`1l0.26`).
@@ -97,12 +97,12 @@ restrained casualty layer and sourced vignettes; authenticity from a `Document`
 entity with the actual orders. Then an epilogue to the trench line, the
 East–West cross-reference, a guided tour, a polish pass and a historical review.
 
-**Information architecture** (`history-alive-neh.5`, a P0 design decision):
+**Information architecture** (`sand-neh.5`, a P0 design decision):
 one map, one dossier, one timeline. Technology, science, documents, decisions
 and causal chains are glyphs on the timeline that open cards in the dossier —
 never additional rails. Responsive from day one.
 
-## Multi-era layout (decided in `history-alive-a55.3`, built in `a55.6`/`a55.18`)
+## Multi-era layout (decided in `sand-a55.3`, built in `a55.6`/`a55.18`)
 
 ```
 content/
@@ -123,7 +123,7 @@ extract plus per-era regional extracts declared by each pack (Manchuria for
 proves the engine — but the layout exists from the scaffold so nothing has to
 be restructured to add them.
 
-## Imagery (`history-alive-y0u`)
+## Imagery (`sand-y0u`)
 
 Real period photographs from open archives (Wikimedia Commons/Bundesarchiv,
 Library of Congress, NARA, Gallica, IWM where the licence allows), colorized

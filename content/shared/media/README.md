@@ -7,13 +7,13 @@ Photographs, maps and documents referenced by every scenario pack.
 - **Tracked:** one `media.json` manifest per image (provenance, licence, credit,
   caption, colorization notes, placement). The manifest is the source of truth.
 - **Not tracked:** the image binaries (`*.png`, `*.jpg`, `*.webp`, …). They live
-  in the S3 assets bucket (see decision `history-alive-a55.4`) under the same
+  in the S3 assets bucket (see decision `sand-a55.4`) under the same
   relative path as the manifest, e.g.
   `media/people/schlieffen-alfred-von/portrait-c1906-colorized.png`.
   A copy beside the manifest on a developer's machine is a local staging copy
   only; `.gitignore` keeps it out of commits.
 
-The media pipeline (`history-alive-y0u.3`) uploads originals and derivatives
+The media pipeline (`sand-y0u.3`) uploads originals and derivatives
 from the staging copy to the bucket, generates WebP/AVIF variants, and writes
 the attribution manifest the app renders.
 
@@ -26,7 +26,7 @@ media/
   documents/<slug>/       scans of orders, memoranda, maps   (future)
 ```
 
-## Rules (from the imagery policy, `history-alive-y0u.1`)
+## Rules (from the imagery policy, `sand-y0u.1`)
 
 - Open-licence or public-domain originals only; archive, photographer, date and
   licence recorded per image. Bundesarchiv images are CC-BY-SA — the credit

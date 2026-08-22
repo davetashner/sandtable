@@ -137,7 +137,7 @@ is the single-file proof of concept.
 
 ## Conventions
 
-- Work from `bd ready`; the five `decision` beads under `history-alive-a55`
+- Work from `bd ready`; the five `decision` beads under `sand-a55`
   come first and each produces `docs/decisions/NNNN-*.md`.
 - Feature branches in worktrees under `.claude/worktrees/`, never `main`;
   `git commit -s` with the bead ID in the message.

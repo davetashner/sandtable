@@ -1,5 +1,5 @@
 {
-  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2). LICENCE NOTE: Bundesarchiv image under CC-BY-SA 3.0 DE — attribution string mandatory and derivative (this colorization) must carry the same licence.",
+  "$comment": "Provisional manifest — formalized by the Media entity schema (sand-y0u.2). LICENCE NOTE: Bundesarchiv image under CC-BY-SA 3.0 DE — attribution string mandatory and derivative (this colorization) must carry the same licence.",
   "id": "media:person/ludendorff-erich/portrait-1915-colorized",
   "person": "person:ludendorff-erich",
   "file": "portrait-1915-colorized.png",
@@ -16,14 +16,14 @@
     "licence": "CC-BY-SA 3.0 DE — required attribution: \"Bundesarchiv, Bild 183-2005-0828-525 / CC-BY-SA 3.0\" (the photograph may also be PD by age, but we honour the Bundesarchiv terms)"
   },
   "colorization": {
-    "author": "Dave Tashner / History Alive",
+    "author": "Dave Tashner / Sandtable",
     "method": "AI-assisted colorization from the Bundesarchiv original, 2026",
     "licence": "CC-BY-SA 3.0 DE (share-alike inherited from the Bundesarchiv original)",
     "status": "ok — label 'colorized (AI-assisted)'; documented colours: feldgrau M1910 tunic with red piping and red collar patches, silver Larisch embroidery, black-and-silver Pour le Mérite ribbon"
   },
   "content_policy": "ok — portrait, no gore",
   "caption": "Erich Ludendorff (1865–1937) — as a staff officer at Liège on 7 August 1914 he drove to the citadel and took its surrender, then went east to Tannenberg as Hindenburg's chief of staff; by 1916 he ran the German war effort. Photographed in 1915. Colorized (AI-assisted).",
-  "credit": "Original photograph: Bundesarchiv, Bild 183-2005-0828-525 / CC-BY-SA 3.0. Colorization: History Alive, AI-assisted, 2026, CC-BY-SA 3.0 DE.",
+  "credit": "Original photograph: Bundesarchiv, Bild 183-2005-0828-525 / CC-BY-SA 3.0. Colorization: Sandtable, AI-assisted, 2026, CC-BY-SA 3.0 DE.",
   "used_by": [
     "1914:liege",
     "1914:vignette-ludendorff-citadel",

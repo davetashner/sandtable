@@ -1,5 +1,5 @@
 {
-  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2). First Phase 3 (Verdun) image.",
+  "$comment": "Provisional manifest — formalized by the Media entity schema (sand-y0u.2). First Phase 3 (Verdun) image.",
   "id": "media:scene/1916-douaumont-officers/haupt-oven-brandis-1916-colorized",
   "kind": "group-portrait",
   "people": [
@@ -21,19 +21,19 @@
     "licence": "public domain — life + 70 / published before 1931"
   },
   "colorization": {
-    "author": "Dave Tashner / History Alive",
+    "author": "Dave Tashner / Sandtable",
     "method": "AI-assisted colorization from the public-domain original, 2026",
-    "licence": "History Alive project licence; underlying photograph public domain",
+    "licence": "Sandtable project licence; underlying photograph public domain",
     "status": "ok — label 'colorized (AI-assisted)'; documented colours: feldgrau M1915 Bluse/M1910 tunic with red piping, grey peaked caps with red band and black-white-red and state cockades, black boots, black-and-silver Pour le Mérite ribbon"
   },
   "content_policy": "ok — group portrait, no gore",
   "caption": "Haupt, von Oven and von Brandis of the 24th Brandenburg Infantry, the officers credited with taking Fort Douaumont on 25 February 1916 — though it was Haupt's company, and Pionier-Sergeant Kunze who climbed in first; Brandis wrote the book and got the fame. Colorized (AI-assisted) from a public-domain photograph.",
-  "credit": "Original photograph: Die Woche 1918 Nr. 2, August Scherl Verlag; public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "credit": "Original photograph: Die Woche 1918 Nr. 2, August Scherl Verlag; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
     "ww1-west:verdun",
     "ww1-west:verdun-vignette-douaumont-capture",
     "ww1-west:verdun-historiography-who-took-douaumont"
   ],
   "focal_point": { "x": 0.5, "y": 0.3 },
-  "notes": "Provided by Dave 2026-08-22. Belongs to the Phase 3 Verdun zoom-in (epic history-alive-g80) — the 'who really took Douaumont' story (Kunze vs. Haupt vs. Brandis) is a ready-made historiography beat. Also a strong uniforms-and-kit reference for the 1915–16 field-grey."
+  "notes": "Provided by Dave 2026-08-22. Belongs to the Phase 3 Verdun zoom-in (epic sand-g80) — the 'who really took Douaumont' story (Kunze vs. Haupt vs. Brandis) is a ready-made historiography beat. Also a strong uniforms-and-kit reference for the 1915–16 field-grey."
 }

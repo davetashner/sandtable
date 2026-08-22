@@ -60,7 +60,7 @@ This protocol applies when ending a Beads implementation workflow. It is subordi
 
 ## Build & Test
 
-No application build yet (Phase 0 scaffolding is `history-alive-a55.6`). The
+No application build yet (Phase 0 scaffolding is `sand-a55.6`). The
 proof of concept is a single self-contained file:
 
 ```bash
@@ -80,7 +80,7 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
 
 - **Backlog:** beads is the source of truth. `bd ready` → `bd update <id> --claim`
   → work → `bd close <id> --reason "..."`. Phase epics chain by dependency; the
-  five `decision` beads under `history-alive-a55` are the first things to settle,
+  five `decision` beads under `sand-a55` are the first things to settle,
   each producing `docs/decisions/NNNN-*.md`.
 - **Branches/worktrees:** new work happens on a feature branch in a worktree
   under `.claude/worktrees/`, never on `main`. Sign off commits (`git commit -s`)
@@ -90,9 +90,9 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
   media referenced by era-qualified IDs like `1870:sedan`), `content/threads/`
   (learning paths across packs). Never a by-war hierarchy. See `docs/ROADMAP.md`.
 - **Imagery:** open-licence archive photos only, credited; colorized images are
-  labelled with the original available; no gore (`history-alive-y0u.1`).
+  labelled with the original available; no gore (`sand-y0u.1`).
 - **Content:** every date, number and position cites a `Source`; contested
   points are written as historiography, not fact; hypothetical branches are
   labelled as such. Packs must pass the validator (Phase 0).
 - **Design:** tokens and the war-room identity come from the design-system epic
-  (`history-alive-neh`); don't introduce ad-hoc colours or typefaces.
+  (`sand-neh`); don't introduce ad-hoc colours or typefaces.
