@@ -14,3 +14,6 @@ content/shared/media/**/*.webp
 content/shared/media/**/*.avif
 content/shared/media/**/*.tif
 content/shared/media/**/*.tiff
+
+# Agent worktrees (local only)
+.claude/worktrees/

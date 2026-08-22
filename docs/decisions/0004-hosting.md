@@ -1,0 +1,64 @@
+# 0004 — Static hosting on AWS (S3 + CloudFront), GitHub Actions via OIDC, assets outside git
+
+- **Status:** accepted
+- **Date:** 2026-08-22
+- **Bead:** `sand-a55.4`
+
+## Context
+
+Everything in Sandtable is static: the built app, the scenario packs, the
+PMTiles archives and the media. Two assets are large and read by byte range
+(PMTiles) or are heavy binaries that should not bloat a git repository
+(photographs, tile archives). Dave has an AWS account and prefers to use it.
+The site should cost close to nothing, deploy from CI without long-lived
+credentials, and give reviewers a preview of content and map changes before
+merge.
+
+## Decision
+
+- **App:** a private S3 bucket behind **CloudFront** (origin access control).
+  Hashed JS/CSS bundles are cached immutably; `index.html` is short-cached
+  and invalidated on each deploy.
+- **Assets:** a second S3 bucket (or prefix) behind the same CloudFront
+  distribution for PMTiles, border GeoJSON, media originals and derivatives.
+  S3 and CloudFront serve HTTP range requests natively, which PMTiles
+  requires.
+- **Domain / TLS:** Route 53 and an ACM certificate.
+- **Deploy:** GitHub Actions assuming an IAM role via **OIDC** — no AWS keys
+  in GitHub secrets. `main` → production; pull requests → a per-PR prefix in
+  a preview bucket, cleaned up on merge.
+- **Infrastructure as code:** AWS CDK in TypeScript (matches the app stack)
+  under `infra/`; Terraform is an acceptable substitute if preferred.
+- **Media and large files live in S3, not git.** The repository tracks the
+  `media.json` manifests and optimized web derivatives may be generated at
+  build time; originals, masters and tile archives are uploaded to the assets
+  bucket by the media and tiles pipelines. A developer's local copy beside
+  the manifest is a staging copy and is git-ignored. (The repo's history was
+  rewritten before first push to honour this; it is ~200 KB.)
+- **Cost:** cents per month at this scale; CloudFront's free tier covers
+  1 TB/month of egress.
+
+## Alternatives considered
+
+- **AWS Amplify Hosting.** Git-connected, built-in previews, simpler — but
+  less control over cache behaviours and large-asset handling, and the tiles
+  would still need their own bucket. Reasonable fallback.
+- **Cloudflare Pages / GitHub Pages / Netlify / Vercel.** Free and good; GitHub
+  Pages handles large range-requested files poorly, the others impose asset
+  size limits, and Dave prefers AWS.
+- **A server (Node, containers).** Nothing needs one.
+- **Git LFS for media.** Would keep binaries "in git" but still outside the
+  repository proper; S3 is simpler, is where the site reads from anyway, and
+  avoids LFS bandwidth quotas. Revisit only if build-time derivatives become
+  heavy.
+
+## Consequences
+
+- Phase 0 includes the CDK stack, the OIDC role, the deploy workflow and a
+  preview mechanism (`sand-a55.16`).
+- The media pipeline (`sand-y0u.3`) and tiles pipeline upload to the assets
+  bucket and emit the attribution/asset manifests the app reads.
+- `.gitignore` excludes image binaries under `content/shared/media/`;
+  `content/shared/media/README.md` documents the rule.
+- `bd dolt push` uses the same GitHub remote (`refs/dolt/data`) so the
+  backlog travels with the code.
