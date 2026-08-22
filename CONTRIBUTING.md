@@ -42,8 +42,8 @@ through the same workflow.
 
 ## Content contributions
 
-Read `docs/content-model.md` first — it describes the files, ids, time rules,
-branches and the validator. Then:
+Read `docs/authoring.md` (the how-to) and `docs/content-model.md` (the
+reference) first. Then:
 
 - **Cite everything.** Every route, event, battle, beat, card, document and
   causal link needs at least one `Source`; dates, numbers and positions are

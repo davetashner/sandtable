@@ -108,7 +108,8 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
   points are written as historiography, not fact; hypothetical branches are
   labelled as such. Packs must pass the validator — the schema (Zod, single
   source of truth for types + JSON Schema) is `src/packs/schema/`, the rules
-  are `src/packs/validate/`, the prose is `docs/content-model.md`.
+  are `src/packs/validate/`, the prose is `docs/content-model.md`, the how-to is
+  `docs/authoring.md`.
 - **Design:** tokens and the war-room identity come from the design-system epic
   (`sand-neh`): `src/styles/tokens.ts` → `npm run tokens` → `tokens.css`, reference
   in `docs/design.md`; don't introduce ad-hoc colours or typefaces.

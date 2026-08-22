@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1914:link-wheel-to-marne",
+    "from": "1914:event-kluck-wheels-south-east",
+    "to": "1914:event-battle-of-the-marne",
+    "relation": "enabled",
+    "claim": "By wheeling south-east inside Paris on 30–31 August, Kluck exposed the 1st Army's right flank to the Paris garrison and the new 6th Army; the Ourcq attack that opened the Marne struck exactly there.",
+    "confidence": "high",
+    "historiography": "Whether Kluck's turn was a blunder or the only way to keep touch with Bülow and pursue a 'beaten' enemy is still argued; Herwig treats it as a reasonable decision on the information available, made fatal by the thinned right wing and Joffre's redeployment.",
+    "evidence": [
+      { "source": "source:herwig-2009", "note": "chapters on Kluck's wheel and the Ourcq" },
+      { "source": "source:reichsarchiv-weltkrieg-1" }
+    ]
+  },
+  {
+    "id": "1914:link-instruction-2-to-marne",
+    "from": "1914:event-instruction-generale-2",
+    "to": "1914:event-battle-of-the-marne",
+    "relation": "enabled",
+    "claim": "Instruction générale no 2 (25 August) created the mass of manoeuvre on the French left — the future 6th Army, railed from Lorraine — without which there was no flank attack to make on 5 September.",
+    "confidence": "high",
+    "evidence": [{ "source": "source:afgg-1-1" }, { "source": "source:herwig-2009" }]
+  }
+]
