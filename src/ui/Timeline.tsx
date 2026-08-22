@@ -22,12 +22,26 @@ export interface TimelinePhase {
   hypothetical?: boolean;
 }
 
+export type MarkerKind = 'event' | 'battle' | 'decision' | 'tech' | 'science' | 'document';
+
 export interface TimelineMarker {
   id: string;
   title: string;
   /** Epoch ms. */
   at: number;
+  /** Glyph family (ADR 0006): ▲ event · ◆ battle · ◇ decision · ⚙ tech · ✦ science · ▢ document. */
+  kind?: MarkerKind;
 }
+
+// eslint-disable-next-line react-refresh/only-export-components -- glyph table belongs with the strip
+export const MARKER_GLYPH: Record<MarkerKind, string> = {
+  event: '▲',
+  battle: '◆',
+  decision: '◇',
+  tech: '⚙',
+  science: '✦',
+  document: '▢',
+};
 
 export interface TimelineProps {
   /** Phase bands (narrative beats) for the active branch. */
@@ -38,6 +52,8 @@ export interface TimelineProps {
   title?: string;
   /** Listen for shortcuts on window as well as on the strip (default true). */
   globalShortcuts?: boolean;
+  /** Called when a marker is clicked (after the clock seeks to it). */
+  onSelectMarker?: (marker: TimelineMarker) => void;
 }
 
 const isEditable = (el: EventTarget | null) =>
@@ -49,6 +65,7 @@ export function Timeline({
   markers = [],
   title,
   globalShortcuts = true,
+  onSelectMarker,
 }: TimelineProps) {
   const { now, range, playing, speed } = useClock();
   const clock = useClockControls();
@@ -219,21 +236,34 @@ export function Timeline({
           ))}
         </div>
         <div className="timeline__markers">
-          {markers.map((m) => (
-            <button
-              type="button"
-              key={m.id}
-              className="timeline__marker"
-              data-past={m.at <= now || undefined}
-              style={{ left: pct(m.at) }}
-              onClick={() => clock.seek(m.at)}
-              title={m.title}
-              aria-label={`Jump to ${m.title}`}
-            >
-              <span className="timeline__marker-dot" />
-              <span className="timeline__marker-label">{m.title}</span>
-            </button>
-          ))}
+          {markers.map((m) => {
+            const kind = m.kind ?? 'event';
+            return (
+              <button
+                type="button"
+                key={m.id}
+                className="timeline__marker"
+                data-kind={kind}
+                data-past={m.at <= now || undefined}
+                style={{ left: pct(m.at) }}
+                onClick={() => {
+                  clock.seek(m.at);
+                  onSelectMarker?.(m);
+                }}
+                title={m.title}
+                aria-label={`${kind === 'event' ? 'Jump to' : 'Open'} ${m.title}`}
+              >
+                {kind === 'event' ? (
+                  <span className="timeline__marker-dot" />
+                ) : (
+                  <span className="timeline__marker-glyph" aria-hidden="true">
+                    {MARKER_GLYPH[kind]}
+                  </span>
+                )}
+                <span className="timeline__marker-label">{m.title}</span>
+              </button>
+            );
+          })}
         </div>
         <div className="timeline__progress" style={{ width: pct(now) }} aria-hidden="true" />
         <input

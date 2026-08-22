@@ -1,0 +1,154 @@
+/* Card frame — tokens only. */
+
+.card {
+  min-height: 0;
+  overflow: auto;
+  padding-right: 4px;
+  animation: dossier-enter var(--dur-base) var(--ease-out);
+}
+
+.card__back {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 0 0 8px;
+  color: var(--brass);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.card__back:hover {
+  text-decoration: underline;
+}
+
+.card__eyebrow {
+  margin: 0 0 2px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.card__title {
+  margin: 0 0 4px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-xl);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.card__meta {
+  margin: 0 0 10px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+
+.card__body {
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+}
+
+.card__body p {
+  margin: 0 0 10px;
+}
+
+.card__body p:first-child {
+  font-size: 15.5px;
+  color: var(--ink);
+}
+
+.card__body sup a {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-decoration: none;
+  padding: 0 2px;
+}
+
+.card__chips {
+  margin: 6px 0 10px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.card__chip {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--ink);
+  border-radius: var(--radius-pill);
+  padding: 3px 10px;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+}
+
+.card__chip:hover:not(:disabled) {
+  border-color: var(--brass);
+}
+
+.card__chip:disabled {
+  cursor: default;
+  color: var(--muted);
+}
+
+.card__chip[data-kind='battle']::before,
+.card__chip[data-kind='event']::before,
+.card__chip[data-kind='tech']::before,
+.card__chip[data-kind='person']::before,
+.card__chip[data-kind='place']::before {
+  font-family: var(--font-mono);
+  color: var(--brass);
+  margin-right: 5px;
+}
+
+.card__chip[data-kind='battle']::before {
+  content: '◆';
+}
+.card__chip[data-kind='event']::before {
+  content: '▲';
+}
+.card__chip[data-kind='tech']::before {
+  content: '⚙';
+}
+.card__chip[data-kind='person']::before {
+  content: '●';
+}
+.card__chip[data-kind='place']::before {
+  content: '○';
+}
+
+.card__sources {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+
+.card__sources h3 {
+  margin: 0 0 4px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.card__sources ol {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.card__sources li p {
+  margin: 0 0 3px;
+}

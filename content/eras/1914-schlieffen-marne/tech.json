@@ -1,0 +1,68 @@
+[
+  {
+    "id": "1914:tech-railways-mobilization",
+    "title": "Railways and the mobilization timetable",
+    "field": "railways",
+    "introduced": {
+      "at": "1914-08-02",
+      "label": "Mobilization day 1, 2 August 1914 — the timetable starts"
+    },
+    "summary": "The German war plan was, before it was anything else, a railway timetable: the Great General Staff's railway section had scheduled some 11,000 trains to carry the field army to the frontiers in the first seventeen days, on double-tracked lines laid with the deployment in mind and across Rhine bridges built to the same plan.",
+    "body": "Deployment by rail is what made a six-week plan thinkable — and what made it rigid. When the Kaiser asked on 1 August whether the deployment could be turned east against Russia alone, Moltke answered that the timetables could not be remade: a year's staff work could not be improvised in an evening.[^tuchman-1962] The same staff section had planned the Belgian and French lines the armies would need once across the frontier; the Belgians blew their bridges and tunnels, the Liège forts delayed the opening of the Meuse line, and the right wing soon marched days ahead of its railheads, supplied by horse and foot over demolished ground — the 'rail versus feet' gap that the feasibility debate turns on.[^strachan-2001] On the French side the same instrument worked the other way: from 25 August Joffre's Instruction générale no 2 moved corps from Lorraine to the left by rail, the redeployment that put a new army at Paris in time for the Marne.[^herwig-2009]",
+    "links": {
+      "events": ["1914:event-invasion-of-belgium", "1914:event-instruction-generale-2"],
+      "places": ["place:cologne", "place:aachen"],
+      "people": ["person:moltke-helmuth-von-younger", "person:joffre-joseph"]
+    },
+    "sources": [
+      { "source": "source:strachan-2001", "note": "mobilization, railways and the supply gap" },
+      { "source": "source:tuchman-1962", "note": "the Kaiser and Moltke, 1 August" },
+      { "source": "source:herwig-2009", "note": "Instruction générale no 2 and the redeployment" }
+    ]
+  },
+  {
+    "id": "1914:tech-heavy-siege-artillery",
+    "title": "Heavy siege artillery — Krupp's 42 cm and Škoda's 30.5 cm",
+    "field": "artillery",
+    "introduced": {
+      "at": "1914-08-12",
+      "label": "First fired at Liège, 12 August 1914"
+    },
+    "summary": "Brialmont's forts at Liège and Namur were built in the 1880s against guns of 21 cm; Germany arrived with Krupp 42 cm howitzers throwing shells of around 800 kg and Austrian Škoda 30.5 cm mortars, and the forts that were meant to hold for weeks fell in days once the guns were in position.",
+    "body": "The first German attempt on Liège was a coup de main without heavy guns, and it failed against the forts on 5–6 August; Ludendorff's capture of the citadel on the 7th did not silence the ring.[^herwig-2009] The decisive weapon arrived late because it was hard to move: the 42 cm 'Gamma' was a rail-and-road monster assembled on site, and even the road-mobile 'M-Gerät' needed tractors and days. Once emplaced, from 12 August, the howitzers broke the forts one after another — Fort Loncin blew up under Leman on the 15th — and by the 16th the Meuse crossings were open.[^strachan-2001] The same guns, with the Škoda mortars lent by Austria-Hungary, reduced Namur in four days (21–25 August), Maubeuge by 7 September and Antwerp in early October.[^herwig-2009] The lesson the armies drew was that concrete and steel of the 1880s could not live with the industrial artillery of 1914 — one of the reasons the trench, not the fortress, became the defensive form of the war.",
+    "links": {
+      "events": ["1914:event-siege-of-liege"],
+      "places": ["place:liege", "place:namur", "place:antwerp"],
+      "people": ["person:leman-gerard", "person:ludendorff-erich"]
+    },
+    "sources": [
+      { "source": "source:herwig-2009", "note": "Liège, Namur, Maubeuge, Antwerp" },
+      { "source": "source:strachan-2001", "note": "the siege train and the fall of the forts" }
+    ]
+  },
+  {
+    "id": "1914:tech-aerial-reconnaissance",
+    "title": "Aerial reconnaissance — the eyes that found the gap",
+    "field": "aviation",
+    "introduced": {
+      "at": "1914-08-31",
+      "label": "Kluck's turn observed from the air, 31 August – 3 September 1914"
+    },
+    "summary": "Unarmed observation aeroplanes — a few dozen on each side — gave the 1914 commanders a view the 1870 generals never had. British and French aviators reported Kluck's columns turning south-east across the front of Paris, Gallieni and Joffre acted on it, and the counterstroke on the Ourcq followed; in the East, German aircraft had already helped find the Russian armies before Tannenberg.",
+    "body": "The aeroplane of August 1914 carried no weapon and, usually, no wireless; the observer came home and reported. It was enough. Royal Flying Corps pilots watching the German 1st Army from 31 August saw the columns marching south-east instead of toward Paris; French aviators confirmed it on 3 September, and Gallieni, Military Governor of Paris, used the reports to press Joffre for the attack that opened the Marne on the 5th.[^herwig-2009] Reconnaissance cut the other way too: Bülow's and Kluck's own aviators reported the gap between their armies filling with the BEF and the French 5th Army on 8–9 September, which is part of what Hentsch and Bülow were reacting to.[^herwig-2009] In East Prussia, German aircraft and the uncoded Russian wireless together told Hindenburg's staff where Samsonov's army was — the other side of the same revolution.[^strachan-2001] By 1915 the observer's camera and the wireless set would turn the reconnaissance flight into the map the artillery fought from.",
+    "links": {
+      "events": ["1914:event-kluck-wheels-south-east", "1914:event-battle-of-the-marne"],
+      "battles": ["1914:marne"],
+      "people": [
+        "person:gallieni-joseph",
+        "person:joffre-joseph",
+        "person:kluck-alexander-von",
+        "person:hentsch-richard"
+      ]
+    },
+    "sources": [
+      { "source": "source:herwig-2009", "note": "air reports of Kluck's wheel; the gap" },
+      { "source": "source:strachan-2001", "note": "aviation in 1914; Tannenberg" }
+    ]
+  }
+]

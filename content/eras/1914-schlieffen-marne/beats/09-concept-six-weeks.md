@@ -11,6 +11,7 @@ sources:
   - source: source:strachan-2001
   - source: source:herwig-2009
 ---
+
 **Hypothetical.** On paper the campaign ends here, in a decisive envelopment before Russia's mobilization is complete, and the armies entrain for the East.[^strachan-2001] That was the war Germany believed it could not otherwise win on two fronts.
 
 Compare it with the historical branch at the same date: the same armies, the same six weeks, and the right wing falling back to the Aisne. The distance between the two maps is the argument of this pack — a timetable the world fell behind.[^herwig-2009]
