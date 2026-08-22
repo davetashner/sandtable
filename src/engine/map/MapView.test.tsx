@@ -59,8 +59,12 @@ vi.mock('maplibre-gl', () => ({
   NavigationControl: class {},
   ScaleControl: class {},
   addProtocol: vi.fn(),
+  setWorkerUrl: vi.fn(),
 }));
 vi.mock('maplibre-gl/dist/maplibre-gl.css', () => ({}));
+vi.mock('maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url', () => ({
+  default: '/app/maplibre-gl-worker-bundled.js',
+}));
 vi.mock('@deck.gl/mapbox', () => ({
   MapboxOverlay: class {
     props: unknown;
@@ -79,6 +83,7 @@ vi.mock('pmtiles', () => ({
 import type { MapHandle as Handle } from './MapView.js';
 
 const { MapView } = await import('./MapView.js');
+const { setWorkerUrl } = await import('maplibre-gl');
 
 describe('<MapView>', () => {
   beforeEach(() => {
@@ -94,6 +99,23 @@ describe('<MapView>', () => {
         }),
       })),
     );
+  });
+
+  it('registers the bundled MapLibre worker and bridges map.transform for deck.gl (sand-2fw)', () => {
+    render(
+      <MapView
+        camera={{ center: [4.2, 49.7], zoom: 6.3 }}
+        theme="light"
+        styleFor={() => ({ version: 8, sources: {}, layers: [] })}
+      />,
+    );
+    // Production builds must not resolve the worker relative to the bundle
+    // (maplibre-gl 6 default), but to the URL Vite emitted for it.
+    expect(vi.mocked(setWorkerUrl)).toHaveBeenCalledWith('/app/maplibre-gl-worker-bundled.js');
+    // @deck.gl/mapbox reads map.transform, which maplibre-gl 6 moved to _camera.
+    const map = maps[0]! as unknown as { _camera?: unknown; transform?: unknown };
+    map._camera = { transform: { height: 480 } };
+    expect(map.transform).toEqual({ height: 480 });
   });
 
   it('mounts with the camera, loads borders after style load, and exposes the camera API', async () => {
