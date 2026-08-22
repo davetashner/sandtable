@@ -1,0 +1,74 @@
+/*
+ * Design tokens — provisional, lifted from the PoC's "lamp-lit General Staff
+ * war room" identity. The design-system story (sand-neh.1) replaces this file
+ * with the reviewed palette and type scale; components must only ever use
+ * these variables, never literal colours.
+ *
+ * Theme model: bare :root = light; dark via prefers-color-scheme unless
+ * [data-theme="light"] is stamped; [data-theme="dark"] forces dark.
+ */
+:root {
+  --bg: #e6dfcb;
+  --panel: #efe9d8;
+  --panel-2: #e0d9c4;
+  --ink: #241f16;
+  --muted: #6b6354;
+  --brass: #8c6d28;
+  --brass-dim: #b7a97c;
+  --line: #c9bfa4;
+  --army-1: #9a2e22;
+  --army-2: #832820;
+  --army-3: #6e241e;
+  --french: #24566e;
+  --sea: #d6ccae;
+  --land: #e6dfcb;
+
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+
+  --radius: 10px;
+  --shadow: 0 8px 24px rgba(40, 32, 16, 0.14);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #10161a;
+    --panel: #1a2228;
+    --panel-2: #202a31;
+    --ink: #e9e1cb;
+    --muted: #93998f;
+    --brass: #c9a24b;
+    --brass-dim: #6e6142;
+    --line: #384049;
+    --army-1: #d45b3f;
+    --army-2: #b94734;
+    --army-3: #97392a;
+    --french: #6fa6c4;
+    --sea: #0b1013;
+    --land: #1d262c;
+    --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #10161a;
+  --panel: #1a2228;
+  --panel-2: #202a31;
+  --ink: #e9e1cb;
+  --muted: #93998f;
+  --brass: #c9a24b;
+  --brass-dim: #6e6142;
+  --line: #384049;
+  --army-1: #d45b3f;
+  --army-2: #b94734;
+  --army-3: #97392a;
+  --french: #6fa6c4;
+  --sea: #0b1013;
+  --land: #1d262c;
+  --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  color-scheme: dark;
+}

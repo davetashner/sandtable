@@ -20,3 +20,18 @@ content/shared/media/**/*.tiff
 
 # bd append-only audit log — local, machine-specific; history lives in Dolt
 .beads/interactions.jsonl
+
+# Node / build
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+
+# Local tile extracts (served from the assets bucket in production)
+public/tiles/*.pmtiles
+
+# CDK
+infra/cdk.out/

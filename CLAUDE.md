@@ -3,6 +3,7 @@
 This file provides instructions and context for AI coding agents working on this project.
 
 <!-- BEGIN BEADS INTEGRATION v:1 profile:minimal hash:6cd5cc61 -->
+
 ## Beads Issue Tracker
 
 This project uses **bd (beads)** for issue tracking. Run `bd prime` to see full workflow context and commands.
@@ -52,20 +53,29 @@ This protocol applies when ending a Beads implementation workflow. It is subordi
 5. **Hand off** - Summarize changes, validation, issue status, and any blocked sync/commit/push step
 
 **Critical rules:**
+
 - Explicit user or orchestrator instructions override this Beads block.
 - Do not commit or push without clear authority from the active profile or the current user request.
 - If a required sync or push is blocked, stop and report the exact command and error.
-<!-- END BEADS INTEGRATION -->
 
+<!-- END BEADS INTEGRATION -->
 
 ## Build & Test
 
-No application build yet (Phase 0 scaffolding is `sand-a55.6`). The
-proof of concept is a single self-contained file:
+Node 22 (`.nvmrc`). The app is Vite + TypeScript + React (ADR 0001).
 
 ```bash
-open poc/schlieffen-plan.html   # the PoC — no build step
+npm ci
+npm run dev              # Vite dev server
+npm run lint             # ESLint (flat config)
+npm run typecheck        # tsc -b
+npm test -- --run        # Vitest, single pass
+npm run validate:content # content checks (scripts/check-content.sh; schema validator lands in sand-a55.7)
+npm run build            # tsc -b && vite build → dist/
+npm run format           # Prettier
 ```
+
+CI runs the same commands in the `web` job; `lint` and `security` jobs cover docs, content manifests, secrets and dependencies. Open `poc/schlieffen-plan.html` directly for the original proof of concept.
 
 ## Architecture Overview
 
