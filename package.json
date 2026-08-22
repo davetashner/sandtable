@@ -1,7 +1,7 @@
 {
   "name": "sandtable",
   "version": "0.1.0",
-  "description": "Interactive history simulation — the Schlieffen Plan and beyond",
+  "description": "Interactive history simulation \u2014 the Schlieffen Plan and beyond",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -17,7 +17,8 @@
     "format:check": "prettier --check .",
     "validate:content": "bash scripts/check-content.sh && tsx scripts/validate-content.ts",
     "schema": "tsx scripts/generate-schema.ts",
-    "borders": "tsx scripts/fetch-borders.ts"
+    "borders": "tsx scripts/fetch-borders.ts",
+    "tokens": "tsx scripts/generate-tokens.ts"
   },
   "keywords": [],
   "author": "",

@@ -256,7 +256,7 @@
 
 .dossier__check {
   font-family: var(--font-mono);
-  color: var(--army-1);
+  color: var(--accent-red);
 }
 
 .dossier__feasibility li[data-met] .dossier__check {

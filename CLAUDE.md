@@ -73,6 +73,7 @@ npm test -- --run        # Vitest, single pass
 npm run validate:content # scripts/check-content.sh + the pack validator (docs/content-model.md)
 npm run schema           # regenerate schema/*.schema.json from src/packs/schema (tests fail if stale)
 npm run borders          # rebuild content/shared/geo/borders/<year>.geojson from historical-basemaps (pinned commit)
+npm run tokens           # regenerate src/styles/tokens.css from src/styles/tokens.ts (docs/design.md; AA contrast tested)
 npm run build            # tsc -b && vite build → dist/ (bundles under dist/app/)
 npm run format           # Prettier
 ```
@@ -109,7 +110,8 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
   source of truth for types + JSON Schema) is `src/packs/schema/`, the rules
   are `src/packs/validate/`, the prose is `docs/content-model.md`.
 - **Design:** tokens and the war-room identity come from the design-system epic
-  (`sand-neh`); don't introduce ad-hoc colours or typefaces.
+  (`sand-neh`): `src/styles/tokens.ts` → `npm run tokens` → `tokens.css`, reference
+  in `docs/design.md`; don't introduce ad-hoc colours or typefaces.
 
 ## CI & branch rules
 
