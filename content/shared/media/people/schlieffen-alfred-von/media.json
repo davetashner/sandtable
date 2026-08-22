@@ -1,0 +1,32 @@
+{
+  "$comment": "Provisional manifest — the Media entity schema (history-alive-y0u.2) will formalize these fields. Licence of the colorization is UNVERIFIED (history-alive-y0u.8); do not publish until resolved.",
+  "id": "media:person/schlieffen-alfred-von/portrait-c1906-colorized",
+  "person": "person:schlieffen-alfred-von",
+  "file": "portrait-c1906-colorized.png",
+  "width": 1058,
+  "height": 1487,
+  "colorized": true,
+  "original": {
+    "description": "Studio portrait of Generalfeldmarschall Alfred Graf von Schlieffen in full dress uniform with Pour le Mérite, Order of the Black Eagle star and the Iron Cross; black-and-white photograph, c. 1906 (he was promoted Generalfeldmarschall on 1 Jan 1911 — date to be confirmed from the archive record).",
+    "photographer": "unknown — to confirm",
+    "archive": "to confirm (likely Bundesarchiv or a Commons-hosted print)",
+    "archive_url": null,
+    "licence": "public domain (author died >70 years ago / published before 1930) — confirm against archive record"
+  },
+  "colorization": {
+    "author": "UNKNOWN — must identify",
+    "source_url": null,
+    "licence": "UNVERIFIED — the colorization is a derivative work with its own copyright; confirm author and licence (or produce our own from the PD original per the imagery policy) before use",
+    "status": "pending-review"
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Alfred Graf von Schlieffen (1833–1913), Chief of the German General Staff 1891–1906, author of the December 1905 memorandum. Colorized.",
+  "credit": "Original: public domain. Colorization: credit to be added once the author is identified.",
+  "used_by": [
+    "1914:prologue-origins",
+    "1905:consequences-memorandum",
+    "thread:road-to-1914"
+  ],
+  "focal_point": { "x": 0.5, "y": 0.28 },
+  "notes": "Provided by Dave on 2026-08-22 for the Phase 1 prologue and the Person card. Hero image candidate for the prologue beat."
+}
