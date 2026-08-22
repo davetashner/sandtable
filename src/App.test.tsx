@@ -28,4 +28,25 @@ describe('App shell', () => {
       await screen.findByRole('region', { name: /^Map — .*10 August 1914/ }),
     ).toBeInTheDocument();
   });
+
+  it('zooms into a battle and back, swapping the clock range and restoring the campaign time', async () => {
+    window.history.replaceState(null, '', '/?t=1914-09-01T00:00:00Z');
+    render(<App />);
+    expect(screen.getByText('Day 30')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'First Battle of the Marne' }));
+    expect(window.location.search).toContain('focus=1914:marne');
+    expect(screen.getByRole('navigation', { name: 'Focus' })).toHaveTextContent(
+      'First Battle of the Marne',
+    );
+    // the clock now runs on the battle's own range: day 0 of the battle = 5 September
+    expect(screen.getByText('Day 0')).toBeInTheDocument();
+    expect(screen.getByText(/5 September 1914/)).toBeInTheDocument();
+    expect(
+      await screen.findByRole('heading', { level: 2, name: /Inside the Marne/ }),
+    ).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Back to the campaign' }));
+    expect(window.location.search).not.toContain('focus=');
+    // the viewer moved past 1 Sep inside the battle (5 Sep), so time does not jump back
+    expect(screen.getByText('Day 34')).toBeInTheDocument();
+  });
 });

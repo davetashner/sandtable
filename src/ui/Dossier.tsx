@@ -24,7 +24,7 @@ export interface DossierProps {
   sides: Side[];
   branch: Branch;
   /** Battle id when inside a zoom-in (sand-a55.14); beats with that focus win. */
-  focus?: string;
+  focus?: string | undefined;
   packTitle?: string;
 }
 
