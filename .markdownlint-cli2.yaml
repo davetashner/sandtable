@@ -14,3 +14,6 @@ ignores:
   - "**/CHANGELOG.md"
   - CLAUDE.md    # contains a block generated and managed by `bd` — not hand-edited
   - AGENTS.md    # same
+  - .beads/**    # bd-managed
+  - .agents/**   # bd-managed
+  - .codex/**    # bd-managed
