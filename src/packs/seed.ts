@@ -7,18 +7,21 @@
  * Nothing here is era-specific beyond the import paths; swap the glob and the
  * JSON imports for fetches and the rest of the app does not change.
  */
+import battlesJson from '../../content/eras/1914-schlieffen-marne/battles.json';
 import eventsJson from '../../content/eras/1914-schlieffen-marne/events.json';
 import formationsJson from '../../content/eras/1914-schlieffen-marne/formations.json';
 import packJson from '../../content/eras/1914-schlieffen-marne/pack.json';
 import routesJson from '../../content/eras/1914-schlieffen-marne/routes.json';
 import sourcesJson from '../../content/shared/sources/sources.json';
 import {
+  Battle,
   BeatFrontMatter,
   Event,
   Formation,
   Pack,
   Route,
   Source,
+  type Battle as BattleT,
   type Event as EventT,
   type Formation as FormationT,
   type NarrativeBeat,
@@ -37,6 +40,7 @@ const beatsRaw = import.meta.glob('../../content/eras/1914-schlieffen-marne/beat
 export interface SeedPack {
   pack: PackT;
   events: EventT[];
+  battles: BattleT[];
   formations: FormationT[];
   routes: RouteT[];
   /** Front matter + Markdown body. */
@@ -48,6 +52,7 @@ export interface SeedPack {
 function loadSeed(): SeedPack {
   const pack = Pack.parse(packJson);
   const events = Event.array().parse(eventsJson);
+  const battles = Battle.array().parse(battlesJson);
   const formations = Formation.array().parse(formationsJson);
   const routes = Route.array().parse(routesJson);
   const beats: NarrativeBeat[] = Object.entries(beatsRaw)
@@ -56,7 +61,7 @@ function loadSeed(): SeedPack {
     .map((x) => ({ ...BeatFrontMatter.parse(x.split.data), body: x.split.body, file: x.file }))
     .sort((a, b) => Date.parse(a.from) - Date.parse(b.from));
   const sources = Source.array().parse(sourcesJson);
-  return { pack, events, formations, routes, beats, sources };
+  return { pack, events, battles, formations, routes, beats, sources };
 }
 
 export const seed: SeedPack = loadSeed();

@@ -1,0 +1,39 @@
+[
+  {
+    "id": "1914:marne",
+    "title": "First Battle of the Marne",
+    "timeRange": { "start": "1914-09-05T00:00:00Z", "end": "1914-09-12T00:00:00Z" },
+    "region": [2.3, 48.4, 4.7, 49.6],
+    "camera": { "center": [3.4, 48.95], "zoom": 8 },
+    "place": "place:meaux",
+    "summary": "Six days on the Ourcq, the Petit and Grand Morin and the marshes of Saint-Gond: Maunoury's 6th Army strikes Kluck's open flank, Kluck swings his corps back to meet it and opens a gap to Bülow, the BEF and Franchet d'Espèrey's 5th Army walk into the gap, Foch holds at Saint-Gond, and on 9 September the German right wing retreats. This is the zoom-in seed — the hourly corps-level routes, the taxis, the Hentsch mission and the per-day beats are authored in sand-1l0.10.",
+    "outcome": "German 1st and 2nd Armies retreat to the Aisne from 9 September; the Schlieffen timetable is dead and the mobile war in the West ends within the month.",
+    "participants": [
+      "1914:army-de-1",
+      "1914:army-de-2",
+      "1914:army-de-3",
+      "1914:army-fr-5",
+      "1914:army-fr-6",
+      "1914:army-fr-9",
+      "1914:bef"
+    ],
+    "links": {
+      "events": ["1914:event-battle-of-the-marne"],
+      "people": [
+        "person:maunoury-michel-joseph",
+        "person:gallieni-joseph",
+        "person:kluck-alexander-von",
+        "person:bulow-karl-von",
+        "person:franchet-desperey-louis",
+        "person:foch-ferdinand",
+        "person:french-john",
+        "person:hentsch-richard"
+      ]
+    },
+    "sources": [
+      { "source": "source:herwig-2009", "note": "chapters on the Ourcq, the gap and the Hentsch mission" },
+      { "source": "source:edmonds-1922" },
+      { "source": "source:afgg-1-1" }
+    ]
+  }
+]
