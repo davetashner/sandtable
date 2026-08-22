@@ -72,3 +72,9 @@
     transition: none;
   }
 }
+
+/* Phone bottom sheet (BottomSheet.tsx): the peek detent is title-only, so
+   the strip waits for half/full rather than showing a row of cut-off faces. */
+.sheet[data-detent='peek'] .cast {
+  display: none;
+}
