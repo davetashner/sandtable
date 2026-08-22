@@ -245,3 +245,10 @@
   color: var(--ink);
   border-color: var(--french);
 }
+
+.card__chip[data-kind='causal']::before {
+  content: '⟶';
+  font-family: var(--font-mono);
+  color: var(--brass);
+  margin-right: 5px;
+}

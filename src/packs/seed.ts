@@ -17,9 +17,11 @@ import sourcesJson from '../../content/shared/sources/sources.json';
 import techJson from '../../content/eras/1914-schlieffen-marne/tech.json';
 import scienceJson from '../../content/eras/1914-schlieffen-marne/science.json';
 import documentsJson from '../../content/eras/1914-schlieffen-marne/documents.json';
+import linksJson from '../../content/eras/1914-schlieffen-marne/links.json';
 import {
   Battle,
   BeatFrontMatter,
+  CausalLink,
   Event,
   Formation,
   Pack,
@@ -30,6 +32,7 @@ import {
   Source,
   TechCard,
   type Battle as BattleT,
+  type CausalLink as CausalLinkT,
   type Document as DocumentT,
   type ScienceCard as ScienceCardT,
   type Event as EventT,
@@ -64,6 +67,7 @@ export interface SeedPack {
   tech: TechCardT[];
   science: ScienceCardT[];
   documents: DocumentT[];
+  links: CausalLinkT[];
 }
 
 function loadSeed(): SeedPack {
@@ -82,6 +86,7 @@ function loadSeed(): SeedPack {
   const tech = TechCard.array().parse(techJson);
   const science = ScienceCard.array().parse(scienceJson);
   const documents = Document.array().parse(documentsJson);
+  const links = CausalLink.array().parse(linksJson);
   return {
     pack,
     events,
@@ -94,6 +99,7 @@ function loadSeed(): SeedPack {
     tech,
     science,
     documents,
+    links,
   };
 }
 

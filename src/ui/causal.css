@@ -1,0 +1,131 @@
+/* Causal-chain explorer — tokens only. */
+
+.causal__chain {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.causal__step {
+  position: relative;
+  padding: 8px 10px 8px 14px;
+  border-left: 2px solid var(--line);
+  font-size: var(--fs-sm);
+}
+
+.causal__step[data-focal] {
+  border-left-color: var(--brass);
+  background: var(--panel-2);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: var(--fs-md);
+}
+
+.causal__step[data-confidence='contested'] {
+  border-left-style: dashed;
+}
+
+.causal__heads {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.causal__entity {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  text-decoration: underline dotted var(--brass-dim);
+  text-underline-offset: 3px;
+}
+
+.causal__entity--inert {
+  cursor: default;
+  text-decoration: none;
+}
+
+.causal__arrow,
+.causal__relation {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--brass);
+}
+
+.causal__confidence {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+}
+
+.causal__step[data-confidence='contested'] .causal__confidence {
+  color: var(--accent-red);
+}
+
+.causal__claim {
+  margin-top: 6px;
+  line-height: var(--lh-body);
+}
+
+.causal__claim p {
+  margin: 0 0 8px;
+}
+
+.causal__debate {
+  margin: 4px 0 8px;
+}
+
+.causal__debate summary {
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.causal__open {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 4px 0 0;
+  text-align: left;
+  font: inherit;
+  color: var(--muted);
+  line-height: var(--lh-body);
+  cursor: pointer;
+}
+
+.causal__open:hover {
+  color: var(--ink);
+}
+
+.causal__also {
+  margin: 6px 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.causal__alt {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: var(--brass);
+  cursor: pointer;
+}
+
+.causal__alt:hover {
+  text-decoration: underline;
+}
