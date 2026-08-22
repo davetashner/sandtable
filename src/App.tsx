@@ -105,6 +105,7 @@ function MapSection() {
           movement={MOVEMENT_SOURCE}
           region={seed.pack.region}
           focusRegion={focus?.region}
+          places={seed.places}
         />
       </Suspense>
     </section>

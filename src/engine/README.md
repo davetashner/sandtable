@@ -25,7 +25,8 @@ scenario pack it is given.
   the URL's `focus` slot.
 - `beats.ts` — which narrative beat is on now (time × branch × focus) and how a
   citation reads; used by the dossier.
-- `layers/` — data layers on the deck.gl overlay: `movement.ts`
+- `layers/` — data layers on the deck.gl overlay: `places.ts` (cities and
+  fortress rings from the shared registry), `movement.ts`
   (composeRoutes per branch, positionAt, ghost + TripsLayer trail + tokens +
   labels), `colors.ts` (design tokens → RGBA per side), `useMovementLayers`.
 
