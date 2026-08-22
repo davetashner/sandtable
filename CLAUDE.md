@@ -70,7 +70,8 @@ npm run dev              # Vite dev server
 npm run lint             # ESLint (flat config)
 npm run typecheck        # tsc -b
 npm test -- --run        # Vitest, single pass
-npm run validate:content # content checks (scripts/check-content.sh; schema validator lands in sand-a55.7)
+npm run validate:content # scripts/check-content.sh + the pack validator (docs/content-model.md)
+npm run schema           # regenerate schema/*.schema.json from src/packs/schema (tests fail if stale)
 npm run build            # tsc -b && vite build → dist/ (bundles under dist/app/)
 npm run format           # Prettier
 ```
@@ -103,7 +104,9 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
   labelled with the original available; no gore (`sand-y0u.1`).
 - **Content:** every date, number and position cites a `Source`; contested
   points are written as historiography, not fact; hypothetical branches are
-  labelled as such. Packs must pass the validator (Phase 0).
+  labelled as such. Packs must pass the validator — the schema (Zod, single
+  source of truth for types + JSON Schema) is `src/packs/schema/`, the rules
+  are `src/packs/validate/`, the prose is `docs/content-model.md`.
 - **Design:** tokens and the war-room identity come from the design-system epic
   (`sand-neh`); don't introduce ad-hoc colours or typefaces.
 

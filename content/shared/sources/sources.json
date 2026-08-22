@@ -1,0 +1,104 @@
+[
+  {
+    "id": "source:herwig-2009",
+    "kind": "book",
+    "author": "Herwig, Holger H.",
+    "title": "The Marne, 1914: The Opening of World War I and the Battle That Changed the World",
+    "year": 2009,
+    "publisher": "Random House, New York",
+    "isbn": "978-1-4000-6671-1",
+    "notes": "The standard modern operational narrative of the 1914 campaign in the West; uses German, French and British archives. Primary source for army movements, dates and strengths."
+  },
+  {
+    "id": "source:tuchman-1962",
+    "kind": "book",
+    "author": "Tuchman, Barbara W.",
+    "title": "The Guns of August",
+    "year": 1962,
+    "publisher": "Macmillan, New York",
+    "notes": "Narrative classic covering the July Crisis to the eve of the Marne. Vivid on personalities; operational detail is dated — cite Herwig or the official histories for numbers and positions."
+  },
+  {
+    "id": "source:strachan-2001",
+    "kind": "book",
+    "author": "Strachan, Hew",
+    "title": "The First World War, Volume I: To Arms",
+    "year": 2001,
+    "publisher": "Oxford University Press, Oxford",
+    "isbn": "978-0-19-926191-8",
+    "notes": "Global, thematic; strongest on war plans, mobilization and the strategic context."
+  },
+  {
+    "id": "source:zuber-2002",
+    "kind": "book",
+    "author": "Zuber, Terence",
+    "title": "Inventing the Schlieffen Plan: German War Planning 1871–1914",
+    "year": 2002,
+    "publisher": "Oxford University Press, Oxford",
+    "isbn": "978-0-19-925016-5",
+    "notes": "Revisionist: argues the 1905 memorandum was not an operational plan and that 'the Schlieffen Plan' was a post-war construction. Contested — see Mombauer, Holmes, Foley; cite as one side of the debate."
+  },
+  {
+    "id": "source:mombauer-2001",
+    "kind": "book",
+    "author": "Mombauer, Annika",
+    "title": "Helmuth von Moltke and the Origins of the First World War",
+    "year": 2001,
+    "publisher": "Cambridge University Press, Cambridge",
+    "isbn": "978-0-521-79101-4",
+    "notes": "Moltke the Younger's planning and conduct in 1914; the principal reply to Zuber on the reality of the plan."
+  },
+  {
+    "id": "source:keegan-1998",
+    "kind": "book",
+    "author": "Keegan, John",
+    "title": "The First World War",
+    "year": 1998,
+    "publisher": "Hutchinson, London",
+    "notes": "General history; clear chapters on the war plans and the 1914 campaign."
+  },
+  {
+    "id": "source:hastings-2013",
+    "kind": "book",
+    "author": "Hastings, Max",
+    "title": "Catastrophe: Europe Goes to War 1914",
+    "year": 2013,
+    "publisher": "William Collins, London",
+    "notes": "1914 from the July Crisis to the trench line; good on the human scale and the Belgian and Serbian fronts."
+  },
+  {
+    "id": "source:reichsarchiv-weltkrieg-1",
+    "kind": "official-history",
+    "author": "Reichsarchiv",
+    "title": "Der Weltkrieg 1914 bis 1918. Die militärischen Operationen zu Lande, Band 1: Die Grenzschlachten im Westen",
+    "year": 1925,
+    "publisher": "E. S. Mittler & Sohn, Berlin",
+    "notes": "German official history; volumes 1, 3 and 4 cover the West in 1914. Authoritative for German orders of battle, daily positions and orders; apologetic in tone on command decisions."
+  },
+  {
+    "id": "source:edmonds-1922",
+    "kind": "official-history",
+    "author": "Edmonds, J. E.",
+    "title": "Military Operations: France and Belgium, 1914, Volume I: Mons, the Retreat to the Seine, the Marne and the Aisne, August–October 1914",
+    "year": 1922,
+    "publisher": "Macmillan, London (History of the Great War based on Official Documents)",
+    "notes": "British official history. Authoritative for the BEF's daily positions and the Le Cateau/Marne/Aisne narrative."
+  },
+  {
+    "id": "source:afgg-1-1",
+    "kind": "official-history",
+    "author": "Ministère de la Guerre, État-major de l'Armée, Service historique",
+    "title": "Les Armées françaises dans la Grande Guerre, Tome I, 1er volume: La guerre de mouvement (opérations antérieures au 14 novembre 1914)",
+    "year": 1922,
+    "publisher": "Imprimerie nationale, Paris",
+    "notes": "French official history with annex volumes of orders (e.g. Instruction générale no 2, the 6 September order of the day). Authoritative for French orders of battle and positions."
+  },
+  {
+    "id": "source:wikipedia-en",
+    "kind": "web",
+    "author": "Wikipedia contributors",
+    "title": "Wikipedia, the free encyclopedia (English)",
+    "url": "https://en.wikipedia.org/",
+    "notes": "Used only for uncontested biographical dates (birth, death) pending the citation standard in sand-23b.1. Never cite for operational claims."
+  }
+]

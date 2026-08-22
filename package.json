@@ -1,7 +1,7 @@
 {
   "name": "sandtable",
   "version": "0.1.0",
-  "description": "Interactive history simulation — the Schlieffen Plan and beyond",
+  "description": "Interactive history simulation \u2014 the Schlieffen Plan and beyond",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -15,7 +15,8 @@
     "typecheck": "tsc -b --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "validate:content": "bash scripts/check-content.sh"
+    "validate:content": "bash scripts/check-content.sh && tsx scripts/validate-content.ts",
+    "schema": "tsx scripts/generate-schema.ts"
   },
   "keywords": [],
   "author": "",
@@ -27,7 +28,9 @@
   },
   "dependencies": {
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "yaml": "^2.9.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -44,6 +47,7 @@
     "globals": "^17.11.0",
     "jsdom": "^30.0.1",
     "prettier": "^3.9.6",
+    "tsx": "^4.23.12",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.67.0",
     "vite": "^8.2.2",

@@ -1,0 +1,346 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sandtable.davetashner.com/schema/pack.schema.json",
+  "title": "Sandtable pack",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+      "description": "<era>:pack, e.g. 1914:schlieffen-marne"
+    },
+    "idPrefix": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "description": "Era prefix every entity id in this pack carries, e.g. \"1914\""
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Markdown"
+    },
+    "timeRange": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+          "description": "ISO-8601 date-time with offset, e.g. 1914-08-04T08:00:00Z"
+        },
+        "end": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+          "description": "ISO-8601 date-time with offset, e.g. 1914-08-04T08:00:00Z"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ],
+      "additionalProperties": false,
+      "description": "The campaign clock: the timeline spans this range"
+    },
+    "region": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        },
+        {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        },
+        {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        }
+      ],
+      "description": "Geographic extent of the pack"
+    },
+    "borderYear": {
+      "type": "integer",
+      "minimum": -9007199254740991,
+      "maximum": 9007199254740991,
+      "description": "Which shared/geo/borders/<year>.geojson to draw"
+    },
+    "camera": {
+      "type": "object",
+      "properties": {
+        "center": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number",
+              "minimum": -180,
+              "maximum": 180
+            },
+            {
+              "type": "number",
+              "minimum": -90,
+              "maximum": 90
+            }
+          ],
+          "description": "[lng, lat] in WGS 84"
+        },
+        "zoom": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 22
+        },
+        "bearing": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        },
+        "pitch": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 85
+        }
+      },
+      "required": [
+        "center",
+        "zoom"
+      ],
+      "additionalProperties": false,
+      "description": "Opening camera"
+    },
+    "sides": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "description": "Short side id used by formations: de, fr, be, gb, ru"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "short": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12
+          },
+          "alliance": {
+            "description": "\"Central Powers\" / \"Entente\" — drives the colour family",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "branches": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+            "description": "<era>:<slug>; the historical branch is conventionally <era>:historical"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "historical",
+              "counterfactual"
+            ]
+          },
+          "divergesAt": {
+            "description": "Required for counterfactual branches: shared history before this instant",
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Markdown"
+          },
+          "historiography": {
+            "description": "The debate: who argues what about whether this could have happened",
+            "type": "string",
+            "minLength": 1
+          },
+          "feasibility": {
+            "description": "For \"success\" branches: what would have had to be true",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "condition": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "met": {
+                  "type": "boolean",
+                  "description": "Was the condition actually met in history?"
+                },
+                "note": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Markdown"
+                },
+                "sources": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "source": {
+                        "type": "string",
+                        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+                        "description": "Source id, e.g. source:herwig-2009"
+                      },
+                      "pages": {
+                        "description": "Page(s), e.g. \"112–115\" or \"ch. 4\"",
+                        "type": "string"
+                      },
+                      "note": {
+                        "description": "What this citation supports",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "source"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "description": "Citations supporting the claims in this entity"
+                }
+              },
+              "required": [
+                "condition",
+                "met"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+                  "description": "Source id, e.g. source:herwig-2009"
+                },
+                "pages": {
+                  "description": "Page(s), e.g. \"112–115\" or \"ch. 4\"",
+                  "type": "string"
+                },
+                "note": {
+                  "description": "What this citation supports",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source"
+              ],
+              "additionalProperties": false
+            },
+            "description": "Citations supporting the claims in this entity"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "kind",
+          "summary"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "defaultBranch": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+      "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+    },
+    "language": {
+      "default": "en",
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "seed",
+        "draft",
+        "review",
+        "published"
+      ],
+      "description": "seed: scaffolding; draft: being authored; review: in fact-check; published"
+    },
+    "sources": {
+      "description": "General bibliography for the pack",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+            "description": "Source id, e.g. source:herwig-2009"
+          },
+          "pages": {
+            "description": "Page(s), e.g. \"112–115\" or \"ch. 4\"",
+            "type": "string"
+          },
+          "note": {
+            "description": "What this citation supports",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "id",
+    "idPrefix",
+    "title",
+    "summary",
+    "timeRange",
+    "region",
+    "borderYear",
+    "camera",
+    "sides",
+    "branches",
+    "defaultBranch",
+    "status"
+  ],
+  "additionalProperties": false
+}

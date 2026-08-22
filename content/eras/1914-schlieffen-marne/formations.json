@@ -1,0 +1,156 @@
+[
+  {
+    "id": "1914:army-de-1",
+    "name": "German 1st Army",
+    "short": "1. Armee",
+    "side": "de",
+    "kind": "army",
+    "commander": "person:kluck-alexander-von",
+    "summary": "Outer edge of the right wing: Brussels, Mons, Le Cateau, the wheel inside Paris, the Ourcq.",
+    "sources": [{ "source": "source:herwig-2009" }, { "source": "source:reichsarchiv-weltkrieg-1" }]
+  },
+  {
+    "id": "1914:army-de-2",
+    "name": "German 2nd Army",
+    "short": "2. Armee",
+    "side": "de",
+    "kind": "army",
+    "commander": "person:bulow-karl-von",
+    "summary": "Liège, the Sambre at Charleroi, Guise, the Marne at Montmirail.",
+    "sources": [{ "source": "source:herwig-2009" }, { "source": "source:reichsarchiv-weltkrieg-1" }]
+  },
+  {
+    "id": "1914:army-de-3",
+    "name": "German 3rd Army",
+    "short": "3. Armee",
+    "side": "de",
+    "kind": "army",
+    "commander": "person:hausen-max-von",
+    "summary": "Saxon army; the Meuse at Dinant, the marshes of Saint-Gond.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "1914:army-de-4",
+    "name": "German 4th Army",
+    "short": "4. Armee",
+    "side": "de",
+    "kind": "army",
+    "summary": "Duke Albrecht of Württemberg; the Ardennes encounter battles, the Meuse at Sedan.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "1914:army-de-5",
+    "name": "German 5th Army",
+    "short": "5. Armee",
+    "side": "de",
+    "kind": "army",
+    "summary": "Crown Prince Wilhelm; Longwy, the Ardennes, Verdun's western face.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "1914:army-de-6",
+    "name": "German 6th Army",
+    "short": "6. Armee",
+    "side": "de",
+    "kind": "army",
+    "commander": "person:rupprecht-of-bavaria",
+    "summary": "The left wing in Lorraine: Morhange–Sarrebourg, the Trouée de Charmes, the Grand Couronné.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "1914:army-de-7",
+    "name": "German 7th Army",
+    "short": "7. Armee",
+    "side": "de",
+    "kind": "army",
+    "summary": "Josias von Heeringen; Alsace and the Vosges, then moved to the Aisne in September.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "1914:army-fr-1",
+    "name": "French 1st Army",
+    "short": "1re Armée",
+    "side": "fr",
+    "kind": "army",
+    "summary": "Dubail; Alsace and the Sarrebourg side of the Lorraine offensive.",
+    "sources": [{ "source": "source:afgg-1-1" }]
+  },
+  {
+    "id": "1914:army-fr-2",
+    "name": "French 2nd Army",
+    "short": "2e Armée",
+    "side": "fr",
+    "kind": "army",
+    "commander": "person:castelnau-edouard-de",
+    "summary": "Morhange, then the defence of the Grand Couronné de Nancy.",
+    "sources": [{ "source": "source:afgg-1-1" }]
+  },
+  {
+    "id": "1914:army-fr-3",
+    "name": "French 3rd Army",
+    "short": "3e Armée",
+    "side": "fr",
+    "kind": "army",
+    "summary": "Ruffey, then Sarrail; the Ardennes and the Verdun hinge.",
+    "sources": [{ "source": "source:afgg-1-1" }]
+  },
+  {
+    "id": "1914:army-fr-4",
+    "name": "French 4th Army",
+    "short": "4e Armée",
+    "side": "fr",
+    "kind": "army",
+    "summary": "Langle de Cary; the Ardennes, the Meuse, Vitry-le-François at the Marne.",
+    "sources": [{ "source": "source:afgg-1-1" }]
+  },
+  {
+    "id": "1914:army-fr-5",
+    "name": "French 5th Army",
+    "short": "5e Armée",
+    "side": "fr",
+    "kind": "army",
+    "commander": "person:lanrezac-charles",
+    "summary": "Charleroi, Guise, the retreat; under Franchet d'Espèrey from 3 September, into the gap at the Marne.",
+    "sources": [{ "source": "source:afgg-1-1" }, { "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "1914:army-fr-6",
+    "name": "French 6th Army",
+    "short": "6e Armée",
+    "side": "fr",
+    "kind": "army",
+    "commander": "person:maunoury-michel-joseph",
+    "summary": "Formed around Amiens from 26 August by rail; fell back on Paris; struck Kluck on the Ourcq from 5 September.",
+    "sources": [{ "source": "source:afgg-1-1" }, { "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "1914:army-fr-9",
+    "name": "French 9th Army",
+    "short": "9e Armée",
+    "side": "fr",
+    "kind": "army",
+    "commander": "person:foch-ferdinand",
+    "summary": "Improvised on 29 August between the 4th and 5th Armies; held the marshes of Saint-Gond.",
+    "sources": [{ "source": "source:afgg-1-1" }, { "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "1914:bef",
+    "name": "British Expeditionary Force",
+    "short": "BEF",
+    "side": "gb",
+    "kind": "army",
+    "commander": "person:french-john",
+    "summary": "Two corps and a cavalry division: Mons, Le Cateau, the retreat to the Grand Morin, the advance into the gap.",
+    "sources": [{ "source": "source:edmonds-1922" }]
+  },
+  {
+    "id": "1914:belgian-field-army",
+    "name": "Belgian Field Army",
+    "short": "Belgian Army",
+    "side": "be",
+    "kind": "army",
+    "commander": "person:albert-i-of-belgium",
+    "summary": "Six divisions: the Gette line, the withdrawal into Antwerp, the sorties, the Yser.",
+    "sources": [{ "source": "source:hastings-2013" }]
+  }
+]

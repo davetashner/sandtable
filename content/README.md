@@ -14,5 +14,6 @@ content/
 Entity IDs are era-qualified (`1870:sedan`, `1914:marne`). A pack must be
 valid on its own; `shared/` is the only cross-pack dependency. Every factual
 claim cites a `Source`; image binaries live in the assets bucket, not here
-(see `shared/media/README.md`). Run `npm run validate:content` before opening
-a PR.
+(see `shared/media/README.md`). The schema and validator rules are described in
+[`docs/content-model.md`](../docs/content-model.md); JSON Schema for editors is
+under `schema/`. Run `npm run validate:content` before opening a PR.

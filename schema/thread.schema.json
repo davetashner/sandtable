@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sandtable.davetashner.com/schema/thread.schema.json",
+  "title": "Sandtable thread",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+      "description": "thread:<slug>"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Markdown"
+    },
+    "steps": {
+      "minItems": 2,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pack": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+            "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+          },
+          "beat": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+            "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+          },
+          "at": {
+            "description": "Time to jump to if no beat",
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+          },
+          "branch": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+            "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+          },
+          "note": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Connective narrative between steps"
+          }
+        },
+        "required": [
+          "pack",
+          "note"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+            "description": "Source id, e.g. source:herwig-2009"
+          },
+          "pages": {
+            "description": "Page(s), e.g. \"112–115\" or \"ch. 4\"",
+            "type": "string"
+          },
+          "note": {
+            "description": "What this citation supports",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Citations supporting the claims in this entity"
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "summary",
+    "steps"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sandtable.davetashner.com/schema/sources.schema.json",
+  "title": "Sandtable sources",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+      },
+      "kind": {
+        "type": "string",
+        "enum": [
+          "book",
+          "chapter",
+          "article",
+          "official-history",
+          "archive",
+          "map",
+          "web",
+          "other"
+        ]
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "author": {
+        "description": "\"Surname, Given\" — separate several with \";\"",
+        "type": "string"
+      },
+      "year": {
+        "type": "integer",
+        "minimum": 1000,
+        "maximum": 2100
+      },
+      "publisher": {
+        "type": "string"
+      },
+      "edition": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string",
+        "format": "uri"
+      },
+      "isbn": {
+        "type": "string"
+      },
+      "notes": {
+        "description": "What this source is good for; known biases",
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "kind",
+      "title"
+    ],
+    "additionalProperties": false
+  }
+}
