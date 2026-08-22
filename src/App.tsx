@@ -9,13 +9,12 @@
  */
 import { lazy, Suspense, useMemo } from 'react';
 import { ClockProvider, useClock, useViewState } from './engine/ClockContext.js';
-import { labelNow } from './engine/ticks.js';
 import { seed } from './packs/seed.js';
 import { Timeline, type TimelineMarker, type TimelinePhase } from './ui/Timeline.js';
 
-// MapLibre + deck.gl are the heaviest dependencies; load them on demand so the
-// shell, timeline and dossier paint first.
-const MapView = lazy(() => import('./engine/map/MapView.js').then((m) => ({ default: m.MapView })));
+// MapLibre + deck.gl are the heaviest dependencies; load the whole map surface
+// on demand so the shell, timeline and dossier paint first.
+const MapSurface = lazy(() => import('./ui/MapSurface.js'));
 
 const RANGE = {
   start: Date.parse(seed.pack.timeRange.start),
@@ -29,16 +28,22 @@ function useBranch() {
   return known ?? seed.pack.branches.find((b) => b.id === seed.pack.defaultBranch)!;
 }
 
-function MapSurface() {
-  const { now, range } = useClock();
-  const label = labelNow(now, range);
+const MOVEMENT_SOURCE = {
+  routes: seed.routes,
+  formations: seed.formations,
+  sides: seed.pack.sides,
+};
+
+function MapSection() {
+  const branch = useBranch();
   return (
     <section className="surface surface--map">
       <Suspense fallback={<p className="surface__hint surface__hint--loading">Loading the map…</p>}>
-        <MapView
+        <MapSurface
           camera={seed.pack.camera}
           borderYear={seed.pack.borderYear}
-          label={`Map — ${label.date}`}
+          branch={branch}
+          movement={MOVEMENT_SOURCE}
         />
       </Suspense>
     </section>
@@ -114,7 +119,7 @@ export function App() {
         </header>
 
         <main className="app__main">
-          <MapSurface />
+          <MapSection />
           <DossierPlaceholder />
         </main>
 

@@ -20,6 +20,10 @@ scenario pack it is given.
   `MapView.tsx` (the surface; `MapHandle.flyTo/fitRegion/setDeckLayers` for
   tours, zoom-ins and data layers).
 
-Coming: the data layers (`sand-a55.11`), branches
+- `layers/` — data layers on the deck.gl overlay: `movement.ts`
+  (composeRoutes per branch, positionAt, ghost + TripsLayer trail + tokens +
+  labels), `colors.ts` (design tokens → RGBA per side), `useMovementLayers`.
+
+Coming: branches
 (`sand-a55.13`) and the focus/zoom-in mechanism (`sand-a55.14`), which swaps
 the clock's range for a battle's.
