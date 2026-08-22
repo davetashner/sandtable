@@ -460,4 +460,49 @@ describe('validateContent', () => {
     expect(msgs).toContainEqual(expect.stringMatching(/to 1914:ghost does not exist/));
     expect(msgs).toContainEqual(expect.stringMatching(/idPrefix "1914" is also used by/));
   });
+
+  it('accepts a colorized image that points at its original and refuses one without licence or credit', () => {
+    const raw = fixture();
+    raw.shared.media.push({
+      path: 'shared/media/people/kluck/media.json',
+      data: {
+        id: 'media:person/kluck/portrait-colorized',
+        person: 'person:kluck',
+        file: 'portrait-colorized.png',
+        width: 1070,
+        height: 1470,
+        colorized: true,
+        original: {
+          photographer: 'unknown',
+          date: 'c. 1914',
+          archive: 'Library of Congress, Bain News Service',
+          archive_url: 'https://www.loc.gov/item/2014697553/',
+          licence: 'public domain (no known restrictions)',
+        },
+        colorization: {
+          author: 'Sandtable',
+          method: 'AI-assisted colorization from the public-domain original, 2026',
+          licence: 'Sandtable project licence; underlying photograph public domain',
+          status: 'ok — label colorized (AI-assisted)',
+        },
+        content_policy: 'ok — portrait, no gore',
+        caption:
+          'Alexander von Kluck, c. 1914. Colorized (AI-assisted) from a public-domain photograph.',
+        credit:
+          'Original: Library of Congress, Bain News Service; public domain. Colorization: Sandtable, AI-assisted, 2026.',
+        focal_point: { x: 0.5, y: 0.3 },
+      },
+    });
+    const ok = validateContent(raw);
+    expect(messages(ok)).toEqual([]);
+    expect(ok.content.shared.media.at(-1)?.original.archive_url).toBe('https://www.loc.gov/item/2014697553/');
+
+    (
+      raw.shared.media.at(-1)!.data as { original: { licence?: string }; credit?: string }
+    ).original.licence = '';
+    delete (raw.shared.media.at(-1)!.data as { credit?: string }).credit;
+    const msgs = messages(validateContent(raw));
+    expect(msgs).toContainEqual(expect.stringMatching(/original\.licence/));
+    expect(msgs).toContainEqual(expect.stringMatching(/credit/));
+  });
 });

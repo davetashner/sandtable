@@ -34,6 +34,7 @@ import { Breadcrumb } from './ui/Breadcrumb.js';
 import { Dossier, type CardChipLike } from './ui/Dossier.js';
 import { CausalView } from './ui/CausalView.js';
 import { DocumentCardView } from './ui/DocumentCardView.js';
+import { PersonCardView } from './ui/PersonCardView.js';
 import { MeanwhileFilter } from './ui/MeanwhileFilter.js';
 import { ScienceCardView, SCIENCE_FIELDS } from './ui/ScienceCardView.js';
 import { TechCardView, type EntityLabeller } from './ui/TechCardView.js';
@@ -76,6 +77,7 @@ function useLabeller(): EntityLabeller {
     () => ({
       label(id) {
         return (
+          seed.people.find((p) => p.id === id)?.name ??
           seed.tech.find((t) => t.id === id)?.title ??
           seed.science.find((t) => t.id === id)?.title ??
           seed.documents.find((d) => d.id === id)?.title ??
@@ -87,7 +89,7 @@ function useLabeller(): EntityLabeller {
         );
       },
       open(id, kind: keyof Links) {
-        if (kind === 'tech' || kind === 'science' || kind === 'documents')
+        if (kind === 'tech' || kind === 'science' || kind === 'documents' || kind === 'people')
           return () => controls?.setCard(id);
         if (kind === 'battles') return () => controls?.setFocus(id);
         if (kind === 'events') {
@@ -109,6 +111,7 @@ function useCard():
   | { kind: 'science'; card: (typeof seed.science)[number] }
   | { kind: 'document'; card: (typeof seed.documents)[number] }
   | { kind: 'causal'; card: (typeof seed.links)[number] }
+  | { kind: 'person'; card: (typeof seed.people)[number] }
   | undefined {
   const { card } = useViewState();
   if (!card) return undefined;
@@ -120,6 +123,8 @@ function useCard():
   if (document) return { kind: 'document', card: document };
   const link = seed.links.find((l) => l.id === card);
   if (link) return { kind: 'causal', card: link };
+  const person = seed.people.find((p) => p.id === card);
+  if (person) return { kind: 'person', card: person };
   return undefined;
 }
 
@@ -235,6 +240,7 @@ function DossierSurface() {
     if (!links) return [];
     const out: CardChipLike[] = [];
     for (const [kind, ids] of [
+      ['person', links.people],
       ['tech', links.tech],
       ['science', links.science],
       ['document', links.documents],
@@ -294,6 +300,16 @@ function DossierSurface() {
               doc={card.card}
               sources={seed.sources}
               labeller={labeller}
+              onBack={() => controls?.setCard(undefined)}
+            />
+          ) : card?.kind === 'person' ? (
+            <PersonCardView
+              person={card.card}
+              sources={seed.sources}
+              labeller={labeller}
+              commands={seed.formations
+                .filter((f) => f.commander === card.card.id)
+                .map((f) => ({ id: f.id, label: f.name }))}
               onBack={() => controls?.setCard(undefined)}
             />
           ) : card?.kind === 'causal' ? (

@@ -74,6 +74,7 @@ npm run validate:content # scripts/check-content.sh + the pack validator (docs/c
 npm run schema           # regenerate schema/*.schema.json from src/packs/schema (tests fail if stale)
 npm run borders          # rebuild content/shared/geo/borders/<year>.geojson from historical-basemaps (pinned commit)
 npm run tokens           # regenerate src/styles/tokens.css from src/styles/tokens.ts (docs/design.md; AA contrast tested)
+npm run media            # WebP derivatives + content/shared/media/index.json from media.json manifests; -- --upload syncs to the assets bucket
 npm run build            # tsc -b && vite build → dist/ (bundles under dist/app/)
 npm run format           # Prettier
 ```

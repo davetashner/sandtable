@@ -1,0 +1,901 @@
+{
+  "generatedAt": "2026-08-22",
+  "base": "/assets/media/",
+  "entries": [
+    {
+      "id": "media:person/albert-i-of-belgium/portrait-colorized",
+      "dir": "people/albert-i-of-belgium",
+      "original": {
+        "src": "people/albert-i-of-belgium/portrait-colorized.png",
+        "width": 1129,
+        "height": 1393,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/albert-i-of-belgium/.derived/portrait-colorized.w320.webp",
+          "width": 320,
+          "height": 395,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/albert-i-of-belgium/.derived/portrait-colorized.w640.webp",
+          "width": 640,
+          "height": 790,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/albert-i-of-belgium/.derived/portrait-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1263,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1129,
+      "height": 1393,
+      "caption": "Albert I (1875–1934), King of the Belgians and commander of the Belgian army, who refused the German ultimatum and held Liège, Antwerp and finally the Yser. Photographed in 1917 in the post-1915 khaki uniform and Adrian helmet. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: Richard Neville Speaight, 1917, The World's Work 1919; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — author died 1938; published before 1931",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Albert_I_of_Belgium_(cropped).jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.3
+      },
+      "person": "person:albert-i-of-belgium"
+    },
+    {
+      "id": "media:person/bulow-karl-von/portrait-c1916-colorized",
+      "dir": "people/bulow-karl-von",
+      "original": {
+        "src": "people/bulow-karl-von/portrait-c1916-colorized.png",
+        "width": 1086,
+        "height": 1448,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/bulow-karl-von/.derived/portrait-c1916-colorized.w320.webp",
+          "width": 320,
+          "height": 427,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/bulow-karl-von/.derived/portrait-c1916-colorized.w640.webp",
+          "width": 640,
+          "height": 853,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/bulow-karl-von/.derived/portrait-c1916-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1365,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1086,
+      "height": 1448,
+      "caption": "Karl von Bülow (1846–1921), commander of the German 2nd Army — Liège, Namur, Charleroi, Guise; his call for Kluck to wheel inward and his decision to retreat from the Marne on 9 September, in consultation with Hentsch. Photographed c. 1916 as Generalfeldmarschall. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: Rudolf Dührkoop, c. 1916, Berliner Illustrirte Zeitung; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — photographer died 1918 (life + 70); published before 1931",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Karl_von_B%C3%BClow_c1916.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.2
+      },
+      "person": "person:bulow-karl-von"
+    },
+    {
+      "id": "media:person/castelnau-edouard-de/portrait-colorized",
+      "dir": "people/castelnau-edouard-de",
+      "original": {
+        "src": "people/castelnau-edouard-de/portrait-colorized.png",
+        "width": 1098,
+        "height": 1433,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/castelnau-edouard-de/.derived/portrait-colorized.w320.webp",
+          "width": 320,
+          "height": 418,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/castelnau-edouard-de/.derived/portrait-colorized.w640.webp",
+          "width": 640,
+          "height": 835,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/castelnau-edouard-de/.derived/portrait-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1336,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1098,
+      "height": 1433,
+      "caption": "Édouard de Castelnau (1851–1944), commander of the French 2nd Army — attacked into Lorraine under Plan XVII, was thrown back at Morhange, then held the Grand Couronné before Nancy while the Marne was fought; he lost three sons in the war. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: unknown, c. 1915; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain / CC0 per Commons; weak provenance chain — find the underlying Gallica/Agence Rol print for the pipeline",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_de_Castelnau._No%C3%ABl_%C3%89douard_Marie_Joseph_de_Curi%C3%A8res_de_Castelnau.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.25
+      },
+      "person": "person:castelnau-edouard-de"
+    },
+    {
+      "id": "media:person/churchill-winston/portrait-c1914-colorized",
+      "dir": "people/churchill-winston",
+      "original": {
+        "src": "people/churchill-winston/portrait-c1914-colorized.png",
+        "width": 1085,
+        "height": 1450,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/churchill-winston/.derived/portrait-c1914-colorized.w320.webp",
+          "width": 320,
+          "height": 428,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/churchill-winston/.derived/portrait-c1914-colorized.w640.webp",
+          "width": 640,
+          "height": 855,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/churchill-winston/.derived/portrait-c1914-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1368,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1085,
+      "height": 1450,
+      "caption": "Winston Churchill (1874–1965), First Lord of the Admiralty 1911–1915 — sent the Royal Naval Division to Antwerp in October 1914 and went there himself; a cross-era figure who reappears at Gallipoli, in the interwar years and in 1940. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: agency stringer, 16 Sept 1914; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain in the United States (published before 1931); confirm status outside the US",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Churchill_Admiralty_Uniform_1914.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.3
+      },
+      "person": "person:churchill-winston"
+    },
+    {
+      "id": "media:person/foch-ferdinand/portrait-colorized",
+      "dir": "people/foch-ferdinand",
+      "original": {
+        "src": "people/foch-ferdinand/portrait-colorized.png",
+        "width": 1074,
+        "height": 1465,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/foch-ferdinand/.derived/portrait-colorized.w320.webp",
+          "width": 320,
+          "height": 436,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/foch-ferdinand/.derived/portrait-colorized.w640.webp",
+          "width": 640,
+          "height": 873,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/foch-ferdinand/.derived/portrait-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1397,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1074,
+      "height": 1465,
+      "caption": "Ferdinand Foch (1851–1929), commander of the new 9th Army at the Marne — held the marshes of Saint-Gond against Bülow and Hausen ('my centre is giving way, my right is retreating; situation excellent, I attack'); Supreme Allied Commander in 1918. Colorized (AI-assisted) from a public-domain photograph; the horizon-blue uniform post-dates 1914.",
+      "credit": "Original photograph: Sport & General, Nationaal Archief 158-1095, CC0 (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "CC0 1.0 (Nationaal Archief public-domain dedication)",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Maarschalk_Ferdinand_Foch_(1851-1929),_Bestanddeelnr_158-1095_(cropped).jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.3
+      },
+      "person": "person:foch-ferdinand"
+    },
+    {
+      "id": "media:person/franchet-desperey-louis/portrait-colorized",
+      "dir": "people/franchet-desperey-louis",
+      "original": {
+        "src": "people/franchet-desperey-louis/portrait-colorized.png",
+        "width": 1056,
+        "height": 1490,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/franchet-desperey-louis/.derived/portrait-colorized.w320.webp",
+          "width": 320,
+          "height": 452,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/franchet-desperey-louis/.derived/portrait-colorized.w640.webp",
+          "width": 640,
+          "height": 903,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/franchet-desperey-louis/.derived/portrait-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1445,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1056,
+      "height": 1490,
+      "caption": "Louis Franchet d'Espèrey (1856–1942), 'Desperate Frankie' to the British — led I Corps at Guise, replaced Lanrezac at the head of the 5th Army on 3 September, and drove into the gap beside the BEF at the Marne; commanded the Salonika breakthrough in 1918. Colorized (AI-assisted) from a public-domain photograph; the horizon-blue uniform post-dates 1914.",
+      "credit": "Original photograph: Henri Manuel, BnF Gallica; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — photographer died 1947 (life + 70)",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Franchet_d%27Esperey_-_photo_Henri_Manuel.jpg",
+      "focalPoint": {
+        "x": 0.45,
+        "y": 0.28
+      },
+      "person": "person:franchet-desperey-louis"
+    },
+    {
+      "id": "media:person/french-john/portrait-colorized",
+      "dir": "people/french-john",
+      "original": {
+        "src": "people/french-john/portrait-colorized.png",
+        "width": 1070,
+        "height": 1470,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/french-john/.derived/portrait-colorized.w320.webp",
+          "width": 320,
+          "height": 440,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/french-john/.derived/portrait-colorized.w640.webp",
+          "width": 640,
+          "height": 879,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/french-john/.derived/portrait-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1407,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1070,
+      "height": 1470,
+      "caption": "Field Marshal Sir John French (1852–1925), Commander-in-Chief of the British Expeditionary Force 1914–1915 — Mons, Le Cateau, the retreat, and a reluctant return to the line at the Marne. Colorized (AI-assisted) from a public-domain photograph; uniform colour interpretive.",
+      "credit": "Original photograph: Hainer, Paris, period postcard; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — published before 1 January 1931",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Field_Marshal_Sir_John_French_2.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.3
+      },
+      "person": "person:french-john"
+    },
+    {
+      "id": "media:person/gallieni-joseph/portrait-colorized",
+      "dir": "people/gallieni-joseph",
+      "original": {
+        "src": "people/gallieni-joseph/portrait-colorized.png",
+        "width": 1074,
+        "height": 1465,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/gallieni-joseph/.derived/portrait-colorized.w320.webp",
+          "width": 320,
+          "height": 436,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/gallieni-joseph/.derived/portrait-colorized.w640.webp",
+          "width": 640,
+          "height": 873,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/gallieni-joseph/.derived/portrait-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1397,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1074,
+      "height": 1465,
+      "caption": "Joseph Gallieni (1849–1916), Military Governor of Paris from 26 August 1914 — read the aviators' reports of Kluck's turn and threw the 6th Army at the exposed German flank; the taxis were his. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: Bain News Service, 1910, Library of Congress; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — LoC: no known copyright restrictions; pre-1931; PD Mark 1.0",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Gen._Gallieni_LCCN2014697689_(cropped).jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.28
+      },
+      "person": "person:gallieni-joseph"
+    },
+    {
+      "id": "media:person/hausen-max-von/portrait-colorized",
+      "dir": "people/hausen-max-von",
+      "original": {
+        "src": "people/hausen-max-von/portrait-colorized.png",
+        "width": 1085,
+        "height": 1450,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/hausen-max-von/.derived/portrait-colorized.w320.webp",
+          "width": 320,
+          "height": 428,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/hausen-max-von/.derived/portrait-colorized.w640.webp",
+          "width": 640,
+          "height": 855,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/hausen-max-von/.derived/portrait-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1368,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1085,
+      "height": 1450,
+      "caption": "Max von Hausen (1846–1922), commander of the Saxon 3rd Army — Dinant and the Meuse crossing, the Sambre with Bülow, and the night assault on Foch at the marshes of Saint-Gond; relieved, ill with typhus, after the Marne. Colorized (AI-assisted) from a public-domain photograph (c. 1900, in full dress).",
+      "credit": "Original photograph: Otto Mayer, Dresden, c. 1900, Bildarchiv Austria; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — life + 70 (photographer) / published before 1931",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:MaxHausen.jpg",
+      "focalPoint": {
+        "x": 0.55,
+        "y": 0.25
+      },
+      "person": "person:hausen-max-von"
+    },
+    {
+      "id": "media:person/hentsch-richard/portrait-colorized",
+      "dir": "people/hentsch-richard",
+      "original": {
+        "src": "people/hentsch-richard/portrait-colorized.png",
+        "width": 1048,
+        "height": 1501,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/hentsch-richard/.derived/portrait-colorized.w320.webp",
+          "width": 320,
+          "height": 458,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/hentsch-richard/.derived/portrait-colorized.w640.webp",
+          "width": 640,
+          "height": 917,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/hentsch-richard/.derived/portrait-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1467,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1048,
+      "height": 1501,
+      "caption": "Richard Hentsch (1869–1918), Oberstleutnant of the General Staff — sent by Moltke on 8 September 1914 to tour the army headquarters with authority to order a retreat; his visit to Bülow and Kluck on 8–9 September ended the German advance at the Marne. Photographed in 1918. Colorized (AI-assisted).",
+      "credit": "Original photograph: J. F. R. von Goetz, 1918, Deutsche Digitale Bibliothek, CC-BY 3.0 (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "CC-BY 3.0 DE (attribution: Landesarchiv Baden-Württemberg, HStA Stuttgart M 703 R959N4) and public domain in the US (pre-1931)",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Richard_Hentsch.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.2
+      },
+      "person": "person:hentsch-richard"
+    },
+    {
+      "id": "media:person/joffre-joseph/portrait-colorized",
+      "dir": "people/joffre-joseph",
+      "original": {
+        "src": "people/joffre-joseph/portrait-colorized.png",
+        "width": 1070,
+        "height": 1470,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/joffre-joseph/.derived/portrait-colorized.w320.webp",
+          "width": 320,
+          "height": 440,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/joffre-joseph/.derived/portrait-colorized.w640.webp",
+          "width": 640,
+          "height": 879,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/joffre-joseph/.derived/portrait-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1407,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1070,
+      "height": 1470,
+      "caption": "Joseph Joffre (1852–1931), Commander-in-Chief of the French armies 1914–1916 — author of Plan XVII and of the retreat and counterstroke that won the Marne. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: BnF Gallica, photographer unknown; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain (France; pre-1931)",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Portrait_de_Joseph_Joffre_(cropped)(b).jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.3
+      },
+      "person": "person:joffre-joseph"
+    },
+    {
+      "id": "media:person/kluck-alexander-von/portrait-c1914-colorized",
+      "dir": "people/kluck-alexander-von",
+      "original": {
+        "src": "people/kluck-alexander-von/portrait-c1914-colorized.png",
+        "width": 1092,
+        "height": 1440,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/kluck-alexander-von/.derived/portrait-c1914-colorized.w320.webp",
+          "width": 320,
+          "height": 422,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/kluck-alexander-von/.derived/portrait-c1914-colorized.w640.webp",
+          "width": 640,
+          "height": 844,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/kluck-alexander-von/.derived/portrait-c1914-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1350,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1092,
+      "height": 1440,
+      "caption": "Alexander von Kluck (1846–1934), commander of the German 1st Army — the outer edge of the wheel, who fought the BEF at Mons and Le Cateau and turned southeast short of Paris, opening the gap the Allies struck at the Marne. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: Mayer, Dresden; postcard by Gustav Liersch & Co., Berlin, c. 1914; public domain (via Wikimedia Commons, Wartenberg Trust). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — published before 1 January 1931 (United States)",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Alexander_von_Kluck_(ca._1914).jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.22
+      },
+      "person": "person:kluck-alexander-von"
+    },
+    {
+      "id": "media:person/lanrezac-charles/portrait-colorized",
+      "dir": "people/lanrezac-charles",
+      "original": {
+        "src": "people/lanrezac-charles/portrait-colorized.png",
+        "width": 1023,
+        "height": 1537,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/lanrezac-charles/.derived/portrait-colorized.w320.webp",
+          "width": 320,
+          "height": 481,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/lanrezac-charles/.derived/portrait-colorized.w640.webp",
+          "width": 640,
+          "height": 962,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1023,
+      "height": 1537,
+      "caption": "Charles Lanrezac (1852–1925), commander of the French 5th Army — saw the German wheel coming before Joffre believed it, was mauled at Charleroi, counterattacked at Guise, and was dismissed on 3 September, three days before the Marne. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: anonymous, reproduced in Hanotaux, Histoire illustrée de la guerre de 1914 (1916); public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — anonymous work, copyright expired (US and EU)",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Charles_Lanrezac.gif",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.22
+      },
+      "person": "person:lanrezac-charles"
+    },
+    {
+      "id": "media:person/leman-gerard/portrait-1918-colorized",
+      "dir": "people/leman-gerard",
+      "original": {
+        "src": "people/leman-gerard/portrait-1918-colorized.png",
+        "width": 1074,
+        "height": 1464,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/leman-gerard/.derived/portrait-1918-colorized.w320.webp",
+          "width": 320,
+          "height": 436,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/leman-gerard/.derived/portrait-1918-colorized.w640.webp",
+          "width": 640,
+          "height": 872,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/leman-gerard/.derived/portrait-1918-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1396,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1074,
+      "height": 1464,
+      "caption": "Gérard Leman (1851–1920), commander of the fortified position of Liège — held the ring of forts from 4 August until he was pulled unconscious from the ruins of Fort Loncin on 15 August; the delay cost the German timetable its first days. Colorized (AI-assisted) from a public-domain photograph (1918, after his release from captivity).",
+      "credit": "Original photograph: anonymous, 1918; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — anonymous work published before 1931",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:G%C3%A9rard_Leman_(1918).jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.25
+      },
+      "person": "person:leman-gerard"
+    },
+    {
+      "id": "media:person/ludendorff-erich/portrait-1915-colorized",
+      "dir": "people/ludendorff-erich",
+      "original": {
+        "src": "people/ludendorff-erich/portrait-1915-colorized.png",
+        "width": 1100,
+        "height": 1430,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/ludendorff-erich/.derived/portrait-1915-colorized.w320.webp",
+          "width": 320,
+          "height": 416,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/ludendorff-erich/.derived/portrait-1915-colorized.w640.webp",
+          "width": 640,
+          "height": 832,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/ludendorff-erich/.derived/portrait-1915-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1331,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1100,
+      "height": 1430,
+      "caption": "Erich Ludendorff (1865–1937) — as a staff officer at Liège on 7 August 1914 he drove to the citadel and took its surrender, then went east to Tannenberg as Hindenburg's chief of staff; by 1916 he ran the German war effort. Photographed in 1915. Colorized (AI-assisted).",
+      "credit": "Original photograph: Bundesarchiv, Bild 183-2005-0828-525 / CC-BY-SA 3.0. Colorization: Sandtable, AI-assisted, 2026, CC-BY-SA 3.0 DE.",
+      "licence": "CC-BY-SA 3.0 DE — required attribution: \"Bundesarchiv, Bild 183-2005-0828-525 / CC-BY-SA 3.0\" (the photograph may also be PD by age, but we honour the Bundesarchiv terms)",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-2005-0828-525,_Erich_Ludendorff.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.28
+      },
+      "person": "person:ludendorff-erich"
+    },
+    {
+      "id": "media:person/maunoury-michel-joseph/portrait-colorized",
+      "dir": "people/maunoury-michel-joseph",
+      "original": {
+        "src": "people/maunoury-michel-joseph/portrait-colorized.png",
+        "width": 1093,
+        "height": 1438,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/maunoury-michel-joseph/.derived/portrait-colorized.w320.webp",
+          "width": 320,
+          "height": 421,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/maunoury-michel-joseph/.derived/portrait-colorized.w640.webp",
+          "width": 640,
+          "height": 842,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/maunoury-michel-joseph/.derived/portrait-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1347,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1093,
+      "height": 1438,
+      "caption": "Michel-Joseph Maunoury (1847–1923), recalled from retirement to command the new 6th Army — struck Kluck's exposed flank on the Ourcq on 5–6 September 1914, the blow that opened the Marne; blinded by a bullet in 1915. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: Bain News Service, Library of Congress; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — published before 1931 (LoC Bain: no known restrictions)",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Michel-Joseph_Maunoury.jpg",
+      "focalPoint": {
+        "x": 0.52,
+        "y": 0.3
+      },
+      "person": "person:maunoury-michel-joseph"
+    },
+    {
+      "id": "media:person/moltke-helmuth-von-younger/portrait-1906-colorized",
+      "dir": "people/moltke-helmuth-von-younger",
+      "original": {
+        "src": "people/moltke-helmuth-von-younger/portrait-1906-colorized.png",
+        "width": 1089,
+        "height": 1445,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/moltke-helmuth-von-younger/.derived/portrait-1906-colorized.w320.webp",
+          "width": 320,
+          "height": 425,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/moltke-helmuth-von-younger/.derived/portrait-1906-colorized.w640.webp",
+          "width": 640,
+          "height": 849,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/moltke-helmuth-von-younger/.derived/portrait-1906-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1359,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1089,
+      "height": 1445,
+      "caption": "Helmuth von Moltke the Younger (1848–1916), Chief of the General Staff 1906–1914, who inherited Schlieffen's plan and altered it. Photographed in 1906 on taking office. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: E. Bieber studio, 1906, published in Die Woche; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — published before 1 January 1931; Commons Public Domain Mark 1.0",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Generalleutnant_von_Moltke,_der_neue_Chef_des_Generalstabs,_1906_(cropped).jpg",
+      "focalPoint": {
+        "x": 0.48,
+        "y": 0.26
+      },
+      "person": "person:moltke-helmuth-von-younger"
+    },
+    {
+      "id": "media:person/rupprecht-of-bavaria/portrait-colorized",
+      "dir": "people/rupprecht-of-bavaria",
+      "original": {
+        "src": "people/rupprecht-of-bavaria/portrait-colorized.png",
+        "width": 1085,
+        "height": 1449,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/rupprecht-of-bavaria/.derived/portrait-colorized.w320.webp",
+          "width": 320,
+          "height": 427,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/rupprecht-of-bavaria/.derived/portrait-colorized.w640.webp",
+          "width": 640,
+          "height": 855,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/rupprecht-of-bavaria/.derived/portrait-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1368,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1085,
+      "height": 1449,
+      "caption": "Rupprecht, Crown Prince of Bavaria (1869–1955), commander of the German 6th Army — the hinge at Metz; his counteroffensive in Lorraine (20 Aug) and assault on the Grand Couronné drew the left wing into battle Schlieffen meant it to avoid. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: Bernhard Dittmar, c. 1914, Library of Congress; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — photographer died 1939; published before 1931",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Rupprecht_von_Bayern.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.22
+      },
+      "person": "person:rupprecht-of-bavaria"
+    },
+    {
+      "id": "media:person/schlieffen-alfred-von/portrait-c1906-colorized",
+      "dir": "people/schlieffen-alfred-von",
+      "original": {
+        "src": "people/schlieffen-alfred-von/portrait-c1906-colorized.png",
+        "width": 1058,
+        "height": 1487,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/schlieffen-alfred-von/.derived/portrait-c1906-colorized.w320.webp",
+          "width": 320,
+          "height": 450,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/schlieffen-alfred-von/.derived/portrait-c1906-colorized.w640.webp",
+          "width": 640,
+          "height": 900,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/schlieffen-alfred-von/.derived/portrait-c1906-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1439,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1058,
+      "height": 1487,
+      "caption": "Alfred Graf von Schlieffen (1833–1913), Chief of the German General Staff 1891–1906, author of the December 1905 memorandum. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: public domain (archive to confirm). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — published before 1 January 1931 (Commons: PD in the United States; note the rule-of-the-shorter-term caveat outside the US)",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Alfred_von_Schlieffen_1906.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.28
+      },
+      "person": "person:schlieffen-alfred-von"
+    },
+    {
+      "id": "media:scene/1914-ausflug-nach-paris/railway-wagon-august-1914-colorized",
+      "dir": "scenes/1914-ausflug-nach-paris",
+      "original": {
+        "src": "scenes/1914-ausflug-nach-paris/railway-wagon-august-1914-colorized.png",
+        "width": 1464,
+        "height": 1075,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-ausflug-nach-paris/.derived/railway-wagon-august-1914-colorized.w320.webp",
+          "width": 320,
+          "height": 235,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-ausflug-nach-paris/.derived/railway-wagon-august-1914-colorized.w640.webp",
+          "width": 640,
+          "height": 470,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-ausflug-nach-paris/.derived/railway-wagon-august-1914-colorized.w1024.webp",
+          "width": 1024,
+          "height": 752,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1464,
+      "height": 1075,
+      "caption": "'Excursion to Paris — see you on the Boulevard.' German infantry in a goods wagon of the Alsace-Lorraine railways, August 1914: the mobilization timetable in human form, and the confidence that it would all be over in six weeks. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: anonymous, August 1914, via greatwar.nl and Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — anonymous work, more than 70 years since creation (EU) and published before 1931 (US)",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:German_soldiers_in_a_railroad_car_on_the_way_to_the_front_during_early_World_War_I,_taken_in_1914._Taken_from_greatwar.nl_site.jpg",
+      "focalPoint": {
+        "x": 0.55,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "media:scene/1916-douaumont-officers/haupt-oven-brandis-1916-colorized",
+      "dir": "scenes/1916-douaumont-officers",
+      "original": {
+        "src": "scenes/1916-douaumont-officers/haupt-oven-brandis-1916-colorized.png",
+        "width": 1379,
+        "height": 1141,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "scenes/1916-douaumont-officers/.derived/haupt-oven-brandis-1916-colorized.w320.webp",
+          "width": 320,
+          "height": 265,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1916-douaumont-officers/.derived/haupt-oven-brandis-1916-colorized.w640.webp",
+          "width": 640,
+          "height": 530,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1916-douaumont-officers/.derived/haupt-oven-brandis-1916-colorized.w1024.webp",
+          "width": 1024,
+          "height": 847,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1379,
+      "height": 1141,
+      "caption": "Haupt, von Oven and von Brandis of the 24th Brandenburg Infantry, the officers credited with taking Fort Douaumont on 25 February 1916 — though it was Haupt's company, and Pionier-Sergeant Kunze who climbed in first; Brandis wrote the book and got the fame. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: Die Woche 1918 Nr. 2, August Scherl Verlag; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — life + 70 / published before 1931",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:OffiziereHauptOvenBrandis.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.3
+      }
+    }
+  ]
+}
