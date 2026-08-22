@@ -101,6 +101,7 @@ PR that first cites it (see `docs/authoring.md` §1).
 ## Review
 
 Content PRs are checked against this page by the fact-check workflow
-(`sand-23b.2`): every claim cited, pages where contestable, contested points
+([`docs/fact-check.md`](fact-check.md)); the contested points are listed in
+[`docs/historiography-1914.md`](historiography-1914.md). The reviewer checks: every claim cited, pages where contestable, contested points
 as historiography, documents quoted not paraphrased, Wikipedia only for dates,
 images cited in their manifests.
