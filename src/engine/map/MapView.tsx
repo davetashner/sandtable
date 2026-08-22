@@ -13,10 +13,18 @@ import {
   Map as MapLibreMap,
   NavigationControl,
   ScaleControl,
+  setWorkerUrl,
   type LngLatBoundsLike,
   type StyleSpecification,
 } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
+// MapLibre 6 resolves its worker as `new URL('./maplibre-gl-worker.mjs',
+// import.meta.url)` at runtime, which only works while import.meta.url points
+// into node_modules (dev). In a Vite build that URL becomes /app/maplibre-gl-
+// worker.mjs, which is never emitted — so no worker, no tiles (sand-2fw).
+// `?worker&url` makes Vite bundle the worker (with maplibre-gl-shared) and
+// hand us its real URL to register before the first map is created.
+import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 import { Protocol } from 'pmtiles';
 import { useEffect, useImperativeHandle, useRef, useState, type Ref } from 'react';
 import type { BBox, Camera } from '../../packs/schema/index.js';
@@ -24,12 +32,30 @@ import { BORDERS_SOURCE, bordersLayers, decorateBorders, fetchBorders } from './
 import { buildStyle, detectTheme, type MapTheme } from './style.js';
 import './map.css';
 
-let protocolRegistered = false;
-function ensurePmtilesProtocol() {
-  if (protocolRegistered) return;
+let maplibreConfigured = false;
+/** One-time MapLibre globals: the bundled worker URL and the PMTiles protocol. */
+function ensureMapLibreConfigured() {
+  if (maplibreConfigured) return;
+  setWorkerUrl(maplibreWorkerUrl);
   const protocol = new Protocol();
   addProtocol('pmtiles', protocol.tile);
-  protocolRegistered = true;
+  maplibreConfigured = true;
+}
+
+/**
+ * deck.gl 9.3's `MapboxOverlay` (interleaved) reads the undocumented
+ * `map.transform` to derive the near/far planes each frame; maplibre-gl 6
+ * moved the camera state to `map._camera.transform`, so without this bridge
+ * the overlay throws on every render — no deck layers, and the map's `load`
+ * event never fires (so borders never load either). Remove once
+ * @deck.gl/mapbox supports maplibre-gl 6 (sand-2fw follow-up).
+ */
+function bridgeTransformForDeck(map: MapLibreMap) {
+  if ('transform' in map) return;
+  Object.defineProperty(map, 'transform', {
+    configurable: true,
+    get: () => (map as unknown as { _camera?: { transform?: unknown } })._camera?.transform,
+  });
 }
 
 export interface CameraTarget {
@@ -141,7 +167,7 @@ export function MapView({
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
-    ensurePmtilesProtocol();
+    ensureMapLibreConfigured();
     const style = (styleFor ?? ((t, u) => buildStyle({ theme: t, ...(u ? { tilesUrl: u } : {}) })))(
       activeTheme,
       tilesUrl,
@@ -160,6 +186,7 @@ export function MapView({
     });
     map.addControl(new NavigationControl({ showCompass: false }), 'top-right');
     map.addControl(new ScaleControl({ maxWidth: 120, unit: 'metric' }), 'bottom-left');
+    bridgeTransformForDeck(map);
     const overlay = new MapboxOverlay({ interleaved: true, layers: deckLayers ?? [] });
     map.addControl(overlay);
     mapRef.current = map;

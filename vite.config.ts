@@ -14,6 +14,14 @@ import react from '@vitejs/plugin-react';
  * downloading to run the app.
  */
 const ASSETS_ORIGIN = 'https://sandtable.davetashner.com';
+const assetsProxy = {
+  '/assets': {
+    target: ASSETS_ORIGIN,
+    changeOrigin: true,
+    bypass: (req: { url?: string }) =>
+      req.url && existsSync(join('public', req.url.split('?')[0])) ? req.url : undefined,
+  },
+};
 
 // https://vite.dev/config/ — test options are Vitest's (vitest/config extends Vite's defineConfig)
 export default defineConfig({
@@ -26,16 +34,13 @@ export default defineConfig({
     // nature; the performance budget story (sand-pmz.3) tunes it further.
     chunkSizeWarningLimit: 1800,
   },
-  server: {
-    proxy: {
-      '/assets': {
-        target: ASSETS_ORIGIN,
-        changeOrigin: true,
-        bypass: (req) =>
-          req.url && existsSync(join('public', req.url.split('?')[0])) ? req.url : undefined,
-      },
-    },
-  },
+  // MapLibre's worker is an ES module (it imports maplibre-gl-shared); see
+  // src/engine/map/MapView.tsx for why it is bundled explicitly.
+  worker: { format: 'es' },
+  server: { proxy: assetsProxy },
+  // `vite preview` serves a production build; proxy the same way so the map
+  // can be checked locally exactly as deployed.
+  preview: { proxy: assetsProxy },
   test: {
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
