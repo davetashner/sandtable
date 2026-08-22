@@ -126,6 +126,16 @@ export class HostingStack extends cdk.Stack {
       }),
     });
 
+    // CloudFront forwards the full path; the assets bucket has no /assets prefix.
+    const assetsRewrite = new cloudfront.Function(this, 'AssetsRewrite', {
+      functionName: 'sandtable-assets-rewrite',
+      comment: '/assets/<key> → /<key> on the assets bucket',
+      runtime: cloudfront.FunctionRuntime.JS_2_0,
+      code: cloudfront.FunctionCode.fromFile({
+        filePath: path.join(functionsDir, 'assets-rewrite.js'),
+      }),
+    });
+
     // --------------------------------------------------------- distributions
     const assetsBehavior: cloudfront.BehaviorOptions = {
       origin: origins.S3BucketOrigin.withOriginAccessControl(this.assetsBucket),
@@ -134,6 +144,9 @@ export class HostingStack extends cdk.Stack {
       cachePolicy: cloudfront.CachePolicy.CACHING_OPTIMIZED,
       responseHeadersPolicy: cloudfront.ResponseHeadersPolicy.CORS_ALLOW_ALL_ORIGINS_WITH_PREFLIGHT,
       compress: true,
+      functionAssociations: [
+        { function: assetsRewrite, eventType: cloudfront.FunctionEventType.VIEWER_REQUEST },
+      ],
     };
 
     const securityHeaders = new cloudfront.ResponseHeadersPolicy(this, 'SecurityHeaders', {

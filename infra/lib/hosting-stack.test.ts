@@ -58,6 +58,14 @@ test('two distributions: production host and preview wildcard, both mounting /as
       d.Properties.DistributionConfig.CacheBehaviors.map((b) => b.PathPattern),
       ['/assets/*'],
     );
+    // the /assets/* behaviour strips its prefix before hitting the bucket
+    const assoc = (
+      d.Properties.DistributionConfig.CacheBehaviors[0] as unknown as {
+        FunctionAssociations: { EventType: string }[];
+      }
+    ).FunctionAssociations;
+    assert.equal(assoc.length, 1);
+    assert.equal(assoc[0]!.EventType, 'viewer-request');
   }
 });
 
@@ -73,7 +81,7 @@ test('A and AAAA aliases for the host and the wildcard', () => {
 
 test('CloudFront functions use the 2.0 runtime', () => {
   const t = synth();
-  t.resourceCountIs('AWS::CloudFront::Function', 2);
+  t.resourceCountIs('AWS::CloudFront::Function', 3);
   t.allResourcesProperties('AWS::CloudFront::Function', {
     FunctionConfig: { Runtime: 'cloudfront-js-2.0' },
   });

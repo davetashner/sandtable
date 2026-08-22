@@ -6,16 +6,16 @@ in `us-east-1` (account `205074708100`). Story: `sand-a55.16`.
 
 ## What it creates
 
-| Resource                         | Name / address                                   | Purpose                                          |
-| -------------------------------- | ------------------------------------------------ | ------------------------------------------------ |
-| S3 `sandtable-app-<acct>`        | origin of `sandtable.davetashner.com`            | the built app (`main`)                           |
-| S3 `sandtable-assets-<acct>`     | `/assets/*` on every distribution                | PMTiles, border GeoJSON, media (versioned, CORS) |
-| S3 `sandtable-preview-<acct>`    | origin of `*.sandtable.davetashner.com`          | PR previews, one `pr-<n>/` prefix each           |
-| ACM certificate                  | host + `*.sandtable.davetashner.com`             | DNS-validated in the `davetashner.com` zone      |
-| CloudFront `Distribution`        | `sandtable.davetashner.com`                      | app + `/assets/*`; SPA rewrite function          |
-| CloudFront `PreviewDistribution` | `*.sandtable.davetashner.com`                    | host label → `pr-<n>/` prefix; `/assets/*`       |
-| Route 53 A/AAAA aliases          | host and wildcard                                | point at the two distributions                   |
-| CloudFront Functions             | `functions/spa-rewrite.js`, `preview-rewrite.js` | viewer-request URL rewriting                     |
+| Resource                         | Name / address                                                        | Purpose                                                                     |
+| -------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| S3 `sandtable-app-<acct>`        | origin of `sandtable.davetashner.com`                                 | the built app (`main`)                                                      |
+| S3 `sandtable-assets-<acct>`     | `/assets/*` on every distribution                                     | PMTiles, border GeoJSON, media (versioned, CORS)                            |
+| S3 `sandtable-preview-<acct>`    | origin of `*.sandtable.davetashner.com`                               | PR previews, one `pr-<n>/` prefix each                                      |
+| ACM certificate                  | host + `*.sandtable.davetashner.com`                                  | DNS-validated in the `davetashner.com` zone                                 |
+| CloudFront `Distribution`        | `sandtable.davetashner.com`                                           | app + `/assets/*`; SPA rewrite function                                     |
+| CloudFront `PreviewDistribution` | `*.sandtable.davetashner.com`                                         | host label → `pr-<n>/` prefix; `/assets/*`                                  |
+| Route 53 A/AAAA aliases          | host and wildcard                                                     | point at the two distributions                                              |
+| CloudFront Functions             | `functions/spa-rewrite.js`, `preview-rewrite.js`, `assets-rewrite.js` | viewer-request URL rewriting (SPA fallback; pr-<n> prefix; strip `/assets`) |
 
 All buckets are private (origin access control, TLS-only, public access
 blocked). Bucket names match the deployer IAM policy scope `sandtable-*`.
