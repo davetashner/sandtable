@@ -1,0 +1,55 @@
+name: Infra
+
+# Checks for the CDK stack on pull requests: typecheck, unit tests, synth, and a
+# `cdk diff` against the live stack so reviewers see exactly what would change.
+# Deploys happen from main in deploy.yml.
+
+on:
+  pull_request:
+    paths:
+      - 'infra/**'
+      - '.github/workflows/infra.yml'
+
+permissions:
+  contents: read
+  id-token: write
+
+defaults:
+  run:
+    working-directory: infra
+
+jobs:
+  check:
+    name: infra (synth + diff)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: infra/package-lock.json
+
+      - name: install
+        run: npm ci
+
+      - name: typecheck
+        run: npm run typecheck
+
+      - name: test
+        run: npm test
+
+      - name: synth
+        run: npx cdk synth --quiet
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: cdk diff
+        if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
+        run: |
+          { echo '## cdk diff'; echo '```'; npx cdk diff --ci 2>&1 | tee diff.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
