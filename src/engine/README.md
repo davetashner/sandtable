@@ -15,6 +15,11 @@ scenario pack it is given.
 - `ClockContext.tsx` — React binding: `<ClockProvider range>`, `useClock()`
   (re-renders on ticks), `useClockControls()` (stable), `useViewState()`.
 
-Coming: the map and its data layers (`sand-a55.9`, `sand-a55.11`), branches
+- `map/` — MapLibre GL + PMTiles + deck.gl: `style.ts` (themed Protomaps v4
+  basemap from our own archive), `borders.ts` (historical borders per year),
+  `MapView.tsx` (the surface; `MapHandle.flyTo/fitRegion/setDeckLayers` for
+  tours, zoom-ins and data layers).
+
+Coming: the data layers (`sand-a55.11`), branches
 (`sand-a55.13`) and the focus/zoom-in mechanism (`sand-a55.14`), which swaps
 the clock's range for a battle's.

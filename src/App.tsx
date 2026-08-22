@@ -7,11 +7,15 @@
  * will use is exercised now. Content comes from the bundled seed pack until
  * the lazy loader lands (sand-shn.1).
  */
-import { useMemo } from 'react';
+import { lazy, Suspense, useMemo } from 'react';
 import { ClockProvider, useClock, useViewState } from './engine/ClockContext.js';
 import { labelNow } from './engine/ticks.js';
 import { seed } from './packs/seed.js';
 import { Timeline, type TimelineMarker, type TimelinePhase } from './ui/Timeline.js';
+
+// MapLibre + deck.gl are the heaviest dependencies; load them on demand so the
+// shell, timeline and dossier paint first.
+const MapView = lazy(() => import('./engine/map/MapView.js').then((m) => ({ default: m.MapView })));
 
 const RANGE = {
   start: Date.parse(seed.pack.timeRange.start),
@@ -25,17 +29,18 @@ function useBranch() {
   return known ?? seed.pack.branches.find((b) => b.id === seed.pack.defaultBranch)!;
 }
 
-function MapPlaceholder() {
+function MapSurface() {
   const { now, range } = useClock();
   const label = labelNow(now, range);
   return (
-    <section className="surface surface--map" aria-label="Map">
-      <p className="surface__label">Map</p>
-      <p className="surface__hint">
-        Real geography, period borders, animated armies — engine story <code>sand-a55.9</code>.
-        <br />
-        The map will render <strong>{label.date}</strong>.
-      </p>
+    <section className="surface surface--map">
+      <Suspense fallback={<p className="surface__hint surface__hint--loading">Loading the map…</p>}>
+        <MapView
+          camera={seed.pack.camera}
+          borderYear={seed.pack.borderYear}
+          label={`Map — ${label.date}`}
+        />
+      </Suspense>
     </section>
   );
 }
@@ -109,7 +114,7 @@ export function App() {
         </header>
 
         <main className="app__main">
-          <MapPlaceholder />
+          <MapSurface />
           <DossierPlaceholder />
         </main>
 

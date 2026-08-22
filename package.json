@@ -1,7 +1,7 @@
 {
   "name": "sandtable",
   "version": "0.1.0",
-  "description": "Interactive history simulation \u2014 the Schlieffen Plan and beyond",
+  "description": "Interactive history simulation — the Schlieffen Plan and beyond",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -28,6 +28,12 @@
     "node": ">=22"
   },
   "dependencies": {
+    "@deck.gl/core": "^9.3.10",
+    "@deck.gl/layers": "^9.3.10",
+    "@deck.gl/mapbox": "^9.3.10",
+    "maplibre-gl": "^6.5.0",
+    "pmtiles": "^4.5.0",
+    "protomaps-themes-base": "^4.5.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "yaml": "^2.9.0",

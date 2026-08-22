@@ -53,6 +53,22 @@ must show the political geography of the period (Alsace-Lorraine German in
 - **A full OpenStreetMap planet extract at all zooms.** Tens of GB; the
   per-era regional extracts give the same result for a few hundred MB.
 
+## Implementation note (2026-08-22, `sand-a55.9` / `sand-a55.10`)
+
+- Basemap tiles: a Protomaps planet build (`build.protomaps.com/20260821.pmtiles`,
+  tile schema v4, OpenStreetMap © ODbL) extracted to a Western-Europe archive
+  `western-europe-z10.pmtiles` (bbox −1.5,46 → 10.5,53, z≤10, 181 MB) with
+  `scripts/tiles-extract.sh` and uploaded to the assets bucket; the app reads
+  `/assets/tiles/…` through the `pmtiles://` protocol. Styled by
+  `protomaps-themes-base` v4 with the muted palette in `src/engine/map/style.ts`
+  (replaced by the design-system map style, `sand-neh.2`).
+- Borders: `npm run borders` builds one world file per era year from
+  aourednik/historical-basemaps (GPL-3.0); `content/shared/geo/borders/README.md`
+  lists years, caveats and attribution. Drawn by `src/engine/map/borders.ts`.
+- deck.gl (`MapboxOverlay`, interleaved) is mounted by `MapView` for the data
+  layers of `sand-a55.11`; `MapHandle.flyTo/fitRegion` is the camera API for
+  tours and zoom-ins.
+
 ## Consequences
 
 - Hosting must serve large files with range requests (see 0004 — S3 and

@@ -65,3 +65,8 @@ aws s3 sync content/shared/media s3://sandtable-assets-205074708100/media \
 ```
 
 They are then reachable at `https://sandtable.davetashner.com/assets/media/…`.
+
+Tiles: `scripts/tiles-extract.sh <name> <bbox> <maxzoom>` builds a PMTiles
+extract from the Protomaps planet build and uploads it to `tiles/`; the map
+reads `/assets/tiles/<name>.pmtiles`. Shared geo data (`content/shared/geo/`)
+is synced to `geo/` by the deploy and preview workflows.
