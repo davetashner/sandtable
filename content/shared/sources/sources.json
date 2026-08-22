@@ -136,5 +136,23 @@
     "year": 1996,
     "publisher": "Franz Steiner, Stuttgart",
     "notes": "Text, signatories, genesis and aftermath of the Manifesto of the 93."
+  },
+  {
+    "id": "source:beesly-1982",
+    "kind": "book",
+    "author": "Beesly, Patrick",
+    "title": "Room 40: British Naval Intelligence 1914–1918",
+    "year": 1982,
+    "publisher": "Hamish Hamilton, London",
+    "notes": "The Admiralty's signals-intelligence section from the 1914 codebook captures to the Zimmermann telegram; the forward link from 1914 wireless."
+  },
+  {
+    "id": "source:horne-kramer-2001",
+    "kind": "book",
+    "author": "Horne, John; Kramer, Alan",
+    "title": "German Atrocities, 1914: A History of Denial",
+    "year": 2001,
+    "publisher": "Yale University Press, New Haven",
+    "notes": "The standard study of the August 1914 reprisals in Belgium and France and of the franc-tireur myth; for the Belgian chapter and the historiography notes."
   }
 ]

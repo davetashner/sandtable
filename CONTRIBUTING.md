@@ -60,8 +60,8 @@ reference) first. Then:
 - **No by-war hierarchy** — packs are flat under `content/eras/`, shared
   registries under `content/shared/`, learning paths under `content/threads/`.
 
-Content PRs are reviewed for accuracy as well as form; the fact-check
-checklist is `sand-23b.2`.
+Content PRs are reviewed for accuracy as well as form; the reviewer runs the
+checklist in `docs/fact-check.md`.
 
 ## Engine contributions
 

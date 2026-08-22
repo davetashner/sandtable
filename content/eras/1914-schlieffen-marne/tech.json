@@ -15,9 +15,18 @@
       "people": ["person:moltke-helmuth-von-younger", "person:joffre-joseph"]
     },
     "sources": [
-      { "source": "source:strachan-2001", "note": "mobilization, railways and the supply gap" },
-      { "source": "source:tuchman-1962", "note": "the Kaiser and Moltke, 1 August" },
-      { "source": "source:herwig-2009", "note": "Instruction générale no 2 and the redeployment" }
+      {
+        "source": "source:strachan-2001",
+        "note": "mobilization, railways and the supply gap"
+      },
+      {
+        "source": "source:tuchman-1962",
+        "note": "the Kaiser and Moltke, 1 August"
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "Instruction générale no 2 and the redeployment"
+      }
     ]
   },
   {
@@ -36,8 +45,14 @@
       "people": ["person:leman-gerard", "person:ludendorff-erich"]
     },
     "sources": [
-      { "source": "source:herwig-2009", "note": "Liège, Namur, Maubeuge, Antwerp" },
-      { "source": "source:strachan-2001", "note": "the siege train and the fall of the forts" }
+      {
+        "source": "source:herwig-2009",
+        "note": "Liège, Namur, Maubeuge, Antwerp"
+      },
+      {
+        "source": "source:strachan-2001",
+        "note": "the siege train and the fall of the forts"
+      }
     ]
   },
   {
@@ -61,8 +76,73 @@
       ]
     },
     "sources": [
-      { "source": "source:herwig-2009", "note": "air reports of Kluck's wheel; the gap" },
-      { "source": "source:strachan-2001", "note": "aviation in 1914; Tannenberg" }
+      {
+        "source": "source:herwig-2009",
+        "note": "air reports of Kluck's wheel; the gap"
+      },
+      {
+        "source": "source:strachan-2001",
+        "note": "aviation in 1914; Tannenberg"
+      }
+    ]
+  },
+  {
+    "id": "1914:tech-firepower-1914",
+    "title": "Machine guns, magazine rifles and quick-firing artillery — why 1914 firepower favoured the defender",
+    "field": "machine-guns",
+    "introduced": {
+      "at": "1914-08-22",
+      "label": "The Battle of the Frontiers, 20–23 August 1914"
+    },
+    "summary": "Every army of 1914 carried a bolt-action magazine rifle (Mauser Gewehr 98, Lebel, Lee-Enfield), water-cooled Maxim-type machine guns (the German MG 08, the French Hotchkiss and Saint-Étienne, the British Vickers) and quick-firing field artillery — the French 75 mm above all, firing up to fifteen aimed rounds a minute from a recoil-absorbing carriage. Against infantry attacking in the open, this firepower was decisive: on 22 August 1914 alone, in the Ardennes and on the Sambre, the French army lost about 27,000 dead — the bloodiest day in its history.",
+    "body": "The lesson had been visible in Manchuria in 1904–05 and was drawn by observers from every army; the doctrine of the offensive — the French *offensive à outrance*, Plan XVII's drive into Lorraine and the Ardennes — was written against it anyway.[^herwig-2009] The Frontiers settled the argument in a week: attacks across open ground into unsuppressed rifles, machine guns and shrapnel failed at Morhange, Sarrebourg, Rossignol, Charleroi and Mons, and the British regulars' rapid rifle fire at Mons was taken by some German units for massed machine guns.[^herwig-2009] The German heavy field howitzers (10.5 cm and 15 cm) gave them the edge in any fight that stood still; the French 75 dominated the open field and was helpless against a dug-in enemy on a reverse slope.[^strachan-2001] By October, with the front continuous from the Swiss border to the sea, the only reply the armies had found was the spade — the trench system that the next four years would be spent trying to break.[^strachan-2001]",
+    "counter": "1914:tech-heavy-siege-artillery",
+    "links": {
+      "events": ["1914:event-battle-of-the-frontiers", "1914:event-retreat-to-the-aisne"],
+      "places": ["place:mons", "place:charleroi"]
+    },
+    "sources": [
+      {
+        "source": "source:herwig-2009",
+        "note": "the Frontiers; 22 August casualties; Mons"
+      },
+      {
+        "source": "source:strachan-2001",
+        "note": "doctrine, artillery, the turn to trenches"
+      }
+    ]
+  },
+  {
+    "id": "1914:tech-wireless-signals",
+    "title": "Wireless and signals intelligence — the uncoded Russian radio at Tannenberg",
+    "field": "signals",
+    "introduced": {
+      "at": "1914-08-26",
+      "label": "Russian army orders intercepted in clear, 24–26 August 1914"
+    },
+    "summary": "Field wireless in 1914 was new, scarce and fragile — heavy spark sets on wagons, few trained operators, ranges of a few dozen kilometres — so armies kept using the telegraph and the motorcycle. In East Prussia the Russian First and Second Armies, short of codebooks and cable, transmitted their orders in clear; German stations at Königsberg and elsewhere read them, and Hindenburg, Ludendorff and Hoffmann knew where Samsonov and Rennenkampf were going before they went. The encirclement at Tannenberg (26–30 August) followed.",
+    "body": "The same weeks in the West show the other face of the technology: German army headquarters communicated with Luxembourg by a handful of overloaded wireless links and couriers, and Moltke's distance from the right wing — and the Hentsch mission itself — is partly a communications story.[^herwig-2009] Signals intelligence grew from these accidents into a discipline: within months the British Admiralty's Room 40 was reading German naval traffic with captured codebooks, and in January 1917 it decrypted the Zimmermann telegram that helped bring the United States into the war.[^beesly-1982] The eastern cross-reference (sand-1l0.13) carries the two corps that left the Marne for Tannenberg; Tannenberg itself is the Eastern Front pack (sand-en0.2).",
+    "links": {
+      "people": [
+        "person:ludendorff-erich",
+        "person:moltke-helmuth-von-younger",
+        "person:hentsch-richard"
+      ],
+      "events": ["1914:event-instruction-generale-2"]
+    },
+    "sources": [
+      {
+        "source": "source:strachan-2001",
+        "note": "wireless in 1914; the Russian intercepts; Tannenberg"
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "German command communications in the West"
+      },
+      {
+        "source": "source:beesly-1982",
+        "note": "Room 40 and the Zimmermann telegram"
+      }
     ]
   }
 ]

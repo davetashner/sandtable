@@ -5,6 +5,7 @@ dateLabel: 14–24 August 1914
 from: 1914-08-16T00:00:00Z
 to: 1914-08-25T00:00:00Z
 links:
+  tech: ['1914:tech-firepower-1914']
   science: ['1914:science-freundlich-eclipse', '1914:science-moseley-enlists']
   events: ['1914:event-battle-of-the-frontiers']
   people:

@@ -110,8 +110,10 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
   labelled as such. Packs must pass the validator — the schema (Zod, single
   source of truth for types + JSON Schema) is `src/packs/schema/`, the rules
   are `src/packs/validate/`, the prose is `docs/content-model.md`, the how-to is
-  `docs/authoring.md`, the citation standard is `docs/sources.md`, the 1914 lesson
-  spine every beat must serve is `docs/lesson-1914.md`.
+  `docs/authoring.md`, the citation standard is `docs/sources.md`, the reviewer
+  checklist is `docs/fact-check.md`, the contested points are
+  `docs/historiography-1914.md`, the 1914 lesson spine every beat must serve is
+  `docs/lesson-1914.md`.
 - **Design:** tokens and the war-room identity come from the design-system epic
   (`sand-neh`): `src/styles/tokens.ts` → `npm run tokens` → `tokens.css`, reference
   in `docs/design.md`; don't introduce ad-hoc colours or typefaces.

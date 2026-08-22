@@ -6,7 +6,7 @@ from: 1914-08-25T00:00:00Z
 to: 1914-09-02T00:00:00Z
 branch: 1914:historical
 links:
-  tech: ['1914:tech-railways-mobilization']
+  tech: ['1914:tech-railways-mobilization', '1914:tech-wireless-signals']
   events: ['1914:event-instruction-generale-2', '1914:event-kluck-wheels-south-east']
   people:
     [
