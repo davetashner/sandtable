@@ -7,11 +7,13 @@
   "height": 1487,
   "colorized": true,
   "original": {
-    "description": "Studio portrait of Generalfeldmarschall Alfred Graf von Schlieffen in full dress uniform with Pour le Mérite, Order of the Black Eagle star and the Iron Cross; black-and-white photograph, c. 1906 (he was promoted Generalfeldmarschall on 1 Jan 1911 — date to be confirmed from the archive record).",
-    "photographer": "unknown — to confirm",
-    "archive": "to confirm (likely Bundesarchiv or a Commons-hosted print)",
-    "archive_url": null,
-    "licence": "public domain (author died >70 years ago / published before 1930) — confirm against archive record"
+    "description": "Studio portrait of Generaloberst Alfred Graf von Schlieffen in full dress uniform with Pour le Mérite, Order of the Black Eagle star and the Iron Cross; black-and-white photograph, 1906 — the year he retired as Chief of the General Staff (he was made Generalfeldmarschall in 1911).",
+    "photographer": "Photo studio E. Bieber (Hamburg/Berlin)",
+    "date": "1906",
+    "archive": "Landesarchiv Baden-Württemberg (via Wikimedia Commons)",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Alfred_von_Schlieffen_1906.jpg",
+    "original_dimensions": "996 × 1400",
+    "licence": "public domain — published before 1 January 1931 (Commons: PD in the United States; note the rule-of-the-shorter-term caveat outside the US)"
   },
   "colorization": {
     "author": "Dave Tashner / History Alive",

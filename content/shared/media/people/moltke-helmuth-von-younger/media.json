@@ -1,0 +1,37 @@
+{
+  "$comment": "Provisional manifest — the Media entity schema (history-alive-y0u.2) will formalize these fields.",
+  "id": "media:person/moltke-helmuth-von-younger/portrait-1906-colorized",
+  "person": "person:moltke-helmuth-von-younger",
+  "file": "portrait-1906-colorized.png",
+  "width": 1089,
+  "height": 1445,
+  "colorized": true,
+  "original": {
+    "description": "Generalleutnant Helmuth von Moltke (the Younger) as the newly appointed Chief of the German General Staff, 1906; studio portrait in Prussian general's full dress with orders and aiguillette. Published in Die Woche, 1906.",
+    "photographer": "Photo studio E. Bieber (Hamburg/Berlin)",
+    "date": "1906",
+    "archive": "Wikimedia Commons (scan from Die Woche, 1906)",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Generalleutnant_von_Moltke,_der_neue_Chef_des_Generalstabs,_1906_(cropped).jpg",
+    "uncropped_url": "https://commons.wikimedia.org/wiki/File:Generalleutnant_von_Moltke,_der_neue_Chef_des_Generalstabs,_1906.jpg",
+    "original_dimensions": "768 × 1018 (cropped scan)",
+    "licence": "public domain — published before 1 January 1931; Commons Public Domain Mark 1.0"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization from the public-domain black-and-white original, 2026",
+    "licence": "History Alive project licence; the underlying photograph is public domain",
+    "status": "ok — label as 'colorized (AI-assisted)'; colour is interpretive except where documented (field-grey/blue-grey general's tunic, gold epaulettes and aiguillette)"
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Helmuth von Moltke the Younger (1848–1916), Chief of the General Staff 1906–1914, who inherited Schlieffen's plan and altered it. Photographed in 1906 on taking office. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: E. Bieber studio, 1906, published in Die Woche; public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "1914:prologue-origins",
+    "1914:moltke-changes",
+    "1914:decision-1914-08-25-corps-east",
+    "1914:decision-1914-09-04-directive",
+    "thread:road-to-1914"
+  ],
+  "focal_point": { "x": 0.48, "y": 0.26 },
+  "notes": "Provided by Dave on 2026-08-22. Pairs with the Schlieffen portrait (same studio, same year) — ideal for a side-by-side 'the author and the heir' moment in the prologue."
+}
