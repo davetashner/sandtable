@@ -1,0 +1,45 @@
+[
+  {
+    "id": "1914:document-joffre-order-of-the-day-1914-09-06",
+    "title": "Joffre's order of the day, 6 September 1914",
+    "date": "1914-09-06",
+    "author": "person:joffre-joseph",
+    "kind": "order",
+    "language": "fr",
+    "excerpt": "Au moment où s'engage une bataille d'où dépend le salut du pays, il importe de rappeler à tous que le moment n'est plus de regarder en arrière ; tous les efforts doivent être employés à attaquer et à refouler l'ennemi. Une troupe qui ne peut plus avancer devra, coûte que coûte, garder le terrain conquis et se faire tuer sur place plutôt que de reculer. Dans les circonstances actuelles, aucune défaillance ne peut être tolérée.",
+    "translation": "At the moment when a battle is joined on which the salvation of the country depends, it is important to remind everyone that the time for looking back is over; every effort must be turned to attacking and driving back the enemy. A unit that can no longer advance must, whatever the cost, hold the ground it has won and be killed where it stands rather than retreat. In the present circumstances no failure can be tolerated.",
+    "archive": "Ordre général no 6 bis, G.Q.G., 6 septembre 1914 — printed in the AFGG annexes; widely reproduced",
+    "links": {
+      "events": ["1914:event-battle-of-the-marne"],
+      "battles": ["1914:marne"],
+      "people": ["person:joffre-joseph"]
+    },
+    "sources": [
+      { "source": "source:afgg-1-1", "note": "text of the order in the annex volumes" },
+      { "source": "source:herwig-2009", "note": "context of the 6 September counter-offensive" }
+    ]
+  },
+  {
+    "id": "1914:document-gallieni-proclamation-1914-09-03",
+    "title": "Gallieni's proclamation to the Army and people of Paris, 3 September 1914",
+    "date": "1914-09-03",
+    "author": "person:gallieni-joseph",
+    "kind": "proclamation",
+    "language": "fr",
+    "excerpt": "Armée de Paris, Habitants de Paris, Les membres du Gouvernement de la République ont quitté Paris pour donner une impulsion nouvelle à la défense nationale. J'ai reçu le mandat de défendre Paris contre l'envahisseur. Ce mandat, je le remplirai jusqu'au bout.",
+    "translation": "Army of Paris, inhabitants of Paris: the members of the Government of the Republic have left Paris to give a new impetus to the national defence. I have received the mandate to defend Paris against the invader. That mandate I shall carry out to the end.",
+    "archive": "Poster proclamation, Paris, 3 September 1914 — reproduced in Gallieni's memoirs and in most histories of the Marne",
+    "links": {
+      "events": ["1914:event-kluck-wheels-south-east", "1914:event-battle-of-the-marne"],
+      "places": ["place:paris"],
+      "people": ["person:gallieni-joseph"]
+    },
+    "sources": [
+      {
+        "source": "source:herwig-2009",
+        "note": "Gallieni, the government's departure for Bordeaux, the proclamation"
+      },
+      { "source": "source:tuchman-1962", "note": "the proclamation and its reception" }
+    ]
+  }
+]

@@ -31,7 +31,10 @@
       ]
     },
     "sources": [
-      { "source": "source:herwig-2009", "note": "chapters on the Ourcq, the gap and the Hentsch mission" },
+      {
+        "source": "source:herwig-2009",
+        "note": "chapters on the Ourcq, the gap and the Hentsch mission"
+      },
       { "source": "source:edmonds-1922" },
       { "source": "source:afgg-1-1" }
     ]

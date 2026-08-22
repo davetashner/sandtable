@@ -7,7 +7,17 @@
  * will use is exercised now. Content comes from the bundled seed pack until
  * the lazy loader lands (sand-shn.1).
  */
-import { lazy, Suspense, useEffect, useMemo, useRef } from 'react';
+import {
+  createContext,
+  lazy,
+  Suspense,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from 'react';
 import {
   ClockProvider,
   useClock,
@@ -21,9 +31,12 @@ import { seed } from './packs/seed.js';
 import { BranchToggle } from './ui/BranchToggle.js';
 import { Breadcrumb } from './ui/Breadcrumb.js';
 import { Dossier, type CardChipLike } from './ui/Dossier.js';
+import { DocumentCardView } from './ui/DocumentCardView.js';
+import { MeanwhileFilter } from './ui/MeanwhileFilter.js';
+import { ScienceCardView, SCIENCE_FIELDS } from './ui/ScienceCardView.js';
 import { TechCardView, type EntityLabeller } from './ui/TechCardView.js';
 import { Timeline, type TimelineMarker, type TimelinePhase } from './ui/Timeline.js';
-import type { Links } from './packs/schema/index.js';
+import type { Links, ScienceField } from './packs/schema/index.js';
 
 // MapLibre + deck.gl are the heaviest dependencies; load the whole map surface
 // on demand so the shell, timeline and dossier paint first.
@@ -62,6 +75,8 @@ function useLabeller(): EntityLabeller {
       label(id) {
         return (
           seed.tech.find((t) => t.id === id)?.title ??
+          seed.science.find((t) => t.id === id)?.title ??
+          seed.documents.find((d) => d.id === id)?.title ??
           seed.events.find((e) => e.id === id)?.title ??
           seed.battles.find((b) => b.id === id)?.title ??
           seed.formations.find((f) => f.id === id)?.name ??
@@ -70,7 +85,8 @@ function useLabeller(): EntityLabeller {
         );
       },
       open(id, kind: keyof Links) {
-        if (kind === 'tech') return () => controls?.setCard(id);
+        if (kind === 'tech' || kind === 'science' || kind === 'documents')
+          return () => controls?.setCard(id);
         if (kind === 'battles') return () => controls?.setFocus(id);
         if (kind === 'events') {
           const e = seed.events.find((x) => x.id === id);
@@ -85,10 +101,53 @@ function useLabeller(): EntityLabeller {
   );
 }
 
-/** The tech card the URL's card slot names, if any. */
-function useCard() {
+/** The card the URL's card slot names, if any — tech, science or document. */
+function useCard():
+  | { kind: 'tech'; card: (typeof seed.tech)[number] }
+  | { kind: 'science'; card: (typeof seed.science)[number] }
+  | { kind: 'document'; card: (typeof seed.documents)[number] }
+  | undefined {
   const { card } = useViewState();
-  return card ? seed.tech.find((t) => t.id === card) : undefined;
+  if (!card) return undefined;
+  const tech = seed.tech.find((t) => t.id === card);
+  if (tech) return { kind: 'tech', card: tech };
+  const science = seed.science.find((t) => t.id === card);
+  if (science) return { kind: 'science', card: science };
+  const document = seed.documents.find((d) => d.id === card);
+  if (document) return { kind: 'document', card: document };
+  return undefined;
+}
+
+const MeanwhileCtx = createContext<ReturnType<typeof useMeanwhile> | null>(null);
+function useMeanwhileContext() {
+  const v = useContext(MeanwhileCtx);
+  if (!v) throw new Error('MeanwhileCtx missing');
+  return v;
+}
+function MeanwhileProvider({ children }: { children: ReactNode }) {
+  const value = useMeanwhile();
+  return <MeanwhileCtx.Provider value={value}>{children}</MeanwhileCtx.Provider>;
+}
+
+/** Science fields present in the pack, and which are shown (all, by default). */
+function useMeanwhile() {
+  const available = useMemo(
+    () => SCIENCE_FIELDS.filter((f) => seed.science.some((c) => c.field === f)),
+    [],
+  );
+  const [hidden, setHidden] = useState<ReadonlySet<ScienceField>>(() => new Set());
+  const active = useMemo(
+    () => new Set(available.filter((f) => !hidden.has(f))),
+    [available, hidden],
+  );
+  const toggle = (f: ScienceField) =>
+    setHidden((h) => {
+      const next = new Set(h);
+      if (next.has(f)) next.delete(f);
+      else next.add(f);
+      return next;
+    });
+  return { available, active, toggle };
 }
 
 /**
@@ -158,6 +217,7 @@ function DossierSurface() {
   const branch = useBranch();
   const focus = useFocus();
   const card = useCard();
+  const meanwhile = useMeanwhileContext();
   const controls = useViewStateControls();
   const labeller = useLabeller();
   const { now, range } = useClock();
@@ -169,9 +229,15 @@ function DossierSurface() {
     const links = beat?.links;
     if (!links) return [];
     const out: CardChipLike[] = [];
-    for (const id of links.tech ?? []) {
-      const label = labeller.label(id);
-      if (label) out.push({ id, label, kind: 'tech', onClick: () => controls?.setCard(id) });
+    for (const [kind, ids] of [
+      ['tech', links.tech],
+      ['science', links.science],
+      ['document', links.documents],
+    ] as const) {
+      for (const id of ids ?? []) {
+        const label = labeller.label(id);
+        if (label) out.push({ id, label, kind, onClick: () => controls?.setCard(id) });
+      }
     }
     for (const id of links.battles ?? []) {
       const label = labeller.label(id);
@@ -191,15 +257,34 @@ function DossierSurface() {
         packTitle={focus ? focus.title : seed.pack.title}
         related={related}
         card={
-          card ? (
+          card?.kind === 'tech' ? (
             <TechCardView
-              card={card}
+              card={card.card}
+              sources={seed.sources}
+              labeller={labeller}
+              onBack={() => controls?.setCard(undefined)}
+            />
+          ) : card?.kind === 'science' ? (
+            <ScienceCardView
+              card={card.card}
+              sources={seed.sources}
+              labeller={labeller}
+              onBack={() => controls?.setCard(undefined)}
+            />
+          ) : card?.kind === 'document' ? (
+            <DocumentCardView
+              doc={card.card}
               sources={seed.sources}
               labeller={labeller}
               onBack={() => controls?.setCard(undefined)}
             />
           ) : undefined
         }
+      />
+      <MeanwhileFilter
+        available={meanwhile.available}
+        active={meanwhile.active}
+        onToggle={meanwhile.toggle}
       />
     </div>
   );
@@ -208,6 +293,7 @@ function DossierSurface() {
 function TimelineSurface() {
   const branch = useBranch();
   const focus = useFocus();
+  const meanwhile = useMeanwhileContext();
   const focusId = focus?.id;
   const phases = useMemo<TimelinePhase[]>(
     () =>
@@ -244,8 +330,26 @@ function TimelineSurface() {
             at: Date.parse(t.introduced.at!),
             kind: 'tech' as const,
           }));
-    return [...events, ...tech];
-  }, [branch, focus]);
+    const science: TimelineMarker[] = focus
+      ? []
+      : seed.science
+          .filter((c) => meanwhile.active.has(c.field))
+          .map((c) => ({
+            id: c.id,
+            title: c.title,
+            at: Date.parse(c.at),
+            kind: 'science' as const,
+          }));
+    const documents: TimelineMarker[] = focus
+      ? []
+      : seed.documents.map((d) => ({
+          id: d.id,
+          title: d.title,
+          at: Date.parse(d.date),
+          kind: 'document' as const,
+        }));
+    return [...events, ...tech, ...science, ...documents];
+  }, [branch, focus, meanwhile.active]);
   return (
     <footer className="surface surface--timeline" aria-label="Timeline">
       <Timeline
@@ -253,7 +357,8 @@ function TimelineSurface() {
         phases={phases}
         markers={markers}
         onSelectMarker={(m) => {
-          if (m.kind === 'tech') controls?.setCard(m.id);
+          if (m.kind === 'tech' || m.kind === 'science' || m.kind === 'document')
+            controls?.setCard(m.id);
         }}
       />
     </footer>
@@ -263,26 +368,28 @@ function TimelineSurface() {
 export function App() {
   return (
     <ClockProvider range={RANGE}>
-      <div className="app">
-        <header className="app__header">
-          <div className="app__header-text">
-            <p className="eyebrow">Operational study · Western Front, 1914</p>
-            <h1>Sandtable</h1>
-            <p className="lede">{seed.pack.subtitle ?? seed.pack.title}</p>
-          </div>
-          <BranchToggle branches={seed.pack.branches} defaultBranch={seed.pack.defaultBranch} />
-        </header>
+      <MeanwhileProvider>
+        <div className="app">
+          <header className="app__header">
+            <div className="app__header-text">
+              <p className="eyebrow">Operational study · Western Front, 1914</p>
+              <h1>Sandtable</h1>
+              <p className="lede">{seed.pack.subtitle ?? seed.pack.title}</p>
+            </div>
+            <BranchToggle branches={seed.pack.branches} defaultBranch={seed.pack.defaultBranch} />
+          </header>
 
-        <FocusController />
-        <FocusBar />
+          <FocusController />
+          <FocusBar />
 
-        <main className="app__main">
-          <MapSection />
-          <DossierSurface />
-        </main>
+          <main className="app__main">
+            <MapSection />
+            <DossierSurface />
+          </main>
 
-        <TimelineSurface />
-      </div>
+          <TimelineSurface />
+        </div>
+      </MeanwhileProvider>
     </ClockProvider>
   );
 }

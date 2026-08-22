@@ -1,0 +1,75 @@
+[
+  {
+    "id": "1914:science-freundlich-eclipse",
+    "title": "The eclipse that did not test relativity",
+    "field": "physics",
+    "at": "1914-08-21",
+    "people": [],
+    "summary": "On 21 August 1914 a total eclipse crossed the Crimea. Erwin Freundlich's Berlin expedition had gone there to measure whether starlight bends round the Sun, as Einstein predicted — and was interned as enemy aliens when Germany and Russia went to war three weeks before totality.",
+    "body": "Einstein's 1911 prediction (half the value general relativity would give in 1915) could have been tested — and 'disproved' — that August. War spared the theory an embarrassment and delayed its test until Eddington's expedition of May 1919, which made Einstein famous months after Versailles.[^pais-1982] Freundlich and his instruments were held in Russia and exchanged for Russian officers in September 1914.[^crelinsten-2006] Meanwhile in Berlin, Einstein spent the autumn of 1914 on the flawed 'Entwurf' theory, the last detour before the field equations of November 1915.[^pais-1982]",
+    "connections": [
+      {
+        "to": "General relativity, November 1915 (sand-9u2.2)",
+        "note": "the correct deflection, twice the 1911 value"
+      },
+      {
+        "to": "Eddington's eclipse expedition, 29 May 1919",
+        "note": "the test that finally happened — and made relativity a world story"
+      },
+      { "to": "GPS", "note": "satellite clocks are corrected for general relativity every day" }
+    ],
+    "sources": [
+      {
+        "source": "source:pais-1982",
+        "note": "Einstein 1911–1915; the Entwurf theory; the 1914 expedition"
+      },
+      {
+        "source": "source:crelinsten-2006",
+        "note": "Freundlich's internment and the astronomers' reception of relativity"
+      }
+    ]
+  },
+  {
+    "id": "1914:science-moseley-enlists",
+    "title": "Moseley joins the Royal Engineers",
+    "field": "physics",
+    "at": "1914-08-20",
+    "summary": "Henry Moseley, twenty-six, had just shown that the atomic number — not the atomic weight — orders the elements, from the X-ray spectra of the metals. In August 1914 he left Rutherford's laboratory and the Manchester–Oxford circle to take a commission as a signals officer. He was killed at Gallipoli on 10 August 1915.",
+    "body": "Moseley's law (1913) turned Mendeleev's table from an empirical arrangement into a count of nuclear charge, predicted the missing elements (43, 61, 72, 75), and tied chemistry to Rutherford's nucleus and Bohr's atom.[^heilbron-1974] His death at Suvla Bay is the case usually cited when the war's cost to science is counted; after 1915 Britain kept more of its scientists out of the line.[^heilbron-1974] The card stands for the others who enlisted in August 1914 — among them Lawrence Bragg and the young Göttingen and Cambridge physicists — and for the question of what a year of silence in the laboratories cost.",
+    "connections": [
+      { "to": "Gallipoli, 10 August 1915 (sand-aie.1)", "note": "Moseley's death at Suvla" },
+      { "to": "The periodic table by atomic number", "note": "the modern table follows Moseley" },
+      { "to": "Bohr's atom (1913) and the nucleus", "note": "the quantum atom the law confirmed" }
+    ],
+    "sources": [{ "source": "source:heilbron-1974", "note": "Moseley's law, enlistment and death" }]
+  },
+  {
+    "id": "1914:science-manifesto-of-the-93",
+    "title": "The Manifesto of the Ninety-Three — and Einstein's reply",
+    "field": "ideas-culture",
+    "at": "1914-10-04",
+    "summary": "On 4 October 1914 ninety-three German scholars and artists — Planck, Röntgen, Haber, Ostwald, Klein among the scientists — published 'An die Kulturwelt!', denying German war guilt and the Belgian atrocities and defending the army as the guardian of German culture. Einstein was one of four who signed a counter-manifesto 'to the Europeans' calling for a united Europe; it circulated privately and changed nothing.",
+    "body": "The Manifesto did more damage to German science abroad than any defeat: it made the international scientific community a casualty of the war, and German scientists were excluded from international bodies until the mid-1920s.[^ungern-sternberg-1996] Several signatories later said they had signed without reading it; Planck distanced himself publicly in 1916.[^ungern-sternberg-1996] Einstein's 'Aufruf an die Europäer', drafted by Georg Friedrich Nicolai, gathered four signatures and was not published until 1917 — a first sign of the pacifist public figure he became.[^pais-1982]",
+    "connections": [
+      {
+        "to": "The isolation of German science, 1919–1926",
+        "note": "exclusion from the International Research Council"
+      },
+      {
+        "to": "Einstein's pacifism and public life",
+        "note": "from the counter-manifesto to the 1930s"
+      },
+      {
+        "to": "Fritz Haber and chemical warfare (sand-w9t.8)",
+        "note": "a signatory six months before Second Ypres"
+      }
+    ],
+    "sources": [
+      {
+        "source": "source:ungern-sternberg-1996",
+        "note": "the text, the signatories and the aftermath"
+      },
+      { "source": "source:pais-1982", "note": "Einstein and the counter-manifesto" }
+    ]
+  }
+]

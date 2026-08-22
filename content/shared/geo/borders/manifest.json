@@ -5,12 +5,7 @@
   "upstreamCommit": "62d8f1a03a71f2d3ff17f2d166f7553f256bce68",
   "generatedAt": "2026-08-22",
   "simplification": "mapshaper: snap, simplify 12% keep-shapes (planar), clean, precision 0.001, fields NAME/SUBJECTO/PARTOF/BORDERPRECISION",
-  "fields": [
-    "NAME",
-    "SUBJECTO",
-    "PARTOF",
-    "BORDERPRECISION"
-  ],
+  "fields": ["NAME", "SUBJECTO", "PARTOF", "BORDERPRECISION"],
   "entries": [
     {
       "year": 1870,

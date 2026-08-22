@@ -100,5 +100,41 @@
     "title": "Wikipedia, the free encyclopedia (English)",
     "url": "https://en.wikipedia.org/",
     "notes": "Used only for uncontested biographical dates (birth, death) pending the citation standard in sand-23b.1. Never cite for operational claims."
+  },
+  {
+    "id": "source:pais-1982",
+    "kind": "book",
+    "author": "Pais, Abraham",
+    "title": "'Subtle is the Lord…': The Science and the Life of Albert Einstein",
+    "year": 1982,
+    "publisher": "Oxford University Press, Oxford",
+    "notes": "The standard scientific biography; relativity 1907–1919, the Entwurf theory, the 1914 eclipse expedition, the counter-manifesto."
+  },
+  {
+    "id": "source:crelinsten-2006",
+    "kind": "book",
+    "author": "Crelinsten, Jeffrey",
+    "title": "Einstein's Jury: The Race to Test Relativity",
+    "year": 2006,
+    "publisher": "Princeton University Press, Princeton",
+    "notes": "The astronomers and the eclipse tests 1911–1922, incl. Freundlich's 1914 expedition and internment."
+  },
+  {
+    "id": "source:heilbron-1974",
+    "kind": "book",
+    "author": "Heilbron, J. L.",
+    "title": "H. G. J. Moseley: The Life and Letters of an English Physicist, 1887–1915",
+    "year": 1974,
+    "publisher": "University of California Press, Berkeley",
+    "notes": "Moseley's law, his enlistment in 1914 and death at Gallipoli."
+  },
+  {
+    "id": "source:ungern-sternberg-1996",
+    "kind": "book",
+    "author": "Ungern-Sternberg, Jürgen von; Ungern-Sternberg, Wolfgang von",
+    "title": "Der Aufruf 'An die Kulturwelt!': Das Manifest der 93 und die Anfänge der Kriegspropaganda im Ersten Weltkrieg",
+    "year": 1996,
+    "publisher": "Franz Steiner, Stuttgart",
+    "notes": "Text, signatories, genesis and aftermath of the Manifesto of the 93."
   }
 ]
