@@ -17,3 +17,6 @@ content/shared/media/**/*.tiff
 
 # Agent worktrees (local only)
 .claude/worktrees/
+
+# bd append-only audit log — local, machine-specific; history lives in Dolt
+.beads/interactions.jsonl
