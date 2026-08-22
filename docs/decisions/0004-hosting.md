@@ -62,3 +62,20 @@ merge.
   `content/shared/media/README.md` documents the rule.
 - `bd dolt push` uses the same GitHub remote (`refs/dolt/data`) so the
   backlog travels with the code.
+
+## Identities (created 2026-08-22)
+
+- **IAM role `sandtable-deployer`** (path `/sandtable/`), trusted by the
+  account's GitHub OIDC provider for `repo:davetashner/sandtable:*`
+  (audience `sts.amazonaws.com`); one-hour sessions. Its ARN is the GitHub
+  repository variable `AWS_ROLE_ARN`; `AWS_REGION` is `us-east-1`.
+- **IAM user `sandtable-deployer`** (same path and policy) for manual work
+  from a laptop — media uploads, one-off syncs. Its access key lives only in
+  the local AWS profile `sandtable-deployer`; it is never stored in GitHub.
+- **Managed policy `sandtable-deployer`**: assume the CDK bootstrap roles
+  (`cdk-hnb659fds-*`), read CloudFormation stack outputs, list/get/put/delete
+  objects in buckets named `sandtable-*`, and create CloudFront
+  invalidations. Everything else (bucket creation, distributions, DNS,
+  certificates) is done by CDK through the bootstrap roles, so the policy
+  stays small.
+- The account was already CDK-bootstrapped (v30) in `us-east-1`.
