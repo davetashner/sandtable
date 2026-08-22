@@ -18,7 +18,8 @@
     "validate:content": "bash scripts/check-content.sh && tsx scripts/validate-content.ts",
     "schema": "tsx scripts/generate-schema.ts",
     "borders": "tsx scripts/fetch-borders.ts",
-    "tokens": "tsx scripts/generate-tokens.ts"
+    "tokens": "tsx scripts/generate-tokens.ts",
+    "media": "tsx scripts/media-pipeline.ts"
   },
   "keywords": [],
   "author": "",
@@ -59,6 +60,7 @@
     "jsdom": "^30.0.1",
     "mapshaper": "^0.7.55",
     "prettier": "^3.9.6",
+    "sharp": "^0.34.5",
     "tsx": "^4.23.12",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.67.0",

@@ -12,6 +12,7 @@ import eventsJson from '../../content/eras/1914-schlieffen-marne/events.json';
 import formationsJson from '../../content/eras/1914-schlieffen-marne/formations.json';
 import packJson from '../../content/eras/1914-schlieffen-marne/pack.json';
 import routesJson from '../../content/eras/1914-schlieffen-marne/routes.json';
+import peopleJson from '../../content/shared/people/people.json';
 import placesJson from '../../content/shared/places/places.json';
 import sourcesJson from '../../content/shared/sources/sources.json';
 import techJson from '../../content/eras/1914-schlieffen-marne/tech.json';
@@ -25,6 +26,7 @@ import {
   Event,
   Formation,
   Pack,
+  Person,
   Place,
   Document,
   Route,
@@ -39,6 +41,7 @@ import {
   type Formation as FormationT,
   type NarrativeBeat,
   type Pack as PackT,
+  type Person as PersonT,
   type Place as PlaceT,
   type Route as RouteT,
   type Source as SourceT,
@@ -64,6 +67,8 @@ export interface SeedPack {
   sources: SourceT[];
   /** Shared places registry (content/shared/places). */
   places: PlaceT[];
+  /** Shared people registry (content/shared/people). */
+  people: PersonT[];
   tech: TechCardT[];
   science: ScienceCardT[];
   documents: DocumentT[];
@@ -83,6 +88,7 @@ function loadSeed(): SeedPack {
     .sort((a, b) => Date.parse(a.from) - Date.parse(b.from));
   const sources = Source.array().parse(sourcesJson);
   const places = Place.array().parse(placesJson);
+  const people = Person.array().parse(peopleJson);
   const tech = TechCard.array().parse(techJson);
   const science = ScienceCard.array().parse(scienceJson);
   const documents = Document.array().parse(documentsJson);
@@ -96,6 +102,7 @@ function loadSeed(): SeedPack {
     beats,
     sources,
     places,
+    people,
     tech,
     science,
     documents,

@@ -13,9 +13,12 @@ Photographs, maps and documents referenced by every scenario pack.
   A copy beside the manifest on a developer's machine is a local staging copy
   only; `.gitignore` keeps it out of commits.
 
-The media pipeline (`sand-y0u.3`) uploads originals and derivatives
-from the staging copy to the bucket, generates WebP/AVIF variants, and writes
-the attribution manifest the app renders.
+The media pipeline — `npm run media` (`scripts/media-pipeline.ts`) — makes
+WebP derivatives (320/640/1024 px, in a git-ignored `.derived/` beside the
+original), writes the attribution manifest the app renders (`index.json`,
+tracked), and with `-- --upload` syncs originals and derivatives to the assets
+bucket (`/assets/media/<path>`). `MediaFigure` renders every image with its
+credit, the colorized label and a link to the original (ADR 0007).
 
 ## Layout
 

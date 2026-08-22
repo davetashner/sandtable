@@ -1,0 +1,68 @@
+/* Media figures — ADR 0007: credit, colorized label and original always visible. */
+
+.media {
+  position: relative;
+  margin: 0 0 12px;
+}
+
+.media__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+}
+
+.media--portrait .media__img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.media__label {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--panel) 85%, transparent);
+  border: 1px dashed var(--brass);
+  color: var(--brass);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+}
+
+.media__caption {
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.media__original {
+  color: var(--brass);
+}
+
+.card__portrait {
+  float: right;
+  width: 128px;
+  margin: 0 0 8px 12px;
+}
+
+@media (max-width: 640px) {
+  .card__portrait {
+    float: none;
+    width: 100%;
+    max-width: 240px;
+  }
+}
+
+.card__chip[data-kind='formation']::before {
+  content: '▣';
+  font-family: var(--font-mono);
+  color: var(--brass);
+  margin-right: 5px;
+}
