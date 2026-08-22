@@ -17,7 +17,7 @@
     ],
     "photographer": "unknown (anonymous German war photographer)",
     "date": "August 1914 (presumed, after the declaration of war on France)",
-    "archive": "greatwar.nl (Rob Ruggenberg's collection) via Wikimedia Commons — the underlying print is widely reproduced; trace to a holding archive (Bundesarchiv / BfZ Stuttgart / DHM) for the pipeline",
+    "archive": "greatwar.nl (Rob Ruggenberg's collection) via Wikimedia Commons",
     "archive_url": "https://commons.wikimedia.org/wiki/File:German_soldiers_in_a_railroad_car_on_the_way_to_the_front_during_early_World_War_I,_taken_in_1914._Taken_from_greatwar.nl_site.jpg",
     "source_page": "https://greatwar.nl/germany/fransman.html",
     "original_dimensions": "1024 × 718",
@@ -39,6 +39,9 @@
     "1914:opening-sequence",
     "1914:human-scale-vignettes"
   ],
-  "focal_point": { "x": 0.55, "y": 0.45 },
-  "notes": "Provided by Dave 2026-08-22. Candidate hero for the opening sequence and the railways tech card — the chalked 'Ausflug nach Paris' is the thesis ('a timetable the world fell behind') stated by the men themselves. The wagon's Alsace-Lorraine marking ties it to the annexed provinces and the 1870 prequel."
+  "focal_point": {
+    "x": 0.55,
+    "y": 0.45
+  },
+  "notes": "Provided by Dave 2026-08-22. Candidate hero for the opening sequence and the railways tech card — the chalked 'Ausflug nach Paris' is the thesis ('a timetable the world fell behind') stated by the men themselves. The wagon's Alsace-Lorraine marking ties it to the annexed provinces and the 1870 prequel. The print is widely reproduced; trace the holding archive (German federal or state photo collections) for the pipeline."
 }
