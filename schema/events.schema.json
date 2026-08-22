@@ -1,0 +1,220 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sandtable.davetashner.com/schema/events.schema.json",
+  "title": "Sandtable events",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "at": {
+        "description": "Instant, for point events",
+        "type": "string",
+        "format": "date-time",
+        "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+      },
+      "timeRange": {
+        "description": "Range, for battles, sieges, crises",
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+            "description": "ISO-8601 date-time with offset, e.g. 1914-08-04T08:00:00Z"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+            "description": "ISO-8601 date-time with offset, e.g. 1914-08-04T08:00:00Z"
+          }
+        },
+        "required": [
+          "start",
+          "end"
+        ],
+        "additionalProperties": false
+      },
+      "kind": {
+        "type": "string",
+        "enum": [
+          "battle",
+          "siege",
+          "order",
+          "decision",
+          "political",
+          "diplomatic",
+          "mobilization",
+          "movement",
+          "technology",
+          "science",
+          "phase",
+          "other"
+        ]
+      },
+      "significance": {
+        "default": "minor",
+        "description": "major events appear as timeline ticks",
+        "type": "string",
+        "enum": [
+          "major",
+          "minor"
+        ]
+      },
+      "branch": {
+        "description": "Absent: in every branch; present: only in that branch (the historical one included, for events after a divergence)",
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$"
+      },
+      "place": {
+        "description": "place:<slug>",
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$"
+      },
+      "lngLat": {
+        "description": "Position when there is no Place",
+        "type": "array",
+        "prefixItems": [
+          {
+            "type": "number",
+            "minimum": -180,
+            "maximum": 180
+          },
+          {
+            "type": "number",
+            "minimum": -90,
+            "maximum": 90
+          }
+        ]
+      },
+      "summary": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Markdown"
+      },
+      "links": {
+        "type": "object",
+        "properties": {
+          "people": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+              "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+            }
+          },
+          "formations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+              "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+            }
+          },
+          "places": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+              "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+            }
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+              "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+            }
+          },
+          "battles": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+              "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+            }
+          },
+          "tech": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+              "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+            }
+          },
+          "science": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+              "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+            }
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+              "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+            }
+          },
+          "media": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+              "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "description": "Related entities by id; every id must resolve"
+      },
+      "sources": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+              "description": "Source id, e.g. source:herwig-2009"
+            },
+            "pages": {
+              "description": "Page(s), e.g. \"112–115\" or \"ch. 4\"",
+              "type": "string"
+            },
+            "note": {
+              "description": "What this citation supports",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        "description": "Citations supporting the claims in this entity"
+      }
+    },
+    "required": [
+      "id",
+      "title",
+      "kind",
+      "significance",
+      "summary",
+      "sources"
+    ],
+    "additionalProperties": false
+  }
+}

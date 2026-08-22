@@ -1,0 +1,77 @@
+{
+  "id": "1914:schlieffen-marne",
+  "idPrefix": "1914",
+  "title": "The Schlieffen Plan and the march to the Marne",
+  "subtitle": "A timetable the world fell behind — August–September 1914",
+  "summary": "Germany's war plan staked everything on beating France inside six weeks by a right-wing sweep through Belgium, before Russia could mobilize. This pack follows the five German armies from the Meuse to the Marne, the French Plan XVII offensive that walked into the German left, the British at Mons and Le Cateau, the Great Retreat, Joffre's redeployment by rail, and the counterstroke of 5–12 September that turned the mobile war into the trenches. A hypothetical branch renders Schlieffen's concept — the wheel west of Paris — beside what actually happened.",
+  "timeRange": { "start": "1914-08-02T00:00:00Z", "end": "1914-11-25T00:00:00Z" },
+  "region": [0.0, 47.0, 9.0, 52.0],
+  "borderYear": 1914,
+  "camera": { "center": [4.2, 49.7], "zoom": 6.3 },
+  "sides": [
+    { "id": "de", "name": "German Empire", "short": "Germany", "alliance": "Central Powers" },
+    { "id": "fr", "name": "French Republic", "short": "France", "alliance": "Entente" },
+    { "id": "gb", "name": "British Empire", "short": "Britain", "alliance": "Entente" },
+    { "id": "be", "name": "Kingdom of Belgium", "short": "Belgium", "alliance": "Entente" }
+  ],
+  "branches": [
+    {
+      "id": "1914:historical",
+      "title": "What happened",
+      "kind": "historical",
+      "summary": "The campaign as it was fought: the right wing thinned by detachments, Kluck's wheel inside Paris, the gap, the Marne, the Aisne.",
+      "sources": [{ "source": "source:herwig-2009" }, { "source": "source:strachan-2001" }]
+    },
+    {
+      "id": "1914:schlieffen-concept",
+      "title": "Schlieffen's concept",
+      "kind": "counterfactual",
+      "divergesAt": "1914-08-25T00:00:00Z",
+      "summary": "The sweep as the 1905 memorandum drew it: the right wing keeps its weight, passes west of Paris and wheels south and east to pin the French armies against their own fortress line. A hypothetical, schematic branch — it renders an idea, not an event.",
+      "historiography": "Whether a 'Schlieffen Plan' existed as an operational plan, and whether the sweep was ever physically possible, are contested. Zuber argues the 1905 memorandum was a staff study and that the plan is a post-war construction;[^zuber-2002] Mombauer, Holmes and Foley reply that Moltke inherited and modified a real deployment concept;[^mombauer-2001] Herwig treats the feasibility of the outer wheel — march rates, supply beyond the railheads, the detached corps — as the central question of the campaign.[^herwig-2009]",
+      "feasibility": [
+        {
+          "condition": "The right wing keeps its full weight — no corps detached to East Prussia or masking Antwerp and Maubeuge",
+          "met": false,
+          "note": "Two corps left for East Prussia on 25–26 August; others masked Antwerp, Maubeuge and Givet.",
+          "sources": [{ "source": "source:herwig-2009" }]
+        },
+        {
+          "condition": "Belgian railways are captured intact and the armies are supplied beyond the railheads",
+          "met": false,
+          "note": "Demolitions and the Liège delay kept supply days behind the marching armies.",
+          "sources": [{ "source": "source:herwig-2009" }, { "source": "source:strachan-2001" }]
+        },
+        {
+          "condition": "The 1st Army passes west of Paris rather than wheeling inside it",
+          "met": false,
+          "note": "Kluck turned south-east on 30–31 August to keep touch with Bülow.",
+          "sources": [{ "source": "source:herwig-2009" }]
+        },
+        {
+          "condition": "The French do not redeploy west by rail in time to form a new army at Paris",
+          "met": false,
+          "note": "Joffre's Instruction générale no 2 (25 August) created the 6th Army from troops railed from Lorraine.",
+          "sources": [{ "source": "source:afgg-1-1" }, { "source": "source:herwig-2009" }]
+        }
+      ],
+      "sources": [
+        { "source": "source:zuber-2002" },
+        { "source": "source:mombauer-2001" },
+        { "source": "source:herwig-2009" }
+      ]
+    }
+  ],
+  "defaultBranch": "1914:historical",
+  "status": "seed",
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:tuchman-1962" },
+    { "source": "source:strachan-2001" },
+    { "source": "source:zuber-2002" },
+    { "source": "source:mombauer-2001" },
+    { "source": "source:reichsarchiv-weltkrieg-1" },
+    { "source": "source:edmonds-1922" },
+    { "source": "source:afgg-1-1" }
+  ]
+}

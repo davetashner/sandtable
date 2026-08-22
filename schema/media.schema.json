@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sandtable.davetashner.com/schema/media.schema.json",
+  "title": "Sandtable media",
+  "type": "object",
+  "properties": {
+    "$comment": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+      "description": "media:<kind>/<slug>/<file-stem>"
+    },
+    "person": {
+      "description": "Person depicted, for portraits",
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$"
+    },
+    "file": {
+      "type": "string",
+      "minLength": 1,
+      "description": "File name beside the manifest, stored in the assets bucket"
+    },
+    "width": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    },
+    "height": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    },
+    "colorized": {
+      "type": "boolean"
+    },
+    "original": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "photographer": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "archive": {
+          "type": "string"
+        },
+        "archive_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "uncropped_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "original_dimensions": {
+          "type": "string"
+        },
+        "licence": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "licence"
+      ],
+      "additionalProperties": {}
+    },
+    "colorization": {
+      "type": "object",
+      "properties": {
+        "author": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "licence": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "additionalProperties": {}
+    },
+    "content_policy": {
+      "type": "string",
+      "minLength": 1
+    },
+    "caption": {
+      "type": "string",
+      "minLength": 1
+    },
+    "credit": {
+      "type": "string",
+      "minLength": 1
+    },
+    "used_by": {
+      "description": "Intended placements (beats, events, cards)",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+      }
+    },
+    "focal_point": {
+      "type": "object",
+      "properties": {
+        "x": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "y": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "x",
+        "y"
+      ],
+      "additionalProperties": false
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "file",
+    "width",
+    "height",
+    "colorized",
+    "original",
+    "content_policy",
+    "caption",
+    "credit"
+  ],
+  "additionalProperties": {}
+}

@@ -1,0 +1,87 @@
+[
+  {
+    "id": "1914:route-de-1",
+    "formation": "1914:army-de-1",
+    "waypoints": [
+      [6.08, 50.78, "1914-08-13T06:00:00Z"],
+      [5.25, 50.75, "1914-08-18T12:00:00Z"],
+      [4.35, 50.85, "1914-08-20T12:00:00Z"],
+      [3.95, 50.45, "1914-08-23T12:00:00Z"],
+      [3.54, 50.1, "1914-08-26T12:00:00Z"],
+      [3.05, 49.9, "1914-08-28T12:00:00Z"],
+      [2.9, 49.5, "1914-08-31T12:00:00Z"],
+      [3.4, 49.05, "1914-09-03T12:00:00Z"],
+      [3.08, 48.82, "1914-09-05T12:00:00Z"],
+      [3.0, 49.1, "1914-09-07T12:00:00Z"],
+      [3.1, 49.3, "1914-09-10T12:00:00Z"],
+      [3.33, 49.4, "1914-09-13T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Seed: approximate centre of the army at the dates named in the narrative sources (Aachen assembly, Brussels 20 Aug, Mons 23 Aug, Le Cateau 26 Aug, the wheel south-east 30–31 Aug, across the Marne 3 Sep, the Ourcq 5–9 Sep, the Aisne 13 Sep). To be replaced by daily HQ and corps positions in sand-1l0.2.",
+    "sources": [{ "source": "source:herwig-2009" }, { "source": "source:reichsarchiv-weltkrieg-1" }]
+  },
+  {
+    "id": "1914:route-de-1-schlieffen-concept",
+    "formation": "1914:army-de-1",
+    "branch": "1914:schlieffen-concept",
+    "waypoints": [
+      [2.9, 50.2, "1914-08-26T12:00:00Z"],
+      [2.3, 49.89, "1914-08-30T12:00:00Z"],
+      [1.7, 49.0, "1914-09-03T12:00:00Z"],
+      [1.5, 48.45, "1914-09-07T12:00:00Z"],
+      [2.7, 48.4, "1914-09-11T12:00:00Z"],
+      [4.07, 48.3, "1914-09-15T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Hypothetical. A schematic rendering of the 1905 memorandum's outer wheel — west of Paris, then south and east — at the march rates the historical army actually achieved. It illustrates the concept; it is not a claim about what would have happened (see the branch's feasibility checklist). Refined in sand-1l0.11.",
+    "sources": [{ "source": "source:zuber-2002" }, { "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "1914:route-de-2",
+    "formation": "1914:army-de-2",
+    "waypoints": [
+      [6.0, 50.65, "1914-08-13T06:00:00Z"],
+      [5.57, 50.63, "1914-08-16T12:00:00Z"],
+      [4.7, 50.6, "1914-08-20T12:00:00Z"],
+      [4.44, 50.41, "1914-08-22T12:00:00Z"],
+      [3.63, 49.9, "1914-08-29T12:00:00Z"],
+      [3.96, 49.04, "1914-09-04T12:00:00Z"],
+      [3.54, 48.87, "1914-09-08T12:00:00Z"],
+      [3.9, 49.4, "1914-09-13T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Seed: approximate centre of the army at named dates (Liège 16 Aug, Gembloux 20 Aug, the Sambre at Charleroi 21–23 Aug, Guise 29 Aug, the Marne at Épernay 4 Sep, Montmirail 8 Sep, the Aisne 13 Sep). Replaced in sand-1l0.2.",
+    "sources": [{ "source": "source:herwig-2009" }, { "source": "source:reichsarchiv-weltkrieg-1" }]
+  },
+  {
+    "id": "1914:route-bef",
+    "formation": "1914:bef",
+    "waypoints": [
+      [3.97, 50.28, "1914-08-21T12:00:00Z"],
+      [3.95, 50.45, "1914-08-23T12:00:00Z"],
+      [3.54, 50.1, "1914-08-26T12:00:00Z"],
+      [2.9, 49.5, "1914-08-30T12:00:00Z"],
+      [2.7, 48.87, "1914-09-03T12:00:00Z"],
+      [2.77, 48.74, "1914-09-05T12:00:00Z"],
+      [3.13, 48.95, "1914-09-09T12:00:00Z"],
+      [3.4, 49.4, "1914-09-13T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Seed: approximate centre of the BEF at named dates (concentration about Maubeuge 21 Aug, Mons 23 Aug, Le Cateau 26 Aug, Compiègne 30–31 Aug, across the Marne 3 Sep, the southernmost point near Tournan 5 Sep, the Marne recrossed at La Ferté-sous-Jouarre 9 Sep, the Aisne 13 Sep). Replaced in sand-1l0.2.",
+    "sources": [{ "source": "source:edmonds-1922" }]
+  },
+  {
+    "id": "1914:route-fr-6",
+    "formation": "1914:army-fr-6",
+    "waypoints": [
+      [2.3, 49.89, "1914-08-27T12:00:00Z"],
+      [2.45, 48.95, "1914-09-01T12:00:00Z"],
+      [2.88, 48.96, "1914-09-05T06:00:00Z"],
+      [3.0, 49.05, "1914-09-08T12:00:00Z"],
+      [3.2, 49.4, "1914-09-13T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Seed: approximate centre of the army at named dates (forming about Amiens 26–27 Aug, withdrawn to the Paris camp 1 Sep, advancing on Meaux and the Ourcq 5 Sep, the Ourcq 6–9 Sep, the Aisne 13 Sep). Replaced in sand-1l0.2.",
+    "sources": [{ "source": "source:afgg-1-1" }, { "source": "source:herwig-2009" }]
+  }
+]

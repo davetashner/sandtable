@@ -1,0 +1,98 @@
+[
+  {
+    "id": "place:liege",
+    "name": "Liège",
+    "names": [
+      { "name": "Lüttich", "language": "de", "kind": "translation" },
+      { "name": "Luik", "language": "nl", "kind": "translation" }
+    ],
+    "kind": "fortress",
+    "lngLat": [5.573, 50.633],
+    "country": "Belgium",
+    "notes": "Ring of twelve Brialmont forts around the Meuse crossings; the gateway of the German right wing.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:namur",
+    "name": "Namur",
+    "names": [{ "name": "Namen", "language": "nl", "kind": "translation" }],
+    "kind": "fortress",
+    "lngLat": [4.867, 50.467],
+    "country": "Belgium",
+    "notes": "Nine-fort ring at the Sambre–Meuse confluence; fell 21–25 August 1914.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:brussels",
+    "name": "Brussels",
+    "names": [
+      { "name": "Bruxelles", "language": "fr", "kind": "translation" },
+      { "name": "Brussel", "language": "nl", "kind": "translation" }
+    ],
+    "kind": "city",
+    "lngLat": [4.351, 50.847],
+    "country": "Belgium",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:mons",
+    "name": "Mons",
+    "names": [{ "name": "Bergen", "language": "nl", "kind": "translation" }],
+    "kind": "town",
+    "lngLat": [3.952, 50.454],
+    "country": "Belgium",
+    "sources": [{ "source": "source:edmonds-1922" }]
+  },
+  {
+    "id": "place:le-cateau",
+    "name": "Le Cateau",
+    "names": [{ "name": "Le Cateau-Cambrésis", "kind": "modern" }],
+    "kind": "town",
+    "lngLat": [3.543, 50.104],
+    "country": "France",
+    "sources": [{ "source": "source:edmonds-1922" }]
+  },
+  {
+    "id": "place:paris",
+    "name": "Paris",
+    "kind": "city",
+    "lngLat": [2.352, 48.857],
+    "country": "France",
+    "notes": "Fortified camp of Paris; the pivot the plan turned around — or, in the concept, outside.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:meaux",
+    "name": "Meaux",
+    "kind": "town",
+    "lngLat": [2.879, 48.96],
+    "country": "France",
+    "notes": "On the Marne east of Paris; Maunoury's attack toward the Ourcq opened here on 5 September 1914.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:soissons",
+    "name": "Soissons",
+    "kind": "town",
+    "lngLat": [3.323, 49.382],
+    "country": "France",
+    "notes": "On the Aisne; the German right wing dug in north of it from 13 September 1914.",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:compiegne",
+    "name": "Compiègne",
+    "kind": "town",
+    "lngLat": [2.826, 49.418],
+    "country": "France",
+    "sources": [{ "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "place:amiens",
+    "name": "Amiens",
+    "kind": "city",
+    "lngLat": [2.296, 49.894],
+    "country": "France",
+    "sources": [{ "source": "source:herwig-2009" }]
+  }
+]

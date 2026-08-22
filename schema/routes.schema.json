@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sandtable.davetashner.com/schema/routes.schema.json",
+  "title": "Sandtable routes",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+      },
+      "formation": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+      },
+      "branch": {
+        "description": "Absent: the historical/default route. Present: a counterfactual continuation — its waypoints must start at or after the branch divergesAt and are appended to the default route’s earlier waypoints",
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$"
+      },
+      "waypoints": {
+        "minItems": 2,
+        "type": "array",
+        "items": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number",
+              "minimum": -180,
+              "maximum": 180
+            },
+            {
+              "type": "number",
+              "minimum": -90,
+              "maximum": 90
+            },
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+              "description": "ISO-8601 date-time with offset, e.g. 1914-08-04T08:00:00Z"
+            }
+          ],
+          "description": "[lng, lat, ISO time]"
+        },
+        "description": "Strictly increasing in time"
+      },
+      "confidence": {
+        "default": "medium",
+        "type": "string",
+        "enum": [
+          "high",
+          "medium",
+          "low",
+          "contested"
+        ],
+        "description": "high: documented; medium: inferred from sources; low: approximate; contested: historians disagree"
+      },
+      "derivation": {
+        "description": "How positions were derived (HQ locations, corps centres, …)",
+        "type": "string"
+      },
+      "notes": {
+        "type": "string"
+      },
+      "sources": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+              "description": "Source id, e.g. source:herwig-2009"
+            },
+            "pages": {
+              "description": "Page(s), e.g. \"112–115\" or \"ch. 4\"",
+              "type": "string"
+            },
+            "note": {
+              "description": "What this citation supports",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        "description": "Citations supporting the claims in this entity"
+      }
+    },
+    "required": [
+      "id",
+      "formation",
+      "waypoints",
+      "confidence",
+      "sources"
+    ],
+    "additionalProperties": false
+  }
+}

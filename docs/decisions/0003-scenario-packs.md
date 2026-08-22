@@ -70,6 +70,15 @@ Media · NarrativeBeat (time range × branch × focus → Markdown with citation
   couples content to the React runtime and breaks the "engine-agnostic data"
   rule. Beats stay plain Markdown with a small set of directives.
 
+## Implementation note (2026-08-22, `sand-a55.7`)
+
+The schema is authored in Zod (`src/packs/schema/`); the TypeScript types are
+inferred from it and the JSON Schema under `schema/` is generated from it —
+one source of truth rather than "JSON Schema generated from TypeScript types"
+as written above. Same intent, fewer moving parts. Rules the schema cannot
+express live in the validator (`src/packs/validate/`); see
+`docs/content-model.md`.
+
 ## Consequences
 
 - Phase 0 ships the schema, validator CLI and authoring guide before content

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sandtable.davetashner.com/schema/links.schema.json",
+  "title": "Sandtable links",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+      },
+      "from": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "Cause — any entity id, in this pack or another"
+      },
+      "to": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "Consequence — any entity id, in this pack or another"
+      },
+      "relation": {
+        "type": "string",
+        "enum": [
+          "caused",
+          "enabled",
+          "accelerated",
+          "prevented",
+          "motivated",
+          "shaped",
+          "other"
+        ]
+      },
+      "claim": {
+        "type": "string",
+        "minLength": 1,
+        "description": "\"This led to that because …\""
+      },
+      "confidence": {
+        "type": "string",
+        "enum": [
+          "high",
+          "medium",
+          "low",
+          "contested"
+        ],
+        "description": "high: documented; medium: inferred from sources; low: approximate; contested: historians disagree"
+      },
+      "historiography": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Markdown"
+      },
+      "evidence": {
+        "minItems": 1,
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+              "description": "Source id, e.g. source:herwig-2009"
+            },
+            "pages": {
+              "description": "Page(s), e.g. \"112–115\" or \"ch. 4\"",
+              "type": "string"
+            },
+            "note": {
+              "description": "What this citation supports",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "id",
+      "from",
+      "to",
+      "relation",
+      "claim",
+      "confidence",
+      "evidence"
+    ],
+    "additionalProperties": false
+  }
+}

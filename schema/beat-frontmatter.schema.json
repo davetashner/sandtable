@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sandtable.davetashner.com/schema/beat-frontmatter.schema.json",
+  "title": "Sandtable beat-frontmatter",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+      "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dateLabel": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human date shown in the dossier: \"4–9 August 1914\" or \"Hypothetical, ~day 26\""
+    },
+    "from": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+      "description": "ISO-8601 date-time with offset, e.g. 1914-08-04T08:00:00Z"
+    },
+    "to": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+      "description": "ISO-8601 date-time with offset, e.g. 1914-08-04T08:00:00Z"
+    },
+    "branch": {
+      "description": "Absent: shown in every branch; present: only in that branch (use the historical branch id for beats after a divergence)",
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$"
+    },
+    "focus": {
+      "description": "Battle id when the beat belongs to a zoom-in",
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$"
+    },
+    "pullQuote": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "attribution": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "text",
+        "attribution"
+      ],
+      "additionalProperties": false
+    },
+    "media": {
+      "description": "Hero image",
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$"
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "people": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+            "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+          }
+        },
+        "formations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+            "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+          }
+        },
+        "places": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+            "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+          }
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+            "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+          }
+        },
+        "battles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+            "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+          }
+        },
+        "tech": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+            "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+          }
+        },
+        "science": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+            "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+          }
+        },
+        "documents": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+            "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+          }
+        },
+        "media": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+            "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "description": "Related entities by id; every id must resolve"
+    },
+    "sources": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+            "description": "Source id, e.g. source:herwig-2009"
+          },
+          "pages": {
+            "description": "Page(s), e.g. \"112–115\" or \"ch. 4\"",
+            "type": "string"
+          },
+          "note": {
+            "description": "What this citation supports",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "dateLabel",
+    "from",
+    "to",
+    "sources"
+  ],
+  "additionalProperties": false
+}
