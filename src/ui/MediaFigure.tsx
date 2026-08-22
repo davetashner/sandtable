@@ -1,7 +1,8 @@
 /**
  * An image from the media index with everything ADR 0007 requires visible:
  * the caption, the credit line, a "colorized (AI-assisted)" label when it
- * applies, and a link to the unaltered original. Responsive via srcset from
+ * applies (in the caption, never over the picture — sand-akw), and a link to
+ * the unaltered original. Responsive via srcset from
  * the WebP derivatives; falls back to the original file.
  */
 import type { MediaIndexEntry } from '../packs/media-index.js';
@@ -45,12 +46,15 @@ export function MediaFigure({
         decoding="async"
         style={{ objectPosition: position }}
       />
-      {entry.colorized && (
-        <span className="media__label" title="Colour is an interpretation; only colour was changed">
-          Colorized (AI-assisted)
-        </span>
-      )}
       <figcaption className="media__caption">
+        {entry.colorized && (
+          <span
+            className="media__label"
+            title="Colour is an interpretation; only colour was changed"
+          >
+            Colorized (AI-assisted)
+          </span>
+        )}
         <span className="media__credit">{entry.credit}</span>
         {entry.originalUrl && (
           <>
