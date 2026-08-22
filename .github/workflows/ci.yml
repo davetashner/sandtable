@@ -1,0 +1,101 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: actionlint (workflow files)
+        run: |
+          docker run --rm -v "$PWD":/repo --workdir /repo rhysd/actionlint:latest -color
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: markdownlint
+        run: npx --yes markdownlint-cli2 "**/*.md" "#node_modules" "#.claude" "#poc"
+
+      - name: content checks (JSON + media manifests)
+        run: bash scripts/check-content.sh
+
+  security:
+    name: security
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write # dependency-review comments on PRs
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # gitleaks scans history
+
+      - name: gitleaks (secrets)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: dependency review
+        if: github.event_name == 'pull_request'
+        uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: high
+          comment-summary-in-pr: on-failure
+
+  web:
+    # Activates automatically once the app scaffold (package.json) lands.
+    # Until then every step is skipped and the job reports success, so it can
+    # be a required check from day one.
+    name: web
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: detect app
+        id: app
+        run: |
+          if [ -f package.json ]; then echo "present=true" >> "$GITHUB_OUTPUT"; else echo "present=false" >> "$GITHUB_OUTPUT"; echo "No package.json yet — web checks skipped."; fi
+
+      - uses: actions/setup-node@v4
+        if: steps.app.outputs.present == 'true'
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: install
+        if: steps.app.outputs.present == 'true'
+        run: npm ci
+
+      - name: lint
+        if: steps.app.outputs.present == 'true'
+        run: npm run lint --if-present
+
+      - name: typecheck
+        if: steps.app.outputs.present == 'true'
+        run: npm run typecheck --if-present
+
+      - name: test
+        if: steps.app.outputs.present == 'true'
+        run: npm test --if-present -- --run
+
+      - name: validate content packs
+        if: steps.app.outputs.present == 'true'
+        run: npm run validate:content --if-present
+
+      - name: build
+        if: steps.app.outputs.present == 'true'
+        run: npm run build --if-present

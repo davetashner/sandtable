@@ -1,0 +1,13 @@
+# markdownlint-cli2 configuration
+config:
+  default: true
+  MD013: false   # line length — prose and tables are allowed to run long
+  MD033: false   # inline HTML — used for comments in templates
+  MD041: false   # first line need not be a top-level heading (templates, READMEs with frontmatter)
+  MD024:
+    siblings_only: true   # repeated headings allowed in different sections (ADR template)
+ignores:
+  - node_modules/**
+  - .claude/**
+  - poc/**
+  - "**/CHANGELOG.md"
