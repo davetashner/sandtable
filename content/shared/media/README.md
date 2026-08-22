@@ -26,7 +26,7 @@ media/
   documents/<slug>/       scans of orders, memoranda, maps   (future)
 ```
 
-## Rules (from the imagery policy, `sand-y0u.1`)
+## Rules (from the imagery policy, [ADR 0007](../../../docs/decisions/0007-imagery.md))
 
 - Open-licence or public-domain originals only; archive, photographer, date and
   licence recorded per image. Bundesarchiv images are CC-BY-SA — the credit
