@@ -22,6 +22,9 @@ export default defineConfig({
     target: 'es2022',
     sourcemap: true,
     assetsDir: 'app',
+    // The map chunk (maplibre-gl + deck.gl, lazy-loaded by App) is large by
+    // nature; the performance budget story (sand-pmz.3) tunes it further.
+    chunkSizeWarningLimit: 1800,
   },
   server: {
     proxy: {

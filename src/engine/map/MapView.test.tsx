@@ -1,0 +1,142 @@
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { act, render, screen } from '@testing-library/react';
+import { createRef } from 'react';
+
+// jsdom has no WebGL: stub maplibre and the deck overlay, keep the rest real.
+const maps: FakeMap[] = [];
+class FakeMap {
+  handlers = new Map<string, (() => void)[]>();
+  layers: { id: string; type: string }[] = [];
+  sources = new Map<string, unknown>();
+  controls: unknown[] = [];
+  flyTo = vi.fn();
+  jumpTo = vi.fn();
+  fitBounds = vi.fn();
+  setStyle = vi.fn();
+  remove = vi.fn();
+  constructor(public opts: Record<string, unknown>) {
+    maps.push(this);
+  }
+  addControl(c: unknown) {
+    this.controls.push(c);
+  }
+  once(ev: string, fn: () => void) {
+    this.handlers.set(ev, [...(this.handlers.get(ev) ?? []), fn]);
+  }
+  fire(ev: string) {
+    for (const fn of this.handlers.get(ev) ?? []) fn();
+    this.handlers.delete(ev);
+  }
+  getSource(id: string) {
+    return this.sources.get(id);
+  }
+  addSource(id: string, src: unknown) {
+    this.sources.set(id, src);
+  }
+  removeSource(id: string) {
+    this.sources.delete(id);
+  }
+  getLayer(id: string) {
+    return this.layers.find((l) => l.id === id);
+  }
+  addLayer(l: { id: string; type: string }) {
+    this.layers.push(l);
+  }
+  removeLayer(id: string) {
+    this.layers = this.layers.filter((l) => l.id !== id);
+  }
+  getStyle() {
+    return {
+      layers: [
+        { id: 'water', type: 'fill' },
+        { id: 'places', type: 'symbol' },
+      ],
+    };
+  }
+}
+vi.mock('maplibre-gl', () => ({
+  Map: FakeMap,
+  NavigationControl: class {},
+  ScaleControl: class {},
+  addProtocol: vi.fn(),
+}));
+vi.mock('maplibre-gl/dist/maplibre-gl.css', () => ({}));
+vi.mock('@deck.gl/mapbox', () => ({
+  MapboxOverlay: class {
+    props: unknown;
+    constructor(p: unknown) {
+      this.props = p;
+    }
+    setProps = vi.fn();
+  },
+}));
+vi.mock('pmtiles', () => ({
+  Protocol: class {
+    tile = vi.fn();
+  },
+}));
+
+import type { MapHandle as Handle } from './MapView.js';
+
+const { MapView } = await import('./MapView.js');
+
+describe('<MapView>', () => {
+  beforeEach(() => {
+    maps.length = 0;
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => ({
+        ok: true,
+        json: async () => ({
+          type: 'FeatureCollection',
+          attribution: 'test',
+          features: [{ type: 'Feature', properties: { NAME: 'X', SUBJECTO: 'X' } }],
+        }),
+      })),
+    );
+  });
+
+  it('mounts with the camera, loads borders after style load, and exposes the camera API', async () => {
+    const ref = createRef<Handle>();
+    const onReady = vi.fn();
+    render(
+      <MapView
+        ref={ref}
+        camera={{ center: [4.2, 49.7], zoom: 6.3 }}
+        borderYear={1914}
+        theme="light"
+        onReady={onReady}
+        styleFor={() => ({ version: 8, sources: {}, layers: [] })}
+      />,
+    );
+    expect(screen.getByRole('region', { name: 'Map' })).toBeInTheDocument();
+    const map = maps[0]!;
+    expect(map.opts['center']).toEqual([4.2, 49.7]);
+    expect(map.opts['zoom']).toBe(6.3);
+
+    await act(async () => {
+      map.fire('load');
+      await Promise.resolve();
+      await Promise.resolve();
+    });
+    expect(onReady).toHaveBeenCalledTimes(1);
+    expect(fetch).toHaveBeenCalledWith('/assets/geo/borders/1914.geojson');
+    await vi.waitFor(() => expect(map.getSource('borders')).toBeDefined());
+    expect(map.layers.map((l) => l.id)).toEqual(['borders-fill', 'borders-line', 'borders-label']);
+
+    ref.current!.flyTo({ center: [2.35, 48.86], zoom: 9 });
+    expect(map.flyTo).toHaveBeenCalledWith(
+      expect.objectContaining({ center: [2.35, 48.86], zoom: 9 }),
+    );
+    ref.current!.flyTo({ zoom: 5, duration: 0 });
+    expect(map.jumpTo).toHaveBeenCalled();
+    ref.current!.fitRegion([0, 47, 9, 52]);
+    expect(map.fitBounds).toHaveBeenCalledWith(
+      [
+        [0, 47],
+        [9, 52],
+      ],
+      expect.objectContaining({ padding: 40 }),
+    );
+  });
+});

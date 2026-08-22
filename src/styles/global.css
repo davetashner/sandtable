@@ -92,6 +92,9 @@ h1 {
 
 .surface--map {
   background: var(--sea);
+  padding: 0;
+  min-height: 480px;
+  display: grid;
 }
 
 .surface__label {
@@ -107,6 +110,10 @@ h1 {
   margin: 0;
   font-size: 13.5px;
   color: var(--muted);
+}
+
+.surface__hint--loading {
+  padding: 16px 17px;
 }
 
 .surface__hint code {
