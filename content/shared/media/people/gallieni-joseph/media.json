@@ -1,0 +1,37 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "id": "media:person/gallieni-joseph/portrait-colorized",
+  "person": "person:gallieni-joseph",
+  "file": "portrait-colorized.png",
+  "width": 1074,
+  "height": 1465,
+  "colorized": true,
+  "original": {
+    "description": "Portrait of General Joseph Gallieni in the frogged dolman of a French general with képi, pince-nez, colonial campaign medals (Tonkin, Madagascar) and the plaque of the Légion d'honneur, 1910.",
+    "photographer": "Bain News Service (publisher)",
+    "date": "1910",
+    "archive": "Library of Congress, George Grantham Bain Collection — LCCN 2014697689, digital ID ggbain.17427",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Gen._Gallieni_LCCN2014697689_(cropped).jpg",
+    "catalog_url": "https://lccn.loc.gov/2014697689",
+    "original_dimensions": "3700 × 5200 (glass negative scan)",
+    "licence": "public domain — LoC: no known copyright restrictions; pre-1931; PD Mark 1.0"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "History Alive project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: dark-blue dolman with black frogging, gold képi embroidery, red Légion d'honneur ribbon"
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Joseph Gallieni (1849–1916), Military Governor of Paris from 26 August 1914 — read the aviators' reports of Kluck's turn and threw the 6th Army at the exposed German flank; the taxis were his. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: Bain News Service, 1910, Library of Congress; public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "1914:marne",
+    "1914:decision-1914-09-04-directive",
+    "1914:tech-aerial-reconnaissance",
+    "1914:tech-motor-transport-taxis",
+    "1914:vignette-taxis"
+  ],
+  "focal_point": { "x": 0.5, "y": 0.28 },
+  "notes": "Provided by Dave 2026-08-22. Excellent archive provenance (LoC glass negative, 3700 × 5200) — a good candidate for the 'show original' demonstration."
+}

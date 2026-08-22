@@ -1,0 +1,37 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "id": "media:person/bulow-karl-von/portrait-c1916-colorized",
+  "person": "person:bulow-karl-von",
+  "file": "portrait-c1916-colorized.png",
+  "width": 1086,
+  "height": 1448,
+  "colorized": true,
+  "original": {
+    "description": "Three-quarter-length portrait of Generalfeldmarschall Karl von Bülow in field-grey (M1910) service tunic with red piping, peaked cap, Pour le Mérite, Iron Cross and breast star; c. 1916, published in the Berliner Illustrirte Zeitung 12/1916.",
+    "photographer": "Rudolf Dührkoop (1848–1918), Hamburg",
+    "date": "c. 1916",
+    "archive": "Berliner Illustrirte Zeitung 12/1916 (Getty Images editorial scan) via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Karl_von_B%C3%BClow_c1916.jpg",
+    "original_dimensions": "604 × 906",
+    "licence": "public domain — photographer died 1918 (life + 70); published before 1931"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "History Alive project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: feldgrau M1910 tunic with red piping and red cap band, brown leather belt, black-and-silver Pour le Mérite ribbon"
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Karl von Bülow (1846–1921), commander of the German 2nd Army — Liège, Namur, Charleroi, Guise; his call for Kluck to wheel inward and his decision to retreat from the Marne on 9 September, in consultation with Hentsch. Photographed c. 1916 as Generalfeldmarschall. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: Rudolf Dührkoop, c. 1916, Berliner Illustrirte Zeitung; public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "1914:formation-german-2nd-army",
+    "1914:liege",
+    "1914:frontiers-north-great-retreat",
+    "1914:guise",
+    "1914:decision-1914-09-08-hentsch",
+    "1914:marne"
+  ],
+  "focal_point": { "x": 0.5, "y": 0.2 },
+  "notes": "Provided by Dave 2026-08-22. The only one of the German portraits in field-grey — useful contrast with Kluck's pre-war Dunkelblau on the uniforms & kit cards."
+}

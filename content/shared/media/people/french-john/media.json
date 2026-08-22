@@ -1,0 +1,35 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "id": "media:person/french-john/portrait-colorized",
+  "person": "person:french-john",
+  "file": "portrait-colorized.png",
+  "width": 1070,
+  "height": 1470,
+  "colorized": true,
+  "original": {
+    "description": "Head-and-shoulders portrait of Field Marshal Sir John French in greatcoat with gold oak-leaf collar embroidery, from a period postcard.",
+    "photographer": "Hainer, Paris (postcard photographer/publisher)",
+    "date": "c. 1914–1915 (postcard over 75 years old; Commons date field shows the 2013 upload)",
+    "archive": "Period postcard, uploaded to Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Field_Marshal_Sir_John_French_2.jpg",
+    "original_dimensions": "2119 × 2925",
+    "licence": "public domain — published before 1 January 1931"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "History Alive project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'. NOTE: the coat is rendered dark blue; British field-marshal's service dress and greatcoat were khaki/drab (the blue may be a frock coat or an interpretation). Flag as interpretive in the caption; consider a khaki re-render for the uniforms & kit feature."
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Field Marshal Sir John French (1852–1925), Commander-in-Chief of the British Expeditionary Force 1914–1915 — Mons, Le Cateau, the retreat, and a reluctant return to the line at the Marne. Colorized (AI-assisted) from a public-domain photograph; uniform colour interpretive.",
+  "credit": "Original photograph: Hainer, Paris, period postcard; public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "1914:frontiers-north-great-retreat",
+    "1914:vignette-rethel-lanrezac-french",
+    "1914:marne",
+    "1914:decision-1914-09-04-directive"
+  ],
+  "focal_point": { "x": 0.5, "y": 0.3 },
+  "notes": "Provided by Dave 2026-08-22. Uniform colour needs a second look before it appears on the kit cards (BEF = khaki)."
+}

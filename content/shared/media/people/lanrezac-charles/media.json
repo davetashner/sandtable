@@ -1,0 +1,36 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "id": "media:person/lanrezac-charles/portrait-colorized",
+  "person": "person:lanrezac-charles",
+  "file": "portrait-colorized.png",
+  "width": 1023,
+  "height": 1537,
+  "colorized": true,
+  "original": {
+    "description": "Three-quarter-length portrait of General Charles Lanrezac in French general's full dress — bicorne with plumes, dark-blue double-breasted tunic, gold epaulettes and sash, Légion d'honneur — as reproduced in Gabriel Hanotaux, Histoire illustrée de la guerre de 1914, vol. 4 (Paris: Gounouilhou, 1916).",
+    "photographer": "not credited in the source publication (anonymous)",
+    "date": "1916 publication; photograph pre-war",
+    "archive": "Hanotaux, Histoire illustrée de la guerre de 1914, vol. 4 (1916) via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Charles_Lanrezac.gif",
+    "original_dimensions": "438 × 696 (GIF scan — small; seek a better scan of the Hanotaux plate or a Gallica/Agence Rol print)",
+    "licence": "public domain — anonymous work, copyright expired (US and EU)"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization (and upscaling) from the public-domain original, 2026",
+    "licence": "History Alive project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: dark-blue French general's full-dress tunic, gold epaulettes/sash/collar embroidery, black bicorne with white plume (divisional/army general), red Légion d'honneur ribbon"
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Charles Lanrezac (1852–1925), commander of the French 5th Army — saw the German wheel coming before Joffre believed it, was mauled at Charleroi, counterattacked at Guise, and was dismissed on 3 September, three days before the Marne. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: anonymous, reproduced in Hanotaux, Histoire illustrée de la guerre de 1914 (1916); public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "1914:formation-french-5th-army",
+    "1914:frontiers-north-great-retreat",
+    "1914:guise",
+    "1914:vignette-rethel-lanrezac-french",
+    "1914:decision-points-joffre-sackings"
+  ],
+  "focal_point": { "x": 0.5, "y": 0.22 },
+  "notes": "Provided by Dave 2026-08-22. Source scan is small; acceptable for cards, seek a better scan before hero use."
+}

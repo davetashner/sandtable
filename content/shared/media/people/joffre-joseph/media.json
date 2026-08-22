@@ -1,0 +1,38 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "id": "media:person/joffre-joseph/portrait-colorized",
+  "person": "person:joffre-joseph",
+  "file": "portrait-colorized.png",
+  "width": 1070,
+  "height": 1470,
+  "colorized": true,
+  "original": {
+    "description": "Studio portrait of Joseph Joffre in the plain dark tunic and gold-oak-leaf képi of a French general officer; the Légion d'honneur and Croix de guerre on the breast. Taken before 1931 (Croix de guerre dates it to 1915 or later).",
+    "photographer": "unknown",
+    "date": "before 1931 (1915 or later — Croix de guerre present)",
+    "archive": "Bibliothèque nationale de France, Gallica (btv1b10336672j, f.9) via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Portrait_de_Joseph_Joffre_(cropped)(b).jpg",
+    "uncropped_url": "https://commons.wikimedia.org/wiki/File:Portrait_de_Joseph_Joffre_(cropped).jpg",
+    "original_dimensions": "800 × 1100 (crop; Commons note: highlights raised, shadows lowered)",
+    "licence": "public domain (France; pre-1931)"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "History Alive project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: dark-blue/black general's tunic, gold oak-leaf képi embroidery, red Légion d'honneur ribbon, green-and-black Croix de guerre ribbon"
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Joseph Joffre (1852–1931), Commander-in-Chief of the French armies 1914–1916 — author of Plan XVII and of the retreat and counterstroke that won the Marne. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: BnF Gallica, photographer unknown; public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "1914:prologue-plan-xvii",
+    "1914:frontiers-lorraine",
+    "1914:guise",
+    "1914:rail-vs-feet-redeployment",
+    "1914:marne",
+    "1914:document-order-of-the-day-1914-09-06"
+  ],
+  "focal_point": { "x": 0.5, "y": 0.3 },
+  "notes": "Provided by Dave 2026-08-22. The photograph post-dates the 1914 campaign (Croix de guerre instituted April 1915); fine for the Person card and the Marne order of the day."
+}

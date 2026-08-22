@@ -1,0 +1,36 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "id": "media:person/albert-i-of-belgium/portrait-colorized",
+  "person": "person:albert-i-of-belgium",
+  "file": "portrait-colorized.png",
+  "width": 1129,
+  "height": 1393,
+  "colorized": true,
+  "original": {
+    "description": "Portrait of King Albert I of Belgium in the khaki Belgian field uniform with the lion-badged Adrian helmet, 1917; published in The World's Work, 1919.",
+    "photographer": "Richard Neville Speaight (1875–1938)",
+    "date": "1917",
+    "archive": "The World's Work, 1919 (archive.org) via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Portrait_of_Albert_I_of_Belgium_(cropped).jpg",
+    "uncropped_url": "https://commons.wikimedia.org/wiki/File:Portrait_of_Albert_I_of_Belgium.jpg",
+    "original_dimensions": "1234 × 1531 (crop)",
+    "licence": "public domain — author died 1938; published before 1931"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "History Alive project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: khaki 1915-pattern Belgian uniform and khaki-painted Adrian helmet with brass lion, dark-blue collar patches with gold stars"
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Albert I (1875–1934), King of the Belgians and commander of the Belgian army, who refused the German ultimatum and held Liège, Antwerp and finally the Yser. Photographed in 1917 in the post-1915 khaki uniform and Adrian helmet. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: Richard Neville Speaight, 1917, The World's Work 1919; public domain (via Wikimedia Commons). Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "1914:prologue-belgian-neutrality",
+    "1914:liege",
+    "1914:belgium-antwerp",
+    "1914:document-ultimatum-reply-1914-08-03"
+  ],
+  "focal_point": { "x": 0.5, "y": 0.3 },
+  "notes": "Provided by Dave 2026-08-22. ANACHRONISM NOTE for the uniforms & kit feature: in August 1914 the Belgian army still wore the dark-blue uniform and shako/bonnet de police; the khaki and Adrian helmet shown date from 1915. Good for the Person card; caption it honestly if shown beside 1914 beats."
+}

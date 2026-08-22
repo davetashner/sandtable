@@ -1,0 +1,36 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2).",
+  "id": "media:person/kluck-alexander-von/portrait-c1914-colorized",
+  "person": "person:kluck-alexander-von",
+  "file": "portrait-c1914-colorized.png",
+  "width": 1092,
+  "height": 1440,
+  "colorized": true,
+  "original": {
+    "description": "Seated studio portrait of Generaloberst Alexander von Kluck in Prussian general's full dress (dark-blue tunic, gold-embroidered collar, epaulettes, sash, sword), with Pour le Mérite and Iron Cross; c. 1914. Published as a postcard by Gustav Liersch, Berlin (no. 95).",
+    "photographer": "Mayer, Dresden (studio); postcard publisher Gustav Liersch & Co., Berlin",
+    "date": "c. 1914",
+    "archive": "Private collection (Wartenberg Trust) via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Alexander_von_Kluck_(ca._1914).jpg",
+    "original_dimensions": "467 × 709 (small scan — the colorized version is upscaled; look for a higher-resolution scan of the Liersch card)",
+    "licence": "public domain — published before 1 January 1931 (United States)"
+  },
+  "colorization": {
+    "author": "Dave Tashner / History Alive",
+    "method": "AI-assisted colorization (and upscaling) from the public-domain original, 2026",
+    "licence": "History Alive project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: Prussian dark-blue (Dunkelblau) full-dress tunic with red piping, gold epaulettes and collar embroidery, silver-and-black sash, black-and-silver Pour le Mérite ribbon"
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Alexander von Kluck (1846–1934), commander of the German 1st Army — the outer edge of the wheel, who fought the BEF at Mons and Le Cateau and turned southeast short of Paris, opening the gap the Allies struck at the Marne. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: Mayer, Dresden; postcard by Gustav Liersch & Co., Berlin, c. 1914; public domain (via Wikimedia Commons, Wartenberg Trust). Colorization: History Alive, AI-assisted, 2026.",
+  "used_by": [
+    "1914:formation-german-1st-army",
+    "1914:frontiers-north-great-retreat",
+    "1914:guise",
+    "1914:decision-1914-08-30-kluck-wheels-inward",
+    "1914:marne"
+  ],
+  "focal_point": { "x": 0.5, "y": 0.22 },
+  "notes": "Provided by Dave 2026-08-22. Source scan is small (467 × 709); acceptable for cards, but seek a better scan before using as a hero image."
+}
