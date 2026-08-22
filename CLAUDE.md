@@ -60,18 +60,33 @@ This protocol applies when ending a Beads implementation workflow. It is subordi
 
 ## Build & Test
 
-_Add your build and test commands here_
+No application build yet (Phase 0 scaffolding is `history-alive-a55.6`). The
+proof of concept is a single self-contained file:
 
 ```bash
-# Example:
-# npm install
-# npm test
+open poc/schlieffen-plan.html   # the PoC — no build step
 ```
 
 ## Architecture Overview
 
-_Add a brief overview of your project architecture_
+See `docs/ROADMAP.md` for the phased plan and thesis. In one paragraph: a
+static, client-only web app (Vite + TypeScript + React; MapLibre GL + deck.gl)
+that renders data-driven **scenario packs** (JSON + Markdown under `content/`)
+on real geography with a timeline, narrative dossier, counterfactual branches,
+battle zoom-ins, and timeline-synced technology and science "rails". The engine
+is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
 
 ## Conventions & Patterns
 
-_Add your project-specific conventions here_
+- **Backlog:** beads is the source of truth. `bd ready` → `bd update <id> --claim`
+  → work → `bd close <id> --reason "..."`. Phase epics chain by dependency; the
+  five `decision` beads under `history-alive-a55` are the first things to settle,
+  each producing `docs/decisions/NNNN-*.md`.
+- **Branches/worktrees:** new work happens on a feature branch in a worktree
+  under `.claude/worktrees/`, never on `main`. Sign off commits (`git commit -s`)
+  and reference the bead ID in the message.
+- **Content:** every date, number and position cites a `Source`; contested
+  points are written as historiography, not fact; hypothetical branches are
+  labelled as such. Packs must pass the validator (Phase 0).
+- **Design:** tokens and the war-room identity come from the design-system epic
+  (`history-alive-neh`); don't introduce ad-hoc colours or typefaces.

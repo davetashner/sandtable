@@ -1,0 +1,1041 @@
+<title>The Schlieffen Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #E6DFCB;
+    --panel: #EFE9D8;
+    --panel-2: #E0D9C4;
+    --ink: #241F16;
+    --muted: #6B6354;
+    --brass: #8C6D28;
+    --brass-dim: #B7A97C;
+    --line: #C9BFA4;
+    --army-1: #9A2E22;
+    --army-2: #832820;
+    --army-3: #6E241E;
+    --french: #24566E;
+    --sea: #D6CCAE;
+    --land: #E6DFCB;
+    --land-2: #DED5B9;
+    --glow: 0 0 0 rgba(0,0,0,0);
+    --shadow: 0 8px 24px rgba(40,32,16,0.14);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #10161A;
+      --panel: #1A2228;
+      --panel-2: #202A31;
+      --ink: #E9E1CB;
+      --muted: #93998F;
+      --brass: #C9A24B;
+      --brass-dim: #6E6142;
+      --line: #384049;
+      --army-1: #D45B3F;
+      --army-2: #B94734;
+      --army-3: #97392A;
+      --french: #6FA6C4;
+      --sea: #0B1013;
+      --land: #1D262C;
+      --land-2: #222D34;
+      --glow: 0 0 40px rgba(201,162,75,0.08);
+      --shadow: 0 12px 32px rgba(0,0,0,0.45);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #10161A;
+    --panel: #1A2228;
+    --panel-2: #202A31;
+    --ink: #E9E1CB;
+    --muted: #93998F;
+    --brass: #C9A24B;
+    --brass-dim: #6E6142;
+    --line: #384049;
+    --army-1: #D45B3F;
+    --army-2: #B94734;
+    --army-3: #97392A;
+    --french: #6FA6C4;
+    --sea: #0B1013;
+    --land: #1D262C;
+    --land-2: #222D34;
+    --glow: 0 0 40px rgba(201,162,75,0.08);
+    --shadow: 0 12px 32px rgba(0,0,0,0.45);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 22px 28px 14px;
+    flex-wrap: wrap;
+  }
+  .title-block { display: flex; flex-direction: column; gap: 2px; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+  }
+  h1 {
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    font-size: clamp(24px, 3.2vw, 34px);
+    margin: 0;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    font-size: 13.5px;
+    color: var(--muted);
+    max-width: 46ch;
+  }
+
+  .mode-toggle {
+    display: flex;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 3px;
+    gap: 2px;
+    font-family: "IBM Plex Mono", monospace;
+  }
+  .mode-toggle button {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 11.5px;
+    letter-spacing: 0.03em;
+    padding: 9px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+    line-height: 1.3;
+    transition: background 0.18s ease, color 0.18s ease;
+  }
+  .mode-toggle button .mt-label { display:block; font-weight: 600; text-transform: uppercase; font-size: 10.5px; letter-spacing: 0.08em; }
+  .mode-toggle button .mt-sub { display:block; font-family: "IBM Plex Sans", sans-serif; font-size: 11px; opacity: 0.85; margin-top: 1px; }
+  .mode-toggle button[aria-pressed="true"] {
+    background: var(--brass);
+    color: #1a1408;
+  }
+  .mode-toggle button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+
+  /* ---------- Main layout ---------- */
+  main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 16px;
+    padding: 0 28px;
+    min-height: 0;
+  }
+  @media (max-width: 880px) {
+    main { grid-template-columns: 1fr; }
+  }
+
+  .map-wrap {
+    position: relative;
+    background: var(--sea);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    min-height: 420px;
+    display: flex;
+  }
+  #map { width: 100%; height: auto; display: block; }
+
+  .map-caption {
+    position: absolute;
+    left: 14px;
+    bottom: 12px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    color: var(--brass-dim);
+    letter-spacing: 0.04em;
+    background: color-mix(in srgb, var(--panel) 78%, transparent);
+    padding: 5px 9px;
+    border-radius: 5px;
+    border: 1px solid var(--line);
+    max-width: 60%;
+  }
+
+  /* ---------- Dossier panel ---------- */
+  .dossier {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 0;
+    padding-bottom: 4px;
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 17px;
+    box-shadow: var(--shadow);
+  }
+  .card h2 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 0 0 10px;
+  }
+
+  .phase-title {
+    font-family: "Fraunces", serif;
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    text-wrap: balance;
+  }
+  .phase-text {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+  }
+  .phase-date {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line);
+  }
+
+  .quote-card {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--brass-dim);
+    border-left: 2px solid var(--brass);
+    padding: 2px 0 2px 14px;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .quote-card cite {
+    display: block;
+    font-family: "IBM Plex Mono", monospace;
+    font-style: normal;
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  .legend { display: flex; flex-direction: column; gap: 8px; }
+  .legend-row { display: flex; align-items: center; gap: 9px; font-size: 12.5px; }
+  .swatch { width: 22px; height: 3px; border-radius: 2px; flex-shrink: 0; }
+  .swatch.dot { width: 10px; height: 10px; border-radius: 50%; }
+  .swatch.star { width: 12px; height: 12px; flex-shrink:0; }
+  .legend-label { color: var(--ink); }
+  .legend-label small { display:block; color: var(--muted); font-size: 11px; }
+
+  /* ---------- Timeline strip ---------- */
+  .timeline {
+    margin: 14px 28px 24px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 18px 10px;
+    box-shadow: var(--shadow);
+  }
+  .timeline-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 6px;
+  }
+  .transport {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .transport button {
+    appearance: none;
+    border: 1px solid var(--line);
+    background: var(--panel-2);
+    color: var(--ink);
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .transport button:hover { border-color: var(--brass); }
+  .transport button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+  .speed-select {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    background: var(--panel-2);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: 7px 8px;
+  }
+  .day-readout {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    color: var(--brass);
+    white-space: nowrap;
+  }
+  .day-readout .date {
+    color: var(--muted);
+    margin-left: 8px;
+  }
+  .scrub-wrap { flex: 1; min-width: 120px; }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 22px;
+    background: transparent;
+    cursor: pointer;
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 4px;
+    background: var(--line);
+    border-radius: 2px;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -7px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--brass);
+    border: 2px solid var(--panel);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.35);
+  }
+  input[type="range"]::-moz-range-track {
+    height: 4px;
+    background: var(--line);
+    border-radius: 2px;
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--brass);
+    border: 2px solid var(--panel);
+  }
+  input[type="range"]:focus-visible::-webkit-slider-thumb { outline: 2px solid var(--brass); outline-offset: 2px; }
+
+  .ticks {
+    position: relative;
+    height: 34px;
+    margin-top: 2px;
+  }
+  .tick {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: "IBM Plex Mono", monospace;
+    color: var(--muted);
+    padding: 0;
+  }
+  .tick i {
+    width: 1px;
+    height: 6px;
+    background: var(--line);
+  }
+  .tick span {
+    font-size: 9.5px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    max-width: 90px;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .tick:hover span, .tick:focus-visible span { color: var(--brass); }
+  .tick:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+
+  /* ---------- Map elements ---------- */
+  .label-city text { font-family: "IBM Plex Sans", sans-serif; }
+  .label-region text { font-family: "IBM Plex Mono", monospace; }
+
+  .army-token { filter: drop-shadow(0 1px 3px rgba(0,0,0,0.4)); }
+  .army-token .pulse {
+    animation: pulse 2.2s ease-in-out infinite;
+    transform-origin: center;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.55; transform: scale(1); }
+    50% { opacity: 0.15; transform: scale(2.1); }
+  }
+
+  .pocket-fill { transition: opacity 0.6s ease; }
+  .marne-burst { transform-origin: center; }
+
+  footer {
+    text-align: center;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    color: var(--muted);
+    padding: 4px 20px 22px;
+  }
+
+  @media (max-width: 640px) {
+    header { padding: 16px 16px 10px; }
+    main { padding: 0 16px; gap: 12px; }
+    .timeline { margin: 12px 16px 18px; padding: 12px 14px 8px; }
+    .map-wrap { min-height: 320px; }
+  }
+</style>
+
+<div class="app">
+  <header>
+    <div class="title-block">
+      <span class="eyebrow">Operational Study &middot; Western Front, 1914</span>
+      <h1>The Schlieffen Plan</h1>
+      <p class="subtitle">Germany's wager: swing wide through neutral Belgium, avoid the French fortress line entirely, and destroy the French army before Russia could finish mobilizing.</p>
+    </div>
+    <div class="mode-toggle" role="group" aria-label="Plan version">
+      <button id="btn-concept" aria-pressed="true" type="button">
+        <span class="mt-label">Schlieffen's Concept</span>
+        <span class="mt-sub">The plan on paper, 1905</span>
+      </button>
+      <button id="btn-actual" aria-pressed="false" type="button">
+        <span class="mt-label">Moltke's Execution</span>
+        <span class="mt-sub">What actually happened, 1914</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="map-wrap">
+      <svg id="map" viewBox="0 0 1000 680" role="img" aria-label="Schematic map of the German invasion of Belgium and France in 1914, showing army routes sweeping around the French frontier fortresses.">
+        <defs>
+          <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="currentColor"></path>
+          </marker>
+          <radialGradient id="pocketGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="var(--army-1)" stop-opacity="0.32"></stop>
+            <stop offset="100%" stop-color="var(--army-1)" stop-opacity="0.02"></stop>
+          </radialGradient>
+        </defs>
+
+        <!-- sea -->
+        <rect x="0" y="0" width="1000" height="680" fill="var(--sea)"></rect>
+
+        <!-- land -->
+        <path id="land" d="M1000,0 L1000,680 L0,680 L0,265 C55,247 118,233 172,196 C214,166 202,122 236,88 C266,58 316,27 396,6 L1000,0 Z"
+          fill="var(--land)" stroke="var(--brass-dim)" stroke-width="1.4"></path>
+
+        <!-- Alsace-Lorraine (German Reichsland, annexed 1871) tint -->
+        <path d="M545,250 L610,255 L618,340 L612,420 L580,440 L560,430 L555,375 L560,330 L550,290 Z"
+          fill="var(--land-2)" opacity="0.7"></path>
+
+        <!-- rivers -->
+        <g stroke="var(--french)" stroke-opacity="0.55" fill="none" stroke-width="1.6">
+          <path d="M530,150 C520,190 500,230 500,260 C500,300 480,330 470,360"></path>
+          <path d="M380,300 C420,305 460,300 500,300 C520,300 540,310 560,300" stroke-dasharray="0"></path>
+          <path d="M330,345 C340,335 360,335 375,335"></path>
+        </g>
+        <text x="475" y="235" class="riverlabel" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--french)" opacity="0.8">Meuse</text>
+        <text x="395" y="296" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--french)" opacity="0.8">Marne</text>
+
+        <!-- international borders -->
+        <g stroke="var(--brass-dim)" stroke-width="1.1" stroke-dasharray="3 3" fill="none">
+          <path d="M370,105 C410,98 450,100 485,108"></path>
+          <path d="M556,140 C552,180 556,220 555,255"></path>
+          <path d="M555,255 C560,285 560,300 565,330 C568,360 560,375 560,378"></path>
+          <path d="M560,378 C575,395 583,405 588,420"></path>
+        </g>
+
+        <!-- region labels -->
+        <g class="label-region" fill="var(--muted)" opacity="0.85">
+          <text x="255" y="90" font-size="11" letter-spacing="1.5">NETHERLANDS</text>
+          <text x="360" y="185" font-size="11" letter-spacing="1.5">BELGIUM</text>
+          <text x="270" y="420" font-size="12" letter-spacing="2">FRANCE</text>
+          <text x="700" y="120" font-size="12" letter-spacing="2">GERMAN EMPIRE</text>
+          <text x="562" y="410" font-size="8.5" letter-spacing="0.5">ALSACE-LORRAINE</text>
+          <text x="562" y="420" font-size="8.5" letter-spacing="0.5">(German since 1871)</text>
+        </g>
+
+        <!-- fortress line (French frontier barrier) -->
+        <g id="fort-line">
+          <path d="M500,300 L505,335 L545,375 L575,415" fill="none" stroke="var(--brass)" stroke-width="1.6" stroke-dasharray="1 5" stroke-linecap="round"></path>
+        </g>
+
+        <!-- routes render here (JS) -->
+        <g id="routes"></g>
+
+        <!-- pocket / marne overlays -->
+        <g id="overlay"></g>
+
+        <!-- fort markers -->
+        <g id="forts"></g>
+
+        <!-- cities -->
+        <g id="cities"></g>
+
+        <!-- army tokens -->
+        <g id="tokens"></g>
+      </svg>
+      <div class="map-caption" id="map-caption">Day 0 &middot; 4 August 1914 &mdash; Germany declares war on Belgium and begins the wheel through the Ardennes and the Meuse valley.</div>
+    </div>
+
+    <aside class="dossier">
+      <div class="card">
+        <h2 id="dossier-heading">Situation Report</h2>
+        <p class="phase-title" id="phase-title">Mobilization</p>
+        <p class="phase-text" id="phase-text">Loading&hellip;</p>
+        <p class="phase-date" id="phase-date"></p>
+      </div>
+
+      <div class="card quote-card" id="quote-card">
+        &ldquo;Let the last man on the right brush the Channel with his sleeve.&rdquo;
+        <cite>&mdash; Alfred von Schlieffen, on the scale the right wing needed</cite>
+      </div>
+
+      <div class="card">
+        <h2>Legend</h2>
+        <div class="legend">
+          <div class="legend-row"><span class="swatch" style="background:var(--army-1)"></span><span class="legend-label">1st Army &mdash; von Kluck<small>Outer wing, the decisive hammer</small></span></div>
+          <div class="legend-row"><span class="swatch" style="background:var(--army-2)"></span><span class="legend-label">2nd Army &mdash; von B&uuml;low<small>Through Li&egrave;ge and Namur</small></span></div>
+          <div class="legend-row"><span class="swatch" style="background:var(--army-3)"></span><span class="legend-label">3rd&ndash;5th Armies<small>Center, through the Ardennes</small></span></div>
+          <div class="legend-row"><span class="swatch" style="background:var(--brass)"></span><span class="legend-label">6th&ndash;7th Armies<small>Left wing &mdash; the hinge at Metz</small></span></div>
+          <div class="legend-row"><span class="swatch" style="background:var(--french)"></span><span class="legend-label">French &amp; Allied forces<small>Retreat, then counterattack</small></span></div>
+          <div class="legend-row"><svg class="swatch star" viewBox="0 0 12 12"><path d="M6,0 L7.4,4.2 L12,4.2 L8.3,6.8 L9.7,11 L6,8.4 L2.3,11 L3.7,6.8 L0,4.2 L4.6,4.2 Z" fill="var(--brass)"></path></svg><span class="legend-label">Frontier fortress<small>Verdun &middot; Toul &middot; &Eacute;pinal &middot; Belfort</small></span></div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <div class="timeline">
+    <div class="timeline-top">
+      <div class="transport">
+        <button id="btn-play" type="button" aria-label="Play">&#9658;</button>
+        <button id="btn-reset" type="button" aria-label="Reset to day 0">&#8634;</button>
+      </div>
+      <select class="speed-select" id="speed" aria-label="Playback speed">
+        <option value="700">Slow</option>
+        <option value="380" selected>Normal</option>
+        <option value="160">Fast</option>
+      </select>
+      <div class="scrub-wrap">
+        <input type="range" id="scrub" min="0" max="42" value="0" step="1" aria-label="Day of campaign">
+      </div>
+      <div class="day-readout"><span id="day-num">Day 0</span><span class="date" id="day-date">4 Aug 1914</span></div>
+    </div>
+    <div class="ticks" id="ticks"></div>
+  </div>
+
+  <footer>Schematic reconstruction for orientation, not a surveyed map &middot; troop routes are simplified &middot; dates follow the historical 1914 campaign</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---------- geometry helpers ----------
+  function catmullRom2bezier(pts) {
+    if (pts.length < 2) return "";
+    var d = "M" + pts[0].x + "," + pts[0].y + " ";
+    for (var i = 0; i < pts.length - 1; i++) {
+      var p0 = pts[i === 0 ? 0 : i - 1];
+      var p1 = pts[i];
+      var p2 = pts[i + 1];
+      var p3 = pts[i + 2 < pts.length ? i + 2 : i + 1];
+      var c1x = p1.x + (p2.x - p0.x) / 6;
+      var c1y = p1.y + (p2.y - p0.y) / 6;
+      var c2x = p2.x - (p3.x - p1.x) / 6;
+      var c2y = p2.y - (p3.y - p1.y) / 6;
+      d += "C" + c1x + "," + c1y + " " + c2x + "," + c2y + " " + p2.x + "," + p2.y + " ";
+    }
+    return d.trim();
+  }
+
+  function fractionForDay(waypoints, day) {
+    var n = waypoints.length;
+    if (day <= waypoints[0].day) return 0;
+    if (day >= waypoints[n - 1].day) return 1;
+    for (var i = 0; i < n - 1; i++) {
+      var a = waypoints[i], b = waypoints[i + 1];
+      if (day >= a.day && day <= b.day) {
+        var t = (b.day === a.day) ? 0 : (day - a.day) / (b.day - a.day);
+        return (i + t) / (n - 1);
+      }
+    }
+    return 1;
+  }
+
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs) {
+    var e = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  // ---------- data: cities ----------
+  var CITIES = [
+    {x:600,y:158,name:"Cologne",side:"de"},
+    {x:555,y:186,name:"Aachen",side:"de"},
+    {x:430,y:118,name:"Antwerp",side:"neutral"},
+    {x:450,y:172,name:"Brussels",side:"neutral"},
+    {x:527,y:196,name:"Liège",side:"neutral",fort:true},
+    {x:487,y:216,name:"Namur",side:"neutral",fort:true},
+    {x:405,y:230,name:"Mons",side:"neutral"},
+    {x:452,y:236,name:"Charleroi",side:"neutral"},
+    {x:522,y:255,name:"Luxembourg",side:"neutral"},
+    {x:328,y:255,name:"Amiens",side:"fr"},
+    {x:487,y:270,name:"Sedan",side:"fr"},
+    {x:430,y:300,name:"Reims",side:"fr"},
+    {x:500,y:300,name:"Verdun",side:"fr",fort:true},
+    {x:555,y:290,name:"Metz",side:"de"},
+    {x:525,y:322,name:"Nancy",side:"fr"},
+    {x:505,y:337,name:"Toul",side:"fr",fort:true},
+    {x:330,y:348,name:"Paris",side:"fr",capital:true},
+    {x:610,y:330,name:"Strasbourg",side:"de"},
+    {x:545,y:377,name:"Épinal",side:"fr",fort:true},
+    {x:575,y:417,name:"Belfort",side:"fr",fort:true}
+  ];
+
+  // ---------- data: army routes ----------
+  // shared opening (days 0-20) — the historical invasion of Belgium, before the plans diverge
+  var K_SHARED = [
+    {day:0,x:600,y:158},
+    {day:5,x:520,y:150},
+    {day:9,x:450,y:120},
+    {day:13,x:412,y:170},
+    {day:17,x:405,y:230},
+    {day:20,x:355,y:250}
+  ];
+  var K_CONCEPT = K_SHARED.concat([
+    {day:26,x:262,y:305},
+    {day:31,x:250,y:400},
+    {day:36,x:320,y:455},
+    {day:42,x:460,y:445}
+  ]);
+  var K_ACTUAL = K_SHARED.concat([
+    {day:23,x:370,y:300},
+    {day:27,x:400,y:322},
+    {day:31,x:430,y:300},
+    {day:38,x:452,y:280}
+  ]);
+
+  var B_SHARED = [
+    {day:0,x:600,y:190},
+    {day:4,x:555,y:190},
+    {day:8,x:527,y:196},
+    {day:14,x:487,y:216},
+    {day:19,x:452,y:236}
+  ];
+  var B_CONCEPT = B_SHARED.concat([
+    {day:25,x:420,y:280},
+    {day:31,x:400,y:350},
+    {day:37,x:420,y:410},
+    {day:42,x:460,y:440}
+  ]);
+  var B_ACTUAL = B_SHARED.concat([
+    {day:24,x:420,y:280},
+    {day:29,x:430,y:300},
+    {day:34,x:445,y:295},
+    {day:38,x:450,y:288}
+  ]);
+
+  var C_SHARED = [
+    {day:0,x:590,y:230},
+    {day:6,x:560,y:240},
+    {day:12,x:522,y:255},
+    {day:18,x:495,y:268}
+  ];
+  var C_CONCEPT = C_SHARED.concat([
+    {day:24,x:490,y:295},
+    {day:30,x:470,y:360},
+    {day:36,x:440,y:420},
+    {day:42,x:460,y:440}
+  ]);
+  var C_ACTUAL = C_SHARED.concat([
+    {day:23,x:496,y:290},
+    {day:29,x:498,y:300},
+    {day:34,x:495,y:298},
+    {day:38,x:492,y:295}
+  ]);
+
+  var ARMIES = [
+    {id:"k", name:"1st Army", commander:"von Kluck", color:"var(--army-1)",
+      concept:K_CONCEPT, actual:K_ACTUAL, r:6.5},
+    {id:"b", name:"2nd Army", commander:"von Bülow", color:"var(--army-2)",
+      concept:B_CONCEPT, actual:B_ACTUAL, r:5.5},
+    {id:"c", name:"3rd–5th Armies", commander:"center", color:"var(--army-3)",
+      concept:C_CONCEPT, actual:C_ACTUAL, r:5}
+  ];
+
+  // French Sixth Army / BEF counter-thrust into the gap (actual mode only)
+  var FRENCH_COUNTER = [
+    {day:20,x:330,y:348},
+    {day:23,x:355,y:335},
+    {day:27,x:390,y:318},
+    {day:32,x:415,y:305}
+  ];
+
+  // ---------- narrative ----------
+  var PHASES_SHARED = [
+    {from:0,to:5,title:"Mobilization & the door swings open",
+      text:"Germany declares war on Belgium and demands passage. Five armies, roughly a million men, wheel west through Belgium and Luxembourg — deliberately bypassing the French frontier fortresses at Verdun, Toul, Épinal and Belfort, which French war planning had assumed would face the main German blow.",
+      date:"4–9 August 1914"},
+    {from:5,to:12,title:"Liège and Namur besieged",
+      text:"Belgian fortress rings at Liège and Namur, expected to fall in days, hold out under heavy siege artillery until mid-August, costing the Germans precious time against a timetable with almost no slack.",
+      date:"5–16 August 1914"},
+    {from:12,to:20,title:"Battle of the Frontiers",
+      text:"French Plan XVII throws the French army into an offensive across the Alsace-Lorraine border straight at the German left wing — exactly the trap Schlieffen intended. The weaker German 6th and 7th Armies hold at the Metz hinge while, in the north, the German right wing crashes into the Allies at Mons and Charleroi, forcing a general Allied retreat.",
+      date:"14–23 August 1914"}
+  ];
+
+  var PHASES_CONCEPT = PHASES_SHARED.concat([
+    {from:20,to:26,title:"The wide wheel continues",
+      text:"In Schlieffen's design, 1st Army keeps swinging west and south, passing outside Paris rather than turning short of it — using the capital's garrison as a pivot to trap the retreating French armies against the fortress line instead of driving them toward it.",
+      date:"Hypothetical, ~day 26"},
+    {from:26,to:34,title:"The pocket closes",
+      text:"With the right wing sweeping south of Paris and the left wing holding firm at Metz, the retreating French armies find their line of retreat cut. The plan's entire logic — borrowed from Hannibal at Cannae — was a double envelopment: pin the center, encircle with both wings.",
+      date:"Hypothetical, ~day 34"},
+    {from:34,to:43,title:"Decision within six weeks",
+      text:"Schlieffen's timetable assumed the French army could be destroyed before Russia's slower mobilization finished, freeing German forces to entrain east. On paper, the campaign ends in a decisive envelopment — the war Germany could not otherwise win on two fronts.",
+      date:"Hypothetical, ~day 42"}
+  ]);
+
+  var PHASES_ACTUAL = PHASES_SHARED.concat([
+    {from:20,to:24,title:"Von Kluck turns short",
+      text:"Moltke the Younger had already thinned the right wing to reinforce East Prussia and the left wing. Worried about his exposed flank and the untouched Paris garrison, von Kluck turns his 1st Army southeast — passing east of Paris instead of west, and opening a gap between his army and von Bülow's 2nd.",
+      date:"~25 August 1914"},
+    {from:24,to:29,title:"The Battle of the Marne",
+      text:"French reconnaissance and aerial observation spot the gap. The French 6th Army, reinforced famously by Paris taxicabs, and the British Expeditionary Force strike into it along the Marne. The German advance, six weeks into the campaign and exhausted, cannot hold.",
+      date:"5–12 September 1914"},
+    {from:29,to:43,title:"The plan fails, the trenches begin",
+      text:"Germany orders a general retreat to the Aisne River. Both sides then race north trying to outflank the other, extending a continuous front to the sea. The mobile war Schlieffen designed to avoid a long war ends instead in the stalemate it was meant to prevent.",
+      date:"September–October 1914"}
+  ]);
+
+  var TICKS = [
+    {day:0, label:"Invasion begins"},
+    {day:9, label:"Liège falls"},
+    {day:17, label:"Battle of the Frontiers"},
+    {day:20, label:"Plans diverge"},
+    {day:31, label:"Marne / pocket"},
+    {day:42, label:"Six weeks"}
+  ];
+
+  // ---------- state ----------
+  var state = { mode: "concept", day: 0, playing: false, timer: null };
+  var MAXDAY = 42;
+
+  // ---------- render: static map bits ----------
+  var svg = document.getElementById("map");
+
+  function renderCities() {
+    var g = document.getElementById("cities");
+    CITIES.forEach(function(c) {
+      var wrap = el("g", {"class":"label-city"});
+      var r = c.capital ? 4.5 : (c.fort ? 3.6 : 2.6);
+      var fill = c.side === "de" ? "var(--army-3)" : (c.side === "fr" ? "var(--french)" : "var(--brass-dim)");
+      wrap.appendChild(el("circle", {cx:c.x, cy:c.y, r:r, fill: c.capital ? "var(--brass)" : fill, stroke:"var(--panel)", "stroke-width":1}));
+      var t = el("text", {x:c.x + r + 4, y:c.y + 3, "font-size": c.capital ? 12.5 : 9.5, fill:"var(--ink)", "font-weight": c.capital ? 600 : 400});
+      t.textContent = c.name;
+      wrap.appendChild(t);
+      g.appendChild(wrap);
+    });
+  }
+
+  function renderForts() {
+    var g = document.getElementById("forts");
+    CITIES.filter(function(c){ return c.fort; }).forEach(function(c) {
+      var s = el("path", {
+        d: starPath(c.x, c.y - 11, 6),
+        fill: "var(--brass)"
+      });
+      g.appendChild(s);
+    });
+  }
+  function starPath(cx, cy, r) {
+    var pts = [];
+    for (var i = 0; i < 10; i++) {
+      var rad = i % 2 === 0 ? r : r * 0.42;
+      var ang = -Math.PI/2 + i * Math.PI / 5;
+      pts.push((cx + rad*Math.cos(ang)).toFixed(1) + "," + (cy + rad*Math.sin(ang)).toFixed(1));
+    }
+    return "M" + pts.join(" L") + " Z";
+  }
+
+  // ---------- render: routes + tokens ----------
+  var routeEls = {};   // ghost (full route) per army per mode
+  var travelEls = {};  // revealed/traveled overlay per army
+  var tokenEls = {};
+
+  function buildRoutes() {
+    var g = document.getElementById("routes");
+    g.innerHTML = "";
+    ARMIES.forEach(function(a) {
+      ["concept","actual"].forEach(function(mode) {
+        var wps = a[mode];
+        var d = catmullRom2bezier(wps);
+        var ghost = el("path", {
+          d: d, fill: "none", stroke: a.color, "stroke-width": 2,
+          "stroke-dasharray": mode === "concept" ? "1 6" : "0",
+          "stroke-linecap": "round", opacity: mode === "concept" ? 0.55 : 0.22,
+          "data-mode": mode, "data-army": a.id, "class": "route-ghost"
+        });
+        g.appendChild(ghost);
+
+        var travel = el("path", {
+          d: d, fill: "none", stroke: a.color, "stroke-width": mode === "concept" ? 2.6 : 3.2,
+          "stroke-linecap": "round", "marker-end": "url(#arrowhead)",
+          style: "color:" + a.color,
+          "data-mode": mode, "data-army": a.id, "class": "route-travel"
+        });
+        g.appendChild(travel);
+
+        var len = travel.getTotalLength();
+        travel.setAttribute("stroke-dasharray", len + " " + len);
+        travel.setAttribute("stroke-dashoffset", len);
+        travelEls[a.id + "_" + mode] = {el: travel, len: len};
+
+        ghost.style.display = (mode === state.mode) ? "" : "none";
+        travel.style.display = (mode === state.mode) ? "" : "none";
+      });
+
+      var tok = el("g", {"class":"army-token"});
+      tok.appendChild(el("circle", {r: a.r + 5, fill: a.color, opacity: 0.35, "class":"pulse"}));
+      tok.appendChild(el("circle", {r: a.r, fill: a.color, stroke:"var(--panel)", "stroke-width":1.3}));
+      var lbl = el("text", {y: -a.r - 6, "text-anchor":"middle", "font-family":"IBM Plex Mono, monospace", "font-size":9.5, fill:"var(--ink)", "font-weight":600});
+      lbl.textContent = a.id.toUpperCase();
+      tok.appendChild(lbl);
+      document.getElementById("tokens").appendChild(tok);
+      tokenEls[a.id] = tok;
+    });
+
+    // French counter-thrust (actual mode only)
+    var fd = catmullRom2bezier(FRENCH_COUNTER);
+    var fpath = el("path", {d: fd, fill:"none", stroke:"var(--french)", "stroke-width":3, "stroke-linecap":"round", "marker-end":"url(#arrowhead)", style:"color:var(--french)"});
+    document.getElementById("overlay").appendChild(fpath);
+    var flen = fpath.getTotalLength();
+    fpath.setAttribute("stroke-dasharray", flen + " " + flen);
+    fpath.setAttribute("stroke-dashoffset", flen);
+    travelEls["french_actual"] = {el: fpath, len: flen, startDay: 20};
+
+    var ftok = el("g", {"class":"army-token"});
+    ftok.appendChild(el("circle", {r: 6, fill:"var(--french)", stroke:"var(--panel)", "stroke-width":1.3}));
+    var flbl = el("text", {y:-11, "text-anchor":"middle", "font-family":"IBM Plex Mono, monospace", "font-size":9, fill:"var(--ink)", "font-weight":600});
+    flbl.textContent = "FR";
+    ftok.appendChild(flbl);
+    document.getElementById("tokens").appendChild(ftok);
+    tokenEls["french"] = ftok;
+
+    // encirclement pocket (concept, late days)
+    var pocket = el("ellipse", {cx:370, cy:380, rx:150, ry:95, fill:"url(#pocketGrad)", "class":"pocket-fill", opacity:0});
+    document.getElementById("overlay").insertBefore(pocket, fpath);
+    routeEls.pocket = pocket;
+
+    // Marne battle burst (actual, days 24-29)
+    var burst = el("g", {"class":"marne-burst", opacity:0});
+    burst.appendChild(el("circle", {cx:378, cy:322, r:14, fill:"none", stroke:"var(--french)", "stroke-width":2}));
+    burst.appendChild(el("circle", {cx:378, cy:322, r:5, fill:"var(--french)"}));
+    document.getElementById("overlay").appendChild(burst);
+    routeEls.burst = burst;
+  }
+
+  function setTokenAt(tokEl, pathEl, frac) {
+    if (!pathEl) return;
+    var len = pathEl.getTotalLength();
+    var p = pathEl.getPointAtLength(Math.max(0, Math.min(1, frac)) * len);
+    tokEl.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ")");
+  }
+
+  // ---------- update loop ----------
+  function narrativeFor(day, mode) {
+    var list = mode === "concept" ? PHASES_CONCEPT : PHASES_ACTUAL;
+    for (var i = 0; i < list.length; i++) {
+      if (day >= list[i].from && day <= list[i].to) return list[i];
+    }
+    return list[list.length - 1];
+  }
+
+  function render() {
+    var day = state.day;
+    var mode = state.mode;
+
+    ARMIES.forEach(function(a) {
+      var wps = a[mode];
+      var frac = fractionForDay(wps, day);
+      var t = travelEls[a.id + "_" + mode];
+      t.el.setAttribute("stroke-dashoffset", (t.len * (1 - frac)).toFixed(1));
+      setTokenAt(tokenEls[a.id], t.el, frac);
+
+      // toggle mode visibility on ghost/travel
+      ["concept","actual"].forEach(function(m) {
+        document.querySelectorAll('.route-ghost[data-army="'+a.id+'"][data-mode="'+m+'"], .route-travel[data-army="'+a.id+'"][data-mode="'+m+'"]').forEach(function(node){
+          node.style.display = (m === mode) ? "" : "none";
+        });
+      });
+    });
+
+    // French counter — actual mode only, active day 20-38
+    var ftravel = travelEls["french_actual"];
+    var fVisible = mode === "actual" && day >= 20;
+    ftravel.el.style.display = fVisible ? "" : "none";
+    tokenEls["french"].style.display = fVisible ? "" : "none";
+    if (fVisible) {
+      var ffrac = fractionForDay(FRENCH_COUNTER, day);
+      ftravel.el.setAttribute("stroke-dashoffset", (ftravel.len * (1 - ffrac)).toFixed(1));
+      setTokenAt(tokenEls["french"], ftravel.el, ffrac);
+    }
+
+    // pocket overlay — concept mode only, grows after day 26
+    if (mode === "concept") {
+      var op = Math.max(0, Math.min(1, (day - 24) / 12));
+      routeEls.pocket.setAttribute("opacity", op);
+    } else {
+      routeEls.pocket.setAttribute("opacity", 0);
+    }
+
+    // marne burst — actual mode only, days 22-32
+    if (mode === "actual") {
+      var bop = day >= 22 && day <= 34 ? 1 : 0;
+      routeEls.burst.setAttribute("opacity", bop);
+    } else {
+      routeEls.burst.setAttribute("opacity", 0);
+    }
+
+    // narrative panel
+    var phase = narrativeFor(day, mode);
+    document.getElementById("phase-title").textContent = phase.title;
+    document.getElementById("phase-text").textContent = phase.text;
+    document.getElementById("phase-date").textContent = phase.date;
+    document.getElementById("dossier-heading").textContent = mode === "concept" ? "The Plan — as designed" : "Situation Report — 1914";
+    document.getElementById("map-caption").textContent = "Day " + day + " · " + dateForDay(day) + (mode === "concept" && day > 20 ? " (hypothetical continuation)" : "") + " — " + phase.title;
+
+    // scrub + readout
+    document.getElementById("scrub").value = day;
+    document.getElementById("day-num").textContent = "Day " + day;
+    document.getElementById("day-date").textContent = dateForDay(day);
+
+    document.getElementById("btn-concept").setAttribute("aria-pressed", mode === "concept");
+    document.getElementById("btn-actual").setAttribute("aria-pressed", mode === "actual");
+  }
+
+  function dateForDay(day) {
+    var start = new Date(1914, 7, 4); // 4 Aug 1914
+    var d = new Date(start.getTime() + day * 86400000);
+    var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    return d.getDate() + " " + months[d.getMonth()] + " 1914";
+  }
+
+  // ---------- ticks ----------
+  function buildTicks() {
+    var wrap = document.getElementById("ticks");
+    TICKS.forEach(function(t) {
+      var pct = (t.day / MAXDAY) * 100;
+      var btn = document.createElement("button");
+      btn.className = "tick";
+      btn.style.left = pct + "%";
+      btn.type = "button";
+      btn.innerHTML = '<i></i><span>' + t.label + '</span>';
+      btn.addEventListener("click", function() {
+        stopPlay();
+        state.day = t.day;
+        render();
+      });
+      wrap.appendChild(btn);
+    });
+  }
+
+  // ---------- controls ----------
+  function stopPlay() {
+    state.playing = false;
+    document.getElementById("btn-play").innerHTML = "&#9658;";
+    if (state.timer) { clearInterval(state.timer); state.timer = null; }
+  }
+  function startPlay() {
+    if (state.day >= MAXDAY) state.day = 0;
+    state.playing = true;
+    document.getElementById("btn-play").innerHTML = "&#10074;&#10074;";
+    var speed = parseInt(document.getElementById("speed").value, 10);
+    state.timer = setInterval(function() {
+      state.day++;
+      if (state.day >= MAXDAY) { state.day = MAXDAY; stopPlay(); }
+      render();
+    }, speed);
+  }
+
+  document.getElementById("btn-play").addEventListener("click", function() {
+    if (state.playing) stopPlay(); else startPlay();
+  });
+  document.getElementById("btn-reset").addEventListener("click", function() {
+    stopPlay(); state.day = 0; render();
+  });
+  document.getElementById("speed").addEventListener("change", function() {
+    if (state.playing) { stopPlay(); startPlay(); }
+  });
+  document.getElementById("scrub").addEventListener("input", function(e) {
+    stopPlay();
+    state.day = parseInt(e.target.value, 10);
+    render();
+  });
+  document.getElementById("btn-concept").addEventListener("click", function() {
+    stopPlay(); state.mode = "concept"; render();
+  });
+  document.getElementById("btn-actual").addEventListener("click", function() {
+    stopPlay(); state.mode = "actual"; render();
+  });
+
+  // ---------- init ----------
+  renderCities();
+  renderForts();
+  buildRoutes();
+  buildTicks();
+  render();
+})();
+</script>

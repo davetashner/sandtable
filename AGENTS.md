@@ -125,3 +125,21 @@ bd prime                # Refresh Beads context
 
 **Architecture in one line:** issues live in a local Dolt DB; sync uses `refs/dolt/data` on your git remote; `.beads/issues.jsonl` is a passive export. See https://github.com/gastownhall/beads/blob/main/docs/SYNC_CONCEPTS.md for details and anti-patterns.
 <!-- END BEADS CODEX SETUP -->
+
+## Project Overview
+
+See `docs/ROADMAP.md` for the phased plan. Static, client-only web app (Vite +
+TypeScript + React; MapLibre GL + deck.gl) rendering data-driven scenario packs
+(JSON + Markdown under `content/`) on real geography with a timeline, narrative
+dossier, counterfactual branches, battle zoom-ins, and tech/science rails. The
+first pack is the Schlieffen Plan / 1914 campaign; `poc/schlieffen-plan.html`
+is the single-file proof of concept.
+
+## Conventions
+
+- Work from `bd ready`; the five `decision` beads under `history-alive-a55`
+  come first and each produces `docs/decisions/NNNN-*.md`.
+- Feature branches in worktrees under `.claude/worktrees/`, never `main`;
+  `git commit -s` with the bead ID in the message.
+- Content cites sources; contested points are historiography; hypothetical
+  branches are labelled.
