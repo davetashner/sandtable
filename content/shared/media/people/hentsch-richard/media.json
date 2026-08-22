@@ -1,5 +1,5 @@
 {
-  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2). STATUS: HOLD — see colorization.status.",
+  "$comment": "Provisional manifest — formalized by the Media entity schema (history-alive-y0u.2). Verified against the original print (mourning card: 'Oberst Hentsch † Generalstabschef der Militär-Verwaltung in Rumänien, gest. am 13. Februar 1918').",
   "id": "media:person/hentsch-richard/portrait-colorized",
   "person": "person:hentsch-richard",
   "file": "portrait-colorized.png",
@@ -20,7 +20,7 @@
     "author": "Dave Tashner / History Alive",
     "method": "AI-assisted colorization from the original, 2026",
     "licence": "History Alive project licence with CC-BY attribution to the Deutsche Digitale Bibliothek",
-    "status": "HOLD (narrowed) — the archive catalogue confirms the desk and the standing pose are in the original, so the setting is not invented. It also describes the print as 'Brustbild' (bust-length), whereas the colorized image runs to the hips with hands on the table and a wall of maps behind — so confirm by a side-by-side glance that the lower half and background were not AI-extended. If they were, re-render colour-only at the original crop. Policy: colour only (history-alive-y0u.1)."
+    "status": "ok — verified against the original on 2026-08-22: the print shows Hentsch standing behind the desk, hands on the papers, maps on the wall and a framed picture top-left, exactly as in the colorized image (the catalogue's 'Brustbild' undersells the crop). Only the mourning-card mount and its printed caption were cropped away. Label 'colorized (AI-assisted)'; documented colours: feldgrau tunic with red piping, gold shoulder boards; the rest interpretive."
   },
   "content_policy": "ok — portrait, no gore",
   "caption": "Richard Hentsch (1869–1918), Oberstleutnant of the General Staff — sent by Moltke on 8 September 1914 to tour the army headquarters with authority to order a retreat; his visit to Bülow and Kluck on 8–9 September ended the German advance at the Marne. Photographed in 1918. Colorized (AI-assisted).",
