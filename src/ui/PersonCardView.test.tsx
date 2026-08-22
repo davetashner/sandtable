@@ -22,7 +22,7 @@ describe('media index', () => {
     const joffre = portraitFor('person:joffre-joseph');
     expect(joffre?.variants.map((v) => v.width)).toEqual([320, 640, 1024]);
     expect(joffre?.colorized).toBe(true);
-    expect(joffre?.originalUrl).toMatch(/commons\.wikimedia\.org/);
+    expect(joffre?.originalUrl?.startsWith('https://commons.wikimedia.org/')).toBe(true);
     expect(joffre?.credit).toMatch(/BnF Gallica/);
   });
 });
