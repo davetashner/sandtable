@@ -35,7 +35,7 @@ export function Dossier({ beats, sources, sides, branch, focus, packTitle }: Dos
     [beats, now, branch.id, focus, range.end],
   );
   const markdown = useMemo(() => (beat ? withFootnotes(beat, sources) : ''), [beat, sources]);
-  const hypothetical = branch.kind === 'counterfactual' && beat?.branch === branch.id;
+  const hypothetical = branch.kind === 'counterfactual';
 
   // Fade on beat change.
   const [shown, setShown] = useState(beat?.id);
@@ -64,10 +64,42 @@ export function Dossier({ beats, sources, sides, branch, focus, packTitle }: Dos
             {branch.title}
           </span>
         </p>
-        {hypothetical && (
-          <p className="dossier__badge" role="note">
-            Hypothetical — an authored branch, not what happened
-          </p>
+        {branch.kind === 'counterfactual' && (
+          <details className="dossier__about" open={!beat}>
+            <summary className="dossier__badge" role="note">
+              Hypothetical — an authored branch, not what happened
+            </summary>
+            <div className="dossier__about-body">
+              <Markdown remarkPlugins={[remarkGfm]}>{branch.summary}</Markdown>
+              {branch.feasibility && branch.feasibility.length > 0 && (
+                <>
+                  <h3>What would have had to be true</h3>
+                  <ul className="dossier__feasibility">
+                    {branch.feasibility.map((f) => (
+                      <li key={f.condition} data-met={f.met || undefined}>
+                        <span className="dossier__check" aria-hidden="true">
+                          {f.met ? '✓' : '✗'}
+                        </span>
+                        <span>
+                          <strong>{f.condition}</strong>
+                          {f.note ? <> — {f.note}</> : null}
+                          <span className="visually-hidden">
+                            {f.met ? ' (met in history)' : ' (not met in history)'}
+                          </span>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+              {branch.historiography && (
+                <>
+                  <h3>The debate</h3>
+                  <Markdown remarkPlugins={[remarkGfm]}>{branch.historiography}</Markdown>
+                </>
+              )}
+            </div>
+          </details>
         )}
       </header>
 
