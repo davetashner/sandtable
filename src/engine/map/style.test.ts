@@ -4,6 +4,7 @@ import {
   buildStyle,
   DEFAULT_TILES_URL,
   detectTheme,
+  DROPPED_LAYERS,
   MAP_PALETTE,
 } from './style.js';
 
@@ -45,5 +46,22 @@ describe('buildStyle', () => {
     expect(detectTheme()).toBe('light');
     document.documentElement.removeAttribute('data-theme');
     expect(['light', 'dark']).toContain(detectTheme());
+  });
+
+  it('refines the basemap into a staff map: rivers and rails early, modern political layers gone', () => {
+    const style = buildStyle();
+    const ids = new Set(style.layers.map((l) => l.id));
+    for (const dropped of DROPPED_LAYERS) expect(ids.has(dropped)).toBe(false);
+    const river = style.layers.find((l) => l.id === 'water_river')!;
+    expect(river.minzoom).toBe(6);
+    const rail = style.layers.find((l) => l.id === 'roads_rail')!;
+    expect(rail.minzoom).toBe(6);
+    expect((rail as { paint: { 'line-dasharray': number[] } }).paint['line-dasharray']).toEqual([
+      4, 2,
+    ]);
+    const label = style.layers.find((l) => l.id === 'water_waterway_label')!;
+    expect(label.minzoom).toBe(7);
+    expect(style.layers.find((l) => l.id === 'buildings')!.minzoom).toBe(13);
+    expect(style.layers.find((l) => l.id === 'places_locality')).toBeDefined();
   });
 });

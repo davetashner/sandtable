@@ -495,7 +495,9 @@ describe('validateContent', () => {
     });
     const ok = validateContent(raw);
     expect(messages(ok)).toEqual([]);
-    expect(ok.content.shared.media.at(-1)?.original.archive_url).toBe('https://www.loc.gov/item/2014697553/');
+    expect(ok.content.shared.media.at(-1)?.original.archive_url).toBe(
+      'https://www.loc.gov/item/2014697553/',
+    );
 
     (
       raw.shared.media.at(-1)!.data as { original: { licence?: string }; credit?: string }

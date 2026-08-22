@@ -84,6 +84,20 @@ Plex Sans 400–600, Plex Mono 400–600) with system fallbacks.
   `--dur-camera` 1400ms (map flights); `--ease-out`. Everything animated must
   honour `prefers-reduced-motion` (the global reset zeroes durations).
 
+## Map style
+
+The basemap is Protomaps v4 (our own PMTiles archive) themed with the muted
+palette in `src/engine/map/style.ts` and refined into a **staff map**
+(`refineLayers`, `sand-neh.2`): rivers and their names are first-class from
+campaign zoom (the Meuse, Sambre, Oise, Aisne, Marne, Ourcq, Morins, Seine are
+the terrain of 1914), railways show from the start as a dashed brass-dim line,
+modern boundaries, country/region names and points of interest are removed so
+the historical-borders layer owns the political picture, motorways and trunk
+roads recede until you zoom in, buildings wait for z13. Fortresses get a brass
+ring in the places layer. Hillshade where the ground decided events (the Grand
+Couronné, the Argonne, the Meuse heights) needs a terrain source — a follow-up.
+Both themes come from the same palette table.
+
 ## Rules of use
 
 1. Variables only. A literal colour or typeface in a component is a bug.
