@@ -85,6 +85,12 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
 - **Branches/worktrees:** new work happens on a feature branch in a worktree
   under `.claude/worktrees/`, never on `main`. Sign off commits (`git commit -s`)
   and reference the bead ID in the message.
+- **Multi-era layout:** `content/eras/<yyyy>-<slug>/` (one self-contained pack
+  per campaign), `content/shared/` (people, places, sources, borders, links,
+  media referenced by era-qualified IDs like `1870:sedan`), `content/threads/`
+  (learning paths across packs). Never a by-war hierarchy. See `docs/ROADMAP.md`.
+- **Imagery:** open-licence archive photos only, credited; colorized images are
+  labelled with the original available; no gore (`history-alive-y0u.1`).
 - **Content:** every date, number and position cites a `Source`; contested
   points are written as historiography, not fact; hypothetical branches are
   labelled as such. Packs must pass the validator (Phase 0).

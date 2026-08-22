@@ -43,6 +43,9 @@ is the narrative overview; the issue IDs below point into it.
 | 4 | `history-alive-ekc` Interwar & the causal chain | Causal-chain explorer; Versailles → 1939. |
 | 5 | `history-alive-kq6` / `history-alive-c6p` WWII West / East | Opens with 1940 as the echo of 1914 (route overlay). |
 | 6 | `history-alive-shn` Learning companion & platform | Multi-era packs, tours, sources, search, authoring tools. |
+| pre | `history-alive-mny` Franco-Prussian War 1870–71 | The template for 1914: Sedan, Alsace-Lorraine, the fortress line; "Road to 1914" thread. |
+| pre | `history-alive-6dh` Russo-Japanese War 1904–05 | Port Arthur, Mukden, Tsushima; why the memorandum was written in Dec 1905; "Korea 1905–1953" thread. |
+| — | `history-alive-y0u` Imagery & media | Real archive photographs, colorized and labelled, never gory; uniforms & kit. |
 | — | `history-alive-neh` Design system | Tokens, map style, components, motion. |
 | — | `history-alive-23b` Content quality & historical review | Citation standard, fact-check workflow, historiography. |
 | — | `history-alive-pmz` Engineering quality | CI, visual regression, performance, accessibility. |
@@ -98,6 +101,38 @@ East–West cross-reference, a guided tour, a polish pass and a historical revie
 one map, one dossier, one timeline. Technology, science, documents, decisions
 and causal chains are glyphs on the timeline that open cards in the dossier —
 never additional rails. Responsive from day one.
+
+## Multi-era layout (decided in `history-alive-a55.3`, built in `a55.6`/`a55.18`)
+
+```
+content/
+  eras/<yyyy>-<slug>/      one self-contained scenario pack per campaign or period
+                           1870-franco-prussian, 1904-russo-japanese, 1914-july-crisis,
+                           1914-schlieffen-marne, 1914-tannenberg, 1940-fall-of-france, 1950-korea …
+  shared/                  cross-era registries packs reference by ID
+    people/  places/  sources/  geo/borders/<year>.geojson  links/  media/
+  threads/<slug>/          curated learning paths across packs
+                           road-to-1914, the-german-way-of-war-1870-1940, korea-1905-1953 …
+```
+
+Entity IDs are era-qualified (`1870:sedan`, `1914:marne`) so a `CausalLink`
+can point across packs; a pack is valid alone, `shared/` is its only
+cross-pack dependency, threads are optional. Tiles are a low-zoom world
+extract plus per-era regional extracts declared by each pack (Manchuria for
+1904–05 is the first non-European one). Prequel eras are P3 — after Phase 1
+proves the engine — but the layout exists from the scaffold so nothing has to
+be restructured to add them.
+
+## Imagery (`history-alive-y0u`)
+
+Real period photographs from open archives (Wikimedia Commons/Bundesarchiv,
+Library of Congress, NARA, Gallica, IWM where the licence allows), colorized
+only when a faithful colorization exists or we produce one from the public-
+domain original — always labelled "colorized" with the original one click
+away, always credited, never gory. A `Media` entity in the schema, a
+reproducible pipeline, one strong image per dossier beat, and a "uniforms &
+kit" feature (Pickelhaube and feldgrau vs. pantalon rouge and capote vs. BEF
+khaki).
 
 ## What exists today
 
