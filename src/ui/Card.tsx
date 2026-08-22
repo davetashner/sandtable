@@ -33,6 +33,8 @@ export interface CardProps {
   citations?: Citation[];
   sources: Source[];
   onBack?: () => void;
+  /** Rendered between the meta line and the body — a portrait, a scan. */
+  hero?: ReactNode;
   children?: ReactNode;
 }
 
@@ -46,6 +48,7 @@ export function Card({
   citations = [],
   sources,
   onBack,
+  hero,
   children,
 }: CardProps) {
   const byId = new Map(sources.map((s) => [s.id, s]));
@@ -60,6 +63,7 @@ export function Card({
       <p className="card__eyebrow">{eyebrow}</p>
       <h2 className="card__title">{title}</h2>
       {meta && <p className="card__meta">{meta}</p>}
+      {hero}
       {md && (
         <div className="card__body">
           <Markdown remarkPlugins={[remarkGfm]}>{md}</Markdown>

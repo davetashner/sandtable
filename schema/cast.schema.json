@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sandtable.davetashner.com/schema/cast.schema.json",
+  "title": "Sandtable cast",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "<era>:cast-<slug>"
+      },
+      "person": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "person:<slug> in the shared registry"
+      },
+      "role": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Period role, one line: \"Commander-in-Chief, French armies\""
+      },
+      "side": {
+        "description": "Pack side id (de, fr, gb, be…) for grouping and colour",
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      },
+      "bio": {
+        "type": "string",
+        "minLength": 1,
+        "description": "What they are known for in this period — a few paragraphs, footnoted [^slug] to `sources`; contested points as historiography"
+      },
+      "sources": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+              "description": "Source id, e.g. source:herwig-2009"
+            },
+            "pages": {
+              "description": "Page(s), e.g. \"112–115\" or \"ch. 4\"",
+              "type": "string"
+            },
+            "note": {
+              "description": "What this citation supports",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        "description": "At least one citation; footnote slugs in `bio` must name these"
+      },
+      "order": {
+        "description": "Explicit ordering within the side (default: file order)",
+        "type": "integer",
+        "minimum": -9007199254740991,
+        "maximum": 9007199254740991
+      }
+    },
+    "required": [
+      "id",
+      "person",
+      "role",
+      "bio",
+      "sources"
+    ],
+    "additionalProperties": false
+  }
+}

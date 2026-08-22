@@ -83,4 +83,36 @@ describe('<PersonCardView>', () => {
     expect(screen.getByRole('list', { name: 'Related' })).toHaveTextContent('French armies');
     expect(screen.getByRole('region', { name: 'Sources' })).toHaveTextContent(/Herwig/);
   });
+
+  it('renders a profile when a cast entry is given: headshot first, period role, footnoted bio, "In brief"', () => {
+    const { container } = render(
+      <PersonCardView
+        person={joffre}
+        sources={sources}
+        labeller={labeller}
+        cast={{
+          id: '1914:cast-joffre-joseph',
+          person: 'person:joffre-joseph',
+          side: 'fr',
+          role: 'Commander-in-Chief of the French armies',
+          bio: 'Plan XVII failed on the frontiers.[^herwig-2009]\n\nHe did not panic.[^herwig-2009]',
+          sources: [{ source: 'source:herwig-2009' }],
+        }}
+      />,
+    );
+    expect(
+      screen.getByText(/Commander-in-Chief of the French armies — 12 January 1852/),
+    ).toBeInTheDocument();
+    // headshot precedes the body
+    const hero = container.querySelector('.card__hero');
+    const body = container.querySelector('.card__body');
+    expect(hero).not.toBeNull();
+    expect(body).not.toBeNull();
+    expect(hero!.compareDocumentPosition(body!) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(body).toHaveTextContent('Plan XVII failed on the frontiers.');
+    expect(body!.querySelector('.footnotes')).toHaveTextContent(/Herwig/);
+    expect(screen.getByRole('region', { name: 'In brief' })).toHaveTextContent(
+      /Author of Plan XVII/,
+    );
+  });
 });

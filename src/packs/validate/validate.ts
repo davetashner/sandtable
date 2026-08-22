@@ -39,6 +39,7 @@ import {
   type Thread as ThreadT,
   type TimeRange,
   BeatFrontMatter,
+  type CastEntry,
 } from '../schema/index.js';
 import { footnoteLabels, splitFrontMatter } from './frontmatter.js';
 import type { RawContent, RawFile, RawPack } from './tree.js';
@@ -69,6 +70,7 @@ export interface ParsedPack {
   documents: Document[];
   links: CausalLink[];
   sources: Source[];
+  cast: CastEntry[];
   beats: NarrativeBeat[];
 }
 
@@ -91,6 +93,7 @@ export interface Report {
 
 type Kind =
   | 'pack'
+  | 'cast'
   | 'branch'
   | 'formation'
   | 'route'
@@ -287,6 +290,7 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     documents: [],
     links: [],
     sources: [],
+    cast: [],
     beats: [],
     files: {},
     branchById: new Map(),
@@ -308,6 +312,7 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     'documents.json': 'document',
     'links.json': 'link',
     'sources.json': 'source',
+    'cast.json': 'cast',
   };
   for (const [file, schema] of Object.entries(PACK_COLLECTIONS) as [
     PackCollectionFile,
@@ -579,6 +584,17 @@ function checkCard(ctx: Ctx, path: string, c: TechCard | ScienceCard | Document)
   checkCitations(ctx, path, c.id, c.sources, true);
 }
 
+function checkCast(ctx: Ctx, path: string, c: CastEntry, sideIds: Set<string>) {
+  ctx.ref(path, c.id, c.person, ['person'], 'person');
+  if (c.side && !sideIds.has(c.side)) ctx.error(path, `side ${c.side} is not a pack side`, c.id);
+  checkCitations(ctx, path, c.id, c.sources, true);
+  const slugs = new Set(c.sources.map((x) => x.source.split(':')[1] ?? x.source));
+  for (const m of c.bio.matchAll(/\[\^([^\]\s]+)\]/g)) {
+    if (!slugs.has(m[1]!))
+      ctx.error(path, `bio footnote [^${m[1]}] is not one of the entry's sources`, c.id);
+  }
+}
+
 function checkLink(ctx: Ctx, path: string, l: CausalLink) {
   const any: Kind[] = [
     'pack',
@@ -769,6 +785,13 @@ export function validateContent(raw: RawContent): Report {
     for (const c of s.science) checkCard(ctx, file('science.json'), c);
     for (const c of s.documents) checkCard(ctx, file('documents.json'), c);
     for (const l of s.links) checkLink(ctx, file('links.json'), l);
+    const seenCast = new Set<string>();
+    for (const c of s.cast) {
+      checkCast(ctx, file('cast.json'), c, sideIds);
+      if (seenCast.has(c.person))
+        ctx.error(file('cast.json'), `person ${c.person} appears twice in the cast`, c.id);
+      seenCast.add(c.person);
+    }
     checkBeats(ctx, s);
   }
   checkShared(ctx, shared, raw);

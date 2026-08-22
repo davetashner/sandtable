@@ -93,6 +93,32 @@ or from the dev map: open the browser console and run
 `document.querySelector('.maplibregl-canvas')` hover tooling once the
 waypoint-capture helper lands (`sand-shn.7`); until then, the OSM method.
 
+## 3a. Add someone to the cast
+
+The cast is the pack's dramatis personae — the faces in the strip at the top
+of the dossier, each with a profile. Add the Person to the shared registry
+first (§3, with a portrait manifest under `content/shared/media/people/<slug>/`
+— §9), then an entry in `content/eras/<era>/cast.json`:
+
+```json
+{
+  "id": "1914:cast-joffre-joseph",
+  "person": "person:joffre-joseph",
+  "side": "fr",
+  "role": "Commander-in-Chief of the French armies",
+  "bio": "What they are known for *in this period*, a few paragraphs, footnoted.[^herwig-2009]",
+  "sources": [{ "source": "source:herwig-2009" }]
+}
+```
+
+The `bio` is the period biography — what this person did between the pack's
+`timeRange` start and end, not a life story (that is the shared Person's
+era-neutral `summary`, shown under "In brief"). Footnote every claim with
+`[^slug]` naming one of the entry's `sources`; write contested points as
+historiography ("whether X… is still argued"). `side` groups and colours the
+face; file order is the order in the strip. The profile shows the colorized
+portrait large, so the manifest's `focal_point` matters.
+
 ## 4. Add a formation and its route
 
 `formations.json`:

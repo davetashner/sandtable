@@ -207,6 +207,27 @@ export const Branch = z
   })
   .strict();
 
+// ------------------------------------------------------------------- Cast
+/**
+ * A pack's dramatis personae: who the story is about in *this* period. The
+ * shared Person stays era-neutral (names, dates, portrait); what they are
+ * known for in the pack's window — role, biography, sources — lives here, so
+ * the same person reads differently in a 1914 and a 1916 pack (sand-9ts).
+ */
+export const CastEntry = z
+  .object({
+    id: Id.describe('<era>:cast-<slug>'),
+    person: Id.describe('person:<slug> in the shared registry'),
+    role: z.string().min(1).describe('Period role, one line: "Commander-in-Chief, French armies"'),
+    side: Slug.optional().describe('Pack side id (de, fr, gb, be…) for grouping and colour'),
+    bio: Markdown.describe(
+      'What they are known for in this period — a few paragraphs, footnoted [^slug] to `sources`; contested points as historiography',
+    ),
+    sources: Sources.describe('At least one citation; footnote slugs in `bio` must name these'),
+    order: z.number().int().optional().describe('Explicit ordering within the side (default: file order)'),
+  })
+  .strict();
+
 export const Pack = z
   .object({
     id: Id.describe('<era>:pack, e.g. 1914:schlieffen-marne'),
@@ -574,6 +595,7 @@ export const Thread = z
 export type Links = z.infer<typeof Links>;
 export type Source = z.infer<typeof Source>;
 export type Person = z.infer<typeof Person>;
+export type CastEntry = z.infer<typeof CastEntry>;
 export type Place = z.infer<typeof Place>;
 export type Media = z.infer<typeof Media>;
 export type Side = z.infer<typeof Side>;

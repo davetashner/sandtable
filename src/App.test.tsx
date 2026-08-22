@@ -76,4 +76,22 @@ describe('App shell', () => {
     expect(window.location.search).toContain('card=1914:tech-railways-mobilization');
     expect(screen.getByText('Day 0')).toBeInTheDocument(); // 2 Aug 1914 = pack start
   }, 15000);
+
+  it('opens a person profile from the cast strip and toggles back to the narrative', async () => {
+    render(<App />);
+    const strip = screen.getByRole('navigation', { name: 'Cast' });
+    const face = await screen.findByRole('button', { name: /Joseph Joffre — / }, { timeout: 8000 });
+    expect(strip).toContainElement(face);
+    fireEvent.click(face);
+    expect(
+      await screen.findByRole('heading', { level: 2, name: 'Joseph Joffre' }, { timeout: 8000 }),
+    ).toBeInTheDocument();
+    expect(face).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.getByRole('region', { name: 'In brief' })).toBeInTheDocument();
+    fireEvent.click(face);
+    expect(
+      screen.queryByRole('heading', { level: 2, name: 'Joseph Joffre' }),
+    ).not.toBeInTheDocument();
+    expect(face).toHaveAttribute('aria-pressed', 'false');
+  });
 });

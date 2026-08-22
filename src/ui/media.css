@@ -20,7 +20,9 @@
 }
 
 .media__label {
-  display: inline-block;
+  display: block;
+  width: max-content;
+  max-width: 100%;
   margin: 2px 0 4px;
   padding: 1px 8px;
   border-radius: var(--radius-pill);

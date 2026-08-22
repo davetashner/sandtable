@@ -1,0 +1,36 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (sand-y0u.2).",
+  "id": "media:person/falkenhayn-erich/portrait-colorized",
+  "person": "person:falkenhayn-erich",
+  "file": "portrait-colorized.png",
+  "width": 1080,
+  "height": 1456,
+  "colorized": true,
+  "original": {
+    "description": "Studio portrait of Erich von Falkenhayn in the field-grey tunic of a Prussian general officer with gold shoulder cords, the Iron Cross 2nd Class ribbon in a buttonhole and the Iron Cross 1st Class on the breast; c. 1913 (Wikipedia dates the sitting to 1913; the Iron Cross 1914 suggests the print was taken or re-issued in 1914–15).",
+    "photographer": "Albert Meyer (1857–1924), Berlin",
+    "date": "c. 1913–1914",
+    "archive": "Wikimedia Commons (retouched copy of a print also held by the Bundesarchiv, Bild 146-2004-0023)",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Erich_von_Falkenhayn-retouched.jpg",
+    "uncropped_url": "https://en.wikipedia.org/wiki/Erich_von_Falkenhayn",
+    "original_dimensions": "472 × 639 (Commons retouched file)",
+    "licence": "public domain (photographer died 1924; life + 100 years)"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: field-grey (feldgrau) tunic with red piping, gold shoulder cords, black-and-white Iron Cross ribbon, silver-and-black Iron Cross 1st Class. Colour-check: the Iron Cross dates the decorations to August 1914 or later; if the sitting is 1913 the cross was added to the print or the date is 1914–15 — caption says 'c. 1913–14'."
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Erich von Falkenhayn (1861–1922), Prussian Minister of War from 1913 and, from 14 September 1914, Moltke's successor as Chief of the General Staff — the man who took the war to the Race to the Sea and Ypres. Colorized (AI-assisted) from a public-domain photograph by Albert Meyer, c. 1913–14.",
+  "credit": "Original photograph: Albert Meyer, Berlin, c. 1913–14; public domain (via Wikimedia Commons; Bundesarchiv Bild 146-2004-0023). Colorization: Sandtable, AI-assisted, 2026.",
+  "used_by": [
+    "1914:beat-aisne-and-after"
+  ],
+  "focal_point": {
+    "x": 0.5,
+    "y": 0.27
+  },
+  "notes": "Provided by Dave 2026-08-22 (original: https://en.wikipedia.org/wiki/Erich_von_Falkenhayn). The Commons file is a retouched copy; Bundesarchiv Bild 146-2004-0023 is the un-retouched print. used_by is provisional until the beat exists — see cast.json for the 1914 placement."
+}

@@ -142,6 +142,13 @@ generated JSON Schema; this is the intent of each.
   language), `translation`, archive, links, required sources.
 - **CausalLink** — `from` → `to` (any entity, any pack), `relation`, the
   `claim`, `confidence`, historiography, and at least one piece of `evidence`.
+- **CastEntry** (`cast.json`) — the pack's dramatis personae: `person` (a
+  shared Person), `role` in this period, `side` (a pack side, for grouping and
+  colour), a period-focused `bio` (Markdown, footnoted `[^slug]` to its
+  `sources`), optional `order`. The shared Person stays era-neutral; what
+  someone is known for in _this_ window lives here, so the same person can
+  read differently in two packs. Surfaced as the cast strip and person
+  profiles in the dossier (`sand-9ts`). Required sources.
 - **NarrativeBeat** — a Markdown file; front matter carries `id`, `title`,
   `dateLabel`, `from`/`to`, `branch`, `focus` (a Battle), pull quote, hero
   `media`, links and required `sources`. The body is Markdown; footnote
@@ -157,8 +164,8 @@ generated JSON Schema; this is the intent of each.
 
 Entities that make claims carry `sources: Citation[]`, a citation being
 `{ source, pages?, note? }`. Required (at least one) on routes, events,
-battles, decision points, tech and science cards, documents, beats and causal
-links (`evidence`); optional on formations, people, places, branches and
+battles, decision points, tech and science cards, documents, beats, cast
+entries and causal links (`evidence`); optional on formations, people, places, branches and
 packs. Every citation must resolve to a Source. The citation standard and the
 bibliography for WWI are `sand-23b.1`.
 
@@ -170,7 +177,8 @@ pack prefix, dangling references of every kind, `defaultBranch` not in
 `divergesAt`, start ≥ end, anything outside its pack/battle range, unordered
 waypoints, counterfactual routes starting before the divergence, duplicate
 routes per formation and branch, beats visible together overlapping, unknown
-footnote labels, missing required citations, decision `historical` not an
+footnote labels (beats and cast bios), missing required citations, cast
+entries naming a person or side that does not exist or the same person twice, decision `historical` not an
 option, campaign routes using battle-level formations, and the imagery policy
 on media manifests (flagged BLOCKED/UNVERIFIED/UNKNOWN/HOLD, colorized without
 saying so, Bundesarchiv without the credit string, no archive record).

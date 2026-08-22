@@ -34,6 +34,8 @@ import { BottomSheet } from './ui/BottomSheet.js';
 import { BranchToggle } from './ui/BranchToggle.js';
 import { Breadcrumb } from './ui/Breadcrumb.js';
 import { Dossier, type CardChipLike } from './ui/Dossier.js';
+import { CastStrip, type CastMember } from './ui/CastStrip.js';
+import { portraitFor } from './packs/media-index.js';
 import { CausalView } from './ui/CausalView.js';
 import { DocumentCardView } from './ui/DocumentCardView.js';
 import { PersonCardView } from './ui/PersonCardView.js';
@@ -58,6 +60,19 @@ function useBranch() {
   const known = seed.pack.branches.find((b) => b.id === branch);
   return known ?? seed.pack.branches.find((b) => b.id === seed.pack.defaultBranch)!;
 }
+
+/** The pack's cast joined to the shared people and media registries (sand-9ts). */
+const CAST_MEMBERS: CastMember[] = seed.cast.map((c) => {
+  const person = seed.people.find((p) => p.id === c.person);
+  return {
+    id: c.id,
+    person: c.person,
+    name: person?.name ?? c.person,
+    role: c.role,
+    side: c.side,
+    portrait: portraitFor(c.person),
+  };
+});
 
 const MOVEMENT_SOURCE = {
   routes: seed.routes,
@@ -283,6 +298,16 @@ function DossierSurface() {
         focus={focus?.id}
         packTitle={focus ? focus.title : seed.pack.title}
         related={related}
+        cast={
+          <CastStrip
+            members={CAST_MEMBERS}
+            sides={seed.pack.sides}
+            selected={card?.kind === 'person' ? card.card.id : undefined}
+            onSelect={(id) =>
+              controls?.setCard(card?.kind === 'person' && card.card.id === id ? undefined : id)
+            }
+          />
+        }
         card={
           card?.kind === 'tech' ? (
             <TechCardView
@@ -313,6 +338,7 @@ function DossierSurface() {
               commands={seed.formations
                 .filter((f) => f.commander === card.card.id)
                 .map((f) => ({ id: f.id, label: f.name }))}
+              cast={seed.cast.find((c) => c.person === card.card.id)}
               onBack={() => controls?.setCard(undefined)}
             />
           ) : card?.kind === 'causal' ? (
