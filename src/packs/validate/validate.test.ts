@@ -391,4 +391,73 @@ describe('validateContent', () => {
       expect.stringMatching(/thread:test: step.beat 1914:beat-x does not exist/),
     );
   });
+
+  it('resolves cross-pack causal links and threads through the shared registries (cross-era identity)', () => {
+    const raw = fixture();
+    // a second pack: 1870, referencing the same shared person
+    const pack1870 = {
+      id: '1870:sedan-campaign',
+      idPrefix: '1870',
+      title: 'Franco-Prussian War',
+      summary: 'Fixture.',
+      timeRange: { start: '1870-07-19T00:00:00Z', end: '1871-01-28T00:00:00Z' },
+      region: [0, 47, 9, 52],
+      borderYear: 1870,
+      camera: { center: [4.9, 49.7], zoom: 7 },
+      sides: [{ id: 'pr', name: 'Prussia' }],
+      branches: [
+        { id: '1870:historical', title: 'What happened', kind: 'historical', summary: 'History.' },
+      ],
+      defaultBranch: '1870:historical',
+      status: 'seed',
+    };
+    const events1870 = [
+      {
+        id: '1870:event-sedan',
+        title: 'Sedan',
+        at: '1870-09-01T12:00:00Z',
+        kind: 'battle',
+        significance: 'major',
+        place: 'place:meaux',
+        summary: 'Encirclement.',
+        links: { people: ['person:kluck'] },
+        sources: [{ source: 'source:herwig-2009' }],
+      },
+    ];
+    const links1870 = [
+      {
+        id: '1870:link-sedan-to-1914',
+        from: '1870:event-sedan',
+        to: '1914:marne',
+        relation: 'shaped',
+        claim: 'The encirclement at Sedan became the model the 1914 plan tried to repeat.',
+        confidence: 'medium',
+        evidence: [{ source: 'source:zuber-2002' }],
+      },
+    ];
+    raw.packs.push({
+      dir: '1870-sedan-campaign',
+      pack: { path: 'eras/1870-sedan-campaign/pack.json', data: pack1870 },
+      collections: {
+        'events.json': { path: 'eras/1870-sedan-campaign/events.json', data: events1870 },
+        'links.json': { path: 'eras/1870-sedan-campaign/links.json', data: links1870 },
+      },
+      beats: [],
+    });
+    (raw.threads[0]!.data as { steps: unknown[] }).steps.push({
+      pack: '1870:sedan-campaign',
+      at: '1870-09-01T12:00:00Z',
+      note: 'Back to the model.',
+    });
+    const ok = validateContent(raw);
+    expect(messages(ok)).toEqual([]);
+    expect(ok.counts['pack']).toBe(2);
+
+    // a dangling cross-pack target fails, as does a duplicate idPrefix
+    (links1870[0] as { to: string }).to = '1914:ghost';
+    (pack1870 as { idPrefix: string }).idPrefix = '1914';
+    const msgs = messages(validateContent(raw));
+    expect(msgs).toContainEqual(expect.stringMatching(/to 1914:ghost does not exist/));
+    expect(msgs).toContainEqual(expect.stringMatching(/idPrefix "1914" is also used by/));
+  });
 });
