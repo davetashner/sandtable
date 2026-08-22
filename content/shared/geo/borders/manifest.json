@@ -1,0 +1,88 @@
+{
+  "dataset": "https://github.com/aourednik/historical-basemaps",
+  "licence": "GPL-3.0 (upstream); these files are derived works and carry the same licence",
+  "attribution": "Historical borders © aourednik/historical-basemaps contributors, GPL-3.0, simplified by Sandtable",
+  "upstreamCommit": "62d8f1a03a71f2d3ff17f2d166f7553f256bce68",
+  "generatedAt": "2026-08-22",
+  "simplification": "mapshaper: snap, simplify 12% keep-shapes (planar), clean, precision 0.001, fields NAME/SUBJECTO/PARTOF/BORDERPRECISION",
+  "fields": [
+    "NAME",
+    "SUBJECTO",
+    "PARTOF",
+    "BORDERPRECISION"
+  ],
+  "entries": [
+    {
+      "year": 1870,
+      "source": 1880,
+      "caveat": "Upstream has no 1870 file; 1880 shows Alsace-Lorraine already German and the Empire proclaimed. The 1870 prequel (sand-mny.1) must restore the pre-annexation frontier and the North German Confederation / southern states by hand.",
+      "file": "1870.geojson",
+      "sourceUrl": "https://github.com/aourednik/historical-basemaps/blob/62d8f1a03a71f2d3ff17f2d166f7553f256bce68/geojson/world_1880.geojson",
+      "features": 235,
+      "bytes": 138650
+    },
+    {
+      "year": 1871,
+      "source": 1880,
+      "caveat": "Post-Frankfurt borders as of 1880; acceptable for 1871 in western Europe.",
+      "file": "1871.geojson",
+      "sourceUrl": "https://github.com/aourednik/historical-basemaps/blob/62d8f1a03a71f2d3ff17f2d166f7553f256bce68/geojson/world_1880.geojson",
+      "features": 235,
+      "bytes": 138495
+    },
+    {
+      "year": 1905,
+      "source": 1900,
+      "caveat": "Upstream 1900; Europe is unchanged to 1905. East Asia: Port Arthur/Liaodong is the Russian lease, Korea is still the Korean Empire — check the Manchuria/Korea detail (sand-6dh.1).",
+      "file": "1905.geojson",
+      "sourceUrl": "https://github.com/aourednik/historical-basemaps/blob/62d8f1a03a71f2d3ff17f2d166f7553f256bce68/geojson/world_1900.geojson",
+      "features": 269,
+      "bytes": 145965
+    },
+    {
+      "year": 1914,
+      "source": 1914,
+      "caveat": "August 1914 borders; Alsace-Lorraine German.",
+      "file": "1914.geojson",
+      "sourceUrl": "https://github.com/aourednik/historical-basemaps/blob/62d8f1a03a71f2d3ff17f2d166f7553f256bce68/geojson/world_1914.geojson",
+      "features": 176,
+      "bytes": 120475
+    },
+    {
+      "year": 1918,
+      "source": 1920,
+      "caveat": "Upstream 1920 (post-Versailles/Trianon/Saint-Germain; some eastern frontiers still unsettled). For 11 November 1918 the legal borders are still those of 1914 with the front line overlaid — packs that need the armistice-day map should use 1914 plus the front-line layer (sand-g80.1).",
+      "file": "1918.geojson",
+      "sourceUrl": "https://github.com/aourednik/historical-basemaps/blob/62d8f1a03a71f2d3ff17f2d166f7553f256bce68/geojson/world_1920.geojson",
+      "features": 203,
+      "bytes": 139914
+    },
+    {
+      "year": 1939,
+      "source": 1938,
+      "caveat": "Upstream 1938 — confirm whether Austria (March 1938) and the Sudetenland (October 1938) are included before using for September 1939; Czechoslovakia, Memel and Albania changed in 1939.",
+      "file": "1939.geojson",
+      "sourceUrl": "https://github.com/aourednik/historical-basemaps/blob/62d8f1a03a71f2d3ff17f2d166f7553f256bce68/geojson/world_1938.geojson",
+      "features": 240,
+      "bytes": 146957
+    },
+    {
+      "year": 1945,
+      "source": 1945,
+      "caveat": "Upstream 1945; check whether it shows May or December 1945 (Poland shifted west, Germany in zones).",
+      "file": "1945.geojson",
+      "sourceUrl": "https://github.com/aourednik/historical-basemaps/blob/62d8f1a03a71f2d3ff17f2d166f7553f256bce68/geojson/world_1945.geojson",
+      "features": 225,
+      "bytes": 134852
+    },
+    {
+      "year": 1950,
+      "source": 1960,
+      "caveat": "Upstream 1960 — decolonisation has changed Africa and Asia; for Europe and Korea (38th parallel) 1950 is served adequately. Revisit when a Cold War era exists.",
+      "file": "1950.geojson",
+      "sourceUrl": "https://github.com/aourednik/historical-basemaps/blob/62d8f1a03a71f2d3ff17f2d166f7553f256bce68/geojson/world_1960.geojson",
+      "features": 196,
+      "bytes": 123291
+    }
+  ]
+}

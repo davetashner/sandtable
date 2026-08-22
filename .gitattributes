@@ -1,0 +1,3 @@
+# Generated data: hide from diffs and language stats
+content/shared/geo/borders/*.geojson -diff linguist-generated=true
+schema/*.schema.json linguist-generated=true

@@ -16,7 +16,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "validate:content": "bash scripts/check-content.sh && tsx scripts/validate-content.ts",
-    "schema": "tsx scripts/generate-schema.ts"
+    "schema": "tsx scripts/generate-schema.ts",
+    "borders": "tsx scripts/fetch-borders.ts"
   },
   "keywords": [],
   "author": "",
@@ -46,6 +47,7 @@
     "eslint-plugin-react-refresh": "^0.5.4",
     "globals": "^17.11.0",
     "jsdom": "^30.0.1",
+    "mapshaper": "^0.7.55",
     "prettier": "^3.9.6",
     "tsx": "^4.23.12",
     "typescript": "^6.0.3",

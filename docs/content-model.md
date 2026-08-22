@@ -47,7 +47,7 @@ content/
     places/places.json         Place[]
     sources/sources.json       Source[]
     media/**/media.json        Media (one manifest per image; binaries live in S3)
-    geo/borders/<year>.geojson (tiles/borders pipeline, sand-a55.10)
+    geo/borders/<year>.geojson world borders per era year (npm run borders; manifest.json has provenance)
   threads/<slug>/thread.json   Thread — a learning path across packs
 ```
 

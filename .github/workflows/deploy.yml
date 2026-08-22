@@ -79,10 +79,13 @@ jobs:
         id: stack
         run: |
           q() { aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='$1'].OutputValue" --output text; }
-          { echo "bucket=$(q AppBucketName)"; echo "distribution=$(q DistributionId)"; echo "url=$(q SiteUrl)"; } >> "$GITHUB_OUTPUT"
+          { echo "bucket=$(q AppBucketName)"; echo "assets=$(q AssetsBucketName)"; echo "distribution=$(q DistributionId)"; echo "url=$(q SiteUrl)"; } >> "$GITHUB_OUTPUT"
 
       - name: sync to S3
         run: bash scripts/deploy-static.sh dist "s3://${{ steps.stack.outputs.bucket }}"
+
+      - name: sync shared geo data to the assets bucket
+        run: aws s3 sync content/shared/geo "s3://${{ steps.stack.outputs.assets }}/geo" --no-progress --cache-control "public, max-age=3600"
 
       - name: invalidate CloudFront
         run: |
