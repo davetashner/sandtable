@@ -87,3 +87,16 @@
   text-transform: uppercase;
   pointer-events: none;
 }
+
+@media (max-width: 699.98px) {
+  .branch-toggle__option {
+    padding: 4px 9px;
+    font-size: 11.5px;
+  }
+
+  .branch-toggle__label {
+    max-width: 9em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

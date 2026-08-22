@@ -29,6 +29,8 @@ import { selectBeat } from './engine/beats.js';
 import { linksTouching } from './engine/causal.js';
 import { battleRange, enterNow, exitNow, resolveFocus, type FocusMemory } from './engine/focus.js';
 import { seed } from './packs/seed.js';
+import { usePhone } from './engine/useMediaQuery.js';
+import { BottomSheet } from './ui/BottomSheet.js';
 import { BranchToggle } from './ui/BranchToggle.js';
 import { Breadcrumb } from './ui/Breadcrumb.js';
 import { Dossier, type CardChipLike } from './ui/Dossier.js';
@@ -270,8 +272,9 @@ function DossierSurface() {
     }
     return out;
   }, [beat, labeller, controls, focus?.id]);
-  return (
-    <div className="surface surface--dossier">
+  const phone = usePhone();
+  const dossier = (
+    <>
       <Dossier
         beats={seed.beats}
         sources={seed.sources}
@@ -335,7 +338,12 @@ function DossierSurface() {
         active={meanwhile.active}
         onToggle={meanwhile.toggle}
       />
-    </div>
+    </>
+  );
+  return phone ? (
+    <BottomSheet initial="peek">{dossier}</BottomSheet>
+  ) : (
+    <div className="surface surface--dossier">{dossier}</div>
   );
 }
 

@@ -1,0 +1,61 @@
+/* Bottom sheet (phone dossier) — tokens only. */
+
+.sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+  border-radius: var(--radius) var(--radius) 0 0;
+  box-shadow: var(--shadow);
+  transition: height var(--dur-base) var(--ease-out);
+  height: 112px;
+  overflow: hidden;
+}
+
+.sheet[data-detent='half'] {
+  height: 50dvh;
+}
+
+.sheet[data-detent='full'] {
+  height: 90dvh;
+}
+
+.sheet__handle {
+  appearance: none;
+  border: 0;
+  background: none;
+  width: 100%;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  cursor: grab;
+  touch-action: none;
+}
+
+.sheet__grip {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--brass-dim);
+}
+
+.sheet__body {
+  min-height: 0;
+  overflow: auto;
+  padding: 0 14px 14px;
+}
+
+.sheet[data-detent='peek'] .sheet__body {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet {
+    transition: none;
+  }
+}

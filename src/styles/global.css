@@ -85,9 +85,51 @@ h1 {
   min-height: 420px;
 }
 
-@media (max-width: 880px) {
+/* 700–1100: map full width, dossier beneath (collapsible), timeline below */
+@media (max-width: 1099.98px) {
   .app__main {
     grid-template-columns: 1fr;
+  }
+
+  .surface--dossier {
+    max-height: 46vh;
+  }
+}
+
+/* phone: full-bleed map, compact timeline strip, dossier as a bottom sheet */
+@media (max-width: 699.98px) {
+  .app {
+    padding: 0 10px 124px;
+    gap: 10px;
+  }
+
+  .app__header {
+    padding-top: 10px;
+    align-items: center;
+  }
+
+  .lede {
+    display: none;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .app__main {
+    min-height: 0;
+  }
+
+  .surface--map {
+    min-height: 56vh;
+  }
+
+  .surface--timeline {
+    padding: 8px 10px 6px;
+  }
+
+  .crumbs {
+    font-size: 10.5px;
   }
 }
 
