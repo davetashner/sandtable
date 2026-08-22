@@ -44,5 +44,5 @@ poc/          the original single-file proof of concept
 Work happens on feature branches in worktrees, lands by pull request with
 squash or rebase merges, and `main` requires green `lint`, `security` and
 `web` checks. Every PR names the beads it completes. Content cites sources;
-images are open-licence, credited, and never gory. See `CLAUDE.md` for the
-full conventions.
+images are open-licence, credited, and never gory (ADR 0007). See
+`CONTRIBUTING.md` for the workflow and `CLAUDE.md` for the full conventions.

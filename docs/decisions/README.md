@@ -16,7 +16,7 @@ is merged.
 | [0004](0004-hosting.md)         | Static hosting on AWS (S3 + CloudFront), GitHub Actions via OIDC, assets outside git | `sand-a55.4` | accepted |
 | [0005](0005-counterfactuals.md) | Counterfactuals are hand-authored branches, not a wargame engine                     | `sand-a55.5` | accepted |
 | 0006                            | Information architecture: one map, one dossier, one timeline                         | `sand-neh.5` | pending  |
-| 0007                            | Imagery: sourcing, licensing, colorization, content policy                           | `sand-y0u.1` | pending  |
+| [0007](0007-imagery.md)         | Imagery: sourcing, licensing, colorization, content policy                           | `sand-y0u.1` | accepted |
 
 ## Template
 
