@@ -7,6 +7,11 @@ to: 1914-09-10T00:00:00Z
 branch: 1914:historical
 links:
   tech: ['1914:tech-aerial-reconnaissance']
+  documents:
+    [
+      '1914:document-gallieni-proclamation-1914-09-03',
+      '1914:document-joffre-order-of-the-day-1914-09-06',
+    ]
   events: ['1914:event-battle-of-the-marne']
   people:
     [

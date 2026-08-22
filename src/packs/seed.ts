@@ -15,6 +15,8 @@ import routesJson from '../../content/eras/1914-schlieffen-marne/routes.json';
 import placesJson from '../../content/shared/places/places.json';
 import sourcesJson from '../../content/shared/sources/sources.json';
 import techJson from '../../content/eras/1914-schlieffen-marne/tech.json';
+import scienceJson from '../../content/eras/1914-schlieffen-marne/science.json';
+import documentsJson from '../../content/eras/1914-schlieffen-marne/documents.json';
 import {
   Battle,
   BeatFrontMatter,
@@ -22,10 +24,14 @@ import {
   Formation,
   Pack,
   Place,
+  Document,
   Route,
+  ScienceCard,
   Source,
   TechCard,
   type Battle as BattleT,
+  type Document as DocumentT,
+  type ScienceCard as ScienceCardT,
   type Event as EventT,
   type Formation as FormationT,
   type NarrativeBeat,
@@ -56,6 +62,8 @@ export interface SeedPack {
   /** Shared places registry (content/shared/places). */
   places: PlaceT[];
   tech: TechCardT[];
+  science: ScienceCardT[];
+  documents: DocumentT[];
 }
 
 function loadSeed(): SeedPack {
@@ -72,7 +80,21 @@ function loadSeed(): SeedPack {
   const sources = Source.array().parse(sourcesJson);
   const places = Place.array().parse(placesJson);
   const tech = TechCard.array().parse(techJson);
-  return { pack, events, battles, formations, routes, beats, sources, places, tech };
+  const science = ScienceCard.array().parse(scienceJson);
+  const documents = Document.array().parse(documentsJson);
+  return {
+    pack,
+    events,
+    battles,
+    formations,
+    routes,
+    beats,
+    sources,
+    places,
+    tech,
+    science,
+    documents,
+  };
 }
 
 export const seed: SeedPack = loadSeed();
