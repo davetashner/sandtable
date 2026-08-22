@@ -13,7 +13,7 @@ map cannot show them. Later eras need other regions entirely — Manchuria and
 the Tsushima strait for 1904–05, the Eastern Front for 1914–17 and 1941–45 —
 so the geography solution must not be Europe-only or hand-drawn.
 
-At the same time the map must *look like a staff map*, not a web map, and
+At the same time the map must _look like a staff map_, not a web map, and
 must show the political geography of the period (Alsace-Lorraine German in
 1914, pre-annexation in 1870), which no modern basemap provides.
 
@@ -27,7 +27,7 @@ must show the political geography of the period (Alsace-Lorraine German in
   loaded lazily (Western Europe for 1870/1914/1940; Manchuria–Korea–Japan for
   1904–05; the Eastern Front for 1914–17 and 1941–45; the Middle East later).
 - **Period borders:** GeoJSON overlays derived from the open
-  *historical-basemaps* dataset (aourednik) for each era year the roadmap
+  _historical-basemaps_ dataset (aourednik) for each era year the roadmap
   needs (1870, 1871, 1905, 1914, 1918, 1939, 1945, 1950), simplified for the
   web, stored in `content/shared/geo/borders/<year>.geojson`, selected by
   the pack's declared year. Known inaccuracies are documented and corrected

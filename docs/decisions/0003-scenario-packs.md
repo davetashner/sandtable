@@ -16,7 +16,7 @@ live. The engine must be generic and the content must be data.
 
 ## Decision
 
-**Content is data; the engine is generic.** A *scenario pack* is a directory
+**Content is data; the engine is generic.** A _scenario pack_ is a directory
 of JSON (validated by JSON Schema generated from TypeScript types) plus
 Markdown narrative. The engine renders any valid pack.
 

@@ -31,24 +31,24 @@ is the narrative overview; the issue IDs below point into it.
 
 ## Phases
 
-| Phase | Epic | Outcome |
-|---|---|---|
-| 0 | `sand-a55` Foundation & platform kernel | The PoC re-implemented on the real engine, on real geography, deployed. |
-| 1 | `sand-1l0` Schlieffen Plan & the march to the Marne | The headline experience: all armies, branches, seven battle zoom-ins, guided tour. |
-| — | `sand-w9t` Technology & innovation layer | Tech rail; 1914 cards first, then the rest of WWI, later WWII. |
-| — | `sand-9u2` Science & ideas "Meanwhile" layer | Physics 1905–1919 and more, with forward connections. |
-| 2 | `sand-en0` WWI Eastern Front | Tannenberg → Brest-Litovsk, cross-linked to the West. |
-| 3 | `sand-g80` WWI Western Front 1915–18 | Trench-line layer; Verdun, Somme, 1917, 1918 zoom-ins. |
-| 3 | `sand-aie` Other fronts & the war at sea | Gallipoli, Italy, Middle East, Jutland, U-boats. |
-| 4 | `sand-ekc` Interwar & the causal chain | Causal-chain explorer; Versailles → 1939. |
-| 5 | `sand-kq6` / `sand-c6p` WWII West / East | Opens with 1940 as the echo of 1914 (route overlay). |
-| 6 | `sand-shn` Learning companion & platform | Multi-era packs, tours, sources, search, authoring tools. |
-| pre | `sand-mny` Franco-Prussian War 1870–71 | The template for 1914: Sedan, Alsace-Lorraine, the fortress line; "Road to 1914" thread. |
-| pre | `sand-6dh` Russo-Japanese War 1904–05 | Port Arthur, Mukden, Tsushima; why the memorandum was written in Dec 1905; "Korea 1905–1953" thread. |
-| — | `sand-y0u` Imagery & media | Real archive photographs, colorized and labelled, never gory; uniforms & kit. |
-| — | `sand-neh` Design system | Tokens, map style, components, motion. |
-| — | `sand-23b` Content quality & historical review | Citation standard, fact-check workflow, historiography. |
-| — | `sand-pmz` Engineering quality | CI, visual regression, performance, accessibility. |
+| Phase | Epic                                                | Outcome                                                                                              |
+| ----- | --------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| 0     | `sand-a55` Foundation & platform kernel             | The PoC re-implemented on the real engine, on real geography, deployed.                              |
+| 1     | `sand-1l0` Schlieffen Plan & the march to the Marne | The headline experience: all armies, branches, seven battle zoom-ins, guided tour.                   |
+| —     | `sand-w9t` Technology & innovation layer            | Tech rail; 1914 cards first, then the rest of WWI, later WWII.                                       |
+| —     | `sand-9u2` Science & ideas "Meanwhile" layer        | Physics 1905–1919 and more, with forward connections.                                                |
+| 2     | `sand-en0` WWI Eastern Front                        | Tannenberg → Brest-Litovsk, cross-linked to the West.                                                |
+| 3     | `sand-g80` WWI Western Front 1915–18                | Trench-line layer; Verdun, Somme, 1917, 1918 zoom-ins.                                               |
+| 3     | `sand-aie` Other fronts & the war at sea            | Gallipoli, Italy, Middle East, Jutland, U-boats.                                                     |
+| 4     | `sand-ekc` Interwar & the causal chain              | Causal-chain explorer; Versailles → 1939.                                                            |
+| 5     | `sand-kq6` / `sand-c6p` WWII West / East            | Opens with 1940 as the echo of 1914 (route overlay).                                                 |
+| 6     | `sand-shn` Learning companion & platform            | Multi-era packs, tours, sources, search, authoring tools.                                            |
+| pre   | `sand-mny` Franco-Prussian War 1870–71              | The template for 1914: Sedan, Alsace-Lorraine, the fortress line; "Road to 1914" thread.             |
+| pre   | `sand-6dh` Russo-Japanese War 1904–05               | Port Arthur, Mukden, Tsushima; why the memorandum was written in Dec 1905; "Korea 1905–1953" thread. |
+| —     | `sand-y0u` Imagery & media                          | Real archive photographs, colorized and labelled, never gory; uniforms & kit.                        |
+| —     | `sand-neh` Design system                            | Tokens, map style, components, motion.                                                               |
+| —     | `sand-23b` Content quality & historical review      | Citation standard, fact-check workflow, historiography.                                              |
+| —     | `sand-pmz` Engineering quality                      | CI, visual regression, performance, accessibility.                                                   |
 
 Phase 0 blocks Phase 1; Phase 1 blocks 2, 3, 6 and the other fronts; Phase 3
 blocks 4; Phase 4 blocks both halves of 5. The cross-cutting epics run
@@ -91,8 +91,8 @@ Couronné are narrative chapters without sub-timelines. Belgium beyond Liège
 
 Four **decision points** (`1l0.22`) pause the campaign — 25 Aug, 30 Aug,
 4 Sep, 8–9 Sep — and ask the viewer to choose before revealing what happened
-and what historians think. The "success" branch is framed as *what it would
-have required*, with a visible feasibility checklist. Human scale comes from a
+and what historians think. The "success" branch is framed as _what it would
+have required_, with a visible feasibility checklist. Human scale comes from a
 restrained casualty layer and sourced vignettes; authenticity from a `Document`
 entity with the actual orders. Then an epilogue to the trench line, the
 East–West cross-reference, a guided tour, a polish pass and a historical review.

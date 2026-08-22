@@ -5,6 +5,7 @@
 ## Beads
 
 <!-- One line per bead this PR completes. These lines are parsed; keep the exact form. -->
+
 Closes sand-
 
 ## Checklist

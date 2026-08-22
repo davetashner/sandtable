@@ -6,8 +6,8 @@
 
 ## Context
 
-The headline experience asks the viewer to see *where the plan would have
-succeeded* — Schlieffen's concept west of Paris, the pocket closing — and to
+The headline experience asks the viewer to see _where the plan would have
+succeeded_ — Schlieffen's concept west of Paris, the pocket closing — and to
 pause at decision points (25 August, 30 August, 4 September, 8–9 September)
 and choose. That demands alternative timelines. There are two ways to get
 them: author them, or compute them with an operational simulation (march
@@ -19,7 +19,7 @@ question deserves an explicit answer.
 **Counterfactuals are authored, clearly labelled branches.** A `Branch`
 shares the historical timeline up to a divergence timestamp and then carries
 its own routes, events and narrative beats. Every non-historical branch is
-rendered with a persistent *hypothetical* treatment on the map and in the
+rendered with a persistent _hypothetical_ treatment on the map and in the
 dossier, and carries:
 
 - the historiographical debate attached (for 1914: Zuber, Holmes, Mombauer,

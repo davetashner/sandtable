@@ -6,9 +6,9 @@ updates:
       interval: weekly
     groups:
       actions:
-        patterns: ["*"]
+        patterns: ['*']
     commit-message:
-      prefix: "chore(deps)"
+      prefix: 'chore(deps)'
 
   - package-ecosystem: npm
     directory: /
@@ -16,6 +16,6 @@ updates:
       interval: weekly
     groups:
       npm-minor-patch:
-        update-types: ["minor", "patch"]
+        update-types: ['minor', 'patch']
     commit-message:
-      prefix: "chore(deps)"
+      prefix: 'chore(deps)'
