@@ -1,0 +1,47 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (sand-y0u.2).",
+  "id": "media:scene/1914-ausflug-nach-paris/railway-wagon-august-1914-colorized",
+  "kind": "scene",
+  "people": [],
+  "file": "railway-wagon-august-1914-colorized.png",
+  "width": 1464,
+  "height": 1075,
+  "colorized": true,
+  "original": {
+    "description": "German infantry crowd the open door of a goods wagon of the Reichseisenbahnen in Elsass-Lothringen (marked 'Elsaß-Lothringen 33644 Gm'), waving, raising fists, holding flowers and a letter; the wagon is chalked 'Ausflug nach Paris — Auf Wiedersehn auf dem Boulevard' and 'Auf in den Kampf, mir juckt die Säbelspitze'; two men in shirtsleeves lean from the side hatch; oak sprigs on the door. August 1914, en route to the front.",
+    "inscriptions": [
+      "Ausflug nach Paris",
+      "Auf Wiedersehn auf dem Boulevard",
+      "Auf in den Kampf, mir juckt die Säbelspitze",
+      "Elsaß-Lothringen 33644 Gm"
+    ],
+    "photographer": "unknown (anonymous German war photographer)",
+    "date": "August 1914 (presumed, after the declaration of war on France)",
+    "archive": "greatwar.nl (Rob Ruggenberg's collection) via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:German_soldiers_in_a_railroad_car_on_the_way_to_the_front_during_early_World_War_I,_taken_in_1914._Taken_from_greatwar.nl_site.jpg",
+    "source_page": "https://greatwar.nl/germany/fransman.html",
+    "original_dimensions": "1024 × 718",
+    "licence": "public domain — anonymous work, more than 70 years since creation (EU) and published before 1931 (US)"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: feldgrau M1910 tunics with red piping, grey field caps with red band, dark-green/grey goods wagon; flowers and foliage interpretive"
+  },
+  "content_policy": "ok — soldiers departing, no gore",
+  "caption": "'Excursion to Paris — see you on the Boulevard.' German infantry in a goods wagon of the Alsace-Lorraine railways, August 1914: the mobilization timetable in human form, and the confidence that it would all be over in six weeks. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: anonymous, August 1914, via greatwar.nl and Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+  "used_by": [
+    "1914:prologue-mobilization",
+    "1914:tech-railways-and-timetables",
+    "1914:two-clocks-intro",
+    "1914:opening-sequence",
+    "1914:human-scale-vignettes"
+  ],
+  "focal_point": {
+    "x": 0.55,
+    "y": 0.45
+  },
+  "notes": "Provided by Dave 2026-08-22. Candidate hero for the opening sequence and the railways tech card — the chalked 'Ausflug nach Paris' is the thesis ('a timetable the world fell behind') stated by the men themselves. The wagon's Alsace-Lorraine marking ties it to the annexed provinces and the 1870 prequel. The print is widely reproduced; trace the holding archive (German federal or state photo collections) for the pipeline."
+}

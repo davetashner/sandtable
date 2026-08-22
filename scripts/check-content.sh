@@ -36,7 +36,7 @@ while IFS= read -r m; do
     bad "$m: colorized=true but caption does not say so"
   fi
   # Bundesarchiv images must carry the attribution string
-  if jq -e '(.original.archive // "") | test("Bundesarchiv")' "$m" >/dev/null && ! jq -e '.credit | test("Bundesarchiv, Bild")' "$m" >/dev/null; then
+  if jq -e '(.original.archive // "") | test("^Bundesarchiv")' "$m" >/dev/null && ! jq -e '.credit | test("Bundesarchiv, Bild")' "$m" >/dev/null; then
     bad "$m: Bundesarchiv image without the required 'Bundesarchiv, Bild …' credit string"
   fi
 done < <(find content/shared/media -name 'media.json' -print)
