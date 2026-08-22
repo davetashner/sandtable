@@ -66,9 +66,18 @@ merge.
 ## Identities (created 2026-08-22)
 
 - **IAM role `sandtable-deployer`** (path `/sandtable/`), trusted by the
-  account's GitHub OIDC provider for `repo:davetashner/sandtable:*`
-  (audience `sts.amazonaws.com`); one-hour sessions. Its ARN is the GitHub
-  repository variable `AWS_ROLE_ARN`; `AWS_REGION` is `us-east-1`.
+  account's GitHub OIDC provider (audience `sts.amazonaws.com`); one-hour
+  sessions. Its ARN is the GitHub repository variable `AWS_ROLE_ARN`;
+  `AWS_REGION` is `us-east-1`. **Trust condition:** GitHub's `sub` claim for
+  this repository is ID-qualified —
+  `repo:davetashner@5702882/sandtable@1343031046:<context>` (see
+  `gh api repos/davetashner/sandtable/actions/oidc/customization/sub`) — so the
+  `StringLike` condition on `token.actions.githubusercontent.com:sub` must
+  list `repo:davetashner@5702882/sandtable@1343031046:*` (keeping the legacy
+  `repo:davetashner/sandtable:*` alongside is harmless). A trust policy with
+  only the legacy pattern fails with
+  `Not authorized to perform sts:AssumeRoleWithWebIdentity` (observed
+  2026-08-22 on the first deploy run).
 - **IAM user `sandtable-deployer`** (same path and policy) for manual work
   from a laptop — media uploads, one-off syncs. Its access key lives only in
   the local AWS profile `sandtable-deployer`; it is never stored in GitHub.
