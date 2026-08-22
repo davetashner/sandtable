@@ -1,36 +1,56 @@
 /*
- * Design tokens — provisional, lifted from the PoC's "lamp-lit General Staff
- * war room" identity. The design-system story (sand-neh.1) replaces this file
- * with the reviewed palette and type scale; components must only ever use
- * these variables, never literal colours.
+ * Design tokens — GENERATED from src/styles/tokens.ts by `npm run tokens`.
+ * Do not edit by hand; change tokens.ts and regenerate (a test guards drift).
  *
  * Theme model: bare :root = light; dark via prefers-color-scheme unless
  * [data-theme="light"] is stamped; [data-theme="dark"] forces dark.
+ * Components use these variables only — never literal colours or typefaces.
  */
 :root {
   --bg: #e6dfcb;
   --panel: #efe9d8;
   --panel-2: #e0d9c4;
   --ink: #241f16;
-  --muted: #6b6354;
-  --brass: #8c6d28;
+  --muted: #5f5849;
+  --brass: #745519;
   --brass-dim: #b7a97c;
   --line: #c9bfa4;
+  --accent-red: #9a2e22;
   --army-1: #9a2e22;
   --army-2: #832820;
   --army-3: #6e241e;
   --french: #24566e;
   --sea: #d6ccae;
   --land: #e6dfcb;
+  --shadow: 0 8px 24px rgba(40, 32, 16, 0.14);
+  color-scheme: light;
 
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-body: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
-
+  --fs-xs: 10.5px;
+  --fs-sm: 12px;
+  --fs-md: 14.5px;
+  --fs-lg: 17px;
+  --fs-xl: 21px;
+  --fs-2xl: 26px;
+  --fs-3xl: clamp(24px, 3.2vw, 34px);
+  --lh-tight: 1.2;
+  --lh-body: 1.55;
+  --track-eyebrow: 0.12em;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
   --radius: 10px;
-  --shadow: 0 8px 24px rgba(40, 32, 16, 0.14);
-
-  color-scheme: light;
+  --radius-sm: 8px;
+  --radius-pill: 999px;
+  --dur-fast: 120ms;
+  --dur-base: 260ms;
+  --dur-camera: 1400ms;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,6 +63,7 @@
     --brass: #c9a24b;
     --brass-dim: #6e6142;
     --line: #384049;
+    --accent-red: #e0765e;
     --army-1: #d45b3f;
     --army-2: #b94734;
     --army-3: #97392a;
@@ -63,6 +84,7 @@
   --brass: #c9a24b;
   --brass-dim: #6e6142;
   --line: #384049;
+  --accent-red: #e0765e;
   --army-1: #d45b3f;
   --army-2: #b94734;
   --army-3: #97392a;
