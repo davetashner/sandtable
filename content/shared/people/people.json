@@ -6,13 +6,26 @@
     "born": "1833-02-28",
     "died": "1913-01-04",
     "nationality": "DE",
-    "roles": [{ "title": "Chief of the German General Staff", "from": "1891", "to": "1906-01-01" }],
+    "roles": [
+      {
+        "title": "Chief of the German General Staff",
+        "from": "1891",
+        "to": "1906-01-01"
+      }
+    ],
     "summary": "Chief of the German General Staff 1891–1906. His December 1905 memorandum — a massive right-wing sweep through Belgium and northern France to envelop the French armies — is the document the 1914 campaign is measured against, and whether it was ever an operational plan is itself a historiographical debate.",
     "media": ["media:person/schlieffen-alfred-von/portrait-c1906-colorized"],
     "sources": [
-      { "source": "source:zuber-2002" },
-      { "source": "source:mombauer-2001" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:zuber-2002"
+      },
+      {
+        "source": "source:mombauer-2001"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -23,13 +36,22 @@
     "died": "1916-06-18",
     "nationality": "DE",
     "roles": [
-      { "title": "Chief of the German General Staff", "from": "1906-01-01", "to": "1914-09-14" }
+      {
+        "title": "Chief of the German General Staff",
+        "from": "1906-01-01",
+        "to": "1914-09-14"
+      }
     ],
     "summary": "Schlieffen's successor, nephew of the victor of 1870. He modified the deployment — strengthening the left wing in Lorraine and, once war began, detaching corps to East Prussia and Antwerp — and directed the 1914 campaign from Koblenz and then Luxembourg. Relieved after the Marne.",
     "media": ["media:person/moltke-helmuth-von-younger/portrait-1906-colorized"],
     "sources": [
-      { "source": "source:mombauer-2001" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:mombauer-2001"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -39,12 +61,23 @@
     "born": "1846-05-20",
     "died": "1934-10-19",
     "nationality": "DE",
-    "roles": [{ "title": "Commander, German 1st Army", "from": "1914-08-02", "to": "1915-03" }],
+    "roles": [
+      {
+        "title": "Commander, German 1st Army",
+        "from": "1914-08-02",
+        "to": "1915-03"
+      }
+    ],
     "summary": "Commander of the German 1st Army on the outer edge of the right wing — the army that marched furthest and fastest, fought Mons and Le Cateau, wheeled inside Paris at the end of August and was struck on the Ourcq by Maunoury's 6th Army in September.",
     "media": ["media:person/kluck-alexander-von/portrait-c1914-colorized"],
     "sources": [
-      { "source": "source:herwig-2009" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -54,12 +87,23 @@
     "born": "1846-03-24",
     "died": "1921-08-31",
     "nationality": "DE",
-    "roles": [{ "title": "Commander, German 2nd Army", "from": "1914-08-02", "to": "1915-04" }],
+    "roles": [
+      {
+        "title": "Commander, German 2nd Army",
+        "from": "1914-08-02",
+        "to": "1915-04"
+      }
+    ],
     "summary": "Commander of the German 2nd Army, for a time also directing the 1st and 3rd. Fought the Sambre and Guise; his decision to pull back from the Marne on 9 September, after Hentsch's visit, ended the campaign's offensive phase.",
     "media": ["media:person/bulow-karl-von/portrait-c1916-colorized"],
     "sources": [
-      { "source": "source:herwig-2009" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -69,12 +113,23 @@
     "born": "1846-12-17",
     "died": "1922-03-19",
     "nationality": "DE",
-    "roles": [{ "title": "Commander, German 3rd Army", "from": "1914-08-02", "to": "1914-09-12" }],
+    "roles": [
+      {
+        "title": "Commander, German 3rd Army",
+        "from": "1914-08-02",
+        "to": "1914-09-12"
+      }
+    ],
     "summary": "Saxon commander of the German 3rd Army, the hinge between the right wing and the centre; forced the Meuse at Dinant and fought Foch's 9th Army in the marshes of Saint-Gond at the Marne before falling ill and being relieved.",
     "media": ["media:person/hausen-max-von/portrait-colorized"],
     "sources": [
-      { "source": "source:herwig-2009" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -84,12 +139,23 @@
     "born": "1869-05-18",
     "died": "1955-08-02",
     "nationality": "DE",
-    "roles": [{ "title": "Commander, German 6th Army", "from": "1914-08-02", "to": "1916-08" }],
+    "roles": [
+      {
+        "title": "Commander, German 6th Army",
+        "from": "1914-08-02",
+        "to": "1916-08"
+      }
+    ],
     "summary": "Commander of the German 6th Army in Lorraine — the left wing that absorbed the French Plan XVII offensive at Morhange–Sarrebourg and then counterattacked toward the Trouée de Charmes and Nancy.",
     "media": ["media:person/rupprecht-of-bavaria/portrait-colorized"],
     "sources": [
-      { "source": "source:herwig-2009" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -109,8 +175,13 @@
     "summary": "Lieutenant-colonel on the General Staff whom Moltke sent by car to the right-wing armies on 8–9 September 1914. His authority and the retreat order he sanctioned at 1st and 2nd Army headquarters are among the most argued-over moments of the campaign.",
     "media": ["media:person/hentsch-richard/portrait-colorized"],
     "sources": [
-      { "source": "source:herwig-2009" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -126,13 +197,21 @@
         "from": "1914-08-02",
         "to": "1914-08-22"
       },
-      { "title": "Chief of staff, German 8th Army (East Prussia)", "from": "1914-08-22" }
+      {
+        "title": "Chief of staff, German 8th Army (East Prussia)",
+        "from": "1914-08-22"
+      }
     ],
     "summary": "Staff officer who took Liège's citadel by bluff on 7 August 1914, then was sent east with Hindenburg to command at Tannenberg — the detour that links the western campaign to the eastern.",
     "media": ["media:person/ludendorff-erich/portrait-1915-colorized"],
     "sources": [
-      { "source": "source:herwig-2009" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -143,15 +222,31 @@
     "died": "1922-04-08",
     "nationality": "DE",
     "roles": [
-      { "title": "Prussian Minister of War", "from": "1913-06-07", "to": "1915-01-21" },
-      { "title": "Chief of the German General Staff", "from": "1914-09-14", "to": "1916-08-29" }
+      {
+        "title": "Prussian Minister of War",
+        "from": "1913-06-07",
+        "to": "1915-01-21"
+      },
+      {
+        "title": "Chief of the German General Staff",
+        "from": "1914-09-14",
+        "to": "1916-08-29"
+      }
     ],
     "summary": "Prussian Minister of War from 1913 and Chief of the General Staff from 14 September 1914 (in Moltke's place; officially from 3 November) to August 1916. He ran the Race to the Sea and the First Battle of Ypres in the autumn of 1914, then the war of attrition that culminated at Verdun in 1916; he was dismissed after Romania entered the war and commanded in Romania and Palestine.",
     "media": ["media:person/falkenhayn-erich/portrait-colorized"],
     "sources": [
-      { "source": "source:strachan-2001" },
-      { "source": "source:herwig-2009", "note": "the succession to Moltke" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "the succession to Moltke"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -162,13 +257,22 @@
     "died": "1931-01-03",
     "nationality": "FR",
     "roles": [
-      { "title": "Commander-in-Chief, French armies", "from": "1914-08-02", "to": "1916-12" }
+      {
+        "title": "Commander-in-Chief, French armies",
+        "from": "1914-08-02",
+        "to": "1916-12"
+      }
     ],
     "summary": "Commander-in-Chief of the French armies 1914–1916: author of Plan XVII's frontier offensive, and of the retreat, the redeployment west by rail and the 6 September counterstroke that won the Marne.",
     "media": ["media:person/joffre-joseph/portrait-colorized"],
     "sources": [
-      { "source": "source:herwig-2009" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -178,12 +282,23 @@
     "born": "1851-12-24",
     "died": "1944-03-19",
     "nationality": "FR",
-    "roles": [{ "title": "Commander, French 2nd Army", "from": "1914-08-02", "to": "1915-06" }],
+    "roles": [
+      {
+        "title": "Commander, French 2nd Army",
+        "from": "1914-08-02",
+        "to": "1915-06"
+      }
+    ],
     "summary": "Commander of the French 2nd Army in Lorraine: beaten at Morhange on 20 August, then held the Grand Couronné de Nancy through early September — the hinge that kept the German left from closing the other jaw.",
     "media": ["media:person/castelnau-edouard-de/portrait-colorized"],
     "sources": [
-      { "source": "source:herwig-2009" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -193,12 +308,23 @@
     "born": "1852-07-31",
     "died": "1925-01-18",
     "nationality": "FR",
-    "roles": [{ "title": "Commander, French 5th Army", "from": "1914-08-02", "to": "1914-09-03" }],
+    "roles": [
+      {
+        "title": "Commander, French 5th Army",
+        "from": "1914-08-02",
+        "to": "1914-09-03"
+      }
+    ],
     "summary": "Commander of the French 5th Army on the Allied left. He read the German wheel through Belgium earlier than GQG, fought Charleroi and the counterattack at Guise on 29 August, and was replaced by Franchet d'Espèrey on 3 September.",
     "media": ["media:person/lanrezac-charles/portrait-colorized"],
     "sources": [
-      { "source": "source:herwig-2009" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -208,12 +334,23 @@
     "born": "1856-05-25",
     "died": "1942-07-08",
     "nationality": "FR",
-    "roles": [{ "title": "Commander, French 5th Army", "from": "1914-09-03", "to": "1916-03" }],
+    "roles": [
+      {
+        "title": "Commander, French 5th Army",
+        "from": "1914-09-03",
+        "to": "1916-03"
+      }
+    ],
     "summary": "Took over the French 5th Army on 3 September 1914 and drove it back north into the gap between Kluck and Bülow during the Marne; 'Desperate Frankie' to the British.",
     "media": ["media:person/franchet-desperey-louis/portrait-colorized"],
     "sources": [
-      { "source": "source:herwig-2009" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -223,12 +360,23 @@
     "born": "1847-12-17",
     "died": "1923-03-28",
     "nationality": "FR",
-    "roles": [{ "title": "Commander, French 6th Army", "from": "1914-08-26", "to": "1915-03" }],
+    "roles": [
+      {
+        "title": "Commander, French 6th Army",
+        "from": "1914-08-26",
+        "to": "1915-03"
+      }
+    ],
     "summary": "Recalled from retirement to command the new French 6th Army, formed at the end of August from troops railed west. Its attack on Kluck's flank along the Ourcq on 5 September opened the Battle of the Marne.",
     "media": ["media:person/maunoury-michel-joseph/portrait-colorized"],
     "sources": [
-      { "source": "source:herwig-2009" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -238,12 +386,23 @@
     "born": "1849-04-24",
     "died": "1916-05-27",
     "nationality": "FR",
-    "roles": [{ "title": "Military Governor of Paris", "from": "1914-08-26", "to": "1915-10" }],
+    "roles": [
+      {
+        "title": "Military Governor of Paris",
+        "from": "1914-08-26",
+        "to": "1915-10"
+      }
+    ],
     "summary": "Military Governor of Paris from late August 1914. Saw the opening offered by Kluck's wheel, pushed Joffre to attack, and sent Maunoury's reinforcements forward — some of them in the requisitioned taxis that became the battle's legend.",
     "media": ["media:person/gallieni-joseph/portrait-colorized"],
     "sources": [
-      { "source": "source:herwig-2009" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -254,14 +413,27 @@
     "died": "1929-03-20",
     "nationality": "FR",
     "roles": [
-      { "title": "Commander, XX Corps", "from": "1914-08-02", "to": "1914-08-28" },
-      { "title": "Commander, French 9th Army", "from": "1914-08-29", "to": "1915-01" }
+      {
+        "title": "Commander, XX Corps",
+        "from": "1914-08-02",
+        "to": "1914-08-28"
+      },
+      {
+        "title": "Commander, French 9th Army",
+        "from": "1914-08-29",
+        "to": "1915-01"
+      }
     ],
     "summary": "Commanded XX Corps in Lorraine, then the improvised 9th Army that held the marshes of Saint-Gond at the Marne. Later Allied generalissimo in 1918 — one person who spans the whole war.",
     "media": ["media:person/foch-ferdinand/portrait-colorized"],
     "sources": [
-      { "source": "source:herwig-2009" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -281,8 +453,13 @@
     "summary": "Commander of the British Expeditionary Force in 1914: Mons, Le Cateau, the retreat almost to the Seine, and — after Kitchener's intervention — the advance into the gap at the Marne.",
     "media": ["media:person/french-john/portrait-colorized"],
     "sources": [
-      { "source": "source:edmonds-1922" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -292,12 +469,23 @@
     "born": "1874-11-30",
     "died": "1965-01-24",
     "nationality": "GB",
-    "roles": [{ "title": "First Lord of the Admiralty", "from": "1911-10", "to": "1915-05" }],
+    "roles": [
+      {
+        "title": "First Lord of the Admiralty",
+        "from": "1911-10",
+        "to": "1915-05"
+      }
+    ],
     "summary": "First Lord of the Admiralty in 1914; sent the Royal Naval Division to Antwerp in October and went there himself. Appears again at Gallipoli and, in 1940, as the figure the whole multi-era arc bends toward.",
     "media": ["media:person/churchill-winston/portrait-c1914-colorized"],
     "sources": [
-      { "source": "source:hastings-2013" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -308,13 +496,22 @@
     "died": "1934-02-17",
     "nationality": "BE",
     "roles": [
-      { "title": "Commander-in-Chief, Belgian Army", "from": "1914-08-04", "to": "1918-11" }
+      {
+        "title": "Commander-in-Chief, Belgian Army",
+        "from": "1914-08-04",
+        "to": "1918-11"
+      }
     ],
     "summary": "King and commander-in-chief who refused the German ultimatum, fought for the Gette line, withdrew the field army into Antwerp and held the Yser in October — keeping a corner of Belgium unoccupied for four years.",
     "media": ["media:person/albert-i-of-belgium/portrait-colorized"],
     "sources": [
-      { "source": "source:hastings-2013" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -334,8 +531,298 @@
     "summary": "Commander of the Liège fortress ring. Held the forts against the German coup de main and the siege until the 42 cm howitzers broke them; carried unconscious from the ruins of Fort Loncin on 15 August.",
     "media": ["media:person/leman-gerard/portrait-1918-colorized"],
     "sources": [
-      { "source": "source:herwig-2009" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:albrecht-of-wurttemberg",
+    "name": "Albrecht, Duke of Württemberg",
+    "sortName": "Albrecht, Duke of Württemberg",
+    "born": "1865-12-23",
+    "died": "1939-10-29",
+    "nationality": "DE",
+    "roles": [
+      {
+        "title": "Commander, German 4th Army",
+        "from": "1914-08-02",
+        "to": "1917-02"
+      }
+    ],
+    "summary": "Heir to the throne of Württemberg and a career soldier, he commanded the German 4th Army through the Ardennes battles, the Marne and First Ypres, and from 1917 Army Group Albrecht on the southern end of the Western Front.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:wilhelm-german-crown-prince",
+    "name": "Wilhelm, German Crown Prince",
+    "sortName": "Wilhelm, Crown Prince of Germany",
+    "born": "1882-05-06",
+    "died": "1951-07-20",
+    "nationality": "DE",
+    "roles": [
+      {
+        "title": "Commander, German 5th Army",
+        "from": "1914-08-02",
+        "to": "1916-11"
+      }
+    ],
+    "summary": "The Kaiser's eldest son commanded the 5th Army in 1914 — the Ardennes, Longwy and the Verdun sector — and in 1916 the army that attacked Verdun; from November 1916 he led Army Group Crown Prince. His chief of staff, Schmidt von Knobelsdorf, did much of the work.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:heeringen-josias-von",
+    "name": "Josias von Heeringen",
+    "sortName": "Heeringen, Josias von",
+    "born": "1850-03-09",
+    "died": "1926-10-09",
+    "nationality": "DE",
+    "roles": [
+      {
+        "title": "Prussian Minister of War",
+        "from": "1909",
+        "to": "1913-06"
+      },
+      {
+        "title": "Commander, German 7th Army",
+        "from": "1914-08-02",
+        "to": "1916-08"
+      }
+    ],
+    "summary": "Prussian War Minister until 1913, then commander of the 7th Army in Alsace in 1914: Mulhouse, the Vosges and the Aisne after the army was moved north in September.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:dubail-auguste",
+    "name": "Auguste Dubail",
+    "sortName": "Dubail, Auguste",
+    "born": "1851-04-15",
+    "died": "1934-01-07",
+    "nationality": "FR",
+    "roles": [
+      {
+        "title": "Commander, French 1st Army",
+        "from": "1914-08-02",
+        "to": "1915-01"
+      }
+    ],
+    "summary": "Commanded the French 1st Army on the right of Plan XVII — the advance into Alsace and Lorraine towards Sarrebourg, the retreat after Morhange, and the defence of the Vosges and the Trouée de Charmes; later commander of the Eastern Army Group.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:ruffey-pierre",
+    "name": "Pierre Ruffey",
+    "sortName": "Ruffey, Pierre",
+    "born": "1851-03-17",
+    "died": "1928-09-16",
+    "nationality": "FR",
+    "roles": [
+      {
+        "title": "Commander, French 3rd Army",
+        "from": "1914-08-02",
+        "to": "1914-08-30"
+      }
+    ],
+    "summary": "Commanded the French 3rd Army in the Ardennes offensive of 21–23 August around Longwy and Virton; relieved by Joffre on 30 August and replaced by Sarrail.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:langle-de-cary-fernand-de",
+    "name": "Fernand de Langle de Cary",
+    "sortName": "Langle de Cary, Fernand de",
+    "born": "1849-07-04",
+    "died": "1927-02-19",
+    "nationality": "FR",
+    "roles": [
+      {
+        "title": "Commander, French 4th Army",
+        "from": "1914-08-02",
+        "to": "1915-12"
+      }
+    ],
+    "summary": "Commanded the French 4th Army into the Ardennes on 21–23 August (Neufchâteau, Rossignol), in the retreat over the Meuse and at the Marne around Vitry-le-François; later the Central Army Group and the early defence of Verdun.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:sarrail-maurice",
+    "name": "Maurice Sarrail",
+    "sortName": "Sarrail, Maurice",
+    "born": "1856-04-06",
+    "died": "1929-03-23",
+    "nationality": "FR",
+    "roles": [
+      {
+        "title": "Commander, French 3rd Army",
+        "from": "1914-08-30",
+        "to": "1915-07"
+      }
+    ],
+    "summary": "Took over the French 3rd Army from Ruffey on 30 August and held the line from Verdun to Revigny at the Marne, keeping the fortress as the hinge of the French right; the politically connected 'republican general' later commanded at Salonika.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:pau-paul",
+    "name": "Paul Pau",
+    "sortName": "Pau, Paul",
+    "born": "1848-11-29",
+    "died": "1932-01-02",
+    "nationality": "FR",
+    "roles": [
+      {
+        "title": "Commander, Army of Alsace",
+        "from": "1914-08-10",
+        "to": "1914-08-26"
+      }
+    ],
+    "summary": "A one-armed veteran of 1870 recalled from retirement to command the Army of Alsace, which retook Mulhouse on 19 August and was dissolved a week later when Joffre pulled its troops west for the new 6th Army.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:haig-douglas",
+    "name": "Sir Douglas Haig",
+    "sortName": "Haig, Douglas",
+    "born": "1861-06-19",
+    "died": "1928-01-29",
+    "nationality": "GB",
+    "roles": [
+      {
+        "title": "Commander, I Corps, BEF",
+        "from": "1914-08-05",
+        "to": "1914-12-26"
+      }
+    ],
+    "summary": "Commanded I Corps of the BEF in 1914 — in reserve at Mons, the retreat from Landrecies to the Marne, the advance to the Aisne, and the defence of Ypres in October–November; commanded the First Army from December 1914 and the BEF from December 1915.",
+    "sources": [
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:smith-dorrien-horace",
+    "name": "Sir Horace Smith-Dorrien",
+    "sortName": "Smith-Dorrien, Horace",
+    "born": "1858-05-26",
+    "died": "1930-08-12",
+    "nationality": "GB",
+    "roles": [
+      {
+        "title": "Commander, II Corps, BEF",
+        "from": "1914-08-21",
+        "to": "1914-12-26"
+      }
+    ],
+    "summary": "Given II Corps on 21 August after Grierson died on the train to the front, he fought Mons on 23 August and, against Sir John French's wishes, stood and fought at Le Cateau on 26 August; commanded the Second Army from December 1914 until French removed him in May 1915.",
+    "sources": [
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   }
 ]

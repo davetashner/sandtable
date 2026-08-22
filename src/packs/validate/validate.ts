@@ -462,7 +462,27 @@ function checkFormation(
   checkIds(ctx, path, f.media, f.id, ['media'], 'media');
   checkCitations(ctx, path, f.id, f.sources, false);
   checkCitations(ctx, path, f.id, f.strength?.sources, false, 'strength.sources');
-  void scope;
+  if (f.concentration) {
+    const c = f.concentration;
+    checkCitations(ctx, path, f.id, c.sources, false, 'concentration.sources');
+    const range = scope?.timeRange ?? s.pack.timeRange;
+    if (c.asOf && !within(range, c.asOf))
+      ctx.error(
+        path,
+        `concentration.asOf (${c.asOf}) is outside the ${scope ? 'battle' : 'pack'} timeRange`,
+        f.id,
+      );
+    const [w, so, e, n] = scope?.region ?? s.pack.region;
+    if (c.position) {
+      const [x, y] = c.position;
+      if (x < w || x > e || y < so || y > n)
+        ctx.warn(
+          path,
+          `concentration.position [${x}, ${y}] is outside the ${scope ? 'battle' : 'pack'} region`,
+          f.id,
+        );
+    }
+  }
 }
 
 function checkRoute(

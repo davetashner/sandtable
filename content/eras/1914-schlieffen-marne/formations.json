@@ -6,8 +6,35 @@
     "side": "de",
     "kind": "army",
     "commander": "person:kluck-alexander-von",
-    "summary": "Outer edge of the right wing: Brussels, Mons, Le Cateau, the wheel inside Paris, the Ourcq.",
-    "sources": [{ "source": "source:herwig-2009" }, { "source": "source:reichsarchiv-weltkrieg-1" }]
+    "strength": {
+      "men": 320000,
+      "corps": 7,
+      "asOf": "1914-08-17",
+      "sources": [
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "Around Aachen–Jülich–Krefeld, behind the Dutch frontier, after detraining on the Rhine",
+      "position": [6.2, 50.85],
+      "asOf": "1914-08-17",
+      "sources": [
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    },
+    "summary": "Outer edge of the right wing: II, III, IV and IX Corps with the III and IV Reserve Corps, the IX Reserve Corps joining from Schleswig at the end of August, and Marwitz's II Cavalry Corps riding ahead. Brussels, Mons, Le Cateau, the wheel inside Paris, the Ourcq.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      }
+    ]
   },
   {
     "id": "1914:army-de-2",
@@ -16,8 +43,35 @@
     "side": "de",
     "kind": "army",
     "commander": "person:bulow-karl-von",
-    "summary": "Liège, the Sambre at Charleroi, Guise, the Marne at Montmirail.",
-    "sources": [{ "source": "source:herwig-2009" }, { "source": "source:reichsarchiv-weltkrieg-1" }]
+    "strength": {
+      "men": 260000,
+      "corps": 6,
+      "asOf": "1914-08-17",
+      "sources": [
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "Eupen–Malmedy and around Liège after its fall",
+      "position": [6.1, 50.6],
+      "asOf": "1914-08-17",
+      "sources": [
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    },
+    "summary": "Guard, VII and X Corps with the Guard Reserve, VII Reserve and X Reserve Corps, and Richthofen's I Cavalry Corps. Liège, Namur, the Sambre at Charleroi, Guise, the Marne on the Petit Morin; Bülow's retreat on 9 September ended the battle.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      }
+    ]
   },
   {
     "id": "1914:army-de-3",
@@ -26,8 +80,35 @@
     "side": "de",
     "kind": "army",
     "commander": "person:hausen-max-von",
-    "summary": "Saxon army; the Meuse at Dinant, the marshes of Saint-Gond.",
-    "sources": [{ "source": "source:herwig-2009" }]
+    "strength": {
+      "men": 180000,
+      "corps": 4,
+      "asOf": "1914-08-17",
+      "sources": [
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "Around Sankt Vith–Prüm in the Eifel",
+      "position": [6.3, 50.25],
+      "asOf": "1914-08-17",
+      "sources": [
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    },
+    "summary": "The Saxon army: XI, XII and XIX Corps with the XII Reserve Corps. The Meuse at Dinant, the centre of the wheel, the marshes of Saint-Gond against Foch.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      }
+    ]
   },
   {
     "id": "1914:army-de-4",
@@ -35,8 +116,36 @@
     "short": "4. Armee",
     "side": "de",
     "kind": "army",
-    "summary": "Duke Albrecht of Württemberg; the Ardennes encounter battles, the Meuse at Sedan.",
-    "sources": [{ "source": "source:herwig-2009" }]
+    "commander": "person:albrecht-of-wurttemberg",
+    "strength": {
+      "men": 180000,
+      "corps": 5,
+      "asOf": "1914-08-17",
+      "sources": [
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "Trier–Bitburg and the Grand Duchy of Luxembourg",
+      "position": [6.5, 49.85],
+      "asOf": "1914-08-17",
+      "sources": [
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    },
+    "summary": "VI, VIII and XVIII Corps with the VIII Reserve and XVIII Reserve Corps. The Ardennes encounter battles of 21–23 August (Neufchâteau, Rossignol), the Meuse at Sedan, the Marne around Vitry-le-François.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      }
+    ]
   },
   {
     "id": "1914:army-de-5",
@@ -44,8 +153,36 @@
     "short": "5. Armee",
     "side": "de",
     "kind": "army",
-    "summary": "Crown Prince Wilhelm; Longwy, the Ardennes, Verdun's western face.",
-    "sources": [{ "source": "source:herwig-2009" }]
+    "commander": "person:wilhelm-german-crown-prince",
+    "strength": {
+      "men": 200000,
+      "corps": 5,
+      "asOf": "1914-08-17",
+      "sources": [
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "Saarburg–Thionville (Diedenhofen)–Metz",
+      "position": [6.3, 49.35],
+      "asOf": "1914-08-17",
+      "sources": [
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    },
+    "summary": "V, XIII and XVI Corps with the V Reserve and VI Reserve Corps and Hollen's IV Cavalry Corps, pivoting on Metz. Longwy and the southern Ardennes, Verdun's western approaches, the Marne around Revigny.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      }
+    ]
   },
   {
     "id": "1914:army-de-6",
@@ -54,8 +191,35 @@
     "side": "de",
     "kind": "army",
     "commander": "person:rupprecht-of-bavaria",
-    "summary": "The left wing in Lorraine: Morhange–Sarrebourg, the Trouée de Charmes, the Grand Couronné.",
-    "sources": [{ "source": "source:herwig-2009" }]
+    "strength": {
+      "men": 220000,
+      "corps": 5,
+      "asOf": "1914-08-17",
+      "sources": [
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "Lorraine between Metz, Saarbrücken and Sarreguemines",
+      "position": [6.9, 49.1],
+      "asOf": "1914-08-17",
+      "sources": [
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    },
+    "summary": "The Bavarian army: I, II and III Bavarian Corps, XXI Corps, the I Bavarian Reserve Corps and Frommel's III Cavalry Corps. Drew the French in, then struck at Morhange–Sarrebourg on 20 August; the Trouée de Charmes and the Grand Couronné de Nancy; moved north to Picardy in late September.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      }
+    ]
   },
   {
     "id": "1914:army-de-7",
@@ -63,8 +227,699 @@
     "short": "7. Armee",
     "side": "de",
     "kind": "army",
-    "summary": "Josias von Heeringen; Alsace and the Vosges, then moved to the Aisne in September.",
-    "sources": [{ "source": "source:herwig-2009" }]
+    "commander": "person:heeringen-josias-von",
+    "strength": {
+      "men": 125000,
+      "corps": 3,
+      "asOf": "1914-08-17",
+      "sources": [
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "Strasbourg and Upper Alsace",
+      "position": [7.6, 48.5],
+      "asOf": "1914-08-17",
+      "sources": [
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    },
+    "summary": "XIV and XV Corps with the XIV Reserve Corps, the left flank of the whole deployment: Mulhouse lost and retaken, the Vosges passes, then railed north to the Aisne in September.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-ii",
+    "name": "German II Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "II. AK",
+    "parent": "1914:army-de-1",
+    "summary": "3rd and 4th Divisions (Pomerania). Marched on the outer edge of the wheel; faced Maunoury's right on the Ourcq from 6 September.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-iii",
+    "name": "German III Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "III. AK",
+    "parent": "1914:army-de-1",
+    "summary": "5th and 6th Divisions (Brandenburg). Mons, Le Cateau; swung back north to the Ourcq on 7–8 September.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-iv",
+    "name": "German IV Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "IV. AK",
+    "parent": "1914:army-de-1",
+    "summary": "7th and 8th Divisions (Prussian Saxony). Mons and Le Cateau on the right of the 1st Army; the Ourcq.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-ix",
+    "name": "German IX Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "IX. AK",
+    "parent": "1914:army-de-1",
+    "summary": "17th and 18th Divisions (Schleswig-Holstein and Hanseatic cities). The inner corps at Mons; turned back north on 6 September, opening the gap with the 2nd Army.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-iii-res",
+    "name": "German III Reserve Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "III. RK",
+    "parent": "1914:army-de-1",
+    "summary": "5th and 6th Reserve Divisions. Detached on 20 August to mask Antwerp; did not march to the Marne.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-iv-res",
+    "name": "German IV Reserve Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "IV. RK",
+    "parent": "1914:army-de-1",
+    "summary": "7th and 22nd Reserve Divisions (Gronau). The flank guard that met Maunoury on 5 September and began the battle of the Ourcq.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-ix-res",
+    "name": "German IX Reserve Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "IX. RK",
+    "parent": "1914:army-de-1",
+    "summary": "17th and 18th Reserve Divisions, held back in Schleswig against a British landing until 22 August; joined the 1st Army at the end of August to mask Antwerp and reached the Ourcq on 8–9 September.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:hkk-2",
+    "name": "German II Cavalry Corps (HKK 2)",
+    "side": "de",
+    "kind": "corps",
+    "short": "HKK 2",
+    "parent": "1914:army-de-1",
+    "summary": "Marwitz: 2nd, 4th and 9th Cavalry Divisions. Haelen on 12 August, the screen ahead of the right wing, the Marne crossings; filled the gap between the 1st and 2nd Armies on 8–9 September.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-guard",
+    "name": "German Guard Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "GK",
+    "parent": "1914:army-de-2",
+    "summary": "1st and 2nd Guard Divisions. Namur, the Sambre, Guise; the Marne at the marshes of Saint-Gond beside Hausen.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-vii",
+    "name": "German VII Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "VII. AK",
+    "parent": "1914:army-de-2",
+    "summary": "13th and 14th Divisions (Westphalia). Liège from the north, the Sambre at Charleroi, Maubeuge.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-x",
+    "name": "German X Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "X. AK",
+    "parent": "1914:army-de-2",
+    "summary": "19th and 20th Divisions (Hanover; Emmich, who led the Liège assault). The Sambre, Guise — where Lanrezac's counterstroke fell on it — the Marne.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-guard-res",
+    "name": "German Guard Reserve Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "GRK",
+    "parent": "1914:army-de-2",
+    "summary": "3rd Guard and 1st Guard Reserve Divisions. Namur; detached with the XI Corps to East Prussia on 25–26 August — one of the two corps the right wing lost.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-vii-res",
+    "name": "German VII Reserve Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "VII. RK",
+    "parent": "1914:army-de-2",
+    "summary": "13th and 14th Reserve Divisions. Besieged Maubeuge (taken 7 September) and so was absent from the Marne.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-x-res",
+    "name": "German X Reserve Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "X. RK",
+    "parent": "1914:army-de-2",
+    "summary": "2nd Guard Reserve and 19th Reserve Divisions. The Sambre, Guise, the Marne on the Petit Morin.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:hkk-1",
+    "name": "German I Cavalry Corps (HKK 1)",
+    "side": "de",
+    "kind": "corps",
+    "short": "HKK 1",
+    "parent": "1914:army-de-2",
+    "summary": "Richthofen: Guard and 5th Cavalry Divisions. Screened the 2nd Army's advance and covered the gap on 8–9 September.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-xi",
+    "name": "German XI Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "XI. AK",
+    "parent": "1914:army-de-3",
+    "summary": "22nd and 38th Divisions (Hesse-Nassau, Thuringia). Namur; detached to East Prussia on 25–26 August with the Guard Reserve Corps.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-xii",
+    "name": "German XII (1st Royal Saxon) Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "XII. AK",
+    "parent": "1914:army-de-3",
+    "summary": "23rd and 32nd Divisions. The Meuse at Dinant on 23 August; the Marne at Fère-Champenoise.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-xix",
+    "name": "German XIX (2nd Royal Saxon) Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "XIX. AK",
+    "parent": "1914:army-de-3",
+    "summary": "24th and 40th Divisions. Dinant, the advance across the Aisne, the Marne.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-xii-res",
+    "name": "German XII Reserve Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "XII. RK",
+    "parent": "1914:army-de-3",
+    "summary": "23rd and 24th Reserve Divisions (Saxon). Dinant and Givet; masked the Meuse forts before following the army south.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-vi",
+    "name": "German VI Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "VI. AK",
+    "parent": "1914:army-de-4",
+    "summary": "11th and 12th Divisions (Silesia). Neufchâteau in the Ardennes, Sedan, the Marne near Vitry.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-viii",
+    "name": "German VIII Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "VIII. AK",
+    "parent": "1914:army-de-4",
+    "summary": "15th and 16th Divisions (Rhineland). Longwy sector of the Ardennes, the Meuse, the Marne.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-xviii",
+    "name": "German XVIII Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "XVIII. AK",
+    "parent": "1914:army-de-4",
+    "summary": "21st and 25th Divisions (Hesse). Rossignol on 22 August, where the French Colonial Corps was destroyed.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-viii-res",
+    "name": "German VIII Reserve Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "VIII. RK",
+    "parent": "1914:army-de-4",
+    "summary": "15th and 16th Reserve Divisions. The Ardennes and the Meuse crossings.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-xviii-res",
+    "name": "German XVIII Reserve Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "XVIII. RK",
+    "parent": "1914:army-de-4",
+    "summary": "21st and 25th Reserve Divisions. The Ardennes; the Marne around Sermaize.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-v",
+    "name": "German V Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "V. AK",
+    "parent": "1914:army-de-5",
+    "summary": "9th and 10th Divisions (Posen, Silesia). Longwy; the approaches to Verdun from the north.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-xiii",
+    "name": "German XIII (Royal Württemberg) Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "XIII. AK",
+    "parent": "1914:army-de-5",
+    "summary": "26th and 27th Divisions. Longwy and the Woëvre; the Marne near Revigny.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-xvi",
+    "name": "German XVI Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "XVI. AK",
+    "parent": "1914:army-de-5",
+    "summary": "33rd and 34th Divisions (Metz, Lorraine). The pivot on Metz; the Argonne.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-v-res",
+    "name": "German V Reserve Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "V. RK",
+    "parent": "1914:army-de-5",
+    "summary": "9th and 10th Reserve Divisions. Verdun's western forts; the Argonne.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-vi-res",
+    "name": "German VI Reserve Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "VI. RK",
+    "parent": "1914:army-de-5",
+    "summary": "11th and 12th Reserve Divisions. Masked Verdun from the north-east.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:hkk-4",
+    "name": "German IV Cavalry Corps (HKK 4)",
+    "side": "de",
+    "kind": "corps",
+    "short": "HKK 4",
+    "parent": "1914:army-de-5",
+    "summary": "Hollen: 3rd and 6th Cavalry Divisions. The Ardennes screen; the Argonne.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-i-bav",
+    "name": "German I Royal Bavarian Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "I. bAK",
+    "parent": "1914:army-de-6",
+    "summary": "1st and 2nd Bavarian Divisions. Morhange on 20 August; the Trouée de Charmes; sent north in September.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-ii-bav",
+    "name": "German II Royal Bavarian Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "II. bAK",
+    "parent": "1914:army-de-6",
+    "summary": "3rd and 4th Bavarian Divisions. Morhange–Sarrebourg; the Grand Couronné; north to the Somme in late September.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-iii-bav",
+    "name": "German III Royal Bavarian Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "III. bAK",
+    "parent": "1914:army-de-6",
+    "summary": "5th and 6th Bavarian Divisions. Sarrebourg; the attacks on Nancy in September.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-xxi",
+    "name": "German XXI Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "XXI. AK",
+    "parent": "1914:army-de-6",
+    "summary": "31st and 42nd Divisions (Lorraine). Sarrebourg and the Vosges foothills.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-i-bav-res",
+    "name": "German I Royal Bavarian Reserve Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "I. bRK",
+    "parent": "1914:army-de-6",
+    "summary": "1st and 5th Bavarian Reserve Divisions. Lorraine; the Grand Couronné.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:hkk-3",
+    "name": "German III Cavalry Corps (HKK 3)",
+    "side": "de",
+    "kind": "corps",
+    "short": "HKK 3",
+    "parent": "1914:army-de-6",
+    "summary": "Frommel: 7th, 8th and Bavarian Cavalry Divisions. Lorraine; sent north to Picardy in September.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-xiv",
+    "name": "German XIV Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "XIV. AK",
+    "parent": "1914:army-de-7",
+    "summary": "28th and 29th Divisions (Baden). Mulhouse; railed to the Aisne in September.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-xv",
+    "name": "German XV Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "XV. AK",
+    "parent": "1914:army-de-7",
+    "summary": "30th and 39th Divisions (Alsace). The Vosges; the Aisne.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-xiv-res",
+    "name": "German XIV Reserve Corps",
+    "side": "de",
+    "kind": "corps",
+    "short": "XIV. RK",
+    "parent": "1914:army-de-7",
+    "summary": "26th and 28th Reserve Divisions. Mulhouse and Upper Alsace.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
   },
   {
     "id": "1914:army-fr-1",
@@ -72,8 +927,36 @@
     "short": "1re Armée",
     "side": "fr",
     "kind": "army",
-    "summary": "Dubail; Alsace and the Sarrebourg side of the Lorraine offensive.",
-    "sources": [{ "source": "source:afgg-1-1" }]
+    "commander": "person:dubail-auguste",
+    "strength": {
+      "men": 256000,
+      "corps": 5,
+      "asOf": "1914-08-14",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "Épinal–Belfort, the right of the Plan XVII concentration",
+      "position": [6.5, 48.2],
+      "asOf": "1914-08-14",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        }
+      ]
+    },
+    "summary": "VII, VIII, XIII, XIV and XXI Corps with the 6th and 8th Cavalry Divisions and the 44th (Alpine) Division. Plan XVII's right: into Alsace towards Sarrebourg, beaten back on 20 August, then held the Vosges and the Trouée de Charmes. The VII Corps went to the Army of Alsace and then the 6th Army.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
   },
   {
     "id": "1914:army-fr-2",
@@ -82,8 +965,35 @@
     "side": "fr",
     "kind": "army",
     "commander": "person:castelnau-edouard-de",
-    "summary": "Morhange, then the defence of the Grand Couronné de Nancy.",
-    "sources": [{ "source": "source:afgg-1-1" }]
+    "strength": {
+      "men": 200000,
+      "corps": 5,
+      "asOf": "1914-08-14",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "Toul–Nancy–Lunéville",
+      "position": [6.1, 48.65],
+      "asOf": "1914-08-14",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        }
+      ]
+    },
+    "summary": "IX, XV, XVI, XVIII and XX Corps, the 2nd Group of Reserve Divisions (59th, 68th, 70th) and the 2nd and 10th Cavalry Divisions. Lorraine: Morhange on 20 August, the retreat to the Meurthe, the defence of the Grand Couronné de Nancy (4–12 September). The IX Corps went to the 4th Army and the XVIII to the 5th in the shift north.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
   },
   {
     "id": "1914:army-fr-3",
@@ -91,8 +1001,36 @@
     "short": "3e Armée",
     "side": "fr",
     "kind": "army",
-    "summary": "Ruffey, then Sarrail; the Ardennes and the Verdun hinge.",
-    "sources": [{ "source": "source:afgg-1-1" }]
+    "commander": "person:ruffey-pierre",
+    "strength": {
+      "men": 168000,
+      "corps": 3,
+      "asOf": "1914-08-14",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "Verdun and the Woëvre",
+      "position": [5.6, 49.1],
+      "asOf": "1914-08-14",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        }
+      ]
+    },
+    "summary": "IV, V and VI Corps, the 3rd Group of Reserve Divisions (54th, 55th, 56th) and the 7th Cavalry Division. The Ardennes offensive towards Longwy–Virton on 21–23 August, the retreat on Verdun; Sarrail replaced Ruffey on 30 August and held the hinge at the Marne.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
   },
   {
     "id": "1914:army-fr-4",
@@ -100,8 +1038,36 @@
     "short": "4e Armée",
     "side": "fr",
     "kind": "army",
-    "summary": "Langle de Cary; the Ardennes, the Meuse, Vitry-le-François at the Marne.",
-    "sources": [{ "source": "source:afgg-1-1" }]
+    "commander": "person:langle-de-cary-fernand-de",
+    "strength": {
+      "men": 193000,
+      "corps": 3,
+      "asOf": "1914-08-14",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "Sainte-Menehould–Bar-le-Duc, the strategic reserve behind the centre",
+      "position": [5.0, 49.0],
+      "asOf": "1914-08-14",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        }
+      ]
+    },
+    "summary": "XII and XVII Corps and the Colonial Corps at first, reinforced by the II, XI and IX Corps as the 5th shifted north; 9th Cavalry Division. The Ardennes on 21–23 August (Neufchâteau, Rossignol), the Meuse at Sedan, the Marne around Vitry-le-François.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
   },
   {
     "id": "1914:army-fr-5",
@@ -110,8 +1076,35 @@
     "side": "fr",
     "kind": "army",
     "commander": "person:lanrezac-charles",
-    "summary": "Charleroi, Guise, the retreat; under Franchet d'Espèrey from 3 September, into the gap at the Marne.",
-    "sources": [{ "source": "source:afgg-1-1" }, { "source": "source:herwig-2009" }]
+    "strength": {
+      "men": 254000,
+      "corps": 5,
+      "asOf": "1914-08-14",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "Mézières–Sedan–Rethel, then north to the Sambre–Meuse angle",
+      "position": [4.7, 49.65],
+      "asOf": "1914-08-14",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        }
+      ]
+    },
+    "summary": "I, II, III, X and XI Corps, the 4th Group of Reserve Divisions (51st, 53rd, 69th) and Sordet's Cavalry Corps on the left. Moved north to face the German right: Charleroi, Guise, the retreat; under Franchet d'Espèrey from 3 September, the Marne at Montmirail.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
   },
   {
     "id": "1914:army-fr-6",
@@ -120,8 +1113,34 @@
     "side": "fr",
     "kind": "army",
     "commander": "person:maunoury-michel-joseph",
-    "summary": "Formed around Amiens from 26 August by rail; fell back on Paris; struck Kluck on the Ourcq from 5 September.",
-    "sources": [{ "source": "source:afgg-1-1" }, { "source": "source:herwig-2009" }]
+    "strength": {
+      "men": 150000,
+      "asOf": "1914-09-05",
+      "sources": [
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "Formed 26 August around Amiens from troops railed out of Lorraine and Alsace, then fell back into the Paris entrenched camp",
+      "position": [2.3, 49.9],
+      "asOf": "1914-08-27",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        }
+      ]
+    },
+    "summary": "VII Corps, the 55th, 56th, 61st and 62nd Reserve Divisions, the Moroccan Brigade, later the IV Corps from the 3rd Army, the 45th (Algerian) Division and Sordet's cavalry; the 7th Division came up partly by taxi on 7 September. The army that struck Kluck's flank on the Ourcq.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
   },
   {
     "id": "1914:army-fr-9",
@@ -130,8 +1149,581 @@
     "side": "fr",
     "kind": "army",
     "commander": "person:foch-ferdinand",
-    "summary": "Improvised on 29 August between the 4th and 5th Armies; held the marshes of Saint-Gond.",
-    "sources": [{ "source": "source:afgg-1-1" }, { "source": "source:herwig-2009" }]
+    "strength": {
+      "corps": 2,
+      "asOf": "1914-09-05",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "Formed 5 September from the Foch Detachment between the 4th and 5th Armies, around Sézanne–Fère-Champenoise",
+      "position": [3.8, 48.75],
+      "asOf": "1914-09-05",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        }
+      ]
+    },
+    "summary": "IX and XI Corps, the 42nd Division, the Moroccan Division, the 52nd and 60th Reserve Divisions and the 9th Cavalry Division. The marshes of Saint-Gond, 6–9 September, against Bülow's left and Hausen's Saxons.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:army-fr-alsace",
+    "name": "Army of Alsace",
+    "short": "Armée d'Alsace",
+    "side": "fr",
+    "kind": "army",
+    "commander": "person:pau-paul",
+    "strength": {
+      "corps": 1,
+      "asOf": "1914-08-14",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "Belfort and the Upper Alsace front",
+      "position": [7.0, 47.8],
+      "asOf": "1914-08-14",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        }
+      ]
+    },
+    "summary": "Formed 10 August under Pau from the VII Corps, the 44th Division, the 8th Cavalry Division and reserve divisions; retook Mulhouse on 19 August, and was dissolved on 26 August when Joffre sent its corps west to the new 6th Army.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:tuchman-1962"
+      }
+    ]
+  },
+  {
+    "id": "1914:army-fr-lorraine",
+    "name": "Army of Lorraine",
+    "short": "Armée Lorraine",
+    "side": "fr",
+    "kind": "army",
+    "commander": "person:maunoury-michel-joseph",
+    "strength": {
+      "divisions": 6,
+      "asOf": "1914-08-21",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "The Hauts-de-Meuse south of Verdun, 21–26 August",
+      "position": [5.8, 49.0],
+      "asOf": "1914-08-21",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        }
+      ]
+    },
+    "summary": "A short-lived army of reserve divisions (the 3rd Group — 54th, 55th, 56th — with the 65th, 67th and 75th) under Maunoury to cover the gap between Verdun and Toul; broken up on 26 August, its commander and two divisions going west to form the 6th Army.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-vii",
+    "name": "French VII Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "VII CA",
+    "parent": "1914:army-fr-1",
+    "summary": "Besançon: 14th and 41st Divisions. Mulhouse on 8 August, then the Army of Alsace, then railed west to Maunoury's 6th Army for the Ourcq.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-viii",
+    "name": "French VIII Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "VIII CA",
+    "parent": "1914:army-fr-1",
+    "summary": "Bourges: 15th and 16th Divisions. The Vosges passes and Sarrebourg.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-xiii",
+    "name": "French XIII Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "XIII CA",
+    "parent": "1914:army-fr-1",
+    "summary": "Clermont-Ferrand: 25th and 26th Divisions. Sarrebourg on 20 August; the Trouée de Charmes.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-xiv",
+    "name": "French XIV Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "XIV CA",
+    "parent": "1914:army-fr-1",
+    "summary": "Lyon–Grenoble: 27th and 28th Divisions. The Donon and the Vosges; later railed north.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-xxi",
+    "name": "French XXI Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "XXI CA",
+    "parent": "1914:army-fr-1",
+    "summary": "Épinal: 13th and 43rd Divisions. The Vosges; the Trouée de Charmes.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-ix",
+    "name": "French IX Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "IX CA",
+    "parent": "1914:army-fr-2",
+    "summary": "Tours: 17th and 18th Divisions and the Moroccan Division. Morhange; transferred to the 4th Army and then Foch's 9th for the Marne.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-xv",
+    "name": "French XV Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "XV CA",
+    "parent": "1914:army-fr-2",
+    "summary": "Marseille: 29th and 30th Divisions. Broke at Morhange on 20 August — the 'Midi' corps unjustly blamed in the press — and held the Grand Couronné.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-xvi",
+    "name": "French XVI Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "XVI CA",
+    "parent": "1914:army-fr-2",
+    "summary": "Montpellier: 31st and 32nd Divisions. Morhange; the Grand Couronné.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-xviii",
+    "name": "French XVIII Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "XVIII CA",
+    "parent": "1914:army-fr-2",
+    "summary": "Bordeaux: 35th and 36th Divisions. Sent north to Lanrezac's 5th Army on 20 August: Charleroi, Guise, the Marne.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-xx",
+    "name": "French XX Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "XX CA",
+    "commander": "person:foch-ferdinand",
+    "parent": "1914:army-fr-2",
+    "summary": "Nancy — the 'Iron Corps': 11th and 39th Divisions under Foch. Held at Morhange while the army fell back; Foch left it on 28 August for his detachment.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:det-fr-rd-2",
+    "name": "French 2nd Group of Reserve Divisions",
+    "side": "fr",
+    "kind": "detachment",
+    "short": "2e GDR",
+    "parent": "1914:army-fr-2",
+    "summary": "59th, 68th and 70th Reserve Divisions, the 2nd Army's reserve; the Grand Couronné.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-iv",
+    "name": "French IV Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "IV CA",
+    "parent": "1914:army-fr-3",
+    "summary": "Le Mans: 7th and 8th Divisions. Virton on 22 August; sent to the 6th Army at Paris on 3 September for the Ourcq.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-v",
+    "name": "French V Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "V CA",
+    "parent": "1914:army-fr-3",
+    "summary": "Orléans: 9th and 10th Divisions. Longwy and Virton; Verdun; the Marne at Revigny.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-vi",
+    "name": "French VI Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "VI CA",
+    "parent": "1914:army-fr-3",
+    "summary": "Châlons: 12th, 40th and 42nd Divisions. The Ardennes; Verdun's hinge at the Marne.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:det-fr-rd-3",
+    "name": "French 3rd Group of Reserve Divisions",
+    "side": "fr",
+    "kind": "detachment",
+    "short": "3e GDR",
+    "parent": "1914:army-fr-3",
+    "summary": "54th, 55th and 56th Reserve Divisions; briefly the Army of Lorraine, two of them then railed to Paris for the 6th Army.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-xii",
+    "name": "French XII Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "XII CA",
+    "parent": "1914:army-fr-4",
+    "summary": "Limoges: 23rd and 24th Divisions. Neufchâteau in the Ardennes; the Meuse; the Marne.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-xvii",
+    "name": "French XVII Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "XVII CA",
+    "parent": "1914:army-fr-4",
+    "summary": "Toulouse: 33rd and 34th Divisions. Bertrix on 22 August, badly cut up; the Marne.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-colonial",
+    "name": "French Colonial Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "CAC",
+    "parent": "1914:army-fr-4",
+    "summary": "2nd and 3rd Colonial Divisions. Rossignol on 22 August — the 3rd Colonial Division destroyed, the worst single day of the Ardennes; the Marne.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-ii",
+    "name": "French II Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "II CA",
+    "parent": "1914:army-fr-4",
+    "summary": "Amiens: 3rd and 4th Divisions. Transferred from the 5th Army on 20 August; the Ardennes, the Meuse, the Marne.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-xi",
+    "name": "French XI Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "XI CA",
+    "parent": "1914:army-fr-4",
+    "summary": "Nantes: 21st and 22nd Divisions. Transferred from the 5th Army; the Ardennes; then to Foch's 9th Army for Saint-Gond.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-i",
+    "name": "French I Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "Ier CA",
+    "commander": "person:franchet-desperey-louis",
+    "parent": "1914:army-fr-5",
+    "summary": "Lille: 1st and 2nd Divisions under Franchet d'Espèrey. Dinant on 15 August, the Sambre, the counter-attack at Guise on 29 August; its commander took the army on 3 September.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-iii",
+    "name": "French III Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "III CA",
+    "parent": "1914:army-fr-5",
+    "summary": "Rouen: 5th and 6th Divisions. Charleroi on 21–23 August; Guise; the Marne.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-fr-x",
+    "name": "French X Corps",
+    "side": "fr",
+    "kind": "corps",
+    "short": "X CA",
+    "parent": "1914:army-fr-5",
+    "summary": "Rennes: 19th and 20th Divisions. The Sambre at Charleroi; Guise; the Marne at Montmirail.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:det-fr-rd-4",
+    "name": "French 4th Group of Reserve Divisions",
+    "side": "fr",
+    "kind": "detachment",
+    "short": "4e GDR",
+    "parent": "1914:army-fr-5",
+    "summary": "51st, 53rd and 69th Reserve Divisions on the army's left: Charleroi, the retreat, the Marne.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:cav-corps-fr-sordet",
+    "name": "French Cavalry Corps (Sordet)",
+    "side": "fr",
+    "kind": "corps",
+    "short": "CC Sordet",
+    "parent": "1914:army-fr-5",
+    "summary": "1st, 3rd and 5th Cavalry Divisions. Rode into the Ardennes on 6 August, covered the BEF's left at Mons and Le Cateau, then passed to the 6th Army at Paris; Bridoux replaced Sordet on 8 September.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:cav-corps-fr-conneau",
+    "name": "French Cavalry Corps (Conneau)",
+    "side": "fr",
+    "kind": "corps",
+    "short": "CC Conneau",
+    "parent": "1914:army-fr-5",
+    "summary": "4th, 8th and 10th Cavalry Divisions, formed 31 August on the 5th Army's left; the Marne between the 5th Army and the BEF.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:det-fr-rd-paris",
+    "name": "French Paris reserve divisions (61st, 62nd)",
+    "side": "fr",
+    "kind": "detachment",
+    "short": "61e–62e DR",
+    "parent": "1914:army-fr-6",
+    "summary": "The 61st and 62nd Reserve Divisions from the Paris garrison, given to Maunoury for the Ourcq.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:det-fr-moroccan-bde",
+    "name": "French Moroccan Brigade",
+    "side": "fr",
+    "kind": "brigade",
+    "short": "Bde maroc.",
+    "parent": "1914:army-fr-6",
+    "summary": "Ditte's Moroccan brigade, railed to the 6th Army; the Ourcq.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
   },
   {
     "id": "1914:bef",
@@ -140,8 +1732,106 @@
     "side": "gb",
     "kind": "army",
     "commander": "person:french-john",
-    "summary": "Two corps and a cavalry division: Mons, Le Cateau, the retreat to the Grand Morin, the advance into the gap.",
-    "sources": [{ "source": "source:edmonds-1922" }]
+    "strength": {
+      "men": 80000,
+      "corps": 2,
+      "divisions": 4,
+      "asOf": "1914-08-21",
+      "sources": [
+        {
+          "source": "source:edmonds-1922"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "Maubeuge–Le Cateau, on the left of Lanrezac's 5th Army",
+      "position": [3.85, 50.2],
+      "asOf": "1914-08-21",
+      "sources": [
+        {
+          "source": "source:edmonds-1922"
+        }
+      ]
+    },
+    "summary": "I Corps (Haig) and II Corps (Smith-Dorrien), the Cavalry Division (Allenby) and the 19th Brigade — about 80,000 men on 21 August, near 100,000 once the 4th Division arrived on 25 August and III Corps was formed on 31 August. Mons, Le Cateau, the retreat to the Grand Morin, the advance into the gap, the Aisne.",
+    "sources": [
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-gb-i",
+    "name": "BEF I Corps",
+    "side": "gb",
+    "kind": "corps",
+    "short": "I Corps",
+    "commander": "person:haig-douglas",
+    "parent": "1914:bef",
+    "summary": "1st Division (Lomax) and 2nd Division (Monro) under Haig. In reserve at Mons; Landrecies on 25 August; the retreat, the Marne and the Aisne.",
+    "sources": [
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-gb-ii",
+    "name": "BEF II Corps",
+    "side": "gb",
+    "kind": "corps",
+    "short": "II Corps",
+    "commander": "person:smith-dorrien-horace",
+    "parent": "1914:bef",
+    "summary": "3rd Division (Hamilton) and 5th Division (Fergusson). Grierson died on 17 August; Smith-Dorrien took over on the 21st. Mons on 23 August, Le Cateau on 26 August.",
+    "sources": [
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-gb-iii",
+    "name": "BEF III Corps",
+    "side": "gb",
+    "kind": "corps",
+    "short": "III Corps",
+    "parent": "1914:bef",
+    "summary": "Formed 31 August under Pulteney from the 4th Division (Snow, landed 23 August, fought at Le Cateau) and the 19th Brigade; the 6th Division joined on the Aisne.",
+    "sources": [
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
+  },
+  {
+    "id": "1914:cav-div-gb",
+    "name": "BEF Cavalry Division",
+    "side": "gb",
+    "kind": "division",
+    "short": "Cav Div",
+    "parent": "1914:bef",
+    "summary": "Allenby: 1st–4th Cavalry Brigades, with the independent 5th Cavalry Brigade (Chetwode). Casteau on 22 August — the BEF's first shots — Mons, Le Cateau, the screen on the retreat.",
+    "sources": [
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
   },
   {
     "id": "1914:belgian-field-army",
@@ -150,7 +1840,202 @@
     "side": "be",
     "kind": "army",
     "commander": "person:albert-i-of-belgium",
-    "summary": "Six divisions: the Gette line, the withdrawal into Antwerp, the sorties, the Yser.",
-    "sources": [{ "source": "source:hastings-2013" }]
+    "strength": {
+      "men": 117000,
+      "divisions": 6,
+      "asOf": "1914-08-06",
+      "sources": [
+        {
+          "source": "source:strachan-2001"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "On the Gette between Tienen (Tirlemont) and Diest, covering Brussels and Antwerp",
+      "position": [4.95, 50.8],
+      "asOf": "1914-08-06",
+      "sources": [
+        {
+          "source": "source:strachan-2001"
+        }
+      ]
+    },
+    "summary": "Six infantry divisions and a cavalry division, about 117,000 men, under the King with Selliers de Moranville as chief of staff. Haelen on 12 August, the retreat to Antwerp on 20 August, the sorties of 24–26 August and 9 September, the Yser in October.",
+    "sources": [
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
+  },
+  {
+    "id": "1914:div-be-1",
+    "name": "Belgian 1st Division",
+    "side": "be",
+    "kind": "division",
+    "short": "1re DA",
+    "parent": "1914:belgian-field-army",
+    "summary": "Ghent. The Gette, Antwerp, the Yser.",
+    "sources": [
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
+  },
+  {
+    "id": "1914:div-be-2",
+    "name": "Belgian 2nd Division",
+    "side": "be",
+    "kind": "division",
+    "short": "2e DA",
+    "parent": "1914:belgian-field-army",
+    "summary": "Antwerp. The Gette, Antwerp, the Yser.",
+    "sources": [
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
+  },
+  {
+    "id": "1914:div-be-3",
+    "name": "Belgian 3rd Division",
+    "side": "be",
+    "kind": "division",
+    "short": "3e DA",
+    "parent": "1914:belgian-field-army",
+    "summary": "Liège, under Leman: the defence of the interval between the forts on 5–6 August, then withdrawn to the field army on the Gette.",
+    "sources": [
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
+  },
+  {
+    "id": "1914:div-be-4",
+    "name": "Belgian 4th Division",
+    "side": "be",
+    "kind": "division",
+    "short": "4e DA",
+    "parent": "1914:belgian-field-army",
+    "summary": "Namur, under Michel: the defence of the fortress 20–24 August, then by way of France to Antwerp.",
+    "sources": [
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
+  },
+  {
+    "id": "1914:div-be-5",
+    "name": "Belgian 5th Division",
+    "side": "be",
+    "kind": "division",
+    "short": "5e DA",
+    "parent": "1914:belgian-field-army",
+    "summary": "Mons. The Gette, Antwerp.",
+    "sources": [
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
+  },
+  {
+    "id": "1914:div-be-6",
+    "name": "Belgian 6th Division",
+    "side": "be",
+    "kind": "division",
+    "short": "6e DA",
+    "parent": "1914:belgian-field-army",
+    "summary": "Brussels. The Gette, Antwerp.",
+    "sources": [
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
+  },
+  {
+    "id": "1914:cav-div-be",
+    "name": "Belgian Cavalry Division",
+    "side": "be",
+    "kind": "division",
+    "short": "DC",
+    "parent": "1914:belgian-field-army",
+    "summary": "De Witte: Haelen on 12 August, where the German cavalry attacks broke on dismounted fire — the 'battle of the silver helmets'.",
+    "sources": [
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
+  },
+  {
+    "id": "1914:fortress-liege",
+    "name": "Fortified position of Liège",
+    "side": "be",
+    "kind": "garrison",
+    "short": "Liège",
+    "commander": "person:leman-gerard",
+    "summary": "Twelve forts around Liège with the 3rd Division and fortress troops under Leman — about 30,000 men; resisted 4–16 August until the 42-cm and 30.5-cm howitzers broke the forts.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962"
+      }
+    ]
+  },
+  {
+    "id": "1914:fortress-namur",
+    "name": "Fortified position of Namur",
+    "side": "be",
+    "kind": "garrison",
+    "short": "Namur",
+    "summary": "Nine forts around Namur with the 4th Division and fortress troops under Michel; attacked from 20 August, the forts fell by 24–25 August to the same heavy howitzers.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:fortress-antwerp",
+    "name": "Fortified position of Antwerp",
+    "side": "be",
+    "kind": "garrison",
+    "short": "Antwerp",
+    "summary": "The national redoubt — an outer and inner ring of forts — into which the field army withdrew on 20 August; besieged from 28 September and surrendered on 10 October.",
+    "sources": [
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
   }
 ]
