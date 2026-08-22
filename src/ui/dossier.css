@@ -1,0 +1,201 @@
+/* Dossier — tokens only. */
+
+.dossier {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 12px;
+  min-height: 0;
+  height: 100%;
+}
+
+.dossier__head {
+  display: grid;
+  gap: 6px;
+}
+
+.dossier__eyebrow {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.dossier__pack {
+  color: var(--muted);
+}
+
+.dossier__branch[data-hypothetical] {
+  color: var(--brass);
+  border-bottom: 1px dashed var(--brass-dim);
+}
+
+.dossier__badge {
+  margin: 0;
+  padding: 6px 10px;
+  border: 1px dashed var(--brass);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--brass) 10%, transparent);
+  color: var(--ink);
+  font-size: 12.5px;
+}
+
+.dossier__beat,
+.dossier__empty {
+  min-height: 0;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.dossier[data-entering] .dossier__beat {
+  animation: dossier-enter 260ms ease-out;
+}
+
+@keyframes dossier-enter {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.dossier__date {
+  margin: 0 0 2px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--brass);
+}
+
+.dossier__title {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.dossier__pull {
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border-left: 3px solid var(--brass);
+  background: var(--panel-2);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 15px;
+}
+
+.dossier__pull footer {
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.dossier__body {
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+.dossier__body p {
+  margin: 0 0 10px;
+}
+
+.dossier__body strong {
+  color: var(--ink);
+}
+
+.dossier__body a {
+  color: var(--brass);
+}
+
+/* footnote references */
+.dossier__body sup a {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-decoration: none;
+  padding: 0 2px;
+}
+
+/* footnotes section from remark-gfm */
+.dossier__body .footnotes {
+  margin-top: 14px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.dossier__body .footnotes h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.dossier__body .footnotes ol {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.dossier__body .footnotes li {
+  margin-bottom: 4px;
+}
+
+.dossier__body .footnotes li p {
+  margin: 0;
+  display: inline;
+}
+
+.dossier__body .dossier__also {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.dossier__hint {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.dossier__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.dossier__side {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dossier__swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--panel);
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dossier[data-entering] .dossier__beat {
+    animation: none;
+  }
+}

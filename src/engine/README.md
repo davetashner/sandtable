@@ -20,6 +20,8 @@ scenario pack it is given.
   `MapView.tsx` (the surface; `MapHandle.flyTo/fitRegion/setDeckLayers` for
   tours, zoom-ins and data layers).
 
+- `beats.ts` — which narrative beat is on now (time × branch × focus) and how a
+  citation reads; used by the dossier.
 - `layers/` — data layers on the deck.gl overlay: `movement.ts`
   (composeRoutes per branch, positionAt, ghost + TripsLayer trail + tokens +
   labels), `colors.ts` (design tokens → RGBA per side), `useMovementLayers`.
