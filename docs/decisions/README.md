@@ -20,7 +20,7 @@ is merged.
 
 ## Template
 
-```
+```markdown
 # NNNN — Title
 
 - **Status:** proposed | accepted | superseded by NNNN

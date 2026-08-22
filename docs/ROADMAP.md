@@ -104,7 +104,7 @@ never additional rails. Responsive from day one.
 
 ## Multi-era layout (decided in `sand-a55.3`, built in `a55.6`/`a55.18`)
 
-```
+```text
 content/
   eras/<yyyy>-<slug>/      one self-contained scenario pack per campaign or period
                            1870-franco-prussian, 1904-russo-japanese, 1914-july-crisis,

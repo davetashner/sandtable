@@ -19,7 +19,7 @@ the attribution manifest the app renders.
 
 ## Layout
 
-```
+```text
 media/
   people/<slug>/          portraits — one directory per Person
   scenes/<yyyy>-<slug>/   group photographs, places, events

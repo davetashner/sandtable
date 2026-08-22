@@ -22,7 +22,7 @@ Markdown narrative. The engine renders any valid pack.
 
 ### Layout
 
-```
+```text
 content/
   eras/<yyyy>-<slug>/       one self-contained pack per campaign or period
     pack.json               id, title, date range, region, border year, default camera
