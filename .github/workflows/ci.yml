@@ -55,6 +55,12 @@ jobs:
         with:
           fail-on-severity: high
           comment-summary-in-pr: on-failure
+          # image-size (JXL/HEIF/ICNS parser DoS; no patched release as of
+          # 2026-08-22) is reached only via @deck.gl/geo-layers → @luma.gl/gltf →
+          # @loaders.gl/textures → texture-compressor, a Node-only encoder CLI
+          # that is never imported by the browser bundle (verified: not in dist/).
+          # Revisit when upstream publishes a fix (npm audit will show it).
+          allow-ghsas: GHSA-w3rx-r6r6-pgpr, GHSA-5p2g-fcmc-qvqq
 
   web:
     # Activates automatically once the app scaffold (package.json) lands.
