@@ -96,3 +96,21 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
   labelled as such. Packs must pass the validator (Phase 0).
 - **Design:** tokens and the war-room identity come from the design-system epic
   (`sand-neh`); don't introduce ad-hoc colours or typefaces.
+
+## CI & branch rules
+
+- `main` is protected by a ruleset: PR-only, **squash or rebase merges** (no
+  merge commits), **linear history required**, force-push and deletion
+  blocked, required checks `lint`, `security`, `web` (strict — branch must be
+  up to date with `main`).
+- CI (`.github/workflows/ci.yml`): `lint` = actionlint + markdownlint +
+  `scripts/check-content.sh` (JSON validity, media-manifest policy, no tracked
+  image binaries); `security` = gitleaks + dependency review; `web` =
+  npm lint/typecheck/test/validate:content/build, self-activating once
+  `package.json` exists. CodeQL is added with the app scaffold.
+- Merged branches are deleted automatically (`delete_branch_on_merge`); keep
+  locals clean with `git fetch --prune` and `git worktree prune`.
+- PRs use `.github/pull_request_template.md` — one `Closes sand-…` line per
+  bead; close those beads after merge.
+- Deploys assume the AWS role in repo variable `AWS_ROLE_ARN` via OIDC
+  (`AWS_REGION` = us-east-1); see `docs/decisions/0004-hosting.md`.
