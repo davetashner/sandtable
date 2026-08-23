@@ -15,6 +15,7 @@
  *     sources.json       Source[]          (pack-local; shared/sources for the rest)
  *     casualties.json    CasualtyRecord[]
  *     vignettes.json     Vignette[]
+ *     tours.json         Tour[]
  *     beats/*.md         NarrativeBeat     (YAML front matter + Markdown)
  *   content/shared/
  *     people/people.json    Person[]
@@ -44,6 +45,7 @@ import {
   Source,
   TechCard,
   Thread,
+  Tour,
   CastEntry,
   CasualtyRecord,
   SupplyLine,
@@ -70,6 +72,7 @@ export const PACK_COLLECTIONS = {
   'supply.json': SupplyLine,
   'casualties.json': CasualtyRecord,
   'vignettes.json': Vignette,
+  'tours.json': Tour,
 } as const;
 
 export type PackCollectionFile = keyof typeof PACK_COLLECTIONS;
@@ -107,6 +110,7 @@ export const JSON_SCHEMAS = {
   supply: z.array(SupplyLine),
   casualties: z.array(CasualtyRecord),
   vignettes: z.array(Vignette),
+  tours: z.array(Tour),
   'beat-frontmatter': BeatFrontMatter,
   people: z.array(Person),
   places: z.array(Place),

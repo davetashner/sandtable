@@ -214,4 +214,74 @@ describe('App shell', () => {
     expect(window.location.search).toContain('card=1914:supply-de-1');
     expect(screen.getByText('Rail against feet')).toBeInTheDocument();
   });
+
+  it('plays the story: the launcher starts the tour and the panel drives the view', async () => {
+    window.history.replaceState(null, '', '/');
+    render(<App />);
+    fireEvent.click(await screen.findByRole('button', { name: /^Play the story/ }));
+    expect(window.location.search).toContain('tour=1914:tour-the-campaign');
+    expect(window.location.search).toContain('step=a-bet-about-time');
+    const panel = screen.getByRole('region', { name: /Guided tour/ });
+    expect(panel).toHaveTextContent('Step 1 of 15');
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'A plan is a bet about time' }),
+    ).toBeInTheDocument();
+    // the way out is on screen from the first step
+    expect(screen.getByRole('button', { name: 'Exit tour' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Next step' }));
+    expect(window.location.search).toContain('step=the-two-clocks');
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'Two clocks start together' }),
+    ).toBeInTheDocument();
+  });
+
+  it('deep-links to a tour step, rebuilding its clock and card', async () => {
+    window.history.replaceState(null, '', '/?tour=1914:tour-the-campaign&step=two-corps-east');
+    render(<App />);
+    expect(await screen.findByRole('region', { name: /Guided tour/ })).toHaveTextContent(
+      'Step 7 of 15',
+    );
+    // the step's own instant (25 August, day 23) and its decision card
+    expect(screen.getByText('Day 23')).toBeInTheDocument();
+    expect(window.location.search).toContain('card=1914:decision-1914-08-25-two-corps-east');
+    expect(
+      screen.getByRole('heading', { name: /Two corps for East Prussia\?/ }),
+    ).toBeInTheDocument();
+    // arrives stopped on the card it reveals, going nowhere until asked
+    expect(
+      screen.getByRole('button', { name: /Continue past a card to read/ }),
+    ).toBeInTheDocument();
+    expect(screen.getByText(/continue when you are ready/)).toBeInTheDocument();
+  });
+
+  it('drives the tour from the keyboard alone (sand-1l0.28)', async () => {
+    window.history.replaceState(null, '', '/?tour=1914:tour-the-campaign&step=two-corps-east');
+    render(<App />);
+    await screen.findByRole('region', { name: /Guided tour/ });
+    expect(screen.getByText(/Step 7 of 15/)).toBeInTheDocument();
+    // ← steps back, without a pointer ever touching a control
+    fireEvent.keyDown(document.body, { key: 'ArrowLeft' });
+    expect(window.location.search).toContain('step=charleroi-mons');
+    // → goes on
+    fireEvent.keyDown(document.body, { key: 'ArrowRight' });
+    expect(screen.getByText(/Step 7 of 15/)).toBeInTheDocument();
+    // Escape leaves
+    fireEvent.keyDown(document.body, { key: 'Escape' });
+    expect(window.location.search).not.toContain('tour=');
+  });
+
+  it('leaves the tour without yanking the viewer back', async () => {
+    window.history.replaceState(null, '', '/?tour=1914:tour-the-campaign&step=the-marne');
+    render(<App />);
+    await screen.findByRole('region', { name: /Guided tour/ });
+    // the step zooms into the Marne
+    expect(window.location.search).toContain('focus=1914:marne');
+    fireEvent.click(screen.getByRole('button', { name: 'Exit tour' }));
+    expect(window.location.search).not.toContain('tour=');
+    expect(window.location.search).not.toContain('step=');
+    expect(screen.queryByRole('region', { name: /Guided tour/ })).not.toBeInTheDocument();
+    // still where the tour left us
+    expect(window.location.search).toContain('focus=1914:marne');
+    expect(screen.getByRole('button', { name: /^Play the story/ })).toBeInTheDocument();
+  });
 });

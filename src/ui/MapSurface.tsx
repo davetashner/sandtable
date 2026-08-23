@@ -15,7 +15,7 @@ import {
 import { buildStyle, type MapTheme } from '../engine/map/style.js';
 import { useMovementLayers, type MovementSource } from '../engine/layers/useMovementLayers.js';
 import { buildTallyLayers } from '../engine/layers/tallies.js';
-import { MapView, type MapHandle } from '../engine/map/MapView.js';
+import { MapView, type CameraTarget, type MapHandle } from '../engine/map/MapView.js';
 import { labelNow } from '../engine/ticks.js';
 import type { BBox, Branch, Camera, Place, Tally } from '../packs/schema/index.js';
 
@@ -32,6 +32,12 @@ export interface MapSurfaceProps {
   places?: Place[];
   /** Strength ledgers whose positioned entries appear as markers (sand-1l0.19). */
   tallies?: Tally[];
+  /**
+   * A camera a guided tour asks for (sand-1l0.14). Applied whenever `key`
+   * changes, after the region fit, so a tour step can frame something closer
+   * than the campaign or battle extent.
+   */
+  cameraTarget?: (CameraTarget & { key: string }) | undefined;
   onSelectTally?: ((tallyId: string) => void) | undefined;
 }
 
@@ -45,6 +51,7 @@ export function MapSurface({
   places = [],
   tallies = [],
   onSelectTally,
+  cameraTarget,
 }: MapSurfaceProps) {
   const { now, range } = useClock();
   const label = labelNow(now, range);
@@ -119,6 +126,21 @@ export function MapSurface({
     if (focusRegion) h.fitRegion(focusRegion, { padding: 48, maxZoom: 11 });
     else h.fitRegion(region, { padding: 24, maxZoom: 8 });
   }, [focusRegion, region]);
+
+  // A tour's camera wins over the region fit for as long as the step lasts.
+  const lastCameraKey = useRef<string | null>(null);
+  useEffect(() => {
+    if (!cameraTarget) {
+      lastCameraKey.current = null;
+      return;
+    }
+    if (lastCameraKey.current === cameraTarget.key) return;
+    const h = handle.current;
+    if (!h) return;
+    lastCameraKey.current = cameraTarget.key;
+    const { key: _key, ...target } = cameraTarget;
+    h.flyTo(target);
+  }, [cameraTarget]);
 
   return (
     <MapView

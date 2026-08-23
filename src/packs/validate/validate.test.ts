@@ -278,6 +278,96 @@ describe('validateContent', () => {
     expect(messages(validateContent(raw)).filter((m) => /dissolved/.test(m))).toEqual([]);
   });
 
+  it('checks guided tours: unique steps, instants inside the right range, ids resolve, footnotes cite the tour', () => {
+    const raw = fixture();
+    const c = raw.packs[0]!.collections;
+    const tour = (steps: Record<string, unknown>[]) => ({
+      id: '1914:tour-campaign',
+      title: 'The campaign',
+      summary: 'A pass over the campaign.',
+      sources: [{ source: 'source:herwig-2009' }],
+      steps,
+    });
+    const step = (over: Record<string, unknown> = {}) => ({
+      id: 'opening',
+      title: 'Opening',
+      narration: 'The bet.[^herwig-2009]',
+      at: '1914-08-04T00:00:00Z',
+      ...over,
+    });
+    c['tours.json'] = {
+      path: 'eras/1914-test/tours.json',
+      data: [
+        tour([
+          step({}),
+          step({
+            id: 'marne',
+            at: '1914-09-06T00:00:00Z',
+            playUntil: '1914-09-10T00:00:00Z',
+            focus: '1914:marne',
+            branch: '1914:concept',
+            card: '1914:link-turn-to-marne',
+          }),
+        ]),
+      ],
+    };
+    expect(messages(validateContent(raw)).filter((m) => /tour/.test(m))).toEqual([]);
+
+    // a step's instant must sit inside the battle's range once it names a focus
+    c['tours.json']!.data = [
+      tour([step({}), step({ id: 'marne', at: '1914-08-20T00:00:00Z', focus: '1914:marne' })]),
+    ];
+    expect(messages(validateContent(raw))).toContainEqual(
+      expect.stringMatching(/steps\[1\] \(marne\): at is outside the battle's timeRange/),
+    );
+
+    // …and inside the pack's when it does not
+    c['tours.json']!.data = [tour([step({}), step({ id: 'late', at: '1915-01-01T00:00:00Z' })])];
+    expect(messages(validateContent(raw))).toContainEqual(
+      expect.stringMatching(/steps\[1\] \(late\): at is outside the pack timeRange/),
+    );
+
+    // playUntil must follow at
+    c['tours.json']!.data = [
+      tour([step({ playUntil: '1914-08-03T00:00:00Z' }), step({ id: 'b' })]),
+    ];
+    expect(messages(validateContent(raw))).toContainEqual(
+      expect.stringMatching(/steps\[0\] \(opening\): playUntil must be after at/),
+    );
+
+    // duplicate step ids, dangling card and branch, uncited footnote
+    c['tours.json']!.data = [
+      tour([
+        step({}),
+        step({ card: '1914:card-missing', branch: '1914:nope', narration: 'X.[^nobody]' }),
+      ]),
+    ];
+    const errs = messages(validateContent(raw));
+    expect(errs).toContainEqual(expect.stringMatching(/steps\[1\] \(opening\): duplicate step id/));
+    expect(errs).toContainEqual(
+      expect.stringMatching(/steps\[1\] \(opening\): card 1914:card-missing does not exist/),
+    );
+    expect(errs).toContainEqual(
+      expect.stringMatching(/branch 1914:nope is not defined in pack\.json/),
+    );
+    expect(errs).toContainEqual(
+      expect.stringMatching(/steps\[1\] \(opening\) narration footnote \[\^nobody\]/),
+    );
+
+    // running backwards is legal but warned about
+    c['tours.json']!.data = [
+      tour([
+        step({ at: '1914-09-01T00:00:00Z' }),
+        step({ id: 'back', at: '1914-08-05T00:00:00Z' }),
+      ]),
+    ];
+    const report = validateContent(raw);
+    expect(messages(report).filter((m) => /tour/.test(m))).toEqual([]);
+    expect(report.warnings.map((w) => w.message)).toContainEqual(
+      expect.stringMatching(/steps\[1\] \(back\): at runs backwards from the previous step/),
+    );
+  });
+
   it('checks supply lines: army and railhead must exist and have historical routes; footnotes and citations', () => {
     const raw = fixture();
     const c = raw.packs[0]!.collections;
