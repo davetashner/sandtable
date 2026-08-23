@@ -1,0 +1,184 @@
+[
+  {
+    "id": "1914:decision-1914-08-25-two-corps-east",
+    "at": "1914-08-25T12:00:00Z",
+    "title": "Two corps for East Prussia?",
+    "actor": "person:moltke-helmuth-von-younger",
+    "question": "**25 August, Koblenz.** Two Russian armies are inside East Prussia; Prittwitz has spoken of retreating behind the Vistula and has just been replaced by Hindenburg and Ludendorff; refugees are on the roads and the Junkers are at the Kaiser's ear. In the West, Namur has fallen, the French are retreating everywhere and the right wing seems to be winning. Kluck and Bülow can, you judge, spare something. Do you send corps from the right wing to the East?",
+    "options": [
+      {
+        "id": "send",
+        "label": "Send two corps east now",
+        "summary": "Detach the Guard Reserve Corps and the XI Corps (with the 8th Cavalry Division) from the 2nd and 3rd Armies and entrain them for East Prussia. The East must not be lost while the West is being won."
+      },
+      {
+        "id": "keep",
+        "label": "Keep every corps on the right wing",
+        "summary": "The 8th Army must manage with what it has until France is beaten — the memorandum's logic was always to accept risk in the East. Plays the branch 'What success required', in which the right wing keeps its weight (one of seven conditions).",
+        "branch": "1914:schlieffen-success"
+      }
+    ],
+    "historical": "send",
+    "reasoning": "Moltke believed the decision in the West was at hand — 'the French are beaten' was the mood at OHL after the Frontiers — and that the right wing could afford the loss; the corps chosen were those left behind at Namur and Maubeuge, so their departure cost no marching column that day. He did not know that Hindenburg and Ludendorff had already resolved to fight Samsonov with what they had, nor that Tannenberg would be decided on 26–30 August before a single reinforcement arrived.[^herwig-2009] [^mombauer-2001]",
+    "verdict": "The two corps were in transit during Tannenberg and contributed nothing to it; at the Marne two weeks later they were the corps missing from the line between Kluck and Bülow. Moltke is reported to have called the detachment his worst mistake, and most historians of the campaign — Herwig, Mombauer — count it as the decision that cost the right wing its margin; Strachan notes the East was never as weak as Berlin feared. Zuber, who denies there was a plan to spoil, treats the transfer as sensible prudence.[^herwig-2009] [^strachan-2001] [^zuber-2002]",
+    "links": {
+      "people": [
+        "person:moltke-helmuth-von-younger",
+        "person:ludendorff-erich",
+        "person:bulow-karl-von"
+      ],
+      "formations": [
+        "1914:corps-de-guard-res",
+        "1914:corps-de-xi",
+        "1914:army-de-2",
+        "1914:army-de-3"
+      ],
+      "events": ["1914:event-battle-of-the-frontiers"]
+    },
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:mombauer-2001"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:zuber-2002"
+      }
+    ]
+  },
+  {
+    "id": "1914:decision-1914-08-30-kluck-wheel",
+    "at": "1914-08-30T18:00:00Z",
+    "title": "Wheel inside Paris, or pass it on the outside?",
+    "actor": "person:kluck-alexander-von",
+    "question": "**30 August, evening.** Bülow, checked by Lanrezac at Guise yesterday, asks you to wheel inward and help him roll up the French left. Your own army has marched for twelve days; the British seem beaten and gone; Paris lies ahead and to your right, with whatever is in it. The memorandum wanted you to pass the capital on the outside. Which way do you turn?",
+    "options": [
+      {
+        "id": "inward",
+        "label": "Turn south-east towards Bülow",
+        "summary": "Wheel in across the Oise to the Marne, behind the French 5th Army, masking Paris with a corps on the flank; finish the French field army and let the fortress wait."
+      },
+      {
+        "id": "outside",
+        "label": "Hold the course west of Paris",
+        "summary": "Keep to the outer wheel as the 1905 memorandum drew it — Amiens, the lower Oise, the Seine below the capital — and let Bülow look after himself. Plays the branch 'Schlieffen's concept'.",
+        "branch": "1914:schlieffen-concept"
+      }
+    ],
+    "historical": "inward",
+    "reasoning": "Kluck believed the French were broken and the BEF out of the battle; Bülow's request carried the weight of an army commander who had been his superior a week earlier; aviators and cavalry reported French troop trains and columns around Paris, but he read them as the debris of retreat rather than a new army. On 2 September Moltke approved the inward turn — the 1st Army to follow the 2nd in echelon — which Kluck then exceeded by pushing ahead across the Marne.[^herwig-2009] [^tuchman-1962]",
+    "verdict": "The turn inside Paris exposed the 1st Army's flank to the capital, where Maunoury's 6th Army was forming; Gallieni's aviators saw the columns cross the front of Paris on 3 September and the battle of the Ourcq followed. Herwig judges the decision defensible on what Kluck knew and fatal on what he did not; Tuchman makes it the hinge of the campaign. Whether the outer wheel was ever practicable is the question the branch 'What success required' scores.[^herwig-2009] [^tuchman-1962] [^strachan-2001]",
+    "links": {
+      "people": [
+        "person:kluck-alexander-von",
+        "person:bulow-karl-von",
+        "person:gallieni-joseph",
+        "person:maunoury-michel-joseph"
+      ],
+      "events": ["1914:event-kluck-wheels-south-east"],
+      "battles": ["1914:marne"],
+      "tech": ["1914:tech-aerial-reconnaissance"]
+    },
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:decision-1914-09-04-halt-facing-paris",
+    "at": "1914-09-04T20:00:00Z",
+    "title": "Halt the right wing and face Paris?",
+    "actor": "person:moltke-helmuth-von-younger",
+    "question": "**4 September, Luxembourg, evening.** Air and cavalry reports say French forces are gathering about Paris; the 1st Army is across the Marne and still driving south-east, the 2nd on the Petit Morin, the gap between them widening. The centre armies report the French giving way. Do you stop the right wing and turn it to face the capital, or keep it driving south to finish the French field armies?",
+    "options": [
+      {
+        "id": "halt",
+        "label": "Halt the 1st and 2nd Armies and face Paris",
+        "summary": "Order the right wing to stand between the Oise and the Marne facing west, covering the flank against whatever is at Paris, while the 3rd, 4th and 5th Armies break the French centre and the 6th and 7th press at Nancy."
+      },
+      {
+        "id": "press",
+        "label": "Keep driving south-east",
+        "summary": "Let the 1st and 2nd Armies cross the Marne and the Seine and finish the French field armies before anything assembling at Paris can matter — the memorandum's bet on speed."
+      }
+    ],
+    "historical": "halt",
+    "reasoning": "Moltke had lost faith in the 'beaten French' since the end of August: the prisoners and captured guns of a routed army were missing, the French were retreating in order, and the reports from Paris were consistent. The general directive of 4 September, sent that night, was the first order of the campaign to speak of defence. It reached Kluck at 07:00 on 5 September, when his corps were already a day's march south of the Marne and Maunoury's advance guard was hours from Gronau's flank guard.[^herwig-2009] [^mombauer-2001]",
+    "verdict": "The directive was right and late: the right wing had to swing back north under fire over the next four days instead of standing to receive the blow, and the swing opened the gap the BEF and the 5th Army walked into. Historians read it as the moment OHL admitted the plan had failed — Herwig as sensible but tardy, Mombauer as the product of a commander by then out of touch with his armies; Strachan notes that by 4 September no order from Luxembourg could have caught up with the front.[^herwig-2009] [^mombauer-2001] [^strachan-2001]",
+    "links": {
+      "people": [
+        "person:moltke-helmuth-von-younger",
+        "person:kluck-alexander-von",
+        "person:bulow-karl-von"
+      ],
+      "formations": ["1914:army-de-1", "1914:army-de-2"],
+      "battles": ["1914:marne"]
+    },
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:mombauer-2001"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:decision-1914-09-09-hentsch-retreat",
+    "at": "1914-09-09T11:30:00Z",
+    "title": "Authorize the retreat?",
+    "actor": "person:hentsch-richard",
+    "question": "**Mareuil-sur-Ourcq, late morning, 9 September.** You have driven through the retreating right of the 2nd Army: Bülow is going back behind the Marne on the agreement you reached with him last night, because the British are across the river into the gap. Kluck's chief of staff tells you the 1st Army is winning on the Ourcq and its IX Corps is about to turn Maunoury's left. Your instructions from Moltke say to coordinate a retreat if the gap cannot be closed — and you are a lieutenant-colonel among generals. Do you tell the 1st Army to break off and retreat to the Aisne?",
+    "options": [
+      {
+        "id": "retreat",
+        "label": "Order the 1st Army back to the Aisne",
+        "summary": "The 2nd Army is already retreating; the gap cannot be closed from the south; an army left west of the Marne with the British behind it is an army lost. Break off the Ourcq and go back in step with Bülow."
+      },
+      {
+        "id": "fight",
+        "label": "Let Kluck finish the battle of the Ourcq",
+        "summary": "With Maunoury beaten, the 1st Army could turn back east and close the gap from the north; the British are slow and Bülow's retreat could be reversed. Stake the campaign on Kluck's judgement of his own front."
+      }
+    ],
+    "historical": "retreat",
+    "reasoning": "Hentsch knew what Moltke, far away in Luxembourg, did not: that Bülow had decided to retreat that morning on the airmen's report of the British crossing, that the gap was forty kilometres wide and held only by cavalry and Jäger, and that the 2nd Army's right was already in motion. What he did not know, and could not from Mareuil, was how near Kluck was to a decision on the Ourcq. His authority — *Vollmacht* — to order rather than advise has been disputed since the day itself; he believed he had it.[^herwig-2009] [^tuchman-1962]",
+    "verdict": "The retreat ended the battle of the Marne and the war of movement; the right wing stood on the Aisne within three days. The army's 1917 inquiry found Hentsch had acted within his instructions, and Herwig argues that once Bülow had decided, Kluck's army could not have stayed south of the Aisne whatever happened on the Ourcq. The older German account made Hentsch the scapegoat for Moltke and Bülow; Tuchman gives the episode its drama; the question of what the 1st Army might have done to Maunoury on 9–10 September remains the campaign's most durable counterfactual.[^herwig-2009] [^tuchman-1962] [^strachan-2001]",
+    "links": {
+      "people": [
+        "person:hentsch-richard",
+        "person:kluck-alexander-von",
+        "person:bulow-karl-von",
+        "person:moltke-helmuth-von-younger"
+      ],
+      "events": ["1914:marne-event-hentsch-mareuil", "1914:marne-event-bulow-retreats"],
+      "battles": ["1914:marne"],
+      "formations": ["1914:marne-hentsch-mission"]
+    },
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  }
+]

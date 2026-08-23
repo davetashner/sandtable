@@ -1,7 +1,7 @@
 /**
  * Deep-linkable view state in the URL query string:
  *
- *   ?t=1914-08-24T12:00:00Z&branch=1914:historical&focus=1914:marne&card=1914:tech-…
+ *   ?t=1914-08-24T12:00:00Z&branch=1914:historical&focus=1914:marne&card=1914:tech-…&pick=…
  *
  * `t` is the clock's "now"; `branch`, `focus` and `card` are the slots the
  * branch toggle (sand-a55.13), the zoom-in (sand-a55.14) and the dossier
@@ -19,6 +19,8 @@ export interface ViewState {
   focus?: string;
   /** Entity id of the card open in the dossier. */
   card?: string;
+  /** The option chosen on an open decision point (sand-1l0.22). */
+  pick?: string;
 }
 
 export function parseViewState(search: string): ViewState {
@@ -35,6 +37,8 @@ export function parseViewState(search: string): ViewState {
   if (focus) out.focus = focus;
   const card = q.get('card');
   if (card) out.card = card;
+  const pick = q.get('pick');
+  if (pick) out.pick = pick;
   return out;
 }
 
@@ -45,6 +49,7 @@ export function formatViewState(state: ViewState): string {
   if (state.branch) parts.push(`branch=${encodeURIComponent(state.branch).replace(/%3A/gi, ':')}`);
   if (state.focus) parts.push(`focus=${encodeURIComponent(state.focus).replace(/%3A/gi, ':')}`);
   if (state.card) parts.push(`card=${encodeURIComponent(state.card).replace(/%3A/gi, ':')}`);
+  if (state.pick) parts.push(`pick=${encodeURIComponent(state.pick)}`);
   return parts.length ? `?${parts.join('&')}` : '';
 }
 
@@ -52,6 +57,7 @@ export interface Slots {
   branch?: string;
   focus?: string;
   card?: string;
+  pick?: string;
 }
 
 export interface UrlBinding {
@@ -60,6 +66,7 @@ export interface UrlBinding {
   setBranch(branch: string | undefined): void;
   setFocus(focus: string | undefined): void;
   setCard(card: string | undefined): void;
+  setPick(pick: string | undefined): void;
   subscribe(listener: () => void): () => void;
   dispose(): void;
 }
@@ -120,6 +127,7 @@ export function bindUrlState(clock: Clock, opts: BindOptions = {}): UrlBinding {
     if (s.branch) slots.branch = s.branch;
     if (s.focus) slots.focus = s.focus;
     if (s.card) slots.card = s.card;
+    if (s.pick) slots.pick = s.pick;
     if (s.t !== undefined) clock.seek(s.t);
     lastWritten = formatViewState({ t: clock.get().now, ...slots });
     for (const l of listeners) l();
@@ -153,7 +161,17 @@ export function bindUrlState(clock: Clock, opts: BindOptions = {}): UrlBinding {
       setSlot('focus', focus);
     },
     setCard(card) {
-      setSlot('card', card);
+      // a new card forgets the previous decision's pick
+      const next: Slots = { ...slots };
+      if (card) next.card = card;
+      else delete next.card;
+      if (card !== slots.card) delete next.pick;
+      slots = next;
+      for (const l of listeners) l();
+      scheduleWrite(true);
+    },
+    setPick(pick) {
+      setSlot('pick', pick);
     },
     subscribe(l) {
       listeners.add(l);

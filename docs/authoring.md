@@ -297,6 +297,41 @@ optional forward `connections`.
   citation. Cross-pack links (`1870:sedan` → `1914:…`) are how the eras
   connect; the validator resolves them across all of `content/`.
 
+### Decision points
+
+`decisions.json` — the campaign pauses here and asks the viewer to choose as the
+commander, then reveals what was decided:
+
+```json
+{
+  "id": "1914:decision-1914-08-25-two-corps-east",
+  "at": "1914-08-25T12:00:00Z",
+  "title": "Two corps for East Prussia?",
+  "actor": "person:moltke-helmuth-von-younger",
+  "question": "Markdown — the situation as the actor saw it, ending in the choice.",
+  "options": [
+    { "id": "send", "label": "Send two corps east now", "summary": "Markdown." },
+    {
+      "id": "keep",
+      "label": "Keep every corps",
+      "summary": "Markdown.",
+      "branch": "1914:schlieffen-success"
+    }
+  ],
+  "historical": "send",
+  "reasoning": "What was known at the time — Markdown, footnoted.",
+  "verdict": "What happened and the historians' assessment — Markdown, footnoted.",
+  "links": { "people": ["person:moltke-helmuth-von-younger"] },
+  "sources": [{ "source": "source:herwig-2009" }]
+}
+```
+
+`historical` names the option actually taken; an option's `branch` is the
+counterfactual that plays on the map if it is chosen. The card shows the
+question and options first and the reasoning, verdict, chips and sources only
+after a choice; playback pauses at `at` the first time it crosses it on the
+historical branch. Deep link: `?card=<id>&pick=<option>`.
+
 ## 9. Add an image
 
 Read [ADR 0007](decisions/0007-imagery.md) first. Put the manifest

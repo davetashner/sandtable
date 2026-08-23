@@ -99,4 +99,25 @@ describe('App shell', () => {
     ).not.toBeInTheDocument();
     expect(face).toHaveAttribute('aria-pressed', 'false');
   });
+
+  it('opens a decision point from its ◇ glyph, records the pick in the URL and reveals the verdict', async () => {
+    window.history.replaceState(null, '', '/?t=1914-08-20T00:00:00Z');
+    render(<App />);
+    fireEvent.click(
+      await screen.findByRole(
+        'button',
+        { name: 'Open Two corps for East Prussia?' },
+        { timeout: 8000 },
+      ),
+    );
+    expect(window.location.search).toContain('card=1914:decision-1914-08-25-two-corps-east');
+    expect(screen.getByText('Decision point ◇')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: /Keep every corps on the right wing/ }));
+    expect(window.location.search).toContain('pick=keep');
+    expect(screen.getByText('What was known at the time')).toBeInTheDocument();
+    expect(screen.getByText('what happened')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: /Back to the narrative/ }));
+    expect(window.location.search).not.toContain('card=');
+    expect(window.location.search).not.toContain('pick=');
+  });
 });

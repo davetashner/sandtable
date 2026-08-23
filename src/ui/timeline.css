@@ -313,6 +313,11 @@
   color: var(--french);
 }
 
+.timeline__marker[data-kind='decision'] .timeline__marker-glyph {
+  color: var(--brass);
+  font-size: 13px;
+}
+
 .timeline__marker:not([data-past]) .timeline__marker-glyph {
   opacity: 0.6;
 }

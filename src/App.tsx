@@ -8,15 +8,15 @@
  * the lazy loader lands (sand-shn.1).
  */
 import {
+  Suspense,
   createContext,
   lazy,
-  Suspense,
+  type ReactNode,
   useContext,
   useEffect,
   useMemo,
   useRef,
   useState,
-  type ReactNode,
 } from 'react';
 import {
   ClockProvider,
@@ -42,6 +42,8 @@ import { BranchToggle } from './ui/BranchToggle.js';
 import { Breadcrumb } from './ui/Breadcrumb.js';
 import { Dossier, type CardChipLike } from './ui/Dossier.js';
 import { CastStrip, type CastMember } from './ui/CastStrip.js';
+import { DecisionCardView } from './ui/DecisionCardView.js';
+import { decisionCrossed } from './engine/decisions.js';
 import { portraitFor } from './packs/media-index.js';
 import { CausalView } from './ui/CausalView.js';
 import { DocumentCardView } from './ui/DocumentCardView.js';
@@ -102,6 +104,7 @@ function useLabeller(): EntityLabeller {
       label(id) {
         return (
           seed.people.find((p) => p.id === id)?.name ??
+          seed.decisions.find((d) => d.id === id)?.title ??
           seed.tech.find((t) => t.id === id)?.title ??
           seed.science.find((t) => t.id === id)?.title ??
           seed.documents.find((d) => d.id === id)?.title ??
@@ -136,9 +139,12 @@ function useCard():
   | { kind: 'document'; card: (typeof seed.documents)[number] }
   | { kind: 'causal'; card: (typeof seed.links)[number] }
   | { kind: 'person'; card: (typeof seed.people)[number] }
+  | { kind: 'decision'; card: (typeof seed.decisions)[number] }
   | undefined {
   const { card } = useViewState();
   if (!card) return undefined;
+  const decision = seed.decisions.find((d) => d.id === card);
+  if (decision) return { kind: 'decision', card: decision };
   const tech = seed.tech.find((t) => t.id === card);
   if (tech) return { kind: 'tech', card: tech };
   const science = seed.science.find((t) => t.id === card);
@@ -249,10 +255,38 @@ function MapSection() {
   );
 }
 
+/**
+ * The campaign pauses at a decision point (sand-1l0.22): when playback crosses
+ * one on the historical branch outside a zoom-in with no card open, the clock
+ * stops and the decision card opens. Each decision interrupts once per visit.
+ */
+function DecisionPauser() {
+  const { now } = useClock();
+  const clock = useClockControls();
+  const branch = useBranch();
+  const focus = useFocus();
+  const { card } = useViewState();
+  const controls = useViewStateControls();
+  const before = useRef(now);
+  const seen = useRef(new Set<string>());
+  useEffect(() => {
+    const prev = before.current;
+    before.current = now;
+    if (!clock.get().playing || branch.kind !== 'historical' || focus || card) return;
+    const hit = decisionCrossed(seed.decisions, prev, now, seen.current);
+    if (!hit) return;
+    seen.current.add(hit.id);
+    clock.pause();
+    controls?.setCard(hit.id);
+  }, [now, clock, branch.kind, focus, card, controls]);
+  return null;
+}
+
 function DossierSurface() {
   const branch = useBranch();
   const focus = useFocus();
   const card = useCard();
+  const { pick } = useViewState();
   const meanwhile = useMeanwhileContext();
   const controls = useViewStateControls();
   const labeller = useLabeller();
@@ -350,6 +384,16 @@ function DossierSurface() {
               cast={seed.cast.find((c) => c.person === card.card.id)}
               onBack={() => controls?.setCard(undefined)}
             />
+          ) : card?.kind === 'decision' ? (
+            <DecisionCardView
+              decision={card.card}
+              sources={seed.sources}
+              labeller={labeller}
+              pick={pick}
+              onPick={(id) => controls?.setPick(id)}
+              onPlayBranch={(b) => controls?.setBranch(b)}
+              onBack={() => controls?.setCard(undefined)}
+            />
           ) : card?.kind === 'causal' ? (
             <CausalView
               links={seed.links}
@@ -440,7 +484,15 @@ function TimelineSurface() {
           at: Date.parse(d.date),
           kind: 'document' as const,
         }));
-    return [...events, ...tech, ...science, ...documents];
+    const decisions: TimelineMarker[] = focus
+      ? []
+      : seed.decisions.map((d) => ({
+          id: d.id,
+          title: d.title,
+          at: Date.parse(d.at),
+          kind: 'decision' as const,
+        }));
+    return [...events, ...decisions, ...tech, ...science, ...documents];
   }, [branch, focus, meanwhile.active]);
   return (
     <footer className="surface surface--timeline" aria-label="Timeline">
@@ -449,7 +501,12 @@ function TimelineSurface() {
         phases={phases}
         markers={markers}
         onSelectMarker={(m) => {
-          if (m.kind === 'tech' || m.kind === 'science' || m.kind === 'document')
+          if (
+            m.kind === 'tech' ||
+            m.kind === 'science' ||
+            m.kind === 'document' ||
+            m.kind === 'decision'
+          )
             controls?.setCard(m.id);
         }}
       />
@@ -477,6 +534,7 @@ export function App() {
           <main className="app__main">
             <MapSection />
             <DossierSurface />
+            <DecisionPauser />
           </main>
 
           <TimelineSurface />

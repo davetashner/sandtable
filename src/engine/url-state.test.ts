@@ -24,6 +24,12 @@ describe('view state ⇄ query string', () => {
     });
   });
 
+  it('round-trips the decision pick', () => {
+    const st = parseViewState('?card=1914:decision-x&pick=keep');
+    expect(st).toEqual({ card: '1914:decision-x', pick: 'keep' });
+    expect(formatViewState(st)).toBe('?card=1914:decision-x&pick=keep');
+  });
+
   it('ignores garbage and empties', () => {
     expect(parseViewState('?t=not-a-date&branch=&x=1')).toEqual({});
     expect(formatViewState({})).toBe('');

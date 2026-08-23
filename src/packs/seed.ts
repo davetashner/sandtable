@@ -20,11 +20,13 @@ import scienceJson from '../../content/eras/1914-schlieffen-marne/science.json';
 import documentsJson from '../../content/eras/1914-schlieffen-marne/documents.json';
 import linksJson from '../../content/eras/1914-schlieffen-marne/links.json';
 import castJson from '../../content/eras/1914-schlieffen-marne/cast.json';
+import decisionsJson from '../../content/eras/1914-schlieffen-marne/decisions.json';
 import {
   Battle,
   BeatFrontMatter,
   CastEntry,
   CausalLink,
+  DecisionPoint,
   Event,
   Formation,
   Pack,
@@ -37,6 +39,7 @@ import {
   TechCard,
   type Battle as BattleT,
   type CastEntry as CastEntryT,
+  type DecisionPoint as DecisionPointT,
   type CausalLink as CausalLinkT,
   type Document as DocumentT,
   type ScienceCard as ScienceCardT,
@@ -78,6 +81,8 @@ export interface SeedPack {
   links: CausalLinkT[];
   /** The pack's dramatis personae (cast.json), in file order. */
   cast: CastEntryT[];
+  /** Decision points (decisions.json), in time order. */
+  decisions: DecisionPointT[];
 }
 
 function loadSeed(): SeedPack {
@@ -99,6 +104,9 @@ function loadSeed(): SeedPack {
   const documents = Document.array().parse(documentsJson);
   const links = CausalLink.array().parse(linksJson);
   const cast = CastEntry.array().parse(castJson);
+  const decisions = DecisionPoint.array()
+    .parse(decisionsJson)
+    .sort((a, b) => Date.parse(a.at) - Date.parse(b.at));
   return {
     pack,
     events,
@@ -114,6 +122,7 @@ function loadSeed(): SeedPack {
     documents,
     links,
     cast,
+    decisions,
   };
 }
 
