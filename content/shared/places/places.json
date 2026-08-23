@@ -665,5 +665,57 @@
         "note": "coordinates"
       }
     ]
+  },
+  {
+    "id": "place:guise",
+    "name": "Guise",
+    "kind": "town",
+    "lngLat": [3.627, 49.899],
+    "country": "France",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:vervins",
+    "name": "Vervins",
+    "kind": "town",
+    "lngLat": [3.909, 49.835],
+    "country": "France",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:ribemont",
+    "name": "Ribemont",
+    "kind": "town",
+    "lngLat": [3.458, 49.799],
+    "country": "France",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:marle",
+    "name": "Marle",
+    "kind": "town",
+    "lngLat": [3.772, 49.74],
+    "country": "France",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
   }
 ]
