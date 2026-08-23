@@ -814,6 +814,49 @@
       "person": "person:moltke-helmuth-von-elder"
     },
     {
+      "id": "media:person/moltke-helmuth-von-elder/portrait-1889-colorized",
+      "dir": "people/moltke-helmuth-von-elder/portrait-1889-colorized",
+      "original": {
+        "src": "people/moltke-helmuth-von-elder/portrait-1889-colorized/portrait-1889-colorized.png",
+        "width": 1070,
+        "height": 1470,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/moltke-helmuth-von-elder/portrait-1889-colorized/.derived/portrait-1889-colorized.w320.webp",
+          "width": 320,
+          "height": 440,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/moltke-helmuth-von-elder/portrait-1889-colorized/.derived/portrait-1889-colorized.w640.webp",
+          "width": 640,
+          "height": 879,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/moltke-helmuth-von-elder/portrait-1889-colorized/.derived/portrait-1889-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1407,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1070,
+      "height": 1470,
+      "caption": "Helmuth von Moltke the Elder in the full dress of a Generalfeldmarschall, about 1889 — eighty-nine years old, a year from retirement's end and two from his death, wearing the orders of the three wars that made Germany. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: photographer not identified, c. 1889; via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — PD-old-70-expired and PD Mark 1.0 per Commons; published well before 1931",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Helmuth_von_Moltke_Photo_ca._1889.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.22
+      },
+      "person": "person:moltke-helmuth-von-elder"
+    },
+    {
       "id": "media:person/moltke-helmuth-von-younger/portrait-1906-colorized",
       "dir": "people/moltke-helmuth-von-younger",
       "original": {

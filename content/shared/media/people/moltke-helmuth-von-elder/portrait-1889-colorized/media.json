@@ -1,0 +1,29 @@
+{
+  "$comment": "Second portrait of Moltke the Elder — the late full-dress bust. Replaces the outdoor full-length image held under sand-y0u.12, which had no archive record.",
+  "id": "media:person/moltke-helmuth-von-elder/portrait-1889-colorized",
+  "person": "person:moltke-helmuth-von-elder",
+  "file": "portrait-1889-colorized.png",
+  "width": 1070,
+  "height": 1470,
+  "colorized": true,
+  "original": {
+    "description": "Bust portrait of Helmuth von Moltke the Elder in the full dress of a Prussian Generalfeldmarschall: dark-blue tunic with heavily embroidered collar, gold-braid shoulder cords and aiguillette, sash, the Iron Cross of 1870 at the throat, and the stars and crosses of a career's orders across the breast — among them, per the Commons categories, the star of the Supreme Order of the Most Holy Annunciation and the insignia of the Austrian Order of Leopold.",
+    "photographer": "not identified on the Commons record",
+    "date": "1 October 1889, as stated on the Wikimedia Commons file record",
+    "archive": "Wikimedia Commons file record; the record cites no holding archive — its stated source is a Pinterest page, and the uploader gives no institutional reference",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Helmuth_von_Moltke_Photo_ca._1889.jpg",
+    "original_dimensions": "1024 × 1407 (Commons file)",
+    "licence": "public domain — PD-old-70-expired and PD Mark 1.0 per Commons; published well before 1931"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'. Documented colours: Prussian dark-blue full-dress tunic with gold embroidery and cords; the black-and-silver Iron Cross of 1870 at the throat. The remaining orders, enamels and ribbon colours are the colorizer's reading rather than taken from a reference — flag for the image review (sand-y0u.7)."
+  },
+  "content_policy": "ok — studio portrait, no gore",
+  "caption": "Helmuth von Moltke the Elder in the full dress of a Generalfeldmarschall, about 1889 — eighty-nine years old, a year from retirement's end and two from his death, wearing the orders of the three wars that made Germany. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: photographer not identified, c. 1889; via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+  "focal_point": { "x": 0.5, "y": 0.22 },
+  "notes": "Chosen by Dave 2026-08-23 to replace the outdoor full-length portrait held under sand-y0u.12. PROVENANCE, recorded so the image review (sand-y0u.7) can finish the job: research supplied with the image attributes this portrait to the court photographer Julius Braatz, taken 1 October 1889 in Berlin and cropped from a group of the German Conservative Party caucus in the Wandelhalle of the old Reichstag. The Commons record's date matches that claim exactly, and a Braatz group photograph of the Conservative faction does exist on Commons showing Moltke standing with Rudolph Wichmann, Otto von Seydewitz and three others — so the attribution is plausible and partly corroborated. Two things do not line up and are not asserted here: the Deutsches Historisches Museum dates Braatz's Reichstag campaign to April and May 1889, not October, and the group file names no holding archive or Bundesarchiv Bild number. The caption therefore says 'about 1889' and names no photographer."
+}
