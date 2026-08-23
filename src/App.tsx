@@ -1050,23 +1050,25 @@ function AppShell() {
         <div className="app__header-text">
           <p className="eyebrow">Operational study · Western Front, 1914</p>
           <h1 className="brand">
-            <img
-              className="brand__wordmark brand__wordmark--light"
-              src="/brand/wordmark-light.png"
-              alt="Sandtable"
-              width="872"
-              height="122"
-              decoding="async"
-            />
-            <img
-              className="brand__wordmark brand__wordmark--dark"
-              src="/brand/wordmark-dark.png"
-              alt=""
-              aria-hidden="true"
-              width="859"
-              height="122"
-              decoding="async"
-            />
+            <a className="brand__link" href="/">
+              <img
+                className="brand__wordmark brand__wordmark--light"
+                src="/brand/wordmark-light.png"
+                alt="Sandtable"
+                width="872"
+                height="122"
+                decoding="async"
+              />
+              <img
+                className="brand__wordmark brand__wordmark--dark"
+                src="/brand/wordmark-dark.png"
+                alt=""
+                aria-hidden="true"
+                width="859"
+                height="122"
+                decoding="async"
+              />
+            </a>
           </h1>
           <p className="lede">{seed.pack.subtitle ?? seed.pack.title}</p>
         </div>

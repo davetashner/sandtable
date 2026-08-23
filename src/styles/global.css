@@ -78,6 +78,24 @@ body {
   line-height: 0;
 }
 
+.brand__link {
+  display: block;
+  line-height: 0;
+  text-decoration: none;
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}
+
+.brand__link:hover {
+  opacity: 0.82;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand__link {
+    transition: none;
+  }
+}
+
 .brand__wordmark {
   display: block;
   height: clamp(30px, 3.6vw, 42px);
