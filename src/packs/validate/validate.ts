@@ -23,6 +23,7 @@ import {
   type Links,
   Cue,
   type Cue as CueT,
+  type ScoreEntry as ScoreEntryT,
   Media,
   type Media as MediaT,
   type NarrativeBeat,
@@ -86,6 +87,7 @@ export interface ParsedPack {
   casualties: CasualtyRecord[];
   vignettes: Vignette[];
   tours: Tour[];
+  score: ScoreEntryT[];
   beats: NarrativeBeat[];
 }
 
@@ -137,6 +139,7 @@ type Kind =
   | 'place'
   | 'media'
   | 'cue'
+  | 'score'
   | 'thread';
 
 interface IndexEntry {
@@ -338,6 +341,7 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     casualties: [],
     vignettes: [],
     tours: [],
+    score: [],
     beats: [],
     files: {},
     branchById: new Map(),
@@ -366,6 +370,7 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     'casualties.json': 'casualties',
     'vignettes.json': 'vignette',
     'tours.json': 'tour',
+    'score.json': 'score',
   };
   for (const [file, schema] of Object.entries(PACK_COLLECTIONS) as [
     PackCollectionFile,
@@ -377,7 +382,10 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     const items = parseWith(ctx, schema.array(), f, file) as { id: string }[] | undefined;
     if (!items) continue;
     const kind = kindOf[file];
-    for (const item of items) ctx.register(item.id, { kind, path: f.path, pack: raw.dir });
+    // Score entries are anonymous — they say when a cue plays, they are not
+    // themselves referable.
+    for (const item of items)
+      if (item.id) ctx.register(item.id, { kind, path: f.path, pack: raw.dir });
     const key = file.replace('.json', '') as keyof ParsedPack;
     (state as unknown as Record<string, unknown>)[key] = items;
     if (kind === 'battle') {
@@ -1061,6 +1069,34 @@ function checkShared(ctx: Ctx, shared: ParsedContent['shared'], raw: RawContent)
   });
 }
 
+function checkScore(ctx: Ctx, s: PackState, path: string) {
+  const entries = s.score;
+  if (!entries.length) return;
+  let opening = 0;
+  entries.forEach((e, i) => {
+    const where = `score[${i}]`;
+    if (e.cue) ctx.ref(path, s.pack.id, e.cue, ['cue'], `${where}: cue`);
+    if (e.focus) ctx.ref(path, s.pack.id, e.focus, ['battle'], `${where}: focus`);
+    if (e.from && e.to) {
+      if (!within(s.pack.timeRange, e.from))
+        ctx.error(path, `${where}: from is outside the pack timeRange`);
+      if (!within(s.pack.timeRange, e.to))
+        ctx.error(path, `${where}: to is outside the pack timeRange`);
+    }
+    if (e.opening) opening += 1;
+  });
+  if (opening > 1) ctx.error(path, 'more than one entry claims the opening sequence');
+  // A campaign moment with nothing to play is not an error — the score may be
+  // deliberately sparse — but a pack whose score never covers the start is
+  // almost certainly a mistake in authoring rather than a choice.
+  const start = s.pack.timeRange.start;
+  const covered = entries.some(
+    (e) => e.from && e.to && within({ start: e.from, end: e.to }, start),
+  );
+  if (!covered && entries.some((e) => e.from))
+    ctx.warn(path, 'no score entry covers the start of the campaign');
+}
+
 function checkCue(ctx: Ctx, c: CueT, path: string) {
   // The same bar the imagery policy sets: a manifest still carrying a
   // placeholder is not ready to ship, whoever or whatever made the sound.
@@ -1153,6 +1189,7 @@ export function validateContent(raw: RawContent): Report {
     for (const c of s.casualties) checkCasualties(ctx, s, file('casualties.json'), c, sideIds);
     for (const v of s.vignettes) checkVignette(ctx, s, file('vignettes.json'), v);
     for (const tr of s.tours) checkTour(ctx, s, file('tours.json'), tr);
+    checkScore(ctx, s, file('score.json'));
     const seenCast = new Set<string>();
     for (const c of s.cast) {
       checkCast(ctx, file('cast.json'), c, sideIds);

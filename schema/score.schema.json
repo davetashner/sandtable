@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sandtable.davetashner.com/schema/score.schema.json",
+  "title": "Sandtable score",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "cue": {
+        "description": "cue:<slug> from the shared audio registry",
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$"
+      },
+      "silence": {
+        "type": "boolean"
+      },
+      "opening": {
+        "type": "boolean"
+      },
+      "focus": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+      },
+      "from": {
+        "type": "string",
+        "format": "date-time",
+        "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+        "description": "ISO-8601 date-time with offset, e.g. 1914-08-04T08:00:00Z"
+      },
+      "to": {
+        "type": "string",
+        "format": "date-time",
+        "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+        "description": "ISO-8601 date-time with offset, e.g. 1914-08-04T08:00:00Z"
+      },
+      "note": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": {}
+  }
+}

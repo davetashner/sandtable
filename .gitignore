@@ -37,6 +37,9 @@ content/shared/audio/**/.derived/
 # bd append-only audit log — local, machine-specific; history lives in Dolt
 .beads/interactions.jsonl
 
+# macOS
+.DS_Store
+
 # Node / build
 node_modules/
 # ...and as a bare entry too: a trailing slash matches only directories, so a

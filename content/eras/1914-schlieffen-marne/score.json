@@ -1,0 +1,98 @@
+[
+  {
+    "opening": true,
+    "cue": "cue:forty-days",
+    "note": "The theme stated whole, before the campaign puts it under pressure."
+  },
+  {
+    "focus": "1914:july-crisis",
+    "cue": "cue:thirty-seven-days",
+    "note": "The ticking is the argument: thirty-seven days in which everyone had time to stop."
+  },
+  {
+    "focus": "1914:origins",
+    "cue": "cue:timetable",
+    "note": "A chapter about a document, not a battle — machinery, not mood."
+  },
+  {
+    "focus": "1914:liege",
+    "cue": "cue:iron-and-rails",
+    "note": "The siege guns. Never a victory march: the forts fall, and the point is the machinery."
+  },
+  {
+    "focus": "1914:belgium-antwerp",
+    "cue": "cue:iron-and-rails",
+    "note": "Antwerp, Namur and Maubeuge — the same machinery, still grinding."
+  },
+  {
+    "focus": "1914:lorraine",
+    "cue": "cue:long-road-south",
+    "note": "Plan XVII into the trap."
+  },
+  {
+    "focus": "1914:ardennes",
+    "cue": "cue:long-road-south",
+    "note": "The encounter battles in the fog."
+  },
+  {
+    "focus": "1914:frontiers-north",
+    "cue": "cue:long-road-south",
+    "note": "Charleroi, Mons, Le Cateau."
+  },
+  {
+    "focus": "1914:guise",
+    "cue": "cue:long-road-south",
+    "note": "The counter-attack that bent the wheel, in the middle of the retreat."
+  },
+  {
+    "focus": "1914:grand-couronne",
+    "cue": "cue:long-road-south",
+    "note": "The hinge holding while it is taken apart to feed the west."
+  },
+  {
+    "focus": "1914:tannenberg-east",
+    "cue": "cue:long-road-south",
+    "note": "Two corps that fought in neither battle they were sent to decide."
+  },
+  {
+    "focus": "1914:marne",
+    "cue": "cue:the-turn",
+    "note": "The only forward motion in the score."
+  },
+  {
+    "from": "1914-08-02T00:00:00Z",
+    "to": "1914-08-04T00:00:00Z",
+    "cue": "cue:thirty-seven-days",
+    "note": "The pre-campaign window the July Crisis and the ultimatum occupy."
+  },
+  {
+    "from": "1914-08-04T00:00:00Z",
+    "to": "1914-08-16T00:00:00Z",
+    "cue": "cue:iron-and-rails",
+    "note": "Mobilization and Liège: the timetable turning into movement."
+  },
+  {
+    "from": "1914-08-16T00:00:00Z",
+    "to": "1914-09-05T00:00:00Z",
+    "cue": "cue:long-road-south",
+    "note": "The Frontiers and the Great Retreat. One cue for three stages, because this stretch should feel like it will not end."
+  },
+  {
+    "from": "1914-08-22T00:00:00Z",
+    "to": "1914-08-23T00:00:00Z",
+    "silence": true,
+    "note": "22 August 1914, the bloodiest day in French history: about 27,000 French dead. The music stops. A narrower window than the retreat around it, so it wins — silence after an hour of sound is the strongest thing the site can do, and the pack already refuses to gamify this day (ADR 0008)."
+  },
+  {
+    "from": "1914-09-05T00:00:00Z",
+    "to": "1914-09-16T00:00:00Z",
+    "cue": "cue:the-turn",
+    "note": "The Marne."
+  },
+  {
+    "from": "1914-09-16T00:00:00Z",
+    "to": "1914-11-25T00:00:00Z",
+    "cue": "cue:ground",
+    "note": "The Aisne, the race to the sea, First Ypres and the line. The war becomes geography."
+  }
+]
