@@ -1,0 +1,31 @@
+[
+  {
+    "id": "1914:supply-de-1",
+    "title": "1st Army: feet against rail",
+    "army": "1914:army-de-1",
+    "railhead": "1914:railhead-de-1",
+    "thresholdKm": 100,
+    "summary": "The outer wheel was the plan's longest march and its longest supply line. Kluck's corps covered some 500 kilometres in a month on their feet; behind them the railhead crept forward only as the Belgians' demolitions were repaired, and beyond the railhead everything — bread, fodder, shells — came by horse. Herwig and Strachan both put the practical limit of horse-drawn supply at about a hundred kilometres; by the Sambre the 1st Army was past it and by the Marne it was living on the country.[^herwig-2009] [^strachan-2001]",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:supply-de-2",
+    "title": "2nd Army: feet against rail",
+    "army": "1914:army-de-2",
+    "railhead": "1914:railhead-de-2",
+    "thresholdKm": 100,
+    "summary": "Bülow's line ran through Liège, Namur and Charleroi; Maubeuge, invested but untaken until 7 September, blocked the direct line south and cost the 2nd Army a corps to mask it and a railway to use.[^herwig-2009]",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  }
+]

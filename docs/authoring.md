@@ -413,6 +413,43 @@ Entries must be in time order and inside the pack range; a positioned entry
 becomes a ring on the map once the clock passes it; the gauge under the
 timeline shows the running value and the card the full ledger (`?card=<id>`).
 
+### Rail against feet
+
+Mark a transfer by train with `"mode": "rail"` on its route — it draws dashed
+and the corps token shows only while the train is under way:
+
+```json
+{
+  "id": "1914:route-vii-by-rail",
+  "formation": "1914:corps-fr-vii",
+  "mode": "rail",
+  "waypoints": [
+    [6.86, 47.64, "1914-08-25T12:00:00Z"],
+    [2.3, 49.89, "1914-08-27T12:00:00Z"]
+  ],
+  "confidence": "medium",
+  "sources": [{ "source": "source:afgg-1-1" }]
+}
+```
+
+A railhead is a formation of kind `other` with a route of its own; a
+`supply.json` line pairs it with the army it feeds:
+
+```json
+{
+  "id": "1914:supply-de-1",
+  "title": "1st Army: feet against rail",
+  "army": "1914:army-de-1",
+  "railhead": "1914:railhead-de-1",
+  "thresholdKm": 100,
+  "summary": "Footnoted.[^herwig-2009]",
+  "sources": [{ "source": "source:herwig-2009" }]
+}
+```
+
+The gauge under the timeline reads kilometres marched and the railhead gap at
+the clock; the card (`?card=<id>`) carries the argument.
+
 ## 9. Add an image
 
 Read [ADR 0007](decisions/0007-imagery.md) first. Put the manifest

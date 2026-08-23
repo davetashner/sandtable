@@ -139,6 +139,7 @@ describe('buildMovementLayers', () => {
       ] as [number, number, number][],
       hypothetical: false,
       confidence: 'medium' as const,
+      mode: 'march' as const,
     });
     const now = Date.UTC(1914, 7, 15);
     const tokensOf = (layers: ReturnType<typeof buildMovementLayers>) =>
@@ -208,6 +209,7 @@ describe('buildMovementLayers', () => {
       ] as [number, number, number][],
       hypothetical: false,
       confidence: 'medium' as const,
+      mode: 'march' as const,
     });
     // an army and a corps 20 px apart: the army keeps the slot above, the corps takes another
     const routes = [mk(f('1. Armee', 'army'), 6.0), mk(f('II. AK', 'corps'), 6.2)];
@@ -226,5 +228,42 @@ describe('buildMovementLayers', () => {
     expect(
       labels.getAlignmentBaseline({ id: 'II. AK' }) + labels.getTextAnchor({ id: 'II. AK' }),
     ).not.toBe('bottommiddle');
+  });
+
+  it('shows a rail leg\u2019s token only while it is moving and flags its path as dashed', () => {
+    const sides = [{ id: 'fr', name: 'FR', alliance: 'Entente' }];
+    const f = {
+      id: 'corps',
+      name: 'corps',
+      short: 'VII',
+      side: 'fr',
+      kind: 'corps',
+    } as unknown as Parameters<typeof composeRoutes>[1][number];
+    const rail = {
+      formation: f,
+      side: sides[0]!,
+      points: [
+        [7, 47.6, Date.UTC(1914, 7, 25, 12)],
+        [2.3, 49.9, Date.UTC(1914, 7, 27, 12)],
+      ] as [number, number, number][],
+      hypothetical: false,
+      confidence: 'medium' as const,
+      mode: 'rail' as const,
+    };
+    const base = { routes: [rail], rangeStart: Date.UTC(1914, 7, 2), sides };
+    const tokensOf = (layers: ReturnType<typeof buildMovementLayers>) =>
+      (layers.find((l) => l.id === 'movement-tokens')!.props as unknown as { data: unknown[] }).data
+        .length;
+    expect(tokensOf(buildMovementLayers({ ...base, now: Date.UTC(1914, 7, 24) }))).toBe(0); // before: hidden
+    expect(tokensOf(buildMovementLayers({ ...base, now: Date.UTC(1914, 7, 26) }))).toBe(1); // under way
+    expect(tokensOf(buildMovementLayers({ ...base, now: Date.UTC(1914, 7, 30) }))).toBe(0); // arrived: absorbed
+    const ghost = buildMovementLayers({ ...base, now: Date.UTC(1914, 7, 26) }).find(
+      (l) => l.id === 'movement-ghost',
+    )!.props as unknown as {
+      data: { dashed: boolean }[];
+      getDashArray: (d: { dashed: boolean }) => number[];
+    };
+    expect(ghost.data[0]!.dashed).toBe(true);
+    expect(ghost.getDashArray(ghost.data[0]!)).toEqual([6, 4]);
   });
 });

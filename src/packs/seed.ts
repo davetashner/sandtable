@@ -23,6 +23,7 @@ import castJson from '../../content/eras/1914-schlieffen-marne/cast.json';
 import decisionsJson from '../../content/eras/1914-schlieffen-marne/decisions.json';
 import clocksJson from '../../content/eras/1914-schlieffen-marne/clocks.json';
 import talliesJson from '../../content/eras/1914-schlieffen-marne/tallies.json';
+import supplyJson from '../../content/eras/1914-schlieffen-marne/supply.json';
 import {
   Battle,
   BeatFrontMatter,
@@ -38,6 +39,7 @@ import {
   Route,
   ScienceCard,
   Source,
+  SupplyLine,
   TechCard,
   Tally,
   Timetable,
@@ -56,6 +58,7 @@ import {
   type Route as RouteT,
   type Source as SourceT,
   type TechCard as TechCardT,
+  type SupplyLine as SupplyLineT,
   type Tally as TallyT,
   type Timetable as TimetableT,
 } from './schema/index.js';
@@ -93,6 +96,8 @@ export interface SeedPack {
   clocks: TimetableT[];
   /** Strength ledgers (tallies.json). */
   tallies: TallyT[];
+  /** Rail-vs-feet supply lines (supply.json). */
+  supply: SupplyLineT[];
 }
 
 function loadSeed(): SeedPack {
@@ -116,6 +121,7 @@ function loadSeed(): SeedPack {
   const cast = CastEntry.array().parse(castJson);
   const clocks = Timetable.array().parse(clocksJson);
   const tallies = Tally.array().parse(talliesJson);
+  const supply = SupplyLine.array().parse(supplyJson);
   const decisions = DecisionPoint.array()
     .parse(decisionsJson)
     .sort((a, b) => Date.parse(a.at) - Date.parse(b.at));
@@ -137,6 +143,7 @@ function loadSeed(): SeedPack {
     decisions,
     clocks,
     tallies,
+    supply,
   };
 }
 

@@ -54,6 +54,7 @@
   height: 7px;
   border-radius: 2px;
   background: color-mix(in srgb, var(--line) 60%, transparent);
+  overflow: hidden;
 }
 
 .clocks__row--plan {
@@ -152,6 +153,10 @@
 
 .clocks__tick--entry[data-sign='plus'][data-reached] {
   background: var(--brass);
+}
+
+.clocks__fill--march {
+  background: color-mix(in srgb, var(--muted) 55%, transparent);
 }
 
 /* Phone: the timeline strip is deliberately minimal and the dossier sheet

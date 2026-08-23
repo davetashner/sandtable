@@ -2040,5 +2040,39 @@
         "source": "source:hastings-2013"
       }
     ]
+  },
+  {
+    "id": "1914:railhead-de-1",
+    "name": "1st Army railhead",
+    "short": "Railhead 1. A",
+    "side": "de",
+    "kind": "other",
+    "parent": "1914:army-de-1",
+    "summary": "Where the 1st Army's supply trains ended — the railhead creeping forward behind the demolitions from Aachen through Liège and Brussels, never closer than a hundred kilometres to the marching corps after the Sambre; beyond it, horse-drawn columns. Schematic positions (sand-1l0.21).",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:railhead-de-2",
+    "name": "2nd Army railhead",
+    "short": "Railhead 2. A",
+    "side": "de",
+    "kind": "other",
+    "parent": "1914:army-de-2",
+    "summary": "Where the 2nd Army's supply trains ended — Liège, Namur and Charleroi by the end of August, with Maubeuge blocking the line south until 7 September. Schematic positions (sand-1l0.21).",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
   }
 ]

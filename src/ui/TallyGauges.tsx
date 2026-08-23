@@ -23,12 +23,16 @@ export function TallyGauges({ tallies, onSelect, selected }: TallyGaugesProps) {
     <div className="clocks clocks--tallies" role="list" aria-label="Strength">
       {tallies.map((c) => {
         const st = tallyStatus(c, now);
-        const max = Math.max(
-          c.start.value,
-          ...c.entries.map((e) => (e.delta > 0 ? c.start.value + e.delta : 0)),
-        );
-        const pct = max > 0 ? (st.value / max) * 100 : 0;
+        // scale: the largest running total the ledger ever reaches
+        let running = c.start.value;
+        let max = c.start.value;
+        for (const e of c.entries) {
+          running += e.delta;
+          max = Math.max(max, running);
+        }
+        const pct = max > 0 ? Math.min(100, (st.value / max) * 100) : 0;
         const lost = c.start.value - st.value;
+        const grows = c.start.value === 0;
         return (
           <button
             key={c.id}
@@ -38,7 +42,11 @@ export function TallyGauges({ tallies, onSelect, selected }: TallyGaugesProps) {
             data-tone={lost > 0 ? 'behind' : lost < 0 ? 'ahead' : 'none'}
             data-selected={c.id === selected || undefined}
             onClick={() => onSelect?.(c.id)}
-            aria-label={`${c.title}: ${st.value} of ${c.start.value} ${c.unit}${lost > 0 ? `, ${lost} gone` : ''}`}
+            aria-label={
+              grows
+                ? `${c.title}: ${st.value} ${c.unit}${lost < 0 ? `, ${-lost} gained` : ''}`
+                : `${c.title}: ${st.value} of ${c.start.value} ${c.unit}${lost > 0 ? `, ${lost} gone` : ''}`
+            }
             title={c.subtitle ?? c.title}
           >
             <span className="clocks__title">{c.title}</span>
@@ -60,7 +68,7 @@ export function TallyGauges({ tallies, onSelect, selected }: TallyGaugesProps) {
             </span>
             <span className="clocks__readout">
               <span className="clocks__day">
-                {st.value} / {c.start.value} {c.unit}
+                {grows ? `${st.value} ${c.unit}` : `${st.value} / ${c.start.value} ${c.unit}`}
               </span>
               <span className="clocks__slip">
                 {lost > 0 ? `${lost} gone` : lost < 0 ? `${-lost} gained` : 'at full weight'}

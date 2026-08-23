@@ -986,5 +986,155 @@
         "source": "source:herwig-2009"
       }
     ]
+  },
+  {
+    "id": "1914:route-railhead-de-1",
+    "formation": "1914:railhead-de-1",
+    "waypoints": [
+      [6.08, 50.78, "1914-08-13T12:00:00Z"],
+      [6.08, 50.78, "1914-08-17T12:00:00Z"],
+      [5.57, 50.63, "1914-08-21T12:00:00Z"],
+      [4.7, 50.88, "1914-08-25T12:00:00Z"],
+      [4.35, 50.85, "1914-08-28T12:00:00Z"],
+      [4.0, 50.6, "1914-09-01T12:00:00Z"],
+      [3.52, 50.36, "1914-09-04T12:00:00Z"],
+      [3.29, 49.85, "1914-09-08T12:00:00Z"],
+      [3.22, 49.62, "1914-09-12T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Schematic: the forward end of the 1st Army's railway supply as the lines through Liège, Brussels and Valenciennes were repaired — Aachen until the Liège line reopened, Liège from 21 Aug, Leuven and Brussels in the last week of August, Valenciennes–Cambrai in early September, Saint-Quentin by the Marne. Drawn from Herwig's and Strachan's accounts of the railheads lagging 100–150 km behind the corps; positions approximate to a day and a town.",
+    "notes": "Beyond the railhead everything went by horse; both authors put the breaking point of horse-drawn supply at roughly 100 km.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-railhead-de-2",
+    "formation": "1914:railhead-de-2",
+    "waypoints": [
+      [6.08, 50.78, "1914-08-13T12:00:00Z"],
+      [6.08, 50.78, "1914-08-18T12:00:00Z"],
+      [5.57, 50.63, "1914-08-20T12:00:00Z"],
+      [4.87, 50.47, "1914-08-26T12:00:00Z"],
+      [4.44, 50.41, "1914-08-30T12:00:00Z"],
+      [4.08, 49.92, "1914-09-04T12:00:00Z"],
+      [3.62, 49.56, "1914-09-10T12:00:00Z"],
+      [3.62, 49.56, "1914-09-12T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Schematic: the 2nd Army's railhead from Aachen to Liège, Namur and Charleroi, then Hirson and Laon once the lines south were open — Maubeuge blocked the direct line until 7 September. Drawn from Herwig and Strachan; approximate.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-xviii-by-rail",
+    "formation": "1914:corps-fr-xviii",
+    "mode": "rail",
+    "waypoints": [
+      [6.18, 48.69, "1914-08-20T06:00:00Z"],
+      [4.3, 50.35, "1914-08-21T18:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "Entraining and detraining points and dates from the AFGG as summarised in Herwig; the straight line is the train, not the track.",
+    "notes": "The XVIII Corps entrained at Nancy on 20 August and detrained behind the 5th Army on the Sambre on the 21st — Joffre's first transfer west.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-vii-by-rail",
+    "formation": "1914:corps-fr-vii",
+    "mode": "rail",
+    "waypoints": [
+      [6.86, 47.64, "1914-08-25T12:00:00Z"],
+      [2.3, 49.89, "1914-08-27T12:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "Entraining and detraining points and dates from the AFGG as summarised in Herwig; the straight line is the train, not the track.",
+    "notes": "The VII Corps from the Army of Alsace by rail to Amiens, 25–27 August, the core of the new 6th Army.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-rd-3-by-rail",
+    "formation": "1914:det-fr-rd-3",
+    "mode": "rail",
+    "waypoints": [
+      [5.8, 49.0, "1914-08-27T12:00:00Z"],
+      [2.45, 48.95, "1914-08-29T12:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "Entraining and detraining points and dates from the AFGG as summarised in Herwig; the straight line is the train, not the track.",
+    "notes": "The 55th and 56th Reserve Divisions from the Army of Lorraine by rail to Paris, 27–29 August.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-ix-by-rail",
+    "formation": "1914:corps-fr-ix",
+    "mode": "rail",
+    "waypoints": [
+      [6.2, 48.75, "1914-08-22T12:00:00Z"],
+      [4.55, 49.15, "1914-08-24T12:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "Entraining and detraining points and dates from the AFGG as summarised in Herwig; the straight line is the train, not the track.",
+    "notes": "The IX Corps from the 2nd Army in Lorraine by rail to the 4th Army on the Aisne, 22–24 August.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-iv-by-rail",
+    "formation": "1914:corps-fr-iv",
+    "mode": "rail",
+    "waypoints": [
+      [5.4, 49.15, "1914-09-02T06:00:00Z"],
+      [2.45, 48.9, "1914-09-04T12:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "Entraining and detraining points and dates from the AFGG as summarised in Herwig; the straight line is the train, not the track.",
+    "notes": "The IV Corps from the 3rd Army at Verdun by rail to Paris, 2–4 September — the last of Joffre's transfers before the Marne.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
   }
 ]
