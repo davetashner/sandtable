@@ -31,6 +31,7 @@
   },
   {
     "id": "1914:tech-heavy-siege-artillery",
+    "media": ["media:scene/1914-big-bertha-42cm/big-bertha-42cm-colorized"],
     "title": "Heavy siege artillery — Krupp's 42 cm and Škoda's 30.5 cm",
     "field": "artillery",
     "introduced": {

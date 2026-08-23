@@ -5,6 +5,7 @@ dateLabel: '28 June – 4 August 1914 (chapter)'
 from: 1914-08-02T00:00:00Z
 to: 1914-08-04T00:00:00Z
 focus: 1914:july-crisis
+media: media:scene/1914-sarajevo-motorcade-wide/sarajevo-motorcade-wide-colorized
 links:
   documents:
     [
