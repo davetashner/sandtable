@@ -6,6 +6,7 @@ from: 1914-08-16T00:00:00Z
 to: 1914-08-17T00:00:00Z
 branch: 1914:historical
 focus: 1914:liege
+media: media:scene/1917-liege-turret-gun-cambrai/liege-turret-gun-cambrai-1917-colorized
 links:
   battles: ['1914:liege']
   people:

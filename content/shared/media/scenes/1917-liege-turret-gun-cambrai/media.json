@@ -1,0 +1,37 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (sand-y0u.2).",
+  "id": "media:scene/1917-liege-turret-gun-cambrai/liege-turret-gun-cambrai-1917-colorized",
+  "kind": "scene",
+  "people": [],
+  "file": "liege-turret-gun-cambrai-1917-colorized.png",
+  "width": 1403,
+  "height": 1121,
+  "colorized": true,
+  "original": {
+    "description": "A German 21 cm howitzer in its timber-and-camouflage-net emplacement at Flesquières, with men of the 1/7th Gordon Highlanders (51st Division) who captured it, 24 November 1917. The piece is a Krupp 21 cm Turmhaubitze M 1891 — one of the turret guns built for the Belgian forts of Liège, Namur and Antwerp, taken when the fortresses fell in 1914 and converted by the German army into field artillery.",
+    "photographer": "John Warwick Brooke (1886–1929), British official photographer",
+    "date": "1917-11-24",
+    "archive": "Imperial War Museums, Q 7823, via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Battle_of_Cambrai,_November-december_1917_Q7823.jpg",
+    "source_page": "https://en.wikipedia.org/wiki/Fortified_position_of_Li%C3%A8ge",
+    "original_dimensions": "1300 × 1036",
+    "licence": "public domain — UK Crown copyright expired (photograph taken before 1 June 1957); IWM Q 7823"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: khaki service dress and Tam o' Shanters, field-grey-green gun carriage, raw timber, hemp netting. Colour-check: plausible."
+  },
+  "content_policy": "ok — captured gun and its captors, no casualties",
+  "caption": "One of Liège's own guns, three years on: a Krupp 21 cm turret howitzer from the Belgian forts, converted by the Germans into a field piece and captured at Flesquières by the 1/7th Gordon Highlanders, 24 November 1917. A 1917 photograph (IWM Q 7823), not a Liège one — shown here for what the forts' fall gave the German artillery. Colorized (AI-assisted).",
+  "credit": "Original photograph: John Warwick Brooke, 24 November 1917, Imperial War Museums Q 7823, via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+  "used_by": [
+    "1914:beat-liege-0816"
+  ],
+  "focal_point": {
+    "x": 0.5,
+    "y": 0.6
+  },
+  "notes": "Provided by Dave 2026-08-22 (original linked from the Fortified position of Liège article). Date and place (Cambrai 1917) must stay in the caption wherever shown (y0u.7). Hero for the 'What Liège cost' focus beat."
+}

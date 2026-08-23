@@ -1023,6 +1023,48 @@
         "x": 0.5,
         "y": 0.3
       }
+    },
+    {
+      "id": "media:scene/1917-liege-turret-gun-cambrai/liege-turret-gun-cambrai-1917-colorized",
+      "dir": "scenes/1917-liege-turret-gun-cambrai",
+      "original": {
+        "src": "scenes/1917-liege-turret-gun-cambrai/liege-turret-gun-cambrai-1917-colorized.png",
+        "width": 1403,
+        "height": 1121,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "scenes/1917-liege-turret-gun-cambrai/.derived/liege-turret-gun-cambrai-1917-colorized.w320.webp",
+          "width": 320,
+          "height": 256,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1917-liege-turret-gun-cambrai/.derived/liege-turret-gun-cambrai-1917-colorized.w640.webp",
+          "width": 640,
+          "height": 511,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1917-liege-turret-gun-cambrai/.derived/liege-turret-gun-cambrai-1917-colorized.w1024.webp",
+          "width": 1024,
+          "height": 818,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1403,
+      "height": 1121,
+      "caption": "One of Liège's own guns, three years on: a Krupp 21 cm turret howitzer from the Belgian forts, converted by the Germans into a field piece and captured at Flesquières by the 1/7th Gordon Highlanders, 24 November 1917. A 1917 photograph (IWM Q 7823), not a Liège one — shown here for what the forts' fall gave the German artillery. Colorized (AI-assisted).",
+      "credit": "Original photograph: John Warwick Brooke, 24 November 1917, Imperial War Museums Q 7823, via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — UK Crown copyright expired (photograph taken before 1 June 1957); IWM Q 7823",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Battle_of_Cambrai,_November-december_1917_Q7823.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.6
+      }
     }
   ]
 }
