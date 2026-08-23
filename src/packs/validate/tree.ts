@@ -27,6 +27,8 @@ export interface RawShared {
   collections: Record<string, RawFile>;
   /** Every media.json manifest. */
   media: RawFile[];
+  /** Every cue.json manifest (the score). */
+  audio: RawFile[];
 }
 
 export interface RawContent {

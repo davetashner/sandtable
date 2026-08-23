@@ -1,0 +1,25 @@
+{
+  "$comment": "Cue B of the score. A machine starting, not a tragedy unfolding.",
+  "id": "cue:thirty-seven-days",
+  "title": "Thirty-Seven Days",
+  "letter": "B",
+  "file": "thirty-seven-days.wav",
+  "role": "cue",
+  "duration": 183.64,
+  "loop": true,
+  "musical": {
+    "key": "D minor",
+    "bpm": 60,
+    "notes": "The ticking is the argument: thirty-seven days in which every actor had time to stop, and none did. Opens on the open fifth cue A leaves ringing, so the join can be a straight crossfade."
+  },
+  "provenance": {
+    "tool": "Suno",
+    "prompt": "Instrumental underscore, 60 BPM, D minor. Muted chamber strings played close and cold; pizzicato ticking like a pocket watch, steady and slightly too loud; felt piano marking the same three-note figure underneath. A cimbalom heard once, far off, as if through a window. Air between the notes. Tension with no release. Ends suspended, no cadence.",
+    "excludes": "drums, vocals, choir, brass, orchestral swell, cinematic trailer, folk dance, upbeat",
+    "generatedAt": "2026-08-23",
+    "licence": "Generated with Suno by Dave Tashner for Sandtable. Commercial rights follow the Suno plan held at generation time — confirm the plan and record the exact terms here before the site is public."
+  },
+  "credit": "Music: “Thirty-Seven Days”, generated with Suno for Sandtable, 2026.",
+  "used_by": ["1914:beat-july-crisis"],
+  "notes": "Sarajevo and the July Crisis. Model version and the plan's exact licence terms still to be filled in by Dave; the prompt is the one published in the cue sheet."
+}

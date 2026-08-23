@@ -1,0 +1,108 @@
+{
+  "generatedAt": "2026-08-23",
+  "base": "/assets/audio/",
+  "entries": [
+    {
+      "id": "cue:forty-days",
+      "dir": "forty-days",
+      "title": "The Clockwork Minute",
+      "letter": "A",
+      "role": "cue",
+      "duration": 139.2,
+      "loop": true,
+      "mixDb": 0,
+      "sources": [
+        {
+          "src": "forty-days/.derived/the-clockwork-minute.opus",
+          "type": "audio/ogg; codecs=opus",
+          "bitrateKbps": 96,
+          "bytes": 1883206
+        },
+        {
+          "src": "forty-days/.derived/the-clockwork-minute.m4a",
+          "type": "audio/mp4; codecs=mp4a.40.2",
+          "bitrateKbps": 128,
+          "bytes": 2269991
+        }
+      ],
+      "credit": "Music: “The Clockwork Minute”, generated with Suno for Sandtable, 2026.",
+      "licence": "Generated with Suno by Dave Tashner for Sandtable. Commercial rights follow the Suno plan held at generation time — confirm the plan and record the exact terms here before the site is public.",
+      "key": "D minor",
+      "bpm": 60,
+      "present": true,
+      "loudness": {
+        "inputLufs": -14.38,
+        "outputLufs": -20,
+        "targetLufs": -20
+      }
+    },
+    {
+      "id": "cue:thirty-seven-days",
+      "dir": "thirty-seven-days",
+      "title": "Thirty-Seven Days",
+      "letter": "B",
+      "role": "cue",
+      "duration": 183.64,
+      "loop": true,
+      "mixDb": 0,
+      "sources": [
+        {
+          "src": "thirty-seven-days/.derived/thirty-seven-days.opus",
+          "type": "audio/ogg; codecs=opus",
+          "bitrateKbps": 96,
+          "bytes": 2528008
+        },
+        {
+          "src": "thirty-seven-days/.derived/thirty-seven-days.m4a",
+          "type": "audio/mp4; codecs=mp4a.40.2",
+          "bitrateKbps": 128,
+          "bytes": 2975125
+        }
+      ],
+      "credit": "Music: “Thirty-Seven Days”, generated with Suno for Sandtable, 2026.",
+      "licence": "Generated with Suno by Dave Tashner for Sandtable. Commercial rights follow the Suno plan held at generation time — confirm the plan and record the exact terms here before the site is public.",
+      "key": "D minor",
+      "bpm": 60,
+      "present": true,
+      "loudness": {
+        "inputLufs": -15.53,
+        "outputLufs": -20,
+        "targetLufs": -20
+      }
+    },
+    {
+      "id": "cue:timetable",
+      "dir": "timetable",
+      "title": "Timetable",
+      "letter": "C",
+      "role": "cue",
+      "duration": 93.52,
+      "loop": true,
+      "mixDb": 0,
+      "sources": [
+        {
+          "src": "timetable/.derived/timetable.opus",
+          "type": "audio/ogg; codecs=opus",
+          "bitrateKbps": 96,
+          "bytes": 1245916
+        },
+        {
+          "src": "timetable/.derived/timetable.m4a",
+          "type": "audio/mp4; codecs=mp4a.40.2",
+          "bitrateKbps": 128,
+          "bytes": 1532071
+        }
+      ],
+      "credit": "Music: “Timetable”, generated with Suno for Sandtable, 2026.",
+      "licence": "Generated with Suno by Dave Tashner for Sandtable. Commercial rights follow the Suno plan held at generation time — confirm the plan and record the exact terms here before the site is public.",
+      "key": "D dorian",
+      "bpm": 60,
+      "present": true,
+      "loudness": {
+        "inputLufs": -15.14,
+        "outputLufs": -20,
+        "targetLufs": -20
+      }
+    }
+  ]
+}

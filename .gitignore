@@ -17,6 +17,20 @@ content/shared/media/**/*.tiff
 # WebP/AVIF derivatives made by `npm run media` (uploaded to the assets bucket)
 content/shared/media/**/.derived/
 
+# Score masters live beside their cue.json as a local staging copy only; the
+# derivatives go to the assets bucket (decision 0008). Neither belongs in git —
+# a WAV master is tens of megabytes and nothing in the browser wants one.
+content/shared/audio/**/*.wav
+content/shared/audio/**/*.aif
+content/shared/audio/**/*.aiff
+content/shared/audio/**/*.flac
+content/shared/audio/**/*.mp3
+content/shared/audio/**/*.m4a
+content/shared/audio/**/*.opus
+content/shared/audio/**/*.ogg
+# Opus/AAC derivatives made by `npm run audio`
+content/shared/audio/**/.derived/
+
 # Agent worktrees (local only)
 .claude/worktrees/
 

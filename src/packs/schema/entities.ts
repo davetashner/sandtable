@@ -914,6 +914,68 @@ export type CasualtyRecord = z.infer<typeof CasualtyRecord>;
 export type Vignette = z.infer<typeof Vignette>;
 export type Place = z.infer<typeof Place>;
 export type Media = z.infer<typeof Media>;
+
+// ----------------------------------------------------------------------- Cue
+
+/**
+ * A piece of the background score (sand-1l0.34). One manifest per cue, in
+ * content/shared/audio/<slug>/cue.json, with the master beside it as a
+ * git-ignored staging copy — the same arrangement as media.json and for the
+ * same reason (decision 0004; the binaries live in the assets bucket).
+ *
+ * Cues are shared, not pack-scoped: a score written for 1914 can underscore
+ * another era, and which cue plays when is the pack's business, not the
+ * asset's. `provenance` is the audio counterpart of a photograph's archive
+ * record — for generated music the questions are which tool, which prompt and
+ * which licence, and they are answered here or the cue does not ship.
+ */
+export const Cue = z.looseObject({
+  $comment: z.string().optional(),
+  id: Id.describe('cue:<slug>'),
+  title: z.string().min(1),
+  /** Position in the score, when it has one: A, B, C… */
+  letter: z.string().max(2).optional(),
+  /** Master file beside the manifest; the extension may be absent. */
+  file: z.string().min(1),
+  /**
+   * cue = stage music, one at a time, crossfaded on a stage change.
+   * bed = an overlay that fades in *under* whatever cue is playing.
+   */
+  role: z.enum(['cue', 'bed']).default('cue'),
+  /** Seconds, from the master; the pipeline fills it and warns on drift. */
+  duration: z.number().positive(),
+  /** True when the tail joins the head cleanly enough to repeat. */
+  loop: z.boolean(),
+  /**
+   * Trim in dB applied on top of the common loudness target — negative for a
+   * bed that must sit under a cue. 0 for stage music.
+   */
+  mixDb: z.number().min(-24).max(6).optional(),
+  /** What the score says it is, for the player and for anyone reading. */
+  musical: z
+    .looseObject({
+      key: z.string().optional(),
+      bpm: z.number().positive().optional(),
+      notes: z.string().optional(),
+    })
+    .optional(),
+  /** Where the sound came from. Required: generated audio still needs a record. */
+  provenance: z.looseObject({
+    tool: z.string().min(1).describe('Suno, a performer, a library…'),
+    model: z.string().optional(),
+    prompt: z.string().optional(),
+    excludes: z.string().optional(),
+    generatedAt: z.string().optional(),
+    licence: z.string().min(1),
+  }),
+  /** Rendered wherever the cue is credited. */
+  credit: z.string().min(1),
+  /** Intended placements — beats, battles, branches. */
+  used_by: z.array(Id).optional(),
+  notes: z.string().optional(),
+});
+
+export type Cue = z.infer<typeof Cue>;
 export type Side = z.infer<typeof Side>;
 export type Branch = z.infer<typeof Branch>;
 export type Opening = z.infer<typeof Opening>;
