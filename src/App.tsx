@@ -43,6 +43,8 @@ import { Breadcrumb } from './ui/Breadcrumb.js';
 import { Dossier, type CardChipLike } from './ui/Dossier.js';
 import { CastStrip, type CastMember } from './ui/CastStrip.js';
 import { DecisionCardView } from './ui/DecisionCardView.js';
+import { ClockGauges } from './ui/ClockGauges.js';
+import { ClockCardView } from './ui/ClockCardView.js';
 import { decisionCrossed } from './engine/decisions.js';
 import { portraitFor } from './packs/media-index.js';
 import { CausalView } from './ui/CausalView.js';
@@ -105,6 +107,7 @@ function useLabeller(): EntityLabeller {
         return (
           seed.people.find((p) => p.id === id)?.name ??
           seed.decisions.find((d) => d.id === id)?.title ??
+          seed.clocks.find((c) => c.id === id)?.title ??
           seed.tech.find((t) => t.id === id)?.title ??
           seed.science.find((t) => t.id === id)?.title ??
           seed.documents.find((d) => d.id === id)?.title ??
@@ -140,9 +143,12 @@ function useCard():
   | { kind: 'causal'; card: (typeof seed.links)[number] }
   | { kind: 'person'; card: (typeof seed.people)[number] }
   | { kind: 'decision'; card: (typeof seed.decisions)[number] }
+  | { kind: 'clock'; card: (typeof seed.clocks)[number] }
   | undefined {
   const { card } = useViewState();
   if (!card) return undefined;
+  const clock = seed.clocks.find((c) => c.id === card);
+  if (clock) return { kind: 'clock', card: clock };
   const decision = seed.decisions.find((d) => d.id === card);
   if (decision) return { kind: 'decision', card: decision };
   const tech = seed.tech.find((t) => t.id === card);
@@ -384,6 +390,12 @@ function DossierSurface() {
               cast={seed.cast.find((c) => c.person === card.card.id)}
               onBack={() => controls?.setCard(undefined)}
             />
+          ) : card?.kind === 'clock' ? (
+            <ClockCardView
+              clock={card.card}
+              sources={seed.sources}
+              onBack={() => controls?.setCard(undefined)}
+            />
           ) : card?.kind === 'decision' ? (
             <DecisionCardView
               decision={card.card}
@@ -447,6 +459,7 @@ function TimelineSurface() {
     [branch, focusId],
   );
   const controls = useViewStateControls();
+  const { card: viewCard } = useViewState();
   const markers = useMemo<TimelineMarker[]>(() => {
     const events: TimelineMarker[] = (focus ? (focus.events ?? []) : seed.events)
       .filter((e) => e.significance === 'major' && (!e.branch || e.branch === branch.id))
@@ -510,6 +523,13 @@ function TimelineSurface() {
             controls?.setCard(m.id);
         }}
       />
+      {!focus && (
+        <ClockGauges
+          clocks={seed.clocks}
+          selected={viewCard}
+          onSelect={(id) => controls?.setCard(viewCard === id ? undefined : id)}
+        />
+      )}
     </footer>
   );
 }

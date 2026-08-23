@@ -58,6 +58,7 @@ export function withFootnotes(
     .filter((slug) => !cited.has(slug))
     .map((slug) => `[^${slug}]`)
     .join('');
-  const also = uncited ? `\n\n<small class="dossier__also">Also drawing on${uncited}</small>` : '';
+  // Plain Markdown (react-markdown does not render raw HTML): an italic footer with the superscripts.
+  const also = uncited ? `\n\n_Also drawing on_${uncited}` : '';
   return `${beat.body}${also}\n\n${defs.join('\n')}\n`;
 }

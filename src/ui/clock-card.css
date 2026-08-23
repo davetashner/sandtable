@@ -1,0 +1,54 @@
+/* Timetable card table (sand-1l0.18). */
+
+.clock-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6px 0 12px;
+  font-size: var(--fs-sm);
+}
+
+.clock-table th,
+.clock-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 6px 6px 6px 0;
+  border-top: 1px solid var(--line);
+}
+
+.clock-table thead th {
+  border-top: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+  font-weight: 500;
+}
+
+.clock-table tbody th {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.clock-table td {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.clock-table tr[data-never] td {
+  color: var(--side-central-1, #a33);
+}
+
+.clock-table__note {
+  display: block;
+  font-weight: 400;
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.clock-table__note p {
+  margin: 0;
+}

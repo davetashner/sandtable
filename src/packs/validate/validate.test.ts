@@ -278,6 +278,51 @@ describe('validateContent', () => {
     expect(messages(validateContent(raw)).filter((m) => /dissolved/.test(m))).toEqual([]);
   });
 
+  it('checks timetables: milestone ids unique, planned or actual, actual after origin, footnotes resolve, citations required', () => {
+    const raw = fixture();
+    const c = raw.packs[0]!.collections;
+    const clock = (over: Record<string, unknown>) => ({
+      id: '1914:clock-plan',
+      title: 'Plan',
+      origin: '1914-08-02T00:00:00Z',
+      assumption: 'Six weeks.[^herwig-2009]',
+      milestones: [
+        { id: 'liege', label: 'Liège', plannedDay: 12, actualAt: '1914-08-16T00:00:00Z' },
+      ],
+      sources: [{ source: 'source:herwig-2009' }],
+      ...over,
+    });
+    c['clocks.json'] = { path: 'eras/1914-test/clocks.json', data: [clock({})] };
+    expect(messages(validateContent(raw)).filter((m) => /clock/.test(m))).toEqual([]);
+    c['clocks.json'] = {
+      path: 'eras/1914-test/clocks.json',
+      data: [
+        clock({
+          assumption: 'Text.[^nope]',
+          milestones: [
+            { id: 'a', label: 'A' },
+            { id: 'a', label: 'A again', plannedDay: 3 },
+            { id: 'b', label: 'B', actualAt: '1914-07-30T00:00:00Z', place: 'place:nowhere' },
+          ],
+        }),
+      ],
+    };
+    const msgs = messages(validateContent(raw));
+    expect(msgs).toContainEqual(
+      expect.stringMatching(/milestone a needs a plannedDay or an actualAt/),
+    );
+    expect(msgs).toContainEqual(expect.stringMatching(/duplicate milestone id a/));
+    expect(msgs).toContainEqual(
+      expect.stringMatching(/milestone b: actualAt is before the timetable origin/),
+    );
+    expect(msgs).toContainEqual(
+      expect.stringMatching(/milestone b place place:nowhere does not exist/),
+    );
+    expect(msgs).toContainEqual(
+      expect.stringMatching(/assumption footnote \[\^nope\] is not one of the timetable's sources/),
+    );
+  });
+
   it('checks cast entries: person and side must exist, citations required, bio footnotes must name a source, one entry per person', () => {
     const raw = fixture();
     const c = raw.packs[0]!.collections;

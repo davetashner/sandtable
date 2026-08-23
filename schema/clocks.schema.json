@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sandtable.davetashner.com/schema/clocks.schema.json",
+  "title": "Sandtable clocks",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "<era>:clock-<slug>"
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "subtitle": {
+        "type": "string"
+      },
+      "origin": {
+        "type": "string",
+        "format": "date-time",
+        "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+        "description": "Day 0 of the timetable (e.g. the first mobilization day)"
+      },
+      "dayLabel": {
+        "description": "Prefix for day numbers, default \"M+\"",
+        "type": "string"
+      },
+      "assumption": {
+        "type": "string",
+        "minLength": 1,
+        "description": "What the plan expected, footnoted [^slug] to `sources`"
+      },
+      "milestones": {
+        "minItems": 1,
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "plannedDay": {
+              "description": "Day the plan expected it; absent for reality-only marks",
+              "type": "number"
+            },
+            "actualAt": {
+              "description": "When it actually happened; absent if never",
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            "place": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+              "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+            },
+            "note": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Markdown"
+            },
+            "sources": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "source": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+                    "description": "Source id, e.g. source:herwig-2009"
+                  },
+                  "pages": {
+                    "description": "Page(s), e.g. \"112–115\" or \"ch. 4\"",
+                    "type": "string"
+                  },
+                  "note": {
+                    "description": "What this citation supports",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "source"
+                ],
+                "additionalProperties": false
+              },
+              "description": "Citations supporting the claims in this entity"
+            }
+          },
+          "required": [
+            "id",
+            "label"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "sources": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+              "description": "Source id, e.g. source:herwig-2009"
+            },
+            "pages": {
+              "description": "Page(s), e.g. \"112–115\" or \"ch. 4\"",
+              "type": "string"
+            },
+            "note": {
+              "description": "What this citation supports",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        "description": "Citations supporting the claims in this entity"
+      }
+    },
+    "required": [
+      "id",
+      "title",
+      "origin",
+      "assumption",
+      "milestones",
+      "sources"
+    ],
+    "additionalProperties": false
+  }
+}

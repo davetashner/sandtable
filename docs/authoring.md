@@ -332,6 +332,43 @@ question and options first and the reasoning, verdict, chips and sources only
 after a choice; playback pauses at `at` the first time it crosses it on the
 historical branch. Deep link: `?card=<id>&pick=<option>`.
 
+### Plan-vs-reality clocks
+
+`clocks.json` — a timetable the pack measures the campaign against (the
+Schlieffen M-day schedule, the Russian-mobilization assumption):
+
+```json
+{
+  "id": "1914:clock-plan-timetable",
+  "title": "The plan's timetable",
+  "origin": "1914-08-02T00:00:00Z",
+  "dayLabel": "M+",
+  "assumption": "What the plan expected — Markdown, footnoted.[^tuchman-1962]",
+  "milestones": [
+    {
+      "id": "liege",
+      "label": "Liège taken",
+      "plannedDay": 12,
+      "actualAt": "1914-08-16T18:00:00Z",
+      "place": "place:liege",
+      "note": "…"
+    },
+    { "id": "decision", "label": "Decisive battle", "plannedDay": 39, "note": "Never reached." },
+    {
+      "id": "marne-retreat",
+      "label": "The retreat from the Marne",
+      "actualAt": "1914-09-09T12:00:00Z"
+    }
+  ],
+  "sources": [{ "source": "source:tuchman-1962" }]
+}
+```
+
+A milestone with both `plannedDay` and `actualAt` shows its slip; one with
+only `plannedDay` reads "never"; one with only `actualAt` is a reality-only
+mark. The gauges under the timeline read the slip on the milestone furthest
+along; clicking one opens the card (`?card=<id>`).
+
 ## 9. Add an image
 
 Read [ADR 0007](decisions/0007-imagery.md) first. Put the manifest

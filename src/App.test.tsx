@@ -120,4 +120,25 @@ describe('App shell', () => {
     expect(window.location.search).not.toContain('card=');
     expect(window.location.search).not.toContain('pick=');
   });
+
+  it('shows the plan-vs-reality gauges under the timeline and opens the timetable card', async () => {
+    window.history.replaceState(null, '', '/?t=1914-08-17T12:00:00Z');
+    render(<App />);
+    const gauge = await screen.findByRole(
+      'listitem',
+      { name: /The plan's timetable: M\+15/ },
+      { timeout: 8000 },
+    );
+    expect(gauge).toHaveTextContent(/behind/);
+    fireEvent.click(gauge);
+    expect(window.location.search).toContain('card=1914:clock-plan-timetable');
+    expect(screen.getByText('Plan against reality')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { level: 2, name: "The plan's timetable" }),
+    ).toBeInTheDocument();
+    // the Russian clock reads ahead: the armies crossed on M+15 against an assumption of M+40
+    expect(
+      screen.getByRole('listitem', { name: /The Russian clock: M\+15, 25 d ahead/ }),
+    ).toBeInTheDocument();
+  });
 });
