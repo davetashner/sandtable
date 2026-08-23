@@ -62,6 +62,42 @@ body {
   color: var(--brass);
 }
 
+/* Brand wordmark (sand-neh.6): the tray mark + SANDTABLE lockup, one image
+   per theme; the light one carries the accessible name, the dark one is
+   decorative. Height tracks the old h1 size. */
+.brand {
+  line-height: 0;
+}
+
+.brand__wordmark {
+  display: block;
+  height: clamp(30px, 3.6vw, 42px);
+  width: auto;
+  max-width: 100%;
+}
+
+.brand__wordmark--dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .brand__wordmark--light {
+    display: none;
+  }
+
+  :root:not([data-theme='light']) .brand__wordmark--dark {
+    display: block;
+  }
+}
+
+:root[data-theme='dark'] .brand__wordmark--light {
+  display: none;
+}
+
+:root[data-theme='dark'] .brand__wordmark--dark {
+  display: block;
+}
+
 h1 {
   margin: 2px 0 4px;
   font-family: var(--font-display);

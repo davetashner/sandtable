@@ -98,6 +98,18 @@ ring in the places layer. Hillshade where the ground decided events (the Grand
 Couronné, the Argonne, the Meuse heights) needs a terrain source — a follow-up.
 Both themes come from the same palette table.
 
+## Brand
+
+The mark is a sand table seen from above — a tray of contoured sand with three
+side-coloured tokens and one marching route — with SANDTABLE set in the display
+serif, small caps, tracked out. Assets live in `public/brand/` (copied to the
+site root on deploy): `wordmark-light.png` / `wordmark-dark.png` (the header
+lockups, switched by theme), `sandtable-mark.png` (the tray mark on charcoal,
+also the social image), `icon-16/32/192/512.png` and `apple-touch-icon.png`
+(the square icon on charcoal, which reads on both light and dark browser
+chrome). The wordmark is the `h1`; its light image carries the accessible name.
+Era-agnostic by design: no period iconography in the mark.
+
 ## Rules of use
 
 1. Variables only. A literal colour or typeface in a component is a bug.
