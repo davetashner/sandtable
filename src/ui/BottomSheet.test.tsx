@@ -49,6 +49,46 @@ describe('<BottomSheet>', () => {
   });
 });
 
+describe('<BottomSheet> raiseFor', () => {
+  const sheet = () => document.querySelector('.sheet')!;
+
+  it('lifts off peek when a card opens, where the body is clipped', () => {
+    const { rerender } = render(<BottomSheet>body</BottomSheet>);
+    expect(sheet().getAttribute('data-detent')).toBe('peek');
+    rerender(<BottomSheet raiseFor="person:french-john">body</BottomSheet>);
+    expect(sheet().getAttribute('data-detent')).toBe('half');
+  });
+
+  it('does not pull a sheet back down that is already higher', () => {
+    const { rerender } = render(
+      <BottomSheet initial="full" raiseFor="person:a">
+        body
+      </BottomSheet>,
+    );
+    rerender(
+      <BottomSheet initial="full" raiseFor="person:b">
+        body
+      </BottomSheet>,
+    );
+    expect(sheet().getAttribute('data-detent')).toBe('full');
+  });
+
+  it('leaves a reader alone who pulls the sheet down with the same card open', () => {
+    const { rerender } = render(<BottomSheet raiseFor="person:a">body</BottomSheet>);
+    expect(sheet().getAttribute('data-detent')).toBe('half');
+    // The reader drags it back to peek; the same card is still open.
+    fireEvent.keyDown(screen.getByRole('button', { name: /dossier/i }), { key: 'ArrowDown' });
+    expect(sheet().getAttribute('data-detent')).toBe('peek');
+    rerender(<BottomSheet raiseFor="person:a">body</BottomSheet>);
+    expect(sheet().getAttribute('data-detent')).toBe('peek');
+  });
+
+  it('stays put when no card is open', () => {
+    render(<BottomSheet>body</BottomSheet>);
+    expect(sheet().getAttribute('data-detent')).toBe('peek');
+  });
+});
+
 describe('useMediaQuery', () => {
   it('reads matchMedia and follows changes', () => {
     const listeners = new Set<() => void>();

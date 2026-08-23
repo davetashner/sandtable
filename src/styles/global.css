@@ -165,6 +165,13 @@ h1 {
   .surface--dossier {
     max-height: 46vh;
   }
+
+  /* A card is much longer than a beat — a portrait alone is taller than 46vh
+     leaves. Give it room while one is open, so the bio is on screen rather
+     than behind a scroll the reader cannot see (sand-neh.9). */
+  .surface--dossier[data-card] {
+    max-height: 72vh;
+  }
 }
 
 /* phone: full-bleed map, compact timeline strip, dossier as a bottom sheet */
