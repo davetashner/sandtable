@@ -4,8 +4,6 @@
  * as paired bars, and the sources. Opened from the gauge, a map marker or
  * ?card=<id>.
  */
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import { withFootnotes } from '../engine/beats.js';
 import { deltaLabel, tallyRunning } from '../engine/tally.js';
 import type { Source, Tally } from '../packs/schema/index.js';
@@ -13,6 +11,7 @@ import { Card } from './Card.js';
 import { whenLabel } from './ScienceCardView.js';
 import type { EntityLabeller } from './TechCardView.js';
 import './clock-card.css';
+import { Prose } from './Prose.js';
 
 export interface TallyCardViewProps {
   tally: Tally;
@@ -54,7 +53,7 @@ export function TallyCardView({ tally, sources, labeller, onBack }: TallyCardVie
               Start
               {tally.start.note && (
                 <span className="clock-table__note">
-                  <Markdown remarkPlugins={[remarkGfm]}>{tally.start.note}</Markdown>
+                  <Prose>{tally.start.note}</Prose>
                 </span>
               )}
             </th>
@@ -78,7 +77,7 @@ export function TallyCardView({ tally, sources, labeller, onBack }: TallyCardVie
                 )}
                 {entry.note && (
                   <span className="clock-table__note">
-                    <Markdown remarkPlugins={[remarkGfm]}>{entry.note}</Markdown>
+                    <Prose>{entry.note}</Prose>
                   </span>
                 )}
               </th>
@@ -105,7 +104,7 @@ export function TallyCardView({ tally, sources, labeller, onBack }: TallyCardVie
                 </span>
                 {c.note && (
                   <span className="ratio__note">
-                    <Markdown remarkPlugins={[remarkGfm]}>{c.note}</Markdown>
+                    <Prose>{c.note}</Prose>
                   </span>
                 )}
               </li>

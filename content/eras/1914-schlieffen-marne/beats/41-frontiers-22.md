@@ -18,6 +18,6 @@ sources:
   - source: source:edmonds-1922
 ---
 
-Through the slag heaps and mining villages east of Charleroi Bülow's corps drive the French III and X Corps back from the river; Lanrezac's planned counter-attack never starts and by evening the 5th Army's centre has given a dozen kilometres. On the Meuse Franchet d'Espèrey's I Corps holds the crossings at Dinant — for one more day.[^herwig-2009] [^afgg-1-1]
+Through the slag heaps and mining villages east of Charleroi [Bülow](person:bulow-karl-von)'s corps drive the French III and X Corps back from the river; [Lanrezac](person:lanrezac-charles)'s planned counter-attack never starts and by evening the 5th Army's centre has given a dozen kilometres. On the Meuse Franchet d'Espèrey's I Corps holds the crossings at Dinant — for one more day.[^herwig-2009] [^afgg-1-1]
 
 At Casteau on the Brussels road the 4th Dragoon Guards fire the British army's first shots on the Continent since Waterloo; Smith-Dorrien's II Corps is digging in along the Mons–Condé canal, where Kluck's columns will arrive in the morning.[^edmonds-1922]

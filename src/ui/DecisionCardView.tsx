@@ -6,13 +6,12 @@
  * the map. Opened from a ◇ glyph on the timeline, by playback crossing the
  * instant, or as ?card=<id>&pick=<option>.
  */
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import type { DecisionPoint, Source } from '../packs/schema/index.js';
 import { Card } from './Card.js';
 import { whenLabel } from './ScienceCardView.js';
 import { linksToChips, type EntityLabeller } from './TechCardView.js';
 import './decision.css';
+import { Prose } from './Prose.js';
 
 export interface DecisionCardViewProps {
   decision: DecisionPoint;
@@ -81,7 +80,7 @@ export function DecisionCardView({
                     </span>
                   )}
                   <span className="decision__option-summary">
-                    <Markdown remarkPlugins={[remarkGfm]}>{o.summary}</Markdown>
+                    <Prose>{o.summary}</Prose>
                   </span>
                 </button>
               </li>
@@ -106,9 +105,9 @@ export function DecisionCardView({
               </p>
             )}
             <h3>What was known at the time</h3>
-            <Markdown remarkPlugins={[remarkGfm]}>{decision.reasoning}</Markdown>
+            <Prose>{decision.reasoning}</Prose>
             <h3>What happened, and the verdict</h3>
-            <Markdown remarkPlugins={[remarkGfm]}>{decision.verdict}</Markdown>
+            <Prose>{decision.verdict}</Prose>
             {onPlayBranch && (
               <p className="decision__play">
                 <button

@@ -5,8 +5,6 @@
  * adds up to, per side, labelled as a sum of recorded periods only. Nothing
  * here is a score. Opened from the human-cost line or ?card=<id>.
  */
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import { useClock } from '../engine/ClockContext.js';
 import { withFootnotes } from '../engine/beats.js';
 import {
@@ -22,6 +20,7 @@ import { whenLabel } from './ScienceCardView.js';
 import { linksToChips, type EntityLabeller } from './TechCardView.js';
 import './clock-card.css';
 import './human.css';
+import { Prose } from './Prose.js';
 
 // eslint-disable-next-line react-refresh/only-export-components -- confidence labels belong with the card
 export const CONFIDENCE_LABEL: Record<Confidence, string> = {
@@ -108,7 +107,7 @@ export function CasualtyCardView({
                 {CATEGORY_LABEL[f.category]}
                 {f.note && (
                   <span className="clock-table__note">
-                    <Markdown remarkPlugins={[remarkGfm]}>{f.note}</Markdown>
+                    <Prose>{f.note}</Prose>
                   </span>
                 )}
               </td>

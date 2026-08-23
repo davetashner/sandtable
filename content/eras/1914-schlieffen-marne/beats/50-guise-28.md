@@ -18,6 +18,6 @@ sources:
   - source: source:edmonds-1922
 ---
 
-Three days into the Great Retreat Joffre needs time: the new 6th Army is detraining at Amiens, the BEF has fought at Le Cateau and is falling back, and the German right wing is pressing. On 28 August he drives to Lanrezac's headquarters at Marle and orders the 5th Army to turn and strike west towards Saint-Quentin, into the Germans pursuing the British.[^afgg-1-1] [^herwig-2009]
+Three days into the Great Retreat [Joffre](person:joffre-joseph) needs time: the new 6th Army is detraining at Amiens, the BEF has fought at Le Cateau and is falling back, and the German right wing is pressing. On 28 August he drives to [Lanrezac](person:lanrezac-charles)'s headquarters at Marle and orders the 5th Army to turn and strike west towards Saint-Quentin, into the Germans pursuing the British.[^afgg-1-1] [^herwig-2009]
 
-Lanrezac, who can see Bülow's 2nd Army on his right flank and not on his front, argues and obeys. Haig offers his I Corps for the attack; Sir John French, determined to get the BEF out of the line, forbids it. The 5th Army will fight alone, with its back to a retreat.[^edmonds-1922] [^herwig-2009]
+Lanrezac, who can see Bülow's 2nd Army on his right flank and not on his front, argues and obeys. [Haig](person:haig-douglas) offers his I Corps for the attack; [Sir John French](person:french-john), determined to get the BEF out of the line, forbids it. The 5th Army will fight alone, with its back to a retreat.[^edmonds-1922] [^herwig-2009]

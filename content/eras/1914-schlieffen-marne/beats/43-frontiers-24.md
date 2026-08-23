@@ -18,6 +18,6 @@ sources:
   - source: source:herwig-2009
 ---
 
-The BEF falls back past Maubeuge — French will not be shut up in a fortress as Bazaine was at Metz — and the Forest of Mormal splits it: Haig's I Corps passes east of the forest, Smith-Dorrien's II Corps west, and by the night of the 25th they are out of touch. At Landrecies Haig's headquarters is attacked in the dark and the confusion persuades I Corps to keep going.[^edmonds-1922] [^hastings-2013]
+The BEF falls back past Maubeuge — [French](person:french-john) will not be shut up in a fortress as Bazaine was at Metz — and the Forest of Mormal splits it: [Haig](person:haig-douglas)'s I Corps passes east of the forest, Smith-Dorrien's II Corps west, and by the night of the 25th they are out of touch. At Landrecies Haig's headquarters is attacked in the dark and the confusion persuades I Corps to keep going.[^edmonds-1922] [^hastings-2013]
 
 Namur's last forts fall on the 25th, four days after the first shell; the Guard Reserve Corps that took them entrains the next morning — for East Prussia. The 4th Division, just landed, reaches Le Cateau in time for what comes next.[^herwig-2009] [^edmonds-1922]

@@ -17,6 +17,6 @@ sources:
   - source: source:tuchman-1962
 ---
 
-On 7 August Ludendorff drives into Liège with an adjutant, hammers on the gate of the citadel and takes the surrender of its garrison; it wins him the Pour le Mérite and, two weeks later, the East. The city and its bridges are German. The forts are not: Barchon, cut off and battered by 21 cm mortars, gives up on the 8th, and the rest go on firing on everything that moves in the intervals.[^herwig-2009] [^tuchman-1962]
+On 7 August [Ludendorff](person:ludendorff-erich) drives into Liège with an adjutant, hammers on the gate of the citadel and takes the surrender of its garrison; it wins him the Pour le Mérite and, two weeks later, the East. The city and its bridges are German. The forts are not: Barchon, cut off and battered by 21 cm mortars, gives up on the 8th, and the rest go on firing on everything that moves in the intervals.[^herwig-2009] [^tuchman-1962]
 
 For five days the German infantry can do nothing about them. The weapon that can is still on the road from Aachen, because the Belgians have blown the railway tunnels — Krupp's 42 cm howitzers, each hauled in pieces by tractors and teams, and the Austrian 30.5 cm mortars lent for the purpose.[^herwig-2009]

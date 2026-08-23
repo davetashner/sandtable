@@ -17,6 +17,6 @@ sources:
   - source: source:afgg-1-1
 ---
 
-Lanrezac has got what he asked for: Joffre let the 5th Army move north into the angle where the Sambre meets the Meuse, with Namur at its point and the BEF coming up on its left. It is the right place to meet the German right wing and the worst place to be caught in it — two river lines, a fortress about to be bombarded, and Hausen's 3rd Army closing on the Meuse behind its right.[^herwig-2009] [^afgg-1-1]
+[Lanrezac](person:lanrezac-charles) has got what he asked for: Joffre let the 5th Army move north into the angle where the Sambre meets the Meuse, with Namur at its point and the BEF coming up on its left. It is the right place to meet the German right wing and the worst place to be caught in it — two river lines, a fortress about to be bombarded, and [Hausen](person:hausen-max-von)'s 3rd Army closing on the Meuse behind its right.[^herwig-2009] [^afgg-1-1]
 
-On the afternoon of 21 August Bülow's X Corps and the Guard force the Sambre at Tamines and Auvelais; Lanrezac's X Corps counter-attacks in the old style and is cut down. The siege guns from Liège are already shelling Namur. The BEF is a day's march away.[^herwig-2009]
+On the afternoon of 21 August [Bülow](person:bulow-karl-von)'s X Corps and the Guard force the Sambre at Tamines and Auvelais; Lanrezac's X Corps counter-attacks in the old style and is cut down. The siege guns from Liège are already shelling Namur. The BEF is a day's march away.[^herwig-2009]

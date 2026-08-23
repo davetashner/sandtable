@@ -7,12 +7,11 @@
  * Presentational: the controller in App.tsx owns the state.
  */
 import { useMemo } from 'react';
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import { withFootnotes } from '../engine/beats.js';
 import type { Citation, Source, Tour, TourStep } from '../packs/schema/index.js';
 import type { TourStop } from '../engine/tour.js';
 import './tour.css';
+import { Prose } from './Prose.js';
 
 /** What each kind of break is giving the reader time for. */
 const STOP_LABEL: Record<TourStop['kind'], string> = {
@@ -102,7 +101,7 @@ export function TourPanel({
         <h2 className="tour__title">{step.title}</h2>
       </div>
       <div className="tour__narration">
-        <Markdown remarkPlugins={[remarkGfm]}>{narration}</Markdown>
+        <Prose>{narration}</Prose>
       </div>
       <div className="tour__controls">
         <button

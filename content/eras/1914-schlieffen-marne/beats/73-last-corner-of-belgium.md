@@ -24,7 +24,7 @@ sources:
   - source: source:strachan-2001
 ---
 
-Falkenhayn tries for a decision one more time in 1914, and he tries for it here: a reconstituted Fourth Army of four new reserve corps, raised in the autumn and barely trained, thrown at the twenty-five kilometres between Ypres and the sea.[^edmonds-1925]
+[Falkenhayn](person:falkenhayn-erich) tries for a decision one more time in 1914, and he tries for it here: a reconstituted Fourth Army of four new reserve corps, raised in the autumn and barely trained, thrown at the twenty-five kilometres between Ypres and the sea.[^edmonds-1925]
 
 What stands there is not much. King Albert's field army has been retreating for ten weeks and holds the Yser embankment with six divisions that have lost their depots, their fortresses and most of their country. At Dixmude, Admiral Ronarc'h's brigade of naval reservists and Breton fishermen — sailors fighting as infantry — holds the town for three weeks.[^van-pul-2006]
 

@@ -1,0 +1,92 @@
+/*
+ * Entity links in prose (sand-1l0.29) and the name a portrait shows on
+ * hover or focus (sand-1l0.30). Tokens only.
+ */
+
+/* A name in the narrative that opens a card. Two cues, so colour is never
+   the only one: the brass ink and a dotted underline that goes solid. */
+.entity-link {
+  color: var(--brass);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--brass-dim);
+  transition:
+    color var(--dur-fast) var(--ease-out),
+    border-bottom-color var(--dur-fast) var(--ease-out);
+}
+
+.entity-link:hover,
+.entity-link:focus-visible {
+  border-bottom-style: solid;
+  border-bottom-color: var(--brass);
+}
+
+.entity-link:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* A portrait wrapped in a link carries no underline — the image is the target. */
+.entity-link--portrait {
+  display: inline-block;
+  border-bottom: none;
+  line-height: 0;
+}
+
+/* The name label a portrait reveals on hover or keyboard focus. */
+.portrait-name {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + var(--space-1));
+  transform: translate(-50%, 2px);
+  z-index: 5;
+  padding: 2px var(--space-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-tight);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.portrait-frame {
+  position: relative;
+  display: inline-block;
+}
+
+.portrait-frame:hover > .portrait-name,
+.portrait-frame:focus-within > .portrait-name {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entity-link,
+  .portrait-name {
+    transition: none;
+  }
+}
+
+/* A named figure (a person card's portrait) shows the name over the image. */
+.media--named {
+  position: relative;
+}
+
+.media--named > .portrait-name {
+  top: var(--space-2);
+  bottom: auto;
+}
+
+.media--named:hover > .portrait-name,
+.media--named:focus-within > .portrait-name {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}

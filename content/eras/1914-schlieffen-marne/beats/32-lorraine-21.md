@@ -17,6 +17,6 @@ sources:
   - source: source:herwig-2009
 ---
 
-The Bavarians follow up across the Seille and the Meurthe; Lunéville falls on the 22nd. Castelnau, who has lost a son in the fighting, considers giving up Nancy itself and is held to the Grand Couronné by Joffre; the XVIII Corps is already entraining at Nancy for the left, where the real crisis is breaking. Within three days the 1st and 2nd Armies are back where they started, minus their offensive.[^afgg-1-1] [^herwig-2009]
+The Bavarians follow up across the Seille and the Meurthe; Lunéville falls on the 22nd. [Castelnau](person:castelnau-edouard-de), who has lost a son in the fighting, considers giving up Nancy itself and is held to the Grand Couronné by [Joffre](person:joffre-joseph); the XVIII Corps is already entraining at Nancy for the left, where the real crisis is breaking. Within three days the 1st and 2nd Armies are back where they started, minus their offensive.[^afgg-1-1] [^herwig-2009]
 
 Seen from Luxembourg the victory looked complete; seen from the map, the French left wing had been pushed back towards its own fortresses and reserves — the opposite of what the plan needed.[^herwig-2009]

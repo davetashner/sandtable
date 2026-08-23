@@ -20,6 +20,6 @@ sources:
 
 On the morning of 31 October the line on the Menin road breaks. Gheluvelt is lost, the divisional headquarters behind it are being shelled, and for some hours there is no formed body of British infantry between the German attack and Ypres. What is within reach is one battalion in reserve, about three hundred and fifty men, who cross a thousand yards of open ground and go into the village with the bayonet. The line closes. It was not a plan; it was what happened to be there.[^edmonds-1925]
 
-The battle runs on for three more weeks — the Prussian Guard astride the Menin road on 11 November, stopped by cooks, orderlies and engineers fed into a gap — and then Falkenhayn closes it down.[^1914-1918-online-ypres]
+The battle runs on for three more weeks — the Prussian Guard astride the Menin road on 11 November, stopped by cooks, orderlies and engineers fed into a gap — and then [Falkenhayn](person:falkenhayn-erich) closes it down.[^1914-1918-online-ypres]
 
 What is left of the army that landed in August is arithmetic. Some 58,000 British casualties at Ypres; about 86,000 to 90,000 since the landing, out of roughly 160,000 men, and most of them from the infantry of seven divisions.[^edmonds-1925] [^hastings-2013]

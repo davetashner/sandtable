@@ -18,6 +18,6 @@ sources:
   - source: source:strachan-2001
 ---
 
-On 14 August Dubail's 1st Army and Castelnau's 2nd cross into the Lorraine that France lost in 1871 — the offensive Plan XVII was written around, red trousers and all. For six days they advance against rearguards: Sarrebourg on the 18th, Dieuze and the Morhange heights by the 19th. It feels like victory.[^afgg-1-1] [^herwig-2009]
+On 14 August [Dubail](person:dubail-auguste)'s 1st Army and [Castelnau](person:castelnau-edouard-de)'s 2nd cross into the Lorraine that France lost in 1871 — the offensive Plan XVII was written around, red trousers and all. For six days they advance against rearguards: Sarrebourg on the 18th, Dieuze and the Morhange heights by the 19th. It feels like victory.[^afgg-1-1] [^herwig-2009]
 
 It is also exactly what Schlieffen's geometry wanted: the French left wing drawn east and south, away from the wheel coming through Belgium behind it — the 'revolving door' in which the harder the French pushed in Lorraine the more surely they were enveloped. Rupprecht's 6th Army and Heeringen's 7th yield by design. But Rupprecht and his chief of staff, Krafft von Dellmensingen, do not want to yield; on the 17th they ask OHL for leave to stop and strike, and Moltke's staff, after hesitation, gives it.[^herwig-2009] [^strachan-2001]

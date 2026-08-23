@@ -44,4 +44,4 @@ On the 25th, with the French and British fighting on the Sambre and the canal, t
 
 That dusk, in Louvain, troops falling back from the sortie front run into others arriving by the Liège road; shots are fired in the dark and the garrison concludes that the town has risen. Over three days 248 inhabitants are killed, the university library with its manuscripts and some 1,100 buildings are burned, and the population is driven out. Horne and Kramer find no rising: a panic, and a doctrine that expected one. It is Louvain, with Dinant, that the neutral press prints, and that the Manifesto of the 93 will deny in October.[^horne-kramer-2001]
 
-The same afternoon, forty kilometres south of Mons, Zwehl's VII Reserve Corps closes round Maubeuge, which the BEF has just declined to be shut into. A second corps leaves the ledger.[^herwig-2009] [^tyng-1935]
+The same afternoon, forty kilometres south of Mons, [Zwehl](person:zwehl-hans-von)'s VII Reserve Corps closes round Maubeuge, which the BEF has just declined to be shut into. A second corps leaves the ledger.[^herwig-2009] [^tyng-1935]
