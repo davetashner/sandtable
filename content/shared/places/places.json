@@ -496,5 +496,18 @@
         "note": "coordinates"
       }
     ]
+  },
+  {
+    "id": "place:vise",
+    "name": "Visé",
+    "kind": "town",
+    "lngLat": [5.699, 50.738],
+    "country": "Belgium",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
   }
 ]

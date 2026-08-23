@@ -1370,5 +1370,1156 @@
         ]
       }
     ]
+  },
+  {
+    "id": "1914:liege",
+    "title": "Liège",
+    "timeRange": {
+      "start": "1914-08-04T00:00:00Z",
+      "end": "1914-08-17T00:00:00Z"
+    },
+    "region": [5.35, 50.5, 5.88, 50.8],
+    "camera": {
+      "center": [5.6, 50.64],
+      "zoom": 10.4
+    },
+    "place": "place:liege",
+    "summary": "Twelve Brialmont forts in a ring around the Meuse crossings, the first obstacle on the right wing's road. Emmich's six brigades try to rush the intervals on the night of 5/6 August and fail; Ludendorff, taking over a brigade whose commander has been killed, reaches the heights and bluffs the citadel into surrender on the 7th; Leman sends his field division away and fights on from the forts. They fall one by one from 8 August — Barchon first — and in a rush from the 12th, when the 42 cm and 30.5 cm howitzers arrive; Loncin explodes on the 15th with Leman inside; Hollogne and Flémalle give up on the 16th. Whether the defence cost the timetable anything is argued.",
+    "outcome": "The city taken on 7 August, the forts by 16 August; the 1st and 2nd Armies march from the 18th. Leman a prisoner; the heavy howitzers' reputation made.",
+    "participants": ["1914:army-de-2", "1914:belgian-field-army", "1914:fortress-liege"],
+    "formations": [
+      {
+        "id": "1914:liege-fort-barchon",
+        "name": "Fort de Barchon",
+        "short": "Barchon",
+        "side": "be",
+        "kind": "garrison",
+        "parent": "1914:fortress-liege",
+        "dissolved": "1914-08-08T16:00:00Z",
+        "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 8 August 1914.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-fort-evegnee",
+        "name": "Fort de Évegnée",
+        "short": "Évegnée",
+        "side": "be",
+        "kind": "garrison",
+        "parent": "1914:fortress-liege",
+        "dissolved": "1914-08-11T12:00:00Z",
+        "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 11 August 1914.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-fort-pontisse",
+        "name": "Fort de Pontisse",
+        "short": "Pontisse",
+        "side": "be",
+        "kind": "garrison",
+        "parent": "1914:fortress-liege",
+        "dissolved": "1914-08-13T12:30:00Z",
+        "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 13 August 1914.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-fort-embourg",
+        "name": "Fort de Embourg",
+        "short": "Embourg",
+        "side": "be",
+        "kind": "garrison",
+        "parent": "1914:fortress-liege",
+        "dissolved": "1914-08-13T17:30:00Z",
+        "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 13 August 1914.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-fort-chaudfontaine",
+        "name": "Fort de Chaudfontaine",
+        "short": "Chaudfontaine",
+        "side": "be",
+        "kind": "garrison",
+        "parent": "1914:fortress-liege",
+        "dissolved": "1914-08-13T09:00:00Z",
+        "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 13 August 1914.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-fort-liers",
+        "name": "Fort de Liers",
+        "short": "Liers",
+        "side": "be",
+        "kind": "garrison",
+        "parent": "1914:fortress-liege",
+        "dissolved": "1914-08-14T09:40:00Z",
+        "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 14 August 1914.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-fort-fleron",
+        "name": "Fort de Fléron",
+        "short": "Fléron",
+        "side": "be",
+        "kind": "garrison",
+        "parent": "1914:fortress-liege",
+        "dissolved": "1914-08-14T09:45:00Z",
+        "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 14 August 1914.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-fort-boncelles",
+        "name": "Fort de Boncelles",
+        "short": "Boncelles",
+        "side": "be",
+        "kind": "garrison",
+        "parent": "1914:fortress-liege",
+        "dissolved": "1914-08-15T07:30:00Z",
+        "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 15 August 1914.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-fort-lantin",
+        "name": "Fort de Lantin",
+        "short": "Lantin",
+        "side": "be",
+        "kind": "garrison",
+        "parent": "1914:fortress-liege",
+        "dissolved": "1914-08-15T12:30:00Z",
+        "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 15 August 1914.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-fort-loncin",
+        "name": "Fort de Loncin",
+        "short": "Loncin",
+        "side": "be",
+        "kind": "garrison",
+        "parent": "1914:fortress-liege",
+        "dissolved": "1914-08-15T17:20:00Z",
+        "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 15 August 1914.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-fort-hollogne",
+        "name": "Fort de Hollogne",
+        "short": "Hollogne",
+        "side": "be",
+        "kind": "garrison",
+        "parent": "1914:fortress-liege",
+        "dissolved": "1914-08-16T07:30:00Z",
+        "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 16 August 1914.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-fort-flemalle",
+        "name": "Fort de Flémalle",
+        "short": "Flémalle",
+        "side": "be",
+        "kind": "garrison",
+        "parent": "1914:fortress-liege",
+        "dissolved": "1914-08-16T09:30:00Z",
+        "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 16 August 1914.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-army-of-the-meuse",
+        "name": "Army of the Meuse (Emmich)",
+        "short": "Maas-Armee",
+        "side": "de",
+        "kind": "detachment",
+        "parent": "1914:army-de-2",
+        "strength": {
+          "men": 39000,
+          "asOf": "1914-08-04T12:00:00Z",
+          "sources": [
+            {
+              "source": "source:herwig-2009"
+            }
+          ]
+        },
+        "concentration": {
+          "area": "Aachen–Eupen, the Belgian frontier",
+          "position": [6.0, 50.68],
+          "asOf": "1914-08-04T00:00:00Z",
+          "sources": [
+            {
+              "source": "source:herwig-2009"
+            }
+          ]
+        },
+        "summary": "Six reinforced brigades drawn from the 2nd Army's corps (the 11th, 14th, 27th, 34th, 38th and 43rd) under Otto von Emmich, formed for the coup de main on Liège; Ludendorff rode with it as OHL's liaison. About 39,000 men and 124 guns.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-bde-14",
+        "name": "14th Infantry Brigade",
+        "short": "14. Bde",
+        "side": "de",
+        "kind": "brigade",
+        "parent": "1914:liege-army-of-the-meuse",
+        "commander": "person:ludendorff-erich",
+        "summary": "Wussow's brigade, which Ludendorff took over when its commander was killed on the morning of 6 August; it was the only one of the six to break through the intervals, reached the heights above the city and took the citadel on 7 August.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-bde-27",
+        "name": "27th Infantry Brigade",
+        "short": "27. Bde",
+        "side": "de",
+        "kind": "brigade",
+        "parent": "1914:liege-army-of-the-meuse",
+        "summary": "Attacked between Barchon and Évegnée on the night of 5/6 August and was thrown back.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-bde-34",
+        "name": "34th Infantry Brigade",
+        "short": "34. Bde",
+        "side": "de",
+        "kind": "brigade",
+        "parent": "1914:liege-army-of-the-meuse",
+        "summary": "Crossed the Meuse at Lixhe on the north of the ring and attacked between Pontisse and Liers; repulsed with heavy loss at Rabosée.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-bde-11",
+        "name": "11th Infantry Brigade",
+        "short": "11. Bde",
+        "side": "de",
+        "kind": "brigade",
+        "parent": "1914:liege-army-of-the-meuse",
+        "summary": "Attacked between Fléron and Chaudfontaine; repulsed on 6 August.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-bde-38-43",
+        "name": "38th and 43rd Infantry Brigades",
+        "short": "38./43. Bde",
+        "side": "de",
+        "kind": "brigade",
+        "parent": "1914:liege-army-of-the-meuse",
+        "summary": "The southern attack over the Ourthe between Embourg and Boncelles; thrown back on the night of 5/6 August.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-42cm",
+        "name": "42 cm howitzer battery (Krupp)",
+        "short": "42 cm",
+        "side": "de",
+        "kind": "other",
+        "concentration": {
+          "area": "Essen → Aachen by rail, then by road",
+          "position": [6.08, 50.78],
+          "asOf": "1914-08-09T12:00:00Z",
+          "sources": [
+            {
+              "source": "source:herwig-2009"
+            }
+          ]
+        },
+        "summary": "Two of Krupp's 42 cm M-Gerät howitzers, brought by road from Aachen when the railway was blocked, in action against Pontisse from the evening of 12 August and then against the western forts from inside the city.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-30cm",
+        "name": "30.5 cm mortar batteries (Škoda)",
+        "short": "30.5 cm",
+        "side": "de",
+        "kind": "other",
+        "concentration": {
+          "area": "Aachen",
+          "position": [6.08, 50.78],
+          "asOf": "1914-08-11T12:00:00Z",
+          "sources": [
+            {
+              "source": "source:herwig-2009"
+            }
+          ]
+        },
+        "summary": "Austro-Hungarian 30.5 cm Škoda mortars lent to the German army, in action against the eastern forts from 12–13 August.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-leman-hq",
+        "name": "Leman's headquarters",
+        "short": "Leman",
+        "side": "be",
+        "kind": "other",
+        "commander": "person:leman-gerard",
+        "dissolved": "1914-08-15T17:30:00Z",
+        "summary": "Leman's headquarters in the Rue Sainte-Foi in Liège until the morning of 6 August, when a German patrol reached it and he withdrew to Fort Loncin to direct the forts; taken unconscious from Loncin's ruins on 15 August.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "id": "1914:liege-route-fort-barchon",
+        "formation": "1914:liege-fort-barchon",
+        "waypoints": [
+          [5.684, 50.684, "1914-08-04T00:00:00Z"],
+          [5.684, 50.684, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-fort-evegnee",
+        "formation": "1914:liege-fort-evegnee",
+        "waypoints": [
+          [5.702, 50.655, "1914-08-04T00:00:00Z"],
+          [5.702, 50.655, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-fort-pontisse",
+        "formation": "1914:liege-fort-pontisse",
+        "waypoints": [
+          [5.618, 50.7, "1914-08-04T00:00:00Z"],
+          [5.618, 50.7, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-fort-embourg",
+        "formation": "1914:liege-fort-embourg",
+        "waypoints": [
+          [5.606, 50.56, "1914-08-04T00:00:00Z"],
+          [5.606, 50.56, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-fort-chaudfontaine",
+        "formation": "1914:liege-fort-chaudfontaine",
+        "waypoints": [
+          [5.639, 50.582, "1914-08-04T00:00:00Z"],
+          [5.639, 50.582, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-fort-liers",
+        "formation": "1914:liege-fort-liers",
+        "waypoints": [
+          [5.567, 50.713, "1914-08-04T00:00:00Z"],
+          [5.567, 50.713, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-fort-fleron",
+        "formation": "1914:liege-fort-fleron",
+        "waypoints": [
+          [5.687, 50.62, "1914-08-04T00:00:00Z"],
+          [5.687, 50.62, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-fort-boncelles",
+        "formation": "1914:liege-fort-boncelles",
+        "waypoints": [
+          [5.548, 50.563, "1914-08-04T00:00:00Z"],
+          [5.548, 50.563, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-fort-lantin",
+        "formation": "1914:liege-fort-lantin",
+        "waypoints": [
+          [5.532, 50.7, "1914-08-04T00:00:00Z"],
+          [5.532, 50.7, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-fort-loncin",
+        "formation": "1914:liege-fort-loncin",
+        "waypoints": [
+          [5.5, 50.672, "1914-08-04T00:00:00Z"],
+          [5.5, 50.672, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-fort-hollogne",
+        "formation": "1914:liege-fort-hollogne",
+        "waypoints": [
+          [5.492, 50.639, "1914-08-04T00:00:00Z"],
+          [5.492, 50.639, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-fort-flemalle",
+        "formation": "1914:liege-fort-flemalle",
+        "waypoints": [
+          [5.464, 50.603, "1914-08-04T00:00:00Z"],
+          [5.464, 50.603, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-army-of-the-meuse",
+        "formation": "1914:liege-army-of-the-meuse",
+        "waypoints": [
+          [6.0, 50.68, "1914-08-04T06:00:00Z"],
+          [5.85, 50.66, "1914-08-04T18:00:00Z"],
+          [5.75, 50.65, "1914-08-05T12:00:00Z"],
+          [5.7, 50.64, "1914-08-06T12:00:00Z"],
+          [5.63, 50.64, "1914-08-07T12:00:00Z"],
+          [5.6, 50.64, "1914-08-09T12:00:00Z"],
+          [5.58, 50.64, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Centre of Emmich's force at the hours named (Herwig, Tuchman); the brigades carry the detail.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-bde-14",
+        "formation": "1914:liege-bde-14",
+        "waypoints": [
+          [5.79, 50.64, "1914-08-05T12:00:00Z"],
+          [5.7, 50.64, "1914-08-05T22:00:00Z"],
+          [5.68, 50.63, "1914-08-06T03:00:00Z"],
+          [5.64, 50.64, "1914-08-06T10:00:00Z"],
+          [5.62, 50.64, "1914-08-06T18:00:00Z"],
+          [5.58, 50.65, "1914-08-07T12:00:00Z"],
+          [5.58, 50.65, "1914-08-08T12:00:00Z"],
+          [5.6, 50.64, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Herve road, the Fléron–Évegnée interval in the night, the heights at Queue-du-Bois by morning, the citadel on the 7th.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-bde-27",
+        "formation": "1914:liege-bde-27",
+        "waypoints": [
+          [5.8, 50.66, "1914-08-05T18:00:00Z"],
+          [5.71, 50.67, "1914-08-06T03:00:00Z"],
+          [5.76, 50.67, "1914-08-06T12:00:00Z"],
+          [5.72, 50.68, "1914-08-08T18:00:00Z"],
+          [5.7, 50.68, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Herve, the Barchon–Évegnée interval, repulsed; Barchon after its fall on 8 August.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-bde-34",
+        "formation": "1914:liege-bde-34",
+        "waypoints": [
+          [5.74, 50.76, "1914-08-04T18:00:00Z"],
+          [5.66, 50.75, "1914-08-05T20:00:00Z"],
+          [5.61, 50.71, "1914-08-06T03:00:00Z"],
+          [5.64, 50.74, "1914-08-06T12:00:00Z"],
+          [5.63, 50.7, "1914-08-09T12:00:00Z"],
+          [5.62, 50.7, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Lixhe crossing, the Pontisse–Liers interval, repulse, then Herstal.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-bde-11",
+        "formation": "1914:liege-bde-11",
+        "waypoints": [
+          [5.76, 50.61, "1914-08-05T18:00:00Z"],
+          [5.67, 50.6, "1914-08-06T03:00:00Z"],
+          [5.72, 50.6, "1914-08-06T12:00:00Z"],
+          [5.67, 50.6, "1914-08-14T12:00:00Z"],
+          [5.66, 50.6, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Soumagne, the Fléron–Chaudfontaine interval, repulse.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-bde-38-43",
+        "formation": "1914:liege-bde-38-43",
+        "waypoints": [
+          [5.72, 50.53, "1914-08-05T18:00:00Z"],
+          [5.6, 50.55, "1914-08-06T03:00:00Z"],
+          [5.66, 50.52, "1914-08-06T12:00:00Z"],
+          [5.62, 50.54, "1914-08-13T12:00:00Z"],
+          [5.6, 50.55, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Louveigné, the Embourg–Boncelles interval, repulse.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-42cm",
+        "formation": "1914:liege-42cm",
+        "waypoints": [
+          [6.08, 50.78, "1914-08-09T12:00:00Z"],
+          [5.85, 50.67, "1914-08-11T12:00:00Z"],
+          [5.69, 50.7, "1914-08-12T16:00:00Z"],
+          [5.69, 50.7, "1914-08-13T18:00:00Z"],
+          [5.58, 50.64, "1914-08-14T12:00:00Z"],
+          [5.56, 50.64, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Aachen, the Herve road, emplaced at Mortier east of Pontisse on 12 August, then moved into Liège for the left-bank forts.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-30cm",
+        "formation": "1914:liege-30cm",
+        "waypoints": [
+          [6.08, 50.78, "1914-08-11T12:00:00Z"],
+          [5.75, 50.64, "1914-08-12T18:00:00Z"],
+          [5.72, 50.64, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Aachen to the eastern side of the ring.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-leman",
+        "formation": "1914:liege-leman-hq",
+        "waypoints": [
+          [5.575, 50.641, "1914-08-04T00:00:00Z"],
+          [5.575, 50.641, "1914-08-06T08:00:00Z"],
+          [5.5, 50.672, "1914-08-06T12:00:00Z"],
+          [5.5, 50.672, "1914-08-15T17:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "Rue Sainte-Foi, then Fort Loncin.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-div-be-3",
+        "formation": "1914:div-be-3",
+        "waypoints": [
+          [5.62, 50.66, "1914-08-04T00:00:00Z"],
+          [5.61, 50.64, "1914-08-06T03:00:00Z"],
+          [5.6, 50.63, "1914-08-06T12:00:00Z"],
+          [5.45, 50.66, "1914-08-06T22:00:00Z"],
+          [5.25, 50.7, "1914-08-07T12:00:00Z"],
+          [5.0, 50.8, "1914-08-08T12:00:00Z"],
+          [4.95, 50.8, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "The division held the intervals on the night of 5/6 August and was sent back to the field army on the Gette by Leman on the 6th.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-route-hkk-2",
+        "formation": "1914:hkk-2",
+        "waypoints": [
+          [5.8, 50.78, "1914-08-04T06:00:00Z"],
+          [5.66, 50.75, "1914-08-04T14:00:00Z"],
+          [5.55, 50.76, "1914-08-05T12:00:00Z"],
+          [5.46, 50.78, "1914-08-06T12:00:00Z"],
+          [5.25, 50.8, "1914-08-08T12:00:00Z"],
+          [5.11, 50.95, "1914-08-12T12:00:00Z"],
+          [5.1, 50.9, "1914-08-17T00:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Marwitz's cavalry crossed the Meuse at Lixhe on 4 August and screened north of the ring towards Tongeren and Sint-Truiden; Haelen on 12 August.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "1914:liege-event-frontier",
+        "title": "German troops cross the Belgian frontier at Gemmenich",
+        "at": "1914-08-04T08:00:00Z",
+        "kind": "movement",
+        "significance": "major",
+        "lngLat": [6.02, 50.75],
+        "summary": "Belgium having refused passage on 3 August, Emmich's Army of the Meuse and Marwitz's cavalry cross the frontier near Gemmenich and Aachen on the morning of 4 August and close on the Meuse.",
+        "links": {
+          "formations": ["1914:liege-army-of-the-meuse", "1914:hkk-2"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-event-ultimatum",
+        "title": "Emmich's demand refused; the bombardment begins",
+        "at": "1914-08-05T14:00:00Z",
+        "kind": "diplomatic",
+        "significance": "major",
+        "place": "place:liege",
+        "summary": "A parlementaire's demand for free passage is refused by Leman; German field guns open on the eastern forts and Zeppelin L Z VI bombs the city on the night of 5/6 August.",
+        "links": {
+          "people": ["person:leman-gerard"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-event-night-assault",
+        "title": "The night assault on the intervals",
+        "at": "1914-08-06T02:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "lngLat": [5.68, 50.63],
+        "summary": "Five brigades attack the gaps between the forts in the dark and are thrown back with heavy loss — Rabosée, Retinne, the Ourthe; only the 14th Brigade, its commander Wussow killed and Ludendorff in his place, gets through to the heights above the city.",
+        "links": {
+          "formations": [
+            "1914:liege-bde-14",
+            "1914:liege-bde-27",
+            "1914:liege-bde-34",
+            "1914:liege-bde-11",
+            "1914:liege-bde-38-43",
+            "1914:div-be-3"
+          ],
+          "people": ["person:ludendorff-erich"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-event-3rd-division-withdraws",
+        "title": "Leman sends the 3rd Division away",
+        "at": "1914-08-06T22:00:00Z",
+        "kind": "order",
+        "significance": "major",
+        "place": "place:liege",
+        "summary": "With a German brigade on the heights and the intervals no longer tenable, Leman orders the 3rd Division back to the field army on the Gette and moves his own headquarters into Fort Loncin. The forts will fight on alone.",
+        "links": {
+          "formations": ["1914:div-be-3", "1914:liege-leman-hq"],
+          "people": ["person:leman-gerard"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-event-citadel",
+        "title": "Ludendorff takes the citadel",
+        "at": "1914-08-07T12:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:liege",
+        "summary": "Ludendorff drives into the city with his brigade adjutant, hammers on the citadel gate and receives the surrender of its garrison; the city is German, the forts are not.",
+        "links": {
+          "formations": ["1914:liege-bde-14"],
+          "people": ["person:ludendorff-erich"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-event-barchon",
+        "title": "Fort de Barchon surrenders — the first",
+        "at": "1914-08-08T16:00:00Z",
+        "kind": "siege",
+        "significance": "minor",
+        "lngLat": [5.684, 50.684],
+        "summary": "Barchon, battered by 21 cm mortars and cut off, is the first of the twelve to give up.",
+        "links": {
+          "formations": ["1914:liege-fort-barchon"]
+        },
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-event-first-42cm",
+        "title": "The first 42 cm shell falls on Pontisse",
+        "at": "1914-08-12T18:30:00Z",
+        "kind": "technology",
+        "significance": "major",
+        "lngLat": [5.618, 50.7],
+        "summary": "Krupp's M-Gerät, brought by road from Aachen, opens fire from Mortier; Pontisse is wrecked and surrenders the next day. The fortress, the strongest of its type in Europe, has met the weapon built to break it.",
+        "links": {
+          "formations": ["1914:liege-42cm", "1914:liege-fort-pontisse"],
+          "tech": ["1914:tech-heavy-siege-artillery"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-event-13-aug",
+        "title": "Pontisse, Embourg and Chaudfontaine fall",
+        "at": "1914-08-13T17:30:00Z",
+        "kind": "siege",
+        "significance": "major",
+        "place": "place:liege",
+        "summary": "Three forts in a day under the 42 cm and 30.5 cm howitzers; at Chaudfontaine the magazine explodes.",
+        "links": {
+          "formations": [
+            "1914:liege-fort-pontisse",
+            "1914:liege-fort-embourg",
+            "1914:liege-fort-chaudfontaine"
+          ]
+        },
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-event-loncin",
+        "title": "Fort de Loncin explodes; Leman taken",
+        "at": "1914-08-15T17:20:00Z",
+        "kind": "siege",
+        "significance": "major",
+        "lngLat": [5.5, 50.672],
+        "summary": "A 42 cm shell reaches Loncin's magazine; the fort blows up with most of its garrison, and Leman is dug unconscious from the ruins and taken prisoner.",
+        "links": {
+          "formations": ["1914:liege-fort-loncin", "1914:liege-leman-hq"],
+          "people": ["person:leman-gerard"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-event-vise",
+        "title": "Visé burned",
+        "at": "1914-08-15T20:00:00Z",
+        "kind": "other",
+        "significance": "minor",
+        "place": "place:vise",
+        "summary": "The town of Visé on the Meuse, where the cavalry had crossed on 4 August, is sacked and burned by German troops on 15–16 August and some 600 of its people deported — one of the August massacres and burnings that Horne and Kramer trace to the franc-tireur panic.",
+        "sources": [
+          {
+            "source": "source:horne-kramer-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:liege-event-last-forts",
+        "title": "Hollogne and Flémalle surrender — the last forts",
+        "at": "1914-08-16T09:30:00Z",
+        "kind": "siege",
+        "significance": "major",
+        "place": "place:liege",
+        "summary": "The last two forts on the left bank give up on the morning of 16 August; the road and railway through Liège are open, and the 1st and 2nd Armies begin their march on the 18th.",
+        "links": {
+          "formations": ["1914:liege-fort-hollogne", "1914:liege-fort-flemalle"]
+        },
+        "sources": [
+          {
+            "source": "source:wikipedia-en",
+            "note": "fort positions and surrender dates"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      }
+    ],
+    "links": {
+      "events": ["1914:event-siege-of-liege"],
+      "people": [
+        "person:leman-gerard",
+        "person:ludendorff-erich",
+        "person:albert-i-of-belgium",
+        "person:bulow-karl-von"
+      ],
+      "tech": ["1914:tech-heavy-siege-artillery"],
+      "places": ["place:liege", "place:vise"]
+    },
+    "sources": [
+      {
+        "source": "source:herwig-2009",
+        "note": "chapter on Liège"
+      },
+      {
+        "source": "source:tuchman-1962",
+        "note": "Ludendorff and the citadel"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:horne-kramer-2001",
+        "note": "Visé"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "fort positions and surrender times"
+      }
+    ]
   }
 ]
