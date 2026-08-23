@@ -1,0 +1,30 @@
+{
+  "$comment": "The wide framing of the Sarajevo motorcade photograph of 28 June 1914; the sibling directory carries the other framing of the same exposure.",
+  "id": "media:scene/1914-sarajevo-motorcade-wide/sarajevo-motorcade-wide-colorized",
+  "kind": "scene",
+  "people": ["person:franz-ferdinand-of-austria", "person:sophie-chotek"],
+  "file": "sarajevo-motorcade-wide-colorized.png",
+  "width": 1530,
+  "height": 1028,
+  "colorized": true,
+  "original": {
+    "description": "The archduke's Gräf & Stift double phaeton seen from the side, stationary in front of a long stone building, its hood folded down. The driver and an officer sit in front; behind them a general officer in a plumed hat, a man in grey seen from behind, a woman in a white hat and dress holding a bouquet, and beside her an officer in a light blue tunic with a plumed helmet. A pennant is mounted on the front wing; two soldiers salute at the kerb beyond.",
+    "photographer": "not identified in the catalogue record",
+    "date": "28 June 1914",
+    "archive": "Imperial War Museums, catalogue number Q 91848 — 'Archduke Franz Ferdinand in Sarajevo, June 1914', the couple leaving the City Hall by motor car; also held, in other copies, by the Historical Archives of Sarajevo",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Archduke_Franz_Ferdinand_in_Sarajevo,_June_1914_Q91848.jpg",
+    "original_dimensions": "800 × 649 (the IWM copy on Commons)",
+    "licence": "public domain — PD-UKGov for the IWM copy (UK Government work created before 1 June 1957); the photograph itself dates from 1914 and is out of copyright in its country of origin"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'. Documented colours: the pike-grey Austro-Hungarian general officers' tunic, the green plume of a general's helmet, Sophie's white summer dress and hat, the dark lacquer of the car. The plume and facing colours are the colorizer's reading rather than matched to a reference — flag for the image review (sand-y0u.7)."
+  },
+  "content_policy": "ok — the couple alive and in the car; the assassination itself is not shown and no such image belongs in the pack",
+  "caption": "Franz Ferdinand and Sophie in the open car at Sarajevo on 28 June 1914, the hood folded down and the route lined — minutes from the corner where Princip was standing. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: photographer not identified, Sarajevo, 28 June 1914; Imperial War Museums Q 91848, via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+  "focal_point": { "x": 0.62, "y": 0.42 },
+  "notes": "Supplied by Dave 2026-08-23. IDENTIFICATION: matched to the IWM record by content — the car, the occupants and the building all correspond to Q 91848, the departure from Sarajevo City Hall. The framing here is wide and its aspect ratio differs from the IWM copy (this file 1.488 against the IWM copy's 1.233), so it derives from a different and less tightly cropped reproduction of the same exposure, whose particular scan is not identified. The sibling manifest holds the other framing. For the image review (sand-y0u.7): confirm the moment — several similar photographs were taken that morning, on the arrival at the City Hall as well as the departure. Intended placement: the July Crisis chain (sand-1l0.23, shipped in PR #60) and the Sarajevo backstory (sand-1l0.32, in flight)."
+}

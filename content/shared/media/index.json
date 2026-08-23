@@ -1059,6 +1059,48 @@
       }
     },
     {
+      "id": "media:scene/1910-franz-ferdinand-family/franz-ferdinand-family-1910-colorized",
+      "dir": "scenes/1910-franz-ferdinand-family",
+      "original": {
+        "src": "scenes/1910-franz-ferdinand-family/franz-ferdinand-family-1910-colorized.png",
+        "width": 1477,
+        "height": 1065,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "scenes/1910-franz-ferdinand-family/.derived/franz-ferdinand-family-1910-colorized.w320.webp",
+          "width": 320,
+          "height": 231,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1910-franz-ferdinand-family/.derived/franz-ferdinand-family-1910-colorized.w640.webp",
+          "width": 640,
+          "height": 461,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1910-franz-ferdinand-family/.derived/franz-ferdinand-family-1910-colorized.w1024.webp",
+          "width": 1024,
+          "height": 738,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1477,
+      "height": 1065,
+      "caption": "Franz Ferdinand, Sophie and their three children at home in 1910. Their marriage was morganatic and their children barred from the throne; it was their fourteenth wedding anniversary that took them to Sarajevo on 28 June 1914. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: Bain News Service, 1910; Library of Congress, George Grantham Bain Collection (LCCN 2014697443, ggbain.17181); no known restrictions on publication. Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — Library of Congress: no known restrictions on publication; pre-1931",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Franz_Ferdinand_%26_family_LCCN2014697443.jpg",
+      "focalPoint": {
+        "x": 0.2,
+        "y": 0.5
+      }
+    },
+    {
       "id": "media:scene/1914-ausflug-nach-paris/railway-wagon-august-1914-colorized",
       "dir": "scenes/1914-ausflug-nach-paris",
       "original": {
@@ -1097,6 +1139,48 @@
       "originalUrl": "https://commons.wikimedia.org/wiki/File:German_soldiers_in_a_railroad_car_on_the_way_to_the_front_during_early_World_War_I,_taken_in_1914._Taken_from_greatwar.nl_site.jpg",
       "focalPoint": {
         "x": 0.55,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "media:scene/1914-big-bertha-42cm/big-bertha-42cm-colorized",
+      "dir": "scenes/1914-big-bertha-42cm",
+      "original": {
+        "src": "scenes/1914-big-bertha-42cm/big-bertha-42cm-colorized.png",
+        "width": 1384,
+        "height": 1136,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-big-bertha-42cm/.derived/big-bertha-42cm-colorized.w320.webp",
+          "width": 320,
+          "height": 263,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-big-bertha-42cm/.derived/big-bertha-42cm-colorized.w640.webp",
+          "width": 640,
+          "height": 525,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-big-bertha-42cm/.derived/big-bertha-42cm-colorized.w1024.webp",
+          "width": 1024,
+          "height": 841,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1384,
+      "height": 1136,
+      "caption": "A German 42cm siege howitzer and its crew, the type that broke the Liège and Namur forts in August 1914 — a gun that had to be brought up in pieces and bedded before it could fire. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: photographer not identified, First World War; via Flickr (Alfredo Grados Rivero), marked public domain. Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — the underlying photograph is a German press or army photograph of the First World War, published well before 1931; the Flickr copy is marked public domain",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://www.flickr.com/photos/alfredo-grados/19884125866",
+      "focalPoint": {
+        "x": 0.62,
         "y": 0.45
       }
     },
@@ -1182,6 +1266,90 @@
       "focalPoint": {
         "x": 0.45,
         "y": 0.55
+      }
+    },
+    {
+      "id": "media:scene/1914-sarajevo-motorcade-detail/sarajevo-motorcade-detail-colorized",
+      "dir": "scenes/1914-sarajevo-motorcade-detail",
+      "original": {
+        "src": "scenes/1914-sarajevo-motorcade-detail/sarajevo-motorcade-detail-colorized.png",
+        "width": 1450,
+        "height": 994,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-sarajevo-motorcade-detail/.derived/sarajevo-motorcade-detail-colorized.w320.webp",
+          "width": 320,
+          "height": 219,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-sarajevo-motorcade-detail/.derived/sarajevo-motorcade-detail-colorized.w640.webp",
+          "width": 640,
+          "height": 439,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-sarajevo-motorcade-detail/.derived/sarajevo-motorcade-detail-colorized.w1024.webp",
+          "width": 1024,
+          "height": 702,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1450,
+      "height": 994,
+      "caption": "Sophie and Franz Ferdinand in the back of the car at Sarajevo, 28 June 1914 — the last hour of both their lives, and the first link in the chain that followed. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: photographer not identified, Sarajevo, 28 June 1914; Imperial War Museums Q 91848, via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — PD-UKGov for the IWM copy (UK Government work created before 1 June 1957); the photograph itself dates from 1914 and is out of copyright in its country of origin",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Archduke_Franz_Ferdinand_in_Sarajevo,_June_1914_Q91848.jpg",
+      "focalPoint": {
+        "x": 0.78,
+        "y": 0.4
+      }
+    },
+    {
+      "id": "media:scene/1914-sarajevo-motorcade-wide/sarajevo-motorcade-wide-colorized",
+      "dir": "scenes/1914-sarajevo-motorcade-wide",
+      "original": {
+        "src": "scenes/1914-sarajevo-motorcade-wide/sarajevo-motorcade-wide-colorized.png",
+        "width": 1530,
+        "height": 1028,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-sarajevo-motorcade-wide/.derived/sarajevo-motorcade-wide-colorized.w320.webp",
+          "width": 320,
+          "height": 215,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-sarajevo-motorcade-wide/.derived/sarajevo-motorcade-wide-colorized.w640.webp",
+          "width": 640,
+          "height": 430,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-sarajevo-motorcade-wide/.derived/sarajevo-motorcade-wide-colorized.w1024.webp",
+          "width": 1024,
+          "height": 688,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1530,
+      "height": 1028,
+      "caption": "Franz Ferdinand and Sophie in the open car at Sarajevo on 28 June 1914, the hood folded down and the route lined — minutes from the corner where Princip was standing. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: photographer not identified, Sarajevo, 28 June 1914; Imperial War Museums Q 91848, via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — PD-UKGov for the IWM copy (UK Government work created before 1 June 1957); the photograph itself dates from 1914 and is out of copyright in its country of origin",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Archduke_Franz_Ferdinand_in_Sarajevo,_June_1914_Q91848.jpg",
+      "focalPoint": {
+        "x": 0.62,
+        "y": 0.42
       }
     },
     {
