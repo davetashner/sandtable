@@ -1077,6 +1077,7 @@ function checkScore(ctx: Ctx, s: PackState, path: string) {
     const where = `score[${i}]`;
     if (e.cue) ctx.ref(path, s.pack.id, e.cue, ['cue'], `${where}: cue`);
     if (e.focus) ctx.ref(path, s.pack.id, e.focus, ['battle'], `${where}: focus`);
+    if (e.branch) checkBranchRef(ctx, s, path, s.pack.id, e.branch, true);
     if (e.from && e.to) {
       if (!within(s.pack.timeRange, e.from))
         ctx.error(path, `${where}: from is outside the pack timeRange`);
@@ -1086,6 +1087,8 @@ function checkScore(ctx: Ctx, s: PackState, path: string) {
     if (e.opening) opening += 1;
   });
   if (opening > 1) ctx.error(path, 'more than one entry claims the opening sequence');
+  if (entries.filter((e) => e.vignette).length > 1)
+    ctx.error(path, 'more than one entry names the vignette bed');
   // A campaign moment with nothing to play is not an error — the score may be
   // deliberately sparse — but a pack whose score never covers the start is
   // almost certainly a mistake in authoring rather than a choice.

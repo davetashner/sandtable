@@ -996,8 +996,19 @@ export const ScoreEntry = z
     silence: z.boolean().optional(),
     /** Matches while the opening sequence is on screen. */
     opening: z.boolean().optional(),
+    /**
+     * Matches while the view is on this branch. A counterfactual branch should
+     * sound audibly not-history, the way the pack already labels it in text,
+     * so a branch match outranks a focus or a time window.
+     */
+    branch: Id.optional(),
     /** Matches while this battle, chapter or zoom-in is in focus. */
     focus: Id.optional(),
+    /**
+     * Names the bed that fades in UNDER the stage cue while a first-person
+     * vignette is on screen. A bed does not replace the cue; it joins it.
+     */
+    vignette: z.boolean().optional(),
     /** Matches while the clock is inside this window. */
     from: IsoTime.optional(),
     to: IsoTime.optional(),
@@ -1016,11 +1027,14 @@ export const ScoreEntry = z
       ctx.addIssue({ code: 'custom', message: 'from and to go together' });
     if (e.from && e.to && Date.parse(e.from) >= Date.parse(e.to))
       ctx.addIssue({ code: 'custom', message: 'to must be after from' });
-    if (!e.opening && !e.focus && !e.from)
+    if (!e.opening && !e.focus && !e.from && !e.branch && !e.vignette)
       ctx.addIssue({
         code: 'custom',
-        message: 'an entry needs something to match on: opening, focus, or from/to',
+        message:
+          'an entry needs something to match on: opening, branch, focus, vignette, or from/to',
       });
+    if (e.vignette && e.silence)
+      ctx.addIssue({ code: 'custom', message: 'a vignette entry names a bed; it cannot be silence' });
   });
 
 export type ScoreEntry = z.infer<typeof ScoreEntry>;

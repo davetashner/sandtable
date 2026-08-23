@@ -17,10 +17,18 @@
       "opening": {
         "type": "boolean"
       },
+      "branch": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+      },
       "focus": {
         "type": "string",
         "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
         "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+      },
+      "vignette": {
+        "type": "boolean"
       },
       "from": {
         "type": "string",

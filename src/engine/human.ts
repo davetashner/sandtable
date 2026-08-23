@@ -13,6 +13,32 @@ import type {
   Vignette,
 } from '../packs/schema/index.js';
 
+/**
+ * How long after a vignette's moment the score treats it as "now" — in
+ * simulated time, so it scales with the clock: about twelve seconds of real
+ * time at the default one hour per second, and a blink when scrubbing fast.
+ * Long enough to notice the bed arrive, short enough that it does not drone.
+ */
+export const VIGNETTE_MOMENT_MS = 12 * 60 * 60 * 1000;
+
+/**
+ * True when the clock has just passed a vignette on this branch — the signal
+ * that brings the score's bed in (sand-1l0.35). Deliberately independent of
+ * which beat is open: the bed marks the moment, not the panel.
+ */
+export function vignetteNear(
+  vignettes: Vignette[],
+  now: number,
+  branchId: string,
+  windowMs = VIGNETTE_MOMENT_MS,
+): boolean {
+  return vignettes.some((v) => {
+    if (v.branch && v.branch !== branchId) return false;
+    const at = Date.parse(v.at);
+    return at <= now && now - at <= windowMs;
+  });
+}
+
 /** Vignettes that belong to `beat`, are visible on `branchId`, and whose moment the clock has passed. */
 export function vignettesFor(
   vignettes: Vignette[],

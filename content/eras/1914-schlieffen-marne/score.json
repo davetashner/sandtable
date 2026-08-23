@@ -5,6 +5,21 @@
     "note": "The theme stated whole, before the campaign puts it under pressure."
   },
   {
+    "branch": "1914:schlieffen-concept",
+    "cue": "cue:the-other-road",
+    "note": "A hypothetical should sound hypothetical wherever the reader is standing — the theme remembered wrongly, over the top of whatever stage cue would otherwise play."
+  },
+  {
+    "branch": "1914:schlieffen-success",
+    "cue": "cue:the-other-road",
+    "note": "The second counterfactual branch takes the same cue: both are roads not taken."
+  },
+  {
+    "vignette": true,
+    "cue": "cue:vignette-bed",
+    "note": "Fades in UNDER the stage cue while a first-person vignette is on screen — one cello, at -9 dB, the audio equivalent of the dossier's first-person voice."
+  },
+  {
     "focus": "1914:july-crisis",
     "cue": "cue:thirty-seven-days",
     "note": "The ticking is the argument: thirty-seven days in which everyone had time to stop."
