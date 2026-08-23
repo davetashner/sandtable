@@ -509,5 +509,96 @@
         "note": "coordinates"
       }
     ]
+  },
+  {
+    "id": "place:morhange",
+    "name": "Morhange",
+    "kind": "town",
+    "lngLat": [6.64, 48.922],
+    "country": "Germany (annexed Lorraine)",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:sarrebourg",
+    "name": "Sarrebourg",
+    "kind": "town",
+    "lngLat": [7.053, 48.735],
+    "country": "Germany (annexed Lorraine)",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:luneville",
+    "name": "Lunéville",
+    "kind": "town",
+    "lngLat": [6.497, 48.589],
+    "country": "France",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:chateau-salins",
+    "name": "Château-Salins",
+    "kind": "town",
+    "lngLat": [6.514, 48.819],
+    "country": "Germany (annexed Lorraine)",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:dieuze",
+    "name": "Dieuze",
+    "kind": "town",
+    "lngLat": [6.718, 48.812],
+    "country": "Germany (annexed Lorraine)",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:charmes",
+    "name": "Charmes",
+    "kind": "town",
+    "lngLat": [6.292, 48.373],
+    "country": "France",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:saint-die",
+    "name": "Saint-Dié",
+    "kind": "town",
+    "lngLat": [6.949, 48.284],
+    "country": "France",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
   }
 ]
