@@ -1092,6 +1092,35 @@
     ]
   },
   {
+    "id": "person:sophie-chotek",
+    "name": "Sophie Chotek",
+    "sortName": "Hohenberg, Sophie, Duchess of",
+    "born": "1868-03-01",
+    "died": "1914-06-28",
+    "nationality": "AT",
+    "roles": [
+      {
+        "title": "Duchess of Hohenberg",
+        "from": "1909-10-04",
+        "to": "1914-06-28"
+      }
+    ],
+    "summary": "A Bohemian countess whose marriage to the heir in 1900 was permitted only as morganatic: she could not share his rank, her children were barred from the throne, and at court she walked behind the youngest archduchess. On military inspections that protocol did not apply, which is part of why she was beside him in the car at Sarajevo on their fourteenth wedding anniversary. She was shot with him and died first.",
+    "media": [
+      "media:scene/1910-franz-ferdinand-family/franz-ferdinand-family-1910-colorized",
+      "media:scene/1914-sarajevo-motorcade-detail/sarajevo-motorcade-detail-colorized"
+    ],
+    "sources": [
+      {
+        "source": "source:clark-2012"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates and titles"
+      }
+    ]
+  },
+  {
     "id": "person:franz-ferdinand-of-austria",
     "name": "Franz Ferdinand",
     "sortName": "Franz Ferdinand, Archduke of Austria-Este",
@@ -1111,6 +1140,10 @@
       }
     ],
     "summary": "Heir to the Habsburg throne and, on the evidence of his own papers, one of the more cautious voices in Vienna on war with Serbia - he had opposed the annexation crisis policy and doubted the army's readiness. He and his wife Sophie were shot at Sarajevo on 28 June 1914 by Gavrilo Princip. His death removed the chief restraint on the war party at the moment it gave that party its occasion.",
+    "media": [
+      "media:scene/1910-franz-ferdinand-family/franz-ferdinand-family-1910-colorized",
+      "media:scene/1914-sarajevo-motorcade-detail/sarajevo-motorcade-detail-colorized"
+    ],
     "sources": [
       {
         "source": "source:clark-2012"

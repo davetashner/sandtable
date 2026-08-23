@@ -1,0 +1,31 @@
+{
+  "$comment": "The family in 1910 — the private life behind the July Crisis chain's first link.",
+  "id": "media:scene/1910-franz-ferdinand-family/franz-ferdinand-family-1910-colorized",
+  "kind": "scene",
+  "people": ["person:franz-ferdinand-of-austria", "person:sophie-chotek"],
+  "file": "franz-ferdinand-family-1910-colorized.png",
+  "width": 1477,
+  "height": 1065,
+  "colorized": true,
+  "original": {
+    "description": "The family in a panelled salon with tall windows and gilt furniture. Franz Ferdinand sits at the left in a general officer's tunic with a newspaper on his knee; Sophie sits beside him in a high-necked dress and feathered hat; their younger son stands by a marble table with a flowering azalea; the elder son in a sailor suit leans against a grand piano at which their daughter is seated. The print carries a hand-lettered caption, 'Franz Ferdinand & Family, 1910.'",
+    "photographer": "Bain News Service (publisher)",
+    "date": "1910",
+    "archive": "Library of Congress, George Grantham Bain Collection — LCCN 2014697443, digital id ggbain.17181, glass negative",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Franz_Ferdinand_%26_family_LCCN2014697443.jpg",
+    "catalog_url": "https://www.loc.gov/item/2014697443/",
+    "original_dimensions": "5773 × 4216 (Library of Congress glass-negative scan)",
+    "licence": "public domain — Library of Congress: no known restrictions on publication; pre-1931"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'. Documented colours: the pike-grey Austro-Hungarian officer's tunic, dark blue sailor suits, gilt boiserie and parquet. The dress and upholstery colours are the colorizer's invention rather than a reading of anything documented, and the hand-lettered caption is part of the reproduction, not the original negative — both flagged for the image review (sand-y0u.7)."
+  },
+  "content_policy": "ok — a family group, no gore; the children are named in the record and long dead",
+  "caption": "Franz Ferdinand, Sophie and their three children at home in 1910. Their marriage was morganatic and their children barred from the throne; it was their fourteenth wedding anniversary that took them to Sarajevo on 28 June 1914. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: Bain News Service, 1910; Library of Congress, George Grantham Bain Collection (LCCN 2014697443, ggbain.17181); no known restrictions on publication. Colorization: Sandtable, AI-assisted, 2026.",
+  "focal_point": { "x": 0.2, "y": 0.5 },
+  "notes": "Supplied by Dave 2026-08-23 without a source. Matched to the Library of Congress Bain Collection record by title and year — the Commons copy of LCCN 2014697443 is titled 'Franz Ferdinand & family' and dated 1910, and this file's aspect ratio (1.387) is within cropping tolerance of the LoC negative's 1.369. The archive copy is a 5773 × 4216 glass-negative scan, so it is also the natural 'show original' target. Intended placement: the July Crisis chain and the Sarajevo backstory (sand-1l0.32)."
+}
