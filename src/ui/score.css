@@ -1,0 +1,86 @@
+/* The background score control (sand-1l0.34). Sits with the other header
+   controls and borrows the branch toggle's pill so the row reads as one set. */
+
+.score {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.score__toggle {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-2);
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.score__toggle:hover {
+  color: var(--ink);
+}
+
+.score__toggle[aria-pressed='true'] {
+  color: var(--brass);
+  border-color: var(--brass-dim);
+}
+
+.score__glyph {
+  font-size: 13px;
+  line-height: 1;
+  /* Off reads as off at a glance, not only in the label. */
+  opacity: 0.45;
+}
+
+.score__toggle[aria-pressed='true'] .score__glyph {
+  opacity: 1;
+}
+
+.score__label {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  max-width: 16ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* The 22 August silence explains itself rather than looking like a fault. */
+/* Visually the status lives in the button; the live region carries it for
+   screen readers, and only the 22 August note is shown as text. */
+.score__status {
+  margin: 0;
+}
+
+.score__status-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.score__note {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: var(--muted);
+  max-width: 22ch;
+}
+
+@media (max-width: 640px) {
+  .score__label {
+    max-width: 10ch;
+  }
+  .score__note {
+    display: none;
+  }
+}

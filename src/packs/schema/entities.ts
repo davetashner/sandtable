@@ -976,6 +976,54 @@ export const Cue = z.looseObject({
 });
 
 export type Cue = z.infer<typeof Cue>;
+
+// ---------------------------------------------------------------- ScoreEntry
+
+/**
+ * Which cue plays when (sand-1l0.34). The cues themselves are shared assets;
+ * this is the pack's own reading of them, because the stages are the pack's.
+ *
+ * An entry matches on the opening sequence, on a zoom-in or chapter, or on a
+ * window of campaign time. The narrowest match wins, so a one-day window can
+ * carve silence out of a three-week cue — which is exactly what 22 August
+ * does. Every entry either names a cue or declares `silence`; nothing else is
+ * a valid thing to say about a moment.
+ */
+export const ScoreEntry = z
+  .looseObject({
+    cue: Id.optional().describe('cue:<slug> from the shared audio registry'),
+    /** Deliberate silence. The music stops; it has not merely been forgotten. */
+    silence: z.boolean().optional(),
+    /** Matches while the opening sequence is on screen. */
+    opening: z.boolean().optional(),
+    /** Matches while this battle, chapter or zoom-in is in focus. */
+    focus: Id.optional(),
+    /** Matches while the clock is inside this window. */
+    from: IsoTime.optional(),
+    to: IsoTime.optional(),
+    /** Why this cue here — read by people, not by the player. */
+    note: z.string().optional(),
+  })
+  .superRefine((e, ctx) => {
+    const named = e.cue !== undefined;
+    const silent = e.silence === true;
+    if (named === silent)
+      ctx.addIssue({
+        code: 'custom',
+        message: 'an entry names a cue or declares silence: true, exactly one',
+      });
+    if ((e.from === undefined) !== (e.to === undefined))
+      ctx.addIssue({ code: 'custom', message: 'from and to go together' });
+    if (e.from && e.to && Date.parse(e.from) >= Date.parse(e.to))
+      ctx.addIssue({ code: 'custom', message: 'to must be after from' });
+    if (!e.opening && !e.focus && !e.from)
+      ctx.addIssue({
+        code: 'custom',
+        message: 'an entry needs something to match on: opening, focus, or from/to',
+      });
+  });
+
+export type ScoreEntry = z.infer<typeof ScoreEntry>;
 export type Side = z.infer<typeof Side>;
 export type Branch = z.infer<typeof Branch>;
 export type Opening = z.infer<typeof Opening>;

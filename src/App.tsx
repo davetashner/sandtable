@@ -54,6 +54,7 @@ import { OpeningSequence } from './ui/OpeningSequence.js';
 import { useMediaQuery, usePhone } from './engine/useMediaQuery.js';
 import { BottomSheet } from './ui/BottomSheet.js';
 import { BranchToggle } from './ui/BranchToggle.js';
+import { ScorePlayer } from './ui/ScorePlayer.js';
 import { Breadcrumb } from './ui/Breadcrumb.js';
 import { Dossier, type CardChipLike } from './ui/Dossier.js';
 import { CastStrip, type CastMember } from './ui/CastStrip.js';
@@ -1073,6 +1074,7 @@ function AppShell() {
           <p className="lede">{seed.pack.subtitle ?? seed.pack.title}</p>
         </div>
         <div className="app__header-controls">
+          <ScorePlayer score={seed.score} opening={showing} />
           <TourStart />
           <BranchToggle branches={seed.pack.branches} defaultBranch={seed.pack.defaultBranch} />
         </div>
