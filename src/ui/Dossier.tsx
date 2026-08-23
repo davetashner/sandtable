@@ -149,7 +149,15 @@ export function Dossier({
         <article className="dossier__beat" key={beat.id} aria-live="polite">
           <p className="dossier__date">{beat.dateLabel}</p>
           <h2 className="dossier__title">{beat.title}</h2>
-          {hero && <MediaFigure entry={hero} width={360} fit="contain" className="dossier__hero" />}
+          {hero && (
+            <MediaFigure
+              entry={hero}
+              width={360}
+              fit="contain"
+              zoomable
+              className="dossier__hero"
+            />
+          )}
           {beat.pullQuote && (
             <blockquote className="dossier__pull">
               <p>{beat.pullQuote.text}</p>
