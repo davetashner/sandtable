@@ -46,6 +46,49 @@
       "person": "person:albert-i-of-belgium"
     },
     {
+      "id": "media:person/bismarck-otto-von/portrait-1890-colorized",
+      "dir": "people/bismarck-otto-von",
+      "original": {
+        "src": "people/bismarck-otto-von/portrait-1890-colorized.png",
+        "width": 1142,
+        "height": 1377,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/bismarck-otto-von/.derived/portrait-1890-colorized.w320.webp",
+          "width": 320,
+          "height": 386,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/bismarck-otto-von/.derived/portrait-1890-colorized.w640.webp",
+          "width": 640,
+          "height": 772,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/bismarck-otto-von/.derived/portrait-1890-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1235,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1142,
+      "height": 1377,
+      "caption": "Otto von Bismarck in 1890 — the year Wilhelm II dismissed him and let his treaty with Russia lapse. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: Jacques Pilartz, Cologne, 1890; Internet Archive Book Images via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — no known copyright restrictions (Internet Archive Book Images); the photographer died in 1910",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Bismarck_Portrait(arms_folded)).jpg",
+      "focalPoint": {
+        "x": 0.45,
+        "y": 0.24
+      },
+      "person": "person:bismarck-otto-von"
+    },
+    {
       "id": "media:person/bulow-karl-von/portrait-c1916-colorized",
       "dir": "people/bulow-karl-von",
       "original": {
@@ -898,6 +941,66 @@
         "y": 0.28
       },
       "person": "person:schlieffen-alfred-von"
+    },
+    {
+      "id": "media:person/wilhelm-ii/portrait-1905",
+      "dir": "people/wilhelm-ii",
+      "original": {
+        "src": "people/wilhelm-ii/portrait-1905.png",
+        "width": 284,
+        "height": 747,
+        "type": "image/png"
+      },
+      "variants": [],
+      "width": 284,
+      "height": 747,
+      "caption": "Wilhelm II in full dress in 1905, photographed by the court photographers Reichard & Lindner and sold as a postcard — the Kaiser as he wished to be seen. Monochrome archive original.",
+      "credit": "Original photograph: Reichard & Lindner, Berlin, 1905; published by Gustav Liersch & Co; Deutsches Historisches Museum via Wikimedia Commons; public domain.",
+      "licence": "public domain — PD-old, published 1905",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Wilhelm_II._1905.jpeg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.2
+      },
+      "person": "person:wilhelm-ii"
+    },
+    {
+      "id": "media:scene/1905-wilhelm-nicholas-uniform-exchange/wilhelm-nicholas-1905-colorized",
+      "dir": "scenes/1905-wilhelm-nicholas-uniform-exchange",
+      "original": {
+        "src": "scenes/1905-wilhelm-nicholas-uniform-exchange/wilhelm-nicholas-1905-colorized.png",
+        "width": 997,
+        "height": 1578,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "scenes/1905-wilhelm-nicholas-uniform-exchange/.derived/wilhelm-nicholas-1905-colorized.w320.webp",
+          "width": 320,
+          "height": 506,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1905-wilhelm-nicholas-uniform-exchange/.derived/wilhelm-nicholas-1905-colorized.w640.webp",
+          "width": 640,
+          "height": 1013,
+          "type": "image/webp"
+        }
+      ],
+      "width": 997,
+      "height": 1578,
+      "caption": "Wilhelm II (left) in Russian uniform and his cousin Nicholas II in Prussian uniform, 1905 — the two emperors wearing each other's armies for the camera, nine years before those armies met. Colorized (AI-assisted) from a Bundesarchiv photograph.",
+      "credit": "Original photograph: Bundesarchiv, Bild 183-R43302 / CC-BY-SA 3.0 (Allgemeiner Deutscher Nachrichtendienst — Zentralbild), 1905. Colorization: Sandtable, AI-assisted, 2026, under the same CC-BY-SA 3.0 licence.",
+      "licence": "CC-BY-SA 3.0 DE — the attribution string 'Bundesarchiv, Bild 183-R43302 / CC-BY-SA 3.0' is mandatory, and the colorization inherits share-alike",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-R43302,_Kaiser_Wilhelm_II._und_Zar_Nikolaus_II..jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.35
+      }
     },
     {
       "id": "media:scene/1914-ausflug-nach-paris/railway-wagon-august-1914-colorized",

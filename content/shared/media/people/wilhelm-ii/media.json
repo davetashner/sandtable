@@ -1,0 +1,30 @@
+{
+  "$comment": "The monochrome archive original as published — see notes; a colorized version is wanted (sand-y0u.14).",
+  "id": "media:person/wilhelm-ii/portrait-1905",
+  "person": "person:wilhelm-ii",
+  "file": "portrait-1905.png",
+  "width": 284,
+  "height": 747,
+  "colorized": false,
+  "original": {
+    "description": "Full-length portrait postcard of Wilhelm II in full dress with the eagle-crested parade helmet of the Garde du Corps, sash, stars and neck orders, resting both hands on a drawn sword. The print carries the studio imprint 'Originalaufnahme der Hofphotos. Reichard & Lindner, Berlin 1905' and 'Verlag von Gustav Liersch & Co, Berlin'.",
+    "photographer": "Reichard & Lindner, Hofphotographen, Berlin",
+    "date": "1905",
+    "archive": "Deutsches Historisches Museum (LeMO), object 95007746 — via Wikimedia Commons; issued as a postcard by Gustav Liersch & Co, Berlin",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Wilhelm_II._1905.jpeg",
+    "catalog_url": "http://www.dhm.de/lemo/objekte/pict/95007746/index.html",
+    "original_dimensions": "284 × 747 (Commons file)",
+    "licence": "public domain — PD-old, published 1905"
+  },
+  "colorization": {
+    "author": "n/a",
+    "method": "n/a",
+    "licence": "underlying photograph public domain",
+    "status": "not colorized — this is the monochrome archive original, reproduced as published"
+  },
+  "content_policy": "ok — studio portrait, no gore",
+  "caption": "Wilhelm II in full dress in 1905, photographed by the court photographers Reichard & Lindner and sold as a postcard — the Kaiser as he wished to be seen. Monochrome archive original.",
+  "credit": "Original photograph: Reichard & Lindner, Berlin, 1905; published by Gustav Liersch & Co; Deutsches Historisches Museum via Wikimedia Commons; public domain.",
+  "focal_point": { "x": 0.5, "y": 0.2 },
+  "notes": "Provided by Dave 2026-08-23 alongside two colorizations, described as 'color', but this file is the unmodified Commons original: monochrome, 284 × 747. It sits below the pipeline's smallest derivative width (320 px), so it generates no WebP variants, and it is too small to carry a Person card or a hero image. Filed as the archive original; a colorized and higher-resolution version is wanted before it is placed — sand-y0u.14."
+}

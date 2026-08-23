@@ -1,5 +1,36 @@
 [
   {
+    "id": "person:bismarck-otto-von",
+    "name": "Otto von Bismarck",
+    "sortName": "Bismarck, Otto von",
+    "born": "1815-04-01",
+    "died": "1898-07-30",
+    "nationality": "DE",
+    "roles": [
+      {
+        "title": "Minister President of Prussia",
+        "from": "1862-09-23",
+        "to": "1890-03-20"
+      },
+      {
+        "title": "Chancellor of the German Empire",
+        "from": "1871-03-21",
+        "to": "1890-03-20"
+      }
+    ],
+    "summary": "United Germany in three wars and then spent twenty years insuring it against the coalition those wars invited: the League of the Three Emperors, the alliance with Austria-Hungary, and the Reinsurance Treaty of 1887 that kept a line open to St Petersburg. Wilhelm II dismissed him in March 1890 and let the treaty lapse; France and Russia allied in 1894. The two-front problem the Schlieffen Plan was written to answer is the shape Europe took after he left it.",
+    "media": ["media:person/bismarck-otto-von/portrait-1890-colorized"],
+    "sources": [
+      {
+        "source": "source:clark-2012"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates and dates of office"
+      }
+    ]
+  },
+  {
     "id": "person:moltke-helmuth-von-elder",
     "name": "Helmuth von Moltke the Elder",
     "sortName": "Moltke, Helmuth von (the Elder)",
@@ -1161,6 +1192,7 @@
       }
     ],
     "summary": "The last Russian emperor. On 29 July 1914 he ordered general mobilization, cancelled it within hours after a telegram from the Kaiser, and on 30 July let his ministers and the General Staff persuade him to order it again - the decision that, given the German deployment plan, made a European war all but certain. Overthrown in March 1917; murdered with his family at Ekaterinburg in July 1918.",
+    "media": ["media:scene/1905-wilhelm-nicholas-uniform-exchange/wilhelm-nicholas-1905-colorized"],
     "sources": [
       {
         "source": "source:clark-2012"
@@ -1238,6 +1270,10 @@
       }
     ],
     "summary": "German Emperor and nominal supreme warlord. In practice OHL made the operational decisions in 1914; the Kaiser travelled between headquarters, and came to Rupprecht's 6th Army in September expecting to ride into Nancy.",
+    "media": [
+      "media:person/wilhelm-ii/portrait-1905",
+      "media:scene/1905-wilhelm-nicholas-uniform-exchange/wilhelm-nicholas-1905-colorized"
+    ],
     "sources": [
       {
         "source": "source:herwig-2009"

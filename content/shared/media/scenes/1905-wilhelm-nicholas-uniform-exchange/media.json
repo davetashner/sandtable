@@ -1,0 +1,30 @@
+{
+  "$comment": "Bundesarchiv CC-BY-SA 3.0 DE — the attribution string is mandatory and the colorization inherits share-alike.",
+  "id": "media:scene/1905-wilhelm-nicholas-uniform-exchange/wilhelm-nicholas-1905-colorized",
+  "kind": "scene",
+  "people": ["person:wilhelm-ii", "person:nicholas-ii"],
+  "file": "wilhelm-nicholas-1905-colorized.png",
+  "width": 997,
+  "height": 1578,
+  "colorized": true,
+  "original": {
+    "description": "Bundesarchiv catalogue description: 'Kaiser Wilhelm II. von Deutschland (l. in russischer Uniform) und Zar Nikolaus II. von Russland in preußischer Uniform.' — Wilhelm II of Germany, on the left, in the uniform of a Russian regiment, and Nicholas II of Russia in Prussian uniform, standing full length side by side, each with a sword.",
+    "photographer": "not identified in the Bundesarchiv record",
+    "date": "1905",
+    "archive": "Bundesarchiv, Bild 183-R43302 (Allgemeiner Deutscher Nachrichtendienst — Zentralbild)",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-R43302,_Kaiser_Wilhelm_II._und_Zar_Nikolaus_II..jpg",
+    "original_dimensions": "1099 × 1741",
+    "licence": "CC-BY-SA 3.0 DE — the attribution string 'Bundesarchiv, Bild 183-R43302 / CC-BY-SA 3.0' is mandatory, and the colorization inherits share-alike"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the Bundesarchiv original, 2026",
+    "licence": "CC-BY-SA 3.0 DE, inherited from the underlying Bundesarchiv photograph — share-alike applies to this colorization",
+    "status": "ok — label 'colorized (AI-assisted)'. Documented colours: Russian general officers' dark-green-to-blue tunic with red facings and gold shoulder cords on Wilhelm, Prussian dark-blue with the gilt-and-eagle spiked helmet on Nicholas. The individual orders, sashes and ribbon colours are the colorizer's reading rather than taken from a reference — flag for the image review (sand-y0u.7)."
+  },
+  "content_policy": "ok — two figures posed for a portrait, no gore",
+  "caption": "Wilhelm II (left) in Russian uniform and his cousin Nicholas II in Prussian uniform, 1905 — the two emperors wearing each other's armies for the camera, nine years before those armies met. Colorized (AI-assisted) from a Bundesarchiv photograph.",
+  "credit": "Original photograph: Bundesarchiv, Bild 183-R43302 / CC-BY-SA 3.0 (Allgemeiner Deutscher Nachrichtendienst — Zentralbild), 1905. Colorization: Sandtable, AI-assisted, 2026, under the same CC-BY-SA 3.0 licence.",
+  "focal_point": { "x": 0.5, "y": 0.35 },
+  "notes": "Provided by Dave 2026-08-23. The photograph is often associated with the two emperors' meeting at Björkö in July 1905; the Bundesarchiv record itself gives only the year, so the caption does not claim the occasion. Natural placement is the July Crisis chain (the Willy–Nicky correspondence, sand-1l0.23, shipped in PR #60) and the prologue; used_by is deliberately empty because the validator warns on ids that do not yet exist for a placement that has not been authored."
+}
