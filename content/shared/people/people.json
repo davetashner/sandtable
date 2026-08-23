@@ -1286,5 +1286,66 @@
         "note": "dates"
       }
     ]
+  },
+  {
+    "id": "person:michel-victor",
+    "name": "Victor Michel",
+    "sortName": "Michel, Victor",
+    "born": "1850-06-09",
+    "died": "1937-03-05",
+    "nationality": "FR",
+    "roles": [
+      {
+        "title": "Vice-President of the Conseil superieur de la guerre (commander-in-chief designate)",
+        "from": "1910-01",
+        "to": "1911-07"
+      },
+      {
+        "title": "Military Governor of Paris",
+        "from": "1912",
+        "to": "1914-08-26"
+      }
+    ],
+    "summary": "The French commander-in-chief designate who, in February 1911, proposed meeting a German attack through Belgium: a deployment reaching north to Lille and Mezieres, with reserve regiments paired to active ones to man the extra front. The Conseil superieur de la guerre rejected the plan as defensive and unaffordable in manpower, and he was moved to the Paris governorship within months; his successors built Plan XVII on the opposite assumption. He was relieved of Paris on 26 August 1914 and replaced by Gallieni.",
+    "sources": [
+      {
+        "source": "source:doughty-2005"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:grandmaison-louis-de",
+    "name": "Louis de Grandmaison",
+    "sortName": "Grandmaison, Louis Loyzeau de",
+    "born": "1861-02-15",
+    "died": "1915-02-18",
+    "nationality": "FR",
+    "roles": [
+      {
+        "title": "Head of the Troisieme Bureau (operations), French General Staff",
+        "from": "1908",
+        "to": "1911"
+      }
+    ],
+    "summary": "Staff officer whose lectures of February 1911 gave the French doctrine of the offensive its slogan and its reputation. He argued that in an encounter battle the side that attacks first with everything imposes its will, and that caution costs more lives than audacity - the offensive a outrance written into the 1913 regulations and into the way French corps fought in August 1914. He was killed commanding a brigade in February 1915. Whether his lectures made the doctrine or merely named it is argued.",
+    "sources": [
+      {
+        "source": "source:doughty-2005"
+      },
+      {
+        "source": "source:greenhalgh-2014"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
   }
 ]
