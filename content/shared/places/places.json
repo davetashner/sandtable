@@ -1217,5 +1217,61 @@
         "note": "coordinates"
       }
     ]
+  },
+  {
+    "id": "place:amance",
+    "name": "Amance",
+    "kind": "village",
+    "lngLat": [6.283, 48.768],
+    "country": "France",
+    "notes": "Village and hill on the Grand Couronné north-east of Nancy; the observation point of the whole position and the target of the heaviest German bombardment on 6 September 1914.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:champenoux",
+    "name": "Champenoux",
+    "kind": "village",
+    "lngLat": [6.354, 48.727],
+    "country": "France",
+    "notes": "Village and forest east of Nancy, fought over throughout the German attacks of 4–10 September 1914.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:sainte-genevieve",
+    "name": "Sainte-Geneviève",
+    "kind": "village",
+    "lngLat": [6.086, 48.849],
+    "country": "France",
+    "notes": "Village on the Moselle heights at the northern end of the Grand Couronné position.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:remereville",
+    "name": "Réméréville",
+    "kind": "village",
+    "lngLat": [6.353, 48.687],
+    "country": "France",
+    "notes": "Village east of Nancy from which German heavy guns shelled the city on 9 September 1914.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
   }
 ]

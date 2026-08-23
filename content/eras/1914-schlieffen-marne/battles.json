@@ -5630,5 +5630,166 @@
         "source": "source:herwig-2009"
       }
     ]
+  },
+  {
+    "id": "1914:grand-couronne",
+    "title": "The Grand Couronné de Nancy: the hinge holds",
+    "timeRange": {
+      "start": "1914-08-24T00:00:00Z",
+      "end": "1914-09-13T00:00:00Z"
+    },
+    "region": [5.95, 48.5, 6.6, 48.95],
+    "camera": {
+      "center": [6.27, 48.74],
+      "zoom": 10
+    },
+    "place": "place:nancy",
+    "summary": "The heights east and north of Nancy, held by Castelnau's 2nd Army from the retreat out of Lorraine until the Germans gave them up after the Marne. A chapter, not a zoom-in: static markers on the ground the fighting was for, with the campaign tokens still moving on their campaign routes.",
+    "outcome": "The position held through Rupprecht's offensive of 4–10 September while Castelnau sent two of his corps west by rail, and the German 6th and 7th Armies — the strongest concentration of German force in the west after the right wing — spent September attacking fortified heights instead of reinforcing the wheel. The Germans withdrew behind the Seille on 11–12 September; the line there barely moved again until 1918.",
+    "participants": ["1914:army-fr-2", "1914:army-de-6", "1914:army-de-7"],
+    "events": [
+      {
+        "id": "1914:grand-couronne-event-dig-in",
+        "title": "The 2nd Army digs in on the heights",
+        "at": "1914-08-24T12:00:00Z",
+        "kind": "movement",
+        "significance": "major",
+        "place": "place:amance",
+        "summary": "Thrown out of Lorraine at Morhange, Castelnau's army falls back onto the Grand Couronné — the ridge of wooded hills covering Nancy from the east — and entrenches. Joffre had wanted Nancy covered, not held to the last; Castelnau holds it.[^afgg-1-1]",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:doughty-2005"
+          }
+        ]
+      },
+      {
+        "id": "1914:grand-couronne-event-corps-west",
+        "title": "Two corps leave for the west by rail",
+        "at": "1914-08-24T18:00:00Z",
+        "kind": "movement",
+        "significance": "major",
+        "place": "place:nancy",
+        "summary": "XVIII Corps has already gone to the 5th Army on the Sambre; IX Corps entrains for the 4th Army. Castelnau is to hold the hinge with what is left — the argument the whole pack turns on, seen from the other end.[^afgg-1-1] [^doughty-2005]",
+        "links": {
+          "formations": ["1914:corps-fr-ix", "1914:corps-fr-xviii"]
+        },
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:doughty-2005"
+          }
+        ]
+      },
+      {
+        "id": "1914:grand-couronne-event-offensive",
+        "title": "Rupprecht's offensive opens",
+        "at": "1914-09-04T13:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:champenoux",
+        "summary": "The German 6th Army attacks the whole position, with the main weight against the forest of Champenoux and the Amance plateau, on the day Kluck's turn south-east is being read at Paris.[^afgg-1-1] [^herwig-2009]",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:grand-couronne-event-amance",
+        "title": "The bombardment of the Amance plateau",
+        "at": "1914-09-06T08:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:amance",
+        "summary": "More than three thousand heavy shells fall on the Amance plateau in eight hours; the infantry attacks that follow do not carry it. It is the heaviest concentration of German artillery in Lorraine, fired on the day the Marne begins two hundred kilometres to the west.[^afgg-1-1]",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          }
+        ]
+      },
+      {
+        "id": "1914:grand-couronne-event-sainte-genevieve",
+        "title": "Sainte-Geneviève",
+        "at": "1914-09-07T05:00:00Z",
+        "kind": "battle",
+        "significance": "minor",
+        "place": "place:sainte-genevieve",
+        "summary": "The last coordinated German assault, on the northern hinge of the position above the Moselle. It is badly put together, goes in piecemeal, and fails.[^afgg-1-1]",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          }
+        ]
+      },
+      {
+        "id": "1914:grand-couronne-event-nancy-shelled",
+        "title": "Nancy shelled from Réméréville",
+        "at": "1914-09-09T06:00:00Z",
+        "kind": "battle",
+        "significance": "minor",
+        "place": "place:remereville",
+        "summary": "Sixty-seven heavy shells fall on the centre of Nancy, killing eight civilians. The bombardment is cover: the guns are firing to mask a withdrawal that has already begun.[^afgg-1-1] [^wikipedia-en]",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:wikipedia-en",
+            "note": "shell count and civilian dead, from the French account; verify against AFGG I/2 in the sourcing pass (sand-1l0.16)"
+          }
+        ]
+      },
+      {
+        "id": "1914:grand-couronne-event-withdrawal",
+        "title": "The Germans go back behind the Seille",
+        "at": "1914-09-12T06:00:00Z",
+        "kind": "movement",
+        "significance": "major",
+        "place": "place:champenoux",
+        "summary": "The 6th Army pulls back east of the Seille, and French patrols find the forest empty. The front settles on that line and stays there, almost unchanged, until 1918.[^afgg-1-1] [^tyng-1935]",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:tyng-1935"
+          }
+        ]
+      }
+    ],
+    "links": {
+      "people": [
+        "person:castelnau-edouard-de",
+        "person:rupprecht-of-bavaria",
+        "person:balfourier-maurice",
+        "person:foch-ferdinand",
+        "person:joffre-joseph",
+        "person:wilhelm-ii"
+      ],
+      "battles": ["1914:lorraine"]
+    },
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:doughty-2005"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tyng-1935"
+      }
+    ]
   }
 ]

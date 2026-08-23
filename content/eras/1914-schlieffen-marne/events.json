@@ -766,5 +766,32 @@
         "note": "date of Sarrail's appointment and Ruffey's post-war complaint; verify against Joffre's memoirs in the sourcing pass (sand-1l0.16)"
       }
     ]
+  },
+  {
+    "id": "1914:event-grand-couronne",
+    "title": "The Grand Couronné: Nancy holds",
+    "timeRange": {
+      "start": "1914-09-04T13:00:00Z",
+      "end": "1914-09-13T00:00:00Z"
+    },
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:nancy",
+    "summary": "Rupprecht's 6th Army attacks the heights covering Nancy for a week while the Marne is fought in the west. The position holds, and the two German armies in Lorraine spend the decisive week attacking entrenchments instead of reinforcing the wheel.[^afgg-1-1] [^herwig-2009]",
+    "links": {
+      "battles": ["1914:grand-couronne"],
+      "people": ["person:castelnau-edouard-de", "person:rupprecht-of-bavaria"]
+    },
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:doughty-2005"
+      }
+    ]
   }
 ]

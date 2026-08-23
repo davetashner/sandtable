@@ -225,5 +225,27 @@
       "casualties": ["1914:casualties-22-august"]
     },
     "sources": [{ "source": "source:zuber-2007" }, { "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "1914:vignette-castelnau-nancy",
+    "title": "Castelnau is told he may give up Nancy",
+    "at": "1914-09-06T21:00:00Z",
+    "lngLat": [6.184, 48.692],
+    "voice": "\u00c9douard de Castelnau, 2nd Army",
+    "kind": "reconstruction",
+    "text": "On the evening of the 6th, with the Amance plateau under three thousand shells and the Marne beginning two hundred kilometres away, Castelnau puts to GQG the question a commander is not supposed to ask: whether the army should come back behind the Meurthe and let Nancy go. Joffre tells him to hold where he is. He holds. He had been told on 20 August, in the middle of the retreat from Morhange, that one of his sons had been killed there.[^afgg-1-1] [^wikipedia-en]",
+    "links": {
+      "battles": ["1914:grand-couronne"],
+      "places": ["place:nancy", "place:amance"],
+      "people": ["person:castelnau-edouard-de", "person:joffre-joseph"]
+    },
+    "sources": [
+      { "source": "source:afgg-1-1" },
+      { "source": "source:doughty-2005" },
+      {
+        "source": "source:wikipedia-en",
+        "note": "the proposal to give up Nancy and the death of Castelnau's son at Morhange; accounts differ on how near he came to withdrawing \u2014 verify in the sourcing pass (sand-1l0.16)"
+      }
+    ]
   }
 ]
