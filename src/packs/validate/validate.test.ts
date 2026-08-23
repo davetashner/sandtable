@@ -264,6 +264,32 @@ describe('validateContent', () => {
     );
   });
 
+  it('checks the backstory: chain.focus must be a battle, chain.card must resolve', () => {
+    const raw = fixture();
+    const pack = raw.packs[0]!.pack.data as Record<string, unknown>;
+    pack['opening'] = {
+      headline: ['August 1914.'],
+      lede: 'A bet about time.',
+      chain: { focus: '1914:no-such-chapter', card: '1914:no-such-link' },
+    };
+    const errs = validateContent(raw).errors.map((e) => e.message);
+    expect(errs).toContainEqual(expect.stringMatching(/opening\.chain\.focus/));
+    expect(errs).toContainEqual(expect.stringMatching(/opening\.chain\.card/));
+  });
+
+  it('warns about a backstory that goes nowhere', () => {
+    const raw = fixture();
+    const pack = raw.packs[0]!.pack.data as Record<string, unknown>;
+    pack['opening'] = {
+      headline: ['August 1914.'],
+      lede: 'A bet about time.',
+      chain: { label: 'How did it start?' },
+    };
+    expect(validateContent(raw).warnings.map((w) => w.message)).toContainEqual(
+      expect.stringMatching(/opening\.chain has neither card nor focus/),
+    );
+  });
+
   it('accepts an opening whose claim and citations resolve', () => {
     const raw = fixture();
     const pack = raw.packs[0]!.pack.data as Record<string, unknown>;

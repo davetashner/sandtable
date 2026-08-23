@@ -20,8 +20,17 @@ export type MapTheme = 'light' | 'dark';
 /** Name of the vector source every basemap layer reads from. */
 export const BASEMAP_SOURCE = 'basemap';
 
-/** Default archive: the Western-Europe z≤10 extract (scripts/tiles-extract.sh). */
-export const DEFAULT_TILES_URL = '/assets/tiles/western-europe-z10.pmtiles';
+/**
+ * Default archive: the Central-Europe z≤10 extract (scripts/tiles-extract.sh).
+ *
+ * It replaced the narrower western-europe extract (bbox −1.5,46 → 10.5,53), which
+ * stopped short of two chapters the pack now carries — Tannenberg in East
+ * Prussia and the July Crisis at Sarajevo both fell outside it and drew as an
+ * empty field with place labels on the borders layer. PMTiles is range-read, so
+ * a wider archive costs storage, not bandwidth: a viewer still fetches only the
+ * tiles under the viewport.
+ */
+export const DEFAULT_TILES_URL = '/assets/tiles/central-europe-z10.pmtiles';
 
 /** Palette overrides per theme — desaturated land and sea, quiet roads, brass-ish labels. */
 export const MAP_PALETTE: Record<MapTheme, Partial<Theme>> = {

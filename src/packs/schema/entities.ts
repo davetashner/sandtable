@@ -448,6 +448,18 @@ export const Opening = z
       .strict()
       .optional()
       .describe('One click from the premise to the evidence behind it'),
+    chain: z
+      .object({
+        label: z.string().min(1).optional().describe('"How did it start?"'),
+        hint: z.string().min(1).optional().describe('Sub-label: "the chain of events"'),
+        focus: Id.optional().describe(
+          'Chapter or zoom-in the backstory establishes itself in: the map goes there, so a chain that begins somewhere other than the campaign front is seen where it happened',
+        ),
+        card: Id.optional().describe('Card to open — typically the first link of the chain'),
+      })
+      .strict()
+      .optional()
+      .describe('Where the pack’s backstory lives (sand-1l0.32)'),
     sources: Sources.optional(),
   })
   .strict();

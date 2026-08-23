@@ -414,6 +414,33 @@
           ],
           "additionalProperties": false
         },
+        "chain": {
+          "description": "Where the pack’s backstory lives (sand-1l0.32)",
+          "type": "object",
+          "properties": {
+            "label": {
+              "description": "\"How did it start?\"",
+              "type": "string",
+              "minLength": 1
+            },
+            "hint": {
+              "description": "Sub-label: \"the chain of events\"",
+              "type": "string",
+              "minLength": 1
+            },
+            "focus": {
+              "description": "Chapter or zoom-in the backstory establishes itself in: the map goes there, so a chain that begins somewhere other than the campaign front is seen where it happened",
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$"
+            },
+            "card": {
+              "description": "Card to open — typically the first link of the chain",
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$"
+            }
+          },
+          "additionalProperties": false
+        },
         "sources": {
           "type": "array",
           "items": {

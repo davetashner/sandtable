@@ -841,6 +841,13 @@ function checkOpening(ctx: Ctx, path: string, pack: PackT) {
     'person',
   ];
   if (o.claim) ctx.ref(path, pack.id, o.claim.card, CARD_KINDS, 'opening.claim.card');
+  if (o.chain) {
+    if (o.chain.card) ctx.ref(path, pack.id, o.chain.card, CARD_KINDS, 'opening.chain.card');
+    // The backstory's map identity: a chapter or zoom-in the camera can go to.
+    if (o.chain.focus) ctx.ref(path, pack.id, o.chain.focus, ['battle'], 'opening.chain.focus');
+    if (!o.chain.card && !o.chain.focus)
+      ctx.warn(path, 'opening.chain has neither card nor focus, so it does nothing', pack.id);
+  }
   checkCitations(ctx, path, pack.id, o.sources, false, 'opening.sources');
   checkFootnotes(ctx, path, pack.id, o.lede, o.sources ?? [], 'opening.lede');
   if (o.camera) {

@@ -139,3 +139,25 @@ describe('OpeningSequence', () => {
     expect(screen.getByRole('button', { name: /Explore the map/ })).toBeInTheDocument();
   });
 });
+
+describe('the backstory action (sand-1l0.32)', () => {
+  it('uses the pack\'s own label and hint when it declares them', () => {
+    const onChain = vi.fn();
+    setup({ onChain, chainLabel: 'Where did it begin?', chainHint: 'thirty-seven days' });
+    const button = screen.getByRole('button', { name: /Where did it begin\?/ });
+    expect(button).toBeTruthy();
+    expect(button.textContent).toContain('thirty-seven days');
+    fireEvent.click(button);
+    expect(onChain).toHaveBeenCalledOnce();
+  });
+
+  it('falls back to a generic label for a pack that declares none', () => {
+    setup({ onChain: vi.fn() });
+    expect(screen.getByRole('button', { name: /How did it start\?/ })).toBeTruthy();
+  });
+
+  it('shows no backstory action when the pack has none', () => {
+    setup();
+    expect(screen.queryByRole('button', { name: /How did it start\?/ })).toBeNull();
+  });
+});

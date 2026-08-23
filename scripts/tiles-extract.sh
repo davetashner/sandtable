@@ -4,7 +4,7 @@
 # ODbL; the Protomaps build is a free daily artifact — never hotlink it, copy.
 #
 #   scripts/tiles-extract.sh <name> <west,south,east,north> <maxzoom> [build-date]
-#   scripts/tiles-extract.sh western-europe-z10 -1.5,46,10.5,53 10 20260821
+#   scripts/tiles-extract.sh central-europe-z10 -1.5,42,24,56 10 20260821
 #
 # Needs the pmtiles CLI (brew install pmtiles) and the sandtable-deployer AWS
 # profile. The app reads /assets/tiles/<name>.pmtiles (see
@@ -12,7 +12,7 @@
 # docs/decisions/0002-geography.md.
 set -euo pipefail
 
-name=${1:?name, e.g. western-europe-z10}
+name=${1:?name, e.g. central-europe-z10}
 bbox=${2:?bbox west,south,east,north}
 maxzoom=${3:?maxzoom}
 build=${4:-20260821}

@@ -614,6 +614,12 @@ interactive. It is optional; a pack without one simply opens on the map.
     "label": "Where does “forty days” come from?",
     "card": "1914:clock-plan-timetable"
   },
+  "chain": {
+    "label": "How did it start?",
+    "hint": "thirty-seven days, from Sarajevo",
+    "focus": "1914:july-crisis",
+    "card": "1914:link-sarajevo-to-vienna"
+  },
   "sources": [{ "source": "source:herwig-2009" }]
 }
 ```
@@ -629,6 +635,12 @@ interactive. It is optional; a pack without one simply opens on the map.
   is read, then hands back to the ordinary region fit.
 - Do not write the ways on: the engine offers the tour when the pack has one,
   the causal chain when it has links, and always plain exploration.
+- **Name your backstory in `chain`.** Without it the engine guesses at the
+  first causal link, which is wherever `links.json` happens to start — in this
+  pack that was the wheel to the Marne, the _end_ of the story. `card` names
+  the link to open; `focus` names the chapter or zoom-in the backstory lives
+  in, so the map goes to where the chain begins rather than staying on the
+  campaign front. `label` and `hint` let a pack word the action itself.
 
 ## 9. Add an image
 
