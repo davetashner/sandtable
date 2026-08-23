@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { Battle } from '../packs/schema/index.js';
 import { DAY, HOUR } from './clock.js';
-import { battleRange, enterNow, exitNow, resolveFocus } from './focus.js';
+import { battleRange, enterNow, exitNow, movementSourceFor, resolveFocus } from './focus.js';
 
 const marne: Battle = {
   id: '1914:marne',
@@ -37,5 +37,29 @@ describe('focus', () => {
     expect(resolveFocus([marne], undefined)).toBeUndefined();
     expect(range.end - range.start).toBe(7 * DAY);
     expect(HOUR * 24).toBe(DAY);
+  });
+});
+
+describe('movementSourceFor', () => {
+  const campaign = {
+    routes: [{ id: 'r-army' }],
+    formations: [{ id: 'army' }],
+    sides: [{ id: 'de', name: 'DE' }],
+  } as unknown as Parameters<typeof movementSourceFor>[1];
+  it('returns the campaign source when there is no focus or the battle has no routes', () => {
+    expect(movementSourceFor(undefined, campaign)).toBe(campaign);
+    const bare = { id: '1914:x', routes: [] } as unknown as Parameters<typeof movementSourceFor>[0];
+    expect(movementSourceFor(bare, campaign)).toBe(campaign);
+  });
+  it('animates the battle routes over the battle formations plus the campaign ones inside a zoom-in', () => {
+    const battle = {
+      id: '1914:marne',
+      routes: [{ id: 'r-corps' }],
+      formations: [{ id: 'div' }],
+    } as unknown as Parameters<typeof movementSourceFor>[0];
+    const src = movementSourceFor(battle, campaign);
+    expect(src.routes.map((r) => r.id)).toEqual(['r-corps']);
+    expect(src.formations.map((f) => f.id)).toEqual(['div', 'army']);
+    expect(src.sides).toBe(campaign.sides);
   });
 });

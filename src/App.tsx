@@ -27,7 +27,14 @@ import {
 } from './engine/ClockContext.js';
 import { selectBeat } from './engine/beats.js';
 import { linksTouching } from './engine/causal.js';
-import { battleRange, enterNow, exitNow, resolveFocus, type FocusMemory } from './engine/focus.js';
+import {
+  battleRange,
+  enterNow,
+  exitNow,
+  movementSourceFor,
+  resolveFocus,
+  type FocusMemory,
+} from './engine/focus.js';
 import { seed } from './packs/seed.js';
 import { usePhone } from './engine/useMediaQuery.js';
 import { BottomSheet } from './ui/BottomSheet.js';
@@ -222,6 +229,8 @@ function MapSection() {
   const branch = useBranch();
   const focus = useFocus();
   const hypothetical = branch.kind === 'counterfactual';
+  // Inside a zoom-in with its own routes the map animates those (sand-1l0.10).
+  const movement = useMemo(() => movementSourceFor(focus, MOVEMENT_SOURCE), [focus]);
   return (
     <section className="surface surface--map" data-hypothetical={hypothetical || undefined}>
       {hypothetical && <p className="hypothetical-ribbon">Hypothetical · {branch.title}</p>}
@@ -230,7 +239,7 @@ function MapSection() {
           camera={seed.pack.camera}
           borderYear={seed.pack.borderYear}
           branch={branch}
-          movement={MOVEMENT_SOURCE}
+          movement={movement}
           region={seed.pack.region}
           focusRegion={focus?.region}
           places={seed.places}

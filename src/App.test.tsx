@@ -42,9 +42,14 @@ describe('App shell', () => {
     );
     // the clock now runs on the battle's own range: day 0 of the battle = 5 September
     expect(screen.getByText('Day 0')).toBeInTheDocument();
-    expect(screen.getByText(/5 September 1914/)).toBeInTheDocument();
     expect(
-      await screen.findByRole('heading', { level: 2, name: /Inside the Marne/ }),
+      screen.getByText(/5 September 1914/, { selector: '.timeline__date' }),
+    ).toBeInTheDocument();
+    expect(
+      await screen.findByRole('heading', {
+        level: 2,
+        name: /The flank: Gronau meets Maunoury on the Ourcq/,
+      }),
     ).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Back to the campaign' }));
     expect(window.location.search).not.toContain('focus=');

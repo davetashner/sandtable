@@ -5,7 +5,7 @@
  * slot in the URL is the source of truth (deep-linkable); this module is the
  * pure logic the React controller applies.
  */
-import type { Battle } from '../packs/schema/index.js';
+import type { Battle, Formation, Route, Side } from '../packs/schema/index.js';
 import type { ClockRange } from './clock.js';
 
 export interface FocusMemory {
@@ -40,4 +40,28 @@ export function exitNow(memory: FocusMemory, battleNow: number): number {
 /** The battle a focus id names, if it is one of the pack's. */
 export function resolveFocus(battles: Battle[], focus: string | undefined): Battle | undefined {
   return focus ? battles.find((b) => b.id === focus) : undefined;
+}
+
+export interface MovementSourceLike {
+  routes: Route[];
+  formations: Formation[];
+  sides: Side[];
+}
+
+/**
+ * What the map animates: inside a zoom-in that carries its own routes, the
+ * battle's routes over the battle's formations plus the campaign's (battle
+ * routes may move campaign corps); otherwise the campaign source unchanged.
+ * Pure, so MapSection can memoise it (sand-1l0.10).
+ */
+export function movementSourceFor(
+  focus: Battle | undefined,
+  campaign: MovementSourceLike,
+): MovementSourceLike {
+  if (!focus?.routes?.length) return campaign;
+  return {
+    routes: focus.routes,
+    formations: [...(focus.formations ?? []), ...campaign.formations],
+    sides: campaign.sides,
+  };
 }
