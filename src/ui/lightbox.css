@@ -1,0 +1,82 @@
+/* Full-size portrait (sand-neh.10). Native <dialog>, so the backdrop, focus
+   trap and Escape are the platform's; this only has to look right. */
+
+.lightbox {
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md, 10px);
+  background: var(--panel);
+  color: var(--ink);
+  max-width: min(92vw, 760px);
+  max-height: 92vh;
+  overflow: auto;
+  box-shadow: var(--shadow);
+}
+
+.lightbox::backdrop {
+  /* Dark enough to isolate the picture in either theme. */
+  background: rgb(0 0 0 / 68%);
+}
+
+.lightbox__inner {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+}
+
+.lightbox__img {
+  display: block;
+  /* Hug the picture rather than filling the panel: a tall portrait in a wide
+     frame would otherwise sit between two empty bands. */
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  /* The card shows a crop; here the whole picture, never cut. */
+  max-height: 74vh;
+  margin-inline: auto;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+}
+
+.lightbox__caption {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.lightbox__close {
+  justify-self: end;
+  appearance: none;
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill, 999px);
+  background: var(--panel-2);
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.lightbox__close:hover {
+  color: var(--ink);
+}
+
+/* The image itself is the button in the card; it should read as one. */
+.media__zoom {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  line-height: 0;
+}
+
+.media__zoom:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
