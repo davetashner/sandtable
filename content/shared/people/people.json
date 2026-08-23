@@ -824,5 +824,88 @@
         "note": "dates"
       }
     ]
+  },
+  {
+    "id": "person:beseler-hans-von",
+    "name": "Hans von Beseler",
+    "sortName": "Beseler, Hans von",
+    "born": "1850-04-27",
+    "died": "1921-12-20",
+    "nationality": "DE",
+    "roles": [
+      {
+        "title": "Commanding General, III Reserve Corps",
+        "from": "1914-08-02",
+        "to": "1915-08"
+      },
+      {
+        "title": "Governor-General of Warsaw",
+        "from": "1915-08",
+        "to": "1918-11"
+      }
+    ],
+    "summary": "Engineer general recalled from retirement to command the III Reserve Corps; turned off the wheel on 20 August to mask Antwerp, besieged and took the fortress in October 1914, and later governed occupied Poland.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:zwehl-hans-von",
+    "name": "Hans von Zwehl",
+    "sortName": "Zwehl, Hans von",
+    "born": "1851-04-27",
+    "died": "1926-05-18",
+    "nationality": "DE",
+    "roles": [
+      {
+        "title": "Commanding General, VII Reserve Corps",
+        "from": "1914-08-02",
+        "to": "1916-08"
+      }
+    ],
+    "summary": "Commander of the VII Reserve Corps: besieged Maubeuge from 25 August to 7 September 1914, then force-marched the corps to the Chemin des Dames in time to close the gap between the 1st and 2nd Armies on 13 September — a day after the Marne was lost.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:fournier-joseph",
+    "name": "Joseph Anthelme Fournier",
+    "sortName": "Fournier, Joseph",
+    "born": "1854-03-15",
+    "died": "1928-06-23",
+    "nationality": "FR",
+    "roles": [
+      {
+        "title": "Governor of the fortified position of Maubeuge",
+        "from": "1914-08-02",
+        "to": "1914-09-08"
+      }
+    ],
+    "summary": "Governor of Maubeuge; held the fortress against the VII Reserve Corps and the siege guns from 25 August to 7 September, longer than Liège or Namur, was court-martialled for the surrender like the other governors who had capitulated — and acquitted in May 1920.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates; the 1920 acquittal (fr.wikipedia)"
+      }
+    ]
   }
 ]
