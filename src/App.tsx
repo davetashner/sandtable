@@ -66,7 +66,7 @@ import { SupplyGauges } from './ui/SupplyGauges.js';
 import { SupplyCardView } from './ui/SupplyCardView.js';
 import { CasualtyCardView } from './ui/CasualtyCardView.js';
 import { HumanCostLine } from './ui/HumanCostLine.js';
-import { vignettesFor } from './engine/human.js';
+import { vignetteNear, vignettesFor } from './engine/human.js';
 import { ClockCardView } from './ui/ClockCardView.js';
 import { decisionCrossed } from './engine/decisions.js';
 import { mediaById, portraitFor } from './packs/media-index.js';
@@ -1045,6 +1045,15 @@ function AppShell() {
   // While the premise is up, the app behind it is inert: nothing under the
   // dialog takes focus or a click (sand-1l0.26).
   const { showing } = useOpening();
+  // The score's bed follows the vignettes, not the dossier: it marks the
+  // moment a first-person voice arrives, wherever the reader is looking.
+  const { now } = useClock();
+  const { branch: branchId } = useViewState();
+  const vignetteMoment = vignetteNear(
+    seed.vignettes,
+    now,
+    branchId ?? seed.pack.defaultBranch,
+  );
   return (
     <div className="app" inert={showing || undefined}>
       <header className="app__header">
@@ -1074,7 +1083,7 @@ function AppShell() {
           <p className="lede">{seed.pack.subtitle ?? seed.pack.title}</p>
         </div>
         <div className="app__header-controls">
-          <ScorePlayer score={seed.score} opening={showing} />
+          <ScorePlayer score={seed.score} opening={showing} vignette={vignetteMoment} />
           <TourStart />
           <BranchToggle branches={seed.pack.branches} defaultBranch={seed.pack.defaultBranch} />
         </div>

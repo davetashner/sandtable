@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { cueFor, cuesInScore } from './score.js';
+import { bedFor, cueFor, cuesInScore } from './score.js';
 import type { ScoreEntry } from '../packs/schema/index.js';
 import scoreJson from '../../content/eras/1914-schlieffen-marne/score.json';
 import { ScoreEntry as ScoreEntrySchema } from '../packs/schema/index.js';
@@ -57,6 +57,44 @@ describe('cueFor', () => {
   });
 });
 
+describe('branches and beds', () => {
+  const withBranch: ScoreEntry[] = [
+    { branch: '1914:schlieffen-concept', cue: 'cue:h' },
+    { focus: '1914:marne', cue: 'cue:f' },
+    { from: '1914-08-16T00:00:00Z', to: '1914-09-05T00:00:00Z', cue: 'cue:e' },
+    { vignette: true, cue: 'cue:bed' },
+  ];
+
+  it('lets a counterfactual branch outrank the chapter in focus', () => {
+    const v = cueFor(withBranch, {
+      t: t('1914-09-07T00:00:00Z'),
+      focus: '1914:marne',
+      branch: '1914:schlieffen-concept',
+    });
+    expect(v.cue).toBe('cue:h');
+  });
+
+  it('returns to the ordinary cue on the historical branch', () => {
+    expect(
+      cueFor(withBranch, { t: t('1914-08-18T00:00:00Z'), branch: '1914:historical' }).cue,
+    ).toBe('cue:e');
+  });
+
+  it('never lets a branch or bed entry win a time-window contest', () => {
+    expect(cueFor(withBranch, { t: t('1914-08-18T00:00:00Z') }).cue).toBe('cue:e');
+  });
+
+  it('offers the bed only while a vignette is on screen', () => {
+    expect(bedFor(withBranch, { t: 0, vignette: true })).toBe('cue:bed');
+    expect(bedFor(withBranch, { t: 0 })).toBeUndefined();
+  });
+
+  it('has no bed when the score does not name one', () => {
+    expect(bedFor([{ from: 'a', to: 'b', cue: 'cue:e' } as ScoreEntry], { t: 0, vignette: true }))
+      .toBeUndefined();
+  });
+});
+
 describe('the pack score', () => {
   const score = ScoreEntrySchema.array().parse(scoreJson);
 
@@ -76,6 +114,23 @@ describe('the pack score', () => {
     expect(cueFor(score, { t: t('1914-08-22T12:00:00Z') }).silent).toBe(true);
     expect(cueFor(score, { t: t('1914-08-21T12:00:00Z') }).silent).toBe(false);
     expect(cueFor(score, { t: t('1914-08-23T12:00:00Z') }).silent).toBe(false);
+  });
+
+  it('sends both counterfactual branches to the other road', () => {
+    for (const b of ['1914:schlieffen-concept', '1914:schlieffen-success']) {
+      const v = cueFor(score, { t: t('1914-09-07T12:00:00Z'), branch: b });
+      expect(v.cue, `${b} has no cue`).toBe('cue:the-other-road');
+    }
+  });
+
+  it('names a bed that is actually a bed', async () => {
+    const { audioIndex } = await import('../packs/audio-index.js');
+    const id = bedFor(score, { t: 0, vignette: true });
+    expect(id).toBeTruthy();
+    const entry = audioIndex.entries.find((e) => e.id === id);
+    expect(entry?.role).toBe('bed');
+    // A bed that is not quieter than the cue it joins would fight it.
+    expect(entry?.mixDb).toBeLessThan(0);
   });
 
   it('names only cues that exist in the audio registry', async () => {
