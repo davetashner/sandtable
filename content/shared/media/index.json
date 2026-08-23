@@ -728,6 +728,49 @@
       "person": "person:maunoury-michel-joseph"
     },
     {
+      "id": "media:person/moltke-helmuth-von-elder/portrait-1870s-colorized",
+      "dir": "people/moltke-helmuth-von-elder/portrait-1870s-colorized",
+      "original": {
+        "src": "people/moltke-helmuth-von-elder/portrait-1870s-colorized/portrait-1870s-colorized.png",
+        "width": 1083,
+        "height": 1452,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/moltke-helmuth-von-elder/portrait-1870s-colorized/.derived/portrait-1870s-colorized.w320.webp",
+          "width": 320,
+          "height": 429,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/moltke-helmuth-von-elder/portrait-1870s-colorized/.derived/portrait-1870s-colorized.w640.webp",
+          "width": 640,
+          "height": 858,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/moltke-helmuth-von-elder/portrait-1870s-colorized/.derived/portrait-1870s-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1373,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1083,
+      "height": 1452,
+      "caption": "Helmuth von Moltke the Elder (1800–1891), Chief of the Prussian General Staff, photographed by Carl Günther in the 1870s. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: Carl Günther, 1870s; Bibliothèque nationale de France (Gallica), via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — photographer died 1905, photograph taken in the 1870s; Commons: public domain",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Helmuth_von_Moltke_the_Elder_(by_Carl_G%C3%BCnther)_-_BNF_Gallica_(cropped).jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.26
+      },
+      "person": "person:moltke-helmuth-von-elder"
+    },
+    {
       "id": "media:person/moltke-helmuth-von-younger/portrait-1906-colorized",
       "dir": "people/moltke-helmuth-von-younger",
       "original": {

@@ -1,5 +1,28 @@
 [
   {
+    "id": "person:moltke-helmuth-von-elder",
+    "name": "Helmuth von Moltke the Elder",
+    "sortName": "Moltke, Helmuth von (the Elder)",
+    "born": "1800-10-26",
+    "died": "1891-04-24",
+    "nationality": "DE",
+    "roles": [
+      {
+        "title": "Chief of the Prussian (from 1871 the Great) General Staff",
+        "from": "1857-10-29",
+        "to": "1888-08-10"
+      }
+    ],
+    "summary": "Chief of the General Staff for thirty years and the victor of 1864, 1866 and 1870 — the man who made the Prussian staff, the railway timetable and the mobilization plan into instruments of war. Two inheritances run from him into 1914: the two-front problem, which he answered with a defensive war in the west and limited offensives in the east rather than a knock-out blow, and the warning that no plan of operations survives the first encounter with the enemy's main body — the sentence the campaign that followed is measured against. Uncle of the younger Moltke who directed it.",
+    "media": ["media:person/moltke-helmuth-von-elder/portrait-1870s-colorized"],
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates and dates of office"
+      }
+    ]
+  },
+  {
     "id": "person:schlieffen-alfred-von",
     "name": "Alfred von Schlieffen",
     "sortName": "Schlieffen, Alfred von",

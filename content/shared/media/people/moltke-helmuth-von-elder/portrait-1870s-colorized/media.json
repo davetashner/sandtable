@@ -1,0 +1,30 @@
+{
+  "$comment": "Cross-era portrait: Moltke the Elder is referenced by the 1914 pack's prologue (sand-1l0.3) and will be reused by a future 1870 pack.",
+  "id": "media:person/moltke-helmuth-von-elder/portrait-1870s-colorized",
+  "person": "person:moltke-helmuth-von-elder",
+  "file": "portrait-1870s-colorized.png",
+  "width": 1083,
+  "height": 1452,
+  "colorized": true,
+  "original": {
+    "description": "Bust portrait of Helmuth von Moltke the Elder in the dark undress tunic of a Prussian general officer, with braided shoulder boards and a star order at the collar. Taken during his tenure as Chief of the Prussian General Staff.",
+    "photographer": "Carl Günther (Berlin)",
+    "date": "1870s",
+    "archive": "Bibliothèque nationale de France (Gallica); the file used is the Wikimedia Commons crop of the Gallica scan",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Portrait_of_Helmuth_von_Moltke_the_Elder_(by_Carl_G%C3%BCnther)_-_BNF_Gallica_(cropped).jpg",
+    "uncropped_url": "https://commons.wikimedia.org/wiki/File:Helmuth_Karl_Bernhard_von_Moltke_G%C3%BCnther_BNF_Gallica.jpg",
+    "original_dimensions": "410 × 549 (Commons crop of the Gallica scan)",
+    "licence": "public domain — photographer died 1905, photograph taken in the 1870s; Commons: public domain"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization and upscale from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'. Documented colours: Prussian general officers' tunic dark blue with gold-braid shoulder boards. NOT verified: the enamel star at the collar (order not identified) and the eye colour are colorizer choices — flag for the image review (sand-y0u.7)."
+  },
+  "content_policy": "ok — studio portrait, no gore",
+  "caption": "Helmuth von Moltke the Elder (1800–1891), Chief of the Prussian General Staff, photographed by Carl Günther in the 1870s. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: Carl Günther, 1870s; Bibliothèque nationale de France (Gallica), via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+  "focal_point": { "x": 0.5, "y": 0.26 },
+  "notes": "Provided by Dave 2026-08-23. Intended placement: the Person card and the prologue's descent-of-doctrine pair (elder Moltke → Schlieffen → the younger Moltke); used_by is deliberately empty until the prologue beats exist (sand-1l0.3), since the validator warns on ids that do not yet exist. The upscale means the rendered image carries more apparent detail than the 410 × 549 source — do not read insignia from it."
+}

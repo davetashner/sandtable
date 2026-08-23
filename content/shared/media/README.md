@@ -24,10 +24,17 @@ credit, the colorized label and a link to the original (ADR 0007).
 
 ```text
 media/
-  people/<slug>/          portraits — one directory per Person
-  scenes/<yyyy>-<slug>/   group photographs, places, events
-  documents/<slug>/       scans of orders, memoranda, maps   (future)
+  people/<slug>/                portraits — one directory per Person
+  people/<slug>/<file-stem>/    …one directory per image, when a Person has more
+                                than one portrait (e.g. moltke-helmuth-von-elder)
+  scenes/<yyyy>-<slug>/         group photographs, places, events
+  documents/<slug>/             scans of orders, memoranda, maps   (future)
 ```
+
+A manifest is found by walking for files named exactly `media.json`, so a
+directory holds at most one image. A Person photographed at different points in
+their life therefore gets a directory per image, named for the file stem; a
+Person with a single portrait keeps the flat layout.
 
 ## Rules (from the imagery policy, [ADR 0007](../../../docs/decisions/0007-imagery.md))
 
