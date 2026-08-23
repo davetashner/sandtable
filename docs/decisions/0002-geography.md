@@ -56,10 +56,18 @@ must show the political geography of the period (Alsace-Lorraine German in
 ## Implementation note (2026-08-22, `sand-a55.9` / `sand-a55.10`)
 
 - Basemap tiles: a Protomaps planet build (`build.protomaps.com/20260821.pmtiles`,
-  tile schema v4, OpenStreetMap © ODbL) extracted to a Western-Europe archive
-  `western-europe-z10.pmtiles` (bbox −1.5,46 → 10.5,53, z≤10, 181 MB) with
-  `scripts/tiles-extract.sh` and uploaded to the assets bucket; the app reads
-  `/assets/tiles/…` through the `pmtiles://` protocol. Styled by
+  tile schema v4, OpenStreetMap © ODbL) extracted with `scripts/tiles-extract.sh`
+  and uploaded to the assets bucket; the app reads `/assets/tiles/…` through the
+  `pmtiles://` protocol. Extracts, newest first:
+  - `central-europe-z10.pmtiles` (bbox −1.5,42 → 24,56, z≤10, 541 MB) — **current
+    default** (`sand-pmz.6`, 2026-08-23). The Western-Europe archive stopped at
+    10.5°E/46°N, so the Tannenberg chapter in East Prussia and the July Crisis
+    at Sarajevo drew as an empty field with place labels. Superseding it under a
+    new name rather than re-extracting in place keeps the name honest and avoids
+    serving a stale copy from the 24-hour `max-age` on the old URL. PMTiles is
+    range-read, so the extra extent costs storage, not per-viewer bandwidth.
+  - `western-europe-z10.pmtiles` (bbox −1.5,46 → 10.5,53, z≤10, 172 MB) — the
+    original extract, retained in the bucket and no longer referenced. Styled by
   `protomaps-themes-base` v4 with the muted palette in `src/engine/map/style.ts`
   (replaced by the design-system map style, `sand-neh.2`).
 - Borders: `npm run borders` builds one world file per era year from
