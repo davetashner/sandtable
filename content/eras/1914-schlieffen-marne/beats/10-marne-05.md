@@ -8,6 +8,11 @@ branch: 1914:historical
 focus: 1914:marne
 media: media:scene/1914-marne-german-infantry/german-infantry-marne-colorized
 links:
+  documents:
+    [
+      '1914:document-ohl-wireless-1914-09-04',
+      '1914:document-gallieni-ordre-general-5-1914-09-04',
+    ]
   battles: ['1914:marne']
   people:
     ['person:maunoury-michel-joseph', 'person:kluck-alexander-von', 'person:gallieni-joseph']

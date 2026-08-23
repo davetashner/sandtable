@@ -81,7 +81,11 @@
       ],
       "events": ["1914:event-kluck-wheels-south-east"],
       "battles": ["1914:marne"],
-      "tech": ["1914:tech-aerial-reconnaissance"]
+      "tech": ["1914:tech-aerial-reconnaissance"],
+      "documents": [
+        "1914:document-bulow-kluck-wireless-1914-08-30",
+        "1914:document-ohl-general-directions-1914-08-27"
+      ]
     },
     "sources": [
       {
@@ -123,7 +127,11 @@
         "person:bulow-karl-von"
       ],
       "formations": ["1914:army-de-1", "1914:army-de-2"],
-      "battles": ["1914:marne"]
+      "battles": ["1914:marne"],
+      "documents": [
+        "1914:document-ohl-wireless-1914-09-04",
+        "1914:document-gallieni-ordre-general-5-1914-09-04"
+      ]
     },
     "sources": [
       {
@@ -167,7 +175,8 @@
       ],
       "events": ["1914:marne-event-hentsch-mareuil", "1914:marne-event-bulow-retreats"],
       "battles": ["1914:marne"],
-      "formations": ["1914:marne-hentsch-mission"]
+      "formations": ["1914:marne-hentsch-mission"],
+      "documents": ["1914:document-hentsch-first-army-minute-1914-09-09"]
     },
     "sources": [
       {

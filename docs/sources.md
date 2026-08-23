@@ -62,19 +62,26 @@ specific with a `note`; when they disagree on meaning, write historiography.
 
 ## Core bibliography — 1914 in the West (in the registry)
 
-| id                                | Work                                                                         | Use it for                                                |
-| --------------------------------- | ---------------------------------------------------------------------------- | --------------------------------------------------------- |
-| `source:herwig-2009`              | Herwig, _The Marne, 1914_ (2009)                                             | the operational narrative, strengths, dates; the backbone |
-| `source:strachan-2001`            | Strachan, _The First World War, I: To Arms_ (2001)                           | plans, mobilization, strategy, the global frame           |
-| `source:mombauer-2001`            | Mombauer, _Helmuth von Moltke and the Origins of the First World War_ (2001) | Moltke, the plan's reality, the reply to Zuber            |
-| `source:zuber-2002`               | Zuber, _Inventing the Schlieffen Plan_ (2002)                                | the revisionist case — cited as one side                  |
-| `source:tuchman-1962`             | Tuchman, _The Guns of August_ (1962)                                         | narrative colour; personalities; not numbers              |
-| `source:keegan-1998`              | Keegan, _The First World War_ (1998)                                         | general context                                           |
-| `source:hastings-2013`            | Hastings, _Catastrophe_ (2013)                                               | 1914 at human scale; Belgium, Serbia                      |
-| `source:reichsarchiv-weltkrieg-1` | Reichsarchiv, _Der Weltkrieg 1914 bis 1918_, Bd. 1 (1925)                    | German orders of battle, positions, orders                |
-| `source:edmonds-1922`             | Edmonds, _Military Operations: France and Belgium, 1914_, I (1922)           | the BEF day by day                                        |
-| `source:afgg-1-1`                 | _Les Armées françaises dans la Grande Guerre_, I/1 (1922)                    | French orders of battle, positions, the orders            |
-| `source:wikipedia-en`             | Wikipedia (English)                                                          | uncontested biographical dates only                       |
+| id                                         | Work                                                                         | Use it for                                                              |
+| ------------------------------------------ | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `source:herwig-2009`                       | Herwig, _The Marne, 1914_ (2009)                                             | the operational narrative, strengths, dates; the backbone               |
+| `source:strachan-2001`                     | Strachan, _The First World War, I: To Arms_ (2001)                           | plans, mobilization, strategy, the global frame                         |
+| `source:mombauer-2001`                     | Mombauer, _Helmuth von Moltke and the Origins of the First World War_ (2001) | Moltke, the plan's reality, the reply to Zuber                          |
+| `source:zuber-2002`                        | Zuber, _Inventing the Schlieffen Plan_ (2002)                                | the revisionist case — cited as one side                                |
+| `source:tuchman-1962`                      | Tuchman, _The Guns of August_ (1962)                                         | narrative colour; personalities; not numbers                            |
+| `source:keegan-1998`                       | Keegan, _The First World War_ (1998)                                         | general context                                                         |
+| `source:hastings-2013`                     | Hastings, _Catastrophe_ (2013)                                               | 1914 at human scale; Belgium, Serbia                                    |
+| `source:reichsarchiv-weltkrieg-1`          | Reichsarchiv, _Der Weltkrieg 1914 bis 1918_, Bd. 1 (1925)                    | German orders of battle, positions, orders                              |
+| `source:edmonds-1922`                      | Edmonds, _Military Operations: France and Belgium, 1914_, I (1922)           | the BEF day by day                                                      |
+| `source:afgg-1-1`                          | _Les Armées françaises dans la Grande Guerre_, I/1 (1922)                    | French orders of battle, positions, the orders                          |
+| `source:wikipedia-en`                      | Wikipedia (English)                                                          | uncontested biographical dates only                                     |
+| `source:afgg-1-2-annexes-1`                | AFGG, Tome I, 2e vol., Annexes 1er vol. (1925)                               | the French orders of the retreat; Instruction générale no 2             |
+| `source:kluck-1920`                        | Kluck, _The March on Paris and the Battle of the Marne, 1914_ (1920)         | OHL directives and wireless as received by First Army; memoir, one side |
+| `source:gallieni-1920`                     | Gallieni, _Mémoires: Défense de Paris_ (1920)                                | the Paris orders of 3–9 September; memoir, one side                     |
+| `source:belgian-grey-book-1914`            | Belgian Grey Book (1914; English in _Collected Diplomatic Documents_, 1915)  | the ultimatum and the reply, Nos. 20 and 22                             |
+| `source:bsb-1000dokumente-schlieffen-1905` | BSB, _Denkschrift 'Krieg gegen Frankreich'_ (transcription, 2010)            | the German text of the 1905 memorandum                                  |
+| `source:ehlert-epkenhans-gross-2006`       | Ehlert, Epkenhans & Groß (eds), _Der Schlieffenplan_ (2006)                  | the edited documents and the post-Zuber essays                          |
+| `source:ritter-1958`                       | Ritter, _The Schlieffen Plan: Critique of a Myth_ (1958)                     | the English memorandum text, pp. 134–148; Ritter's critique             |
 
 ## To add as the content lands (not yet in the registry)
 
@@ -91,9 +98,11 @@ specific with a `note`; when they disagree on meaning, write historiography.
 - Terraine, _Mons: The Retreat to Victory_ (1960) and the Bavarian and French
   regimental histories — the battle zoom-ins.
 - Senior, _Home Before the Leaves Fall_ (2012) — the 1914 campaign narrative.
-- Primary: the 1905 memorandum (in Foley); Moltke's directives of 27 August
-  and 4 September; Joffre's Instruction générale no 2 and the order of
-  6 September; Hentsch's 1917 report; Kluck's and Bülow's post-war accounts.
+- Primary still to add: Hentsch's 1917 report (Reichsarchiv Bd. 4;
+  Müller-Loebnitz, _Die Sendung des Oberstleutnants Hentsch_, 1922); Bülow's
+  _Mein Bericht zur Marneschlacht_ (1919); the German texts of the OHL
+  directives of 27 August and 4 September (Reichsarchiv Bd. 3–4, to replace
+  the English of Kluck's translation in the Document cards).
 
 Each addition is a registry entry with `notes` on use and bias, added in the
 PR that first cites it (see `docs/authoring.md` §1).

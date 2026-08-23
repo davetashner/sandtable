@@ -5,6 +5,11 @@ dateLabel: 4–9 August 1914
 from: 1914-08-04T00:00:00Z
 to: 1914-08-09T00:00:00Z
 links:
+  documents:
+    [
+      '1914:document-german-ultimatum-to-belgium-1914-08-02',
+      '1914:document-belgian-reply-1914-08-03',
+    ]
   tech: ['1914:tech-railways-mobilization']
   events: ['1914:event-invasion-of-belgium']
   people: ['person:albert-i-of-belgium', 'person:moltke-helmuth-von-younger']
