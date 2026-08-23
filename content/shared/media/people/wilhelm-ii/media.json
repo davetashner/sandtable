@@ -1,30 +1,29 @@
 {
-  "$comment": "The monochrome archive original as published — see notes; a colorized version is wanted (sand-y0u.14).",
-  "id": "media:person/wilhelm-ii/portrait-1905",
+  "id": "media:person/wilhelm-ii/portrait-1905-colorized",
   "person": "person:wilhelm-ii",
-  "file": "portrait-1905.png",
-  "width": 284,
-  "height": 747,
-  "colorized": false,
+  "file": "portrait-1905-colorized.png",
+  "width": 936,
+  "height": 1681,
+  "colorized": true,
   "original": {
-    "description": "Full-length portrait postcard of Wilhelm II in full dress with the eagle-crested parade helmet of the Garde du Corps, sash, stars and neck orders, resting both hands on a drawn sword. The print carries the studio imprint 'Originalaufnahme der Hofphotos. Reichard & Lindner, Berlin 1905' and 'Verlag von Gustav Liersch & Co, Berlin'.",
+    "description": "Full-length studio portrait of Wilhelm II in the white full-dress tunic of the Garde du Corps with the eagle-crested parade helmet, sash, stars and neck orders, both hands resting on a drawn sword; a throne, a table bearing a crown and a palm behind him. The print carries the studio imprint 'Originalaufnahme der Hofphotos. Reichard & Lindner, Berlin 1905' and 'Verlag von Gustav Liersch & Co, Berlin'.",
     "photographer": "Reichard & Lindner, Hofphotographen, Berlin",
     "date": "1905",
     "archive": "Deutsches Historisches Museum (LeMO), object 95007746 — via Wikimedia Commons; issued as a postcard by Gustav Liersch & Co, Berlin",
     "archive_url": "https://commons.wikimedia.org/wiki/File:Wilhelm_II._1905.jpeg",
     "catalog_url": "http://www.dhm.de/lemo/objekte/pict/95007746/index.html",
-    "original_dimensions": "284 × 747 (Commons file)",
+    "original_dimensions": "284 × 747 (the Commons copy, which is a narrow crop of the same sitting)",
     "licence": "public domain — PD-old, published 1905"
   },
   "colorization": {
-    "author": "n/a",
-    "method": "n/a",
-    "licence": "underlying photograph public domain",
-    "status": "not colorized — this is the monochrome archive original, reproduced as published"
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'. Documented colours: the white tunic, gilt eagle helmet and black lacquered boots of the Garde du Corps; gold shoulder cords and aiguillette. Two things for the image review (sand-y0u.7): the individual stars and ribbon colours are the colorizer's reading rather than taken from a reference, and this colorization shows a wider framing than the Commons file recorded above, so it derives from a fuller reproduction of the same Reichard & Lindner sitting whose particular scan is not identified."
   },
   "content_policy": "ok — studio portrait, no gore",
-  "caption": "Wilhelm II in full dress in 1905, photographed by the court photographers Reichard & Lindner and sold as a postcard — the Kaiser as he wished to be seen. Monochrome archive original.",
-  "credit": "Original photograph: Reichard & Lindner, Berlin, 1905; published by Gustav Liersch & Co; Deutsches Historisches Museum via Wikimedia Commons; public domain.",
-  "focal_point": { "x": 0.5, "y": 0.2 },
-  "notes": "Provided by Dave 2026-08-23 alongside two colorizations, described as 'color', but this file is the unmodified Commons original: monochrome, 284 × 747. It sits below the pipeline's smallest derivative width (320 px), so it generates no WebP variants, and it is too small to carry a Person card or a hero image. Filed as the archive original; a colorized and higher-resolution version is wanted before it is placed — sand-y0u.14."
+  "caption": "Wilhelm II in the white full dress of the Garde du Corps, photographed by the court photographers Reichard & Lindner in 1905 and sold as a postcard — the Kaiser as he wished to be seen. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: Reichard & Lindner, Berlin, 1905; published by Gustav Liersch & Co; Deutsches Historisches Museum via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+  "focal_point": { "x": 0.5, "y": 0.16 },
+  "notes": "Replaces the monochrome 284 × 747 Commons original filed in PR #64, which was too small to generate WebP variants or carry a card (sand-y0u.14). Colorized version provided by Dave 2026-08-23 at 936 × 1681."
 }
