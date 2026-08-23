@@ -23,6 +23,12 @@
       "label": "Where does \u201cforty days\u201d come from?",
       "card": "1914:clock-plan-timetable"
     },
+    "chain": {
+      "label": "How did it start?",
+      "hint": "thirty-seven days, from Sarajevo",
+      "focus": "1914:july-crisis",
+      "card": "1914:link-sarajevo-to-vienna"
+    },
     "sources": [{ "source": "source:herwig-2009" }, { "source": "source:tuchman-1962" }]
   },
   "sides": [

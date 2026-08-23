@@ -5956,5 +5956,26 @@
       { "source": "source:herwig-2009" },
       { "source": "source:mombauer-2001" }
     ]
+  },
+  {
+    "id": "1914:july-crisis",
+    "title": "The July Crisis: from Sarajevo to the Belgian frontier",
+    "timeRange": { "start": "1914-08-02T00:00:00Z", "end": "1914-08-04T00:00:00Z" },
+    "region": [17.2, 42.9, 21.2, 45.7],
+    "camera": { "center": [18.413, 43.856], "zoom": 8 },
+    "place": "place:sarajevo",
+    "summary": "The chapter the war comes out of. Thirty-seven days separate two shots fired in a Bosnian street from German columns crossing into Belgium, and the map begins where the chain does — at Sarajevo, not on the frontier the campaign is fought over. The crisis ran from 28 June to 4 August 1914, outside the campaign clock this pack keeps, so the chapter occupies the timeline's first hours and each beat gives its real date; the argument itself is carried by the causal chain, the documents and the people, none of which are pinned to a campaign instant.",
+    "links": {
+      "places": ["place:sarajevo", "place:belgrade"],
+      "people": [
+        "person:franz-ferdinand-of-austria",
+        "person:princip-gavrilo",
+        "person:berchtold-leopold"
+      ]
+    },
+    "sources": [
+      { "source": "source:clark-2012", "note": "the crisis as a chain of decisions" },
+      { "source": "source:albertini-1952", "note": "the day-by-day reconstruction" }
+    ]
   }
 ]

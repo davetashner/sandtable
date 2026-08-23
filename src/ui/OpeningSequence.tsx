@@ -61,6 +61,10 @@ export interface OpeningSequenceProps {
   onExplore: () => void;
   /** Open the causal chain the war came out of. Absent when the pack has none. */
   onChain?: (() => void) | undefined;
+  /** Label for the chain action; the pack may name its own backstory. */
+  chainLabel?: string | undefined;
+  /** Sub-label under it. */
+  chainHint?: string | undefined;
   /** Show the evidence behind the premise (pack.opening.claim). */
   onClaim?: (() => void) | undefined;
   /** How long the tour takes, for the primary action's hint. */
@@ -74,6 +78,8 @@ export function OpeningSequence({
   onPlay,
   onExplore,
   onChain,
+  chainLabel = 'How did it start?',
+  chainHint = 'the chain of events',
   onClaim,
   tourMinutes,
 }: OpeningSequenceProps) {
@@ -191,8 +197,8 @@ export function OpeningSequence({
           </button>
           {onChain && (
             <button type="button" className="opening__action" onClick={onChain}>
-              How did it start?
-              <span className="opening__hint">the chain of events</span>
+              {chainLabel}
+              <span className="opening__hint">{chainHint}</span>
             </button>
           )}
         </div>

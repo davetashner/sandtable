@@ -28,7 +28,13 @@ narrative plus markers rather than as a reconstruction that plays. Their
 beats say `(chapter)` in `dateLabel` where a zoom-in says `(zoom-in)`.
 
 Chapters: `1914:origins` (`sand-1l0.3`), `1914:ardennes` (`sand-1l0.6`),
-`1914:grand-couronne` (`sand-1l0.9`), `1914:tannenberg-east` (`sand-1l0.13`).
+`1914:grand-couronne` (`sand-1l0.9`), `1914:tannenberg-east` (`sand-1l0.13`),
+`1914:july-crisis` (`sand-1l0.32`). The July Crisis is the pack's backstory:
+`pack.opening.chain` points at it, so the opening's "How did it start?" takes
+the map to Sarajevo, where the chain begins, instead of leaving it on the
+western frontier. Like `1914:origins` it carries no events — the crisis ran
+28 June to 4 August, outside the campaign clock — and the two days it vacated
+in the campaign spine are now the ultimatum beat (`81-ultimatum-to-belgium`).
 `1914:origins` is the unusual one: it narrates the decades before the war rather
 than days of it, so it carries no events either — its beats sit in the 2–4 August
 window because everything in a pack must fall inside `pack.timeRange`, and each

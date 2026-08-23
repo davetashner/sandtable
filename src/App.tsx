@@ -580,7 +580,13 @@ function OpeningProvider({ children }: { children: ReactNode }) {
     [showing, opening],
   );
 
-  const chainCard = seed.links[0]?.id;
+  // The backstory the pack declares, if it has one. Falling back to the first
+  // causal link is a guess — in this pack it lands on the wheel to the Marne,
+  // which is the end of the story rather than its beginning — so `opening.chain`
+  // names the chapter and the link to open (sand-1l0.32).
+  const chain = opening?.chain;
+  const chainCard = chain?.card ?? seed.links[0]?.id;
+  const chainFocus = chain?.focus;
   return (
     <OpeningCtx.Provider value={value}>
       {children}
@@ -599,11 +605,16 @@ function OpeningProvider({ children }: { children: ReactNode }) {
               : undefined
           }
           onExplore={dismiss}
+          {...(chain?.label ? { chainLabel: chain.label } : {})}
+          {...(chain?.hint ? { chainHint: chain.hint } : {})}
           onChain={
-            chainCard && controls
+            (chainCard || chainFocus) && controls
               ? () => {
                   dismiss();
-                  controls.setCard(chainCard);
+                  // Focus first: the map flies to where the chain begins, then
+                  // the card opens over it.
+                  if (chainFocus) controls.setFocus(chainFocus);
+                  if (chainCard) controls.setCard(chainCard);
                 }
               : undefined
           }
