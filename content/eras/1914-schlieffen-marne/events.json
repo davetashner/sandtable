@@ -330,5 +330,391 @@
         "source": "source:strachan-2001"
       }
     ]
+  },
+  {
+    "id": "1914:event-entrenchment-on-the-aisne",
+    "title": "The armies dig in on the Aisne",
+    "timeRange": {
+      "start": "1914-09-16T00:00:00Z",
+      "end": "1914-09-28T00:00:00Z"
+    },
+    "kind": "phase",
+    "significance": "major",
+    "branch": "1914:historical",
+    "place": "place:chemin-des-dames",
+    "summary": "Attack after attack on the Chemin des Dames fails against troops who are below ground. Within a fortnight both sides have continuous trenches, wire and registered artillery, and the spade has beaten the boot: the way to make ground is no longer to march round a flank but to break through one — and nobody yet knows how.",
+    "links": {
+      "formations": ["1914:army-de-1", "1914:army-de-2", "1914:army-fr-6", "1914:bef"],
+      "places": ["place:soissons"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-race-to-the-sea",
+    "title": "The race to the sea",
+    "timeRange": {
+      "start": "1914-09-17T00:00:00Z",
+      "end": "1914-10-19T00:00:00Z"
+    },
+    "kind": "phase",
+    "significance": "major",
+    "branch": "1914:historical",
+    "lngLat": [2.6, 50.1],
+    "summary": "Four times in a month each side reaches north to get round the other's open flank — Picardy, the Santerre, Artois, Flanders — and four times both arrive at once and the line simply grows northward. It was never a race for the sea; it was a race for a flank, which the sea finally abolished.",
+    "links": {
+      "formations": ["1914:army-fr-2", "1914:army-fr-10", "1914:army-de-6", "1914:bef"],
+      "places": ["place:roye", "place:albert", "place:arras", "place:lille"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:keegan-1998"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-picardy-attempt",
+    "title": "The Second Army's attempt in Picardy",
+    "timeRange": {
+      "start": "1914-09-22T00:00:00Z",
+      "end": "1914-09-26T00:00:00Z"
+    },
+    "kind": "battle",
+    "significance": "minor",
+    "branch": "1914:historical",
+    "place": "place:roye",
+    "summary": "Castelnau's Second Army, brought west out of Lorraine by rail, tries to work round the German right about Roye and Lassigny and meets German forces arriving by the same means. The first of the northward attempts stalls in a week.",
+    "links": {
+      "formations": ["1914:army-fr-2"],
+      "people": ["person:castelnau-edouard-de"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-tenth-army-arras",
+    "title": "The Tenth Army formed at Arras",
+    "timeRange": {
+      "start": "1914-10-01T00:00:00Z",
+      "end": "1914-10-09T00:00:00Z"
+    },
+    "kind": "battle",
+    "significance": "minor",
+    "branch": "1914:historical",
+    "place": "place:arras",
+    "summary": "Joffre improvises a third northern army under de Maud'huy at Arras. It is met head-on by Rupprecht's Sixth Army, arriving from Lorraine; Arras is held, the German attempt to take it fails, and the line stops a few kilometres east of the city for four years.",
+    "links": {
+      "formations": ["1914:army-fr-10", "1914:army-de-6"],
+      "people": ["person:maud-huy-louis-de", "person:rupprecht-of-bavaria"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-foch-north",
+    "title": "Foch sent north as Joffre's deputy",
+    "at": "1914-10-04T12:00:00Z",
+    "kind": "order",
+    "significance": "minor",
+    "branch": "1914:historical",
+    "place": "place:arras",
+    "summary": "Joffre makes Foch his deputy for the northern armies, with the job of coordinating the French forces there and, as far as persuasion allows, the British and the Belgians too. It is the first Allied coordination of the war in the West, and it is done without any authority over the allies it coordinates.",
+    "links": {
+      "people": ["person:foch-ferdinand", "person:joffre-joseph"],
+      "formations": ["1914:army-fr-2", "1914:army-fr-10"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-antwerp-falls",
+    "title": "Antwerp falls",
+    "timeRange": {
+      "start": "1914-09-28T00:00:00Z",
+      "end": "1914-10-10T00:00:00Z"
+    },
+    "kind": "siege",
+    "significance": "major",
+    "branch": "1914:historical",
+    "place": "place:antwerp",
+    "summary": "Beseler's siege train opens on the outer forts on 28 September and works through them as it had at Liège and Namur. A British naval brigade arrives on 4–6 October, too late and too light to change the arithmetic. The Belgian field army leaves westward on 6–8 October rather than be shut up with the city; Antwerp surrenders on 10 October, and some thirty thousand Belgian troops cross into the Netherlands and are interned for the duration.",
+    "links": {
+      "formations": ["1914:belgian-field-army", "1914:corps-de-iii-res"],
+      "people": [
+        "person:albert-i-of-belgium",
+        "person:beseler-hans-von",
+        "person:churchill-winston"
+      ],
+      "battles": ["1914:belgium-antwerp"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-bef-moves-north",
+    "title": "The BEF moves from the Aisne to Flanders",
+    "timeRange": {
+      "start": "1914-10-03T00:00:00Z",
+      "end": "1914-10-19T00:00:00Z"
+    },
+    "kind": "movement",
+    "significance": "major",
+    "branch": "1914:historical",
+    "place": "place:ypres",
+    "summary": "At Sir John French's request the BEF is taken out of the Aisne line by night, marched to the railheads and moved north by train to its own supply ports — a fortnight's work, carried out corps by corps and, for a time, concealed from the Germans. It arrives on the last open flank in Europe.",
+    "links": {
+      "formations": ["1914:bef"],
+      "people": ["person:french-john", "person:haig-douglas", "person:smith-dorrien-horace"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-lille-occupied",
+    "title": "Lille occupied",
+    "at": "1914-10-12T12:00:00Z",
+    "kind": "battle",
+    "significance": "minor",
+    "branch": "1914:historical",
+    "place": "place:lille",
+    "summary": "The German Sixth Army takes Lille after three days' bombardment. France's fifth city and the industry of the north pass under an occupation that lasts until October 1918.",
+    "links": {
+      "formations": ["1914:army-de-6"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-battle-of-the-yser",
+    "title": "The battle of the Yser",
+    "timeRange": {
+      "start": "1914-10-16T00:00:00Z",
+      "end": "1914-11-01T00:00:00Z"
+    },
+    "kind": "battle",
+    "significance": "major",
+    "branch": "1914:historical",
+    "place": "place:dixmude",
+    "summary": "The Belgian field army, six exhausted divisions with the sea at its back, holds the last twenty kilometres of unoccupied Belgium along the Yser embankment, with Ronarc'h's French marines at Dixmude. By the end of October it has been pushed off the far bank and is fighting on the railway embankment behind it.",
+    "links": {
+      "formations": [
+        "1914:belgian-field-army",
+        "1914:det-fr-belgique",
+        "1914:corps-de-xxii-res",
+        "1914:corps-de-xxiii-res"
+      ],
+      "people": ["person:albert-i-of-belgium", "person:ronarch-pierre"],
+      "places": ["place:nieuwpoort"]
+    },
+    "sources": [
+      {
+        "source": "source:van-pul-2006"
+      },
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-yser-inundation",
+    "title": "The sea let in: the Yser inundation",
+    "timeRange": {
+      "start": "1914-10-21T00:00:00Z",
+      "end": "1914-10-31T00:00:00Z"
+    },
+    "kind": "other",
+    "significance": "major",
+    "branch": "1914:historical",
+    "place": "place:nieuwpoort",
+    "summary": "Belgian engineers, guided by men who worked the polders for a living, open the locks of the Ganzepoot at Nieuwpoort to the flood tide on a succession of nights, so that the sea runs inland faster than it can drain. By 30 October the water is four to five kilometres wide and rising, the German positions are islands, and the attack across the Yser stops for good. The front's northern anchor is not a fortress but a flood.",
+    "links": {
+      "people": ["person:cogge-karel", "person:geeraert-hendrik", "person:albert-i-of-belgium"],
+      "formations": ["1914:belgian-field-army"],
+      "places": ["place:dixmude"]
+    },
+    "sources": [
+      {
+        "source": "source:van-pul-2006"
+      },
+      {
+        "source": "source:edmonds-1925"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-first-ypres",
+    "title": "The First Battle of Ypres",
+    "timeRange": {
+      "start": "1914-10-19T00:00:00Z",
+      "end": "1914-11-22T00:00:00Z"
+    },
+    "kind": "battle",
+    "significance": "major",
+    "branch": "1914:historical",
+    "place": "place:ypres",
+    "summary": "Falkenhayn's last attempt at a decision in 1914: the reconstituted Fourth Army and the Sixth attack the salient in front of Ypres for a month, in numbers the defenders cannot match. The line bends and holds, and the old British regular army is destroyed holding it.",
+    "links": {
+      "formations": [
+        "1914:bef",
+        "1914:army-de-4",
+        "1914:army-de-6",
+        "1914:det-fr-belgique",
+        "1914:corps-de-xxvi-res",
+        "1914:corps-de-xxvii-res"
+      ],
+      "people": [
+        "person:falkenhayn-erich",
+        "person:french-john",
+        "person:haig-douglas",
+        "person:albrecht-of-wurttemberg",
+        "person:foch-ferdinand"
+      ],
+      "casualties": ["1914:casualties-first-ypres"],
+      "places": ["place:gheluvelt", "place:langemarck"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:1914-1918-online-ypres"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-gheluvelt",
+    "title": "The crisis at Gheluvelt",
+    "at": "1914-10-31T14:00:00Z",
+    "kind": "battle",
+    "significance": "major",
+    "branch": "1914:historical",
+    "place": "place:gheluvelt",
+    "summary": "The German attack breaks the line on the Menin road and takes Gheluvelt; for some hours the road to Ypres is open and the British divisional staffs are being shelled out of their headquarters. A single under-strength battalion counter-attacks across open ground into the village and retakes it. The salient holds because the reserve arrived before the breakthrough was noticed.",
+    "links": {
+      "formations": ["1914:bef", "1914:corps-de-xxvii-res"],
+      "people": ["person:haig-douglas"],
+      "casualties": ["1914:casualties-first-ypres"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:1914-1918-online-ypres"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-nonne-bosschen",
+    "title": "The Prussian Guard on the Menin road",
+    "at": "1914-11-11T09:00:00Z",
+    "kind": "battle",
+    "significance": "minor",
+    "branch": "1914:historical",
+    "place": "place:ypres",
+    "summary": "The last heavy German effort at Ypres: the Guard attacks astride the Menin road, breaks into the British line at Nonne Bosschen and is stopped by cooks, orderlies and engineers fed into the gap. After it the Flanders offensive is closed down.",
+    "links": {
+      "formations": ["1914:bef", "1914:army-de-4"],
+      "casualties": ["1914:casualties-first-ypres"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:1914-1918-online-ypres"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-continuous-front",
+    "title": "The continuous front",
+    "timeRange": {
+      "start": "1914-11-22T00:00:00Z",
+      "end": "1914-11-25T00:00:00Z"
+    },
+    "kind": "phase",
+    "significance": "major",
+    "branch": "1914:historical",
+    "lngLat": [4.5, 49.6],
+    "summary": "By the end of November the trenches run without a gap from Nieuwpoort on the North Sea to the Swiss frontier — some seven hundred kilometres with no flank to turn at either end. The war of movement that the plan was built to win in six weeks is over in four months, and the war it was built to avoid has begun.",
+    "links": {
+      "places": ["place:nieuwpoort", "place:pfetterhouse"],
+      "tech": ["1914:tech-firepower-1914"]
+    },
+    "sources": [
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:keegan-1998"
+      },
+      {
+        "source": "source:edmonds-1925"
+      }
+    ]
   }
 ]

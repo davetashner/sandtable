@@ -82,13 +82,18 @@ specific with a `note`; when they disagree on meaning, write historiography.
 | `source:bsb-1000dokumente-schlieffen-1905` | BSB, _Denkschrift 'Krieg gegen Frankreich'_ (transcription, 2010)            | the German text of the 1905 memorandum                                  |
 | `source:ehlert-epkenhans-gross-2006`       | Ehlert, Epkenhans & Groß (eds), _Der Schlieffenplan_ (2006)                  | the edited documents and the post-Zuber essays                          |
 | `source:ritter-1958`                       | Ritter, _The Schlieffen Plan: Critique of a Myth_ (1958)                     | the English memorandum text, pp. 134–148; Ritter's critique             |
-| `source:clark-2012`                        | Clark, _The Sleepwalkers_ (2012)                                             | the July Crisis; the revisionist case — one side                       |
-| `source:fischer-1967`                      | Fischer, _Germany's Aims in the First World War_ (1967)                      | the case for German responsibility — one side                          |
-| `source:albertini-1952`                    | Albertini, _The Origins of the War of 1914_ (1952–57)                        | the crisis hour by hour; the standard reconstruction                   |
-| `source:mombauer-2013`                     | Mombauer (ed.), _The Origins of the First World War: Documents_ (2013)       | crisis documents in translation, with commentary                       |
-| `source:hmso-collected-1915`               | _Collected Diplomatic Documents_ (HMSO, 1915)                                | the colour books in one volume; selected by governments                |
-| `source:kautsky-1924`                      | Kautsky (ed.), _Outbreak of the World War: German Documents_ (1924)          | the German files; the 'blank cheque' is no. 15                         |
-| `source:byu-wwi-archive`                   | BYU, _The World War I Document Archive_                                      | working transcriptions; cite the printed collection too                |
+| `source:clark-2012`                        | Clark, _The Sleepwalkers_ (2012)                                             | the July Crisis; the revisionist case — one side                        |
+| `source:fischer-1967`                      | Fischer, _Germany's Aims in the First World War_ (1967)                      | the case for German responsibility — one side                           |
+| `source:albertini-1952`                    | Albertini, _The Origins of the War of 1914_ (1952–57)                        | the crisis hour by hour; the standard reconstruction                    |
+| `source:mombauer-2013`                     | Mombauer (ed.), _The Origins of the First World War: Documents_ (2013)       | crisis documents in translation, with commentary                        |
+| `source:hmso-collected-1915`               | _Collected Diplomatic Documents_ (HMSO, 1915)                                | the colour books in one volume; selected by governments                 |
+| `source:kautsky-1924`                      | Kautsky (ed.), _Outbreak of the World War: German Documents_ (1924)          | the German files; the 'blank cheque' is no. 15                          |
+| `source:byu-wwi-archive`                   | BYU, _The World War I Document Archive_                                      | working transcriptions; cite the printed collection too                 |
+| `source:edmonds-1925`                      | Edmonds, _Military Operations: France and Belgium, 1914_, II (1925)          | Antwerp, the Yser and First Ypres; the BEF's casualty returns           |
+| `source:van-pul-2006`                      | Van Pul, _In Flanders Flooded Fields_ (2006)                                 | the Yser inundation: the locks, the nights, who opened them             |
+| `source:unruh-1986`                        | Unruh, _Langemarck: Legende und Wirklichkeit_ (1986)                         | the reality behind the Kindermord legend                                |
+| `source:1914-1918-online-langemarck`       | Grawe, 'Langemarck Myth', _1914-1918-online_                                 | the OHL communiqué of 11 November 1914 and the myth's construction      |
+| `source:1914-1918-online-ypres`            | Jones, 'Ypres, Battles of', _1914-1918-online_                               | First Ypres: dates, armies, the round casualty totals                   |
 
 ## To add as the content lands (not yet in the registry)
 
@@ -105,6 +110,10 @@ specific with a `note`; when they disagree on meaning, write historiography.
 - Terraine, _Mons: The Retreat to Victory_ (1960) and the Bavarian and French
   regimental histories — the battle zoom-ins.
 - Senior, _Home Before the Leaves Fall_ (2012) — the 1914 campaign narrative.
+- AFGG Tome I, 4e volume and Reichsarchiv Bd. 5–6 — the French and German
+  official accounts of the race to the sea, the Yser and First Ypres, to
+  replace the British official history as the backbone of the epilogue
+  (`sand-1l0.12` cites Edmonds II for all three fronts).
 - Primary still to add: Hentsch's 1917 report (Reichsarchiv Bd. 4;
   Müller-Loebnitz, _Die Sendung des Oberstleutnants Hentsch_, 1922); Bülow's
   _Mein Bericht zur Marneschlacht_ (1919); the German texts of the OHL

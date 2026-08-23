@@ -8,11 +8,20 @@
     "kind": "memoir",
     "text": "The brigade commander was shot dead on the night march, and Ludendorff — the staff observer who happened to be riding with the 14th Brigade — has taken it over and pushed it into the town alone, between forts that still fire. In the afternoon he drives up to the old citadel with his adjutant and finds the gate shut. He hammers on it; it is opened from inside, and the few hundred Belgians within surrender to a man with no troops behind him but his car.[^ludendorff-1919] The ring of forts holds for another nine days, until the 42 cm howitzers come up.[^herwig-2009]",
     "people": ["person:ludendorff-erich"],
-    "links": { "battles": ["1914:liege"] },
+    "links": {
+      "battles": ["1914:liege"]
+    },
     "sources": [
-      { "source": "source:ludendorff-1919", "note": "his own account of 6–7 August" },
-      { "source": "source:herwig-2009" },
-      { "source": "source:tuchman-1962" }
+      {
+        "source": "source:ludendorff-1919",
+        "note": "his own account of 6–7 August"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962"
+      }
     ]
   },
   {
@@ -29,8 +38,12 @@
         "source": "source:spears-1930",
         "note": "the eyewitness; the exchange is reported from memory and coloured by Spears's view of Lanrezac"
       },
-      { "source": "source:herwig-2009" },
-      { "source": "source:tuchman-1962" }
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962"
+      }
     ]
   },
   {
@@ -41,11 +54,19 @@
     "voice": "The 3rd Colonial Division",
     "kind": "reconstruction",
     "text": "In fog above the Semois the 3rd Colonial Division marches in column into the woods towards Neufchâteau and meets the German 12th Division coming the other way. Marsouins who have fought in Tonkin and Morocco go in with the bayonet against infantry lying in the rye; by dusk the division has lost its commander, General Raffenel, most of its officers and the greater part of its men. Rossignol is one village. The count of French soldiers dead that day along the whole line, reconstructed from the army's own records, is about twenty-seven thousand.[^steg-2013] [^hastings-2013]",
-    "links": { "casualties": ["1914:casualties-22-august"] },
+    "links": {
+      "casualties": ["1914:casualties-22-august"]
+    },
     "sources": [
-      { "source": "source:steg-2013" },
-      { "source": "source:hastings-2013" },
-      { "source": "source:herwig-2009" }
+      {
+        "source": "source:steg-2013"
+      },
+      {
+        "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
     ]
   },
   {
@@ -57,10 +78,17 @@
     "kind": "reconstruction",
     "text": "Gallieni's staff requisition the taxis of Paris on the evening of 6 September; they are marshalled on the esplanade of the Invalides, five men to a cab, meters running, and sent out along the Meaux road to Nanteuil-le-Haudouin through the night of the 7th with part of the 7th Division for Maunoury's army.[^gallieni-1920] About six hundred cabs move something like four thousand men — a regiment and a half, a rounding error beside the armies on the Ourcq — and the fares are paid. Gallieni, told it was done: *\"Eh bien, voilà au moins qui n'est pas banal.\"*[^tuchman-1962] The numbers differ from one account to the next; the legend does not.[^herwig-2009]",
     "people": ["person:gallieni-joseph", "person:maunoury-michel-joseph"],
-    "links": { "battles": ["1914:marne"], "places": ["place:nanteuil-le-haudouin"] },
+    "links": {
+      "battles": ["1914:marne"],
+      "places": ["place:nanteuil-le-haudouin"]
+    },
     "sources": [
-      { "source": "source:gallieni-1920" },
-      { "source": "source:tuchman-1962" },
+      {
+        "source": "source:gallieni-1920"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
       {
         "source": "source:herwig-2009",
         "note": "for the scale of the lift against the 6th Army's strength"
@@ -76,11 +104,20 @@
     "kind": "reconstruction",
     "text": "For three days the new 9th Army has been pushed back across the marshes of Saint-Gond by Bülow's left and Hausen's Saxons — a night bayonet attack on the 8th breaks its right and takes Fère-Champenoise. On the 9th Foch pulls the 42nd Division out of his left, where Franchet d'Espèrey's 5th Army has come up, marches it behind his line and puts it in on the right; by evening the Germans opposite him are drawing off, because Hentsch has been to Bülow's headquarters.[^foch-1931] [^herwig-2009] The line later attached to him — *my centre gives way, my right falls back, situation excellent, I attack* — appears in no order of the day and not in his memoirs. It is remembered because it fits.[^tuchman-1962]",
     "people": ["person:foch-ferdinand", "person:franchet-desperey-louis"],
-    "links": { "battles": ["1914:marne"] },
+    "links": {
+      "battles": ["1914:marne"]
+    },
     "sources": [
-      { "source": "source:foch-1931" },
-      { "source": "source:herwig-2009" },
-      { "source": "source:tuchman-1962", "note": "gives the famous message; treat as legend" }
+      {
+        "source": "source:foch-1931"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962",
+        "note": "gives the famous message; treat as legend"
+      }
     ]
   },
   {
@@ -92,14 +129,86 @@
     "kind": "reconstruction",
     "text": "He left Luxembourg at eleven the morning before with two captains and a car, called at the 5th, 4th and 3rd Army headquarters in turn, and reached Bülow at Montmort after dark; there it was agreed that the 2nd Army would fall back if the British crossed the Marne.[^herwig-2009] This morning he drives west through the 2nd Army's baggage columns already moving to the rear, and reaches Kluck's headquarters at Mareuil-sur-Ourcq towards midday. Kluck is forward; Hentsch sits down with his chief of staff, Kuhl, draws on the map the gap the British are walking into, and says — on an authority no one has seen written — that the 1st Army must retreat to the Aisne.[^herwig-2009] [^strachan-2001] His written report of 15 September is the only first-hand record of the two days, and it was written to defend them.[^herwig-2009]",
     "people": ["person:hentsch-richard", "person:kluck-alexander-von", "person:bulow-karl-von"],
-    "links": { "battles": ["1914:marne"], "places": ["place:montmort"] },
+    "links": {
+      "battles": ["1914:marne"],
+      "places": ["place:montmort"]
+    },
     "sources": [
       {
         "source": "source:herwig-2009",
         "note": "follows Hentsch's report and the Reichsarchiv inquiry"
       },
-      { "source": "source:strachan-2001" },
-      { "source": "source:tuchman-1962" }
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:tuchman-1962"
+      }
+    ]
+  },
+  {
+    "id": "1914:vignette-churchill-antwerp",
+    "title": "Churchill at Antwerp",
+    "at": "1914-10-04T10:00:00Z",
+    "place": "place:antwerp",
+    "lngLat": [4.4, 51.22],
+    "branch": "1914:historical",
+    "voice": "The First Lord of the Admiralty",
+    "kind": "reconstruction",
+    "text": "The First Lord of the Admiralty arrives in a city under bombardment, in the uniform of Trinity House, with a naval brigade of reservists behind him and a telegram to the Prime Minister offering to resign his office and take command in the field. The offer is refused, and the brigade — men some of whom had never fired a rifle — is fed into a fortress that the siege guns have already decided. Antwerp holds five days longer than it might otherwise have done; whether those days mattered to the coast that was saved a fortnight later was argued about for the rest of Churchill's career.[^edmonds-1925] [^strachan-2001]",
+    "people": ["person:churchill-winston"],
+    "links": {
+      "events": ["1914:event-antwerp-falls"],
+      "battles": ["1914:belgium-antwerp"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:vignette-nieuwpoort-locks",
+    "title": "The men who knew the locks",
+    "at": "1914-10-29T22:00:00Z",
+    "place": "place:nieuwpoort",
+    "lngLat": [2.752, 51.13],
+    "branch": "1914:historical",
+    "voice": "A water bailiff and a bargeman at the Ganzepoot",
+    "kind": "reconstruction",
+    "text": "The army has the idea of flooding the plain; what it does not have is the knowledge of which of the eight channels meeting at Nieuwpoort will do it, or how the gates are worked. That belongs to men who have spent their lives keeping the sea out of these fields: Karel Cogge, the water bailiff of the Veurne polders, who knows the system, and Hendrik Geeraert, a bargeman who can find the right sluice in the dark. Under the tide of the last nights of October they open the gates to the flood and shut them to the ebb, and the sea goes in.[^van-pul-2006]",
+    "people": ["person:cogge-karel", "person:geeraert-hendrik"],
+    "links": {
+      "events": ["1914:event-yser-inundation"],
+      "places": ["place:dixmude"]
+    },
+    "sources": [
+      {
+        "source": "source:van-pul-2006"
+      }
+    ]
+  },
+  {
+    "id": "1914:vignette-gheluvelt-worcesters",
+    "title": "Gheluvelt: the counter-attack that had nothing behind it",
+    "at": "1914-10-31T14:00:00Z",
+    "place": "place:gheluvelt",
+    "lngLat": [3.0, 50.836],
+    "branch": "1914:historical",
+    "voice": "A British battalion on the Menin road",
+    "kind": "reconstruction",
+    "text": "By early afternoon the line on the Menin road is gone, Gheluvelt is lost, and there is no formed body of British infantry between the Germans and Ypres. What is available is one battalion in reserve, about three hundred and fifty men. They cross a thousand yards of open ground under shellfire, lose a hundred on the way, and go into the village and the château grounds with the bayonet against troops who are not expecting anything to come the other way. The village is retaken and the line is closed. It was not a plan; it was what happened to be within reach.[^edmonds-1925]",
+    "links": {
+      "events": ["1914:event-gheluvelt"],
+      "casualties": ["1914:casualties-first-ypres"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      }
     ]
   }
 ]

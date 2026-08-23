@@ -288,6 +288,45 @@
     "notes": "First publication of the 1905 memorandum and its drafts, with Moltke's comments, from the then-lost-and-recovered files; the English text of the memorandum is at pp. 134–148. Ritter's critique of the plan's feasibility is itself a position in the debate."
   },
   {
+    "id": "source:van-pul-2006",
+    "kind": "book",
+    "author": "Van Pul, Paul",
+    "title": "In Flanders Flooded Fields: Before Ypres There Was Yser",
+    "year": 2006,
+    "publisher": "Pen & Sword Military, Barnsley",
+    "isbn": "9781844154920",
+    "notes": "Specialist study of the Yser inundation by a hydraulic engineer: the polder system, the locks of the Ganzepoot at Nieuwpoort, and who opened which sluice on which night. Reconstructs the operation of 21–30 October 1914 from the Belgian engineering and unit records, and argues against the older claim that Foch was the author of the idea; the flooding is his subject, the wider battle only its frame."
+  },
+  {
+    "id": "source:unruh-1986",
+    "kind": "book",
+    "author": "Unruh, Karl",
+    "title": "Langemarck: Legende und Wirklichkeit",
+    "year": 1986,
+    "publisher": "Bernard & Graefe, Koblenz",
+    "notes": "The detailed demolition of the Langemarck legend: the composition of the four new reserve corps (experienced reservists and Landwehr with a minority of volunteers, not a student army), the absence of the singing from contemporary accounts, and the distance between the fighting of late October and the communiqué of 11 November. Cite for the reality against which the myth is measured."
+  },
+  {
+    "id": "source:1914-1918-online-langemarck",
+    "kind": "article",
+    "author": "Grawe, Lukas",
+    "title": "Langemarck Myth",
+    "year": 2020,
+    "publisher": "1914-1918-online. International Encyclopedia of the First World War (Freie Universität Berlin)",
+    "url": "https://encyclopedia.1914-1918-online.net/article/langemarck-myth/",
+    "notes": "Peer-reviewed encyclopedia article: the text of the OHL communiqué of 11 November 1914, the fighting it actually described (10 November, between Bixschote and Noordschote), the composition of the reserve corps, and the myth's later career. Cite for the communiqué's wording and the myth's construction."
+  },
+  {
+    "id": "source:1914-1918-online-ypres",
+    "kind": "article",
+    "author": "Jones, Spencer",
+    "title": "Ypres, Battles of",
+    "year": 2015,
+    "publisher": "1914-1918-online. International Encyclopedia of the First World War (Freie Universität Berlin)",
+    "url": "https://encyclopedia.1914-1918-online.net/article/ypres-battles-of/",
+    "notes": "Peer-reviewed encyclopedia article on the Ypres battles; for First Ypres gives 19 October – 22 November 1914, the armies engaged, German losses of about 130,000 and Entente losses of about 100,000, and the destruction of the British pre-war army. Cite for the round totals beside Edmonds's exact returns."
+  },
+  {
     "id": "source:clark-2012",
     "kind": "book",
     "author": "Clark, Christopher",
