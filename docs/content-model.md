@@ -125,7 +125,8 @@ generated JSON Schema; this is the intent of each.
   is a tree: corps under armies, divisions under corps), optional `strength`
   (men, guns, corps, divisions, `asOf`) and `concentration` (where it
   assembled, in words plus a representative position and date — the start
-  token before its route begins), each with its own sources.
+  token before its route begins) and `dissolved` (when it ceased to exist —
+  its token disappears then), each with its own sources.
 - **Route** — a Formation's movement over time (see above). Required sources.
 - **Event** — a point (`at`) or a span (`timeRange`); `kind`, `significance`
   (`major` events become timeline ticks), a Place or a position, summary,
@@ -182,7 +183,8 @@ waypoints, counterfactual routes starting before the divergence, duplicate
 routes per formation and branch, beats visible together overlapping, unknown
 footnote labels (beats and cast bios), missing required citations, cast
 entries naming a person or side that does not exist or the same person twice,
-a formation's `concentration.asOf` outside the pack range, decision `historical` not an
+a formation's `concentration.asOf` or `dissolved` outside the pack range or
+`dissolved` not after `concentration.asOf`, decision `historical` not an
 option, campaign routes using battle-level formations, and the imagery policy
 on media manifests (flagged BLOCKED/UNVERIFIED/UNKNOWN/HOLD, colorized without
 saying so, Bundesarchiv without the credit string, no archive record).

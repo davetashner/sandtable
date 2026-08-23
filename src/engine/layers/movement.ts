@@ -162,6 +162,21 @@ const RADIUS: Partial<Record<Formation['kind'], number>> = {
   other: 5,
 };
 
+/** Whether a formation has come into being by `now`: from `concentration.asOf` when given, else always. */
+export function existsAt(formation: Formation, now: number): boolean {
+  const asOf = formation.concentration?.asOf;
+  if (!asOf) return true;
+  const t = Date.parse(asOf);
+  return Number.isFinite(t) ? t <= now : false;
+}
+
+/** Whether a formation has ceased to exist by `now` (`dissolved`). */
+export function dissolvedBy(formation: Formation, now: number): boolean {
+  if (!formation.dissolved) return false;
+  const t = Date.parse(formation.dissolved);
+  return Number.isFinite(t) ? t <= now : false;
+}
+
 /** deck.gl layers for the current instant. Rebuild every tick; deck diffs props. */
 export function buildMovementLayers(o: MovementLayerOptions): Layer[] {
   const routeData: RouteDatum[] = o.routes.map((r) => ({
@@ -171,9 +186,15 @@ export function buildMovementLayers(o: MovementLayerOptions): Layer[] {
     color: sideColor(r.side, o.sides),
     hypothetical: r.hypothetical,
   }));
-  const tokens: TokenDatum[] = o.routes.map((r) => {
+  const tokens: TokenDatum[] = [];
+  for (const r of o.routes) {
     const pos = positionAt(r.points, o.now);
-    return {
+    // Before its route begins a formation shows only once it exists — from
+    // its concentration date (an army deploying), never for one not yet
+    // formed (the French 6th and 9th Armies, the Army of Alsace).
+    if (pos.phase === 'before' && !existsAt(r.formation, o.now)) continue;
+    if (dissolvedBy(r.formation, o.now)) continue;
+    tokens.push({
       id: r.formation.id,
       label: r.formation.short ?? r.formation.name,
       position: pos.lngLat,
@@ -181,8 +202,8 @@ export function buildMovementLayers(o: MovementLayerOptions): Layer[] {
       radius: RADIUS[r.formation.kind] ?? 5,
       phase: pos.phase,
       hypothetical: r.hypothetical,
-    };
-  });
+    });
+  }
   const currentTime = (o.now - o.rangeStart) / 1000;
   const ink = tokenColor('--panel');
   const halo = tokenColor('--ink');

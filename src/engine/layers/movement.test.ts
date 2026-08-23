@@ -119,4 +119,76 @@ describe('buildMovementLayers', () => {
     expect(tokens.data[0]).toMatchObject({ id: '1914:army-de-1', phase: 'moving' });
     expect(tokens.data[1]).toMatchObject({ id: '1914:army-fr-6', phase: 'before' });
   });
+
+  it('hides the token of a formation whose concentration date is still to come; shows it from then on', () => {
+    const fmt = (id: string, asOf?: string) =>
+      ({
+        id,
+        name: id,
+        side: 'de',
+        kind: 'army',
+        ...(asOf ? { concentration: { area: 'x', asOf } } : {}),
+      }) as unknown as Parameters<typeof composeRoutes>[1][number];
+    const sides = [{ id: 'de', name: 'DE', alliance: 'Central Powers' }];
+    const mk = (f: ReturnType<typeof fmt>) => ({
+      formation: f,
+      side: sides[0]!,
+      points: [
+        [6, 50, Date.UTC(1914, 7, 20)],
+        [5, 50, Date.UTC(1914, 7, 25)],
+      ] as [number, number, number][],
+      hypothetical: false,
+      confidence: 'medium' as const,
+    });
+    const now = Date.UTC(1914, 7, 15);
+    const tokensOf = (layers: ReturnType<typeof buildMovementLayers>) =>
+      (
+        layers.find((l) => l.id === 'movement-tokens')!.props as unknown as {
+          data: { id: string }[];
+        }
+      ).data.map((d) => d.id);
+    const routes = [
+      mk(fmt('later')),
+      mk(fmt('deploying', '1914-08-10')),
+      mk(fmt('notyet', '1914-08-18')),
+    ];
+    expect(
+      tokensOf(buildMovementLayers({ routes, now, rangeStart: Date.UTC(1914, 7, 2), sides })),
+    ).toEqual(['later', 'deploying']);
+    // a dissolved formation disappears from its dissolved date, even mid-route
+    const gone = mk({ ...fmt('gone', '1914-08-10'), dissolved: '1914-08-22' } as ReturnType<
+      typeof fmt
+    >);
+    expect(
+      tokensOf(
+        buildMovementLayers({
+          routes: [gone],
+          now: Date.UTC(1914, 7, 21),
+          rangeStart: Date.UTC(1914, 7, 2),
+          sides,
+        }),
+      ),
+    ).toEqual(['gone']);
+    expect(
+      tokensOf(
+        buildMovementLayers({
+          routes: [gone],
+          now: Date.UTC(1914, 7, 23),
+          rangeStart: Date.UTC(1914, 7, 2),
+          sides,
+        }),
+      ),
+    ).toEqual([]);
+    // once moving, every formation shows
+    expect(
+      tokensOf(
+        buildMovementLayers({
+          routes,
+          now: Date.UTC(1914, 7, 22),
+          rangeStart: Date.UTC(1914, 7, 2),
+          sides,
+        }),
+      ),
+    ).toEqual(['later', 'deploying', 'notyet']);
+  });
 });

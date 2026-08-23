@@ -462,6 +462,17 @@ function checkFormation(
   checkIds(ctx, path, f.media, f.id, ['media'], 'media');
   checkCitations(ctx, path, f.id, f.sources, false);
   checkCitations(ctx, path, f.id, f.strength?.sources, false, 'strength.sources');
+  if (f.dissolved) {
+    const range = scope?.timeRange ?? s.pack.timeRange;
+    if (!within(range, f.dissolved))
+      ctx.error(
+        path,
+        `dissolved (${f.dissolved}) is outside the ${scope ? 'battle' : 'pack'} timeRange`,
+        f.id,
+      );
+    if (f.concentration?.asOf && t(f.dissolved) <= t(f.concentration.asOf))
+      ctx.error(path, 'dissolved must be later than concentration.asOf', f.id);
+  }
   if (f.concentration) {
     const c = f.concentration;
     checkCitations(ctx, path, f.id, c.sources, false, 'concentration.sources');

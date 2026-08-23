@@ -266,6 +266,16 @@ describe('validateContent', () => {
     );
     forms[0]!['concentration'] = { area: 'Aachen', position: [6, 50.8], asOf: '1914-08-17' };
     expect(messages(validateContent(raw)).filter((m) => /concentration/.test(m))).toEqual([]);
+    forms[0]!['dissolved'] = '1914-08-10';
+    expect(messages(validateContent(raw))).toContainEqual(
+      expect.stringMatching(/dissolved must be later than concentration\.asOf/),
+    );
+    forms[0]!['dissolved'] = '1914-12-01';
+    expect(messages(validateContent(raw))).toContainEqual(
+      expect.stringMatching(/dissolved \(1914-12-01\) is outside the pack timeRange/),
+    );
+    forms[0]!['dissolved'] = '1914-08-26';
+    expect(messages(validateContent(raw)).filter((m) => /dissolved/.test(m))).toEqual([]);
   });
 
   it('checks cast entries: person and side must exist, citations required, bio footnotes must name a source, one entry per person', () => {

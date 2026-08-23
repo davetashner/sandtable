@@ -285,6 +285,8 @@ export const Formation = z
       })
       .strict()
       .optional(),
+    /** When it ceased to exist (disbanded, merged, destroyed); its token disappears then. */
+    dissolved: When.optional(),
     /** Where it assembled before moving (the order of battle, sand-1l0.1). */
     concentration: z
       .object({
