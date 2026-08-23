@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Branch, Formation, Route, Side } from '../../packs/schema/index.js';
-import { buildMovementLayers, composeRoutes, positionAt } from './movement.js';
+import { buildMovementLayers, buildMovementScene, composeRoutes, positionAt } from './movement.js';
 
 const sides: Side[] = [
   { id: 'de', name: 'German Empire', alliance: 'Central Powers' },
@@ -190,5 +190,41 @@ describe('buildMovementLayers', () => {
         }),
       ),
     ).toEqual(['later', 'deploying', 'notyet']);
+  });
+
+  it('lays token labels out against each other when given a projection and reports their boxes', () => {
+    const project = (p: [number, number]): [number, number] => [p[0] * 100, -p[1] * 100];
+    const sides = [{ id: 'de', name: 'DE', alliance: 'Central Powers' }];
+    const f = (id: string, kind: string) =>
+      ({ id, name: id, short: id, side: 'de', kind }) as unknown as Parameters<
+        typeof composeRoutes
+      >[1][number];
+    const mk = (fm: ReturnType<typeof f>, lng: number) => ({
+      formation: fm,
+      side: sides[0]!,
+      points: [
+        [lng, 50, Date.UTC(1914, 7, 20)],
+        [lng, 50, Date.UTC(1914, 7, 25)],
+      ] as [number, number, number][],
+      hypothetical: false,
+      confidence: 'medium' as const,
+    });
+    // an army and a corps 20 px apart: the army keeps the slot above, the corps takes another
+    const routes = [mk(f('1. Armee', 'army'), 6.0), mk(f('II. AK', 'corps'), 6.2)];
+    const opts = { routes, now: Date.UTC(1914, 7, 22), rangeStart: Date.UTC(1914, 7, 2), sides };
+    const plain = buildMovementScene(opts);
+    expect(plain.labelBoxes).toEqual([]);
+    const scene = buildMovementScene({ ...opts, project });
+    expect(scene.labelBoxes.length).toBeGreaterThanOrEqual(4); // two dots + two labels
+    const labels = scene.layers.find((l) => l.id === 'movement-labels')!.props as unknown as {
+      data: { id: string }[];
+      getAlignmentBaseline: (d: { id: string }) => string;
+      getTextAnchor: (d: { id: string }) => string;
+    };
+    expect(labels.data.map((d) => d.id)).toEqual(['1. Armee', 'II. AK']);
+    expect(labels.getAlignmentBaseline({ id: '1. Armee' })).toBe('bottom');
+    expect(
+      labels.getAlignmentBaseline({ id: 'II. AK' }) + labels.getTextAnchor({ id: 'II. AK' }),
+    ).not.toBe('bottommiddle');
   });
 });

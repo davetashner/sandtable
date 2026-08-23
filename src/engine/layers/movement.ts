@@ -16,6 +16,14 @@ import { TripsLayer } from '@deck.gl/geo-layers';
 import { PathLayer, ScatterplotLayer, TextLayer } from '@deck.gl/layers';
 import type { Branch, Formation, Route, Side, Waypoint } from '../../packs/schema/index.js';
 import { type RGBA, sideColor, tokenColor } from './colors.js';
+import {
+  occupiedBoxes,
+  placeLabels,
+  TOKEN_SLOTS,
+  type Box,
+  type LabelCandidate,
+  type LabelPlacement,
+} from './places.js';
 
 export interface ComposedRoute {
   formation: Formation;
@@ -127,6 +135,13 @@ export interface MovementLayerOptions {
   highlight?: string;
   /** Called when a token is clicked. */
   onSelect?: (formationId: string) => void;
+  /**
+   * Screen projection (MapLibre's map.project). When given, token labels are
+   * laid out against each other — above, then right, left, below of the
+   * token; hidden only when boxed in — and `buildMovementScene` reports the
+   * boxes they occupy so place labels can keep clear of them (sand-4xz).
+   */
+  project?: ((lngLat: [number, number]) => [number, number] | null) | undefined;
 }
 
 interface RouteDatum {
@@ -162,6 +177,21 @@ const RADIUS: Partial<Record<Formation['kind'], number>> = {
   other: 5,
 };
 
+const LABEL_PRIORITY: Partial<Record<Formation['kind'], number>> = {
+  'army-group': 6,
+  army: 5,
+  fleet: 5,
+  corps: 4,
+  other: 3,
+  division: 3,
+  squadron: 3,
+  garrison: 2,
+  brigade: 2,
+  flotilla: 2,
+  detachment: 1,
+  regiment: 1,
+};
+
 /** Whether a formation has come into being by `now`: from `concentration.asOf` when given, else always. */
 export function existsAt(formation: Formation, now: number): boolean {
   const asOf = formation.concentration?.asOf;
@@ -179,6 +209,17 @@ export function dissolvedBy(formation: Formation, now: number): boolean {
 
 /** deck.gl layers for the current instant. Rebuild every tick; deck diffs props. */
 export function buildMovementLayers(o: MovementLayerOptions): Layer[] {
+  return buildMovementScene(o).layers;
+}
+
+export interface MovementScene {
+  layers: Layer[];
+  /** Screen boxes of the token dots and their placed labels (empty without `project`). */
+  labelBoxes: Box[];
+}
+
+/** Layers plus the screen space the tokens and their labels occupy. */
+export function buildMovementScene(o: MovementLayerOptions): MovementScene {
   const routeData: RouteDatum[] = o.routes.map((r) => ({
     id: r.formation.id,
     path: r.points.map((p) => [p[0], p[1]] as [number, number]),
@@ -208,7 +249,27 @@ export function buildMovementLayers(o: MovementLayerOptions): Layer[] {
   const ink = tokenColor('--panel');
   const halo = tokenColor('--ink');
 
-  return [
+  // Label layout against each other (sand-4xz); without a projection every
+  // label sits above its token as before.
+  const kindOf = new Map(o.routes.map((r) => [r.formation.id, r.formation.kind]));
+  const candidates: LabelCandidate[] = tokens.map((t) => ({
+    id: t.id,
+    text: t.label,
+    position: t.position,
+    priority: LABEL_PRIORITY[kindOf.get(t.id) ?? 'other'] ?? 3,
+    size: 12,
+    gap: t.radius + 5,
+    radius: t.radius + 2,
+  }));
+  const placement: ReadonlyMap<string, LabelPlacement> | undefined = o.project
+    ? placeLabels(candidates, o.project, [], TOKEN_SLOTS)
+    : undefined;
+  const labelBoxes = o.project && placement ? occupiedBoxes(candidates, placement, o.project) : [];
+  const labelData = placement
+    ? tokens.filter((t) => placement.get(t.id)?.visible !== false)
+    : tokens;
+
+  const layers: Layer[] = [
     // the whole route, faint — what is still to come
     new PathLayer<RouteDatum>({
       id: 'movement-ghost',
@@ -261,13 +322,15 @@ export function buildMovementLayers(o: MovementLayerOptions): Layer[] {
     }),
     new TextLayer<TokenDatum>({
       id: 'movement-labels',
-      data: tokens,
+      data: labelData,
       getPosition: (d) => d.position,
       getText: (d) => d.label,
       getSize: 12,
       sizeUnits: 'pixels',
       getColor: () => halo,
-      getPixelOffset: (d) => [0, -(d.radius + 9)],
+      getTextAnchor: (d) => placement?.get(d.id)?.anchor ?? 'middle',
+      getAlignmentBaseline: (d) => placement?.get(d.id)?.baseline ?? 'bottom',
+      getPixelOffset: (d) => placement?.get(d.id)?.offset ?? [0, -(d.radius + 5)],
       fontFamily: 'IBM Plex Mono, ui-monospace, monospace',
       fontWeight: 600,
       outlineWidth: 3,
@@ -277,4 +340,5 @@ export function buildMovementLayers(o: MovementLayerOptions): Layer[] {
       pickable: false,
     }),
   ];
+  return { layers, labelBoxes };
 }
