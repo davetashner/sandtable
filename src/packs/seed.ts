@@ -22,6 +22,7 @@ import linksJson from '../../content/eras/1914-schlieffen-marne/links.json';
 import castJson from '../../content/eras/1914-schlieffen-marne/cast.json';
 import decisionsJson from '../../content/eras/1914-schlieffen-marne/decisions.json';
 import clocksJson from '../../content/eras/1914-schlieffen-marne/clocks.json';
+import talliesJson from '../../content/eras/1914-schlieffen-marne/tallies.json';
 import {
   Battle,
   BeatFrontMatter,
@@ -38,6 +39,7 @@ import {
   ScienceCard,
   Source,
   TechCard,
+  Tally,
   Timetable,
   type Battle as BattleT,
   type CastEntry as CastEntryT,
@@ -54,6 +56,7 @@ import {
   type Route as RouteT,
   type Source as SourceT,
   type TechCard as TechCardT,
+  type Tally as TallyT,
   type Timetable as TimetableT,
 } from './schema/index.js';
 import { splitFrontMatter } from './validate/frontmatter.js';
@@ -88,6 +91,8 @@ export interface SeedPack {
   decisions: DecisionPointT[];
   /** Plan-vs-actual clocks (clocks.json). */
   clocks: TimetableT[];
+  /** Strength ledgers (tallies.json). */
+  tallies: TallyT[];
 }
 
 function loadSeed(): SeedPack {
@@ -110,6 +115,7 @@ function loadSeed(): SeedPack {
   const links = CausalLink.array().parse(linksJson);
   const cast = CastEntry.array().parse(castJson);
   const clocks = Timetable.array().parse(clocksJson);
+  const tallies = Tally.array().parse(talliesJson);
   const decisions = DecisionPoint.array()
     .parse(decisionsJson)
     .sort((a, b) => Date.parse(a.at) - Date.parse(b.at));
@@ -130,6 +136,7 @@ function loadSeed(): SeedPack {
     cast,
     decisions,
     clocks,
+    tallies,
   };
 }
 

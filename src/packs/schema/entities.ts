@@ -241,6 +241,66 @@ export const Timetable = z
   })
   .strict();
 
+// ------------------------------------------------------------------ Tally
+/**
+ * A running strength ledger (sand-1l0.19): a starting value in some unit and
+ * dated entries that add or subtract — the corps that left the right wing —
+ * each with where it went and why; plus named comparisons (right:left under
+ * the 1905 memorandum vs. Moltke's deployment). Generic: any force ratio or
+ * attrition ledger in a later era.
+ */
+export const Tally = z
+  .object({
+    id: Id.describe('<era>:tally-<slug>'),
+    title: z.string().min(1),
+    subtitle: z.string().optional(),
+    unit: z.string().min(1).describe('"corps", "divisions", "men"…'),
+    start: z
+      .object({
+        value: z.number(),
+        asOf: IsoTime,
+        note: Markdown.optional(),
+        sources: Sources.optional(),
+      })
+      .strict(),
+    entries: z
+      .array(
+        z
+          .object({
+            id: Slug,
+            at: IsoTime,
+            delta: z.number().describe('Negative when strength leaves'),
+            label: z.string().min(1),
+            formations: z.array(Id).optional(),
+            place: Id.optional(),
+            lngLat: LngLat.optional().describe('Where the marker goes on the map'),
+            note: Markdown.optional(),
+            sources: Sources.optional(),
+          })
+          .strict(),
+      )
+      .min(1),
+    comparisons: z
+      .array(
+        z
+          .object({
+            id: Slug,
+            label: z.string().min(1),
+            a: z.number().describe('Left-hand quantity, e.g. the right wing'),
+            b: z.number().describe('Right-hand quantity, e.g. the left wing'),
+            unit: z.string().optional(),
+            note: Markdown.optional(),
+            sources: Sources.optional(),
+          })
+          .strict(),
+      )
+      .optional()
+      .describe('Named a:b comparisons drawn as paired bars'),
+    summary: Markdown.optional().describe('Footnoted [^slug] to `sources`'),
+    sources: Sources,
+  })
+  .strict();
+
 // ------------------------------------------------------------------- Cast
 /**
  * A pack's dramatis personae: who the story is about in *this* period. The
@@ -645,6 +705,7 @@ export type Source = z.infer<typeof Source>;
 export type Person = z.infer<typeof Person>;
 export type CastEntry = z.infer<typeof CastEntry>;
 export type Timetable = z.infer<typeof Timetable>;
+export type Tally = z.infer<typeof Tally>;
 export type Place = z.infer<typeof Place>;
 export type Media = z.infer<typeof Media>;
 export type Side = z.infer<typeof Side>;

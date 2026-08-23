@@ -14,9 +14,10 @@ import {
 } from '../engine/layers/places.js';
 import { buildStyle, type MapTheme } from '../engine/map/style.js';
 import { useMovementLayers, type MovementSource } from '../engine/layers/useMovementLayers.js';
+import { buildTallyLayers } from '../engine/layers/tallies.js';
 import { MapView, type MapHandle } from '../engine/map/MapView.js';
 import { labelNow } from '../engine/ticks.js';
-import type { BBox, Branch, Camera, Place } from '../packs/schema/index.js';
+import type { BBox, Branch, Camera, Place, Tally } from '../packs/schema/index.js';
 
 export interface MapSurfaceProps {
   camera: Camera;
@@ -29,6 +30,9 @@ export interface MapSurfaceProps {
   focusRegion?: BBox | undefined;
   /** Cities and fortresses to label. */
   places?: Place[];
+  /** Strength ledgers whose positioned entries appear as markers (sand-1l0.19). */
+  tallies?: Tally[];
+  onSelectTally?: ((tallyId: string) => void) | undefined;
 }
 
 export function MapSurface({
@@ -39,6 +43,8 @@ export function MapSurface({
   region,
   focusRegion,
   places = [],
+  tallies = [],
+  onSelectTally,
 }: MapSurfaceProps) {
   const { now, range } = useClock();
   const label = labelNow(now, range);
@@ -76,7 +82,14 @@ export function MapSurface({
       }),
     [labelledPoints],
   );
-  const layers = useMemo(() => [...placeLayers, ...movementLayers], [placeLayers, movementLayers]);
+  const tallyLayers = useMemo(
+    () => buildTallyLayers({ tallies, now, ...(onSelectTally ? { onSelect: onSelectTally } : {}) }),
+    [tallies, now, onSelectTally],
+  );
+  const layers = useMemo(
+    () => [...placeLayers, ...tallyLayers, ...movementLayers],
+    [placeLayers, tallyLayers, movementLayers],
+  );
   const first = useRef(true);
 
   // Re-lay-out labels as the camera moves (one layout per animation frame at most).

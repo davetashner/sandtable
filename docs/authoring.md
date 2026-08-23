@@ -369,6 +369,50 @@ only `plannedDay` reads "never"; one with only `actualAt` is a reality-only
 mark. The gauges under the timeline read the slip on the milestone furthest
 along; clicking one opens the card (`?card=<id>`).
 
+### Strength ledgers
+
+`tallies.json` — a running count that changes as dated entries bite (the
+right wing's corps leaving the wheel), with optional a:b comparisons:
+
+```json
+{
+  "id": "1914:tally-right-wing",
+  "title": "The right wing bleeds",
+  "unit": "corps",
+  "start": {
+    "value": 16,
+    "asOf": "1914-08-17T12:00:00Z",
+    "sources": [{ "source": "source:reichsarchiv-weltkrieg-1" }]
+  },
+  "entries": [
+    {
+      "id": "antwerp",
+      "at": "1914-08-20T12:00:00Z",
+      "delta": -1,
+      "label": "III Reserve Corps left before Antwerp",
+      "formations": ["1914:corps-de-iii-res"],
+      "lngLat": [4.45, 51.05],
+      "note": "…"
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "schlieffen-1905",
+      "label": "The 1905 memorandum",
+      "a": 59,
+      "b": 9,
+      "unit": "divisions"
+    }
+  ],
+  "summary": "Footnoted Markdown.[^herwig-2009]",
+  "sources": [{ "source": "source:herwig-2009" }]
+}
+```
+
+Entries must be in time order and inside the pack range; a positioned entry
+becomes a ring on the map once the clock passes it; the gauge under the
+timeline shows the running value and the card the full ledger (`?card=<id>`).
+
 ## 9. Add an image
 
 Read [ADR 0007](decisions/0007-imagery.md) first. Put the manifest

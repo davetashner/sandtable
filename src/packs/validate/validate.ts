@@ -40,6 +40,7 @@ import {
   type TimeRange,
   BeatFrontMatter,
   type CastEntry,
+  type Tally,
   type Timetable,
 } from '../schema/index.js';
 import { footnoteLabels, splitFrontMatter } from './frontmatter.js';
@@ -73,6 +74,7 @@ export interface ParsedPack {
   sources: Source[];
   cast: CastEntry[];
   clocks: Timetable[];
+  tallies: Tally[];
   beats: NarrativeBeat[];
 }
 
@@ -97,6 +99,7 @@ type Kind =
   | 'pack'
   | 'cast'
   | 'clock'
+  | 'tally'
   | 'branch'
   | 'formation'
   | 'route'
@@ -295,6 +298,7 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     sources: [],
     cast: [],
     clocks: [],
+    tallies: [],
     beats: [],
     files: {},
     branchById: new Map(),
@@ -318,6 +322,7 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     'sources.json': 'source',
     'cast.json': 'cast',
     'clocks.json': 'clock',
+    'tallies.json': 'tally',
   };
   for (const [file, schema] of Object.entries(PACK_COLLECTIONS) as [
     PackCollectionFile,
@@ -651,6 +656,40 @@ function checkClock(ctx: Ctx, path: string, c: Timetable) {
   }
 }
 
+function checkTally(ctx: Ctx, s: PackState, path: string, c: Tally) {
+  const range = s.pack.timeRange;
+  if (!within(range, c.start.asOf))
+    ctx.error(path, 'start.asOf is outside the pack timeRange', c.id);
+  checkCitations(ctx, path, c.id, c.start.sources, false, 'start.sources');
+  const ids = new Set<string>();
+  let prev = -Infinity;
+  for (const e of c.entries) {
+    if (ids.has(e.id)) ctx.error(path, `duplicate entry id ${e.id}`, c.id);
+    ids.add(e.id);
+    const at = t(e.at);
+    if (!(at >= prev)) ctx.error(path, `entry ${e.id} is earlier than the previous entry`, c.id);
+    prev = at;
+    if (!within(range, e.at))
+      ctx.error(path, `entry ${e.id}: at is outside the pack timeRange`, c.id);
+    checkIds(ctx, path, e.formations, c.id, ['formation'], `entry ${e.id} formations`);
+    if (e.place) ctx.ref(path, c.id, e.place, ['place'], `entry ${e.id} place`);
+    checkCitations(ctx, path, c.id, e.sources, false, `entry ${e.id} sources`);
+  }
+  for (const cmp of c.comparisons ?? []) {
+    if (cmp.a < 0 || cmp.b < 0)
+      ctx.error(path, `comparison ${cmp.id}: quantities must be >= 0`, c.id);
+    checkCitations(ctx, path, c.id, cmp.sources, false, `comparison ${cmp.id} sources`);
+  }
+  checkCitations(ctx, path, c.id, c.sources, true);
+  if (c.summary) {
+    const slugs = new Set(c.sources.map((x) => x.source.split(':')[1] ?? x.source));
+    for (const m of c.summary.matchAll(/\[\^([^\]\s]+)\]/g)) {
+      if (!slugs.has(m[1]!))
+        ctx.error(path, `summary footnote [^${m[1]}] is not one of the tally's sources`, c.id);
+    }
+  }
+}
+
 function checkLink(ctx: Ctx, path: string, l: CausalLink) {
   const any: Kind[] = [
     'pack',
@@ -842,6 +881,7 @@ export function validateContent(raw: RawContent): Report {
     for (const c of s.documents) checkCard(ctx, file('documents.json'), c);
     for (const l of s.links) checkLink(ctx, file('links.json'), l);
     for (const c of s.clocks) checkClock(ctx, file('clocks.json'), c);
+    for (const c of s.tallies) checkTally(ctx, s, file('tallies.json'), c);
     const seenCast = new Set<string>();
     for (const c of s.cast) {
       checkCast(ctx, file('cast.json'), c, sideIds);

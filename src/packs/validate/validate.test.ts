@@ -278,6 +278,68 @@ describe('validateContent', () => {
     expect(messages(validateContent(raw)).filter((m) => /dissolved/.test(m))).toEqual([]);
   });
 
+  it('checks tallies: entries ordered and in range, formation/place refs, footnotes and citations', () => {
+    const raw = fixture();
+    const c = raw.packs[0]!.collections;
+    const tally = (over: Record<string, unknown>) => ({
+      id: '1914:tally-rw',
+      title: 'Right wing',
+      unit: 'corps',
+      start: { value: 16, asOf: '1914-08-17T00:00:00Z' },
+      entries: [
+        {
+          id: 'a',
+          at: '1914-08-20T00:00:00Z',
+          delta: -1,
+          label: 'A',
+          formations: ['1914:army-de-1'],
+        },
+      ],
+      summary: 'Weight.[^herwig-2009]',
+      sources: [{ source: 'source:herwig-2009' }],
+      ...over,
+    });
+    c['tallies.json'] = { path: 'eras/1914-test/tallies.json', data: [tally({})] };
+    expect(messages(validateContent(raw)).filter((m) => /tally/.test(m))).toEqual([]);
+    c['tallies.json'] = {
+      path: 'eras/1914-test/tallies.json',
+      data: [
+        tally({
+          summary: 'Text.[^nope]',
+          entries: [
+            {
+              id: 'b',
+              at: '1914-08-25T00:00:00Z',
+              delta: -2,
+              label: 'B',
+              formations: ['1914:ghost'],
+              place: 'place:nowhere',
+            },
+            { id: 'b', at: '1914-08-20T00:00:00Z', delta: 1, label: 'Earlier' },
+            { id: 'c', at: '1914-12-01T00:00:00Z', delta: 1, label: 'Late' },
+          ],
+          comparisons: [{ id: 'x', label: 'X', a: -1, b: 2 }],
+        }),
+      ],
+    };
+    const msgs = messages(validateContent(raw));
+    expect(msgs).toContainEqual(
+      expect.stringMatching(/entry b formations 1914:ghost does not exist/),
+    );
+    expect(msgs).toContainEqual(
+      expect.stringMatching(/entry b place place:nowhere does not exist/),
+    );
+    expect(msgs).toContainEqual(expect.stringMatching(/duplicate entry id b/));
+    expect(msgs).toContainEqual(
+      expect.stringMatching(/entry b is earlier than the previous entry/),
+    );
+    expect(msgs).toContainEqual(expect.stringMatching(/entry c: at is outside the pack timeRange/));
+    expect(msgs).toContainEqual(expect.stringMatching(/comparison x: quantities must be >= 0/));
+    expect(msgs).toContainEqual(
+      expect.stringMatching(/summary footnote \[\^nope\] is not one of the tally's sources/),
+    );
+  });
+
   it('checks timetables: milestone ids unique, planned or actual, actual after origin, footnotes resolve, citations required', () => {
     const raw = fixture();
     const c = raw.packs[0]!.collections;

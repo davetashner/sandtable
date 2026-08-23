@@ -1,0 +1,174 @@
+[
+  {
+    "id": "1914:tally-right-wing",
+    "title": "The right wing bleeds",
+    "subtitle": "Corps on the wheel — 1st, 2nd and 3rd Armies — from the assembly to the Marne",
+    "unit": "corps",
+    "start": {
+      "value": 16,
+      "asOf": "1914-08-17T12:00:00Z",
+      "note": "Sixteen corps on the wheel as the advance began: six in the 1st Army (II, III, IV, IX, III Reserve, IV Reserve), six in the 2nd (Guard, VII, X, Guard Reserve, VII Reserve, X Reserve), four in the 3rd (XI, XII, XIX, XII Reserve) — with the IX Reserve Corps still held in Schleswig.",
+      "sources": [
+        {
+          "source": "source:reichsarchiv-weltkrieg-1"
+        },
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    },
+    "entries": [
+      {
+        "id": "antwerp",
+        "at": "1914-08-20T12:00:00Z",
+        "delta": -1,
+        "label": "III Reserve Corps left before Antwerp",
+        "formations": ["1914:corps-de-iii-res"],
+        "place": "place:antwerp",
+        "lngLat": [4.45, 51.05],
+        "note": "As the 1st Army passed Brussels the III Reserve Corps turned off to mask the Belgian field army in Antwerp; it never rejoined the wheel.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ]
+      },
+      {
+        "id": "maubeuge",
+        "at": "1914-08-25T12:00:00Z",
+        "delta": -1,
+        "label": "VII Reserve Corps invests Maubeuge",
+        "formations": ["1914:corps-de-vii-res"],
+        "lngLat": [3.97, 50.28],
+        "note": "The fortress held until 7 September; the corps reached the front only after the Marne was lost.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "east",
+        "at": "1914-08-26T00:00:00Z",
+        "delta": -2,
+        "label": "Guard Reserve and XI Corps entrain for East Prussia",
+        "formations": ["1914:corps-de-guard-res", "1914:corps-de-xi"],
+        "place": "place:namur",
+        "lngLat": [4.87, 50.47],
+        "note": "Moltke's decision of 25 August, taken when the West seemed won and East Prussia lost; the corps were in transit during Tannenberg and missing from the gap at the Marne.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:mombauer-2001"
+          }
+        ]
+      },
+      {
+        "id": "ix-res",
+        "at": "1914-08-28T12:00:00Z",
+        "delta": 1,
+        "label": "IX Reserve Corps arrives from Schleswig",
+        "formations": ["1914:corps-de-ix-res"],
+        "lngLat": [4.35, 50.85],
+        "note": "Released once a British landing on the North Sea coast was ruled out; it relieved the III Reserve Corps before Antwerp for a while and reached the Ourcq only on 8–9 September.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ]
+      },
+      {
+        "id": "marne",
+        "at": "1914-09-05T12:00:00Z",
+        "delta": 0,
+        "label": "The Marne: what is left on the wheel",
+        "lngLat": [3.4, 48.95],
+        "note": "Thirteen corps nominally, twelve in the battle — the 1st Army's five, the 2nd's four, the 3rd's three — against a French left that had been reinforced from Lorraine by rail and a new army at Paris.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      }
+    ],
+    "comparisons": [
+      {
+        "id": "schlieffen-1905",
+        "label": "The 1905 memorandum: right wing to left",
+        "a": 59,
+        "b": 9,
+        "unit": "divisions",
+        "note": "Schlieffen's paper put almost everything north of Metz — a ratio usually quoted as about seven to one; Zuber objects that many of those divisions existed only on paper.",
+        "sources": [
+          {
+            "source": "source:tuchman-1962"
+          },
+          {
+            "source": "source:zuber-2002"
+          }
+        ]
+      },
+      {
+        "id": "moltke-1914",
+        "label": "Moltke's August 1914 deployment",
+        "a": 55,
+        "b": 23,
+        "unit": "divisions",
+        "note": "The left wing in Lorraine and Alsace strengthened to meet a real French offensive: about three to one.",
+        "sources": [
+          {
+            "source": "source:tuchman-1962"
+          },
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:mombauer-2001"
+          }
+        ]
+      },
+      {
+        "id": "ersatz",
+        "label": "Mid-August: the six Ersatz divisions go to Lorraine",
+        "a": 55,
+        "b": 29,
+        "unit": "divisions",
+        "note": "The last reserve of the deployment went to the left, not the wheel; Moltke's defenders answer that the French Plan XVII offensive made it necessary.",
+        "sources": [
+          {
+            "source": "source:tuchman-1962"
+          },
+          {
+            "source": "source:mombauer-2001"
+          }
+        ]
+      }
+    ],
+    "summary": "The plan's logic was weight on the right; the campaign's arithmetic was the weight leaving it. Before a shot was fired at the Marne the wheel had given up a corps to Antwerp, a corps to Maubeuge and two corps to East Prussia — the decision point of 25 August — and received one back from Schleswig.[^herwig-2009] [^reichsarchiv-weltkrieg-1] Whether the missing corps would have closed the gap, and whether Moltke's thickened left was prudence or betrayal of the concept, is the argument between Mombauer and Herwig on one side and Zuber on the other.[^mombauer-2001] [^zuber-2002]",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:mombauer-2001"
+      },
+      {
+        "source": "source:zuber-2002"
+      }
+    ]
+  }
+]

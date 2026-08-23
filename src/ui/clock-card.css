@@ -52,3 +52,70 @@
 .clock-table__note p {
   margin: 0;
 }
+
+/* Tally comparisons: paired bars (sand-1l0.19). */
+.ratio {
+  margin: 4px 0 12px;
+}
+
+.ratio__title {
+  margin: 12px 0 6px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.ratio__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.ratio__item {
+  display: grid;
+  gap: 3px;
+}
+
+.ratio__label {
+  font-size: var(--fs-sm);
+  color: var(--ink);
+}
+
+.ratio__bar {
+  display: flex;
+  height: 8px;
+  gap: 2px;
+}
+
+.ratio__a {
+  background: var(--side-central-1, #a33);
+  border-radius: 2px;
+}
+
+.ratio__b {
+  background: color-mix(in srgb, var(--side-central-1, #a33) 35%, transparent);
+  border-radius: 2px;
+}
+
+.ratio__numbers {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.ratio__note {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.ratio__note p {
+  margin: 0;
+}
+
+.clock-table tr[data-sign='minus'] td:nth-child(3) {
+  color: var(--side-central-1, #a33);
+}

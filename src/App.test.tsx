@@ -141,4 +141,20 @@ describe('App shell', () => {
       screen.getByRole('listitem', { name: /The Russian clock: M\+15, 25 d ahead/ }),
     ).toBeInTheDocument();
   });
+
+  it('shows the right-wing tally under the timeline and opens the ledger card', async () => {
+    window.history.replaceState(null, '', '/?t=1914-09-05T12:00:00Z');
+    render(<App />);
+    const gauge = await screen.findByRole(
+      'listitem',
+      { name: /The right wing bleeds: 13 of 16 corps, 3 gone/ },
+      { timeout: 8000 },
+    );
+    fireEvent.click(gauge);
+    expect(window.location.search).toContain('card=1914:tally-right-wing');
+    expect(screen.getByText('Strength ledger')).toBeInTheDocument();
+    expect(screen.getByRole('region', { name: 'Comparisons' })).toHaveTextContent(
+      /Moltke's August 1914 deployment/,
+    );
+  });
 });
