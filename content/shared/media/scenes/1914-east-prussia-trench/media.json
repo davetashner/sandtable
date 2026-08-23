@@ -1,0 +1,30 @@
+{
+  "$comment": "Winter trench scene on the Eastern Front; place and date are as described by the supplier and are not established by an archive record — see notes.",
+  "id": "media:scene/1914-east-prussia-trench/german-trench-east-prussia-colorized",
+  "kind": "scene",
+  "people": [],
+  "file": "german-trench-east-prussia-colorized.png",
+  "width": 1573,
+  "height": 1000,
+  "colorized": true,
+  "original": {
+    "description": "German infantry resting in a snow-covered trench cut into pale soil. Most wear the M1907/10 greatcoat and the Pickelhaube under a cloth cover; one man on the parapet keeps watch with his rifle, another stands at the right in marching order with pack, rolled greatcoat, mess tin and bayonet, a scarf wound to his ears. Others sit or lie along the trench floor and against the wall, one asleep at the foot of the frame. Rifles lie along the parapet; a dugout entrance opens behind the seated men.",
+    "photographer": "not identified",
+    "date": "described as 1914; on internal evidence the winter of 1914–15",
+    "archive": "no archive of record — supplied without a source, and no holding institution has been traced for it",
+    "archive_url": "https://commons.wikimedia.org/wiki/Category:Pickelhaube_of_World_War_I",
+    "original_dimensions": "not established",
+    "licence": "public domain — a German photograph of the First World War, published well before 1931"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'. Documented colours: field-grey greatcoats, brown leather equipment, grey-green helmet covers, snow. The purple scarf and other personal items are the colorizer's invention — flag for the image review (sand-y0u.7)."
+  },
+  "content_policy": "ok — men resting and on watch; the figure at the foot of the frame is asleep, and no casualties are shown",
+  "caption": "German infantry resting in a snow-filled trench on the Eastern Front, winter 1914–15 — greatcoats, covered Pickelhauben, and one man still watching the parapet. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: photographer not identified, German army, winter 1914–15; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+  "focal_point": { "x": 0.45, "y": 0.5 },
+  "notes": "Supplied by Dave 2026-08-23 as 'German soldiers resting after a battle in East Prussia in 1914'. PROVENANCE IS THE WEAKEST OF THIS BATCH and the caption is written accordingly: no source was supplied, and searching did not trace a holding archive, so neither the place nor the engagement can be stated. What the image itself supports is the season and the army — deep snow with covered Pickelhauben and M1907/10 greatcoats puts it in the winter of 1914–15, before the Stahlhelm — so the caption says 'the Eastern Front, winter 1914–15' rather than naming East Prussia or a battle. Note that the same kit and snow would fit the Vosges, the Argonne or the Carpathians equally well. For the image review (sand-y0u.7): trace an archive copy, or replace it. Natural placement if it can be sourced: the Tannenberg eastern cross-reference (1914:tannenberg-east, shipped in PR #68) and the winter that followed it."
+}

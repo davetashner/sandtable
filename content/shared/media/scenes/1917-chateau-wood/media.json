@@ -1,0 +1,30 @@
+{
+  "$comment": "Future-era image (Phase 3, Third Ypres). Filed now with the rest of the shared library.",
+  "id": "media:scene/1917-chateau-wood/chateau-wood-duckboards-colorized",
+  "kind": "scene",
+  "people": [],
+  "file": "chateau-wood-duckboards-colorized.png",
+  "width": 1431,
+  "height": 1099,
+  "colorized": true,
+  "original": {
+    "description": "AWM catalogue description: five Australians, members of a field artillery brigade, passing along a duckboard track over mud and water among gaunt bare tree trunks in the devastated Chateau Wood, part of one of the battlegrounds in the Ypres salient. The wood is reduced to splintered stumps; shell holes have filled with water and reflect the sky; a fallen trunk lies across the foreground.",
+    "photographer": "Frank Hurley (James Francis Hurley), Australian official photographer",
+    "date": "29 October 1917, per the Australian War Memorial record",
+    "archive": "Australian War Memorial, catalogue number E01220 — the print annotated 'E1220' in pencil, a silver gelatin photograph 15.1 × 20.2 cm",
+    "archive_url": "https://www.awm.gov.au/collection/E01220",
+    "original_dimensions": "not stated on the record consulted",
+    "licence": "public domain — Australian official photograph of the First World War, well out of copyright; the AWM makes the image available for public use"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'. Documented colours: Australian khaki and Brodie helmets, waterlogged clay, bleached and blackened timber. The sky is the colorizer's invention — flag for the image review (sand-y0u.7)."
+  },
+  "content_policy": "ok — a landscape with living soldiers on a duckboard track; no casualties shown",
+  "caption": "Australian gunners on a duckboard track through what had been Chateau Wood, near Hooge in the Ypres salient, 29 October 1917. The wood is the ground itself, drowned. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: Frank Hurley, 29 October 1917; Australian War Memorial E01220; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+  "focal_point": { "x": 0.6, "y": 0.62 },
+  "notes": "Supplied by Dave 2026-08-23. The men are identified in the AWM record as an Australian 4th Division field artillery brigade party; named candidates include Gunner James Macrea Fulton (110 Battery, 10th Field Artillery Brigade), Lieutenant Anthony Devine and Sergeant Clive Stewart Smith. HISTORIOGRAPHICAL NOTE worth carrying into the Passchendaele pack rather than hiding here: although the AWM dates the exposure to 29 October 1917, Hurley's own diary places him elsewhere that day, and Hurley is the photographer who argued openly with Charles Bean about composite prints — the dispute over how far a war photograph may be arranged is part of this image's history. The caption states the AWM date and does not adjudicate."
+}

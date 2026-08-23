@@ -1185,6 +1185,48 @@
       }
     },
     {
+      "id": "media:scene/1914-east-prussia-trench/german-trench-east-prussia-colorized",
+      "dir": "scenes/1914-east-prussia-trench",
+      "original": {
+        "src": "scenes/1914-east-prussia-trench/german-trench-east-prussia-colorized.png",
+        "width": 1573,
+        "height": 1000,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-east-prussia-trench/.derived/german-trench-east-prussia-colorized.w320.webp",
+          "width": 320,
+          "height": 203,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-east-prussia-trench/.derived/german-trench-east-prussia-colorized.w640.webp",
+          "width": 640,
+          "height": 407,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-east-prussia-trench/.derived/german-trench-east-prussia-colorized.w1024.webp",
+          "width": 1024,
+          "height": 651,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1573,
+      "height": 1000,
+      "caption": "German infantry resting in a snow-filled trench on the Eastern Front, winter 1914–15 — greatcoats, covered Pickelhauben, and one man still watching the parapet. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: photographer not identified, German army, winter 1914–15; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — a German photograph of the First World War, published well before 1931",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/Category:Pickelhaube_of_World_War_I",
+      "focalPoint": {
+        "x": 0.45,
+        "y": 0.5
+      }
+    },
+    {
       "id": "media:scene/1914-french-infantry-manoeuvres/french-infantry-charge-1913-colorized",
       "dir": "scenes/1914-french-infantry-manoeuvres",
       "original": {
@@ -1392,6 +1434,90 @@
       "focalPoint": {
         "x": 0.5,
         "y": 0.3
+      }
+    },
+    {
+      "id": "media:scene/1916-somme-royal-irish-rifles/royal-irish-rifles-somme-colorized",
+      "dir": "scenes/1916-somme-royal-irish-rifles",
+      "original": {
+        "src": "scenes/1916-somme-royal-irish-rifles/royal-irish-rifles-somme-colorized.png",
+        "width": 1573,
+        "height": 1000,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "scenes/1916-somme-royal-irish-rifles/.derived/royal-irish-rifles-somme-colorized.w320.webp",
+          "width": 320,
+          "height": 203,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1916-somme-royal-irish-rifles/.derived/royal-irish-rifles-somme-colorized.w640.webp",
+          "width": 640,
+          "height": 407,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1916-somme-royal-irish-rifles/.derived/royal-irish-rifles-somme-colorized.w1024.webp",
+          "width": 1024,
+          "height": 651,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1573,
+      "height": 1000,
+      "caption": "A ration party of the Royal Irish Rifles in a communication trench on the Somme, July 1916 — one of the most reproduced photographs of the war, and one of the few in which the men look back at you. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: Royal Engineers No 1 Printing Company, July 1916; Imperial War Museums Q 1, via Wikimedia Commons; public domain (PD-UKGov). Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — PD-UKGov, UK Government work created before 1 June 1957",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Royal_Irish_Rifles_ration_party_Somme_July_1916.jpg",
+      "focalPoint": {
+        "x": 0.4,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "media:scene/1917-chateau-wood/chateau-wood-duckboards-colorized",
+      "dir": "scenes/1917-chateau-wood",
+      "original": {
+        "src": "scenes/1917-chateau-wood/chateau-wood-duckboards-colorized.png",
+        "width": 1431,
+        "height": 1099,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "scenes/1917-chateau-wood/.derived/chateau-wood-duckboards-colorized.w320.webp",
+          "width": 320,
+          "height": 246,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1917-chateau-wood/.derived/chateau-wood-duckboards-colorized.w640.webp",
+          "width": 640,
+          "height": 492,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1917-chateau-wood/.derived/chateau-wood-duckboards-colorized.w1024.webp",
+          "width": 1024,
+          "height": 786,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1431,
+      "height": 1099,
+      "caption": "Australian gunners on a duckboard track through what had been Chateau Wood, near Hooge in the Ypres salient, 29 October 1917. The wood is the ground itself, drowned. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: Frank Hurley, 29 October 1917; Australian War Memorial E01220; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — Australian official photograph of the First World War, well out of copyright; the AWM makes the image available for public use",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://www.awm.gov.au/collection/E01220",
+      "focalPoint": {
+        "x": 0.6,
+        "y": 0.62
       }
     },
     {

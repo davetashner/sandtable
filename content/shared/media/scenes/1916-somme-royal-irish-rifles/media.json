@@ -1,0 +1,31 @@
+{
+  "$comment": "Future-era image (Phase 3, the Somme). Filed now with the rest of the shared library.",
+  "id": "media:scene/1916-somme-royal-irish-rifles/royal-irish-rifles-somme-colorized",
+  "kind": "scene",
+  "people": [],
+  "file": "royal-irish-rifles-somme-colorized.png",
+  "width": 1573,
+  "height": 1000,
+  "colorized": true,
+  "original": {
+    "description": "IWM catalogue description: 'A ration party of the Royal Irish Rifles in a communication trench during the Battle of the Somme.' Men in shrapnel helmets and service dress sit along the trench wall in deep mud, rifles and small-box respirator haversacks beside them; more men stand along the trench behind, one group in front of a sandbagged and revetted wall. Several look directly at the camera.",
+    "photographer": "Royal Engineers No 1 Printing Company (official photograph)",
+    "date": "July 1916; the IWM record gives the date as believed to be 1 July 1916, the first day of the offensive",
+    "archive": "Imperial War Museums, catalogue number Q 1 (collection no. 1900-02)",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Royal_Irish_Rifles_ration_party_Somme_July_1916.jpg",
+    "catalog_url": "https://www.iwm.org.uk/collections/item/object/205193964",
+    "original_dimensions": "5330 × 3943",
+    "licence": "public domain — PD-UKGov, UK Government work created before 1 June 1957"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'. Documented colours: British khaki service dress and puttees, the painted steel of Brodie helmets, chalky Somme mud. Individual formation flashes and the greener helmet covers are the colorizer's reading rather than matched to a reference — flag for the image review (sand-y0u.7)."
+  },
+  "content_policy": "ok — living soldiers resting, no casualties shown",
+  "caption": "A ration party of the Royal Irish Rifles in a communication trench on the Somme, July 1916 — one of the most reproduced photographs of the war, and one of the few in which the men look back at you. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: Royal Engineers No 1 Printing Company, July 1916; Imperial War Museums Q 1, via Wikimedia Commons; public domain (PD-UKGov). Colorization: Sandtable, AI-assisted, 2026.",
+  "focal_point": { "x": 0.4, "y": 0.45 },
+  "notes": "Supplied by Dave 2026-08-23 as 'the Royal Irish Rifles resting before the battle of the Somme'. TWO CAVEATS THE CAPTION RESPECTS, both from the archive record itself: the IWM calls these men a RATION PARTY — a working party carrying up supplies, not troops waiting to go over the top, which is how the picture is usually captioned — and the unit is given as 'possibly the 1st Battalion, Royal Irish Rifles (25th Brigade, 8th Division)', not confirmed. The 1 July date is 'believed', and the Western Front Association has published a cautionary piece questioning how securely this photograph is dated and placed. So the caption says 'July 1916' and 'a ration party'. For the image review (sand-y0u.7) and for whoever writes the Somme pack: this photograph is a good case study in how a caption acquires meaning it never had."
+}
