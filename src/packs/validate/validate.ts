@@ -40,6 +40,7 @@ import {
   type TimeRange,
   BeatFrontMatter,
   type CastEntry,
+  type Timetable,
 } from '../schema/index.js';
 import { footnoteLabels, splitFrontMatter } from './frontmatter.js';
 import type { RawContent, RawFile, RawPack } from './tree.js';
@@ -71,6 +72,7 @@ export interface ParsedPack {
   links: CausalLink[];
   sources: Source[];
   cast: CastEntry[];
+  clocks: Timetable[];
   beats: NarrativeBeat[];
 }
 
@@ -94,6 +96,7 @@ export interface Report {
 type Kind =
   | 'pack'
   | 'cast'
+  | 'clock'
   | 'branch'
   | 'formation'
   | 'route'
@@ -291,6 +294,7 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     links: [],
     sources: [],
     cast: [],
+    clocks: [],
     beats: [],
     files: {},
     branchById: new Map(),
@@ -313,6 +317,7 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     'links.json': 'link',
     'sources.json': 'source',
     'cast.json': 'cast',
+    'clocks.json': 'clock',
   };
   for (const [file, schema] of Object.entries(PACK_COLLECTIONS) as [
     PackCollectionFile,
@@ -626,6 +631,26 @@ function checkCast(ctx: Ctx, path: string, c: CastEntry, sideIds: Set<string>) {
   }
 }
 
+function checkClock(ctx: Ctx, path: string, c: Timetable) {
+  const ids = new Set<string>();
+  for (const m of c.milestones) {
+    if (ids.has(m.id)) ctx.error(path, `duplicate milestone id ${m.id}`, c.id);
+    ids.add(m.id);
+    if (m.plannedDay === undefined && !m.actualAt)
+      ctx.error(path, `milestone ${m.id} needs a plannedDay or an actualAt`, c.id);
+    if (m.actualAt && t(m.actualAt) < t(c.origin))
+      ctx.error(path, `milestone ${m.id}: actualAt is before the timetable origin`, c.id);
+    if (m.place) ctx.ref(path, c.id, m.place, ['place'], `milestone ${m.id} place`);
+    checkCitations(ctx, path, c.id, m.sources, false, `milestone ${m.id} sources`);
+  }
+  checkCitations(ctx, path, c.id, c.sources, true);
+  const slugs = new Set(c.sources.map((x) => x.source.split(':')[1] ?? x.source));
+  for (const m of c.assumption.matchAll(/\[\^([^\]\s]+)\]/g)) {
+    if (!slugs.has(m[1]!))
+      ctx.error(path, `assumption footnote [^${m[1]}] is not one of the timetable's sources`, c.id);
+  }
+}
+
 function checkLink(ctx: Ctx, path: string, l: CausalLink) {
   const any: Kind[] = [
     'pack',
@@ -816,6 +841,7 @@ export function validateContent(raw: RawContent): Report {
     for (const c of s.science) checkCard(ctx, file('science.json'), c);
     for (const c of s.documents) checkCard(ctx, file('documents.json'), c);
     for (const l of s.links) checkLink(ctx, file('links.json'), l);
+    for (const c of s.clocks) checkClock(ctx, file('clocks.json'), c);
     const seenCast = new Set<string>();
     for (const c of s.cast) {
       checkCast(ctx, file('cast.json'), c, sideIds);

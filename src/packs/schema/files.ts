@@ -43,6 +43,7 @@ import {
   TechCard,
   Thread,
   CastEntry,
+  Timetable,
 } from './entities.js';
 
 /** Pack files that hold an array of one entity kind, keyed by file name. */
@@ -58,6 +59,7 @@ export const PACK_COLLECTIONS = {
   'links.json': CausalLink,
   'sources.json': Source,
   'cast.json': CastEntry,
+  'clocks.json': Timetable,
 } as const;
 
 export type PackCollectionFile = keyof typeof PACK_COLLECTIONS;
@@ -90,6 +92,7 @@ export const JSON_SCHEMAS = {
   links: z.array(CausalLink),
   sources: z.array(Source),
   cast: z.array(CastEntry),
+  clocks: z.array(Timetable),
   'beat-frontmatter': BeatFrontMatter,
   people: z.array(Person),
   places: z.array(Place),

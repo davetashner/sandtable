@@ -207,6 +207,40 @@ export const Branch = z
   })
   .strict();
 
+// -------------------------------------------------------------- Timetable
+/**
+ * A plan measured against what happened (sand-1l0.18): a clock with a day-0
+ * origin and milestones the plan expected on given days, each recording when
+ * (if ever) it was actually reached. Generic — the Schlieffen timetable, the
+ * Russian-mobilization assumption, any later era's plan vs. actual.
+ */
+export const Timetable = z
+  .object({
+    id: Id.describe('<era>:clock-<slug>'),
+    title: z.string().min(1),
+    subtitle: z.string().optional(),
+    origin: IsoTime.describe('Day 0 of the timetable (e.g. the first mobilization day)'),
+    dayLabel: z.string().optional().describe('Prefix for day numbers, default "M+"'),
+    assumption: Markdown.describe('What the plan expected, footnoted [^slug] to `sources`'),
+    milestones: z
+      .array(
+        z
+          .object({
+            id: Slug,
+            label: z.string().min(1),
+            plannedDay: z.number().optional().describe('Day the plan expected it; absent for reality-only marks'),
+            actualAt: IsoTime.optional().describe('When it actually happened; absent if never'),
+            place: Id.optional(),
+            note: Markdown.optional(),
+            sources: Sources.optional(),
+          })
+          .strict(),
+      )
+      .min(1),
+    sources: Sources,
+  })
+  .strict();
+
 // ------------------------------------------------------------------- Cast
 /**
  * A pack's dramatis personae: who the story is about in *this* period. The
@@ -610,6 +644,7 @@ export type Links = z.infer<typeof Links>;
 export type Source = z.infer<typeof Source>;
 export type Person = z.infer<typeof Person>;
 export type CastEntry = z.infer<typeof CastEntry>;
+export type Timetable = z.infer<typeof Timetable>;
 export type Place = z.infer<typeof Place>;
 export type Media = z.infer<typeof Media>;
 export type Side = z.infer<typeof Side>;

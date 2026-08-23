@@ -21,6 +21,7 @@ import documentsJson from '../../content/eras/1914-schlieffen-marne/documents.js
 import linksJson from '../../content/eras/1914-schlieffen-marne/links.json';
 import castJson from '../../content/eras/1914-schlieffen-marne/cast.json';
 import decisionsJson from '../../content/eras/1914-schlieffen-marne/decisions.json';
+import clocksJson from '../../content/eras/1914-schlieffen-marne/clocks.json';
 import {
   Battle,
   BeatFrontMatter,
@@ -37,6 +38,7 @@ import {
   ScienceCard,
   Source,
   TechCard,
+  Timetable,
   type Battle as BattleT,
   type CastEntry as CastEntryT,
   type DecisionPoint as DecisionPointT,
@@ -52,6 +54,7 @@ import {
   type Route as RouteT,
   type Source as SourceT,
   type TechCard as TechCardT,
+  type Timetable as TimetableT,
 } from './schema/index.js';
 import { splitFrontMatter } from './validate/frontmatter.js';
 
@@ -83,6 +86,8 @@ export interface SeedPack {
   cast: CastEntryT[];
   /** Decision points (decisions.json), in time order. */
   decisions: DecisionPointT[];
+  /** Plan-vs-actual clocks (clocks.json). */
+  clocks: TimetableT[];
 }
 
 function loadSeed(): SeedPack {
@@ -104,6 +109,7 @@ function loadSeed(): SeedPack {
   const documents = Document.array().parse(documentsJson);
   const links = CausalLink.array().parse(linksJson);
   const cast = CastEntry.array().parse(castJson);
+  const clocks = Timetable.array().parse(clocksJson);
   const decisions = DecisionPoint.array()
     .parse(decisionsJson)
     .sort((a, b) => Date.parse(a.at) - Date.parse(b.at));
@@ -123,6 +129,7 @@ function loadSeed(): SeedPack {
     links,
     cast,
     decisions,
+    clocks,
   };
 }
 

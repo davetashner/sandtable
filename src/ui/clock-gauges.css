@@ -1,0 +1,130 @@
+/* Plan-vs-actual gauges under the timeline (sand-1l0.18). Tokens only. */
+
+.clocks {
+  display: grid;
+  gap: 4px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.clocks__gauge {
+  appearance: none;
+  border: 1px solid transparent;
+  background: none;
+  color: var(--ink);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+}
+
+.clocks__gauge:hover,
+.clocks__gauge:focus-visible {
+  border-color: var(--line);
+  outline: none;
+}
+
+.clocks__gauge[data-selected] {
+  border-color: var(--brass);
+}
+
+.clocks__title {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.clocks__bars {
+  position: relative;
+  display: block;
+  height: 18px;
+}
+
+.clocks__row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 7px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--line) 60%, transparent);
+}
+
+.clocks__row--plan {
+  top: 0;
+}
+
+.clocks__row--actual {
+  top: 11px;
+}
+
+.clocks__tick {
+  position: absolute;
+  top: -1px;
+  width: 2px;
+  height: 9px;
+  margin-left: -1px;
+  border-radius: 1px;
+  background: var(--muted);
+  opacity: 0.45;
+}
+
+.clocks__tick--plan[data-due],
+.clocks__tick--actual[data-reached] {
+  opacity: 1;
+}
+
+.clocks__tick--plan {
+  background: var(--brass);
+}
+
+.clocks__tick--actual {
+  background: var(--ink);
+}
+
+.clocks__needle {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 1px;
+  margin-left: -0.5px;
+  background: var(--ink);
+}
+
+.clocks__readout {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.clocks__day {
+  color: var(--ink);
+}
+
+.clocks__gauge[data-tone='behind'] .clocks__slip {
+  color: var(--side-central-1, #a33);
+}
+
+.clocks__gauge[data-tone='ahead'] .clocks__slip {
+  color: var(--brass);
+}
+
+@media (max-width: 699.98px) {
+  .clocks__gauge {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .clocks__readout {
+    justify-content: flex-start;
+  }
+}

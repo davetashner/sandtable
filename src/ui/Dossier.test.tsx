@@ -112,7 +112,7 @@ describe('selectBeat / citations', () => {
     const md = withFootnotes(beats[0]!, sources);
     expect(md).toContain('[^herwig-2009]: Herwig, Holger H.');
     expect(md).toContain('[^tuchman-1962]: Tuchman');
-    expect(md).toMatch(/Also drawing on\[\^tuchman-1962\]/);
+    expect(md).toMatch(/_Also drawing on_\[\^tuchman-1962\]/);
   });
 });
 

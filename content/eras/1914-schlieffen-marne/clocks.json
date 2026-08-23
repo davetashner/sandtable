@@ -1,0 +1,213 @@
+[
+  {
+    "id": "1914:clock-plan-timetable",
+    "title": "The plan's timetable",
+    "subtitle": "Where the right wing should be, day by day, against where it is",
+    "origin": "1914-08-02T00:00:00Z",
+    "dayLabel": "M+",
+    "assumption": "The deployment plan Moltke took to war was a timetable counted in mobilization days from 2 August: Liège in German hands by about M+12, Brussels by M+19, the French frontier by M+22, the line of the Somme and the Oise before Paris by about M+31, and the decisive battle — the French armies enveloped — by M+39 or M+40, after which the armies would entrain for the East. The figures are the ones the staff worked to and the ones Tuchman and Herwig use as the yardstick of the campaign; the memorandum itself gave no day-by-day schedule, and whether a 'plan' existed at all is argued in this pack's historiography.[^tuchman-1962] [^herwig-2009] [^zuber-2002]",
+    "milestones": [
+      {
+        "id": "liege",
+        "label": "Liège taken",
+        "plannedDay": 12,
+        "actualAt": "1914-08-16T18:00:00Z",
+        "place": "place:liege",
+        "note": "The city fell on 7 August; the last forts held until the 16th against the 42-cm and 30.5-cm howitzers — two to three days behind the schedule, though how much the whole advance lost is disputed.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "brussels",
+        "label": "Brussels",
+        "plannedDay": 19,
+        "actualAt": "1914-08-20T12:00:00Z",
+        "place": "place:brussels",
+        "note": "The 1st Army marched through Brussels on 20 August — on time.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "frontier",
+        "label": "The French frontier (Mons–Sambre)",
+        "plannedDay": 22,
+        "actualAt": "1914-08-23T12:00:00Z",
+        "place": "place:mons",
+        "note": "Mons and Charleroi on 21–23 August: the right wing reached the frontier on the day the timetable asked.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:edmonds-1922"
+          }
+        ]
+      },
+      {
+        "id": "somme-oise",
+        "label": "The Somme–Oise line before Paris",
+        "plannedDay": 31,
+        "actualAt": "1914-08-31T12:00:00Z",
+        "place": "place:compiegne",
+        "note": "Kluck crossed the Oise at Compiègne on 31 August, a day inside the schedule — but turning south-east inside Paris rather than passing it on the outside.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "decision",
+        "label": "Decisive battle: the French armies enveloped",
+        "plannedDay": 39,
+        "note": "Never reached. On M+38 (9 September) the right wing was ordered back to the Aisne; by M+39 the Marne was lost.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "east",
+        "label": "Armies entrain for the East",
+        "plannedDay": 42,
+        "note": "Never reached: the first large transfers east came only after the Race to the Sea.",
+        "sources": [
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      },
+      {
+        "id": "marne-retreat",
+        "label": "The retreat from the Marne",
+        "actualAt": "1914-09-09T12:00:00Z",
+        "place": "place:meaux",
+        "note": "Hentsch at Mareuil; the 1st and 2nd Armies break off the battle.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:zuber-2002"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:clock-russian-mobilization",
+    "title": "The Russian clock",
+    "subtitle": "The planning assumption — six weeks — against the Russian armies' real arrival",
+    "origin": "1914-08-02T00:00:00Z",
+    "dayLabel": "M+",
+    "assumption": "The whole plan rested on a Russian clock: the General Staff assumed that Russia's size and thin railways meant its armies could not press Germany's eastern frontier in strength for about six weeks — roughly M+40 — which was the time the West had to be won in. The assumption was already out of date; French loans had been building Russian railways since 1894 and Russia had promised France an offensive by the fifteenth day of mobilization.[^strachan-2001] [^herwig-2009] [^tuchman-1962]",
+    "milestones": [
+      {
+        "id": "russian-general-mobilization",
+        "label": "Russian general mobilization ordered",
+        "actualAt": "1914-08-02T00:00:00Z",
+        "note": "Decreed on 30 July, before German mobilization; the clock here starts on 2 August for comparability.",
+        "sources": [
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      },
+      {
+        "id": "effective",
+        "label": "Russian armies effective on the German frontier (the assumption)",
+        "plannedDay": 40,
+        "actualAt": "1914-08-17T06:00:00Z",
+        "note": "Rennenkampf's 1st Army crossed into East Prussia on 17 August (M+15) and Samsonov's 2nd on the 20th — some 25 days before the plan expected them.",
+        "sources": [
+          {
+            "source": "source:strachan-2001"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "gumbinnen",
+        "label": "Gumbinnen: the 8th Army checked",
+        "actualAt": "1914-08-20T12:00:00Z",
+        "note": "Prittwitz talks of retreating behind the Vistula; Hindenburg and Ludendorff are sent east.",
+        "sources": [
+          {
+            "source": "source:strachan-2001"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "detachment",
+        "label": "Moltke detaches two corps from the right wing",
+        "actualAt": "1914-08-25T12:00:00Z",
+        "note": "The Guard Reserve and XI Corps entrain for East Prussia — the decision this clock explains.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:mombauer-2001"
+          }
+        ]
+      },
+      {
+        "id": "tannenberg",
+        "label": "Tannenberg",
+        "actualAt": "1914-08-30T12:00:00Z",
+        "note": "Samsonov's army destroyed, 26–30 August, before the two corps arrive.",
+        "sources": [
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:mombauer-2001"
+      }
+    ]
+  }
+]

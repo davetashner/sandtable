@@ -153,6 +153,12 @@ generated JSON Schema; this is the intent of each.
   someone is known for in _this_ window lives here, so the same person can
   read differently in two packs. Surfaced as the cast strip and person
   profiles in the dossier (`sand-9ts`). Required sources.
+- **Timetable** (`clocks.json`) — a plan measured against what happened: a
+  day-0 `origin`, the plan's `assumption` (footnoted), and `milestones` each
+  with the `plannedDay` the plan expected and the `actualAt` it was really
+  reached (absent if never; reality-only marks have only `actualAt`). Rendered
+  as the plan-vs-reality gauges under the timeline and a card (`sand-1l0.18`);
+  any later era's plan vs. actual fits. Required sources.
 - **NarrativeBeat** — a Markdown file; front matter carries `id`, `title`,
   `dateLabel`, `from`/`to`, `branch`, `focus` (a Battle), pull quote, hero
   `media`, links and required `sources`. The body is Markdown; footnote
@@ -184,7 +190,9 @@ routes per formation and branch, beats visible together overlapping, unknown
 footnote labels (beats and cast bios), missing required citations, cast
 entries naming a person or side that does not exist or the same person twice,
 a formation's `concentration.asOf` or `dissolved` outside the pack range or
-`dissolved` not after `concentration.asOf`, decision `historical` not an
+`dissolved` not after `concentration.asOf`, timetable milestones without a
+planned day or an actual date, duplicated, or dated before the origin, and
+assumption footnotes that name no source, decision `historical` not an
 option, campaign routes using battle-level formations, and the imagery policy
 on media manifests (flagged BLOCKED/UNVERIFIED/UNKNOWN/HOLD, colorized without
 saying so, Bundesarchiv without the credit string, no archive record).
