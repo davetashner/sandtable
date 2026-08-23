@@ -83,6 +83,11 @@
   text-wrap: balance;
 }
 
+/* Hero image on a beat (sand-y0u.10): full width of the panel, caption below. */
+.dossier__hero {
+  margin: 6px 0 12px;
+}
+
 .dossier__pull {
   margin: 0 0 12px;
   padding: 8px 12px;

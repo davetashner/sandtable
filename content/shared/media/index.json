@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22",
+  "generatedAt": "2026-08-23",
   "base": "/assets/media/",
   "entries": [
     {
@@ -896,6 +896,90 @@
       "focalPoint": {
         "x": 0.55,
         "y": 0.45
+      }
+    },
+    {
+      "id": "media:scene/1914-french-infantry-manoeuvres/french-infantry-charge-1913-colorized",
+      "dir": "scenes/1914-french-infantry-manoeuvres",
+      "original": {
+        "src": "scenes/1914-french-infantry-manoeuvres/french-infantry-charge-1913-colorized.png",
+        "width": 1660,
+        "height": 948,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-french-infantry-manoeuvres/.derived/french-infantry-charge-1913-colorized.w320.webp",
+          "width": 320,
+          "height": 183,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-french-infantry-manoeuvres/.derived/french-infantry-charge-1913-colorized.w640.webp",
+          "width": 640,
+          "height": 365,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-french-infantry-manoeuvres/.derived/french-infantry-charge-1913-colorized.w1024.webp",
+          "width": 1024,
+          "height": 585,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1660,
+      "height": 948,
+      "caption": "French infantry charging with the bayonet at the Grandes manœuvres of 1913 — the army of Plan XVII a year before it attacked into Lorraine and the Ardennes in the same coats and képis. A peacetime exercise, often miscaptioned as the Marne. Colorized (AI-assisted) from an Agence Rol photograph.",
+      "credit": "Original photograph: Agence Rol, 1913; Bibliothèque nationale de France, Gallica (btv1b6931787b), via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain (agency photograph, France, pre-1931; BnF Gallica)",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Infanterie-fran%C3%A7aise-rol.jpg",
+      "focalPoint": {
+        "x": 0.6,
+        "y": 0.55
+      }
+    },
+    {
+      "id": "media:scene/1914-marne-german-infantry/german-infantry-marne-colorized",
+      "dir": "scenes/1914-marne-german-infantry",
+      "original": {
+        "src": "scenes/1914-marne-german-infantry/german-infantry-marne-colorized.png",
+        "width": 1199,
+        "height": 1312,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-marne-german-infantry/.derived/german-infantry-marne-colorized.w320.webp",
+          "width": 320,
+          "height": 350,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-marne-german-infantry/.derived/german-infantry-marne-colorized.w640.webp",
+          "width": 640,
+          "height": 700,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-marne-german-infantry/.derived/german-infantry-marne-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1121,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1199,
+      "height": 1312,
+      "caption": "German infantry in the long grass, rifles levelled, Pickelhauben under their grey covers — captioned as the Marne, September 1914, and possibly posed for the camera: two of the men already wear the Iron Cross. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: German Army, September 1914 (as captioned), via greatwar.nl and Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — published before 1931 (US), anonymous work more than 70 years old (EU)",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:German_soldiers_Battle_of_Marne_WWI.jpg",
+      "focalPoint": {
+        "x": 0.45,
+        "y": 0.55
       }
     },
     {
