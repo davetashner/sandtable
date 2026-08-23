@@ -4805,5 +4805,665 @@
         "source": "source:reichsarchiv-weltkrieg-1"
       }
     ]
+  },
+  {
+    "id": "1914:belgium-antwerp",
+    "title": "Belgium beyond Liège",
+    "timeRange": {
+      "start": "1914-08-18T00:00:00Z",
+      "end": "1914-09-14T00:00:00Z"
+    },
+    "region": [3.6, 50.1, 5.3, 51.45],
+    "camera": {
+      "center": [4.45, 50.74],
+      "zoom": 8.0
+    },
+    "place": "place:antwerp",
+    "summary": "What the right wing left behind it. The Belgian field army, ordered back from the Gette on 18 August, is inside the Antwerp forts by the 20th, and Beseler's III Reserve Corps turns off the wheel to watch it; the IX Reserve Corps joins it at the end of the month. Namur falls in four days (21–25 August), Maubeuge holds for thirteen (25 August – 7 September) and keeps the VII Reserve Corps out of the Marne. The field army comes out twice — on 25–26 August and 9–13 September — to pin what it can. Behind the front the reprisals at Aarschot, Tamines, Dinant and Louvain, and the demolitions that kept the railheads a hundred kilometres behind the marching corps.",
+    "outcome": "Two corps held in front of Antwerp and one at Maubeuge through the decisive week; the VII Reserve Corps reaches the Aisne on 13 September, a day after the Marne; the railways through Belgium still in repair. Belgium — 'the rape of Belgium' in the neutral press — becomes the moral case against Germany for the rest of the war.",
+    "participants": [
+      "1914:belgian-field-army",
+      "1914:fortress-antwerp",
+      "1914:fortress-namur",
+      "1914:fortress-maubeuge",
+      "1914:corps-de-iii-res",
+      "1914:corps-de-ix-res",
+      "1914:corps-de-vii-res",
+      "1914:army-de-1"
+    ],
+    "formations": [
+      {
+        "id": "1914:belgium-marine-division",
+        "name": "Marine Division",
+        "short": "Marine-Div.",
+        "side": "de",
+        "kind": "division",
+        "summary": "Naval infantry sent up from the coast at the end of August to take over part of the line facing Antwerp, with Landwehr brigades, so that the IX Reserve Corps could march south. Under Beseler for the siege in October.",
+        "concentration": {
+          "area": "Brussels",
+          "position": [4.25, 50.9],
+          "asOf": "1914-08-31T12:00:00Z",
+          "sources": [
+            {
+              "source": "source:edmonds-1925"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1925"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "id": "1914:belgium-route-field-army",
+        "formation": "1914:belgian-field-army",
+        "waypoints": [
+          [4.95, 50.8, "1914-08-18T06:00:00Z"],
+          [4.85, 50.86, "1914-08-18T20:00:00Z"],
+          [4.62, 50.98, "1914-08-19T12:00:00Z"],
+          [4.47, 51.1, "1914-08-20T12:00:00Z"],
+          [4.42, 51.18, "1914-08-21T12:00:00Z"],
+          [4.42, 51.18, "1914-08-24T06:00:00Z"],
+          [4.48, 51.03, "1914-08-24T20:00:00Z"],
+          [4.52, 50.97, "1914-08-25T14:00:00Z"],
+          [4.55, 50.96, "1914-08-26T08:00:00Z"],
+          [4.48, 51.06, "1914-08-26T20:00:00Z"],
+          [4.42, 51.18, "1914-08-27T12:00:00Z"],
+          [4.42, 51.18, "1914-09-08T20:00:00Z"],
+          [4.6, 51.02, "1914-09-09T12:00:00Z"],
+          [4.72, 50.97, "1914-09-10T12:00:00Z"],
+          [4.7, 50.96, "1914-09-11T12:00:00Z"],
+          [4.65, 50.99, "1914-09-12T12:00:00Z"],
+          [4.5, 51.1, "1914-09-13T12:00:00Z"],
+          [4.42, 51.18, "1914-09-13T22:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Edmonds vol. II for the withdrawal from the Gette (ordered on the 18th, complete on the 20th) and the two sorties: 25–26 August towards Hofstade and Elewijt between Malines and Louvain; 9–13 September to Aarschot and the edge of Louvain. Centre of the field army at the times shown; divisional positions are not drawn.",
+        "notes": "The token stands for four to five divisions out of six: the 4th was at Namur and then on its way round by France, the 2nd and parts of the 5th were fortress garrison at times.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925"
+          },
+          {
+            "source": "source:strachan-2001"
+          },
+          {
+            "source": "source:hastings-2013"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-route-div-be-4",
+        "formation": "1914:div-be-4",
+        "mode": "rail",
+        "waypoints": [
+          [4.8, 50.4, "1914-08-23T22:00:00Z"],
+          [4.55, 50.15, "1914-08-24T18:00:00Z"],
+          [0.12, 49.49, "1914-08-26T12:00:00Z"],
+          [2.92, 51.23, "1914-08-27T12:00:00Z"],
+          [4.4, 51.2, "1914-08-29T12:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Michel's division left the Namur intervals on the night of 23/24 August behind the French 5th Army, went by rail through France to Le Havre, by sea to Ostend (27 August) and back to the field army at Antwerp; dates for the French legs from Tyng and Edmonds. Drawn as a transfer — the dashed line is the journey, not the track, and its first leg was a march.",
+        "notes": "The 4th Division's march out and journey round is the whole Belgian chapter in miniature: it could not hold Namur and it could not be spared, so it went the long way to the redoubt.",
+        "sources": [
+          {
+            "source": "source:tyng-1935"
+          },
+          {
+            "source": "source:edmonds-1925"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-route-de-iii-res",
+        "formation": "1914:corps-de-iii-res",
+        "waypoints": [
+          [5.2, 50.95, "1914-08-18T06:00:00Z"],
+          [4.84, 50.98, "1914-08-19T12:00:00Z"],
+          [4.62, 50.92, "1914-08-20T12:00:00Z"],
+          [4.5, 50.93, "1914-08-21T12:00:00Z"],
+          [4.5, 50.93, "1914-08-25T06:00:00Z"],
+          [4.52, 50.96, "1914-08-25T18:00:00Z"],
+          [4.5, 50.93, "1914-08-27T12:00:00Z"],
+          [4.55, 50.93, "1914-09-09T06:00:00Z"],
+          [4.62, 50.9, "1914-09-10T12:00:00Z"],
+          [4.68, 50.92, "1914-09-12T12:00:00Z"],
+          [4.6, 50.95, "1914-09-13T20:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre, approximate: on the 1st Army's northern flank through Aarschot on the 19th, turned north of Brussels on 20 August to face Antwerp, on the Vilvoorde–Louvain line for both sorties. From the Reichsarchiv narrative as summarised by Herwig and Edmonds; positions to a town and a day.",
+        "notes": "The corps that the tally shows leaving the wheel on 20 August. It never rejoined it: Antwerp in October, then the Yser.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:edmonds-1925"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-route-de-ix-res",
+        "formation": "1914:corps-de-ix-res",
+        "waypoints": [
+          [4.35, 50.85, "1914-08-28T12:00:00Z"],
+          [4.3, 50.95, "1914-08-30T12:00:00Z"],
+          [4.3, 50.95, "1914-09-05T06:00:00Z"],
+          [4.1, 50.55, "1914-09-06T12:00:00Z"],
+          [3.7, 50.1, "1914-09-07T12:00:00Z"],
+          [3.3, 49.6, "1914-09-08T12:00:00Z"],
+          [2.85, 49.2, "1914-09-09T12:00:00Z"],
+          [2.8, 49.12, "1914-09-09T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Detrained at Brussels on 27–28 August after release from Schleswig; took over part of the Antwerp front; released south in the first days of September as the Marine Division and Landwehr came up, and reached the 1st Army's right on the Ourcq, near Nanteuil, on 9 September. Herwig and Edmonds; the march itself is schematic.",
+        "notes": "The one masking corps that did get to the Marne — on its last day.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:edmonds-1922"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-route-de-vii-res",
+        "formation": "1914:corps-de-vii-res",
+        "waypoints": [
+          [5.25, 50.6, "1914-08-18T12:00:00Z"],
+          [4.8, 50.5, "1914-08-20T12:00:00Z"],
+          [4.4, 50.42, "1914-08-22T12:00:00Z"],
+          [4.35, 50.35, "1914-08-23T12:00:00Z"],
+          [4.15, 50.33, "1914-08-24T12:00:00Z"],
+          [4.05, 50.33, "1914-08-25T18:00:00Z"],
+          [4.05, 50.33, "1914-09-08T06:00:00Z"],
+          [3.9, 50.05, "1914-09-09T12:00:00Z"],
+          [3.8, 49.8, "1914-09-10T12:00:00Z"],
+          [3.7, 49.62, "1914-09-11T12:00:00Z"],
+          [3.62, 49.56, "1914-09-12T18:00:00Z"],
+          [3.65, 49.44, "1914-09-13T08:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "On the 2nd Army's right from the Meuse below Liège to the Sambre west of Charleroi, then to the investment of Maubeuge on 25 August (the ring closed on the 26th), in place until the surrender on 7 September, then by Laon to the Chemin des Dames, reached on the morning of 13 September after about sixty kilometres in twenty-four hours. Herwig, Edmonds and Tyng; positions to a town and a day.",
+        "notes": "Zwehl's forced march filled the gap between the 1st and 2nd Armies on the Aisne ridge hours before the BEF's I Corps reached it — the corps the right wing had lacked at the Marne arriving one battle late.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:edmonds-1922"
+          },
+          {
+            "source": "source:tyng-1935"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-route-marine-division",
+        "formation": "1914:belgium-marine-division",
+        "waypoints": [
+          [4.25, 50.9, "1914-08-31T12:00:00Z"],
+          [4.25, 50.92, "1914-09-13T20:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Holding part of the line west and north of Brussels from the end of August; a representative position.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-route-antwerp",
+        "formation": "1914:fortress-antwerp",
+        "waypoints": [
+          [4.4, 51.25, "1914-08-18T00:00:00Z"],
+          [4.4, 51.25, "1914-09-13T23:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "The fortress; the token marks the city, the forts lay in two rings around it.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-route-namur",
+        "formation": "1914:fortress-namur",
+        "waypoints": [
+          [4.87, 50.47, "1914-08-18T00:00:00Z"],
+          [4.87, 50.47, "1914-08-25T12:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "The fortress; the last forts fell on 25 August and the token disappears then.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-route-maubeuge",
+        "formation": "1914:fortress-maubeuge",
+        "waypoints": [
+          [3.97, 50.28, "1914-08-18T00:00:00Z"],
+          [3.97, 50.28, "1914-09-07T12:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "The fortress; surrendered at noon on 7 September and the token disappears then.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:edmonds-1922"
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "1914:belgium-event-retreat-ordered",
+        "title": "The King orders the field army back to Antwerp",
+        "at": "1914-08-18T20:00:00Z",
+        "kind": "order",
+        "significance": "major",
+        "lngLat": [4.95, 50.8],
+        "summary": "With the German 1st Army over the Gette in strength and no French or British force within reach, Albert orders the field army to break off and withdraw into the national redoubt — keeping the army in being rather than losing it in front of Brussels.",
+        "links": {
+          "people": ["person:albert-i-of-belgium"],
+          "formations": ["1914:belgian-field-army"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1925"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-event-aarschot",
+        "title": "Aarschot: the first large reprisal",
+        "at": "1914-08-19T18:00:00Z",
+        "kind": "other",
+        "significance": "minor",
+        "place": "place:aarschot",
+        "summary": "German troops entering the town after a fight with the Belgian rearguard shoot 156 inhabitants and burn much of it, the pattern — a belief in civilian snipers, then collective punishment — repeated across Belgium in the next ten days.",
+        "links": {
+          "places": ["place:aarschot"]
+        },
+        "sources": [
+          {
+            "source": "source:horne-kramer-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-event-brussels",
+        "title": "Brussels occupied; the III Reserve Corps turns off",
+        "at": "1914-08-20T12:00:00Z",
+        "kind": "movement",
+        "significance": "major",
+        "place": "place:brussels",
+        "summary": "The 1st Army marches through the open city and keeps wheeling south-west; Beseler's III Reserve Corps turns north instead, to stand between the Belgian field army and the roads and railways behind the wheel.",
+        "links": {
+          "people": ["person:kluck-alexander-von", "person:beseler-hans-von"],
+          "formations": ["1914:army-de-1", "1914:corps-de-iii-res"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:edmonds-1925"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-event-field-army-in",
+        "title": "The field army is inside Antwerp",
+        "at": "1914-08-20T18:00:00Z",
+        "kind": "movement",
+        "significance": "minor",
+        "place": "place:antwerp",
+        "summary": "Four divisions and the cavalry are inside the outer forts by evening on the 20th; the 4th Division is still at Namur.",
+        "links": {
+          "formations": ["1914:belgian-field-army", "1914:fortress-antwerp"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1925"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-event-namur-siege",
+        "title": "The siege of Namur",
+        "timeRange": {
+          "start": "1914-08-21T10:00:00Z",
+          "end": "1914-08-25T12:00:00Z"
+        },
+        "kind": "siege",
+        "significance": "major",
+        "place": "place:namur",
+        "summary": "Gallwitz's Guard Reserve and XI Corps with the heavy howitzers from Liège: the bombardment opens on the 21st, Cognelée and Marchovelette fall on the 23rd, Michel's 4th Division slips out that night, and the last forts surrender on the 25th — four days, against the weeks the French had counted on.",
+        "links": {
+          "formations": [
+            "1914:fortress-namur",
+            "1914:div-be-4",
+            "1914:corps-de-guard-res",
+            "1914:corps-de-xi"
+          ],
+          "places": ["place:namur"],
+          "tech": ["1914:tech-heavy-siege-artillery"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:strachan-2001"
+          },
+          {
+            "source": "source:edmonds-1925"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-event-tamines",
+        "title": "Tamines",
+        "at": "1914-08-22T16:00:00Z",
+        "kind": "other",
+        "significance": "minor",
+        "place": "place:tamines",
+        "summary": "After the 2nd Army's crossing of the Sambre, 383 townspeople are shot on the riverbank; the largest of the Sambre reprisals.",
+        "links": {
+          "places": ["place:tamines"]
+        },
+        "sources": [
+          {
+            "source": "source:horne-kramer-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-event-dinant",
+        "title": "Dinant",
+        "at": "1914-08-23T14:00:00Z",
+        "kind": "other",
+        "significance": "major",
+        "place": "place:dinant",
+        "summary": "Hausen's Saxons, forcing the Meuse under fire and believing the town in arms, kill 674 civilians — the largest single reprisal of the invasion — and burn the centre.",
+        "links": {
+          "places": ["place:dinant"],
+          "formations": ["1914:army-de-3"]
+        },
+        "sources": [
+          {
+            "source": "source:horne-kramer-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-event-first-sortie",
+        "title": "The first sortie: Malines towards Louvain",
+        "timeRange": {
+          "start": "1914-08-25T06:00:00Z",
+          "end": "1914-08-26T20:00:00Z"
+        },
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:mechelen",
+        "summary": "Four divisions out of Malines towards Hofstade, Elewijt and the Louvain railway, to hold German strength in the north while the French and British fight on the Sambre; the III Reserve Corps holds, the Allied retreat is reported, and the army is back behind the forts on the 26th.",
+        "links": {
+          "formations": ["1914:belgian-field-army", "1914:corps-de-iii-res"],
+          "places": ["place:mechelen", "place:louvain"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1925"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-event-maubeuge-invested",
+        "title": "The VII Reserve Corps invests Maubeuge",
+        "at": "1914-08-25T18:00:00Z",
+        "kind": "siege",
+        "significance": "major",
+        "place": "place:maubeuge",
+        "summary": "Zwehl's corps, with a division of the VII Corps and the siege guns coming on from Namur, closes round the fortress; the BEF has just passed it, refusing to be shut in. The bombardment proper begins on the 29th.",
+        "links": {
+          "people": ["person:zwehl-hans-von", "person:fournier-joseph"],
+          "formations": ["1914:corps-de-vii-res", "1914:fortress-maubeuge"],
+          "tech": ["1914:tech-heavy-siege-artillery"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:edmonds-1922"
+          },
+          {
+            "source": "source:tyng-1935"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-event-louvain",
+        "title": "Louvain burns",
+        "timeRange": {
+          "start": "1914-08-25T20:00:00Z",
+          "end": "1914-08-28T12:00:00Z"
+        },
+        "kind": "other",
+        "significance": "major",
+        "place": "place:louvain",
+        "summary": "At dusk on the 25th troops falling back from the sortie meet others arriving; shots are fired in the dark and the garrison concludes the town has risen. Over three days 248 inhabitants are killed, the library and some 1,100 buildings burned, and the population driven out. Horne and Kramer: no evidence of a civilian rising — a panic, and a doctrine that expected francs-tireurs.",
+        "links": {
+          "places": ["place:louvain"],
+          "science": ["1914:science-manifesto-of-the-93"]
+        },
+        "sources": [
+          {
+            "source": "source:horne-kramer-2001"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-event-ix-res-arrives",
+        "title": "The IX Reserve Corps detrains at Brussels",
+        "at": "1914-08-28T12:00:00Z",
+        "kind": "movement",
+        "significance": "minor",
+        "place": "place:brussels",
+        "summary": "Released from Schleswig once a British landing on the North Sea coast was ruled out; it takes over part of the front facing Antwerp.",
+        "links": {
+          "formations": ["1914:corps-de-ix-res"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-event-maubeuge-bombardment",
+        "title": "The siege guns open on Maubeuge",
+        "at": "1914-08-29T13:00:00Z",
+        "kind": "siege",
+        "significance": "minor",
+        "place": "place:maubeuge",
+        "summary": "The 30.5 cm and 42 cm batteries that broke Liège and Namur begin on the Maubeuge forts; they hold nine days more.",
+        "links": {
+          "formations": ["1914:fortress-maubeuge"],
+          "tech": ["1914:tech-heavy-siege-artillery"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tyng-1935"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-event-ix-res-south",
+        "title": "The IX Reserve Corps marches for the Marne",
+        "at": "1914-09-05T06:00:00Z",
+        "kind": "movement",
+        "significance": "minor",
+        "place": "place:brussels",
+        "summary": "Relieved in front of Antwerp by the Marine Division and Landwehr, the corps is called south to the 1st Army; it reaches the Ourcq on the 9th.",
+        "links": {
+          "formations": ["1914:corps-de-ix-res", "1914:belgium-marine-division"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:edmonds-1925"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-event-maubeuge-falls",
+        "title": "Maubeuge surrenders",
+        "at": "1914-09-07T12:00:00Z",
+        "kind": "siege",
+        "significance": "major",
+        "place": "place:maubeuge",
+        "summary": "Fournier surrenders the fortress and its garrison — some forty thousand men and four hundred guns by the British count; Herwig gives 32,700 prisoners, Lodier 45,000 — after thirteen days. The VII Reserve Corps is released.",
+        "links": {
+          "people": ["person:fournier-joseph", "person:zwehl-hans-von"],
+          "formations": ["1914:fortress-maubeuge", "1914:corps-de-vii-res"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:edmonds-1922"
+          },
+          {
+            "source": "source:tyng-1935"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-event-second-sortie",
+        "title": "The second sortie: Aarschot and the edge of Louvain",
+        "timeRange": {
+          "start": "1914-09-09T06:00:00Z",
+          "end": "1914-09-13T18:00:00Z"
+        },
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:aarschot",
+        "summary": "Timed to help the Allied counter-offensive on the Marne: the Demer and Dyle crossings are taken, Aarschot retaken, the cavalry reaches the outskirts of Louvain on the 10th; the Germans turn the 6th Reserve Division back north and bring a division of the XV Corps from Alsace, and the field army is back inside the forts on the 13th.",
+        "links": {
+          "formations": ["1914:belgian-field-army", "1914:corps-de-iii-res"],
+          "places": ["place:aarschot", "place:louvain"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1925"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:belgium-event-vii-res-aisne",
+        "title": "The VII Reserve Corps reaches the Chemin des Dames",
+        "at": "1914-09-13T08:00:00Z",
+        "kind": "movement",
+        "significance": "major",
+        "lngLat": [3.65, 49.44],
+        "summary": "After the surrender Zwehl marches by Laon and covers about sixty kilometres in the last day and night, arriving on the Aisne ridge on the morning of the 13th — in the gap between Kluck and Bülow, hours before the BEF's I Corps climbs towards it. The corps the wheel had lacked on the Ourcq arrives one battle late, and the Aisne holds.",
+        "links": {
+          "people": ["person:zwehl-hans-von"],
+          "formations": ["1914:corps-de-vii-res", "1914:army-de-1", "1914:army-de-2", "1914:bef"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:edmonds-1922"
+          }
+        ]
+      }
+    ],
+    "links": {
+      "people": [
+        "person:albert-i-of-belgium",
+        "person:beseler-hans-von",
+        "person:zwehl-hans-von",
+        "person:fournier-joseph"
+      ],
+      "places": ["place:antwerp", "place:namur", "place:maubeuge", "place:louvain", "place:dinant"],
+      "tech": ["1914:tech-heavy-siege-artillery"],
+      "science": ["1914:science-manifesto-of-the-93"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:horne-kramer-2001"
+      },
+      {
+        "source": "source:tyng-1935"
+      },
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      }
+    ]
   }
 ]

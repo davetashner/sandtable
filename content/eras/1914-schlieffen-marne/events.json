@@ -82,6 +82,85 @@
     ]
   },
   {
+    "id": "1914:event-belgian-army-into-antwerp",
+    "title": "The Belgian field army withdraws into Antwerp",
+    "at": "1914-08-20T12:00:00Z",
+    "kind": "movement",
+    "significance": "major",
+    "place": "place:antwerp",
+    "summary": "Ordered back from the Gette on the 18th as the German 1st Army came on, the field army is inside the national redoubt by the 20th; Brussels is occupied the same day. From now on the Belgian army is a threat on the flank of the German communications, and a corps is turned off the wheel to watch it.",
+    "links": {
+      "people": [
+        "person:albert-i-of-belgium",
+        "person:kluck-alexander-von",
+        "person:beseler-hans-von"
+      ],
+      "formations": ["1914:belgian-field-army", "1914:fortress-antwerp", "1914:corps-de-iii-res"],
+      "places": ["place:antwerp", "place:brussels"],
+      "battles": ["1914:belgium-antwerp"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-antwerp-first-sortie",
+    "title": "The first sortie from Antwerp",
+    "timeRange": {
+      "start": "1914-08-25T06:00:00Z",
+      "end": "1914-08-26T20:00:00Z"
+    },
+    "kind": "battle",
+    "significance": "minor",
+    "place": "place:mechelen",
+    "summary": "Four Belgian divisions come out towards Malines and Louvain to pull German strength back from the Sambre; they are stopped by the III Reserve Corps and go back when the news comes that the French and British are retreating. Louvain burns that night.",
+    "links": {
+      "formations": ["1914:belgian-field-army", "1914:corps-de-iii-res"],
+      "battles": ["1914:belgium-antwerp"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-louvain-burned",
+    "title": "Louvain burned",
+    "timeRange": {
+      "start": "1914-08-25T20:00:00Z",
+      "end": "1914-08-28T12:00:00Z"
+    },
+    "kind": "other",
+    "significance": "major",
+    "place": "place:louvain",
+    "summary": "German troops in the university town, convinced they are under fire from civilians as units fall back from the Belgian sortie and others arrive at dusk, shoot some 248 inhabitants, burn about a sixth of the town and the university library with its manuscripts, and expel the population. With Dinant, Tamines and Aarschot it is the 'rape of Belgium' that shapes neutral opinion — and, a century on, the best-documented of the reprisals.",
+    "links": {
+      "places": ["place:louvain"],
+      "science": ["1914:science-manifesto-of-the-93"],
+      "battles": ["1914:belgium-antwerp"]
+    },
+    "sources": [
+      {
+        "source": "source:horne-kramer-2001"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
     "id": "1914:event-instruction-generale-2",
     "title": "Joffre's Instruction générale no 2",
     "at": "1914-08-25T22:00:00Z",
@@ -165,6 +244,56 @@
       },
       {
         "source": "source:afgg-1-1"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-maubeuge-surrenders",
+    "title": "Maubeuge surrenders",
+    "at": "1914-09-07T12:00:00Z",
+    "kind": "siege",
+    "significance": "major",
+    "place": "place:maubeuge",
+    "summary": "After thirteen days of investment and nine of bombardment by the heavy howitzers brought on from Namur, Fournier surrenders the fortress and some forty thousand men; the VII Reserve Corps is free to march — a week after the Marne opened, and a day after the decision there had turned.",
+    "links": {
+      "people": ["person:fournier-joseph", "person:zwehl-hans-von"],
+      "formations": ["1914:fortress-maubeuge", "1914:corps-de-vii-res"],
+      "places": ["place:maubeuge"],
+      "battles": ["1914:belgium-antwerp"]
+    },
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:tyng-1935"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-antwerp-second-sortie",
+    "title": "The second sortie from Antwerp",
+    "timeRange": {
+      "start": "1914-09-09T06:00:00Z",
+      "end": "1914-09-13T18:00:00Z"
+    },
+    "kind": "battle",
+    "significance": "minor",
+    "place": "place:aarschot",
+    "summary": "Timed to the Marne: the field army comes out again towards Aarschot and Louvain, retakes Aarschot and puts its cavalry at the edge of Louvain before German reinforcements — a reserve division turned back north and a division from Alsace — press it back into the fortress on the 13th.",
+    "links": {
+      "formations": ["1914:belgian-field-army"],
+      "battles": ["1914:belgium-antwerp"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:strachan-2001"
       }
     ]
   },

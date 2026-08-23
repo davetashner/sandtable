@@ -51,6 +51,24 @@
         ]
       },
       {
+        "id": "sortie-1",
+        "at": "1914-08-25T12:00:00Z",
+        "delta": 0,
+        "label": "First sortie from Antwerp: the III Reserve Corps pinned north of Brussels",
+        "formations": ["1914:belgian-field-army", "1914:corps-de-iii-res"],
+        "place": "place:mechelen",
+        "lngLat": [4.5, 50.98],
+        "note": "Nothing leaves the ledger, but the corps that has already left cannot come back: the Belgian field army comes out towards Malines and Louvain and the III Reserve Corps, with the IX Reserve Corps arriving behind it, is kept facing north.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      },
+      {
         "id": "east",
         "at": "1914-08-26T00:00:00Z",
         "delta": -2,
@@ -95,6 +113,56 @@
         "sources": [
           {
             "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "maubeuge-falls",
+        "at": "1914-09-07T12:00:00Z",
+        "delta": 0,
+        "label": "Maubeuge surrenders — the VII Reserve Corps is free, too late",
+        "formations": ["1914:corps-de-vii-res", "1914:fortress-maubeuge"],
+        "place": "place:maubeuge",
+        "lngLat": [3.85, 50.2],
+        "note": "Thirteen days for a fortress the plan had not counted on; the corps marches for the front the next day, as the right wing is already being turned on the Ourcq.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tyng-1935"
+          }
+        ]
+      },
+      {
+        "id": "sortie-2",
+        "at": "1914-09-09T12:00:00Z",
+        "delta": 0,
+        "label": "Second sortie from Antwerp: a reserve division turned back north",
+        "formations": ["1914:belgian-field-army"],
+        "place": "place:aarschot",
+        "lngLat": [4.84, 50.98],
+        "note": "The 6th Reserve Division, on its way south, and a division of the XV Corps from Alsace are drawn to Brussels instead — nothing the Marne could still have used, but troops the Aisne would have.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925"
+          }
+        ]
+      },
+      {
+        "id": "vii-res-aisne",
+        "at": "1914-09-13T08:00:00Z",
+        "delta": 1,
+        "label": "VII Reserve Corps reaches the Chemin des Dames — a day after the Marne",
+        "formations": ["1914:corps-de-vii-res"],
+        "lngLat": [3.65, 49.44],
+        "note": "Zwehl's corps comes back on to the ledger after a sixty-kilometre march in a day and a night, and fills the gap between the 1st and 2nd Armies on the Aisne ridge just as the BEF climbs towards it. Had Maubeuge fallen as fast as Namur, it would have been there for the Marne.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:edmonds-1922"
           }
         ]
       }

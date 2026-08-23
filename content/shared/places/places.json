@@ -717,5 +717,123 @@
         "note": "coordinates"
       }
     ]
+  },
+  {
+    "id": "place:louvain",
+    "name": "Louvain",
+    "names": [
+      {
+        "name": "Leuven",
+        "language": "nl",
+        "kind": "translation"
+      },
+      {
+        "name": "Löwen",
+        "language": "de",
+        "kind": "translation"
+      }
+    ],
+    "kind": "city",
+    "lngLat": [4.701, 50.879],
+    "country": "Belgium",
+    "notes": "University town on the Dyle, on the Liège–Brussels railway; burned by German troops on 25–28 August 1914, the library with it.",
+    "sources": [
+      {
+        "source": "source:horne-kramer-2001"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:mechelen",
+    "name": "Malines",
+    "names": [
+      {
+        "name": "Mechelen",
+        "language": "nl",
+        "kind": "translation"
+      }
+    ],
+    "kind": "city",
+    "lngLat": [4.478, 51.028],
+    "country": "Belgium",
+    "notes": "Between Antwerp and Brussels; the Belgian sortie of 25 August went out from here and the town was shelled when it came back.",
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:aarschot",
+    "name": "Aarschot",
+    "names": [
+      {
+        "name": "Aerschot",
+        "language": "fr",
+        "kind": "translation"
+      }
+    ],
+    "kind": "town",
+    "lngLat": [4.836, 50.985],
+    "country": "Belgium",
+    "notes": "On the Demer north-east of Louvain; taken on 19 August, the scene of the first large reprisal, retaken in the Belgian sortie of 9 September.",
+    "sources": [
+      {
+        "source": "source:horne-kramer-2001"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:tamines",
+    "name": "Tamines",
+    "kind": "town",
+    "lngLat": [4.606, 50.433],
+    "country": "Belgium",
+    "notes": "On the Sambre between Charleroi and Namur; where the German 2nd Army forced the river on 21–22 August and shot the townspeople on the 22nd.",
+    "sources": [
+      {
+        "source": "source:horne-kramer-2001"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:ostend",
+    "name": "Ostend",
+    "names": [
+      {
+        "name": "Oostende",
+        "language": "nl",
+        "kind": "translation"
+      }
+    ],
+    "kind": "town",
+    "lngLat": [2.917, 51.23],
+    "country": "Belgium",
+    "notes": "Channel port; where the Belgian 4th Division came ashore from Le Havre on 27 August on its way back to Antwerp.",
+    "sources": [
+      {
+        "source": "source:tyng-1935"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
   }
 ]

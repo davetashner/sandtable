@@ -341,7 +341,8 @@
       {
         "source": "source:herwig-2009"
       }
-    ]
+    ],
+    "commander": "person:beseler-hans-von"
   },
   {
     "id": "1914:corps-de-iv-res",
@@ -375,7 +376,20 @@
       {
         "source": "source:herwig-2009"
       }
-    ]
+    ],
+    "concentration": {
+      "area": "Brussels — detrained 27–28 August after release from Schleswig",
+      "position": [4.35, 50.85],
+      "asOf": "1914-08-27T12:00:00Z",
+      "sources": [
+        {
+          "source": "source:herwig-2009"
+        },
+        {
+          "source": "source:reichsarchiv-weltkrieg-1"
+        }
+      ]
+    }
   },
   {
     "id": "1914:hkk-2",
@@ -477,7 +491,8 @@
       {
         "source": "source:herwig-2009"
       }
-    ]
+    ],
+    "commander": "person:zwehl-hans-von"
   },
   {
     "id": "1914:corps-de-x-res",
@@ -2031,15 +2046,48 @@
     "side": "be",
     "kind": "garrison",
     "short": "Antwerp",
-    "summary": "The national redoubt — an outer and inner ring of forts — into which the field army withdrew on 20 August; besieged from 28 September and surrendered on 10 October.",
+    "summary": "The national redoubt — an outer ring of forts twenty kilometres out and an inner ring — into which the field army withdrew on 20 August. Its garrison and the field army together tied down the III Reserve Corps, for a time the IX Reserve Corps, and then the Marine Division and Landwehr; besieged from 28 September and surrendered on 10 October.",
     "sources": [
       {
         "source": "source:strachan-2001"
       },
       {
         "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:edmonds-1925"
       }
     ]
+  },
+  {
+    "id": "1914:fortress-maubeuge",
+    "name": "Fortified position of Maubeuge",
+    "side": "fr",
+    "kind": "garrison",
+    "short": "Maubeuge",
+    "commander": "person:fournier-joseph",
+    "summary": "The French fortress on the Sambre — six forts and seven intermediate works built against the guns of 1880, about a thousand officers and 48,000 men of garrison and services, reservists and Territorials for the most part — invested by the VII Reserve Corps from 25 August and held until 7 September: longer than Liège or Namur, and long enough that the corps besieging it missed the Marne.",
+    "dissolved": "1914-09-07T12:00:00Z",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:tyng-1935"
+      }
+    ],
+    "strength": {
+      "men": 49000,
+      "asOf": "1914-08-25",
+      "sources": [
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    }
   },
   {
     "id": "1914:railhead-de-1",
