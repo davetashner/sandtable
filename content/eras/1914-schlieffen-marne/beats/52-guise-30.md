@@ -7,6 +7,7 @@ to: 1914-08-31T00:00:00Z
 branch: 1914:historical
 focus: 1914:guise
 links:
+  documents: ['1914:document-bulow-kluck-wireless-1914-08-30']
   battles: ['1914:guise']
   people:
     ['person:bulow-karl-von', 'person:kluck-alexander-von', 'person:lanrezac-charles', 'person:joffre-joseph']

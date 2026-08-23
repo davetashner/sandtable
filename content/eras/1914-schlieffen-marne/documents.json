@@ -1,22 +1,198 @@
 [
   {
-    "id": "1914:document-joffre-order-of-the-day-1914-09-06",
-    "title": "Joffre's order of the day, 6 September 1914",
-    "date": "1914-09-06",
-    "author": "person:joffre-joseph",
-    "kind": "order",
-    "language": "fr",
-    "excerpt": "Au moment où s'engage une bataille d'où dépend le salut du pays, il importe de rappeler à tous que le moment n'est plus de regarder en arrière ; tous les efforts doivent être employés à attaquer et à refouler l'ennemi. Une troupe qui ne peut plus avancer devra, coûte que coûte, garder le terrain conquis et se faire tuer sur place plutôt que de reculer. Dans les circonstances actuelles, aucune défaillance ne peut être tolérée.",
-    "translation": "At the moment when a battle is joined on which the salvation of the country depends, it is important to remind everyone that the time for looking back is over; every effort must be turned to attacking and driving back the enemy. A unit that can no longer advance must, whatever the cost, hold the ground it has won and be killed where it stands rather than retreat. In the present circumstances no failure can be tolerated.",
-    "archive": "Ordre général no 6 bis, G.Q.G., 6 septembre 1914 — printed in the AFGG annexes; widely reproduced",
+    "id": "1914:document-schlieffen-memorandum-1905-12",
+    "title": "Schlieffen's memorandum 'Krieg gegen Frankreich', December 1905",
+    "date": "1905-12",
+    "author": "person:schlieffen-alfred-von",
+    "kind": "memorandum",
+    "language": "de",
+    "excerpt": "Ein Frontalangriff auf die Stellung Belfort-Verdun bietet daher wenig Aussicht auf Erfolg. […] Mehr versprechend als der Frontalangriff mit Umfassung des linken Flügels scheint ein von Nordwesten gegen die Flanken bei Mézières, Rethel, La Fère und über die Oise gegen den Rücken der Stellung gerichteter Angriff zu sein. Um zu diesem zu gelangen, muß die belgisch-französische Grenze auf dem linken Maasufer mit den befestigten Plätzen Mézières, Hirson, Maubeuge, 3 kleinen Sperrforts, Lille und Dünkirchen bewältigt und, um so weit zu kommen, die Neutralität von Luxemburg, Belgien und den Niederlanden verletzt werden. […] Es kommt also darauf an, den Vormarsch des rechten deutschen Flügels nach Möglichkeit zu beschleunigen. […] Diese Vorbereitungen mögen getroffen werden, wie sie wollen, so werden wir uns überzeugen, daß wir für eine Fortsetzung der Operationen in dieser Richtung zu schwach sind. Wir werden die Erfahrung aller früheren Eroberer bestätigt finden, daß der Angriffskrieg sehr viele Kräfte erfordert und sehr viele verbraucht, daß diese ebenso beständig abnehmen, wie diejenigen des Verteidigers zunehmen, und alles dies ganz besonders in einem Lande, das von Festungen starrt.",
+    "translation": "A frontal attack on the Belfort–Verdun position therefore offers little prospect of success. […] More promising than a frontal attack with envelopment of the left wing seems an attack directed from the north-west against the flanks at Mézières, Rethel and La Fère and across the Oise against the rear of the position. To reach it, the Belgian–French frontier on the left bank of the Meuse, with the fortified places Mézières, Hirson, Maubeuge, three small barrier forts, Lille and Dunkirk, must be overcome and — to get that far — the neutrality of Luxembourg, Belgium and the Netherlands violated. […] Everything therefore depends on accelerating the advance of the German right wing as far as possible. […] However these preparations are made, we shall convince ourselves that we are too weak to continue operations in this direction. We shall find the experience of all earlier conquerors confirmed: that a war of attack demands very many forces and consumes very many; that these dwindle as steadily as the defender's grow; and all this especially in a country bristling with fortresses.",
+    "archive": "Bundesarchiv-Militärarchiv, Freiburg, Nachlass Friedrich von Boetticher, N 323/19 (a copy of the lost original); transcription published by the Bayerische Staatsbibliothek (1000dokumente.de) and in Ehlert, Epkenhans & Groß, Der Schlieffenplan (2006); English in Ritter, The Schlieffen Plan (1958), pp. 134–148. Excerpted; Moltke's marginal notes omitted.",
     "links": {
-      "events": ["1914:event-battle-of-the-marne"],
-      "battles": ["1914:marne"],
-      "people": ["person:joffre-joseph"]
+      "people": ["person:schlieffen-alfred-von", "person:moltke-helmuth-von-younger"],
+      "places": ["place:paris"]
     },
     "sources": [
-      { "source": "source:afgg-1-1", "note": "text of the order in the annex volumes" },
-      { "source": "source:herwig-2009", "note": "context of the 6 September counter-offensive" }
+      {
+        "source": "source:bsb-1000dokumente-schlieffen-1905",
+        "note": "full German transcription of the Boetticher copy; the text quoted"
+      },
+      {
+        "source": "source:ehlert-epkenhans-gross-2006",
+        "note": "the edited German text with the marginalia; Groß, 'There was a Schlieffen Plan'"
+      },
+      {
+        "source": "source:ritter-1958",
+        "pages": "134–148",
+        "note": "the English translation and Ritter's dating of the memorandum (December 1905 / February 1906)"
+      },
+      {
+        "source": "source:zuber-2002",
+        "note": "the revisionist reading — cited as one side"
+      },
+      {
+        "source": "source:mombauer-2001",
+        "note": "the reply to Zuber; Moltke's changes to the plan"
+      }
+    ]
+  },
+  {
+    "id": "1914:document-german-ultimatum-to-belgium-1914-08-02",
+    "title": "The German note to Belgium, 2 August 1914 (the ultimatum)",
+    "date": "1914-08-02T19:00:00Z",
+    "author": "Kaiserlich Deutsche Gesandtschaft in Belgien (Herr von Below-Saleske, on instructions from Berlin; drafted by the Great General Staff)",
+    "kind": "other",
+    "language": "de",
+    "excerpt": "Der kaiserlichen Regierung liegen zuverlässige Nachrichten vor über den beabsichtigten Aufmarsch französischer Streitkräfte an der Maas-Strecke Givet–Namur. Sie lassen keinen Zweifel über die Absicht Frankreichs, durch belgisches Gebiet gegen Deutschland vorzugehen. Die Kaiserliche Regierung kann sich der Besorgnis nicht erwehren, dass Belgien, trotz besten Willens, nicht im Stande sein wird, ohne Hülfe einen französischen Vormarsch mit so grosser Aussicht auf Erfolg abzuwehren, dass darin eine ausreichende Sicherheit gegen die Bedrohung Deutschlands gefunden werden kann. Es ist ein Gebot der Selbsterhaltung für Deutschland, dem feindlichen Angriff zuvorzukommen. […] 4. Sollte Belgien den deutschen Truppen feindlich entgegentreten, insbesondere ihrem Vorgehen durch Widerstand der Maas-Befestigungen oder durch Zerstörungen von Eisenbahnen, Strassen, Tunneln oder sonstigen Kunstbauten Schwierigkeiten bereiten, so wird Deutschland zu seinem Bedauern gezwungen sein, das Königreich als Feind zu betrachten.",
+    "translation": "Reliable information has been received by the Imperial Government to the effect that French forces intend to march on the line of the Meuse by Givet and Namur. This information leaves no doubt as to the intention of France to march through Belgian territory against Germany. The Imperial Government cannot but fear that Belgium, in spite of the utmost goodwill, will be unable, without assistance, to repel so considerable a French invasion with sufficient prospect of success to afford an adequate guarantee against danger to Germany. It is essential for the self-defence of Germany that she should anticipate any such hostile attack. […] 4. Should Belgium oppose the German troops, and in particular should she throw difficulties in the way of their march by a resistance of the fortresses on the Meuse, or by destroying railways, roads, tunnels, or other similar works, Germany will, to her regret, be compelled to consider Belgium as an enemy.",
+    "archive": "Note marked 'Très confidentiel', handed to M. Davignon at 19:00 on 2 August with a twelve-hour time limit stated orally; printed in German and French as No. 20 of the Belgian Grey Book (Correspondance diplomatique relative à la guerre de 1914, Brussels 1914); the English translation here is that of the British Collected Diplomatic Documents (1915). Excerpted.",
+    "links": {
+      "events": ["1914:event-invasion-of-belgium"],
+      "people": ["person:albert-i-of-belgium", "person:moltke-helmuth-von-younger"]
+    },
+    "sources": [
+      {
+        "source": "source:belgian-grey-book-1914",
+        "note": "No. 20 — the German text and the official translation; No. 19 and 71 for the delivery and the time limit"
+      },
+      {
+        "source": "source:strachan-2001",
+        "note": "the ultimatum in the July Crisis; Moltke's July draft"
+      },
+      {
+        "source": "source:hastings-2013",
+        "note": "the scene in Brussels on the night of 2–3 August"
+      }
+    ]
+  },
+  {
+    "id": "1914:document-belgian-reply-1914-08-03",
+    "title": "The Belgian reply to the German note, 3 August 1914",
+    "date": "1914-08-03T07:00:00Z",
+    "author": "Gouvernement du Roi (M. Davignon, Minister for Foreign Affairs; drafted overnight by Carton de Wiart, van den Heuvel and Hymans, approved by the Crown Council under Albert I)",
+    "kind": "other",
+    "language": "fr",
+    "excerpt": "Cette note a provoqué chez le Gouvernement du Roi un profond et douloureux étonnement. […] La Belgique a toujours été fidèle à ses obligations internationales, elle a accompli ses devoirs dans un esprit de loyale impartialité, elle n'a négligé aucun effort pour maintenir et faire respecter sa neutralité. L'atteinte à son indépendance dont la menace le Gouvernement allemand constituerait une flagrante violation du droit des gens. Aucun intérêt stratégique ne justifie la violation du droit. Le Gouvernement belge, en acceptant les propositions qui lui sont notifiées, sacrifierait l'honneur de la nation en même temps qu'il trahirait ses devoirs vis-à-vis de l'Europe. Conscient du rôle que la Belgique joue depuis plus de quatre-vingts ans dans la civilisation du monde, il se refuse à croire que l'indépendance de la Belgique ne puisse être conservée qu'au prix de la violation de sa neutralité. Si cet espoir était déçu, le Gouvernement belge est fermement décidé à repousser par tous les moyens en son pouvoir toute atteinte à son droit.",
+    "translation": "This note has made a deep and painful impression upon the Belgian Government. […] Belgium has always been faithful to her international obligations, she has carried out her duties in a spirit of loyal impartiality, and she has left nothing undone to maintain and enforce respect for her neutrality. The attack upon her independence with which the German Government threaten her constitutes a flagrant violation of international law. No strategic interest justifies such a violation of law. The Belgian Government, if they were to accept the proposals submitted to them, would sacrifice the honour of the nation and betray their duty towards Europe. Conscious of the part which Belgium has played for more than eighty years in the civilisation of the world, they refuse to believe that the independence of Belgium can only be preserved at the price of the violation of her neutrality. If this hope is disappointed the Belgian Government are firmly resolved to repel, by all the means in their power, every attack upon their rights.",
+    "archive": "Note handed to Herr von Below-Saleske at 07:00 on 3 August; No. 22 of the Belgian Grey Book. French text as released to the press on 4 August (Le Radical, Le Rappel, La Gazette de France, 5 August 1914) and as quoted by Poincaré; English translation from the British Collected Diplomatic Documents (1915). Excerpted.",
+    "links": {
+      "events": ["1914:event-invasion-of-belgium"],
+      "people": ["person:albert-i-of-belgium"]
+    },
+    "sources": [
+      {
+        "source": "source:belgian-grey-book-1914",
+        "note": "No. 22 — the reply; the English translation quoted"
+      },
+      {
+        "source": "source:gallica-le-radical-1914-08-05",
+        "note": "the French text as printed in Paris on 5 August 1914 (page 2), checked against Le Rappel and La Gazette de France of the same date"
+      },
+      {
+        "source": "source:hastings-2013",
+        "note": "the Crown Council of the night of 2–3 August and the decision to resist"
+      }
+    ]
+  },
+  {
+    "id": "1914:document-afgg-instruction-generale-2-1914-08-25",
+    "title": "Joffre's Instruction générale no 2, 25 August 1914",
+    "date": "1914-08-25",
+    "author": "person:joffre-joseph",
+    "kind": "directive",
+    "language": "fr",
+    "excerpt": "1° La manœuvre offensive projetée n'ayant pu être exécutée, les opérations ultérieures seront réglées de manière à reconstituer à notre gauche, par la jonction des IVe, Ve armées, de l'armée anglaise et de forces nouvelles, prélevées sur la région de l'Est, une masse capable de reprendre l'offensive, pendant que les autres armées contiendront, le temps nécessaire, les efforts de l'ennemi. 2° Dans son mouvement de repli, chacune des IIIe, IVe, Ve armées tiendra compte des mouvements des armées voisines, avec lesquelles elle devra rester en liaison. Le mouvement sera couvert par des arrière-gardes laissées sur les coupures favorables du terrain de façon à utiliser tous les obstacles pour arrêter par des contre-attaques, courtes et violentes, dont l'élément principal sera l'artillerie, la marche de l'ennemi ou tout au moins la retarder. […] 6° En avant d'Amiens entre Domart-en-Ponthieu et Corbie, ou en arrière de la Somme entre Picquigny et Villers-Bretonneux, un nouveau groupement de forces constitué par des éléments transportés en chemin de fer (7e corps, 4 divisions de réserve, et peut-être un autre corps d'armée actif) est groupé du 27 août au 2 septembre. Ce groupement sera prêt à passer à l'offensive en direction générale de St-Pol, Arras, ou Arras, Bapaume.",
+    "translation": "1. The projected offensive manoeuvre having proved impossible to carry out, subsequent operations will be arranged so as to rebuild on our left, by joining the Fourth and Fifth Armies, the British Army and fresh forces drawn from the eastern region, a mass capable of resuming the offensive, while the other armies hold off the enemy's efforts for as long as necessary. 2. In its withdrawal each of the Third, Fourth and Fifth Armies will take account of the movements of its neighbours, with which it must stay in touch. The movement will be covered by rearguards left on favourable lines of the ground, so as to use every obstacle to halt — or at least delay — the enemy's advance by short, violent counter-attacks in which artillery will be the main element. […] 6. Forward of Amiens between Domart-en-Ponthieu and Corbie, or behind the Somme between Picquigny and Villers-Bretonneux, a new grouping of forces made up of elements moved by rail (7th Corps, four reserve divisions and perhaps another active army corps) is assembled from 27 August to 2 September. This grouping will be ready to go over to the offensive in the general direction Saint-Pol–Arras, or Arras–Bapaume.",
+    "archive": "G.Q.G. des Armées de l'Est, État-major, 3e bureau, no 2349, 25 août 1914, 'Le commandant en chef aux commandants d'armée' — AFGG Tome I, 2e volume, Annexes 1er volume, annexe no 395, pp. 278–279. Excerpted (points 1, 2 and 6 of 10).",
+    "links": {
+      "events": ["1914:event-instruction-generale-2"],
+      "people": [
+        "person:joffre-joseph",
+        "person:lanrezac-charles",
+        "person:maunoury-michel-joseph"
+      ],
+      "places": ["place:amiens"]
+    },
+    "sources": [
+      {
+        "source": "source:afgg-1-2-annexes-1",
+        "pages": "278–279",
+        "note": "annexe no 395 — the text quoted (Gallica, pp. 292–293 of the scan)"
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "the instruction as the origin of the Sixth Army and of the redeployment west"
+      }
+    ]
+  },
+  {
+    "id": "1914:document-ohl-general-directions-1914-08-27",
+    "title": "Moltke's 'General Directions for the Further Conduct of the Operations', 27 August 1914",
+    "date": "1914-08-27",
+    "author": "person:moltke-helmuth-von-younger",
+    "kind": "directive",
+    "language": "en",
+    "excerpt": "The First Army, with the II. Cavalry Corps under its orders, will march west of the Oise towards the lower Seine. It must be prepared to co-operate in the fighting of the Second Army. It will also be responsible for the protection of the right flank of the Armies, and will take steps to prevent any new enemy concentration in its zone of operations. The Second Army, with the I. Cavalry Corps under its orders, will advance across the line Laon–La Fère towards Paris. It will also invest and capture Maubeuge and later La Fère, as also Laon in co-operation with the Third Army. All the Armies will mutually co-operate with one another and support each other during the fighting. The strong resistance which is expected to be met on the Aisne and later on the Marne may necessitate a wheel inwards of the Armies from a south-westerly to a southerly direction.",
+    "archive": "O.H.L. Koblenz, 27 August 1914 ('Allgemeine Anweisung für die weiteren Operationen'), received at First Army headquarters on the evening of 28 August. German text in Reichsarchiv, Der Weltkrieg, Bd. 3, and in Kluck, Der Marsch auf Paris (1920); quoted here in the 1920 English translation of Kluck's memoir, pp. 75–76 (the paragraphs for the First and Second Armies and the closing paragraph). Excerpted.",
+    "links": {
+      "people": [
+        "person:moltke-helmuth-von-younger",
+        "person:kluck-alexander-von",
+        "person:bulow-karl-von"
+      ],
+      "formations": ["1914:army-de-1", "1914:army-de-2"],
+      "places": ["place:paris"]
+    },
+    "sources": [
+      {
+        "source": "source:kluck-1920",
+        "pages": "75–76",
+        "note": "the text quoted, as received by First Army"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "note": "German text and context in Bd. 3 (Der Marnefeldzug: Von der Sambre zur Marne)"
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "the directive and the march-on-Paris intent"
+      }
+    ]
+  },
+  {
+    "id": "1914:document-bulow-kluck-wireless-1914-08-30",
+    "title": "Bülow asks, Kluck turns: the wireless exchange of 30–31 August 1914",
+    "date": "1914-08-30T18:30:00Z",
+    "author": "person:bulow-karl-von",
+    "kind": "telegram",
+    "language": "en",
+    "excerpt": "[Second Army to First Army, 30 August, 5.55 p.m.] Enemy decisively beaten to-day; strong forces retiring on La Fère. The British, who were barring the Oise south-west of La Fère, are also retreating in a southerly, and some in a south-easterly, direction. The enemy in front of the Third and Fourth Armies is also in retreat. The Second Army will rest on the 31st August except that the bombardment of the forts of La Fère will be carried out. [Second Army to First Army, 6.30 p.m.] To gain the full advantages of the victory, a wheel inwards of the First Army pivoted on Chauny towards the line La Fère–Laon is urgently desired. [First Army to Supreme Command, evening of 30 August] The First Army has wheeled round towards the Oise and will advance on the 31st by Compiègne and Noyon to exploit the success of the Second Army. [Supreme Command to First Army, morning of 31 August] The movement begun by the First Army is in accordance with the wishes of the Supreme Command.",
+    "archive": "Wireless messages as logged at First Army headquarters (Kluck, The March on Paris, 1920, pp. 83–84); German texts in Reichsarchiv, Der Weltkrieg, Bd. 3, and Kluck, Der Marsch auf Paris (1920). The Chauny–La Fère–Laon wheel that these messages set in motion is the turn 'inside Paris'.",
+    "links": {
+      "events": ["1914:guise-event-bulow-asks-kluck", "1914:event-kluck-wheels-south-east"],
+      "battles": ["1914:guise"],
+      "people": [
+        "person:bulow-karl-von",
+        "person:kluck-alexander-von",
+        "person:moltke-helmuth-von-younger"
+      ],
+      "formations": ["1914:army-de-1", "1914:army-de-2"]
+    },
+    "sources": [
+      {
+        "source": "source:kluck-1920",
+        "pages": "83–84",
+        "note": "the four messages as quoted"
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "the Guise aftermath and the decision to wheel; the historiography of blame"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "note": "the German texts, Bd. 3"
+      }
     ]
   },
   {
@@ -39,7 +215,136 @@
         "source": "source:herwig-2009",
         "note": "Gallieni, the government's departure for Bordeaux, the proclamation"
       },
-      { "source": "source:tuchman-1962", "note": "the proclamation and its reception" }
+      {
+        "source": "source:tuchman-1962",
+        "note": "the proclamation and its reception"
+      }
+    ]
+  },
+  {
+    "id": "1914:document-ohl-wireless-1914-09-04",
+    "title": "Moltke's wireless to the First and Second Armies, 4 September 1914, 7 p.m.",
+    "date": "1914-09-04T19:00:00Z",
+    "author": "person:moltke-helmuth-von-younger",
+    "kind": "directive",
+    "language": "en",
+    "excerpt": "The First and Second Armies are to remain facing the eastern front of Paris: the First Army between the Oise and the Marne, occupying the Marne crossings west of Château Thierry; the Second Army between the Marne and the Seine, occupying the Seine crossings between Nogent and Méry inclusive. The Third Army will march towards Troyes and east of it.",
+    "archive": "O.H.L. Luxembourg, sent 7 p.m. on 4 September, received at First Army headquarters (La Ferté-Milon) at 7.15 a.m. on 5 September — after the day's march had begun; the fuller written directive followed by officer on the evening of the 5th. Quoted in the 1920 English translation of Kluck's memoir, p. 105; German text in Reichsarchiv, Der Weltkrieg, Bd. 4.",
+    "links": {
+      "people": [
+        "person:moltke-helmuth-von-younger",
+        "person:kluck-alexander-von",
+        "person:bulow-karl-von"
+      ],
+      "formations": ["1914:army-de-1", "1914:army-de-2", "1914:army-de-3"],
+      "battles": ["1914:marne"],
+      "places": ["place:paris", "place:chateau-thierry"]
+    },
+    "sources": [
+      {
+        "source": "source:kluck-1920",
+        "pages": "105",
+        "note": "the wireless as received; Kluck's argument for continuing to the Seine, pp. 105–106"
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "the 4 September halt order and its arrival after Kluck had crossed the Marne"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "note": "German text and OHL reasoning, Bd. 4 (Der Marnefeldzug: Die Schlacht)"
+      }
+    ]
+  },
+  {
+    "id": "1914:document-gallieni-ordre-general-5-1914-09-04",
+    "title": "Gallieni's Ordre général no 5 to the Armée de Paris, 4 September 1914",
+    "date": "1914-09-04T20:30:00Z",
+    "author": "person:gallieni-joseph",
+    "kind": "order",
+    "language": "fr",
+    "excerpt": "I. — Tous les renseignements concordent à démontrer que les gros de la première armée allemande qui faisaient face jusqu'ici à la 6e armée se sont orientés vers le Sud-Est. Ces colonnes importantes ont été signalées hier soir se dirigeant sur la Marne pour la franchir entre la Ferté-sous-Jouarre et Château-Thierry. Ce mouvement paraît nettement dirigé contre la droite anglaise et la gauche de la 5e armée française. […] Dans ces conditions, Paris cessant d'être menacé, toutes les forces mobiles de l'Armée de Paris doivent manœuvrer de manière à conserver le contact avec l'armée allemande et à la suivre pour se tenir prêtes à participer à la bataille à prévoir. L'armée anglaise a fait connaître qu'elle se préparait à agir dans le même sens. […] III. — Demain, la 6e armée se mettra en mouvement dans la direction de l'est en se maintenant sur la rive droite (Nord) de la Marne, de manière à amener son front à hauteur de Meaux et à être prête à attaquer le 6 au matin en liaison avec l'armée anglaise qui attaquera sur le front Coulommiers–Changis.",
+    "translation": "I. All reports agree that the main body of the German First Army, which until now faced the Sixth Army, has turned south-east. These large columns were reported yesterday evening heading for the Marne to cross it between La Ferté-sous-Jouarre and Château-Thierry. The movement appears clearly aimed at the British right and the left of the French Fifth Army. […] In these conditions, Paris no longer being threatened, all the mobile forces of the Army of Paris must manoeuvre so as to keep contact with the German army and follow it, ready to take part in the battle to be expected. The British Army has made known that it is preparing to act in the same sense. […] III. Tomorrow the Sixth Army will move eastwards, keeping to the right (north) bank of the Marne, so as to bring its front level with Meaux and be ready to attack on the morning of the 6th in liaison with the British Army, which will attack on the front Coulommiers–Changis.",
+    "archive": "Armée de Paris, État-major, 3e bureau, Ordre général no 5, Paris, 4 septembre 1914, 20 h. 30 — printed in Gallieni, Mémoires: Défense de Paris (1920), documents, pp. 225–226; Gallieni notes (p. 132) that the order was already dated 20 h. 30 when, at 22 h., G.Q.G. announced the general offensive for the morning of the 6th. Excerpted.",
+    "links": {
+      "events": ["1914:event-kluck-wheels-south-east", "1914:event-battle-of-the-marne"],
+      "battles": ["1914:marne"],
+      "people": ["person:gallieni-joseph", "person:maunoury-michel-joseph", "person:french-john"],
+      "places": ["place:paris", "place:meaux"]
+    },
+    "sources": [
+      {
+        "source": "source:gallieni-1920",
+        "pages": "132, 225–226",
+        "note": "the order as printed in the documents annex; the 20 h. 30 dating"
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "Gallieni, Maunoury and the 4 September decisions; the Joffre–Gallieni priority dispute as historiography"
+      }
+    ]
+  },
+  {
+    "id": "1914:document-joffre-order-of-the-day-1914-09-06",
+    "title": "Joffre's order of the day, 6 September 1914",
+    "date": "1914-09-06",
+    "author": "person:joffre-joseph",
+    "kind": "order",
+    "language": "fr",
+    "excerpt": "Au moment où s'engage une bataille d'où dépend le salut du pays, il importe de rappeler à tous que le moment n'est plus de regarder en arrière ; tous les efforts doivent être employés à attaquer et à refouler l'ennemi. Une troupe qui ne peut plus avancer devra, coûte que coûte, garder le terrain conquis et se faire tuer sur place plutôt que de reculer. Dans les circonstances actuelles, aucune défaillance ne peut être tolérée.",
+    "translation": "At the moment when a battle is joined on which the salvation of the country depends, it is important to remind everyone that the time for looking back is over; every effort must be turned to attacking and driving back the enemy. A unit that can no longer advance must, whatever the cost, hold the ground it has won and be killed where it stands rather than retreat. In the present circumstances no failure can be tolerated.",
+    "archive": "Ordre général no 6 bis, G.Q.G., 6 septembre 1914 — printed in the AFGG annexes; widely reproduced",
+    "links": {
+      "events": ["1914:event-battle-of-the-marne"],
+      "battles": ["1914:marne"],
+      "people": ["person:joffre-joseph"]
+    },
+    "sources": [
+      {
+        "source": "source:afgg-1-1",
+        "note": "text of the order in the annex volumes"
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "context of the 6 September counter-offensive"
+      }
+    ]
+  },
+  {
+    "id": "1914:document-hentsch-first-army-minute-1914-09-09",
+    "title": "Hentsch at First Army headquarters, Mareuil, 9 September 1914: the minute of his instructions",
+    "date": "1914-09-09T11:30:00Z",
+    "author": "person:hentsch-richard",
+    "kind": "report",
+    "language": "en",
+    "excerpt": "The situation is not favourable. The Fifth Army is held up in front of Verdun and the Sixth and Seventh in front of Nancy–Épinal. The retreat of the Second Army behind the Marne is unalterable: its right wing, the VII. Corps, is being forced back and not voluntarily retiring. In consequence of these facts, all the Armies are to be moved back: the Third Army to north-east of Châlons, and the Fourth and Fifth Army, in conjunction, through the neighbourhood of Clermont-en-Argonne towards Verdun. The First Army must therefore also retire in the direction Soissons–Fère-en-Tardenois, and in extreme circumstances perhaps farther, even to Laon–La Fère. […] General von Kuhl remarked that the attack of the First Army was in full swing and that a retreat would be a very delicate operation, especially as the Army was in an extremely exhausted condition and its units intermingled. To this Lieut.-Colonel Hentsch replied that there was nothing else to be done; he admitted that, as the fighting stood at the moment, it would not be convenient to retire in the direction ordered and better to go straight back to behind the Aisne with the left flank at least on Soissons. He emphasized the fact that these directions were to remain valid regardless of any other communications that might arrive, and that he had full powers.",
+    "archive": "Minute taken down at First Army headquarters, Mareuil-sur-Ourcq, late morning of 9 September 1914, of what Lieutenant-Colonel Hentsch (O.H.L.) told General von Kuhl — 'in the still existing records of First Army Headquarters', as Kluck put it — quoted in the 1920 English translation of Kluck's memoir, p. 138. Hentsch's own written report of 1917 to the Ludendorff inquiry (Reichsarchiv, Der Weltkrieg, Bd. 4; Müller-Loebnitz, Die Sendung des Oberstleutnants Hentsch, 1922) is not reproduced here.",
+    "links": {
+      "events": ["1914:marne-event-hentsch-mareuil", "1914:event-retreat-to-the-aisne"],
+      "battles": ["1914:marne"],
+      "people": [
+        "person:hentsch-richard",
+        "person:kluck-alexander-von",
+        "person:bulow-karl-von",
+        "person:moltke-helmuth-von-younger"
+      ],
+      "formations": ["1914:army-de-1", "1914:army-de-2"],
+      "places": ["place:mareuil-sur-ourcq", "place:soissons"]
+    },
+    "sources": [
+      {
+        "source": "source:kluck-1920",
+        "pages": "137–139",
+        "note": "the minute as quoted; Kluck's complaint that Hentsch did not report to him in person"
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "the Hentsch mission, 8–9 September, and the 1917 inquiry — the 'did he exceed his powers?' question written as historiography"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "note": "the official account and Hentsch's 1917 report, Bd. 4"
+      }
     ]
   }
 ]

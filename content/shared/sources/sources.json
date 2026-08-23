@@ -213,9 +213,78 @@
     "id": "source:gallieni-1920",
     "kind": "book",
     "author": "Gallieni, Joseph",
-    "title": "Mémoires du général Gallieni: Défense de Paris (25 août – 11 septembre 1914)",
+    "title": "Mémoires du général Gallieni: Défense de Paris, 25 août – 11 septembre 1914",
     "year": 1920,
     "publisher": "Payot, Paris",
-    "notes": "Gallieni's account of the Paris camp and the 6th Army's attack on the Ourcq, including the requisition of the Paris taxis on 6–7 September 1914."
+    "url": "https://archive.org/details/mmoiresdfens00galluoft",
+    "notes": "Gallieni's own account (he died in 1916; published by his family), with a documents annex printing the Paris orders of 3–9 September (Ordre général no 5 of 4 September, the proclamation of 3 September). Written to assert Gallieni's priority over Joffre in the Marne decision; cite the documents, treat the narrative as one side of that dispute. Also the account of the Paris camp and the 6th Army's attack on the Ourcq, including the requisition of the Paris taxis on 6–7 September 1914."
+  },
+  {
+    "id": "source:kluck-1920",
+    "kind": "book",
+    "author": "Kluck, Alexander von",
+    "title": "The March on Paris and the Battle of the Marne, 1914",
+    "year": 1920,
+    "publisher": "Edward Arnold, London",
+    "edition": "English translation of Der Marsch auf Paris und die Marneschlacht 1914 (Mittler, Berlin, 1920), with notes by the Historical Section (Military Branch) of the Committee of Imperial Defence",
+    "url": "https://archive.org/details/marchonparisbatt00klucuoft",
+    "notes": "First Army commander's memoir, completed February 1918. Prints the OHL directives of 27 August and 4 September, the Bülow–Kluck wireless exchange of 30–31 August and the First Army minute of Hentsch's instructions of 9 September. Self-justifying on the turn inside Paris and on Hentsch; cite for what Kluck's headquarters received and believed, not as fact."
+  },
+  {
+    "id": "source:afgg-1-2-annexes-1",
+    "kind": "official-history",
+    "author": "Ministère de la Guerre, État-major de l'Armée, Service historique",
+    "title": "Les Armées françaises dans la Grande Guerre, Tome I, 2e volume: Annexes, 1er volume",
+    "year": 1925,
+    "publisher": "Imprimerie nationale, Paris",
+    "url": "https://gallica.bnf.fr/ark:/12148/bpt6k62710977",
+    "notes": "The order annexes for 24 August – 5 September 1914: Instruction générale no 2 (annexe no 395, 25 August), Joffre's telegrams and the army orders of the retreat. Authoritative for the French texts; page references are to the printed volume (Gallica scan page = printed page + 14)."
+  },
+  {
+    "id": "source:belgian-grey-book-1914",
+    "kind": "official-history",
+    "author": "Ministère des Affaires étrangères de Belgique",
+    "title": "Correspondance diplomatique relative à la guerre de 1914 (24 juillet – 29 août): the Belgian Grey Book",
+    "year": 1914,
+    "publisher": "Brussels; English translation in Collected Diplomatic Documents relating to the Outbreak of the European War (HMSO, London, 1915)",
+    "url": "https://wwi.lib.byu.edu/index.php/The_Belgian_Grey_Book",
+    "notes": "The Belgian government's published diplomatic file: No. 20 the German note of 2 August (German text and translation), No. 22 the Belgian reply of 3 August, No. 71 the memorandum on the delivery. A belligerent's publication, selected for effect on neutral opinion; the texts themselves are authentic. The BYU transcription carries OCR slips, corrected silently."
+  },
+  {
+    "id": "source:gallica-le-radical-1914-08-05",
+    "kind": "web",
+    "author": "Le Radical (Paris)",
+    "title": "Le Radical, 5 août 1914 — 'La réponse de la Belgique', p. 2",
+    "year": 1914,
+    "url": "https://gallica.bnf.fr/ark:/12148/bpt6k7605335n",
+    "notes": "Paris daily printing the French text of the Belgian reply as released on 4 August; used for the French wording (checked against Le Rappel and La Gazette de France of the same date, and Poincaré, Comment fut déclarée la guerre de 1914, 1939). Newspaper OCR; a few typographic slips corrected by comparison."
+  },
+  {
+    "id": "source:bsb-1000dokumente-schlieffen-1905",
+    "kind": "web",
+    "author": "Bayerische Staatsbibliothek (ed.); Epkenhans, Michael (introduction)",
+    "title": "Alfred Graf von Schlieffen, Denkschrift 'Krieg gegen Frankreich' [Schlieffen-Plan], Dezember 1905 — Volltext und Faksimile",
+    "year": 2010,
+    "url": "https://www.1000dokumente.de/index.html?c=dokument_de&dokument=0097_spl&object=translation&l=de",
+    "notes": "Full German transcription (with Moltke's marginalia) and facsimile of the Boetticher copy, Bundesarchiv-Militärarchiv N 323/19, with an introduction by Epkenhans summarising the Zuber debate. The text quoted in the Document card."
+  },
+  {
+    "id": "source:ehlert-epkenhans-gross-2006",
+    "kind": "book",
+    "author": "Ehlert, Hans; Epkenhans, Michael; Groß, Gerhard P. (eds)",
+    "title": "Der Schlieffenplan: Analysen und Dokumente",
+    "year": 2006,
+    "publisher": "Ferdinand Schöningh, Paderborn",
+    "notes": "The post-Zuber collection: essays (Groß, 'There was a Schlieffen Plan') and the edited documents, including the December 1905 memorandum and the later Aufmarschanweisungen. For the historiography panel and the German text."
+  },
+  {
+    "id": "source:ritter-1958",
+    "kind": "book",
+    "author": "Ritter, Gerhard",
+    "title": "The Schlieffen Plan: Critique of a Myth",
+    "year": 1958,
+    "publisher": "Oswald Wolff, London",
+    "edition": "translation of Der Schlieffenplan: Kritik eines Mythos (Munich, 1956)",
+    "notes": "First publication of the 1905 memorandum and its drafts, with Moltke's comments, from the then-lost-and-recovered files; the English text of the memorandum is at pp. 134–148. Ritter's critique of the plan's feasibility is itself a position in the debate."
   }
 ]

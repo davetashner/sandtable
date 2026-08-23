@@ -7,6 +7,12 @@ to: 1914-09-02T00:00:00Z
 branch: 1914:historical
 links:
   casualties: ['1914:casualties-le-cateau', '1914:casualties-august-france']
+  documents:
+    [
+      '1914:document-afgg-instruction-generale-2-1914-08-25',
+      '1914:document-ohl-general-directions-1914-08-27',
+      '1914:document-bulow-kluck-wireless-1914-08-30',
+    ]
   tech: ['1914:tech-railways-mobilization', '1914:tech-wireless-signals']
   events: ['1914:event-instruction-generale-2', '1914:event-kluck-wheels-south-east']
   people:

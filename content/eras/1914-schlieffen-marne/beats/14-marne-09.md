@@ -7,6 +7,7 @@ to: 1914-09-10T00:00:00Z
 branch: 1914:historical
 focus: 1914:marne
 links:
+  documents: ['1914:document-hentsch-first-army-minute-1914-09-09']
   battles: ['1914:marne']
   people:
     ['person:hentsch-richard', 'person:bulow-karl-von', 'person:kluck-alexander-von', 'person:french-john']

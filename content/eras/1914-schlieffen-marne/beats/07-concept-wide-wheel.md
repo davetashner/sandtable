@@ -6,6 +6,7 @@ from: 1914-08-25T00:00:00Z
 to: 1914-08-30T00:00:00Z
 branch: 1914:schlieffen-concept
 links:
+  documents: ['1914:document-schlieffen-memorandum-1905-12']
   people:
     ['person:schlieffen-alfred-von', 'person:kluck-alexander-von']
   places: ['place:amiens', 'place:paris']

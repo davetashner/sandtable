@@ -9,7 +9,11 @@
     "summary": "Belgium having refused passage, German cavalry and the Army of the Meuse cross the frontier near Gemmenich on the morning of 4 August and move on Liège. Britain's ultimatum expires that night.",
     "links": {
       "people": ["person:albert-i-of-belgium", "person:moltke-helmuth-von-younger"],
-      "places": ["place:liege"]
+      "places": ["place:liege"],
+      "documents": [
+        "1914:document-german-ultimatum-to-belgium-1914-08-02",
+        "1914:document-belgian-reply-1914-08-03"
+      ]
     },
     "sources": [
       {
@@ -171,7 +175,8 @@
     "summary": "Joffre abandons Plan XVII: the armies will retreat, and a new mass of manoeuvre — the future 6th Army — will be formed on the left by rail from the Lorraine front, to strike the German right wing's outer flank.",
     "links": {
       "people": ["person:joffre-joseph", "person:maunoury-michel-joseph"],
-      "formations": ["1914:army-fr-6"]
+      "formations": ["1914:army-fr-6"],
+      "documents": ["1914:document-afgg-instruction-generale-2-1914-08-25"]
     },
     "sources": [
       {
@@ -193,7 +198,11 @@
     "summary": "Believing the French left beaten and anxious to keep touch with Bülow, Kluck turns the 1st Army south-east on 30–31 August to pass east of Paris — exposing his right flank to the garrison of Paris and the new 6th Army.",
     "links": {
       "people": ["person:kluck-alexander-von", "person:bulow-karl-von"],
-      "formations": ["1914:army-de-1"]
+      "formations": ["1914:army-de-1"],
+      "documents": [
+        "1914:document-bulow-kluck-wireless-1914-08-30",
+        "1914:document-ohl-general-directions-1914-08-27"
+      ]
     },
     "sources": [
       {

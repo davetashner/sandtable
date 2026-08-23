@@ -13,6 +13,8 @@ links:
     [
       '1914:document-gallieni-proclamation-1914-09-03',
       '1914:document-joffre-order-of-the-day-1914-09-06',
+      '1914:document-ohl-wireless-1914-09-04',
+      '1914:document-gallieni-ordre-general-5-1914-09-04',
     ]
   events: ['1914:event-battle-of-the-marne']
   people:
