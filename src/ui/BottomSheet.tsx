@@ -4,7 +4,14 @@
  * handle up/down moves one detent. The sheet owns its vertical drags; the map
  * behind keeps pinch-zoom and pan.
  */
-import { useCallback, useRef, useState, type PointerEvent, type ReactNode } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type PointerEvent,
+  type ReactNode,
+} from 'react';
 import './bottom-sheet.css';
 
 export type Detent = 'peek' | 'half' | 'full';
@@ -13,6 +20,14 @@ const ORDER: Detent[] = ['peek', 'half', 'full'];
 export interface BottomSheetProps {
   children: ReactNode;
   initial?: Detent;
+  /**
+   * Raise the sheet to at least this detent whenever the value changes to a
+   * new non-empty key — a card opening, say. At peek the body is clipped to
+   * 112px, so content asked for while the sheet is down would otherwise be
+   * invisible and unscrollable (sand-neh.9).
+   */
+  raiseFor?: string | undefined;
+  raiseTo?: Detent;
   label?: string;
   /** Tests/embedding can observe detent changes. */
   onDetent?: (d: Detent) => void;
@@ -27,6 +42,8 @@ export function nextDetent(d: Detent, dir: 1 | -1): Detent {
 export function BottomSheet({
   children,
   initial = 'peek',
+  raiseFor,
+  raiseTo = 'half',
   label = 'Dossier sheet',
   onDetent,
 }: BottomSheetProps) {
@@ -39,6 +56,18 @@ export function BottomSheet({
     },
     [onDetent],
   );
+
+  // Only ever raises, and only when the key changes: a reader who pulls the
+  // sheet back down while a card is open is left alone.
+  const lastRaise = useRef<string | undefined>(undefined);
+  useEffect(() => {
+    if (!raiseFor || raiseFor === lastRaise.current) {
+      lastRaise.current = raiseFor;
+      return;
+    }
+    lastRaise.current = raiseFor;
+    setDetentState((d) => (ORDER.indexOf(d) < ORDER.indexOf(raiseTo) ? raiseTo : d));
+  }, [raiseFor, raiseTo]);
 
   const onPointerDown = (e: PointerEvent<HTMLButtonElement>) => {
     startY.current = e.clientY;

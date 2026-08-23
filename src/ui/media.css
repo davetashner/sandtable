@@ -54,6 +54,26 @@
   margin: 0 0 8px 12px;
 }
 
+/* The cast hero sits directly above the bio, so at 320px wide and 4:5 it put
+   400px between the reader and the first line of text — on a short pane that
+   is the whole pane. Float it instead: the bio starts at the top and wraps
+   beside the portrait. Narrow panes keep it stacked but cap the height, so
+   there is always prose in view (sand-neh.9). */
+.card__hero.media--portrait {
+  float: right;
+  width: 132px;
+  margin: 0 0 10px 14px;
+}
+
+@media (max-width: 400px) {
+  .card__hero.media--portrait {
+    float: none;
+    width: 100%;
+    max-width: 190px;
+    margin: 4px 0 10px;
+  }
+}
+
 @media (max-width: 640px) {
   .card__portrait {
     float: none;

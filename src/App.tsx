@@ -918,10 +918,19 @@ function DossierSurface() {
       />
     </>
   );
+  // A card is far longer than a beat — a portrait alone is taller than the
+  // pane the dossier gets at medium widths. Both layouts need telling
+  // (sand-neh.9): the sheet raises itself off peek, where the body is clipped
+  // to 112px, and the surface is allowed more height while a card is open.
+  const cardKey = card ? `${card.kind}:${card.card.id}` : undefined;
   return phone ? (
-    <BottomSheet initial="peek">{dossier}</BottomSheet>
+    <BottomSheet initial="peek" raiseFor={cardKey}>
+      {dossier}
+    </BottomSheet>
   ) : (
-    <div className="surface surface--dossier">{dossier}</div>
+    <div className="surface surface--dossier" data-card={card ? '' : undefined}>
+      {dossier}
+    </div>
   );
 }
 
