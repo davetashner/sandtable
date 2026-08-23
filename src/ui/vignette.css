@@ -14,11 +14,15 @@
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
-.vignette__face {
+.vignette__facewrap {
   float: right;
+  margin: 0 0 6px 10px;
+}
+
+.vignette__face {
   width: 44px;
   height: 44px;
-  margin: 0 0 6px 10px;
+  display: block;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--line);

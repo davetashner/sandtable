@@ -7,6 +7,7 @@
  */
 import type { MediaIndexEntry } from '../packs/media-index.js';
 import './media.css';
+import './prose.css';
 
 export interface MediaFigureProps {
   entry: MediaIndexEntry;
@@ -16,6 +17,8 @@ export interface MediaFigureProps {
   width?: number;
   /** Crop to a portrait frame using the focal point (cards) or show whole (figures). */
   fit?: 'portrait' | 'contain';
+  /** Who or what is pictured — revealed on hover and keyboard focus (sand-1l0.30). */
+  name?: string | undefined;
   className?: string;
 }
 
@@ -24,6 +27,7 @@ export function MediaFigure({
   base = '/assets/media/',
   width = 320,
   fit = 'contain',
+  name,
   className,
 }: MediaFigureProps) {
   const srcSet = entry.variants.map((v) => `${base}${v.src} ${v.width}w`).join(', ');
@@ -34,7 +38,14 @@ export function MediaFigure({
     ? `${Math.round(entry.focalPoint.x * 100)}% ${Math.round(entry.focalPoint.y * 100)}%`
     : '50% 30%';
   return (
-    <figure className={`media media--${fit}${className ? ` ${className}` : ''}`}>
+    <figure
+      className={`media media--${fit}${name ? ' media--named' : ''}${className ? ` ${className}` : ''}`}
+    >
+      {name && (
+        <span className="portrait-name" aria-hidden="true">
+          {name}
+        </span>
+      )}
       <img
         className="media__img"
         src={src}

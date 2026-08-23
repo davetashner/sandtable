@@ -74,3 +74,19 @@
     transition: none;
   }
 }
+
+/* A named figure (a person card's portrait) shows the name over the image. */
+.media--named {
+  position: relative;
+}
+
+.media--named > .portrait-name {
+  top: var(--space-2);
+  bottom: auto;
+}
+
+.media--named:hover > .portrait-name,
+.media--named:focus-within > .portrait-name {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}

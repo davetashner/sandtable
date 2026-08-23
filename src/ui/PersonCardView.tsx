@@ -64,7 +64,13 @@ export function PersonCardView({
         body={bio}
         hero={
           portrait && (
-            <MediaFigure entry={portrait} width={320} fit="portrait" className="card__hero" />
+            <MediaFigure
+              entry={portrait}
+              width={320}
+              fit="portrait"
+              name={person.name}
+              className="card__hero"
+            />
           )
         }
         chips={chips}
@@ -91,7 +97,13 @@ export function PersonCardView({
       {...(onBack ? { onBack } : {})}
     >
       {portrait && (
-        <MediaFigure entry={portrait} width={320} fit="portrait" className="card__portrait" />
+        <MediaFigure
+          entry={portrait}
+          width={320}
+          fit="portrait"
+          name={person.name}
+          className="card__portrait"
+        />
       )}
     </Card>
   );

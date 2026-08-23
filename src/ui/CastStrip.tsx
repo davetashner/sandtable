@@ -11,6 +11,7 @@ import { sideToken } from '../engine/layers/colors.js';
 import type { MediaIndexEntry } from '../packs/media-index.js';
 import type { Side } from '../packs/schema/index.js';
 import './cast.css';
+import './prose.css';
 
 export interface CastMember {
   /** Cast entry id. */
@@ -79,13 +80,12 @@ export function CastStrip({
                 ? `${Math.round(p.focalPoint.x * 100)}% ${Math.round(p.focalPoint.y * 100)}%`
                 : '50% 25%';
               return (
-                <li key={m.id}>
+                <li key={m.id} className="portrait-frame">
                   <button
                     type="button"
                     className="cast__face"
                     aria-pressed={pressed}
                     aria-label={`${m.name} — ${m.role}`}
-                    title={`${m.name} — ${m.role}`}
                     onClick={() => onSelect(m.person)}
                   >
                     {p && variant ? (
@@ -102,6 +102,9 @@ export function CastStrip({
                       </span>
                     )}
                   </button>
+                  <span className="portrait-name" aria-hidden="true">
+                    {m.name}
+                  </span>
                 </li>
               );
             })}
