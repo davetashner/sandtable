@@ -1,0 +1,131 @@
+/* Decision point card (sand-1l0.22): choose, then compare. Tokens only. */
+
+.decision {
+  margin: 8px 0 12px;
+}
+
+.decision__prompt,
+.decision__reveal h3 {
+  margin: 12px 0 6px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.decision__options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.decision__option {
+  appearance: none;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--ink);
+  cursor: pointer;
+  display: grid;
+  gap: 4px;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.decision__option:hover,
+.decision__option:focus-visible {
+  border-color: var(--brass);
+  outline: none;
+}
+
+.decision__option[data-picked] {
+  border-color: var(--brass);
+  box-shadow: 0 0 0 1px var(--brass);
+}
+
+.decision__option[data-historical] {
+  border-style: dashed;
+}
+
+.decision__option-label {
+  font-weight: 600;
+  font-size: var(--fs-md);
+}
+
+.decision__option-summary {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+
+.decision__option-summary p {
+  margin: 0;
+}
+
+.decision__tags {
+  display: flex;
+  gap: 6px;
+}
+
+.decision__tag {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  padding: 1px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.decision__tag--pick {
+  border-color: var(--brass);
+  color: var(--brass);
+}
+
+.decision__tag--history {
+  border-style: dashed;
+  color: var(--ink);
+}
+
+.decision__reveal {
+  margin-top: 10px;
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+}
+
+.decision__reveal p {
+  margin: 0 0 8px;
+}
+
+.decision__play {
+  margin: 8px 0;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+
+.decision__play-btn {
+  appearance: none;
+  border: 1px solid var(--brass);
+  background: none;
+  color: var(--brass);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+
+.decision__play-btn:hover,
+.decision__play-btn:focus-visible {
+  background: color-mix(in srgb, var(--brass) 15%, transparent);
+  outline: none;
+}
