@@ -94,6 +94,9 @@ specific with a `note`; when they disagree on meaning, write historiography.
 | `source:unruh-1986`                        | Unruh, _Langemarck: Legende und Wirklichkeit_ (1986)                         | the reality behind the Kindermord legend                                 |
 | `source:1914-1918-online-langemarck`       | Grawe, 'Langemarck Myth', _1914-1918-online_                                 | the OHL communiqué of 11 November 1914 and the myth's construction       |
 | `source:1914-1918-online-ypres`            | Jones, 'Ypres, Battles of', _1914-1918-online_                               | First Ypres: dates, armies, the round casualty totals                    |
+| id                                         | Work                                                                         | Use it for                                                              |
+| `source:showalter-2004`                    | Showalter, _Tannenberg: Clash of Empires, 1914_ (2004)                       | East Prussia 1914: Gumbinnen, Tannenberg, the corps from the West        |
+| `source:stone-1975`                        | Stone, _The Eastern Front 1914-1917_ (1975)                                  | the Eastern Front's shape; sceptical of the Tannenberg legend            |
 | `source:doughty-2005`                      | Doughty, _Pyrrhic Victory_ (2005)                                            | French strategy and operations; Plan XVII, the Ardennes, Joffre's purges |
 | `source:greenhalgh-2014`                   | Greenhalgh, _The French Army and the First World War_ (2014)                 | French doctrine and losses; the Colonial Corps at Rossignol, p. 41       |
 | `source:zuber-2007`                        | Zuber, _The Battle of the Frontiers: Ardennes 1914_ (2007)                   | the Ardennes encounter battles from the German regimental histories      |

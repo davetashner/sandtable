@@ -2302,5 +2302,32 @@
         "source": "source:unruh-1986"
       }
     ]
+  },
+  {
+    "id": "1914:army-de-8",
+    "name": "German 8th Army",
+    "side": "de",
+    "kind": "army",
+    "short": "8. Armee",
+    "summary": "The single army left to hold East Prussia while seven went west. Commanded by Prittwitz to 23 August, then by Hindenburg with Ludendorff as chief of staff. No route: this pack renders it as order of battle for the eastern cross-reference, not as a token on the western map.",
+    "sources": [{ "source": "source:showalter-2004" }, { "source": "source:strachan-2001" }]
+  },
+  {
+    "id": "1914:army-ru-1",
+    "name": "Russian First Army",
+    "side": "ru",
+    "kind": "army",
+    "short": "1st Army",
+    "summary": "Rennenkampf's army, which entered East Prussia from the east on 17 August and fought at Gumbinnen on the 20th. No route: order of battle for the eastern cross-reference only.",
+    "sources": [{ "source": "source:showalter-2004" }]
+  },
+  {
+    "id": "1914:army-ru-2",
+    "name": "Russian Second Army",
+    "side": "ru",
+    "kind": "army",
+    "short": "2nd Army",
+    "summary": "Samsonov's army, which advanced north-west into East Prussia and was encircled at Tannenberg on 26-30 August. No route: order of battle for the eastern cross-reference only.",
+    "sources": [{ "source": "source:showalter-2004" }, { "source": "source:stone-1975" }]
   }
 ]

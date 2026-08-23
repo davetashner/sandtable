@@ -5845,5 +5845,116 @@
         "source": "source:doughty-2005"
       }
     ]
+  },
+  {
+    "id": "1914:tannenberg-east",
+    "title": "The eastern cross-reference: two corps that fought in neither battle",
+    "timeRange": { "start": "1914-08-20T00:00:00Z", "end": "1914-09-14T00:00:00Z" },
+    "region": [18.6, 52.8, 23.4, 55.3],
+    "camera": { "center": [20.9, 54.0], "zoom": 7 },
+    "place": "place:tannenberg",
+    "summary": "The other end of the same war. While the right wing swung through Belgium, one German army held East Prussia against two Russian ones; when it was checked at Gumbinnen on 20 August its commander proposed abandoning the province, and the alarm reached Moltke as the West seemed already won. On 25 August he took the Guard Reserve and XI Corps off the wheel and sent them east. A chapter, not a zoom-in: these are static markers on the ground where the eastern battles were fought, and the campaign tokens in the West keep moving on their own routes.",
+    "outcome": "The Eighth Army, under Hindenburg and Ludendorff from 23 August and working to a concentration Hoffmann had already begun, encircled Samsonov's Second Army at Tannenberg on 26-30 August and took some 92,000 prisoners; Samsonov shot himself in the forest near Willenberg in the early hours of the 30th. Russian losses in killed and wounded are given anywhere between 50,000 and 78,000, and the totals are unreliable because only part of the army was inside the ring.[^showalter-2004] [^stone-1975] The two corps from the West were formally assigned to Hindenburg on 31 August - the day after the battle ended. They fought at the Masurian Lakes on 7-14 September, in the same week the Marne was lost without them.[^showalter-2004] [^herwig-2009]",
+    "participants": [
+      "1914:army-de-8",
+      "1914:army-ru-1",
+      "1914:army-ru-2",
+      "1914:corps-de-guard-res",
+      "1914:corps-de-xi"
+    ],
+    "events": [
+      {
+        "id": "1914:east-event-gumbinnen",
+        "title": "Gumbinnen: the Eighth Army checked",
+        "at": "1914-08-20T08:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:gumbinnen",
+        "summary": "Attacking Rennenkampf's First Army in the open, the German Eighth Army is fought to a standstill and I Corps falls back in disorder. Tactically the day is indecisive; its consequence is entirely a matter of nerve.[^showalter-2004]",
+        "sources": [{ "source": "source:showalter-2004" }, { "source": "source:strachan-2001" }]
+      },
+      {
+        "id": "1914:east-event-prittwitz-vistula",
+        "title": "Prittwitz proposes to give up East Prussia",
+        "at": "1914-08-20T18:00:00Z",
+        "kind": "decision",
+        "significance": "major",
+        "place": "place:konigsberg",
+        "summary": "That evening Prittwitz telephones OHL to say he intends to break off and retire behind the Vistula - abandoning the province, Königsberg and the ground the whole eastern deployment was built to hold. He is talked partly round within hours, but the alarm has been raised and cannot be unraised.[^showalter-2004] [^mombauer-2001]",
+        "sources": [{ "source": "source:showalter-2004" }, { "source": "source:mombauer-2001" }]
+      },
+      {
+        "id": "1914:east-event-new-command",
+        "title": "Hindenburg and Ludendorff take over at Marienburg",
+        "at": "1914-08-23T14:00:00Z",
+        "kind": "order",
+        "significance": "major",
+        "place": "place:marienburg",
+        "summary": "Moltke relieves Prittwitz on 22 August, sends for Hindenburg out of retirement and gives him Ludendorff - fresh from Liège - as chief of staff. They reach Marienburg on the afternoon of the 23rd and adopt the concentration against Samsonov that Hoffmann and the army staff have already set in motion.[^showalter-2004] [^stone-1975]",
+        "sources": [{ "source": "source:showalter-2004" }, { "source": "source:stone-1975" }]
+      },
+      {
+        "id": "1914:east-event-tannenberg",
+        "title": "Tannenberg: the Second Army encircled",
+        "timeRange": { "start": "1914-08-26T00:00:00Z", "end": "1914-08-30T18:00:00Z" },
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:tannenberg",
+        "summary": "The Eighth Army leaves a screen in front of Rennenkampf, moves the rest of itself by rail and road across the front of one Russian army to fall on the other, and closes a ring round Samsonov's centre. Some 92,000 prisoners are taken. Hindenburg asks that the battle be named for Tannenberg, where the Teutonic Knights were beaten in 1410; Ludendorff and Hoffmann each later claimed the idea.[^showalter-2004] [^stone-1975]",
+        "sources": [{ "source": "source:showalter-2004" }, { "source": "source:stone-1975" }]
+      },
+      {
+        "id": "1914:east-event-samsonov",
+        "title": "Samsonov walks into the forest",
+        "at": "1914-08-30T01:00:00Z",
+        "kind": "other",
+        "significance": "minor",
+        "place": "place:tannenberg",
+        "summary": "Separated from his staff near Willenberg and unwilling to report the loss of his army to the Tsar, Samsonov shoots himself in the early hours of 30 August. A German patrol finds the body later.[^showalter-2004]",
+        "sources": [
+          { "source": "source:showalter-2004" },
+          { "source": "source:wikipedia-en", "note": "date and circumstances; Old Style 17 August" }
+        ]
+      },
+      {
+        "id": "1914:east-event-corps-assigned",
+        "title": "The corps from the West are assigned - on 31 August",
+        "at": "1914-08-31T12:00:00Z",
+        "kind": "order",
+        "significance": "major",
+        "place": "place:marienburg",
+        "summary": "Hindenburg is given the XI Corps, the Guard Reserve Corps and the 8th Cavalry Division for operations in East Prussia. The battle they were sent for ended the day before.[^showalter-2004]",
+        "sources": [{ "source": "source:showalter-2004" }, { "source": "source:herwig-2009" }]
+      },
+      {
+        "id": "1914:east-event-masurian-lakes",
+        "title": "The Masurian Lakes: the battle they did fight",
+        "timeRange": { "start": "1914-09-07T00:00:00Z", "end": "1914-09-14T00:00:00Z" },
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:masurian-lakes",
+        "summary": "With the corps from the West now in the line, the Eighth Army turns on Rennenkampf and pushes the First Army out of East Prussia. It is fought in the same week as the Marne, thirteen hundred kilometres away, where the wing those corps came from is short of exactly what it lent.[^showalter-2004] [^stone-1975]",
+        "sources": [{ "source": "source:showalter-2004" }, { "source": "source:stone-1975" }]
+      }
+    ],
+    "links": {
+      "events": ["1914:event-two-corps-east"],
+      "people": [
+        "person:moltke-helmuth-von-younger",
+        "person:hindenburg-paul-von",
+        "person:ludendorff-erich",
+        "person:prittwitz-maximilian-von",
+        "person:hoffmann-max",
+        "person:samsonov-alexander",
+        "person:rennenkampf-paul-von"
+      ],
+      "places": ["place:gumbinnen", "place:tannenberg", "place:marienburg", "place:masurian-lakes"]
+    },
+    "sources": [
+      { "source": "source:showalter-2004" },
+      { "source": "source:stone-1975" },
+      { "source": "source:herwig-2009" },
+      { "source": "source:mombauer-2001" }
+    ]
   }
 ]

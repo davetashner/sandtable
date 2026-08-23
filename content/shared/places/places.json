@@ -1273,5 +1273,64 @@
         "note": "coordinates"
       }
     ]
+  },
+  {
+    "id": "place:tannenberg",
+    "name": "Tannenberg",
+    "names": [{ "name": "Stebark", "language": "pl", "kind": "modern" }],
+    "kind": "village",
+    "lngLat": [20.135, 53.497],
+    "country": "German Empire (East Prussia)",
+    "notes": "The village the battle of 26-30 August 1914 was named for, at Hindenburg's request, to answer the defeat of the Teutonic Knights on the same ground in 1410.",
+    "sources": [{ "source": "source:showalter-2004" }]
+  },
+  {
+    "id": "place:allenstein",
+    "name": "Allenstein",
+    "names": [{ "name": "Olsztyn", "language": "pl", "kind": "modern" }],
+    "kind": "city",
+    "lngLat": [20.48, 53.778],
+    "country": "German Empire (East Prussia)",
+    "notes": "Objective of the Russian Second Army's centre as it advanced north-west into East Prussia.",
+    "sources": [{ "source": "source:showalter-2004" }]
+  },
+  {
+    "id": "place:gumbinnen",
+    "name": "Gumbinnen",
+    "names": [{ "name": "Gusev", "language": "ru", "kind": "modern" }],
+    "kind": "town",
+    "lngLat": [22.2, 54.593],
+    "country": "German Empire (East Prussia)",
+    "notes": "Where Rennenkampf's First Army checked the German Eighth Army on 20 August 1914 - the shock that produced Prittwitz's collapse and, at one remove, the two corps sent east from the right wing.",
+    "sources": [{ "source": "source:showalter-2004" }, { "source": "source:strachan-2001" }]
+  },
+  {
+    "id": "place:konigsberg",
+    "name": "Königsberg",
+    "names": [{ "name": "Kaliningrad", "language": "ru", "kind": "modern" }],
+    "kind": "fortress",
+    "lngLat": [20.51, 54.71],
+    "country": "German Empire (East Prussia)",
+    "notes": "The province's fortress and capital; holding it, or abandoning it behind the Vistula, was the question Prittwitz put to Moltke on 20 August.",
+    "sources": [{ "source": "source:showalter-2004" }]
+  },
+  {
+    "id": "place:marienburg",
+    "name": "Marienburg",
+    "names": [{ "name": "Malbork", "language": "pl", "kind": "modern" }],
+    "kind": "town",
+    "lngLat": [19.03, 54.036],
+    "country": "German Empire (West Prussia)",
+    "notes": "Eighth Army headquarters; Hindenburg and Ludendorff arrived here on the afternoon of 23 August 1914.",
+    "sources": [{ "source": "source:showalter-2004" }]
+  },
+  {
+    "id": "place:masurian-lakes",
+    "name": "The Masurian Lakes",
+    "kind": "region",
+    "lngLat": [21.65, 53.92],
+    "country": "German Empire (East Prussia)",
+    "notes": "The lake belt that split the two Russian armies' advance, and gave its name to the battle of 7-14 September 1914 - the battle the two corps from the West actually fought in.",
+    "sources": [{ "source": "source:showalter-2004" }, { "source": "source:stone-1975" }]
   }
 ]
