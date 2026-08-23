@@ -4284,5 +4284,526 @@
         "source": "source:reichsarchiv-weltkrieg-1"
       }
     ]
+  },
+  {
+    "id": "1914:guise",
+    "title": "Guise / Saint-Quentin",
+    "timeRange": {
+      "start": "1914-08-28T00:00:00Z",
+      "end": "1914-08-31T00:00:00Z"
+    },
+    "region": [2.95, 49.55, 4.05, 50.1],
+    "camera": {
+      "center": [3.55, 49.85],
+      "zoom": 9.4
+    },
+    "place": "place:guise",
+    "summary": "Joffre, building a new army on the left by rail and needing a day, orders Lanrezac to turn the retreating 5th Army and strike west towards Saint-Quentin. On 29 August the blow meant for Kluck lands on Bülow: the French left is stopped on the Ribemont road, Bülow's Guard and X Corps cross the Oise at Guise, and in the afternoon Franchet d'Espèrey's I Corps counter-attacks and throws the Guard back over the river. Lanrezac disengages the next morning. Bülow, checked, asks Kluck to wheel inward to help him — and the 1st Army turns south-east, inside Paris.",
+    "outcome": "A day gained for Joffre's redeployment and the 5th Army kept intact; Bülow checked; Kluck asked to wheel in — the operational cause of the turn inside Paris and of the Marne; Lanrezac relieved on 3 September nonetheless, Franchet d'Espèrey in his place.",
+    "participants": ["1914:army-fr-5", "1914:army-de-2", "1914:army-de-1", "1914:bef"],
+    "formations": [],
+    "routes": [
+      {
+        "id": "1914:guise-route-fr-i",
+        "formation": "1914:corps-fr-i",
+        "waypoints": [
+          [3.8, 49.92, "1914-08-28T12:00:00Z"],
+          [3.65, 49.85, "1914-08-29T06:00:00Z"],
+          [3.63, 49.9, "1914-08-29T15:00:00Z"],
+          [3.6, 49.93, "1914-08-29T20:00:00Z"],
+          [3.65, 49.85, "1914-08-30T06:00:00Z"],
+          [3.77, 49.75, "1914-08-30T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the AFGG maps as summarised in Herwig; ±4–6 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Franchet d'Espèrey's I Corps: brought across from the right in the morning, it counter-attacked through Guise in the afternoon and drove the Guard back over the Oise."
+      },
+      {
+        "id": "1914:guise-route-fr-iii",
+        "formation": "1914:corps-fr-iii",
+        "waypoints": [
+          [3.7, 49.83, "1914-08-28T12:00:00Z"],
+          [3.58, 49.82, "1914-08-29T06:00:00Z"],
+          [3.48, 49.81, "1914-08-29T12:00:00Z"],
+          [3.5, 49.82, "1914-08-29T18:00:00Z"],
+          [3.55, 49.78, "1914-08-30T06:00:00Z"],
+          [3.62, 49.7, "1914-08-30T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the AFGG maps as summarised in Herwig; ±4–6 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Towards Saint-Quentin in the morning; stopped on the Ribemont road."
+      },
+      {
+        "id": "1914:guise-route-fr-x",
+        "formation": "1914:corps-fr-x",
+        "waypoints": [
+          [3.88, 49.85, "1914-08-28T12:00:00Z"],
+          [3.72, 49.88, "1914-08-29T06:00:00Z"],
+          [3.7, 49.9, "1914-08-29T12:00:00Z"],
+          [3.68, 49.92, "1914-08-29T18:00:00Z"],
+          [3.72, 49.85, "1914-08-30T06:00:00Z"],
+          [3.8, 49.75, "1914-08-30T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the AFGG maps as summarised in Herwig; ±4–6 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Held the Oise east of Guise against the X Corps, then joined the afternoon counter-attack."
+      },
+      {
+        "id": "1914:guise-route-fr-xviii",
+        "formation": "1914:corps-fr-xviii",
+        "waypoints": [
+          [3.55, 49.8, "1914-08-28T12:00:00Z"],
+          [3.42, 49.8, "1914-08-29T06:00:00Z"],
+          [3.38, 49.8, "1914-08-29T12:00:00Z"],
+          [3.4, 49.79, "1914-08-29T18:00:00Z"],
+          [3.45, 49.75, "1914-08-30T06:00:00Z"],
+          [3.52, 49.68, "1914-08-30T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the AFGG maps as summarised in Herwig; ±4–6 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "The left, aimed at Saint-Quentin; checked by the X Reserve Corps and the 1st Army's approach."
+      },
+      {
+        "id": "1914:guise-route-fr-rd-4",
+        "formation": "1914:det-fr-rd-4",
+        "waypoints": [
+          [3.5, 49.75, "1914-08-28T12:00:00Z"],
+          [3.45, 49.76, "1914-08-29T12:00:00Z"],
+          [3.5, 49.65, "1914-08-30T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the AFGG maps as summarised in Herwig; ±4–6 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          }
+        ]
+      },
+      {
+        "id": "1914:guise-route-de-guard",
+        "formation": "1914:corps-de-guard",
+        "waypoints": [
+          [3.72, 50.02, "1914-08-28T12:00:00Z"],
+          [3.65, 49.95, "1914-08-29T06:00:00Z"],
+          [3.63, 49.9, "1914-08-29T12:00:00Z"],
+          [3.64, 49.94, "1914-08-29T18:00:00Z"],
+          [3.62, 49.9, "1914-08-30T12:00:00Z"],
+          [3.62, 49.85, "1914-08-30T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±4–6 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Across the Oise at Guise at midday; thrown back by Franchet d'Espèrey in the afternoon."
+      },
+      {
+        "id": "1914:guise-route-de-x",
+        "formation": "1914:corps-de-x",
+        "waypoints": [
+          [3.82, 50.02, "1914-08-28T12:00:00Z"],
+          [3.75, 49.95, "1914-08-29T06:00:00Z"],
+          [3.72, 49.91, "1914-08-29T12:00:00Z"],
+          [3.74, 49.93, "1914-08-29T18:00:00Z"],
+          [3.72, 49.88, "1914-08-30T12:00:00Z"],
+          [3.72, 49.82, "1914-08-30T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±4–6 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:guise-route-de-x-res",
+        "formation": "1914:corps-de-x-res",
+        "waypoints": [
+          [3.6, 50.05, "1914-08-28T12:00:00Z"],
+          [3.52, 49.95, "1914-08-29T06:00:00Z"],
+          [3.48, 49.85, "1914-08-29T12:00:00Z"],
+          [3.5, 49.86, "1914-08-29T18:00:00Z"],
+          [3.5, 49.8, "1914-08-30T12:00:00Z"],
+          [3.52, 49.75, "1914-08-30T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±4–6 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Bülow's right: met the French XVIII and III Corps on the Saint-Quentin road."
+      },
+      {
+        "id": "1914:guise-route-de-vii",
+        "formation": "1914:corps-de-vii",
+        "waypoints": [
+          [3.5, 50.0, "1914-08-28T12:00:00Z"],
+          [3.4, 49.9, "1914-08-29T12:00:00Z"],
+          [3.35, 49.85, "1914-08-30T12:00:00Z"],
+          [3.38, 49.78, "1914-08-30T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±4–6 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:guise-route-hkk-1",
+        "formation": "1914:hkk-1",
+        "waypoints": [
+          [3.9, 50.0, "1914-08-28T12:00:00Z"],
+          [3.85, 49.95, "1914-08-29T12:00:00Z"],
+          [3.85, 49.85, "1914-08-30T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±4–6 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:guise-route-de-ix",
+        "formation": "1914:corps-de-ix",
+        "waypoints": [
+          [3.45, 50.05, "1914-08-28T12:00:00Z"],
+          [3.3, 49.98, "1914-08-29T12:00:00Z"],
+          [3.25, 49.9, "1914-08-30T12:00:00Z"],
+          [3.3, 49.85, "1914-08-30T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±4–6 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "The 1st Army's inner corps, marching south-west past the battle towards Saint-Quentin and Péronne."
+      },
+      {
+        "id": "1914:guise-route-de-ii",
+        "formation": "1914:corps-de-ii",
+        "waypoints": [
+          [3.2, 50.05, "1914-08-28T12:00:00Z"],
+          [3.1, 49.95, "1914-08-29T12:00:00Z"],
+          [3.0, 49.85, "1914-08-30T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±4–6 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:guise-route-gb-i",
+        "formation": "1914:corps-gb-i",
+        "waypoints": [
+          [3.62, 49.97, "1914-08-28T12:00:00Z"],
+          [3.5, 49.83, "1914-08-29T06:00:00Z"],
+          [3.4, 49.72, "1914-08-29T18:00:00Z"],
+          [3.35, 49.62, "1914-08-30T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre from the Official History; ±4 km.",
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          }
+        ],
+        "notes": "Haig offered to join Lanrezac's attack on the 28th; GHQ forbade it and I Corps continued its retreat past Mont d'Origny."
+      },
+      {
+        "id": "1914:guise-route-gb-ii",
+        "formation": "1914:corps-gb-ii",
+        "waypoints": [
+          [3.29, 49.85, "1914-08-28T12:00:00Z"],
+          [3.1, 49.75, "1914-08-29T12:00:00Z"],
+          [3.0, 49.62, "1914-08-30T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre from the Official History; ±4 km.",
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "1914:guise-event-joffre-orders",
+        "title": "Joffre at Marle: the 5th Army is to turn and strike towards Saint-Quentin",
+        "at": "1914-08-28T14:00:00Z",
+        "kind": "order",
+        "significance": "major",
+        "place": "place:marle",
+        "summary": "Joffre drives to Lanrezac's headquarters and orders him to attack westward with his whole army against the German forces pressing the British — a blow to relieve the BEF and gain a day for the new army forming on the left. Lanrezac, who sees the 2nd Army on his right flank, objects and obeys.",
+        "links": {
+          "people": ["person:joffre-joseph", "person:lanrezac-charles"],
+          "formations": ["1914:army-fr-5"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:guise-event-haig-offer",
+        "title": "Haig offers I Corps; GHQ refuses",
+        "at": "1914-08-28T18:00:00Z",
+        "kind": "decision",
+        "significance": "minor",
+        "lngLat": [3.62, 49.97],
+        "summary": "Haig proposes to support the French attack with his corps on the 29th; Sir John French, set on getting the BEF out of the line, countermands it. Lanrezac's left will attack alone.",
+        "links": {
+          "people": ["person:haig-douglas", "person:french-john", "person:lanrezac-charles"],
+          "formations": ["1914:corps-gb-i"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:guise-event-attack-west",
+        "title": "The 5th Army attacks towards Saint-Quentin",
+        "at": "1914-08-29T06:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:ribemont",
+        "summary": "The XVIII and III Corps go forward along the Ribemont–Saint-Quentin road and are stopped by Bülow's X Reserve Corps; the blow meant for Kluck lands on Bülow.",
+        "links": {
+          "formations": ["1914:corps-fr-xviii", "1914:corps-fr-iii", "1914:corps-de-x-res"]
+        },
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:guise-event-oise-crossed",
+        "title": "The Guard and X Corps cross the Oise at Guise",
+        "at": "1914-08-29T12:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:guise",
+        "summary": "While the French left is held, Bülow's Guard and X Corps come over the Oise at Guise against the French X Corps and the army's right, which bends.",
+        "links": {
+          "formations": ["1914:corps-de-guard", "1914:corps-de-x", "1914:corps-fr-x"],
+          "people": ["person:bulow-karl-von"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ]
+      },
+      {
+        "id": "1914:guise-event-counterattack",
+        "title": "Franchet d'Espèrey counter-attacks at Guise",
+        "at": "1914-08-29T17:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:guise",
+        "summary": "Lanrezac throws in the I Corps, brought across from the right; Franchet d'Espèrey leads it forward in the afternoon with bands playing, drives the Guard back over the Oise and retakes the crossings — the moment that makes his reputation and, three days later, gives him the army.",
+        "links": {
+          "formations": ["1914:corps-fr-i", "1914:corps-de-guard"],
+          "people": ["person:franchet-desperey-louis", "person:lanrezac-charles"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:guise-event-bulow-halts",
+        "title": "Bülow claims a victory and halts for a day",
+        "at": "1914-08-29T22:00:00Z",
+        "kind": "order",
+        "significance": "minor",
+        "place": "place:guise",
+        "summary": "The 2nd Army reports the French beaten and asks for a day's rest to recover; it has been checked on the Oise and its right has been hit.",
+        "links": {
+          "people": ["person:bulow-karl-von"],
+          "formations": ["1914:army-de-2"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:guise-event-retreat-resumed",
+        "title": "Lanrezac breaks off and resumes the retreat",
+        "at": "1914-08-30T06:00:00Z",
+        "kind": "order",
+        "significance": "major",
+        "place": "place:marle",
+        "summary": "Having gained the day Joffre asked for, Lanrezac disengages on Joffre's order and the 5th Army falls back on Laon and the Aisne.",
+        "links": {
+          "people": ["person:lanrezac-charles", "person:joffre-joseph"],
+          "formations": ["1914:army-fr-5"]
+        },
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:guise-event-bulow-asks-kluck",
+        "title": "Bülow asks Kluck to wheel inward",
+        "at": "1914-08-30T12:00:00Z",
+        "kind": "decision",
+        "significance": "major",
+        "lngLat": [3.55, 49.95],
+        "summary": "To exploit the 'victory' and help his checked army, Bülow asks the 1st Army to wheel in towards the Oise and the Marne — the request that turns Kluck south-east, inside Paris, and opens the flank Maunoury will strike on 5 September. The counter-attack at Guise is the operational cause of the turn.",
+        "links": {
+          "people": ["person:bulow-karl-von", "person:kluck-alexander-von"],
+          "formations": ["1914:army-de-1", "1914:army-de-2"],
+          "events": ["1914:event-kluck-wheels-south-east"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      }
+    ],
+    "links": {
+      "events": ["1914:event-instruction-generale-2", "1914:event-kluck-wheels-south-east"],
+      "people": [
+        "person:lanrezac-charles",
+        "person:franchet-desperey-louis",
+        "person:joffre-joseph",
+        "person:bulow-karl-von",
+        "person:kluck-alexander-von",
+        "person:haig-douglas",
+        "person:french-john"
+      ],
+      "places": [
+        "place:guise",
+        "place:saint-quentin",
+        "place:ribemont",
+        "place:marle",
+        "place:vervins"
+      ]
+    },
+    "sources": [
+      {
+        "source": "source:herwig-2009",
+        "note": "Guise and Bülow's request"
+      },
+      {
+        "source": "source:afgg-1-1",
+        "note": "the 5th Army's orders"
+      },
+      {
+        "source": "source:edmonds-1922",
+        "note": "Haig's offer"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      }
+    ]
   }
 ]
