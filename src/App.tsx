@@ -46,6 +46,8 @@ import { DecisionCardView } from './ui/DecisionCardView.js';
 import { ClockGauges } from './ui/ClockGauges.js';
 import { TallyGauges } from './ui/TallyGauges.js';
 import { TallyCardView } from './ui/TallyCardView.js';
+import { SupplyGauges } from './ui/SupplyGauges.js';
+import { SupplyCardView } from './ui/SupplyCardView.js';
 import { ClockCardView } from './ui/ClockCardView.js';
 import { decisionCrossed } from './engine/decisions.js';
 import { mediaById, portraitFor } from './packs/media-index.js';
@@ -111,6 +113,7 @@ function useLabeller(): EntityLabeller {
           seed.decisions.find((d) => d.id === id)?.title ??
           seed.clocks.find((c) => c.id === id)?.title ??
           seed.tallies.find((c) => c.id === id)?.title ??
+          seed.supply.find((c) => c.id === id)?.title ??
           seed.tech.find((t) => t.id === id)?.title ??
           seed.science.find((t) => t.id === id)?.title ??
           seed.documents.find((d) => d.id === id)?.title ??
@@ -148,9 +151,12 @@ function useCard():
   | { kind: 'decision'; card: (typeof seed.decisions)[number] }
   | { kind: 'clock'; card: (typeof seed.clocks)[number] }
   | { kind: 'tally'; card: (typeof seed.tallies)[number] }
+  | { kind: 'supply'; card: (typeof seed.supply)[number] }
   | undefined {
   const { card } = useViewState();
   if (!card) return undefined;
+  const supply = seed.supply.find((c) => c.id === card);
+  if (supply) return { kind: 'supply', card: supply };
   const tally = seed.tallies.find((c) => c.id === card);
   if (tally) return { kind: 'tally', card: tally };
   const clock = seed.clocks.find((c) => c.id === card);
@@ -400,6 +406,14 @@ function DossierSurface() {
               cast={seed.cast.find((c) => c.person === card.card.id)}
               onBack={() => controls?.setCard(undefined)}
             />
+          ) : card?.kind === 'supply' ? (
+            <SupplyCardView
+              line={card.card}
+              routes={seed.routes}
+              sources={seed.sources}
+              labeller={labeller}
+              onBack={() => controls?.setCard(undefined)}
+            />
           ) : card?.kind === 'tally' ? (
             <TallyCardView
               tally={card.card}
@@ -549,6 +563,13 @@ function TimelineSurface() {
           />
           <TallyGauges
             tallies={seed.tallies}
+            selected={viewCard}
+            onSelect={(id) => controls?.setCard(viewCard === id ? undefined : id)}
+          />
+          <SupplyGauges
+            lines={seed.supply}
+            routes={seed.routes}
+            label={(id) => seed.formations.find((f) => f.id === id)?.short}
             selected={viewCard}
             onSelect={(id) => controls?.setCard(viewCard === id ? undefined : id)}
           />

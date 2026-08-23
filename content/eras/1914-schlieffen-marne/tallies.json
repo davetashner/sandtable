@@ -170,5 +170,114 @@
         "source": "source:zuber-2002"
       }
     ]
+  },
+  {
+    "id": "1914:tally-left-by-rail",
+    "title": "The left wing grows — by rail",
+    "subtitle": "Corps Joffre moved west from Lorraine and Alsace by train, 20 August – 4 September",
+    "unit": "corps",
+    "start": {
+      "value": 0,
+      "asOf": "1914-08-20T00:00:00Z",
+      "note": "Interior lines: the French railway net let Joffre move a corps from Lorraine to Paris in two days while the German corps walked.",
+      "sources": [
+        {
+          "source": "source:afgg-1-1"
+        },
+        {
+          "source": "source:herwig-2009"
+        }
+      ]
+    },
+    "entries": [
+      {
+        "id": "xviii",
+        "at": "1914-08-21T18:00:00Z",
+        "delta": 1,
+        "label": "XVIII Corps to the 5th Army on the Sambre",
+        "formations": ["1914:corps-fr-xviii"],
+        "lngLat": [4.3, 50.35],
+        "note": "From Nancy, 20–21 August.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          }
+        ]
+      },
+      {
+        "id": "ix",
+        "at": "1914-08-24T12:00:00Z",
+        "delta": 1,
+        "label": "IX Corps to the 4th Army",
+        "formations": ["1914:corps-fr-ix"],
+        "lngLat": [4.55, 49.15],
+        "note": "From the 2nd Army, 22–24 August; later Foch's 9th Army.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          }
+        ]
+      },
+      {
+        "id": "vii",
+        "at": "1914-08-27T12:00:00Z",
+        "delta": 1,
+        "label": "VII Corps to Amiens — the 6th Army forms",
+        "formations": ["1914:corps-fr-vii"],
+        "lngLat": [2.3, 49.89],
+        "note": "From Alsace, 25–27 August, under Instruction générale no 2.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "rd-3",
+        "at": "1914-08-29T12:00:00Z",
+        "delta": 1,
+        "label": "55th and 56th Reserve Divisions to Paris",
+        "formations": ["1914:det-fr-rd-3"],
+        "lngLat": [2.45, 48.95],
+        "note": "From the Army of Lorraine, 27–29 August; the divisions that opened the Ourcq.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          }
+        ]
+      },
+      {
+        "id": "iv",
+        "at": "1914-09-04T12:00:00Z",
+        "delta": 1,
+        "label": "IV Corps to Paris",
+        "formations": ["1914:corps-fr-iv"],
+        "lngLat": [2.45, 48.9],
+        "note": "From Verdun, 2–4 September; part of its 7th Division reached the front by taxi.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      }
+    ],
+    "summary": "Schlieffen's wheel assumed the French would not be able to shift their weight faster than the Germans could march. They could: between Instruction générale no 2 and the Marne Joffre moved the equivalent of five corps from the right to the left by rail, built a new army at Amiens and Paris, and reinforced the 5th — interior lines against exterior lines, the railway against the boot.[^afgg-1-1] [^herwig-2009] [^strachan-2001]",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
   }
 ]

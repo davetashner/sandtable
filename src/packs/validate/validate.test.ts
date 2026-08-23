@@ -278,6 +278,38 @@ describe('validateContent', () => {
     expect(messages(validateContent(raw)).filter((m) => /dissolved/.test(m))).toEqual([]);
   });
 
+  it('checks supply lines: army and railhead must exist and have historical routes; footnotes and citations', () => {
+    const raw = fixture();
+    const c = raw.packs[0]!.collections;
+    const line = (over: Record<string, unknown>) => ({
+      id: '1914:supply-1',
+      title: 'Feet against rail',
+      army: '1914:army-de-1',
+      railhead: '1914:army-fr-6',
+      summary: 'Horses.[^herwig-2009]',
+      sources: [{ source: 'source:herwig-2009' }],
+      ...over,
+    });
+    c['supply.json'] = { path: 'eras/1914-test/supply.json', data: [line({})] };
+    expect(messages(validateContent(raw)).filter((m) => /supply/.test(m))).toEqual([]);
+    // strip the railhead's route → flagged
+    const routes = c['routes.json']!.data as { formation: string }[];
+    c['routes.json']!.data = routes.filter((r) => r.formation !== '1914:army-fr-6');
+    expect(messages(validateContent(raw))).toContainEqual(
+      expect.stringMatching(/railhead 1914:army-fr-6 has no historical route to measure/),
+    );
+    c['routes.json']!.data = routes;
+    c['supply.json'] = {
+      path: 'eras/1914-test/supply.json',
+      data: [line({ railhead: '1914:ghost', summary: 'Text.[^nope]' })],
+    };
+    const msgs = messages(validateContent(raw));
+    expect(msgs).toContainEqual(expect.stringMatching(/railhead 1914:ghost does not exist/));
+    expect(msgs).toContainEqual(
+      expect.stringMatching(/summary footnote \[\^nope\] is not one of the supply line's sources/),
+    );
+  });
+
   it('checks tallies: entries ordered and in range, formation/place refs, footnotes and citations', () => {
     const raw = fixture();
     const c = raw.packs[0]!.collections;

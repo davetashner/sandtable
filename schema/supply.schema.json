@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sandtable.davetashner.com/schema/supply.schema.json",
+  "title": "Sandtable supply",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "<era>:supply-<slug>"
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "army": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "Formation whose march is measured"
+      },
+      "railhead": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "Formation (kind other) whose route is the railhead/depot position over time"
+      },
+      "thresholdKm": {
+        "description": "Gap beyond which horse-drawn supply failed in this era (default 100)",
+        "type": "number",
+        "exclusiveMinimum": 0
+      },
+      "summary": {
+        "description": "Footnoted [^slug] to `sources`",
+        "type": "string",
+        "minLength": 1
+      },
+      "sources": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+              "description": "Source id, e.g. source:herwig-2009"
+            },
+            "pages": {
+              "description": "Page(s), e.g. \"112–115\" or \"ch. 4\"",
+              "type": "string"
+            },
+            "note": {
+              "description": "What this citation supports",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        "description": "Citations supporting the claims in this entity"
+      }
+    },
+    "required": [
+      "id",
+      "title",
+      "army",
+      "railhead",
+      "sources"
+    ],
+    "additionalProperties": false
+  }
+}

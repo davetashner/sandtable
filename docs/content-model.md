@@ -127,7 +127,10 @@ generated JSON Schema; this is the intent of each.
   assembled, in words plus a representative position and date — the start
   token before its route begins) and `dissolved` (when it ceased to exist —
   its token disappears then), each with its own sources.
-- **Route** — a Formation's movement over time (see above). Required sources.
+- **Route** — a Formation's movement over time (see above); optional `mode`
+  (`march | rail | sea | air`): a rail/sea/air leg draws dashed and its token
+  shows only while it is under way (a transfer, not a position). Required
+  sources.
 - **Event** — a point (`at`) or a span (`timeRange`); `kind`, `significance`
   (`major` events become timeline ticks), a Place or a position, summary,
   links, required sources.
@@ -165,6 +168,12 @@ generated JSON Schema; this is the intent of each.
   `comparisons` (a:b pairs drawn as bars). Rendered as a gauge beside the
   clocks, markers on the map as each entry happens, and a ledger card
   (`sand-1l0.19`). Required sources.
+- **SupplyLine** (`supply.json`) — rail against feet: an `army` formation and
+  a `railhead` formation (kind `other`, its route the railhead creeping
+  forward), a `thresholdKm` beyond which horse-drawn supply failed, a
+  footnoted `summary`. The gauge reads kilometres marched off the army's
+  route and the gap to the railhead at the clock (`sand-1l0.21`). Required
+  sources; both formations need historical routes.
 - **NarrativeBeat** — a Markdown file; front matter carries `id`, `title`,
   `dateLabel`, `from`/`to`, `branch`, `focus` (a Battle), pull quote, hero
   `media`, links and required `sources`. The body is Markdown; footnote
@@ -200,7 +209,7 @@ a formation's `concentration.asOf` or `dissolved` outside the pack range or
 planned day or an actual date, duplicated, or dated before the origin,
 assumption footnotes that name no source, tally entries out of order, outside
 the range or naming formations/places that do not exist, negative comparison
-quantities, decision `historical` not an
+quantities, supply lines whose army or railhead has no historical route, decision `historical` not an
 option, campaign routes using battle-level formations, and the imagery policy
 on media manifests (flagged BLOCKED/UNVERIFIED/UNKNOWN/HOLD, colorized without
 saying so, Bundesarchiv without the credit string, no archive record).

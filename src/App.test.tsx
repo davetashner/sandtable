@@ -157,4 +157,18 @@ describe('App shell', () => {
       /Moltke's August 1914 deployment/,
     );
   });
+
+  it('shows the rail-against-feet gauges and opens the supply card', async () => {
+    window.history.replaceState(null, '', '/?t=1914-09-05T12:00:00Z');
+    render(<App />);
+    const gauge = await screen.findByRole(
+      'listitem',
+      { name: /1\. Armee: marched \d+ km, railhead \d+ km behind/ },
+      { timeout: 8000 },
+    );
+    expect(gauge).toHaveAttribute('data-tone', 'behind');
+    fireEvent.click(gauge);
+    expect(window.location.search).toContain('card=1914:supply-de-1');
+    expect(screen.getByText('Rail against feet')).toBeInTheDocument();
+  });
 });

@@ -464,6 +464,16 @@
               ],
               "description": "high: documented; medium: inferred from sources; low: approximate; contested: historians disagree"
             },
+            "mode": {
+              "description": "How the formation moved along this route; rail/sea/air legs draw dashed and show their token only while moving (default march)",
+              "type": "string",
+              "enum": [
+                "march",
+                "rail",
+                "sea",
+                "air"
+              ]
+            },
             "derivation": {
               "description": "How positions were derived (HQ locations, corps centres, …)",
               "type": "string"

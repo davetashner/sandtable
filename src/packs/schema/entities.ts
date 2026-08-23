@@ -241,6 +241,29 @@ export const Timetable = z
   })
   .strict();
 
+// ------------------------------------------------------------- SupplyLine
+/**
+ * Rail against feet (sand-1l0.21): an army's marching distance read off its
+ * route, and the gap between the army and the railhead that feeds it — the
+ * railhead being a formation of its own with a route that creeps forward.
+ * Generic: any army/railhead (or depot, port) pair.
+ */
+export const SupplyLine = z
+  .object({
+    id: Id.describe('<era>:supply-<slug>'),
+    title: z.string().min(1),
+    army: Id.describe('Formation whose march is measured'),
+    railhead: Id.describe('Formation (kind other) whose route is the railhead/depot position over time'),
+    thresholdKm: z
+      .number()
+      .positive()
+      .optional()
+      .describe('Gap beyond which horse-drawn supply failed in this era (default 100)'),
+    summary: Markdown.optional().describe('Footnoted [^slug] to `sources`'),
+    sources: Sources,
+  })
+  .strict();
+
 // ------------------------------------------------------------------ Tally
 /**
  * A running strength ledger (sand-1l0.19): a starting value in some unit and
@@ -413,6 +436,12 @@ export const Route = z
     ),
     waypoints: z.array(Waypoint).min(2).describe('Strictly increasing in time'),
     confidence: Confidence.default('medium'),
+    mode: z
+      .enum(['march', 'rail', 'sea', 'air'])
+      .optional()
+      .describe(
+        'How the formation moved along this route; rail/sea/air legs draw dashed and show their token only while moving (default march)',
+      ),
     derivation: z
       .string()
       .optional()
@@ -706,6 +735,7 @@ export type Person = z.infer<typeof Person>;
 export type CastEntry = z.infer<typeof CastEntry>;
 export type Timetable = z.infer<typeof Timetable>;
 export type Tally = z.infer<typeof Tally>;
+export type SupplyLine = z.infer<typeof SupplyLine>;
 export type Place = z.infer<typeof Place>;
 export type Media = z.infer<typeof Media>;
 export type Side = z.infer<typeof Side>;

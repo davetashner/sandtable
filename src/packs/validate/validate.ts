@@ -40,6 +40,7 @@ import {
   type TimeRange,
   BeatFrontMatter,
   type CastEntry,
+  type SupplyLine,
   type Tally,
   type Timetable,
 } from '../schema/index.js';
@@ -75,6 +76,7 @@ export interface ParsedPack {
   cast: CastEntry[];
   clocks: Timetable[];
   tallies: Tally[];
+  supply: SupplyLine[];
   beats: NarrativeBeat[];
 }
 
@@ -100,6 +102,7 @@ type Kind =
   | 'cast'
   | 'clock'
   | 'tally'
+  | 'supply'
   | 'branch'
   | 'formation'
   | 'route'
@@ -299,6 +302,7 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     cast: [],
     clocks: [],
     tallies: [],
+    supply: [],
     beats: [],
     files: {},
     branchById: new Map(),
@@ -323,6 +327,7 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     'cast.json': 'cast',
     'clocks.json': 'clock',
     'tallies.json': 'tally',
+    'supply.json': 'supply',
   };
   for (const [file, schema] of Object.entries(PACK_COLLECTIONS) as [
     PackCollectionFile,
@@ -690,6 +695,31 @@ function checkTally(ctx: Ctx, s: PackState, path: string, c: Tally) {
   }
 }
 
+function checkSupply(ctx: Ctx, s: PackState, path: string, c: SupplyLine) {
+  const army = ctx.ref(path, c.id, c.army, ['formation'], 'army');
+  const railhead = ctx.ref(path, c.id, c.railhead, ['formation'], 'railhead');
+  for (const [what, fe, id] of [
+    ['army', army, c.army],
+    ['railhead', railhead, c.railhead],
+  ] as const) {
+    if (fe && fe.pack !== s.dir) ctx.error(path, `${what} ${id} belongs to another pack`, c.id);
+    if (fe && !s.routes.some((r) => r.formation === id && !r.branch))
+      ctx.error(path, `${what} ${id} has no historical route to measure`, c.id);
+  }
+  checkCitations(ctx, path, c.id, c.sources, true);
+  if (c.summary) {
+    const slugs = new Set(c.sources.map((x) => x.source.split(':')[1] ?? x.source));
+    for (const m of c.summary.matchAll(/\[\^([^\]\s]+)\]/g)) {
+      if (!slugs.has(m[1]!))
+        ctx.error(
+          path,
+          `summary footnote [^${m[1]}] is not one of the supply line's sources`,
+          c.id,
+        );
+    }
+  }
+}
+
 function checkLink(ctx: Ctx, path: string, l: CausalLink) {
   const any: Kind[] = [
     'pack',
@@ -882,6 +912,7 @@ export function validateContent(raw: RawContent): Report {
     for (const l of s.links) checkLink(ctx, file('links.json'), l);
     for (const c of s.clocks) checkClock(ctx, file('clocks.json'), c);
     for (const c of s.tallies) checkTally(ctx, s, file('tallies.json'), c);
+    for (const c of s.supply) checkSupply(ctx, s, file('supply.json'), c);
     const seenCast = new Set<string>();
     for (const c of s.cast) {
       checkCast(ctx, file('cast.json'), c, sideIds);

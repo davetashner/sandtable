@@ -13,6 +13,7 @@
  */
 import type { Layer } from '@deck.gl/core';
 import { TripsLayer } from '@deck.gl/geo-layers';
+import { PathStyleExtension, type PathStyleExtensionProps } from '@deck.gl/extensions';
 import { PathLayer, ScatterplotLayer, TextLayer } from '@deck.gl/layers';
 import type { Branch, Formation, Route, Side, Waypoint } from '../../packs/schema/index.js';
 import { type RGBA, sideColor, tokenColor } from './colors.js';
@@ -33,6 +34,8 @@ export interface ComposedRoute {
   /** True when any part of the path comes from a counterfactual branch. */
   hypothetical: boolean;
   confidence: Route['confidence'];
+  /** How it moves: rail/sea/air legs draw dashed and show the token only while moving. */
+  mode: NonNullable<Route['mode']>;
 }
 
 const toPoint = (w: Waypoint): [number, number, number] => [w[0], w[1], Date.parse(w[2])];
@@ -71,6 +74,7 @@ export function composeRoutes(
       points,
       hypothetical: Boolean(tail),
       confidence: tail?.confidence ?? base?.confidence ?? 'medium',
+      mode: tail?.mode ?? base?.mode ?? 'march',
     });
   }
   return out;
@@ -146,6 +150,8 @@ export interface MovementLayerOptions {
 
 interface RouteDatum {
   id: string;
+  /** rail/sea/air legs are dashed. */
+  dashed: boolean;
   path: [number, number][];
   timestamps: number[];
   color: RGBA;
@@ -226,6 +232,7 @@ export function buildMovementScene(o: MovementLayerOptions): MovementScene {
     timestamps: r.points.map((p) => (p[2] - o.rangeStart) / 1000),
     color: sideColor(r.side, o.sides),
     hypothetical: r.hypothetical,
+    dashed: Boolean(r.mode) && r.mode !== 'march',
   }));
   const tokens: TokenDatum[] = [];
   for (const r of o.routes) {
@@ -235,6 +242,8 @@ export function buildMovementScene(o: MovementLayerOptions): MovementScene {
     // formed (the French 6th and 9th Armies, the Army of Alsace).
     if (pos.phase === 'before' && !existsAt(r.formation, o.now)) continue;
     if (dissolvedBy(r.formation, o.now)) continue;
+    // a rail/sea/air leg is a transfer: the token exists on the map only while it is under way
+    if (r.mode && r.mode !== 'march' && pos.phase !== 'moving') continue;
     tokens.push({
       id: r.formation.id,
       label: r.formation.short ?? r.formation.name,
@@ -271,7 +280,7 @@ export function buildMovementScene(o: MovementLayerOptions): MovementScene {
 
   const layers: Layer[] = [
     // the whole route, faint — what is still to come
-    new PathLayer<RouteDatum>({
+    new PathLayer<RouteDatum, PathStyleExtensionProps<RouteDatum>>({
       id: 'movement-ghost',
       data: routeData,
       getPath: (d) => d.path,
@@ -280,6 +289,9 @@ export function buildMovementScene(o: MovementLayerOptions): MovementScene {
       widthUnits: 'pixels',
       widthMinPixels: 1.5,
       capRounded: true,
+      extensions: [new PathStyleExtension({ dash: true })],
+      getDashArray: (d) => (d.dashed ? [6, 4] : [0, 0]),
+      dashJustified: true,
       jointRounded: true,
       pickable: false,
     }),
