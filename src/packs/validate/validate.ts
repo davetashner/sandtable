@@ -44,6 +44,7 @@ import {
   type SupplyLine,
   type Tally,
   type Timetable,
+  type Tour,
   type Vignette,
 } from '../schema/index.js';
 import { footnoteLabels, splitFrontMatter } from './frontmatter.js';
@@ -81,6 +82,7 @@ export interface ParsedPack {
   supply: SupplyLine[];
   casualties: CasualtyRecord[];
   vignettes: Vignette[];
+  tours: Tour[];
   beats: NarrativeBeat[];
 }
 
@@ -109,6 +111,7 @@ type Kind =
   | 'supply'
   | 'casualties'
   | 'vignette'
+  | 'tour'
   | 'branch'
   | 'formation'
   | 'route'
@@ -312,6 +315,7 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     supply: [],
     casualties: [],
     vignettes: [],
+    tours: [],
     beats: [],
     files: {},
     branchById: new Map(),
@@ -339,6 +343,7 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     'supply.json': 'supply',
     'casualties.json': 'casualties',
     'vignettes.json': 'vignette',
+    'tours.json': 'tour',
   };
   for (const [file, schema] of Object.entries(PACK_COLLECTIONS) as [
     PackCollectionFile,
@@ -785,6 +790,60 @@ function checkVignette(ctx: Ctx, s: PackState, path: string, v: Vignette) {
   checkFootnotes(ctx, path, v.id, v.text, v.sources, 'text');
 }
 
+/**
+ * A guided tour (sand-1l0.14). Each step is a complete view: its clock instant
+ * must sit inside the range the step will actually be shown on — the pack's,
+ * or the battle's when the step names a `focus` — and every id it opens must
+ * resolve. Steps that run backwards in time are legal (a tour may compare a
+ * branch with history) but warned about, since it is usually a typo.
+ */
+function checkTour(ctx: Ctx, s: PackState, path: string, tr: Tour) {
+  const CARD_KINDS: Kind[] = [
+    'tech',
+    'science',
+    'document',
+    'decision',
+    'clock',
+    'tally',
+    'supply',
+    'casualties',
+    'vignette',
+    'link',
+    'person',
+  ];
+  const seen = new Set<string>();
+  let previous: string | undefined;
+  tr.steps.forEach((step, i) => {
+    const where = `steps[${i}] (${step.id})`;
+    if (seen.has(step.id)) ctx.error(path, `${where}: duplicate step id`, tr.id);
+    seen.add(step.id);
+    let range = s.pack.timeRange;
+    if (step.focus) {
+      const b = ctx.ref(path, tr.id, step.focus, ['battle'], `${where}: focus`);
+      if (b && b.pack !== s.dir)
+        ctx.error(path, `${where}: focus ${step.focus} belongs to another pack`, tr.id);
+      const battle = s.battles.find((x) => x.id === step.focus);
+      if (battle) range = battle.timeRange;
+    }
+    const scope = step.focus ? `the battle's timeRange` : `the pack timeRange`;
+    if (!within(range, step.at)) ctx.error(path, `${where}: at is outside ${scope}`, tr.id);
+    if (step.playUntil) {
+      if (!(t(step.at) < t(step.playUntil)))
+        ctx.error(path, `${where}: playUntil must be after at`, tr.id);
+      if (!within(range, step.playUntil))
+        ctx.error(path, `${where}: playUntil is outside ${scope}`, tr.id);
+    }
+    checkBranchRef(ctx, s, path, tr.id, step.branch, true);
+    if (step.card) ctx.ref(path, tr.id, step.card, CARD_KINDS, `${where}: card`);
+    checkFootnotes(ctx, path, tr.id, step.narration, tr.sources, `${where} narration`);
+    if (previous && t(step.at) < t(previous))
+      ctx.warn(path, `${where}: at runs backwards from the previous step`, tr.id);
+    previous = step.at;
+  });
+  checkFootnotes(ctx, path, tr.id, tr.summary, tr.sources, 'summary');
+  checkCitations(ctx, path, tr.id, tr.sources, true);
+}
+
 function checkLink(ctx: Ctx, path: string, l: CausalLink) {
   const any: Kind[] = [
     'pack',
@@ -982,6 +1041,7 @@ export function validateContent(raw: RawContent): Report {
     for (const c of s.supply) checkSupply(ctx, s, file('supply.json'), c);
     for (const c of s.casualties) checkCasualties(ctx, s, file('casualties.json'), c, sideIds);
     for (const v of s.vignettes) checkVignette(ctx, s, file('vignettes.json'), v);
+    for (const tr of s.tours) checkTour(ctx, s, file('tours.json'), tr);
     const seenCast = new Set<string>();
     for (const c of s.cast) {
       checkCast(ctx, file('cast.json'), c, sideIds);

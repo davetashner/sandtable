@@ -12,6 +12,7 @@ import {
   createContext,
   lazy,
   type ReactNode,
+  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -36,7 +37,16 @@ import {
   type FocusMemory,
 } from './engine/focus.js';
 import { seed } from './packs/seed.js';
-import { usePhone } from './engine/useMediaQuery.js';
+import {
+  diverged,
+  holdMs,
+  resolvePosition,
+  tourMinutes,
+  viewForStep,
+  type TourPosition,
+} from './engine/tour.js';
+import { TourLauncher, TourPanel } from './ui/TourPanel.js';
+import { useMediaQuery, usePhone } from './engine/useMediaQuery.js';
 import { BottomSheet } from './ui/BottomSheet.js';
 import { BranchToggle } from './ui/BranchToggle.js';
 import { Breadcrumb } from './ui/Breadcrumb.js';
@@ -222,6 +232,156 @@ function useMeanwhile() {
   return { available, active, toggle };
 }
 
+/** Simulated ms per real second a tour step plays at unless it says otherwise. */
+const TOUR_SPEED = 12 * 60 * 60 * 1000;
+
+interface TourValue {
+  pos: TourPosition | undefined;
+  /** True while the tour is advancing itself. */
+  running: boolean;
+  minutes: number;
+  start: () => void;
+  exit: () => void;
+  goto: (index: number) => void;
+  toggle: () => void;
+}
+
+const TourCtx = createContext<TourValue | null>(null);
+function useTour(): TourValue {
+  const v = useContext(TourCtx);
+  if (!v) throw new Error('TourCtx missing');
+  return v;
+}
+
+/**
+ * The guided tour (sand-1l0.14). The URL holds where the tour is (`tour`,
+ * `step`), so it is resumable and deep-linkable; this provider applies each
+ * step's view — slots first, then the clock once the range has caught up with
+ * a zoom-in — advances when the step is done, and stops the moment the viewer
+ * touches anything the tour did not set. Nothing here knows about 1914.
+ */
+function TourProvider({ children }: { children: ReactNode }) {
+  const { tour: tourSlot, step: stepSlot, focus, branch, card } = useViewState();
+  const controls = useViewStateControls();
+  const clock = useClockControls();
+  const { now, range } = useClock();
+  const pos = useMemo(() => resolvePosition(seed.tours, tourSlot, stepSlot), [tourSlot, stepSlot]);
+  const expected = useMemo(
+    () => (pos ? viewForStep(pos.step, seed.pack.defaultBranch) : undefined),
+    [pos],
+  );
+  const [running, setRunning] = useState(false);
+  // The step whose clock has been applied; state (not a ref) so the advance
+  // timers arm only once the view has actually settled on the step.
+  const [armed, setArmed] = useState<string | null>(null);
+  const slotsFor = useRef<string | null>(null);
+  const speedBefore = useRef<number | null>(null);
+
+  const exit = useCallback(() => {
+    setRunning(false);
+    setArmed(null);
+    slotsFor.current = null;
+    clock.pause();
+    if (speedBefore.current) clock.setSpeed(speedBefore.current);
+    speedBefore.current = null;
+    controls?.setTour(undefined);
+  }, [clock, controls]);
+
+  const goto = useCallback(
+    (index: number) => {
+      if (!pos) return;
+      const step = pos.tour.steps[index];
+      if (!step) {
+        // Past the last step: hold the final view and hand back control.
+        setRunning(false);
+        clock.pause();
+        return;
+      }
+      controls?.setTour(pos.tour.id, step.id);
+    },
+    [pos, controls, clock],
+  );
+
+  const start = useCallback(() => {
+    const tour = seed.tours[0];
+    if (!tour || !controls) return;
+    speedBefore.current = clock.get().speed;
+    setRunning(true);
+    controls.setTour(tour.id, tour.steps[0]!.id);
+  }, [controls, clock]);
+
+  const toggle = useCallback(() => setRunning((r) => !r), []);
+
+  // 1. the step's slots — branch, zoom-in, card — applied once per step.
+  useEffect(() => {
+    if (!pos || !expected || !controls) {
+      slotsFor.current = null;
+      return;
+    }
+    if (slotsFor.current === pos.key) return;
+    slotsFor.current = pos.key;
+    setArmed(null);
+    controls.setFocus(expected.focus);
+    controls.setBranch(expected.branch);
+    controls.setCard(expected.card);
+  }, [pos, expected, controls]);
+
+  // 2. the clock, once the focus swap has given us the range the step lives in.
+  useEffect(() => {
+    if (!pos || !expected || armed === pos.key || slotsFor.current !== pos.key) return;
+    if ((focus ?? undefined) !== expected.focus) return;
+    if (expected.t < range.start || expected.t > range.end) return;
+    clock.seek(expected.t);
+    clock.setSpeed(pos.step.speed ?? TOUR_SPEED);
+    setArmed(pos.key);
+  }, [pos, expected, armed, focus, range.start, range.end, clock]);
+
+  // 3. play or hold, following the running flag.
+  useEffect(() => {
+    if (!pos || !expected || armed !== pos.key) return;
+    const playing = clock.get().playing;
+    const wants = running && expected.playTo !== undefined && now < expected.playTo;
+    if (wants && !playing) clock.play();
+    if (!wants && playing) clock.pause();
+  }, [pos, expected, armed, running, now, clock]);
+
+  // 4a. a playing step ends when the clock reaches its window.
+  useEffect(() => {
+    if (!pos || !expected?.playTo || !running || armed !== pos.key) return;
+    if (now >= expected.playTo) goto(pos.index + 1);
+  }, [pos, expected, running, armed, now, goto]);
+
+  // 4b. a held step ends after its own beat of reading time.
+  useEffect(() => {
+    if (!pos || !running || expected?.playTo !== undefined || armed !== pos.key) return;
+    const id = window.setTimeout(() => goto(pos.index + 1), holdMs(pos.step));
+    return () => window.clearTimeout(id);
+  }, [pos, expected, running, armed, goto]);
+
+  // 5. the viewer takes over: anything the tour did not do stops the autoplay.
+  useEffect(() => {
+    if (!pos || !expected || !running || armed !== pos.key) return;
+    if (diverged(expected, { focus, branch, card }, now)) setRunning(false);
+  }, [pos, expected, running, armed, focus, branch, card, now]);
+
+  // Escape always leaves.
+  useEffect(() => {
+    if (!pos) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') exit();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [pos, exit]);
+
+  const minutes = useMemo(() => (seed.tours[0] ? tourMinutes(seed.tours[0], TOUR_SPEED) : 0), []);
+  const value = useMemo<TourValue>(
+    () => ({ pos, running, minutes, start, exit, goto, toggle }),
+    [pos, running, minutes, start, exit, goto, toggle],
+  );
+  return <TourCtx.Provider value={value}>{children}</TourCtx.Provider>;
+}
+
 /**
  * Applies the zoom-in: when the focus changes, swap the clock range for the
  * battle's (remembering the campaign instant) or restore the campaign range
@@ -263,11 +423,34 @@ function FocusBar() {
   );
 }
 
+/** The way into the tour; hidden while one is running (the panel has the exit). */
+function TourStart() {
+  const { pos, minutes, start } = useTour();
+  const tour = seed.tours[0];
+  if (!tour || pos) return null;
+  return <TourLauncher tour={tour} minutes={minutes} onStart={start} />;
+}
+
 function MapSection() {
   const branch = useBranch();
   const focus = useFocus();
   const controls = useViewStateControls();
+  const { pos } = useTour();
+  const reduced = useMediaQuery('(prefers-reduced-motion: reduce)');
   const hypothetical = branch.kind === 'counterfactual';
+  // A tour step may frame something closer than the region fit (sand-1l0.14).
+  const cameraTarget = useMemo(() => {
+    const c = pos?.step.camera;
+    if (!c || !pos) return undefined;
+    return {
+      key: pos.key,
+      center: c.center,
+      zoom: c.zoom,
+      ...(c.bearing !== undefined ? { bearing: c.bearing } : {}),
+      ...(c.pitch !== undefined ? { pitch: c.pitch } : {}),
+      ...(reduced ? { duration: 0 } : {}),
+    };
+  }, [pos, reduced]);
   // Inside a zoom-in with its own routes the map animates those (sand-1l0.10).
   const movement = useMemo(() => movementSourceFor(focus, MOVEMENT_SOURCE), [focus]);
   return (
@@ -283,6 +466,7 @@ function MapSection() {
           focusRegion={focus?.region}
           places={seed.places}
           tallies={focus ? [] : seed.tallies}
+          cameraTarget={cameraTarget}
           onSelectTally={(id) => controls?.setCard(id)}
         />
       </Suspense>
@@ -302,18 +486,20 @@ function DecisionPauser() {
   const focus = useFocus();
   const { card } = useViewState();
   const controls = useViewStateControls();
+  // A guided tour opens the decisions it wants, in its own order (sand-1l0.14).
+  const touring = useTour().pos !== undefined;
   const before = useRef(now);
   const seen = useRef(new Set<string>());
   useEffect(() => {
     const prev = before.current;
     before.current = now;
-    if (!clock.get().playing || branch.kind !== 'historical' || focus || card) return;
+    if (touring || !clock.get().playing || branch.kind !== 'historical' || focus || card) return;
     const hit = decisionCrossed(seed.decisions, prev, now, seen.current);
     if (!hit) return;
     seen.current.add(hit.id);
     clock.pause();
     controls?.setCard(hit.id);
-  }, [now, clock, branch.kind, focus, card, controls]);
+  }, [now, clock, branch.kind, focus, card, controls, touring]);
   return null;
 }
 
@@ -371,8 +557,26 @@ function DossierSurface() {
     [beat, now, branch.id],
   );
   const phone = usePhone();
+  const tour = useTour();
   const dossier = (
     <>
+      {tour.pos && (
+        <TourPanel
+          tour={tour.pos.tour}
+          step={tour.pos.step}
+          index={tour.pos.index}
+          running={tour.running}
+          sources={seed.sources}
+          onPrev={tour.pos.index > 0 ? () => tour.goto(tour.pos!.index - 1) : undefined}
+          onNext={
+            tour.pos.index < tour.pos.tour.steps.length - 1
+              ? () => tour.goto(tour.pos!.index + 1)
+              : undefined
+          }
+          onToggleRunning={tour.toggle}
+          onExit={tour.exit}
+        />
+      )}
       <Dossier
         beats={seed.beats}
         sources={seed.sources}
@@ -619,47 +823,55 @@ function TimelineSurface() {
 export function App() {
   return (
     <ClockProvider range={RANGE}>
-      <MeanwhileProvider>
-        <div className="app">
-          <header className="app__header">
-            <div className="app__header-text">
-              <p className="eyebrow">Operational study · Western Front, 1914</p>
-              <h1 className="brand">
-                <img
-                  className="brand__wordmark brand__wordmark--light"
-                  src="/brand/wordmark-light.png"
-                  alt="Sandtable"
-                  width="872"
-                  height="122"
-                  decoding="async"
+      <TourProvider>
+        <MeanwhileProvider>
+          <div className="app">
+            <header className="app__header">
+              <div className="app__header-text">
+                <p className="eyebrow">Operational study · Western Front, 1914</p>
+                <h1 className="brand">
+                  <img
+                    className="brand__wordmark brand__wordmark--light"
+                    src="/brand/wordmark-light.png"
+                    alt="Sandtable"
+                    width="872"
+                    height="122"
+                    decoding="async"
+                  />
+                  <img
+                    className="brand__wordmark brand__wordmark--dark"
+                    src="/brand/wordmark-dark.png"
+                    alt=""
+                    aria-hidden="true"
+                    width="859"
+                    height="122"
+                    decoding="async"
+                  />
+                </h1>
+                <p className="lede">{seed.pack.subtitle ?? seed.pack.title}</p>
+              </div>
+              <div className="app__header-controls">
+                <TourStart />
+                <BranchToggle
+                  branches={seed.pack.branches}
+                  defaultBranch={seed.pack.defaultBranch}
                 />
-                <img
-                  className="brand__wordmark brand__wordmark--dark"
-                  src="/brand/wordmark-dark.png"
-                  alt=""
-                  aria-hidden="true"
-                  width="859"
-                  height="122"
-                  decoding="async"
-                />
-              </h1>
-              <p className="lede">{seed.pack.subtitle ?? seed.pack.title}</p>
-            </div>
-            <BranchToggle branches={seed.pack.branches} defaultBranch={seed.pack.defaultBranch} />
-          </header>
+              </div>
+            </header>
 
-          <FocusController />
-          <FocusBar />
+            <FocusController />
+            <FocusBar />
 
-          <main className="app__main">
-            <MapSection />
-            <DossierSurface />
-            <DecisionPauser />
-          </main>
+            <main className="app__main">
+              <MapSection />
+              <DossierSurface />
+              <DecisionPauser />
+            </main>
 
-          <TimelineSurface />
-        </div>
-      </MeanwhileProvider>
+            <TimelineSurface />
+          </div>
+        </MeanwhileProvider>
+      </TourProvider>
     </ClockProvider>
   );
 }

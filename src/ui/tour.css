@@ -1,0 +1,210 @@
+/* Guided tour (sand-1l0.14): the tour's band at the top of the dossier, and
+   the launcher in the header. Tokens only. */
+
+.tour {
+  /* A column so the narration can scroll while the eyebrow, the step title and
+     the controls stay put — the way out is never scrolled off screen. */
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: 55vh;
+  margin: 0 0 var(--space-4);
+  padding: var(--space-3) var(--space-3) var(--space-2);
+  border: 1px solid var(--brass-dim);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--panel-2) 70%, transparent);
+}
+
+.tour__eyebrow {
+  flex: none;
+  margin: 0 0 var(--space-2);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.tour__count {
+  color: var(--muted);
+}
+
+.tour__progress {
+  flex: none;
+  display: flex;
+  gap: 3px;
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+
+.tour__pip {
+  height: 3px;
+  flex: 1 1 0;
+  border-radius: var(--radius-pill);
+  background: var(--line);
+}
+
+.tour__pip[data-state='done'] {
+  background: var(--brass-dim);
+}
+
+.tour__pip[data-state='here'] {
+  background: var(--brass);
+}
+
+.tour__title {
+  flex: none;
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-xl);
+  line-height: var(--lh-tight);
+  color: var(--ink);
+}
+
+.tour__narration {
+  min-height: 0;
+  overflow-y: auto;
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+  color: var(--ink);
+}
+
+.tour__narration p {
+  margin: 0 0 var(--space-2);
+}
+
+.tour__narration p:last-of-type {
+  margin-bottom: 0;
+}
+
+.tour__narration sup a {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-decoration: none;
+  padding: 0 2px;
+}
+
+.tour__narration .footnotes {
+  margin-top: var(--space-2);
+  padding-top: var(--space-1);
+  border-top: 1px solid var(--line);
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+.tour__narration .footnotes h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.tour__narration .footnotes ol {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.tour__narration .footnotes li p {
+  margin: 0;
+  display: inline;
+}
+
+.tour__controls {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-top: var(--space-3);
+}
+
+.tour__button {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out);
+}
+
+.tour__button:hover:not(:disabled) {
+  background: var(--panel-2);
+  border-color: var(--brass-dim);
+}
+
+.tour__button:disabled {
+  color: var(--muted);
+  cursor: default;
+  opacity: 0.6;
+}
+
+.tour__button--primary {
+  color: var(--panel);
+  background: var(--brass);
+  border-color: var(--brass);
+}
+
+.tour__button--primary:hover:not(:disabled) {
+  background: var(--brass);
+  filter: brightness(1.08);
+}
+
+.tour__button--exit {
+  margin-left: auto;
+  color: var(--muted);
+}
+
+.tour__hint {
+  flex: none;
+  margin: var(--space-2) 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+/* The way in, beside the branch toggle. */
+.tour-launch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 12px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--panel);
+  background: var(--brass);
+  border: 1px solid var(--brass);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: filter var(--dur-fast) var(--ease-out);
+}
+
+.tour-launch:hover {
+  filter: brightness(1.08);
+}
+
+.tour-launch__mark {
+  font-size: 10px;
+}
+
+.tour-launch__time {
+  color: color-mix(in srgb, var(--panel) 75%, var(--brass));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tour {
+    animation: dossier-enter var(--dur-base) var(--ease-out);
+  }
+}

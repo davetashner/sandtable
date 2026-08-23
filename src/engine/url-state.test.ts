@@ -101,4 +101,25 @@ describe('bindUrlState', () => {
     expect(h.writes.length).toBe(n + 1);
     expect(h.writes.at(-1)).toMatch(/t=1914-08-04T00:00:00Z/);
   });
+
+  it('starts, moves and leaves a guided tour (sand-1l0.14)', () => {
+    const h = harness('');
+    h.binding.setTour('1914:tour-the-campaign', 'liege');
+    expect(h.binding.get()).toEqual({ tour: '1914:tour-the-campaign', step: 'liege' });
+    expect(h.writes.at(-1)).toMatch(/tour=1914:tour-the-campaign&step=liege$/);
+    h.binding.setTour('1914:tour-the-campaign', 'the-marne');
+    expect(h.writes.at(-1)).toMatch(/step=the-marne$/);
+    h.binding.setTour(undefined);
+    expect(h.binding.get()).toEqual({});
+    expect(h.writes.at(-1)).not.toMatch(/tour=|step=/);
+  });
+});
+
+describe('the guided-tour slots (sand-1l0.14)', () => {
+  it('round-trips tour and step', () => {
+    const st = parseViewState('?tour=1914:tour-the-campaign&step=the-marne');
+    expect(st.tour).toBe('1914:tour-the-campaign');
+    expect(st.step).toBe('the-marne');
+    expect(formatViewState(st)).toBe('?tour=1914:tour-the-campaign&step=the-marne');
+  });
 });

@@ -802,6 +802,58 @@ export const Thread = z
   })
   .strict();
 
+// --------------------------------------------------------------------- Tour
+/**
+ * A guided tour (sand-1l0.14): a scripted pass over the pack for a viewer who
+ * would rather lean back than drive — camera, clock, branch, zoom-in and card,
+ * one step at a time, with narration. Authored as data, so any era can script
+ * its own; the engine knows nothing about 1914.
+ *
+ * Each step is a **complete description of the view**, not a diff from the one
+ * before: what a step does not name falls back to the default (the campaign
+ * map, the pack's default branch, no card). Deep-linking to a step therefore
+ * rebuilds the whole view — `?tour=<tour id>&step=<step id>`.
+ */
+export const TourStep = z
+  .object({
+    id: Slug.describe('Unique within the tour; the URL carries it as ?step=<id>'),
+    title: z.string().min(1),
+    narration: Markdown.describe('A few sentences, footnoted [^slug] to the tour’s sources'),
+    at: IsoTime.describe('Where the clock stands when the step opens'),
+    playUntil: IsoTime.optional().describe(
+      'Play the clock from `at` to here, then advance; absent: hold at `at`',
+    ),
+    speed: z
+      .number()
+      .positive()
+      .optional()
+      .describe('Simulated ms per real second while this step plays'),
+    hold: z
+      .number()
+      .positive()
+      .optional()
+      .describe('Seconds to hold a non-playing step before advancing'),
+    camera: Camera.optional().describe(
+      'Fly here; absent: the battle region when `focus` is set, else the pack region',
+    ),
+    focus: Id.optional().describe('Battle to be zoomed into; absent: the campaign map'),
+    branch: Id.optional().describe('Branch to show; absent: the pack default'),
+    card: Id.optional().describe('Dossier card to open on arrival'),
+  })
+  .strict();
+
+export const Tour = z
+  .object({
+    id: Id.describe('<era>:tour-<slug>'),
+    title: z.string().min(1),
+    summary: Markdown.describe('One or two sentences: what the tour shows and roughly how long'),
+    steps: z.array(TourStep).min(2),
+    sources: Sources.describe(
+      'At least one citation; footnote slugs in every step’s narration must name these',
+    ),
+  })
+  .strict();
+
 // -------------------------------------------------------------------- types
 
 export type Links = z.infer<typeof Links>;
@@ -835,3 +887,5 @@ export type CausalLink = z.infer<typeof CausalLink>;
 export type BeatFrontMatter = z.infer<typeof BeatFrontMatter>;
 export type NarrativeBeat = z.infer<typeof NarrativeBeat>;
 export type Thread = z.infer<typeof Thread>;
+export type TourStep = z.infer<typeof TourStep>;
+export type Tour = z.infer<typeof Tour>;

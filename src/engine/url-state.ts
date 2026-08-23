@@ -2,10 +2,12 @@
  * Deep-linkable view state in the URL query string:
  *
  *   ?t=1914-08-24T12:00:00Z&branch=1914:historical&focus=1914:marne&card=1914:tech-…&pick=…
+ *   ?tour=1914:tour-the-campaign&step=the-marne
  *
  * `t` is the clock's "now"; `branch`, `focus` and `card` are the slots the
  * branch toggle (sand-a55.13), the zoom-in (sand-a55.14) and the dossier
- * cards (ADR 0006) fill. Reading
+ * cards (ADR 0006) fill; `tour` and `step` are where the guided tour has
+ * reached (sand-1l0.14), so a tour is resumable and deep-linkable. Reading
  * and writing are pure over a query string; `bindUrlState` wires them to
  * window.history with a throttle so a playing clock does not thrash it.
  */
@@ -21,6 +23,9 @@ export interface ViewState {
   card?: string;
   /** The option chosen on an open decision point (sand-1l0.22). */
   pick?: string;
+  /** The guided tour being played, and the step it is on (sand-1l0.14). */
+  tour?: string;
+  step?: string;
 }
 
 export function parseViewState(search: string): ViewState {
@@ -39,6 +44,10 @@ export function parseViewState(search: string): ViewState {
   if (card) out.card = card;
   const pick = q.get('pick');
   if (pick) out.pick = pick;
+  const tour = q.get('tour');
+  if (tour) out.tour = tour;
+  const step = q.get('step');
+  if (step) out.step = step;
   return out;
 }
 
@@ -50,6 +59,8 @@ export function formatViewState(state: ViewState): string {
   if (state.focus) parts.push(`focus=${encodeURIComponent(state.focus).replace(/%3A/gi, ':')}`);
   if (state.card) parts.push(`card=${encodeURIComponent(state.card).replace(/%3A/gi, ':')}`);
   if (state.pick) parts.push(`pick=${encodeURIComponent(state.pick)}`);
+  if (state.tour) parts.push(`tour=${encodeURIComponent(state.tour).replace(/%3A/gi, ':')}`);
+  if (state.step) parts.push(`step=${encodeURIComponent(state.step)}`);
   return parts.length ? `?${parts.join('&')}` : '';
 }
 
@@ -58,6 +69,8 @@ export interface Slots {
   focus?: string;
   card?: string;
   pick?: string;
+  tour?: string;
+  step?: string;
 }
 
 export interface UrlBinding {
@@ -67,6 +80,8 @@ export interface UrlBinding {
   setFocus(focus: string | undefined): void;
   setCard(card: string | undefined): void;
   setPick(pick: string | undefined): void;
+  /** Start, move or leave a guided tour; clearing the tour clears the step. */
+  setTour(tour: string | undefined, step?: string | undefined): void;
   subscribe(listener: () => void): () => void;
   dispose(): void;
 }
@@ -128,6 +143,8 @@ export function bindUrlState(clock: Clock, opts: BindOptions = {}): UrlBinding {
     if (s.focus) slots.focus = s.focus;
     if (s.card) slots.card = s.card;
     if (s.pick) slots.pick = s.pick;
+    if (s.tour) slots.tour = s.tour;
+    if (s.step) slots.step = s.step;
     if (s.t !== undefined) clock.seek(s.t);
     lastWritten = formatViewState({ t: clock.get().now, ...slots });
     for (const l of listeners) l();
@@ -172,6 +189,16 @@ export function bindUrlState(clock: Clock, opts: BindOptions = {}): UrlBinding {
     },
     setPick(pick) {
       setSlot('pick', pick);
+    },
+    setTour(tour, step) {
+      const next: Slots = { ...slots };
+      if (tour) next.tour = tour;
+      else delete next.tour;
+      if (tour && step) next.step = step;
+      else delete next.step;
+      slots = next;
+      for (const l of listeners) l();
+      scheduleWrite(true);
     },
     subscribe(l) {
       listeners.add(l);

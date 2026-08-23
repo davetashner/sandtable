@@ -509,6 +509,59 @@ different voice — write it in the present tense, keep it short, and say in
 A legend goes in as a legend (the Foch message at Saint-Gond is
 `reconstruction`, and the text says it appears in no document of the time).
 
+## 8a. Script a guided tour
+
+A tour in `tours.json` is the lean-back path through a pack (`sand-1l0.14`):
+the engine follows it, so a first-time viewer does not have to know what to
+click. Each step is a **complete description of the view**, never a diff from
+the step before — what a step leaves out goes back to the default (the
+campaign map, the pack's default branch, no card). That is what makes
+`?tour=<id>&step=<step id>` rebuild the whole view.
+
+```json
+{
+  "id": "1914:tour-the-campaign",
+  "title": "The campaign, end to end",
+  "summary": "What the tour shows, in a sentence.",
+  "sources": [{ "source": "source:herwig-2009" }],
+  "steps": [
+    {
+      "id": "liege",
+      "title": "Liège: eleven days the plan did not have",
+      "narration": "Two or three sentences, footnoted.[^herwig-2009]",
+      "at": "1914-08-05T00:00:00Z",
+      "playUntil": "1914-08-16T00:00:00Z",
+      "speed": 43200000,
+      "focus": "1914:liege"
+    },
+    {
+      "id": "the-wheel",
+      "title": "Decision: wheel inside Paris",
+      "narration": "Why this moment matters.[^kluck-1920]",
+      "at": "1914-08-30T18:00:00Z",
+      "camera": { "center": [2.95, 49.35], "zoom": 7.4 },
+      "card": "1914:decision-1914-08-30-kluck-wheel",
+      "hold": 26
+    }
+  ]
+}
+```
+
+- `at` is where the clock stands when the step opens; add `playUntil` (and
+  optionally `speed`, in simulated ms per real second) to let it run, or
+  `hold` (seconds) to give a still step reading time. Times must fall inside
+  the pack's range — or inside the battle's, once a step names a `focus`.
+- `focus` enters a zoom-in, `branch` shows a counterfactual (label it as one
+  in the narration), `card` opens a dossier card, `camera` frames something
+  closer than the region fit.
+- Footnote the narration to the **tour's** sources, as beats do.
+- Keep steps in time order: a step that runs backwards is allowed (returning
+  from a counterfactual to history) but the validator warns, because it is
+  usually a typo.
+- The tour never traps anyone: pause, step, and exit are always on screen,
+  Escape leaves, and touching anything the tour did not set stops the
+  autoplay. Write each step so it still reads if the viewer stops there.
+
 ## 9. Add an image
 
 Read [ADR 0007](decisions/0007-imagery.md) first. Put the manifest

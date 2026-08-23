@@ -53,6 +53,15 @@ body {
   min-width: 0;
 }
 
+/* Tour launcher + branch toggle sit together at the end of the header. */
+.app__header-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .eyebrow {
   margin: 0;
   font-family: var(--font-mono);

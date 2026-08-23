@@ -16,7 +16,7 @@ import {
   type ReactNode,
 } from 'react';
 import { createClock, type Clock, type ClockRange, type ClockState } from './clock.js';
-import { bindUrlState, type UrlBinding } from './url-state.js';
+import { bindUrlState, type Slots, type UrlBinding } from './url-state.js';
 
 interface ClockContextValue {
   clock: Clock;
@@ -88,15 +88,10 @@ export function useClockControls(): Clock {
 }
 
 const noopSubscribe = () => () => {};
-const EMPTY = Object.freeze({}) as {
-  branch?: string;
-  focus?: string;
-  card?: string;
-  pick?: string;
-};
+const EMPTY = Object.freeze({}) as Slots;
 
-/** Branch and focus from the URL (empty when URL sync is off). */
-export function useViewState(): { branch?: string; focus?: string; card?: string; pick?: string } {
+/** Branch, focus, card and tour position from the URL (empty when URL sync is off). */
+export function useViewState(): Slots {
   const { url } = useCtx();
   return useSyncExternalStore(
     url ? url.subscribe : noopSubscribe,
@@ -107,7 +102,7 @@ export function useViewState(): { branch?: string; focus?: string; card?: string
 
 export function useViewStateControls(): Pick<
   UrlBinding,
-  'setBranch' | 'setFocus' | 'setCard' | 'setPick'
+  'setBranch' | 'setFocus' | 'setCard' | 'setPick' | 'setTour'
 > | null {
   return useCtx().url;
 }
