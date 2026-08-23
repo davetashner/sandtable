@@ -18,6 +18,18 @@ export const HOUR = 60 * MINUTE;
 export const DAY = 24 * HOUR;
 export const WEEK = 7 * DAY;
 
+/**
+ * The reading pace: **one simulated hour per real second**, the speed a clock
+ * runs at unless something asks for another. Slow enough to read the narrative
+ * while the tokens move, which is the whole point (sand-1l0.28, sand-1l0.31) —
+ * anything faster turns a dossier into a flicker. The guided tour plays at this
+ * speed too (`TOUR_SPEED` in tour.ts).
+ *
+ * A range too long for it lands on the slowest pace it does offer; see
+ * `defaultSpeedFor`.
+ */
+export const DEFAULT_SPEED = 1 * HOUR;
+
 export interface ClockRange {
   /** Inclusive start, epoch ms. */
   start: number;
@@ -81,7 +93,7 @@ export function createClock(opts: ClockOptions): Clock {
     range: { ...opts.range },
     now: clamp(opts.now ?? opts.range.start, opts.range.start, opts.range.end),
     playing: false,
-    speed: opts.speed ?? 12 * HOUR,
+    speed: opts.speed ?? defaultSpeedFor(opts.range),
   };
   const listeners = new Set<ClockListener>();
   let frame: number | null = null;
@@ -157,8 +169,12 @@ export function createClock(opts: ClockOptions): Clock {
 
 /**
  * Speed presets that suit a range: hours-per-second for a battle, days or
- * weeks per second for a campaign, months for a multi-year era. The middle
- * preset is the default.
+ * weeks per second for a campaign, months for a multi-year era.
+ *
+ * Every ladder short enough to read at brackets `DEFAULT_SPEED`, so the pace a
+ * clock starts at is always one of the choices offered — see `defaultSpeedFor`.
+ * The fast end is kept for scrubbing: at 1 day/s the whole 1914 campaign sweeps
+ * past in two minutes, which is how you find a moment rather than read one.
  */
 export function speedPresetsFor(range: ClockRange): SpeedPreset[] {
   const span = range.end - range.start;
@@ -173,11 +189,12 @@ export function speedPresetsFor(range: ClockRange): SpeedPreset[] {
   }
   if (span <= 120 * DAY) {
     return [
+      { speed: 15 * MINUTE, label: '15 min / s' },
       { speed: 1 * HOUR, label: '1 h / s' },
+      { speed: 3 * HOUR, label: '3 h / s' },
       { speed: 6 * HOUR, label: '6 h / s' },
       { speed: 12 * HOUR, label: '12 h / s' },
       { speed: 1 * DAY, label: '1 day / s' },
-      { speed: 3 * DAY, label: '3 days / s' },
     ];
   }
   if (span <= 3 * 365 * DAY) {
@@ -196,6 +213,40 @@ export function speedPresetsFor(range: ClockRange): SpeedPreset[] {
     { speed: 13 * WEEK, label: '3 months / s' },
     { speed: 52 * WEEK, label: '1 year / s' },
   ];
+}
+
+/**
+ * The pace a clock over this range should start at: the reading pace where the
+ * range is short enough to offer it, otherwise the slowest pace it does — a
+ * five-year era at an hour a second would take a fortnight to watch.
+ *
+ * Derived from `speedPresetsFor` rather than restated, so the starting speed is
+ * always selectable in the timeline's own control and the two cannot drift.
+ */
+export function defaultSpeedFor(range: ClockRange): number {
+  const presets = speedPresetsFor(range);
+  const reading = presets.find((p) => p.speed === DEFAULT_SPEED);
+  return reading?.speed ?? presets[0]?.speed ?? DEFAULT_SPEED;
+}
+
+/**
+ * Label an arbitrary speed the way the presets are labelled. Only needed for a
+ * speed that is not on the current ladder — a tour step's own pace, or a speed
+ * carried in from a wider range — so the control can show what is really running.
+ */
+export function speedLabel(speed: number): string {
+  const n = (x: number) => (Number.isInteger(x) ? String(x) : x.toFixed(1));
+  if (speed >= WEEK) {
+    const w = speed / WEEK;
+    return `${n(w)} week${w === 1 ? '' : 's'} / s`;
+  }
+  if (speed >= DAY) {
+    const d = speed / DAY;
+    return `${n(d)} day${d === 1 ? '' : 's'} / s`;
+  }
+  if (speed >= HOUR) return `${n(speed / HOUR)} h / s`;
+  if (speed >= MINUTE) return `${n(speed / MINUTE)} min / s`;
+  return `${n(speed / SECOND)} s / s`;
 }
 
 /** A sensible keyboard step for a range: an hour for battles, a day for campaigns, a week for eras. */

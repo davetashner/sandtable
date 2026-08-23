@@ -13,13 +13,17 @@
  * view and the panel in ui/TourPanel.tsx renders the narration.
  */
 import type { DecisionPoint, NarrativeBeat, Tour, TourStep } from '../packs/schema/index.js';
+import { DEFAULT_SPEED } from './clock.js';
 
 /**
  * Simulated milliseconds per real second a tour plays at unless a step says
  * otherwise: **one hour per second**. Fast enough that a week is not a wait,
  * slow enough to read the narration while the tokens move (sand-1l0.28).
+ *
+ * The same reading pace the timeline starts at — defined once in clock.ts so
+ * the guided path and the manual one cannot drift apart (sand-1l0.31).
  */
-export const TOUR_SPEED = 60 * 60 * 1000;
+export const TOUR_SPEED = DEFAULT_SPEED;
 
 /** Words a reader gets through in a minute, for dwell timing. */
 const WORDS_PER_MINUTE = 200;
