@@ -2,11 +2,17 @@
   {
     "id": "1914:marne",
     "title": "First Battle of the Marne",
-    "timeRange": { "start": "1914-09-05T00:00:00Z", "end": "1914-09-12T00:00:00Z" },
+    "timeRange": {
+      "start": "1914-09-05T00:00:00Z",
+      "end": "1914-09-12T00:00:00Z"
+    },
     "region": [2.3, 48.4, 4.7, 49.6],
-    "camera": { "center": [3.4, 48.95], "zoom": 8 },
+    "camera": {
+      "center": [3.4, 48.95],
+      "zoom": 8
+    },
     "place": "place:meaux",
-    "summary": "Six days on the Ourcq, the Petit and Grand Morin and the marshes of Saint-Gond: Maunoury's 6th Army strikes Kluck's open flank, Kluck swings his corps back to meet it and opens a gap to Bülow, the BEF and Franchet d'Espèrey's 5th Army walk into the gap, Foch holds at Saint-Gond, and on 9 September the German right wing retreats. This is the zoom-in seed — the hourly corps-level routes, the taxis, the Hentsch mission and the per-day beats are authored in sand-1l0.10.",
+    "summary": "Seven days on the Ourcq, the two Morins and the marshes of Saint-Gond. Maunoury's 6th Army finds Kluck's open flank north-east of Meaux on 5 September; Kluck swings four corps back across the Marne to meet it and wins on the Ourcq, but every corps he moves widens the gap between his army and Bülow's, into which the BEF and Franchet d'Espèrey's 5th Army advance. Foch holds the marshes against Bülow's left and Hausen's night attack. On the evening of 8 September Moltke's emissary Hentsch reaches Bülow; on the morning of the 9th, with the British across the Marne, Bülow retreats and Hentsch tells Kluck to conform. The right wing marches for the Aisne.",
     "outcome": "German 1st and 2nd Armies retreat to the Aisne from 9 September; the Schlieffen timetable is dead and the mobile war in the West ends within the month.",
     "participants": [
       "1914:army-de-1",
@@ -18,25 +24,1351 @@
       "1914:bef"
     ],
     "links": {
-      "events": ["1914:event-battle-of-the-marne"],
+      "events": ["1914:event-battle-of-the-marne", "1914:event-kluck-wheels-south-east"],
       "people": [
         "person:maunoury-michel-joseph",
         "person:gallieni-joseph",
+        "person:joffre-joseph",
         "person:kluck-alexander-von",
         "person:bulow-karl-von",
+        "person:hausen-max-von",
         "person:franchet-desperey-louis",
         "person:foch-ferdinand",
         "person:french-john",
-        "person:hentsch-richard"
+        "person:hentsch-richard",
+        "person:moltke-helmuth-von-younger"
+      ],
+      "tech": ["1914:tech-aerial-reconnaissance"],
+      "documents": [
+        "1914:document-joffre-order-of-the-day-1914-09-06",
+        "1914:document-gallieni-proclamation-1914-09-03"
+      ],
+      "places": [
+        "place:meaux",
+        "place:nanteuil-le-haudouin",
+        "place:coulommiers",
+        "place:la-ferte-sous-jouarre",
+        "place:chateau-thierry",
+        "place:montmirail",
+        "place:sezanne",
+        "place:fere-champenoise"
       ]
     },
     "sources": [
       {
         "source": "source:herwig-2009",
-        "note": "chapters on the Ourcq, the gap and the Hentsch mission"
+        "note": "chapters on the Ourcq, the gap, Saint-Gond and the Hentsch mission"
       },
-      { "source": "source:edmonds-1922" },
-      { "source": "source:afgg-1-1" }
+      {
+        "source": "source:edmonds-1922",
+        "note": "the BEF's advance, 6–10 September"
+      },
+      {
+        "source": "source:afgg-1-1",
+        "note": "6th, 5th and 9th Army orders and positions"
+      },
+      {
+        "source": "source:tuchman-1962",
+        "note": "the taxis and the Hentsch mission as narrative"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "note": "German corps positions"
+      }
+    ],
+    "formations": [
+      {
+        "id": "1914:marne-div-fr-7",
+        "name": "French 7th Division",
+        "short": "7e DI",
+        "side": "fr",
+        "kind": "division",
+        "parent": "1914:corps-fr-iv",
+        "concentration": {
+          "area": "Paris, around Gagny and Livry",
+          "position": [2.53, 48.9],
+          "asOf": "1914-09-07T12:00:00Z",
+          "sources": [
+            {
+              "source": "source:afgg-1-1"
+            }
+          ]
+        },
+        "summary": "The division of the IV Corps part of which rode to the front in the taxis of Paris on the night of 7/8 September.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-div-fr-45",
+        "name": "French 45th (Algerian) Division",
+        "short": "45e DI",
+        "side": "fr",
+        "kind": "division",
+        "parent": "1914:army-fr-6",
+        "summary": "Drude's Algerian division, sent from Paris to Maunoury's centre on the Ourcq.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-div-fr-42",
+        "name": "French 42nd Division",
+        "short": "42e DI",
+        "side": "fr",
+        "kind": "division",
+        "parent": "1914:army-fr-9",
+        "summary": "Grossetti's division, Foch's reserve: from the left to the right of the 9th Army on 9 September for the counter-attack.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-div-marocaine",
+        "name": "Moroccan Division",
+        "short": "DM",
+        "side": "fr",
+        "kind": "division",
+        "parent": "1914:army-fr-9",
+        "summary": "Humbert's Moroccan Division on the southern edge of the marshes of Saint-Gond.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-hentsch-mission",
+        "name": "Hentsch's mission",
+        "short": "Hentsch",
+        "side": "de",
+        "kind": "other",
+        "commander": "person:hentsch-richard",
+        "concentration": {
+          "area": "OHL, Luxembourg",
+          "asOf": "1914-09-08T11:00:00Z",
+          "sources": [
+            {
+              "source": "source:herwig-2009"
+            }
+          ]
+        },
+        "dissolved": "1914-09-10T06:00:00Z",
+        "summary": "Lieutenant-Colonel Hentsch's car from Luxembourg to the army headquarters, 8–9 September — the journey that ended the battle.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "id": "1914:marne-route-de-iv-res",
+        "formation": "1914:corps-de-iv-res",
+        "waypoints": [
+          [2.82, 49.02, "1914-09-05T06:00:00Z"],
+          [2.8, 49.01, "1914-09-05T13:00:00Z"],
+          [2.93, 49.05, "1914-09-05T22:00:00Z"],
+          [2.94, 49.05, "1914-09-06T12:00:00Z"],
+          [2.95, 49.05, "1914-09-07T12:00:00Z"],
+          [2.95, 49.06, "1914-09-08T12:00:00Z"],
+          [2.95, 49.1, "1914-09-09T12:00:00Z"],
+          [2.96, 49.16, "1914-09-09T20:00:00Z"],
+          [2.9, 49.23, "1914-09-10T12:00:00Z"],
+          [3.08, 49.38, "1914-09-11T12:00:00Z"],
+          [3.1, 49.44, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named, read off the daily sketch maps in Herwig and the Reichsarchiv; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ],
+        "notes": "5 Sep: Monthyon–Saint-Soupplets against Maunoury's advance guard; fell back in the night to the Thérouanne; 9 Sep evening: the retreat through Betz."
+      },
+      {
+        "id": "1914:marne-route-de-ii",
+        "formation": "1914:corps-de-ii",
+        "waypoints": [
+          [3.08, 48.8, "1914-09-05T06:00:00Z"],
+          [3.05, 48.85, "1914-09-05T22:00:00Z"],
+          [2.98, 48.98, "1914-09-06T12:00:00Z"],
+          [2.93, 49.0, "1914-09-06T20:00:00Z"],
+          [2.93, 49.08, "1914-09-07T12:00:00Z"],
+          [2.95, 49.11, "1914-09-08T12:00:00Z"],
+          [2.83, 49.14, "1914-09-09T12:00:00Z"],
+          [2.88, 49.2, "1914-09-09T20:00:00Z"],
+          [3.05, 49.26, "1914-09-10T12:00:00Z"],
+          [3.3, 49.38, "1914-09-11T12:00:00Z"],
+          [3.3, 49.42, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named, read off the daily sketch maps in Herwig and the Reichsarchiv; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ],
+        "notes": "Recalled from Coulommiers on the night of 5/6 Sep; across the Marne at Trilport and Lizy by noon on the 6th; Puisieux–Acy; 9 Sep: Nanteuil with the IX Corps."
+      },
+      {
+        "id": "1914:marne-route-de-iv",
+        "formation": "1914:corps-de-iv",
+        "waypoints": [
+          [3.25, 48.84, "1914-09-05T06:00:00Z"],
+          [3.22, 48.86, "1914-09-06T06:00:00Z"],
+          [3.1, 48.96, "1914-09-06T20:00:00Z"],
+          [3.03, 49.03, "1914-09-07T06:00:00Z"],
+          [2.98, 49.1, "1914-09-07T18:00:00Z"],
+          [2.94, 49.12, "1914-09-08T12:00:00Z"],
+          [2.96, 49.16, "1914-09-09T12:00:00Z"],
+          [3.0, 49.2, "1914-09-09T20:00:00Z"],
+          [3.09, 49.26, "1914-09-10T12:00:00Z"],
+          [3.32, 49.4, "1914-09-11T12:00:00Z"],
+          [3.32, 49.44, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named, read off the daily sketch maps in Herwig and the Reichsarchiv; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ],
+        "notes": "Rebais–La Ferté-Gaucher on 5 Sep; marched north on the night of 6/7 Sep to Lizy; May-en-Multien–Antilly on the Ourcq."
+      },
+      {
+        "id": "1914:marne-route-de-iii",
+        "formation": "1914:corps-de-iii",
+        "waypoints": [
+          [3.52, 48.78, "1914-09-05T06:00:00Z"],
+          [3.52, 48.76, "1914-09-06T12:00:00Z"],
+          [3.5, 48.8, "1914-09-06T22:00:00Z"],
+          [3.25, 48.92, "1914-09-07T12:00:00Z"],
+          [3.12, 48.97, "1914-09-08T06:00:00Z"],
+          [3.0, 49.07, "1914-09-08T18:00:00Z"],
+          [2.95, 49.13, "1914-09-09T12:00:00Z"],
+          [3.02, 49.2, "1914-09-09T20:00:00Z"],
+          [3.1, 49.27, "1914-09-10T12:00:00Z"],
+          [3.33, 49.4, "1914-09-11T12:00:00Z"],
+          [3.33, 49.45, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named, read off the daily sketch maps in Herwig and the Reichsarchiv; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ],
+        "notes": "Esternay against the French 5th Army on 6 Sep, then ordered north in the night: across the Marne at La Ferté and Saâcy on 8 Sep to the Ourcq."
+      },
+      {
+        "id": "1914:marne-route-de-ix",
+        "formation": "1914:corps-de-ix",
+        "waypoints": [
+          [3.56, 48.73, "1914-09-05T06:00:00Z"],
+          [3.55, 48.72, "1914-09-06T12:00:00Z"],
+          [3.54, 48.87, "1914-09-07T06:00:00Z"],
+          [3.4, 48.92, "1914-09-07T22:00:00Z"],
+          [3.13, 48.96, "1914-09-08T18:00:00Z"],
+          [2.95, 49.14, "1914-09-09T06:00:00Z"],
+          [2.85, 49.15, "1914-09-09T12:00:00Z"],
+          [2.95, 49.2, "1914-09-09T20:00:00Z"],
+          [3.0, 49.25, "1914-09-10T12:00:00Z"],
+          [3.3, 49.38, "1914-09-11T12:00:00Z"],
+          [3.3, 49.43, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named, read off the daily sketch maps in Herwig and the Reichsarchiv; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ],
+        "notes": "Esternay on 6 Sep; covered at Montmirail on the 7th; marched north-west through the night of 7/8 Sep; 9 Sep morning: on Maunoury's left at Nanteuil, the attack cancelled by the retreat order."
+      },
+      {
+        "id": "1914:marne-route-hkk-2",
+        "formation": "1914:hkk-2",
+        "waypoints": [
+          [3.08, 48.8, "1914-09-05T06:00:00Z"],
+          [3.22, 48.86, "1914-09-06T12:00:00Z"],
+          [3.13, 48.93, "1914-09-07T12:00:00Z"],
+          [3.2, 48.95, "1914-09-08T12:00:00Z"],
+          [3.3, 49.05, "1914-09-09T12:00:00Z"],
+          [3.52, 49.2, "1914-09-10T12:00:00Z"],
+          [3.53, 49.34, "1914-09-11T12:00:00Z"],
+          [3.53, 49.36, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named, read off the daily sketch maps in Herwig and the Reichsarchiv; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ],
+        "notes": "Marwitz's cavalry and Jäger held the gap on the Petit Morin and the Marne against the BEF on 8–9 Sep."
+      },
+      {
+        "id": "1914:marne-route-de-vii",
+        "formation": "1914:corps-de-vii",
+        "waypoints": [
+          [3.6, 48.85, "1914-09-05T06:00:00Z"],
+          [3.58, 48.85, "1914-09-06T12:00:00Z"],
+          [3.55, 48.87, "1914-09-07T12:00:00Z"],
+          [3.6, 48.92, "1914-09-08T12:00:00Z"],
+          [3.62, 48.98, "1914-09-09T06:00:00Z"],
+          [3.64, 49.07, "1914-09-09T18:00:00Z"],
+          [3.68, 49.31, "1914-09-10T12:00:00Z"],
+          [3.7, 49.4, "1914-09-11T12:00:00Z"],
+          [3.75, 49.43, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named, read off the daily sketch maps in Herwig and the Reichsarchiv; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ],
+        "notes": "Bülow's right: Montmirail, back over the Petit Morin on 8 Sep, the retreat to Dormans and the Aisne."
+      },
+      {
+        "id": "1914:marne-route-de-x-res",
+        "formation": "1914:corps-de-x-res",
+        "waypoints": [
+          [3.65, 48.82, "1914-09-05T06:00:00Z"],
+          [3.65, 48.83, "1914-09-06T12:00:00Z"],
+          [3.65, 48.84, "1914-09-07T12:00:00Z"],
+          [3.68, 48.9, "1914-09-08T12:00:00Z"],
+          [3.66, 49.0, "1914-09-09T12:00:00Z"],
+          [3.7, 49.28, "1914-09-10T12:00:00Z"],
+          [3.74, 49.4, "1914-09-11T12:00:00Z"],
+          [3.76, 49.43, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named, read off the daily sketch maps in Herwig and the Reichsarchiv; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-route-de-x",
+        "formation": "1914:corps-de-x",
+        "waypoints": [
+          [3.85, 48.8, "1914-09-05T06:00:00Z"],
+          [3.85, 48.81, "1914-09-06T12:00:00Z"],
+          [3.85, 48.82, "1914-09-07T12:00:00Z"],
+          [3.88, 48.82, "1914-09-08T12:00:00Z"],
+          [3.86, 48.95, "1914-09-09T12:00:00Z"],
+          [3.95, 49.1, "1914-09-10T12:00:00Z"],
+          [3.92, 49.28, "1914-09-11T12:00:00Z"],
+          [3.95, 49.36, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named, read off the daily sketch maps in Herwig and the Reichsarchiv; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ],
+        "notes": "The western marshes of Saint-Gond against Foch's left."
+      },
+      {
+        "id": "1914:marne-route-de-guard",
+        "formation": "1914:corps-de-guard",
+        "waypoints": [
+          [3.95, 48.78, "1914-09-05T06:00:00Z"],
+          [3.96, 48.78, "1914-09-06T12:00:00Z"],
+          [3.97, 48.77, "1914-09-07T12:00:00Z"],
+          [3.98, 48.76, "1914-09-08T12:00:00Z"],
+          [4.0, 48.88, "1914-09-09T12:00:00Z"],
+          [3.96, 49.04, "1914-09-10T12:00:00Z"],
+          [3.95, 49.2, "1914-09-11T12:00:00Z"],
+          [4.0, 49.33, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named, read off the daily sketch maps in Herwig and the Reichsarchiv; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ],
+        "notes": "Morains and the eastern marshes; on 8 Sep pressed Foch's right with Hausen."
+      },
+      {
+        "id": "1914:marne-route-hkk-1",
+        "formation": "1914:hkk-1",
+        "waypoints": [
+          [3.45, 48.85, "1914-09-05T06:00:00Z"],
+          [3.38, 48.9, "1914-09-06T12:00:00Z"],
+          [3.35, 48.92, "1914-09-07T12:00:00Z"],
+          [3.22, 48.95, "1914-09-08T12:00:00Z"],
+          [3.4, 49.05, "1914-09-09T12:00:00Z"],
+          [3.52, 49.22, "1914-09-10T12:00:00Z"],
+          [3.6, 49.38, "1914-09-11T12:00:00Z"],
+          [3.62, 49.4, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named, read off the daily sketch maps in Herwig and the Reichsarchiv; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ],
+        "notes": "Richthofen's cavalry in the gap between the 1st and 2nd Armies."
+      },
+      {
+        "id": "1914:marne-route-de-xii",
+        "formation": "1914:corps-de-xii",
+        "waypoints": [
+          [4.0, 48.9, "1914-09-05T06:00:00Z"],
+          [3.99, 48.79, "1914-09-06T12:00:00Z"],
+          [3.99, 48.76, "1914-09-07T12:00:00Z"],
+          [3.99, 48.73, "1914-09-08T03:00:00Z"],
+          [3.93, 48.73, "1914-09-08T12:00:00Z"],
+          [4.0, 48.85, "1914-09-09T12:00:00Z"],
+          [4.3, 48.95, "1914-09-10T12:00:00Z"],
+          [4.45, 49.1, "1914-09-11T12:00:00Z"],
+          [4.2, 49.3, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named, read off the daily sketch maps in Herwig and the Reichsarchiv; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ],
+        "notes": "8 Sep, 03:00: the bayonet attack without artillery preparation that took Fère-Champenoise and bent Foch's right."
+      },
+      {
+        "id": "1914:marne-route-de-xix",
+        "formation": "1914:corps-de-xix",
+        "waypoints": [
+          [4.2, 48.95, "1914-09-05T06:00:00Z"],
+          [4.2, 48.76, "1914-09-06T12:00:00Z"],
+          [4.22, 48.72, "1914-09-07T12:00:00Z"],
+          [4.22, 48.7, "1914-09-08T12:00:00Z"],
+          [4.25, 48.82, "1914-09-09T12:00:00Z"],
+          [4.32, 48.96, "1914-09-10T12:00:00Z"],
+          [4.5, 49.12, "1914-09-11T12:00:00Z"],
+          [4.3, 49.3, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named, read off the daily sketch maps in Herwig and the Reichsarchiv; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-route-de-xii-res",
+        "formation": "1914:corps-de-xii-res",
+        "waypoints": [
+          [4.35, 48.95, "1914-09-05T06:00:00Z"],
+          [4.4, 48.75, "1914-09-06T12:00:00Z"],
+          [4.4, 48.72, "1914-09-07T12:00:00Z"],
+          [4.4, 48.72, "1914-09-08T12:00:00Z"],
+          [4.4, 48.85, "1914-09-09T12:00:00Z"],
+          [4.42, 49.0, "1914-09-10T12:00:00Z"],
+          [4.5, 49.15, "1914-09-11T12:00:00Z"],
+          [4.45, 49.25, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named, read off the daily sketch maps in Herwig and the Reichsarchiv; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-route-fr-rd-3",
+        "formation": "1914:det-fr-rd-3",
+        "waypoints": [
+          [2.68, 49.05, "1914-09-05T06:00:00Z"],
+          [2.8, 49.02, "1914-09-05T13:00:00Z"],
+          [2.9, 49.0, "1914-09-06T12:00:00Z"],
+          [2.9, 49.0, "1914-09-07T12:00:00Z"],
+          [2.9, 49.0, "1914-09-08T12:00:00Z"],
+          [2.92, 49.02, "1914-09-09T12:00:00Z"],
+          [3.03, 49.03, "1914-09-10T12:00:00Z"],
+          [3.0, 49.2, "1914-09-11T12:00:00Z"],
+          [3.08, 49.38, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Lamaze's 55th and 56th Reserve Divisions opened the battle at Monthyon on 5 Sep and held Barcy–Chambry."
+      },
+      {
+        "id": "1914:marne-route-fr-vii",
+        "formation": "1914:corps-fr-vii",
+        "waypoints": [
+          [2.6, 49.05, "1914-09-05T06:00:00Z"],
+          [2.8, 49.05, "1914-09-06T12:00:00Z"],
+          [2.92, 49.06, "1914-09-07T12:00:00Z"],
+          [2.92, 49.08, "1914-09-08T12:00:00Z"],
+          [2.9, 49.1, "1914-09-09T12:00:00Z"],
+          [2.96, 49.16, "1914-09-10T12:00:00Z"],
+          [2.89, 49.23, "1914-09-11T12:00:00Z"],
+          [3.05, 49.38, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Vautier's corps on the Thérouanne: Étrépilly 7–8 Sep."
+      },
+      {
+        "id": "1914:marne-route-fr-moroccan-bde",
+        "formation": "1914:det-fr-moroccan-bde",
+        "waypoints": [
+          [2.85, 48.97, "1914-09-05T06:00:00Z"],
+          [2.85, 48.97, "1914-09-06T12:00:00Z"],
+          [2.87, 48.99, "1914-09-07T12:00:00Z"],
+          [2.93, 48.98, "1914-09-08T12:00:00Z"],
+          [2.93, 48.98, "1914-09-09T12:00:00Z"],
+          [3.03, 49.03, "1914-09-10T12:00:00Z"],
+          [3.05, 49.22, "1914-09-11T12:00:00Z"],
+          [3.1, 49.38, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Penchard and Chauconin on 6 Sep; Varreddes."
+      },
+      {
+        "id": "1914:marne-route-fr-rd-paris",
+        "formation": "1914:det-fr-rd-paris",
+        "waypoints": [
+          [2.45, 48.95, "1914-09-05T06:00:00Z"],
+          [2.68, 49.05, "1914-09-06T12:00:00Z"],
+          [2.81, 49.14, "1914-09-07T12:00:00Z"],
+          [2.8, 49.13, "1914-09-08T12:00:00Z"],
+          [2.78, 49.14, "1914-09-09T12:00:00Z"],
+          [2.96, 49.16, "1914-09-10T12:00:00Z"],
+          [2.89, 49.23, "1914-09-11T12:00:00Z"],
+          [3.0, 49.38, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Ebener's 61st and 62nd Reserve Divisions on Maunoury's left at Nanteuil."
+      },
+      {
+        "id": "1914:marne-route-fr-cav-sordet",
+        "formation": "1914:cav-corps-fr-sordet",
+        "waypoints": [
+          [2.75, 49.15, "1914-09-05T06:00:00Z"],
+          [2.9, 49.2, "1914-09-06T12:00:00Z"],
+          [2.9, 49.22, "1914-09-07T12:00:00Z"],
+          [2.85, 49.2, "1914-09-08T12:00:00Z"],
+          [2.9, 49.22, "1914-09-09T12:00:00Z"],
+          [2.89, 49.25, "1914-09-10T12:00:00Z"],
+          [2.83, 49.42, "1914-09-11T12:00:00Z"],
+          [3.05, 49.42, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Sordet's (from 8 Sep Bridoux's) cavalry corps on the extreme left; the raid towards Lévignen."
+      },
+      {
+        "id": "1914:marne-route-fr-iv",
+        "formation": "1914:corps-fr-iv",
+        "waypoints": [
+          [2.45, 48.9, "1914-09-05T06:00:00Z"],
+          [2.55, 48.95, "1914-09-06T12:00:00Z"],
+          [2.68, 49.05, "1914-09-07T12:00:00Z"],
+          [2.81, 49.14, "1914-09-08T12:00:00Z"],
+          [2.82, 49.14, "1914-09-09T12:00:00Z"],
+          [2.96, 49.16, "1914-09-10T12:00:00Z"],
+          [2.89, 49.23, "1914-09-11T12:00:00Z"],
+          [3.05, 49.4, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Boëlle's IV Corps, railed from the 3rd Army to Paris, reached the Ourcq front at Nanteuil on 8 Sep — part of its 7th Division by taxi."
+      },
+      {
+        "id": "1914:marne-route-fr-div-7",
+        "formation": "1914:marne-div-fr-7",
+        "waypoints": [
+          [2.53, 48.9, "1914-09-07T18:00:00Z"],
+          [2.55, 48.93, "1914-09-07T22:00:00Z"],
+          [2.8, 49.13, "1914-09-08T02:00:00Z"],
+          [2.81, 49.14, "1914-09-08T12:00:00Z"],
+          [2.82, 49.15, "1914-09-09T12:00:00Z"],
+          [2.96, 49.16, "1914-09-10T12:00:00Z"],
+          [2.89, 49.23, "1914-09-11T12:00:00Z"],
+          [3.05, 49.4, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "The taxi lift from Gagny/Livry to Nanteuil and Silly-le-Long on the night of 7/8 Sep (two runs, about 600 taxis, some 4,000–5,000 men of the 103rd and 104th Regiments); then with the IV Corps.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ],
+        "notes": "Only part of the division rode in taxis; the rest came by rail and on foot. The episode's military weight was small, its legend large."
+      },
+      {
+        "id": "1914:marne-route-fr-div-45",
+        "formation": "1914:marne-div-fr-45",
+        "waypoints": [
+          [2.45, 48.92, "1914-09-05T06:00:00Z"],
+          [2.8, 49.05, "1914-09-06T12:00:00Z"],
+          [2.92, 49.08, "1914-09-07T12:00:00Z"],
+          [2.9, 49.1, "1914-09-08T12:00:00Z"],
+          [2.9, 49.1, "1914-09-09T12:00:00Z"],
+          [2.96, 49.16, "1914-09-10T12:00:00Z"],
+          [2.89, 49.23, "1914-09-11T12:00:00Z"],
+          [3.05, 49.39, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Drude's 45th (Algerian) Division, from Paris to the Ourcq."
+      },
+      {
+        "id": "1914:marne-route-gb-i",
+        "formation": "1914:corps-gb-i",
+        "waypoints": [
+          [2.95, 48.68, "1914-09-05T06:00:00Z"],
+          [3.02, 48.75, "1914-09-06T12:00:00Z"],
+          [3.12, 48.8, "1914-09-07T12:00:00Z"],
+          [3.22, 48.88, "1914-09-08T12:00:00Z"],
+          [3.3, 48.98, "1914-09-09T12:00:00Z"],
+          [3.38, 49.1, "1914-09-10T12:00:00Z"],
+          [3.5, 49.25, "1914-09-11T12:00:00Z"],
+          [3.55, 49.35, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Official History's daily narrative and maps; ±5 km.",
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Haig's corps on the right: the Grand Morin, the Petit Morin, the Marne at Charly on 9 Sep."
+      },
+      {
+        "id": "1914:marne-route-gb-ii",
+        "formation": "1914:corps-gb-ii",
+        "waypoints": [
+          [2.78, 48.7, "1914-09-05T06:00:00Z"],
+          [2.9, 48.78, "1914-09-06T12:00:00Z"],
+          [3.05, 48.82, "1914-09-07T12:00:00Z"],
+          [3.15, 48.9, "1914-09-08T12:00:00Z"],
+          [3.2, 48.98, "1914-09-09T12:00:00Z"],
+          [3.3, 49.1, "1914-09-10T12:00:00Z"],
+          [3.4, 49.27, "1914-09-11T12:00:00Z"],
+          [3.45, 49.37, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Official History's daily narrative and maps; ±5 km.",
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Smith-Dorrien's corps in the centre: Coulommiers, the Petit Morin at Orly and Saint-Cyr, the Marne at Nanteuil-sur-Marne."
+      },
+      {
+        "id": "1914:marne-route-gb-iii",
+        "formation": "1914:corps-gb-iii",
+        "waypoints": [
+          [2.68, 48.75, "1914-09-05T06:00:00Z"],
+          [2.8, 48.8, "1914-09-06T12:00:00Z"],
+          [2.93, 48.86, "1914-09-07T12:00:00Z"],
+          [3.0, 48.92, "1914-09-08T12:00:00Z"],
+          [3.1, 48.97, "1914-09-09T12:00:00Z"],
+          [3.2, 49.1, "1914-09-10T12:00:00Z"],
+          [3.3, 49.3, "1914-09-11T12:00:00Z"],
+          [3.35, 49.38, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Official History's daily narrative and maps; ±5 km.",
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Pulteney's corps on the left: La Ferté-sous-Jouarre, where the Marne bridges were down and the crossing took until the 10th."
+      },
+      {
+        "id": "1914:marne-route-gb-cav",
+        "formation": "1914:cav-div-gb",
+        "waypoints": [
+          [2.9, 48.7, "1914-09-05T06:00:00Z"],
+          [3.0, 48.78, "1914-09-06T12:00:00Z"],
+          [3.1, 48.82, "1914-09-07T12:00:00Z"],
+          [3.1, 48.9, "1914-09-08T12:00:00Z"],
+          [3.2, 49.0, "1914-09-09T12:00:00Z"],
+          [3.3, 49.15, "1914-09-10T12:00:00Z"],
+          [3.45, 49.3, "1914-09-11T12:00:00Z"],
+          [3.5, 49.38, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the Official History's daily narrative and maps; ±5 km.",
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-route-fr-xviii",
+        "formation": "1914:corps-fr-xviii",
+        "waypoints": [
+          [3.45, 48.65, "1914-09-05T06:00:00Z"],
+          [3.5, 48.72, "1914-09-06T12:00:00Z"],
+          [3.48, 48.8, "1914-09-07T12:00:00Z"],
+          [3.48, 48.85, "1914-09-08T12:00:00Z"],
+          [3.4, 48.97, "1914-09-09T12:00:00Z"],
+          [3.4, 49.08, "1914-09-10T12:00:00Z"],
+          [3.52, 49.2, "1914-09-11T12:00:00Z"],
+          [3.6, 49.35, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "The 5th Army's left: Marchais-en-Brie on 8 Sep, Château-Thierry on the 9th."
+      },
+      {
+        "id": "1914:marne-route-fr-iii",
+        "formation": "1914:corps-fr-iii",
+        "waypoints": [
+          [3.55, 48.68, "1914-09-05T06:00:00Z"],
+          [3.56, 48.73, "1914-09-06T12:00:00Z"],
+          [3.56, 48.8, "1914-09-07T12:00:00Z"],
+          [3.54, 48.87, "1914-09-08T12:00:00Z"],
+          [3.55, 48.95, "1914-09-09T12:00:00Z"],
+          [3.6, 49.05, "1914-09-10T12:00:00Z"],
+          [3.65, 49.2, "1914-09-11T12:00:00Z"],
+          [3.7, 49.38, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Esternay on 6 Sep; Montmirail taken on 8 Sep."
+      },
+      {
+        "id": "1914:marne-route-fr-i",
+        "formation": "1914:corps-fr-i",
+        "waypoints": [
+          [3.72, 48.7, "1914-09-05T06:00:00Z"],
+          [3.68, 48.75, "1914-09-06T12:00:00Z"],
+          [3.65, 48.8, "1914-09-07T12:00:00Z"],
+          [3.65, 48.85, "1914-09-08T12:00:00Z"],
+          [3.65, 48.95, "1914-09-09T12:00:00Z"],
+          [3.7, 49.05, "1914-09-10T12:00:00Z"],
+          [3.75, 49.22, "1914-09-11T12:00:00Z"],
+          [3.8, 49.38, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-route-fr-x",
+        "formation": "1914:corps-fr-x",
+        "waypoints": [
+          [3.75, 48.68, "1914-09-05T06:00:00Z"],
+          [3.75, 48.73, "1914-09-06T12:00:00Z"],
+          [3.72, 48.8, "1914-09-07T12:00:00Z"],
+          [3.7, 48.85, "1914-09-08T12:00:00Z"],
+          [3.72, 48.95, "1914-09-09T12:00:00Z"],
+          [3.78, 49.05, "1914-09-10T12:00:00Z"],
+          [3.85, 49.15, "1914-09-11T12:00:00Z"],
+          [3.85, 49.3, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Linked the 5th Army to Foch's left at the western end of the marshes."
+      },
+      {
+        "id": "1914:marne-route-fr-cav-conneau",
+        "formation": "1914:cav-corps-fr-conneau",
+        "waypoints": [
+          [3.4, 48.72, "1914-09-05T06:00:00Z"],
+          [3.42, 48.78, "1914-09-06T12:00:00Z"],
+          [3.4, 48.85, "1914-09-07T12:00:00Z"],
+          [3.45, 48.88, "1914-09-08T12:00:00Z"],
+          [3.4, 49.0, "1914-09-09T12:00:00Z"],
+          [3.45, 49.12, "1914-09-10T12:00:00Z"],
+          [3.5, 49.28, "1914-09-11T12:00:00Z"],
+          [3.55, 49.38, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Conneau's cavalry corps between the 5th Army and the BEF."
+      },
+      {
+        "id": "1914:marne-route-fr-rd-4",
+        "formation": "1914:det-fr-rd-4",
+        "waypoints": [
+          [3.6, 48.6, "1914-09-05T06:00:00Z"],
+          [3.6, 48.68, "1914-09-06T12:00:00Z"],
+          [3.6, 48.75, "1914-09-07T12:00:00Z"],
+          [3.6, 48.83, "1914-09-08T12:00:00Z"],
+          [3.6, 48.9, "1914-09-09T12:00:00Z"],
+          [3.62, 49.0, "1914-09-10T12:00:00Z"],
+          [3.65, 49.15, "1914-09-11T12:00:00Z"],
+          [3.7, 49.3, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-route-fr-div-42",
+        "formation": "1914:marne-div-fr-42",
+        "waypoints": [
+          [3.75, 48.75, "1914-09-05T06:00:00Z"],
+          [3.8, 48.78, "1914-09-06T12:00:00Z"],
+          [3.8, 48.78, "1914-09-07T12:00:00Z"],
+          [3.82, 48.76, "1914-09-08T12:00:00Z"],
+          [3.88, 48.74, "1914-09-09T06:00:00Z"],
+          [3.96, 48.72, "1914-09-09T15:00:00Z"],
+          [4.0, 48.88, "1914-09-10T12:00:00Z"],
+          [4.0, 49.0, "1914-09-11T12:00:00Z"],
+          [4.02, 49.15, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Grossetti's 42nd Division: pulled out of the left on 9 Sep and marched behind the front to counter-attack on the right — the manoeuvre Foch is remembered for."
+      },
+      {
+        "id": "1914:marne-route-fr-div-marocaine",
+        "formation": "1914:marne-div-marocaine",
+        "waypoints": [
+          [3.78, 48.78, "1914-09-05T06:00:00Z"],
+          [3.85, 48.78, "1914-09-06T12:00:00Z"],
+          [3.85, 48.78, "1914-09-07T12:00:00Z"],
+          [3.85, 48.78, "1914-09-08T12:00:00Z"],
+          [3.87, 48.78, "1914-09-09T12:00:00Z"],
+          [3.95, 48.9, "1914-09-10T12:00:00Z"],
+          [4.0, 49.05, "1914-09-11T12:00:00Z"],
+          [4.02, 49.18, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Humbert's Moroccan Division on the marshes' southern edge."
+      },
+      {
+        "id": "1914:marne-route-fr-ix",
+        "formation": "1914:corps-fr-ix",
+        "waypoints": [
+          [3.95, 48.76, "1914-09-05T06:00:00Z"],
+          [3.95, 48.75, "1914-09-06T12:00:00Z"],
+          [3.95, 48.75, "1914-09-07T12:00:00Z"],
+          [3.97, 48.72, "1914-09-08T06:00:00Z"],
+          [3.96, 48.7, "1914-09-08T12:00:00Z"],
+          [3.97, 48.73, "1914-09-09T12:00:00Z"],
+          [4.0, 48.85, "1914-09-10T12:00:00Z"],
+          [4.05, 49.0, "1914-09-11T12:00:00Z"],
+          [4.05, 49.15, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Dubois's IX Corps east of the marshes; driven back on the morning of 8 Sep."
+      },
+      {
+        "id": "1914:marne-route-fr-xi",
+        "formation": "1914:corps-fr-xi",
+        "waypoints": [
+          [4.05, 48.72, "1914-09-05T06:00:00Z"],
+          [4.05, 48.72, "1914-09-06T12:00:00Z"],
+          [4.05, 48.72, "1914-09-07T12:00:00Z"],
+          [4.12, 48.68, "1914-09-08T06:00:00Z"],
+          [4.15, 48.67, "1914-09-08T12:00:00Z"],
+          [4.1, 48.68, "1914-09-09T12:00:00Z"],
+          [4.15, 48.8, "1914-09-10T12:00:00Z"],
+          [4.25, 48.9, "1914-09-11T12:00:00Z"],
+          [4.3, 49.05, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Eydoux's XI Corps on Foch's right, pushed back towards Mailly by Hausen's night attack."
+      },
+      {
+        "id": "1914:marne-route-hentsch",
+        "formation": "1914:marne-hentsch-mission",
+        "waypoints": [
+          [6.13, 49.61, "1914-09-08T11:00:00Z"],
+          [5.04, 49.23, "1914-09-08T13:00:00Z"],
+          [4.5, 48.98, "1914-09-08T15:00:00Z"],
+          [4.37, 48.96, "1914-09-08T16:00:00Z"],
+          [3.82, 48.92, "1914-09-08T20:00:00Z"],
+          [3.82, 48.92, "1914-09-09T07:00:00Z"],
+          [3.08, 49.14, "1914-09-09T11:00:00Z"],
+          [3.08, 49.14, "1914-09-09T13:00:00Z"],
+          [3.82, 48.92, "1914-09-09T20:00:00Z"],
+          [6.13, 49.61, "1914-09-10T06:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Hentsch's itinerary by car as reconstructed in Herwig: Luxembourg, the 5th, 4th and 3rd Army headquarters on 8 Sep, Bülow's at Montmort that evening, Kluck's at Mareuil-sur-Ourcq late on the morning of the 9th, back to Luxembourg on the 10th.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ],
+        "notes": "Times are the sources' approximations; the route shows the order of the visits, not the roads taken."
+      }
+    ],
+    "events": [
+      {
+        "id": "1914:marne-event-monthyon",
+        "title": "Gronau meets Maunoury: the Ourcq opens",
+        "at": "1914-09-05T13:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:meaux",
+        "summary": "North-east of Meaux, around Monthyon and Saint-Soupplets, the IV Reserve Corps — Kluck's flank guard — runs into the 55th and 56th Reserve Divisions leading Maunoury's advance out of Paris. Gronau attacks, then falls back in the night; Kluck learns that his open flank has been found.",
+        "links": {
+          "formations": ["1914:corps-de-iv-res", "1914:det-fr-rd-3"],
+          "people": ["person:maunoury-michel-joseph", "person:kluck-alexander-von"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:afgg-1-1"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-event-kluck-recalls-ii-corps",
+        "title": "Kluck recalls the II Corps across the Marne",
+        "at": "1914-09-05T22:00:00Z",
+        "kind": "order",
+        "significance": "major",
+        "lngLat": [3.05, 48.85],
+        "summary": "From his headquarters Kluck orders the II Corps back north over the Marne to the Ourcq — the first of four corps he will swing away from the BEF and the French 5th Army over the next three days.",
+        "links": {
+          "formations": ["1914:corps-de-ii", "1914:army-de-1"],
+          "people": ["person:kluck-alexander-von"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-event-order-of-the-day",
+        "title": "Joffre's order of the day: the hour has come",
+        "at": "1914-09-06T06:00:00Z",
+        "kind": "order",
+        "significance": "major",
+        "lngLat": [2.95, 48.55],
+        "summary": "The general counter-offensive begins. Joffre's order of the day tells the armies that the battle on which the safety of the country depends has begun, that every effort must go to attacking and throwing back the enemy, and that troops which can no longer advance must hold the ground won at any price and be killed on the spot rather than fall back.",
+        "links": {
+          "documents": ["1914:document-joffre-order-of-the-day-1914-09-06"],
+          "people": ["person:joffre-joseph"]
+        },
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-event-bef-turns",
+        "title": "The BEF and the French 5th Army turn about",
+        "at": "1914-09-06T08:00:00Z",
+        "kind": "movement",
+        "significance": "major",
+        "lngLat": [3.0, 48.72],
+        "summary": "After a fortnight's retreat the British and Franchet d'Espèrey's army face north again. The BEF advances from the Tournan–Rozay line towards the Grand Morin; the 5th Army attacks Kluck's III and IX Corps at Esternay — the corps Kluck is about to pull away to the Ourcq.",
+        "links": {
+          "formations": ["1914:bef", "1914:army-fr-5"],
+          "people": ["person:french-john", "person:franchet-desperey-louis"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          },
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-event-taxis",
+        "title": "The taxis of the Marne leave Paris",
+        "at": "1914-09-07T22:00:00Z",
+        "kind": "movement",
+        "significance": "major",
+        "lngLat": [2.53, 48.9],
+        "summary": "On Gallieni's order some 600 Paris taxis, requisitioned that afternoon, carry part of the 7th Division from Gagny and Livry to Nanteuil-le-Haudouin and Silly-le-Long in two runs through the night — four to five thousand men, a fraction of Maunoury's reinforcements, and the most famous image of the battle.",
+        "links": {
+          "formations": ["1914:marne-div-fr-7"],
+          "people": ["person:gallieni-joseph", "person:maunoury-michel-joseph"],
+          "tech": ["1914:tech-railways-mobilization"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          },
+          {
+            "source": "source:afgg-1-1"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-event-saint-gond-night",
+        "title": "Hausen's night attack at Fère-Champenoise",
+        "at": "1914-09-08T03:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:fere-champenoise",
+        "summary": "At three in the morning the Saxon XII Corps and the Guard go forward with the bayonet, without artillery preparation, against Foch's right at the eastern end of the marshes of Saint-Gond. The IX and XI Corps are driven back several kilometres and Fère-Champenoise is lost — the last German success of the battle.",
+        "links": {
+          "formations": [
+            "1914:corps-de-xii",
+            "1914:corps-de-guard",
+            "1914:corps-fr-ix",
+            "1914:corps-fr-xi"
+          ],
+          "people": ["person:hausen-max-von", "person:foch-ferdinand"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-event-hentsch-montmort",
+        "title": "Hentsch at Bülow's headquarters, Montmort",
+        "at": "1914-09-08T19:45:00Z",
+        "kind": "decision",
+        "significance": "major",
+        "place": "place:montmort",
+        "summary": "Having visited the 5th, 4th and 3rd Army headquarters, Hentsch reaches Bülow at Montmort in the evening. Bülow and his staff judge the 2nd Army's position untenable once the BEF crosses the Marne into the gap; the two agree that if it does, the 2nd Army will retreat and the 1st must conform.",
+        "links": {
+          "formations": ["1914:marne-hentsch-mission", "1914:army-de-2"],
+          "people": ["person:hentsch-richard", "person:bulow-karl-von"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-event-bef-crosses-marne",
+        "title": "The BEF crosses the Marne",
+        "at": "1914-09-09T06:00:00Z",
+        "kind": "movement",
+        "significance": "major",
+        "place": "place:la-ferte-sous-jouarre",
+        "summary": "The I and II Corps cross at Charly and Nanteuil-sur-Marne in the morning; at La Ferté-sous-Jouarre the bridges are down and the III Corps needs until the next day. German airmen report the British columns north of the river — the report that decides Bülow.",
+        "links": {
+          "formations": ["1914:corps-gb-i", "1914:corps-gb-ii", "1914:corps-gb-iii"],
+          "people": ["person:french-john"],
+          "tech": ["1914:tech-aerial-reconnaissance"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-event-bulow-retreats",
+        "title": "Bülow orders the 2nd Army to retreat",
+        "at": "1914-09-09T09:00:00Z",
+        "kind": "order",
+        "significance": "major",
+        "place": "place:montmort",
+        "summary": "With the British across the Marne on his open right, Bülow orders his army back behind the Marne towards Dormans and Épernay, and tells OHL and Kluck.",
+        "links": {
+          "formations": ["1914:army-de-2"],
+          "people": ["person:bulow-karl-von"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-event-hentsch-mareuil",
+        "title": "Hentsch at Kluck's headquarters, Mareuil: the 1st Army is to retreat",
+        "at": "1914-09-09T11:30:00Z",
+        "kind": "decision",
+        "significance": "major",
+        "place": "place:mareuil-sur-ourcq",
+        "summary": "Hentsch reaches Mareuil-sur-Ourcq late in the morning, after a drive through the retreating columns of the 2nd Army's right, and tells Kluck's chief of staff, Kuhl, that the 2nd Army is retreating and the 1st must fall back to the Aisne. Kluck, who believes he is winning on the Ourcq, obeys. Whether Hentsch had the authority — Vollmacht — to order it, and whether the battle was already lost, is the oldest dispute about the Marne.",
+        "links": {
+          "formations": ["1914:marne-hentsch-mission", "1914:army-de-1"],
+          "people": ["person:hentsch-richard", "person:kluck-alexander-von"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:marne-event-aisne",
+        "title": "The right wing stands on the Aisne",
+        "at": "1914-09-11T18:00:00Z",
+        "kind": "movement",
+        "significance": "major",
+        "lngLat": [3.35, 49.42],
+        "summary": "After three days of pursuit the 1st and 2nd Armies are across the Aisne between Compiègne and Reims; when the Allies arrive on 13 September the Germans are dug in on the heights north of the river and the war of movement ends.",
+        "links": {
+          "formations": ["1914:army-de-1", "1914:army-de-2"],
+          "events": ["1914:event-retreat-to-the-aisne"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:edmonds-1922"
+          }
+        ]
+      }
     ]
   }
 ]
