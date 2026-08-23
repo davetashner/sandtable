@@ -8,7 +8,7 @@
  * Home/End jump · , and . slower/faster.
  */
 import { useCallback, useEffect, useId, useMemo, useRef, type KeyboardEvent } from 'react';
-import { speedPresetsFor, stepFor } from '../engine/clock.js';
+import { speedLabel, speedPresetsFor, stepFor } from '../engine/clock.js';
 import { useClock, useClockControls } from '../engine/ClockContext.js';
 import { labelNow, ticksFor } from '../engine/ticks.js';
 import './timeline.css';
@@ -80,6 +80,15 @@ export function Timeline({
   );
   const ticks = useMemo(() => ticksFor(range), [range]);
   const presets = useMemo(() => speedPresetsFor(range), [range]);
+  // A tour step, or a speed carried in from a wider range, can sit off the
+  // ladder. Show it rather than mislabelling what is actually running.
+  const speedOptions = useMemo(
+    () =>
+      presets.some((p) => p.speed === speed)
+        ? presets
+        : [...presets, { speed, label: speedLabel(speed) }].sort((a, b) => a.speed - b.speed),
+    [presets, speed],
+  );
   const steps = useMemo(() => stepFor(range), [range]);
   const label = labelNow(now, range);
   const activePhase = phases.find(
@@ -88,14 +97,14 @@ export function Timeline({
 
   const speedIndex = Math.max(
     0,
-    presets.findIndex((p) => p.speed === speed),
+    speedOptions.findIndex((p) => p.speed === speed),
   );
   const changeSpeed = useCallback(
     (dir: 1 | -1) => {
-      const next = presets[Math.min(presets.length - 1, Math.max(0, speedIndex + dir))];
+      const next = speedOptions[Math.min(speedOptions.length - 1, Math.max(0, speedIndex + dir))];
       if (next) clock.setSpeed(next.speed);
     },
-    [clock, presets, speedIndex],
+    [clock, speedOptions, speedIndex],
   );
 
   const onKey = useCallback(
@@ -194,12 +203,12 @@ export function Timeline({
           <label className="timeline__speed">
             <span className="visually-hidden">Speed</span>
             <select
-              value={presets[speedIndex]?.speed ?? speed}
+              value={speed}
               onChange={(e) => clock.setSpeed(Number(e.target.value))}
               aria-label="Playback speed"
               title="Playback speed (, and .)"
             >
-              {presets.map((p) => (
+              {speedOptions.map((p) => (
                 <option key={p.speed} value={p.speed}>
                   {p.label}
                 </option>

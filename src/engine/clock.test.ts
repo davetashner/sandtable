@@ -1,5 +1,16 @@
 import { describe, expect, it } from 'vitest';
-import { createClock, DAY, HOUR, speedPresetsFor, stepFor, WEEK } from './clock.js';
+import {
+  createClock,
+  DAY,
+  DEFAULT_SPEED,
+  defaultSpeedFor,
+  HOUR,
+  MINUTE,
+  speedLabel,
+  speedPresetsFor,
+  stepFor,
+  WEEK,
+} from './clock.js';
 
 const START = Date.UTC(1914, 7, 2);
 const END = Date.UTC(1914, 10, 25);
@@ -80,9 +91,9 @@ describe('createClock', () => {
     clock.setRange({ start: START + 40 * DAY, end: START + 41 * DAY });
     expect(clock.get().now).toBe(START + 40 * DAY);
     clock.setSpeed(0);
-    expect(clock.get().speed).toBe(12 * HOUR);
-    clock.setSpeed(HOUR);
-    expect(clock.get().speed).toBe(HOUR);
+    expect(clock.get().speed).toBe(DEFAULT_SPEED);
+    clock.setSpeed(6 * HOUR);
+    expect(clock.get().speed).toBe(6 * HOUR);
   });
 
   it('dispose drops listeners', () => {
@@ -107,5 +118,39 @@ describe('presets', () => {
     );
     expect(stepFor({ start: START, end: END })).toEqual({ small: HOUR, large: DAY });
     expect(stepFor({ start: 0, end: 6 * HOUR }).large).toBe(HOUR);
+  });
+
+  it('a clock starts at the reading pace, not a skim (sand-1l0.31)', () => {
+    // The 1914 campaign: 2 August to 25 November.
+    const campaign = { start: START, end: START + 115 * DAY };
+    expect(defaultSpeedFor(campaign)).toBe(HOUR);
+    expect(createClock({ range: campaign, raf: () => 0, caf: () => {} }).get().speed).toBe(HOUR);
+    // A battle offers it too.
+    expect(defaultSpeedFor({ start: 0, end: 12 * HOUR })).toBe(HOUR);
+  });
+
+  it('the starting pace is always one of the offered presets', () => {
+    for (const span of [12 * HOUR, 115 * DAY, 2 * 365 * DAY, 5 * 365 * DAY]) {
+      const range = { start: START, end: START + span };
+      expect(speedPresetsFor(range).map((p) => p.speed)).toContain(defaultSpeedFor(range));
+    }
+  });
+
+  it('a range too long to read at falls back to its slowest pace', () => {
+    const era = { start: START, end: START + 5 * 365 * DAY };
+    expect(defaultSpeedFor(era)).toBe(DAY);
+    expect(defaultSpeedFor(era)).not.toBe(DEFAULT_SPEED);
+  });
+
+  it('the campaign ladder brackets the reading pace and keeps a scrubbing speed', () => {
+    const labels = speedPresetsFor({ start: START, end: END }).map((p) => p.label);
+    expect(labels).toEqual(['15 min / s', '1 h / s', '3 h / s', '6 h / s', '12 h / s', '1 day / s']);
+  });
+
+  it('speedLabel describes an off-ladder speed', () => {
+    expect(speedLabel(HOUR)).toBe('1 h / s');
+    expect(speedLabel(45 * MINUTE)).toBe('45 min / s');
+    expect(speedLabel(2 * DAY)).toBe('2 days / s');
+    expect(speedLabel(WEEK)).toBe('1 week / s');
   });
 });
