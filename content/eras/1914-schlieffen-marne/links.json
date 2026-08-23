@@ -281,5 +281,57 @@
         "source": "source:reichsarchiv-weltkrieg-1"
       }
     ]
+  },
+  {
+    "id": "1914:link-gumbinnen-to-new-command",
+    "from": "1914:east-event-gumbinnen",
+    "to": "1914:east-event-new-command",
+    "relation": "caused",
+    "claim": "Gumbinnen did not destroy the Eighth Army, but it destroyed its commander's confidence: within two days of proposing to abandon East Prussia, Prittwitz was replaced by Hindenburg and Ludendorff.",
+    "confidence": "high",
+    "evidence": [
+      { "source": "source:showalter-2004", "note": "Gumbinnen and the relief of Prittwitz" },
+      { "source": "source:mombauer-2001" }
+    ]
+  },
+  {
+    "id": "1914:link-east-prussia-to-two-corps",
+    "from": "1914:east-event-prittwitz-vistula",
+    "to": "1914:event-two-corps-east",
+    "relation": "caused",
+    "claim": "The alarm from East Prussia - a commander offering to give up a province - reached Moltke in the week the West looked won, and on 25 August he took two corps off the right wing to answer it.",
+    "confidence": "high",
+    "historiography": "Mombauer treats this as the clearest case of Moltke's habit of reacting to the loudest crisis rather than holding to the plan's priorities: the corps were sent on his own initiative, were not requested by the Eighth Army, and were sent after the danger that prompted them had already passed with Prittwitz's relief.",
+    "evidence": [
+      { "source": "source:mombauer-2001", "note": "Moltke's decision and its critics" },
+      { "source": "source:herwig-2009" },
+      { "source": "source:showalter-2004" }
+    ]
+  },
+  {
+    "id": "1914:link-two-corps-to-masurian-lakes",
+    "from": "1914:event-two-corps-east",
+    "to": "1914:east-event-masurian-lakes",
+    "relation": "enabled",
+    "claim": "The corps arrived after Tannenberg was over - they were formally assigned on 31 August, the day after - and went into the line for the Masurian Lakes on 7-14 September instead.",
+    "confidence": "high",
+    "evidence": [
+      { "source": "source:showalter-2004", "note": "the corps' arrival and the September battle" },
+      { "source": "source:stone-1975" }
+    ]
+  },
+  {
+    "id": "1914:link-two-corps-to-marne",
+    "from": "1914:event-two-corps-east",
+    "to": "1914:event-battle-of-the-marne",
+    "relation": "shaped",
+    "claim": "Two corps that were on the wheel on 25 August were in East Prussia on 5 September, and the wing that had to cover the ground between Kluck and Bülow was short of them when the gap opened.",
+    "confidence": "contested",
+    "historiography": "Moltke's own circle treated the transfer as the mistake that cost the campaign, and it is the most quoted might-have-been of 1914. Against it: the two corps were only part of a wider bleed (Antwerp, Maubeuge, Givet), they came from the 2nd and 3rd Armies rather than from Kluck's flank where the gap actually opened, and Herwig argues the Marne turned on the coordination of the German right and Joffre's redeployment more than on any two corps. The pack states the arithmetic and leaves the counterfactual open.",
+    "evidence": [
+      { "source": "source:herwig-2009", "note": "the thinned right wing at the Marne" },
+      { "source": "source:mombauer-2001" },
+      { "source": "source:showalter-2004" }
+    ]
   }
 ]

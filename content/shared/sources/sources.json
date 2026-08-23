@@ -438,5 +438,26 @@
     "year": 2001,
     "publisher": "War in History 8:2, pp. 208-232",
     "notes": "The opening reply in the War in History exchange that ran from 1999 into the 2010s. Cited for the case that the December 1905 memorandum describes a real operational intention; Zuber's rejoinders are part of the same exchange and the pack presents both sides."
+  },
+  {
+    "id": "source:showalter-2004",
+    "kind": "book",
+    "author": "Showalter, Dennis E.",
+    "title": "Tannenberg: Clash of Empires, 1914",
+    "year": 2004,
+    "publisher": "Brassey's, Washington DC",
+    "edition": "first published Archon Books, Hamden CT, 1991",
+    "isbn": "978-1-57488-781-9",
+    "notes": "The standard operational account of the East Prussian campaign of August 1914: Gumbinnen, the relief of Prittwitz, the encirclement, and the two corps sent from the West."
+  },
+  {
+    "id": "source:stone-1975",
+    "kind": "book",
+    "author": "Stone, Norman",
+    "title": "The Eastern Front 1914-1917",
+    "year": 1975,
+    "publisher": "Hodder & Stoughton, London",
+    "isbn": "978-0-14-026725-9",
+    "notes": "The Eastern Front as a whole, sceptical of the Tannenberg legend and of the German high command's later account of it; cite for the campaign's shape and for the myth-making."
   }
 ]

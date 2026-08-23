@@ -793,5 +793,25 @@
         "source": "source:doughty-2005"
       }
     ]
+  },
+  {
+    "id": "1914:event-two-corps-east",
+    "title": "Two corps are taken off the right wing for East Prussia",
+    "at": "1914-08-25T20:00:00Z",
+    "kind": "order",
+    "significance": "major",
+    "branch": "1914:historical",
+    "place": "place:namur",
+    "summary": "With Namur fallen and the French in retreat everywhere, Moltke concludes that the West is won and East Prussia is not, and orders the Guard Reserve Corps and the XI Corps - with the 8th Cavalry Division - to entrain for the East. Nobody in East Prussia asked for them. They leave the wheel on 26 August, are on trains through the battle they were sent to fight, and are missing from the front on which the Marne is decided ten days later.[^herwig-2009] [^mombauer-2001]",
+    "links": {
+      "formations": ["1914:corps-de-guard-res", "1914:corps-de-xi"],
+      "battles": ["1914:tannenberg-east"],
+      "people": ["person:moltke-helmuth-von-younger"]
+    },
+    "sources": [
+      { "source": "source:herwig-2009" },
+      { "source": "source:mombauer-2001" },
+      { "source": "source:showalter-2004" }
+    ]
   }
 ]
