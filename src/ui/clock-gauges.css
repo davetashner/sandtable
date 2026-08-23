@@ -118,13 +118,11 @@
   color: var(--brass);
 }
 
+/* Phone: the timeline strip is deliberately minimal and the dossier sheet
+   sits over the space below it — the gauges wait for the stacked layouts;
+   the timetable cards stay reachable from the ◇/markers and deep links. */
 @media (max-width: 699.98px) {
-  .clocks__gauge {
-    grid-template-columns: 1fr;
-    gap: 2px;
-  }
-
-  .clocks__readout {
-    justify-content: flex-start;
+  .clocks {
+    display: none;
   }
 }
