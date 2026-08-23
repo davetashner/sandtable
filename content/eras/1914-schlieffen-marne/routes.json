@@ -742,7 +742,7 @@
       [4.07, 48.3, "1914-09-15T12:00:00Z"]
     ],
     "confidence": "low",
-    "derivation": "Hypothetical. A schematic rendering of the 1905 memorandum's outer wheel — west of Paris, then south and east — at the march rates the historical army actually achieved. It illustrates the concept; it is not a claim about what would have happened (see the branch's feasibility checklist). Refined in sand-1l0.11.",
+    "derivation": "Hypothetical. A schematic rendering of the 1905 memorandum's outer wheel — west of Paris, then south and east — at the march rates the historical army actually achieved. It illustrates the concept; it is not a claim about what would have happened (the 'What success required' branch scores what that would have taken)..",
     "sources": [
       {
         "source": "source:zuber-2002"
@@ -764,7 +764,7 @@
       [3.3, 48.55, "1914-09-13T12:00:00Z"]
     ],
     "confidence": "low",
-    "derivation": "Hypothetical, schematic: the 2nd Army keeps station inside the 1st on the wide wheel — Saint-Quentin, Creil, south-west of Paris, the Seine at Melun, closing east. Illustrates the concept (see the branch's feasibility checklist); refined in sand-1l0.11.",
+    "derivation": "Hypothetical, schematic: the 2nd Army keeps station inside the 1st on the wide wheel — Saint-Quentin, Creil, south-west of Paris, the Seine at Melun, closing east. Illustrates the concept (the 'What success required' branch scores what that would have taken).",
     "sources": [
       {
         "source": "source:zuber-2002"
@@ -786,10 +786,201 @@
       [3.8, 48.3, "1914-09-13T12:00:00Z"]
     ],
     "confidence": "low",
-    "derivation": "Hypothetical, schematic: the centre pins the French armies against the fortress line — Rethel, Reims, Châlons, Troyes — while the wings close. Illustrates the concept; refined in sand-1l0.11.",
+    "derivation": "Hypothetical, schematic: the centre pins the French armies against the fortress line — Rethel, Reims, Châlons, Troyes — while the wings close. Illustrates the concept.",
     "sources": [
       {
         "source": "source:zuber-2002"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-de-1-schlieffen-success",
+    "formation": "1914:army-de-1",
+    "branch": "1914:schlieffen-success",
+    "waypoints": [
+      [2.9, 50.2, "1914-08-26T12:00:00Z"],
+      [2.45, 49.95, "1914-08-28T12:00:00Z"],
+      [2.25, 49.7, "1914-08-30T12:00:00Z"],
+      [2.0, 49.35, "1914-09-01T12:00:00Z"],
+      [1.75, 49.05, "1914-09-03T12:00:00Z"],
+      [1.85, 48.75, "1914-09-05T12:00:00Z"],
+      [2.15, 48.45, "1914-09-07T12:00:00Z"],
+      [2.75, 48.35, "1914-09-09T12:00:00Z"],
+      [3.35, 48.25, "1914-09-11T12:00:00Z"],
+      [3.95, 48.25, "1914-09-13T12:00:00Z"],
+      [4.1, 48.3, "1914-09-15T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Hypothetical, schematic: the 1st Army at full weight on the outer wheel — Amiens, Beauvais, west of Paris to the Seine at Mantes, south past Versailles and Étampes, then east through Fontainebleau and Sens to close the pocket near Troyes. Drawn at the march rates the historical army achieved; see the feasibility checklist for why that is the claim in dispute.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:zuber-2002"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-de-2-schlieffen-success",
+    "formation": "1914:army-de-2",
+    "branch": "1914:schlieffen-success",
+    "waypoints": [
+      [3.3, 49.9, "1914-08-27T12:00:00Z"],
+      [2.95, 49.55, "1914-08-30T12:00:00Z"],
+      [2.55, 49.15, "1914-09-02T12:00:00Z"],
+      [2.25, 48.85, "1914-09-04T12:00:00Z"],
+      [2.35, 48.55, "1914-09-06T12:00:00Z"],
+      [2.75, 48.45, "1914-09-08T12:00:00Z"],
+      [3.25, 48.5, "1914-09-10T12:00:00Z"],
+      [3.55, 48.5, "1914-09-13T12:00:00Z"],
+      [3.75, 48.55, "1914-09-15T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Hypothetical, schematic: the 2nd Army keeps station inside the 1st — Saint-Quentin, Compiègne, Pontoise, round the south-west of Paris to the Seine at Melun and east to Nogent-sur-Seine.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:zuber-2002"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-de-3-schlieffen-success",
+    "formation": "1914:army-de-3",
+    "branch": "1914:schlieffen-success",
+    "waypoints": [
+      [4.4, 49.6, "1914-08-27T12:00:00Z"],
+      [4.3, 49.4, "1914-08-30T12:00:00Z"],
+      [4.2, 49.15, "1914-09-02T12:00:00Z"],
+      [4.25, 48.9, "1914-09-05T12:00:00Z"],
+      [4.2, 48.6, "1914-09-08T12:00:00Z"],
+      [4.1, 48.4, "1914-09-11T12:00:00Z"],
+      [4.05, 48.35, "1914-09-15T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Hypothetical, schematic: the centre pins — Rethel, Reims, Châlons — and presses to the Seine at Troyes as the wings close.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:zuber-2002"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-fr-5-schlieffen-success",
+    "formation": "1914:army-fr-5",
+    "branch": "1914:schlieffen-success",
+    "waypoints": [
+      [3.65, 49.85, "1914-08-30T12:00:00Z"],
+      [3.8, 49.45, "1914-09-02T12:00:00Z"],
+      [4.0, 49.05, "1914-09-05T12:00:00Z"],
+      [4.15, 48.7, "1914-09-08T12:00:00Z"],
+      [4.35, 48.45, "1914-09-11T12:00:00Z"],
+      [4.4, 48.4, "1914-09-15T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Hypothetical, schematic: with no army forming at Paris and the German right behind its left, the 5th Army falls back south-east from Guise through Laon and Reims towards the Seine — and is caught between Troyes and the fortress line.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-bef-schlieffen-success",
+    "formation": "1914:bef",
+    "branch": "1914:schlieffen-success",
+    "waypoints": [
+      [2.85, 49.45, "1914-08-30T12:00:00Z"],
+      [2.3, 49.1, "1914-09-02T12:00:00Z"],
+      [1.85, 48.85, "1914-09-05T12:00:00Z"],
+      [1.55, 48.5, "1914-09-08T12:00:00Z"],
+      [1.45, 48.45, "1914-09-12T12:00:00Z"],
+      [1.4, 48.45, "1914-09-15T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Hypothetical, schematic: the BEF retires south-west behind the Seine as Sir John French proposed on 31 August — Compiègne, Pontoise, Mantes, Chartres — out of the battle.",
+    "sources": [
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:tuchman-1962"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-fr-4-schlieffen-success",
+    "formation": "1914:army-fr-4",
+    "branch": "1914:schlieffen-success",
+    "waypoints": [
+      [4.7, 49.4, "1914-08-30T12:00:00Z"],
+      [4.55, 49.05, "1914-09-03T12:00:00Z"],
+      [4.65, 48.7, "1914-09-07T12:00:00Z"],
+      [4.9, 48.6, "1914-09-11T12:00:00Z"],
+      [4.95, 48.6, "1914-09-15T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Hypothetical, schematic: the 4th Army falls back on Vitry-le-François and Saint-Dizier with its right on the Verdun–Toul line and is pinned there.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-fr-6-schlieffen-success",
+    "formation": "1914:army-fr-6",
+    "branch": "1914:schlieffen-success",
+    "waypoints": [
+      [2.3, 49.89, "1914-08-27T12:00:00Z"],
+      [2.42, 49.4, "1914-08-31T12:00:00Z"],
+      [2.45, 48.95, "1914-09-03T12:00:00Z"],
+      [2.45, 48.95, "1914-09-15T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Hypothetical, schematic: the troops Joffre railed west reach Paris but — in this branch — never sortie: the army stays inside the entrenched camp as its garrison.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:route-fr-9-schlieffen-success",
+    "formation": "1914:army-fr-9",
+    "branch": "1914:schlieffen-success",
+    "waypoints": [
+      [3.85, 48.76, "1914-09-05T12:00:00Z"],
+      [4.05, 48.55, "1914-09-08T12:00:00Z"],
+      [4.2, 48.4, "1914-09-11T12:00:00Z"],
+      [4.25, 48.35, "1914-09-15T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Hypothetical, schematic: the Foch Detachment, formed into the 9th Army on 5 September, falls back with the 4th towards Troyes and the Seine.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
       },
       {
         "source": "source:herwig-2009"
