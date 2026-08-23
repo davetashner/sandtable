@@ -129,3 +129,55 @@
 .causal__alt:hover {
   text-decoration: underline;
 }
+
+/* Overview rail: the whole chain, when it runs past the depth shown in detail. */
+.causal__overview {
+  margin-top: 10px;
+  padding: 8px 10px;
+  background: var(--panel-2);
+  border-radius: var(--radius-sm);
+}
+
+.causal__overview-title {
+  margin: 0 0 6px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.causal__overview ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 2px;
+}
+
+.causal__overview li {
+  font-size: var(--fs-xs);
+  line-height: var(--lh-body);
+  color: var(--muted);
+}
+
+.causal__overview li[data-current] {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.causal__overview button {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.causal__overview button:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}

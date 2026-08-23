@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { CausalLink } from '../packs/schema/index.js';
-import { chainAround, chainsFor, linksTouching } from './causal.js';
+import { chainAround, chainsFor, fullChain, linksTouching } from './causal.js';
 
 const link = (id: string, from: string, to: string): CausalLink => ({
   id,
@@ -40,6 +40,28 @@ describe('causal chains', () => {
     const loop = [link('l:pq', 'p', 'q'), link('l:qp', 'q', 'p')];
     expect(chainAround(loop, loop[0]!, 10).map((s) => s.link.id)).toEqual(['l:qp', 'l:pq']);
     expect(chainAround(links, links[1]!, 0).map((s) => s.link.id)).toEqual(['l:bc']);
+  });
+
+  it('walks the whole chain end to end, past the depth chainAround() shows', () => {
+    // a long chain: the depth-limited walk truncates it, fullChain() does not
+    const long = [
+      link('l:12', '1', '2'),
+      link('l:23', '2', '3'),
+      link('l:34', '3', '4'),
+      link('l:45', '4', '5'),
+      link('l:56', '5', '6'),
+      link('l:67', '6', '7'),
+      link('l:78', '7', '8'),
+    ];
+    const focal = long[3]!;
+    expect(chainAround(long, focal, 1).map((s) => s.link.id)).toEqual(['l:34', 'l:45', 'l:56']);
+    expect(fullChain(long, focal).map((s) => s.link.id)).toEqual(long.map((l) => l.id));
+    expect(fullChain(long, focal).find((s) => s.depth === 0)!.link.id).toBe('l:45');
+  });
+
+  it('terminates on a cycle when walking the whole chain', () => {
+    const loop = [link('l:pq', 'p', 'q'), link('l:qp', 'q', 'p')];
+    expect(fullChain(loop, loop[0]!).map((s) => s.link.id)).toEqual(['l:qp', 'l:pq']);
   });
 
   it('finds links touching a set of entities', () => {

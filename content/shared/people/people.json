@@ -930,5 +930,122 @@
         "note": "dates; the 1920 acquittal (fr.wikipedia)"
       }
     ]
+  },
+  {
+    "id": "person:franz-ferdinand-of-austria",
+    "name": "Franz Ferdinand",
+    "sortName": "Franz Ferdinand, Archduke of Austria-Este",
+    "born": "1863-12-18",
+    "died": "1914-06-28",
+    "nationality": "AT",
+    "roles": [
+      {
+        "title": "Heir presumptive to the Austro-Hungarian throne",
+        "from": "1896-05-19",
+        "to": "1914-06-28"
+      },
+      {
+        "title": "Inspector General of the Austro-Hungarian armed forces",
+        "from": "1913-08-17",
+        "to": "1914-06-28"
+      }
+    ],
+    "summary": "Heir to the Habsburg throne and, on the evidence of his own papers, one of the more cautious voices in Vienna on war with Serbia - he had opposed the annexation crisis policy and doubted the army's readiness. He and his wife Sophie were shot at Sarajevo on 28 June 1914 by Gavrilo Princip. His death removed the chief restraint on the war party at the moment it gave that party its occasion.",
+    "sources": [
+      {
+        "source": "source:clark-2012"
+      },
+      {
+        "source": "source:albertini-1952"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:princip-gavrilo",
+    "name": "Gavrilo Princip",
+    "sortName": "Princip, Gavrilo",
+    "born": "1894-07-25",
+    "died": "1918-04-28",
+    "nationality": "AT",
+    "roles": [
+      {
+        "title": "Member of Mlada Bosna; assassin of Archduke Franz Ferdinand",
+        "from": "1914-06-28",
+        "to": "1914-06-28"
+      }
+    ],
+    "summary": "Bosnian Serb student, a member of the Young Bosnia circle, who shot the Archduke and Duchess at Sarajevo on 28 June 1914 with a pistol supplied through Serbian military intelligence contacts. Too young for the death penalty, he was sentenced to twenty years and died of tuberculosis in the fortress of Theresienstadt in April 1918. How far his act was directed from Belgrade is one of the central disputes of the origins debate.",
+    "sources": [
+      {
+        "source": "source:clark-2012"
+      },
+      {
+        "source": "source:albertini-1952"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:berchtold-leopold",
+    "name": "Leopold Berchtold",
+    "sortName": "Berchtold, Leopold von",
+    "born": "1863-04-18",
+    "died": "1942-11-21",
+    "nationality": "AT",
+    "roles": [
+      {
+        "title": "Foreign Minister of Austria-Hungary",
+        "from": "1912-02-17",
+        "to": "1915-01-13"
+      }
+    ],
+    "summary": "Austro-Hungarian foreign minister through the July Crisis. He sought and obtained the German assurance of 5-6 July, presided over the drafting of the note to Serbia in terms meant to be refused, judged the Serbian reply of 25 July unsatisfactory, and pressed the declaration of war of 28 July - by his own account partly to foreclose the mediation proposals then circulating.",
+    "sources": [
+      {
+        "source": "source:clark-2012"
+      },
+      {
+        "source": "source:albertini-1952"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:nicholas-ii",
+    "name": "Nicholas II",
+    "sortName": "Nicholas II, Emperor of Russia",
+    "born": "1868-05-18",
+    "died": "1918-07-17",
+    "nationality": "RU",
+    "roles": [
+      {
+        "title": "Emperor of Russia",
+        "from": "1894-11-01",
+        "to": "1917-03-15"
+      }
+    ],
+    "summary": "The last Russian emperor. On 29 July 1914 he ordered general mobilization, cancelled it within hours after a telegram from the Kaiser, and on 30 July let his ministers and the General Staff persuade him to order it again - the decision that, given the German deployment plan, made a European war all but certain. Overthrown in March 1917; murdered with his family at Ekaterinburg in July 1918.",
+    "sources": [
+      {
+        "source": "source:clark-2012"
+      },
+      {
+        "source": "source:albertini-1952"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
   }
 ]
