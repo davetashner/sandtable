@@ -837,6 +837,259 @@
     ]
   },
   {
+    "id": "place:chemin-des-dames",
+    "name": "Chemin des Dames",
+    "kind": "region",
+    "lngLat": [3.62, 49.44],
+    "country": "France",
+    "notes": "The ridge between the Aisne and the Ailette where the German right wing turned and dug in on 13–14 September 1914; the line held there until 1917.",
+    "sources": [
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:roye",
+    "name": "Roye",
+    "kind": "town",
+    "lngLat": [2.792, 49.7],
+    "country": "France",
+    "notes": "Picardy town on the front of the French Second Army's northward attempt of 22–26 September 1914.",
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:albert",
+    "name": "Albert",
+    "kind": "town",
+    "lngLat": [2.65, 50.003],
+    "country": "France",
+    "notes": "Santerre town taken as the outflanking moved north in late September 1914.",
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:arras",
+    "name": "Arras",
+    "kind": "city",
+    "lngLat": [2.777, 50.291],
+    "country": "France",
+    "notes": "Artois city held by de Maud'huy's Tenth Army from the beginning of October 1914; the front stopped a few kilometres east of it and stayed there.",
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:lille",
+    "name": "Lille",
+    "names": [
+      {
+        "name": "Rijsel",
+        "language": "nl",
+        "kind": "translation"
+      }
+    ],
+    "kind": "city",
+    "lngLat": [3.058, 50.629],
+    "country": "France",
+    "notes": "The largest French city near the northern front; abandoned by the French and occupied by the German Sixth Army on 12 October 1914, and held until October 1918.",
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:ypres",
+    "name": "Ypres",
+    "names": [
+      {
+        "name": "Ieper",
+        "language": "nl",
+        "kind": "modern"
+      }
+    ],
+    "kind": "town",
+    "lngLat": [2.885, 50.851],
+    "country": "Belgium",
+    "notes": "Flemish cloth town at the centre of the last unoccupied corner of Belgium; the salient held around it from October 1914 became the most fought-over ground of the war.",
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:gheluvelt",
+    "name": "Gheluvelt",
+    "names": [
+      {
+        "name": "Geluveld",
+        "language": "nl",
+        "kind": "modern"
+      }
+    ],
+    "kind": "village",
+    "lngLat": [3.0, 50.836],
+    "country": "Belgium",
+    "notes": "Village on the Menin road east of Ypres, lost and retaken on 31 October 1914 — the crisis of the First Battle of Ypres.",
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:langemarck",
+    "name": "Langemarck",
+    "names": [
+      {
+        "name": "Langemark",
+        "language": "nl",
+        "kind": "modern"
+      }
+    ],
+    "kind": "village",
+    "lngLat": [2.917, 50.917],
+    "country": "Belgium",
+    "notes": "Village north-east of Ypres attacked by the new German reserve corps in late October 1914, and the name later attached to the 'Kindermord' legend.",
+    "sources": [
+      {
+        "source": "source:unruh-1986"
+      },
+      {
+        "source": "source:1914-1918-online-langemarck"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:dixmude",
+    "name": "Dixmude",
+    "names": [
+      {
+        "name": "Diksmuide",
+        "language": "nl",
+        "kind": "modern"
+      }
+    ],
+    "kind": "town",
+    "lngLat": [2.865, 51.033],
+    "country": "Belgium",
+    "notes": "Town on the Yser held by Ronarc'h's fusiliers marins and Belgian troops through the battle of the Yser, October–November 1914.",
+    "sources": [
+      {
+        "source": "source:van-pul-2006"
+      },
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:nieuwpoort",
+    "name": "Nieuwpoort",
+    "names": [
+      {
+        "name": "Nieuport",
+        "language": "fr",
+        "kind": "period",
+        "period": "the French and British name in 1914"
+      }
+    ],
+    "kind": "town",
+    "lngLat": [2.752, 51.13],
+    "country": "Belgium",
+    "notes": "Where the Yser meets the sea, and where the locks of the Ganzepoot let the tide into the polders on the nights of 21–30 October 1914.",
+    "sources": [
+      {
+        "source": "source:van-pul-2006"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:zeebrugge",
+    "name": "Zeebrugge",
+    "kind": "town",
+    "lngLat": [3.208, 51.331],
+    "country": "Belgium",
+    "notes": "Channel port on the Flanders coast, in German hands from mid-October 1914 — one of the objectives that made the coast worth fighting for.",
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:pfetterhouse",
+    "name": "Pfetterhouse",
+    "kind": "village",
+    "lngLat": [7.147, 47.503],
+    "country": "Germany",
+    "notes": "Alsatian village at the Swiss frontier; the southern end of the continuous Western Front from late 1914 until 1918.",
+    "sources": [
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
     "id": "place:sarajevo",
     "name": "Sarajevo",
     "kind": "city",

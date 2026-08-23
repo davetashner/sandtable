@@ -2,7 +2,10 @@
   {
     "id": "1914:casualties-22-august",
     "title": "22 August 1914 — the bloodiest day in French history",
-    "timeRange": { "start": "1914-08-22T00:00:00Z", "end": "1914-08-23T00:00:00Z" },
+    "timeRange": {
+      "start": "1914-08-22T00:00:00Z",
+      "end": "1914-08-23T00:00:00Z"
+    },
     "event": "1914:event-battle-of-the-frontiers",
     "figures": [
       {
@@ -11,22 +14,40 @@
         "value": 27000,
         "confidence": "medium",
         "note": "French soldiers dead on the day, reconstructed from the army's own death records (*Mémoire des hommes*); rounded. Wounded and missing are not counted here.",
-        "sources": [{ "source": "source:steg-2013" }, { "source": "source:hastings-2013" }]
+        "sources": [
+          {
+            "source": "source:steg-2013"
+          },
+          {
+            "source": "source:hastings-2013"
+          }
+        ]
       }
     ],
     "summary": "In the Ardennes fog the French 3rd and 4th Armies marched in column into the German 4th and 5th, and in Lorraine the 1st and 2nd were still falling back from Morhange and Sarrebourg; at Rossignol the 3rd Colonial Division was all but destroyed in an afternoon. About 27,000 French soldiers died on this one day — more than on any other day in the country's history, more than the French dead of the whole Franco-Prussian war's opening battles, and more than the first day of the Somme cost the British.[^steg-2013] [^hastings-2013]",
     "historiography": "The day-count is Jean-Michel Steg's, from the individual death records; earlier writers had only monthly totals and spoke of 'the worst losses of the war' without a number.[^steg-2013] No comparable German figure for the day exists: German losses were reported by ten-day periods and by army, and the Ardennes armies' returns for 21–31 August are incomplete.[^herwig-2009]",
-    "links": { "people": ["person:ruffey-pierre", "person:langle-de-cary-fernand-de"] },
+    "links": {
+      "people": ["person:ruffey-pierre", "person:langle-de-cary-fernand-de"]
+    },
     "sources": [
-      { "source": "source:steg-2013" },
-      { "source": "source:hastings-2013" },
-      { "source": "source:herwig-2009" }
+      {
+        "source": "source:steg-2013"
+      },
+      {
+        "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
     ]
   },
   {
     "id": "1914:casualties-mons",
     "title": "Mons, 23 August 1914",
-    "timeRange": { "start": "1914-08-23T00:00:00Z", "end": "1914-08-24T00:00:00Z" },
+    "timeRange": {
+      "start": "1914-08-23T00:00:00Z",
+      "end": "1914-08-24T00:00:00Z"
+    },
     "battle": "1914:frontiers-north",
     "place": "place:mons",
     "figures": [
@@ -36,16 +57,30 @@
         "value": 1600,
         "confidence": "high",
         "note": "'Just over 1,600' of all ranks, the official history's figure for the day; most of them in II Corps along the canal.",
-        "sources": [{ "source": "source:edmonds-1922" }]
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          }
+        ]
       }
     ],
     "summary": "The BEF's first battle: II Corps held the Mons–Condé canal for a day against the German 1st Army and withdrew that night. The British loss was small by the standards of the week around it; the German, in the units that attacked the canal in close order, was probably heavier but was never separately returned.[^edmonds-1922] [^herwig-2009]",
-    "sources": [{ "source": "source:edmonds-1922" }, { "source": "source:herwig-2009" }]
+    "sources": [
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
   },
   {
     "id": "1914:casualties-le-cateau",
     "title": "Le Cateau, 26 August 1914",
-    "timeRange": { "start": "1914-08-26T00:00:00Z", "end": "1914-08-27T00:00:00Z" },
+    "timeRange": {
+      "start": "1914-08-26T00:00:00Z",
+      "end": "1914-08-27T00:00:00Z"
+    },
     "battle": "1914:frontiers-north",
     "place": "place:le-cateau",
     "figures": [
@@ -55,17 +90,30 @@
         "value": 7812,
         "confidence": "high",
         "note": "Killed, wounded and missing of all ranks, with 38 guns lost — the official history's figure for Smith-Dorrien's stand.",
-        "sources": [{ "source": "source:edmonds-1922" }]
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          }
+        ]
       }
     ],
     "summary": "Smith-Dorrien's II Corps turned and fought at Le Cateau rather than be caught on the march; the corps got away that evening, but the day cost it more than Mons and the Retreat together had so far.[^edmonds-1922]",
-    "links": { "people": ["person:smith-dorrien-horace"] },
-    "sources": [{ "source": "source:edmonds-1922" }]
+    "links": {
+      "people": ["person:smith-dorrien-horace"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1922"
+      }
+    ]
   },
   {
     "id": "1914:casualties-august-france",
     "title": "The French Army, August 1914 — the Battle of the Frontiers",
-    "timeRange": { "start": "1914-08-02T00:00:00Z", "end": "1914-09-01T00:00:00Z" },
+    "timeRange": {
+      "start": "1914-08-02T00:00:00Z",
+      "end": "1914-09-01T00:00:00Z"
+    },
     "event": "1914:event-battle-of-the-frontiers",
     "figures": [
       {
@@ -74,14 +122,22 @@
         "value": 206515,
         "confidence": "medium",
         "note": "Killed, wounded and missing for the month, from the French Army's own returns as given by Herwig; the returns were compiled in the retreat and understate the dead, many of whom were first carried as missing. Includes the 22 August dead.",
-        "sources": [{ "source": "source:herwig-2009" }]
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
       }
     ],
     "summary": "Plan XVII cost France more men in three weeks than any later month of the war would: the Lorraine offensive, the Ardennes, the Sambre and the Meuse, and the first week of the Retreat. The army that fought the Marne was the army that had survived August.[^herwig-2009] [^strachan-2001]",
     "historiography": "The monthly return is the one hard number; estimates that count the missing later confirmed dead run higher — to something over 260,000 for the Frontiers and the opening of the Retreat, of whom some 75,000 killed — but no two authors agree on the period or the categories, so the higher figures are given here as the upper bound of the debate rather than as a fact.[^herwig-2009] [^wikipedia-en]",
     "sources": [
-      { "source": "source:herwig-2009" },
-      { "source": "source:strachan-2001" },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
       {
         "source": "source:wikipedia-en",
         "note": "Battle of the Frontiers — casualty summary; tertiary, for the range of figures in circulation"
@@ -91,7 +147,10 @@
   {
     "id": "1914:casualties-marne",
     "title": "The Marne, 5–12 September 1914",
-    "timeRange": { "start": "1914-09-05T00:00:00Z", "end": "1914-09-12T00:00:00Z" },
+    "timeRange": {
+      "start": "1914-09-05T00:00:00Z",
+      "end": "1914-09-12T00:00:00Z"
+    },
     "battle": "1914:marne",
     "event": "1914:event-battle-of-the-marne",
     "figures": [
@@ -102,7 +161,14 @@
         "high": 250000,
         "confidence": "contested",
         "note": "Killed, wounded and missing over the week of the battle; the round figure of a quarter of a million, with some 80,000 dead, is the one most often repeated and rests on estimates, not returns.",
-        "sources": [{ "source": "source:herwig-2009" }, { "source": "source:wikipedia-en" }]
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:wikipedia-en"
+          }
+        ]
       },
       {
         "side": "de",
@@ -111,7 +177,14 @@
         "high": 250000,
         "confidence": "contested",
         "note": "German returns for the period are by ten-day periods and incomplete for the armies of the right wing; the usual estimate is of the same order as the French.",
-        "sources": [{ "source": "source:herwig-2009" }, { "source": "source:wikipedia-en" }]
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:wikipedia-en"
+          }
+        ]
       },
       {
         "side": "gb",
@@ -120,17 +193,158 @@
         "high": 13000,
         "confidence": "contested",
         "note": "The official history's count for 6–10 September is 1,701; wider reckonings that take the BEF's losses to the Aisne run to about 13,000.",
-        "sources": [{ "source": "source:edmonds-1922" }, { "source": "source:wikipedia-en" }]
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          },
+          {
+            "source": "source:wikipedia-en"
+          }
+        ]
       }
     ],
     "summary": "A week of meeting engagements on a front of more than two hundred kilometres, fought by men who had marched or retreated for three weeks first. Neither side ever produced a reliable count; the figures here are the range of the estimates.[^herwig-2009]",
     "historiography": "Herwig's judgement is that the exact losses of the Marne will never be known: French and German returns were compiled by different periods and categories, and the German ones are missing for the formations that mattered most. The round numbers in general histories descend from a handful of early estimates.[^herwig-2009]",
     "sources": [
-      { "source": "source:herwig-2009" },
-      { "source": "source:edmonds-1922" },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1922"
+      },
       {
         "source": "source:wikipedia-en",
         "note": "First Battle of the Marne — casualty summary; tertiary, for the range of figures in circulation"
+      }
+    ]
+  },
+  {
+    "id": "1914:casualties-first-ypres",
+    "title": "First Ypres, 19 October – 22 November 1914",
+    "timeRange": {
+      "start": "1914-10-19T00:00:00Z",
+      "end": "1914-11-23T00:00:00Z"
+    },
+    "event": "1914:event-first-ypres",
+    "place": "place:ypres",
+    "figures": [
+      {
+        "side": "gb",
+        "category": "casualties",
+        "value": 58155,
+        "confidence": "high",
+        "note": "Killed, wounded and missing in the BEF, 14 October – 30 November 1914, as returned in the British official history. The count runs a few days either side of the battle's official dates.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925"
+          }
+        ]
+      },
+      {
+        "side": "de",
+        "category": "casualties",
+        "low": 130000,
+        "high": 134315,
+        "confidence": "medium",
+        "note": "The official history's figure for the German armies at Ypres, 15 October – 24 November, is 134,315; the round 130,000 is the figure usually given in the reference literature. German ten-day casualty lists counted on a different basis from British returns, so the two totals are not strictly comparable.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925"
+          },
+          {
+            "source": "source:1914-1918-online-ypres"
+          }
+        ]
+      }
+    ],
+    "summary": "A month of attacks on a salient that was never more than a few kilometres deep. The British figure is the one the army itself returned; the French and Belgian losses in the same battle were reported separately and are not included here, so the totals below are not an Allied total.[^edmonds-1925] [^1914-1918-online-ypres]",
+    "historiography": "The two sides counted differently — the British by name in unit returns, the German in ten-day lists compiled by corps that treated lightly wounded men who stayed with their units inconsistently — so the German total is the softer of the two figures, and comparisons of 'losses' between the armies at Ypres carry that difference silently. Jones gives about 130,000 German and about 100,000 Entente casualties for the battle as a whole; Edmonds's 134,315 is the same order of magnitude from the German returns available to him.[^edmonds-1925] [^1914-1918-online-ypres]",
+    "links": {
+      "places": ["place:gheluvelt", "place:langemarck"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:1914-1918-online-ypres"
+      }
+    ]
+  },
+  {
+    "id": "1914:casualties-yser",
+    "title": "The Yser, 16 October – 1 November 1914",
+    "timeRange": {
+      "start": "1914-10-16T00:00:00Z",
+      "end": "1914-11-02T00:00:00Z"
+    },
+    "event": "1914:event-battle-of-the-yser",
+    "place": "place:dixmude",
+    "figures": [
+      {
+        "side": "be",
+        "category": "casualties",
+        "low": 18500,
+        "high": 20000,
+        "confidence": "low",
+        "note": "Belgian killed, wounded and missing on the Yser; the figures usually given are about 3,500 dead and about 15,000 wounded, with higher totals in some accounts. The Belgian army's returns for October 1914 were made by an army that had been retreating and reorganising for two months.",
+        "sources": [
+          {
+            "source": "source:van-pul-2006"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      }
+    ],
+    "summary": "The Belgian field army came out of the battle having lost something like a fifth of the strength it still had, and was taken out of the line to be rebuilt behind the flood.[^van-pul-2006] [^strachan-2001]",
+    "historiography": "Belgian casualty accounting for 1914 is the weakest of the four armies here: the army lost its depots, its records and much of its territory in the first ten weeks, and the October figures are reconstructions rather than returns. The range given is the span of the figures in the literature, not a measurement.",
+    "sources": [
+      {
+        "source": "source:van-pul-2006"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:casualties-bef-1914",
+    "title": "The old BEF, August–November 1914",
+    "timeRange": {
+      "start": "1914-08-05T00:00:00Z",
+      "end": "1914-11-25T00:00:00Z"
+    },
+    "figures": [
+      {
+        "side": "gb",
+        "category": "casualties",
+        "low": 86000,
+        "high": 90000,
+        "confidence": "medium",
+        "note": "Killed, wounded and missing in the BEF from the landing to the end of November 1914. The figures in circulation — about 86,000 to the end of November, about 90,000 including early December — differ by end-date and by whether the sick are counted; the Expeditionary Force that crossed in August was roughly 160,000 strong, and the great majority of these losses fell on the infantry of its first seven divisions.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925"
+          }
+        ]
+      }
+    ],
+    "summary": "By the end of November the pre-war regular army — the one that had trained together for years, and whose musketry made the difference at Mons, Le Cateau and Ypres — had effectively ceased to exist as a body of men. Britain fought the rest of the war with territorials, volunteers and, from 1916, conscripts.[^edmonds-1925] [^1914-1918-online-ypres] [^hastings-2013]",
+    "historiography": "The 'death of the old army' is a real fact and also a story the army told about itself. The loss rates in the original infantry battalions were extraordinary — some lost the equivalent of their whole strength — but the BEF's cadre survived in the men who were wounded and returned, and in those who became the instructors and officers of the New Armies. The figure to hold on to is not that the old army died but that its infantry was spent in fifteen weeks.[^edmonds-1925] [^hastings-2013]",
+    "links": {
+      "events": ["1914:event-first-ypres"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:1914-1918-online-ypres"
+      },
+      {
+        "source": "source:hastings-2013"
       }
     ]
   }

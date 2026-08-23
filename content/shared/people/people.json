@@ -932,6 +932,132 @@
     ]
   },
   {
+    "id": "person:maud-huy-louis-de",
+    "name": "Louis de Maud'huy",
+    "sortName": "Maud'huy, Louis de",
+    "nationality": "FR",
+    "roles": [
+      {
+        "title": "Commanding, XVIII Corps",
+        "from": "1914-08",
+        "to": "1914-09"
+      },
+      {
+        "title": "Commanding, French Tenth Army (initially the Détachement d'armée de Maud'huy)",
+        "from": "1914-10",
+        "to": "1915-04"
+      }
+    ],
+    "summary": "French corps commander given the improvised army that Joffre pushed north to Arras at the beginning of October 1914 — the third of the successive attempts to find and turn the German northern flank. He held Arras when the attempt failed, and the town stayed in French hands for the rest of the war.",
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "career dates"
+      }
+    ]
+  },
+  {
+    "id": "person:urbal-victor-d",
+    "name": "Victor d'Urbal",
+    "sortName": "Urbal, Victor d'",
+    "nationality": "FR",
+    "roles": [
+      {
+        "title": "Commanding, the French detachment in Belgium (Détachement d'armée de Belgique), which became the Eighth Army",
+        "from": "1914-10",
+        "to": "1915-04"
+      }
+    ],
+    "summary": "French cavalry general who commanded the French forces sent into Flanders in October 1914 — the divisions and territorials that fought beside the Belgians on the Yser and the British at Ypres. His command was regularised as the Eighth Army in November.",
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "career dates"
+      }
+    ]
+  },
+  {
+    "id": "person:ronarch-pierre",
+    "name": "Pierre Ronarc'h",
+    "sortName": "Ronarc'h, Pierre",
+    "nationality": "FR",
+    "roles": [
+      {
+        "title": "Commanding, Brigade of Fusiliers Marins",
+        "from": "1914-08",
+        "to": "1915-11"
+      }
+    ],
+    "summary": "French rear-admiral who took a brigade of naval reservists and Breton fishermen — the fusiliers marins — to Flanders in October 1914 and held Dixmude on the Yser for three weeks against far heavier forces, at the cost of most of the brigade.",
+    "sources": [
+      {
+        "source": "source:van-pul-2006"
+      },
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "career dates"
+      }
+    ]
+  },
+  {
+    "id": "person:cogge-karel",
+    "name": "Karel Cogge",
+    "sortName": "Cogge, Karel",
+    "nationality": "BE",
+    "roles": [
+      {
+        "title": "Water bailiff, Noordwatering of Veurne",
+        "from": "1890",
+        "to": "1920"
+      }
+    ],
+    "summary": "Belgian water bailiff of the Veurne polders, who knew which of the locks at Nieuwpoort would let the sea into the plain of the Yser and how far it would spread. In October 1914 he took that knowledge to the Belgian army; the inundation he helped open stopped the German advance at the last twenty kilometres of unoccupied Belgium.",
+    "sources": [
+      {
+        "source": "source:van-pul-2006"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:geeraert-hendrik",
+    "name": "Hendrik Geeraert",
+    "sortName": "Geeraert, Hendrik",
+    "nationality": "BE",
+    "roles": [
+      {
+        "title": "Bargeman, Nieuwpoort",
+        "from": "1880",
+        "to": "1925"
+      }
+    ],
+    "summary": "Nieuwpoort bargeman who could work the sluice gates of the Ganzepoot lock complex in the dark and under fire, and did so on the nights of the last week of October 1914. Belgium later put his face on its banknotes.",
+    "sources": [
+      {
+        "source": "source:van-pul-2006"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
     "id": "person:franz-ferdinand-of-austria",
     "name": "Franz Ferdinand",
     "sortName": "Franz Ferdinand, Archduke of Austria-Este",

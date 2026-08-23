@@ -2122,5 +2122,185 @@
         "source": "source:strachan-2001"
       }
     ]
+  },
+  {
+    "id": "1914:army-fr-10",
+    "name": "French Tenth Army",
+    "short": "X Armée",
+    "side": "fr",
+    "kind": "army",
+    "commander": "person:maud-huy-louis-de",
+    "concentration": {
+      "area": "Arras and the Scarpe, formed from corps railed north out of the Aisne and Lorraine",
+      "position": [2.777, 50.291],
+      "asOf": "1914-10-01",
+      "sources": [
+        {
+          "source": "source:edmonds-1925"
+        },
+        {
+          "source": "source:strachan-2001"
+        }
+      ]
+    },
+    "summary": "Improvised on 1 October 1914 as the Détachement d'armée de Maud'huy and regularised as the Tenth Army: the third French attempt to reach round the German northern flank, which instead found the German Sixth Army coming the other way and settled into the line before Arras.",
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:det-fr-belgique",
+    "name": "French Detachment in Belgium",
+    "short": "DAB",
+    "side": "fr",
+    "kind": "detachment",
+    "commander": "person:urbal-victor-d",
+    "concentration": {
+      "area": "Flanders, between the Belgians on the Yser and the British before Ypres",
+      "position": [2.9, 50.9],
+      "asOf": "1914-10-15",
+      "sources": [
+        {
+          "source": "source:edmonds-1925"
+        }
+      ]
+    },
+    "summary": "The French divisions, territorials and cavalry sent into Flanders in October 1914 under d'Urbal — including Ronarc'h's fusiliers marins at Dixmude. Regularised as the Eighth Army in November.",
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:van-pul-2006"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-xxii-res",
+    "name": "German XXII Reserve Corps",
+    "short": "XXII RK",
+    "side": "de",
+    "kind": "corps",
+    "parent": "1914:army-de-4",
+    "concentration": {
+      "area": "Raised in Germany in August–September 1914; detrained in Flanders in the second half of October",
+      "position": [3.22, 51.1],
+      "asOf": "1914-10-17",
+      "sources": [
+        {
+          "source": "source:edmonds-1925"
+        },
+        {
+          "source": "source:unruh-1986"
+        }
+      ]
+    },
+    "summary": "One of the four reserve corps raised after mobilization and thrown into Flanders in October 1914, half-trained, under the reconstituted Fourth Army.",
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:unruh-1986"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-xxiii-res",
+    "name": "German XXIII Reserve Corps",
+    "short": "XXIII RK",
+    "side": "de",
+    "kind": "corps",
+    "parent": "1914:army-de-4",
+    "concentration": {
+      "area": "Raised in Germany in August–September 1914; detrained in Flanders in the second half of October",
+      "position": [3.6, 51.02],
+      "asOf": "1914-10-17",
+      "sources": [
+        {
+          "source": "source:edmonds-1925"
+        },
+        {
+          "source": "source:unruh-1986"
+        }
+      ]
+    },
+    "summary": "New reserve corps of the Fourth Army, engaged against the Belgians and Ronarc'h's marines on the Yser.",
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:unruh-1986"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-xxvi-res",
+    "name": "German XXVI Reserve Corps",
+    "short": "XXVI RK",
+    "side": "de",
+    "kind": "corps",
+    "parent": "1914:army-de-4",
+    "concentration": {
+      "area": "Raised in Germany in August–September 1914; detrained in Flanders in the second half of October",
+      "position": [3.1, 51.03],
+      "asOf": "1914-10-18",
+      "sources": [
+        {
+          "source": "source:edmonds-1925"
+        },
+        {
+          "source": "source:unruh-1986"
+        }
+      ]
+    },
+    "summary": "New reserve corps of the Fourth Army; attacked towards Langemarck and the Ypres–Staden railway in late October 1914, at the cost that gave the fighting its German name.",
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:unruh-1986"
+      },
+      {
+        "source": "source:1914-1918-online-langemarck"
+      }
+    ]
+  },
+  {
+    "id": "1914:corps-de-xxvii-res",
+    "name": "German XXVII Reserve Corps",
+    "short": "XXVII RK",
+    "side": "de",
+    "kind": "corps",
+    "parent": "1914:army-de-4",
+    "concentration": {
+      "area": "Raised in Germany in August–September 1914; detrained in Flanders in the second half of October",
+      "position": [3.26, 50.83],
+      "asOf": "1914-10-18",
+      "sources": [
+        {
+          "source": "source:edmonds-1925"
+        },
+        {
+          "source": "source:unruh-1986"
+        }
+      ]
+    },
+    "summary": "New reserve corps of the Fourth Army, engaged east and south-east of Ypres on the Menin road.",
+    "sources": [
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:unruh-1986"
+      }
+    ]
   }
 ]
