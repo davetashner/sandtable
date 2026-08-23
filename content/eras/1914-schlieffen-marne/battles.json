@@ -5465,5 +5465,170 @@
         "source": "source:reichsarchiv-weltkrieg-1"
       }
     ]
+  },
+  {
+    "id": "1914:ardennes",
+    "title": "The Ardennes: the encounter battles",
+    "timeRange": {
+      "start": "1914-08-21T00:00:00Z",
+      "end": "1914-08-24T00:00:00Z"
+    },
+    "region": [4.95, 49.4, 5.95, 50.1],
+    "camera": {
+      "center": [5.42, 49.76],
+      "zoom": 9
+    },
+    "place": "place:neufchateau",
+    "summary": "Joffre's main offensive under Plan XVII: the French 3rd and 4th Armies marched north-east into the wooded Ardennes on 21 August believing the German centre was thin, and on the 22nd met the German 4th and 5th Armies marching south-west through the same forest. A chapter, not a zoom-in — the campaign tokens keep moving on their campaign routes and these are static markers on the ground where the encounter battles were fought.",
+    "outcome": "Both French armies were fought to a standstill in a single day and fell back to the Meuse on 23–24 August, opening the flank of Lanrezac's 5th Army at Charleroi and ending Plan XVII as an offensive. The heaviest single loss was the Colonial Corps at Rossignol — 11,648 men, its divisional commander and most of its officers — in an afternoon.[^greenhalgh-2014] Three-day totals for the two armies are unreliable (the returns were made in a retreat, and the missing were counted twice or not at all); the French army's own monthly return for August, which covers the Ardennes along with Lorraine and the Sambre, is carried as a single record in the human-cost ledger.[^herwig-2009] Ruffey was relieved of the 3rd Army on 30 August.",
+    "participants": ["1914:army-fr-3", "1914:army-fr-4", "1914:army-de-4", "1914:army-de-5"],
+    "events": [
+      {
+        "id": "1914:ardennes-event-advance",
+        "title": "The French armies enter the forest",
+        "at": "1914-08-21T06:00:00Z",
+        "kind": "movement",
+        "significance": "major",
+        "place": "place:neufchateau",
+        "summary": "Under Joffre's Instruction particulière no 13 the 3rd and 4th Armies advance north-east on a front of some eighty kilometres, with orders to attack whatever they meet. Cavalry reconnaissance in the wooded country tells them almost nothing, and aircraft are grounded by the weather.[^afgg-1-1]",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:doughty-2005"
+          }
+        ]
+      },
+      {
+        "id": "1914:ardennes-event-rossignol",
+        "title": "Rossignol: the 3rd Colonial Division destroyed",
+        "at": "1914-08-22T09:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:rossignol",
+        "summary": "The 3rd Colonial Division of the 4th Army's Colonial Corps marches into the German VI Corps north of Tintigny. Its commander, General Raffenel, is killed with his brigade commander Rondony; the Colonial Corps loses 11,648 men in the day.[^greenhalgh-2014]",
+        "sources": [
+          {
+            "source": "source:greenhalgh-2014"
+          },
+          {
+            "source": "source:zuber-2007"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:ardennes-event-bertrix",
+        "title": "Bertrix: the 4th Army's centre broken",
+        "at": "1914-08-22T10:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:bertrix",
+        "summary": "XVII Corps is caught in column in the woods south of Bertrix by the German 21st Division and driven back with the loss of much of its divisional artillery — guns that could not be brought into action on forest tracks.[^zuber-2007]",
+        "sources": [
+          {
+            "source": "source:zuber-2007"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:ardennes-event-maissin",
+        "title": "Maissin and Anloy",
+        "at": "1914-08-22T11:00:00Z",
+        "kind": "battle",
+        "significance": "minor",
+        "place": "place:maissin",
+        "summary": "On the 4th Army's left, XI and XII Corps take Maissin and Anloy at heavy cost and hold them into the evening — the one part of the line where the French end the day on the ground they attacked for, and they abandon it the next morning with the rest.[^afgg-1-1]",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:zuber-2007"
+          }
+        ]
+      },
+      {
+        "id": "1914:ardennes-event-ethe",
+        "title": "Ethe and Bleid",
+        "at": "1914-08-22T08:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:ethe",
+        "summary": "In fog on the 3rd Army's front, French and German columns collide at fifty metres in the village streets of Ethe and Bleid. The fighting lasts all day and is followed by German reprisals against the villagers.[^zuber-2007] [^horne-kramer-2001]",
+        "sources": [
+          {
+            "source": "source:zuber-2007"
+          },
+          {
+            "source": "source:horne-kramer-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:ardennes-event-virton",
+        "title": "Virton",
+        "at": "1914-08-22T12:00:00Z",
+        "kind": "battle",
+        "significance": "minor",
+        "place": "place:virton",
+        "summary": "V Corps is stopped in front of Virton by German artillery firing from the heights it had expected to occupy; the 3rd Army's attack towards Neufchâteau never develops.[^afgg-1-1]",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:zuber-2007"
+          }
+        ]
+      },
+      {
+        "id": "1914:ardennes-event-retreat",
+        "title": "Back to the Meuse",
+        "at": "1914-08-23T12:00:00Z",
+        "kind": "movement",
+        "significance": "major",
+        "place": "place:virton",
+        "summary": "Joffre orders the offensive resumed on the 23rd; neither army can. By nightfall both are falling back on the Meuse and the Semois, and on the 24th the retreat is general — uncovering the right of Lanrezac's 5th Army, already fighting at Charleroi.[^afgg-1-1] [^herwig-2009]",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      }
+    ],
+    "links": {
+      "casualties": ["1914:casualties-22-august", "1914:casualties-august-france"],
+      "people": [
+        "person:ruffey-pierre",
+        "person:langle-de-cary-fernand-de",
+        "person:albrecht-of-wurttemberg",
+        "person:wilhelm-german-crown-prince",
+        "person:raffenel-leon"
+      ]
+    },
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:doughty-2005"
+      },
+      {
+        "source": "source:zuber-2007"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
   }
 ]

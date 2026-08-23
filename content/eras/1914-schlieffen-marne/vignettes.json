@@ -210,5 +210,20 @@
         "source": "source:edmonds-1925"
       }
     ]
+  },
+  {
+    "id": "1914:vignette-ethe-fog",
+    "title": "Ethe: fifty metres of fog",
+    "at": "1914-08-22T07:30:00Z",
+    "lngLat": [5.585, 49.585],
+    "voice": "The 3rd Army at Ethe",
+    "kind": "reconstruction",
+    "text": "The fog on the morning of the 22nd is thick enough that the two columns hear each other before they see each other. There is no line and no flank: French and German infantry meet in the village street and in the gardens behind it, and the fighting goes house by house all day, with each side's artillery unable to fire for fear of hitting its own. What decides it, here and everywhere in the forest, is which side gets its guns off the road and its infantry on the ground first.[^zuber-2007] [^herwig-2009]",
+    "links": {
+      "battles": ["1914:ardennes"],
+      "places": ["place:ethe"],
+      "casualties": ["1914:casualties-22-august"]
+    },
+    "sources": [{ "source": "source:zuber-2007" }, { "source": "source:herwig-2009" }]
   }
 ]

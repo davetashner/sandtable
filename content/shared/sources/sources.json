@@ -393,5 +393,32 @@
     "title": "The World War I Document Archive",
     "url": "https://wwi.lib.byu.edu/",
     "notes": "Transcriptions of the published diplomatic collections. Used here for the working text of documents whose authoritative printing is cited alongside it; the transcriptions carry occasional OCR slips, corrected silently against the printed collection."
+  },
+  {
+    "id": "source:doughty-2005",
+    "kind": "book",
+    "author": "Doughty, Robert A.",
+    "title": "Pyrrhic Victory: French Strategy and Operations in the Great War",
+    "year": 2005,
+    "publisher": "Belknap Press of Harvard University Press, Cambridge MA",
+    "notes": "The standard operational history of the French army in the war, written from the AFGG and the GQG archives; the spine for Plan XVII, the Ardennes offensive and Joffre's handling of his army commanders."
+  },
+  {
+    "id": "source:greenhalgh-2014",
+    "kind": "book",
+    "author": "Greenhalgh, Elizabeth",
+    "title": "The French Army and the First World War",
+    "year": 2014,
+    "publisher": "Cambridge University Press",
+    "notes": "Armies of the Great War series; cited here for the Colonial Corps' losses at Rossignol on 22 August 1914 (p. 41) and for the state of French doctrine in August."
+  },
+  {
+    "id": "source:zuber-2007",
+    "kind": "book",
+    "author": "Zuber, Terence",
+    "title": "The Battle of the Frontiers: Ardennes 1914",
+    "year": 2007,
+    "publisher": "Tempus, Stroud",
+    "notes": "The only monograph on the Ardennes encounter battles, built from German regimental histories. Zuber's wider argument about the 'Schlieffen Plan' is contested (see source:zuber-2002 and source:mombauer-2001); his tactical reconstruction of 21–23 August is used here for the shape of the fighting, not for its conclusions."
   }
 ]

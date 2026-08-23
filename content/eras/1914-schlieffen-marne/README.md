@@ -14,3 +14,20 @@ seed pack — two branches (historical and Schlieffen's concept), the sides, the
 tails for the 1st–3rd (`confidence: low`, to be replaced by the daily
 positions of `sand-1l0.2`), seven major events, the First Marne as a zoom-in
 seed, and ten narrative beats adapted from the PoC (PoC parity: `sand-a55.15`). See `docs/content-model.md` for the file layout.
+
+## Chapters and zoom-ins
+
+Some engagements deserve narrative and a place on the ground but not an
+animated sub-timeline. Those are authored as **chapters**: a `Battle` entity
+carrying `participants`, `summary`, `outcome`, a region and camera, a handful
+of battle-level `events` as static markers, and beats with `focus` — but
+**no battle-level `formations` and no `routes`**. With no routes the engine
+leaves the campaign tokens on their campaign movement
+(`movementSourceFor` in `src/engine/focus.ts`), so a chapter reads as
+narrative plus markers rather than as a reconstruction that plays. Their
+beats say `(chapter)` in `dateLabel` where a zoom-in says `(zoom-in)`.
+
+Chapters: `1914:ardennes` (`sand-1l0.6`), `1914:grand-couronne`
+(`sand-1l0.9`). Zoom-ins, which do carry routes and a sub-timeline:
+`1914:liege`, `1914:lorraine`, `1914:frontiers-north`, `1914:guise`,
+`1914:belgium-antwerp`, `1914:marne`.

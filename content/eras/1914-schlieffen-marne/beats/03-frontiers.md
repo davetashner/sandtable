@@ -9,7 +9,7 @@ links:
   tech: ['1914:tech-firepower-1914']
   science: ['1914:science-freundlich-eclipse', '1914:science-moseley-enlists']
   events: ['1914:event-battle-of-the-frontiers']
-  battles: ['1914:lorraine']
+  battles: ['1914:lorraine', '1914:ardennes']
   people:
     [
       'person:joffre-joseph',

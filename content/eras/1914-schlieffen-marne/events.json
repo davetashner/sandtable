@@ -360,6 +360,34 @@
     ]
   },
   {
+    "id": "1914:event-ardennes",
+    "title": "The Ardennes: the French offensive stopped in a day",
+    "timeRange": {
+      "start": "1914-08-21T06:00:00Z",
+      "end": "1914-08-24T00:00:00Z"
+    },
+    "kind": "battle",
+    "significance": "major",
+    "lngLat": [5.42, 49.76],
+    "summary": "The main effort of Plan XVII. The French 3rd and 4th Armies advanced into the Ardennes against what Joffre believed was a weak German centre and met two German armies moving the other way; after one day of encounter battles at Rossignol, Bertrix, Ethe and Virton they fell back to the Meuse.[^afgg-1-1] [^doughty-2005]",
+    "links": {
+      "battles": ["1914:ardennes"],
+      "casualties": ["1914:casualties-22-august"],
+      "people": ["person:ruffey-pierre", "person:langle-de-cary-fernand-de"]
+    },
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:doughty-2005"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
     "id": "1914:event-race-to-the-sea",
     "title": "The race to the sea",
     "timeRange": {
@@ -714,6 +742,28 @@
       },
       {
         "source": "source:edmonds-1925"
+      }
+    ]
+  },
+  {
+    "id": "1914:event-ruffey-relieved",
+    "title": "Joffre relieves Ruffey",
+    "at": "1914-08-30T12:00:00Z",
+    "kind": "decision",
+    "significance": "minor",
+    "place": "place:verdun",
+    "summary": "Ruffey is removed from the 3rd Army and replaced by Sarrail — one of some fifty French general officers Joffre relieved in August and September. Ruffey argued to the end of his life that the two reserve divisions withheld from him for the Army of Lorraine had cost him the battle.[^doughty-2005] [^wikipedia-en]",
+    "links": {
+      "people": ["person:ruffey-pierre", "person:sarrail-maurice", "person:joffre-joseph"],
+      "battles": ["1914:ardennes"]
+    },
+    "sources": [
+      {
+        "source": "source:doughty-2005"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "date of Sarrail's appointment and Ruffey's post-war complaint; verify against Joffre's memoirs in the sourcing pass (sand-1l0.16)"
       }
     ]
   }
