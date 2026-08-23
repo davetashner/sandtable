@@ -48,7 +48,7 @@ import { TallyGauges } from './ui/TallyGauges.js';
 import { TallyCardView } from './ui/TallyCardView.js';
 import { ClockCardView } from './ui/ClockCardView.js';
 import { decisionCrossed } from './engine/decisions.js';
-import { portraitFor } from './packs/media-index.js';
+import { mediaById, portraitFor } from './packs/media-index.js';
 import { CausalView } from './ui/CausalView.js';
 import { DocumentCardView } from './ui/DocumentCardView.js';
 import { PersonCardView } from './ui/PersonCardView.js';
@@ -356,6 +356,7 @@ function DossierSurface() {
         focus={focus?.id}
         packTitle={focus ? focus.title : seed.pack.title}
         related={related}
+        resolveMedia={mediaById}
         cast={
           <CastStrip
             members={CAST_MEMBERS}

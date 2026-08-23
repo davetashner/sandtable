@@ -5,6 +5,7 @@ dateLabel: 3–9 September 1914
 from: 1914-09-02T00:00:00Z
 to: 1914-09-10T00:00:00Z
 branch: 1914:historical
+media: media:scene/1914-marne-german-infantry/german-infantry-marne-colorized
 links:
   tech: ['1914:tech-aerial-reconnaissance']
   documents:

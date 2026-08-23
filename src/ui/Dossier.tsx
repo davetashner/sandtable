@@ -17,6 +17,8 @@ import { sideToken } from '../engine/layers/colors.js';
 import { selectBeat, withFootnotes } from '../engine/beats.js';
 import type { Branch, NarrativeBeat, Side, Source } from '../packs/schema/index.js';
 import './card.css';
+import { MediaFigure } from './MediaFigure.js';
+import type { MediaIndexEntry } from '../packs/media-index.js';
 import './dossier.css';
 
 export interface DossierProps {
@@ -31,6 +33,8 @@ export interface DossierProps {
   card?: ReactNode;
   /** The cast strip (sand-9ts), rendered under the header in every mode. */
   cast?: ReactNode;
+  /** Resolves a beat's hero `media` id to an index entry (sand-y0u.10). */
+  resolveMedia?: ((id: string) => MediaIndexEntry | undefined) | undefined;
   /** Chips for the beat's links (tech cards, battles, people…). */
   related?: CardChipLike[];
 }
@@ -51,6 +55,7 @@ export function Dossier({
   packTitle,
   card,
   cast,
+  resolveMedia,
   related = [],
 }: DossierProps) {
   const { now, range } = useClock();
@@ -60,6 +65,7 @@ export function Dossier({
   );
   const markdown = useMemo(() => (beat ? withFootnotes(beat, sources) : ''), [beat, sources]);
   const hypothetical = branch.kind === 'counterfactual';
+  const hero = beat?.media && resolveMedia ? resolveMedia(beat.media) : undefined;
 
   // Fade on beat change.
   const [shown, setShown] = useState(beat?.id);
@@ -134,6 +140,7 @@ export function Dossier({
         <article className="dossier__beat" key={beat.id} aria-live="polite">
           <p className="dossier__date">{beat.dateLabel}</p>
           <h2 className="dossier__title">{beat.title}</h2>
+          {hero && <MediaFigure entry={hero} width={360} fit="contain" className="dossier__hero" />}
           {beat.pullQuote && (
             <blockquote className="dossier__pull">
               <p>{beat.pullQuote.text}</p>

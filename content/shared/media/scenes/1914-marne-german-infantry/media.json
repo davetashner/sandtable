@@ -1,0 +1,38 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (sand-y0u.2).",
+  "id": "media:scene/1914-marne-german-infantry/german-infantry-marne-colorized",
+  "kind": "scene",
+  "people": [],
+  "file": "german-infantry-marne-colorized.png",
+  "width": 1199,
+  "height": 1312,
+  "colorized": true,
+  "original": {
+    "description": "A line of German infantry lying prone in long grass with Mauser Gewehr 98 rifles, bayonets fixed, wearing field-grey M1910 tunics and Pickelhauben under cloth covers; packs with rolled greatcoats; two men wear the ribbon or cross of the Iron Cross on the breast; a wall and a pylon-like structure on the skyline. Captioned as the First Battle of the Marne, September 1914; Commons notes it was 'possibly staged for the camera' — medals were not normally worn in action.",
+    "photographer": "unknown (German Army photographer, per the source)",
+    "date": "September 1914 (as captioned; possibly a posed photograph of uncertain date)",
+    "archive": "greatwar.nl (German Army archives) via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:German_soldiers_Battle_of_Marne_WWI.jpg",
+    "source_page": "https://en.wikipedia.org/wiki/First_Battle_of_the_Marne",
+    "original_dimensions": "501 × 548",
+    "licence": "public domain — published before 1931 (US), anonymous work more than 70 years old (EU)"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: field-grey tunics with red piping, grey helmet covers, brown leather and packs, black-and-white Iron Cross ribbons, summer grass. Colour-check: the tunics read blue-grey rather than the greener feldgrau of 1914 — acceptable for a faded print, note for the image review (y0u.7)."
+  },
+  "content_policy": "ok — troops in position, no casualties shown",
+  "caption": "German infantry in the long grass, rifles levelled, Pickelhauben under their grey covers — captioned as the Marne, September 1914, and possibly posed for the camera: two of the men already wear the Iron Cross. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: German Army, September 1914 (as captioned), via greatwar.nl and Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+  "used_by": [
+    "1914:beat-marne",
+    "1914:beat-marne-0905"
+  ],
+  "focal_point": {
+    "x": 0.45,
+    "y": 0.55
+  },
+  "notes": "Provided by Dave 2026-08-22 (original: https://en.wikipedia.org/wiki/First_Battle_of_the_Marne#/media/File:German_soldiers_Battle_of_Marne_WWI.jpg). Caption the staging caveat wherever it is shown (y0u.7). Hero for the Marne campaign beat and the 5 September focus beat."
+}

@@ -143,4 +143,41 @@ describe('<Dossier>', () => {
     expect(screen.getByText(/No narrative beat/)).toBeInTheDocument();
     expect(screen.getByText(/History after the fork/)).toBeInTheDocument();
   });
+
+  it('renders the beat\u2019s hero media with its credit when a resolver is given', () => {
+    const entry = {
+      id: 'media:scene/x/photo',
+      dir: 'scenes/x',
+      original: { src: 'scenes/x/photo.png', width: 1000, height: 800, type: 'image/png' },
+      variants: [
+        { src: 'scenes/x/.derived/photo.w320.webp', width: 320, height: 256, type: 'image/webp' },
+      ],
+      width: 1000,
+      height: 800,
+      caption: 'Infantry in the grass',
+      credit: 'Original photograph: German Army; public domain.',
+      licence: 'public domain',
+      colorized: true,
+      present: true,
+    };
+    const heroBeat = { ...beats[0]!, media: 'media:scene/x/photo' };
+    render(
+      <ClockProvider
+        range={{ start: START, end: END }}
+        initialNow={Date.UTC(1914, 7, 5)}
+        syncUrl={false}
+      >
+        <Dossier
+          beats={[heroBeat]}
+          sources={sources}
+          sides={sides}
+          branch={historical}
+          resolveMedia={(id) => (id === entry.id ? entry : undefined)}
+        />
+      </ClockProvider>,
+    );
+    expect(screen.getByRole('img', { name: 'Infantry in the grass' })).toBeInTheDocument();
+    expect(screen.getByText(/Original photograph: German Army/)).toBeInTheDocument();
+    expect(screen.getByText('Colorized (AI-assisted)')).toBeInTheDocument();
+  });
 });

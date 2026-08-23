@@ -1,0 +1,37 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (sand-y0u.2).",
+  "id": "media:scene/1914-french-infantry-manoeuvres/french-infantry-charge-1913-colorized",
+  "kind": "scene",
+  "people": [],
+  "file": "french-infantry-charge-1913-colorized.png",
+  "width": 1660,
+  "height": 948,
+  "colorized": true,
+  "original": {
+    "description": "A line of French infantry running forward with rifles and fixed bayonets across open grass — képis, dark-blue capotes buttoned back, the pantalon rouge hidden by the coats — photographed by the Agence Rol at the Grandes manœuvres of 1913. An exercise, not a battle: the photograph is widely reproduced and miscaptioned as the Marne or the Frontiers of 1914.",
+    "photographer": "Agence Rol (Paris press agency, 1904–1937)",
+    "date": "1913 (Grandes manœuvres)",
+    "archive": "Bibliothèque nationale de France, Gallica (btv1b6931787b) via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Infanterie-fran%C3%A7aise-rol.jpg",
+    "source_page": "https://en.wikipedia.org/wiki/First_Battle_of_the_Marne",
+    "original_dimensions": "2552 × 1456",
+    "licence": "public domain (agency photograph, France, pre-1931; BnF Gallica)"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'; documented colours: dark-blue capotes and képis (the red képi band and red trousers of 1914 are largely hidden), brown leather, summer grass. Colour-check: plausible for 1913 field dress."
+  },
+  "content_policy": "ok — manoeuvres, no casualties",
+  "caption": "French infantry charging with the bayonet at the Grandes manœuvres of 1913 — the army of Plan XVII a year before it attacked into Lorraine and the Ardennes in the same coats and képis. A peacetime exercise, often miscaptioned as the Marne. Colorized (AI-assisted) from an Agence Rol photograph.",
+  "credit": "Original photograph: Agence Rol, 1913; Bibliothèque nationale de France, Gallica (btv1b6931787b), via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+  "used_by": [
+    "1914:beat-frontiers"
+  ],
+  "focal_point": {
+    "x": 0.6,
+    "y": 0.55
+  },
+  "notes": "Provided by Dave 2026-08-22 (original linked from the Marne Wikipedia article). Not a 1914 battle photograph: Commons and Gallica date it to the 1913 manoeuvres — caption the exercise wherever it is shown (y0u.7). Hero for the Battle of the Frontiers beat (the offensive à outrance in its pre-war dress)."
+}

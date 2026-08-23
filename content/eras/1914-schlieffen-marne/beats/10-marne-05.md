@@ -6,6 +6,7 @@ from: 1914-09-05T00:00:00Z
 to: 1914-09-06T00:00:00Z
 branch: 1914:historical
 focus: 1914:marne
+media: media:scene/1914-marne-german-infantry/german-infantry-marne-colorized
 links:
   battles: ['1914:marne']
   people:
