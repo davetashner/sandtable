@@ -270,6 +270,61 @@ describe('App shell', () => {
     expect(window.location.search).not.toContain('tour=');
   });
 
+  describe('the opening sequence (sand-1l0.26)', () => {
+    // sessionStorage remembers the choice for the session, so each case starts clean.
+    const fresh = () => {
+      window.sessionStorage.clear();
+      window.history.replaceState(null, '', '/');
+    };
+
+    it('states the premise on a cold arrival, over an inert app', () => {
+      fresh();
+      render(<App />);
+      const dialog = screen.getByRole('dialog');
+      expect(dialog).toHaveAccessibleName(/Germany has forty days/);
+      expect(document.querySelector('.app')).toHaveAttribute('inert');
+    });
+
+    it('hands off into the guided tour', async () => {
+      fresh();
+      render(<App />);
+      fireEvent.click(screen.getByRole('button', { name: /Play the campaign/ }));
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      expect(window.location.search).toContain('tour=1914:tour-the-campaign');
+      expect(await screen.findByRole('region', { name: /Guided tour/ })).toBeInTheDocument();
+    });
+
+    it('gets out of the way when the viewer explores, and does not come back', () => {
+      fresh();
+      const { unmount } = render(<App />);
+      fireEvent.click(screen.getByRole('button', { name: /Explore the map/ }));
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      expect(document.querySelector('.app')).not.toHaveAttribute('inert');
+      unmount();
+      // a reload in the same session goes straight to the map
+      render(<App />);
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
+
+    it('opens the evidence behind the premise instead of asserting it', () => {
+      fresh();
+      render(<App />);
+      fireEvent.click(screen.getByRole('button', { name: /Where does .forty days. come from\?/ }));
+      expect(window.location.search).toContain('card=1914:clock-plan-timetable');
+      expect(
+        screen.getByRole('heading', { level: 2, name: /The plan's timetable/ }),
+      ).toBeInTheDocument();
+    });
+
+    it('never interrupts a deep link', () => {
+      fresh();
+      window.history.replaceState(null, '', '/?t=1914-09-06T00:00:00Z');
+      render(<App />);
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      expect(document.querySelector('.app')).not.toHaveAttribute('inert');
+    });
+  });
+
   it('leaves the tour without yanking the viewer back', async () => {
     window.history.replaceState(null, '', '/?tour=1914:tour-the-campaign&step=the-marne');
     render(<App />);

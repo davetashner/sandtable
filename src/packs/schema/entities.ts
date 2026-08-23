@@ -420,6 +420,38 @@ export const CastEntry = z
   })
   .strict();
 
+/**
+ * The opening sequence (sand-1l0.26): the first thirty seconds, before the map
+ * is interactive. A pack states its own premise — the engine knows nothing
+ * about 1914 — and hands off into the guided tour or free exploration.
+ *
+ * `headline` is read one line at a time, so each line is a beat of the reveal.
+ * A premise that asserts a number must be able to show its working: `claim`
+ * points at the card the number rests on (typically a clock), and `sources`
+ * carries the citations the lede footnotes.
+ */
+export const Opening = z
+  .object({
+    eyebrow: z.string().min(1).optional().describe('Mono eyebrow above the premise'),
+    headline: z
+      .array(z.string().min(1))
+      .min(1)
+      .max(4)
+      .describe('The premise, one line per beat of the reveal'),
+    lede: Markdown.describe('One or two sentences under the headline'),
+    camera: Camera.optional().describe('Where the map settles while the premise is read'),
+    claim: z
+      .object({
+        label: z.string().min(1).describe('"Where does “forty days” come from?"'),
+        card: Id.describe('Card that shows the working — typically a clock'),
+      })
+      .strict()
+      .optional()
+      .describe('One click from the premise to the evidence behind it'),
+    sources: Sources.optional(),
+  })
+  .strict();
+
 export const Pack = z
   .object({
     id: Id.describe('<era>:pack, e.g. 1914:schlieffen-marne'),
@@ -439,6 +471,7 @@ export const Pack = z
       .enum(['seed', 'draft', 'review', 'published'])
       .describe('seed: scaffolding; draft: being authored; review: in fact-check; published'),
     sources: Sources.optional().describe('General bibliography for the pack'),
+    opening: Opening.optional().describe('The first thirty seconds (sand-1l0.26)'),
   })
   .strict();
 
@@ -871,6 +904,7 @@ export type Place = z.infer<typeof Place>;
 export type Media = z.infer<typeof Media>;
 export type Side = z.infer<typeof Side>;
 export type Branch = z.infer<typeof Branch>;
+export type Opening = z.infer<typeof Opening>;
 export type Pack = z.infer<typeof Pack>;
 export type Formation = z.infer<typeof Formation>;
 export type Waypoint = z.infer<typeof Waypoint>;

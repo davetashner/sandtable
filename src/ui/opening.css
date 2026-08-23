@@ -1,0 +1,201 @@
+/* Opening sequence (sand-1l0.26) — the first thirty seconds. Tokens only. */
+
+.opening {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: var(--space-5);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(3px);
+}
+
+.opening__panel {
+  position: relative;
+  width: min(58ch, 100%);
+  max-height: 100%;
+  overflow-y: auto;
+  padding: var(--space-6) var(--space-6) var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.opening__eyebrow {
+  margin: 0 0 var(--space-3);
+  color: var(--brass);
+}
+
+.opening__headline {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  line-height: var(--lh-tight);
+  color: var(--ink);
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.opening__line {
+  display: block;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.opening__line[data-shown] {
+  opacity: 1;
+  transform: none;
+}
+
+.opening__lede,
+.opening__claim,
+.opening__actions {
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+
+.opening__lede[data-shown],
+.opening__claim[data-shown],
+.opening__actions[data-shown] {
+  opacity: 1;
+}
+
+.opening__lede {
+  margin-top: var(--space-4);
+  color: var(--muted);
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+}
+
+.opening__lede p {
+  margin: 0;
+}
+
+.opening__claim {
+  margin: var(--space-3) 0 0;
+}
+
+.opening__claim-link {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--brass);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.opening__claim-link:hover {
+  color: var(--ink);
+}
+
+.opening__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}
+
+.opening__action {
+  appearance: none;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-2);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  line-height: 1.2;
+  text-align: left;
+  cursor: pointer;
+}
+
+.opening__action:hover {
+  border-color: var(--brass-dim);
+}
+
+.opening__action--primary {
+  background: var(--brass);
+  border-color: var(--brass);
+  color: var(--panel);
+}
+
+.opening__action--primary:hover {
+  border-color: var(--brass);
+  filter: brightness(1.06);
+}
+
+.opening__hint {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  opacity: 0.85;
+}
+
+.opening__skip {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 4px 10px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill, 999px);
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.opening__skip:hover {
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.opening__skip-key {
+  padding: 1px 5px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 9.5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .opening {
+    backdrop-filter: none;
+  }
+
+  .opening__line,
+  .opening__lede,
+  .opening__claim,
+  .opening__actions {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.opening__cite {
+  margin: var(--space-2) 0 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+}

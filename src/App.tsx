@@ -50,6 +50,7 @@ import {
   type TourStop,
 } from './engine/tour.js';
 import { TourLauncher, TourPanel } from './ui/TourPanel.js';
+import { OpeningSequence } from './ui/OpeningSequence.js';
 import { useMediaQuery, usePhone } from './engine/useMediaQuery.js';
 import { BottomSheet } from './ui/BottomSheet.js';
 import { BranchToggle } from './ui/BranchToggle.js';
@@ -75,7 +76,8 @@ import { MeanwhileFilter } from './ui/MeanwhileFilter.js';
 import { ScienceCardView, SCIENCE_FIELDS } from './ui/ScienceCardView.js';
 import { TechCardView, type EntityLabeller } from './ui/TechCardView.js';
 import { Timeline, type TimelineMarker, type TimelinePhase } from './ui/Timeline.js';
-import type { Links, ScienceField } from './packs/schema/index.js';
+import { parseViewState } from './engine/url-state.js';
+import type { Camera, Links, ScienceField } from './packs/schema/index.js';
 
 // MapLibre + deck.gl are the heaviest dependencies; load the whole map surface
 // on demand so the shell, timeline and dossier paint first.
@@ -516,15 +518,132 @@ function TourStart() {
   return <TourLauncher tour={tour} minutes={minutes} onStart={start} />;
 }
 
+/**
+ * The opening sequence (sand-1l0.26). It plays on a cold arrival only: a deep
+ * link is someone coming for a particular moment, and putting a cinematic in
+ * front of that would be rude. Skipping is remembered for the session, so a
+ * reload during a reading session does not replay it.
+ */
+const OPENING_KEY = 'sandtable:opening-seen';
+
+function openingSeen(): boolean {
+  try {
+    return window.sessionStorage.getItem(OPENING_KEY) === '1';
+  } catch {
+    return false; // private mode: show it, never crash
+  }
+}
+
+function rememberOpening() {
+  try {
+    window.sessionStorage.setItem(OPENING_KEY, '1');
+  } catch {
+    /* storage unavailable — the choice just does not survive a reload */
+  }
+}
+
+interface OpeningValue {
+  showing: boolean;
+  /** Where the map settles while the premise is read. */
+  camera: Camera | undefined;
+}
+
+const OpeningCtx = createContext<OpeningValue>({ showing: false, camera: undefined });
+function useOpening(): OpeningValue {
+  return useContext(OpeningCtx);
+}
+
+function OpeningProvider({ children }: { children: ReactNode }) {
+  const opening = seed.pack.opening;
+  const controls = useViewStateControls();
+  const tour = useTour();
+  const reduced = useMediaQuery('(prefers-reduced-motion: reduce)');
+  // Read the URL once, at mount: any slot means the viewer asked for something
+  // specific, so the premise stands aside.
+  const deepLinked = useRef<boolean | null>(null);
+  if (deepLinked.current === null) {
+    const v = parseViewState(typeof window === 'undefined' ? '' : window.location.search);
+    deepLinked.current = Boolean(
+      v.t !== undefined || v.card || v.focus || v.tour || v.pick || v.branch,
+    );
+  }
+  const [dismissed, setDismissed] = useState(() => openingSeen());
+  const showing = Boolean(opening) && !dismissed && !deepLinked.current;
+
+  const dismiss = useCallback(() => {
+    rememberOpening();
+    setDismissed(true);
+  }, []);
+
+  const value = useMemo<OpeningValue>(
+    () => ({ showing, camera: showing ? opening?.camera : undefined }),
+    [showing, opening],
+  );
+
+  const chainCard = seed.links[0]?.id;
+  return (
+    <OpeningCtx.Provider value={value}>
+      {children}
+      {showing && opening && (
+        <OpeningSequence
+          opening={opening}
+          sources={seed.sources}
+          reduced={reduced}
+          tourMinutes={tour.minutes}
+          onPlay={
+            seed.tours[0]
+              ? () => {
+                  dismiss();
+                  tour.start();
+                }
+              : undefined
+          }
+          onExplore={dismiss}
+          onChain={
+            chainCard && controls
+              ? () => {
+                  dismiss();
+                  controls.setCard(chainCard);
+                }
+              : undefined
+          }
+          onClaim={
+            opening.claim && controls
+              ? () => {
+                  dismiss();
+                  controls.setCard(opening.claim!.card);
+                }
+              : undefined
+          }
+        />
+      )}
+    </OpeningCtx.Provider>
+  );
+}
+
 function MapSection() {
   const branch = useBranch();
   const focus = useFocus();
   const controls = useViewStateControls();
   const { pos } = useTour();
+  const opening = useOpening();
   const reduced = useMediaQuery('(prefers-reduced-motion: reduce)');
   const hypothetical = branch.kind === 'counterfactual';
-  // A tour step may frame something closer than the region fit (sand-1l0.14).
+  // A tour step may frame something closer than the region fit (sand-1l0.14);
+  // before either, the opening settles the map on what the premise is about
+  // (sand-1l0.26). One-shot: the key never changes, so it flies once and then
+  // leaves the region fit alone.
   const cameraTarget = useMemo(() => {
+    if (opening.camera) {
+      return {
+        key: 'opening',
+        center: opening.camera.center,
+        zoom: opening.camera.zoom,
+        ...(opening.camera.bearing !== undefined ? { bearing: opening.camera.bearing } : {}),
+        ...(opening.camera.pitch !== undefined ? { pitch: opening.camera.pitch } : {}),
+        ...(reduced ? { duration: 0 } : {}),
+      };
+    }
     const c = pos?.step.camera;
     if (!c || !pos) return undefined;
     return {
@@ -535,7 +654,7 @@ function MapSection() {
       ...(c.pitch !== undefined ? { pitch: c.pitch } : {}),
       ...(reduced ? { duration: 0 } : {}),
     };
-  }, [pos, reduced]);
+  }, [pos, reduced, opening.camera]);
   // Inside a zoom-in with its own routes the map animates those (sand-1l0.10).
   const movement = useMemo(() => movementSourceFor(focus, MOVEMENT_SOURCE), [focus]);
   return (
@@ -910,56 +1029,64 @@ function TimelineSurface() {
   );
 }
 
+function AppShell() {
+  // While the premise is up, the app behind it is inert: nothing under the
+  // dialog takes focus or a click (sand-1l0.26).
+  const { showing } = useOpening();
+  return (
+    <div className="app" inert={showing || undefined}>
+      <header className="app__header">
+        <div className="app__header-text">
+          <p className="eyebrow">Operational study · Western Front, 1914</p>
+          <h1 className="brand">
+            <img
+              className="brand__wordmark brand__wordmark--light"
+              src="/brand/wordmark-light.png"
+              alt="Sandtable"
+              width="872"
+              height="122"
+              decoding="async"
+            />
+            <img
+              className="brand__wordmark brand__wordmark--dark"
+              src="/brand/wordmark-dark.png"
+              alt=""
+              aria-hidden="true"
+              width="859"
+              height="122"
+              decoding="async"
+            />
+          </h1>
+          <p className="lede">{seed.pack.subtitle ?? seed.pack.title}</p>
+        </div>
+        <div className="app__header-controls">
+          <TourStart />
+          <BranchToggle branches={seed.pack.branches} defaultBranch={seed.pack.defaultBranch} />
+        </div>
+      </header>
+
+      <FocusController />
+      <FocusBar />
+
+      <main className="app__main">
+        <MapSection />
+        <DossierSurface />
+        <DecisionPauser />
+      </main>
+
+      <TimelineSurface />
+    </div>
+  );
+}
+
 export function App() {
   return (
     <ClockProvider range={RANGE}>
       <TourProvider>
         <MeanwhileProvider>
-          <div className="app">
-            <header className="app__header">
-              <div className="app__header-text">
-                <p className="eyebrow">Operational study · Western Front, 1914</p>
-                <h1 className="brand">
-                  <img
-                    className="brand__wordmark brand__wordmark--light"
-                    src="/brand/wordmark-light.png"
-                    alt="Sandtable"
-                    width="872"
-                    height="122"
-                    decoding="async"
-                  />
-                  <img
-                    className="brand__wordmark brand__wordmark--dark"
-                    src="/brand/wordmark-dark.png"
-                    alt=""
-                    aria-hidden="true"
-                    width="859"
-                    height="122"
-                    decoding="async"
-                  />
-                </h1>
-                <p className="lede">{seed.pack.subtitle ?? seed.pack.title}</p>
-              </div>
-              <div className="app__header-controls">
-                <TourStart />
-                <BranchToggle
-                  branches={seed.pack.branches}
-                  defaultBranch={seed.pack.defaultBranch}
-                />
-              </div>
-            </header>
-
-            <FocusController />
-            <FocusBar />
-
-            <main className="app__main">
-              <MapSection />
-              <DossierSurface />
-              <DecisionPauser />
-            </main>
-
-            <TimelineSurface />
-          </div>
+          <OpeningProvider>
+            <AppShell />
+          </OpeningProvider>
         </MeanwhileProvider>
       </TourProvider>
     </ClockProvider>
