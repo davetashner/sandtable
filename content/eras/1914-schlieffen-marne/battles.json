@@ -2521,5 +2521,681 @@
         "note": "fort positions and surrender times"
       }
     ]
+  },
+  {
+    "id": "1914:lorraine",
+    "title": "Lorraine — Morhange–Sarrebourg",
+    "timeRange": {
+      "start": "1914-08-14T00:00:00Z",
+      "end": "1914-08-26T00:00:00Z"
+    },
+    "region": [5.95, 48.2, 7.45, 49.3],
+    "camera": {
+      "center": [6.65, 48.72],
+      "zoom": 8.6
+    },
+    "place": "place:morhange",
+    "summary": "Plan XVII's main blow: the French 1st and 2nd Armies march into annexed Lorraine on 14 August towards Sarrebourg and Morhange, and the German 6th and 7th Armies give ground before them — the trap the 1905 memorandum had imagined, the French drawn east while the right wing wheeled behind them. Then Rupprecht, with OHL's leave, stops yielding: on 20 August the Bavarians strike the whole French front at Morhange–Sarrebourg and throw it back to the Meurthe in a day. The follow-up at the Trouée de Charmes on 24–25 August is held, and the left wing settles into a front before Nancy that will not move for four years.",
+    "outcome": "The French offensive into Lorraine broken on 20 August; the German left wing's breakthrough at Charmes held on the 25th; the hinge at Metz secure — and two German armies that might have thickened the wheel committed to a battle the plan did not want.",
+    "participants": ["1914:army-fr-1", "1914:army-fr-2", "1914:army-de-6", "1914:army-de-7"],
+    "formations": [],
+    "routes": [
+      {
+        "id": "1914:lorraine-route-fr-xx",
+        "formation": "1914:corps-fr-xx",
+        "waypoints": [
+          [6.3, 48.72, "1914-08-14T06:00:00Z"],
+          [6.45, 48.8, "1914-08-16T12:00:00Z"],
+          [6.51, 48.82, "1914-08-18T12:00:00Z"],
+          [6.58, 48.88, "1914-08-19T18:00:00Z"],
+          [6.6, 48.89, "1914-08-20T12:00:00Z"],
+          [6.52, 48.82, "1914-08-20T18:00:00Z"],
+          [6.4, 48.75, "1914-08-21T12:00:00Z"],
+          [6.3, 48.72, "1914-08-22T12:00:00Z"],
+          [6.3, 48.73, "1914-08-25T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Foch's corps: Château-Salins, the Morhange heights on the 20th, then the Grand Couronné."
+      },
+      {
+        "id": "1914:lorraine-route-fr-xv",
+        "formation": "1914:corps-fr-xv",
+        "waypoints": [
+          [6.4, 48.65, "1914-08-14T06:00:00Z"],
+          [6.6, 48.78, "1914-08-17T12:00:00Z"],
+          [6.7, 48.8, "1914-08-19T18:00:00Z"],
+          [6.7, 48.86, "1914-08-20T06:00:00Z"],
+          [6.68, 48.8, "1914-08-20T12:00:00Z"],
+          [6.58, 48.7, "1914-08-20T18:00:00Z"],
+          [6.5, 48.66, "1914-08-21T12:00:00Z"],
+          [6.42, 48.62, "1914-08-22T12:00:00Z"],
+          [6.4, 48.62, "1914-08-25T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Dieuze on the 19th; broke under the Bavarian counter-attack on the morning of the 20th and fell back on Lunéville."
+      },
+      {
+        "id": "1914:lorraine-route-fr-xvi",
+        "formation": "1914:corps-fr-xvi",
+        "waypoints": [
+          [6.5, 48.6, "1914-08-14T06:00:00Z"],
+          [6.65, 48.7, "1914-08-17T12:00:00Z"],
+          [6.75, 48.75, "1914-08-19T18:00:00Z"],
+          [6.75, 48.76, "1914-08-20T12:00:00Z"],
+          [6.65, 48.66, "1914-08-20T18:00:00Z"],
+          [6.55, 48.6, "1914-08-21T12:00:00Z"],
+          [6.5, 48.58, "1914-08-22T12:00:00Z"],
+          [6.42, 48.55, "1914-08-23T12:00:00Z"],
+          [6.4, 48.55, "1914-08-25T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:lorraine-route-fr-ix",
+        "formation": "1914:corps-fr-ix",
+        "waypoints": [
+          [6.25, 48.78, "1914-08-14T06:00:00Z"],
+          [6.4, 48.85, "1914-08-17T12:00:00Z"],
+          [6.4, 48.88, "1914-08-19T18:00:00Z"],
+          [6.45, 48.9, "1914-08-20T12:00:00Z"],
+          [6.35, 48.82, "1914-08-20T18:00:00Z"],
+          [6.3, 48.78, "1914-08-21T12:00:00Z"],
+          [6.3, 48.8, "1914-08-22T12:00:00Z"],
+          [6.3, 48.8, "1914-08-25T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "The army's left at Delme; back to the northern Grand Couronné."
+      },
+      {
+        "id": "1914:lorraine-route-fr-xviii",
+        "formation": "1914:corps-fr-xviii",
+        "waypoints": [
+          [6.2, 48.7, "1914-08-14T06:00:00Z"],
+          [6.35, 48.75, "1914-08-17T12:00:00Z"],
+          [6.45, 48.85, "1914-08-19T18:00:00Z"],
+          [6.45, 48.86, "1914-08-20T12:00:00Z"],
+          [6.35, 48.78, "1914-08-20T18:00:00Z"],
+          [6.28, 48.72, "1914-08-21T12:00:00Z"],
+          [6.2, 48.7, "1914-08-22T12:00:00Z"],
+          [6.18, 48.69, "1914-08-23T12:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Entrained at Nancy for the 5th Army on 22–23 August."
+      },
+      {
+        "id": "1914:lorraine-route-fr-rd-2",
+        "formation": "1914:det-fr-rd-2",
+        "waypoints": [
+          [6.2, 48.7, "1914-08-14T06:00:00Z"],
+          [6.22, 48.72, "1914-08-20T12:00:00Z"],
+          [6.25, 48.74, "1914-08-25T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          }
+        ]
+      },
+      {
+        "id": "1914:lorraine-route-fr-viii",
+        "formation": "1914:corps-fr-viii",
+        "waypoints": [
+          [6.8, 48.55, "1914-08-14T06:00:00Z"],
+          [6.85, 48.59, "1914-08-16T12:00:00Z"],
+          [6.98, 48.68, "1914-08-18T12:00:00Z"],
+          [7.05, 48.73, "1914-08-19T18:00:00Z"],
+          [7.05, 48.73, "1914-08-20T12:00:00Z"],
+          [6.95, 48.66, "1914-08-20T18:00:00Z"],
+          [6.85, 48.58, "1914-08-21T12:00:00Z"],
+          [6.74, 48.45, "1914-08-22T12:00:00Z"],
+          [6.45, 48.45, "1914-08-24T12:00:00Z"],
+          [6.5, 48.45, "1914-08-25T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Sarrebourg taken on the 18th, lost on the 20th; back through Blâmont and Baccarat to the Trouée de Charmes."
+      },
+      {
+        "id": "1914:lorraine-route-fr-xiii",
+        "formation": "1914:corps-fr-xiii",
+        "waypoints": [
+          [6.75, 48.5, "1914-08-14T06:00:00Z"],
+          [6.95, 48.58, "1914-08-17T12:00:00Z"],
+          [7.03, 48.7, "1914-08-19T18:00:00Z"],
+          [7.0, 48.7, "1914-08-20T12:00:00Z"],
+          [6.92, 48.62, "1914-08-20T18:00:00Z"],
+          [6.85, 48.55, "1914-08-21T12:00:00Z"],
+          [6.78, 48.48, "1914-08-22T12:00:00Z"],
+          [6.51, 48.5, "1914-08-24T12:00:00Z"],
+          [6.5, 48.48, "1914-08-25T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:lorraine-route-fr-xxi",
+        "formation": "1914:corps-fr-xxi",
+        "waypoints": [
+          [6.85, 48.4, "1914-08-14T06:00:00Z"],
+          [7.1, 48.5, "1914-08-17T12:00:00Z"],
+          [7.12, 48.55, "1914-08-19T18:00:00Z"],
+          [7.1, 48.55, "1914-08-20T12:00:00Z"],
+          [7.0, 48.48, "1914-08-21T12:00:00Z"],
+          [6.9, 48.42, "1914-08-22T12:00:00Z"],
+          [6.8, 48.4, "1914-08-24T12:00:00Z"],
+          [6.8, 48.4, "1914-08-25T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "The Donon and the Vosges foothills."
+      },
+      {
+        "id": "1914:lorraine-route-fr-xiv",
+        "formation": "1914:corps-fr-xiv",
+        "waypoints": [
+          [6.95, 48.28, "1914-08-14T06:00:00Z"],
+          [7.05, 48.35, "1914-08-17T12:00:00Z"],
+          [7.15, 48.48, "1914-08-19T18:00:00Z"],
+          [7.15, 48.48, "1914-08-20T12:00:00Z"],
+          [7.05, 48.42, "1914-08-21T12:00:00Z"],
+          [6.98, 48.36, "1914-08-22T12:00:00Z"],
+          [6.95, 48.32, "1914-08-25T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:lorraine-route-de-i-bav",
+        "formation": "1914:corps-de-i-bav",
+        "waypoints": [
+          [6.65, 48.95, "1914-08-14T06:00:00Z"],
+          [6.66, 48.93, "1914-08-19T18:00:00Z"],
+          [6.62, 48.9, "1914-08-20T06:00:00Z"],
+          [6.55, 48.84, "1914-08-20T18:00:00Z"],
+          [6.51, 48.8, "1914-08-21T12:00:00Z"],
+          [6.5, 48.7, "1914-08-22T12:00:00Z"],
+          [6.5, 48.6, "1914-08-23T12:00:00Z"],
+          [6.4, 48.48, "1914-08-24T12:00:00Z"],
+          [6.42, 48.5, "1914-08-25T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Morhange on the 20th; Château-Salins, Lunéville, the Trouée de Charmes on the 24th."
+      },
+      {
+        "id": "1914:lorraine-route-de-ii-bav",
+        "formation": "1914:corps-de-ii-bav",
+        "waypoints": [
+          [6.78, 48.95, "1914-08-14T06:00:00Z"],
+          [6.78, 48.9, "1914-08-19T18:00:00Z"],
+          [6.75, 48.88, "1914-08-20T06:00:00Z"],
+          [6.72, 48.8, "1914-08-20T18:00:00Z"],
+          [6.72, 48.78, "1914-08-21T12:00:00Z"],
+          [6.65, 48.68, "1914-08-22T12:00:00Z"],
+          [6.6, 48.62, "1914-08-23T12:00:00Z"],
+          [6.52, 48.52, "1914-08-24T12:00:00Z"],
+          [6.55, 48.52, "1914-08-25T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:lorraine-route-de-iii-bav",
+        "formation": "1914:corps-de-iii-bav",
+        "waypoints": [
+          [7.05, 48.85, "1914-08-14T06:00:00Z"],
+          [7.05, 48.8, "1914-08-19T18:00:00Z"],
+          [7.05, 48.75, "1914-08-20T06:00:00Z"],
+          [7.0, 48.7, "1914-08-20T18:00:00Z"],
+          [6.92, 48.64, "1914-08-21T12:00:00Z"],
+          [6.85, 48.6, "1914-08-22T12:00:00Z"],
+          [6.78, 48.55, "1914-08-23T12:00:00Z"],
+          [6.65, 48.5, "1914-08-24T12:00:00Z"],
+          [6.65, 48.52, "1914-08-25T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Sarrebourg on the 20th; Blâmont; the Mortagne."
+      },
+      {
+        "id": "1914:lorraine-route-de-xxi",
+        "formation": "1914:corps-de-xxi",
+        "waypoints": [
+          [7.2, 48.8, "1914-08-14T06:00:00Z"],
+          [7.15, 48.75, "1914-08-19T18:00:00Z"],
+          [7.12, 48.72, "1914-08-20T12:00:00Z"],
+          [7.05, 48.62, "1914-08-21T12:00:00Z"],
+          [6.95, 48.56, "1914-08-22T12:00:00Z"],
+          [6.85, 48.5, "1914-08-24T12:00:00Z"],
+          [6.85, 48.5, "1914-08-25T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:lorraine-route-de-i-bav-res",
+        "formation": "1914:corps-de-i-bav-res",
+        "waypoints": [
+          [6.2, 49.1, "1914-08-14T06:00:00Z"],
+          [6.4, 49.0, "1914-08-19T18:00:00Z"],
+          [6.42, 48.95, "1914-08-20T12:00:00Z"],
+          [6.4, 48.9, "1914-08-21T12:00:00Z"],
+          [6.38, 48.85, "1914-08-23T12:00:00Z"],
+          [6.38, 48.85, "1914-08-25T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "The army's right on the Metz hinge."
+      },
+      {
+        "id": "1914:lorraine-route-hkk-3",
+        "formation": "1914:hkk-3",
+        "waypoints": [
+          [6.72, 48.85, "1914-08-14T06:00:00Z"],
+          [6.8, 48.92, "1914-08-19T18:00:00Z"],
+          [6.6, 48.7, "1914-08-21T12:00:00Z"],
+          [6.55, 48.55, "1914-08-23T12:00:00Z"],
+          [6.55, 48.5, "1914-08-25T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:lorraine-route-de-xv",
+        "formation": "1914:corps-de-xv",
+        "waypoints": [
+          [7.3, 48.7, "1914-08-14T06:00:00Z"],
+          [7.2, 48.65, "1914-08-19T18:00:00Z"],
+          [7.12, 48.66, "1914-08-20T12:00:00Z"],
+          [7.15, 48.55, "1914-08-21T12:00:00Z"],
+          [7.05, 48.5, "1914-08-22T12:00:00Z"],
+          [6.95, 48.45, "1914-08-24T12:00:00Z"],
+          [6.95, 48.45, "1914-08-25T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "The 7th Army's corps beside the 6th at Sarrebourg, then the Donon."
+      },
+      {
+        "id": "1914:lorraine-route-de-xiv",
+        "formation": "1914:corps-de-xiv",
+        "waypoints": [
+          [7.75, 48.57, "1914-08-14T06:00:00Z"],
+          [7.5, 48.55, "1914-08-18T12:00:00Z"],
+          [7.35, 48.5, "1914-08-20T12:00:00Z"],
+          [7.22, 48.48, "1914-08-22T12:00:00Z"],
+          [7.1, 48.42, "1914-08-24T12:00:00Z"],
+          [7.1, 48.42, "1914-08-25T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "1914:lorraine-event-offensive-opens",
+        "title": "Plan XVII opens: the 1st and 2nd Armies cross into Lorraine",
+        "at": "1914-08-14T06:00:00Z",
+        "kind": "movement",
+        "significance": "major",
+        "place": "place:luneville",
+        "summary": "Dubail's 1st Army and Castelnau's 2nd advance into the annexed provinces — the offensive Plan XVII was built around — towards Sarrebourg and Morhange. Rupprecht's 6th Army and Heeringen's 7th fall back before them, as OHL's deployment intended.",
+        "links": {
+          "formations": ["1914:army-fr-1", "1914:army-fr-2", "1914:army-de-6"],
+          "people": [
+            "person:dubail-auguste",
+            "person:castelnau-edouard-de",
+            "person:rupprecht-of-bavaria"
+          ]
+        },
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:lorraine-event-ohl-authorises",
+        "title": "OHL lets Rupprecht counter-attack",
+        "at": "1914-08-17T12:00:00Z",
+        "kind": "decision",
+        "significance": "major",
+        "place": "place:metz",
+        "summary": "Rupprecht and his chief of staff Krafft von Dellmensingen press to stop yielding and strike; Moltke's staff, after hesitation, lets them. The left wing is about to fight the battle Schlieffen's concept wanted it to avoid.",
+        "links": {
+          "people": ["person:rupprecht-of-bavaria", "person:moltke-helmuth-von-younger"],
+          "formations": ["1914:army-de-6", "1914:army-de-7"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:strachan-2001"
+          },
+          {
+            "source": "source:keegan-1998"
+          }
+        ]
+      },
+      {
+        "id": "1914:lorraine-event-sarrebourg-taken",
+        "title": "The 1st Army enters Sarrebourg",
+        "at": "1914-08-18T12:00:00Z",
+        "kind": "battle",
+        "significance": "minor",
+        "place": "place:sarrebourg",
+        "summary": "The VIII Corps takes Sarrebourg as the Germans give ground; the advance is six days old and has met little more than rearguards.",
+        "links": {
+          "formations": ["1914:corps-fr-viii"]
+        },
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:lorraine-event-morhange",
+        "title": "Morhange–Sarrebourg: Rupprecht strikes",
+        "at": "1914-08-20T06:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:morhange",
+        "summary": "At dawn the 6th Army's Bavarian corps and the 7th Army's XV and XXI Corps counter-attack the whole French front from Morhange to Sarrebourg, under artillery the French cannot answer. The XV Corps breaks; the XX Corps (Foch) holds on the Morhange heights while the army around it gives way; the 1st Army is thrown out of Sarrebourg.",
+        "links": {
+          "formations": [
+            "1914:corps-de-i-bav",
+            "1914:corps-de-ii-bav",
+            "1914:corps-de-iii-bav",
+            "1914:corps-fr-xv",
+            "1914:corps-fr-xx",
+            "1914:corps-fr-viii"
+          ],
+          "people": [
+            "person:rupprecht-of-bavaria",
+            "person:foch-ferdinand",
+            "person:castelnau-edouard-de"
+          ]
+        },
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:lorraine-event-retreat-ordered",
+        "title": "Castelnau orders the 2nd Army back to the Meurthe",
+        "at": "1914-08-20T18:00:00Z",
+        "kind": "order",
+        "significance": "major",
+        "place": "place:chateau-salins",
+        "summary": "By evening the 2nd Army is retreating on Nancy and the Meurthe; the 1st Army conforms on its right. Plan XVII's main offensive has lasted six days.",
+        "links": {
+          "formations": ["1914:army-fr-2", "1914:army-fr-1"],
+          "people": ["person:castelnau-edouard-de", "person:dubail-auguste"]
+        },
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:lorraine-event-luneville",
+        "title": "Lunéville falls to the Bavarians",
+        "at": "1914-08-22T12:00:00Z",
+        "kind": "battle",
+        "significance": "minor",
+        "place": "place:luneville",
+        "summary": "The 6th Army follows up across the Seille and the Meurthe; Lunéville is occupied on 22 August.",
+        "links": {
+          "formations": ["1914:corps-de-i-bav"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:lorraine-event-charmes",
+        "title": "The Trouée de Charmes: Rupprecht tries the gap between Toul and Épinal",
+        "at": "1914-08-24T18:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:charmes",
+        "summary": "Having won at Morhange, Rupprecht now asks to break through — the 6th and 7th Armies drive at the Charmes gap between the fortresses of Toul and Épinal, the door to the Moselle. Dubail and Castelnau, with Foch's XX Corps on the Grand Couronné, counter-attack into their flank on the 25th at Rozelieures.",
+        "links": {
+          "formations": [
+            "1914:corps-de-i-bav",
+            "1914:corps-de-ii-bav",
+            "1914:corps-fr-xx",
+            "1914:corps-fr-viii",
+            "1914:corps-fr-xiii"
+          ],
+          "people": [
+            "person:rupprecht-of-bavaria",
+            "person:dubail-auguste",
+            "person:castelnau-edouard-de",
+            "person:foch-ferdinand"
+          ]
+        },
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      }
+    ],
+    "links": {
+      "events": ["1914:event-battle-of-the-frontiers"],
+      "people": [
+        "person:rupprecht-of-bavaria",
+        "person:heeringen-josias-von",
+        "person:dubail-auguste",
+        "person:castelnau-edouard-de",
+        "person:foch-ferdinand",
+        "person:moltke-helmuth-von-younger"
+      ],
+      "places": [
+        "place:morhange",
+        "place:sarrebourg",
+        "place:luneville",
+        "place:chateau-salins",
+        "place:dieuze",
+        "place:charmes",
+        "place:nancy",
+        "place:metz"
+      ]
+    },
+    "sources": [
+      {
+        "source": "source:afgg-1-1",
+        "note": "the 1st and 2nd Armies' orders and positions"
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "Lorraine and the 'revolving door'"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:keegan-1998",
+        "note": "the critique of the left wing's counter-attack"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      },
+      {
+        "source": "source:tuchman-1962"
+      }
+    ]
   }
 ]
