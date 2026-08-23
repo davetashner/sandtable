@@ -2,7 +2,10 @@
   "$comment": "The wide framing of the Sarajevo motorcade photograph of 28 June 1914; the sibling directory carries the other framing of the same exposure.",
   "id": "media:scene/1914-sarajevo-motorcade-wide/sarajevo-motorcade-wide-colorized",
   "kind": "scene",
-  "people": ["person:franz-ferdinand-of-austria", "person:sophie-chotek"],
+  "people": [
+    "person:franz-ferdinand-of-austria",
+    "person:sophie-chotek"
+  ],
   "file": "sarajevo-motorcade-wide-colorized.png",
   "width": 1530,
   "height": 1028,
@@ -25,6 +28,12 @@
   "content_policy": "ok — the couple alive and in the car; the assassination itself is not shown and no such image belongs in the pack",
   "caption": "Franz Ferdinand and Sophie in the open car at Sarajevo on 28 June 1914, the hood folded down and the route lined — minutes from the corner where Princip was standing. Colorized (AI-assisted) from a public-domain photograph.",
   "credit": "Original photograph: photographer not identified, Sarajevo, 28 June 1914; Imperial War Museums Q 91848, via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
-  "focal_point": { "x": 0.62, "y": 0.42 },
+  "used_by": [
+    "1914:beat-july-crisis"
+  ],
+  "focal_point": {
+    "x": 0.62,
+    "y": 0.42
+  },
   "notes": "Supplied by Dave 2026-08-23. IDENTIFICATION: matched to the IWM record by content — the car, the occupants and the building all correspond to Q 91848, the departure from Sarajevo City Hall. The framing here is wide and its aspect ratio differs from the IWM copy (this file 1.488 against the IWM copy's 1.233), so it derives from a different and less tightly cropped reproduction of the same exposure, whose particular scan is not identified. The sibling manifest holds the other framing. For the image review (sand-y0u.7): confirm the moment — several similar photographs were taken that morning, on the arrival at the City Hall as well as the departure. Intended placement: the July Crisis chain (sand-1l0.23, shipped in PR #60) and the Sarajevo backstory (sand-1l0.32, in flight)."
 }

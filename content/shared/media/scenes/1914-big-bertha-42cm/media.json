@@ -25,6 +25,12 @@
   "content_policy": "ok — a gun and its crew, no casualties shown",
   "caption": "A German 42cm siege howitzer and its crew, the type that broke the Liège and Namur forts in August 1914 — a gun that had to be brought up in pieces and bedded before it could fire. Colorized (AI-assisted) from a public-domain photograph.",
   "credit": "Original photograph: photographer not identified, First World War; via Flickr (Alfredo Grados Rivero), marked public domain. Colorization: Sandtable, AI-assisted, 2026.",
-  "focal_point": { "x": 0.62, "y": 0.45 },
+  "used_by": [
+    "1914:tech-heavy-siege-artillery"
+  ],
+  "focal_point": {
+    "x": 0.62,
+    "y": 0.45
+  },
   "notes": "Supplied by Dave 2026-08-23 as 'one of the first Big Berthas being readied for firing'. IDENTIFICATION IS NOT SETTLED and the caption deliberately says '42cm siege howitzer' rather than naming the piece: 'Big Bertha' properly means Krupp's 42cm M-Gerät, the road-mobile version on wheels, but the name was applied loosely at the time and since — to the emplaced 42cm Gamma-Gerät, and by Allied press even to the Austrian Skoda 30.5cm and to the 1918 Paris Gun. This piece is on a wheeled carriage, which is consistent with the M-Gerät, but the source gives no unit, place or date. For the image review (sand-y0u.7): confirm the type, and if possible find an archive copy — this is the weakest provenance in the library after the Moltke replacement, since the Flickr page names no institution. Intended placement: the Liège zoom-in (sand-1l0.4 material) and the siege-artillery tech card."
 }
