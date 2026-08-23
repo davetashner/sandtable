@@ -153,7 +153,10 @@ people registry (add them first). The order of battle is a tree: give a corps
 route get a moving token, so corps-level entries are reference data until they
 get routes of their own. `concentration` is where the formation stood before
 it moved — the position is the start token and the first waypoint of its
-historical route should agree with it.
+historical route should agree with it; its token appears from
+`concentration.asOf`. A formation that was disbanded or merged away gets
+`"dissolved": "1914-08-26"` so its token disappears rather than parking at the
+end of its route.
 
 `routes.json` — one default (historical) route per formation:
 

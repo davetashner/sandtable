@@ -1212,7 +1212,8 @@
       {
         "source": "source:tuchman-1962"
       }
-    ]
+    ],
+    "dissolved": "1914-08-26"
   },
   {
     "id": "1914:army-fr-lorraine",
@@ -1245,7 +1246,8 @@
       {
         "source": "source:afgg-1-1"
       }
-    ]
+    ],
+    "dissolved": "1914-08-26"
   },
   {
     "id": "1914:corps-fr-vii",
