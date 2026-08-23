@@ -52,7 +52,19 @@ export interface LabelPlacement {
   /** Pixel offset from the dot. */
   offset: [number, number];
   visible: boolean;
+  /** Screen box the label occupies when visible (for later passes to avoid). */
+  box?: Box;
 }
+
+export type LabelSlot =
+  | 'right'
+  | 'left'
+  | 'below'
+  | 'above'
+  | 'upper-right'
+  | 'upper-left'
+  | 'lower-right'
+  | 'lower-left';
 
 export interface LabelCandidate {
   id: string;
@@ -64,9 +76,11 @@ export interface LabelCandidate {
   size: number;
   /** Gap between dot and text in px (fortress rings need more). */
   gap: number;
+  /** Radius of the dot itself in px (an obstacle for every other label); default 4. */
+  radius?: number;
 }
 
-interface Box {
+export interface Box {
   x0: number;
   y0: number;
   x1: number;
@@ -80,24 +94,68 @@ const overlaps = (a: Box, b: Box) =>
 /** Rough text extent: IBM Plex Sans at ~0.55em per glyph. */
 export const textWidth = (text: string, size: number) => Math.ceil(text.length * size * 0.55) + 2;
 
-const SLOTS: Omit<LabelPlacement, 'visible' | 'offset'>[] = [
-  { anchor: 'start', baseline: 'center' },
-  { anchor: 'end', baseline: 'center' },
-  { anchor: 'middle', baseline: 'top' },
-  { anchor: 'middle', baseline: 'bottom' },
+const SLOT_DEFS: Record<LabelSlot, Omit<LabelPlacement, 'visible' | 'offset' | 'box'>> = {
+  right: { anchor: 'start', baseline: 'center' },
+  left: { anchor: 'end', baseline: 'center' },
+  below: { anchor: 'middle', baseline: 'top' },
+  above: { anchor: 'middle', baseline: 'bottom' },
+  'upper-right': { anchor: 'start', baseline: 'bottom' },
+  'upper-left': { anchor: 'end', baseline: 'bottom' },
+  'lower-right': { anchor: 'start', baseline: 'top' },
+  'lower-left': { anchor: 'end', baseline: 'top' },
+};
+/** Places read best to the right of their dot; tokens carry their label above; diagonals last. */
+export const PLACE_SLOTS: LabelSlot[] = [
+  'right',
+  'left',
+  'below',
+  'above',
+  'upper-right',
+  'lower-right',
+  'upper-left',
+  'lower-left',
 ];
+export const TOKEN_SLOTS: LabelSlot[] = [
+  'above',
+  'right',
+  'left',
+  'below',
+  'upper-right',
+  'upper-left',
+  'lower-right',
+  'lower-left',
+];
+/** Diagonal slots sit at gap/√2 on each axis. */
+const DIAG = Math.SQRT1_2;
 
-function boxFor(slot: (typeof SLOTS)[number], gap: number, w: number, h: number): Box {
-  switch (slot.anchor) {
-    case 'start':
-      return { x0: gap, y0: -h / 2, x1: gap + w, y1: h / 2 };
-    case 'end':
-      return { x0: -gap - w, y0: -h / 2, x1: -gap, y1: h / 2 };
+function offsetFor(name: LabelSlot, gap: number): [number, number] {
+  const g = gap * DIAG;
+  switch (name) {
+    case 'right':
+      return [gap, 0];
+    case 'left':
+      return [-gap, 0];
+    case 'below':
+      return [0, gap];
+    case 'above':
+      return [0, -gap];
+    case 'upper-right':
+      return [g, -g];
+    case 'upper-left':
+      return [-g, -g];
+    case 'lower-right':
+      return [g, g];
     default:
-      return slot.baseline === 'top'
-        ? { x0: -w / 2, y0: gap, x1: w / 2, y1: gap + h }
-        : { x0: -w / 2, y0: -gap - h, x1: w / 2, y1: -gap };
+      return [-g, g];
   }
+}
+
+function boxFor(name: LabelSlot, gap: number, w: number, h: number): Box {
+  const slot = SLOT_DEFS[name];
+  const [dx, dy] = offsetFor(name, gap);
+  const x0 = slot.anchor === 'start' ? dx : slot.anchor === 'end' ? dx - w : dx - w / 2;
+  const y0 = slot.baseline === 'top' ? dy : slot.baseline === 'bottom' ? dy - h : dy - h / 2;
+  return { x0, y0, x1: x0 + w, y1: y0 + h };
 }
 
 export function placeLabels(
@@ -105,6 +163,7 @@ export function placeLabels(
   project: (lngLat: [number, number]) => [number, number] | null,
   /** Pixel boxes that labels must also avoid (tokens, other labels). */
   obstacles: Box[] = [],
+  slots: LabelSlot[] = PLACE_SLOTS,
 ): Map<string, LabelPlacement> {
   const out = new Map<string, LabelPlacement>();
   const placed: Box[] = [...obstacles];
@@ -112,51 +171,71 @@ export function placeLabels(
     (a, b) => b.priority - a.priority || a.text.localeCompare(b.text) || a.id.localeCompare(b.id),
   );
   // Dots themselves are obstacles for every label (a label must not cover another dot).
-  const dots: Box[] = [];
+  const dots = new Map<string, Box>();
   const px = new Map<string, [number, number]>();
   for (const it of order) {
     const p = project(it.position);
     if (!p) continue;
     px.set(it.id, p);
-    dots.push({ x0: p[0] - 4, y0: p[1] - 4, x1: p[0] + 4, y1: p[1] + 4 });
+    const r = it.radius ?? 4;
+    dots.set(it.id, { x0: p[0] - r, y0: p[1] - r, x1: p[0] + r, y1: p[1] + r });
   }
+  const hidden = (it: LabelCandidate): LabelPlacement => ({
+    anchor: 'start',
+    baseline: 'center',
+    offset: [it.gap, 0],
+    visible: false,
+  });
   for (const it of order) {
     const p = px.get(it.id);
     if (!p) {
-      out.set(it.id, { anchor: 'start', baseline: 'center', offset: [it.gap, 0], visible: false });
+      out.set(it.id, hidden(it));
       continue;
     }
     const w = textWidth(it.text, it.size);
     const h = it.size + 2;
     let chosen: LabelPlacement | undefined;
-    for (const slot of SLOTS) {
-      const rel = boxFor(slot, it.gap, w, h);
+    for (const name of slots) {
+      const slot = SLOT_DEFS[name];
+      const rel = boxFor(name, it.gap, w, h);
       const box: Box = {
         x0: p[0] + rel.x0,
         y0: p[1] + rel.y0,
         x1: p[0] + rel.x1,
         y1: p[1] + rel.y1,
       };
-      const hitsDot = dots.some(
-        (d) => !(d.x0 === p[0] - 4 && d.y0 === p[1] - 4) && overlaps(box, d),
-      );
+      let hitsDot = false;
+      for (const [id, d] of dots) {
+        if (id !== it.id && overlaps(box, d)) {
+          hitsDot = true;
+          break;
+        }
+      }
       if (hitsDot || placed.some((b) => overlaps(box, b))) continue;
-      const offset: [number, number] =
-        slot.anchor === 'start'
-          ? [it.gap, 0]
-          : slot.anchor === 'end'
-            ? [-it.gap, 0]
-            : slot.baseline === 'top'
-              ? [0, it.gap]
-              : [0, -it.gap];
-      chosen = { ...slot, offset, visible: true };
+      chosen = { ...slot, offset: offsetFor(name, it.gap), visible: true, box };
       placed.push(box);
       break;
     }
-    out.set(
-      it.id,
-      chosen ?? { anchor: 'start', baseline: 'center', offset: [it.gap, 0], visible: false },
-    );
+    out.set(it.id, chosen ?? hidden(it));
+  }
+  return out;
+}
+
+/** Screen boxes occupied by placed labels and by the dots themselves — obstacles for a later pass. */
+export function occupiedBoxes(
+  items: LabelCandidate[],
+  placement: ReadonlyMap<string, LabelPlacement>,
+  project: (lngLat: [number, number]) => [number, number] | null,
+): Box[] {
+  const out: Box[] = [];
+  for (const it of items) {
+    const p = project(it.position);
+    if (p) {
+      const r = it.radius ?? 4;
+      out.push({ x0: p[0] - r, y0: p[1] - r, x1: p[0] + r, y1: p[1] + r });
+    }
+    const pl = placement.get(it.id);
+    if (pl?.visible && pl.box) out.push(pl.box);
   }
   return out;
 }

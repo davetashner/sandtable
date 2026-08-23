@@ -42,22 +42,26 @@ export function MapSurface({
 }: MapSurfaceProps) {
   const { now, range } = useClock();
   const label = labelNow(now, range);
-  const { layers: movementLayers } = useMovementLayers(movement, branch);
   const handle = useRef<MapHandle | null>(null);
-  // Place labels are laid out in screen space against each other (sand-320);
-  // `viewTick` bumps on every map move so the layout follows the camera.
+  // Labels are laid out in screen space (sand-320, sand-4xz): tokens first,
+  // then places around them. `viewTick` bumps on every map move so the layout
+  // follows the camera; `project` reads the live map when called.
   const [viewTick, setViewTick] = useState(0);
+  const project = useCallback((p: [number, number]): [number, number] | null => {
+    const map = handle.current?.getMap();
+    if (!map) return null;
+    const q = map.project(p);
+    return Number.isFinite(q.x) && Number.isFinite(q.y) ? [q.x, q.y] : null;
+  }, []);
+  const { layers: movementLayers, labelBoxes } = useMovementLayers(movement, branch, {
+    project: viewTick > 0 ? project : undefined,
+    placementKey: viewTick,
+  });
   const candidates = useMemo(() => placeLabelCandidates(places), [places]);
   const placeLayers = useMemo(() => {
-    const map = handle.current?.getMap();
-    const placement = map
-      ? placeLabels(candidates, (p) => {
-          const q = map.project(p);
-          return Number.isFinite(q.x) && Number.isFinite(q.y) ? [q.x, q.y] : null;
-        })
-      : undefined;
+    const placement = viewTick > 0 ? placeLabels(candidates, project, labelBoxes) : undefined;
     return buildPlacesLayers({ places, placement, placementKey: viewTick });
-  }, [places, candidates, viewTick]);
+  }, [places, candidates, viewTick, project, labelBoxes]);
   // The basemap must not label the cities the pack labels itself (sand-3uq).
   const labelledPoints = useMemo(
     () => places.filter((p) => DEFAULT_PLACE_KINDS.includes(p.kind)).map((p) => p.lngLat),

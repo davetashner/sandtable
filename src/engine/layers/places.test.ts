@@ -1,6 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import type { Place } from '../../packs/schema/index.js';
-import { buildPlacesLayers, placeLabelCandidates, placeLabels } from './places.js';
+import {
+  TOKEN_SLOTS,
+  buildPlacesLayers,
+  occupiedBoxes,
+  placeLabelCandidates,
+  placeLabels,
+} from './places.js';
 
 const places: Place[] = [
   { id: 'place:liege', name: 'Liège', kind: 'fortress', lngLat: [5.573, 50.633] },
@@ -102,5 +108,23 @@ describe('placeLabels', () => {
     // An obstacle covering the right side pushes the label left.
     const placed = placeLabels(items, project, [{ x0: 100, y0: -110, x1: 200, y1: -90 }]);
     expect(placed.get('place:a')).toMatchObject({ anchor: 'end', visible: true });
+  });
+
+  it('honours a slot preference and reports the boxes it occupies', () => {
+    const items = placeLabelCandidates([
+      { id: 'place:a', name: 'Alpha', kind: 'town', lngLat: [1, 1] },
+    ]);
+    const above = placeLabels(items, project, [], TOKEN_SLOTS);
+    expect(above.get('place:a')).toMatchObject({
+      anchor: 'middle',
+      baseline: 'bottom',
+      visible: true,
+    });
+    expect(above.get('place:a')?.box).toBeDefined();
+    const boxes = occupiedBoxes(items, above, project);
+    // the dot and the label
+    expect(boxes).toHaveLength(2);
+    expect(boxes[0]).toEqual({ x0: 96, y0: -104, x1: 104, y1: -96 });
+    expect(boxes[1]!.y1).toBeLessThanOrEqual(-100 - 7);
   });
 });
