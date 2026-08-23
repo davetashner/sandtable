@@ -41,6 +41,8 @@ content/
     documents.json             Document[]
     links.json                 CausalLink[]
     sources.json               Source[]   (pack-local; most sources live in shared/)
+    casualties.json            CasualtyRecord[]
+    vignettes.json             Vignette[]
     beats/*.md                 NarrativeBeat — YAML front matter + Markdown
   shared/                      cross-era registries
     people/people.json         Person[]
@@ -174,6 +176,22 @@ generated JSON Schema; this is the intent of each.
   footnoted `summary`. The gauge reads kilometres marched off the army's
   route and the gap to the railhead at the clock (`sand-1l0.21`). Required
   sources; both formations need historical routes.
+- **CasualtyRecord** (`casualties.json`) — the human cost of a battle, day or
+  period: a `timeRange`, optional `battle`/`event`/`place`, and `figures`
+  per side and category (`killed | wounded | missing | prisoners |
+casualties`), each a point `value` or a `low`–`high` range with its own
+  `confidence` and sources; a footnoted `summary` and a `historiography`
+  paragraph on why the figures differ. The engine sums completed records per
+  side _within_ a category (never across), carries the weakest confidence,
+  and labels the result a sum of recorded periods — a quiet line under the
+  timeline and a card, nothing scored (`sand-1l0.24`). Required sources.
+- **Vignette** (`vignettes.json`) — a first-person moment: `at`, optional
+  `branch`/`place`/`lngLat`, `voice` (whose eyes), `kind` (`memoir` —
+  told by a participant afterwards; `witness` — a contemporary diary,
+  letter or report; `reconstruction` — assembled from secondary accounts),
+  a short footnoted `text`, `people`, links. The dossier shows the vignettes
+  whose moment falls inside the current beat once the clock has passed it,
+  as a voice set apart from the narrative (`sand-1l0.24`). Required sources.
 - **NarrativeBeat** — a Markdown file; front matter carries `id`, `title`,
   `dateLabel`, `from`/`to`, `branch`, `focus` (a Battle), pull quote, hero
   `media`, links and required `sources`. The body is Markdown; footnote
@@ -209,7 +227,11 @@ a formation's `concentration.asOf` or `dissolved` outside the pack range or
 planned day or an actual date, duplicated, or dated before the origin,
 assumption footnotes that name no source, tally entries out of order, outside
 the range or naming formations/places that do not exist, negative comparison
-quantities, supply lines whose army or railhead has no historical route, decision `historical` not an
+quantities, supply lines whose army or railhead has no historical route, casualty
+figures without a value or range (or with low > high), naming a side that is
+not a pack side or a battle/event that does not exist, vignettes outside the
+pack range or with unknown people/places, footnotes in casualty and vignette
+text that name no source, decision `historical` not an
 option, campaign routes using battle-level formations, and the imagery policy
 on media manifests (flagged BLOCKED/UNVERIFIED/UNKNOWN/HOLD, colorized without
 saying so, Bundesarchiv without the credit string, no archive record).

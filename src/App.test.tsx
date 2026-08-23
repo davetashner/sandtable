@@ -158,6 +158,49 @@ describe('App shell', () => {
     );
   });
 
+  it('shows the human-cost line, the 22 August beat with its vignette, and opens the casualty card', async () => {
+    window.history.replaceState(null, '', '/?t=1914-08-22T18:00:00Z');
+    render(<App />);
+    // the beat of the day carries the Rossignol vignette once the clock has passed noon
+    expect(
+      await screen.findByRole(
+        'heading',
+        { name: '22 August: the bloodiest day' },
+        { timeout: 8000 },
+      ),
+    ).toBeInTheDocument();
+    const voices = screen.getByRole('region', { name: 'Voices' });
+    expect(voices).toHaveTextContent('Rossignol: the colonial division in the fog');
+    expect(voices).toHaveTextContent('Reconstruction');
+    // the day has not ended: the line is still quiet
+    const line = screen.getByRole('listitem', { name: /Human cost to date/ });
+    expect(line).toHaveAccessibleName(/No recorded losses yet/);
+    // the beat's chip opens the record
+    fireEvent.click(screen.getByRole('button', { name: /22 August 1914 — the bloodiest day/ }));
+    expect(window.location.search).toContain('card=1914:casualties-22-august');
+    expect(screen.getByText('Human cost', { selector: '.card__eyebrow' })).toBeInTheDocument();
+    const rows = screen.getAllByRole('row');
+    expect(rows[1]).toHaveTextContent('French Republic');
+    expect(rows[1]).toHaveTextContent('27,000');
+    expect(rows[1]).toHaveTextContent('inferred');
+  });
+
+  it('sums the recorded periods on the human-cost line by the Marne', async () => {
+    window.history.replaceState(null, '', '/?t=1914-09-13T00:00:00Z');
+    render(<App />);
+    const line = await screen.findByRole(
+      'listitem',
+      {
+        name: /Human cost to date: Germany 200,000–250,000 killed, wounded and missing · France 406,515–456,515 killed, wounded and missing · France 27,000 killed/,
+      },
+      { timeout: 8000 },
+    );
+    expect(line).toHaveAccessibleName(/Britain 11,113–22,412 killed, wounded and missing/);
+    expect(line).toHaveTextContent('5 recorded periods');
+    fireEvent.click(line);
+    expect(window.location.search).toContain('card=1914:casualties-marne');
+  });
+
   it('shows the rail-against-feet gauges and opens the supply card', async () => {
     window.history.replaceState(null, '', '/?t=1914-09-05T12:00:00Z');
     render(<App />);

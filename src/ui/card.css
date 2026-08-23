@@ -185,6 +185,14 @@
   content: '○';
 }
 
+/* human cost (sand-1l0.24): the typographic dagger */
+.card__chip[data-kind='casualties']::before {
+  content: '†';
+  font-family: var(--font-mono);
+  color: var(--brass);
+  margin-right: 5px;
+}
+
 .card__sources {
   margin-top: 12px;
   padding-top: 8px;

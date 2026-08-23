@@ -40,9 +40,11 @@ import {
   type TimeRange,
   BeatFrontMatter,
   type CastEntry,
+  type CasualtyRecord,
   type SupplyLine,
   type Tally,
   type Timetable,
+  type Vignette,
 } from '../schema/index.js';
 import { footnoteLabels, splitFrontMatter } from './frontmatter.js';
 import type { RawContent, RawFile, RawPack } from './tree.js';
@@ -77,6 +79,8 @@ export interface ParsedPack {
   clocks: Timetable[];
   tallies: Tally[];
   supply: SupplyLine[];
+  casualties: CasualtyRecord[];
+  vignettes: Vignette[];
   beats: NarrativeBeat[];
 }
 
@@ -103,6 +107,8 @@ type Kind =
   | 'clock'
   | 'tally'
   | 'supply'
+  | 'casualties'
+  | 'vignette'
   | 'branch'
   | 'formation'
   | 'route'
@@ -224,6 +230,7 @@ const LINK_KINDS: Record<keyof Links, Kind[]> = {
   tech: ['tech'],
   science: ['science'],
   documents: ['document'],
+  casualties: ['casualties'],
   media: ['media'],
 };
 
@@ -303,6 +310,8 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     clocks: [],
     tallies: [],
     supply: [],
+    casualties: [],
+    vignettes: [],
     beats: [],
     files: {},
     branchById: new Map(),
@@ -328,6 +337,8 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     'clocks.json': 'clock',
     'tallies.json': 'tally',
     'supply.json': 'supply',
+    'casualties.json': 'casualties',
+    'vignettes.json': 'vignette',
   };
   for (const [file, schema] of Object.entries(PACK_COLLECTIONS) as [
     PackCollectionFile,
@@ -720,6 +731,60 @@ function checkSupply(ctx: Ctx, s: PackState, path: string, c: SupplyLine) {
   }
 }
 
+function checkFootnotes(
+  ctx: Ctx,
+  path: string,
+  id: string,
+  text: string | undefined,
+  sources: { source: string }[],
+  what: string,
+) {
+  if (!text) return;
+  const slugs = new Set(sources.map((x) => x.source.split(':')[1] ?? x.source));
+  for (const m of text.matchAll(/\[\^([^\]\s]+)\]/g)) {
+    if (!slugs.has(m[1]!))
+      ctx.error(path, `${what} footnote [^${m[1]}] is not one of the entity's sources`, id);
+  }
+}
+
+function checkCasualties(
+  ctx: Ctx,
+  s: PackState,
+  path: string,
+  c: CasualtyRecord,
+  sideIds: Set<string>,
+) {
+  const range = s.pack.timeRange;
+  checkRange(ctx, path, c.id, c.timeRange);
+  if (!within(range, c.timeRange.start) || !within(range, c.timeRange.end))
+    ctx.error(path, 'timeRange is outside the pack timeRange', c.id);
+  if (c.battle) {
+    const b = ctx.ref(path, c.id, c.battle, ['battle'], 'battle');
+    if (b && b.pack !== s.dir) ctx.error(path, `battle ${c.battle} belongs to another pack`, c.id);
+  }
+  if (c.event) ctx.ref(path, c.id, c.event, ['event'], 'event');
+  if (c.place) ctx.ref(path, c.id, c.place, ['place'], 'place');
+  c.figures.forEach((f, i) => {
+    if (!sideIds.has(f.side))
+      ctx.error(path, `figures[${i}]: side ${f.side} is not a pack side`, c.id);
+    checkCitations(ctx, path, c.id, f.sources, false, `figures[${i}] sources`);
+  });
+  checkLinks(ctx, path, c.id, c.links);
+  checkCitations(ctx, path, c.id, c.sources, true);
+  checkFootnotes(ctx, path, c.id, c.summary, c.sources, 'summary');
+  checkFootnotes(ctx, path, c.id, c.historiography, c.sources, 'historiography');
+}
+
+function checkVignette(ctx: Ctx, s: PackState, path: string, v: Vignette) {
+  if (!within(s.pack.timeRange, v.at)) ctx.error(path, 'at is outside the pack timeRange', v.id);
+  checkBranchRef(ctx, s, path, v.id, v.branch, true);
+  if (v.place) ctx.ref(path, v.id, v.place, ['place'], 'place');
+  checkIds(ctx, path, v.people, v.id, ['person'], 'people');
+  checkLinks(ctx, path, v.id, v.links);
+  checkCitations(ctx, path, v.id, v.sources, true);
+  checkFootnotes(ctx, path, v.id, v.text, v.sources, 'text');
+}
+
 function checkLink(ctx: Ctx, path: string, l: CausalLink) {
   const any: Kind[] = [
     'pack',
@@ -731,6 +796,8 @@ function checkLink(ctx: Ctx, path: string, l: CausalLink) {
     'tech',
     'science',
     'document',
+    'casualties',
+    'vignette',
     'beat',
     'person',
     'place',
@@ -913,6 +980,8 @@ export function validateContent(raw: RawContent): Report {
     for (const c of s.clocks) checkClock(ctx, file('clocks.json'), c);
     for (const c of s.tallies) checkTally(ctx, s, file('tallies.json'), c);
     for (const c of s.supply) checkSupply(ctx, s, file('supply.json'), c);
+    for (const c of s.casualties) checkCasualties(ctx, s, file('casualties.json'), c, sideIds);
+    for (const v of s.vignettes) checkVignette(ctx, s, file('vignettes.json'), v);
     const seenCast = new Set<string>();
     for (const c of s.cast) {
       checkCast(ctx, file('cast.json'), c, sideIds);

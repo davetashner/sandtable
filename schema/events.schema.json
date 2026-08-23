@@ -168,6 +168,14 @@
               "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
             }
           },
+          "casualties": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+              "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+            }
+          },
           "media": {
             "type": "array",
             "items": {

@@ -48,6 +48,9 @@ import { TallyGauges } from './ui/TallyGauges.js';
 import { TallyCardView } from './ui/TallyCardView.js';
 import { SupplyGauges } from './ui/SupplyGauges.js';
 import { SupplyCardView } from './ui/SupplyCardView.js';
+import { CasualtyCardView } from './ui/CasualtyCardView.js';
+import { HumanCostLine } from './ui/HumanCostLine.js';
+import { vignettesFor } from './engine/human.js';
 import { ClockCardView } from './ui/ClockCardView.js';
 import { decisionCrossed } from './engine/decisions.js';
 import { mediaById, portraitFor } from './packs/media-index.js';
@@ -114,6 +117,8 @@ function useLabeller(): EntityLabeller {
           seed.clocks.find((c) => c.id === id)?.title ??
           seed.tallies.find((c) => c.id === id)?.title ??
           seed.supply.find((c) => c.id === id)?.title ??
+          seed.casualties.find((c) => c.id === id)?.title ??
+          seed.vignettes.find((c) => c.id === id)?.title ??
           seed.tech.find((t) => t.id === id)?.title ??
           seed.science.find((t) => t.id === id)?.title ??
           seed.documents.find((d) => d.id === id)?.title ??
@@ -125,7 +130,13 @@ function useLabeller(): EntityLabeller {
         );
       },
       open(id, kind: keyof Links) {
-        if (kind === 'tech' || kind === 'science' || kind === 'documents' || kind === 'people')
+        if (
+          kind === 'tech' ||
+          kind === 'science' ||
+          kind === 'documents' ||
+          kind === 'people' ||
+          kind === 'casualties'
+        )
           return () => controls?.setCard(id);
         if (kind === 'battles') return () => controls?.setFocus(id);
         if (kind === 'events') {
@@ -152,11 +163,14 @@ function useCard():
   | { kind: 'clock'; card: (typeof seed.clocks)[number] }
   | { kind: 'tally'; card: (typeof seed.tallies)[number] }
   | { kind: 'supply'; card: (typeof seed.supply)[number] }
+  | { kind: 'casualties'; card: (typeof seed.casualties)[number] }
   | undefined {
   const { card } = useViewState();
   if (!card) return undefined;
   const supply = seed.supply.find((c) => c.id === card);
   if (supply) return { kind: 'supply', card: supply };
+  const casualties = seed.casualties.find((c) => c.id === card);
+  if (casualties) return { kind: 'casualties', card: casualties };
   const tally = seed.tallies.find((c) => c.id === card);
   if (tally) return { kind: 'tally', card: tally };
   const clock = seed.clocks.find((c) => c.id === card);
@@ -325,6 +339,7 @@ function DossierSurface() {
       ['tech', links.tech],
       ['science', links.science],
       ['document', links.documents],
+      ['casualties', links.casualties],
     ] as const) {
       for (const id of ids ?? []) {
         const label = labeller.label(id);
@@ -351,6 +366,10 @@ function DossierSurface() {
     }
     return out;
   }, [beat, labeller, controls, focus?.id]);
+  const voices = useMemo(
+    () => vignettesFor(seed.vignettes, beat, now, branch.id),
+    [beat, now, branch.id],
+  );
   const phone = usePhone();
   const dossier = (
     <>
@@ -362,6 +381,9 @@ function DossierSurface() {
         focus={focus?.id}
         packTitle={focus ? focus.title : seed.pack.title}
         related={related}
+        vignettes={voices}
+        label={(id) => labeller.label(id)}
+        resolvePortrait={portraitFor}
         resolveMedia={mediaById}
         cast={
           <CastStrip
@@ -410,6 +432,15 @@ function DossierSurface() {
             <SupplyCardView
               line={card.card}
               routes={seed.routes}
+              sources={seed.sources}
+              labeller={labeller}
+              onBack={() => controls?.setCard(undefined)}
+            />
+          ) : card?.kind === 'casualties' ? (
+            <CasualtyCardView
+              record={card.card}
+              records={seed.casualties}
+              sides={seed.pack.sides}
               sources={seed.sources}
               labeller={labeller}
               onBack={() => controls?.setCard(undefined)}
@@ -570,6 +601,12 @@ function TimelineSurface() {
             lines={seed.supply}
             routes={seed.routes}
             label={(id) => seed.formations.find((f) => f.id === id)?.short}
+            selected={viewCard}
+            onSelect={(id) => controls?.setCard(viewCard === id ? undefined : id)}
+          />
+          <HumanCostLine
+            records={seed.casualties}
+            sides={seed.pack.sides}
             selected={viewCard}
             onSelect={(id) => controls?.setCard(viewCard === id ? undefined : id)}
           />

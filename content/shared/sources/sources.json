@@ -172,5 +172,50 @@
     "year": 1935,
     "publisher": "Longmans, Green, New York",
     "notes": "Operational narrative from the interwar official histories; clear on the detached corps — Antwerp, Namur, Maubeuge — and on the Belgian 4th Division's journey round by Le Havre and Ostend."
+  },
+  {
+    "id": "source:steg-2013",
+    "kind": "book",
+    "author": "Steg, Jean-Michel",
+    "title": "Le jour le plus meurtrier de l'histoire de France: 22 août 1914",
+    "year": 2013,
+    "publisher": "Fayard, Paris",
+    "notes": "The reconstruction, from the French Army's own death records, of the roughly 27,000 French soldiers killed on 22 August 1914; the source for the figure and for Rossignol and the Ardennes that day."
+  },
+  {
+    "id": "source:spears-1930",
+    "kind": "book",
+    "author": "Spears, Edward L.",
+    "title": "Liaison 1914: A Narrative of the Great Retreat",
+    "year": 1930,
+    "publisher": "William Heinemann, London",
+    "notes": "Memoir of the British liaison officer at Lanrezac's 5th Army headquarters; the eyewitness account of the Rethel meeting of 17 August and of the 5th Army's retreat. Partisan towards the BEF; check against the official histories."
+  },
+  {
+    "id": "source:ludendorff-1919",
+    "kind": "book",
+    "author": "Ludendorff, Erich",
+    "title": "My War Memories, 1914–1918 (Meine Kriegserinnerungen 1914–1918)",
+    "year": 1919,
+    "publisher": "Hutchinson, London; E. S. Mittler, Berlin",
+    "notes": "Ludendorff's memoir; the first-hand account of the 14th Brigade's night march into Liège and the surrender of the citadel on 7 August 1914. Self-serving on everything after; reliable for the Liège episode where the Reichsarchiv agrees."
+  },
+  {
+    "id": "source:foch-1931",
+    "kind": "book",
+    "author": "Foch, Ferdinand",
+    "title": "Mémoires pour servir à l'histoire de la guerre de 1914–1918",
+    "year": 1931,
+    "publisher": "Plon, Paris",
+    "notes": "Foch's memoirs; for the 9th Army at the marshes of Saint-Gond, 6–10 September 1914 — notably silent on the 'situation excellente, j'attaque' line attributed to him."
+  },
+  {
+    "id": "source:gallieni-1920",
+    "kind": "book",
+    "author": "Gallieni, Joseph",
+    "title": "Mémoires du général Gallieni: Défense de Paris (25 août – 11 septembre 1914)",
+    "year": 1920,
+    "publisher": "Payot, Paris",
+    "notes": "Gallieni's account of the Paris camp and the 6th Army's attack on the Ourcq, including the requisition of the Paris taxis on 6–7 September 1914."
   }
 ]

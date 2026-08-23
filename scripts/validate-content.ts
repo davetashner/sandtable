@@ -19,7 +19,14 @@ const { content, problems } = readContent(root);
 const report = validateContent(content);
 const errors = [...problems, ...report.errors];
 const ok = errors.length === 0;
-const PLURALS: Record<string, string> = { branch: 'branches', person: 'people', media: 'media' };
+const PLURALS: Record<string, string> = {
+  branch: 'branches',
+  person: 'people',
+  media: 'media',
+  casualties: 'casualty records',
+  supply: 'supply lines',
+  tally: 'tallies',
+};
 const plural = (n: number, w: string) => `${n} ${n === 1 ? w : (PLURALS[w] ?? `${w}s`)}`;
 
 if (flags.has('--json')) {

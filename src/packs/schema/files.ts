@@ -13,6 +13,8 @@
  *     documents.json     Document[]
  *     links.json         CausalLink[]
  *     sources.json       Source[]          (pack-local; shared/sources for the rest)
+ *     casualties.json    CasualtyRecord[]
+ *     vignettes.json     Vignette[]
  *     beats/*.md         NarrativeBeat     (YAML front matter + Markdown)
  *   content/shared/
  *     people/people.json    Person[]
@@ -43,9 +45,11 @@ import {
   TechCard,
   Thread,
   CastEntry,
+  CasualtyRecord,
   SupplyLine,
   Tally,
   Timetable,
+  Vignette,
 } from './entities.js';
 
 /** Pack files that hold an array of one entity kind, keyed by file name. */
@@ -64,6 +68,8 @@ export const PACK_COLLECTIONS = {
   'clocks.json': Timetable,
   'tallies.json': Tally,
   'supply.json': SupplyLine,
+  'casualties.json': CasualtyRecord,
+  'vignettes.json': Vignette,
 } as const;
 
 export type PackCollectionFile = keyof typeof PACK_COLLECTIONS;
@@ -99,6 +105,8 @@ export const JSON_SCHEMAS = {
   clocks: z.array(Timetable),
   tallies: z.array(Tally),
   supply: z.array(SupplyLine),
+  casualties: z.array(CasualtyRecord),
+  vignettes: z.array(Vignette),
   'beat-frontmatter': BeatFrontMatter,
   people: z.array(Person),
   places: z.array(Place),

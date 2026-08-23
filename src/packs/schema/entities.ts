@@ -33,6 +33,7 @@ export const Links = z
     tech: z.array(Id).optional(),
     science: z.array(Id).optional(),
     documents: z.array(Id).optional(),
+    casualties: z.array(Id).optional(),
     media: z.array(Id).optional(),
   })
   .strict()
@@ -320,6 +321,80 @@ export const Tally = z
       .optional()
       .describe('Named a:b comparisons drawn as paired bars'),
     summary: Markdown.optional().describe('Footnoted [^slug] to `sources`'),
+    sources: Sources,
+  })
+  .strict();
+
+// ------------------------------------------------------------- Casualties
+/**
+ * The human cost (sand-1l0.24): the losses of one battle, day or period as a
+ * set of figures per side and category, each with its confidence and its own
+ * sources — a range where historians disagree, never a single number dressed
+ * as fact. Records are summed "to date" by the engine; nothing is scored.
+ */
+export const CasualtyCategory = z
+  .enum(['killed', 'wounded', 'missing', 'prisoners', 'casualties'])
+  .describe('casualties = killed + wounded + missing (+ prisoners) where the source gives only a total');
+
+export const CasualtyFigure = z
+  .object({
+    side: Slug.describe('One of pack.sides[].id'),
+    category: CasualtyCategory,
+    value: z.number().int().nonnegative().optional().describe('Point estimate'),
+    low: z.number().int().nonnegative().optional().describe('Lower bound of a range'),
+    high: z.number().int().nonnegative().optional().describe('Upper bound of a range'),
+    confidence: Confidence,
+    note: Markdown.optional().describe('What the figure counts, and who gives it'),
+    sources: Sources.optional(),
+  })
+  .strict()
+  .refine((f) => f.value !== undefined || (f.low !== undefined && f.high !== undefined), {
+    message: 'a figure needs a value or both low and high',
+  })
+  .refine((f) => f.low === undefined || f.high === undefined || f.low <= f.high, {
+    message: 'low must be <= high',
+  });
+
+export const CasualtyRecord = z
+  .object({
+    id: Id.describe('<era>:casualties-<slug>'),
+    title: z.string().min(1),
+    timeRange: TimeRange.describe('The battle, day or period the figures cover'),
+    battle: Id.optional().describe('Battle the record belongs to'),
+    event: Id.optional().describe('Event the record belongs to'),
+    place: Id.optional(),
+    figures: z.array(CasualtyFigure).min(1),
+    summary: Markdown.optional().describe('What happened to people, footnoted [^slug] to `sources`'),
+    historiography: Markdown.optional().describe('Why the figures differ, who gives what'),
+    links: Links.optional(),
+    sources: Sources,
+  })
+  .strict();
+
+// --------------------------------------------------------------- Vignette
+/**
+ * A first-person moment (sand-1l0.24): a short, sourced scene at an instant —
+ * Ludendorff at the citadel gate, the taxis at the Invalides — rendered in
+ * the dossier as a voice distinct from the narrative when the clock passes
+ * it. Generic: any era's witnesses.
+ */
+export const Vignette = z
+  .object({
+    id: Id.describe('<era>:vignette-<slug>'),
+    title: z.string().min(1),
+    at: IsoTime.describe('The moment; shows once the clock has passed it'),
+    branch: Id.optional().describe('Absent: every branch; present: only that branch'),
+    place: Id.optional(),
+    lngLat: LngLat.optional(),
+    voice: z.string().min(1).describe('Whose eyes: "Erich Ludendorff", "a British liaison officer"'),
+    kind: z
+      .enum(['memoir', 'witness', 'reconstruction'])
+      .describe(
+        'memoir: told by a participant afterwards; witness: a contemporary diary, letter or report; reconstruction: assembled from secondary accounts',
+      ),
+    text: Markdown.describe('A few sentences, footnoted [^slug] to `sources`'),
+    people: z.array(Id).optional(),
+    links: Links.optional(),
     sources: Sources,
   })
   .strict();
@@ -736,6 +811,10 @@ export type CastEntry = z.infer<typeof CastEntry>;
 export type Timetable = z.infer<typeof Timetable>;
 export type Tally = z.infer<typeof Tally>;
 export type SupplyLine = z.infer<typeof SupplyLine>;
+export type CasualtyCategory = z.infer<typeof CasualtyCategory>;
+export type CasualtyFigure = z.infer<typeof CasualtyFigure>;
+export type CasualtyRecord = z.infer<typeof CasualtyRecord>;
+export type Vignette = z.infer<typeof Vignette>;
 export type Place = z.infer<typeof Place>;
 export type Media = z.infer<typeof Media>;
 export type Side = z.infer<typeof Side>;
