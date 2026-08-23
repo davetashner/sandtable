@@ -75,6 +75,7 @@ npm run schema           # regenerate schema/*.schema.json from src/packs/schema
 npm run borders          # rebuild content/shared/geo/borders/<year>.geojson from historical-basemaps (pinned commit)
 npm run tokens           # regenerate src/styles/tokens.css from src/styles/tokens.ts (docs/design.md; AA contrast tested)
 npm run media            # WebP derivatives + content/shared/media/index.json from media.json manifests; -- --upload syncs to the assets bucket
+npm run audio            # loudness-matched Opus/AAC + content/shared/audio/index.json from cue.json manifests; -- --upload syncs (needs ffmpeg)
 npm run build            # tsc -b && vite build → dist/ (bundles under dist/app/)
 npm run format           # Prettier
 ```

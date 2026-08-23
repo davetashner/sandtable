@@ -21,6 +21,8 @@ import {
   type Event,
   type Formation,
   type Links,
+  Cue,
+  type Cue as CueT,
   Media,
   type Media as MediaT,
   type NarrativeBeat,
@@ -89,7 +91,13 @@ export interface ParsedPack {
 
 export interface ParsedContent {
   packs: ParsedPack[];
-  shared: { people: Person[]; places: Place[]; sources: Source[]; media: MediaT[] };
+  shared: {
+    people: Person[];
+    places: Place[];
+    sources: Source[];
+    media: MediaT[];
+    audio: CueT[];
+  };
   threads: ThreadT[];
 }
 
@@ -128,6 +136,7 @@ type Kind =
   | 'person'
   | 'place'
   | 'media'
+  | 'cue'
   | 'thread';
 
 interface IndexEntry {
@@ -266,7 +275,13 @@ interface PackState extends ParsedPack {
 }
 
 function parseShared(ctx: Ctx, raw: RawContent): ParsedContent['shared'] {
-  const shared: ParsedContent['shared'] = { people: [], places: [], sources: [], media: [] };
+  const shared: ParsedContent['shared'] = {
+    people: [],
+    places: [],
+    sources: [],
+    media: [],
+    audio: [],
+  };
   for (const [file, schema] of Object.entries(SHARED_COLLECTIONS) as [
     SharedCollectionFile,
     ZodType,
@@ -290,6 +305,12 @@ function parseShared(ctx: Ctx, raw: RawContent): ParsedContent['shared'] {
     if (!m) continue;
     ctx.register(m.id, { kind: 'media', path: f.path });
     shared.media.push(m);
+  }
+  for (const f of raw.shared.audio ?? []) {
+    const c = parseWith(ctx, Cue, f, 'cue.json');
+    if (!c) continue;
+    ctx.register(c.id, { kind: 'cue', path: f.path });
+    shared.audio.push(c);
   }
   return shared;
 }
@@ -1034,6 +1055,27 @@ function checkShared(ctx: Ctx, shared: ParsedContent['shared'], raw: RawContent)
     const m = shared.media[i];
     if (m) checkMedia(ctx, m, f.path);
   });
+  (raw.shared.audio ?? []).forEach((f, i) => {
+    const c = shared.audio[i];
+    if (c) checkCue(ctx, c, f.path);
+  });
+}
+
+function checkCue(ctx: Ctx, c: CueT, path: string) {
+  // The same bar the imagery policy sets: a manifest still carrying a
+  // placeholder is not ready to ship, whoever or whatever made the sound.
+  const flagged = [c.provenance.licence, c.provenance.tool, c.$comment]
+    .filter((x): x is string => typeof x === 'string')
+    .join(' ');
+  if (/\b(BLOCKED|UNVERIFIED|UNKNOWN|HOLD|TODO|TBD)\b/i.test(flagged))
+    ctx.error(path, 'cue is flagged BLOCKED/UNVERIFIED/UNKNOWN/HOLD/TODO — resolve before merging', c.id);
+  // A generated cue without its prompt cannot be regenerated or defended.
+  if (/suno|udio|generated|ai/i.test(c.provenance.tool) && !c.provenance.prompt)
+    ctx.warn(path, 'generated audio without provenance.prompt — record what produced it', c.id);
+  if (c.role === 'bed' && (c.mixDb === undefined || c.mixDb >= 0))
+    ctx.warn(path, 'a bed should carry a negative mixDb so it sits under the cue it joins', c.id);
+  for (const u of c.used_by ?? [])
+    if (!ctx.index.has(u)) ctx.warn(path, `used_by ${u} does not exist yet`, c.id);
 }
 
 function checkThread(ctx: Ctx, path: string, th: ThreadT) {

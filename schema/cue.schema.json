@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sandtable.davetashner.com/schema/cue.schema.json",
+  "title": "Sandtable cue",
+  "type": "object",
+  "properties": {
+    "$comment": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+      "description": "cue:<slug>"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "letter": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "file": {
+      "type": "string",
+      "minLength": 1
+    },
+    "role": {
+      "default": "cue",
+      "type": "string",
+      "enum": [
+        "cue",
+        "bed"
+      ]
+    },
+    "duration": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "loop": {
+      "type": "boolean"
+    },
+    "mixDb": {
+      "type": "number",
+      "minimum": -24,
+      "maximum": 6
+    },
+    "musical": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "bpm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Suno, a performer, a library…"
+        },
+        "model": {
+          "type": "string"
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "excludes": {
+          "type": "string"
+        },
+        "generatedAt": {
+          "type": "string"
+        },
+        "licence": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "tool",
+        "licence"
+      ],
+      "additionalProperties": {}
+    },
+    "credit": {
+      "type": "string",
+      "minLength": 1
+    },
+    "used_by": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "file",
+    "role",
+    "duration",
+    "loop",
+    "provenance",
+    "credit"
+  ],
+  "additionalProperties": {}
+}

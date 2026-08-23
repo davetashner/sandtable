@@ -22,6 +22,7 @@
  *     places/places.json    Place[]
  *     sources/sources.json  Source[]
  *     media/** /media.json  Media             (one manifest per image)
+ *     audio/** /cue.json    Cue               (one manifest per score cue)
  *   content/threads/<slug>/thread.json  Thread
  *
  * Only pack.json is mandatory; every other file is optional and, when
@@ -32,6 +33,7 @@ import {
   Battle,
   BeatFrontMatter,
   CausalLink,
+  Cue,
   DecisionPoint,
   Document,
   Event,
@@ -89,6 +91,7 @@ export type SharedCollectionFile = keyof typeof SHARED_COLLECTIONS;
 export const PACK_FILE = 'pack.json';
 export const BEATS_DIR = 'beats';
 export const MEDIA_MANIFEST = 'media.json';
+export const CUE_MANIFEST = 'cue.json';
 export const THREAD_FILE = 'thread.json';
 
 /** Every JSON Schema we publish under schema/, keyed by output file stem. */
@@ -115,5 +118,6 @@ export const JSON_SCHEMAS = {
   people: z.array(Person),
   places: z.array(Place),
   media: Media,
+  cue: Cue,
   thread: Thread,
 } as const;

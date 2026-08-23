@@ -4,7 +4,13 @@
  */
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
-import { BEATS_DIR, MEDIA_MANIFEST, PACK_FILE, THREAD_FILE } from '../../src/packs/schema/files.js';
+import {
+  BEATS_DIR,
+  CUE_MANIFEST,
+  MEDIA_MANIFEST,
+  PACK_FILE,
+  THREAD_FILE,
+} from '../../src/packs/schema/files.js';
 import type { RawContent, RawFile, RawPack } from '../../src/packs/validate/tree.js';
 import type { Problem } from '../../src/packs/validate/validate.js';
 
@@ -92,7 +98,7 @@ export function readContent(root = 'content'): ReadResult {
   }
 
   const sharedDir = join(root, 'shared');
-  const shared: RawContent['shared'] = { collections: {}, media: [] };
+  const shared: RawContent['shared'] = { collections: {}, media: [], audio: [] };
   for (const file of ['people/people.json', 'places/places.json', 'sources/sources.json']) {
     const p = join(sharedDir, file);
     if (!exists(p)) continue;
@@ -100,6 +106,7 @@ export function readContent(root = 'content'): ReadResult {
     if (f) shared.collections[file] = f;
   }
   shared.media = readJsonAll(walk(join(sharedDir, 'media'), (n) => n === MEDIA_MANIFEST));
+  shared.audio = readJsonAll(walk(join(sharedDir, 'audio'), (n) => n === CUE_MANIFEST));
   const threads = readJsonAll(walk(join(root, 'threads'), (n) => n === THREAD_FILE));
 
   return { content: { packs, shared, threads }, problems };

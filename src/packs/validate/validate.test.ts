@@ -204,6 +204,7 @@ function fixture(): RawContent {
         },
       },
       media: [],
+      audio: [],
     },
     threads: [
       {
