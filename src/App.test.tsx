@@ -247,8 +247,27 @@ describe('App shell', () => {
     expect(
       screen.getByRole('heading', { name: /Two corps for East Prussia\?/ }),
     ).toBeInTheDocument();
-    // arrives paused: a deep link is a place, not a performance
-    expect(screen.getByRole('button', { name: 'Resume the tour' })).toBeInTheDocument();
+    // arrives stopped on the card it reveals, going nowhere until asked
+    expect(
+      screen.getByRole('button', { name: /Continue past a card to read/ }),
+    ).toBeInTheDocument();
+    expect(screen.getByText(/continue when you are ready/)).toBeInTheDocument();
+  });
+
+  it('drives the tour from the keyboard alone (sand-1l0.28)', async () => {
+    window.history.replaceState(null, '', '/?tour=1914:tour-the-campaign&step=two-corps-east');
+    render(<App />);
+    await screen.findByRole('region', { name: /Guided tour/ });
+    expect(screen.getByText(/Step 7 of 15/)).toBeInTheDocument();
+    // ← steps back, without a pointer ever touching a control
+    fireEvent.keyDown(document.body, { key: 'ArrowLeft' });
+    expect(window.location.search).toContain('step=charleroi-mons');
+    // → goes on
+    fireEvent.keyDown(document.body, { key: 'ArrowRight' });
+    expect(screen.getByText(/Step 7 of 15/)).toBeInTheDocument();
+    // Escape leaves
+    fireEvent.keyDown(document.body, { key: 'Escape' });
+    expect(window.location.search).not.toContain('tour=');
   });
 
   it('leaves the tour without yanking the viewer back', async () => {

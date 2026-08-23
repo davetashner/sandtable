@@ -11,7 +11,16 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { withFootnotes } from '../engine/beats.js';
 import type { Citation, Source, Tour, TourStep } from '../packs/schema/index.js';
+import type { TourStop } from '../engine/tour.js';
 import './tour.css';
+
+/** What each kind of break is giving the reader time for. */
+const STOP_LABEL: Record<TourStop['kind'], string> = {
+  card: 'A card to read',
+  beat: 'A new chapter',
+  decision: 'A decision point',
+  'step-end': 'End of the step',
+};
 
 /**
  * The citations a step actually makes. A tour's `sources` are the whole
@@ -31,11 +40,20 @@ export interface TourPanelProps {
   index: number;
   /** True while the tour is advancing itself. */
   running: boolean;
+  /** Stopped at a break in the narrative, waiting to be let on (sand-1l0.28). */
+  waiting?: boolean;
+  /** Which break — its kind names what the reader is being given time for. */
+  stop?: TourStop | undefined;
+  /** Whether breaks end on a dwell or on a click. */
+  autoAdvance?: boolean;
   sources: Source[];
   onPrev?: (() => void) | undefined;
   onNext?: (() => void) | undefined;
   onToggleRunning: () => void;
   onExit: () => void;
+  /** Let the tour on from the break it is stopped at. */
+  onContinue?: (() => void) | undefined;
+  onSetAutoAdvance?: ((on: boolean) => void) | undefined;
 }
 
 export function TourPanel({
@@ -43,11 +61,16 @@ export function TourPanel({
   step,
   index,
   running,
+  waiting = false,
+  stop,
+  autoAdvance = true,
   sources,
   onPrev,
   onNext,
   onToggleRunning,
   onExit,
+  onContinue,
+  onSetAutoAdvance,
 }: TourPanelProps) {
   const total = tour.steps.length;
   const narration = useMemo(
@@ -91,14 +114,25 @@ export function TourPanel({
         >
           ‹ Back
         </button>
-        <button
-          type="button"
-          className="tour__button tour__button--primary"
-          onClick={onToggleRunning}
-          aria-label={running ? 'Pause the tour' : 'Resume the tour'}
-        >
-          {running ? '❙❙ Pause' : '▶ Resume'}
-        </button>
+        {waiting && onContinue ? (
+          <button
+            type="button"
+            className="tour__button tour__button--primary"
+            onClick={onContinue}
+            aria-label={`Continue${stop ? ` past ${STOP_LABEL[stop.kind].toLowerCase()}` : ''}`}
+          >
+            ▶ Continue
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="tour__button tour__button--primary"
+            onClick={onToggleRunning}
+            aria-label={running ? 'Pause the tour' : 'Resume the tour'}
+          >
+            {running ? '❙❙ Pause' : '▶ Resume'}
+          </button>
+        )}
         <button
           type="button"
           className="tour__button"
@@ -108,14 +142,31 @@ export function TourPanel({
         >
           Next ›
         </button>
+        {onSetAutoAdvance && (
+          <button
+            type="button"
+            className="tour__button tour__button--toggle"
+            aria-pressed={autoAdvance}
+            onClick={() => onSetAutoAdvance(!autoAdvance)}
+            title={
+              autoAdvance ? 'Each pause ends on its own after a moment' : 'Each pause waits for you'
+            }
+          >
+            {autoAdvance ? '◉' : '○'} Auto-advance
+          </button>
+        )}
         <button type="button" className="tour__button tour__button--exit" onClick={onExit}>
           Exit tour
         </button>
       </div>
       <p className="tour__hint">
-        {running
-          ? 'Playing — move the map or open anything to take over.'
-          : 'Paused. Resume, step through it, or leave the tour and explore.'}
+        {waiting
+          ? `${stop ? STOP_LABEL[stop.kind] : 'A pause'} — ${
+              autoAdvance && running ? 'going on shortly' : 'continue when you are ready'
+            }. Space or → to go on, ← to go back, Esc to leave.`
+          : running
+            ? 'Playing — Space to pause, or move the map to take over.'
+            : 'Paused. Space to go on, ← to step back, Esc to leave the tour.'}
       </p>
     </section>
   );

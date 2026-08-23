@@ -530,8 +530,7 @@ campaign map, the pack's default branch, no card). That is what makes
       "title": "Liège: eleven days the plan did not have",
       "narration": "Two or three sentences, footnoted.[^herwig-2009]",
       "at": "1914-08-05T00:00:00Z",
-      "playUntil": "1914-08-16T00:00:00Z",
-      "speed": 43200000,
+      "playUntil": "1914-08-10T00:00:00Z",
       "focus": "1914:liege"
     },
     {
@@ -540,17 +539,29 @@ campaign map, the pack's default branch, no card). That is what makes
       "narration": "Why this moment matters.[^kluck-1920]",
       "at": "1914-08-30T18:00:00Z",
       "camera": { "center": [2.95, 49.35], "zoom": 7.4 },
-      "card": "1914:decision-1914-08-30-kluck-wheel",
-      "hold": 26
+      "card": "1914:decision-1914-08-30-kluck-wheel"
     }
   ]
 }
 ```
 
-- `at` is where the clock stands when the step opens; add `playUntil` (and
-  optionally `speed`, in simulated ms per real second) to let it run, or
-  `hold` (seconds) to give a still step reading time. Times must fall inside
-  the pack's range — or inside the battle's, once a step names a `focus`.
+- `at` is where the clock stands when the step opens; add `playUntil` to let
+  it run from there. Playback is **one hour per second** unless a step sets
+  its own `speed` (simulated ms per real second) — fast enough that a week is
+  not a wait, slow enough to read while the tokens move. Times must fall
+  inside the pack's range — or inside the battle's, once a step names a
+  `focus`.
+- **The tour stops at every break in the narrative** so the reader can catch
+  up: the card a step reveals, each beat that begins inside the window, each
+  decision point it crosses, and the end of the step. Leaving a break is
+  either automatic — after a dwell scaled to how much text is in front of the
+  reader — or on a click, whichever the viewer has chosen; either way Space,
+  → and the Continue button move it on. Set `hold` (seconds) only to override
+  the dwell on a still step; leave it out and the narration's own length
+  decides.
+- Because every break is a pause, **write each step to be read at a stop**:
+  a window that crosses three beats will stop three times, which is a feature
+  — but do not write a step whose narration only makes sense in motion.
 - `focus` enters a zoom-in, `branch` shows a counterfactual (label it as one
   in the narration), `card` opens a dossier card, `camera` frames something
   closer than the region fit.

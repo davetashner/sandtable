@@ -160,6 +160,11 @@
   filter: brightness(1.08);
 }
 
+.tour__button--toggle[aria-pressed='true'] {
+  color: var(--brass);
+  border-color: var(--brass-dim);
+}
+
 .tour__button--exit {
   margin-left: auto;
   color: var(--muted);

@@ -199,7 +199,11 @@ casualties`), each a point `value` or a `low`–`high` range with its own
   footnoted `narration`. Absent fields mean the default, so a deep link
   (`?tour=…&step=…`) rebuilds the whole view; the engine applies the step, the
   panel narrates it, and any interaction the tour did not initiate stops the
-  autoplay (`sand-1l0.14`). Required sources.
+  autoplay (`sand-1l0.14`). Playback runs at one hour per second and **stops
+  at every break in the narrative** — the card a step reveals, each beat
+  beginning inside its window, each decision crossed, and the step's own end —
+  leaving each on a dwell scaled to the text or on the viewer's click, from
+  the pointer or the keyboard (`sand-1l0.28`). Required sources.
 - **NarrativeBeat** — a Markdown file; front matter carries `id`, `title`,
   `dateLabel`, `from`/`to`, `branch`, `focus` (a Battle), pull quote, hero
   `media`, links and required `sources`. The body is Markdown; footnote

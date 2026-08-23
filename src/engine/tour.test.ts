@@ -1,10 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import type { Tour, TourStep } from '../packs/schema/index.js';
+import type { DecisionPoint, NarrativeBeat, Tour, TourStep } from '../packs/schema/index.js';
 import {
-  DEFAULT_HOLD_SECONDS,
+  TOUR_SPEED,
   diverged,
+  dwellMs,
   holdMs,
   resolvePosition,
+  stopsForStep,
   tourMinutes,
   viewForStep,
 } from './tour.js';
@@ -94,14 +96,80 @@ describe('diverged', () => {
   });
 });
 
-describe('holdMs and tourMinutes', () => {
-  it('defaults the hold and honours an explicit one', () => {
-    expect(holdMs(step({ id: 'a' }))).toBe(DEFAULT_HOLD_SECONDS * 1000);
-    expect(holdMs(step({ id: 'a', hold: 5 }))).toBe(5000);
+describe('dwellMs and holdMs (sand-1l0.28)', () => {
+  it('scales the pause with how much there is to read', () => {
+    const short = dwellMs('Four words go here.');
+    const long = dwellMs(Array.from({ length: 300 }, () => 'word').join(' '));
+    expect(short).toBe(6000); // the floor: a glance still gets a moment
+    expect(long).toBeGreaterThan(short);
+    expect(long).toBeLessThanOrEqual(45000); // …and the ceiling
+    expect(dwellMs(Array.from({ length: 100 }, () => 'word').join(' '))).toBe(30000);
   });
-  it('estimates the length from holds and playback speed', () => {
-    const day = 24 * 60 * 60 * 1000;
-    // three held steps (14 s each) + five days played at one day per second
-    expect(tourMinutes(tour, day)).toBe(Math.round((3 * 14 + 5) / 60));
+  it('does not count markdown syntax or footnote markers as words', () => {
+    expect(dwellMs('**Bold** text.[^herwig-2009]')).toBe(dwellMs('Bold text.'));
+  });
+  it('holds a still step for the author’s time, else for the narration’s', () => {
+    expect(holdMs(step({ id: 'a', hold: 5 }))).toBe(5000);
+    const narration = Array.from({ length: 120 }, () => 'word').join(' ');
+    expect(holdMs(step({ id: 'a', narration }))).toBe(dwellMs(narration));
+  });
+});
+
+describe('stopsForStep (sand-1l0.28)', () => {
+  const beats = [
+    { id: '1914:beat-a', from: '1914-08-04T00:00:00Z', body: 'A.' },
+    { id: '1914:beat-b', from: '1914-08-06T00:00:00Z', body: 'B.' },
+    { id: '1914:beat-cf', from: '1914-08-07T00:00:00Z', body: 'C.', branch: '1914:concept' },
+    { id: '1914:beat-zoom', from: '1914-08-07T12:00:00Z', body: 'Z.', focus: '1914:liege' },
+  ] as unknown as NarrativeBeat[];
+  const decisions = [
+    { id: '1914:decision-x', at: '1914-08-05T12:00:00Z', question: 'Q?', reasoning: 'R.' },
+  ] as unknown as DecisionPoint[];
+  const ctx = { beats, decisions, defaultBranch: '1914:historical' };
+
+  it('stops at every beat and decision inside the window, then at the step’s end', () => {
+    const s = step({ id: 'play', at: '1914-08-04T00:00:00Z', playUntil: '1914-08-09T00:00:00Z' });
+    const stops = stopsForStep(s, viewForStep(s, '1914:historical'), ctx);
+    expect(stops.map((x) => x.kind)).toEqual(['decision', 'beat', 'step-end']);
+    expect(stops[0]!.id).toBe('1914:decision-x');
+    expect(stops[1]!.id).toBe('1914:beat-b'); // beat-a starts *at* the window's start
+    expect(stops[1]!.text).toBe('B.'); // the dwell reads the beat the reader lands on
+  });
+
+  it('only counts the beats the reader will actually see', () => {
+    const s = step({ id: 'play', at: '1914-08-04T00:00:00Z', playUntil: '1914-08-09T00:00:00Z' });
+    // a counterfactual beat shows on that branch…
+    const cf = { ...s, branch: '1914:concept' };
+    const onBranch = stopsForStep(cf, viewForStep(cf, '1914:historical'), ctx);
+    expect(onBranch.map((x) => x.id)).toContain('1914:beat-cf');
+    // …and a zoom-in's beats only inside the zoom-in
+    const zoom = { ...s, focus: '1914:liege' };
+    expect(
+      stopsForStep(zoom, viewForStep(zoom, '1914:historical'), ctx).map((x) => x.id),
+    ).toContain('1914:beat-zoom');
+  });
+
+  it('stops on a card reveal before playing, and gives a still step one stop', () => {
+    const withCard = step({
+      id: 'c',
+      at: '1914-08-04T00:00:00Z',
+      playUntil: '1914-08-05T00:00:00Z',
+      card: '1914:tally-right-wing',
+    });
+    const stops = stopsForStep(withCard, viewForStep(withCard, '1914:historical'), ctx);
+    expect(stops[0]).toMatchObject({ kind: 'card', at: T('1914-08-04T00:00:00Z') });
+    const still = step({ id: 's', at: '1914-08-04T00:00:00Z' });
+    expect(stopsForStep(still, viewForStep(still, '1914:historical'), ctx)).toEqual([
+      { at: T('1914-08-04T00:00:00Z'), kind: 'step-end', text: 'Narration.' },
+    ]);
+  });
+});
+
+describe('tourMinutes', () => {
+  it('counts playback at one hour per second plus a dwell at each step', () => {
+    expect(TOUR_SPEED).toBe(60 * 60 * 1000);
+    const minutes = tourMinutes(tour);
+    // three still steps + a 5-day window: 120 s of playback, plus four dwells
+    expect(minutes).toBe(Math.round((120 + 4 * 6) / 60));
   });
 });

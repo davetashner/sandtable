@@ -38,12 +38,16 @@ import {
 } from './engine/focus.js';
 import { seed } from './packs/seed.js';
 import {
+  TOUR_SPEED,
   diverged,
+  dwellMs,
   holdMs,
   resolvePosition,
+  stopsForStep,
   tourMinutes,
   viewForStep,
   type TourPosition,
+  type TourStop,
 } from './engine/tour.js';
 import { TourLauncher, TourPanel } from './ui/TourPanel.js';
 import { useMediaQuery, usePhone } from './engine/useMediaQuery.js';
@@ -232,18 +236,23 @@ function useMeanwhile() {
   return { available, active, toggle };
 }
 
-/** Simulated ms per real second a tour step plays at unless it says otherwise. */
-const TOUR_SPEED = 12 * 60 * 60 * 1000;
-
 interface TourValue {
   pos: TourPosition | undefined;
   /** True while the tour is advancing itself. */
   running: boolean;
+  /** Stopped at a break in the narrative, waiting to be let on (sand-1l0.28). */
+  waiting: boolean;
+  /** The break we are stopped at, for the panel's label. */
+  stop: TourStop | undefined;
+  /** Leave each break on a dwell (lean back) or on a click (read at your own pace). */
+  autoAdvance: boolean;
   minutes: number;
   start: () => void;
   exit: () => void;
   goto: (index: number) => void;
   toggle: () => void;
+  advance: () => void;
+  setAutoAdvance: (on: boolean) => void;
 }
 
 const TourCtx = createContext<TourValue | null>(null);
@@ -271,6 +280,8 @@ function TourProvider({ children }: { children: ReactNode }) {
     [pos],
   );
   const [running, setRunning] = useState(false);
+  // Lean back by default; readers who want the wheel turn it off (sand-1l0.28).
+  const [autoAdvance, setAutoAdvance] = useState(true);
   // The step whose clock has been applied; state (not a ref) so the advance
   // timers arm only once the view has actually settled on the step.
   const [armed, setArmed] = useState<string | null>(null);
@@ -280,6 +291,8 @@ function TourProvider({ children }: { children: ReactNode }) {
   const exit = useCallback(() => {
     setRunning(false);
     setArmed(null);
+    setWaiting(false);
+    setStopIndex(0);
     slotsFor.current = null;
     clock.pause();
     if (speedBefore.current) clock.setSpeed(speedBefore.current);
@@ -312,6 +325,35 @@ function TourProvider({ children }: { children: ReactNode }) {
 
   const toggle = useCallback(() => setRunning((r) => !r), []);
 
+  // Where this step stops so the reader can catch up, and which one we are at.
+  const stops = useMemo(
+    () =>
+      pos && expected
+        ? stopsForStep(pos.step, expected, {
+            beats: seed.beats,
+            decisions: seed.decisions,
+            defaultBranch: seed.pack.defaultBranch,
+          })
+        : [],
+    [pos, expected],
+  );
+  const [stopIndex, setStopIndex] = useState(0);
+  const [waiting, setWaiting] = useState(false);
+  const stop = waiting ? stops[stopIndex] : undefined;
+
+  /** Let the tour on from the break it is stopped at — the next stop, or the next step. */
+  const advance = useCallback(() => {
+    if (!pos) return;
+    setRunning(true);
+    if (!waiting) return;
+    if (stopIndex < stops.length - 1) {
+      setStopIndex(stopIndex + 1);
+      setWaiting(false);
+      return;
+    }
+    goto(pos.index + 1);
+  }, [pos, waiting, stopIndex, stops.length, goto]);
+
   // 1. the step's slots — branch, zoom-in, card — applied once per step.
   useEffect(() => {
     if (!pos || !expected || !controls) {
@@ -321,6 +363,8 @@ function TourProvider({ children }: { children: ReactNode }) {
     if (slotsFor.current === pos.key) return;
     slotsFor.current = pos.key;
     setArmed(null);
+    setStopIndex(0);
+    setWaiting(false);
     controls.setFocus(expected.focus);
     controls.setBranch(expected.branch);
     controls.setCard(expected.card);
@@ -334,50 +378,91 @@ function TourProvider({ children }: { children: ReactNode }) {
     clock.seek(expected.t);
     clock.setSpeed(pos.step.speed ?? TOUR_SPEED);
     setArmed(pos.key);
-  }, [pos, expected, armed, focus, range.start, range.end, clock]);
+    // A step that reveals a card stops on the reveal before it plays.
+    setWaiting(stops.length > 0 && stops[0]!.at <= expected.t);
+  }, [pos, expected, armed, focus, range.start, range.end, clock, stops]);
 
-  // 3. play or hold, following the running flag.
+  // 3. play up to the next stop, or hold still there.
   useEffect(() => {
     if (!pos || !expected || armed !== pos.key) return;
+    const target = stops[stopIndex]?.at;
     const playing = clock.get().playing;
-    const wants = running && expected.playTo !== undefined && now < expected.playTo;
+    const wants =
+      running && !waiting && expected.playTo !== undefined && target !== undefined && now < target;
     if (wants && !playing) clock.play();
     if (!wants && playing) clock.pause();
-  }, [pos, expected, armed, running, now, clock]);
+  }, [pos, expected, armed, running, waiting, now, clock, stops, stopIndex]);
 
-  // 4a. a playing step ends when the clock reaches its window.
+  // 4. reaching a stop is a pause in the narrative, not the end of the tour.
   useEffect(() => {
-    if (!pos || !expected?.playTo || !running || armed !== pos.key) return;
-    if (now >= expected.playTo) goto(pos.index + 1);
-  }, [pos, expected, running, armed, now, goto]);
+    if (!pos || !running || waiting || armed !== pos.key) return;
+    const target = stops[stopIndex]?.at;
+    if (target === undefined) return;
+    if (expected?.playTo === undefined || now >= target) {
+      clock.pause();
+      setWaiting(true);
+    }
+  }, [pos, expected, running, waiting, armed, now, clock, stops, stopIndex]);
 
-  // 4b. a held step ends after its own beat of reading time.
+  // 5. leaving a stop: on a dwell scaled to the reading, or on a click.
   useEffect(() => {
-    if (!pos || !running || expected?.playTo !== undefined || armed !== pos.key) return;
-    const id = window.setTimeout(() => goto(pos.index + 1), holdMs(pos.step));
+    if (!waiting || !running || !autoAdvance || !pos || armed !== pos.key) return;
+    const here = stops[stopIndex];
+    const ms = here?.kind === 'step-end' ? holdMs(pos.step) : dwellMs(here?.text);
+    const id = window.setTimeout(advance, ms);
     return () => window.clearTimeout(id);
-  }, [pos, expected, running, armed, goto]);
+  }, [waiting, running, autoAdvance, pos, armed, stops, stopIndex, advance]);
 
-  // 5. the viewer takes over: anything the tour did not do stops the autoplay.
+  // 6. the viewer takes over: anything the tour did not do stops the autoplay.
   useEffect(() => {
     if (!pos || !expected || !running || armed !== pos.key) return;
     if (diverged(expected, { focus, branch, card }, now)) setRunning(false);
   }, [pos, expected, running, armed, focus, branch, card, now]);
 
-  // Escape always leaves.
+  // 7. the keyboard drives the whole tour — no pointer required (sand-1l0.28).
   useEffect(() => {
     if (!pos) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') exit();
+      const el = e.target as HTMLElement | null;
+      if (el && /^(BUTTON|INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return;
+      if (e.key === 'Escape') {
+        exit();
+      } else if (e.key === ' ') {
+        // Space is the master switch: let a pause go, or pause the playback.
+        e.preventDefault();
+        if (waiting) advance();
+        else setRunning((r) => !r);
+      } else if (e.key === 'ArrowRight') {
+        // → is always forward: past this break, or on to the next step.
+        e.preventDefault();
+        if (waiting) advance();
+        else goto(pos.index + 1);
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        goto(pos.index - 1);
+      }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [pos, exit]);
+  }, [pos, exit, advance, goto, waiting]);
 
-  const minutes = useMemo(() => (seed.tours[0] ? tourMinutes(seed.tours[0], TOUR_SPEED) : 0), []);
+  const minutes = useMemo(() => (seed.tours[0] ? tourMinutes(seed.tours[0]) : 0), []);
   const value = useMemo<TourValue>(
-    () => ({ pos, running, minutes, start, exit, goto, toggle }),
-    [pos, running, minutes, start, exit, goto, toggle],
+    () => ({
+      pos,
+      running,
+      waiting,
+      stop,
+      autoAdvance,
+      minutes,
+      start,
+      exit,
+      goto,
+      toggle,
+      advance,
+      setAutoAdvance,
+    }),
+    [pos, running, waiting, stop, autoAdvance, minutes, start, exit, goto, toggle, advance],
   );
   return <TourCtx.Provider value={value}>{children}</TourCtx.Provider>;
 }
@@ -566,6 +651,11 @@ function DossierSurface() {
           step={tour.pos.step}
           index={tour.pos.index}
           running={tour.running}
+          waiting={tour.waiting}
+          stop={tour.stop}
+          autoAdvance={tour.autoAdvance}
+          onContinue={tour.advance}
+          onSetAutoAdvance={tour.setAutoAdvance}
           sources={seed.sources}
           onPrev={tour.pos.index > 0 ? () => tour.goto(tour.pos!.index - 1) : undefined}
           onNext={

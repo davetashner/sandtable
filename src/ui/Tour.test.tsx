@@ -82,6 +82,41 @@ describe('TourPanel', () => {
   });
 });
 
+describe('TourPanel at a break in the narrative (sand-1l0.28)', () => {
+  it('offers Continue instead of Pause, and says what the pause is for', () => {
+    const props = panel({
+      waiting: true,
+      stop: { at: Date.parse('1914-08-25T12:00:00Z'), kind: 'decision', id: '1914:decision-x' },
+      onContinue: vi.fn(),
+      onSetAutoAdvance: vi.fn(),
+    });
+    expect(screen.queryByRole('button', { name: 'Pause the tour' })).not.toBeInTheDocument();
+    const go = screen.getByRole('button', { name: /Continue past a decision point/ });
+    fireEvent.click(go);
+    expect(props.onContinue).toHaveBeenCalled();
+    expect(screen.getByText(/A decision point — going on shortly/)).toBeInTheDocument();
+    // the keyboard route is spelled out, not just implied
+    expect(screen.getByText(/Space or → to go on, ← to go back, Esc to leave/)).toBeInTheDocument();
+  });
+
+  it('switches between leaning back and reading at your own pace', () => {
+    const props = panel({ waiting: true, autoAdvance: true, onSetAutoAdvance: vi.fn() });
+    const toggle = screen.getByRole('button', { name: /Auto-advance/ });
+    expect(toggle).toHaveAttribute('aria-pressed', 'true');
+    fireEvent.click(toggle);
+    expect(props.onSetAutoAdvance).toHaveBeenCalledWith(false);
+  });
+
+  it('waits for the reader when auto-advance is off', () => {
+    panel({ waiting: true, autoAdvance: false, onSetAutoAdvance: vi.fn(), onContinue: vi.fn() });
+    expect(screen.getByRole('button', { name: /Auto-advance/ })).toHaveAttribute(
+      'aria-pressed',
+      'false',
+    );
+    expect(screen.getByText(/continue when you are ready/)).toBeInTheDocument();
+  });
+});
+
 describe('TourLauncher', () => {
   it('announces the tour and its length, and starts it', () => {
     const onStart = vi.fn();

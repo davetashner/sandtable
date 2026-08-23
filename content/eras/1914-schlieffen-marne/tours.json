@@ -46,46 +46,38 @@
         "id": "a-bet-about-time",
         "title": "A plan is a bet about time",
         "narration": "Germany went to war in the West with a plan that was really a timetable: beat France in about six weeks, then turn east before Russia was ready.[^herwig-2009] Everything you are about to watch is that bet being settled — not by one decision, but by distance, railways, Belgian forts and the choices of the other side.[^strachan-2001]\n\nWhat the plan actually was is itself contested: an operational plan Moltke inherited and diluted, or a memorandum turned into a legend after the war.[^zuber-2002] Both readings are in the dossier.",
-        "at": "1914-08-02T00:00:00Z",
-        "hold": 24
+        "at": "1914-08-02T00:00:00Z"
       },
       {
         "id": "the-two-clocks",
         "title": "Two clocks start together",
         "narration": "On 4 August the German armies cross into Belgium and the campaign clock starts. Beside it runs the plan's own clock — the days the timetable expected to need — and the Russian mobilization it was racing.[^mombauer-2001]\n\nSeven armies deployed in the West, one in the East: the whole bet in one number.[^herwig-2009] Watch the gauge under the timeline as the days pass; the gap between the two clocks is the story.",
         "at": "1914-08-04T00:00:00Z",
-        "playUntil": "1914-08-09T00:00:00Z",
-        "speed": 21600000,
-        "card": "1914:clock-plan-timetable",
-        "hold": 6
+        "playUntil": "1914-08-07T00:00:00Z",
+        "card": "1914:clock-plan-timetable"
       },
       {
         "id": "liege",
         "title": "Liège: eleven days the plan did not have",
         "narration": "The road west runs through Liège, and Liège is a ring of twelve forts. The city falls on 7 August; the forts hold until 16 August, and only super-heavy siege artillery ends them.[^herwig-2009]\n\nThe delay is smaller than the legend and larger than the timetable could afford — and every day of it is a day the French and British get to concentrate.[^strachan-2001]",
         "at": "1914-08-05T00:00:00Z",
-        "playUntil": "1914-08-16T00:00:00Z",
-        "speed": 43200000,
-        "focus": "1914:liege",
-        "hold": 6
+        "playUntil": "1914-08-10T00:00:00Z",
+        "focus": "1914:liege"
       },
       {
         "id": "lorraine",
         "title": "Plan XVII walks into the trap",
         "narration": "While the wheel swings through Belgium, the French attack where the plan wanted them to: east, into Lorraine. On 20 August the offensive breaks at Morhange and Sarrebourg.[^afgg-1-1]\n\nThe German success here is a problem for Germany. Rupprecht's counter-attack pulls strength toward the hinge and hands the French an army they can move somewhere else.[^herwig-2009]",
-        "at": "1914-08-14T00:00:00Z",
+        "at": "1914-08-18T00:00:00Z",
         "playUntil": "1914-08-22T00:00:00Z",
-        "speed": 43200000,
-        "focus": "1914:lorraine",
-        "hold": 6
+        "focus": "1914:lorraine"
       },
       {
         "id": "twenty-second-august",
         "title": "22 August",
         "narration": "The bloodiest day in French history: on this single day, in the Ardennes and on the Sambre, roughly 27,000 French soldiers are killed.[^steg-2013] It is not a battle anyone planned — armies collide in fog and standing corn.\n\nThe card holds what is known and how firmly. Nothing here is a score.",
         "at": "1914-08-22T12:00:00Z",
-        "card": "1914:casualties-22-august",
-        "hold": 24
+        "card": "1914:casualties-22-august"
       },
       {
         "id": "charleroi-mons",
@@ -93,33 +85,28 @@
         "narration": "On the Sambre and at Mons the French Fifth Army and the British Expeditionary Force meet the right wing head-on, and both give ground.[^edmonds-1922] Joffre orders a general retreat rather than a stand.\n\nThe wing is winning every encounter and still not catching anyone. That is the shape of the next fortnight.[^tyng-1935]",
         "at": "1914-08-23T00:00:00Z",
         "playUntil": "1914-08-26T00:00:00Z",
-        "speed": 21600000,
-        "focus": "1914:frontiers-north",
-        "hold": 6
+        "focus": "1914:frontiers-north"
       },
       {
         "id": "two-corps-east",
         "title": "Decision: two corps for East Prussia",
         "narration": "25 August. With Russian armies in East Prussia, Moltke detaches the Guard Reserve Corps and XI Corps from the decisive wing and entrains them east.[^reichsarchiv-weltkrieg-1]\n\nThey arrive too late for Tannenberg and are absent at the Marne — the clearest single case of the timetable being paid for twice.[^mombauer-2001] Read the options, then let the tour move on.",
         "at": "1914-08-25T12:00:00Z",
-        "card": "1914:decision-1914-08-25-two-corps-east",
-        "hold": 26
+        "card": "1914:decision-1914-08-25-two-corps-east"
       },
       {
         "id": "the-wing-bleeds",
         "title": "Where the right wing bleeds",
         "narration": "East Prussia is not the only debt. Antwerp has to be masked, Namur and Maubeuge besieged, lines of communication guarded — each takes corps out of the wheel.[^herwig-2009]\n\nThe ledger beside the clock counts what leaves. By the Marne the outer wing is markedly weaker than the plan assumed.[^strachan-2001]",
         "at": "1914-08-27T00:00:00Z",
-        "card": "1914:tally-right-wing",
-        "hold": 22
+        "card": "1914:tally-right-wing"
       },
       {
         "id": "rail-and-feet",
         "title": "Rail against feet",
         "narration": "The Germans advance at the speed of boots and horses while their railheads crawl forward behind blown Belgian tunnels and bridges. The French fall back onto their own intact network — and Joffre uses it, moving whole corps west by train to build a new army near Paris.[^herwig-2009]\n\nThe gauge reads the gap between an army and its railhead. Beyond a few marches, supply stops being a line on a map.[^strachan-2001]",
         "at": "1914-08-30T00:00:00Z",
-        "card": "1914:supply-de-1",
-        "hold": 22
+        "card": "1914:supply-de-1"
       },
       {
         "id": "the-wheel",
@@ -130,8 +117,7 @@
           "center": [2.95, 49.35],
           "zoom": 7.4
         },
-        "card": "1914:decision-1914-08-30-kluck-wheel",
-        "hold": 26
+        "card": "1914:decision-1914-08-30-kluck-wheel"
       },
       {
         "id": "the-other-story",
@@ -139,17 +125,14 @@
         "narration": "Here is the counterfactual, labelled as one. Schlieffen's concept branch keeps the weight on the outer wing and swings west of Paris — the sweep the memorandum described.[^zuber-2002]\n\nWatch the tokens take the wider arc, then ask the feasibility checklist what would have had to be true: more corps, more supply, more days than the marching had left.[^herwig-2009]",
         "at": "1914-08-30T18:00:00Z",
         "playUntil": "1914-09-03T00:00:00Z",
-        "speed": 21600000,
-        "branch": "1914:schlieffen-concept",
-        "hold": 8
+        "branch": "1914:schlieffen-concept"
       },
       {
         "id": "facing-paris",
         "title": "Decision: halt and face Paris",
         "narration": "Back on the historical branch. On 4 September the German command finally sees the threat gathering out of Paris and orders the right wing to turn and face it.[^reichsarchiv-weltkrieg-1]\n\nThe order is right and late: turning First Army to meet Maunoury opens a gap between it and Bülow.[^tyng-1935]",
         "at": "1914-09-04T20:00:00Z",
-        "card": "1914:decision-1914-09-04-halt-facing-paris",
-        "hold": 26
+        "card": "1914:decision-1914-09-04-halt-facing-paris"
       },
       {
         "id": "the-marne",
@@ -157,9 +140,7 @@
         "narration": "5 September: the French Sixth Army strikes east out of Paris toward the Ourcq, and Kluck feeds his corps back north-west to meet it.[^gallieni-1920] The gap between the two German armies widens to some fifty kilometres, and the BEF and the French Fifth Army walk into it.[^edmonds-1922]\n\nNo one is being destroyed here. Something simpler is happening: the plan is running out of time.",
         "at": "1914-09-05T00:00:00Z",
         "playUntil": "1914-09-09T00:00:00Z",
-        "speed": 21600000,
-        "focus": "1914:marne",
-        "hold": 8
+        "focus": "1914:marne"
       },
       {
         "id": "hentsch",
@@ -167,17 +148,14 @@
         "narration": "9 September, late morning. Lieutenant-Colonel Hentsch arrives at First Army headquarters with the authority of a supreme command 200 kilometres away, and the German right wing is ordered back.[^kluck-1920]\n\nWhat exactly he was empowered to do has been argued over ever since — the army that lost wanted a reason, and a staff officer made a convenient one.[^herwig-2009]",
         "at": "1914-09-09T11:30:00Z",
         "focus": "1914:marne",
-        "card": "1914:decision-1914-09-09-hentsch-retreat",
-        "hold": 26
+        "card": "1914:decision-1914-09-09-hentsch-retreat"
       },
       {
         "id": "the-line",
         "title": "The line that stayed",
         "narration": "The Germans fall back to the Aisne heights and dig in; the attacks that follow fail, and both sides begin reaching north for an open flank that is closing.[^edmonds-1922]\n\nThe bet is settled. The war of movement ends in a line of trenches, and the plan's six weeks become four years.[^strachan-2001]",
         "at": "1914-09-12T00:00:00Z",
-        "playUntil": "1914-09-16T00:00:00Z",
-        "speed": 21600000,
-        "hold": 20
+        "playUntil": "1914-09-16T00:00:00Z"
       }
     ]
   }
