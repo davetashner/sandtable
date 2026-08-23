@@ -7,7 +7,7 @@ to: 1914-08-26T00:00:00Z
 branch: 1914:historical
 focus: 1914:lorraine
 links:
-  battles: ['1914:lorraine']
+  battles: ['1914:lorraine', '1914:grand-couronne']
   people:
     ['person:rupprecht-of-bavaria', 'person:dubail-auguste', 'person:castelnau-edouard-de', 'person:foch-ferdinand', 'person:moltke-helmuth-von-younger']
   places: ['place:charmes', 'place:toul', 'place:epinal']

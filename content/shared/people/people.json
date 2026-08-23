@@ -1173,5 +1173,79 @@
         "note": "dates"
       }
     ]
+  },
+  {
+    "id": "person:raffenel-leon",
+    "name": "Léon Raffenel",
+    "sortName": "Raffenel, Léon",
+    "born": "1856-08-14",
+    "died": "1914-08-22",
+    "nationality": "FR",
+    "roles": [
+      {
+        "title": "Commander, French 3rd Colonial Infantry Division",
+        "to": "1914-08-22"
+      }
+    ],
+    "summary": "Commanded the 3rd Colonial Infantry Division of the French 4th Army and was killed with most of his division at Rossignol on 22 August 1914, eight days after his fifty-eighth birthday — one of the first French general officers to die in the war.",
+    "sources": [
+      {
+        "source": "source:greenhalgh-2014"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:balfourier-maurice",
+    "name": "Maurice Balfourier",
+    "sortName": "Balfourier, Maurice",
+    "born": "1852-04-27",
+    "died": "1933-06-24",
+    "nationality": "FR",
+    "roles": [
+      {
+        "title": "Commander, French XX Corps",
+        "from": "1914-08-29",
+        "to": "1916-09-17"
+      }
+    ],
+    "summary": "Took the French XX Corps — the Nancy corps, and the army's best — from Foch on 29 August 1914 and held the Grand Couronné with it through the September attacks; later commanded it at Verdun and on the Somme.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:wilhelm-ii",
+    "name": "Wilhelm II",
+    "sortName": "Wilhelm II, German Emperor",
+    "born": "1859-01-27",
+    "died": "1941-06-04",
+    "nationality": "DE",
+    "roles": [
+      {
+        "title": "German Emperor and King of Prussia",
+        "from": "1888-06-15",
+        "to": "1918-11-09"
+      }
+    ],
+    "summary": "German Emperor and nominal supreme warlord. In practice OHL made the operational decisions in 1914; the Kaiser travelled between headquarters, and came to Rupprecht's 6th Army in September expecting to ride into Nancy.",
+    "sources": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
   }
 ]

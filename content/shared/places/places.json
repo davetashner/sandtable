@@ -1121,5 +1121,157 @@
         "source": "source:clark-2012"
       }
     ]
+  },
+  {
+    "id": "place:rossignol",
+    "name": "Rossignol",
+    "kind": "village",
+    "lngLat": [5.516, 49.703],
+    "country": "Belgium",
+    "notes": "Village on the Semois north of Tintigny where the French 3rd Colonial Division was destroyed on 22 August 1914.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:bertrix",
+    "name": "Bertrix",
+    "kind": "town",
+    "lngLat": [5.257, 49.854],
+    "country": "Belgium",
+    "notes": "Where the French 4th Army's XVII Corps was broken in the woods on 22 August 1914.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:neufchateau",
+    "name": "Neufchâteau",
+    "kind": "town",
+    "lngLat": [5.437, 49.841],
+    "country": "Belgium",
+    "notes": "The Belgian Ardennes town the French 4th Army was ordered on; not the Neufchâteau in the Vosges.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:maissin",
+    "name": "Maissin",
+    "kind": "village",
+    "lngLat": [5.181, 49.985],
+    "country": "Belgium",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:virton",
+    "name": "Virton",
+    "kind": "town",
+    "lngLat": [5.532, 49.568],
+    "country": "Belgium",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:ethe",
+    "name": "Ethe",
+    "kind": "village",
+    "lngLat": [5.585, 49.585],
+    "country": "Belgium",
+    "notes": "Village east of Virton, fought over by the French 3rd Army on 22 August 1914 and the scene of German reprisals against civilians.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:longwy",
+    "name": "Longwy",
+    "kind": "fortress",
+    "lngLat": [5.762, 49.521],
+    "country": "France",
+    "notes": "Small French fortress on the 3rd Army's right; besieged from 3 August and surrendered on 26 August 1914.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:amance",
+    "name": "Amance",
+    "kind": "village",
+    "lngLat": [6.283, 48.768],
+    "country": "France",
+    "notes": "Village and hill on the Grand Couronné north-east of Nancy; the observation point of the whole position and the target of the heaviest German bombardment on 6 September 1914.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:champenoux",
+    "name": "Champenoux",
+    "kind": "village",
+    "lngLat": [6.354, 48.727],
+    "country": "France",
+    "notes": "Village and forest east of Nancy, fought over throughout the German attacks of 4–10 September 1914.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:sainte-genevieve",
+    "name": "Sainte-Geneviève",
+    "kind": "village",
+    "lngLat": [6.086, 48.849],
+    "country": "France",
+    "notes": "Village on the Moselle heights at the northern end of the Grand Couronné position.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:remereville",
+    "name": "Réméréville",
+    "kind": "village",
+    "lngLat": [6.353, 48.687],
+    "country": "France",
+    "notes": "Village east of Nancy from which German heavy guns shelled the city on 9 September 1914.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
   }
 ]

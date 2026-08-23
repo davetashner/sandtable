@@ -8,7 +8,7 @@ links:
   casualties: ['1914:casualties-22-august']
   events: ['1914:event-battle-of-the-frontiers']
   tech: ['1914:tech-firepower-1914']
-  battles: ['1914:frontiers-north', '1914:lorraine']
+  battles: ['1914:ardennes', '1914:frontiers-north', '1914:lorraine']
   people: ['person:ruffey-pierre', 'person:langle-de-cary-fernand-de', 'person:lanrezac-charles']
   places: ['place:charleroi', 'place:dinant']
 sources:
