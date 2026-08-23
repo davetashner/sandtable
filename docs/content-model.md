@@ -193,6 +193,16 @@ casualties`), each a point `value` or a `low`–`high` range with its own
   a short footnoted `text`, `people`, links. The dossier shows the vignettes
   whose moment falls inside the current beat once the clock has passed it,
   as a voice set apart from the narrative (`sand-1l0.24`). Required sources.
+- **Opening** (`pack.opening`, optional) — the first thirty seconds
+  (`sand-1l0.26`): a `headline` read one line at a time, a footnoted `lede`,
+  an optional `eyebrow`, an optional `camera` the map settles on while the
+  premise is read, and the ways on — the guided tour, free exploration, and
+  the pack's causal chain. A premise that asserts a number must show its
+  working: `claim` points at the card the number rests on (typically a clock),
+  and `sources` carries the citations the lede footnotes. It plays on a cold
+  arrival only — never in front of a deep link — and is skippable at any
+  moment, by pointer, by Escape or by keyboard, with the choice remembered for
+  the session.
 - **Tour** (`tours.json`) — the lean-back path through a pack: ordered
   `steps`, each a complete description of the view — `at` (and `playUntil`,
   `speed` or `hold`), optional `camera`, `focus`, `branch` and `card` — with

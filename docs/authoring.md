@@ -573,6 +573,37 @@ campaign map, the pack's default branch, no card). That is what makes
   Escape leaves, and touching anything the tour did not set stops the
   autoplay. Write each step so it still reads if the viewer stops there.
 
+## 8b. Write the opening sequence
+
+`pack.opening` is the premise a first-time viewer reads before the map is
+interactive. It is optional; a pack without one simply opens on the map.
+
+```json
+"opening": {
+  "eyebrow": "The plan and the clock",
+  "headline": ["August 1914.", "Germany has forty days."],
+  "lede": "The German plan is a bet about time…[^herwig-2009]",
+  "camera": { "center": [4.9, 50.6], "zoom": 6.8 },
+  "claim": {
+    "label": "Where does “forty days” come from?",
+    "card": "1914:clock-plan-timetable"
+  },
+  "sources": [{ "source": "source:herwig-2009" }]
+}
+```
+
+- **One idea per `headline` line** — each is a beat of the reveal, so a line
+  that needs a comma probably wants to be two lines. Four lines is the cap.
+- **Never assert a bare number.** The 1914 headline says "forty days"; the
+  `claim` link opens the plan-timetable clock, whose `assumption` carries the
+  sourcing and the disagreement. If your premise makes a claim and you cannot
+  point at the card that shows the working, cut the claim.
+- The `lede` footnotes to `opening.sources`, as beats footnote to their own.
+- `camera` frames what the premise is _about_ — the map settles there while it
+  is read, then hands back to the ordinary region fit.
+- Do not write the ways on: the engine offers the tour when the pack has one,
+  the causal chain when it has links, and always plain exploration.
+
 ## 9. Add an image
 
 Read [ADR 0007](decisions/0007-imagery.md) first. Put the manifest

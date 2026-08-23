@@ -14,6 +14,17 @@
     "center": [4.2, 49.7],
     "zoom": 6.3
   },
+  "opening": {
+    "eyebrow": "The plan and the clock",
+    "headline": ["August 1914.", "Germany has forty days."],
+    "lede": "The German plan is a bet about time: beat France in the west before Russia can bring her armies to bear in the east, by a right-wing sweep through Belgium. Everything that follows is that timetable meeting the ground.[^herwig-2009]",
+    "camera": { "center": [4.9, 50.6], "zoom": 6.8 },
+    "claim": {
+      "label": "Where does \u201cforty days\u201d come from?",
+      "card": "1914:clock-plan-timetable"
+    },
+    "sources": [{ "source": "source:herwig-2009" }, { "source": "source:tuchman-1962" }]
+  },
   "sides": [
     {
       "id": "de",

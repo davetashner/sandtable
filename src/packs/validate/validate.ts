@@ -437,6 +437,7 @@ function checkPack(ctx: Ctx, s: PackState, allPrefixes: Map<string, string>) {
       checkCitations(ctx, path, b.id, f.sources, false, 'feasibility.sources');
   }
   checkCitations(ctx, path, pack.id, pack.sources, false);
+  checkOpening(ctx, path, pack);
 
   // every pack-scoped id carries the prefix
   for (const [id, entry] of ctx.index) {
@@ -788,6 +789,40 @@ function checkVignette(ctx: Ctx, s: PackState, path: string, v: Vignette) {
   checkLinks(ctx, path, v.id, v.links);
   checkCitations(ctx, path, v.id, v.sources, true);
   checkFootnotes(ctx, path, v.id, v.text, v.sources, 'text');
+}
+
+/**
+ * The opening sequence (sand-1l0.26). The premise is authored content, so the
+ * claim it rests on must resolve and its footnotes must cite the opening's own
+ * sources — a headline number with nothing behind it is the one thing this
+ * screen must not do. The camera, if given, is checked against the pack region
+ * the same way any other camera is.
+ */
+function checkOpening(ctx: Ctx, path: string, pack: PackT) {
+  const o = pack.opening;
+  if (!o) return;
+  const CARD_KINDS: Kind[] = [
+    'tech',
+    'science',
+    'document',
+    'decision',
+    'clock',
+    'tally',
+    'supply',
+    'casualties',
+    'vignette',
+    'link',
+    'person',
+  ];
+  if (o.claim) ctx.ref(path, pack.id, o.claim.card, CARD_KINDS, 'opening.claim.card');
+  checkCitations(ctx, path, pack.id, o.sources, false, 'opening.sources');
+  checkFootnotes(ctx, path, pack.id, o.lede, o.sources ?? [], 'opening.lede');
+  if (o.camera) {
+    const [w, so, e, n] = pack.region;
+    const [lng, lat] = o.camera.center;
+    if (lng < w || lng > e || lat < so || lat > n)
+      ctx.warn(path, 'opening.camera.center is outside the pack region', pack.id);
+  }
 }
 
 /**

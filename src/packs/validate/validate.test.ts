@@ -242,6 +242,43 @@ describe('validateContent', () => {
     expect(report.content.packs[0]?.beats[0]?.body).toBe('Body text.[^herwig-2009]');
   });
 
+  it('checks the opening sequence: the claim card resolves, footnotes cite its own sources, camera inside the region', () => {
+    const raw = fixture();
+    const pack = raw.packs[0]!.pack.data as Record<string, unknown>;
+    pack['opening'] = {
+      headline: ['August 1914.', 'Germany has forty days.'],
+      lede: 'A bet about time.[^nobody]',
+      camera: { center: [40, 60], zoom: 6 },
+      claim: { label: 'Where does that come from?', card: '1914:no-such-clock' },
+      sources: [{ source: 'source:missing' }],
+    };
+    const report = validateContent(raw);
+    const errs = report.errors.map((e) => e.message);
+    expect(errs).toContainEqual(expect.stringMatching(/opening\.claim\.card/));
+    expect(errs).toContainEqual(expect.stringMatching(/opening\.sources: citation/));
+    expect(errs).toContainEqual(
+      expect.stringMatching(/opening\.lede footnote \[\^nobody\] is not one of the entity's sources/),
+    );
+    expect(report.warnings.map((w) => w.message)).toContainEqual(
+      expect.stringMatching(/opening\.camera\.center is outside the pack region/),
+    );
+  });
+
+  it('accepts an opening whose claim and citations resolve', () => {
+    const raw = fixture();
+    const pack = raw.packs[0]!.pack.data as Record<string, unknown>;
+    pack['opening'] = {
+      eyebrow: 'The plan and the clock',
+      headline: ['August 1914.'],
+      lede: 'A bet about time.[^herwig-2009]',
+      camera: { center: [4.9, 50.6], zoom: 6.8 },
+      sources: [{ source: 'source:herwig-2009' }],
+    };
+    const report = validateContent(raw);
+    expect(messages(report)).toEqual([]);
+    expect(report.ok).toBe(true);
+  });
+
   it('checks a formation concentration: asOf inside the pack range (error), position inside the region (warning), sources resolve', () => {
     const raw = fixture();
     const c = raw.packs[0]!.collections;
