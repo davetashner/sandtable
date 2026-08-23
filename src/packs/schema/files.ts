@@ -43,6 +43,7 @@ import {
   TechCard,
   Thread,
   CastEntry,
+  Tally,
   Timetable,
 } from './entities.js';
 
@@ -60,6 +61,7 @@ export const PACK_COLLECTIONS = {
   'sources.json': Source,
   'cast.json': CastEntry,
   'clocks.json': Timetable,
+  'tallies.json': Tally,
 } as const;
 
 export type PackCollectionFile = keyof typeof PACK_COLLECTIONS;
@@ -93,6 +95,7 @@ export const JSON_SCHEMAS = {
   sources: z.array(Source),
   cast: z.array(CastEntry),
   clocks: z.array(Timetable),
+  tallies: z.array(Tally),
   'beat-frontmatter': BeatFrontMatter,
   people: z.array(Person),
   places: z.array(Place),

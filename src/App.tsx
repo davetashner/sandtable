@@ -44,6 +44,8 @@ import { Dossier, type CardChipLike } from './ui/Dossier.js';
 import { CastStrip, type CastMember } from './ui/CastStrip.js';
 import { DecisionCardView } from './ui/DecisionCardView.js';
 import { ClockGauges } from './ui/ClockGauges.js';
+import { TallyGauges } from './ui/TallyGauges.js';
+import { TallyCardView } from './ui/TallyCardView.js';
 import { ClockCardView } from './ui/ClockCardView.js';
 import { decisionCrossed } from './engine/decisions.js';
 import { portraitFor } from './packs/media-index.js';
@@ -108,6 +110,7 @@ function useLabeller(): EntityLabeller {
           seed.people.find((p) => p.id === id)?.name ??
           seed.decisions.find((d) => d.id === id)?.title ??
           seed.clocks.find((c) => c.id === id)?.title ??
+          seed.tallies.find((c) => c.id === id)?.title ??
           seed.tech.find((t) => t.id === id)?.title ??
           seed.science.find((t) => t.id === id)?.title ??
           seed.documents.find((d) => d.id === id)?.title ??
@@ -144,9 +147,12 @@ function useCard():
   | { kind: 'person'; card: (typeof seed.people)[number] }
   | { kind: 'decision'; card: (typeof seed.decisions)[number] }
   | { kind: 'clock'; card: (typeof seed.clocks)[number] }
+  | { kind: 'tally'; card: (typeof seed.tallies)[number] }
   | undefined {
   const { card } = useViewState();
   if (!card) return undefined;
+  const tally = seed.tallies.find((c) => c.id === card);
+  if (tally) return { kind: 'tally', card: tally };
   const clock = seed.clocks.find((c) => c.id === card);
   if (clock) return { kind: 'clock', card: clock };
   const decision = seed.decisions.find((d) => d.id === card);
@@ -240,6 +246,7 @@ function FocusBar() {
 function MapSection() {
   const branch = useBranch();
   const focus = useFocus();
+  const controls = useViewStateControls();
   const hypothetical = branch.kind === 'counterfactual';
   // Inside a zoom-in with its own routes the map animates those (sand-1l0.10).
   const movement = useMemo(() => movementSourceFor(focus, MOVEMENT_SOURCE), [focus]);
@@ -255,6 +262,8 @@ function MapSection() {
           region={seed.pack.region}
           focusRegion={focus?.region}
           places={seed.places}
+          tallies={focus ? [] : seed.tallies}
+          onSelectTally={(id) => controls?.setCard(id)}
         />
       </Suspense>
     </section>
@@ -388,6 +397,13 @@ function DossierSurface() {
                 .filter((f) => f.commander === card.card.id)
                 .map((f) => ({ id: f.id, label: f.name }))}
               cast={seed.cast.find((c) => c.person === card.card.id)}
+              onBack={() => controls?.setCard(undefined)}
+            />
+          ) : card?.kind === 'tally' ? (
+            <TallyCardView
+              tally={card.card}
+              sources={seed.sources}
+              labeller={labeller}
               onBack={() => controls?.setCard(undefined)}
             />
           ) : card?.kind === 'clock' ? (
@@ -524,11 +540,18 @@ function TimelineSurface() {
         }}
       />
       {!focus && (
-        <ClockGauges
-          clocks={seed.clocks}
-          selected={viewCard}
-          onSelect={(id) => controls?.setCard(viewCard === id ? undefined : id)}
-        />
+        <>
+          <ClockGauges
+            clocks={seed.clocks}
+            selected={viewCard}
+            onSelect={(id) => controls?.setCard(viewCard === id ? undefined : id)}
+          />
+          <TallyGauges
+            tallies={seed.tallies}
+            selected={viewCard}
+            onSelect={(id) => controls?.setCard(viewCard === id ? undefined : id)}
+          />
+        </>
       )}
     </footer>
   );

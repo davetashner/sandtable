@@ -118,6 +118,42 @@
   color: var(--brass);
 }
 
+/* Tallies share the row layout; one bar that shortens as strength leaves. */
+.clocks--tallies {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 4px;
+}
+
+.clocks__row--tally {
+  top: 5px;
+  height: 8px;
+}
+
+.clocks__fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--brass) 55%, transparent);
+  transition: width 200ms ease;
+}
+
+.clocks__tick--entry {
+  top: -2px;
+  height: 12px;
+  background: var(--muted);
+}
+
+.clocks__tick--entry[data-sign='minus'][data-reached] {
+  background: var(--side-central-1, #a33);
+}
+
+.clocks__tick--entry[data-sign='plus'][data-reached] {
+  background: var(--brass);
+}
+
 /* Phone: the timeline strip is deliberately minimal and the dossier sheet
    sits over the space below it — the gauges wait for the stacked layouts;
    the timetable cards stay reachable from the ◇/markers and deep links. */

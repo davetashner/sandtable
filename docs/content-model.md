@@ -159,6 +159,12 @@ generated JSON Schema; this is the intent of each.
   reached (absent if never; reality-only marks have only `actualAt`). Rendered
   as the plan-vs-reality gauges under the timeline and a card (`sand-1l0.18`);
   any later era's plan vs. actual fits. Required sources.
+- **Tally** (`tallies.json`) — a running strength ledger: a `start` value in
+  some `unit`, dated `entries` with a `delta` (negative when strength leaves),
+  the formations and place involved and a map position, and optional named
+  `comparisons` (a:b pairs drawn as bars). Rendered as a gauge beside the
+  clocks, markers on the map as each entry happens, and a ledger card
+  (`sand-1l0.19`). Required sources.
 - **NarrativeBeat** — a Markdown file; front matter carries `id`, `title`,
   `dateLabel`, `from`/`to`, `branch`, `focus` (a Battle), pull quote, hero
   `media`, links and required `sources`. The body is Markdown; footnote
@@ -191,8 +197,10 @@ footnote labels (beats and cast bios), missing required citations, cast
 entries naming a person or side that does not exist or the same person twice,
 a formation's `concentration.asOf` or `dissolved` outside the pack range or
 `dissolved` not after `concentration.asOf`, timetable milestones without a
-planned day or an actual date, duplicated, or dated before the origin, and
-assumption footnotes that name no source, decision `historical` not an
+planned day or an actual date, duplicated, or dated before the origin,
+assumption footnotes that name no source, tally entries out of order, outside
+the range or naming formations/places that do not exist, negative comparison
+quantities, decision `historical` not an
 option, campaign routes using battle-level formations, and the imagery policy
 on media manifests (flagged BLOCKED/UNVERIFIED/UNKNOWN/HOLD, colorized without
 saying so, Bundesarchiv without the credit string, no archive record).
