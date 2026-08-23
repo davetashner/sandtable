@@ -346,5 +346,99 @@
         "note": "the official account and Hentsch's 1917 report, Bd. 4"
       }
     ]
+  },
+  {
+    "id": "1914:document-blank-cheque-1914-07-06",
+    "title": "The 'blank cheque': Bethmann Hollweg to Tschirschky, 6 July 1914",
+    "date": "1914-07-06",
+    "author": "Theobald von Bethmann Hollweg, Imperial Chancellor, to Heinrich von Tschirschky, German Ambassador at Vienna",
+    "kind": "telegram",
+    "language": "en",
+    "excerpt": "Confidential. For Your Excellency's personal information and guidance\n\nThe Austro-Hungarian Ambassador yesterday delivered to the Emperor a confidential personal letter from the Emperor Francis Joseph, which depicts the present situation from the Austro-Hungarian point of view, and describes the measures which Vienna has in view. A copy is now being forwarded to Your Excellency.\n\n[…] Finally, as far as concerns Serbia, His Majesty, of course, cannot interfere in the dispute now going on between Austria-Hungary and that country, as it is a matter not within his competence. The Emperor Francis Joseph may, however, rest assured that His Majesty will faithfully stand by Austria-Hungary, as is required by the obligations of his alliance and of his ancient friendship.\n\nBETHMANN-HOLLWEG",
+    "archive": "Die Deutschen Dokumente zum Kriegsausbruch (Berlin, 1919), no. 15; English text from the Kautsky collection, Outbreak of the World War (Oxford, 1924). Quoted here from the World War I Document Archive transcription; the German original is in the 1919 edition.",
+    "links": {
+      "people": ["person:moltke-helmuth-von-younger"]
+    },
+    "sources": [
+      {
+        "source": "source:kautsky-1924",
+        "note": "document no. 15"
+      },
+      {
+        "source": "source:byu-wwi-archive",
+        "note": "working text"
+      },
+      {
+        "source": "source:clark-2012",
+        "note": "on what the assurance did and did not authorise"
+      },
+      {
+        "source": "source:fischer-1967",
+        "note": "reads the assurance as deliberate encouragement of a wider war"
+      }
+    ]
+  },
+  {
+    "id": "1914:document-austro-hungarian-ultimatum-1914-07-23",
+    "title": "The Austro-Hungarian note to Serbia, 23 July 1914 (the ultimatum)",
+    "date": "1914-07-23",
+    "author": "Ministry of Foreign Affairs, Austria-Hungary; delivered at Belgrade by Baron Giesl",
+    "kind": "other",
+    "language": "en",
+    "excerpt": "The Royal Serbian Government will publish on the first page of its official organ of July 26/13, the following declaration: […]\n\nThe Royal Serbian Government will further pledge itself:\n\n[…]\n\n5. to agree to the cooperation in Serbia of the organs of the Imperial and Royal Government in the suppression of the subversive movement directed against the integrity of the Monarchy;\n\n6. to institute a judicial inquiry against every participant in the conspiracy of the twenty-eighth of June who may be found in Serbian territory; the organs of the Imperial and Royal Government delegated for this purpose will take part in the proceedings held for this purpose;\n\n[…]\n\nThe Imperial and Royal Government awaits the reply of the Royal Government by Saturday, the twenty-fifth instant, at 6 p.m., at the latest.",
+    "archive": "Austro-Hungarian Red Book; English text in Collected Diplomatic Documents Relating to the Outbreak of the European War (HMSO, London, 1915). The note was communicated in French; quoted here from the World War I Document Archive transcription of the English printing. Dated 22 July, presented at 6 p.m. on 23 July with a forty-eight-hour limit.",
+    "links": {
+      "people": ["person:berchtold-leopold"],
+      "places": ["place:belgrade"]
+    },
+    "sources": [
+      {
+        "source": "source:hmso-collected-1915",
+        "note": "Austro-Hungarian Red Book"
+      },
+      {
+        "source": "source:byu-wwi-archive",
+        "note": "working text"
+      },
+      {
+        "source": "source:albertini-1952",
+        "note": "drafting of the note and the forty-eight-hour limit"
+      },
+      {
+        "source": "source:clark-2012"
+      }
+    ]
+  },
+  {
+    "id": "1914:document-serbian-reply-1914-07-25",
+    "title": "The Serbian reply to the Austro-Hungarian note, 25 July 1914",
+    "date": "1914-07-25",
+    "author": "Royal Government of Serbia; delivered by Nikola Pašić at Belgrade",
+    "kind": "other",
+    "language": "fr",
+    "excerpt": "5. Le Gouvernement Royal doit avouer qu'il ne se rend pas clairement compte du sens et de la portée de la demande du Gouvernement I. et R. que la Serbie s'engage à accepter sur son territoire la collaboration des organes du Gouvernement I. et R., mais déclare qu'il admettra la collaboration qui répondrait aux principes du droit international et à la procédure criminelle, ainsi qu'aux bons rapports de voisinage.\n\n6. Le Gouvernement Royal — cela va de soi — considère de son devoir d'ouvrir une enquête contre qui sont ou qui éventuellement auraient été mêlés au complot du 15/28 juin et qui se trouveraient sur le territoire du Royaume. Quant à la participation de cette enquête des organes des autorités austro-hongroises, qui seraient délégués à cet effet par le Gouvernement I. et R., le Gouvernement Royal ne peut pas l'accepter, car ce serait une violation de la Constitution et de la loi sur la procédure criminelle.",
+    "translation": "5. The Royal Government confesses that it is not clear about the sense and the scope of that demand of the I. and R. Government which concerns the obligation on the part of the Royal Serbian Government to permit the cooperation of officials of the I. and R. Government on Serbian territory, but it declares that it is willing to accept every cooperation which does not run counter to international law and criminal law, as well as to the friendly and neighbourly relations.\n\n6. The Royal Government considers it its duty as a matter of course to begin an investigation against all those persons who have participated in the outrage of June 28th and who are in its territory. As far as the cooperation in this investigation of specially delegated officials of the I. and R. Government is concerned, this cannot be accepted, as this is a violation of the constitution and of criminal procedure.\n\n[…] The Royal Serbian Government believes it to be to the common interest not to rush the solution of this affair and it is therefore, in case the I. and R. Government should not consider itself satisfied with this answer, ready, as ever, to accept a peaceable solution, be it by referring the decision of this question to the International Court at The Hague or by leaving it to the decision of the Great Powers who have participated in the working out of the declaration given by the Serbian Government on March 18/31st, 1909.",
+    "archive": "Serbian Blue Book; French original as printed in the diplomatic collections, English translation in Collected Diplomatic Documents Relating to the Outbreak of the European War (HMSO, London, 1915). Quoted here from the World War I Document Archive transcriptions of both texts; an OCR slip ('internatinal') corrected silently against the printed collection. Delivered a few minutes before the 6 p.m. deadline.",
+    "links": {
+      "places": ["place:belgrade"]
+    },
+    "sources": [
+      {
+        "source": "source:hmso-collected-1915",
+        "note": "Serbian Blue Book"
+      },
+      {
+        "source": "source:byu-wwi-archive",
+        "note": "working text, French and English"
+      },
+      {
+        "source": "source:albertini-1952",
+        "note": "drafting of the reply and its delivery"
+      },
+      {
+        "source": "source:clark-2012",
+        "note": "on how conciliatory the reply actually was"
+      }
+    ]
   }
 ]

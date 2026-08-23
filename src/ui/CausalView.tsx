@@ -8,7 +8,7 @@
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { formatCitation } from '../engine/beats.js';
-import { chainAround, chainsFor, RELATION_LABEL } from '../engine/causal.js';
+import { chainAround, chainsFor, fullChain, RELATION_LABEL } from '../engine/causal.js';
 import type { CausalLink, Source } from '../packs/schema/index.js';
 import './card.css';
 import './causal.css';
@@ -44,6 +44,7 @@ export function CausalView({
 }: CausalViewProps) {
   const byId = new Map(sources.map((s) => [s.id, s]));
   const chain = chainAround(links, focal);
+  const whole = fullChain(links, focal);
   const name = (id: string) => label(id) ?? id;
 
   const Entity = ({ id }: { id: string }) => {
@@ -68,6 +69,26 @@ export function CausalView({
       <h2 className="card__title">
         {name(focal.from)} → {name(focal.to)}
       </h2>
+      {whole.length > chain.length && (
+        <nav className="causal__overview" aria-label="The whole chain">
+          <p className="causal__overview-title">The whole chain — {whole.length} steps</p>
+          <ol>
+            {whole.map(({ link: l }, i) => (
+              <li key={l.id} data-current={l.id === focal.id || undefined}>
+                {l.id === focal.id ? (
+                  <span aria-current="step">
+                    {i + 1}. {name(l.from)} → {name(l.to)}
+                  </span>
+                ) : (
+                  <button type="button" onClick={() => onOpenLink(l.id)}>
+                    {i + 1}. {name(l.from)} → {name(l.to)}
+                  </button>
+                )}
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )}
       <ol className="causal__chain" aria-label="Chain">
         {chain.map(({ link, depth }) => {
           const alternatives =

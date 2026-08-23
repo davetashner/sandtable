@@ -56,6 +56,17 @@ export function chainAround(links: CausalLink[], focal: CausalLink, maxDepth = 4
   return steps;
 }
 
+/**
+ * The whole chain a link belongs to, end to end: the same walk as
+ * chainAround() with no depth limit. Terminates because each link is taken
+ * at most once. The July Crisis chain is a dozen links long, well past the
+ * depth chainAround() shows, so the explorer uses this for its overview rail
+ * while still rendering the depth-limited chain in detail.
+ */
+export function fullChain(links: CausalLink[], focal: CausalLink): ChainStep[] {
+  return chainAround(links, focal, Number.POSITIVE_INFINITY);
+}
+
 /** Every link touching any of the given entity ids. */
 export function linksTouching(links: CausalLink[], entityIds: Iterable<string>): CausalLink[] {
   const ids = new Set(entityIds);

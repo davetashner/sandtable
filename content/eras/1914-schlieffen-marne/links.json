@@ -8,8 +8,13 @@
     "confidence": "high",
     "historiography": "Whether Kluck's turn was a blunder or the only way to keep touch with Bülow and pursue a 'beaten' enemy is still argued; Herwig treats it as a reasonable decision on the information available, made fatal by the thinned right wing and Joffre's redeployment.",
     "evidence": [
-      { "source": "source:herwig-2009", "note": "chapters on Kluck's wheel and the Ourcq" },
-      { "source": "source:reichsarchiv-weltkrieg-1" }
+      {
+        "source": "source:herwig-2009",
+        "note": "chapters on Kluck's wheel and the Ourcq"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      }
     ]
   },
   {
@@ -19,6 +24,262 @@
     "relation": "enabled",
     "claim": "Instruction générale no 2 (25 August) created the mass of manoeuvre on the French left — the future 6th Army, railed from Lorraine — without which there was no flank attack to make on 5 September.",
     "confidence": "high",
-    "evidence": [{ "source": "source:afgg-1-1" }, { "source": "source:herwig-2009" }]
+    "evidence": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:link-sarajevo-to-vienna",
+    "from": "place:sarajevo",
+    "to": "person:berchtold-leopold",
+    "relation": "motivated",
+    "claim": "The murder of the Archduke and Duchess at Sarajevo on 28 June 1914 did not oblige Austria-Hungary to go to war, but it gave Berchtold the occasion — and the sympathy of the courts of Europe — for the reckoning with Serbia that the Ballhausplatz had been arguing for since the Balkan wars. Within a week the decision in Vienna was for war; what remained was to arrange the pretext and secure Berlin.",
+    "confidence": "high",
+    "historiography": "Nobody disputes that Sarajevo set the crisis going; the argument is about what Vienna wanted. Clark stresses that the Serbian connection to the killers was real, that Vienna's grievance was genuine, and that the response was a policy of coercion that its authors hoped would stay local. Fischer's school reads the Austrian move as the occasion Berlin had been waiting for rather than one Vienna seized on its own. Albertini, closest to the documents, has Berchtold deciding for war within days and then working backwards to a justification.",
+    "evidence": [
+      {
+        "source": "source:clark-2012",
+        "note": "the Sarajevo plot and the decision in Vienna"
+      },
+      {
+        "source": "source:albertini-1952",
+        "note": "the Vienna deliberations of late June and early July"
+      },
+      {
+        "source": "source:fischer-1967"
+      }
+    ]
+  },
+  {
+    "id": "1914:link-vienna-to-blank-cheque",
+    "from": "person:berchtold-leopold",
+    "to": "1914:document-blank-cheque-1914-07-06",
+    "relation": "caused",
+    "claim": "Before moving against Serbia, Vienna asked whether Berlin would stand behind it against Russia. Berchtold sent Count Hoyos to Berlin with a personal letter from Franz Joseph; the answer, given to the Austrian ambassador on 5 July and confirmed by the Chancellor's telegram of 6 July, was that Germany would 'faithfully stand by Austria-Hungary'.",
+    "confidence": "high",
+    "evidence": [
+      {
+        "source": "source:kautsky-1924",
+        "note": "document no. 15"
+      },
+      {
+        "source": "source:albertini-1952",
+        "note": "the Hoyos mission"
+      },
+      {
+        "source": "source:clark-2012"
+      }
+    ]
+  },
+  {
+    "id": "1914:link-blank-cheque-to-ultimatum",
+    "from": "1914:document-blank-cheque-1914-07-06",
+    "to": "1914:document-austro-hungarian-ultimatum-1914-07-23",
+    "relation": "enabled",
+    "claim": "With the German assurance in hand, Vienna drafted a note whose terms — above all points 5 and 6, admitting Austro-Hungarian officials into Serbian investigations on Serbian soil — were written to be refused, and gave Belgrade forty-eight hours to accept them whole. Berlin was told the substance in advance and did not restrain it.",
+    "confidence": "contested",
+    "historiography": "This is the hinge of the whole origins debate. Fischer's Germany issues the assurance knowing it makes a continental war likely and accepts that risk in pursuit of world power; the 'blank cheque' is close to a decision for war. Clark's Berlin gives a conventional alliance guarantee, badly misjudges the local crisis, and is neither more nor less reckless than Paris or St Petersburg. Mombauer holds the middle: Berlin wanted a localized Austrian success, courted the risk of a wider war and lost the bet. What is not in dispute is that the assurance was given before Berlin had seen the text, and that no restraining word followed.",
+    "evidence": [
+      {
+        "source": "source:fischer-1967"
+      },
+      {
+        "source": "source:clark-2012"
+      },
+      {
+        "source": "source:mombauer-2013",
+        "note": "the documents of 5-23 July with commentary"
+      },
+      {
+        "source": "source:albertini-1952",
+        "note": "drafting of the note"
+      }
+    ]
+  },
+  {
+    "id": "1914:link-ultimatum-to-serbian-reply",
+    "from": "1914:document-austro-hungarian-ultimatum-1914-07-23",
+    "to": "1914:document-serbian-reply-1914-07-25",
+    "relation": "caused",
+    "claim": "Serbia accepted almost every demand and, minutes before the deadline on 25 July, returned a reply that conceded the substance while reserving point 6 — the participation of Austro-Hungarian officials in a Serbian judicial inquiry — as a breach of its constitution, and offered the dispute to the Hague tribunal or to the Great Powers. The reply was conciliatory in form and, on the one point that mattered to Vienna, a refusal.",
+    "confidence": "high",
+    "historiography": "How conciliatory the reply really was is still argued. Contemporaries — the Kaiser among them — read it as a capitulation that removed every reason for war. Clark reads the text more sceptically: its concessions are hedged with qualifications that would have made cooperation unworkable, and Belgrade had ordered mobilization before it was delivered. Either way, Vienna had decided in advance that no answer short of total acceptance would do.",
+    "evidence": [
+      {
+        "source": "source:hmso-collected-1915",
+        "note": "Serbian Blue Book; Austro-Hungarian Red Book"
+      },
+      {
+        "source": "source:clark-2012",
+        "note": "on the drafting and the hedging of the reply"
+      },
+      {
+        "source": "source:albertini-1952"
+      }
+    ]
+  },
+  {
+    "id": "1914:link-serbian-reply-to-russian-mobilization",
+    "from": "1914:document-serbian-reply-1914-07-25",
+    "to": "person:nicholas-ii",
+    "relation": "caused",
+    "claim": "Vienna declared the reply unsatisfactory, broke relations, and on 28 July declared war on Serbia; Austro-Hungarian monitors shelled Belgrade on the 29th. Russia, which had told Vienna it would not stand aside, moved from partial to general mobilization: Nicholas II signed the general order on 29 July, cancelled it after a telegram from the Kaiser, and on 30 July was persuaded by Sazonov and the General Staff to sign it again.",
+    "confidence": "high",
+    "historiography": "Whether Russian general mobilization was a defensive reflex or a decision for war is one of the sharpest disputes in the field. The traditional reading, and Clark's, is that St Petersburg knew mobilization meant war and took the step anyway to avoid a second Bosnian humiliation; McMeekin goes further and makes Russia the more active party. Against that, Russian mobilization was slow by design and its planners believed it could be held short of hostilities, and it followed an Austrian declaration of war and the bombardment of a capital.",
+    "evidence": [
+      {
+        "source": "source:clark-2012",
+        "note": "the mobilization decisions of 29-30 July"
+      },
+      {
+        "source": "source:albertini-1952",
+        "note": "hour by hour on the two orders"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
+  },
+  {
+    "id": "1914:link-russian-mobilization-to-german-mobilization",
+    "from": "person:nicholas-ii",
+    "to": "person:moltke-helmuth-von-younger",
+    "relation": "caused",
+    "claim": "Russian general mobilization was the trigger the German General Staff had defined in advance. Moltke pressed for German mobilization on 30-31 July, Germany proclaimed the state of imminent war, demanded that Russia halt within twelve hours, and on 1 August declared war. In Berlin the political question — whether this war was wanted — had been overtaken by a military timetable that treated Russian mobilization as the starting gun.",
+    "confidence": "high",
+    "historiography": "The 'war by timetable' reading — that mobilization schedules stripped the statesmen of choice — is associated with A. J. P. Taylor and has been heavily qualified since. Mombauer shows Moltke actively pushing for the decision rather than being carried by it, and the Kaiser's late attempt to turn the deployment east (the Wilhelm-Moltke exchange of 1 August) shows that men, not timetables, made the choice — though Moltke insisted the machine could not be reversed.",
+    "evidence": [
+      {
+        "source": "source:mombauer-2001",
+        "note": "Moltke's conduct on 29 July - 1 August"
+      },
+      {
+        "source": "source:clark-2012"
+      },
+      {
+        "source": "source:strachan-2001",
+        "note": "mobilization and the two-front problem"
+      }
+    ]
+  },
+  {
+    "id": "1914:link-schlieffen-plan-to-german-mobilization",
+    "from": "1914:document-schlieffen-memorandum-1905-12",
+    "to": "person:moltke-helmuth-von-younger",
+    "relation": "shaped",
+    "claim": "Germany had one deployment plan, and it faced west. A quarrel in the Balkans between Vienna and St Petersburg therefore reached Belgium: because the General Staff's answer to a two-front war was to beat France first through Belgian territory, Russian mobilization produced a German ultimatum to Brussels within seventy-two hours. This is the step at which a Balkan crisis became a Western war — not because anyone chose it in July, but because it had been chosen years before.",
+    "confidence": "high",
+    "historiography": "Whether a fixed 'Schlieffen Plan' existed is itself contested — Zuber calls the 1905 memorandum a staff study and a plea for divisions, Mombauer, Holmes and Foley reply that Moltke inherited and altered a real deployment concept. The pack's counterfactual branches argue that case at length. For this link the weaker claim suffices, and is not disputed: by 1914 the German army had a single mobilization scheme and it opened with an advance through Belgium.",
+    "evidence": [
+      {
+        "source": "source:mombauer-2001"
+      },
+      {
+        "source": "source:zuber-2002",
+        "note": "the case against a fixed plan"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:herwig-2009"
+      }
+    ]
+  },
+  {
+    "id": "1914:link-german-mobilization-to-belgian-ultimatum",
+    "from": "person:moltke-helmuth-von-younger",
+    "to": "1914:document-german-ultimatum-to-belgium-1914-08-02",
+    "relation": "caused",
+    "claim": "On the evening of 2 August, with war declared on Russia and the deployment west under way, Germany handed Brussels a note demanding free passage for its armies and promising to treat refusal as an act of war. The demand was not a response to anything Belgium had done; it was the first move of a plan drafted years earlier, delivered to a neutral state whose neutrality Prussia had guaranteed in 1839.",
+    "confidence": "high",
+    "evidence": [
+      {
+        "source": "source:belgian-grey-book-1914",
+        "note": "No. 20"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
+  },
+  {
+    "id": "1914:link-belgian-ultimatum-to-belgian-reply",
+    "from": "1914:document-german-ultimatum-to-belgium-1914-08-02",
+    "to": "1914:document-belgian-reply-1914-08-03",
+    "relation": "caused",
+    "claim": "Belgium refused within the twelve hours allowed. The reply of 3 August declined the demand in terms that made the legal case — the treaties of 1839, the duties of a neutral, the honour of the nation — and accepted the consequence: 'the Belgian Government would sacrifice the honour of the nation and betray its duties towards Europe' by yielding.",
+    "confidence": "high",
+    "evidence": [
+      {
+        "source": "source:belgian-grey-book-1914",
+        "note": "No. 22"
+      },
+      {
+        "source": "source:hmso-collected-1915"
+      }
+    ]
+  },
+  {
+    "id": "1914:link-belgian-reply-to-invasion",
+    "from": "1914:document-belgian-reply-1914-08-03",
+    "to": "1914:event-invasion-of-belgium",
+    "relation": "caused",
+    "claim": "The refusal did not change the timetable. German troops crossed the frontier on the morning of 4 August, six weeks and one week after Sarajevo, and the crisis that began with a murder in Bosnia arrived as an invasion of a country that had no part in it.",
+    "confidence": "high",
+    "evidence": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:belgian-grey-book-1914"
+      }
+    ]
+  },
+  {
+    "id": "1914:link-invasion-to-british-entry",
+    "from": "1914:event-invasion-of-belgium",
+    "to": "1914:bef",
+    "relation": "caused",
+    "claim": "The violation of Belgian neutrality settled the British question. Britain had given France no binding promise and a divided cabinet had spent the week arguing; the invasion of a guaranteed neutral turned the argument, and the ultimatum sent to Berlin expired at midnight on 4 August. The British Expeditionary Force began crossing to France on 9 August and was at Mons on the 23rd.",
+    "confidence": "high",
+    "historiography": "Whether Belgium was the cause of British entry or its justification is an old argument. The naval and military conversations with France since 1906, and Grey's own commitments, pointed to intervention in any case; but it was the Belgian treaty that carried the cabinet and the Commons, and without it the government might well have fallen before it could act.",
+    "evidence": [
+      {
+        "source": "source:strachan-2001",
+        "note": "the British decision"
+      },
+      {
+        "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:edmonds-1922",
+        "note": "the crossing of the BEF"
+      }
+    ]
+  },
+  {
+    "id": "1914:link-invasion-to-liege",
+    "from": "1914:event-invasion-of-belgium",
+    "to": "1914:event-siege-of-liege",
+    "relation": "caused",
+    "claim": "The invasion opened at Liège because it had to: the Meuse crossings and the railway through the city were the gate the right wing's timetable depended on. What the plan allowed for as a coup de main became a twelve-day siege, and the campaign this pack follows begins there.",
+    "confidence": "high",
+    "evidence": [
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      }
+    ]
   }
 ]

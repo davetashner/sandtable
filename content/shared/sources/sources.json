@@ -286,5 +286,73 @@
     "publisher": "Oswald Wolff, London",
     "edition": "translation of Der Schlieffenplan: Kritik eines Mythos (Munich, 1956)",
     "notes": "First publication of the 1905 memorandum and its drafts, with Moltke's comments, from the then-lost-and-recovered files; the English text of the memorandum is at pp. 134–148. Ritter's critique of the plan's feasibility is itself a position in the debate."
+  },
+  {
+    "id": "source:clark-2012",
+    "kind": "book",
+    "author": "Clark, Christopher",
+    "title": "The Sleepwalkers: How Europe Went to War in 1914",
+    "year": 2012,
+    "publisher": "Allen Lane, London",
+    "isbn": "978-0-7139-9942-6",
+    "notes": "The leading revisionist account of the July Crisis: decision-makers as sleepwalkers rather than conspirators, with Serbian and Balkan agency given full weight and German war guilt distributed across all the chancelleries. Cite as one position in the origins debate, against Fischer."
+  },
+  {
+    "id": "source:fischer-1967",
+    "kind": "book",
+    "author": "Fischer, Fritz",
+    "title": "Germany's Aims in the First World War",
+    "year": 1967,
+    "publisher": "Chatto & Windus, London",
+    "edition": "translation of Griff nach der Weltmacht (Dusseldorf, 1961)",
+    "notes": "The book that broke the post-1918 consensus: Germany deliberately courted a continental war in July 1914 in pursuit of world power. The thesis every later account of the crisis argues with; cite as a position, not as settled fact."
+  },
+  {
+    "id": "source:albertini-1952",
+    "kind": "book",
+    "author": "Albertini, Luigi",
+    "title": "The Origins of the War of 1914",
+    "year": 1952,
+    "publisher": "Oxford University Press, London",
+    "edition": "3 vols, translated by Isabella M. Massey, 1952-1957",
+    "notes": "The most detailed narrative reconstruction of the crisis, hour by hour, built on the diplomatic documents and on interviews with surviving participants. Still the standard reference for what was sent, received and understood on each day."
+  },
+  {
+    "id": "source:mombauer-2013",
+    "kind": "book",
+    "author": "Mombauer, Annika",
+    "title": "The Origins of the First World War: Diplomatic and Military Documents",
+    "year": 2013,
+    "publisher": "Manchester University Press, Manchester",
+    "isbn": "978-0-7190-7860-0",
+    "notes": "Scholarly edition of the crisis documents in English translation with commentary, drawn from the national colour books and the post-war editions; useful for checking a text against the archival original and for the editorial history of the collections."
+  },
+  {
+    "id": "source:hmso-collected-1915",
+    "kind": "official-history",
+    "author": "Great Britain, Foreign Office",
+    "title": "Collected Diplomatic Documents Relating to the Outbreak of the European War",
+    "year": 1915,
+    "publisher": "HMSO, London",
+    "url": "https://archive.org/details/collecteddiploma00grea",
+    "notes": "The belligerents' own published files - the British Blue Book, the German White Book, the Austro-Hungarian Red Book, the Serbian Blue Book, the Russian Orange Book, the Belgian Grey Book - gathered in one English volume. Each colour book was selected and, in places, edited by its government for effect on neutral opinion; the texts are authentic but the selection is not neutral."
+  },
+  {
+    "id": "source:kautsky-1924",
+    "kind": "archive",
+    "author": "Kautsky, Karl; Montgelas, Max; Schucking, Walther",
+    "title": "Outbreak of the World War: German Documents Collected by Karl Kautsky",
+    "year": 1924,
+    "publisher": "Oxford University Press, New York",
+    "edition": "English translation of Die Deutschen Dokumente zum Kriegsausbruch (Berlin, 1919)",
+    "notes": "The German foreign-office files on the crisis, published by the new republic to document the old regime's conduct; the collection in which the 'blank cheque' telegram of 6 July 1914 is document no. 15. Compiled with a political purpose - to show the Kaiser's government at fault - but the texts are the archival ones."
+  },
+  {
+    "id": "source:byu-wwi-archive",
+    "kind": "web",
+    "author": "Brigham Young University Library",
+    "title": "The World War I Document Archive",
+    "url": "https://wwi.lib.byu.edu/",
+    "notes": "Transcriptions of the published diplomatic collections. Used here for the working text of documents whose authoritative printing is cited alongside it; the transcriptions carry occasional OCR slips, corrected silently against the printed collection."
   }
 ]

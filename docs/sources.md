@@ -82,6 +82,13 @@ specific with a `note`; when they disagree on meaning, write historiography.
 | `source:bsb-1000dokumente-schlieffen-1905` | BSB, _Denkschrift 'Krieg gegen Frankreich'_ (transcription, 2010)            | the German text of the 1905 memorandum                                  |
 | `source:ehlert-epkenhans-gross-2006`       | Ehlert, Epkenhans & Groß (eds), _Der Schlieffenplan_ (2006)                  | the edited documents and the post-Zuber essays                          |
 | `source:ritter-1958`                       | Ritter, _The Schlieffen Plan: Critique of a Myth_ (1958)                     | the English memorandum text, pp. 134–148; Ritter's critique             |
+| `source:clark-2012`                        | Clark, _The Sleepwalkers_ (2012)                                             | the July Crisis; the revisionist case — one side                       |
+| `source:fischer-1967`                      | Fischer, _Germany's Aims in the First World War_ (1967)                      | the case for German responsibility — one side                          |
+| `source:albertini-1952`                    | Albertini, _The Origins of the War of 1914_ (1952–57)                        | the crisis hour by hour; the standard reconstruction                   |
+| `source:mombauer-2013`                     | Mombauer (ed.), _The Origins of the First World War: Documents_ (2013)       | crisis documents in translation, with commentary                       |
+| `source:hmso-collected-1915`               | _Collected Diplomatic Documents_ (HMSO, 1915)                                | the colour books in one volume; selected by governments                |
+| `source:kautsky-1924`                      | Kautsky (ed.), _Outbreak of the World War: German Documents_ (1924)          | the German files; the 'blank cheque' is no. 15                         |
+| `source:byu-wwi-archive`                   | BYU, _The World War I Document Archive_                                      | working transcriptions; cite the printed collection too                |
 
 ## To add as the content lands (not yet in the registry)
 
