@@ -5791,5 +5791,59 @@
         "source": "source:tyng-1935"
       }
     ]
+  },
+  {
+    "id": "1914:origins",
+    "title": "Origins of the plan: the two-front problem",
+    "timeRange": {
+      "start": "1914-08-02T00:00:00Z",
+      "end": "1914-08-04T00:00:00Z"
+    },
+    "region": [1.5, 47.4, 8.2, 51.2],
+    "camera": {
+      "center": [4.9, 49.35],
+      "zoom": 6.4
+    },
+    "summary": "Why the German army of 1914 had one plan and it faced west. A chapter, not a zoom-in, and unlike the other chapters it narrates decades rather than days: Bismarck's alliances and their lapse, the Franco-Russian alliance that made the two-front problem real, Schlieffen's answer and the December 1905 memorandum, the French fortress line that closed the direct road, the younger Moltke's changes, Plan XVII and the cult of the offensive, Belgian neutrality, and the mobilization timetables that turned all of it into a machine. It carries no formations, routes or events of its own; what the map shows is the ground the argument is about - the fortress line from Verdun to Belfort, the Meuse at Liege and Namur, and the open country north of the Ardennes that the plan was built to use.",
+    "outcome": "Two things go into the campaign from here. The first is a schedule: beat France in about six weeks by a right-wing sweep through Belgium, then turn east - the timetable the pack's two clocks measure everything against. The second is an argument that has never been settled: whether 'the Schlieffen Plan' was an operational plan the German army carried out in 1914, or a staff study for forces Germany never had, turned into a plan afterwards by men explaining a defeat. This chapter states both cases and leaves the question where the historians leave it.",
+    "links": {
+      "documents": ["1914:document-schlieffen-memorandum-1905-12"],
+      "tech": ["1914:tech-railways-mobilization"],
+      "people": [
+        "person:moltke-helmuth-von-elder",
+        "person:bismarck-otto-von",
+        "person:schlieffen-alfred-von",
+        "person:moltke-helmuth-von-younger",
+        "person:joffre-joseph"
+      ],
+      "places": [
+        "place:verdun",
+        "place:toul",
+        "place:epinal",
+        "place:belfort",
+        "place:liege",
+        "place:brussels"
+      ]
+    },
+    "sources": [
+      {
+        "source": "source:zuber-2002"
+      },
+      {
+        "source": "source:mombauer-2001"
+      },
+      {
+        "source": "source:ritter-1958"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:doughty-2005"
+      }
+    ]
   }
 ]

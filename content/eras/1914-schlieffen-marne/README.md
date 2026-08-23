@@ -27,7 +27,13 @@ leaves the campaign tokens on their campaign movement
 narrative plus markers rather than as a reconstruction that plays. Their
 beats say `(chapter)` in `dateLabel` where a zoom-in says `(zoom-in)`.
 
-Chapters: `1914:ardennes` (`sand-1l0.6`), `1914:grand-couronne`
-(`sand-1l0.9`). Zoom-ins, which do carry routes and a sub-timeline:
+Chapters: `1914:origins` (`sand-1l0.3`), `1914:ardennes` (`sand-1l0.6`),
+`1914:grand-couronne` (`sand-1l0.9`). `1914:origins` is the unusual one: it
+narrates the decades before the war rather than days of it, so it carries no
+events either — its beats sit in the 2–4 August window because everything in a
+pack must fall inside `pack.timeRange`, and each says its real date in
+`dateLabel`. What the map contributes is the ground the argument is about: the
+fortress line from Verdun to Belfort and the Meuse crossings, already drawn
+from the shared places registry. Zoom-ins, which do carry routes and a sub-timeline:
 `1914:liege`, `1914:lorraine`, `1914:frontiers-north`, `1914:guise`,
 `1914:belgium-antwerp`, `1914:marne`.
