@@ -3197,5 +3197,1092 @@
         "source": "source:tuchman-1962"
       }
     ]
+  },
+  {
+    "id": "1914:frontiers-north",
+    "title": "The Frontiers in the north — Charleroi, Mons, Le Cateau",
+    "timeRange": {
+      "start": "1914-08-20T00:00:00Z",
+      "end": "1914-08-28T00:00:00Z"
+    },
+    "region": [3.05, 49.75, 5.25, 50.75],
+    "camera": {
+      "center": [4.15, 50.3],
+      "zoom": 8.7
+    },
+    "place": "place:mons",
+    "summary": "The German right wing meets the Allied left. Lanrezac's 5th Army, moved north into the angle of the Sambre and the Meuse, is forced off the Sambre at Charleroi by Bülow on 21–22 August and has Hausen across the Meuse at Dinant behind its right by the 23rd; the BEF fights its first battle on the Mons–Condé canal the same day; Lanrezac orders the retreat that night without telling the British. Namur falls on the 25th; Smith-Dorrien stands at Le Cateau on the 26th against orders and gets II Corps away; Joffre meets French and Lanrezac at Saint-Quentin. The Battle of the Frontiers is lost and the wheel seems to be working — and both Allied armies are still in being.",
+    "outcome": "Both Allied armies beaten and intact; the retreat that became the Great Retreat; Kluck freed from Bülow and heading south-west, Lanrezac ordered to turn at Guise; Namur gone and Maubeuge invested.",
+    "participants": [
+      "1914:army-de-1",
+      "1914:army-de-2",
+      "1914:army-de-3",
+      "1914:army-fr-5",
+      "1914:bef",
+      "1914:belgian-field-army"
+    ],
+    "formations": [
+      {
+        "id": "1914:frontiers-div-gb-4",
+        "name": "British 4th Division",
+        "short": "4th Div",
+        "side": "gb",
+        "kind": "division",
+        "parent": "1914:bef",
+        "concentration": {
+          "area": "Le Cateau–Solesmes, detrained 23–25 August",
+          "position": [3.45, 50.15],
+          "asOf": "1914-08-25T06:00:00Z",
+          "sources": [
+            {
+              "source": "source:edmonds-1922"
+            }
+          ]
+        },
+        "summary": "Snow's division, landed in France on 23 August, reached the front in time to stand on II Corps' left at Le Cateau; it became the core of III Corps on 31 August.",
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-bde-gb-19",
+        "name": "19th Infantry Brigade",
+        "short": "19th Bde",
+        "side": "gb",
+        "kind": "brigade",
+        "parent": "1914:bef",
+        "concentration": {
+          "area": "Valenciennes",
+          "position": [3.52, 50.36],
+          "asOf": "1914-08-22T12:00:00Z",
+          "sources": [
+            {
+              "source": "source:edmonds-1922"
+            }
+          ]
+        },
+        "summary": "Formed from the lines-of-communication battalions at Valenciennes on 22 August; on the BEF's left at Mons and Le Cateau.",
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-maubeuge",
+        "name": "Fortified position of Maubeuge",
+        "short": "Maubeuge",
+        "side": "fr",
+        "kind": "garrison",
+        "summary": "The French fortress on the Sambre, invested by the VII Reserve Corps from 25 August and held until 7 September — a corps the right wing would not have at the Marne.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "id": "1914:frontiers-route-de-ii",
+        "formation": "1914:corps-de-ii",
+        "waypoints": [
+          [4.25, 50.78, "1914-08-20T12:00:00Z"],
+          [3.7, 50.6, "1914-08-22T12:00:00Z"],
+          [3.7, 50.45, "1914-08-23T12:00:00Z"],
+          [3.52, 50.36, "1914-08-24T12:00:00Z"],
+          [3.3, 50.22, "1914-08-25T12:00:00Z"],
+          [3.25, 50.17, "1914-08-26T12:00:00Z"],
+          [3.0, 50.05, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "The outer corps: Condé on the 23rd, round the BEF's left at Le Cateau on the 26th."
+      },
+      {
+        "id": "1914:frontiers-route-de-iv",
+        "formation": "1914:corps-de-iv",
+        "waypoints": [
+          [4.35, 50.75, "1914-08-20T12:00:00Z"],
+          [4.07, 50.58, "1914-08-22T12:00:00Z"],
+          [3.95, 50.5, "1914-08-23T09:00:00Z"],
+          [3.79, 50.32, "1914-08-24T12:00:00Z"],
+          [3.55, 50.2, "1914-08-25T12:00:00Z"],
+          [3.55, 50.12, "1914-08-26T09:00:00Z"],
+          [3.4, 49.98, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Mons on the 23rd; Le Cateau on the 26th."
+      },
+      {
+        "id": "1914:frontiers-route-de-iii",
+        "formation": "1914:corps-de-iii",
+        "waypoints": [
+          [4.4, 50.82, "1914-08-20T12:00:00Z"],
+          [4.33, 50.6, "1914-08-22T12:00:00Z"],
+          [4.05, 50.48, "1914-08-23T12:00:00Z"],
+          [3.95, 50.33, "1914-08-24T12:00:00Z"],
+          [3.8, 50.2, "1914-08-25T12:00:00Z"],
+          [3.65, 50.1, "1914-08-26T12:00:00Z"],
+          [3.55, 49.95, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-route-de-ix",
+        "formation": "1914:corps-de-ix",
+        "waypoints": [
+          [4.5, 50.78, "1914-08-20T12:00:00Z"],
+          [4.4, 50.55, "1914-08-22T12:00:00Z"],
+          [4.15, 50.42, "1914-08-23T12:00:00Z"],
+          [4.05, 50.3, "1914-08-24T12:00:00Z"],
+          [3.8, 50.15, "1914-08-25T12:00:00Z"],
+          [3.75, 50.05, "1914-08-26T12:00:00Z"],
+          [3.65, 49.95, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "The inner corps at Mons and Binche; Landrecies against Haig's I Corps on the night of the 25th."
+      },
+      {
+        "id": "1914:frontiers-route-hkk-2",
+        "formation": "1914:hkk-2",
+        "waypoints": [
+          [3.75, 50.63, "1914-08-20T12:00:00Z"],
+          [3.4, 50.6, "1914-08-22T12:00:00Z"],
+          [3.55, 50.45, "1914-08-23T12:00:00Z"],
+          [3.4, 50.33, "1914-08-24T12:00:00Z"],
+          [3.23, 50.18, "1914-08-25T12:00:00Z"],
+          [3.35, 50.1, "1914-08-26T12:00:00Z"],
+          [2.93, 49.93, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-route-de-iv-res",
+        "formation": "1914:corps-de-iv-res",
+        "waypoints": [
+          [4.35, 50.85, "1914-08-20T12:00:00Z"],
+          [3.95, 50.55, "1914-08-23T12:00:00Z"],
+          [3.52, 50.36, "1914-08-25T12:00:00Z"],
+          [3.23, 50.18, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-route-de-guard",
+        "formation": "1914:corps-de-guard",
+        "waypoints": [
+          [4.69, 50.56, "1914-08-20T12:00:00Z"],
+          [4.63, 50.45, "1914-08-21T12:00:00Z"],
+          [4.55, 50.4, "1914-08-22T12:00:00Z"],
+          [4.5, 50.3, "1914-08-23T12:00:00Z"],
+          [4.4, 50.22, "1914-08-24T12:00:00Z"],
+          [4.3, 50.15, "1914-08-25T12:00:00Z"],
+          [4.05, 50.1, "1914-08-26T12:00:00Z"],
+          [3.95, 50.02, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Forced the Sambre at Auvelais on the 21st."
+      },
+      {
+        "id": "1914:frontiers-route-de-x",
+        "formation": "1914:corps-de-x",
+        "waypoints": [
+          [4.55, 50.58, "1914-08-20T12:00:00Z"],
+          [4.6, 50.43, "1914-08-21T12:00:00Z"],
+          [4.45, 50.4, "1914-08-22T12:00:00Z"],
+          [4.4, 50.32, "1914-08-23T12:00:00Z"],
+          [4.24, 50.24, "1914-08-24T12:00:00Z"],
+          [4.09, 50.17, "1914-08-25T12:00:00Z"],
+          [3.93, 50.12, "1914-08-26T12:00:00Z"],
+          [3.75, 50.05, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Tamines and Charleroi; Guise on the 29th lies ahead."
+      },
+      {
+        "id": "1914:frontiers-route-de-vii",
+        "formation": "1914:corps-de-vii",
+        "waypoints": [
+          [4.6, 50.7, "1914-08-20T12:00:00Z"],
+          [4.35, 50.45, "1914-08-21T12:00:00Z"],
+          [4.35, 50.4, "1914-08-22T12:00:00Z"],
+          [4.28, 50.34, "1914-08-23T12:00:00Z"],
+          [4.05, 50.32, "1914-08-24T12:00:00Z"],
+          [3.97, 50.3, "1914-08-25T12:00:00Z"],
+          [3.85, 50.22, "1914-08-26T12:00:00Z"],
+          [3.8, 50.1, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-route-de-x-res",
+        "formation": "1914:corps-de-x-res",
+        "waypoints": [
+          [4.7, 50.62, "1914-08-20T12:00:00Z"],
+          [4.6, 50.45, "1914-08-22T12:00:00Z"],
+          [4.5, 50.35, "1914-08-23T12:00:00Z"],
+          [4.4, 50.25, "1914-08-24T12:00:00Z"],
+          [4.1, 50.12, "1914-08-26T12:00:00Z"],
+          [4.0, 50.03, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-route-de-guard-res",
+        "formation": "1914:corps-de-guard-res",
+        "waypoints": [
+          [4.85, 50.55, "1914-08-20T12:00:00Z"],
+          [4.85, 50.5, "1914-08-22T12:00:00Z"],
+          [4.87, 50.47, "1914-08-25T12:00:00Z"],
+          [4.87, 50.47, "1914-08-26T06:00:00Z"],
+          [4.95, 50.52, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Namur, then the trains to East Prussia on 25–26 August."
+      },
+      {
+        "id": "1914:frontiers-route-de-vii-res",
+        "formation": "1914:corps-de-vii-res",
+        "waypoints": [
+          [4.6, 50.65, "1914-08-20T12:00:00Z"],
+          [4.3, 50.4, "1914-08-23T12:00:00Z"],
+          [3.97, 50.28, "1914-08-25T12:00:00Z"],
+          [3.97, 50.28, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Invests Maubeuge from the 25th."
+      },
+      {
+        "id": "1914:frontiers-route-hkk-1",
+        "formation": "1914:hkk-1",
+        "waypoints": [
+          [4.6, 50.6, "1914-08-20T12:00:00Z"],
+          [4.4, 50.48, "1914-08-22T12:00:00Z"],
+          [4.3, 50.35, "1914-08-23T12:00:00Z"],
+          [4.1, 50.2, "1914-08-25T12:00:00Z"],
+          [3.9, 50.0, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-route-de-xii",
+        "formation": "1914:corps-de-xii",
+        "waypoints": [
+          [5.1, 50.3, "1914-08-20T12:00:00Z"],
+          [5.0, 50.26, "1914-08-22T12:00:00Z"],
+          [4.91, 50.26, "1914-08-23T12:00:00Z"],
+          [4.54, 50.2, "1914-08-24T12:00:00Z"],
+          [4.45, 50.1, "1914-08-25T12:00:00Z"],
+          [4.35, 50.0, "1914-08-26T12:00:00Z"],
+          [4.4, 49.95, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Dinant on the 23rd."
+      },
+      {
+        "id": "1914:frontiers-route-de-xix",
+        "formation": "1914:corps-de-xix",
+        "waypoints": [
+          [5.15, 50.22, "1914-08-20T12:00:00Z"],
+          [4.85, 50.2, "1914-08-23T12:00:00Z"],
+          [4.82, 50.14, "1914-08-24T12:00:00Z"],
+          [4.6, 50.0, "1914-08-26T12:00:00Z"],
+          [4.55, 49.93, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-route-de-xii-res",
+        "formation": "1914:corps-de-xii-res",
+        "waypoints": [
+          [5.25, 50.3, "1914-08-20T12:00:00Z"],
+          [4.9, 50.32, "1914-08-23T12:00:00Z"],
+          [4.87, 50.4, "1914-08-25T12:00:00Z"],
+          [4.7, 50.2, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-route-fr-i",
+        "formation": "1914:corps-fr-i",
+        "waypoints": [
+          [4.85, 50.27, "1914-08-20T12:00:00Z"],
+          [4.88, 50.26, "1914-08-22T12:00:00Z"],
+          [4.85, 50.26, "1914-08-23T12:00:00Z"],
+          [4.7, 50.18, "1914-08-23T22:00:00Z"],
+          [4.54, 50.2, "1914-08-24T12:00:00Z"],
+          [4.32, 50.05, "1914-08-25T12:00:00Z"],
+          [4.15, 49.98, "1914-08-26T12:00:00Z"],
+          [3.95, 49.88, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the AFGG maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Franchet d'Espèrey's corps at Dinant and Onhaye on the 23rd, then the retreat."
+      },
+      {
+        "id": "1914:frontiers-route-fr-iii",
+        "formation": "1914:corps-fr-iii",
+        "waypoints": [
+          [4.45, 50.35, "1914-08-20T12:00:00Z"],
+          [4.45, 50.4, "1914-08-21T12:00:00Z"],
+          [4.45, 50.38, "1914-08-22T12:00:00Z"],
+          [4.4, 50.28, "1914-08-23T12:00:00Z"],
+          [4.24, 50.18, "1914-08-24T12:00:00Z"],
+          [4.1, 50.08, "1914-08-25T12:00:00Z"],
+          [3.95, 49.98, "1914-08-26T12:00:00Z"],
+          [3.91, 49.83, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the AFGG maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Charleroi."
+      },
+      {
+        "id": "1914:frontiers-route-fr-x",
+        "formation": "1914:corps-fr-x",
+        "waypoints": [
+          [4.6, 50.38, "1914-08-20T12:00:00Z"],
+          [4.62, 50.42, "1914-08-21T12:00:00Z"],
+          [4.6, 50.36, "1914-08-22T12:00:00Z"],
+          [4.55, 50.28, "1914-08-23T12:00:00Z"],
+          [4.4, 50.15, "1914-08-24T12:00:00Z"],
+          [4.25, 50.05, "1914-08-25T12:00:00Z"],
+          [4.1, 49.95, "1914-08-26T12:00:00Z"],
+          [4.08, 49.92, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps centre at the hours named from the AFGG maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Tamines and Auvelais against the Guard and X Corps."
+      },
+      {
+        "id": "1914:frontiers-route-fr-xviii",
+        "formation": "1914:corps-fr-xviii",
+        "waypoints": [
+          [4.2, 50.3, "1914-08-20T12:00:00Z"],
+          [4.3, 50.4, "1914-08-21T12:00:00Z"],
+          [4.35, 50.4, "1914-08-22T12:00:00Z"],
+          [4.3, 50.28, "1914-08-23T12:00:00Z"],
+          [3.98, 50.22, "1914-08-24T12:00:00Z"],
+          [3.9, 50.1, "1914-08-25T12:00:00Z"],
+          [3.85, 49.98, "1914-08-26T12:00:00Z"],
+          [3.8, 49.88, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the AFGG maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Arrived from Lorraine on the 20th–21st."
+      },
+      {
+        "id": "1914:frontiers-route-fr-rd-4",
+        "formation": "1914:det-fr-rd-4",
+        "waypoints": [
+          [4.1, 50.25, "1914-08-20T12:00:00Z"],
+          [4.15, 50.28, "1914-08-23T12:00:00Z"],
+          [3.9, 50.12, "1914-08-25T12:00:00Z"],
+          [3.75, 49.9, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the AFGG maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-route-fr-cav-sordet",
+        "formation": "1914:cav-corps-fr-sordet",
+        "waypoints": [
+          [4.1, 50.4, "1914-08-20T12:00:00Z"],
+          [3.95, 50.4, "1914-08-22T12:00:00Z"],
+          [3.55, 50.45, "1914-08-23T12:00:00Z"],
+          [3.45, 50.35, "1914-08-24T12:00:00Z"],
+          [3.4, 50.1, "1914-08-26T12:00:00Z"],
+          [3.2, 49.95, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps centre at the hours named from the AFGG maps as summarised in Herwig; ±5–8 km.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:edmonds-1922"
+          }
+        ],
+        "notes": "Covered the BEF's open left at Mons and Le Cateau."
+      },
+      {
+        "id": "1914:frontiers-route-gb-i",
+        "formation": "1914:corps-gb-i",
+        "waypoints": [
+          [3.97, 50.28, "1914-08-20T12:00:00Z"],
+          [4.05, 50.4, "1914-08-22T12:00:00Z"],
+          [4.05, 50.42, "1914-08-23T12:00:00Z"],
+          [3.82, 50.3, "1914-08-24T12:00:00Z"],
+          [3.69, 50.12, "1914-08-25T12:00:00Z"],
+          [3.6, 50.0, "1914-08-26T12:00:00Z"],
+          [3.6, 49.95, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps/division centre at the hours named from the Official History; ±5 km.",
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          }
+        ],
+        "notes": "In reserve at Mons; Landrecies on the night of the 25th; separated from II Corps by the Forest of Mormal."
+      },
+      {
+        "id": "1914:frontiers-route-gb-ii",
+        "formation": "1914:corps-gb-ii",
+        "waypoints": [
+          [3.9, 50.25, "1914-08-20T12:00:00Z"],
+          [3.92, 50.47, "1914-08-22T12:00:00Z"],
+          [3.9, 50.46, "1914-08-23T06:00:00Z"],
+          [3.88, 50.4, "1914-08-23T18:00:00Z"],
+          [3.7, 50.32, "1914-08-24T12:00:00Z"],
+          [3.54, 50.12, "1914-08-25T12:00:00Z"],
+          [3.54, 50.1, "1914-08-26T06:00:00Z"],
+          [3.4, 50.0, "1914-08-26T18:00:00Z"],
+          [3.29, 49.85, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps/division centre at the hours named from the Official History; ±5 km.",
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          }
+        ],
+        "notes": "The Mons–Condé canal on the 23rd; Le Cateau on the 26th."
+      },
+      {
+        "id": "1914:frontiers-route-gb-cav",
+        "formation": "1914:cav-div-gb",
+        "waypoints": [
+          [3.85, 50.3, "1914-08-20T12:00:00Z"],
+          [4.0, 50.48, "1914-08-22T12:00:00Z"],
+          [3.75, 50.4, "1914-08-23T12:00:00Z"],
+          [3.6, 50.3, "1914-08-24T12:00:00Z"],
+          [3.45, 50.12, "1914-08-26T12:00:00Z"],
+          [3.2, 49.9, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps/division centre at the hours named from the Official History; ±5 km.",
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          }
+        ],
+        "notes": "Casteau on the 22nd — the first shots."
+      },
+      {
+        "id": "1914:frontiers-route-gb-div-4",
+        "formation": "1914:frontiers-div-gb-4",
+        "waypoints": [
+          [3.45, 50.15, "1914-08-25T12:00:00Z"],
+          [3.45, 50.1, "1914-08-26T06:00:00Z"],
+          [3.35, 50.02, "1914-08-26T18:00:00Z"],
+          [3.25, 49.92, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "Corps/division centre at the hours named from the Official History; ±5 km.",
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          }
+        ],
+        "notes": "Landed 23 August, on the left at Le Cateau."
+      },
+      {
+        "id": "1914:frontiers-route-gb-bde-19",
+        "formation": "1914:frontiers-bde-gb-19",
+        "waypoints": [
+          [3.52, 50.36, "1914-08-22T12:00:00Z"],
+          [3.6, 50.45, "1914-08-23T12:00:00Z"],
+          [3.5, 50.1, "1914-08-26T12:00:00Z"],
+          [3.3, 49.9, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "Corps/division centre at the hours named from the Official History; ±5 km.",
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-route-be-div-4",
+        "formation": "1914:div-be-4",
+        "waypoints": [
+          [4.87, 50.47, "1914-08-20T12:00:00Z"],
+          [4.6, 50.3, "1914-08-23T22:00:00Z"],
+          [4.4, 50.15, "1914-08-25T12:00:00Z"],
+          [4.2, 50.0, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "The 4th Division at Namur, withdrawn south-west on the 23rd and away through France.",
+        "sources": [
+          {
+            "source": "source:strachan-2001"
+          },
+          {
+            "source": "source:hastings-2013"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-route-namur",
+        "formation": "1914:fortress-namur",
+        "waypoints": [
+          [4.87, 50.47, "1914-08-20T00:00:00Z"],
+          [4.87, 50.47, "1914-08-25T12:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "Fixed position; the token disappears when the last forts fell on 25 August.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-route-maubeuge",
+        "formation": "1914:frontiers-maubeuge",
+        "waypoints": [
+          [3.97, 50.28, "1914-08-20T00:00:00Z"],
+          [3.97, 50.28, "1914-08-27T18:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "Fixed position.",
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "1914:frontiers-event-sambre",
+        "title": "The Sambre forced at Tamines and Auvelais",
+        "at": "1914-08-21T15:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:charleroi",
+        "summary": "Bülow's X Corps and Guard cross the Sambre east of Charleroi against Lanrezac's X Corps, which counter-attacks and is thrown back with heavy loss; the 5th Army is fighting in the angle of the Sambre and Meuse before the BEF is on its left.",
+        "links": {
+          "formations": ["1914:corps-de-x", "1914:corps-de-guard", "1914:corps-fr-x"],
+          "people": ["person:bulow-karl-von", "person:lanrezac-charles"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:afgg-1-1"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-event-namur-bombardment",
+        "title": "The siege guns open on Namur",
+        "at": "1914-08-21T10:00:00Z",
+        "kind": "siege",
+        "significance": "minor",
+        "place": "place:namur",
+        "summary": "The howitzers that broke Liège are at Namur within a week; the nine forts and the Belgian 4th Division will last four days.",
+        "links": {
+          "formations": ["1914:fortress-namur", "1914:div-be-4", "1914:corps-de-guard-res"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-event-casteau",
+        "title": "Casteau: the BEF's first shots",
+        "at": "1914-08-22T07:00:00Z",
+        "kind": "battle",
+        "significance": "minor",
+        "lngLat": [4.0, 50.48],
+        "summary": "C Squadron, 4th Dragoon Guards, meets German cavalry on the Mons–Brussels road — the British army's first action on the Continent since Waterloo.",
+        "links": {
+          "formations": ["1914:cav-div-gb", "1914:hkk-2"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-event-charleroi",
+        "title": "Charleroi: the 5th Army beaten on the Sambre",
+        "at": "1914-08-22T12:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:charleroi",
+        "summary": "Bülow's corps push the III and X Corps back from the river through the industrial suburbs; Lanrezac's counter-attack never starts. By evening the 5th Army's centre has given way.",
+        "links": {
+          "formations": ["1914:army-fr-5", "1914:army-de-2"],
+          "people": ["person:lanrezac-charles", "person:bulow-karl-von"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-event-mons",
+        "title": "Mons: Kluck attacks the BEF on the canal",
+        "at": "1914-08-23T09:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:mons",
+        "summary": "The 1st Army's III, IV and IX Corps come at Smith-Dorrien's II Corps along the Mons–Condé canal in close order and are shot down by rifle fire the Germans take for machine guns; by afternoon weight of numbers and the salient at Nimy force II Corps back a few kilometres. Haig's I Corps on the right is hardly engaged.",
+        "links": {
+          "formations": [
+            "1914:corps-gb-ii",
+            "1914:corps-de-iii",
+            "1914:corps-de-iv",
+            "1914:corps-de-ix"
+          ],
+          "people": [
+            "person:smith-dorrien-horace",
+            "person:kluck-alexander-von",
+            "person:french-john"
+          ]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-event-dinant",
+        "title": "Dinant: Hausen's Saxons cross the Meuse",
+        "at": "1914-08-23T12:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:dinant",
+        "summary": "The XII Corps forces the Meuse at Dinant against Franchet d'Espèrey's I Corps, which counter-attacks at Onhaye; in the town the Saxons shoot 674 civilians — the worst of the August massacres in Belgium.",
+        "links": {
+          "formations": ["1914:corps-de-xii", "1914:corps-fr-i"],
+          "people": ["person:hausen-max-von", "person:franchet-desperey-louis"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:horne-kramer-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-event-lanrezac-retreats",
+        "title": "Lanrezac orders the retreat — without telling the British",
+        "at": "1914-08-23T21:00:00Z",
+        "kind": "order",
+        "significance": "major",
+        "place": "place:charleroi",
+        "summary": "With Bülow across the Sambre and Hausen across the Meuse behind his right, Lanrezac orders the 5th Army back in the night; Sir John French learns of it from a liaison officer the next morning and never forgives him. The BEF must retreat too or be enveloped.",
+        "links": {
+          "formations": ["1914:army-fr-5", "1914:bef"],
+          "people": ["person:lanrezac-charles", "person:french-john"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:edmonds-1922"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-event-namur-falls",
+        "title": "Namur's last forts fall",
+        "at": "1914-08-25T12:00:00Z",
+        "kind": "siege",
+        "significance": "major",
+        "place": "place:namur",
+        "summary": "The second Belgian fortress goes in four days; the Guard Reserve Corps that took it entrains the next morning for East Prussia.",
+        "links": {
+          "formations": ["1914:fortress-namur", "1914:corps-de-guard-res"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-event-landrecies",
+        "title": "Landrecies: I Corps fights in the dark",
+        "at": "1914-08-25T21:00:00Z",
+        "kind": "battle",
+        "significance": "minor",
+        "place": "place:landrecies",
+        "summary": "Haig's headquarters and the 4th (Guards) Brigade are attacked in Landrecies by the IX Corps' advance guard; the confused night action persuades I Corps to keep retreating east of the Forest of Mormal, away from II Corps.",
+        "links": {
+          "formations": ["1914:corps-gb-i", "1914:corps-de-ix"],
+          "people": ["person:haig-douglas"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-event-smith-dorrien-stands",
+        "title": "Smith-Dorrien decides to stand at Le Cateau",
+        "at": "1914-08-26T02:00:00Z",
+        "kind": "decision",
+        "significance": "major",
+        "place": "place:le-cateau",
+        "summary": "At two in the morning, with his men exhausted, the 4th Division and 19th Brigade on his left and Allenby's cavalry unable to cover a retreat, Smith-Dorrien tells GHQ he will fight at daybreak — against Sir John French's order to continue the retirement.",
+        "links": {
+          "formations": ["1914:corps-gb-ii", "1914:frontiers-div-gb-4"],
+          "people": ["person:smith-dorrien-horace", "person:french-john"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          },
+          {
+            "source": "source:hastings-2013"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-event-le-cateau",
+        "title": "Le Cateau",
+        "at": "1914-08-26T06:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:le-cateau",
+        "summary": "II Corps, the 4th Division and the 19th Brigade fight the 1st Army's IV and III Corps and Marwitz's cavalry in the open from dawn to mid-afternoon, losing some 7,800 men and 38 guns, then break off and march away south; Kluck, believing he has beaten the whole BEF, turns south-west after a phantom.",
+        "links": {
+          "formations": [
+            "1914:corps-gb-ii",
+            "1914:frontiers-div-gb-4",
+            "1914:frontiers-bde-gb-19",
+            "1914:corps-de-iv",
+            "1914:corps-de-iii",
+            "1914:hkk-2"
+          ],
+          "people": ["person:smith-dorrien-horace", "person:kluck-alexander-von"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1922"
+          },
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:hastings-2013"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-event-saint-quentin",
+        "title": "Joffre meets Sir John French and Lanrezac at Saint-Quentin",
+        "at": "1914-08-26T15:00:00Z",
+        "kind": "decision",
+        "significance": "minor",
+        "place": "place:saint-quentin",
+        "summary": "A bad-tempered conference: French complains of Lanrezac's silence, Lanrezac of the British; Joffre, who has just issued Instruction générale no 2, asks both to keep retreating in line and orders Lanrezac to turn and strike at Guise.",
+        "links": {
+          "people": ["person:joffre-joseph", "person:french-john", "person:lanrezac-charles"]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          },
+          {
+            "source": "source:tuchman-1962"
+          }
+        ]
+      },
+      {
+        "id": "1914:frontiers-event-kluck-released",
+        "title": "Kluck released from Bülow's command",
+        "at": "1914-08-27T12:00:00Z",
+        "kind": "order",
+        "significance": "minor",
+        "lngLat": [3.6, 50.05],
+        "summary": "OHL ends the subordination of the 1st Army to the 2nd that had chafed since 17 August; Kluck is free to march south-west — and will be asked to wheel back in three days later.",
+        "links": {
+          "people": [
+            "person:kluck-alexander-von",
+            "person:bulow-karl-von",
+            "person:moltke-helmuth-von-younger"
+          ]
+        },
+        "sources": [
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
+      }
+    ],
+    "links": {
+      "events": ["1914:event-battle-of-the-frontiers"],
+      "people": [
+        "person:lanrezac-charles",
+        "person:french-john",
+        "person:smith-dorrien-horace",
+        "person:haig-douglas",
+        "person:kluck-alexander-von",
+        "person:bulow-karl-von",
+        "person:hausen-max-von",
+        "person:franchet-desperey-louis",
+        "person:joffre-joseph"
+      ],
+      "places": [
+        "place:charleroi",
+        "place:mons",
+        "place:dinant",
+        "place:namur",
+        "place:le-cateau",
+        "place:landrecies",
+        "place:maubeuge",
+        "place:saint-quentin"
+      ]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1922",
+        "note": "Mons, Le Cateau, the retreat"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:afgg-1-1",
+        "note": "the 5th Army on the Sambre"
+      },
+      {
+        "source": "source:tuchman-1962"
+      },
+      {
+        "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:strachan-2001"
+      },
+      {
+        "source": "source:horne-kramer-2001",
+        "note": "Dinant"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1"
+      }
+    ]
   }
 ]
