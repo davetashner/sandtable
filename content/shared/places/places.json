@@ -600,5 +600,70 @@
         "note": "coordinates"
       }
     ]
+  },
+  {
+    "id": "place:maubeuge",
+    "name": "Maubeuge",
+    "kind": "fortress",
+    "lngLat": [3.973, 50.278],
+    "country": "France",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:dinant",
+    "name": "Dinant",
+    "kind": "town",
+    "lngLat": [4.912, 50.261],
+    "country": "Belgium",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:landrecies",
+    "name": "Landrecies",
+    "kind": "town",
+    "lngLat": [3.689, 50.124],
+    "country": "France",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:saint-quentin",
+    "name": "Saint-Quentin",
+    "kind": "town",
+    "lngLat": [3.287, 49.847],
+    "country": "France",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:bavay",
+    "name": "Bavay",
+    "kind": "town",
+    "lngLat": [3.793, 50.299],
+    "country": "France",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
   }
 ]
