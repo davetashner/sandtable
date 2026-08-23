@@ -69,6 +69,7 @@ export function PersonCardView({
               width={320}
               fit="portrait"
               name={person.name}
+              zoomable
               className="card__hero"
             />
           )
@@ -102,6 +103,7 @@ export function PersonCardView({
           width={320}
           fit="portrait"
           name={person.name}
+          zoomable
           className="card__portrait"
         />
       )}
