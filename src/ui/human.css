@@ -1,0 +1,90 @@
+/* Human cost — the card table, the to-date sum and the line under the timeline (sand-1l0.24). Tokens only. */
+
+.human-table__n {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.human-table__conf {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.human-table tr[data-confidence='contested'] .human-table__n::after,
+.human-todate__list li[data-confidence='contested'] .human-todate__n::after {
+  content: ' ?';
+  color: var(--muted);
+}
+
+.human-todate {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.human-todate__title {
+  margin: 0 0 4px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.human-todate__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 2px;
+  font-size: var(--fs-sm);
+}
+
+.human-todate__side {
+  color: var(--muted);
+}
+
+.human-todate__n {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.human-todate__conf {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.human-todate__note,
+.human-todate__empty {
+  margin: 6px 0 0;
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+/* the line under the timeline: text only, no bar */
+.clocks__gauge--human {
+  grid-template-columns: 150px 1fr 150px;
+}
+
+.clocks__gauge--human:disabled {
+  cursor: default;
+}
+
+.human-line__text {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.4;
+}
+
+.human-line__count {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  text-align: right;
+}

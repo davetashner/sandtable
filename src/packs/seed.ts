@@ -24,10 +24,13 @@ import decisionsJson from '../../content/eras/1914-schlieffen-marne/decisions.js
 import clocksJson from '../../content/eras/1914-schlieffen-marne/clocks.json';
 import talliesJson from '../../content/eras/1914-schlieffen-marne/tallies.json';
 import supplyJson from '../../content/eras/1914-schlieffen-marne/supply.json';
+import casualtiesJson from '../../content/eras/1914-schlieffen-marne/casualties.json';
+import vignettesJson from '../../content/eras/1914-schlieffen-marne/vignettes.json';
 import {
   Battle,
   BeatFrontMatter,
   CastEntry,
+  CasualtyRecord,
   CausalLink,
   DecisionPoint,
   Event,
@@ -43,8 +46,11 @@ import {
   TechCard,
   Tally,
   Timetable,
+  Vignette,
   type Battle as BattleT,
   type CastEntry as CastEntryT,
+  type CasualtyRecord as CasualtyRecordT,
+  type Vignette as VignetteT,
   type DecisionPoint as DecisionPointT,
   type CausalLink as CausalLinkT,
   type Document as DocumentT,
@@ -98,6 +104,10 @@ export interface SeedPack {
   tallies: TallyT[];
   /** Rail-vs-feet supply lines (supply.json). */
   supply: SupplyLineT[];
+  /** Casualty records (casualties.json), the human scale. */
+  casualties: CasualtyRecordT[];
+  /** First-person vignettes (vignettes.json), in time order. */
+  vignettes: VignetteT[];
 }
 
 function loadSeed(): SeedPack {
@@ -122,6 +132,10 @@ function loadSeed(): SeedPack {
   const clocks = Timetable.array().parse(clocksJson);
   const tallies = Tally.array().parse(talliesJson);
   const supply = SupplyLine.array().parse(supplyJson);
+  const casualties = CasualtyRecord.array().parse(casualtiesJson);
+  const vignettes = Vignette.array()
+    .parse(vignettesJson)
+    .sort((a, b) => Date.parse(a.at) - Date.parse(b.at));
   const decisions = DecisionPoint.array()
     .parse(decisionsJson)
     .sort((a, b) => Date.parse(a.at) - Date.parse(b.at));
@@ -144,6 +158,8 @@ function loadSeed(): SeedPack {
     clocks,
     tallies,
     supply,
+    casualties,
+    vignettes,
   };
 }
 

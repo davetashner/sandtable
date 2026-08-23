@@ -62,14 +62,14 @@ Central Powers → `--army-1`, `--army-2`, `--army-3`; Entente → `--french`,
 
 ## Type
 
-| Token                     | Value                                             | Use                                    |
-| ------------------------- | ------------------------------------------------- | -------------------------------------- |
-| `--font-display`          | Fraunces, Georgia, serif                          | titles, beat headings, the day counter |
-| `--font-body`             | IBM Plex Sans, system-ui                          | running text, controls                 |
-| `--font-mono`             | IBM Plex Mono, ui-monospace                       | dates, eyebrows, ticks, legends        |
-| `--fs-xs` … `--fs-3xl`    | 10.5 / 12 / 14.5 / 17 / 21 / 26 / clamp(24–34) px | a 1.2 scale from a 14.5px body         |
-| `--lh-tight`, `--lh-body` | 1.2, 1.55                                         | headings, prose                        |
-| `--track-eyebrow`         | 0.12em                                            | uppercase mono eyebrows                |
+| Token                     | Value                                             | Use                                                                                                                         |
+| ------------------------- | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `--font-display`          | Fraunces, Georgia, serif                          | titles, beat headings, the day counter; first-person vignettes at reading size, so a voice reads as a voice (`sand-1l0.24`) |
+| `--font-body`             | IBM Plex Sans, system-ui                          | running text, controls                                                                                                      |
+| `--font-mono`             | IBM Plex Mono, ui-monospace                       | dates, eyebrows, ticks, legends                                                                                             |
+| `--fs-xs` … `--fs-3xl`    | 10.5 / 12 / 14.5 / 17 / 21 / 26 / clamp(24–34) px | a 1.2 scale from a 14.5px body                                                                                              |
+| `--lh-tight`, `--lh-body` | 1.2, 1.55                                         | headings, prose                                                                                                             |
+| `--track-eyebrow`         | 0.12em                                            | uppercase mono eyebrows                                                                                                     |
 
 Fonts load from Google Fonts in `index.html` (Fraunces 500–700 incl. italic,
 Plex Sans 400–600, Plex Mono 400–600) with system fallbacks.

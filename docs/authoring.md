@@ -450,6 +450,65 @@ A railhead is a formation of kind `other` with a route of its own; a
 The gauge under the timeline reads kilometres marched and the railhead gap at
 the clock; the card (`?card=<id>`) carries the argument.
 
+### The human scale
+
+Casualties are a `CasualtyRecord` in `casualties.json` — one per battle, day
+or period, figures per side and category, each with its own confidence and
+(where the numbers differ) a range instead of a point. Write the debate into
+`historiography`; never let a contested figure read as a fact:
+
+```json
+{
+  "id": "1914:casualties-22-august",
+  "title": "22 August 1914 — the bloodiest day in French history",
+  "timeRange": { "start": "1914-08-22T00:00:00Z", "end": "1914-08-23T00:00:00Z" },
+  "event": "1914:event-battle-of-the-frontiers",
+  "figures": [
+    {
+      "side": "fr",
+      "category": "killed",
+      "value": 27000,
+      "confidence": "medium",
+      "note": "Dead on the day, from the army's own records; rounded.",
+      "sources": [{ "source": "source:steg-2013" }]
+    }
+  ],
+  "summary": "Footnoted.[^steg-2013]",
+  "historiography": "Who gives what, and why they differ.[^steg-2013]",
+  "sources": [{ "source": "source:steg-2013" }]
+}
+```
+
+Records that overlap in time double-count when summed — give the month _or_
+the battles inside it, not both, unless they are in different categories (the
+22 August dead are `killed`; the August total is `casualties`). A beat links a
+record with `links.casualties`; the line under the timeline reads the sum of
+every record whose period has ended at the clock, per side and category, and
+opens the latest.
+
+A vignette is a first-person moment in `vignettes.json`: whose eyes, what kind
+of witness, a few footnoted sentences, the instant it happened. It appears
+inside the beat that contains it once the clock has passed it, set in a
+different voice — write it in the present tense, keep it short, and say in
+`sources[].note` how far the witness can be trusted:
+
+```json
+{
+  "id": "1914:vignette-ludendorff-citadel",
+  "title": "A staff officer knocks at the citadel gate",
+  "at": "1914-08-07T12:00:00Z",
+  "place": "place:liege",
+  "voice": "Erich Ludendorff, 14th Brigade",
+  "kind": "memoir",
+  "text": "He hammers on the gate; it is opened from inside.[^ludendorff-1919]",
+  "people": ["person:ludendorff-erich"],
+  "sources": [{ "source": "source:ludendorff-1919", "note": "his own account" }]
+}
+```
+
+A legend goes in as a legend (the Foch message at Saint-Gond is
+`reconstruction`, and the text says it appears in no document of the time).
+
 ## 9. Add an image
 
 Read [ADR 0007](decisions/0007-imagery.md) first. Put the manifest

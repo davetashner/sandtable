@@ -310,6 +310,132 @@ describe('validateContent', () => {
     );
   });
 
+  it('checks casualty records: range, side ids, battle/event refs, value-or-range, footnotes', () => {
+    const raw = fixture();
+    const c = raw.packs[0]!.collections;
+    const rec = (over: Record<string, unknown>) => ({
+      id: '1914:casualties-marne',
+      title: 'The Marne',
+      timeRange: { start: '1914-09-05T00:00:00Z', end: '1914-09-12T00:00:00Z' },
+      battle: '1914:marne',
+      event: '1914:event-marne',
+      figures: [
+        { side: 'fr', category: 'casualties', low: 200000, high: 250000, confidence: 'contested' },
+        {
+          side: 'de',
+          category: 'killed',
+          value: 1000,
+          confidence: 'low',
+          sources: [{ source: 'source:herwig-2009' }],
+        },
+      ],
+      summary: 'A week.[^herwig-2009]',
+      historiography: 'Never known.[^herwig-2009]',
+      links: { people: ['person:kluck'] },
+      sources: [{ source: 'source:herwig-2009' }],
+      ...over,
+    });
+    c['casualties.json'] = { path: 'eras/1914-test/casualties.json', data: [rec({})] };
+    expect(messages(validateContent(raw)).filter((m) => /casualties/.test(m))).toEqual([]);
+    c['casualties.json'] = {
+      path: 'eras/1914-test/casualties.json',
+      data: [
+        rec({
+          timeRange: { start: '1914-09-05T00:00:00Z', end: '1914-10-12T00:00:00Z' },
+          battle: '1914:ghost',
+          figures: [{ side: 'ru', category: 'killed', value: 1, confidence: 'high' }],
+          historiography: 'Text.[^nope]',
+        }),
+      ],
+    };
+    const msgs = messages(validateContent(raw));
+    expect(msgs).toContainEqual(expect.stringMatching(/timeRange is outside the pack timeRange/));
+    expect(msgs).toContainEqual(expect.stringMatching(/battle 1914:ghost does not exist/));
+    expect(msgs).toContainEqual(expect.stringMatching(/figures\[0\]: side ru is not a pack side/));
+    expect(msgs).toContainEqual(
+      expect.stringMatching(
+        /historiography footnote \[\^nope\] is not one of the entity's sources/,
+      ),
+    );
+    // schema: a figure needs a value or a range, and low <= high
+    c['casualties.json'] = {
+      path: 'eras/1914-test/casualties.json',
+      data: [rec({ figures: [{ side: 'fr', category: 'killed', confidence: 'high' }] })],
+    };
+    expect(messages(validateContent(raw))).toContainEqual(
+      expect.stringMatching(/a figure needs a value or both low and high/),
+    );
+    c['casualties.json'] = {
+      path: 'eras/1914-test/casualties.json',
+      data: [
+        rec({ figures: [{ side: 'fr', category: 'killed', low: 9, high: 1, confidence: 'high' }] }),
+      ],
+    };
+    expect(messages(validateContent(raw))).toContainEqual(
+      expect.stringMatching(/low must be <= high/),
+    );
+  });
+
+  it('checks vignettes: at in range, branch, place and people refs, footnotes and citations', () => {
+    const raw = fixture();
+    const c = raw.packs[0]!.collections;
+    const v = (over: Record<string, unknown>) => ({
+      id: '1914:vignette-taxis',
+      title: 'The taxis',
+      at: '1914-09-07T20:00:00Z',
+      place: 'place:meaux',
+      voice: 'Paris',
+      kind: 'reconstruction',
+      text: 'Meters running.[^herwig-2009]',
+      people: ['person:kluck'],
+      links: { battles: ['1914:marne'] },
+      sources: [{ source: 'source:herwig-2009' }],
+      ...over,
+    });
+    c['vignettes.json'] = { path: 'eras/1914-test/vignettes.json', data: [v({})] };
+    expect(messages(validateContent(raw)).filter((m) => /vignette/.test(m))).toEqual([]);
+    c['vignettes.json'] = {
+      path: 'eras/1914-test/vignettes.json',
+      data: [
+        v({
+          at: '1914-10-07T20:00:00Z',
+          branch: '1914:nope',
+          place: 'place:ghost',
+          people: ['person:ghost'],
+          text: 'Text.[^nope]',
+        }),
+      ],
+    };
+    const msgs = messages(validateContent(raw));
+    expect(msgs).toContainEqual(expect.stringMatching(/at is outside the pack timeRange/));
+    expect(msgs).toContainEqual(expect.stringMatching(/branch 1914:nope is not defined/));
+    expect(msgs).toContainEqual(expect.stringMatching(/place place:ghost does not exist/));
+    expect(msgs).toContainEqual(expect.stringMatching(/people person:ghost does not exist/));
+    expect(msgs).toContainEqual(
+      expect.stringMatching(/text footnote \[\^nope\] is not one of the entity's sources/),
+    );
+    // a beat may link a casualty record; a causal link may point at a vignette
+    c['casualties.json'] = {
+      path: 'eras/1914-test/casualties.json',
+      data: [
+        {
+          id: '1914:casualties-x',
+          title: 'X',
+          timeRange: { start: '1914-09-05T00:00:00Z', end: '1914-09-12T00:00:00Z' },
+          figures: [{ side: 'fr', category: 'killed', value: 1, confidence: 'high' }],
+          sources: [{ source: 'source:herwig-2009' }],
+        },
+      ],
+    };
+    c['vignettes.json'] = { path: 'eras/1914-test/vignettes.json', data: [v({})] };
+    (c['events.json']!.data as Record<string, unknown>[])[0]!['links'] = {
+      casualties: ['1914:casualties-x', '1914:casualties-ghost'],
+    };
+    expect(messages(validateContent(raw))).toContainEqual(
+      expect.stringMatching(/links.casualties 1914:casualties-ghost does not exist/),
+    );
+  });
+
   it('checks tallies: entries ordered and in range, formation/place refs, footnotes and citations', () => {
     const raw = fixture();
     const c = raw.packs[0]!.collections;

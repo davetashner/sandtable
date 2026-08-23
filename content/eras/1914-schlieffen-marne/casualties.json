@@ -1,0 +1,137 @@
+[
+  {
+    "id": "1914:casualties-22-august",
+    "title": "22 August 1914 — the bloodiest day in French history",
+    "timeRange": { "start": "1914-08-22T00:00:00Z", "end": "1914-08-23T00:00:00Z" },
+    "event": "1914:event-battle-of-the-frontiers",
+    "figures": [
+      {
+        "side": "fr",
+        "category": "killed",
+        "value": 27000,
+        "confidence": "medium",
+        "note": "French soldiers dead on the day, reconstructed from the army's own death records (*Mémoire des hommes*); rounded. Wounded and missing are not counted here.",
+        "sources": [{ "source": "source:steg-2013" }, { "source": "source:hastings-2013" }]
+      }
+    ],
+    "summary": "In the Ardennes fog the French 3rd and 4th Armies marched in column into the German 4th and 5th, and in Lorraine the 1st and 2nd were still falling back from Morhange and Sarrebourg; at Rossignol the 3rd Colonial Division was all but destroyed in an afternoon. About 27,000 French soldiers died on this one day — more than on any other day in the country's history, more than the French dead of the whole Franco-Prussian war's opening battles, and more than the first day of the Somme cost the British.[^steg-2013] [^hastings-2013]",
+    "historiography": "The day-count is Jean-Michel Steg's, from the individual death records; earlier writers had only monthly totals and spoke of 'the worst losses of the war' without a number.[^steg-2013] No comparable German figure for the day exists: German losses were reported by ten-day periods and by army, and the Ardennes armies' returns for 21–31 August are incomplete.[^herwig-2009]",
+    "links": { "people": ["person:ruffey-pierre", "person:langle-de-cary-fernand-de"] },
+    "sources": [
+      { "source": "source:steg-2013" },
+      { "source": "source:hastings-2013" },
+      { "source": "source:herwig-2009" }
+    ]
+  },
+  {
+    "id": "1914:casualties-mons",
+    "title": "Mons, 23 August 1914",
+    "timeRange": { "start": "1914-08-23T00:00:00Z", "end": "1914-08-24T00:00:00Z" },
+    "battle": "1914:frontiers-north",
+    "place": "place:mons",
+    "figures": [
+      {
+        "side": "gb",
+        "category": "casualties",
+        "value": 1600,
+        "confidence": "high",
+        "note": "'Just over 1,600' of all ranks, the official history's figure for the day; most of them in II Corps along the canal.",
+        "sources": [{ "source": "source:edmonds-1922" }]
+      }
+    ],
+    "summary": "The BEF's first battle: II Corps held the Mons–Condé canal for a day against the German 1st Army and withdrew that night. The British loss was small by the standards of the week around it; the German, in the units that attacked the canal in close order, was probably heavier but was never separately returned.[^edmonds-1922] [^herwig-2009]",
+    "sources": [{ "source": "source:edmonds-1922" }, { "source": "source:herwig-2009" }]
+  },
+  {
+    "id": "1914:casualties-le-cateau",
+    "title": "Le Cateau, 26 August 1914",
+    "timeRange": { "start": "1914-08-26T00:00:00Z", "end": "1914-08-27T00:00:00Z" },
+    "battle": "1914:frontiers-north",
+    "place": "place:le-cateau",
+    "figures": [
+      {
+        "side": "gb",
+        "category": "casualties",
+        "value": 7812,
+        "confidence": "high",
+        "note": "Killed, wounded and missing of all ranks, with 38 guns lost — the official history's figure for Smith-Dorrien's stand.",
+        "sources": [{ "source": "source:edmonds-1922" }]
+      }
+    ],
+    "summary": "Smith-Dorrien's II Corps turned and fought at Le Cateau rather than be caught on the march; the corps got away that evening, but the day cost it more than Mons and the Retreat together had so far.[^edmonds-1922]",
+    "links": { "people": ["person:smith-dorrien-horace"] },
+    "sources": [{ "source": "source:edmonds-1922" }]
+  },
+  {
+    "id": "1914:casualties-august-france",
+    "title": "The French Army, August 1914 — the Battle of the Frontiers",
+    "timeRange": { "start": "1914-08-02T00:00:00Z", "end": "1914-09-01T00:00:00Z" },
+    "event": "1914:event-battle-of-the-frontiers",
+    "figures": [
+      {
+        "side": "fr",
+        "category": "casualties",
+        "value": 206515,
+        "confidence": "medium",
+        "note": "Killed, wounded and missing for the month, from the French Army's own returns as given by Herwig; the returns were compiled in the retreat and understate the dead, many of whom were first carried as missing. Includes the 22 August dead.",
+        "sources": [{ "source": "source:herwig-2009" }]
+      }
+    ],
+    "summary": "Plan XVII cost France more men in three weeks than any later month of the war would: the Lorraine offensive, the Ardennes, the Sambre and the Meuse, and the first week of the Retreat. The army that fought the Marne was the army that had survived August.[^herwig-2009] [^strachan-2001]",
+    "historiography": "The monthly return is the one hard number; estimates that count the missing later confirmed dead run higher — to something over 260,000 for the Frontiers and the opening of the Retreat, of whom some 75,000 killed — but no two authors agree on the period or the categories, so the higher figures are given here as the upper bound of the debate rather than as a fact.[^herwig-2009] [^wikipedia-en]",
+    "sources": [
+      { "source": "source:herwig-2009" },
+      { "source": "source:strachan-2001" },
+      {
+        "source": "source:wikipedia-en",
+        "note": "Battle of the Frontiers — casualty summary; tertiary, for the range of figures in circulation"
+      }
+    ]
+  },
+  {
+    "id": "1914:casualties-marne",
+    "title": "The Marne, 5–12 September 1914",
+    "timeRange": { "start": "1914-09-05T00:00:00Z", "end": "1914-09-12T00:00:00Z" },
+    "battle": "1914:marne",
+    "event": "1914:event-battle-of-the-marne",
+    "figures": [
+      {
+        "side": "fr",
+        "category": "casualties",
+        "low": 200000,
+        "high": 250000,
+        "confidence": "contested",
+        "note": "Killed, wounded and missing over the week of the battle; the round figure of a quarter of a million, with some 80,000 dead, is the one most often repeated and rests on estimates, not returns.",
+        "sources": [{ "source": "source:herwig-2009" }, { "source": "source:wikipedia-en" }]
+      },
+      {
+        "side": "de",
+        "category": "casualties",
+        "low": 200000,
+        "high": 250000,
+        "confidence": "contested",
+        "note": "German returns for the period are by ten-day periods and incomplete for the armies of the right wing; the usual estimate is of the same order as the French.",
+        "sources": [{ "source": "source:herwig-2009" }, { "source": "source:wikipedia-en" }]
+      },
+      {
+        "side": "gb",
+        "category": "casualties",
+        "low": 1701,
+        "high": 13000,
+        "confidence": "contested",
+        "note": "The official history's count for 6–10 September is 1,701; wider reckonings that take the BEF's losses to the Aisne run to about 13,000.",
+        "sources": [{ "source": "source:edmonds-1922" }, { "source": "source:wikipedia-en" }]
+      }
+    ],
+    "summary": "A week of meeting engagements on a front of more than two hundred kilometres, fought by men who had marched or retreated for three weeks first. Neither side ever produced a reliable count; the figures here are the range of the estimates.[^herwig-2009]",
+    "historiography": "Herwig's judgement is that the exact losses of the Marne will never be known: French and German returns were compiled by different periods and categories, and the German ones are missing for the formations that mattered most. The round numbers in general histories descend from a handful of early estimates.[^herwig-2009]",
+    "sources": [
+      { "source": "source:herwig-2009" },
+      { "source": "source:edmonds-1922" },
+      {
+        "source": "source:wikipedia-en",
+        "note": "First Battle of the Marne — casualty summary; tertiary, for the range of figures in circulation"
+      }
+    ]
+  }
+]

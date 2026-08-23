@@ -15,7 +15,8 @@ import remarkGfm from 'remark-gfm';
 import { useClock } from '../engine/ClockContext.js';
 import { sideToken } from '../engine/layers/colors.js';
 import { selectBeat, withFootnotes } from '../engine/beats.js';
-import type { Branch, NarrativeBeat, Side, Source } from '../packs/schema/index.js';
+import type { Branch, NarrativeBeat, Side, Source, Vignette } from '../packs/schema/index.js';
+import { VignetteView } from './VignetteView.js';
 import './card.css';
 import { MediaFigure } from './MediaFigure.js';
 import type { MediaIndexEntry } from '../packs/media-index.js';
@@ -37,6 +38,12 @@ export interface DossierProps {
   resolveMedia?: ((id: string) => MediaIndexEntry | undefined) | undefined;
   /** Chips for the beat's links (tech cards, battles, people…). */
   related?: CardChipLike[];
+  /** First-person vignettes the clock has reached within this beat (sand-1l0.24). */
+  vignettes?: Vignette[];
+  /** Label for an entity id (vignette people). */
+  label?: ((id: string) => string | undefined) | undefined;
+  /** Portrait for a person id (vignette voices). */
+  resolvePortrait?: ((personId: string) => MediaIndexEntry | undefined) | undefined;
 }
 
 export interface CardChipLike {
@@ -57,6 +64,9 @@ export function Dossier({
   cast,
   resolveMedia,
   related = [],
+  vignettes = [],
+  label,
+  resolvePortrait,
 }: DossierProps) {
   const { now, range } = useClock();
   const beat = useMemo(
@@ -150,6 +160,12 @@ export function Dossier({
           <div className="dossier__body">
             <Markdown remarkPlugins={[remarkGfm]}>{markdown}</Markdown>
           </div>
+          <VignetteView
+            vignettes={vignettes}
+            sources={sources}
+            {...(label ? { label } : {})}
+            {...(resolvePortrait ? { portrait: resolvePortrait } : {})}
+          />
           {related.length > 0 && (
             <ul className="card__chips dossier__related" aria-label="Related">
               {related.map((c) => (
