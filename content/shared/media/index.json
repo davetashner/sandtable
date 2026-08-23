@@ -943,26 +943,39 @@
       "person": "person:schlieffen-alfred-von"
     },
     {
-      "id": "media:person/wilhelm-ii/portrait-1905",
+      "id": "media:person/wilhelm-ii/portrait-1905-colorized",
       "dir": "people/wilhelm-ii",
       "original": {
-        "src": "people/wilhelm-ii/portrait-1905.png",
-        "width": 284,
-        "height": 747,
+        "src": "people/wilhelm-ii/portrait-1905-colorized.png",
+        "width": 936,
+        "height": 1681,
         "type": "image/png"
       },
-      "variants": [],
-      "width": 284,
-      "height": 747,
-      "caption": "Wilhelm II in full dress in 1905, photographed by the court photographers Reichard & Lindner and sold as a postcard — the Kaiser as he wished to be seen. Monochrome archive original.",
-      "credit": "Original photograph: Reichard & Lindner, Berlin, 1905; published by Gustav Liersch & Co; Deutsches Historisches Museum via Wikimedia Commons; public domain.",
+      "variants": [
+        {
+          "src": "people/wilhelm-ii/.derived/portrait-1905-colorized.w320.webp",
+          "width": 320,
+          "height": 575,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/wilhelm-ii/.derived/portrait-1905-colorized.w640.webp",
+          "width": 640,
+          "height": 1149,
+          "type": "image/webp"
+        }
+      ],
+      "width": 936,
+      "height": 1681,
+      "caption": "Wilhelm II in the white full dress of the Garde du Corps, photographed by the court photographers Reichard & Lindner in 1905 and sold as a postcard — the Kaiser as he wished to be seen. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: Reichard & Lindner, Berlin, 1905; published by Gustav Liersch & Co; Deutsches Historisches Museum via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
       "licence": "public domain — PD-old, published 1905",
-      "colorized": false,
+      "colorized": true,
       "present": true,
       "originalUrl": "https://commons.wikimedia.org/wiki/File:Wilhelm_II._1905.jpeg",
       "focalPoint": {
         "x": 0.5,
-        "y": 0.2
+        "y": 0.16
       },
       "person": "person:wilhelm-ii"
     },
