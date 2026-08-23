@@ -220,6 +220,32 @@ Namur was supposed to hold for weeks. It held for four days.[^herwig-2009]
 - Write contested points as historiography: "Zuber argues …; Mombauer
   replies …", each with a footnote.
 
+### Link a name to its bio
+
+Name a person in the prose and link them to their card with ordinary Markdown
+link syntax, using the entity id as the target:
+
+```markdown
+On 17 August [Lanrezac](person:lanrezac-charles) meets
+[Sir John French](person:french-john) at Rethel.
+```
+
+- The link opens the person's card in the dossier — the clock, branch and
+  zoom-in stay where they are. It is a real link, so it can be copied or
+  opened in a new tab.
+- **Link the first mention in a beat, not every mention.** A name underlined
+  five times reads as a warning, not an invitation.
+- The same syntax works for anything with a card — `place:`, a document, a
+  battle, a tech card — so `[the ultimatum](1914:document-german-ultimatum-to-belgium-1914-08-02)`
+  is a link too. The validator rejects a target that does not exist.
+- Only mark people the beat is actually about; they should be in the beat's
+  `links.people` as well, which is what feeds the chips.
+- **Ambiguous surnames must be written out.** The registry holds two Moltkes
+  and two Wilhelms: write `[Helmuth von Moltke the Younger](person:moltke-helmuth-von-younger)`
+  the first time, never a bare "Moltke". This is why the link is authored
+  rather than matched from the text — a surname matcher cannot tell an uncle
+  from a nephew.
+
 ## 6. Add a battle (zoom-in)
 
 `battles.json`:

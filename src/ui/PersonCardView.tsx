@@ -4,8 +4,6 @@
  * Opened from a ● chip on beats, events, cards or formations; deep-linked as
  * ?card=person:<slug>.
  */
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import { withFootnotes } from '../engine/beats.js';
 import { portraitFor } from '../packs/media-index.js';
 import type { CastEntry, Person, Source } from '../packs/schema/index.js';
@@ -13,6 +11,7 @@ import { Card } from './Card.js';
 import { MediaFigure } from './MediaFigure.js';
 import { whenLabel } from './ScienceCardView.js';
 import type { EntityLabeller } from './TechCardView.js';
+import { Prose } from './Prose.js';
 
 export interface PersonCardViewProps {
   person: Person;
@@ -75,7 +74,7 @@ export function PersonCardView({
       >
         <section className="card__section" aria-label="In brief">
           <h3>In brief</h3>
-          <Markdown remarkPlugins={[remarkGfm]}>{person.summary}</Markdown>
+          <Prose>{person.summary}</Prose>
         </section>
       </Card>
     );

@@ -19,7 +19,7 @@ sources:
 
 The whole northern end of the war moves at once, and mostly by train.
 
-At Sir John French's request the BEF is taken out of the Aisne by night, corps by corps, marched to railheads and carried north to the ports that supply it — a fortnight's work, concealed for a time from an enemy doing the same thing a hundred kilometres away.[^edmonds-1922] [^edmonds-1925] It is put down on the last unclosed ground in Europe, in front of a Flemish cloth town called Ypres.
+At [Sir John French](person:french-john)'s request the BEF is taken out of the Aisne by night, corps by corps, marched to railheads and carried north to the ports that supply it — a fortnight's work, concealed for a time from an enemy doing the same thing a hundred kilometres away.[^edmonds-1922] [^edmonds-1925] It is put down on the last unclosed ground in Europe, in front of a Flemish cloth town called Ypres.
 
 The Belgian field army, out of Antwerp and marching along its own coast, reaches the Yser on 16 October: six worn divisions with the sea behind them, holding the last twenty kilometres of unoccupied Belgium. Lille, France's fifth city, falls to the German Sixth Army on the 12th and stays lost for four years.[^edmonds-1925] [^strachan-2001]
 

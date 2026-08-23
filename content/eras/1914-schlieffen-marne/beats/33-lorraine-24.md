@@ -19,6 +19,6 @@ sources:
   - source: source:keegan-1998
 ---
 
-Having won, Rupprecht wants more: OHL lets the 6th and 7th Armies try the Trouée de Charmes, the gap between the fortresses of Toul and Épinal that opens the road to the Moselle. On the 24th the Bavarians drive into it; on the 25th Dubail and Castelnau counter-attack into their flank at Rozelieures, with Foch's XX Corps on the Grand Couronné, and the breakthrough is held.[^afgg-1-1] [^herwig-2009] [^strachan-2001]
+Having won, Rupprecht wants more: OHL lets the 6th and 7th Armies try the Trouée de Charmes, the gap between the fortresses of Toul and Épinal that opens the road to the Moselle. On the 24th the Bavarians drive into it; on the 25th [Dubail](person:dubail-auguste) and [Castelnau](person:castelnau-edouard-de) counter-attack into their flank at Rozelieures, with [Foch](person:foch-ferdinand)'s XX Corps on the Grand Couronné, and the breakthrough is held.[^afgg-1-1] [^herwig-2009] [^strachan-2001]
 
 This is the left wing's part in the pack's argument. Schlieffen's concept wanted the left to give ground and let the French walk into Lorraine; Moltke's deployment had already thickened it, and now two armies that might have gone to the wheel were fighting a battle the plan did not want, against fortresses the plan had meant to bypass. Whether the 'revolving door' could ever have turned — whether the French would have obliged — is argued by Keegan and Herwig; what is not argued is that from 25 August the right wing would have to win alone.[^herwig-2009] [^keegan-1998]

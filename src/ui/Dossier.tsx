@@ -10,8 +10,6 @@
  * — which will mount here as modes rather than as new panels.
  */
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import { useClock } from '../engine/ClockContext.js';
 import { sideToken } from '../engine/layers/colors.js';
 import { selectBeat, withFootnotes } from '../engine/beats.js';
@@ -21,6 +19,7 @@ import './card.css';
 import { MediaFigure } from './MediaFigure.js';
 import type { MediaIndexEntry } from '../packs/media-index.js';
 import './dossier.css';
+import { Prose } from './Prose.js';
 
 export interface DossierProps {
   beats: NarrativeBeat[];
@@ -110,7 +109,7 @@ export function Dossier({
               Hypothetical — an authored branch, not what happened
             </summary>
             <div className="dossier__about-body">
-              <Markdown remarkPlugins={[remarkGfm]}>{branch.summary}</Markdown>
+              <Prose>{branch.summary}</Prose>
               {branch.feasibility && branch.feasibility.length > 0 && (
                 <>
                   <h3>What would have had to be true</h3>
@@ -135,7 +134,7 @@ export function Dossier({
               {branch.historiography && (
                 <>
                   <h3>The debate</h3>
-                  <Markdown remarkPlugins={[remarkGfm]}>{branch.historiography}</Markdown>
+                  <Prose>{branch.historiography}</Prose>
                 </>
               )}
             </div>
@@ -158,7 +157,7 @@ export function Dossier({
             </blockquote>
           )}
           <div className="dossier__body">
-            <Markdown remarkPlugins={[remarkGfm]}>{markdown}</Markdown>
+            <Prose>{markdown}</Prose>
           </div>
           <VignetteView
             vignettes={vignettes}

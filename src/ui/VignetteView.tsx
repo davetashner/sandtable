@@ -5,12 +5,11 @@
  * witness (memoir, contemporary witness, reconstruction), footnoted to
  * their own sources. Era-agnostic.
  */
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import { withFootnotes } from '../engine/beats.js';
 import type { Source, Vignette } from '../packs/schema/index.js';
 import type { MediaIndexEntry } from '../packs/media-index.js';
 import './vignette.css';
+import { Prose } from './Prose.js';
 
 const KIND_LABEL: Record<Vignette['kind'], string> = {
   memoir: 'Memoir',
@@ -82,9 +81,7 @@ export function VignetteView({
             <h3 className="vignette__title">{v.title}</h3>
             <p className="vignette__when">{momentLabel(v.at)}</p>
             <div className="vignette__text">
-              <Markdown remarkPlugins={[remarkGfm]}>
-                {withFootnotes({ body: v.text, sources: v.sources }, sources)}
-              </Markdown>
+              <Prose>{withFootnotes({ body: v.text, sources: v.sources }, sources)}</Prose>
             </div>
             {label && v.people && v.people.length > 0 && (
               <p className="vignette__people">

@@ -25,7 +25,7 @@ sources:
   - source: source:zuber-2007
 ---
 
-This is the main effort. While the 1st and 2nd Armies are being thrown out of Lorraine and Lanrezac is arguing his way north to the Sambre, Joffre sends the 3rd and 4th Armies north-east into the Ardennes — the blow Plan XVII was built for, into what he believes is the thin centre of the German line. His reasoning is not foolish: the reports of great German columns in Belgium must mean the centre has been stripped to pay for them.[^afgg-1-1] [^doughty-2005]
+This is the main effort. While the 1st and 2nd Armies are being thrown out of Lorraine and Lanrezac is arguing his way north to the Sambre, [Joffre](person:joffre-joseph) sends the 3rd and 4th Armies north-east into the Ardennes — the blow Plan XVII was built for, into what he believes is the thin centre of the German line. His reasoning is not foolish: the reports of great German columns in Belgium must mean the centre has been stripped to pay for them.[^afgg-1-1] [^doughty-2005]
 
 The centre has not been stripped. The German 4th and 5th Armies are marching south-west through the same forest at the same hour, on the same roads, for reasons of their own — they are the pivot the wheel turns on, and they are moving up to keep the line closed. Two pairs of armies are walking towards each other through eighty kilometres of wooded hills in which neither can see anything.[^herwig-2009] [^zuber-2007]
 

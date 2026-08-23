@@ -10,6 +10,7 @@
  * Pure: no filesystem. `scripts/validate-content.ts` feeds it the tree.
  */
 import type { ZodType } from 'zod';
+import { entityLinksIn } from '../../engine/entity-links.js';
 import {
   type Battle,
   type Branch,
@@ -636,6 +637,9 @@ function checkDecision(ctx: Ctx, s: PackState, path: string, d: DecisionPoint) {
     ctx.error(path, `historical option "${d.historical}" is not one of options[]`, d.id);
   checkLinks(ctx, path, d.id, d.links);
   checkCitations(ctx, path, d.id, d.sources, true);
+  checkProseLinks(ctx, path, d.id, d.reasoning, 'reasoning');
+  checkProseLinks(ctx, path, d.id, d.verdict, 'verdict');
+  for (const o of d.options) checkProseLinks(ctx, path, d.id, o.summary, `option ${o.id}`);
 }
 
 function checkCard(ctx: Ctx, path: string, c: TechCard | ScienceCard | Document) {
@@ -645,6 +649,8 @@ function checkCard(ctx: Ctx, path: string, c: TechCard | ScienceCard | Document)
   if ('author' in c && c.author.includes(':')) ctx.ref(path, c.id, c.author, ['person'], 'author');
   checkLinks(ctx, path, c.id, c.links);
   checkCitations(ctx, path, c.id, c.sources, true);
+  if ('body' in c) checkProseLinks(ctx, path, c.id, c.body, 'body');
+  if ('summary' in c) checkProseLinks(ctx, path, c.id, c.summary, 'summary');
 }
 
 function checkCast(ctx: Ctx, path: string, c: CastEntry, sideIds: Set<string>) {
@@ -656,6 +662,7 @@ function checkCast(ctx: Ctx, path: string, c: CastEntry, sideIds: Set<string>) {
     if (!slugs.has(m[1]!))
       ctx.error(path, `bio footnote [^${m[1]}] is not one of the entry's sources`, c.id);
   }
+  checkProseLinks(ctx, path, c.id, c.bio, 'bio');
 }
 
 function checkClock(ctx: Ctx, path: string, c: Timetable) {
@@ -753,6 +760,24 @@ function checkFootnotes(
   }
 }
 
+/**
+ * Entity links in prose (sand-1l0.29): `[Joffre](person:joffre-joseph)` opens
+ * a card, so a target that does not exist is a link the reader can click and
+ * get nothing from.
+ */
+function checkProseLinks(
+  ctx: Ctx,
+  path: string,
+  id: string,
+  text: string | undefined,
+  what: string,
+) {
+  if (!text) return;
+  for (const target of entityLinksIn(text)) {
+    if (!ctx.index.has(target)) ctx.error(path, `${what} link ${target} does not exist`, id);
+  }
+}
+
 function checkCasualties(
   ctx: Ctx,
   s: PackState,
@@ -789,6 +814,7 @@ function checkVignette(ctx: Ctx, s: PackState, path: string, v: Vignette) {
   checkLinks(ctx, path, v.id, v.links);
   checkCitations(ctx, path, v.id, v.sources, true);
   checkFootnotes(ctx, path, v.id, v.text, v.sources, 'text');
+  checkProseLinks(ctx, path, v.id, v.text, 'text');
 }
 
 /**
@@ -917,6 +943,7 @@ function checkBeats(ctx: Ctx, s: PackState) {
     if (b.media) ctx.ref(path, b.id, b.media, ['media'], 'media');
     checkLinks(ctx, path, b.id, b.links);
     checkCitations(ctx, path, b.id, b.sources, true);
+    checkProseLinks(ctx, path, b.id, b.body, 'body');
     // inline footnotes [^slug] must be among the beat's citations
     const slugs = new Set(b.sources.map((c) => c.source.split(':')[1]));
     for (const label of footnoteLabels(b.body)) {

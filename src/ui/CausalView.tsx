@@ -5,13 +5,12 @@
  * evidence and historiography, and the alternatives at each step. Opened
  * from a ⟶ chip on a beat or card; deep-linked as ?card=<link id>.
  */
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import { formatCitation } from '../engine/beats.js';
 import { chainAround, chainsFor, fullChain, RELATION_LABEL } from '../engine/causal.js';
 import type { CausalLink, Source } from '../packs/schema/index.js';
 import './card.css';
 import './causal.css';
+import { Prose } from './Prose.js';
 
 export interface CausalViewProps {
   links: CausalLink[];
@@ -114,11 +113,11 @@ export function CausalView({
               </div>
               {depth === 0 ? (
                 <div className="causal__claim">
-                  <Markdown remarkPlugins={[remarkGfm]}>{link.claim}</Markdown>
+                  <Prose>{link.claim}</Prose>
                   {link.historiography && (
                     <details className="causal__debate">
                       <summary>The debate</summary>
-                      <Markdown remarkPlugins={[remarkGfm]}>{link.historiography}</Markdown>
+                      <Prose>{link.historiography}</Prose>
                     </details>
                   )}
                   <section className="card__sources" aria-label="Evidence">
@@ -126,13 +125,13 @@ export function CausalView({
                     <ol>
                       {link.evidence.map((c, i) => (
                         <li key={`${c.source}-${i}`}>
-                          <Markdown remarkPlugins={[remarkGfm]}>
+                          <Prose>
                             {formatCitation(
                               byId.get(c.source),
                               c.source.split(':')[1] ?? c.source,
                               c.pages,
                             ) + (c.note ? ` — ${c.note}` : '')}
-                          </Markdown>
+                          </Prose>
                         </li>
                       ))}
                     </ol>

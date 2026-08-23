@@ -4,14 +4,13 @@
  * slip, and a note — and the sources. Opened from a gauge under the timeline
  * or as ?card=<id>.
  */
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import { withFootnotes } from '../engine/beats.js';
 import { dayOf, slipLabel } from '../engine/timetable.js';
 import type { Source, Timetable } from '../packs/schema/index.js';
 import { Card } from './Card.js';
 import { whenLabel } from './ScienceCardView.js';
 import './clock-card.css';
+import { Prose } from './Prose.js';
 
 export interface ClockCardViewProps {
   clock: Timetable;
@@ -55,7 +54,7 @@ export function ClockCardView({ clock, sources, onBack }: ClockCardViewProps) {
                   {m.label}
                   {m.note && (
                     <span className="clock-table__note">
-                      <Markdown remarkPlugins={[remarkGfm]}>{m.note}</Markdown>
+                      <Prose>{m.note}</Prose>
                     </span>
                   )}
                 </th>

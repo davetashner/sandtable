@@ -18,6 +18,6 @@ sources:
   - source: source:strachan-2001
 ---
 
-In the dark of 5/6 August five brigades go at the gaps between the forts and are cut down — at Rabosée in the north, at Retinne, on the Ourthe in the south — by the 3rd Division in its trenches and the forts' guns. Only the 14th Brigade, its commander Wussow killed in the first minutes, gets through between Fléron and Évegnée; Ludendorff, riding with it as OHL's observer, takes command and brings it onto the heights above the city by morning.[^herwig-2009] [^tuchman-1962]
+In the dark of 5/6 August five brigades go at the gaps between the forts and are cut down — at Rabosée in the north, at Retinne, on the Ourthe in the south — by the 3rd Division in its trenches and the forts' guns. Only the 14th Brigade, its commander Wussow killed in the first minutes, gets through between Fléron and Évegnée; [Ludendorff](person:ludendorff-erich), riding with it as OHL's observer, takes command and brings it onto the heights above the city by morning.[^herwig-2009] [^tuchman-1962]
 
-Leman, whose headquarters a German patrol has reached, draws the conclusion: the intervals cannot be held once the enemy is inside them. He sends the 3rd Division away to the field army on the Gette and moves into Fort Loncin. From now on the forts fight alone.[^herwig-2009] [^strachan-2001]
+[Leman](person:leman-gerard), whose headquarters a German patrol has reached, draws the conclusion: the intervals cannot be held once the enemy is inside them. He sends the 3rd Division away to the field army on the Gette and moves into Fort Loncin. From now on the forts fight alone.[^herwig-2009] [^strachan-2001]

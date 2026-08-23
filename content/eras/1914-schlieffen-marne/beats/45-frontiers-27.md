@@ -17,6 +17,6 @@ sources:
   - source: source:edmonds-1922
 ---
 
-The Battle of the Frontiers is lost from Lorraine to the sea, and from Luxembourg it looks like the plan working: the French left broken, the British beaten twice, the wheel rolling. Kluck is freed from Bülow's command on the 27th and marches south-west; Maubeuge is invested; the 5th Army and the BEF are a day or two ahead of the pursuit and still in being.[^herwig-2009] [^edmonds-1922]
+The Battle of the Frontiers is lost from Lorraine to the sea, and from Luxembourg it looks like the plan working: the [French](person:french-john) left broken, the British beaten twice, the wheel rolling. [Kluck](person:kluck-alexander-von) is freed from [Bülow](person:bulow-karl-von)'s command on the 27th and marches south-west; Maubeuge is invested; the 5th Army and the BEF are a day or two ahead of the pursuit and still in being.[^herwig-2009] [^edmonds-1922]
 
-That last fact is the one that matters. The wheel needed a French left that stood to be enveloped; Lanrezac's retreat, Smith-Dorrien's stand and Joffre's trains west out of Lorraine gave it instead an enemy that fell back faster than the Germans could march, towards reserves and a capital — the Great Retreat, and the Marne at the end of it.[^herwig-2009]
+That last fact is the one that matters. The wheel needed a French left that stood to be enveloped; [Lanrezac](person:lanrezac-charles)'s retreat, Smith-Dorrien's stand and Joffre's trains west out of Lorraine gave it instead an enemy that fell back faster than the Germans could march, towards reserves and a capital — the Great Retreat, and the Marne at the end of it.[^herwig-2009]

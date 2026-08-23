@@ -5,11 +5,10 @@
  * way back to the beat that was showing.
  */
 import type { ReactNode } from 'react';
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import { formatCitation } from '../engine/beats.js';
 import type { Citation, Source } from '../packs/schema/index.js';
 import './card.css';
+import { Prose } from './Prose.js';
 
 export interface CardChip {
   id: string;
@@ -66,7 +65,7 @@ export function Card({
       {hero}
       {md && (
         <div className="card__body">
-          <Markdown remarkPlugins={[remarkGfm]}>{md}</Markdown>
+          <Prose>{md}</Prose>
         </div>
       )}
       {children}
@@ -93,10 +92,10 @@ export function Card({
           <ol>
             {citations.map((c, i) => (
               <li key={`${c.source}-${i}`}>
-                <Markdown remarkPlugins={[remarkGfm]}>
+                <Prose>
                   {formatCitation(byId.get(c.source), c.source.split(':')[1] ?? c.source, c.pages) +
                     (c.note ? ` — ${c.note}` : '')}
-                </Markdown>
+                </Prose>
               </li>
             ))}
           </ol>
