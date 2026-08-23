@@ -1,0 +1,30 @@
+{
+  "$comment": "Cross-era: Bismarck belongs to the 1914 pack's prologue and to a future 1870 pack.",
+  "id": "media:person/bismarck-otto-von/portrait-1890-colorized",
+  "person": "person:bismarck-otto-von",
+  "file": "portrait-1890-colorized.png",
+  "width": 1142,
+  "height": 1377,
+  "colorized": true,
+  "original": {
+    "description": "Bust portrait of Otto von Bismarck in a dark civilian frock coat with a high collar and dark cravat, arms folded, head turned to his right, with a small spray in the buttonhole.",
+    "photographer": "Jacques Pilartz (1836–1910), Cologne",
+    "date": "1890",
+    "archive": "Internet Archive Book Images — the plate as reproduced in 'A history of mediæval and modern Europe for secondary schools' (1920); via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Bismarck_Portrait(arms_folded)).jpg",
+    "source_page": "https://www.flickr.com/photos/internetarchivebookimages/14764145112/",
+    "original_dimensions": "559 × 675 (Commons file)",
+    "licence": "public domain — no known copyright restrictions (Internet Archive Book Images); the photographer died in 1910"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization and upscale from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'. Documented colours: black frock coat, white linen, grey hair. Caveat for the image review (sand-y0u.7): the Commons file is a crop of a halftone reproduction printed in a 1920 textbook, with its colour balance already adjusted by a Commons editor, so this colorization sits on a reproduction rather than an original print."
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Otto von Bismarck in 1890 — the year Wilhelm II dismissed him and let his treaty with Russia lapse. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: Jacques Pilartz, Cologne, 1890; Internet Archive Book Images via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+  "focal_point": { "x": 0.45, "y": 0.24 },
+  "notes": "Provided by Dave 2026-08-23. Intended placement: the prologue's diplomatic origin — the alliance system that kept France and Russia apart, the dismissal of 1890, and the Franco-Russian alliance of 1894 that made the two-front problem the Schlieffen Plan was written to answer. used_by is deliberately empty until the prologue beats exist (sand-1l0.3), since the validator warns on ids that do not yet exist."
+}
