@@ -246,5 +246,153 @@
         "note": "the 1918 Chemistry prize, its wording and its award in 1919"
       }
     ]
+  },
+  {
+    "id": "1914:tech-uniforms-1914",
+    "media": [
+      "media:kit/1914-fantassin-francais-meaux/fantassin-francais-1914",
+      "media:kit/1914-pickelhaube-feldueberzug/pickelhaube-with-cover"
+    ],
+    "title": "Feldgrau, khaki and the pantalon rouge — what the four armies wore, and what France had been arguing about since 1911",
+    "field": "other",
+    "introduced": {
+      "at": "1914-08-22",
+      "label": "The Battle of the Frontiers, 20–23 August 1914"
+    },
+    "summary": "Four armies came onto the same ground in August 1914 dressed by four different arguments. The German infantry marched in field-grey, adopted in 1907, with the spike of the Pickelhaube hidden under a cloth cover.[^mollo-1977] The British were in khaki service dress, brought home from India and South Africa and made regulation in 1902.[^mollo-1977] The Belgians wore the dark blue greatcoat and the shako of the previous century, and would not be in khaki until 1915.[^mollo-1977] The French wore a dark blue capote over madder-red trousers — and had been trying to get out of them since 1911.[^sumner-1995]",
+    "body": "The red trousers were not an oversight. From 1911 the army ran trials of a less visible cloth, and each time the change was refused: in the press, in the Chamber, and by ministers who thought a French soldier who looked like everyone else's would fight like everyone else's.[^sumner-1995] [^messimy-1937] The war minister Adolphe Messimy tried in 1911–12 and again in June 1914, and the answer he records receiving from his predecessor Eugène Étienne is the sentence the episode is remembered by — *le pantalon rouge, c'est la France!*[^messimy-1937] It reaches most English readers through Tuchman quoting Messimy, twenty-three years after the fact and in a memoir written to defend a record, which is how it should be read: as what a minister remembered being told, not as a transcript.[^tuchman-1962] A new cloth, the *bleu horizon*, was approved in July 1914. Almost none of it was in the field before the Frontiers, and the change ran through 1915.[^sumner-1995]\n\nWhat the argument had actually been about was visibility against firepower, and the Frontiers settled it in four days. On 22 August 1914 alone, attacking in the Ardennes and on the Sambre, the French army lost about 27,000 dead — the bloodiest day in its history.[^steg-2013] [^herwig-2009] It is worth being exact about what that does and does not prove. No serious account puts those losses on the colour of a garment: the historians put them on doctrine, on artillery that was not co-ordinated with the infantry, and on attacks launched into ground nobody had reconnoitred.[^doughty-2005] [^greenhalgh-2014] The uniform is not the cause. It is the visible form of the same belief — that the decisive factor in battle was the moral force of the attack — worn on the legs of the men making it.[^strachan-2001]\n\nThe German answer to the same question is in this card's other picture. Field-grey was adopted in 1907, and then the helmet was covered as well: the army that most wanted to be seen on a parade ground had decided, seven years before the war, that in the field it wanted to be seen by nobody.[^mollo-1977] The British had reached the same conclusion earlier and for cheaper reasons — khaki came out of colonial campaigning, not out of a theory of morale.[^mollo-1977] By the end of 1915 every army on the Western Front was dressed in a colour chosen to be hard to see, and the Belgians, who had gone to war looking like 1870, were in khaki too.[^mollo-1977]\n\nA caution about the four photographs below, because the card is about colour. Three of them are colorized by this project: the colours are inferred from documented dress regulations, not read off the negative, and each says so where it is shown. The picture in the card's own slot — the French infantryman at Meaux — is a modern photograph of the garments themselves, and is the only place in this pack where the 1914 French uniform is shown in a colour nobody had to guess.",
+    "plates": {
+      "axis": "Each army's infantry in the field, 1914",
+      "fit": "band",
+      "items": [
+        {
+          "media": "media:scene/1914-marne-german-infantry/german-infantry-marne-colorized",
+          "label": "Germany"
+        },
+        {
+          "media": "media:scene/1914-french-infantry-manoeuvres/french-infantry-charge-1913-colorized",
+          "label": "France"
+        },
+        {
+          "media": "media:scene/1914-mons-royal-fusiliers/royal-fusiliers-mons-colorized",
+          "label": "Britain"
+        },
+        {
+          "media": "media:scene/1914-liege-herstal/belgian-infantry-herstal-colorized",
+          "label": "Belgium"
+        }
+      ]
+    },
+    "links": {
+      "events": ["1914:event-battle-of-the-frontiers"],
+      "places": ["place:mons", "place:charleroi"],
+      "tech": ["1914:tech-firepower-1914", "1914:tech-infantry-kit-1914"]
+    },
+    "sources": [
+      {
+        "source": "source:sumner-1995",
+        "note": "the 1914 French dress, the trials from 1911, and the horizon-blue change of 1914–15"
+      },
+      {
+        "source": "source:mollo-1977",
+        "note": "German field-grey and the helmet cover, British khaki service dress, the Belgian greatcoat and shako and the 1915 change"
+      },
+      {
+        "source": "source:messimy-1937",
+        "note": "Messimy's two attempts to change the uniform and Étienne's answer — a memoir, and cited as one"
+      },
+      {
+        "source": "source:tuchman-1962",
+        "note": "the route by which the pantalon rouge episode reaches English accounts; narrative colour, not the authority for it"
+      },
+      {
+        "source": "source:steg-2013",
+        "note": "about 27,000 French dead on 22 August 1914"
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "the Frontiers and the casualties of 22 August"
+      },
+      {
+        "source": "source:doughty-2005",
+        "note": "the causes historians actually assign for the Frontiers — doctrine, artillery co-ordination, reconnaissance"
+      },
+      {
+        "source": "source:greenhalgh-2014",
+        "note": "the French army's pre-war doctrine and its performance in August 1914"
+      },
+      {
+        "source": "source:strachan-2001",
+        "note": "the doctrine of the offensive as the belief the uniform expressed"
+      }
+    ]
+  },
+  {
+    "id": "1914:tech-infantry-kit-1914",
+    "media": ["media:kit/1915-british-soldiers-kit/british-soldiers-kit"],
+    "title": "The rifle and the load — what an infantryman of 1914 carried, and how fast it fired",
+    "field": "small-arms",
+    "introduced": {
+      "at": "1914-08-23",
+      "label": "Mons, 23 August 1914"
+    },
+    "summary": "Every infantryman on the Western Front in 1914 carried a bolt-action magazine rifle, and the four were not equal. The German Gewehr 98 took five rounds of 7.9 mm from a charger; the Belgian Mauser m/1889 did the same in 7.65 mm; the British Short Magazine Lee-Enfield took ten rounds of .303 from two chargers; and the French Lebel mle 1886 — the first smokeless-powder service rifle in the world — held eight rounds in a tube under the barrel and had to be fed one at a time.[^hogg-weeks-1977] [^armemuseum-digitaltmuseum] Around the rifle went a marching load usually given at something near thirty kilograms, and the man carrying it walked.[^mollo-1977]",
+    "body": "The Lebel is the clearest case in the pack of a first mover paying for it. France adopted smokeless powder in 1886 and got a generation's advantage out of it; the price was a magazine designed before anyone had thought of the charger, and by 1914 the French infantryman was refilling his rifle a round at a time while the man opposite him pushed five in at once.[^hogg-weeks-1977] [^sumner-1995] The Berthier, with three rounds on a Mannlicher-type clip, was in service in 1914 mostly as a carbine and with colonial units, and did not replace the Lebel in the line until the war was under way.[^sumner-1995]\n\nThe British went the other way and made the rifle a doctrine. The Short Magazine Lee-Enfield held ten rounds, and the musketry regulations that came out of South Africa required fifteen aimed rounds a minute at three hundred yards, trained for and paid for as a standard.[^jones-2012] At [Mons](place:mons) on 23 August 1914 some German units took that fire for massed machine guns — a mistake with a small army's reputation built on it, and one that Jones argues was policy rather than accident.[^jones-2012] [^edmonds-1922] It did not stop the advance: the BEF was outnumbered, outgunned by the German field artillery, and marching south again the next day.[^herwig-2009]\n\nThe Belgian rifle is on ground this pack already knows. The Mauser m/1889 was made at Herstal, outside [Liège](place:liege), by the Fabrique Nationale founded in 1889 to build it — the same works, and the same suburb, that the German 34th Brigade came through on the night of 5–6 August 1914.[^hogg-weeks-1977] [^herwig-2009]\n\nThe load is the other half of the card, and it is the half the map cares about. A soldier of 1914 carried his rifle, a hundred and twenty or so rounds, an entrenching tool, a mess tin, a water bottle, a pack with a rolled greatcoat and two days' rations, and the figures quoted for the whole differ by army, by season and by author — near thirty kilograms is the honest way to put it.[^mollo-1977] He marched with it some thirty kilometres a day on the German right wing, for a fortnight, to reach the Marne.[^herwig-2009] What that load meant for the timetable is the rail-versus-feet story, and what the rifle meant when it was fired at men crossing open ground is the firepower card.",
+    "plates": {
+      "axis": "The infantry rifle of each army, 1914",
+      "fit": "band",
+      "items": [
+        {
+          "media": "media:kit/gewehr-98-armemuseum/gewehr-98",
+          "label": "Germany — Gewehr 98"
+        },
+        {
+          "media": "media:kit/lebel-mle-1886-armemuseum/lebel-mle-1886",
+          "label": "France — Lebel mle 1886"
+        },
+        {
+          "media": "media:kit/lee-enfield-smle-mk-iii-armemuseum/lee-enfield-smle-mk-iii",
+          "label": "Britain — SMLE Mk III"
+        },
+        {
+          "media": "media:kit/mauser-m1889-armemuseum/mauser-m1889",
+          "label": "Belgium — Mauser m/1889"
+        }
+      ]
+    },
+    "links": {
+      "places": ["place:mons", "place:liege"],
+      "tech": ["1914:tech-firepower-1914", "1914:tech-uniforms-1914"]
+    },
+    "sources": [
+      {
+        "source": "source:hogg-weeks-1977",
+        "note": "calibre, magazine capacity and loading of the Gewehr 98, Lebel, SMLE and Mauser m/1889; Fabrique Nationale and the m/1889"
+      },
+      {
+        "source": "source:armemuseum-digitaltmuseum",
+        "note": "the identification of the four objects photographed in the plate set"
+      },
+      {
+        "source": "source:sumner-1995",
+        "note": "the Lebel and the Berthier in French service in 1914"
+      },
+      {
+        "source": "source:jones-2012",
+        "note": "the musketry regulations, the fifteen-rounds-a-minute standard, and the German reading of the fire at Mons"
+      },
+      {
+        "source": "source:edmonds-1922",
+        "note": "the BEF at Mons, 23 August 1914"
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "Mons and the retreat; Herstal on 5–6 August; the right wing's march rates"
+      },
+      {
+        "source": "source:mollo-1977",
+        "note": "the composition of the marching load, and the caution that the figures vary"
+      }
+    ]
   }
 ]

@@ -822,5 +822,60 @@
     "publisher": "Payot, Paris",
     "url": "https://archive.org/details/leplandecampagne00lanruoft",
     "notes": "The French 5th Army commander's own book, published after his relief and written to answer it. Day by day, and it names his own headquarters — Rethel, Chimay, the command post at Philippeville on the day of Charleroi, Sézanne — which is this pack's citation for the 5th Army track. It also gives the hour Joffre reached Sézanne on 3 September to relieve him (p. 276). Self-exculpatory throughout on the retreat from Charleroi and on the BEF; cite for where his headquarters was and what he says he was told, and check the judgements against the official histories."
+  },
+  {
+    "id": "source:sumner-1995",
+    "kind": "book",
+    "author": "Sumner, Ian",
+    "title": "The French Army 1914–18",
+    "year": 1995,
+    "publisher": "Osprey Publishing, London (Men-at-Arms 286)",
+    "isbn": "978-1-85532-516-0",
+    "notes": "A short uniform-and-organisation reference for the French army of the war: the 1914 dress — capote, képi, madder-red trousers — the pre-war attempts to replace it, and the horizon-blue change of 1914–15. Use it for what the army wore and when the regulations changed. It is a popular series and its colour plates are an artist's reconstructions, not evidence; take garment detail and dates from the text, and take nothing about doctrine or casualties from it at all (Doughty and Greenhalgh are the sources for those)."
+  },
+  {
+    "id": "source:mollo-1977",
+    "kind": "book",
+    "author": "Mollo, Andrew",
+    "title": "Army Uniforms of World War I: European and United States Armies and Aviation Services",
+    "year": 1977,
+    "publisher": "Blandford Press, Poole",
+    "notes": "The standard one-volume comparison of what the armies of 1914–18 wore, army by army — German field-grey and the covered Pickelhaube, British khaki service dress, the Belgian greatcoat and shako and the 1915 change to khaki. Use it for cut, colour and the dates of pattern changes across several armies at once, which is exactly what a comparison card needs. Same caution as Sumner: the plates are drawn reconstructions and the book is a uniformology reference, not an operational history."
+  },
+  {
+    "id": "source:hogg-weeks-1977",
+    "kind": "book",
+    "author": "Hogg, Ian V.; Weeks, John",
+    "title": "Military Small Arms of the 20th Century",
+    "year": 1977,
+    "publisher": "Arms & Armour Press, London",
+    "notes": "A reference catalogue of service small arms: calibre, action, magazine capacity and how each is loaded, for the Lebel, the Berthier, the Gewehr 98, the SMLE and the Belgian Mauser alike. Use it for the mechanical facts a kit card states. Hogg wrote a great deal quickly and the early editions carry the odd slip in service dates; where a date matters, check it against the museum record or an official history."
+  },
+  {
+    "id": "source:jones-2012",
+    "kind": "book",
+    "author": "Jones, Spencer",
+    "title": "From Boer War to World War: Tactical Reform of the British Army, 1902–1914",
+    "year": 2012,
+    "publisher": "University of Oklahoma Press, Norman, OK",
+    "isbn": "978-0-8061-4297-4",
+    "notes": "The scholarly account of what the British army did with the lessons of South Africa: the musketry regulations, the fifteen-aimed-rounds-a-minute standard, the Short Magazine Lee-Enfield and the training that went with it. This is the source for the BEF's rifle fire at Mons being a policy rather than an anecdote. Sympathetic to the reformers and written to argue that the pre-war army was better than its reputation; read the claims about German misidentification of the fire as machine guns alongside Edmonds and Herwig."
+  },
+  {
+    "id": "source:messimy-1937",
+    "kind": "book",
+    "author": "Messimy, Adolphe",
+    "title": "Mes souvenirs",
+    "year": 1937,
+    "publisher": "Plon, Paris",
+    "notes": "The memoirs of the French war minister who tried twice to get the army out of the red trousers — in 1911–12 and again in June 1914 — and the origin, in most English accounts, of Eugène Étienne's answer to him: 'Le pantalon rouge, c'est la France!' A memoir written twenty-three years after the events by a man defending his own record, and the famous sentence reaches most readers through Tuchman quoting him rather than through a stenographic record: cite it as what Messimy remembered being said, never as a transcript."
+  },
+  {
+    "id": "source:armemuseum-digitaltmuseum",
+    "kind": "archive",
+    "author": "Armémuseum (Swedish Army Museum), Stockholm",
+    "title": "Object records on DigitaltMuseum — Gevär m/1898, m/1886 Lebel, Mk III Lee-Enfield (AM.032056), m/1889 Mauser",
+    "url": "https://digitaltmuseum.se/owners/S-AM",
+    "notes": "The catalogue records behind the four rifle photographs in the kit plate set, and the authority for what each object is: the museum's own identification, accession number and photograph. Use it for the identification of the object in the frame and for the licence on the photograph. It is a Swedish collection, so it says nothing about how any of these rifles was used in 1914, and its records do not always distinguish sub-patterns — the Lebel record does not say whether the example carries the 1893 modification, and this pack does not claim it does."
   }
 ]

@@ -1,0 +1,28 @@
+{
+  "$comment": "Kit manifest (sand-y0u.5): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-kit.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:kit/1914-fantassin-francais-meaux/fantassin-francais-1914",
+  "kind": "kit",
+  "file": "fantassin-francais-1914.jpg",
+  "width": 1200,
+  "height": 2463,
+  "colorized": false,
+  "original": {
+    "description": "A French infantryman of 1914 in the collection of the Musée de la Grande Guerre du pays de Meaux, photographed full length: the dark blue capote, the red-topped képi, and the madder-red trousers. The Commons record's whole description is \"Fantassin français, 1914, Musée de la Grande Guerre, Meaux\" — it does not say whether the figure is a dressed mannequin or a display of the garments, and neither does this manifest.",
+    "photographer": "Aubry Gérard (Wikimedia Commons contributor), 7 November 2014",
+    "date": "7 November 2014 (the photograph); the uniform is dated 1914 by the museum",
+    "archive": "Musée de la Grande Guerre du pays de Meaux (the collection); photograph held on Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Fantassin_fran%C3%A7ais,_1914.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fantassin%20fran%C3%A7ais,%201914.jpg",
+    "original_dimensions": "1200 × 2463",
+    "licence": "CC BY-SA 4.0 (Commons record: LicenseShortName \"CC BY-SA 4.0\"; UsageTerms \"Creative Commons Attribution-Share Alike 4.0\"; AttributionRequired true). Share-alike: any derivative, a colorization included, would itself have to ship CC BY-SA 4.0."
+  },
+  "colorization": {
+    "status": "not colorized, and must not be — this is a modern colour photograph of the garments themselves. It is the one picture in the pack that shows the 1914 French uniform in colour without the project inferring the colour, which is the entire reason it is here."
+  },
+  "content_policy": "ok — a museum display of clothing and equipment; no casualties, no human remains",
+  "caption": "The French infantryman of 1914, in the collection of the Musée de la Grande Guerre du pays de Meaux: dark blue capote, red képi, madder-red trousers. No photograph in this pack shows those trousers in the field — the capote covers them, and by 1915 they were gone.",
+  "credit": "Photograph: Aubry Gérard, 2014, of an object in the Musée de la Grande Guerre du pays de Meaux; via Wikimedia Commons; CC BY-SA 4.0.",
+  "used_by": ["1914:tech-uniforms-1914"],
+  "focal_point": { "x": 0.5, "y": 0.55 },
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API (Artist, DateTimeOriginal, LicenseShortName, UsageTerms read from extmetadata). CAUTION for the image review (sand-y0u.7): the record does not say whether this is a dressed mannequin, a figure, or garments laid on a form, and the image was not viewed. Confirm before publication and tighten the caption; do not let it imply a photograph of a soldier. Fills — partly — the gap docs/imagery-phase-1.md records as 'French infantry in the red trousers, in the field': this is the artefact, not the field."
+}
