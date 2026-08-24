@@ -75,7 +75,7 @@ specific with a `note`; when they disagree on meaning, write historiography.
 | `source:tuchman-1962`                      | Tuchman, _The Guns of August_ (1962)                                         | narrative colour; personalities; not numbers                             |
 | `source:keegan-1998`                       | Keegan, _The First World War_ (1998)                                         | general context                                                          |
 | `source:hastings-2013`                     | Hastings, _Catastrophe_ (2013)                                               | 1914 at human scale; Belgium, Serbia                                     |
-| `source:reichsarchiv-weltkrieg-1`          | Reichsarchiv, _Der Weltkrieg 1914 bis 1918_, Bd. 1 (1925)                    | German orders of battle, positions, orders                               |
+| `source:reichsarchiv-weltkrieg-1`          | Reichsarchiv, _Der Weltkrieg 1914 bis 1918_, Bd. 1 (1925)                    | German orders, positions; the Liège forts fall by fall, pp. 105–120      |
 | `source:edmonds-1922`                      | Edmonds, _Military Operations: France and Belgium, 1914_, I (1922)           | the BEF day by day                                                       |
 | `source:afgg-1-1`                          | _Les Armées françaises dans la Grande Guerre_, I/1 (1922)                    | French orders of battle, positions, the orders                           |
 | `source:wikipedia-en`                      | Wikipedia (English)                                                          | uncontested biographical dates only                                      |
@@ -119,6 +119,12 @@ specific with a `note`; when they disagree on meaning, write historiography.
 - Terraine, _Mons: The Retreat to Victory_ (1960) and the Bavarian and French
   regimental histories — the battle zoom-ins.
 - Senior, _Home Before the Leaves Fall_ (2012) — the 1914 campaign narrative.
+- Donnell, _The Forts of the Meuse in World War I_ (Osprey Fortress 60, 2007)
+  and Zuber, _Ten Days in August: The Siege of Liège 1914_ (2014) — the
+  fort-by-fort record of the Liège siege, worked from the Belgian fort
+  archives and the German regimental histories. Wanted for the clock times of
+  the twelve surrenders, which Reichsarchiv Bd. 1 gives only to the part of
+  the day; add them when a copy is in hand and the pages can be given.
 - AFGG Tome I, 4e volume and Reichsarchiv Bd. 5–6 — the French and German
   official accounts of the race to the sea, the Yser and First Ypres, to
   replace the British official history as the backbone of the epilogue

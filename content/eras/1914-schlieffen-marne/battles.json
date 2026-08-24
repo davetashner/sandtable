@@ -1419,8 +1419,9 @@
         "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 8 August 1914.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "118",
+            "note": "the first fort to fall — the German official history puts Barchon's surrender on the afternoon of 8 August, after Massow's two mortar batteries had shelled it and Infantry Regiment 16 came at its gorge from the city"
           },
           {
             "source": "source:herwig-2009"
@@ -1434,12 +1435,13 @@
         "side": "be",
         "kind": "garrison",
         "parent": "1914:fortress-liege",
-        "dissolved": "1914-08-11T12:00:00Z",
+        "dissolved": "1914-08-11T19:00:00Z",
         "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 11 August 1914.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "119",
+            "note": "Évegnée forced to give in by concentrated artillery fire on the evening of 11 August, before Einem's methodical attack had begun"
           },
           {
             "source": "source:herwig-2009"
@@ -1457,8 +1459,9 @@
         "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 13 August 1914.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "119–120",
+            "note": "Pontisse, which blocked the 1st Army's roads, was the first object of the 9th Corps' heaviest guns on 12 August; the official history has it down with Chaudfontaine and Embourg by the evening of the 13th"
           },
           {
             "source": "source:herwig-2009"
@@ -1476,8 +1479,9 @@
         "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 13 August 1914.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "119–120",
+            "note": "assigned with Chaudfontaine to the 7th Corps; the official history has it down with Pontisse by the evening of 13 August"
           },
           {
             "source": "source:herwig-2009"
@@ -1495,8 +1499,9 @@
         "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 13 August 1914.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "119–120",
+            "note": "the 13th Division's heavy artillery opened on Chaudfontaine on 12 August; the official history has it down with Pontisse and Embourg by the evening of the 13th"
           },
           {
             "source": "source:herwig-2009"
@@ -1514,8 +1519,9 @@
         "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 14 August 1914.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "120",
+            "note": "the attack on Liers opened once the 9th Corps had brought its mass across the Meuse; the official history dates the fall to 14 August"
           },
           {
             "source": "source:herwig-2009"
@@ -1533,8 +1539,9 @@
         "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 14 August 1914.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "120",
+            "note": "the fight for Fléron, with a Minenwerfer attack alongside the shelling, lasted into the forenoon of 14 August"
           },
           {
             "source": "source:herwig-2009"
@@ -1552,8 +1559,9 @@
         "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 15 August 1914.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "120",
+            "note": "the artillery attack on the surviving western forts opened early on 15 August; Boncelles, shut in by the 14th Division and the 38th Brigade, went in the course of that morning"
           },
           {
             "source": "source:herwig-2009"
@@ -1567,12 +1575,13 @@
         "side": "be",
         "kind": "garrison",
         "parent": "1914:fortress-liege",
-        "dissolved": "1914-08-15T12:30:00Z",
+        "dissolved": "1914-08-15T11:00:00Z",
         "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 15 August 1914.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "120",
+            "note": "Lantin, the object of Emmich's corps, went in the course of the morning of 15 August"
           },
           {
             "source": "source:herwig-2009"
@@ -1590,8 +1599,9 @@
         "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 15 August 1914.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "120",
+            "note": "Loncin blown into the air by 42 cm shellfire on 15 August, Leman taken senseless from the ruins with what was left of the garrison; the official history gives no hour"
           },
           {
             "source": "source:herwig-2009"
@@ -1609,8 +1619,9 @@
         "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 16 August 1914.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "120",
+            "note": "the last two works, Hollogne and Flémalle, hoisted the white flag on the morning of 16 August after a short bombardment"
           },
           {
             "source": "source:herwig-2009"
@@ -1628,8 +1639,9 @@
         "summary": "One of the twelve Brialmont forts of the Liège ring; surrendered or was destroyed on 16 August 1914.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "120",
+            "note": "the last two works, Hollogne and Flémalle, hoisted the white flag on the morning of 16 August after a short bombardment"
           },
           {
             "source": "source:herwig-2009"
@@ -1826,11 +1838,12 @@
           [5.684, 50.684, "1914-08-17T00:00:00Z"]
         ],
         "confidence": "high",
-        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "derivation": "Fixed position of the fort, which still stands on the ground; the token disappears at the hour the fort surrendered or was destroyed. Reichsarchiv Bd. 1 p. 118 puts the surrender on the afternoon of 8 August; the minute shown is finer than the official history gives and is nominal within that afternoon.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "118",
+            "note": "the first fort to fall — the German official history puts Barchon's surrender on the afternoon of 8 August, after Massow's two mortar batteries had shelled it and Infantry Regiment 16 came at its gorge from the city"
           },
           {
             "source": "source:herwig-2009"
@@ -1845,11 +1858,12 @@
           [5.702, 50.655, "1914-08-17T00:00:00Z"]
         ],
         "confidence": "high",
-        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "derivation": "Fixed position of the fort, which still stands on the ground; the token disappears at the hour the fort surrendered or was destroyed. Reichsarchiv Bd. 1 p. 119 puts the surrender on the evening of 11 August; the hour shown is nominal within that evening.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "119",
+            "note": "Évegnée forced to give in by concentrated artillery fire on the evening of 11 August, before Einem's methodical attack had begun"
           },
           {
             "source": "source:herwig-2009"
@@ -1864,11 +1878,12 @@
           [5.618, 50.7, "1914-08-17T00:00:00Z"]
         ],
         "confidence": "high",
-        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "derivation": "Fixed position of the fort, which still stands on the ground; the token disappears at the hour the fort surrendered or was destroyed. Reichsarchiv Bd. 1 pp. 119–120 has Pontisse down with the two eastern forts by the evening of 13 August; the minute shown is finer than the official history gives and is nominal within that day.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "119–120",
+            "note": "Pontisse, which blocked the 1st Army's roads, was the first object of the 9th Corps' heaviest guns on 12 August; the official history has it down with Chaudfontaine and Embourg by the evening of the 13th"
           },
           {
             "source": "source:herwig-2009"
@@ -1883,11 +1898,12 @@
           [5.606, 50.56, "1914-08-17T00:00:00Z"]
         ],
         "confidence": "high",
-        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "derivation": "Fixed position of the fort, which still stands on the ground; the token disappears at the hour the fort surrendered or was destroyed. Reichsarchiv Bd. 1 pp. 119–120 has Embourg down with Pontisse and Chaudfontaine by the evening of 13 August; the minute shown is finer than the official history gives and is nominal within that day.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "119–120",
+            "note": "assigned with Chaudfontaine to the 7th Corps; the official history has it down with Pontisse by the evening of 13 August"
           },
           {
             "source": "source:herwig-2009"
@@ -1902,11 +1918,12 @@
           [5.639, 50.582, "1914-08-17T00:00:00Z"]
         ],
         "confidence": "high",
-        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "derivation": "Fixed position of the fort, which still stands on the ground; the token disappears at the hour the fort surrendered or was destroyed. Reichsarchiv Bd. 1 pp. 119–120 has Chaudfontaine down with Pontisse and Embourg by the evening of 13 August; the minute shown is finer than the official history gives and is nominal within that day.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "119–120",
+            "note": "the 13th Division's heavy artillery opened on Chaudfontaine on 12 August; the official history has it down with Pontisse and Embourg by the evening of the 13th"
           },
           {
             "source": "source:herwig-2009"
@@ -1921,11 +1938,12 @@
           [5.567, 50.713, "1914-08-17T00:00:00Z"]
         ],
         "confidence": "high",
-        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "derivation": "Fixed position of the fort, which still stands on the ground; the token disappears at the hour the fort surrendered or was destroyed. Reichsarchiv Bd. 1 p. 120 dates the fall to 14 August without an hour; the time shown is nominal within that day.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "120",
+            "note": "the attack on Liers opened once the 9th Corps had brought its mass across the Meuse; the official history dates the fall to 14 August"
           },
           {
             "source": "source:herwig-2009"
@@ -1940,11 +1958,12 @@
           [5.687, 50.62, "1914-08-17T00:00:00Z"]
         ],
         "confidence": "high",
-        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "derivation": "Fixed position of the fort, which still stands on the ground; the token disappears at the hour the fort surrendered or was destroyed. Reichsarchiv Bd. 1 p. 120 has the fight last into the forenoon of 14 August; the minute shown is finer than the official history gives and is nominal within that forenoon.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "120",
+            "note": "the fight for Fléron, with a Minenwerfer attack alongside the shelling, lasted into the forenoon of 14 August"
           },
           {
             "source": "source:herwig-2009"
@@ -1959,11 +1978,12 @@
           [5.548, 50.563, "1914-08-17T00:00:00Z"]
         ],
         "confidence": "high",
-        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "derivation": "Fixed position of the fort, which still stands on the ground; the token disappears at the hour the fort surrendered or was destroyed. Reichsarchiv Bd. 1 p. 120 puts the fall in the course of the morning of 15 August; the minute shown is finer than the official history gives and is nominal within that morning.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "120",
+            "note": "the artillery attack on the surviving western forts opened early on 15 August; Boncelles, shut in by the 14th Division and the 38th Brigade, went in the course of that morning"
           },
           {
             "source": "source:herwig-2009"
@@ -1978,11 +1998,12 @@
           [5.532, 50.7, "1914-08-17T00:00:00Z"]
         ],
         "confidence": "high",
-        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "derivation": "Fixed position of the fort, which still stands on the ground; the token disappears at the hour the fort surrendered or was destroyed. Reichsarchiv Bd. 1 p. 120 puts the fall in the course of the morning of 15 August; the hour shown is nominal within that morning.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "120",
+            "note": "Lantin, the object of Emmich's corps, went in the course of the morning of 15 August"
           },
           {
             "source": "source:herwig-2009"
@@ -1997,11 +2018,12 @@
           [5.5, 50.672, "1914-08-17T00:00:00Z"]
         ],
         "confidence": "high",
-        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "derivation": "Fixed position of the fort, which still stands on the ground; the token disappears at the hour the fort surrendered or was destroyed. Reichsarchiv Bd. 1 p. 120 dates the explosion to 15 August without an hour; the time shown is nominal within that day.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "120",
+            "note": "Loncin blown into the air by 42 cm shellfire on 15 August, Leman taken senseless from the ruins with what was left of the garrison; the official history gives no hour"
           },
           {
             "source": "source:herwig-2009"
@@ -2016,11 +2038,12 @@
           [5.492, 50.639, "1914-08-17T00:00:00Z"]
         ],
         "confidence": "high",
-        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "derivation": "Fixed position of the fort, which still stands on the ground; the token disappears at the hour the fort surrendered or was destroyed. Reichsarchiv Bd. 1 p. 120 puts the white flag on the morning of 16 August; the minute shown is finer than the official history gives and is nominal within that morning.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "120",
+            "note": "the last two works, Hollogne and Flémalle, hoisted the white flag on the morning of 16 August after a short bombardment"
           },
           {
             "source": "source:herwig-2009"
@@ -2035,11 +2058,12 @@
           [5.464, 50.603, "1914-08-17T00:00:00Z"]
         ],
         "confidence": "high",
-        "derivation": "Fixed position of the fort; the token disappears at the hour the fort surrendered or was destroyed.",
+        "derivation": "Fixed position of the fort, which still stands on the ground; the token disappears at the hour the fort surrendered or was destroyed. Reichsarchiv Bd. 1 p. 120 puts the white flag on the morning of 16 August; the minute shown is finer than the official history gives and is nominal within that morning.",
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "120",
+            "note": "the last two works, Hollogne and Flémalle, hoisted the white flag on the morning of 16 August after a short bombardment"
           },
           {
             "source": "source:herwig-2009"
@@ -2389,14 +2413,15 @@
         "kind": "siege",
         "significance": "minor",
         "lngLat": [5.684, 50.684],
-        "summary": "Barchon, battered by 21 cm mortars and cut off, is the first of the twelve to give up.",
+        "summary": "Barchon, shelled by Massow's two mortar batteries while his brigade came on, is given up by its commandant as Infantry Regiment 16 works round to the gorge from the city — the first of the twelve.",
         "links": {
           "formations": ["1914:liege-fort-barchon"]
         },
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "118",
+            "note": "the first fort to fall: Massow's two mortar batteries, and the commandant giving the work up as Infantry Regiment 16 came at the gorge from the city, on the afternoon of 8 August"
           },
           {
             "source": "source:herwig-2009"
@@ -2444,8 +2469,9 @@
         },
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "119–120",
+            "note": "the first success of the heavy artillery — Pontisse, which blocked the 1st Army's roads, and Chaudfontaine and Embourg on the eastern front, down by the evening of 13 August"
           },
           {
             "source": "source:herwig-2009"
@@ -2500,8 +2526,9 @@
         },
         "sources": [
           {
-            "source": "source:wikipedia-en",
-            "note": "the fort's position and the hour it surrendered — tertiary, pending the official histories (sand-23b.5)"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "120",
+            "note": "the last two works hoisted the white flag on the morning of 16 August; the fortress in German hands after ten days' fighting, and the way to the northern bank of the Meuse free"
           },
           {
             "source": "source:herwig-2009"
@@ -2537,8 +2564,9 @@
         "note": "Visé"
       },
       {
-        "source": "source:wikipedia-en",
-        "note": "the forts' positions and the hours they surrendered — tertiary, pending the official histories (sand-23b.5)"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "105–120",
+        "note": "the German official history's account of the Liège operation, from the frontier crossing on 4 August to the white flag over the last two forts on the 16th; the fall of each fort is given to the day and the part of the day"
       }
     ]
   },
@@ -5866,9 +5894,15 @@
   {
     "id": "1914:tannenberg-east",
     "title": "The eastern cross-reference: two corps that fought in neither battle",
-    "timeRange": { "start": "1914-08-20T00:00:00Z", "end": "1914-09-14T00:00:00Z" },
+    "timeRange": {
+      "start": "1914-08-20T00:00:00Z",
+      "end": "1914-09-14T00:00:00Z"
+    },
     "region": [18.6, 52.8, 23.4, 55.3],
-    "camera": { "center": [20.9, 54.0], "zoom": 7 },
+    "camera": {
+      "center": [20.9, 54.0],
+      "zoom": 7
+    },
     "place": "place:tannenberg",
     "summary": "The other end of the same war. While the right wing swung through Belgium, one German army held East Prussia against two Russian ones; when it was checked at Gumbinnen on 20 August its commander proposed abandoning the province, and the alarm reached Moltke as the West seemed already won. On 25 August he took the Guard Reserve and XI Corps off the wheel and sent them east. A chapter, not a zoom-in: these are static markers on the ground where the eastern battles were fought, and the campaign tokens in the West keep moving on their own routes.",
     "outcome": "The Eighth Army, under Hindenburg and Ludendorff from 23 August and working to a concentration Hoffmann had already begun, encircled Samsonov's Second Army at Tannenberg on 26-30 August and took some 92,000 prisoners; Samsonov shot himself in the forest near Willenberg in the early hours of the 30th. Russian losses in killed and wounded are given anywhere between 50,000 and 78,000, and the totals are unreliable because only part of the army was inside the ring.[^showalter-2004] [^stone-1975] The two corps from the West were formally assigned to Hindenburg on 31 August - the day after the battle ended. They fought at the Masurian Lakes on 7-14 September, in the same week the Marne was lost without them.[^showalter-2004] [^herwig-2009]",
@@ -5888,7 +5922,14 @@
         "significance": "major",
         "place": "place:gumbinnen",
         "summary": "Attacking Rennenkampf's First Army in the open, the German Eighth Army is fought to a standstill and I Corps falls back in disorder. Tactically the day is indecisive; its consequence is entirely a matter of nerve.[^showalter-2004]",
-        "sources": [{ "source": "source:showalter-2004" }, { "source": "source:strachan-2001" }]
+        "sources": [
+          {
+            "source": "source:showalter-2004"
+          },
+          {
+            "source": "source:strachan-2001"
+          }
+        ]
       },
       {
         "id": "1914:east-event-prittwitz-vistula",
@@ -5898,7 +5939,14 @@
         "significance": "major",
         "place": "place:konigsberg",
         "summary": "That evening Prittwitz telephones OHL to say he intends to break off and retire behind the Vistula - abandoning the province, Königsberg and the ground the whole eastern deployment was built to hold. He is talked partly round within hours, but the alarm has been raised and cannot be unraised.[^showalter-2004] [^mombauer-2001]",
-        "sources": [{ "source": "source:showalter-2004" }, { "source": "source:mombauer-2001" }]
+        "sources": [
+          {
+            "source": "source:showalter-2004"
+          },
+          {
+            "source": "source:mombauer-2001"
+          }
+        ]
       },
       {
         "id": "1914:east-event-new-command",
@@ -5908,17 +5956,34 @@
         "significance": "major",
         "place": "place:marienburg",
         "summary": "Moltke relieves Prittwitz on 22 August, sends for Hindenburg out of retirement and gives him Ludendorff - fresh from Liège - as chief of staff. They reach Marienburg on the afternoon of the 23rd and adopt the concentration against Samsonov that Hoffmann and the army staff have already set in motion.[^showalter-2004] [^stone-1975]",
-        "sources": [{ "source": "source:showalter-2004" }, { "source": "source:stone-1975" }]
+        "sources": [
+          {
+            "source": "source:showalter-2004"
+          },
+          {
+            "source": "source:stone-1975"
+          }
+        ]
       },
       {
         "id": "1914:east-event-tannenberg",
         "title": "Tannenberg: the Second Army encircled",
-        "timeRange": { "start": "1914-08-26T00:00:00Z", "end": "1914-08-30T18:00:00Z" },
+        "timeRange": {
+          "start": "1914-08-26T00:00:00Z",
+          "end": "1914-08-30T18:00:00Z"
+        },
         "kind": "battle",
         "significance": "major",
         "place": "place:tannenberg",
         "summary": "The Eighth Army leaves a screen in front of Rennenkampf, moves the rest of itself by rail and road across the front of one Russian army to fall on the other, and closes a ring round Samsonov's centre. Some 92,000 prisoners are taken. Hindenburg asks that the battle be named for Tannenberg, where the Teutonic Knights were beaten in 1410; Ludendorff and Hoffmann each later claimed the idea.[^showalter-2004] [^stone-1975]",
-        "sources": [{ "source": "source:showalter-2004" }, { "source": "source:stone-1975" }]
+        "sources": [
+          {
+            "source": "source:showalter-2004"
+          },
+          {
+            "source": "source:stone-1975"
+          }
+        ]
       },
       {
         "id": "1914:east-event-samsonov",
@@ -5943,17 +6008,34 @@
         "significance": "major",
         "place": "place:marienburg",
         "summary": "Hindenburg is given the XI Corps, the Guard Reserve Corps and the 8th Cavalry Division for operations in East Prussia. The battle they were sent for ended the day before.[^showalter-2004]",
-        "sources": [{ "source": "source:showalter-2004" }, { "source": "source:herwig-2009" }]
+        "sources": [
+          {
+            "source": "source:showalter-2004"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ]
       },
       {
         "id": "1914:east-event-masurian-lakes",
         "title": "The Masurian Lakes: the battle they did fight",
-        "timeRange": { "start": "1914-09-07T00:00:00Z", "end": "1914-09-14T00:00:00Z" },
+        "timeRange": {
+          "start": "1914-09-07T00:00:00Z",
+          "end": "1914-09-14T00:00:00Z"
+        },
         "kind": "battle",
         "significance": "major",
         "place": "place:masurian-lakes",
         "summary": "With the corps from the West now in the line, the Eighth Army turns on Rennenkampf and pushes the First Army out of East Prussia. It is fought in the same week as the Marne, thirteen hundred kilometres away, where the wing those corps came from is short of exactly what it lent.[^showalter-2004] [^stone-1975]",
-        "sources": [{ "source": "source:showalter-2004" }, { "source": "source:stone-1975" }]
+        "sources": [
+          {
+            "source": "source:showalter-2004"
+          },
+          {
+            "source": "source:stone-1975"
+          }
+        ]
       }
     ],
     "links": {
@@ -5970,18 +6052,32 @@
       "places": ["place:gumbinnen", "place:tannenberg", "place:marienburg", "place:masurian-lakes"]
     },
     "sources": [
-      { "source": "source:showalter-2004" },
-      { "source": "source:stone-1975" },
-      { "source": "source:herwig-2009" },
-      { "source": "source:mombauer-2001" }
+      {
+        "source": "source:showalter-2004"
+      },
+      {
+        "source": "source:stone-1975"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:mombauer-2001"
+      }
     ]
   },
   {
     "id": "1914:july-crisis",
     "title": "The July Crisis: from Sarajevo to the Belgian frontier",
-    "timeRange": { "start": "1914-08-02T00:00:00Z", "end": "1914-08-04T00:00:00Z" },
+    "timeRange": {
+      "start": "1914-08-02T00:00:00Z",
+      "end": "1914-08-04T00:00:00Z"
+    },
     "region": [17.2, 42.9, 21.2, 45.7],
-    "camera": { "center": [18.413, 43.856], "zoom": 8 },
+    "camera": {
+      "center": [18.413, 43.856],
+      "zoom": 8
+    },
     "place": "place:sarajevo",
     "summary": "The chapter the war comes out of. Thirty-seven days separate two shots fired in a Bosnian street from German columns crossing into Belgium, and the map begins where the chain does — at Sarajevo, not on the frontier the campaign is fought over. The crisis ran from 28 June to 4 August 1914, outside the campaign clock this pack keeps, so the chapter occupies the timeline's first hours and each beat gives its real date; the argument itself is carried by the causal chain, the documents and the people, none of which are pinned to a campaign instant.",
     "links": {
@@ -5993,8 +6089,14 @@
       ]
     },
     "sources": [
-      { "source": "source:clark-2012", "note": "the crisis as a chain of decisions" },
-      { "source": "source:albertini-1952", "note": "the day-by-day reconstruction" }
+      {
+        "source": "source:clark-2012",
+        "note": "the crisis as a chain of decisions"
+      },
+      {
+        "source": "source:albertini-1952",
+        "note": "the day-by-day reconstruction"
+      }
     ]
   }
 ]
