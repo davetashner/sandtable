@@ -161,4 +161,34 @@ describe('<MapView>', () => {
       expect.objectContaining({ padding: 40 }),
     );
   });
+
+  it('is ready on styledata even when the basemap never finishes loading', async () => {
+    // `load` also waits for the first tiles. When the tile source cannot be
+    // read it never fires, and the screen-space label layout that hangs off
+    // `onReady` never runs — every deck label falls back to its default slot
+    // and the army and place names pile up (sand-1l0.15).
+    const onReady = vi.fn();
+    render(
+      <MapView
+        camera={{ center: [4.2, 49.7], zoom: 6.3 }}
+        borderYear={1914}
+        theme="light"
+        onReady={onReady}
+        styleFor={() => ({ version: 8, sources: {}, layers: [] })}
+      />,
+    );
+    const map = maps[0]!;
+    await act(async () => {
+      map.fire('styledata');
+      await Promise.resolve();
+    });
+    expect(onReady).toHaveBeenCalledTimes(1);
+
+    // …and a `load` that arrives later does not announce a second time.
+    await act(async () => {
+      map.fire('load');
+      await Promise.resolve();
+    });
+    expect(onReady).toHaveBeenCalledTimes(1);
+  });
 });

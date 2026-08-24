@@ -137,11 +137,19 @@
 }
 
 .timeline__band-label {
-  display: inline-block;
-  padding: 3px 6px;
+  /* Block, not inline-block, so the label is bounded by the band and can
+     ellipsize: as an inline-block it was cut mid-glyph at the band's edge.
+     `line-height` matches the band's 22px because 11px text with 3px of
+     padding measured 26px in a 22px box and lost its ascenders and
+     descenders to `overflow: hidden` (sand-1l0.15). */
+  display: block;
+  padding: 0 4px;
   font-size: 11px;
+  line-height: 22px;
   color: var(--ink);
   opacity: 0.85;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .timeline__ticks {

@@ -40,6 +40,14 @@ body {
   gap: 16px;
 }
 
+/* A grid item's `min-width: auto` is its min-content width, so one wide,
+   unbreakable control — the three-option branch toggle — stretched the single
+   column past the viewport and gave the whole page a horizontal scrollbar on
+   a phone (sand-1l0.15). Nothing here should be able to widen the shell. */
+.app > * {
+  min-width: 0;
+}
+
 .app__header {
   padding-top: 22px;
   display: flex;
@@ -60,6 +68,8 @@ body {
   gap: 10px;
   flex-wrap: wrap;
   justify-content: flex-end;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .eyebrow {
