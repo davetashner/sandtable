@@ -3,6 +3,7 @@
  * plus the chips that enter a zoom-in. Lives above the map; the zoom-in
  * mechanism itself is in src/engine/focus.ts and the App's FocusController.
  */
+import { useMemo } from 'react';
 import type { Battle } from '../packs/schema/index.js';
 import './breadcrumb.css';
 
@@ -15,6 +16,16 @@ export interface BreadcrumbProps {
 }
 
 export function Breadcrumb({ campaignTitle, battles, focus, onEnter, onExit }: BreadcrumbProps) {
+  // The chapters read in the order the campaign ran, not the order the pack
+  // file happens to list them (sand-neh.12). The sort is stable, so the two
+  // backstory chapters — which share the clamped window at the start of the
+  // pack — keep the pack's order: the origins of the plan, then the crisis
+  // that set it off.
+  const chapters = useMemo(
+    () =>
+      [...battles].sort((a, b) => Date.parse(a.timeRange.start) - Date.parse(b.timeRange.start)),
+    [battles],
+  );
   return (
     <nav className="crumbs" aria-label="Focus">
       <ol className="crumbs__trail">
@@ -52,7 +63,7 @@ export function Breadcrumb({ campaignTitle, battles, focus, onEnter, onExit }: B
       {!focus && battles.length > 0 && (
         <div className="crumbs__battles" role="group" aria-label="Zoom in to a battle">
           <span className="crumbs__label">Zoom in:</span>
-          {battles.map((b) => (
+          {chapters.map((b) => (
             <button
               type="button"
               key={b.id}
