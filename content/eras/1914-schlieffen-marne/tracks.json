@@ -124,14 +124,14 @@
       [2.8263, 49.4179, "1914-09-01T00:30:00Z"],
       [3.1248, 49.1777, "1914-09-03T11:00:00Z"],
       [3.2322, 48.8484, "1914-09-05T00:00:00Z"],
-      [3.2843, 48.9754, "1914-09-06T10:00:00Z"],
+      [3.2843, 48.9754, "1914-09-06T10:00:00Z", "contested"],
       [3.0924, 49.0463, "1914-09-07T07:00:00Z"],
       [3.0924, 49.0463, "1914-09-08T21:15:00Z"],
       [3.079, 49.1363, "1914-09-09T09:30:00Z"],
       [3.079, 49.1363, "1914-09-09T20:15:00Z"]
     ],
     "confidence": "high",
-    "derivation": "The towns the First Army was commanded from, taken one at a time from the two works that name them: Reichsarchiv Bd. 3 for the advance from the Sambre to the Marne, Kluck's own memoir for the days before it and for the battle of the Ourcq, where Bd. 3 stops and Bd. 4 is not digitised. Towns and days, not buildings — except on 6–9 September, where Kluck prints the hour in his own orders (headquarters at Charly-sur-Marne from 10 a.m. on the 6th, the move to Vendrest at 7 a.m. on the 7th, arrival at Mareuil at 9.30 a.m. on the 9th) and the track carries it. The days the sources do not name a town — 10–16 and 20–23 August, 25–26 August, 2 September — are gaps: the line between two waypoints is not a claim about the road or the hour he took it. One wrinkle is the source's own: the order of 11 p.m. on 5 September puts headquarters at Charly-sur-Marne from 10 a.m. on the 6th, while Kluck also prints the orders of the evening of the 6th as issued from Rebais (p. 124). The track follows the order; the contradiction is his.",
+    "derivation": "The towns the First Army was commanded from, taken one at a time from the two works that name them: Reichsarchiv Bd. 3 for the advance from the Sambre to the Marne, Kluck's own memoir for the days before it and for the battle of the Ourcq, where Bd. 3 stops and Bd. 4 is not digitised. Towns and days, not buildings — except on 6–9 September, where Kluck prints the hour in his own orders (headquarters at Charly-sur-Marne from 10 a.m. on the 6th, the move to Vendrest at 7 a.m. on the 7th, arrival at Mareuil at 9.30 a.m. on the 9th) and the track carries it. The days the sources do not name a town — 10–16 and 20–23 August, 25–26 August, 2 September — are gaps: the line between two waypoints is not a claim about the road or the hour he took it. One wrinkle is the source's own: the order of 11 p.m. on 5 September puts headquarters at Charly-sur-Marne from 10 a.m. on the 6th, while Kluck also prints the orders of the evening of the 6th as issued from Rebais (p. 124). The track follows the order, and marks that waypoint contested, which is what the map then draws; the contradiction is his.",
     "notes": "Kluck's headquarters was 300 km from OHL at Koblenz for the whole of the advance, and the two were joined by a wireless net that lost messages. That distance, and not any one order, is what this track is drawing.",
     "sources": [
       {
@@ -428,14 +428,14 @@
     "mode": "motor",
     "waypoints": [
       [5.5986, 50.6319, "1914-08-06T20:00:00Z"],
-      [5.5986, 50.6319, "1914-08-07T07:00:00Z"],
-      [5.5772, 50.6511, "1914-08-07T10:00:00Z"],
+      [5.5986, 50.6319, "1914-08-07T07:00:00Z", "low"],
+      [5.5772, 50.6511, "1914-08-07T10:00:00Z", "low"],
       [5.5772, 50.6511, "1914-08-07T19:00:00Z"],
       [5.7931, 50.6392, "1914-08-07T20:30:00Z"],
-      [6.0839, 50.7764, "1914-08-07T23:30:00Z"]
+      [6.0839, 50.7764, "1914-08-07T23:30:00Z", "low"]
     ],
     "confidence": "medium",
-    "derivation": "The night and day Ludendorff spent inside the fort ring at Liège, from his own account: the heights by the old work of La Chartreuse on the night of 6/7 August, with the 14th Brigade isolated between the forts; into the town in the morning; up to the citadel in a commandeered Belgian car, where he banged on the locked gates and took the surrender of the few hundred Belgians inside; and away at seven in the evening for Aix-la-Chapelle by way of Herve, reaching it 'late at night'. The two hours in the middle — into the town, up to the citadel — are nominal within the morning the memoir describes; seven o'clock and the order of the places are his. The 11.30 p.m. arrival at Aachen is nominal within 'late at night'; what the German official history fixes is that he came back through the fort line by car on the evening of the 7th and reported to Bülow in Aachen on the morning of the 8th.",
+    "derivation": "The night and day Ludendorff spent inside the fort ring at Liège, from his own account: the heights by the old work of La Chartreuse on the night of 6/7 August, with the 14th Brigade isolated between the forts; into the town in the morning; up to the citadel in a commandeered Belgian car, where he banged on the locked gates and took the surrender of the few hundred Belgians inside; and away at seven in the evening for Aix-la-Chapelle by way of Herve, reaching it 'late at night'. The two hours in the middle — into the town, up to the citadel — are nominal within the morning the memoir describes; seven o'clock and the order of the places are his. The 11.30 p.m. arrival at Aachen is nominal within 'late at night'. Those three nominal positions are marked low and draw as approximate; the rest of the track carries its own confidence. what the German official history fixes is that he came back through the fort line by car on the evening of the 7th and reported to Bülow in Aachen on the morning of the 8th.",
     "notes": "A journey is the man, and this one is the reason Ludendorff was known to Moltke a fortnight later, when the call to the east came.",
     "sources": [
       {
@@ -458,12 +458,12 @@
     "mode": "motor",
     "waypoints": [
       [4.738, 50.592, "1914-08-22T09:00:00Z"],
-      [4.6104, 50.717, "1914-08-22T09:45:00Z"],
+      [4.6104, 50.717, "1914-08-22T09:45:00Z", "low"],
       [7.5944, 50.3533, "1914-08-22T18:00:00Z"],
       [7.5944, 50.3533, "1914-08-22T21:00:00Z"]
     ],
     "confidence": "medium",
-    "derivation": "The day Ludendorff was taken off the western front, at the hours he gives himself: the letters from Moltke and Stein handed to him at nine in the morning of 22 August at the headquarters of the 2nd Army, 'half-way between Wavre and Namur'; on the road within a quarter of an hour; through Wavre, which was burning; Koblenz at six in the evening, and a special train east at nine. The first waypoint is the midpoint of the Wavre–Namur road, because that is exactly what the memoir says and no more; the 9.45 a.m. at Wavre is nominal, placed only to make the line follow the road he names. The journey ends at Koblenz because the rest of it — Hindenburg boarding at Hanover at four in the morning, Marienburg at two on the afternoon of the 23rd — is off this map.",
+    "derivation": "The day Ludendorff was taken off the western front, at the hours he gives himself: the letters from Moltke and Stein handed to him at nine in the morning of 22 August at the headquarters of the 2nd Army, 'half-way between Wavre and Namur'; on the road within a quarter of an hour; through Wavre, which was burning; Koblenz at six in the evening, and a special train east at nine. The first waypoint is the midpoint of the Wavre–Namur road, because that is exactly what the memoir says and no more; the 9.45 a.m. at Wavre is nominal and marked low, placed only to make the line follow the road he names. The journey ends at Koblenz because the rest of it — Hindenburg boarding at Hanover at four in the morning, Marienburg at two on the afternoon of the 23rd — is off this map.",
     "notes": "Thirteen hours from the Belgian roadside to a train for East Prussia. The man who took Liège left the western campaign three days before the Marne was lost on it.",
     "sources": [
       {
@@ -480,11 +480,11 @@
     "side": "fr",
     "mode": "motor",
     "waypoints": [
-      [4.5852, 48.7262, "1914-09-03T12:00:00Z"],
+      [4.5852, 48.7262, "1914-09-03T12:00:00Z", "low"],
       [3.7223, 48.7241, "1914-09-03T17:00:00Z"]
     ],
     "confidence": "medium",
-    "derivation": "The drive of 3 September on which Joffre took the Fifth Army away from Lanrezac and gave it to Franchet d'Espèrey. Only one end of it is recorded: Lanrezac's own book has him arriving at Sézanne 'vers 17 heures' with Lieutenant-Colonel Gamelin. The track therefore begins at GQG, which its own hq track puts at Vitry-le-François that day, at a nominal midday, and ends at the hour Lanrezac gives. It does not draw a return, because none is recorded — a journey with one sourced end is drawn to that end and stops.",
+    "derivation": "The drive of 3 September on which Joffre took the Fifth Army away from Lanrezac and gave it to Franchet d'Espèrey. Only one end of it is recorded: Lanrezac's own book has him arriving at Sézanne 'vers 17 heures' with Lieutenant-Colonel Gamelin. The track therefore begins at GQG, which its own hq track puts at Vitry-le-François that day, at a nominal midday — marked low, and drawn as approximate — and ends at the hour Lanrezac gives. It does not draw a return, because none is recorded — a journey with one sourced end is drawn to that end and stops.",
     "notes": "Five days later Joffre made the other drive he is remembered for, to Melun; the two together are most of what he did in person in the campaign.",
     "sources": [
       {
@@ -504,10 +504,10 @@
       [2.3125, 48.8566, "1914-09-04T13:30:00Z"],
       [2.6608, 48.5399, "1914-09-04T15:00:00Z"],
       [2.6608, 48.5399, "1914-09-04T17:00:00Z"],
-      [2.3125, 48.8566, "1914-09-04T18:30:00Z"]
+      [2.3125, 48.8566, "1914-09-04T18:30:00Z", "low"]
     ],
     "confidence": "high",
-    "derivation": "The afternoon on which Paris tried to make the British turn and fight, hour by hour out of Gallieni's own memoir: on the road at half past one with Maunoury and Clergerie, out by the Porte de Charenton on the Melun road; at Melun at three, at the British GHQ installed in the collège on the Melun–Meaux road; three hours of conference with Murray, Sir John French being away visiting his I Corps; and away from Melun 'vers 5 heures', Maunoury for Le Raincy and Gallieni for Paris. Every hour but the last is the memoir's. The return to Paris is not timed, so it carries the ninety minutes the outward drive took, and is marked as that in this sentence rather than left to be read as evidence.",
+    "derivation": "The afternoon on which Paris tried to make the British turn and fight, hour by hour out of Gallieni's own memoir: on the road at half past one with Maunoury and Clergerie, out by the Porte de Charenton on the Melun road; at Melun at three, at the British GHQ installed in the collège on the Melun–Meaux road; three hours of conference with Murray, Sir John French being away visiting his I Corps; and away from Melun 'vers 5 heures', Maunoury for Le Raincy and Gallieni for Paris. Every hour but the last is the memoir's. The return to Paris is not timed, so it carries the ninety minutes the outward drive took, and that waypoint is marked low — the one approximate position on an otherwise hour-by-hour afternoon — rather than left to be read as evidence.",
     "notes": "The next day Joffre drove the same road to Melun to ask Sir John French in person, and got what Gallieni could not.",
     "sources": [
       {

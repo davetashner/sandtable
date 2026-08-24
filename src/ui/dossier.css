@@ -295,3 +295,10 @@
 .dossier__feasibility li[data-met] .dossier__check {
   color: var(--french);
 }
+
+/* the key to the map's approximate positions (sand-23b.4) */
+.dossier__swatch--approx {
+  background: transparent;
+  border: 1px dashed var(--muted);
+  box-shadow: none;
+}

@@ -13,6 +13,7 @@
  */
 /* eslint-disable react-refresh/only-export-components -- the registry is data about components and the stateful specimens are part of the data; they live together by design */
 import { useState, type ReactNode } from 'react';
+import { isApproximate, waypointConfidence } from '../engine/confidence.js';
 import { sideToken } from '../engine/layers/colors.js';
 import { subordinatesOf } from '../engine/formations.js';
 import { seed } from '../packs/seed.js';
@@ -120,6 +121,17 @@ const battle = only(seed.battles, 'battle');
 const castEntry = only(seed.cast, 'cast entry');
 const castPerson =
   seed.people.find((p) => p.id === castEntry.person) ?? only(seed.people, 'person');
+/** A track the pack itself calls approximate, for the position-footnote specimen (sand-23b.4). */
+const approxTrack = only(
+  seed.tracks.filter(
+    (t) =>
+      isApproximate(t.confidence) ||
+      t.waypoints.some((w) => isApproximate(waypointConfidence(w, t.confidence))),
+  ),
+  'track with an approximate position',
+);
+const approxPerson =
+  seed.people.find((p) => p.id === approxTrack.person) ?? only(seed.people, 'person');
 const tour = only(seed.tours, 'tour');
 const tourStep = only(tour.steps, 'tour step');
 const diagram = only(Object.entries(seed.diagrams), 'diagram');
@@ -765,6 +777,23 @@ export const SECTIONS: GallerySection[] = [
             sources={sources}
             labeller={labeller}
             cast={castEntry}
+            tracks={seed.tracks.filter((t) => t.person === castPerson.id)}
+            onBack={() => {}}
+          />
+        ),
+      },
+      {
+        id: 'card-person-positions',
+        title: 'Person card · how the positions were derived',
+        note: 'The footnote under a commander: what his tracks are, at what resolution, and — where the pack says so — that the map draws them as approximate.',
+        covers: ['PersonCardView'],
+        column: true,
+        render: () => (
+          <PersonCardView
+            person={approxPerson}
+            sources={sources}
+            labeller={labeller}
+            tracks={[approxTrack]}
             onBack={() => {}}
           />
         ),

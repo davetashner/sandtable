@@ -29,11 +29,20 @@ scenario pack it is given.
   the URL's `focus` slot.
 - `beats.ts` — which narrative beat is on now (time × branch × focus) and how a
   citation reads; used by the dossier.
+- `confidence.ts` — the pack's one vocabulary for how sure it is
+  (`high | medium | low | contested`), the ordering (`weakest`), the rule that
+  a waypoint inherits its route's or track's confidence unless it carries its
+  own (`waypointConfidence`), what the clock is between at an instant
+  (`confidenceAt`), and the question the map asks of a position
+  (`isApproximate`) — `sand-23b.4`.
 - `layers/` — data layers on the deck.gl overlay: `places.ts` (cities and
   fortress rings from the shared registry), `movement.ts`
   (composeRoutes per branch — a formation's route legs joined into one path,
-  each keeping its own mode — positionAt, ghost + TripsLayer trail + tokens +
-  labels), `colors.ts` (design tokens → RGBA per side), `useMovementLayers`.
+  each keeping its own mode and the confidence of each of its waypoints —
+  positionAt, ghost + TripsLayer trail + tokens + labels), `approx-halo.ts`
+  (the dashed ring a `low` or `contested` position wears, as a mask icon so
+  its colour still comes from the tokens), `colors.ts` (design tokens → RGBA
+  per side), `useMovementLayers`.
 
 Coming: branches
 (`sand-a55.13`) and the focus/zoom-in mechanism (`sand-a55.14`), which swaps

@@ -61,22 +61,32 @@
               "format": "date-time",
               "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
               "description": "ISO-8601 date-time with offset, e.g. 1914-08-04T08:00:00Z"
+            },
+            {
+              "description": "How good this one position is — high: documented; medium: inferred from sources; low: approximate; contested: the sources disagree. Omit to inherit the route’s or track’s confidence",
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low",
+                "contested"
+              ]
             }
           ],
-          "description": "[lng, lat, ISO time]"
+          "description": "[lng, lat, ISO time, confidence?]"
         },
         "description": "Strictly increasing in time"
       },
       "confidence": {
         "default": "medium",
+        "description": "How good the positions on this path are — high: documented; medium: inferred from sources; low: approximate; contested: historians disagree. Every waypoint inherits it unless it carries one of its own",
         "type": "string",
         "enum": [
           "high",
           "medium",
           "low",
           "contested"
-        ],
-        "description": "high: documented; medium: inferred from sources; low: approximate; contested: historians disagree"
+        ]
       },
       "mode": {
         "description": "How he travelled, where the sources say: Joffre and Hentsch by car (motor), a headquarters moving by train (rail). Absent is not a claim that he walked — the pace check reads an unmarked track as road travel",

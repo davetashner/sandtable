@@ -84,6 +84,41 @@ describe('<PersonCardView>', () => {
     expect(screen.getByRole('region', { name: 'Sources' })).toHaveTextContent(/Herwig/);
   });
 
+  it('footnotes how the map’s positions were derived, and flags the approximate ones (sand-23b.4)', () => {
+    render(
+      <PersonCardView
+        person={joffre}
+        sources={sources}
+        labeller={labeller}
+        tracks={[
+          {
+            id: '1914:track-joffre-gqg',
+            person: 'person:joffre-joseph',
+            kind: 'hq',
+            post: 'GQG',
+            waypoints: [
+              [4.58, 48.72, '1914-08-05T12:00:00Z'],
+              [4.7, 48.24, '1914-09-05T12:00:00Z', 'low'],
+            ],
+            confidence: 'medium',
+            derivation: 'Towns, not buildings; days, not hours.',
+            sources: [{ source: 'source:herwig-2009' }],
+          },
+        ]}
+      />,
+    );
+    const section = screen.getByRole('region', { name: 'Positions on the map' });
+    expect(section).toHaveTextContent('Headquarters · GQG — inferred from the sources');
+    expect(section).toHaveTextContent('Towns, not buildings; days, not hours.');
+    // one low waypoint on a medium track is enough for the map to say so
+    expect(section).toHaveTextContent(/drawn on the map as approximate/);
+  });
+
+  it('says nothing about positions when the person has no track', () => {
+    render(<PersonCardView person={joffre} sources={sources} labeller={labeller} />);
+    expect(screen.queryByRole('region', { name: 'Positions on the map' })).toBeNull();
+  });
+
   it('renders a profile when a cast entry is given: headshot first, period role, footnoted bio, "In brief"', () => {
     const { container } = render(
       <PersonCardView

@@ -16,15 +16,31 @@
  * Pure geometry and arithmetic; no filesystem, no schema parsing.
  */
 import { haversineKm } from '../../engine/geo.js';
-import type { MovementMode, Waypoint } from '../schema/index.js';
+import { waypointConfidence } from '../../engine/confidence.js';
+import type { Confidence, MovementMode, Waypoint } from '../schema/index.js';
 
 /**
- * How far apart a leg's endpoints may be for reasons that are not movement.
- * Route derivations put the centre of an army at ±10–15 km, and entraining
- * points are named by town, so every leg gets this much slack before its rate
- * is judged at all.
+ * How far apart a leg's endpoints may be for reasons that are not movement —
+ * now read off the confidence of the positions themselves (`sand-23b.4`).
+ *
+ * The flat 15 km this started as was a confidence statement in disguise: it
+ * was justified by the route derivations, which put the centre of an army at
+ * ±10–15 km, and it was applied to a track whose derivation names a building
+ * and prints the hour. Those are not the same claim and should not buy the
+ * same slack.
+ *
+ * `medium` keeps the old number exactly, so no leg that passed before is
+ * judged differently for want of an author writing anything down. `high` is
+ * the town or the building the source names, good to a few kilometres.
+ * `low` and `contested` are the derived and the disputed position, where the
+ * pack has already said in prose that it does not know better than this.
  */
-export const POSITION_TOLERANCE_KM = 15;
+export const POSITION_TOLERANCE_KM: Record<Confidence, number> = {
+  high: 8,
+  medium: 15,
+  low: 30,
+  contested: 30,
+};
 
 export interface Pace {
   /** km/h the mode held day after day — above it, a warning. */
@@ -65,13 +81,30 @@ export interface PaceFinding {
   level: 'error' | 'warning';
 }
 
-const allowedKm = (kmh: number, hours: number) => POSITION_TOLERANCE_KM + kmh * hours;
+const allowedKm = (kmh: number, hours: number, tolerance: number) => tolerance + kmh * hours;
+
+/**
+ * A leg is judged at the resolution of its weaker end: the larger of the two
+ * tolerances, not their sum. Adding them would double the slack on the
+ * ordinary medium/medium leg — most of the pack — and quietly widen a gate
+ * that is meant to catch teleporting armies.
+ */
+function legTolerance(a: Confidence, b: Confidence): number {
+  return Math.max(POSITION_TOLERANCE_KM[a], POSITION_TOLERANCE_KM[b]);
+}
 
 /**
  * Every leg of `waypoints` that goes faster than `mode` could. Waypoints out
  * of order are somebody else's error and are skipped here.
+ *
+ * `pathConfidence` is the route's or track's own, which every waypoint
+ * inherits unless it carries one of its own.
  */
-export function paceFindings(waypoints: Waypoint[], mode: MovementMode): PaceFinding[] {
+export function paceFindings(
+  waypoints: Waypoint[],
+  mode: MovementMode,
+  pathConfidence: Confidence = 'medium',
+): PaceFinding[] {
   const pace = MOVEMENT_PACE[mode];
   const out: PaceFinding[] = [];
   for (let i = 1; i < waypoints.length; i++) {
@@ -80,14 +113,24 @@ export function paceFindings(waypoints: Waypoint[], mode: MovementMode): PaceFin
     const hours = (Date.parse(b[2]) - Date.parse(a[2])) / 3_600_000;
     if (!(hours > 0)) continue;
     const km = haversineKm([a[0], a[1]], [b[0], b[1]]);
-    if (km > allowedKm(pace.limit, hours))
-      out.push({ index: i, km, hours, allowed: allowedKm(pace.limit, hours), level: 'error' });
-    else if (km > allowedKm(pace.sustained, hours))
+    const tolerance = legTolerance(
+      waypointConfidence(a, pathConfidence),
+      waypointConfidence(b, pathConfidence),
+    );
+    if (km > allowedKm(pace.limit, hours, tolerance))
       out.push({
         index: i,
         km,
         hours,
-        allowed: allowedKm(pace.sustained, hours),
+        allowed: allowedKm(pace.limit, hours, tolerance),
+        level: 'error',
+      });
+    else if (km > allowedKm(pace.sustained, hours, tolerance))
+      out.push({
+        index: i,
+        km,
+        hours,
+        allowed: allowedKm(pace.sustained, hours, tolerance),
         level: 'warning',
       });
   }

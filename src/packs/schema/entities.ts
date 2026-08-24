@@ -613,10 +613,36 @@ export const Formation = z
 
 // -------------------------------------------------------------------- Route
 
-/** [lng, lat, ISO time] — where the formation's centre of mass / HQ was at that instant. */
+/**
+ * `[lng, lat, ISO time]` — where the formation's centre of mass / HQ was at
+ * that instant — with an optional fourth element saying how good that
+ * position is (`sand-23b.4`).
+ *
+ * The confidence vocabulary is the pack's one vocabulary, the same `high /
+ * medium / low / contested` a casualty figure or a causal link carries: a
+ * position is a claim like any other and there is no reason for it to be
+ * graded on a scale of its own.
+ *
+ * **Absent means "as good as the path it belongs to"** — the waypoint
+ * inherits its route's or track's `confidence`, which is where the general
+ * statement belongs, because the `derivation` prose is written about the
+ * whole path ("towns and days, not buildings and hours"). The fourth element
+ * is for the exception the derivation already names: the hour that is nominal
+ * inside a vaguer one, the leg that is the source's own contradiction, the
+ * one waypoint on an otherwise documented journey that nobody timed. Marking
+ * every waypoint of a route `medium` says nothing the route did not already
+ * say; marking the one nominal position on a `high` track says a great deal.
+ */
 export const Waypoint = z
-  .tuple([z.number().min(-180).max(180), z.number().min(-90).max(90), IsoTime])
-  .describe('[lng, lat, ISO time]');
+  .tuple([
+    z.number().min(-180).max(180),
+    z.number().min(-90).max(90),
+    IsoTime,
+    Confidence.optional().describe(
+      'How good this one position is — high: documented; medium: inferred from sources; low: approximate; contested: the sources disagree. Omit to inherit the route’s or track’s confidence',
+    ),
+  ])
+  .describe('[lng, lat, ISO time, confidence?]');
 
 /**
  * How a formation — or a man — covered the ground, and the reason the model
@@ -652,7 +678,9 @@ export const Route = z
       'Absent: the historical/default route. Present: a counterfactual continuation — its waypoints must start at or after the branch divergesAt and are appended to the default route’s earlier waypoints',
     ),
     waypoints: z.array(Waypoint).min(2).describe('Strictly increasing in time'),
-    confidence: Confidence.default('medium'),
+    confidence: Confidence.default('medium').describe(
+      'How good the positions on this path are — high: documented; medium: inferred from sources; low: approximate; contested: historians disagree. Every waypoint inherits it unless it carries one of its own',
+    ),
     mode: MovementMode.optional().describe(
       'How the formation moved along this route; rail/sea/air are transfers and draw dashed with their token shown only while moving, motor draws with a finer dash and keeps its token (default march)',
     ),
@@ -698,7 +726,9 @@ export const PersonTrack = z
       .describe('The headquarters in a word, for the map token: OHL, GQG, Paris'),
     side: Slug.optional().describe('Side id, for the ring colour; inferred from the post otherwise'),
     waypoints: z.array(Waypoint).min(2).describe('Strictly increasing in time'),
-    confidence: Confidence.default('medium'),
+    confidence: Confidence.default('medium').describe(
+      'How good the positions on this path are — high: documented; medium: inferred from sources; low: approximate; contested: historians disagree. Every waypoint inherits it unless it carries one of its own',
+    ),
     mode: MovementMode.optional().describe(
       'How he travelled, where the sources say: Joffre and Hentsch by car (motor), a headquarters moving by train (rail). Absent is not a claim that he walked — the pace check reads an unmarked track as road travel',
     ),

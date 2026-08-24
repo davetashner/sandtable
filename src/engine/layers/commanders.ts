@@ -14,6 +14,8 @@
 import type { Layer } from '@deck.gl/core';
 import { IconLayer, ScatterplotLayer, TextLayer } from '@deck.gl/layers';
 import type { PersonTrack, Side } from '../../packs/schema/index.js';
+import { APPROX_MARK, confidenceAt, isApproximate, waypointConfidence } from '../confidence.js';
+import { APPROX_HALO_ICON, haloSize } from './approx-halo.js';
 import { sideColor, tokenColor, type RGBA } from './colors.js';
 import { positionAt } from './movement.js';
 import { PLACE_SLOTS, type LabelCandidate, type LabelPlacement } from './places.js';
@@ -35,6 +37,12 @@ export interface CommanderDatum {
   color: RGBA;
   /** Data URL of the circular portrait, when one has been made. */
   icon: string | undefined;
+  /**
+   * The position at this instant is `low` or `contested` (`sand-23b.4`). The
+   * portrait is left alone — ADR 0012 does not fade photographs — and the
+   * qualification is carried outside it, by a dashed halo and an `≈`.
+   */
+  approximate: boolean;
 }
 
 export interface CommanderLayerOptions {
@@ -69,7 +77,18 @@ export function commandersAt(o: CommanderLayerOptions): CommanderDatum[] {
     const last = points[points.length - 1]![2];
     if (o.now < first || o.now > last) continue;
     const pos = positionAt(points, o.now);
+    const approximate = isApproximate(
+      confidenceAt(
+        points.map((p) => p[2]),
+        tk.waypoints.map((w) => waypointConfidence(w, tk.confidence)),
+        o.now,
+        tk.confidence,
+      ),
+    );
     const side = tk.side ? o.sides.find((x) => x.id === tk.side) : undefined;
+    const name = o.label(tk.person) ?? tk.person;
+    const post = tk.kind === 'hq' ? (tk.postShort ?? tk.post) : undefined;
+    const mark = approximate ? `${APPROX_MARK} ` : '';
     out.push({
       id: tk.id,
       person: tk.person,
@@ -77,15 +96,13 @@ export function commandersAt(o: CommanderLayerOptions): CommanderDatum[] {
       // An hq pin is a headquarters, not the man, and the token says so: the
       // reader should not read "Moltke" at Luxembourg as Moltke standing there
       // (sand-1l0.27). A journey is the man, and carries his name alone.
-      tokenLabel:
-        tk.kind === 'hq' && (tk.postShort ?? tk.post)
-          ? `${o.label(tk.person) ?? tk.person} · ${tk.postShort ?? tk.post}`
-          : (o.label(tk.person) ?? tk.person),
+      tokenLabel: post ? `${mark}${name} · ${post}` : `${mark}${name}`,
       kind: tk.kind,
       post: tk.post,
       position: pos.lngLat,
       color: side ? sideColor(side, o.sides) : tokenColor('--brass'),
       icon: o.icon(tk.person),
+      approximate,
     });
   }
   return out;
@@ -117,6 +134,20 @@ export function buildCommanderLayers(o: CommanderLayerOptions): Layer[] {
     : data;
 
   return [
+    // The dashed halo of an approximate position (`sand-23b.4`), outside the
+    // ring: Heeringen's two dated facts a fortnight apart are not the same
+    // kind of claim as Gallieni's hour-by-hour afternoon, and the map should
+    // not draw them the same.
+    new IconLayer<CommanderDatum>({
+      id: 'commander-approx',
+      data: data.filter((d) => d.approximate),
+      getPosition: (d) => d.position,
+      getIcon: () => APPROX_HALO_ICON,
+      getSize: haloSize(COMMANDER_RADIUS + 2, 3),
+      sizeUnits: 'pixels',
+      getColor: (d) => [d.color[0], d.color[1], d.color[2], 200],
+      pickable: false,
+    }),
     // The ring: side colour, and dashed-looking for a journey — a journey is
     // the man, an hq is a place, and they must not read the same.
     new ScatterplotLayer<CommanderDatum>({

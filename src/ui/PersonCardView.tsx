@@ -3,10 +3,17 @@
  * original", name, dates, roles in the era, summary, related chips, sources.
  * Opened from a ● chip on beats, events, cards or formations; deep-linked as
  * ?card=person:<slug>.
+ *
+ * It is also where the map's positions are footnoted (`sand-23b.4`). A
+ * commander token is where a reader meets a position; this card is the one it
+ * opens, so the `derivation` prose of his tracks — the sentence that says
+ * whether this is towns and days or buildings and hours — is read here rather
+ * than nowhere.
  */
 import { withFootnotes } from '../engine/beats.js';
+import { isApproximate, waypointConfidence, APPROX_MARK } from '../engine/confidence.js';
 import { portraitFor } from '../packs/media-index.js';
-import type { CastEntry, Person, Source } from '../packs/schema/index.js';
+import type { CastEntry, Confidence, Person, PersonTrack, Source } from '../packs/schema/index.js';
 import { Card } from './Card.js';
 import { MediaFigure } from './MediaFigure.js';
 import { whenLabel } from './ScienceCardView.js';
@@ -25,7 +32,61 @@ export interface PersonCardViewProps {
    * era-neutral summary, which moves to "In brief".
    */
   cast?: CastEntry | undefined;
+  /**
+   * This person's tracks in the pack (`sand-23b.4`): the card footnotes each
+   * one with how its positions were derived, and says which of them the map
+   * is drawing as approximate.
+   */
+  tracks?: PersonTrack[];
   onBack?: () => void;
+}
+
+const CONFIDENCE_LABEL: Record<Confidence, string> = {
+  high: 'documented',
+  medium: 'inferred from the sources',
+  low: 'approximate',
+  contested: 'the sources disagree',
+};
+
+const KIND_LABEL: Record<PersonTrack['kind'], string> = {
+  hq: 'Headquarters',
+  journey: 'Journey',
+};
+
+/**
+ * How positions were derived, per track. The prose is the pack's own — the
+ * card adds only the two things a reader cannot get from it: what the
+ * confidence word means, and whether that is why the token on the map is
+ * drawn open inside a dashed ring.
+ */
+function Derivations({ tracks }: { tracks: PersonTrack[] }) {
+  if (tracks.length === 0) return null;
+  return (
+    <section className="card__section card__positions" aria-label="Positions on the map">
+      <h3>Positions on the map</h3>
+      {tracks.map((tk) => {
+        const approx =
+          isApproximate(tk.confidence) ||
+          tk.waypoints.some((w) => isApproximate(waypointConfidence(w, tk.confidence)));
+        return (
+          <div key={tk.id} className="card__derivation" data-confidence={tk.confidence}>
+            <p className="card__derivation-head">
+              {KIND_LABEL[tk.kind]}
+              {tk.post ? ` · ${tk.post}` : ''} — {CONFIDENCE_LABEL[tk.confidence]}
+            </p>
+            <p className="card__derivation-prose">{tk.derivation}</p>
+            {approx && (
+              <p className="card__derivation-note">
+                <span aria-hidden="true">{APPROX_MARK}</span> Positions on this track are drawn on
+                the map as approximate: an open token inside a dashed ring, and an {APPROX_MARK}{' '}
+                before the label.
+              </p>
+            )}
+          </div>
+        );
+      })}
+    </section>
+  );
 }
 
 const lifeLabel = (p: Person) => {
@@ -43,6 +104,7 @@ export function PersonCardView({
   labeller,
   commands = [],
   cast,
+  tracks = [],
   onBack,
 }: PersonCardViewProps) {
   const portrait = portraitFor(person.id);
@@ -87,6 +149,7 @@ export function PersonCardView({
           <h3>In brief</h3>
           <Prose>{person.summary}</Prose>
         </section>
+        <Derivations tracks={tracks} />
       </Card>
     );
   }
@@ -111,6 +174,7 @@ export function PersonCardView({
           className="card__portrait"
         />
       )}
+      <Derivations tracks={tracks} />
     </Card>
   );
 }

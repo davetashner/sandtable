@@ -159,6 +159,26 @@ ring in the places layer. Hillshade where the ground decided events (the Grand
 Couronné, the Argonne, the Meuse heights) needs a terrain source — a follow-up.
 Both themes come from the same palette table.
 
+### Positions the pack is not sure of (`sand-23b.4`)
+
+A waypoint carries a `confidence`, and `low` or `contested` changes how its
+token draws. Three channels, deliberately redundant, because a treatment that
+is only a colour difference is no treatment at all for a colour-blind reader:
+
+1. **Shape** — the disc **opens**. A documented position is a filled token
+   with a panel-coloured hairline; an approximate one is all but hollow with
+   its outline in the side's own colour.
+2. **A dashed halo** — a broken ring just outside the token, drawn as a mask
+   icon (`src/engine/layers/approx-halo.ts`) so its colour still comes from
+   the tokens in both themes. It says the point is the middle of a zone.
+3. **The label** — an `≈` in front of the name: `≈ 6. Armee`.
+
+The key sits in the dossier legend, dashed and hollow like the map; the
+sentence that says how the positions were derived is the `derivation` prose,
+footnoted on the card the token opens (ADR 0006: a glyph and a card, not a
+fourth surface). Nothing here uses `--accent-red`: an approximate position is
+not an error, and must not read as one.
+
 ## Brand
 
 The mark is a sand table seen from above — a tray of contoured sand with three

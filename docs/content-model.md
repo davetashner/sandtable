@@ -87,9 +87,18 @@ can point at anything anywhere.
 - Everything in a pack must fall inside `pack.timeRange`; everything inside a
   battle must fall inside the battle's `timeRange`.
 - Positions are `[lng, lat]` (WGS 84); regions are `[west, south, east, north]`.
-- Route waypoints are `[lng, lat, time]`, strictly increasing in time. A route
-  carries a `confidence` (`high | medium | low | contested`) and a `derivation`
-  note; per-waypoint confidence is a planned extension (`sand-23b.4`).
+- Route waypoints are `[lng, lat, time]` — or `[lng, lat, time, confidence]`
+  — strictly increasing in time. A route carries a `confidence`
+  (`high | medium | low | contested`) and a `derivation` note, and that
+  confidence is what **every waypoint inherits** unless it carries a fourth
+  element of its own (`sand-23b.4`). The general statement belongs on the
+  path, beside the derivation prose that explains it; the fourth element is
+  for the exception that prose already names — the hour that is nominal
+  inside a vaguer one, the position two sources contradict each other about.
+  A `low` or `contested` position draws on the map as approximate: the token
+  opens, wears a dashed halo, and takes an `≈` before its label. It also buys
+  more slack in the pace check (`src/packs/validate/pace.ts`), which judges
+  each leg at the resolution of its weaker end.
 - A formation that changed how it moved gets **one route per leg**: the French
   2nd Army marched in Lorraine, entrained on 17 September and marched again in
   Picardy, so it is three routes, each with its own `mode`. Legs must meet —
@@ -306,6 +315,6 @@ with neither beat nor instant, unknown pack files.
 Add or change a field in `src/packs/schema/entities.ts`, add the rule to
 `src/packs/validate/validate.ts` if a schema cannot express it, cover it in
 `src/packs/validate/validate.test.ts`, run `npm run schema`, and update this
-file. Planned extensions have beads: Media (`sand-y0u.2`), per-waypoint
-confidence (`sand-23b.4`), cross-era registries and era-qualified links
-(`sand-a55.18`), the authoring guide (`sand-a55.17`).
+file. Planned extensions have beads: Media (`sand-y0u.2`), cross-era
+registries and era-qualified links (`sand-a55.18`), the authoring guide
+(`sand-a55.17`).
