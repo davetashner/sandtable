@@ -369,6 +369,57 @@
                 "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
               }
             },
+            "plates": {
+              "type": "object",
+              "properties": {
+                "axis": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80,
+                  "description": "What is being compared, in one line: \"German kit, August 1914\" — short, because it renders as an eyebrow over the set"
+                },
+                "fit": {
+                  "description": "One crop for every plate in the set (ADR 0012 fits), default band. A shared frame is the control variable; `contain` is not offered here",
+                  "type": "string",
+                  "enum": [
+                    "band",
+                    "portrait"
+                  ]
+                },
+                "items": {
+                  "minItems": 2,
+                  "maxItems": 4,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "media": {
+                        "type": "string",
+                        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+                        "description": "media:<kind>/<slug>/<file-stem>"
+                      },
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 48,
+                        "description": "This plate’s point on the axis: \"Pickelhaube\", \"Belgium\""
+                      }
+                    },
+                    "required": [
+                      "media",
+                      "label"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "axis",
+                "items"
+              ],
+              "additionalProperties": false,
+              "description": "A bounded comparison set of photographs on one axis (ADR 0014)"
+            },
             "sources": {
               "type": "array",
               "items": {

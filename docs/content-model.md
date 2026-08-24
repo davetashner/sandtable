@@ -175,6 +175,12 @@ generated JSON Schema; this is the intent of each.
   `at`), summary, body, `counter` (tech-tree edge) or `connections`
   (forward links), links, required sources. Surfaced as timeline glyphs and
   dossier cards — never a separate rail (`sand-neh.5`).
+- **PlateSet** (`plates`, on Formation and TechCard) — a bounded comparison of
+  photographs on one card (ADR 0014): an `axis` in a single line, one `fit`
+  (`band` or `portrait`) for every plate in the set, and two to four `items`,
+  each a `media` id and the `label` that is its point on the axis. All of them
+  render at once, in a grid, with no paging — four armies' kit, one army's
+  four weapons. Never on a beat: a beat has one picture (ADR 0012).
 - **Document** — the real text: title, date, author, kind, `excerpt` (original
   language), `translation`, archive, links, required sources.
 - **CausalLink** — `from` → `to` (any entity, any pack), `relation`, the
@@ -282,9 +288,11 @@ figures without a value or range (or with low > high), naming a side that is
 not a pack side or a battle/event that does not exist, vignettes outside the
 pack range or with unknown people/places, footnotes in casualty and vignette
 text that name no source, decision `historical` not an
-option, campaign routes using battle-level formations, and the imagery policy
-on media manifests (flagged BLOCKED/UNVERIFIED/UNKNOWN/HOLD, colorized without
-saying so, Bundesarchiv without the credit string, no archive record).
+option, campaign routes using battle-level formations, plate sets outside two
+to four pictures or with the same picture or the same label twice, and the
+imagery policy on media manifests (flagged BLOCKED/UNVERIFIED/UNKNOWN/HOLD,
+colorized without saying so, Bundesarchiv without the credit string, no
+archive record).
 
 Warnings: formations without a historical route (non-seed packs), a
 formation's `concentration.position` outside the pack region, a leg faster

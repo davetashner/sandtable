@@ -1180,6 +1180,132 @@ describe('validateContent', () => {
     );
   });
 
+  // A card may hold a bounded comparison — four armies' kit, one army's four
+  // weapons — where a beat still holds one picture (ADR 0014).
+  describe('plate sets', () => {
+    /** A content tree with four usable manifests and a tech card to hang them on. */
+    const withPlates = (plates: unknown) => {
+      const raw = fixture();
+      for (const slug of ['helmet', 'rifle', 'machine-gun', 'field-gun', 'spare']) {
+        raw.shared.media.push({
+          path: `shared/media/kit/${slug}/media.json`,
+          data: {
+            id: `media:kit/${slug}/photo`,
+            file: 'photo.png',
+            width: 900,
+            height: 600,
+            colorized: false,
+            original: { licence: 'public domain', archive_url: 'https://example.org/item' },
+            content_policy: 'ok',
+            caption: 'A photograph.',
+            credit: 'Somebody; public domain.',
+          },
+        });
+      }
+      raw.packs[0]!.collections['tech.json'] = {
+        path: 'eras/1914-test/tech.json',
+        data: [
+          {
+            id: '1914:tech-kit',
+            title: 'What the German soldier carried',
+            field: 'small-arms',
+            introduced: { label: 'August 1914' },
+            summary: 'Headgear, rifle, machine gun, field gun.',
+            plates,
+            sources: [{ source: 'source:herwig-2009' }],
+          },
+        ],
+      };
+      return raw;
+    };
+
+    const item = (slug: string, label: string) => ({ media: `media:kit/${slug}/photo`, label });
+    const four = [
+      item('helmet', 'Pickelhaube'),
+      item('rifle', 'Gewehr 98'),
+      item('machine-gun', 'MG 08'),
+      item('field-gun', '7.7 cm FK 96'),
+    ];
+
+    it('accepts a set at the cap: four plates, one axis, one crop', () => {
+      const report = validateContent(
+        withPlates({ axis: 'German kit, August 1914', fit: 'portrait', items: four }),
+      );
+      expect(messages(report)).toEqual([]);
+    });
+
+    it('holds the set to between two and four pictures', () => {
+      const tooMany = messages(
+        validateContent(withPlates({ axis: 'Kit', items: [...four, item('spare', 'Bayonet')] })),
+      );
+      expect(tooMany).toContainEqual(expect.stringMatching(/at most 4 pictures/));
+
+      const tooFew = messages(
+        validateContent(withPlates({ axis: 'Kit', items: [item('helmet', 'Pickelhaube')] })),
+      );
+      expect(tooFew).toContainEqual(expect.stringMatching(/a set of one is a plate/));
+    });
+
+    it('refuses the two ways a set stops comparing: one picture twice, one label twice', () => {
+      const twice = messages(
+        validateContent(
+          withPlates({
+            axis: 'Kit',
+            items: [item('helmet', 'Pickelhaube'), item('helmet', 'Helmet')],
+          }),
+        ),
+      );
+      expect(twice).toContainEqual(expect.stringMatching(/media:kit\/helmet\/photo appears twice/));
+
+      const sameLabel = messages(
+        validateContent(
+          withPlates({
+            axis: 'Kit',
+            items: [item('helmet', 'Pickelhaube'), item('rifle', ' pickelhaube ')],
+          }),
+        ),
+      );
+      expect(sameLabel).toContainEqual(expect.stringMatching(/two plates are labelled/));
+    });
+
+    it('resolves every plate against the media registry', () => {
+      const msgs = messages(
+        validateContent(
+          withPlates({
+            axis: 'Kit',
+            items: [
+              item('helmet', 'Pickelhaube'),
+              { media: 'media:kit/nothing/photo', label: 'Ghost' },
+            ],
+          }),
+        ),
+      );
+      expect(msgs).toContainEqual(
+        expect.stringMatching(/plates\.items\[1\]\.media media:kit\/nothing\/photo does not exist/),
+      );
+    });
+
+    it('offers only the two cropped fits — a shared frame is the comparison', () => {
+      const msgs = messages(
+        validateContent(withPlates({ axis: 'Kit', fit: 'contain', items: four })),
+      );
+      expect(msgs).toContainEqual(expect.stringMatching(/plates\.fit/));
+    });
+
+    it('applies the same rule to a formation, which is where the kit cards will hang', () => {
+      const raw = withPlates({ axis: 'German kit, August 1914', items: four });
+      delete raw.packs[0]!.collections['tech.json'];
+      const formations = raw.packs[0]!.collections['formations.json']!.data as Record<
+        string,
+        unknown
+      >[];
+      formations[0]!['plates'] = { axis: 'Kit', items: [item('helmet', 'A'), item('helmet', 'B')] };
+      expect(messages(validateContent(raw))).toContainEqual(
+        expect.stringMatching(/1914:army-de-1: plates: media:kit\/helmet\/photo appears twice/),
+      );
+    });
+  });
+
   it('validates threads across packs', () => {
     const raw = fixture();
     (raw.threads[0]!.data as { steps: { beat: string }[] }).steps[1]!.beat = '1914:beat-x';

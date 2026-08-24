@@ -41,6 +41,7 @@ import { MediaLightbox } from '../ui/MediaLightbox.js';
 import { MeanwhileFilter } from '../ui/MeanwhileFilter.js';
 import { OpeningSequence } from '../ui/OpeningSequence.js';
 import { PersonCardView } from '../ui/PersonCardView.js';
+import { PlateSet, plateItems } from '../ui/PlateSet.js';
 import { PortraitChip } from '../ui/PortraitChip.js';
 import { Prose } from '../ui/Prose.js';
 import { ScienceCardView, SCIENCE_FIELDS } from '../ui/ScienceCardView.js';
@@ -121,6 +122,34 @@ const paired =
   photograph && photograph.variants.length
     ? { ...photograph, unaltered: photograph.variants }
     : undefined;
+
+/**
+ * A comparison the seed pack can really supply: the four armies of the
+ * Western Front photographed in the field in 1914, one plate each on a single
+ * axis (ADR 0014). The kit cards this pattern was settled for are
+ * sand-y0u.5; what the gallery reviews here is the pattern.
+ */
+const armiesInTheField = plateItems(
+  [
+    {
+      media: 'media:scene/1914-marne-german-infantry/german-infantry-marne-colorized',
+      label: 'Germany',
+    },
+    {
+      media: 'media:scene/1914-french-infantry-manoeuvres/french-infantry-charge-1913-colorized',
+      label: 'France',
+    },
+    {
+      media: 'media:scene/1914-mons-royal-fusiliers/royal-fusiliers-mons-colorized',
+      label: 'Britain',
+    },
+    {
+      media: 'media:scene/1914-liege-herstal/belgian-infantry-herstal-colorized',
+      label: 'Belgium',
+    },
+  ],
+  mediaById,
+);
 
 const castMembers: CastMember[] = seed.cast.map((c) => {
   const person = seed.people.find((p) => p.id === c.person);
@@ -602,6 +631,36 @@ export const SECTIONS: GallerySection[] = [
             <MediaFigure entry={paired} width={320} fit="band" />
           ) : (
             <p className="gallery__missing">No image in the media index.</p>
+          ),
+      },
+      {
+        id: 'plate-set',
+        title: 'Plate set — a comparison at the cap',
+        note: 'Four pictures on one axis, all of them visible at once, one crop for the set and a label on each. Bounded at four and never on a beat, which is what keeps it from being a gallery (ADR 0014).',
+        covers: ['PlateSet'],
+        column: true,
+        render: () =>
+          armiesInTheField.length >= 2 ? (
+            <PlateSet axis="In the field, 1914" items={armiesInTheField} />
+          ) : (
+            <p className="gallery__missing">No images in the media index.</p>
+          ),
+      },
+      {
+        id: 'plate-set-portrait',
+        title: 'Plate set — the floor, and the other crop',
+        note: 'Two plates is the smallest set the schema allows; below that a picture is a plate. `portrait` is the other fit a set may take — one frame for all of them either way.',
+        covers: ['PlateSet'],
+        column: true,
+        render: () =>
+          armiesInTheField.length >= 2 ? (
+            <PlateSet
+              axis="Germany and France"
+              items={armiesInTheField.slice(0, 2)}
+              fit="portrait"
+            />
+          ) : (
+            <p className="gallery__missing">No images in the media index.</p>
           ),
       },
       {

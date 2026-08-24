@@ -1,0 +1,97 @@
+/* Plate sets — ADR 0014: a bounded comparison, all of it visible at once.
+   Tokens only; the plates themselves are MediaFigures and bring ADR 0012's
+   tone, missing-file frame and full-size view with them. */
+
+.plates {
+  margin: var(--space-4) 0;
+  padding: var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-2);
+}
+
+/* The one line the whole set shares. Set as an eyebrow, because it labels an
+   object rather than describing a picture — and because a set that needs a
+   paragraph to explain what it compares is not comparing anything. */
+.plates__axis {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+/* Two columns in the dossier (≈300px inside a card), more where there is
+   room, and never so many that a plate drops to chip size — under about
+   110px a photograph stops being a plate. At the cap of four this is a
+   complete 2×2 in the column. */
+.plates__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+  gap: var(--space-3);
+}
+
+.plates__plate {
+  margin: 0;
+}
+
+/* The plate's point on the axis, under the picture the way a label sits under
+   the object in a case. Under rather than over so that the pictures in a row
+   start level whatever the labels do. */
+.plates__label {
+  margin: var(--space-1) 0 0;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-tight);
+  color: var(--ink);
+}
+
+/* One provenance block for the set, one line per plate, keyed by the label
+   above it — every credit still on the page with its picture, gathered
+   instead of repeated (ADR 0014). The pill and the credit run inline here;
+   stacked, four of them would be taller than the photographs. */
+.plates__credits {
+  margin: var(--space-3) 0 0;
+  padding: var(--space-2) 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.plates__credits li + li {
+  margin-top: var(--space-1);
+}
+
+.plates__credit-for {
+  color: var(--ink);
+}
+
+.plates__credit-for::after {
+  content: ' — ';
+}
+
+.plates__credits .media__provenance,
+.plates__credits .media__label {
+  display: inline;
+}
+
+/* The colorized pill runs inline here and may wrap; `clone` redraws its
+   dashed border on each fragment, so a wrapped pill reads as a pill and not
+   as a rendering fault. */
+.plates__credits .media__label {
+  margin: 0 var(--space-1) 0 0;
+  padding: 0 var(--space-1);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* MediaFigure's `name` is here for the zoom button's accessible name — "See
+   Pickelhaube at full size" rather than four buttons called the same thing.
+   The overlay it also draws would say on hover what the label below already
+   says, so only the name survives. */
+.plates__plate.media--named > .portrait-name {
+  display: none;
+}

@@ -33,6 +33,7 @@ import {
   type PackCollectionFile,
   type Person,
   type Place,
+  type PlateSet,
   type Route,
   type ScienceCard,
   SHARED_COLLECTIONS,
@@ -559,6 +560,7 @@ function checkFormation(
     if (f.parent === f.id) ctx.error(path, 'formation cannot be its own parent', f.id);
   }
   checkIds(ctx, path, f.media, f.id, ['media'], 'media');
+  checkPlateSet(ctx, path, f.id, f.plates);
   checkCitations(ctx, path, f.id, f.sources, false);
   checkCitations(ctx, path, f.id, f.strength?.sources, false, 'strength.sources');
   if (f.dissolved) {
@@ -748,8 +750,44 @@ function checkDecision(ctx: Ctx, s: PackState, path: string, d: DecisionPoint) {
   for (const o of d.options) checkProseLinks(ctx, path, d.id, o.summary, `option ${o.id}`);
 }
 
+/**
+ * A plate set (ADR 0014). The count is the schema's — two at least, four at
+ * most — because the cap is the decision and a cap in one place is a cap. The
+ * rules here are the ones that make the set a comparison rather than a strip
+ * of pictures that happen to be on the same card: every plate is a real
+ * image, no image appears twice, and no two plates claim the same point on
+ * the axis. A set that fails any of them still renders; it just compares
+ * nothing.
+ */
+function checkPlateSet(ctx: Ctx, path: string, id: string, set: PlateSet | undefined) {
+  if (!set) return;
+  const seen = new Map<string, number>();
+  const labels = new Map<string, number>();
+  set.items.forEach((item, i) => {
+    ctx.ref(path, id, item.media, ['media'], `plates.items[${i}].media`);
+    const first = seen.get(item.media);
+    if (first !== undefined)
+      ctx.error(
+        path,
+        `plates: ${item.media} appears twice (items[${first}] and items[${i}]) — a picture compared with itself is not a comparison`,
+        id,
+      );
+    else seen.set(item.media, i);
+    const key = item.label.trim().toLowerCase();
+    const firstLabel = labels.get(key);
+    if (firstLabel !== undefined)
+      ctx.error(
+        path,
+        `plates: two plates are labelled "${item.label}" (items[${firstLabel}] and items[${i}]) — each is one point on the axis`,
+        id,
+      );
+    else labels.set(key, i);
+  });
+}
+
 function checkCard(ctx: Ctx, path: string, c: TechCard | ScienceCard | Document) {
   if ('counter' in c && c.counter) ctx.ref(path, c.id, c.counter, ['tech'], 'counter');
+  if ('plates' in c) checkPlateSet(ctx, path, c.id, c.plates);
   if ('people' in c) checkIds(ctx, path, c.people, c.id, ['person'], 'people');
   if ('media' in c) checkIds(ctx, path, c.media, c.id, ['media'], 'media');
   if ('author' in c && c.author.includes(':')) ctx.ref(path, c.id, c.author, ['person'], 'author');

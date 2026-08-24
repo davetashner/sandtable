@@ -120,6 +120,12 @@ looks on the page is [ADR 0012](decisions/0012-photographs.md). In short:
   band on the focal point so every beat opens the same way. The validator
   refuses a second one, whether it arrives as Markdown in the body or as a
   second manifest claiming the beat.
+- **A card may hold a plate set** — two to four plates on one declared axis,
+  one crop for the set, a label on each, all of them visible at once and no
+  way to page through them, with the credits gathered into one block under the
+  set rather than repeated under each picture (`PlateSet`,
+  [ADR 0014](decisions/0014-plate-sets.md)). Never on a beat: a beat is what
+  the reader is given, a card is what they asked for.
 - **Credit travels with the picture.** `MediaCredit` renders the colorized
   label, the credit as the archive asks for it, and the way to the unaltered
   original — a link to the archive record, or a toggle in place where the
