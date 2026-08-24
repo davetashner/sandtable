@@ -29,7 +29,7 @@
 }
 
 .copy-link__glyph {
-  font-size: 11px;
+  font-size: var(--fs-xs);
   line-height: 1;
 }
 

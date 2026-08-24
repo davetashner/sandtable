@@ -27,6 +27,7 @@ import { CausalView } from '../ui/CausalView.js';
 import { ClockCardView } from '../ui/ClockCardView.js';
 import { ClockGauges } from '../ui/ClockGauges.js';
 import { CommanderToggle } from '../ui/CommanderToggle.js';
+import { CopyLink } from '../ui/CopyLink.js';
 import { DecisionCardView } from '../ui/DecisionCardView.js';
 import { DiagramFigure } from '../ui/DiagramFigure.js';
 import { DocumentCardView } from '../ui/DocumentCardView.js';
@@ -85,6 +86,10 @@ const labeller = {
 };
 
 const label = (id: string) => labeller.label(id);
+
+/** A view worth citing, for the copy-link glyph — the gallery has no clock in the URL. */
+const SHARE_URL =
+  'https://sandtable.davetashner.com/?t=1914-09-06T06:00:00Z&branch=1914:historical&focus=1914:marne';
 
 const branch =
   pack.branches.find((b) => b.id === pack.defaultBranch) ?? only(pack.branches, 'branch');
@@ -278,9 +283,21 @@ function TourPanelSpecimen({ waiting }: { waiting: boolean }) {
   );
 }
 
+/**
+ * Mounted on demand. The opening takes focus when it opens — it is a takeover,
+ * and that is correct in the app — but two of them mounting on page load drag
+ * the gallery down to the last section before the reader has seen the first.
+ */
 function OpeningSpecimen() {
+  const [shown, setShown] = useState(false);
   const opening = pack.opening;
   if (!opening) throw new Error('gallery: the seed pack has no opening sequence');
+  if (!shown)
+    return (
+      <button type="button" className="gallery__action" onClick={() => setShown(true)}>
+        Open the sequence
+      </button>
+    );
   return (
     <OpeningSequence
       opening={opening}
@@ -343,6 +360,25 @@ export const SECTIONS: GallerySection[] = [
         note: 'Pressed and unpressed; the glyph is the only thing that moves.',
         covers: ['CommanderToggle'],
         render: () => <CommanderToggleSpecimen />,
+      },
+      {
+        id: 'copy-link',
+        title: 'Copy link',
+        note: 'The ⧉ glyph beside the other switches; press it for the confirmed state.',
+        covers: ['CopyLink'],
+        render: () => <CopyLink href={() => SHARE_URL} write={async () => {}} />,
+      },
+      {
+        id: 'copy-link-manual',
+        title: 'Copy link — the clipboard refused',
+        note: 'No clipboard (plain http, or a browser that says no): the link appears selected, to copy by hand.',
+        covers: ['CopyLink'],
+        render: () => (
+          <CopyLink
+            href={() => SHARE_URL}
+            write={() => Promise.reject(new Error('gallery: no clipboard'))}
+          />
+        ),
       },
       {
         id: 'score-player',
@@ -690,7 +726,7 @@ export const SECTIONS: GallerySection[] = [
       {
         id: 'timeline',
         title: 'Timeline',
-        note: 'Phase bands, marker glyphs by family, the day counter and the transport. Space plays it.',
+        note: 'Phase bands, marker glyphs by family, the day counter and the transport. Space plays it when the strip has focus.',
         covers: ['Timeline'],
         render: () => (
           <footer className="surface surface--timeline">
@@ -741,7 +777,7 @@ export const SECTIONS: GallerySection[] = [
       {
         id: 'opening',
         title: 'Opening sequence',
-        note: 'Shown with the staged reveal off, as a reduced-motion reader gets it.',
+        note: 'Opens on demand — it takes focus, as a takeover should. Shown with the staged reveal off, as a reduced-motion reader gets it.',
         covers: ['OpeningSequence'],
         contained: true,
         render: () => <OpeningSpecimen />,
