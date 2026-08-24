@@ -13,6 +13,11 @@
       "sources": [
         {
           "source": "source:herwig-2009"
+        },
+        {
+          "source": "source:edmonds-1933",
+          "pages": "45",
+          "note": "The seven German army strengths for 17 August 1914, printed in a footnote which attributes them to the German official account: First Army 320,000 men, Second 260,000, Third 180,000, Fourth 180,000, Fifth 200,000, Sixth 220,000, Seventh 125,000, total 1,485,000, excluding the four cavalry corps and the covering troops in Upper Alsace. The count of corps is not from this page."
         }
       ]
     },
@@ -23,6 +28,11 @@
       "sources": [
         {
           "source": "source:herwig-2009"
+        },
+        {
+          "source": "source:reichsarchiv-weltkrieg-1",
+          "pages": "69",
+          "note": "The deployment areas laid down in the Aufmarschanweisungen: the 1. Armee was to assemble west of the Rhine between Duisburg and Hitdorf, in the area Crefeld–Erkelenz–Jülich–Bergheim."
         }
       ]
     },
@@ -32,7 +42,9 @@
         "source": "source:herwig-2009"
       },
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "667–669",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the 1. Armee with its corps, army by army and corps by corps, and its battalion, squadron, battery and gun totals."
       }
     ]
   },
@@ -50,6 +62,11 @@
       "sources": [
         {
           "source": "source:herwig-2009"
+        },
+        {
+          "source": "source:edmonds-1933",
+          "pages": "45",
+          "note": "The seven German army strengths for 17 August 1914, printed in a footnote which attributes them to the German official account: First Army 320,000 men, Second 260,000, Third 180,000, Fourth 180,000, Fifth 200,000, Sixth 220,000, Seventh 125,000, total 1,485,000, excluding the four cavalry corps and the covering troops in Upper Alsace. The count of corps is not from this page."
         }
       ]
     },
@@ -60,6 +77,11 @@
       "sources": [
         {
           "source": "source:herwig-2009"
+        },
+        {
+          "source": "source:reichsarchiv-weltkrieg-1",
+          "pages": "69",
+          "note": "The deployment areas laid down in the Aufmarschanweisungen: the 2. Armee was to assemble in the area Düren–Aachen–Eupen–Malmedy–Blankenheim."
         }
       ]
     },
@@ -69,7 +91,9 @@
         "source": "source:herwig-2009"
       },
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "669–672",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the 2. Armee with its corps, army by army and corps by corps, and its battalion, squadron, battery and gun totals."
       }
     ]
   },
@@ -87,6 +111,11 @@
       "sources": [
         {
           "source": "source:herwig-2009"
+        },
+        {
+          "source": "source:edmonds-1933",
+          "pages": "45",
+          "note": "The seven German army strengths for 17 August 1914, printed in a footnote which attributes them to the German official account: First Army 320,000 men, Second 260,000, Third 180,000, Fourth 180,000, Fifth 200,000, Sixth 220,000, Seventh 125,000, total 1,485,000, excluding the four cavalry corps and the covering troops in Upper Alsace. The count of corps is not from this page."
         }
       ]
     },
@@ -97,6 +126,11 @@
       "sources": [
         {
           "source": "source:herwig-2009"
+        },
+        {
+          "source": "source:reichsarchiv-weltkrieg-1",
+          "pages": "69",
+          "note": "The deployment areas laid down in the Aufmarschanweisungen: the 3. Armee was to assemble in the Eifel, in the area Prüm–St. Vith–Neuerburg–Wittlich."
         }
       ]
     },
@@ -106,7 +140,9 @@
         "source": "source:herwig-2009"
       },
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "672–673",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the 3. Armee with its corps, army by army and corps by corps, and its battalion, squadron, battery and gun totals."
       }
     ]
   },
@@ -124,6 +160,11 @@
       "sources": [
         {
           "source": "source:herwig-2009"
+        },
+        {
+          "source": "source:edmonds-1933",
+          "pages": "45",
+          "note": "The seven German army strengths for 17 August 1914, printed in a footnote which attributes them to the German official account: First Army 320,000 men, Second 260,000, Third 180,000, Fourth 180,000, Fifth 200,000, Sixth 220,000, Seventh 125,000, total 1,485,000, excluding the four cavalry corps and the covering troops in Upper Alsace. The count of corps is not from this page."
         }
       ]
     },
@@ -134,6 +175,11 @@
       "sources": [
         {
           "source": "source:herwig-2009"
+        },
+        {
+          "source": "source:reichsarchiv-weltkrieg-1",
+          "pages": "70",
+          "note": "The deployment areas laid down in the Aufmarschanweisungen: the 4. Armee was to assemble in the area Trier–Diekirch–Luxembourg–Sierck–Wadern."
         }
       ]
     },
@@ -143,7 +189,9 @@
         "source": "source:herwig-2009"
       },
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "673–675",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the 4. Armee with its corps, army by army and corps by corps, and its battalion, squadron, battery and gun totals."
       }
     ]
   },
@@ -161,6 +209,11 @@
       "sources": [
         {
           "source": "source:herwig-2009"
+        },
+        {
+          "source": "source:edmonds-1933",
+          "pages": "45",
+          "note": "The seven German army strengths for 17 August 1914, printed in a footnote which attributes them to the German official account: First Army 320,000 men, Second 260,000, Third 180,000, Fourth 180,000, Fifth 200,000, Sixth 220,000, Seventh 125,000, total 1,485,000, excluding the four cavalry corps and the covering troops in Upper Alsace. The count of corps is not from this page."
         }
       ]
     },
@@ -171,6 +224,11 @@
       "sources": [
         {
           "source": "source:herwig-2009"
+        },
+        {
+          "source": "source:reichsarchiv-weltkrieg-1",
+          "pages": "70",
+          "note": "The deployment areas laid down in the Aufmarschanweisungen: the 5. Armee was to assemble deeply echeloned in the area Lebach–Diedenhofen–Metz–Saarbrücken. The volume does not put Saarburg in this army's area: it names Saarburg in the 6. Armee's."
         }
       ]
     },
@@ -180,7 +238,9 @@
         "source": "source:herwig-2009"
       },
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "675–678",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the 5. Armee with its corps, army by army and corps by corps, and its battalion, squadron, battery and gun totals."
       }
     ]
   },
@@ -198,6 +258,11 @@
       "sources": [
         {
           "source": "source:herwig-2009"
+        },
+        {
+          "source": "source:edmonds-1933",
+          "pages": "45",
+          "note": "The seven German army strengths for 17 August 1914, printed in a footnote which attributes them to the German official account: First Army 320,000 men, Second 260,000, Third 180,000, Fourth 180,000, Fifth 200,000, Sixth 220,000, Seventh 125,000, total 1,485,000, excluding the four cavalry corps and the covering troops in Upper Alsace. The count of corps is not from this page."
         }
       ]
     },
@@ -208,6 +273,11 @@
       "sources": [
         {
           "source": "source:herwig-2009"
+        },
+        {
+          "source": "source:reichsarchiv-weltkrieg-1",
+          "pages": "70",
+          "note": "The deployment areas laid down in the Aufmarschanweisungen: the 6. Armee was to assemble in the area Saargemünd–Kurzel–Château-Salins–Saarburg."
         }
       ]
     },
@@ -217,7 +287,9 @@
         "source": "source:herwig-2009"
       },
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "678–680",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the 6. Armee with its corps, army by army and corps by corps, and its battalion, squadron, battery and gun totals."
       }
     ]
   },
@@ -235,6 +307,11 @@
       "sources": [
         {
           "source": "source:herwig-2009"
+        },
+        {
+          "source": "source:edmonds-1933",
+          "pages": "45",
+          "note": "The seven German army strengths for 17 August 1914, printed in a footnote which attributes them to the German official account: First Army 320,000 men, Second 260,000, Third 180,000, Fourth 180,000, Fifth 200,000, Sixth 220,000, Seventh 125,000, total 1,485,000, excluding the four cavalry corps and the covering troops in Upper Alsace. The count of corps is not from this page."
         }
       ]
     },
@@ -245,6 +322,11 @@
       "sources": [
         {
           "source": "source:herwig-2009"
+        },
+        {
+          "source": "source:reichsarchiv-weltkrieg-1",
+          "pages": "70",
+          "note": "The deployment areas laid down in the Aufmarschanweisungen: the 7. Armee was to assemble in the area Strasbourg–Mülhausen–Freiburg im Breisgau."
         }
       ]
     },
@@ -254,7 +336,9 @@
         "source": "source:herwig-2009"
       },
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "680–682",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the 7. Armee with its corps, army by army and corps by corps, and its battalion, squadron, battery and gun totals."
       }
     ]
   },
@@ -268,7 +352,9 @@
     "summary": "3rd and 4th Divisions (Pomerania). Marched on the outer edge of the wheel; faced Maunoury's right on the Ourcq from 6 September.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "667",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the II. Armeekorps under v. Linsingen with the 3. and 4. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -285,7 +371,9 @@
     "summary": "5th and 6th Divisions (Brandenburg). Mons, Le Cateau; swung back north to the Ourcq on 7–8 September.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "667",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the III. Armeekorps under v. Lochow with the 5. and 6. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -302,7 +390,9 @@
     "summary": "7th and 8th Divisions (Prussian Saxony). Mons and Le Cateau on the right of the 1st Army; the Ourcq.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "667–668",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the IV. Armeekorps under Sixt v. Armin with the 7. and 8. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -319,7 +409,9 @@
     "summary": "17th and 18th Divisions (Schleswig-Holstein and Hanseatic cities). The inner corps at Mons; turned back north on 6 September, opening the gap with the 2nd Army.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "668",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the IX. Armeekorps under v. Quast with the 17. and 18. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -336,7 +428,9 @@
     "summary": "5th and 6th Reserve Divisions. Detached on 20 August to mask Antwerp; did not march to the Marne.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "668",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the III. Reservekorps under v. Beseler with the 5. and 6. Reserve-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -354,7 +448,9 @@
     "summary": "7th and 22nd Reserve Divisions (Gronau). The flank guard that met Maunoury on 5 September and began the battle of the Ourcq.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "668–669",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the IV. Reservekorps under v. Gronau with the 7. and 22. Reserve-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -371,7 +467,9 @@
     "summary": "17th and 18th Reserve Divisions, held back in Schleswig against a British landing until 22 August; joined the 1st Army at the end of August to mask Antwerp and reached the Ourcq on 8–9 September.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "682",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the IX. Reservekorps under v. Boehn with the 17. and 18. Reserve-Division, listed under the Nordarmee guarding Schleswig-Holstein and the Kaiser-Wilhelm-Kanal, not under the 1. Armee. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -386,7 +484,9 @@
           "source": "source:herwig-2009"
         },
         {
-          "source": "source:reichsarchiv-weltkrieg-1"
+          "source": "source:reichsarchiv-weltkrieg-3",
+          "pages": "327–329",
+          "note": "Chapter 12, the events in Belgium: the corps was still on the railway to Tirlemont on 25 August when Beseler drew its detrained and detraining troops forward through Louvain to Bueken; the rising at Louvain on the 26th delayed the rest of its detrainment; and on 30 August it crossed the Willebroek canal, the 17th Reserve Division by Zellik to Assche and the 18th through Brussels to Ganshoren, leaving one brigade to garrison Brussels. The volume therefore has the corps detraining at Tirlemont and Louvain from 25 August, not at Brussels on 27–28 August."
         }
       ]
     }
@@ -401,7 +501,9 @@
     "summary": "Marwitz: 2nd, 4th and 9th Cavalry Divisions. Haelen on 12 August, the screen ahead of the right wing, the Marne crossings; filled the gap between the 1st and 2nd Armies on 8–9 September.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "665",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: Höherer Kavalleriekommandeur 2 under v. der Marwitz with the 2., 4. and 9. Kavallerie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -418,7 +520,9 @@
     "summary": "1st and 2nd Guard Divisions. Namur, the Sambre, Guise; the Marne at the marshes of Saint-Gond beside Hausen.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "669–670",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the Gardekorps under Frhr. v. Plettenberg with the 1. and 2. Garde-Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -435,7 +539,9 @@
     "summary": "13th and 14th Divisions (Westphalia). Liège from the north, the Sambre at Charleroi, Maubeuge.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "670",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the VII. Armeekorps with the 13. and 14. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -452,7 +558,9 @@
     "summary": "19th and 20th Divisions (Hanover; Emmich, who led the Liège assault). The Sambre, Guise — where Lanrezac's counterstroke fell on it — the Marne.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "670",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the X. Armeekorps under v. Emmich with the 19. and 20. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -469,7 +577,9 @@
     "summary": "3rd Guard and 1st Guard Reserve Divisions. Namur; detached with the XI Corps to East Prussia on 25–26 August — one of the two corps the right wing lost.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "670–671",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the Garde-Reservekorps under v. Gallwitz with the 3. Garde-Infanterie-Division and the 1. Garde-Reserve-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -486,7 +596,9 @@
     "summary": "13th and 14th Reserve Divisions. Besieged Maubeuge (taken 7 September) and so was absent from the Marne.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "671",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the VII. Reservekorps under v. Zwehl with the 13. and 14. Reserve-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -504,7 +616,9 @@
     "summary": "2nd Guard Reserve and 19th Reserve Divisions. The Sambre, Guise, the Marne on the Petit Morin.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "671",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the X. Reservekorps under Graf v. Kirchbach with the 2. Garde-Reserve- and 19. Reserve-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -521,7 +635,9 @@
     "summary": "Richthofen: Guard and 5th Cavalry Divisions. Screened the 2nd Army's advance and covered the gap on 8–9 September.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "664–665",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: Höherer Kavalleriekommandeur 1 under Frhr. v. Richthofen with the Garde-Kavallerie-Division and the 5. Kavallerie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -538,7 +654,9 @@
     "summary": "22nd and 38th Divisions (Hesse-Nassau, Thuringia). Namur; detached to East Prussia on 25–26 August with the Guard Reserve Corps.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "672",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the XI. Armeekorps under v. Plüskow with the 22. and 38. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -555,7 +673,9 @@
     "summary": "23rd and 32nd Divisions. The Meuse at Dinant on 23 August; the Marne at Fère-Champenoise.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "672",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the XII. (1. königlich sächsisches) Armeekorps under d'Elsa with the 23. and 32. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -572,7 +692,9 @@
     "summary": "24th and 40th Divisions. Dinant, the advance across the Aisne, the Marne.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "672–673",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the XIX. (2. königlich sächsisches) Armeekorps under v. Laffert with the 24. and 40. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -589,7 +711,9 @@
     "summary": "23rd and 24th Reserve Divisions (Saxon). Dinant and Givet; masked the Meuse forts before following the army south.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "673",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the XII. Reservekorps under v. Kirchbach with the 23. and 24. Reserve-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -606,7 +730,9 @@
     "summary": "11th and 12th Divisions (Silesia). Neufchâteau in the Ardennes, Sedan, the Marne near Vitry.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "673–674",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the VI. Armeekorps under v. Pritzelwitz with the 11. and 12. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -623,7 +749,9 @@
     "summary": "15th and 16th Divisions (Rhineland). Longwy sector of the Ardennes, the Meuse, the Marne.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "674",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the VIII. Armeekorps under Tülff v. Tschepe und Weidenbach with the 15. and 16. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -640,7 +768,9 @@
     "summary": "21st and 25th Divisions (Hesse). Rossignol on 22 August, where the French Colonial Corps was destroyed.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "674",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the XVIII. Armeekorps under v. Schenck with the 21. and 25. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -657,7 +787,9 @@
     "summary": "15th and 16th Reserve Divisions. The Ardennes and the Meuse crossings.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "674–675",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the VIII. Reservekorps with the 15. and 16. Reserve-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -674,7 +806,9 @@
     "summary": "21st and 25th Reserve Divisions. The Ardennes; the Marne around Sermaize.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "675",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the XVIII. Reservekorps under v. Steuben with the 21. and 25. Reserve-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -691,7 +825,9 @@
     "summary": "9th and 10th Divisions (Posen, Silesia). Longwy; the approaches to Verdun from the north.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "675–676",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the V. Armeekorps under v. Strantz with the 9. and 10. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -708,7 +844,9 @@
     "summary": "26th and 27th Divisions. Longwy and the Woëvre; the Marne near Revigny.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "676",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the XIII. (königlich württembergisches) Armeekorps under v. Fabeck with the 26. and 27. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -725,7 +863,9 @@
     "summary": "33rd and 34th Divisions (Metz, Lorraine). The pivot on Metz; the Argonne.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "676",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the XVI. Armeekorps under v. Mudra with the 33. and 34. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -742,7 +882,9 @@
     "summary": "9th and 10th Reserve Divisions. Verdun's western forts; the Argonne.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "676–677",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the V. Reservekorps under v. Gündell with the 9. and 10. Reserve-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -759,7 +901,9 @@
     "summary": "11th and 12th Reserve Divisions. Masked Verdun from the north-east.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "677",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the VI. Reservekorps under v. Goßler with the 11. and 12. Reserve-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -776,7 +920,9 @@
     "summary": "Hollen: 3rd and 6th Cavalry Divisions. The Ardennes screen; the Argonne.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "666",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: Höherer Kavalleriekommandeur 4 under Frhr. v. Hollen with the 3. and 6. Kavallerie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -793,7 +939,9 @@
     "summary": "1st and 2nd Bavarian Divisions. Morhange on 20 August; the Trouée de Charmes; sent north in September.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "678–679",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the I. bayerisches Armeekorps under Ritter v. Xylander with the 1. and 2. bayerische Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -810,7 +958,9 @@
     "summary": "3rd and 4th Bavarian Divisions. Morhange–Sarrebourg; the Grand Couronné; north to the Somme in late September.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "679",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the II. bayerisches Armeekorps under Ritter v. Martini with the 3. and 4. bayerische Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -827,7 +977,9 @@
     "summary": "5th and 6th Bavarian Divisions. Sarrebourg; the attacks on Nancy in September.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "679",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the III. bayerisches Armeekorps under Frhr. v. Gebsattel with the 5. and 6. bayerische Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -844,7 +996,9 @@
     "summary": "31st and 42nd Divisions (Lorraine). Sarrebourg and the Vosges foothills.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "678",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the XXI. Armeekorps under v. Below with the 31. and 42. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -861,7 +1015,9 @@
     "summary": "1st and 5th Bavarian Reserve Divisions. Lorraine; the Grand Couronné.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "679–680",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the I. bayerisches Reservekorps under Ritter v. Fasbender with the 1. and 5. bayerische Reserve-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -878,7 +1034,9 @@
     "summary": "Frommel: 7th, 8th and Bavarian Cavalry Divisions. Lorraine; sent north to Picardy in September.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "665–666",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: Höherer Kavalleriekommandeur 3 under Ritter v. Frommel with the 7., 8. and bayerische Kavallerie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -895,7 +1053,9 @@
     "summary": "28th and 29th Divisions (Baden). Mulhouse; railed to the Aisne in September.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "680",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the XIV. Armeekorps under Frhr. v. Hoiningen gen. Huene with the 28. and 29. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -912,7 +1072,9 @@
     "summary": "30th and 39th Divisions (Alsace). The Vosges; the Aisne.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "680–681",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the XV. Armeekorps under v. Deimling with the 30. and 39. Infanterie-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -929,7 +1091,9 @@
     "summary": "26th and 28th Reserve Divisions. Mulhouse and Upper Alsace.",
     "sources": [
       {
-        "source": "source:reichsarchiv-weltkrieg-1"
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "681",
+        "note": "Anlage 1, 'Das deutsche Westheer am 18. August 1914, beim Beginn des Vormarsches' — the order of battle as printed: the XIV. Reservekorps under v. Schubert with the 26. and 28. Reserve-Division. The recruiting region and the corps' campaign are not from this appendix."
       },
       {
         "source": "source:herwig-2009"
@@ -970,6 +1134,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "488",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the army's commander, its corps with their divisions, its group of reserve divisions and its cavalry, as of August 1914."
       }
     ]
   },
@@ -1007,6 +1176,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "488",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the army's commander, its corps with their divisions, its group of reserve divisions and its cavalry, as of August 1914."
       }
     ]
   },
@@ -1044,6 +1218,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "488–489",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the army's commander, its corps with their divisions, its group of reserve divisions and its cavalry, as of August 1914."
       }
     ]
   },
@@ -1081,6 +1260,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "489",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the army's commander, its corps with their divisions, its group of reserve divisions and its cavalry, as of August 1914."
       }
     ]
   },
@@ -1118,6 +1302,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "489",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the army's commander, its corps with their divisions, its group of reserve divisions and its cavalry, as of August 1914."
       }
     ]
   },
@@ -1134,6 +1323,11 @@
       "sources": [
         {
           "source": "source:herwig-2009"
+        },
+        {
+          "source": "source:edmonds-1933",
+          "pages": "282",
+          "note": "The footnote on the Sixth Army: 'It consisted on the 5th September of the VII. Corps (14th and 63rd Reserve Divisions), 45th Division, 55th and 56th Reserve Divisions, the Moroccan Brigade, and Gillet's cavalry brigade — some 70,000 men, with Sordet's cavalry corps attached. Behind it were a group of Territorial brigades under General Mercier-Milon, Ebener's Group of Reserve divisions (61st and 62nd), and the actual garrison of Paris.' Edmonds's 70,000 for 5 September is well under the 150,000 this card gives."
         }
       ]
     },
@@ -1144,6 +1338,11 @@
       "sources": [
         {
           "source": "source:afgg-1-1"
+        },
+        {
+          "source": "source:edmonds-1933",
+          "pages": "282",
+          "note": "The footnote on the Sixth Army: 'It consisted on the 5th September of the VII. Corps (14th and 63rd Reserve Divisions), 45th Division, 55th and 56th Reserve Divisions, the Moroccan Brigade, and Gillet's cavalry brigade — some 70,000 men, with Sordet's cavalry corps attached. Behind it were a group of Territorial brigades under General Mercier-Milon, Ebener's Group of Reserve divisions (61st and 62nd), and the actual garrison of Paris.' Edmonds's 70,000 for 5 September is well under the 150,000 this card gives."
         }
       ]
     },
@@ -1154,6 +1353,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "282",
+        "note": "The footnote on the Sixth Army: 'It consisted on the 5th September of the VII. Corps (14th and 63rd Reserve Divisions), 45th Division, 55th and 56th Reserve Divisions, the Moroccan Brigade, and Gillet's cavalry brigade — some 70,000 men, with Sordet's cavalry corps attached. Behind it were a group of Territorial brigades under General Mercier-Milon, Ebener's Group of Reserve divisions (61st and 62nd), and the actual garrison of Paris.' Edmonds's 70,000 for 5 September is well under the 150,000 this card gives."
       }
     ]
   },
@@ -1278,6 +1482,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "488",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the VII. Corps (14th and 41st Divisions) under General Bonneau, in the First Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1295,6 +1504,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "488",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the VIII. Corps (15th and 16th Divisions) under General Castelli, in the First Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1312,6 +1526,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "488",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the XIII. Corps (25th and 26th Divisions) under General Alix, in the First Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1329,6 +1548,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "488",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the XIV. Corps (27th and 28th Divisions) under General Pouradier-Duteil, in the First Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1346,6 +1570,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "488",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the XXI. Corps (13th and 43rd Divisions) under General Legrand-Girarde, in the First Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1363,6 +1592,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "488",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the IX. Corps (17th and 18th Divisions, with the Moroccan Division attached) under General Dubois, in the Second Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1380,6 +1614,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "488",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the XV. Corps (29th and 30th Divisions) under General Espinasse, in the Second Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1397,6 +1636,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "488",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the XVI. Corps (31st and 32nd Divisions) under General Taverna, in the Second Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1414,6 +1658,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "488",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the XVIII. Corps (35th and 36th Divisions) under General Mas-Latrie, with the footnote that it was transferred to the Fifth Army and operated on the right flank of the BEF. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1432,6 +1681,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "488",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the XX. Corps (11th and 39th Divisions) under General Foch, in the Second Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1449,6 +1703,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "488",
+        "note": "Appendix 3: the 2nd Group of Reserve Divisions in the Second Army. Edmonds gives it as the 59th, 65th and 70th; Reichsarchiv Bd. 1 p. 688 gives the 59th, 68th and 70th, which is what this card follows."
       }
     ]
   },
@@ -1466,6 +1725,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "488",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the IV. Corps (7th and 8th Divisions) under General Boelle, in the Third Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1483,6 +1747,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "488",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the V. Corps (9th and 10th Divisions) under General Brochin, in the Third Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1500,6 +1769,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "489",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the VI. Corps (12th, 40th and 42nd Divisions) under General Sarrail, in the Third Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1517,6 +1791,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "489",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the 3rd Group of Reserve Divisions (54th, 55th and 56th) in the Third Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1534,6 +1813,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "489",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the XII. Corps (23rd and 24th Divisions) under General Roques, in the Fourth Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1551,6 +1835,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "489",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the XVII. Corps (33rd and 34th Divisions) under General Poline, in the Fourth Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1585,6 +1874,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "489",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the II. Corps (3rd and 4th Divisions) under General Gérard, with the footnote that it went to the Fourth Army when the 37th and 38th Divisions arrived from Africa. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1602,6 +1896,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "489",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the XI. Corps (21st and 22nd Divisions) under General Eydoux, with the footnote that it went to the Fourth Army when the XVIII. Corps came from the Second. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1620,6 +1919,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "489",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the I. Corps (1st and 2nd Divisions) under General Franchet d'Espèrey, in the Fifth Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1637,6 +1941,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "489",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the III. Corps (5th and 6th Divisions) under General Sauret, in the Fifth Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1654,6 +1963,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "489",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the X. Corps (19th and 20th Divisions) under General Defforges, in the Fifth Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1671,6 +1985,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "489",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the 4th Group of Reserve Divisions (51st, 53rd and 69th) under General Valabrègue, in the Fifth Army. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1688,6 +2007,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "489",
+        "note": "Appendix 3, 'Order of Battle of the French Armies in August 1914': the Cavalry Corps under General Sordet with the 1st (Buisson), 3rd (de Lastour) and 5th (Bridoux) Cavalry Divisions. The depot region and the corps' campaign are not from this appendix."
       }
     ]
   },
@@ -1705,6 +2029,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "488",
+        "note": "The footnote to Appendix 3: 'Early in September three of the cavalry divisions (2nd, 8th and 10th) of the First and Second Armies were formed into a cavalry corps under General Conneau.' Edmonds gives the 2nd where this card gives the 4th, and 'early in September' rather than 31 August."
       }
     ]
   },
@@ -1722,6 +2051,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "118, 282",
+        "note": "'two French Reserve divisions, the 61st and 62nd (General Ebener's Group), had been sent from Paris to Arras' (p. 118); and on 5 September Ebener's Group stood behind Maunoury's Sixth Army (p. 282)."
       }
     ]
   },
@@ -1739,6 +2073,11 @@
       },
       {
         "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "282",
+        "note": "The Moroccan Brigade counted in the Sixth Army's composition on 5 September."
       }
     ]
   },
@@ -1756,7 +2095,9 @@
       "asOf": "1914-08-21",
       "sources": [
         {
-          "source": "source:edmonds-1922"
+          "source": "source:edmonds-1933",
+          "pages": "6–7, 486–487",
+          "note": "The war establishment of a division, some 18,000 all ranks (p. 6), and of the Cavalry Division, some 9,000 (p. 7); Appendix 2 prints the detail — 18,073 all ranks for a division (p. 487) and 9,269 for the Cavalry Division (p. 486). The volume does not print a single figure for the force on 21 August; 80,000 is a round total."
         }
       ]
     },
@@ -1766,14 +2107,18 @@
       "asOf": "1914-08-21",
       "sources": [
         {
-          "source": "source:edmonds-1922"
+          "source": "source:edmonds-1933",
+          "pages": "49–50",
+          "note": "The concentration areas: 'a pear-shaped area between Maubeuge and Le Cateau, about twenty-five miles long from north-east to south-west, and averaging ten miles wide', with the cavalry at the north-eastern end 'ready to join hands with the French Fifth Army', and the corps areas listed one by one; the concentration 'was virtually complete on the 20th' (p. 50)."
         }
       ]
     },
     "summary": "I Corps (Haig) and II Corps (Smith-Dorrien), the Cavalry Division (Allenby) and the 19th Brigade — about 80,000 men on 21 August, near 100,000 once the 4th Division arrived on 25 August and III Corps was formed on 31 August. Mons, Le Cateau, the retreat to the Grand Morin, the advance into the gap, the Aisne.",
     "sources": [
       {
-        "source": "source:edmonds-1922"
+        "source": "source:edmonds-1933",
+        "pages": "471–484",
+        "note": "Appendix 1, 'Order of Battle of the British Expeditionary Force August 1914': GHQ, the Cavalry Division, the I., II. and III. Corps and their divisions, down to battalion and battery."
       },
       {
         "source": "source:herwig-2009"
@@ -1791,7 +2136,9 @@
     "summary": "1st Division (Lomax) and 2nd Division (Monro) under Haig. In reserve at Mons; Landrecies on 25 August; the retreat, the Marne and the Aisne.",
     "sources": [
       {
-        "source": "source:edmonds-1922"
+        "source": "source:edmonds-1933",
+        "pages": "473–476",
+        "note": "Appendix 1: the I. Corps under Lieut.-General Sir D. Haig with the 1st Division (Major-General S. H. Lomax) and the 2nd Division (Major-General C. C. Monro)."
       },
       {
         "source": "source:hastings-2013"
@@ -1809,7 +2156,9 @@
     "summary": "3rd Division (Hamilton) and 5th Division (Fergusson). Grierson died on 17 August; Smith-Dorrien took over on the 21st. Mons on 23 August, Le Cateau on 26 August.",
     "sources": [
       {
-        "source": "source:edmonds-1922"
+        "source": "source:edmonds-1933",
+        "pages": "50, 476–478",
+        "note": "Appendix 1: the II. Corps with the 3rd Division (Major-General Hubert I. W. Hamilton) and the 5th Division (Major-General Sir C. Fergusson), and the command note — Grierson '(Died in the train, between Rouen and Amiens, 17th August 1914)', Smith-Dorrien '(Took over command of II. Corps at Bavai, 4 p.m., 21st August 1914)'. The narrative (p. 50) gives Grierson's death as 'suddenly in the train on the morning of the 17th'."
       },
       {
         "source": "source:hastings-2013"
@@ -1826,7 +2175,9 @@
     "summary": "Formed 31 August under Pulteney from the 4th Division (Snow, landed 23 August, fought at Le Cateau) and the 19th Brigade; the 6th Division joined on the Aisne.",
     "sources": [
       {
-        "source": "source:edmonds-1922"
+        "source": "source:edmonds-1933",
+        "pages": "50, 479–481, 483",
+        "note": "Appendix 1: 'III. Corps (Formed in France, 31st August 1914)' under Major-General W. P. Pulteney, with the '4th Division (Landed in France, night 22nd/23rd August)' under Major-General T. D'O. Snow and the '6th Division (Embarked for St. Nazaire 8th/9th September 1914)'. The narrative (p. 50) has the 19th Brigade formed on 19 August under Major-General L. G. Drummond from four battalions taken off the lines of communication, which the appendix lists at p. 483."
       },
       {
         "source": "source:hastings-2013"
@@ -1843,7 +2194,9 @@
     "summary": "Allenby: 1st–4th Cavalry Brigades, with the independent 5th Cavalry Brigade (Chetwode). Casteau on 22 August — the BEF's first shots — Mons, Le Cateau, the screen on the retreat.",
     "sources": [
       {
-        "source": "source:edmonds-1922"
+        "source": "source:edmonds-1933",
+        "pages": "472–473, 486",
+        "note": "Appendix 1: the Cavalry Division under Major-General E. H. H. Allenby with the 1st to 4th Cavalry Brigades, and separately the '5th Cavalry Brigade (and attached troops)' under Brigadier-General Sir P. W. Chetwode; Appendix 2 (p. 486) gives its strength as 9,269 all ranks with 9,815 horses and twenty-four 13-pdrs."
       },
       {
         "source": "source:hastings-2013"
@@ -1864,6 +2217,11 @@
       "sources": [
         {
           "source": "source:strachan-2001"
+        },
+        {
+          "source": "source:edmonds-1933",
+          "pages": "19",
+          "note": "'Actually in August 1914 only 117,000 could be mobilized for the Field Army', and the six divisions listed on the same page."
         }
       ]
     },
@@ -1874,6 +2232,11 @@
       "sources": [
         {
           "source": "source:strachan-2001"
+        },
+        {
+          "source": "source:edmonds-1933",
+          "pages": "33, 35",
+          "note": "'under cover of the 3rd Division, the 1st, 2nd, 5th and 6th Divisions were to move to the line of the river Gette, the Cavalry Division and detachments from Liège and Namur screening the movement… The concentration began on the 4th August' (p. 33); the German cavalry came before the Gette line on the 10th and attacked it at Haelen, south-east of Diest, on the 12th (p. 35)."
         }
       ]
     },
@@ -1884,6 +2247,11 @@
       },
       {
         "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "19, 492",
+        "note": "'Actually in August 1914 only 117,000 could be mobilized for the Field Army' (p. 19), with the peacetime station of each division on the same page — 1st around Ghent, 2nd Antwerp, 3rd around Liège, 4th Namur and Charleroi, 5th around Mons, 6th Brussels, Cavalry Division Brussels; and Appendix 5 (p. 492) names their commanders and gives a division as between 25,500 and 32,000 all ranks and the Cavalry Division as 4,500."
       }
     ]
   },
@@ -1901,6 +2269,11 @@
       },
       {
         "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "19, 492",
+        "note": "'Actually in August 1914 only 117,000 could be mobilized for the Field Army' (p. 19), with the peacetime station of each division on the same page — 1st around Ghent, 2nd Antwerp, 3rd around Liège, 4th Namur and Charleroi, 5th around Mons, 6th Brussels, Cavalry Division Brussels; and Appendix 5 (p. 492) names their commanders and gives a division as between 25,500 and 32,000 all ranks and the Cavalry Division as 4,500."
       }
     ]
   },
@@ -1918,6 +2291,11 @@
       },
       {
         "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "19, 492",
+        "note": "'Actually in August 1914 only 117,000 could be mobilized for the Field Army' (p. 19), with the peacetime station of each division on the same page — 1st around Ghent, 2nd Antwerp, 3rd around Liège, 4th Namur and Charleroi, 5th around Mons, 6th Brussels, Cavalry Division Brussels; and Appendix 5 (p. 492) names their commanders and gives a division as between 25,500 and 32,000 all ranks and the Cavalry Division as 4,500."
       }
     ]
   },
@@ -1935,6 +2313,11 @@
       },
       {
         "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "19, 492",
+        "note": "'Actually in August 1914 only 117,000 could be mobilized for the Field Army' (p. 19), with the peacetime station of each division on the same page — 1st around Ghent, 2nd Antwerp, 3rd around Liège, 4th Namur and Charleroi, 5th around Mons, 6th Brussels, Cavalry Division Brussels; and Appendix 5 (p. 492) names their commanders and gives a division as between 25,500 and 32,000 all ranks and the Cavalry Division as 4,500."
       }
     ]
   },
@@ -1952,6 +2335,11 @@
       },
       {
         "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "19, 492",
+        "note": "'Actually in August 1914 only 117,000 could be mobilized for the Field Army' (p. 19), with the peacetime station of each division on the same page — 1st around Ghent, 2nd Antwerp, 3rd around Liège, 4th Namur and Charleroi, 5th around Mons, 6th Brussels, Cavalry Division Brussels; and Appendix 5 (p. 492) names their commanders and gives a division as between 25,500 and 32,000 all ranks and the Cavalry Division as 4,500."
       }
     ]
   },
@@ -1969,6 +2357,11 @@
       },
       {
         "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "19, 492",
+        "note": "'Actually in August 1914 only 117,000 could be mobilized for the Field Army' (p. 19), with the peacetime station of each division on the same page — 1st around Ghent, 2nd Antwerp, 3rd around Liège, 4th Namur and Charleroi, 5th around Mons, 6th Brussels, Cavalry Division Brussels; and Appendix 5 (p. 492) names their commanders and gives a division as between 25,500 and 32,000 all ranks and the Cavalry Division as 4,500."
       }
     ]
   },
@@ -1986,6 +2379,11 @@
       },
       {
         "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "19, 492",
+        "note": "'Actually in August 1914 only 117,000 could be mobilized for the Field Army' (p. 19), with the peacetime station of each division on the same page — 1st around Ghent, 2nd Antwerp, 3rd around Liège, 4th Namur and Charleroi, 5th around Mons, 6th Brussels, Cavalry Division Brussels; and Appendix 5 (p. 492) names their commanders and gives a division as between 25,500 and 32,000 all ranks and the Cavalry Division as 4,500."
       }
     ]
   },
@@ -2003,6 +2401,11 @@
       },
       {
         "source": "source:hastings-2013"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "35, 492",
+        "note": "Haelen, 12 August: 'six German cavalry regiments, with three horse-batteries and two Jäger battalions attacked the line of the Gette at Haelen… but were ultimately driven back by the Belgians, with appreciable loss, after ten hours of sharp fighting' (p. 35); Appendix 5 (p. 492) gives the division under Lieut.-General de Witte, two brigades, 4,500 all ranks and twelve guns."
       }
     ]
   },
@@ -2055,7 +2458,9 @@
         "source": "source:hastings-2013"
       },
       {
-        "source": "source:edmonds-1925"
+        "source": "source:edmonds-1925",
+        "pages": "32, 35, 47, 62",
+        "note": "'The Siege of Antwerp 28 Sept.' (p. 32), where the defences are described: 'an outer ring of 18 forts some seven to nine miles from the city, an inner line of older forts only two to three thousand yards from it, and a continuous enceinte' — seven to nine miles, not the twenty kilometres this card gives; the field army 'only 65,000 strong' and the garrison 'some 80,000 men' (p. 35); the field army's withdrawal on the night 6th/7th October, the eight forts of the inner line left to the fortress troops (p. 47); and the capitulation signed at Contich on the evening of 9 October, agreed and formally surrendered on the morning of the 10th (p. 62)."
       }
     ]
   },
@@ -2073,7 +2478,9 @@
         "source": "source:herwig-2009"
       },
       {
-        "source": "source:edmonds-1922"
+        "source": "source:edmonds-1933",
+        "pages": "130",
+        "note": "'Maubeuge was invested by the VII. Corps on the south-east and by the IX. Corps (of the First Army) on the north-west' — the volume names the VII. Corps, not Zwehl's VII. Reserve Corps, at the moment of investment, and prints no figure for the garrison."
       },
       {
         "source": "source:tyng-1935"
@@ -2136,7 +2543,9 @@
       "asOf": "1914-10-01",
       "sources": [
         {
-          "source": "source:edmonds-1925"
+          "source": "source:edmonds-1925",
+          "pages": "69",
+          "note": "The Tenth Army in line on the British right in the Race to the Sea, from Joffre's plan of 6 October. The volume does not print the army's concentration area at its formation."
         },
         {
           "source": "source:strachan-2001"
@@ -2146,7 +2555,9 @@
     "summary": "Improvised on 1 October 1914 as the Détachement d'armée de Maud'huy and regularised as the Tenth Army: the third French attempt to reach round the German northern flank, which instead found the German Sixth Army coming the other way and settled into the line before Arras.",
     "sources": [
       {
-        "source": "source:edmonds-1925"
+        "source": "source:edmonds-1925",
+        "pages": "69, 92–93",
+        "note": "Joffre's plan of 6 October, under which 'the Second (General de Castelnau) and the Tenth (General Maud'huy) Armies, under direction of General Foch, were to continue the action they had begun against the right flank of the enemy in the \"Race to the Sea\"' (p. 69); and Maud'huy's own letter of 26 October to the G.O.C. II. Corps, signed as commanding the X Army (pp. 92–93). The volume's narrative begins on 19 September and does not print the army's formation on 1 October."
       },
       {
         "source": "source:strachan-2001"
@@ -2166,14 +2577,18 @@
       "asOf": "1914-10-15",
       "sources": [
         {
-          "source": "source:edmonds-1925"
+          "source": "source:edmonds-1925",
+          "pages": "120, 147",
+          "note": "'On this day General d'Urbal took over command of the French forces in the north, which were now given the name of \"Le Detachement d'Armee de Belgique\"; and he established his headquarters at Rousbrugge' — the volume dates that to 20 October, not 15 October (p. 147). The Brigade de Fusiliers Marins under Rear-Admiral Ronarc'h, '6,000 seamen and 2,000 Zouaves' (p. 42), holds Dixmude in the line as given at p. 120."
         }
       ]
     },
     "summary": "The French divisions, territorials and cavalry sent into Flanders in October 1914 under d'Urbal — including Ronarc'h's fusiliers marins at Dixmude. Regularised as the Eighth Army in November.",
     "sources": [
       {
-        "source": "source:edmonds-1925"
+        "source": "source:edmonds-1925",
+        "pages": "42, 120, 147",
+        "note": "'On this day General d'Urbal took over command of the French forces in the north, which were now given the name of \"Le Detachement d'Armee de Belgique\"; and he established his headquarters at Rousbrugge' — the volume dates that to 20 October, not 15 October (p. 147). The Brigade de Fusiliers Marins under Rear-Admiral Ronarc'h, '6,000 seamen and 2,000 Zouaves' (p. 42), holds Dixmude in the line as given at p. 120."
       },
       {
         "source": "source:van-pul-2006"
@@ -2193,7 +2608,9 @@
       "asOf": "1914-10-17",
       "sources": [
         {
-          "source": "source:edmonds-1925"
+          "source": "source:edmonds-1925",
+          "pages": "122",
+          "note": "'The transport of the new corps of the Fourth Army to the Western Front began on the 10th October; by the 13th their detrainment was in full progress west and south-west of Brussels; and on the 14th they began their advance westwards in four columns'; by the 17th their heads were on a line about twenty miles from the Yser. The volume therefore has them detraining near Brussels in the first half of October, not in Flanders in the second half."
         },
         {
           "source": "source:unruh-1986"
@@ -2203,7 +2620,9 @@
     "summary": "One of the four reserve corps raised after mobilization and thrown into Flanders in October 1914, half-trained, under the reconstituted Fourth Army.",
     "sources": [
       {
-        "source": "source:edmonds-1925"
+        "source": "source:edmonds-1925",
+        "pages": "122–123, 168",
+        "note": "The new corps of the Fourth Army: the XXII. Reserve Corps, on the German right against the Belgians on the Yser, its left directed on Dixmude on 19 October (p. 168). The volume gives their raising on pp. 122–123 — Falkenhayn's reasons for engaging them in Flanders, and Balck's account of the formation of the 51st Reserve Division of the XXVI. Reserve Corps, in which '75 per cent of the new corps consisted of volunteers, untrained men over or under military age'."
       },
       {
         "source": "source:unruh-1986"
@@ -2223,7 +2642,9 @@
       "asOf": "1914-10-17",
       "sources": [
         {
-          "source": "source:edmonds-1925"
+          "source": "source:edmonds-1925",
+          "pages": "122",
+          "note": "'The transport of the new corps of the Fourth Army to the Western Front began on the 10th October; by the 13th their detrainment was in full progress west and south-west of Brussels; and on the 14th they began their advance westwards in four columns'; by the 17th their heads were on a line about twenty miles from the Yser. The volume therefore has them detraining near Brussels in the first half of October, not in Flanders in the second half."
         },
         {
           "source": "source:unruh-1986"
@@ -2233,7 +2654,9 @@
     "summary": "New reserve corps of the Fourth Army, engaged against the Belgians and Ronarc'h's marines on the Yser.",
     "sources": [
       {
-        "source": "source:edmonds-1925"
+        "source": "source:edmonds-1925",
+        "pages": "122–123, 168",
+        "note": "The new corps of the Fourth Army: the XXIII. Reserve Corps, which engaged de Mitry's French cavalry — the 45th Reserve Division reaching Handzaeme and the 46th Staden on 19 October (p. 168). The volume gives their raising on pp. 122–123 — Falkenhayn's reasons for engaging them in Flanders, and Balck's account of the formation of the 51st Reserve Division of the XXVI. Reserve Corps, in which '75 per cent of the new corps consisted of volunteers, untrained men over or under military age'."
       },
       {
         "source": "source:unruh-1986"
@@ -2253,7 +2676,9 @@
       "asOf": "1914-10-18",
       "sources": [
         {
-          "source": "source:edmonds-1925"
+          "source": "source:edmonds-1925",
+          "pages": "122",
+          "note": "'The transport of the new corps of the Fourth Army to the Western Front began on the 10th October; by the 13th their detrainment was in full progress west and south-west of Brussels; and on the 14th they began their advance westwards in four columns'; by the 17th their heads were on a line about twenty miles from the Yser. The volume therefore has them detraining near Brussels in the first half of October, not in Flanders in the second half."
         },
         {
           "source": "source:unruh-1986"
@@ -2263,7 +2688,9 @@
     "summary": "New reserve corps of the Fourth Army; attacked towards Langemarck and the Ypres–Staden railway in late October 1914, at the cost that gave the fighting its German name.",
     "sources": [
       {
-        "source": "source:edmonds-1925"
+        "source": "source:edmonds-1925",
+        "pages": "122–123, 168",
+        "note": "The new corps of the Fourth Army: the XXVI. Reserve Corps, whose 51st Reserve Division took Roulers from the French and whose 52nd drove back the British 3rd Cavalry Division on 19 October (p. 168). The volume gives their raising on pp. 122–123 — Falkenhayn's reasons for engaging them in Flanders, and Balck's account of the formation of the 51st Reserve Division of the XXVI. Reserve Corps, in which '75 per cent of the new corps consisted of volunteers, untrained men over or under military age'."
       },
       {
         "source": "source:unruh-1986"
@@ -2286,7 +2713,9 @@
       "asOf": "1914-10-18",
       "sources": [
         {
-          "source": "source:edmonds-1925"
+          "source": "source:edmonds-1925",
+          "pages": "122",
+          "note": "'The transport of the new corps of the Fourth Army to the Western Front began on the 10th October; by the 13th their detrainment was in full progress west and south-west of Brussels; and on the 14th they began their advance westwards in four columns'; by the 17th their heads were on a line about twenty miles from the Yser. The volume therefore has them detraining near Brussels in the first half of October, not in Flanders in the second half."
         },
         {
           "source": "source:unruh-1986"
@@ -2296,7 +2725,9 @@
     "summary": "New reserve corps of the Fourth Army, engaged east and south-east of Ypres on the Menin road.",
     "sources": [
       {
-        "source": "source:edmonds-1925"
+        "source": "source:edmonds-1925",
+        "pages": "122–123, 168",
+        "note": "The new corps of the Fourth Army: the XXVII. Reserve Corps, whose 53rd Reserve Division came into action against the British 3rd Cavalry Division on 19 October (p. 168). The volume gives their raising on pp. 122–123 — Falkenhayn's reasons for engaging them in Flanders, and Balck's account of the formation of the 51st Reserve Division of the XXVI. Reserve Corps, in which '75 per cent of the new corps consisted of volunteers, untrained men over or under military age'."
       },
       {
         "source": "source:unruh-1986"
@@ -2310,7 +2741,14 @@
     "kind": "army",
     "short": "8. Armee",
     "summary": "The single army left to hold East Prussia while seven went west. Commanded by Prittwitz to 23 August, then by Hindenburg with Ludendorff as chief of staff. No route: this pack renders it as order of battle for the eastern cross-reference, not as a token on the western map.",
-    "sources": [{ "source": "source:showalter-2004" }, { "source": "source:strachan-2001" }]
+    "sources": [
+      {
+        "source": "source:showalter-2004"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ]
   },
   {
     "id": "1914:army-ru-1",
@@ -2319,7 +2757,11 @@
     "kind": "army",
     "short": "1st Army",
     "summary": "Rennenkampf's army, which entered East Prussia from the east on 17 August and fought at Gumbinnen on the 20th. No route: order of battle for the eastern cross-reference only.",
-    "sources": [{ "source": "source:showalter-2004" }]
+    "sources": [
+      {
+        "source": "source:showalter-2004"
+      }
+    ]
   },
   {
     "id": "1914:army-ru-2",
@@ -2328,6 +2770,13 @@
     "kind": "army",
     "short": "2nd Army",
     "summary": "Samsonov's army, which advanced north-west into East Prussia and was encircled at Tannenberg on 26-30 August. No route: order of battle for the eastern cross-reference only.",
-    "sources": [{ "source": "source:showalter-2004" }, { "source": "source:stone-1975" }]
+    "sources": [
+      {
+        "source": "source:showalter-2004"
+      },
+      {
+        "source": "source:stone-1975"
+      }
+    ]
   }
 ]

@@ -207,6 +207,49 @@ chemistry card has to say what Fritz Haber was. It moves to the Western Front
   described as a grievance; the hour is given as the official history gives
   it, not as the memoir does.
 
+## 12. What was in Conneau's cavalry corps, and when was it formed?
+
+The pack's `1914:cav-corps-fr-conneau` gives the 4th, 8th and 10th Cavalry
+Divisions, formed on 31 August 1914. Three accounts, read in the digitisations
+the registry names, give three answers, and none of them is that one.
+
+- **Edmonds** (Vol. I, 3rd edn 1933, p. 488, footnote to the French order of
+  battle): "Early in September three of the cavalry divisions (2nd, 8th and
+  10th) of the First and Second Armies were formed into a cavalry corps under
+  General Conneau." So: the 2nd, not the 4th, and early September, not
+  31 August.
+- **Reichsarchiv** (Bd. 1, p. 688, footnote to the French order of battle):
+  the 6th Cavalry Division was "zeitweise (mit 2. u. 10. Kav. Div.) zum Kav.
+  Korps Conneau vereinigt" — the 6th with the 2nd and the 10th, and only for a
+  time.
+- **The AFGG**, which would settle it from the French orders themselves, is
+  behind Gallica's block from this environment (`sand-23b.20`), and Tome I/1
+  is not on archive.org.
+
+**What is not in dispute:** a French cavalry corps under Conneau existed on
+the Fifth Army's left at the Marne, in the gap between the Fifth Army and the
+BEF, and it was assembled out of divisions taken from the armies in Lorraine.
+
+**How the pack presents it:** the formation card keeps its composition and
+carries an Edmonds citation whose `note` records that Edmonds gives the 2nd
+where the card gives the 4th, and September where the card gives 31 August.
+The card is not "corrected" to either official history while the volume that
+would decide it cannot be opened; when the AFGG can be read, this note is what
+the reader of that bead should start from.
+
+## 13. The Antwerp outer ring: seven to nine miles, or twenty kilometres?
+
+`1914:fortress-antwerp` describes "an outer ring of forts twenty kilometres
+out and an inner ring". Edmonds (Vol. II, 1925, p. 32) describes the same
+defences as "an outer ring of 18 forts some seven to nine miles from the city,
+an inner line of older forts only two to three thousand yards from it, and a
+continuous enceinte" — eleven to fourteen kilometres, not twenty. Deguise, the
+fortress commandant, is the work that would settle the ring's radius fort by
+fort and is on the list of works to add. The card is left as it stands and the
+Edmonds citation's `note` records the divergence, because a distance that has
+not been re-measured against the fort plan should not be quietly replaced by
+one taken from a single conversion.
+
 ## Using these notes
 
 Link a beat to the relevant note by naming the historians in the prose with
