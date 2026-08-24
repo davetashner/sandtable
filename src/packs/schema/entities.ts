@@ -80,7 +80,11 @@ export const Person = z
     nationality: z
       .string()
       .optional()
-      .describe('ISO 3166-1 alpha-2 of the 1914 state, e.g. DE, FR, GB, BE'),
+      .describe(
+        'The 1914 state, ISO 3166-1 alpha-2 where one exists (DE, FR, GB, BE, RU) and the ' +
+          'historical code where it does not: AT-HU is Austria-Hungary, which is not AT — ' +
+          'Franz Ferdinand and the Bosnian Serb who shot him were subjects of the same empire',
+      ),
     roles: z
       .array(
         z
