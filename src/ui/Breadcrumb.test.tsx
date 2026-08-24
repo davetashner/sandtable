@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import type { Battle } from '../packs/schema/index.js';
 import { Breadcrumb } from './Breadcrumb.js';
 
@@ -32,5 +32,23 @@ describe('<Breadcrumb>', () => {
     expect(screen.getByText('Zoom-in')).toBeInTheDocument();
     rerender(<Breadcrumb {...props} battles={[chapter]} focus={chapter} />);
     expect(screen.getByText('Chapter')).toBeInTheDocument();
+  });
+
+  // sand-pmz.4.2: the index unmounts when a level is entered, which used to
+  // leave the keyboard on <body>.
+  it('catches the keyboard when a level is entered from the index', () => {
+    const battles = [battle('1914:liege', 'Liège', [{}])];
+    const { rerender } = render(<Breadcrumb {...props} battles={battles} focus={undefined} />);
+    fireEvent.click(screen.getByRole('button', { name: '1 zoom-in' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Zoom in to Liège' }));
+    rerender(<Breadcrumb {...props} battles={battles} focus={battles[0]} />);
+    expect(screen.getByText('Liège')).toHaveFocus();
+  });
+
+  it('leaves the keyboard alone when a level is entered from anywhere else', () => {
+    const battles = [battle('1914:liege', 'Liège', [{}])];
+    const { rerender } = render(<Breadcrumb {...props} battles={battles} focus={undefined} />);
+    rerender(<Breadcrumb {...props} battles={battles} focus={battles[0]} />);
+    expect(screen.getByText('Liège')).not.toHaveFocus();
   });
 });

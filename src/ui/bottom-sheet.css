@@ -37,6 +37,12 @@
   touch-action: none;
 }
 
+/* The sheet clips its overflow, so a ring 2px outside the handle — which sits
+   flush against the sheet's top edge — is a ring nobody sees (sand-pmz.4). */
+.sheet__handle:focus-visible {
+  outline-offset: -2px;
+}
+
 .sheet__grip {
   width: 40px;
   height: 4px;

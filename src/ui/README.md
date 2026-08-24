@@ -31,6 +31,13 @@ one thing (ADR 0013).
 current view; what makes it work is that the URL is always the whole view
 (ADR 0009, `src/engine/url-state.ts`).
 
+Two rules bind everything here and are checked rather than asked for: a
+control is at least 24×24px and keeps its `:focus-visible` ring, and a role is
+never written down that the element already has — `role="listitem"` on a button
+takes the button away. The keyboard run-through, the measurements and the two
+inline cases the target rule exempts are `docs/accessibility.md`; the axe gate
+that runs on every push is `src/a11y.test.tsx`.
+
 Every component here has a specimen in the gallery (`gallery.html`,
 `src/gallery/`), which shows the library in both themes on real pack content;
 `src/gallery/Gallery.test.tsx` fails when a new component has none.

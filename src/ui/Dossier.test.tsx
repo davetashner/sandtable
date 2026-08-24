@@ -129,12 +129,14 @@ describe('<Dossier>', () => {
     expect(screen.getByText(/Herwig, Holger H\./)).toBeInTheDocument();
     expect(screen.getByText(/Tuchman, Barbara W\./)).toBeInTheDocument();
     expect(screen.getByLabelText('Legend')).toHaveTextContent('Germany');
-    expect(screen.queryByRole('note')).not.toBeInTheDocument();
+    expect(screen.queryByText(/^Hypothetical —/)).not.toBeInTheDocument();
   });
 
   it('labels counterfactual beats as hypothetical and shows the next beat when none is active', () => {
     mount(concept, START + 25 * DAY);
-    expect(screen.getByRole('note')).toHaveTextContent(/Hypothetical/);
+    // The badge is the <summary> of the 'about this branch' disclosure; giving
+    // it role="note" took away the role that made it openable (sand-pmz.4).
+    expect(screen.getByText(/^Hypothetical —/)).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2, name: 'The wide wheel' })).toBeInTheDocument();
   });
 

@@ -91,7 +91,9 @@ function Tokens() {
   return (
     <section className="specimen" id="tokens" aria-label="Tokens">
       <header className="specimen__head">
-        <h3 className="specimen__title">Tokens</h3>
+        {/* h2, not h3: the token sheet is a top-level section of the page in
+            its own right, and an h3 straight after the h1 skips a level. */}
+        <h2 className="specimen__title">Tokens</h2>
         <p className="specimen__covers">src/styles/tokens.ts</p>
         <p className="specimen__note">
           The grounds text is guaranteed AA on, the inks that are guaranteed on them, and the type

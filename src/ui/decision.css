@@ -39,10 +39,15 @@
     box-shadow 150ms ease;
 }
 
-.decision__option:hover,
+.decision__option:hover {
+  border-color: var(--brass);
+}
+
+/* Not `outline: none` with a brass border: that is exactly what a picked
+   option already looks like, so the keyboard vanished the moment it landed on
+   one (sand-pmz.4). */
 .decision__option:focus-visible {
   border-color: var(--brass);
-  outline: none;
 }
 
 .decision__option[data-picked] {
@@ -127,5 +132,4 @@
 .decision__play-btn:hover,
 .decision__play-btn:focus-visible {
   background: color-mix(in srgb, var(--brass) 15%, transparent);
-  outline: none;
 }

@@ -10,7 +10,9 @@
 import { useCallback, useEffect, useId, useMemo, useRef, type KeyboardEvent } from 'react';
 import { speedLabel, speedPresetsFor, stepFor } from '../engine/clock.js';
 import { useClock, useClockControls } from '../engine/ClockContext.js';
+import { usePhone } from '../engine/useMediaQuery.js';
 import { labelNow, ticksFor } from '../engine/ticks.js';
+import { ownsKeys } from '../engine/shortcuts.js';
 import './timeline.css';
 
 export interface TimelinePhase {
@@ -56,10 +58,6 @@ export interface TimelineProps {
   onSelectMarker?: (marker: TimelineMarker) => void;
 }
 
-const isEditable = (el: EventTarget | null) =>
-  el instanceof HTMLElement &&
-  (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName));
-
 export function Timeline({
   phases = [],
   markers = [],
@@ -78,7 +76,11 @@ export function Timeline({
       `${((Math.min(range.end, Math.max(range.start, t)) - range.start) / span) * 100}%`,
     [range, span],
   );
-  const ticks = useMemo(() => ticksFor(range), [range]);
+  // The date labels read at the type floor like everything else (ADR 0010);
+  // twelve of them at 11.5px collide on a 330px strip, so a phone gets half
+  // as many rather than half-size type (sand-pmz.4).
+  const phone = usePhone();
+  const ticks = useMemo(() => ticksFor(range, phone ? 6 : 12), [range, phone]);
   const presets = useMemo(() => speedPresetsFor(range), [range]);
   // A tour step, or a speed carried in from a wider range, can sit off the
   // ladder. Show it rather than mislabelling what is actually running.
@@ -145,7 +147,8 @@ export function Timeline({
   useEffect(() => {
     if (!globalShortcuts) return;
     const handler = (e: globalThis.KeyboardEvent) => {
-      if (isEditable(e.target)) return;
+      // A text field, or a surface with keys of its own — the map (sand-pmz.4).
+      if (ownsKeys(e.target)) return;
       if (e.target instanceof Node && stripRef.current?.contains(e.target)) return; // handled by onKeyDown
       onKey(e);
     };
@@ -244,6 +247,23 @@ export function Timeline({
             </div>
           ))}
         </div>
+        <div className="timeline__progress" style={{ width: pct(now) }} aria-hidden="true" />
+        {/* Before the markers, not after them: the rows no longer overlap, so
+            nothing paints over anything, and a keyboard reader reaches the
+            control the strip is for without tabbing past fifty events to get
+            to it (sand-pmz.4). */}
+        <input
+          id={`${id}-scrubber`}
+          className="timeline__scrubber"
+          type="range"
+          min={range.start}
+          max={range.end}
+          step={Math.max(1000, Math.round(span / 2000))}
+          value={now}
+          onChange={(e) => clock.seek(Number(e.target.value))}
+          aria-label={title ? `Time — ${title}` : 'Time'}
+          aria-valuetext={label.aria}
+        />
         <div className="timeline__markers">
           {markers.map((m) => {
             const kind = m.kind ?? 'event';
@@ -274,19 +294,6 @@ export function Timeline({
             );
           })}
         </div>
-        <div className="timeline__progress" style={{ width: pct(now) }} aria-hidden="true" />
-        <input
-          id={`${id}-scrubber`}
-          className="timeline__scrubber"
-          type="range"
-          min={range.start}
-          max={range.end}
-          step={Math.max(1000, Math.round(span / 2000))}
-          value={now}
-          onChange={(e) => clock.seek(Number(e.target.value))}
-          aria-label={title ? `Time — ${title}` : 'Time'}
-          aria-valuetext={label.aria}
-        />
       </div>
     </div>
   );

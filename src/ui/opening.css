@@ -83,7 +83,9 @@
 .opening__claim-link {
   appearance: none;
   border: 0;
-  padding: 0;
+  display: inline-block;
+  min-height: 24px;
+  padding: 4px 0;
   background: none;
   color: var(--brass);
   font-family: var(--font-mono);
@@ -169,11 +171,14 @@
   border-color: var(--line);
 }
 
+/* A key cap, and a key cap is read: it says "Esc", not a mark. So it reads at
+   the floor like everything else (ADR 0010, sand-pmz.4) and takes its
+   smallness from the padding instead. */
 .opening__skip-key {
-  padding: 1px 5px;
+  padding: 0 5px;
   border: 1px solid var(--line);
   border-radius: 4px;
-  font-size: 9.5px;
+  font-size: var(--fs-xs);
 }
 
 @media (prefers-reduced-motion: reduce) {

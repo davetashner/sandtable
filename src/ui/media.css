@@ -87,15 +87,22 @@
 }
 
 /* "Show original" is a link out to the archive, or a button that swaps the
-   picture in place when the project holds the original too. One look. */
+   picture in place when the project holds the original too. One look.
+
+   It sits in a credit line but it is not part of a sentence — it is a control
+   with a caption around it — so it takes the 24px target floor rather than
+   the inline exemption the entity links in prose keep (sand-pmz.4). */
 .media__original {
   appearance: none;
-  padding: 0;
+  display: inline-block;
+  min-height: 24px;
+  padding: 4px 0;
   border: 0;
   background: none;
   font: inherit;
   color: var(--brass);
   text-decoration: underline;
+  text-underline-offset: 2px;
   cursor: pointer;
 }
 

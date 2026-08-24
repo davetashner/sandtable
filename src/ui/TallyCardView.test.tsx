@@ -67,7 +67,7 @@ describe('<TallyGauges>', () => {
         <TallyGauges tallies={[tally]} />
       </ClockProvider>,
     );
-    const gauge = screen.getByRole('listitem', {
+    const gauge = screen.getByRole('button', {
       name: 'The right wing bleeds: 13 of 16 corps, 3 gone',
     });
     expect(gauge).toHaveAttribute('data-tone', 'behind');

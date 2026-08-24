@@ -53,11 +53,18 @@ button.portrait-chip__face:hover,
 button.portrait-chip__face:focus-visible,
 a.portrait-chip__face:hover,
 a.portrait-chip__face:focus-visible {
-  outline: none;
   transform: scale(1.08);
   box-shadow:
     0 0 0 2px var(--panel),
     0 0 0 4px var(--brass);
+}
+
+/* The brass ring is also what a selected chip wears, so focus keeps the
+   outline on top of it rather than replacing it (sand-pmz.4). */
+button.portrait-chip__face:focus-visible,
+a.portrait-chip__face:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 4px;
 }
 
 .portrait-chip__face[aria-pressed='true'] {

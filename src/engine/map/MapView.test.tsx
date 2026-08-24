@@ -17,8 +17,12 @@ class FakeMap {
   constructor(public opts: Record<string, unknown>) {
     maps.push(this);
   }
+  canvas = document.createElement('canvas');
   addControl(c: unknown) {
     this.controls.push(c);
+  }
+  getCanvas() {
+    return this.canvas;
   }
   once(ev: string, fn: () => void) {
     this.handlers.set(ev, [...(this.handlers.get(ev) ?? []), fn]);
@@ -160,6 +164,53 @@ describe('<MapView>', () => {
       ],
       expect.objectContaining({ padding: 40 }),
     );
+  });
+
+  // sand-pmz.4: the canvas is the only focusable thing on the map, MapLibre
+  // gives it tabindex but no name, and a camera flight is motion like any
+  // other.
+  describe('the keyboard and the reader who asked for less motion', () => {
+    const mount = () => {
+      const ref = createRef<Handle>();
+      render(
+        <MapView
+          ref={ref}
+          camera={{ center: [4.2, 49.7], zoom: 6.3 }}
+          theme="light"
+          styleFor={() => ({ version: 8, sources: {}, layers: [] })}
+        />,
+      );
+      return { ref, map: maps[0]! };
+    };
+
+    it('names the canvas and says which keys drive it', () => {
+      const { map } = mount();
+      expect(map.getCanvas().getAttribute('aria-label')).toMatch(/arrow keys.*plus and minus/i);
+    });
+
+    it('keeps the global shortcuts off the map', () => {
+      mount();
+      expect(screen.getByRole('region', { name: 'Map' })).toHaveAttribute('data-owns-keys');
+    });
+
+    it('jumps instead of flying under prefers-reduced-motion', () => {
+      // jsdom ships no matchMedia at all, which is why the app treats its
+      // absence as "no preference"; install one that has the preference.
+      Object.defineProperty(window, 'matchMedia', {
+        configurable: true,
+        value: (q: string) => ({ matches: q.includes('reduced-motion'), media: q }),
+      });
+      const { ref, map } = mount();
+      ref.current!.flyTo({ center: [2.35, 48.86], zoom: 9 });
+      expect(map.flyTo).not.toHaveBeenCalled();
+      expect(map.jumpTo).toHaveBeenCalled();
+      ref.current!.fitRegion([0, 47, 9, 52]);
+      expect(map.fitBounds).toHaveBeenCalledWith(
+        expect.anything(),
+        expect.objectContaining({ duration: 0 }),
+      );
+      delete (window as { matchMedia?: unknown }).matchMedia;
+    });
   });
 
   it('is ready on styledata even when the basemap never finishes loading', async () => {

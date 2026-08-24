@@ -26,6 +26,29 @@
   border-radius: 2px;
 }
 
+/* ---- target size inside prose (sand-pmz.4) ------------------------------
+   WCAG's 24px target floor exempts a target "in a sentence, or whose size is
+   otherwise constrained by the line-height of non-target text". An entity
+   link is a name inside a sentence and a footnote reference is a mark on one:
+   giving either a 24px box means 24px of leading in the middle of a
+   paragraph, or a control that overlaps the line above it. Both keep their
+   type, and both have a full-size equivalent on the same screen — the Related
+   chips under the beat, and the numbered Sources list under the card.
+
+   The backref at the end of a footnote is the other case, and the line
+   between them is the one worth holding: it is not a word in a sentence, it
+   is a control appended after one. At 12×16 it was the smallest target in the
+   app, and it takes the floor. */
+.data-footnote-backref {
+  display: inline-block;
+  min-width: 24px;
+  min-height: 24px;
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
 /* A portrait wrapped in a link carries no underline — the image is the target. */
 .entity-link--portrait {
   display: inline-block;

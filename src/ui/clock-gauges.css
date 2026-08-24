@@ -1,11 +1,22 @@
 /* Plan-vs-actual gauges under the timeline (sand-1l0.18). Tokens only. */
 
+/* A real <ul> of real <li>s (sand-pmz.4). It was a div with role="list" and
+   buttons with role="listitem", which is the one ARIA move that costs more
+   than it buys: an explicit role replaces the element's own, so every gauge
+   stopped being a button in the accessibility tree and a screen reader had no
+   way to know the row could be opened. */
 .clocks {
   display: grid;
   gap: 4px;
-  margin-top: 8px;
-  padding-top: 8px;
+  margin: 8px 0 0;
+  padding: 8px 0 0;
   border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.clocks > li {
+  display: grid;
+  min-width: 0;
 }
 
 .clocks__gauge {
@@ -13,6 +24,10 @@
   border: 1px solid transparent;
   background: none;
   color: var(--ink);
+  /* A full-width row that is 22px tall is still under the 24px target floor
+     (sand-pmz.4); the human-cost line, which carries no bar, was the one that
+     measured it. */
+  min-height: 24px;
   padding: 2px 6px;
   border-radius: var(--radius-sm);
   display: grid;
@@ -23,10 +38,12 @@
   text-align: left;
 }
 
-.clocks__gauge:hover,
-.clocks__gauge:focus-visible {
+/* Hover borrows the border; focus keeps the ring. They were one rule with
+   `outline: none`, which left the keyboard's position on a row of gauges
+   indistinguishable from the pointer's — and from the open one, whose cue is
+   also a border colour (sand-pmz.4). */
+.clocks__gauge:hover {
   border-color: var(--line);
-  outline: none;
 }
 
 .clocks__gauge[data-selected] {

@@ -46,25 +46,26 @@ export function HumanCostLine({ records, sides, onSelect, selected }: HumanCostL
           .join(' · ');
   const isSelected = latest !== undefined && latest.id === selected;
   return (
-    <div className="clocks clocks--human" role="list" aria-label="Human cost">
-      <button
-        type="button"
-        role="listitem"
-        className="clocks__gauge clocks__gauge--human"
-        data-selected={isSelected || undefined}
-        disabled={!latest}
-        onClick={() => latest && onSelect?.(latest.id)}
-        aria-label={`Human cost to date: ${text}`}
-        title={latest ? `Open: ${latest.title}` : 'No recorded period has ended yet'}
-      >
-        <span className="clocks__title">Human cost</span>
-        <span className="human-line__text">{text}</span>
-        <span className="clocks__readout human-line__count">
-          {done.length === 0
-            ? '—'
-            : `${done.length} recorded ${done.length === 1 ? 'period' : 'periods'}`}
-        </span>
-      </button>
-    </div>
+    <ul className="clocks clocks--human" aria-label="Human cost">
+      <li>
+        <button
+          type="button"
+          className="clocks__gauge clocks__gauge--human"
+          data-selected={isSelected || undefined}
+          disabled={!latest}
+          onClick={() => latest && onSelect?.(latest.id)}
+          aria-label={`Human cost to date: ${text}`}
+          title={latest ? `Open: ${latest.title}` : 'No recorded period has ended yet'}
+        >
+          <span className="clocks__title">Human cost</span>
+          <span className="human-line__text">{text}</span>
+          <span className="clocks__readout human-line__count">
+            {done.length === 0
+              ? '—'
+              : `${done.length} recorded ${done.length === 1 ? 'period' : 'periods'}`}
+          </span>
+        </button>
+      </li>
+    </ul>
   );
 }

@@ -54,7 +54,10 @@ export function DecisionCardView({
         <h3 className="decision__prompt">
           {decided ? 'The options' : actor ? `Decide as ${actor}` : 'Decide'}
         </h3>
-        <ul className="decision__options" role={decided ? undefined : 'group'}>
+        {/* The list stays a list: `role="group"` on the <ul> replaced its own
+            role and orphaned every <li> (sand-pmz.4). The options are already
+            grouped by the section's own label. */}
+        <ul className="decision__options">
           {decision.options.map((o) => {
             const isPick = o.id === pick;
             const isHistorical = o.id === decision.historical;

@@ -80,6 +80,7 @@ import { ScienceCardView, SCIENCE_FIELDS } from './ui/ScienceCardView.js';
 import { TechCardView, type EntityLabeller } from './ui/TechCardView.js';
 import { Timeline, type TimelineMarker, type TimelinePhase } from './ui/Timeline.js';
 import { layerOn, parseViewState } from './engine/url-state.js';
+import { ownsKeys } from './engine/shortcuts.js';
 import type { Camera, Links, ScienceField } from './packs/schema/index.js';
 
 // MapLibre + deck.gl are the heaviest dependencies; load the whole map surface
@@ -447,6 +448,8 @@ function TourProvider({ children }: { children: ReactNode }) {
     const onKey = (e: KeyboardEvent) => {
       const el = e.target as HTMLElement | null;
       if (el && /^(BUTTON|INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return;
+      // …and any surface that drives itself from the keyboard (sand-pmz.4).
+      if (ownsKeys(e.target)) return;
       if (e.key === 'Escape') {
         exit();
       } else if (e.key === ' ') {
@@ -1142,11 +1145,18 @@ function AppShell() {
         <div className="app__header-text">
           <p className="eyebrow">Operational study · Western Front, 1914</p>
           <h1 className="brand">
+            {/* The name is on the link, not on whichever lockup the theme
+                happens to be showing: the light image carried the `alt`, and
+                in dark mode CSS takes it out of the accessibility tree, so the
+                first tab stop on the page — and the document's only h1 — had
+                no name at all (sand-pmz.4). Both images are decoration now. */}
             <a className="brand__link" href="/">
+              <span className="visually-hidden">Sandtable</span>
               <img
                 className="brand__wordmark brand__wordmark--light"
                 src="/brand/wordmark-light.png"
-                alt="Sandtable"
+                alt=""
+                aria-hidden="true"
                 width="872"
                 height="122"
                 decoding="async"

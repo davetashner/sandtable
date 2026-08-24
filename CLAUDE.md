@@ -122,6 +122,9 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
 - **Design:** tokens and the war-room identity come from the design-system epic
   (`sand-neh`): `src/styles/tokens.ts` → `npm run tokens` → `tokens.css`, reference
   in `docs/design.md`; don't introduce ad-hoc colours or typefaces.
+- **Accessibility:** `docs/accessibility.md` — the keyboard run-through, the
+  24×24px target floor and its two inline exemptions, the focus-ring rule, and
+  what `src/a11y.test.tsx` (axe-core over jsdom) checks on every push.
 
 ## CI & branch rules
 

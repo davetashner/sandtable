@@ -77,7 +77,7 @@ describe('<HumanCostLine>', () => {
       ),
     );
     expect(
-      screen.getByRole('listitem', { name: /Human cost to date: No recorded losses yet/ }),
+      screen.getByRole('button', { name: /Human cost to date: No recorded losses yet/ }),
     ).toBeDisabled();
     early.unmount();
     render(
@@ -86,7 +86,7 @@ describe('<HumanCostLine>', () => {
         Date.UTC(1914, 8, 20),
       ),
     );
-    const line = screen.getByRole('listitem', { name: /Human cost to date/ });
+    const line = screen.getByRole('button', { name: /Human cost to date/ });
     expect(line).toHaveAccessibleName(/France 27,000 killed/);
     expect(line).toHaveAccessibleName(/France 200,000–250,000 killed, wounded and missing/);
     expect(line).toHaveAccessibleName(/Germany 200,000–250,000/);
