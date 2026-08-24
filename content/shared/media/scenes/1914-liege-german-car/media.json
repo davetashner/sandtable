@@ -1,0 +1,28 @@
+{
+  "id": "media:scene/1914-liege-german-car/german-soldiers-liege-colorized",
+  "kind": "scene",
+  "file": "german-soldiers-liege-colorized.png",
+  "width": 1452,
+  "height": 1083,
+  "colorized": true,
+  "original": {
+    "description": "Two German soldiers sitting in the back of an open motor car on a city square, their rifles resting across the folded canvas hood and pointing over it. Both wear field-grey with the M1910 field cap and its two cockades; one has a full beard. Behind them the plinth of a monument and the pediment of a classical building close the square.",
+    "photographer": "not established — an agency photograph as reprinted in the illustrated press",
+    "date": "August 1914 (the periodical issue is dated 1 November 1914; German troops were in Liège from 7 August)",
+    "archive": "Published in the Russian periodical 'Velikaya voyna v obrazakh i kartinakh' (The Great War in Images and Pictures), ed. Ivan Lazarevsky, publisher D. Ya. Makovsky, 1914, under the caption 'Na ulitsakh Lyezha. Nemetskie soldaty na avtomobile ozhidayut ataki belgiytsev' — 'On the streets of Liège. German soldiers in a car await a Belgian attack'. The Commons record credits Aleksandr Matveyevich Azancheev (1870–1937) as the author of that publication. Digitised from the Russian State Library and Tomsk library copies.",
+    "archive_url": "https://en.wikipedia.org/wiki/File:%D0%9D%D0%B0_%D1%83%D0%BB%D0%B8%D1%86%D0%B0%D1%85_%D0%9B%D1%8C%D0%B5%D0%B6%D0%B0._%D0%9D%D0%B5%D0%BC%D0%B5%D1%86%D0%BA%D0%B8%D0%B5_%D1%81%D0%BE%D0%BB%D0%B4%D0%B0%D1%82%D1%8B_%D0%BD%D0%B0_%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D0%B5_%D0%BE%D0%B6%D0%B8%D0%B4%D0%B0%D1%8E%D1%82_%D0%B0%D1%82%D0%B0%D0%BA%D0%B8_%D0%B1%D0%B5%D0%BB%D1%8C%D0%B3%D0%B8%D0%B9%D1%86%D0%B5%D0%B2_(1914).jpg",
+    "licence": "public domain — published in the Russian Empire before 7 November 1917, and in the United States before 1 January 1931"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'. Documented colours: German field-grey, the black leather of the folded hood, the two cockades on the field cap — the black-white-red of the Reich and a state cockade. The particular state's colours on the lower cockade and the render of the buildings are the colorizer's reading rather than matched to a reference — for the image review (sand-y0u.7)."
+  },
+  "content_policy": "ok — two soldiers in a car with rifles; nothing is being fired at and no casualties are in frame",
+  "caption": "German soldiers in a motor car on a square in Liège, August 1914, rifles across the folded hood. The city was in German hands from 7 August while the twelve forts around it held out for another nine days. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: photographer not established; published in 'The Great War in Images and Pictures' (Moscow, 1914); public domain. Colorization: Sandtable, AI-assisted, 2026.",
+  "used_by": ["1914:beat-liege-0807"],
+  "focal_point": { "x": 0.4, "y": 0.45 },
+  "notes": "Supplied by Dave 2026-08-23. The car is the point: Ludendorff took the citadel on 7 August by driving up to it, and this is what a German motor patrol in the captured city looked like. TWO THINGS FOR THE IMAGE REVIEW (sand-y0u.7): the 1 November 1914 date on the Commons record is the periodical issue, not the exposure — the Germans held the city from 7 August, so the photograph is August; and the periodical's 'awaiting a Belgian attack' is a Russian illustrated weekly's caption, not a record — the Belgian field army had left the city and the fighting that continued was the reduction of the forts outside it. The pack's caption says what is in the frame and leaves the periodical's story to this note."
+}
