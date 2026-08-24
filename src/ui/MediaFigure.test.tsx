@@ -52,6 +52,13 @@ describe('<MediaFigure> treatment (ADR 0012)', () => {
     expect(img).toHaveAttribute('height', '932');
   });
 
+  it('can hand its credit to a plate set, which shows one block for the whole set (ADR 0014)', () => {
+    const { container, rerender } = render(<MediaFigure entry={entry} />);
+    expect(container.querySelector('.media__caption')).toBeInTheDocument();
+    rerender(<MediaFigure entry={entry} credit={false} />);
+    expect(container.querySelector('.media__caption')).toBeNull();
+  });
+
   it('offers the narrowest derivative to a reader who has asked to spend less data', () => {
     const { container } = render(<MediaFigure entry={entry} width={640} />);
     const source = container.querySelector('picture > source')!;

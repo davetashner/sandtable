@@ -22,6 +22,7 @@ is merged.
 | [0010](0010-type-floor.md)               | The type floor: nothing below 11px, and one mark that is not type                    | `sand-neh.3`    | accepted |
 | [0012](0012-photographs.md)              | Photographs in the war room: toned at rest, one picture per beat                     | `sand-y0u.4`    | accepted |
 | [0013](0013-chapter-index.md)            | The chapter index: a table of contents, not a chip row                               | `sand-neh.7`    | accepted |
+| [0014](0014-plate-sets.md)               | The plate set: four pictures on one axis, and why that is not a gallery              | `sand-neh.16`   | accepted |
 
 ## Template
 

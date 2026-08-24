@@ -43,6 +43,13 @@ export interface MediaFigureProps {
    * where the picture is the subject rather than an illustration of one.
    */
   toned?: boolean;
+  /**
+   * Render the provenance line under the picture. A plate set turns this off
+   * and renders one block for the whole set instead (ADR 0014) — the same
+   * `MediaCredit`, gathered rather than repeated, because four small pictures
+   * with four blocks of grey under them are mostly grey. Nothing else does.
+   */
+  credit?: boolean;
   className?: string;
 }
 
@@ -54,6 +61,7 @@ export function MediaFigure({
   name,
   zoomable = false,
   toned = true,
+  credit = true,
   className,
 }: MediaFigureProps) {
   const [zoomed, setZoomed] = useState(false);
@@ -136,13 +144,15 @@ export function MediaFigure({
       ) : (
         picture
       )}
-      <figcaption className="media__caption">
-        <MediaCredit
-          entry={entry}
-          showing={showing}
-          {...(pair && !absent ? { onShow: setShowing } : {})}
-        />
-      </figcaption>
+      {credit && (
+        <figcaption className="media__caption">
+          <MediaCredit
+            entry={entry}
+            showing={showing}
+            {...(pair && !absent ? { onShow: setShowing } : {})}
+          />
+        </figcaption>
+      )}
       {zoomable && everZoomed && (
         <MediaLightbox
           entry={entry}

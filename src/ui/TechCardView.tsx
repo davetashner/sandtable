@@ -4,8 +4,10 @@
  * glyph on the timeline or a chip on a beat/event; deep-linked as ?card=<id>.
  */
 /* eslint-disable react-refresh/only-export-components -- card view + its labelling helpers live together */
+import type { MediaIndexEntry } from '../packs/media-index.js';
 import type { Links, Source, TechCard, TechField } from '../packs/schema/index.js';
 import { Card, type CardChip } from './Card.js';
+import { PlateSet, plateItems } from './PlateSet.js';
 
 export const TECH_FIELD_LABEL: Record<TechField, string> = {
   railways: 'Railways',
@@ -54,10 +56,13 @@ export interface TechCardViewProps {
   card: TechCard;
   sources: Source[];
   labeller: EntityLabeller;
+  /** Resolves a manifest id to the index entry a plate renders (ADR 0014). */
+  resolveMedia?: ((id: string) => MediaIndexEntry | undefined) | undefined;
   onBack?: () => void;
 }
 
-export function TechCardView({ card, sources, labeller, onBack }: TechCardViewProps) {
+export function TechCardView({ card, sources, labeller, resolveMedia, onBack }: TechCardViewProps) {
+  const plates = card.plates;
   return (
     <Card
       eyebrow={`Technology · ${TECH_FIELD_LABEL[card.field]}`}
@@ -69,6 +74,14 @@ export function TechCardView({ card, sources, labeller, onBack }: TechCardViewPr
       citations={card.sources}
       sources={sources}
       {...(onBack ? { onBack } : {})}
-    />
+    >
+      {plates && resolveMedia && (
+        <PlateSet
+          axis={plates.axis}
+          items={plateItems(plates.items, resolveMedia)}
+          {...(plates.fit ? { fit: plates.fit } : {})}
+        />
+      )}
+    </Card>
   );
 }

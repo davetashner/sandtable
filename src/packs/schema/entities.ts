@@ -41,6 +41,63 @@ export const Links = z
 
 const Sources = z.array(Citation).describe('Citations supporting the claims in this entity');
 
+/**
+ * The cap on a plate set, and the reason the pattern is not a gallery
+ * (ADR 0014). Four is what the dossier column holds as a complete 2×2 at the
+ * type floor, what the editorial need asks for on both of its axes (headgear,
+ * rifle, machine gun, field gun; Germany, France, Britain, Belgium), and
+ * about as many pictures as a reader compares rather than scans. A fifth
+ * point is a second card, not a fifth cell.
+ */
+export const PLATE_SET_MAX = 4;
+
+/**
+ * A comparison set of photographs on one card (ADR 0014): a fixed few plates
+ * with one declared axis, one crop, and a label on each — all of them on
+ * screen at once, in a grid, with no way to page through them. What keeps it
+ * from being the gallery ADR 0006 refuses is that it is bounded, ordered by a
+ * claim rather than by arrival, and complete at a glance.
+ *
+ * Never on a beat: ADR 0012's one picture per beat stands. A beat is what the
+ * reader is given; a card is what they asked for, and that is the difference
+ * that pays for four pictures.
+ */
+export const PlateSet = z
+  .object({
+    axis: z
+      .string()
+      .min(1)
+      .max(80)
+      .describe(
+        'What is being compared, in one line: "German kit, August 1914" — short, because it renders as an eyebrow over the set',
+      ),
+    fit: z
+      .enum(['band', 'portrait'])
+      .optional()
+      .describe(
+        'One crop for every plate in the set (ADR 0012 fits), default band. A shared frame is the control variable; `contain` is not offered here',
+      ),
+    items: z
+      .array(
+        z
+          .object({
+            media: Id.describe('media:<kind>/<slug>/<file-stem>'),
+            label: z
+              .string()
+              .min(1)
+              .max(48)
+              .describe('This plate’s point on the axis: "Pickelhaube", "Belgium"'),
+          })
+          .strict(),
+      )
+      .min(2, { message: 'a set of one is a plate — use the card’s own picture slot' })
+      .max(PLATE_SET_MAX, {
+        message: `a plate set holds at most ${PLATE_SET_MAX} pictures (ADR 0014) — a fifth point is a second card`,
+      }),
+  })
+  .strict()
+  .describe('A bounded comparison set of photographs on one axis (ADR 0014)');
+
 // ------------------------------------------------------------------- Source
 
 export const Source = z
@@ -548,6 +605,8 @@ export const Formation = z
       .optional(),
     summary: Markdown.optional(),
     media: z.array(Id).optional(),
+    /** The "who is who" set: what this army wore and carried (ADR 0014). */
+    plates: PlateSet.optional(),
     sources: Sources.optional(),
   })
   .strict();
@@ -777,6 +836,8 @@ export const TechCard = z
       .optional()
       .describe('The counter-innovation it provoked (tech-tree edge), as a TechCard id'),
     media: z.array(Id).optional(),
+    /** The variants side by side: four field guns, three fuses (ADR 0014). */
+    plates: PlateSet.optional(),
     links: Links.optional(),
     sources: Sources,
   })
@@ -1011,6 +1072,7 @@ export type CasualtyRecord = z.infer<typeof CasualtyRecord>;
 export type Vignette = z.infer<typeof Vignette>;
 export type Place = z.infer<typeof Place>;
 export type Media = z.infer<typeof Media>;
+export type PlateSet = z.infer<typeof PlateSet>;
 
 // ----------------------------------------------------------------------- Cue
 

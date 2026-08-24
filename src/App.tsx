@@ -902,6 +902,7 @@ function DossierSurface() {
               card={card.card}
               sources={seed.sources}
               labeller={labeller}
+              resolveMedia={mediaById}
               onBack={() => controls?.setCard(undefined)}
             />
           ) : card?.kind === 'science' ? (
