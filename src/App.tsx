@@ -224,14 +224,28 @@ function MeanwhileProvider({ children }: { children: ReactNode }) {
 const meanwhileLayer = (field: ScienceField) => `meanwhile.${field}`;
 
 /**
- * Science fields present in the pack, and which are shown (all, by default).
+ * "Meanwhile" reaches outside the campaign — special relativity in 1905,
+ * Eddington's eclipse in 1919 — and the strip clamps anything outside its
+ * range to an edge, which would pile half the layer on the last pixel. Only
+ * cards the strip can place honestly get a ✦; the rest are reached from the
+ * beat that names them (`links.science`) or from `?card=`.
+ */
+const onTheStrip = (c: (typeof seed.science)[number]) => {
+  const at = Date.parse(c.at);
+  return at >= RANGE.start && at <= RANGE.end;
+};
+
+/**
+ * Science fields the timeline can show, and which are shown (all, by default).
  * The switches live in the URL so a link carries the timeline you filtered,
  * not the one the app opens with (sand-shn.3); on by default, so only the
- * fields you hid are written, as `-meanwhile.<field>`.
+ * fields you hid are written, as `-meanwhile.<field>`. A field whose cards all
+ * sit outside the campaign window gets no chip, because the chip would toggle
+ * nothing.
  */
 function useMeanwhile() {
   const available = useMemo(
-    () => SCIENCE_FIELDS.filter((f) => seed.science.some((c) => c.field === f)),
+    () => SCIENCE_FIELDS.filter((f) => seed.science.some((c) => c.field === f && onTheStrip(c))),
     [],
   );
   const { layers } = useViewState();
@@ -1040,7 +1054,7 @@ function TimelineSurface() {
     const science: TimelineMarker[] = focus
       ? []
       : seed.science
-          .filter((c) => meanwhile.active.has(c.field))
+          .filter((c) => onTheStrip(c) && meanwhile.active.has(c.field))
           .map((c) => ({
             id: c.id,
             title: c.title,

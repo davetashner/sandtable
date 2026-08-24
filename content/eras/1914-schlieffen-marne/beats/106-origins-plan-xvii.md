@@ -14,6 +14,7 @@ links:
       'person:castelnau-edouard-de',
     ]
   places: ['place:nancy', 'place:verdun', 'place:liege']
+  science: ['1914:science-bohr-atom-1913']
   battles: ['1914:origins']
 sources:
   - source: source:doughty-2005
