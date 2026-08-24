@@ -236,8 +236,9 @@ function checkRange(ctx: Ctx, path: string, id: string, range: TimeRange, what =
  * is in order; anywhere else it is standing in front of a strength, a
  * position, a time of day or a casualty figure, and owes the reader a real
  * source. A warning, not an error: the standard admits the pointer "until a
- * better reference replaces it", and the outstanding ones are on beads
- * (sand-23b.5, sand-1l0.16).
+ * better reference replaces it". The 1914 pack now carries none — the last of
+ * them, the twelve forts of Liège, went to Reichsarchiv Bd. 1 pp. 105–120 in
+ * sand-23b.5, after the sand-1l0.16 pass.
  */
 const REFERENCE_ONLY_SOURCE = 'source:wikipedia-en';
 const REFERENCE_REGISTRIES = /(?:^|\/)(?:people|places)\.json$/;

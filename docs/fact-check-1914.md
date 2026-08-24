@@ -52,13 +52,21 @@ the beat's own sources — the validator enforces it.
 Four of those were `[^wikipedia-en]` footnotes rendered to the reader in the
 dossier. There are now none.
 
-**The standing exception** is Liège: the twelve forts carry their positions
+**The standing exception was Liège**: the twelve forts carried their positions
 and their surrender hours on Wikipedia, 28 citations, and no work in the
-registry can replace it without the books — Donnell, the Belgian official
-account, or Reichsarchiv Bd. 1. Left in place, narrowed to say exactly what it
-still stands behind, and filed as `sand-23b.5`. **Nothing was invented to
-close it**: a citation to a volume nobody opened is worse than an honest
-tertiary pointer.
+registry could replace it without the books — Donnell, the Belgian official
+account, or Reichsarchiv Bd. 1. `sand-23b.5` closed it on the third of those.
+Reichsarchiv Bd. 1, pp. 105–120 ('Die Eroberung der Festung Lüttich'), read
+page by page in the digitised 1925 first edition, now carries the fall of
+every fort. What the official history gives is the day and the part of the
+day — Barchon on the afternoon of 8 August, Évegnée on the evening of the
+11th, Hollogne and Flémalle on the morning of the 16th — and not the clock;
+each fort's `derivation` says so, and the minute on the timeline is nominal
+within the window the citation supports. Two hours that sat outside that
+window moved into it. Donnell and Zuber, who work from the fort records, are
+on the list of works to add when a copy is in hand and the pages can be given.
+**Nothing was invented to close it**: a citation to a volume nobody opened is
+worse than an honest tertiary pointer.
 
 **Pages.** §3 asks for pages on anything contestable. Seven of 1,620 citations
 give any, six of them on Document entities. This is the pack's largest
