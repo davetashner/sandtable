@@ -77,10 +77,14 @@ npm run tokens           # regenerate src/styles/tokens.css from src/styles/toke
 npm run media            # WebP derivatives + content/shared/media/index.json from media.json manifests; -- --upload syncs to the assets bucket
 npm run audio            # loudness-matched Opus/AAC + content/shared/audio/index.json from cue.json manifests; -- --upload syncs (needs ffmpeg)
 npm run build            # tsc -b && vite build → dist/ (bundles under dist/app/)
+npm run visual:check     # the visual gate: 19 scenes x 2 themes x 2 viewports, assets stubbed (ADR 0011); -- --update rewrites the baseline
+npm run visual:review    # the on-demand design review against real assets (docs/design-review.md); needs a build + `npm run preview`
 npm run format           # Prettier
 ```
 
-CI runs the same commands in the `web` job; `lint` and `security` jobs cover docs, content manifests, secrets and dependencies. Open `poc/schlieffen-plan.html` directly for the original proof of concept.
+Both visual scripts need a browser once: `npx playwright install chromium`.
+
+CI runs the same commands in the `web` job; `lint` and `security` jobs cover docs, content manifests, secrets and dependencies; `visual` runs `visual:check` and uploads its screenshots. Open `poc/schlieffen-plan.html` directly for the original proof of concept.
 
 ## Architecture Overview
 
@@ -124,12 +128,15 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
 - `main` is protected by a ruleset: PR-only, **squash or rebase merges** (no
   merge commits), **linear history required**, force-push and deletion
   blocked, required checks `lint`, `security`, `web` (strict — branch must be
-  up to date with `main`).
+  up to date with `main`). `visual` runs on every PR but is **not** required;
+  adding it is a settings change, made deliberately (ADR 0011).
 - CI (`.github/workflows/ci.yml`): `lint` = actionlint + markdownlint +
   `scripts/check-content.sh` (JSON validity, media-manifest policy, no tracked
   image binaries); `security` = gitleaks + dependency review; `web` =
   npm lint/typecheck/test/validate:content/build, self-activating once
-  `package.json` exists. CodeQL is added with the app scaffold.
+  `package.json` exists; `visual` = `npm run visual:check` against a
+  production-shaped build with the assets bucket stubbed, screenshots uploaded
+  as an artifact (ADR 0011). CodeQL is added with the app scaffold.
 - Merged branches are deleted automatically (`delete_branch_on_merge`); keep
   locals clean with `git fetch --prune` and `git worktree prune`.
 - PRs use `.github/pull_request_template.md` — one `Closes sand-…` line per

@@ -1,0 +1,60 @@
+{
+  "$comment": "Structural defects the DOM audit sees and we have decided to live with — the \"Known and deliberate\" list of docs/design-review.md, machine-readable. Regenerate with `npm run visual:check -- --update`, then write the \"why\" for every new row before committing it: a row with a TODO why is a row nobody has justified. `el` may be \"*\" to allow a kind anywhere. See ADR 0011.",
+  "allow": [
+    {
+      "kind": "clipped-x",
+      "el": "span.timeline__band-label",
+      "why": "A timeline band narrower than its own title ellipsizes. Inherent to a band whose width is its duration; band labels are already hidden below 640px (docs/design-review.md, \"Known and deliberate\")."
+    },
+    {
+      "kind": "clipped-x",
+      "el": "div.timeline__band",
+      "why": "The band itself, when the campaign leaves it a pixel or two wide. Same cause as its label."
+    },
+    {
+      "kind": "clipped-y",
+      "el": "section.sheet",
+      "why": "The phone's bottom sheet clips its own peek when collapsed — that is what a collapsed sheet is. Also the sheet specimen in the gallery, which is the same component in a contained frame."
+    },
+    {
+      "kind": "clipped-y",
+      "el": "div.sheet__body",
+      "why": "The collapsed sheet's body, clipped by the sheet above it."
+    },
+    {
+      "kind": "overflows-right",
+      "el": "a.",
+      "why": "gallery.html at phone width: a specimen wider than 390px inside `.pane__stage`, which is `overflow-x: auto`. Same shape as the chapter chips — a scroll rail, read by scrolling."
+    },
+    {
+      "kind": "overflows-right",
+      "el": "table.clock-table",
+      "why": "gallery.html at phone width: the clock table specimen, whose figures are `nowrap` by design (docs/design-review.md, finding 6), inside the stage's scroll rail."
+    },
+    {
+      "kind": "overflows-right",
+      "el": "thead.",
+      "why": "The clock table specimen's head, carried past the edge by the table."
+    },
+    {
+      "kind": "overflows-right",
+      "el": "tbody.",
+      "why": "The clock table specimen's body, carried past the edge by the table."
+    },
+    {
+      "kind": "overflows-right",
+      "el": "tr.",
+      "why": "A row of the clock table specimen, carried past the edge by the table."
+    },
+    {
+      "kind": "overflows-right",
+      "el": "th.",
+      "why": "A header cell of the clock table specimen, carried past the edge by the table."
+    },
+    {
+      "kind": "overflows-right",
+      "el": "td.",
+      "why": "A cell of the clock table specimen, carried past the edge by the table."
+    }
+  ]
+}

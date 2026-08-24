@@ -62,3 +62,8 @@ infra/cdk.context.json
 
 # Screenshots from scripts/visual-review.mjs (docs/design-review.md) — regenerate, never commit
 visual-review/
+
+# Screenshots + report.json from scripts/visual-check.mjs (ADR 0011) — a CI
+# artifact and a local convenience; the baseline that is committed is the JSON
+# beside the script, never the pixels
+visual-check/

@@ -6,19 +6,32 @@ zoom, transitions, loading and empty states, in both themes and on a phone.
 Tokens and the identity they come from are `docs/design.md`; the information
 architecture is ADR 0006.
 
-## Running it
+## Two walks, one scene list
 
-The checklist is executable — `scripts/visual-review.mjs` walks seventeen
-scenes × two themes × desktop and phone, screenshots each, and audits the
-rendered DOM. Playwright is deliberately not a dependency: this is an
-on-demand review, not a CI gate (that is `sand-pmz.2`).
+The checklist is executable, and it runs twice over: as a review a human
+reads, and as a gate CI runs. Both import the same scene list and the same DOM
+audit from `scripts/lib/visual-scenes.mjs`, so a scene added for one is a
+scene the other walks.
+
+|          | `scripts/visual-review.mjs`               | `scripts/visual-check.mjs`                                          |
+| -------- | ----------------------------------------- | ------------------------------------------------------------------- |
+| For      | a person, on demand                       | CI, every pull request                                              |
+| Assets   | the real bucket, over the network         | stubbed inside the browser                                          |
+| Settles  | long — the map is the subject             | short — the map is not                                              |
+| Output   | a screenshot of every cell, `report.json` | pass or fail, screenshots as an artifact                            |
+| Fails on | nothing; it reports                       | a dead scene, a console error, a structural defect off the baseline |
+
+The gate and the reasoning behind it are ADR 0011. It does not diff pixels,
+and the record says plainly what that does and does not catch.
+
+### The review
 
 ```bash
 npm run build
 npm run preview -- --port 4174 &
-npm i --no-save playwright && npx playwright install chromium
-node scripts/visual-review.mjs                            # → visual-review/*.png + report.json
-BASE=https://sandtable.davetashner.com node scripts/visual-review.mjs
+npx playwright install chromium
+npm run visual:review                                 # → visual-review/*.png + report.json
+BASE=https://sandtable.davetashner.com npm run visual:review
 ```
 
 Screenshots land in `visual-review/`, which is git-ignored — image binaries
@@ -30,6 +43,31 @@ the harness's one lie: `vite preview` proxies `/assets/*` to production, but
 PMTiles range requests through that proxy can fail, leaving the basemap empty.
 Confirm anything about map rendering against `BASE=<a deployment>` before
 believing it.
+
+### The gate
+
+```bash
+npm run build
+npx playwright install chromium
+npm run visual:check                                  # what CI runs
+npm run visual:check -- --shots visual-check          # …and keep the pixels
+npm run visual:check -- --update                      # rewrite the baseline
+```
+
+It serves the build itself, so nothing needs to be running first. It takes
+about three minutes; `CONCURRENCY` and `SETTLE` tune it, and `BASE=<url>` walks
+a deployment instead.
+
+**Updating the baseline.** `scripts/visual-baseline.json` lists the structural
+defects we have decided to live with — the "Known and deliberate" section
+below, machine-readable. `--update` rewrites it, carrying every existing
+reason forward and marking each new row `TODO`. Write the reason before
+committing: a row nobody has justified is visible in the diff, and that is the
+point of keeping the baseline as text rather than as an image.
+
+Only `page-h-overflow`, `clipped-x`, `clipped-y` and `overflows-right` are
+gated. `tiny-text` and `small-target` are counted and printed and never fatal
+— the type floor is ADR 0010's and the tap targets are `sand-pmz.4`'s.
 
 ## What the audit looks for
 
@@ -111,9 +149,14 @@ Eight defects, all confirmed against production before being fixed.
 
 ## The clean run
 
-68 scenes, no page errors, no console errors, and no `page-h-overflow` at
+68 cells, no page errors, no console errors, and no `page-h-overflow` at
 either viewport. Three things still report and all three are the audit reading
 a deliberate design as a defect: the timeline band label's ellipsis, the
 chapter chips sitting past the viewport inside their own scroll rail (that
 rail is gone as of ADR 0013), and the collapsed bottom sheet clipping its
 peek. Everything else is `tiny-text` and `small-target`, both listed above.
+
+What is left of that list, plus the gallery's specimens sitting past the edge
+inside their own scroll rail, is `scripts/visual-baseline.json`. The gate
+starts from the state this pass left the app in, and says so with a sentence
+per row.
