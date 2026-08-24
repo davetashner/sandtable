@@ -47,7 +47,10 @@
         "source": "source:herwig-2009",
         "note": "GQG at Vitry-le-François and the move to Bar-sur-Aube on 5 September"
       },
-      { "source": "source:afgg-1-1", "note": "the French headquarters and its orders" }
+      {
+        "source": "source:afgg-1-1",
+        "note": "the French headquarters and its orders"
+      }
     ]
   },
   {
@@ -68,7 +71,10 @@
         "source": "source:gallieni-1920",
         "note": "his own account of the governorship and where he worked; memoir, one side"
       },
-      { "source": "source:herwig-2009", "note": "the appointment and the defence of Paris" }
+      {
+        "source": "source:herwig-2009",
+        "note": "the appointment and the defence of Paris"
+      }
     ]
   },
   {
@@ -94,6 +100,457 @@
       {
         "source": "source:edmonds-1922",
         "note": "the meeting from the British side and the BEF's orders after it"
+      }
+    ]
+  },
+  {
+    "id": "1914:track-kluck-army-1",
+    "person": "person:kluck-alexander-von",
+    "kind": "hq",
+    "post": "1. Armee — the German First Army",
+    "postShort": "1. Armee",
+    "side": "de",
+    "waypoints": [
+      [6.5849, 51.0862, "1914-08-09T20:00:00Z"],
+      [5.5436, 50.7517, "1914-08-17T12:00:00Z"],
+      [4.7012, 50.8792, "1914-08-19T20:00:00Z"],
+      [3.6287, 50.4467, "1914-08-24T12:00:00Z"],
+      [3.4974, 50.1852, "1914-08-27T12:00:00Z"],
+      [3.4974, 50.1852, "1914-08-28T09:00:00Z"],
+      [3.103, 49.9765, "1914-08-28T13:00:00Z"],
+      [2.9324, 49.9291, "1914-08-29T08:00:00Z"],
+      [2.9324, 49.9291, "1914-08-30T20:00:00Z"],
+      [3.0, 49.5806, "1914-08-31T12:00:00Z"],
+      [2.8263, 49.4179, "1914-09-01T00:30:00Z"],
+      [3.1248, 49.1777, "1914-09-03T11:00:00Z"],
+      [3.2322, 48.8484, "1914-09-05T00:00:00Z"],
+      [3.2843, 48.9754, "1914-09-06T10:00:00Z"],
+      [3.0924, 49.0463, "1914-09-07T07:00:00Z"],
+      [3.0924, 49.0463, "1914-09-08T21:15:00Z"],
+      [3.079, 49.1363, "1914-09-09T09:30:00Z"],
+      [3.079, 49.1363, "1914-09-09T20:15:00Z"]
+    ],
+    "confidence": "high",
+    "derivation": "The towns the First Army was commanded from, taken one at a time from the two works that name them: Reichsarchiv Bd. 3 for the advance from the Sambre to the Marne, Kluck's own memoir for the days before it and for the battle of the Ourcq, where Bd. 3 stops and Bd. 4 is not digitised. Towns and days, not buildings — except on 6–9 September, where Kluck prints the hour in his own orders (headquarters at Charly-sur-Marne from 10 a.m. on the 6th, the move to Vendrest at 7 a.m. on the 7th, arrival at Mareuil at 9.30 a.m. on the 9th) and the track carries it. The days the sources do not name a town — 10–16 and 20–23 August, 25–26 August, 2 September — are gaps: the line between two waypoints is not a claim about the road or the hour he took it. One wrinkle is the source's own: the order of 11 p.m. on 5 September puts headquarters at Charly-sur-Marne from 10 a.m. on the 6th, while Kluck also prints the orders of the evening of the 6th as issued from Rebais (p. 124). The track follows the order; the contradiction is his.",
+    "notes": "Kluck's headquarters was 300 km from OHL at Koblenz for the whole of the advance, and the two were joined by a wireless net that lost messages. That distance, and not any one order, is what this track is drawing.",
+    "sources": [
+      {
+        "source": "source:kluck-1920",
+        "pages": "10",
+        "note": "Army Headquarters arrived at Grevenbroich on the evening of 9 August"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "130, 217",
+        "note": "the move to Glons on 17 August; the Army headquarters going to Löwen on the evening of 19 August"
+      },
+      {
+        "source": "source:kluck-1920",
+        "pages": "28, 57–59, 74",
+        "note": "headquarters at Louvain; at Thivencelle east of Condé on 24 August; at Villers-Faucon on the 28th and Péronne on the morning of the 29th"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-3",
+        "pages": "120, 125, 127, 129, 139, 140, 204, 236",
+        "note": "Solesmes on 27–28 August, Villers-Faucon at midday on the 28th, Péronne from the morning of the 29th and still there on the 30th, 'Armee-Hauptquartier 31. Noyon', 'Armeehauptquartier Compiegne' in the wireless just after midnight on 1 September, and Kluck going to his new headquarters at La Ferté-Milon on the morning of the 3rd"
+      },
+      {
+        "source": "source:kluck-1920",
+        "pages": "96, 102, 118, 120, 124, 127–129, 133, 140",
+        "note": "La Ferté-Milon; the move to Rebais; headquarters at Charly-sur-Marne from 10 a.m. on 6 September; the move to Vendrest at 7 a.m. on the 7th and the order that headquarters remain there on the 8th; arrival at Mareuil at 9.30 a.m. on the 9th and the orders issued there at 2 p.m. and 8.15 p.m."
+      }
+    ]
+  },
+  {
+    "id": "1914:track-bulow-army-2",
+    "person": "person:bulow-karl-von",
+    "kind": "hq",
+    "post": "2. Armee — the German Second Army",
+    "postShort": "2. Armee",
+    "side": "de",
+    "waypoints": [
+      [5.8628, 50.4921, "1914-08-16T12:00:00Z"],
+      [5.5736, 50.6451, "1914-08-17T12:00:00Z"],
+      [5.2629, 50.7428, "1914-08-18T20:00:00Z"],
+      [3.9321, 50.1219, "1914-08-27T23:00:00Z"],
+      [3.6575, 49.995, "1914-08-29T12:30:00Z"],
+      [3.2877, 49.8465, "1914-08-29T20:10:00Z"],
+      [3.6803, 49.3072, "1914-09-02T12:00:00Z"],
+      [3.5135, 49.2012, "1914-09-03T12:00:00Z"],
+      [3.6384, 49.0746, "1914-09-04T12:00:00Z"],
+      [3.8092, 48.9251, "1914-09-08T19:45:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "The towns the Second Army was commanded from, on the days the German official history names them: Spa on 16 August and Liège on the 17th, Marlinne on the evening of the 18th, then Avesnes, Étreux and Saint-Quentin over the Guise fighting, and Fismes, Fère-en-Tardenois and Dormans as the army came down to the Marne. Towns and days. The gap from 19 to 26 August, across Namur and Charleroi, is a gap: Bd. 1 stops naming his headquarters after Marlinne and Bd. 3 picks it up at Avesnes. The last waypoint, Montmort on the evening of 8 September, is where Hentsch found him, and comes from Herwig, not from the official history — Bd. 4 is not digitised.",
+    "notes": "On 17 August Moltke put the First Army under Bülow's orders for the wheel through Belgium, so for a fortnight this headquarters was commanding two armies from one town.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "129, 214, 216",
+        "note": "'Generaloberst v. Bülow verlegte sein Hauptquartier am 16. August nach Spa, am 17. nach Lüttich'; the army chiefs' conference at the Second Army headquarters in Liège on 17 August; the headquarters moved to Marlinne south-east of St Trond by the evening of the 18th"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-3",
+        "pages": "121, 143, 144, 149, 167, 178, 216, 242, 252",
+        "note": "the army order issued at 11 p.m. in Avesnes on 27 August; the new headquarters at Étreux just after midday on the 29th and a report reaching it there at 4.30 p.m.; Bülow going to his new headquarters at Saint-Quentin the same evening and writing from it at 8.10 p.m.; the move to Fismes on 2 September, to Fère-en-Tardenois on the 3rd and to Dormans on the 4th"
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "Bülow at Montmort on the evening of 8 September, where Hentsch reached him"
+      }
+    ]
+  },
+  {
+    "id": "1914:track-hausen-army-3",
+    "person": "person:hausen-max-von",
+    "kind": "hq",
+    "post": "3. Armee — the German Third Army",
+    "postShort": "3. Armee",
+    "side": "de",
+    "waypoints": [
+      [6.4249, 50.2069, "1914-08-12T12:00:00Z"],
+      [6.4249, 50.2069, "1914-08-15T12:00:00Z"],
+      [5.342, 50.2271, "1914-08-20T12:00:00Z"],
+      [4.5205, 49.925, "1914-08-27T14:00:00Z"],
+      [4.5205, 49.925, "1914-08-28T00:00:00Z"],
+      [4.4195, 49.6981, "1914-08-28T15:00:00Z"],
+      [4.4195, 49.6981, "1914-08-30T22:15:00Z"],
+      [4.4445, 49.5388, "1914-09-01T15:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "Five towns and the days the official history attaches to them: Prüm while the army was still closing up on the Eifel border, Marche-en-Famenne on 20 August as it came down on the Meuse, then Rocroi, Signy-l'Abbaye and Novy on the pursuit from the Meuse to the Aisne. Towns and days, not buildings and hours — the one hour on the track is the 10.15 p.m. army order of 30 August, which Bd. 3 dates and places at Signy-l'Abbaye. The five days between Marche and Rocroi, which take in Dinant and the crossing of the Meuse, are a gap.",
+    "notes": "Hausen's Saxons were the hinge between Bülow's wheel and the Crown Prince's advance, and the track shows a headquarters moving straight south while the two beside it swung.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "131, 224",
+        "note": "'Auf Befehl des Armee-Oberbefehlshabers, Generalobersten Freiherrn v. Hausen (Hauptquartier Prüm)' for 12–15 August; 'Generaloberst v. Hausen verlegte am 20. August sein Hauptquartier nach Marche'"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-3",
+        "pages": "55, 57, 58, 63, 116",
+        "note": "'Das Armee-Hauptquartier befand sich in Rocroi' on 27 August and Hausen returning to it about midnight; the headquarters moved to Signy-l'Abbaye on the afternoon of the 28th; the army order issued there at 10.15 p.m. on the 30th; the move from Signy-l'Abbaye to Novy on the afternoon of 1 September"
+      }
+    ]
+  },
+  {
+    "id": "1914:track-wilhelm-army-5",
+    "person": "person:wilhelm-german-crown-prince",
+    "kind": "hq",
+    "post": "5. Armee — the German Fifth Army",
+    "postShort": "5. Armee",
+    "side": "de",
+    "waypoints": [
+      [5.985, 49.496, "1914-08-26T12:00:00Z"],
+      [5.985, 49.496, "1914-08-28T09:00:00Z"],
+      [5.1884, 49.4916, "1914-09-02T12:00:00Z"],
+      [5.1884, 49.4916, "1914-09-03T20:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "Two towns, and only the days the official history states them: Esch, which the Fifth Army headquarters had not left on 26 August and was still working from on the morning of the 28th, and Stenay, which the army order of 1 September named as the next headquarters, which the Crown Prince moved to on 2 September, and from which the air reports were read on the evening of the 3rd. Towns and days. The pivot of the German left in the Ardennes, 20–25 August, is not on this track: the volumes read do not name the headquarters of those days, and it is left out rather than interpolated.",
+    "notes": "The army also worked a forward battle station at Beuveille while the headquarters stayed at Esch (Bd. 3, p. 76) — a command post, not the headquarters, and so not a waypoint here.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-3",
+        "pages": "29, 44, 104, 267, 272",
+        "note": "'Das Armee-Oberkommando verblieb auch am 26. August in seinem bisherigen Hauptquartier Esch'; a wireless taken in at the Fifth Army headquarters in Esch at 7.5 a.m. on 28 August; 'Das Armeehauptquartier sollte nach Stenay verlegt werden' in the order of 1 September; 'Kronprinz Wilhelm verlegte sein Hauptquartier nach Stenay' on 2 September; the air reconnaissance as it could be read 'am Abend des 3. September im Armee-Hauptquartier Stenay'"
+      }
+    ]
+  },
+  {
+    "id": "1914:track-rupprecht-army-6",
+    "person": "person:rupprecht-of-bavaria",
+    "kind": "hq",
+    "post": "6. Armee — the German Sixth Army",
+    "postShort": "6. Armee",
+    "side": "de",
+    "waypoints": [
+      [6.7072, 49.1043, "1914-08-09T12:00:00Z"],
+      [6.7072, 49.1043, "1914-08-16T10:00:00Z"],
+      [6.718, 48.8105, "1914-08-30T09:00:00Z"],
+      [6.718, 48.8105, "1914-09-02T12:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "Two towns, thirty-three kilometres apart, and the days the official histories put the Sixth Army headquarters in each: Saint-Avold from 9 August, where the orders of the 9th, the night of 13/14 and the morning of the 16th were issued and received, and Dieuze, where the headquarters was on 30 August and on 2 September. Between them lie Saarburg and Morhange, and the volumes read do not say on which day the headquarters moved — so the line between the two waypoints is not a claim about the day of the move, and the track says nothing about where he was in that fortnight.",
+    "notes": "On the morning of 30 August Rupprecht drove from Dieuze to the Seventh Army headquarters at Cirey and then round his own corps commands; Bd. 3 records the absence but not the hours, so it is not on the map as a journey.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "169, 193, 204",
+        "note": "an instruction of 9 August from the Sixth Army 'aus dem Hauptquartier St. Avold'; news from OHL reaching the Sixth Army in St Avold on the night of 13/14 August; further news from the Große Hauptquartier reaching it on the morning of the 16th"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-3",
+        "pages": "223, 284, 292",
+        "note": "Major Bauer at the Crown Prince Rupprecht's headquarters on 30 August; 'Während der Abwesenheit des Kronprinzen war im Hauptquartier in Dieuze Major Bauer …'; Krafft von Dellmensingen leaving the army headquarters for Luxembourg on 2 September"
+      }
+    ]
+  },
+  {
+    "id": "1914:track-heeringen-army-7",
+    "person": "person:heeringen-josias-von",
+    "kind": "hq",
+    "post": "7. Armee — the German Seventh Army",
+    "postShort": "7. Armee",
+    "side": "de",
+    "waypoints": [
+      [7.7507, 48.5846, "1914-08-17T10:00:00Z"],
+      [6.95, 48.5811, "1914-08-30T09:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Two towns and no more, because two is all the volumes read give: Strasbourg on 17 August, where the Crown Prince Rupprecht sent a staff officer to put his intentions to Heeringen, and Cirey-sur-Vezouze on 30 August, where Rupprecht came to see him. Everything between — the whole of Lorraine, Saarburg, the attack on the Trouée de Charmes — is unrecorded here, and the straight line between the two waypoints is a line drawn between two dated facts, not a route. It is on the map because the position of the extreme German left is worth seeing beside the right wing, and it is marked low confidence for exactly that reason.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "207",
+        "note": "a general staff officer sent on the morning of 17 August 'in das Hauptquartier der 7. Armee nach Straßburg'"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-3",
+        "pages": "284",
+        "note": "'Kronprinz Rupprecht begab sich am Morgen des 30. August zum Armee-Oberkommando 7 nach Cirey'"
+      }
+    ]
+  },
+  {
+    "id": "1914:track-french-bef-ghq",
+    "person": "person:french-john",
+    "kind": "hq",
+    "post": "GHQ — British Expeditionary Force General Headquarters",
+    "postShort": "BEF GHQ",
+    "side": "gb",
+    "waypoints": [
+      [3.5417, 50.1058, "1914-08-16T22:00:00Z"],
+      [3.7949, 50.2979, "1914-08-24T15:00:00Z"],
+      [3.2877, 49.8465, "1914-08-26T03:30:00Z"],
+      [3.0, 49.5806, "1914-08-26T22:00:00Z"],
+      [2.8263, 49.4179, "1914-08-28T12:00:00Z"],
+      [2.6836, 49.0548, "1914-08-31T20:50:00Z"],
+      [2.7056, 48.8773, "1914-09-01T19:00:00Z"],
+      [2.6608, 48.5399, "1914-09-04T15:00:00Z"],
+      [2.6608, 48.5399, "1914-09-07T11:00:00Z"],
+      [3.5135, 49.2012, "1914-09-14T23:00:00Z"],
+      [1.8337, 50.1061, "1914-10-08T12:00:00Z"],
+      [2.2534, 50.7516, "1914-10-13T12:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "Where GHQ was on the nights the British official history names, and no others: Le Cateau from the late evening of 16 August, Bavai on 24 August, Saint-Quentin in the small hours of the 26th — the morning of Le Cateau, with Smith-Dorrien speaking to it by railway telephone — Noyon that night, Compiègne from the 28th, Dammartin-en-Goële, from which the orders of 8.50 p.m. on 31 August went out, Lagny on the evening of 1 September as German cavalry from Néry passed close by, Melun where Gallieni found it on the afternoon of the 4th and where Joffre's orders for the Marne reached it at 11 a.m. on the 7th, Fère-en-Tardenois on the Aisne, and the move to Abbeville on 8 October and Saint-Omer five days later. Towns and nights, not buildings and hours, except where the volume prints the hour on an order or an arrival. The exact day GHQ came off the Marne to Fère-en-Tardenois is not given in what was read, so the track has it there at the hour of the conference of 14 September and not before. Page numbers are to the third edition of 1933, which is the edition that is digitised; they do not carry to the first edition of 1922.",
+    "notes": "A headquarters that moved eleven times in eight weeks, twice in one day at Le Cateau, is the retreat written as a line — and it is why Joffre had to drive to Melun on 5 September to ask Sir John French in person.",
+    "sources": [
+      {
+        "source": "source:edmonds-1933",
+        "pages": "68, 118, 142, 199, 265, 278, 281, 419, 464, 521, 529",
+        "note": "GHQ at Le Cateau; Sir John French returning to GHQ at Bavai on the afternoon of 24 August; the II Corps message reaching GHQ at Saint-Quentin about 5 a.m. on the 26th; Smith-Dorrien finding on the evening of the 26th that GHQ had left for Noyon; GHQ having moved from Noyon to Compiègne on the 28th; the operation orders of 8.50 p.m. on 31 August from Dammartin-en-Goële and GHQ moving back from Dammartin to Lagny; 'G.H.Q. move Lagny on Marne now' at 7 p.m.; Gallieni at British headquarters at Melun on the afternoon of 4 September and 'G.H.Q. will remain at Melun'; Joffre's orders reaching GHQ at Melun at 11 a.m. on the 7th; the Commander-in-Chief's headquarters at Fère-en-Tardenois at 11 p.m. on 14 September; 'On the 8th, G.H.Q. moved from Fere en Tardenois to Abbeville and five days later to St. Omer'"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "239",
+        "note": "'Das englische Hauptquartier traf am 16. August spät abends in Le Cateau ein'"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-3",
+        "pages": "365, 379",
+        "note": "the German official history placing the British headquarters at Compiègne on 29 August and at Dammartin on the afternoon of 31 August"
+      }
+    ]
+  },
+  {
+    "id": "1914:track-lanrezac-army-5",
+    "person": "person:lanrezac-charles",
+    "kind": "hq",
+    "post": "Ve armée — the French Fifth Army",
+    "postShort": "Ve armée",
+    "side": "fr",
+    "waypoints": [
+      [4.3666, 49.5091, "1914-08-04T12:00:00Z"],
+      [4.3666, 49.5091, "1914-08-17T12:00:00Z"],
+      [4.3213, 50.0356, "1914-08-22T12:00:00Z"],
+      [4.3213, 50.0356, "1914-08-23T20:00:00Z"],
+      [3.6207, 49.5647, "1914-08-29T09:00:00Z"],
+      [3.7223, 48.7241, "1914-09-03T17:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "The towns Lanrezac's own book names as his headquarters, on the days it names them: Rethel from 4 August, where Sir John French came to see him on the 17th; Chimay on 22 and 23 August, over the battle of Charleroi; Laon on the morning of 29 August, where the German official history has Joffre reaching him about 9 a.m.; Sézanne on 3 September, where Joffre took the army from him at about 5 p.m. Towns and days. The retreat between Chimay and Laon — six days and a hundred kilometres, by way of Marle — is a gap: his book narrates the days without naming the headquarters of each, and the track does not invent them.",
+    "notes": "On 23 August, the day of Charleroi, Lanrezac worked from a battle command post at Philippeville while the army headquarters stayed at Chimay; a command post is not the headquarters and is not a waypoint here. The track ends when Franchet d'Espèrey took the army over on the evening of 3 September.",
+    "sources": [
+      {
+        "source": "source:lanrezac-1920",
+        "pages": "62, 91, 173, 177, 179, 276",
+        "note": "'Le 4 août, je me rends de Paris à mon Q. G. de Rethel'; 'Le 17 août, je reçois à Rethel la visite du maréchal French'; 'Le Q. G. de la Ve armée est toujours à Chimay' and 'Mon poste de commandement est à Philippeville' on 23 August; 'Je rentre à mon Q. G. de Chimay'; 'Le 3 septembre, vers 17 heures, le général Joffre … arriva à Sézanne'"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-3",
+        "pages": "360",
+        "note": "Joffre driving early on 29 August to the Fifth Army and reaching 'im Armee-Hauptquartier Laon' about 9 a.m."
+      }
+    ]
+  },
+  {
+    "id": "1914:track-albert-belgian-gqg",
+    "person": "person:albert-i-of-belgium",
+    "kind": "hq",
+    "post": "Belgian General Headquarters",
+    "postShort": "Belgian GQG",
+    "side": "be",
+    "waypoints": [
+      [4.7012, 50.8792, "1914-08-06T12:00:00Z"],
+      [4.7012, 50.8792, "1914-08-18T17:00:00Z"],
+      [4.4803, 51.0281, "1914-08-19T12:00:00Z"],
+      [4.3997, 51.2211, "1914-08-20T12:00:00Z"],
+      [4.3997, 51.2211, "1914-08-26T12:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "Three towns and the days the sources give: Louvain, where the Belgian headquarters heard on 6 August of the German coup against Liège and where it stayed until the King decided on the afternoon of 18 August to fall back on Antwerp; Malines, to which Lanrezac records the headquarters being moved on the 19th; and Antwerp, which the army reached on 20 August — the day the Germans entered Brussels — and from which the first sortie was made on 25 and 26 August. Towns and days; the one hour on the track is 'am 18. August nachmittags', the afternoon the decision was taken. The track stops on 26 August because that is as far as the volumes read carry the headquarters; the siege, the later sorties and the move to the Yser are not on it.",
+    "notes": "Albert commanded his own army in the field, which no other sovereign in this pack did; the track is the Belgian headquarters and, unusually, also the man.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "240, 243, 441",
+        "note": "'Im Hauptquartier Löwen erfuhr man am gleichen Tage von dem in der Nacht vom 5. zum 6. August unternommenen deutschen Handstreich auf Lüttich'; 'So entschloss sich König Albert am 18. August nachmittags zum Rückzug auf diese starke Festung'; 'Am 20. August trafen die Truppen sämtlich im schützenden Festungsbereich ein'"
+      },
+      {
+        "source": "source:lanrezac-1920",
+        "pages": "111",
+        "note": "'son quartier général, la veille, a été transporté de Louvain à Malines' — written on 20 August, of the 19th"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-3",
+        "pages": "327",
+        "note": "'als auch schon am 25. und 26. August der erste Ausfall der Belgier aus Antwerpen erfolgte'"
+      }
+    ]
+  },
+  {
+    "id": "1914:track-ludendorff-liege-1914-08-07",
+    "person": "person:ludendorff-erich",
+    "kind": "journey",
+    "side": "de",
+    "mode": "motor",
+    "waypoints": [
+      [5.5986, 50.6319, "1914-08-06T20:00:00Z"],
+      [5.5986, 50.6319, "1914-08-07T07:00:00Z"],
+      [5.5772, 50.6511, "1914-08-07T10:00:00Z"],
+      [5.5772, 50.6511, "1914-08-07T19:00:00Z"],
+      [5.7931, 50.6392, "1914-08-07T20:30:00Z"],
+      [6.0839, 50.7764, "1914-08-07T23:30:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "The night and day Ludendorff spent inside the fort ring at Liège, from his own account: the heights by the old work of La Chartreuse on the night of 6/7 August, with the 14th Brigade isolated between the forts; into the town in the morning; up to the citadel in a commandeered Belgian car, where he banged on the locked gates and took the surrender of the few hundred Belgians inside; and away at seven in the evening for Aix-la-Chapelle by way of Herve, reaching it 'late at night'. The two hours in the middle — into the town, up to the citadel — are nominal within the morning the memoir describes; seven o'clock and the order of the places are his. The 11.30 p.m. arrival at Aachen is nominal within 'late at night'; what the German official history fixes is that he came back through the fort line by car on the evening of the 7th and reported to Bülow in Aachen on the morning of the 8th.",
+    "notes": "A journey is the man, and this one is the reason Ludendorff was known to Moltke a fortnight later, when the call to the east came.",
+    "sources": [
+      {
+        "source": "source:ludendorff-1919",
+        "pages": "36–38",
+        "note": "the night on the heights east of La Chartreuse; the entry into the town; the citadel taken with the brigade adjutant in a commandeered Belgian car; 'I started at seven o'clock for Aix-la-Chapelle', through Herve, arriving 'late at night'"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "118",
+        "note": "'Er war am 7. August abends in einem belgischen Kraftwagen durch die Fortlinie aus Lüttich zurückgekehrt' and reported to Bülow in Aachen on the morning of 8 August"
+      }
+    ]
+  },
+  {
+    "id": "1914:track-ludendorff-east-1914-08-22",
+    "person": "person:ludendorff-erich",
+    "kind": "journey",
+    "side": "de",
+    "mode": "motor",
+    "waypoints": [
+      [4.738, 50.592, "1914-08-22T09:00:00Z"],
+      [4.6104, 50.717, "1914-08-22T09:45:00Z"],
+      [7.5944, 50.3533, "1914-08-22T18:00:00Z"],
+      [7.5944, 50.3533, "1914-08-22T21:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "The day Ludendorff was taken off the western front, at the hours he gives himself: the letters from Moltke and Stein handed to him at nine in the morning of 22 August at the headquarters of the 2nd Army, 'half-way between Wavre and Namur'; on the road within a quarter of an hour; through Wavre, which was burning; Koblenz at six in the evening, and a special train east at nine. The first waypoint is the midpoint of the Wavre–Namur road, because that is exactly what the memoir says and no more; the 9.45 a.m. at Wavre is nominal, placed only to make the line follow the road he names. The journey ends at Koblenz because the rest of it — Hindenburg boarding at Hanover at four in the morning, Marienburg at two on the afternoon of the 23rd — is off this map.",
+    "notes": "Thirteen hours from the Belgian roadside to a train for East Prussia. The man who took Liège left the western campaign three days before the Marne was lost on it.",
+    "sources": [
+      {
+        "source": "source:ludendorff-1919",
+        "pages": "40, 41, 44, 46",
+        "note": "'On the morning of August 22nd I received my call to the East'; the letters handed to him 'at nine in the morning of the 22nd August, at the Headquarters of the 2nd Army, half-way between Wavre and Namur'; 'Within a quarter of an hour I was on my way in a car to Coblenz. I passed through Wavre'; 'I arrived at Coblenz at six o'clock in the evening'; 'At nine o'clock in the evening I left Coblenz in a special train'"
+      }
+    ]
+  },
+  {
+    "id": "1914:track-joffre-sezanne-1914-09-03",
+    "person": "person:joffre-joseph",
+    "kind": "journey",
+    "side": "fr",
+    "mode": "motor",
+    "waypoints": [
+      [4.5852, 48.7262, "1914-09-03T12:00:00Z"],
+      [3.7223, 48.7241, "1914-09-03T17:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "The drive of 3 September on which Joffre took the Fifth Army away from Lanrezac and gave it to Franchet d'Espèrey. Only one end of it is recorded: Lanrezac's own book has him arriving at Sézanne 'vers 17 heures' with Lieutenant-Colonel Gamelin. The track therefore begins at GQG, which its own hq track puts at Vitry-le-François that day, at a nominal midday, and ends at the hour Lanrezac gives. It does not draw a return, because none is recorded — a journey with one sourced end is drawn to that end and stops.",
+    "notes": "Five days later Joffre made the other drive he is remembered for, to Melun; the two together are most of what he did in person in the campaign.",
+    "sources": [
+      {
+        "source": "source:lanrezac-1920",
+        "pages": "276",
+        "note": "'Le 3 septembre, vers 17 heures, le général Joffre, accompagné du lieutenant-colonel Gamelin, arriva à Sézanne'"
+      }
+    ]
+  },
+  {
+    "id": "1914:track-gallieni-melun-1914-09-04",
+    "person": "person:gallieni-joseph",
+    "kind": "journey",
+    "side": "fr",
+    "mode": "motor",
+    "waypoints": [
+      [2.3125, 48.8566, "1914-09-04T13:30:00Z"],
+      [2.6608, 48.5399, "1914-09-04T15:00:00Z"],
+      [2.6608, 48.5399, "1914-09-04T17:00:00Z"],
+      [2.3125, 48.8566, "1914-09-04T18:30:00Z"]
+    ],
+    "confidence": "high",
+    "derivation": "The afternoon on which Paris tried to make the British turn and fight, hour by hour out of Gallieni's own memoir: on the road at half past one with Maunoury and Clergerie, out by the Porte de Charenton on the Melun road; at Melun at three, at the British GHQ installed in the collège on the Melun–Meaux road; three hours of conference with Murray, Sir John French being away visiting his I Corps; and away from Melun 'vers 5 heures', Maunoury for Le Raincy and Gallieni for Paris. Every hour but the last is the memoir's. The return to Paris is not timed, so it carries the ninety minutes the outward drive took, and is marked as that in this sentence rather than left to be read as evidence.",
+    "notes": "The next day Joffre drove the same road to Melun to ask Sir John French in person, and got what Gallieni could not.",
+    "sources": [
+      {
+        "source": "source:gallieni-1920",
+        "pages": "119–123",
+        "note": "'Je me mets donc en route à 1 heure et demie pour le quartier général anglais'; 'Nous sommes à Melun à 3 heures'; the British GHQ 'très bien installé au collège, sur la grande route nationale de Melun-Meaux'; 'après 3 heures de conférence et de discussion'; 'Nous quittons Melun vers 5 heures'"
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "278",
+        "note": "the visit from the British side: Gallieni came with Maunoury to British headquarters at Melun on the afternoon of the 4th, and 'after waiting three hours for Sir John French, but all in vain, at 5 p.m. General Gallieni departed'"
+      }
+    ]
+  },
+  {
+    "id": "1914:track-hentsch-mission-1914-09-08",
+    "person": "person:hentsch-richard",
+    "kind": "journey",
+    "side": "de",
+    "mode": "motor",
+    "waypoints": [
+      [6.13, 49.611, "1914-09-08T11:00:00Z"],
+      [5.04, 49.23, "1914-09-08T13:00:00Z"],
+      [4.5, 48.98, "1914-09-08T15:00:00Z"],
+      [4.37, 48.96, "1914-09-08T16:00:00Z"],
+      [3.82, 48.92, "1914-09-08T20:00:00Z"],
+      [3.82, 48.92, "1914-09-09T07:00:00Z"],
+      [3.08, 49.14, "1914-09-09T11:00:00Z"],
+      [3.08, 49.14, "1914-09-09T13:00:00Z"],
+      [3.82, 48.92, "1914-09-09T20:00:00Z"],
+      [6.13, 49.611, "1914-09-10T06:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "Hentsch's itinerary by car as reconstructed in Herwig: Luxembourg, the 5th, 4th and 3rd Army headquarters on 8 September, Bülow's at Montmort that evening, Kluck's at Mareuil-sur-Ourcq late on the morning of the 9th, back to Luxembourg on the 10th. The hours are the reconstruction's, not a log; the line shows which headquarters he reached and in what order, not the roads he took.",
+    "notes": "Migrated from a route on the pseudo-formation `1914:marne-hentsch-mission` (sand-23b.9): a staff officer in a car is a man, not a formation, and a documented movement of a man is what a journey track is for. The pseudo-formation and its route are gone; the events and the decision that referenced it reference the person, as they already did.",
+    "sources": [
+      {
+        "source": "source:herwig-2009",
+        "note": "the itinerary, the headquarters visited and the order of the visits"
+      },
+      {
+        "source": "source:tuchman-1962",
+        "note": "the drive as narrative; colour, not times"
       }
     ]
   }
