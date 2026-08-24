@@ -183,6 +183,30 @@ chemistry card has to say what Fritz Haber was. It moves to the Western Front
   the ratio rather than from either total. No single figure is offered for
   "gas casualties in the First World War".
 
+## 11. When did British GHQ learn that Lanrezac was retreating?
+
+- **The version in circulation** (Sir John French, _1914_, 1919, and the
+  narratives that follow him): on the night of 23 August the French Fifth
+  Army began to retire without telling the British, and Sir John French found
+  out only the next morning, from a liaison officer — the moment usually given
+  as the origin of his refusal to work with Lanrezac again.
+- **The British official history** (Edmonds, Vol. I, 3rd edn 1933, p. 93):
+  further information came in from Fifth Army headquarters "during the
+  evening and just before midnight — when Lieutenant Spears brought the news
+  that General Lanrezac had decided to order a retreat to begin at 3 a.m.
+  next morning", and it was that news which decided the Commander-in-Chief
+  that his position in advance of the general line was strategically wrong.
+  Spears's own _Liaison 1914_ (1930) is where the detail comes from; the
+  third edition of Edmonds was revised against it.
+- **What is not in dispute:** Lanrezac ordered the Fifth Army back before
+  daybreak on the 24th (Edmonds p. 94) without a prior agreement with the
+  BEF, and the BEF had to conform or be enveloped.
+- **How the pack presents it:** the Mons event says the official history has
+  Spears bring the news just before midnight, and notes that Sir John French
+  afterwards wrote that he was told nothing. The grievance is real and is
+  described as a grievance; the hour is given as the official history gives
+  it, not as the memoir does.
+
 ## Using these notes
 
 Link a beat to the relevant note by naming the historians in the prose with
