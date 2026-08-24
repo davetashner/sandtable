@@ -1765,24 +1765,6 @@
             "source": "source:strachan-2001"
           }
         ]
-      },
-      {
-        "id": "1914:liege-leman-hq",
-        "name": "Leman's headquarters",
-        "short": "Leman",
-        "side": "be",
-        "kind": "other",
-        "commander": "person:leman-gerard",
-        "dissolved": "1914-08-15T17:30:00Z",
-        "summary": "Leman's headquarters in the Rue Sainte-Foi in Liège until the morning of 6 August, when a German patrol reached it and he withdrew to Fort Loncin to direct the forts; taken unconscious from Loncin's ruins on 15 August.",
-        "sources": [
-          {
-            "source": "source:herwig-2009"
-          },
-          {
-            "source": "source:tuchman-1962"
-          }
-        ]
       }
     ],
     "routes": [
@@ -2188,26 +2170,6 @@
         ]
       },
       {
-        "id": "1914:liege-route-leman",
-        "formation": "1914:liege-leman-hq",
-        "waypoints": [
-          [5.575, 50.641, "1914-08-04T00:00:00Z"],
-          [5.575, 50.641, "1914-08-06T08:00:00Z"],
-          [5.5, 50.672, "1914-08-06T12:00:00Z"],
-          [5.5, 50.672, "1914-08-15T17:00:00Z"]
-        ],
-        "confidence": "high",
-        "derivation": "Rue Sainte-Foi, then Fort Loncin.",
-        "sources": [
-          {
-            "source": "source:herwig-2009"
-          },
-          {
-            "source": "source:tuchman-1962"
-          }
-        ]
-      },
-      {
         "id": "1914:liege-route-div-be-3",
         "formation": "1914:div-be-3",
         "waypoints": [
@@ -2339,7 +2301,7 @@
         "place": "place:liege",
         "summary": "With a German brigade on the heights and the intervals no longer tenable, Leman orders the 3rd Division back to the field army on the Gette and moves his own headquarters into Fort Loncin. The forts will fight on alone.",
         "links": {
-          "formations": ["1914:div-be-3", "1914:liege-leman-hq"],
+          "formations": ["1914:div-be-3"],
           "people": ["person:leman-gerard"]
         },
         "sources": [
@@ -2473,7 +2435,7 @@
         "lngLat": [5.5, 50.672],
         "summary": "A 42 cm shell reaches Loncin's magazine; the fort blows up with most of its garrison, and Leman is dug unconscious from the ruins and taken prisoner.",
         "links": {
-          "formations": ["1914:liege-fort-loncin", "1914:liege-leman-hq"],
+          "formations": ["1914:liege-fort-loncin"],
           "people": ["person:leman-gerard"]
         },
         "sources": [

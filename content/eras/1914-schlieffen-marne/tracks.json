@@ -421,6 +421,44 @@
     ]
   },
   {
+    "id": "1914:track-leman-liege",
+    "person": "person:leman-gerard",
+    "kind": "hq",
+    "post": "Position fortifiée de Liège — the Belgian fortress command",
+    "postShort": "Liège",
+    "side": "be",
+    "mode": "march",
+    "waypoints": [
+      [5.575, 50.641, "1914-08-04T00:00:00Z"],
+      [5.575, 50.641, "1914-08-06T08:00:00Z", "low"],
+      [5.5, 50.672, "1914-08-06T12:00:00Z", "low"],
+      [5.5, 50.672, "1914-08-15T17:00:00Z"]
+    ],
+    "confidence": "high",
+    "derivation": "Two buildings inside one fortress and the days the sources give, not a journey across country: Leman's headquarters in the Rue Sainte-Foi in Liège, which he held from the opening of the attack until a German patrol reached it on the morning of 6 August, and Fort de Loncin, from which he directed the forts until he was dug out of its ruins on 15 August. The positions are as good as this pack's positions get — the German official history has him going into Loncin and conducting the defence of the forts from there on the 6th, and being taken out of it on the 15th — so the track is high, and only its two nominal hours are marked down. The move itself is the pair marked low: the hour he left the Rue Sainte-Foi is nominal inside 'the morning', and the hour he reached Loncin is nominal inside the afternoon in which Bd. 1 p. 117 has the 3rd Division marching off and Leman going into the fort. The 5 p.m. end is the day the volume gives and not an hour it prints; the 5.20 p.m. on the Loncin event is the Belgian fort record's and is nominal there, as that event already says. Nothing is interpolated between the two positions: for the nine days between 6 and 15 August the track stands still at Loncin, which is where the command was.",
+    "notes": "Migrated from a route on the pseudo-formation `1914:liege-leman-hq` (sand-23b.18): a man is not a formation, and the fortress commander was in the order of battle as a unit of kind `other` with a `dissolved` date standing in for his capture. This is an hq and not a journey because what it shows is the post — the Position fortifiée de Liège was run from the Rue Sainte-Foi and then from Loncin, at the resolution of a day or a part of one — and not the man at documented hours. `march` because the whole track is six kilometres inside his own fortified position; no source read here says he was driven, and an unmarked track would be read as road travel. Migrating it also lifts him out of the Liège zoom-in, where a battle-level route is all that renders, onto the campaign map with his portrait token.",
+    "sources": [
+      {
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "117",
+        "note": "Leman ordered the 3rd Division and the 15th Brigade back on Hollogne-sur-Geer and Hannut, and 'diese Bewegung wurde am Nachmittag angetreten'; Leman himself went into Fort Loncin and directed the defence of the forts from there. The afternoon is what the volume supports; the hour on the waypoint is nominal inside it and is marked low"
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-1",
+        "pages": "120",
+        "note": "Loncin blown up on 15 August and Leman taken out of it. The volume gives the day and no hour"
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "the headquarters in the Rue Sainte-Foi and the German patrol that reached it on the morning of 6 August; Leman's withdrawal to Loncin and his capture"
+      },
+      {
+        "source": "source:tuchman-1962",
+        "note": "the raid on the Rue Sainte-Foi as narrative; colour, not times"
+      }
+    ]
+  },
+  {
     "id": "1914:track-ludendorff-liege-1914-08-07",
     "person": "person:ludendorff-erich",
     "kind": "journey",
