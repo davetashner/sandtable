@@ -10,6 +10,18 @@
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
   color: var(--muted);
+}
+
+/* `.clock-table td` holds readouts on one line. The casualty card reuses that
+   table, but its "Counted" cell carries a phrase — "killed, wounded and
+   missing" — and its notes carry prose: unbreakable, they made the four-column
+   table 426px wide inside a 304px dossier, so the numbers sat off-screen
+   (sand-1l0.15). Everything here wraps except the figures themselves. */
+.human-table td {
+  white-space: normal;
+}
+
+.human-table td.human-table__n {
   white-space: nowrap;
 }
 

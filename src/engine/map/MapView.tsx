@@ -191,10 +191,23 @@ export function MapView({
     map.addControl(overlay);
     mapRef.current = map;
     overlayRef.current = overlay;
-    map.once('load', () => {
+    // `load` waits for the first tiles as well as the style. When the basemap
+    // source cannot be read — offline, a blocked tile host, a bad range
+    // request — it never fires, and with it the screen-space label layout
+    // never runs: every deck label falls back to its default slot and the
+    // army and place names pile up on each other (sand-1l0.15). The style
+    // alone is enough for what `onReady` is for — `map.project` and the
+    // interleaved overlay are both live by then — so take whichever comes
+    // first.
+    let announced = false;
+    const announce = () => {
+      if (announced) return;
+      announced = true;
       setReady(true);
       onReady?.(handle);
-    });
+    };
+    map.once('load', announce);
+    map.once('styledata', announce);
     return () => {
       mapRef.current = null;
       overlayRef.current = null;

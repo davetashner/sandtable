@@ -47,6 +47,11 @@
   font-size: var(--fs-xs);
   color: var(--muted);
   margin-top: 2px;
+  /* `td` is `nowrap` so short readouts ("M+22", "on time") never break. A note
+     is prose, and the casualty card reuses this table: inherited nowrap made
+     its note one unbreakable line and the table 1459px wide inside a 304px
+     dossier, so the figures sat five screens off to the right (sand-1l0.15). */
+  white-space: normal;
 }
 
 .clock-table__note p {

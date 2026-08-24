@@ -87,3 +87,32 @@
   border-color: var(--brass);
   text-decoration: none;
 }
+
+/* On a phone the eleven chapter chips wrapped into eleven rows and pushed the
+   map off the screen — more chrome than content. One scrolling rail instead,
+   with the cut edge faded so it reads as continuing (sand-1l0.15). */
+@media (max-width: 699.98px) {
+  .crumbs__battles {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  }
+
+  .crumbs__battles::-webkit-scrollbar {
+    display: none;
+  }
+
+  .crumbs__label,
+  .crumbs__chip {
+    flex: none;
+    white-space: nowrap;
+  }
+
+  .crumbs__chip {
+    padding: 6px 10px;
+  }
+}

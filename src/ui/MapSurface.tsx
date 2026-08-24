@@ -9,12 +9,13 @@ import { useClock } from '../engine/ClockContext.js';
 import {
   DEFAULT_PLACE_KINDS,
   buildPlacesLayers,
+  occupiedBoxes,
   placeLabelCandidates,
   placeLabels,
 } from '../engine/layers/places.js';
 import { buildStyle, type MapTheme } from '../engine/map/style.js';
 import { useMovementLayers, type MovementSource } from '../engine/layers/useMovementLayers.js';
-import { buildTallyLayers } from '../engine/layers/tallies.js';
+import { buildTallyLayers, tallyLabelCandidates } from '../engine/layers/tallies.js';
 import { MapView, type CameraTarget, type MapHandle } from '../engine/map/MapView.js';
 import { labelNow } from '../engine/ticks.js';
 import type { BBox, Branch, Camera, Place, Tally } from '../packs/schema/index.js';
@@ -70,11 +71,26 @@ export function MapSurface({
     project: viewTick > 0 ? project : undefined,
     placementKey: viewTick,
   });
+  // Three passes, in order of who may not be pushed aside: army tokens first
+  // (above), then the tally markers that sit on their route, then the towns.
+  // Each avoids the boxes the passes before it took (sand-320, sand-1l0.15).
+  const tallyCandidates = useMemo(() => tallyLabelCandidates(tallies, now), [tallies, now]);
+  const tallyPlacement = useMemo(
+    () => (viewTick > 0 ? placeLabels(tallyCandidates, project, labelBoxes) : undefined),
+    [tallyCandidates, viewTick, project, labelBoxes],
+  );
+  const takenBoxes = useMemo(
+    () =>
+      tallyPlacement
+        ? [...labelBoxes, ...occupiedBoxes(tallyCandidates, tallyPlacement, project)]
+        : labelBoxes,
+    [labelBoxes, tallyCandidates, tallyPlacement, project],
+  );
   const candidates = useMemo(() => placeLabelCandidates(places), [places]);
   const placeLayers = useMemo(() => {
-    const placement = viewTick > 0 ? placeLabels(candidates, project, labelBoxes) : undefined;
+    const placement = viewTick > 0 ? placeLabels(candidates, project, takenBoxes) : undefined;
     return buildPlacesLayers({ places, placement, placementKey: viewTick });
-  }, [places, candidates, viewTick, project, labelBoxes]);
+  }, [places, candidates, viewTick, project, takenBoxes]);
   // The basemap must not label the cities the pack labels itself (sand-3uq).
   const labelledPoints = useMemo(
     () => places.filter((p) => DEFAULT_PLACE_KINDS.includes(p.kind)).map((p) => p.lngLat),
@@ -90,8 +106,15 @@ export function MapSurface({
     [labelledPoints],
   );
   const tallyLayers = useMemo(
-    () => buildTallyLayers({ tallies, now, ...(onSelectTally ? { onSelect: onSelectTally } : {}) }),
-    [tallies, now, onSelectTally],
+    () =>
+      buildTallyLayers({
+        tallies,
+        now,
+        placement: tallyPlacement,
+        placementKey: viewTick,
+        ...(onSelectTally ? { onSelect: onSelectTally } : {}),
+      }),
+    [tallies, now, tallyPlacement, viewTick, onSelectTally],
   );
   const layers = useMemo(
     () => [...placeLayers, ...tallyLayers, ...movementLayers],

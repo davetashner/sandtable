@@ -33,6 +33,12 @@
   cursor: pointer;
   flex: none;
   display: grid;
+  /* Explicit tracks. With auto tracks the img's `height: 100%` is cyclic and
+     resolves to `auto`, so a 3:4 portrait rendered 30x40 inside a 30px frame:
+     `object-fit`/`object-position` then framed a box 33% taller than the one
+     on screen and every face was cropped top and bottom, undoing the
+     placement pass (sand-y0u.8, sand-1l0.15). */
+  grid-template: 100% / 100%;
   place-items: center;
   transition:
     transform 150ms ease,

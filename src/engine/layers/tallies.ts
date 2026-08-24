@@ -8,6 +8,7 @@ import { ScatterplotLayer, TextLayer } from '@deck.gl/layers';
 import type { Tally } from '../../packs/schema/index.js';
 import { tokenColor } from './colors.js';
 import { deltaLabel } from '../tally.js';
+import { PLACE_SLOTS, type LabelCandidate, type LabelPlacement } from './places.js';
 
 interface MarkerDatum {
   id: string;
@@ -21,13 +22,22 @@ export interface TallyLayerOptions {
   tallies: Tally[];
   now: number;
   onSelect?: (tallyId: string) => void;
+  /**
+   * Screen-space label placement, as for places and tokens (sand-320): a
+   * marker sits where an army passed, so its label collides with the army's
+   * and with the towns around it unless it joins the same layout pass
+   * (sand-1l0.15).
+   */
+  placement?: ReadonlyMap<string, LabelPlacement> | undefined;
+  placementKey?: string | number | undefined;
 }
 
-export function buildTallyLayers(o: TallyLayerOptions): Layer[] {
+/** The markers visible at `now` — the data behind both layers, and the label candidates. */
+export function tallyMarkers(tallies: Tally[], now: number): MarkerDatum[] {
   const data: MarkerDatum[] = [];
-  for (const t of o.tallies) {
+  for (const t of tallies) {
     for (const e of t.entries) {
-      if (!e.lngLat || Date.parse(e.at) > o.now) continue;
+      if (!e.lngLat || Date.parse(e.at) > now) continue;
       data.push({
         id: `${t.id}/${e.id}`,
         tallyId: t.id,
@@ -37,6 +47,26 @@ export function buildTallyLayers(o: TallyLayerOptions): Layer[] {
       });
     }
   }
+  return data;
+}
+
+/** Label candidates for the markers, for `placeLabels`. The ring is 9px. */
+export function tallyLabelCandidates(tallies: Tally[], now: number): LabelCandidate[] {
+  return tallyMarkers(tallies, now).map((d) => ({
+    id: d.id,
+    text: d.label,
+    position: d.position,
+    priority: 2,
+    size: 11,
+    gap: 13,
+    radius: 10,
+  }));
+}
+
+export const TALLY_SLOTS = PLACE_SLOTS;
+
+export function buildTallyLayers(o: TallyLayerOptions): Layer[] {
+  const data = tallyMarkers(o.tallies, o.now);
   const brass = tokenColor('--brass');
   const panel = tokenColor('--panel');
   const ink = tokenColor('--ink');
@@ -61,15 +91,20 @@ export function buildTallyLayers(o: TallyLayerOptions): Layer[] {
     }),
     new TextLayer<MarkerDatum>({
       id: 'tally-marker-labels',
-      data,
+      data: o.placement ? data.filter((d) => o.placement!.get(d.id)?.visible !== false) : data,
       getPosition: (d) => d.position,
       getText: (d) => d.label,
       getSize: 11,
       sizeUnits: 'pixels',
       getColor: (d) => (d.sign === 'minus' ? red : ink),
-      getTextAnchor: 'start',
-      getAlignmentBaseline: 'center',
-      getPixelOffset: [13, 0],
+      getTextAnchor: (d) => o.placement?.get(d.id)?.anchor ?? 'start',
+      getAlignmentBaseline: (d) => o.placement?.get(d.id)?.baseline ?? 'center',
+      getPixelOffset: (d) => o.placement?.get(d.id)?.offset ?? [13, 0],
+      updateTriggers: {
+        getTextAnchor: o.placementKey,
+        getAlignmentBaseline: o.placementKey,
+        getPixelOffset: o.placementKey,
+      },
       fontFamily: 'IBM Plex Mono, ui-monospace, monospace',
       fontWeight: 600,
       outlineWidth: 3,

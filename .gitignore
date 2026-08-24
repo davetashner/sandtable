@@ -59,3 +59,6 @@ public/assets/
 # CDK
 infra/cdk.out/
 infra/cdk.context.json
+
+# Screenshots from scripts/visual-review.mjs (docs/design-review.md) — regenerate, never commit
+visual-review/
