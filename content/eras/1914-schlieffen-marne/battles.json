@@ -195,7 +195,7 @@
           [3.08, 48.8, "1914-09-05T06:00:00Z"],
           [3.05, 48.85, "1914-09-05T22:00:00Z"],
           [2.98, 48.98, "1914-09-06T12:00:00Z"],
-          [2.93, 49.0, "1914-09-06T20:00:00Z"],
+          [2.93, 49, "1914-09-06T20:00:00Z"],
           [2.93, 49.08, "1914-09-07T12:00:00Z"],
           [2.95, 49.11, "1914-09-08T12:00:00Z"],
           [2.83, 49.14, "1914-09-09T12:00:00Z"],
@@ -227,7 +227,7 @@
           [2.98, 49.1, "1914-09-07T18:00:00Z"],
           [2.94, 49.12, "1914-09-08T12:00:00Z"],
           [2.96, 49.16, "1914-09-09T12:00:00Z"],
-          [3.0, 49.2, "1914-09-09T20:00:00Z"],
+          [3, 49.2, "1914-09-09T20:00:00Z"],
           [3.09, 49.26, "1914-09-10T12:00:00Z"],
           [3.32, 49.4, "1914-09-11T12:00:00Z"],
           [3.32, 49.44, "1914-09-12T00:00:00Z"]
@@ -253,7 +253,7 @@
           [3.5, 48.8, "1914-09-06T22:00:00Z"],
           [3.25, 48.92, "1914-09-07T12:00:00Z"],
           [3.12, 48.97, "1914-09-08T06:00:00Z"],
-          [3.0, 49.07, "1914-09-08T18:00:00Z"],
+          [3, 49.07, "1914-09-08T18:00:00Z"],
           [2.95, 49.13, "1914-09-09T12:00:00Z"],
           [3.02, 49.2, "1914-09-09T20:00:00Z"],
           [3.1, 49.27, "1914-09-10T12:00:00Z"],
@@ -284,7 +284,7 @@
           [2.95, 49.14, "1914-09-09T06:00:00Z"],
           [2.85, 49.15, "1914-09-09T12:00:00Z"],
           [2.95, 49.2, "1914-09-09T20:00:00Z"],
-          [3.0, 49.25, "1914-09-10T12:00:00Z"],
+          [3, 49.25, "1914-09-10T12:00:00Z"],
           [3.3, 49.38, "1914-09-11T12:00:00Z"],
           [3.3, 49.43, "1914-09-12T00:00:00Z"]
         ],
@@ -359,7 +359,7 @@
           [3.65, 48.83, "1914-09-06T12:00:00Z"],
           [3.65, 48.84, "1914-09-07T12:00:00Z"],
           [3.68, 48.9, "1914-09-08T12:00:00Z"],
-          [3.66, 49.0, "1914-09-09T12:00:00Z"],
+          [3.66, 49, "1914-09-09T12:00:00Z"],
           [3.7, 49.28, "1914-09-10T12:00:00Z"],
           [3.74, 49.4, "1914-09-11T12:00:00Z"],
           [3.76, 49.43, "1914-09-12T00:00:00Z"]
@@ -408,10 +408,10 @@
           [3.96, 48.78, "1914-09-06T12:00:00Z"],
           [3.97, 48.77, "1914-09-07T12:00:00Z"],
           [3.98, 48.76, "1914-09-08T12:00:00Z"],
-          [4.0, 48.88, "1914-09-09T12:00:00Z"],
+          [4, 48.88, "1914-09-09T12:00:00Z"],
           [3.96, 49.04, "1914-09-10T12:00:00Z"],
           [3.95, 49.2, "1914-09-11T12:00:00Z"],
-          [4.0, 49.33, "1914-09-12T00:00:00Z"]
+          [4, 49.33, "1914-09-12T00:00:00Z"]
         ],
         "confidence": "medium",
         "derivation": "Corps centre at the hours named, read off the daily sketch maps in Herwig and the Reichsarchiv; ±5–8 km.",
@@ -454,12 +454,12 @@
         "id": "1914:marne-route-de-xii",
         "formation": "1914:corps-de-xii",
         "waypoints": [
-          [4.0, 48.9, "1914-09-05T06:00:00Z"],
+          [4, 48.9, "1914-09-05T06:00:00Z"],
           [3.99, 48.79, "1914-09-06T12:00:00Z"],
           [3.99, 48.76, "1914-09-07T12:00:00Z"],
           [3.99, 48.73, "1914-09-08T03:00:00Z"],
           [3.93, 48.73, "1914-09-08T12:00:00Z"],
-          [4.0, 48.85, "1914-09-09T12:00:00Z"],
+          [4, 48.85, "1914-09-09T12:00:00Z"],
           [4.3, 48.95, "1914-09-10T12:00:00Z"],
           [4.45, 49.1, "1914-09-11T12:00:00Z"],
           [4.2, 49.3, "1914-09-12T00:00:00Z"]
@@ -509,7 +509,7 @@
           [4.4, 48.72, "1914-09-07T12:00:00Z"],
           [4.4, 48.72, "1914-09-08T12:00:00Z"],
           [4.4, 48.85, "1914-09-09T12:00:00Z"],
-          [4.42, 49.0, "1914-09-10T12:00:00Z"],
+          [4.42, 49, "1914-09-10T12:00:00Z"],
           [4.5, 49.15, "1914-09-11T12:00:00Z"],
           [4.45, 49.25, "1914-09-12T00:00:00Z"]
         ],
@@ -530,12 +530,12 @@
         "waypoints": [
           [2.68, 49.05, "1914-09-05T06:00:00Z"],
           [2.8, 49.02, "1914-09-05T13:00:00Z"],
-          [2.9, 49.0, "1914-09-06T12:00:00Z"],
-          [2.9, 49.0, "1914-09-07T12:00:00Z"],
-          [2.9, 49.0, "1914-09-08T12:00:00Z"],
+          [2.9, 49, "1914-09-06T12:00:00Z"],
+          [2.9, 49, "1914-09-07T12:00:00Z"],
+          [2.9, 49, "1914-09-08T12:00:00Z"],
           [2.92, 49.02, "1914-09-09T12:00:00Z"],
           [3.03, 49.03, "1914-09-10T12:00:00Z"],
-          [3.0, 49.2, "1914-09-11T12:00:00Z"],
+          [3, 49.2, "1914-09-11T12:00:00Z"],
           [3.08, 49.38, "1914-09-12T00:00:00Z"]
         ],
         "confidence": "medium",
@@ -611,7 +611,7 @@
           [2.78, 49.14, "1914-09-09T12:00:00Z"],
           [2.96, 49.16, "1914-09-10T12:00:00Z"],
           [2.89, 49.23, "1914-09-11T12:00:00Z"],
-          [3.0, 49.38, "1914-09-12T00:00:00Z"]
+          [3, 49.38, "1914-09-12T00:00:00Z"]
         ],
         "confidence": "low",
         "derivation": "Corps/division centre at the hours named from the AFGG situation maps as summarised in Herwig; ±5–8 km.",
@@ -804,7 +804,7 @@
           [2.68, 48.75, "1914-09-05T06:00:00Z"],
           [2.8, 48.8, "1914-09-06T12:00:00Z"],
           [2.93, 48.86, "1914-09-07T12:00:00Z"],
-          [3.0, 48.92, "1914-09-08T12:00:00Z"],
+          [3, 48.92, "1914-09-08T12:00:00Z"],
           [3.1, 48.97, "1914-09-09T12:00:00Z"],
           [3.2, 49.1, "1914-09-10T12:00:00Z"],
           [3.3, 49.3, "1914-09-11T12:00:00Z"],
@@ -827,10 +827,10 @@
         "formation": "1914:cav-div-gb",
         "waypoints": [
           [2.9, 48.7, "1914-09-05T06:00:00Z"],
-          [3.0, 48.78, "1914-09-06T12:00:00Z"],
+          [3, 48.78, "1914-09-06T12:00:00Z"],
           [3.1, 48.82, "1914-09-07T12:00:00Z"],
           [3.1, 48.9, "1914-09-08T12:00:00Z"],
-          [3.2, 49.0, "1914-09-09T12:00:00Z"],
+          [3.2, 49, "1914-09-09T12:00:00Z"],
           [3.3, 49.15, "1914-09-10T12:00:00Z"],
           [3.45, 49.3, "1914-09-11T12:00:00Z"],
           [3.5, 49.38, "1914-09-12T00:00:00Z"]
@@ -953,7 +953,7 @@
           [3.42, 48.78, "1914-09-06T12:00:00Z"],
           [3.4, 48.85, "1914-09-07T12:00:00Z"],
           [3.45, 48.88, "1914-09-08T12:00:00Z"],
-          [3.4, 49.0, "1914-09-09T12:00:00Z"],
+          [3.4, 49, "1914-09-09T12:00:00Z"],
           [3.45, 49.12, "1914-09-10T12:00:00Z"],
           [3.5, 49.28, "1914-09-11T12:00:00Z"],
           [3.55, 49.38, "1914-09-12T00:00:00Z"]
@@ -979,7 +979,7 @@
           [3.6, 48.75, "1914-09-07T12:00:00Z"],
           [3.6, 48.83, "1914-09-08T12:00:00Z"],
           [3.6, 48.9, "1914-09-09T12:00:00Z"],
-          [3.62, 49.0, "1914-09-10T12:00:00Z"],
+          [3.62, 49, "1914-09-10T12:00:00Z"],
           [3.65, 49.15, "1914-09-11T12:00:00Z"],
           [3.7, 49.3, "1914-09-12T00:00:00Z"]
         ],
@@ -1004,8 +1004,8 @@
           [3.82, 48.76, "1914-09-08T12:00:00Z"],
           [3.88, 48.74, "1914-09-09T06:00:00Z"],
           [3.96, 48.72, "1914-09-09T15:00:00Z"],
-          [4.0, 48.88, "1914-09-10T12:00:00Z"],
-          [4.0, 49.0, "1914-09-11T12:00:00Z"],
+          [4, 48.88, "1914-09-10T12:00:00Z"],
+          [4, 49, "1914-09-11T12:00:00Z"],
           [4.02, 49.15, "1914-09-12T00:00:00Z"]
         ],
         "confidence": "medium",
@@ -1030,7 +1030,7 @@
           [3.85, 48.78, "1914-09-08T12:00:00Z"],
           [3.87, 48.78, "1914-09-09T12:00:00Z"],
           [3.95, 48.9, "1914-09-10T12:00:00Z"],
-          [4.0, 49.05, "1914-09-11T12:00:00Z"],
+          [4, 49.05, "1914-09-11T12:00:00Z"],
           [4.02, 49.18, "1914-09-12T00:00:00Z"]
         ],
         "confidence": "low",
@@ -1055,8 +1055,8 @@
           [3.97, 48.72, "1914-09-08T06:00:00Z"],
           [3.96, 48.7, "1914-09-08T12:00:00Z"],
           [3.97, 48.73, "1914-09-09T12:00:00Z"],
-          [4.0, 48.85, "1914-09-10T12:00:00Z"],
-          [4.05, 49.0, "1914-09-11T12:00:00Z"],
+          [4, 48.85, "1914-09-10T12:00:00Z"],
+          [4.05, 49, "1914-09-11T12:00:00Z"],
           [4.05, 49.15, "1914-09-12T00:00:00Z"]
         ],
         "confidence": "medium",
@@ -1165,7 +1165,7 @@
         "at": "1914-09-06T08:00:00Z",
         "kind": "movement",
         "significance": "major",
-        "lngLat": [3.0, 48.72],
+        "lngLat": [3, 48.72],
         "summary": "After a fortnight's retreat the British and Franchet d'Espèrey's army face north again. The BEF advances from the Tournan–Rozay line towards the Grand Morin; the 5th Army attacks Kluck's III and IX Corps at Esternay — the corps Kluck is about to pull away to the Ourcq.",
         "links": {
           "formations": ["1914:bef", "1914:army-fr-5"],
@@ -1173,7 +1173,9 @@
         },
         "sources": [
           {
-            "source": "source:edmonds-1922"
+            "source": "source:edmonds-1933",
+            "pages": "296–298",
+            "note": "Sir John French's operation orders were issued at 5.15 p.m. on 5 September and the wheel was to be completed by the right wing by 9 a.m. and by the left by 10 a.m. on the 6th (p. 297); the cavalry were at Pezarches, five miles north of Rozoy, about 7 a.m. (p. 298). The citation is good for the morning of 6 September; the hour on the timeline is nominal inside it"
           },
           {
             "source": "source:afgg-1-1"
@@ -1190,13 +1192,18 @@
         "kind": "movement",
         "significance": "major",
         "lngLat": [2.53, 48.9],
-        "summary": "On Gallieni's order some 600 Paris taxis, requisitioned that afternoon, carry part of the 7th Division from Gagny and Livry to Nanteuil-le-Haudouin and Silly-le-Long in two runs through the night — four to five thousand men, a fraction of Maunoury's reinforcements, and the most famous image of the battle.",
+        "summary": "On Gallieni's order the Paris taxis are requisitioned in the streets on 7 September, grouped by hundreds at the École militaire and sent to Gagny and Noisy-le-Sec to load the infantry of Trentinian's 7th Division as it came off the trains; the division reaches Nanteuil-le-Haudouin in the course of the night. A fraction of Maunoury's reinforcements, and the most famous image of the battle.",
         "links": {
           "formations": ["1914:marne-div-fr-7"],
           "people": ["person:gallieni-joseph", "person:maunoury-michel-joseph"],
           "tech": ["1914:tech-railways-mobilization", "1914:tech-motor-transport-taxis"]
         },
         "sources": [
+          {
+            "source": "source:gallieni-1920",
+            "pages": "162, 167",
+            "note": "Gallieni's own account of the operation, on the day of 7 September: the police stopping the cabs on the main streets and putting the passengers out, the cars grouped in hundreds at the École militaire under an officer of the military government, sent to Gagny and Noisy-le-Sec to load the division's infantry as it detrained, and the whole division reaching Nanteuil-le-Haudouin during the night (p. 162); Gallieni leaving Monthyon about 16 h and going on to Gagny, where he had ordered the taxis concentrated, to see it done (p. 167). He gives no number of cabs and no hour for the start — the loading points are Gagny and Noisy-le-Sec, not Livry"
+          },
           {
             "source": "source:herwig-2009"
           },
@@ -1267,7 +1274,9 @@
         },
         "sources": [
           {
-            "source": "source:edmonds-1922"
+            "source": "source:edmonds-1933",
+            "pages": "332–335, 349",
+            "note": "hour resolution: the 1st Cavalry Brigade in possession of the bridge at Nogent by 5.30 a.m., the 6th Brigade over at Charly and on the high ground by 8.15 a.m. (pp. 332–333); the II Corps finding the bridges at Nanteuil and Saacy intact and its vanguards over 'before 8 a.m.' (p. 334); and Bülow's own wireless of 10.2 a.m. — 'aviators report advance of four long columns … Heads at 8 a.m. at Nanteuil, Citry, Pavant and Nogent. Second Army begins retirement' (p. 349)"
           },
           {
             "source": "source:herwig-2009"
@@ -1330,7 +1339,9 @@
             "source": "source:herwig-2009"
           },
           {
-            "source": "source:edmonds-1922"
+            "source": "source:edmonds-1933",
+            "pages": "367–368",
+            "note": "Joffre's Instruction No. 22, received on the evening of 11 September, gave the intelligence that in front of the Sixth Army and the BEF 'the enemy was retiring behind the Aisne' (p. 367); GHQ's orders for the 12th were to seize the crossings and the high ground south of the river (p. 368). The citation is good for the evening of the 11th and the two days after, not for the hour"
           }
         ]
       }
@@ -1611,7 +1622,7 @@
         },
         "concentration": {
           "area": "Aachen–Eupen, the Belgian frontier",
-          "position": [6.0, 50.68],
+          "position": [6, 50.68],
           "asOf": "1914-08-04T00:00:00Z",
           "sources": [
             {
@@ -2019,7 +2030,7 @@
         "id": "1914:liege-route-army-of-the-meuse",
         "formation": "1914:liege-army-of-the-meuse",
         "waypoints": [
-          [6.0, 50.68, "1914-08-04T06:00:00Z"],
+          [6, 50.68, "1914-08-04T06:00:00Z"],
           [5.85, 50.66, "1914-08-04T18:00:00Z"],
           [5.75, 50.65, "1914-08-05T12:00:00Z"],
           [5.7, 50.64, "1914-08-06T12:00:00Z"],
@@ -2205,7 +2216,7 @@
           [5.6, 50.63, "1914-08-06T12:00:00Z"],
           [5.45, 50.66, "1914-08-06T22:00:00Z"],
           [5.25, 50.7, "1914-08-07T12:00:00Z"],
-          [5.0, 50.8, "1914-08-08T12:00:00Z"],
+          [5, 50.8, "1914-08-08T12:00:00Z"],
           [4.95, 50.8, "1914-08-17T00:00:00Z"]
         ],
         "confidence": "medium",
@@ -2253,6 +2264,11 @@
           "formations": ["1914:liege-army-of-the-meuse", "1914:hkk-2"]
         },
         "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "109",
+            "note": "the day and the part of it: permission to enter Belgian territory reached Emmich on the afternoon of 3 August and 'am 4. August früh' — early on 4 August — he gave the order to advance on Liège; the same page gives the Army of the Meuse as six reinforced brigades and the mass of the II Cavalry Corps, about 25,000 rifles, 8,000 horse and 124 guns. The hour on the timeline is nominal within that morning"
+          },
           {
             "source": "source:herwig-2009"
           },
@@ -2302,6 +2318,11 @@
         },
         "sources": [
           {
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "111–116",
+            "note": "the assault brigade by brigade. The one hour the volume prints is the 54th Brigade's: it set off from Hermée 'am 6. August um 2.30 morgens', which is the timeline's hour. The rifles were not to be loaded, fire only on an officer's order, white armbands and the password 'Der Kaiser'; the 14th Brigade's break-in has the chapter heading on p. 115"
+          },
+          {
             "source": "source:herwig-2009"
           },
           {
@@ -2312,7 +2333,7 @@
       {
         "id": "1914:liege-event-3rd-division-withdraws",
         "title": "Leman sends the 3rd Division away",
-        "at": "1914-08-06T22:00:00Z",
+        "at": "1914-08-06T15:00:00Z",
         "kind": "order",
         "significance": "major",
         "place": "place:liege",
@@ -2322,6 +2343,11 @@
           "people": ["person:leman-gerard"]
         },
         "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "117",
+            "note": "Leman ordered the march-off of the 3rd Division and the 15th Brigade by Hollogne-sur-Geer and Hannut in the night of 5/6 August, for the 6th, and 'diese Bewegung wurde am Nachmittag angetreten' — the movement began in the afternoon, unmolested; Leman himself went into Fort Loncin and directed the defence of the forts from there. The same page gives the garrison of the fortress as about 50,000 men, not the 6,000 the Germans had assumed. The afternoon is what the citation supports; the hour is nominal inside it"
+          },
           {
             "source": "source:herwig-2009"
           },
@@ -2343,6 +2369,16 @@
           "people": ["person:ludendorff-erich"]
         },
         "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "116–118",
+            "note": "the German official account of the same two days: the white flag over the citadel and the governor's refusal to surrender on the 6th (p. 116), the city in German hands (p. 117), and Ludendorff back through the fort line by car on the evening of 7 August to report to Bülow at Aachen early on the 8th (p. 118). Neither this nor Ludendorff gives an hour for the citadel; the noon on the timeline is nominal within 7 August"
+          },
+          {
+            "source": "source:ludendorff-1919",
+            "pages": "36–37",
+            "note": "Ludendorff's own account: the white flags seen on the citadel from the heights by La Chartreuse, Harbou sent in as parlementaire, and then, believing Oven already had the place, driving there in a commandeered Belgian car with the brigade adjutant, finding no German soldier and the gates locked, hammering on them and taking the surrender of the few hundred Belgians inside. He gives no clock time"
+          },
           {
             "source": "source:herwig-2009"
           },
@@ -2386,6 +2422,11 @@
           "tech": ["1914:tech-heavy-siege-artillery"]
         },
         "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "119",
+            "note": "'Am Nachmittag des 12. August' the IX Corps' heavy and heaviest artillery — a heavy coastal-mortar battery and a short naval-gun (42 cm) battery among it — came into action against the forts Pontisse and Fléron, and the VII Corps' heavy artillery opened the same day on Chaudfontaine. The citation is good for the day and the part of the day, not the clock; the volume does not name the emplacement"
+          },
           {
             "source": "source:herwig-2009"
           },
@@ -2436,6 +2477,11 @@
           "people": ["person:leman-gerard"]
         },
         "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "120",
+            "note": "Loncin blown up on 15 August, and Leman taken out of it. The volume gives the day and no hour; the 17:20 comes from the Belgian fort record and is nominal here (see docs/sources.md on Donnell and Zuber)"
+          },
           {
             "source": "source:herwig-2009"
           },
@@ -2710,7 +2756,7 @@
           [6.75, 48.5, "1914-08-14T06:00:00Z"],
           [6.95, 48.58, "1914-08-17T12:00:00Z"],
           [7.03, 48.7, "1914-08-19T18:00:00Z"],
-          [7.0, 48.7, "1914-08-20T12:00:00Z"],
+          [7, 48.7, "1914-08-20T12:00:00Z"],
           [6.92, 48.62, "1914-08-20T18:00:00Z"],
           [6.85, 48.55, "1914-08-21T12:00:00Z"],
           [6.78, 48.48, "1914-08-22T12:00:00Z"],
@@ -2736,7 +2782,7 @@
           [7.1, 48.5, "1914-08-17T12:00:00Z"],
           [7.12, 48.55, "1914-08-19T18:00:00Z"],
           [7.1, 48.55, "1914-08-20T12:00:00Z"],
-          [7.0, 48.48, "1914-08-21T12:00:00Z"],
+          [7, 48.48, "1914-08-21T12:00:00Z"],
           [6.9, 48.42, "1914-08-22T12:00:00Z"],
           [6.8, 48.4, "1914-08-24T12:00:00Z"],
           [6.8, 48.4, "1914-08-25T18:00:00Z"]
@@ -2834,7 +2880,7 @@
           [7.05, 48.85, "1914-08-14T06:00:00Z"],
           [7.05, 48.8, "1914-08-19T18:00:00Z"],
           [7.05, 48.75, "1914-08-20T06:00:00Z"],
-          [7.0, 48.7, "1914-08-20T18:00:00Z"],
+          [7, 48.7, "1914-08-20T18:00:00Z"],
           [6.92, 48.64, "1914-08-21T12:00:00Z"],
           [6.85, 48.6, "1914-08-22T12:00:00Z"],
           [6.78, 48.55, "1914-08-23T12:00:00Z"],
@@ -2881,7 +2927,7 @@
         "formation": "1914:corps-de-i-bav-res",
         "waypoints": [
           [6.2, 49.1, "1914-08-14T06:00:00Z"],
-          [6.4, 49.0, "1914-08-19T18:00:00Z"],
+          [6.4, 49, "1914-08-19T18:00:00Z"],
           [6.42, 48.95, "1914-08-20T12:00:00Z"],
           [6.4, 48.9, "1914-08-21T12:00:00Z"],
           [6.38, 48.85, "1914-08-23T12:00:00Z"],
@@ -3288,7 +3334,7 @@
           [3.52, 50.36, "1914-08-24T12:00:00Z"],
           [3.3, 50.22, "1914-08-25T12:00:00Z"],
           [3.25, 50.17, "1914-08-26T12:00:00Z"],
-          [3.0, 50.05, "1914-08-27T18:00:00Z"]
+          [3, 50.05, "1914-08-27T18:00:00Z"]
         ],
         "confidence": "medium",
         "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
@@ -3499,7 +3545,7 @@
           [4.5, 50.35, "1914-08-23T12:00:00Z"],
           [4.4, 50.25, "1914-08-24T12:00:00Z"],
           [4.1, 50.12, "1914-08-26T12:00:00Z"],
-          [4.0, 50.03, "1914-08-27T18:00:00Z"]
+          [4, 50.03, "1914-08-27T18:00:00Z"]
         ],
         "confidence": "low",
         "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
@@ -3563,7 +3609,7 @@
           [4.4, 50.48, "1914-08-22T12:00:00Z"],
           [4.3, 50.35, "1914-08-23T12:00:00Z"],
           [4.1, 50.2, "1914-08-25T12:00:00Z"],
-          [3.9, 50.0, "1914-08-27T18:00:00Z"]
+          [3.9, 50, "1914-08-27T18:00:00Z"]
         ],
         "confidence": "low",
         "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
@@ -3581,11 +3627,11 @@
         "formation": "1914:corps-de-xii",
         "waypoints": [
           [5.1, 50.3, "1914-08-20T12:00:00Z"],
-          [5.0, 50.26, "1914-08-22T12:00:00Z"],
+          [5, 50.26, "1914-08-22T12:00:00Z"],
           [4.91, 50.26, "1914-08-23T12:00:00Z"],
           [4.54, 50.2, "1914-08-24T12:00:00Z"],
           [4.45, 50.1, "1914-08-25T12:00:00Z"],
-          [4.35, 50.0, "1914-08-26T12:00:00Z"],
+          [4.35, 50, "1914-08-26T12:00:00Z"],
           [4.4, 49.95, "1914-08-27T18:00:00Z"]
         ],
         "confidence": "medium",
@@ -3607,7 +3653,7 @@
           [5.15, 50.22, "1914-08-20T12:00:00Z"],
           [4.85, 50.2, "1914-08-23T12:00:00Z"],
           [4.82, 50.14, "1914-08-24T12:00:00Z"],
-          [4.6, 50.0, "1914-08-26T12:00:00Z"],
+          [4.6, 50, "1914-08-26T12:00:00Z"],
           [4.55, 49.93, "1914-08-27T18:00:00Z"]
         ],
         "confidence": "low",
@@ -3790,7 +3836,7 @@
           [4.05, 50.42, "1914-08-23T12:00:00Z"],
           [3.82, 50.3, "1914-08-24T12:00:00Z"],
           [3.69, 50.12, "1914-08-25T12:00:00Z"],
-          [3.6, 50.0, "1914-08-26T12:00:00Z"],
+          [3.6, 50, "1914-08-26T12:00:00Z"],
           [3.6, 49.95, "1914-08-27T18:00:00Z"]
         ],
         "confidence": "medium",
@@ -3813,7 +3859,7 @@
           [3.7, 50.32, "1914-08-24T12:00:00Z"],
           [3.54, 50.12, "1914-08-25T12:00:00Z"],
           [3.54, 50.1, "1914-08-26T06:00:00Z"],
-          [3.4, 50.0, "1914-08-26T18:00:00Z"],
+          [3.4, 50, "1914-08-26T18:00:00Z"],
           [3.29, 49.85, "1914-08-27T18:00:00Z"]
         ],
         "confidence": "medium",
@@ -3830,7 +3876,7 @@
         "formation": "1914:cav-div-gb",
         "waypoints": [
           [3.85, 50.3, "1914-08-20T12:00:00Z"],
-          [4.0, 50.48, "1914-08-22T12:00:00Z"],
+          [4, 50.48, "1914-08-22T12:00:00Z"],
           [3.75, 50.4, "1914-08-23T12:00:00Z"],
           [3.6, 50.3, "1914-08-24T12:00:00Z"],
           [3.45, 50.12, "1914-08-26T12:00:00Z"],
@@ -3887,7 +3933,7 @@
           [4.87, 50.47, "1914-08-20T12:00:00Z"],
           [4.6, 50.3, "1914-08-23T22:00:00Z"],
           [4.4, 50.15, "1914-08-25T12:00:00Z"],
-          [4.2, 50.0, "1914-08-27T18:00:00Z"]
+          [4.2, 50, "1914-08-27T18:00:00Z"]
         ],
         "confidence": "low",
         "derivation": "The 4th Division at Namur, withdrawn south-west on the 23rd and away through France.",
@@ -3982,14 +4028,16 @@
         "at": "1914-08-22T07:00:00Z",
         "kind": "battle",
         "significance": "minor",
-        "lngLat": [4.0, 50.48],
+        "lngLat": [4, 50.48],
         "summary": "C Squadron, 4th Dragoon Guards, meets German cavalry on the Mons–Brussels road — the British army's first action on the Continent since Waterloo.",
         "links": {
           "formations": ["1914:cav-div-gb", "1914:hkk-2"]
         },
         "sources": [
           {
-            "source": "source:edmonds-1922"
+            "source": "source:edmonds-1933",
+            "pages": "62",
+            "note": "'At dawn on the 22nd August' two officer's patrols of C Squadron, 4th Dragoon Guards went out from Obourg; one fired on a German piquet — 'apparently the first shot of the war fired by the British on the continent' — and a troop of the same squadron then turned back German cavalry near Casteau. The citation is good for dawn on 22 August, not for the hour on the timeline"
           }
         ]
       },
@@ -4040,7 +4088,9 @@
         },
         "sources": [
           {
-            "source": "source:edmonds-1922"
+            "source": "source:edmonds-1933",
+            "pages": "72–77",
+            "note": "the day at hour resolution where the volume gives it: the commanders' conference at Sars la Bruyère at 5.30 a.m. (p. 72), German guns in position on the high ground north of the canal 'before 9 a.m.' and German infantry engaging the Middlesex about Obourg 'by 9 a.m.' (pp. 76–77)"
           },
           {
             "source": "source:herwig-2009"
@@ -4075,7 +4125,7 @@
         "kind": "order",
         "significance": "major",
         "place": "place:charleroi",
-        "summary": "With Bülow across the Sambre and Hausen across the Meuse behind his right, Lanrezac orders the 5th Army back in the night; Sir John French learns of it from a liaison officer the next morning and never forgives him. The BEF must retreat too or be enveloped.",
+        "summary": "With Bülow across the Sambre and Hausen across the Meuse behind his right, Lanrezac orders the 5th Army back in the night. The British official history has Lieutenant Spears bring the news to GHQ just before midnight; Sir John French, who wrote afterwards that he was told nothing, never forgives him. The BEF must retreat too or be enveloped.",
         "links": {
           "formations": ["1914:army-fr-5", "1914:bef"],
           "people": ["person:lanrezac-charles", "person:french-john"]
@@ -4085,7 +4135,9 @@
             "source": "source:herwig-2009"
           },
           {
-            "source": "source:edmonds-1922"
+            "source": "source:edmonds-1933",
+            "pages": "93–94",
+            "note": "the volume has Lieutenant Spears bring the news to British GHQ 'just before midnight' on 23/24 August, not the next morning, and it was that news that decided Sir John French his position was strategically wrong (p. 93); Lanrezac's order was for the Fifth Army to begin retiring before daybreak (p. 94)"
           },
           {
             "source": "source:tuchman-1962"
@@ -4104,6 +4156,11 @@
           "formations": ["1914:fortress-namur", "1914:corps-de-guard-res"]
         },
         "sources": [
+          {
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "395",
+            "note": "Gallwitz reported in the night hours that the forts of the northern front of Namur had fallen and the northern part of the city was firmly in his hands, and that he expected the rest of the forts to fall the next day — 25 August. The volume gives the day, not the hour"
+          },
           {
             "source": "source:herwig-2009"
           },
@@ -4126,7 +4183,9 @@
         },
         "sources": [
           {
-            "source": "source:edmonds-1922"
+            "source": "source:edmonds-1933",
+            "pages": "122, 133–135",
+            "note": "Haig's headquarters established at Landrecies soon after 2 p.m. on the 25th (p. 122); the fight opening at 7.30 p.m. when the 3/Coldstream piquet was rushed by men who answered the challenge in French, German artillery joining at 8.30 p.m. and the engagement running 'until past midnight' (p. 134). The citation is good for that window; the timeline's hour sits inside it"
           }
         ]
       },
@@ -4144,7 +4203,9 @@
         },
         "sources": [
           {
-            "source": "source:edmonds-1922"
+            "source": "source:edmonds-1933",
+            "pages": "141",
+            "note": "Smith-Dorrien 'thereupon at 2 a.m. sent for General H. I. W. Hamilton' at Bertry; Hamilton did not think the 3rd Division could be formed up for retreat before 9 a.m. and Allenby thought his division too scattered to cover a retreat, and on that Smith-Dorrien decided to stand — the hour on the timeline, printed"
           },
           {
             "source": "source:hastings-2013"
@@ -4172,7 +4233,9 @@
         },
         "sources": [
           {
-            "source": "source:edmonds-1922"
+            "source": "source:edmonds-1933",
+            "pages": "143, 153–191",
+            "note": "the 7th and 8th Brigades 'were actually on the position and improving trenches when fired on at 6 a.m.' (p. 143); about a dozen German batteries opened from near Forest 'very soon after 6 a.m.' (p. 156); the volume's running head for the next twenty pages is 'Le Cateau (6 a.m. till noon)'. The losses — 7,812 men and 38 guns — are the footnote on p. 191"
           },
           {
             "source": "source:herwig-2009"
@@ -4476,7 +4539,7 @@
         "id": "1914:guise-route-de-vii",
         "formation": "1914:corps-de-vii",
         "waypoints": [
-          [3.5, 50.0, "1914-08-28T12:00:00Z"],
+          [3.5, 50, "1914-08-28T12:00:00Z"],
           [3.4, 49.9, "1914-08-29T12:00:00Z"],
           [3.35, 49.85, "1914-08-30T12:00:00Z"],
           [3.38, 49.78, "1914-08-30T18:00:00Z"]
@@ -4496,7 +4559,7 @@
         "id": "1914:guise-route-hkk-1",
         "formation": "1914:hkk-1",
         "waypoints": [
-          [3.9, 50.0, "1914-08-28T12:00:00Z"],
+          [3.9, 50, "1914-08-28T12:00:00Z"],
           [3.85, 49.95, "1914-08-29T12:00:00Z"],
           [3.85, 49.85, "1914-08-30T18:00:00Z"]
         ],
@@ -4538,7 +4601,7 @@
         "waypoints": [
           [3.2, 50.05, "1914-08-28T12:00:00Z"],
           [3.1, 49.95, "1914-08-29T12:00:00Z"],
-          [3.0, 49.85, "1914-08-30T18:00:00Z"]
+          [3, 49.85, "1914-08-30T18:00:00Z"]
         ],
         "confidence": "low",
         "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±4–6 km.",
@@ -4575,7 +4638,7 @@
         "waypoints": [
           [3.29, 49.85, "1914-08-28T12:00:00Z"],
           [3.1, 49.75, "1914-08-29T12:00:00Z"],
-          [3.0, 49.62, "1914-08-30T18:00:00Z"]
+          [3, 49.62, "1914-08-30T18:00:00Z"]
         ],
         "confidence": "low",
         "derivation": "Corps centre from the Official History; ±4 km.",
@@ -4625,7 +4688,9 @@
         },
         "sources": [
           {
-            "source": "source:edmonds-1922"
+            "source": "source:edmonds-1933",
+            "pages": "232",
+            "note": "'During the evening of the 28th, Sir Douglas Haig was asked by General Lanrezac to co-operate in his coming offensive. He agreed to do so, but, on informing G.H.Q. of the request, he received instructions that he was not to take part.' The volume has the request come from Lanrezac and the offer be Haig's agreement to it; it gives the evening and no hour"
           },
           {
             "source": "source:herwig-2009"
@@ -4669,7 +4734,9 @@
             "source": "source:herwig-2009"
           },
           {
-            "source": "source:reichsarchiv-weltkrieg-1"
+            "source": "source:reichsarchiv-weltkrieg-3",
+            "pages": "151, 160–161",
+            "note": "the X Corps held up on the heights south of Guise and Flavigny on the 28th and reporting that they could not be in its hands before 6 p.m. (p. 151); the 20th Division bringing the rest of its infantry and part of its artillery over the Oise at Guise and Flavigny 'in der Nacht und den frühen Morgenstunden' of the 29th, then held by fog, and the fighting west of Clanlieu from about 11 a.m. (pp. 160–161). The crossing was made in the night and the early morning, earlier than the timeline's noon"
           }
         ]
       },
@@ -4809,7 +4876,7 @@
     "region": [3.6, 50.1, 5.3, 51.45],
     "camera": {
       "center": [4.45, 50.74],
-      "zoom": 8.0
+      "zoom": 8
     },
     "place": "place:antwerp",
     "summary": "What the right wing left behind it. The Belgian field army, ordered back from the Gette on 18 August, is inside the Antwerp forts by the 20th, and Beseler's III Reserve Corps turns off the wheel to watch it; the IX Reserve Corps joins it at the end of the month. Namur falls in four days (21–25 August), Maubeuge holds for thirteen (25 August – 7 September) and keeps the VII Reserve Corps out of the Marne. The field army comes out twice — on 25–26 August and 9–13 September — to pin what it can. Behind the front the reprisals at Aarschot, Tamines, Dinant and Louvain, and the demolitions that kept the railheads a hundred kilometres behind the marching corps.",
@@ -5128,7 +5195,9 @@
             "source": "source:herwig-2009"
           },
           {
-            "source": "source:reichsarchiv-weltkrieg-1"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "219, 222",
+            "note": "20 August was 'ein reiner Marschtag' for the First and Second Armies, the First Army's objectives lying on the general line Brussels–Droogenbosch–Waterloo (p. 219); the III Reserve Corps was to take over the screen against Antwerp and the IV Reserve Corps to move up to Louvain (p. 222). The volume gives the day, not the hour of the entry"
           },
           {
             "source": "source:edmonds-1925"
@@ -5309,7 +5378,9 @@
             "source": "source:herwig-2009"
           },
           {
-            "source": "source:reichsarchiv-weltkrieg-1"
+            "source": "source:reichsarchiv-weltkrieg-1",
+            "pages": "70, 425, 452",
+            "note": "the corps' original task — the Nordarmee, guarding Schleswig-Holstein and the Kaiser-Wilhelm-Kanal (p. 70); OHL's signal that the screen against Antwerp was to be held by the III and IV Reserve Corps until the IX Reserve Corps arrived (p. 425); and OHL's decision to bring it west for the decision in the West (p. 452). The volume does not give the day it detrained"
           }
         ]
       },
@@ -5845,7 +5916,7 @@
     },
     "region": [18.6, 52.8, 23.4, 55.3],
     "camera": {
-      "center": [20.9, 54.0],
+      "center": [20.9, 54],
       "zoom": 7
     },
     "place": "place:tannenberg",

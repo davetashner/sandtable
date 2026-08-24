@@ -68,11 +68,42 @@ on the list of works to add when a copy is in hand and the pages can be given.
 **Nothing was invented to close it**: a citation to a volume nobody opened is
 worse than an honest tertiary pointer.
 
-**Pages.** §3 asks for pages on anything contestable. Seven of 1,620 citations
-give any, six of them on Document entities. This is the pack's largest
-citation gap and it cannot be closed from a keyboard — it needs Herwig,
-Edmonds, AFGG, the Reichsarchiv and Doughty open on a desk. Filed as
-`sand-23b.6`.
+**Pages.** §3 asks for pages on anything contestable. At the August 2026 pass
+seven of 1,620 citations gave any, six of them on Document entities; that was
+the pack's largest citation gap and it was filed as `sand-23b.6`.
+
+It is being closed volume by volume, and the count is the measure of it:
+
+| Pass                                     | Citations | With pages |
+| ---------------------------------------- | --------: | ---------: |
+| `sand-1l0.16`, August 2026 (this record) |     1,620 |          7 |
+| after `sand-23b.5` (Liège forts)         |     1,629 |         35 |
+| after `sand-23b.9` (commander tracks)    |     1,694 |         76 |
+| after `sand-23b.6`, first tranche        | **1,705** |    **117** |
+
+The first tranche of `sand-23b.6` worked the three files the bead names in
+priority order and stopped where the volumes stopped. `casualties.json` goes
+0 → 11 of 31: every Edmonds figure in it — Mons's "just over sixteen hundred",
+Le Cateau's 7,812 and 38 guns, the Marne's 1,701, First Ypres's 58,155 and
+134,315, the old BEF's 86,237 — was read on its printed page and now cites it.
+`documents.json` goes 7 → 15 of 45. `battles.json` goes 28 → 50 of 547: the
+Liège assault, Brussels, Namur, the BEF from Casteau to the Aisne, the taxis.
+Everything still without pages rests on a work that could not be opened from
+here — Herwig, Strachan, Tuchman, Doughty, Showalter, Zuber, Steg, Horne &
+Kramer, Van Pul, Tyng, and the AFGG volumes behind Gallica's block
+(`sand-23b.20`). `formations.json` (273 citations), `routes.json` (124) and
+the two shared registries are untouched and want their own beads.
+
+**Never a page that was not read.** Every number above was pulled from
+archive.org's hOCR search-text and page-index files for the digitisation
+named in the registry entry, resolved to the printed page and read. Where a
+volume supports a claim only at day or part-of-day resolution the citation
+says so in its `note` — the technique and the wording are `sand-23b.5`'s and
+`sand-23b.9`'s. Where a page number belongs to an edition the pack does not
+cite, the citation was re-pointed rather than the page carried across:
+**sixteen citations moved from `source:edmonds-1922` to `source:edmonds-1933`**,
+because the 1922 first edition is not the volume that is digitised and its
+pagination is not the 1933 third edition's.
 
 **Spot-checks.** The Belgian documents were checked verbatim against a
 digitised Grey Book: the German note of 2 August (No. 20) and the Belgian

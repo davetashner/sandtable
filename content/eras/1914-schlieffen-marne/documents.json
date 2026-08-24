@@ -57,6 +57,11 @@
         "note": "No. 20 — the German text and the official translation; No. 19 and 71 for the delivery and the time limit"
       },
       {
+        "source": "source:hmso-collected-1915",
+        "pages": "309–311",
+        "note": "Belgian Grey Book No. 20, printed in the collection with the German text and the English translation in parallel columns — the translation quoted here"
+      },
+      {
         "source": "source:strachan-2001",
         "note": "the ultimatum in the July Crisis; Moltke's July draft"
       },
@@ -84,6 +89,11 @@
       {
         "source": "source:belgian-grey-book-1914",
         "note": "No. 22 — the reply; the English translation quoted"
+      },
+      {
+        "source": "source:hmso-collected-1915",
+        "pages": "311–312",
+        "note": "Belgian Grey Book No. 22, headed 'Brussels, August 3, 1914 (7 a.m.)' — the printed dateline is the authority for the hour"
       },
       {
         "source": "source:gallica-le-radical-1914-08-05",
@@ -134,7 +144,7 @@
     "kind": "directive",
     "language": "en",
     "excerpt": "The First Army, with the II. Cavalry Corps under its orders, will march west of the Oise towards the lower Seine. It must be prepared to co-operate in the fighting of the Second Army. It will also be responsible for the protection of the right flank of the Armies, and will take steps to prevent any new enemy concentration in its zone of operations. The Second Army, with the I. Cavalry Corps under its orders, will advance across the line Laon–La Fère towards Paris. It will also invest and capture Maubeuge and later La Fère, as also Laon in co-operation with the Third Army. All the Armies will mutually co-operate with one another and support each other during the fighting. The strong resistance which is expected to be met on the Aisne and later on the Marne may necessitate a wheel inwards of the Armies from a south-westerly to a southerly direction.",
-    "archive": "O.H.L. Koblenz, 27 August 1914 ('Allgemeine Anweisung für die weiteren Operationen'), received at First Army headquarters on the evening of 28 August. German text in Reichsarchiv, Der Weltkrieg, Bd. 3, and in Kluck, Der Marsch auf Paris (1920); quoted here in the 1920 English translation of Kluck's memoir, pp. 75–76 (the paragraphs for the First and Second Armies and the closing paragraph). Excerpted.",
+    "archive": "O.H.L. Koblenz, 27 August 1914 ('Allgemeine Anweisung für die weiteren Operationen'), received at First Army headquarters on the evening of 28 August. German text in Reichsarchiv, Der Weltkrieg, Bd. 3, pp. 7–9, and in Kluck, Der Marsch auf Paris (1920); quoted here in the 1920 English translation of Kluck's memoir, pp. 75–76 (the paragraphs for the First and Second Armies and the closing paragraph). Excerpted.",
     "links": {
       "people": [
         "person:moltke-helmuth-von-younger",
@@ -151,8 +161,9 @@
         "note": "the text quoted, as received by First Army"
       },
       {
-        "source": "source:reichsarchiv-weltkrieg-1",
-        "note": "German text and context in Bd. 3 (Der Marnefeldzug: Von der Sambre zur Marne)"
+        "source": "source:reichsarchiv-weltkrieg-3",
+        "pages": "4, 7–9",
+        "note": "the German text, printed in full under its own title — 'Allgemeine Anweisungen an die 1. bis 7. Armee für den Fortgang der Operationen' — with the assessment of the enemy on p. 4, the paragraphs for the First and Second Armies on p. 8, and the boundaries and the closing sentence about a wheel from south-west to south on p. 9; the orders went out to the armies by officers in motor cars on the evening of 27 August (p. 7)"
       },
       {
         "source": "source:herwig-2009",
@@ -168,7 +179,7 @@
     "kind": "telegram",
     "language": "en",
     "excerpt": "[Second Army to First Army, 30 August, 5.55 p.m.] Enemy decisively beaten to-day; strong forces retiring on La Fère. The British, who were barring the Oise south-west of La Fère, are also retreating in a southerly, and some in a south-easterly, direction. The enemy in front of the Third and Fourth Armies is also in retreat. The Second Army will rest on the 31st August except that the bombardment of the forts of La Fère will be carried out. [Second Army to First Army, 6.30 p.m.] To gain the full advantages of the victory, a wheel inwards of the First Army pivoted on Chauny towards the line La Fère–Laon is urgently desired. [First Army to Supreme Command, evening of 30 August] The First Army has wheeled round towards the Oise and will advance on the 31st by Compiègne and Noyon to exploit the success of the Second Army. [Supreme Command to First Army, morning of 31 August] The movement begun by the First Army is in accordance with the wishes of the Supreme Command.",
-    "archive": "Wireless messages as logged at First Army headquarters (Kluck, The March on Paris, 1920, pp. 83–84); German texts in Reichsarchiv, Der Weltkrieg, Bd. 3, and Kluck, Der Marsch auf Paris (1920). The Chauny–La Fère–Laon wheel that these messages set in motion is the turn 'inside Paris'.",
+    "archive": "Wireless messages as logged at First Army headquarters (Kluck, The March on Paris, 1920, pp. 83–84); German texts in Reichsarchiv, Der Weltkrieg, Bd. 3, pp. 137 and 177, and Kluck, Der Marsch auf Paris (1920). The Chauny–La Fère–Laon wheel that these messages set in motion is the turn 'inside Paris'.",
     "links": {
       "events": ["1914:guise-event-bulow-asks-kluck", "1914:event-kluck-wheels-south-east"],
       "battles": ["1914:guise"],
@@ -190,8 +201,9 @@
         "note": "the Guise aftermath and the decision to wheel; the historiography of blame"
       },
       {
-        "source": "source:reichsarchiv-weltkrieg-1",
-        "note": "the German texts, Bd. 3"
+        "source": "source:reichsarchiv-weltkrieg-3",
+        "pages": "137, 177",
+        "note": "the German texts of the two Second Army messages, from the receiving end at First Army headquarters (p. 137: 'der Feind heute entscheidend geschlagen sei … Zur vollen Ausbeutung des Erfolges ist Einschwenken 1. Armee mit Drehpunkt Chauny gegen La Fère–Laon dringend erwünscht') and from the sending end at Second Army (p. 177), where the wheel request is recorded as an addition made to the victory signal before it went out"
       }
     ]
   },
@@ -212,6 +224,11 @@
     },
     "sources": [
       {
+        "source": "source:gallieni-1920",
+        "pages": "63, 65",
+        "note": "the poster reproduced in facsimile on the unnumbered plate at p. 65 — the text quoted — and, at p. 63, Gallieni’s own sentence that Parisians found it and the government’s proclamation on the walls in the first hour of the morning of 3 September"
+      },
+      {
         "source": "source:herwig-2009",
         "note": "Gallieni, the government's departure for Bordeaux, the proclamation"
       },
@@ -229,7 +246,7 @@
     "kind": "directive",
     "language": "en",
     "excerpt": "The First and Second Armies are to remain facing the eastern front of Paris: the First Army between the Oise and the Marne, occupying the Marne crossings west of Château Thierry; the Second Army between the Marne and the Seine, occupying the Seine crossings between Nogent and Méry inclusive. The Third Army will march towards Troyes and east of it.",
-    "archive": "O.H.L. Luxembourg, sent 7 p.m. on 4 September, received at First Army headquarters (La Ferté-Milon) at 7.15 a.m. on 5 September — after the day's march had begun; the fuller written directive followed by officer on the evening of the 5th. Quoted in the 1920 English translation of Kluck's memoir, p. 105; German text in Reichsarchiv, Der Weltkrieg, Bd. 4.",
+    "archive": "O.H.L. Luxembourg, sent 7 p.m. on 4 September, received at First Army headquarters (La Ferté-Milon) at 7.15 a.m. on 5 September — after the day's march had begun; the fuller written directive followed by officer on the evening of the 5th. Quoted in the 1920 English translation of Kluck's memoir, p. 105; German text in Reichsarchiv, Der Weltkrieg, Bd. 3, p. 311, which prints it as the first of the separate orders issued in the eighth hour of that evening.",
     "links": {
       "people": [
         "person:moltke-helmuth-von-younger",
@@ -251,8 +268,9 @@
         "note": "the 4 September halt order and its arrival after Kluck had crossed the Marne"
       },
       {
-        "source": "source:reichsarchiv-weltkrieg-1",
-        "note": "German text and OHL reasoning, Bd. 4 (Der Marnefeldzug: Die Schlacht)"
+        "source": "source:reichsarchiv-weltkrieg-3",
+        "pages": "311",
+        "note": "the German text of the signal to the First and Second Armies, printed as the first of the separate orders OHL issued 'in der achten Abendstunde' — between seven and eight in the evening — of 4 September. Bd. 3, not Bd. 4: this volume runs to the end of 4 September"
       }
     ]
   },
@@ -340,10 +358,6 @@
       {
         "source": "source:herwig-2009",
         "note": "the Hentsch mission, 8–9 September, and the 1917 inquiry — the 'did he exceed his powers?' question written as historiography"
-      },
-      {
-        "source": "source:reichsarchiv-weltkrieg-1",
-        "note": "the official account and Hentsch's 1917 report, Bd. 4"
       }
     ]
   },
@@ -386,7 +400,7 @@
     "kind": "other",
     "language": "en",
     "excerpt": "The Royal Serbian Government will publish on the first page of its official organ of July 26/13, the following declaration: […]\n\nThe Royal Serbian Government will further pledge itself:\n\n[…]\n\n5. to agree to the cooperation in Serbia of the organs of the Imperial and Royal Government in the suppression of the subversive movement directed against the integrity of the Monarchy;\n\n6. to institute a judicial inquiry against every participant in the conspiracy of the twenty-eighth of June who may be found in Serbian territory; the organs of the Imperial and Royal Government delegated for this purpose will take part in the proceedings held for this purpose;\n\n[…]\n\nThe Imperial and Royal Government awaits the reply of the Royal Government by Saturday, the twenty-fifth instant, at 6 p.m., at the latest.",
-    "archive": "Austro-Hungarian Red Book; English text in Collected Diplomatic Documents Relating to the Outbreak of the European War (HMSO, London, 1915). The note was communicated in French; quoted here from the World War I Document Archive transcription of the English printing. Dated 22 July, presented at 6 p.m. on 23 July with a forty-eight-hour limit.",
+    "archive": "Austro-Hungarian Red Book; the note itself is printed, French and English in parallel, at pp. 6–8 of Collected Diplomatic Documents Relating to the Outbreak of the European War (HMSO, London, 1915), among the British diplomatic correspondence rather than in that volume’s Red Book section. The note was communicated in French; quoted here from the World War I Document Archive transcription of the English printing. Dated 22 July, presented at 6 p.m. on 23 July with a forty-eight-hour limit.",
     "links": {
       "people": ["person:berchtold-leopold"],
       "places": ["place:belgrade"]
@@ -394,7 +408,8 @@
     "sources": [
       {
         "source": "source:hmso-collected-1915",
-        "note": "Austro-Hungarian Red Book"
+        "pages": "6–8",
+        "note": "the note in French and English in parallel columns, as the enclosure to the British Blue Book’s circulation of it: the declaration Serbia was to publish and demands 1–4 on pp. 6–7, demands 5–10 on pp. 7–8, and on p. 8 the time limit — \"expect the reply of the Royal Government at the latest by 6 o'clock on Saturday evening, the 25th July\". The Red Book section of the same collection prints the Austro-Hungarian introduction and the Narodna Odbrana annexes, not the note"
       },
       {
         "source": "source:byu-wwi-archive",
@@ -418,14 +433,15 @@
     "language": "fr",
     "excerpt": "5. Le Gouvernement Royal doit avouer qu'il ne se rend pas clairement compte du sens et de la portée de la demande du Gouvernement I. et R. que la Serbie s'engage à accepter sur son territoire la collaboration des organes du Gouvernement I. et R., mais déclare qu'il admettra la collaboration qui répondrait aux principes du droit international et à la procédure criminelle, ainsi qu'aux bons rapports de voisinage.\n\n6. Le Gouvernement Royal — cela va de soi — considère de son devoir d'ouvrir une enquête contre qui sont ou qui éventuellement auraient été mêlés au complot du 15/28 juin et qui se trouveraient sur le territoire du Royaume. Quant à la participation de cette enquête des organes des autorités austro-hongroises, qui seraient délégués à cet effet par le Gouvernement I. et R., le Gouvernement Royal ne peut pas l'accepter, car ce serait une violation de la Constitution et de la loi sur la procédure criminelle.",
     "translation": "5. The Royal Government confesses that it is not clear about the sense and the scope of that demand of the I. and R. Government which concerns the obligation on the part of the Royal Serbian Government to permit the cooperation of officials of the I. and R. Government on Serbian territory, but it declares that it is willing to accept every cooperation which does not run counter to international law and criminal law, as well as to the friendly and neighbourly relations.\n\n6. The Royal Government considers it its duty as a matter of course to begin an investigation against all those persons who have participated in the outrage of June 28th and who are in its territory. As far as the cooperation in this investigation of specially delegated officials of the I. and R. Government is concerned, this cannot be accepted, as this is a violation of the constitution and of criminal procedure.\n\n[…] The Royal Serbian Government believes it to be to the common interest not to rush the solution of this affair and it is therefore, in case the I. and R. Government should not consider itself satisfied with this answer, ready, as ever, to accept a peaceable solution, be it by referring the decision of this question to the International Court at The Hague or by leaving it to the decision of the Great Powers who have participated in the working out of the declaration given by the Serbian Government on March 18/31st, 1909.",
-    "archive": "Serbian Blue Book; French original as printed in the diplomatic collections, English translation in Collected Diplomatic Documents Relating to the Outbreak of the European War (HMSO, London, 1915). Quoted here from the World War I Document Archive transcriptions of both texts; an OCR slip ('internatinal') corrected silently against the printed collection. Delivered a few minutes before the 6 p.m. deadline.",
+    "archive": "Serbian Blue Book; French original as printed in the diplomatic collections, French and English in parallel at pp. 32–37 of Collected Diplomatic Documents Relating to the Outbreak of the European War (HMSO, London, 1915). Quoted here from the World War I Document Archive transcriptions of both texts; an OCR slip ('internatinal') corrected silently against the printed collection. Delivered a few minutes before the 6 p.m. deadline.",
     "links": {
       "places": ["place:belgrade"]
     },
     "sources": [
       {
         "source": "source:hmso-collected-1915",
-        "note": "Serbian Blue Book"
+        "pages": "32–37",
+        "note": "the reply in French and English in parallel columns; the two paragraphs quoted here are numbers 5 and 6, at pp. 35–36, and the text closes \"Belgrade, le 12 (25) juillet, 1914\" on p. 37"
       },
       {
         "source": "source:byu-wwi-archive",

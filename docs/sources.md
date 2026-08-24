@@ -19,6 +19,16 @@ War packs. Story: `sand-23b.1`; the fact-check workflow that applies it is
 3. **A citation is `{ source, pages?, note? }`.** Give pages for anything
    contestable — a strength, a time of day, a position, a quotation. `note`
    says what the citation supports when an entity cites several works.
+   Two rules follow, and both exist because a page number is a promise that
+   somebody checked. **Never write a page you did not read** — a plausible
+   page is worse than none. And where the work supports the claim only at
+   day, part-of-day, chapter or section resolution, the `note` (or the
+   `derivation`, where the entity has one) says so in as many words, so that
+   the hour on the timeline is visibly nominal rather than falsely precise.
+   Page numbers belong to an edition: never carry them between editions of
+   the same work — re-point the citation to the edition that was read, or
+   leave it without pages (`source:edmonds-1922` and `source:edmonds-1933`
+   are the standing example).
 4. **Inline footnotes in beats** are `[^slug]` where `slug` is the part after
    `source:`; the dossier renders them as numbered footnotes with the full
    citation, and lists front-matter sources not cited inline under "Also
@@ -93,10 +103,10 @@ specific with a `note`; when they disagree on meaning, write historiography.
 | `source:fischer-1967`                      | Fischer, _Germany's Aims in the First World War_ (1967)                       | the case for German responsibility — one side                                   |
 | `source:albertini-1952`                    | Albertini, _The Origins of the War of 1914_ (1952–57)                         | the crisis hour by hour; the standard reconstruction                            |
 | `source:mombauer-2013`                     | Mombauer (ed.), _The Origins of the First World War: Documents_ (2013)        | crisis documents in translation, with commentary                                |
-| `source:hmso-collected-1915`               | _Collected Diplomatic Documents_ (HMSO, 1915)                                 | the colour books in one volume; selected by governments                         |
+| `source:hmso-collected-1915`               | _Collected Diplomatic Documents_ (HMSO, 1915)                                 | the colour books in one volume; the notes at pp. 6–8, 32–37, 309–312            |
 | `source:kautsky-1924`                      | Kautsky (ed.), _Outbreak of the World War: German Documents_ (1924)           | the German files; the 'blank cheque' is no. 15                                  |
 | `source:byu-wwi-archive`                   | BYU, _The World War I Document Archive_                                       | working transcriptions; cite the printed collection too                         |
-| `source:edmonds-1925`                      | Edmonds, _Military Operations: France and Belgium, 1914_, II (1925)           | Antwerp, the Yser and First Ypres; the BEF's casualty returns                   |
+| `source:edmonds-1925`                      | Edmonds, _Military Operations: France and Belgium, 1914_, II (1925)           | Antwerp from 19 Sep, the Yser, First Ypres; the casualty notes, pp. 465–468     |
 | `source:van-pul-2006`                      | Van Pul, _In Flanders Flooded Fields_ (2006)                                  | the Yser inundation: the locks, the nights, who opened them                     |
 | `source:unruh-1986`                        | Unruh, _Langemarck: Legende und Wirklichkeit_ (1986)                          | the reality behind the Kindermord legend                                        |
 | `source:1914-1918-online-langemarck`       | Grawe, 'Langemarck Myth', _1914-1918-online_                                  | the OHL communiqué of 11 November 1914 and the myth's construction              |
@@ -175,6 +185,13 @@ is written as the argument it still is.
   headquarters day by day (Dubail, Castelnau, Ruffey/Sarrail, Langle,
   Maunoury, Foch) are waiting on a copy that can actually be opened; until
   then they are not on the map (`sand-23b.9`).
+- The Belgian army in August and early September 1914 — the withdrawal into
+  Antwerp of 18–20 August and the sorties of 25–26 August and 9–13 September.
+  Several events cite `source:edmonds-1925` for these; that volume's narrative
+  begins on **19 September** and does not carry them, so they have no pages.
+  The Belgian official narrative (_L'action de l'armée belge pour la défense
+  du pays et le respect de sa neutralité_, 1914–1918) is the work to bring in,
+  with Van Pul beside it.
 - Stevenson, _1914–1918: The History of the First World War_ (2004).
 - The later rounds of the Zuber exchange in _War in History_ (2002–2014),
   beyond Holmes's opening reply, which is now in the registry.

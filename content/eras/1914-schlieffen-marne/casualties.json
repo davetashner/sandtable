@@ -59,18 +59,23 @@
         "note": "'Just over 1,600' of all ranks, the official history's figure for the day; most of them in II Corps along the canal.",
         "sources": [
           {
-            "source": "source:edmonds-1922"
+            "source": "source:edmonds-1933",
+            "pages": "91",
+            "note": "the day's total: 'just over sixteen hundred of all ranks, killed, wounded and missing. The whole of these, except forty, were sustained by the II. Corps' — the third edition's wording; the first edition's pagination is different"
           }
         ]
       }
     ],
-    "summary": "The BEF's first battle: II Corps held the Mons–Condé canal for a day against the German 1st Army and withdrew that night. The British loss was small by the standards of the week around it; the German, in the units that attacked the canal in close order, was probably heavier but was never separately returned.[^edmonds-1922] [^herwig-2009]",
+    "summary": "The BEF's first battle: II Corps held the Mons–Condé canal for a day against the German 1st Army and withdrew that night. The British loss was small by the standards of the week around it; the German, in the units that attacked the canal in close order, was probably heavier but was never separately returned.[^edmonds-1933] [^herwig-2009]",
     "sources": [
       {
-        "source": "source:edmonds-1922"
+        "source": "source:edmonds-1933",
+        "pages": "76–77, 91",
+        "note": "the German guns in position before 9 a.m. and the infantry engaged by 9 a.m. (pp. 76–77); the casualty total (p. 91)"
       },
       {
-        "source": "source:herwig-2009"
+        "source": "source:herwig-2009",
+        "note": "the German side of the canal fight"
       }
     ]
   },
@@ -92,18 +97,22 @@
         "note": "Killed, wounded and missing of all ranks, with 38 guns lost — the official history's figure for Smith-Dorrien's stand.",
         "sources": [
           {
-            "source": "source:edmonds-1922"
+            "source": "source:edmonds-1933",
+            "pages": "191",
+            "note": "'The total losses, after the stragglers had come in, were 7,812 men and 38 guns, including one 60-pdr. abandoned' — the footnote to the volume's retrospect on the battle"
           }
         ]
       }
     ],
-    "summary": "Smith-Dorrien's II Corps turned and fought at Le Cateau rather than be caught on the march; the corps got away that evening, but the day cost it more than Mons and the Retreat together had so far.[^edmonds-1922]",
+    "summary": "Smith-Dorrien's II Corps turned and fought at Le Cateau rather than be caught on the march; the corps got away that evening, but the day cost it more than Mons and the Retreat together had so far.[^edmonds-1933]",
     "links": {
       "people": ["person:smith-dorrien-horace"]
     },
     "sources": [
       {
-        "source": "source:edmonds-1922"
+        "source": "source:edmonds-1933",
+        "pages": "141, 143–191",
+        "note": "Smith-Dorrien's decision at 2 a.m. (p. 141); the battle, whose running head is 'Le Cateau (6 a.m. till noon)' (pp. 143–191); the total (p. 191)"
       }
     ]
   },
@@ -185,7 +194,9 @@
         "note": "The official history's count for 6–10 September is 1,701; wider reckonings that take the BEF's losses to the Aisne run to about 13,000.",
         "sources": [
           {
-            "source": "source:edmonds-1922"
+            "source": "source:edmonds-1933",
+            "pages": "363",
+            "note": "the footnote totalling the British casualties of 6–10 September: 'I. Corps, 779; II. Corps, 654; III. Corps (4th Division and 19th Brigade), 133; Cavalry, 135; total, 1,701'"
           }
         ]
       }
@@ -194,10 +205,13 @@
     "historiography": "Herwig's judgement is that the exact losses of the Marne will never be known: French and German returns were compiled by different periods and categories, and the German ones are missing for the formations that mattered most. The round numbers in general histories descend from a handful of early estimates.[^herwig-2009]",
     "sources": [
       {
-        "source": "source:herwig-2009"
+        "source": "source:herwig-2009",
+        "note": "the French and German estimates, and why no count exists"
       },
       {
-        "source": "source:edmonds-1922"
+        "source": "source:edmonds-1933",
+        "pages": "363",
+        "note": "the British official count for 6–10 September, corps by corps"
       }
     ]
   },
@@ -216,10 +230,12 @@
         "category": "casualties",
         "value": 58155,
         "confidence": "high",
-        "note": "Killed, wounded and missing in the BEF, 14 October – 30 November 1914, as returned in the British official history. The count runs a few days either side of the battle's official dates.",
+        "note": "Killed, wounded and missing in the BEF, 14 October – 30 November 1914. The Adjutant-General in France reported 2,298 officers and 51,807 other ranks; the detailed reckoning made in later years, which the official history prints beside it, comes to 58,155. The count runs a few days either side of the battle’s official dates.",
         "sources": [
           {
-            "source": "source:edmonds-1925"
+            "source": "source:edmonds-1925",
+            "pages": "466",
+            "note": "Note I, 'The British Losses': the Adjutant-General's return for 14 October – 30 November, and beneath it the unit-by-unit table whose grand total is 58,155"
           }
         ]
       },
@@ -229,25 +245,30 @@
         "low": 130000,
         "high": 134315,
         "confidence": "medium",
-        "note": "The official history's figure for the German armies at Ypres, 15 October – 24 November, is 134,315; the round 130,000 is the figure usually given in the reference literature. German ten-day casualty lists counted on a different basis from British returns, so the two totals are not strictly comparable.",
+        "note": "The figure the Reichsarchiv supplied to the British official history for the three battles of the autumn on this front — Lille 15–28 October, the Yser 18 October – 30 November, Ypres 30 October – 24 November — is 134,315; the round 130,000 is the figure usually given in the reference literature. It was given \"tentatively under reserve\", and Edmonds records that the returns for missing and prisoners \"were nearly all too high\". German ten-day casualty lists counted on a different basis from British returns, so the two totals are not strictly comparable.",
         "sources": [
           {
-            "source": "source:edmonds-1925"
+            "source": "source:edmonds-1925",
+            "pages": "467–468",
+            "note": "Note II, \"The German Losses\": the three-battle table adding to 134,315, the Reichsarchiv’s covering caveat, and the corps returns behind it"
           },
           {
-            "source": "source:1914-1918-online-ypres"
+            "source": "source:1914-1918-online-ypres",
+            "note": "the round 130,000 as the reference literature gives it"
           }
         ]
       }
     ],
     "summary": "A month of attacks on a salient that was never more than a few kilometres deep. The British figure is the one the army itself returned; the French and Belgian losses in the same battle were reported separately and are not included here, so the totals below are not an Allied total.[^edmonds-1925] [^1914-1918-online-ypres]",
-    "historiography": "The two sides counted differently — the British by name in unit returns, the German in ten-day lists compiled by corps that treated lightly wounded men who stayed with their units inconsistently — so the German total is the softer of the two figures, and comparisons of 'losses' between the armies at Ypres carry that difference silently. Jones gives about 130,000 German and about 100,000 Entente casualties for the battle as a whole; Edmonds's 134,315 is the same order of magnitude from the German returns available to him.[^edmonds-1925] [^1914-1918-online-ypres]",
+    "historiography": "The two sides counted differently — the British by name in unit returns, the German in ten-day lists compiled by corps that treated lightly wounded men who stayed with their units inconsistently — so the German total is the softer of the two figures, and comparisons of 'losses' between the armies at Ypres carry that difference silently. Jones gives about 130,000 German and about 100,000 Entente casualties for the battle as a whole; Edmonds's 134,315 is the same order of magnitude from the German returns available to him, and he prints it with the Reichsarchiv's own warning that the missing-and-prisoner figures in it are too high.[^edmonds-1925] [^1914-1918-online-ypres]",
     "links": {
       "places": ["place:gheluvelt", "place:langemarck"]
     },
     "sources": [
       {
-        "source": "source:edmonds-1925"
+        "source": "source:edmonds-1925",
+        "pages": "466–468",
+        "note": "Notes I and II to the retrospect: the British losses and the German figures the Reichsarchiv supplied"
       },
       {
         "source": "source:1914-1918-online-ypres"
@@ -306,10 +327,12 @@
         "low": 86000,
         "high": 90000,
         "confidence": "medium",
-        "note": "Killed, wounded and missing in the BEF from the landing to the end of November 1914. The figures in circulation — about 86,000 to the end of November, about 90,000 including early December — differ by end-date and by whether the sick are counted; the Expeditionary Force that crossed in August was roughly 160,000 strong, and the great majority of these losses fell on the infantry of its first seven divisions.",
+        "note": "Killed, wounded and missing in the BEF from the landing to the end of November 1914. The Adjutant-General in France returned 3,627 officers and 86,237 other ranks from the beginning of the campaign — 89,864 of all ranks — which is where the two figures in circulation, \"about 86,000\" and \"about 90,000\", both come from. The Expeditionary Force that crossed in August was roughly 160,000 strong, and the official history says the greater part of the loss fell on the infantry of the first seven divisions, which originally numbered only 84,000.",
         "sources": [
           {
-            "source": "source:edmonds-1925"
+            "source": "source:edmonds-1925",
+            "pages": "467",
+            "note": "the Adjutant-General's grand total from the commencement of the campaign — 3,627 officers and 86,237 other ranks — and the note that most of it fell on the infantry of the first seven divisions, 84,000 strong"
           }
         ]
       }
@@ -321,7 +344,9 @@
     },
     "sources": [
       {
-        "source": "source:edmonds-1925"
+        "source": "source:edmonds-1925",
+        "pages": "465, 467",
+        "note": "the retrospect ('an average of one officer and thirty men of those who landed in August 1914', p. 465) and the Adjutant-General's grand total (p. 467)"
       },
       {
         "source": "source:1914-1918-online-ypres"
