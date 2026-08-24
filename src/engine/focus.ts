@@ -42,6 +42,17 @@ export function resolveFocus(battles: Battle[], focus: string | undefined): Batt
   return focus ? battles.find((b) => b.id === focus) : undefined;
 }
 
+/**
+ * A **chapter** is a Battle that carries no routes of its own (the convention
+ * PR #63 introduced, written down in the pack README). With no routes
+ * `movementSourceFor` leaves the campaign tokens on their campaign movement,
+ * so it reads as narrative plus static markers rather than a reconstruction
+ * that plays; a **zoom-in** brings its own routes and replays the engagement.
+ * The engine's answer, so the chrome can name each battle for what it is
+ * instead of calling the whole row one thing (sand-neh.7).
+ */
+export const isChapter = (b: Battle): boolean => !b.routes?.length;
+
 export interface MovementSourceLike {
   routes: Route[];
   formations: Formation[];
@@ -58,9 +69,9 @@ export function movementSourceFor(
   focus: Battle | undefined,
   campaign: MovementSourceLike,
 ): MovementSourceLike {
-  if (!focus?.routes?.length) return campaign;
+  if (!focus || isChapter(focus)) return campaign;
   return {
-    routes: focus.routes,
+    routes: focus.routes ?? [],
     formations: [...(focus.formations ?? []), ...campaign.formations],
     sides: campaign.sides,
   };

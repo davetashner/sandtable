@@ -23,6 +23,7 @@ import { BranchToggle } from '../ui/BranchToggle.js';
 import { Breadcrumb } from '../ui/Breadcrumb.js';
 import { Card } from '../ui/Card.js';
 import { CastStrip, type CastMember } from '../ui/CastStrip.js';
+import { ChapterIndex } from '../ui/ChapterIndex.js';
 import { CasualtyCardView } from '../ui/CasualtyCardView.js';
 import { CausalView } from '../ui/CausalView.js';
 import { ClockCardView } from '../ui/ClockCardView.js';
@@ -229,6 +230,19 @@ function BreadcrumbSpecimen({ inside }: { inside: boolean }) {
   );
 }
 
+function ChapterIndexSpecimen() {
+  const [entered, setEntered] = useState<string | undefined>(undefined);
+  const level = seed.battles.find((b) => b.id === entered);
+  // Entering closes the index in the app, where the trail takes over. Here the
+  // key remounts it open again, so the specimen stays the thing it is for.
+  return (
+    <div className="crumbs">
+      <span className="crumbs__current">{level ? level.title : pack.title}</span>
+      <ChapterIndex key={entered} battles={seed.battles} onEnter={setEntered} defaultOpen />
+    </div>
+  );
+}
+
 function CastStripSpecimen() {
   const [selected, setSelected] = useState<string | undefined>(undefined);
   return (
@@ -405,16 +419,23 @@ export const SECTIONS: GallerySection[] = [
       {
         id: 'crumbs-campaign',
         title: 'Breadcrumb — campaign',
-        note: 'At the campaign level the trail is one item and the chips offer the zoom-ins.',
+        note: 'At the campaign level the trail is one item and the index rests as one control.',
         covers: ['Breadcrumb'],
         render: () => <BreadcrumbSpecimen inside={false} />,
       },
       {
         id: 'crumbs-focus',
-        title: 'Breadcrumb — inside a zoom-in',
-        note: 'Two levels and the exit ✕; the same control, one state deeper.',
+        title: 'Breadcrumb — inside a level',
+        note: 'Two levels, the kind of the one you are in, and the exit ✕.',
         covers: ['Breadcrumb'],
         render: () => <BreadcrumbSpecimen inside />,
+      },
+      {
+        id: 'chapter-index',
+        title: 'Chapter index — open',
+        note: 'The pack in campaign order, each entry named for what it is (ADR 0013).',
+        covers: ['ChapterIndex'],
+        render: () => <ChapterIndexSpecimen />,
       },
       {
         id: 'bottom-sheet',

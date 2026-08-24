@@ -12,6 +12,11 @@ treatment, the placements and the one-picture-per-beat rule are
 [ADR 0012](../../docs/decisions/0012-photographs.md). Nothing here should
 grow a fourth way to crop a face round.
 
+`ChapterIndex.tsx` is the pack's table of contents in the breadcrumb row: it
+rests closed as one control and names each level for what the engine says it
+is — `isChapter` in `src/engine/focus.ts` — rather than calling the whole row
+one thing (ADR 0013).
+
 `CopyLink.tsx` is the ⧉ glyph in the header that copies the address of the
 current view; what makes it work is that the URL is always the whole view
 (ADR 0009, `src/engine/url-state.ts`).

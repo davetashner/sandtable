@@ -36,7 +36,9 @@ describe('App shell', () => {
     window.history.replaceState(null, '', '/?t=1914-09-01T00:00:00Z');
     render(<App />);
     expect(screen.getByText('Day 30')).toBeInTheDocument();
-    fireEvent.click(screen.getByRole('button', { name: 'First Battle of the Marne' }));
+    // the index rests closed above the map (ADR 0013); open it, then pick the level
+    fireEvent.click(screen.getByRole('button', { name: '11 chapters and zoom-ins' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Zoom in to First Battle of the Marne' }));
     expect(window.location.search).toContain('focus=1914:marne');
     expect(screen.getByRole('navigation', { name: 'Focus' })).toHaveTextContent(
       'First Battle of the Marne',
