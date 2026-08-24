@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { parseViewState } from './engine/url-state.js';
 
 // MapLibre needs WebGL; the map surface has its own tests (src/engine/map).
 vi.mock('./engine/map/MapView.js', () => ({
@@ -322,6 +323,69 @@ describe('App shell', () => {
       render(<App />);
       expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
       expect(document.querySelector('.app')).not.toHaveAttribute('inert');
+    });
+  });
+
+  describe('deep links carry the layers too (sand-shn.3)', () => {
+    it('restores the switches from a pasted URL', async () => {
+      window.history.replaceState(
+        null,
+        '',
+        '/?t=1914-09-06T06:00:00Z&layers=commanders,-meanwhile.physics',
+      );
+      render(<App />);
+      expect(screen.getByRole('button', { name: 'Commanders on the map' })).toHaveAttribute(
+        'aria-pressed',
+        'true',
+      );
+      expect(screen.getByRole('button', { name: 'Physics' })).toHaveAttribute(
+        'aria-pressed',
+        'false',
+      );
+      // the hidden field's glyphs really are off the timeline
+      expect(
+        screen.queryByRole('button', { name: /Open The eclipse that did not test relativity/ }),
+      ).not.toBeInTheDocument();
+      // ideas & culture was never switched off, so its glyph is still there
+      expect(
+        screen.getByRole('button', { name: /Open The Manifesto of the Ninety-Three/ }),
+      ).toBeInTheDocument();
+    });
+
+    it('writes a switch into the URL, and takes it out again at its default', () => {
+      window.history.replaceState(null, '', '/?t=1914-09-06T06:00:00Z');
+      render(<App />);
+      fireEvent.click(screen.getByRole('button', { name: 'Commanders on the map' }));
+      expect(window.location.search).toContain('layers=commanders');
+      fireEvent.click(screen.getByRole('button', { name: 'Physics' }));
+      expect(window.location.search).toContain('layers=commanders,-meanwhile.physics');
+      expect(
+        screen.queryByRole('button', { name: /Open The eclipse that did not test relativity/ }),
+      ).not.toBeInTheDocument();
+      fireEvent.click(screen.getByRole('button', { name: 'Commanders on the map' }));
+      fireEvent.click(screen.getByRole('button', { name: 'Physics' }));
+      expect(window.location.search).not.toContain('layers=');
+      expect(window.location.search).toBe('?t=1914-09-06T06:00:00Z');
+    });
+
+    it('copies the address of the view as the reader sees it', async () => {
+      window.history.replaceState(null, '', '/?t=1914-09-06T06:00:00Z');
+      const write = vi.fn((_text: string) => Promise.resolve());
+      Object.defineProperty(navigator, 'clipboard', {
+        configurable: true,
+        value: { writeText: write },
+      });
+      render(<App />);
+      fireEvent.click(screen.getByRole('button', { name: 'Commanders on the map' }));
+      fireEvent.click(screen.getByRole('button', { name: 'Copy a link to this view' }));
+      await waitFor(() => expect(write).toHaveBeenCalledTimes(1));
+      const copied = String(write.mock.calls[0]![0]);
+      expect(copied).toBe(window.location.href);
+      // and what was copied restores the same view
+      expect(parseViewState(new URL(copied).search)).toEqual({
+        t: Date.UTC(1914, 8, 6, 6),
+        layers: ['commanders'],
+      });
     });
   });
 

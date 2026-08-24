@@ -1,6 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import { createClock, DAY } from './clock.js';
-import { bindUrlState, formatViewState, parseViewState } from './url-state.js';
+import {
+  bindUrlState,
+  formatViewState,
+  layerOn,
+  parseViewState,
+  withLayer,
+  type ViewState,
+} from './url-state.js';
 
 const START = Date.UTC(1914, 7, 2);
 const END = Date.UTC(1914, 10, 25);
@@ -31,8 +38,86 @@ describe('view state ⇄ query string', () => {
   });
 
   it('ignores garbage and empties', () => {
-    expect(parseViewState('?t=not-a-date&branch=&x=1')).toEqual({});
+    expect(parseViewState('?t=not-a-date&branch=')).toEqual({});
     expect(formatViewState({})).toBe('');
+  });
+});
+
+describe('layer switches (sand-shn.3)', () => {
+  it('carries only the switches that differ from their default', () => {
+    expect(withLayer(undefined, 'commanders', true)).toEqual(['commanders']);
+    // back at the default: the switch leaves the URL rather than saying "off"
+    expect(withLayer(['commanders'], 'commanders', false)).toEqual([]);
+    // an on-by-default layer is written only when it is turned off
+    expect(withLayer(undefined, 'meanwhile.physics', false, true)).toEqual(['-meanwhile.physics']);
+    expect(withLayer(['-meanwhile.physics'], 'meanwhile.physics', true, true)).toEqual([]);
+  });
+
+  it('answers for a layer whether or not the URL mentions it', () => {
+    const layers = ['commanders', '-meanwhile.physics'];
+    expect(layerOn(layers, 'commanders')).toBe(true);
+    expect(layerOn(layers, 'meanwhile.physics', true)).toBe(false);
+    expect(layerOn(layers, 'meanwhile.ideas-culture', true)).toBe(true);
+    expect(layerOn(undefined, 'commanders')).toBe(false);
+  });
+
+  it('round-trips a comma-separated list', () => {
+    const q = formatViewState({ layers: ['commanders', '-meanwhile.biology-medicine'] });
+    expect(q).toBe('?layers=commanders,-meanwhile.biology-medicine');
+    expect(parseViewState(q)).toEqual({ layers: ['commanders', '-meanwhile.biology-medicine'] });
+  });
+
+  it('drops malformed tokens and repeated names', () => {
+    expect(parseViewState('?layers=commanders,,Bad Name,-commanders,meanwhile.physics')).toEqual({
+      layers: ['commanders', 'meanwhile.physics'],
+    });
+    expect(parseViewState('?layers=')).toEqual({});
+  });
+});
+
+describe('unknown parameters (forward compatibility)', () => {
+  it('keeps them, in order, through a round trip', () => {
+    const st = parseViewState('?t=1914-08-24T00:00:00Z&rail=supply&utm_source=letter');
+    expect(st.extra).toEqual([
+      ['rail', 'supply'],
+      ['utm_source', 'letter'],
+    ]);
+    expect(formatViewState(st)).toBe('?t=1914-08-24T00:00:00Z&rail=supply&utm_source=letter');
+  });
+});
+
+describe('the whole contract round-trips', () => {
+  const states: ViewState[] = [
+    {},
+    { t: Date.UTC(1914, 7, 2) },
+    { t: Date.UTC(1914, 8, 6, 6), branch: '1914:schlieffen-concept' },
+    { branch: '1914:historical', focus: '1914:marne', card: '1914:battle-marne' },
+    { card: '1914:decision-hentsch', pick: 'withdraw' },
+    { tour: '1914:tour-the-campaign', step: 'the-marne' },
+    { layers: ['commanders'] },
+    { layers: ['commanders', '-meanwhile.physics', '-meanwhile.ideas-culture'] },
+    { extra: [['rail', 'supply']] },
+    {
+      t: Date.UTC(1914, 8, 9, 12),
+      branch: '1914:schlieffen-concept',
+      focus: '1914:marne',
+      card: '1914:science-freundlich-eclipse',
+      pick: 'hold',
+      tour: '1914:tour-the-campaign',
+      step: 'the-marne',
+      layers: ['commanders', '-meanwhile.physics'],
+      extra: [['rail', 'supply']],
+    },
+  ];
+
+  it.each(states)('parse(format(%o)) is the state it started as', (state) => {
+    expect(parseViewState(formatViewState(state))).toEqual(state);
+  });
+
+  it('stays short enough to cite', () => {
+    // the deepest state above, on the production origin
+    const url = `https://sandtable.davetashner.com/${formatViewState(states.at(-1)!)}`;
+    expect(url.length).toBeLessThan(300);
   });
 });
 
@@ -112,6 +197,27 @@ describe('bindUrlState', () => {
     h.binding.setTour(undefined);
     expect(h.binding.get()).toEqual({});
     expect(h.writes.at(-1)).not.toMatch(/tour=|step=/);
+  });
+
+  it('turns layers on and off in one parameter (sand-shn.3)', () => {
+    const h = harness('');
+    h.binding.setLayer('commanders', true);
+    expect(h.writes.at(-1)).toMatch(/layers=commanders$/);
+    h.binding.setLayer('meanwhile.physics', false, true);
+    expect(h.binding.get().layers).toEqual(['commanders', '-meanwhile.physics']);
+    expect(h.writes.at(-1)).toMatch(/layers=commanders,-meanwhile\.physics$/);
+    h.binding.setLayer('commanders', false);
+    expect(h.writes.at(-1)).toMatch(/layers=-meanwhile\.physics$/);
+    h.binding.setLayer('meanwhile.physics', true, true);
+    expect(h.binding.get()).toEqual({});
+    expect(h.writes.at(-1)).not.toMatch(/layers=/);
+  });
+
+  it('never destroys a parameter it does not understand', () => {
+    const h = harness('?t=1914-08-24T00:00:00Z&rail=supply');
+    expect(h.binding.get().extra).toEqual([['rail', 'supply']]);
+    h.binding.setFocus('1914:marne');
+    expect(h.writes.at(-1)).toMatch(/\?t=1914-08-24T00:00:00Z&focus=1914:marne&rail=supply$/);
   });
 });
 

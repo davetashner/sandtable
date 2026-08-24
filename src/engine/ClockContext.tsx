@@ -90,7 +90,7 @@ export function useClockControls(): Clock {
 const noopSubscribe = () => () => {};
 const EMPTY = Object.freeze({}) as Slots;
 
-/** Branch, focus, card and tour position from the URL (empty when URL sync is off). */
+/** Branch, focus, card, tour position and layers from the URL (empty when URL sync is off). */
 export function useViewState(): Slots {
   const { url } = useCtx();
   return useSyncExternalStore(
@@ -102,7 +102,7 @@ export function useViewState(): Slots {
 
 export function useViewStateControls(): Pick<
   UrlBinding,
-  'setBranch' | 'setFocus' | 'setCard' | 'setPick' | 'setTour'
+  'setBranch' | 'setFocus' | 'setCard' | 'setPick' | 'setTour' | 'setLayer'
 > | null {
   return useCtx().url;
 }

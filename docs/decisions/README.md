@@ -8,15 +8,17 @@ record that supersedes the old one — never by silently editing history.
 Every record maps to a `decision`-type bead; the bead is closed when the record
 is merged.
 
-| #                                        | Decision                                                                             | Bead         | Status   |
-| ---------------------------------------- | ------------------------------------------------------------------------------------ | ------------ | -------- |
-| [0001](0001-stack.md)                    | Application stack: Vite + TypeScript + React; MapLibre GL + deck.gl                  | `sand-a55.1` | accepted |
-| [0002](0002-geography.md)                | Real geography: self-hosted PMTiles + historical borders; schematic only as inset    | `sand-a55.2` | accepted |
-| [0003](0003-scenario-packs.md)           | Data-driven scenario packs as the platform kernel                                    | `sand-a55.3` | accepted |
-| [0004](0004-hosting.md)                  | Static hosting on AWS (S3 + CloudFront), GitHub Actions via OIDC, assets outside git | `sand-a55.4` | accepted |
-| [0005](0005-counterfactuals.md)          | Counterfactuals are hand-authored branches, not a wargame engine                     | `sand-a55.5` | accepted |
-| [0006](0006-information-architecture.md) | Information architecture: one map, one dossier, one timeline                         | `sand-neh.5` | accepted |
-| [0007](0007-imagery.md)                  | Imagery: sourcing, licensing, colorization, content policy                           | `sand-y0u.1` | accepted |
+| #                                        | Decision                                                                             | Bead            | Status   |
+| ---------------------------------------- | ------------------------------------------------------------------------------------ | --------------- | -------- |
+| [0001](0001-stack.md)                    | Application stack: Vite + TypeScript + React; MapLibre GL + deck.gl                  | `sand-a55.1`    | accepted |
+| [0002](0002-geography.md)                | Real geography: self-hosted PMTiles + historical borders; schematic only as inset    | `sand-a55.2`    | accepted |
+| [0003](0003-scenario-packs.md)           | Data-driven scenario packs as the platform kernel                                    | `sand-a55.3`    | accepted |
+| [0004](0004-hosting.md)                  | Static hosting on AWS (S3 + CloudFront), GitHub Actions via OIDC, assets outside git | `sand-a55.4`    | accepted |
+| [0005](0005-counterfactuals.md)          | Counterfactuals are hand-authored branches, not a wargame engine                     | `sand-a55.5`    | accepted |
+| [0006](0006-information-architecture.md) | Information architecture: one map, one dossier, one timeline                         | `sand-neh.5`    | accepted |
+| [0007](0007-imagery.md)                  | Imagery: sourcing, licensing, colorization, content policy                           | `sand-y0u.1`    | accepted |
+| [0008](0008-audio.md)                    | Background score: generated audio, provenance and playback                           | `sand-1l0.34.1` | accepted |
+| [0009](0009-url-contract.md)             | The URL is the view: a citable deep-link contract                                    | `sand-shn.3`    | accepted |
 
 ## Template
 
