@@ -39,6 +39,21 @@ describe('<Timeline>', () => {
     expect(slider).toHaveAttribute('aria-valuetext', expect.stringContaining('Day 0'));
   });
 
+  it('aligns an edge tick label inwards so it cannot hang off the strip', () => {
+    // A two-day window ticks every twelve hours, so the last tick lands exactly
+    // on the end; centred, half the date would sit outside the page.
+    const start = Date.UTC(1914, 7, 2);
+    render(
+      <ClockProvider range={{ start, end: start + 2 * DAY }} syncUrl={false}>
+        <Timeline title="Chapter" />
+      </ClockProvider>,
+    );
+    const ticks = [...document.querySelectorAll('.timeline__tick--major')];
+    expect(ticks[0]).toHaveAttribute('data-edge', 'start');
+    expect(ticks[ticks.length - 1]).toHaveAttribute('data-edge', 'end');
+    expect(ticks.slice(1, -1).every((t) => !t.hasAttribute('data-edge'))).toBe(true);
+  });
+
   it('seeks with the scrubber and a marker, steps with the keyboard', () => {
     mount();
     const slider = screen.getByRole('slider', { name: 'Time — Test' });

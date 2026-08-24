@@ -38,6 +38,14 @@
         "additionalProperties": false,
         "description": "Inclusive time range; start must precede end"
       },
+      "window": {
+        "description": "What timeRange means, when it is not the obvious thing. Absent: it is when this happened, inside the pack window. \"placed\": it is where a chapter sits on the campaign strip, not when it happened — the beats carry the real dates in dateLabel. \"outside\": it is when this happened, and that is outside the campaign — a prologue or an epilogue, which keeps its own clock.",
+        "type": "string",
+        "enum": [
+          "placed",
+          "outside"
+        ]
+      },
       "region": {
         "type": "array",
         "prefixItems": [

@@ -32,19 +32,32 @@ never labels a level by hand.
 
 Chapters: `1914:origins` (`sand-1l0.3`), `1914:ardennes` (`sand-1l0.6`),
 `1914:grand-couronne` (`sand-1l0.9`), `1914:tannenberg-east` (`sand-1l0.13`),
-`1914:july-crisis` (`sand-1l0.32`). The July Crisis is the pack's backstory:
+`1914:july-crisis` (`sand-1l0.32`), `1914:meanwhile-epilogue` (`sand-9u2.6`).
+The July Crisis is the pack's backstory:
 `pack.opening.chain` points at it, so the opening's "How did it start?" takes
 the map to Sarajevo, where the chain begins, instead of leaving it on the
 western frontier. Like `1914:origins` it carries no events — the crisis ran
 28 June to 4 August, outside the campaign clock — and the two days it vacated
 in the campaign spine are now the ultimatum beat (`81-ultimatum-to-belgium`).
-`1914:origins` is the unusual one: it narrates the decades before the war rather
-than days of it, so it carries no events either — its beats sit in the 2–4 August
-window because everything in a pack must fall inside `pack.timeRange`, and each
-says its real date in `dateLabel`. What the map contributes is the ground the
-argument is about: the fortress line from Verdun to Belfort and the Meuse
-crossings, already drawn from the shared places registry. `1914:tannenberg-east`
+`1914:origins` narrates the decades before the war rather than days of it, so it
+carries no events either. Both of them are `"window": "placed"` (ADR 0015): the
+2–4 August window in the file is where they sit on the campaign strip, not when
+they happened, and each beat says its real date in `dateLabel`. What the map
+contributes for `1914:origins` is the ground the argument is about: the fortress
+line from Verdun to Belfort and the Meuse crossings, already drawn from the
+shared places registry. `1914:tannenberg-east`
 has its own caveat: its region lies outside the western-europe basemap extract,
-so it renders on the borders layer alone until a wider extract exists. Zoom-ins,
-which do carry routes and a sub-timeline:`1914:liege`, `1914:lorraine`, `1914:frontiers-north`, `1914:guise`,
-`1914:belgium-antwerp`, `1914:marne`.
+so it renders on the borders layer alone until a wider extract exists.
+
+`1914:meanwhile-epilogue` is the other kind: `"window": "outside"`, a real
+window of 1915–1919 that the campaign does not contain, and the only level in
+the pack whose strip is not the campaign's. It is where the six ✦ Meanwhile
+cards after 1914 are placed — Moseley, the field equations, Schwarzschild,
+Noether, Rutherford, the eclipse — with three beats (`130`–`132`) putting them
+in order. Its map is deliberately static: the front as November left it,
+because Berlin, Göttingen, Manchester, the Sari Bair ridge and Príncipe are not
+on it.
+
+Zoom-ins, which do carry routes and a sub-timeline: `1914:liege`,
+`1914:lorraine`, `1914:frontiers-north`, `1914:guise`, `1914:belgium-antwerp`,
+`1914:marne`.

@@ -785,6 +785,15 @@ export const Battle = z
     id: Id,
     title: z.string().min(1),
     timeRange: TimeRange,
+    window: z
+      .enum(['placed', 'outside'])
+      .optional()
+      .describe(
+        'What timeRange means, when it is not the obvious thing. Absent: it is when this happened, ' +
+          'inside the pack window. "placed": it is where a chapter sits on the campaign strip, not ' +
+          'when it happened — the beats carry the real dates in dateLabel. "outside": it is when this ' +
+          'happened, and that is outside the campaign — a prologue or an epilogue, which keeps its own clock.',
+      ),
     region: BBox,
     camera: Camera,
     place: Id.optional(),

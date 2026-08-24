@@ -311,6 +311,32 @@ show in the zoom-in; their times must fall inside the battle's range; their ids
 still carry the pack prefix. A beat with `focus: 1914:le-cateau` narrates it.
 The zoom-in chip appears automatically.
 
+### Chapters, and what their window means
+
+Leave out `routes` and you have written a **chapter** instead: narrative and
+static markers, with the campaign tokens left on their campaign movement. The
+chrome works that out for itself (ADR 0013) — never label a level by hand.
+
+What the chrome cannot work out is what your `timeRange` _means_, so say it
+with `window` (ADR 0015):
+
+- **Nothing** — the ordinary case. It is when the thing happened, and it falls
+  inside `pack.timeRange`.
+- **`"placed"`** — it is where the chapter sits on the campaign strip, not when
+  it happened. `1914:origins` narrates 1871–1914 from a 2–4 August window this
+  way. Give every beat its real date in `dateLabel`, and say in the chapter's
+  `summary` that the window is a position.
+- **`"outside"`** — it is when the thing happened, and the campaign does not
+  contain it: a prologue, or an epilogue. It must be a chapter, its window must
+  really be outside `pack.timeRange`, and its beats are then checked against
+  _its_ window rather than the pack's. It gets a strip of its own — the clock
+  swaps over on the way in, at a pace its own length can be read at — and
+  anything the timeline places by date, the ✦ Meanwhile cards included, is
+  placed on that strip instead of the campaign's.
+
+`1914:meanwhile-epilogue` is the worked example of the third: 1915–1919, three
+beats, six science cards the campaign strip could not hold.
+
 ## 7. Add a technology or science card
 
 `tech.json` (surfaced as a ⚙ glyph that opens a dossier card — ADR 0006):

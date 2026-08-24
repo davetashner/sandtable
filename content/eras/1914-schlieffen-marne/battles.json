@@ -5822,6 +5822,7 @@
       "start": "1914-08-02T00:00:00Z",
       "end": "1914-08-04T00:00:00Z"
     },
+    "window": "placed",
     "region": [1.5, 47.4, 8.2, 51.2],
     "camera": {
       "center": [4.9, 49.35],
@@ -6051,6 +6052,7 @@
       "start": "1914-08-02T00:00:00Z",
       "end": "1914-08-04T00:00:00Z"
     },
+    "window": "placed",
     "region": [17.2, 42.9, 21.2, 45.7],
     "camera": {
       "center": [18.413, 43.856],
@@ -6074,6 +6076,60 @@
       {
         "source": "source:albertini-1952",
         "note": "the day-by-day reconstruction"
+      }
+    ]
+  },
+  {
+    "id": "1914:meanwhile-epilogue",
+    "title": "Meanwhile, 1915–1919: physics after the campaign",
+    "timeRange": {
+      "start": "1915-01-01T00:00:00Z",
+      "end": "1919-12-31T00:00:00Z"
+    },
+    "window": "outside",
+    "region": [1.8, 47.2, 8.0, 51.6],
+    "camera": {
+      "center": [4.9, 49.4],
+      "zoom": 6.2
+    },
+    "summary": "The pack's epilogue, and the only level in it that keeps a window of its own. The campaign closes on 25 November 1914 with seven hundred kilometres of trench and no open flank; six of the ✦ Meanwhile cards belong to the years after that, and this is where they are placed instead of being piled on the last pixel of the campaign strip. The window is real — 1915 to 1919 — which is why the strip changes underneath it (ADR 0015). The map is the one thing here that does not move: the line as November left it, because the ground this chapter is about — Berlin, Göttingen, Manchester, a ridge above Suvla, a field hospital behind the Russian front, an island in the Gulf of Guinea — is not on it. A chapter, not a zoom-in: it carries no routes, no formations and no events, and the campaign tokens stay parked where the campaign left them.",
+    "outcome": "Five years, six cards, and no moral drawn from putting them together. An element's place in the periodic table, and the man who found it dead at twenty-seven on the Sari Bair ridge. The field equations of general relativity, read to the Prussian Academy in Berlin a year to the day after this pack's last date. The first exact solution of those equations, worked out by a volunteer computing artillery trajectories on the Russian front, who was dead within five months. The theorem tying every conservation law to a symmetry, proved at Göttingen by a woman the university would not put on the payroll until 1923. The first nucleus broken by hand, in Manchester, by a man who spent most of the war on submarine detection. And an eclipse measured from Brazil and from an island in the Gulf of Guinea that made a German theorist, six months after Versailles, the most famous man alive. The cards carry the dates, the numbers and the arguments the historians are still having; the three beats put them in order.",
+    "links": {
+      "science": [
+        "1914:science-moseley-atomic-number",
+        "1914:science-general-relativity-1915",
+        "1914:science-schwarzschild-solution",
+        "1914:science-noether-theorem-1918",
+        "1914:science-eddington-eclipse-1919",
+        "1914:science-rutherford-transmutation"
+      ],
+      "places": ["place:nieuwpoort", "place:pfetterhouse"],
+      "battles": ["1914:origins"]
+    },
+    "sources": [
+      {
+        "source": "source:mhs-oxford-moseley",
+        "note": "Moseley's work and his death on the Sari Bair ridge, 10 August 1915"
+      },
+      {
+        "source": "source:einstein-1915-feldgleichungen",
+        "note": "the field equations, read to the Prussian Academy on 25 November 1915"
+      },
+      {
+        "source": "source:schwarzschild-1916",
+        "note": "the first exact solution, written at the Russian front"
+      },
+      {
+        "source": "source:noether-1918",
+        "note": "the two theorems, presented at Göttingen on 26 July 1918"
+      },
+      {
+        "source": "source:rutherford-1919",
+        "note": "the disintegration of nitrogen, published June 1919"
+      },
+      {
+        "source": "source:dyson-eddington-davidson-1920",
+        "note": "the eclipse measurement of 29 May 1919 and the report of 6 November"
       }
     ]
   }

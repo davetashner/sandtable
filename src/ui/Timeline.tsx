@@ -242,6 +242,12 @@ export function Timeline({
               key={t.at}
               className={`timeline__tick${t.major ? ' timeline__tick--major' : ''}`}
               style={{ left: pct(t.at) }}
+              // A label is centred on its tick, so one sitting exactly on an
+              // edge hangs half of itself off the strip and gives the page a
+              // horizontal scrollbar. That happens whenever a range ends on a
+              // round step — a two-day chapter window, a seven-day zoom-in —
+              // so the edge labels align inwards instead of centring.
+              data-edge={t.at <= range.start ? 'start' : t.at >= range.end ? 'end' : undefined}
             >
               {t.major && <span className="timeline__tick-label">{t.label}</span>}
             </div>

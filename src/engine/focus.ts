@@ -6,13 +6,15 @@
  * pure logic the React controller applies.
  */
 import type { Battle, Formation, Route, Side } from '../packs/schema/index.js';
-import type { ClockRange } from './clock.js';
+import { defaultSpeedFor, speedPresetsFor, type ClockRange } from './clock.js';
 
 export interface FocusMemory {
   /** Campaign "now" when the zoom-in was entered. */
   campaignNow: number;
   /** Campaign range to restore. */
   campaignRange: ClockRange;
+  /** Campaign pace to restore; a chapter of its own length may need another. */
+  campaignSpeed: number;
 }
 
 export const battleRange = (b: Battle): ClockRange => ({
@@ -23,18 +25,47 @@ export const battleRange = (b: Battle): ClockRange => ({
 /**
  * The "now" to use when entering a battle: keep the campaign instant if it
  * already falls inside the battle, otherwise start at the battle's beginning.
+ *
+ * `wanted` is the instant a deep link asked for, and it is a second chance
+ * rather than a duplicate. The URL binding seeks the clock to `?t=` while the
+ * clock still has the campaign's range, so an instant inside a level that
+ * keeps a window of its own (ADR 0015) — anything in 1915–1919 — has already
+ * been clamped away by the time this runs. The URL still has it, and without
+ * it a link copied from inside the epilogue would not reopen where it was
+ * copied (ADR 0009).
  */
-export function enterNow(now: number, range: ClockRange): number {
-  return now >= range.start && now <= range.end ? now : range.start;
+export function enterNow(now: number, range: ClockRange, wanted?: number): number {
+  const inside = (t: number) => t >= range.start && t <= range.end;
+  if (inside(now)) return now;
+  if (wanted !== undefined && inside(wanted)) return wanted;
+  return range.start;
+}
+
+/**
+ * The pace to run at inside a range: the one already running where that range
+ * can offer it, otherwise the range's own default. The campaign and every
+ * zoom-in in it read at an hour a second and keep it; a chapter that spans
+ * four years cannot — at an hour a second it would take a working day to play,
+ * and the reader would be handed a scrubber that does not move.
+ */
+export function enterSpeed(speed: number, range: ClockRange): number {
+  return speedPresetsFor(range).some((p) => p.speed === speed) ? speed : defaultSpeedFor(range);
 }
 
 /**
  * The "now" to use when leaving: the remembered campaign instant, unless the
  * viewer scrubbed past it inside the battle — then the later of the two, so
  * the story never jumps backwards.
+ *
+ * An instant the campaign cannot hold does not count. A chapter set outside
+ * the campaign — a prologue, an epilogue (ADR 0015) — is always "later" or
+ * always earlier than every campaign instant, so taking its clock would park
+ * every reader who looked at the epilogue on the last day of the pack.
  */
 export function exitNow(memory: FocusMemory, battleNow: number): number {
-  return Math.max(memory.campaignNow, battleNow);
+  const { campaignNow, campaignRange } = memory;
+  if (battleNow < campaignRange.start || battleNow > campaignRange.end) return campaignNow;
+  return Math.max(campaignNow, battleNow);
 }
 
 /** The battle a focus id names, if it is one of the pack's. */

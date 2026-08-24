@@ -32,6 +32,7 @@ import { allFormations, sideFormation, subordinatesOf } from './engine/formation
 import {
   battleRange,
   enterNow,
+  enterSpeed,
   exitNow,
   movementSourceFor,
   resolveFocus,
@@ -83,7 +84,8 @@ import { TechCardView, type EntityLabeller } from './ui/TechCardView.js';
 import { Timeline, type TimelineMarker, type TimelinePhase } from './ui/Timeline.js';
 import { layerOn, parseViewState } from './engine/url-state.js';
 import { ownsKeys } from './engine/shortcuts.js';
-import type { Camera, Links, ScienceField } from './packs/schema/index.js';
+import type { Battle, Camera, Links, ScienceField } from './packs/schema/index.js';
+import type { ClockRange } from './engine/clock.js';
 
 // MapLibre + deck.gl are the heaviest dependencies; load the whole map surface
 // on demand so the shell, timeline and dossier paint first.
@@ -238,29 +240,46 @@ function MeanwhileProvider({ children }: { children: ReactNode }) {
 const meanwhileLayer = (field: ScienceField) => `meanwhile.${field}`;
 
 /**
+ * The window the strip in front of the reader is showing: the campaign's, or —
+ * inside a focus — that level's own, which is the range `FocusController` hands
+ * the clock on the way in.
+ */
+const stripRange = (focus: Battle | undefined): ClockRange => (focus ? battleRange(focus) : RANGE);
+
+/**
  * "Meanwhile" reaches outside the campaign — special relativity in 1905,
  * Eddington's eclipse in 1919 — and the strip clamps anything outside its
  * range to an edge, which would pile half the layer on the last pixel. Only
  * cards the strip can place honestly get a ✦; the rest are reached from the
  * beat that names them (`links.science`) or from `?card=`.
+ *
+ * The rule is the strip's, not the campaign's: the ✦ layer means "at the same
+ * time as what you are looking at", so it follows whichever window is drawn.
+ * That is what gives the six post-1914 cards somewhere to be — the epilogue
+ * chapter keeps its own 1915–1919 window (ADR 0015) and can place every one of
+ * them where it belongs.
  */
-const onTheStrip = (c: (typeof seed.science)[number]) => {
+const onTheStrip = (c: (typeof seed.science)[number], range: ClockRange) => {
   const at = Date.parse(c.at);
-  return at >= RANGE.start && at <= RANGE.end;
+  return at >= range.start && at <= range.end;
 };
 
 /**
  * Science fields the timeline can show, and which are shown (all, by default).
  * The switches live in the URL so a link carries the timeline you filtered,
  * not the one the app opens with (sand-shn.3); on by default, so only the
- * fields you hid are written, as `-meanwhile.<field>`. A field whose cards all
- * sit outside the campaign window gets no chip, because the chip would toggle
- * nothing.
+ * fields you hid are written, as `-meanwhile.<field>`. A field with nothing on
+ * the strip in front of the reader gets no chip, because the chip would toggle
+ * nothing — mathematics has one card, Noether's, so its chip appears in the
+ * epilogue chapter and nowhere else.
  */
 function useMeanwhile() {
+  const focus = useFocus();
+  const range = useMemo(() => stripRange(focus), [focus]);
   const available = useMemo(
-    () => SCIENCE_FIELDS.filter((f) => seed.science.some((c) => c.field === f && onTheStrip(c))),
-    [],
+    () =>
+      SCIENCE_FIELDS.filter((f) => seed.science.some((c) => c.field === f && onTheStrip(c, range))),
+    [range],
   );
   const { layers } = useViewState();
   const controls = useViewStateControls();
@@ -507,8 +526,14 @@ function TourProvider({ children }: { children: ReactNode }) {
 
 /**
  * Applies the zoom-in: when the focus changes, swap the clock range for the
- * battle's (remembering the campaign instant) or restore the campaign range
- * and time. URL is the source of truth, so deep links and back/forward work.
+ * battle's (remembering the campaign instant and pace) or restore the campaign
+ * range, time and pace. URL is the source of truth, so deep links and
+ * back/forward work.
+ *
+ * The pace is part of it because a level may be a different length of thing
+ * (ADR 0015): the campaign and its zoom-ins all read at an hour a second, but
+ * a chapter spanning 1915–1919 cannot, so it is entered at a pace its own
+ * ladder offers and the campaign's is put back on the way out.
  */
 function FocusController() {
   const focus = useFocus();
@@ -520,11 +545,15 @@ function FocusController() {
     if (id === lastFocus.current) return;
     const st = clock.get();
     if (focus) {
-      if (!memory.current) memory.current = { campaignNow: st.now, campaignRange: st.range };
+      if (!memory.current)
+        memory.current = { campaignNow: st.now, campaignRange: st.range, campaignSpeed: st.speed };
       const range = battleRange(focus);
-      clock.setRange(range, enterNow(st.now, range));
+      const wanted = parseViewState(window.location.search).t;
+      clock.setRange(range, enterNow(st.now, range, wanted));
+      clock.setSpeed(enterSpeed(st.speed, range));
     } else if (memory.current) {
       clock.setRange(memory.current.campaignRange, exitNow(memory.current, st.now));
+      clock.setSpeed(memory.current.campaignSpeed);
       memory.current = null;
     }
     lastFocus.current = id;
@@ -1095,16 +1124,18 @@ function TimelineSurface() {
             at: Date.parse(t.introduced.at!),
             kind: 'tech' as const,
           }));
-    const science: TimelineMarker[] = focus
-      ? []
-      : seed.science
-          .filter((c) => onTheStrip(c) && meanwhile.active.has(c.field))
-          .map((c) => ({
-            id: c.id,
-            title: c.title,
-            at: Date.parse(c.at),
-            kind: 'science' as const,
-          }));
+    // The one marker family that is not suppressed inside a focus. The others
+    // are the campaign's own furniture; "Meanwhile" is a layer that runs
+    // alongside whatever window is on the strip, and the epilogue chapter is a
+    // window drawn for it (ADR 0015).
+    const science: TimelineMarker[] = seed.science
+      .filter((c) => onTheStrip(c, stripRange(focus)) && meanwhile.active.has(c.field))
+      .map((c) => ({
+        id: c.id,
+        title: c.title,
+        at: Date.parse(c.at),
+        kind: 'science' as const,
+      }));
     const documents: TimelineMarker[] = focus
       ? []
       : seed.documents.map((d) => ({
