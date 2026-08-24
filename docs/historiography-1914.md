@@ -137,6 +137,52 @@ and cite them, and must not settle the question for the learner (rule 6 of
   contested since, and goes no further than the point both sides accept — that
   the two men were corresponding through the autumn.
 
+## 9. Clara Immerwahr's death, 2 May 1915
+
+A 1915 point, reached from inside the 1914 pack because the tech layer's
+chemistry card has to say what Fritz Haber was. It moves to the Western Front
+1915–1918 pack (`sand-g80`) with the rest of the gas material.
+
+- **The popular reading** (Morris Goran, 1947 and 1967; Gerit von Leitner,
+  _Der Fall Clara Immerwahr_, 1993, and the journalism and drama that follow
+  it): Clara Immerwahr, a chemist in her own right, killed herself in protest
+  at her husband's direction of the chlorine release at Ypres ten days
+  earlier.
+- **The scholarly correction** (Friedrich & Hoffmann, _ZAAC_ 642, 2016, with
+  Henning's companion piece in the same issue): neither Clara nor Fritz Haber
+  left diaries or correspondence from which her motives could be
+  reconstructed, no farewell letter survives, and the protest reading was
+  supplied by later writers without sources. They place the death in a
+  confluence — an unfulfilled life, the marriage, the deaths of her doctoral
+  supervisor Richard Abegg and of Otto Sackur — rather than in a single
+  cause.
+- **How the pack presents it:** the chemistry card
+  (`1914:tech-poison-gas-chemistry`) states both readings, names Friedrich and
+  Hoffmann, and says in terms that the sequence is not in dispute and the
+  causation is. No beat asserts the protest reading, and the card does not
+  use her death as a moral about her husband.
+
+## 10. What gas cost: two casualty totals, neither of them firm
+
+- **The four-nation table** (L. F. Haber, _The Poisonous Cloud_, 1986, p. 243,
+  as reprinted by Faith in _1914-1918-online_): about 186,000 gas casualties
+  for Britain, 130,000 for France, 107,000 for Germany, 73,000 for the United
+  States — some 496,000 — published with the warning that gas casualty data
+  are inherently inaccurate and that for some nations only generalized
+  estimates exist.
+- **The all-belligerent total** (Fitzgerald, _AJPH_ 98:4, 2008, and the
+  interwar literature it draws on): more than 1.3 million casualties and about
+  90,000 deaths. The gap between the two is mostly Russia, whose figures are
+  estimates that cannot be checked.
+- **What both support:** the ratio inside the number. About 2.6 per cent of
+  British chemical casualties died; of the American gas casualties about
+  1,500 did. Gas produced a great many casualties and comparatively few
+  deaths, and fewer of both against troops with respirators.
+- **How the pack presents it:** the chemistry card gives both totals, says
+  which armies each covers and why they differ, and draws the conclusion from
+  the ratio rather than from either total. No single figure is offered for
+  "gas casualties in the First World War".
+
 ## Using these notes
 
 Link a beat to the relevant note by naming the historians in the prose with

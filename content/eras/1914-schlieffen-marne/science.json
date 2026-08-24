@@ -151,10 +151,13 @@
         "note": "from the counter-manifesto to the 1930s"
       },
       {
-        "to": "Fritz Haber and chemical warfare (sand-w9t.8)",
-        "note": "a signatory six months before Second Ypres"
+        "to": "1914:tech-poison-gas-chemistry",
+        "note": "Haber signed in October 1914 and directed the chlorine release at Ypres six months later"
       }
     ],
+    "links": {
+      "tech": ["1914:tech-poison-gas-chemistry"]
+    },
     "sources": [
       {
         "source": "source:ungern-sternberg-1996",

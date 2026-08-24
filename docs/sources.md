@@ -66,49 +66,57 @@ specific with a `note`; when they disagree on meaning, write historiography.
 
 ## Core bibliography — 1914 in the West (in the registry)
 
-| id                                         | Work                                                                         | Use it for                                                                |
-| ------------------------------------------ | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `source:herwig-2009`                       | Herwig, _The Marne, 1914_ (2009)                                             | the operational narrative, strengths, dates; the backbone                 |
-| `source:strachan-2001`                     | Strachan, _The First World War, I: To Arms_ (2001)                           | plans, mobilization, strategy, the global frame                           |
-| `source:mombauer-2001`                     | Mombauer, _Helmuth von Moltke and the Origins of the First World War_ (2001) | Moltke, the plan's reality, the reply to Zuber                            |
-| `source:zuber-2002`                        | Zuber, _Inventing the Schlieffen Plan_ (2002)                                | the revisionist case — cited as one side                                  |
-| `source:tuchman-1962`                      | Tuchman, _The Guns of August_ (1962)                                         | narrative colour; personalities; not numbers                              |
-| `source:keegan-1998`                       | Keegan, _The First World War_ (1998)                                         | general context                                                           |
-| `source:hastings-2013`                     | Hastings, _Catastrophe_ (2013)                                               | 1914 at human scale; Belgium, Serbia                                      |
-| `source:reichsarchiv-weltkrieg-1`          | Reichsarchiv, _Der Weltkrieg 1914 bis 1918_, Bd. 1 (1925)                    | German orders, positions; the Liège forts fall by fall, pp. 105–120       |
-| `source:edmonds-1922`                      | Edmonds, _Military Operations: France and Belgium, 1914_, I (1922)           | the BEF day by day                                                        |
-| `source:afgg-1-1`                          | _Les Armées françaises dans la Grande Guerre_, I/1 (1922)                    | French orders of battle, positions, the orders                            |
-| `source:wikipedia-en`                      | Wikipedia (English)                                                          | uncontested biographical dates only                                       |
-| `source:afgg-1-2-annexes-1`                | AFGG, Tome I, 2e vol., Annexes 1er vol. (1925)                               | the French orders of the retreat; Instruction générale no 2               |
-| `source:kluck-1920`                        | Kluck, _The March on Paris and the Battle of the Marne, 1914_ (1920)         | OHL directives and wireless as received by First Army; memoir, one side   |
-| `source:gallieni-1920`                     | Gallieni, _Mémoires: Défense de Paris_ (1920)                                | the Paris orders of 3–9 September; memoir, one side                       |
-| `source:belgian-grey-book-1914`            | Belgian Grey Book (1914; English in _Collected Diplomatic Documents_, 1915)  | the ultimatum and the reply, Nos. 20 and 22                               |
-| `source:bsb-1000dokumente-schlieffen-1905` | BSB, _Denkschrift 'Krieg gegen Frankreich'_ (transcription, 2010)            | the German text of the 1905 memorandum                                    |
-| `source:ehlert-epkenhans-gross-2006`       | Ehlert, Epkenhans & Groß (eds), _Der Schlieffenplan_ (2006)                  | the edited documents and the post-Zuber essays                            |
-| `source:ritter-1958`                       | Ritter, _The Schlieffen Plan: Critique of a Myth_ (1958)                     | the English memorandum text, pp. 134–148; Ritter's critique               |
-| `source:clark-2012`                        | Clark, _The Sleepwalkers_ (2012)                                             | the July Crisis; the revisionist case — one side                          |
-| `source:fischer-1967`                      | Fischer, _Germany's Aims in the First World War_ (1967)                      | the case for German responsibility — one side                             |
-| `source:albertini-1952`                    | Albertini, _The Origins of the War of 1914_ (1952–57)                        | the crisis hour by hour; the standard reconstruction                      |
-| `source:mombauer-2013`                     | Mombauer (ed.), _The Origins of the First World War: Documents_ (2013)       | crisis documents in translation, with commentary                          |
-| `source:hmso-collected-1915`               | _Collected Diplomatic Documents_ (HMSO, 1915)                                | the colour books in one volume; selected by governments                   |
-| `source:kautsky-1924`                      | Kautsky (ed.), _Outbreak of the World War: German Documents_ (1924)          | the German files; the 'blank cheque' is no. 15                            |
-| `source:byu-wwi-archive`                   | BYU, _The World War I Document Archive_                                      | working transcriptions; cite the printed collection too                   |
-| `source:edmonds-1925`                      | Edmonds, _Military Operations: France and Belgium, 1914_, II (1925)          | Antwerp, the Yser and First Ypres; the BEF's casualty returns             |
-| `source:van-pul-2006`                      | Van Pul, _In Flanders Flooded Fields_ (2006)                                 | the Yser inundation: the locks, the nights, who opened them               |
-| `source:unruh-1986`                        | Unruh, _Langemarck: Legende und Wirklichkeit_ (1986)                         | the reality behind the Kindermord legend                                  |
-| `source:1914-1918-online-langemarck`       | Grawe, 'Langemarck Myth', _1914-1918-online_                                 | the OHL communiqué of 11 November 1914 and the myth's construction        |
-| `source:1914-1918-online-ypres`            | Jones, 'Ypres, Battles of', _1914-1918-online_                               | First Ypres: dates, armies, the round casualty totals                     |
-| id                                         | Work                                                                         | Use it for                                                                |
-| `source:showalter-2004`                    | Showalter, _Tannenberg: Clash of Empires, 1914_ (2004)                       | East Prussia 1914: Gumbinnen, Tannenberg, the corps from the West         |
-| `source:stone-1975`                        | Stone, _The Eastern Front 1914-1917_ (1975)                                  | the Eastern Front's shape; sceptical of the Tannenberg legend             |
-| `source:doughty-2005`                      | Doughty, _Pyrrhic Victory_ (2005)                                            | French strategy and operations; Plan XVII, the Ardennes, Joffre's purges  |
-| `source:greenhalgh-2014`                   | Greenhalgh, _The French Army and the First World War_ (2014)                 | French doctrine and losses; the Colonial Corps at Rossignol, p. 41        |
-| `source:zuber-2007`                        | Zuber, _The Battle of the Frontiers: Ardennes 1914_ (2007)                   | the Ardennes encounter battles from the German regimental histories       |
-| `source:foley-2003`                        | Foley (ed.), _Alfred von Schlieffen's Military Writings_ (2003)              | what Schlieffen actually wrote; the reply to Zuber                        |
-| `source:holmes-2001`                       | Holmes, "The Reluctant March on Paris", _War in History_ 8:2 (2001)          | the Zuber exchange — cited as the other side                              |
-| `source:sumpf-2009`                        | Sumpf, 'Les taxis de la Marne', _L'Histoire par l'image_ (2009)              | the low end of the taxi arithmetic: 630 cabs, 3,000-odd men, not decisive |
-| `source:bruce-2008`                        | Bruce, _Pétain: Verdun to Vichy_ (2008)                                      | Pétain's motor supply at Verdun 1916; the Bar-le-Duc road's organisation  |
-| `source:memorial-verdun-bataille`          | Mémorial de Verdun, 'La bataille de Verdun'                                  | the Voie Sacrée's peak traffic figures — commemorative round numbers      |
+| id                                         | Work                                                                          | Use it for                                                                |
+| ------------------------------------------ | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `source:herwig-2009`                       | Herwig, _The Marne, 1914_ (2009)                                              | the operational narrative, strengths, dates; the backbone                 |
+| `source:strachan-2001`                     | Strachan, _The First World War, I: To Arms_ (2001)                            | plans, mobilization, strategy, the global frame                           |
+| `source:mombauer-2001`                     | Mombauer, _Helmuth von Moltke and the Origins of the First World War_ (2001)  | Moltke, the plan's reality, the reply to Zuber                            |
+| `source:zuber-2002`                        | Zuber, _Inventing the Schlieffen Plan_ (2002)                                 | the revisionist case — cited as one side                                  |
+| `source:tuchman-1962`                      | Tuchman, _The Guns of August_ (1962)                                          | narrative colour; personalities; not numbers                              |
+| `source:keegan-1998`                       | Keegan, _The First World War_ (1998)                                          | general context                                                           |
+| `source:hastings-2013`                     | Hastings, _Catastrophe_ (2013)                                                | 1914 at human scale; Belgium, Serbia                                      |
+| `source:reichsarchiv-weltkrieg-1`          | Reichsarchiv, _Der Weltkrieg 1914 bis 1918_, Bd. 1 (1925)                     | German orders, positions; the Liège forts fall by fall, pp. 105–120       |
+| `source:edmonds-1922`                      | Edmonds, _Military Operations: France and Belgium, 1914_, I (1922)            | the BEF day by day                                                        |
+| `source:afgg-1-1`                          | _Les Armées françaises dans la Grande Guerre_, I/1 (1922)                     | French orders of battle, positions, the orders                            |
+| `source:wikipedia-en`                      | Wikipedia (English)                                                           | uncontested biographical dates only                                       |
+| `source:afgg-1-2-annexes-1`                | AFGG, Tome I, 2e vol., Annexes 1er vol. (1925)                                | the French orders of the retreat; Instruction générale no 2               |
+| `source:kluck-1920`                        | Kluck, _The March on Paris and the Battle of the Marne, 1914_ (1920)          | OHL directives and wireless as received by First Army; memoir, one side   |
+| `source:gallieni-1920`                     | Gallieni, _Mémoires: Défense de Paris_ (1920)                                 | the Paris orders of 3–9 September; memoir, one side                       |
+| `source:belgian-grey-book-1914`            | Belgian Grey Book (1914; English in _Collected Diplomatic Documents_, 1915)   | the ultimatum and the reply, Nos. 20 and 22                               |
+| `source:bsb-1000dokumente-schlieffen-1905` | BSB, _Denkschrift 'Krieg gegen Frankreich'_ (transcription, 2010)             | the German text of the 1905 memorandum                                    |
+| `source:ehlert-epkenhans-gross-2006`       | Ehlert, Epkenhans & Groß (eds), _Der Schlieffenplan_ (2006)                   | the edited documents and the post-Zuber essays                            |
+| `source:ritter-1958`                       | Ritter, _The Schlieffen Plan: Critique of a Myth_ (1958)                      | the English memorandum text, pp. 134–148; Ritter's critique               |
+| `source:clark-2012`                        | Clark, _The Sleepwalkers_ (2012)                                              | the July Crisis; the revisionist case — one side                          |
+| `source:fischer-1967`                      | Fischer, _Germany's Aims in the First World War_ (1967)                       | the case for German responsibility — one side                             |
+| `source:albertini-1952`                    | Albertini, _The Origins of the War of 1914_ (1952–57)                         | the crisis hour by hour; the standard reconstruction                      |
+| `source:mombauer-2013`                     | Mombauer (ed.), _The Origins of the First World War: Documents_ (2013)        | crisis documents in translation, with commentary                          |
+| `source:hmso-collected-1915`               | _Collected Diplomatic Documents_ (HMSO, 1915)                                 | the colour books in one volume; selected by governments                   |
+| `source:kautsky-1924`                      | Kautsky (ed.), _Outbreak of the World War: German Documents_ (1924)           | the German files; the 'blank cheque' is no. 15                            |
+| `source:byu-wwi-archive`                   | BYU, _The World War I Document Archive_                                       | working transcriptions; cite the printed collection too                   |
+| `source:edmonds-1925`                      | Edmonds, _Military Operations: France and Belgium, 1914_, II (1925)           | Antwerp, the Yser and First Ypres; the BEF's casualty returns             |
+| `source:van-pul-2006`                      | Van Pul, _In Flanders Flooded Fields_ (2006)                                  | the Yser inundation: the locks, the nights, who opened them               |
+| `source:unruh-1986`                        | Unruh, _Langemarck: Legende und Wirklichkeit_ (1986)                          | the reality behind the Kindermord legend                                  |
+| `source:1914-1918-online-langemarck`       | Grawe, 'Langemarck Myth', _1914-1918-online_                                  | the OHL communiqué of 11 November 1914 and the myth's construction        |
+| `source:1914-1918-online-ypres`            | Jones, 'Ypres, Battles of', _1914-1918-online_                                | First Ypres: dates, armies, the round casualty totals                     |
+| id                                         | Work                                                                          | Use it for                                                                |
+| `source:showalter-2004`                    | Showalter, _Tannenberg: Clash of Empires, 1914_ (2004)                        | East Prussia 1914: Gumbinnen, Tannenberg, the corps from the West         |
+| `source:stone-1975`                        | Stone, _The Eastern Front 1914-1917_ (1975)                                   | the Eastern Front's shape; sceptical of the Tannenberg legend             |
+| `source:doughty-2005`                      | Doughty, _Pyrrhic Victory_ (2005)                                             | French strategy and operations; Plan XVII, the Ardennes, Joffre's purges  |
+| `source:greenhalgh-2014`                   | Greenhalgh, _The French Army and the First World War_ (2014)                  | French doctrine and losses; the Colonial Corps at Rossignol, p. 41        |
+| `source:zuber-2007`                        | Zuber, _The Battle of the Frontiers: Ardennes 1914_ (2007)                    | the Ardennes encounter battles from the German regimental histories       |
+| `source:foley-2003`                        | Foley (ed.), _Alfred von Schlieffen's Military Writings_ (2003)               | what Schlieffen actually wrote; the reply to Zuber                        |
+| `source:holmes-2001`                       | Holmes, "The Reluctant March on Paris", _War in History_ 8:2 (2001)           | the Zuber exchange — cited as the other side                              |
+| `source:sumpf-2009`                        | Sumpf, 'Les taxis de la Marne', _L'Histoire par l'image_ (2009)               | the low end of the taxi arithmetic: 630 cabs, 3,000-odd men, not decisive |
+| `source:bruce-2008`                        | Bruce, _Pétain: Verdun to Vichy_ (2008)                                       | Pétain's motor supply at Verdun 1916; the Bar-le-Duc road's organisation  |
+| `source:memorial-verdun-bataille`          | Mémorial de Verdun, 'La bataille de Verdun'                                   | the Voie Sacrée's peak traffic figures — commemorative round numbers      |
+| `source:haber-1986`                        | Haber, L. F., _The Poisonous Cloud_ (1986)                                    | chemical warfare: the standard account, the casualty table, the verdict   |
+| `source:1914-1918-online-gas-warfare`      | Faith, 'Gas Warfare', _1914-1918-online_                                      | the sequence of first uses; the four-nation casualty table and its caveat |
+| `source:heller-1984`                       | Heller, _Chemical Warfare in World War I_ (Leavenworth Papers 10, 1984)       | 22 April 1915: the release, the two French divisions, the four-mile gap   |
+| `source:fitzgerald-2008`                   | Fitzgerald, 'Chemical Warfare and Medical Response', _AJPH_ 98:4 (2008)       | the high end of the gas casualty range, and the deaths inside it          |
+| `source:1914-1918-online-blockade`         | Kramer, 'Naval Blockade (of Germany)', _1914-1918-online_                     | the nitrogen figures: BASF's output, 90% of explosives nitrogen by 1915   |
+| `source:friedrich-hoffmann-2016`           | Friedrich & Hoffmann, 'Clara Haber, née Immerwahr', _ZAAC_ 642 (2016)         | Clara Immerwahr's doctorate; the historiography of her death              |
+| `source:erisman-2008`                      | Erisman et al., 'How a century of ammonia synthesis changed the world' (2008) | the 1908 patent; the dependence of the modern world on fixed nitrogen     |
+| `source:nobel-chemistry-1918`              | NobelPrize.org, 'The Nobel Prize in Chemistry 1918'                           | the prize, its wording and its date — reference data only                 |
 
 ## History of science, 1905–1919 — the "Meanwhile" layer (in the registry)
 
@@ -162,6 +170,14 @@ is written as the argument it still is.
   archives and the German regimental histories. Wanted for the clock times of
   the twelve surrenders, which Reichsarchiv Bd. 1 gives only to the part of
   the day; add them when a copy is in hand and the pages can be given.
+- Jones, _World War I Gas Warfare Tactics and Equipment_ (Osprey Elite 150, 2007) and Palazzo, _Seeking Victory on the Western Front_ (1999) — the
+  equipment and the British chemical-warfare organisation, wanted for the
+  respirator sequence and the Livens projector when copies are in hand. The
+  gas card uses Heller (1984) for both, which covers them but from the
+  American side.
+- Mitchell & Smith, _Medical Services: Casualties and Medical Statistics of
+  the Great War_ (HMSO, 1931) — the British official medical history, and the
+  only way to replace the secondary gas casualty figures with returns.
 - AFGG Tome I, 4e volume and Reichsarchiv Bd. 5–6 — the French and German
   official accounts of the race to the sea, the Yser and First Ypres, to
   replace the British official history as the backbone of the epilogue
