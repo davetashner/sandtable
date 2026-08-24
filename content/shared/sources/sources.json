@@ -460,5 +460,33 @@
     "publisher": "Hodder & Stoughton, London",
     "isbn": "978-0-14-026725-9",
     "notes": "The Eastern Front as a whole, sceptical of the Tannenberg legend and of the German high command's later account of it; cite for the campaign's shape and for the myth-making."
+  },
+  {
+    "id": "source:sumpf-2009",
+    "kind": "article",
+    "author": "Sumpf, Alban",
+    "title": "Les taxis de la Marne",
+    "year": 2009,
+    "publisher": "L'Histoire par l'image (Réunion des musées nationaux – Grand Palais; with the French ministries of Culture and of National Education)",
+    "url": "https://histoire-image.org/etudes/taxis-marne",
+    "notes": "A short curated study written around the period photographs of the requisition. Cited for the lower end of the taxi arithmetic — 630 taxis and more than 3,000 men of the 103rd and 104th Infantry, requisitioned by Gallieni on 6 September 1914 — and for the judgement that the trains carried the overwhelming majority of the reinforcements and the taxis were not decisive. It is a public-history site rather than an archival study: use it for the figures it states and for the episode's memory, not for the operational narrative, which comes from the AFGG and Herwig."
+  },
+  {
+    "id": "source:bruce-2008",
+    "kind": "book",
+    "author": "Bruce, Robert B.",
+    "title": "Pétain: Verdun to Vichy",
+    "year": 2008,
+    "publisher": "Potomac Books, Washington DC",
+    "notes": "A short scholarly biography in the Potomac Military Profiles series. Cited here for the organisation of motor supply at Verdun in 1916 — the Bar-le-Duc–Verdun road divided into six sections with repair shops, refuelling points, a commanding officer and traffic police; the Service automobile and the Bar-le-Duc traffic commission at some 9,000 officers and men with 3,900 vehicles; and the first fortnight's loads of 190,000 men, 22,500 tons of munitions and 2,500 tons of other materiel. Sympathetic to Pétain as a commander, which is the bias to watch on the Verdun chapters; the figures are the ones the French service histories give."
+  },
+  {
+    "id": "source:memorial-verdun-bataille",
+    "kind": "web",
+    "author": "Mémorial de Verdun",
+    "title": "La bataille de Verdun (museum resource page)",
+    "publisher": "Mémorial de Verdun – Champ de bataille, Fleury-devant-Douaumont",
+    "url": "https://memorial-verdun.fr/ressources/la-bataille-de-verdun",
+    "notes": "The battlefield museum's own account. Cited only for the traffic figures it states for the Bar-le-Duc–Verdun road: 3,500 lorries, 2,000 cars and 800 ambulances in rotation, a lorry every 14 seconds and one vehicle every 5 seconds at the June–July peak, 90,000 men and 50,000 tonnes a week, and 1,200 territorials shovelling 700,000 tonnes of stone. These are the round figures French commemoration has settled on rather than archival returns, and the card says so; the specific loads come from Bruce."
   }
 ]

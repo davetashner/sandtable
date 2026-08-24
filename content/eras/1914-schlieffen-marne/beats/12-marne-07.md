@@ -17,7 +17,7 @@ links:
     ]
   places: ['place:montmirail', 'place:coulommiers', 'place:nanteuil-le-haudouin']
   events: ['1914:marne-event-taxis']
-  tech: ['1914:tech-railways-mobilization']
+  tech: ['1914:tech-railways-mobilization', '1914:tech-motor-transport-taxis']
 sources:
   - source: source:herwig-2009
   - source: source:edmonds-1922

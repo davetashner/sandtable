@@ -1249,7 +1249,7 @@
         "links": {
           "formations": ["1914:marne-div-fr-7"],
           "people": ["person:gallieni-joseph", "person:maunoury-michel-joseph"],
-          "tech": ["1914:tech-railways-mobilization"]
+          "tech": ["1914:tech-railways-mobilization", "1914:tech-motor-transport-taxis"]
         },
         "sources": [
           {

@@ -81,6 +81,13 @@ and cite them, and must not settle the question for the learner (rule 6 of
 - **How the pack presents it:** Instruction générale no 2 as the hinge; the
   rail-vs-feet layer; the taxis as a tech card episode (`sand-w9t.7`), not as
   the cause; the word "miracle" appears only in quotation.
+- **The taxi count itself is a small debate inside the large one.** Sumpf's
+  study gives 630 cabs and rather more than three thousand men of the 103rd
+  and 104th Infantry; the AFGG and Herwig support the four-to-five thousand
+  the pack's event card uses; figures of eleven hundred vehicles and six
+  thousand men circulate in popular accounts. The motor-transport card states
+  the range rather than a number, and says that no version of the arithmetic
+  makes the taxis a cause.
 
 ## 6. Belgium, atrocities and the manifesto wars
 
