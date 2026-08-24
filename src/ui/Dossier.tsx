@@ -46,6 +46,14 @@ export interface DossierProps {
   label?: ((id: string) => string | undefined) | undefined;
   /** Portrait for a person id (vignette voices). */
   resolvePortrait?: ((personId: string) => MediaIndexEntry | undefined) | undefined;
+  /**
+   * What a side in the legend opens, where the pack gives one answer
+   * (sand-y0u.29). The legend names sides and a formation card is one army's,
+   * so a side that put a single army in the field becomes a control and a
+   * side that put nine stays a swatch and a name. The engine decides which
+   * (`sideFormation` in `src/engine/formations.ts`); the legend only asks.
+   */
+  openSide?: ((sideId: string) => { label: string; onClick: () => void } | undefined) | undefined;
 }
 
 export interface CardChipLike {
@@ -70,6 +78,7 @@ export function Dossier({
   vignettes = [],
   label,
   resolvePortrait,
+  openSide,
 }: DossierProps) {
   const { now, range } = useClock();
   const beat = useMemo(
@@ -222,16 +231,38 @@ export function Dossier({
       )}
 
       <footer className="dossier__legend" aria-label="Legend">
-        {sides.map((s) => (
-          <span key={s.id} className="dossier__side">
+        {sides.map((s) => {
+          const name = s.short ?? s.name;
+          const swatch = (
             <span
               className="dossier__swatch"
               style={{ background: `var(${sideToken(s, sides)})` }}
               aria-hidden="true"
             />
-            {s.short ?? s.name}
-          </span>
-        ))}
+          );
+          const open = openSide?.(s.id);
+          // The visible text stays the side's name and the accessible name
+          // starts with it, so what a reader says is what the control is
+          // called (WCAG 2.5.3) — and what it opens is said out loud, because
+          // "Britain" alone does not tell anyone a card is on the other end.
+          return open ? (
+            <button
+              key={s.id}
+              type="button"
+              className="dossier__side dossier__side--open"
+              aria-label={`${name} — open ${open.label}`}
+              onClick={open.onClick}
+            >
+              {swatch}
+              {name}
+            </button>
+          ) : (
+            <span key={s.id} className="dossier__side">
+              {swatch}
+              {name}
+            </span>
+          );
+        })}
       </footer>
     </aside>
   );

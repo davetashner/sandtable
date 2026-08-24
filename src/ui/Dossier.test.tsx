@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { ClockProvider } from '../engine/ClockContext.js';
 import { DAY } from '../engine/clock.js';
 import type { Branch, NarrativeBeat, Side, Source } from '../packs/schema/index.js';
@@ -130,6 +130,34 @@ describe('<Dossier>', () => {
     expect(screen.getByText(/Tuchman, Barbara W\./)).toBeInTheDocument();
     expect(screen.getByLabelText('Legend')).toHaveTextContent('Germany');
     expect(screen.queryByText(/^Hypothetical —/)).not.toBeInTheDocument();
+  });
+
+  it('opens a side in the legend where the pack gives one answer, and leaves the rest alone', () => {
+    const opened: string[] = [];
+    render(
+      <ClockProvider
+        range={{ start: START, end: END }}
+        initialNow={START + 3 * DAY}
+        syncUrl={false}
+      >
+        <Dossier
+          beats={beats}
+          sources={sources}
+          sides={sides}
+          branch={historical}
+          openSide={(id) =>
+            id === 'fr' ? { label: 'French 5th Army', onClick: () => opened.push(id) } : undefined
+          }
+        />
+      </ClockProvider>,
+    );
+    // A legend of sides can only open a card where the side is one army; the
+    // accessible name still starts with the visible text (WCAG 2.5.3).
+    const button = screen.getByRole('button', { name: 'France — open French 5th Army' });
+    fireEvent.click(button);
+    expect(opened).toEqual(['fr']);
+    expect(screen.getByLabelText('Legend')).toHaveTextContent('Germany');
+    expect(screen.queryByRole('button', { name: /^Germany/ })).not.toBeInTheDocument();
   });
 
   it('labels counterfactual beats as hypothetical and shows the next beat when none is active', () => {

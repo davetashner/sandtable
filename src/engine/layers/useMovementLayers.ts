@@ -21,6 +21,12 @@ export interface MovementLayoutOptions {
   project?: ((lngLat: [number, number]) => [number, number] | null) | undefined;
   /** Bump when the projection changes (map moves) so labels re-lay-out while the clock is paused. */
   placementKey?: number | undefined;
+  /**
+   * What a click on a token does beyond highlighting it — opening the
+   * formation's card (sand-y0u.29). The highlight is the hook's own business
+   * and happens either way; this is the caller's.
+   */
+  onSelect?: ((formationId: string) => void) | undefined;
 }
 
 export function useMovementLayers(
@@ -40,7 +46,7 @@ export function useMovementLayers(
     () => composeRoutes(source.routes, source.formations, source.sides, branch),
     [source, branch],
   );
-  const { project, placementKey } = layout;
+  const { project, placementKey, onSelect } = layout;
   const scene = useMemo(
     () =>
       buildMovementScene({
@@ -49,12 +55,15 @@ export function useMovementLayers(
         rangeStart: range.start,
         sides: source.sides,
         ...(selected ? { highlight: selected } : {}),
-        onSelect: (id) => select((cur) => (cur === id ? undefined : id)),
+        onSelect: (id) => {
+          select((cur) => (cur === id ? undefined : id));
+          onSelect?.(id);
+        },
         project,
       }),
     // placementKey is a deliberate extra dependency: same projection function, new camera.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [composed, now, range.start, source.sides, selected, project, placementKey],
+    [composed, now, range.start, source.sides, selected, project, placementKey, onSelect],
   );
   return { layers: scene.layers, labelBoxes: scene.labelBoxes, selected, select };
 }

@@ -18,7 +18,7 @@ The split is deliberate. axe runs against jsdom, which has no layout, so it is
 strong exactly where the DOM is the whole story and blind where pixels are.
 Contrast is not sampled from a screenshot but computed from the tokens, which
 is stricter. Everything left over — how big a thing is on screen — is measured
-in a browser by `sand-pmz.2`'s harness (ADR 0011), which walks nineteen scenes
+in a browser by `sand-pmz.2`'s harness (ADR 0011), which walks twenty scenes
 × two themes × desktop and phone.
 
 That harness reported `small-target` and never failed on it, and said why: the

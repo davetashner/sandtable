@@ -192,6 +192,31 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  /* One height for both shapes, so a legend of buttons and swatches still
+     reads as one row — and 24px is the tap-target floor the visual gate
+     holds every control to (docs/accessibility.md). */
+  min-height: 24px;
+}
+
+/* A side the pack answers for: the entry opens that army's card (sand-y0u.29).
+   It is a button and looks like the text beside it, plus the underline that
+   says it goes somewhere; the focus ring is global.css's one brass set. */
+.dossier__side--open {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.dossier__side--open:hover {
+  color: var(--ink);
+  text-decoration-color: var(--brass);
 }
 
 .dossier__swatch {

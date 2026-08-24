@@ -1,7 +1,7 @@
 /**
  * The visual gate (sand-pmz.2, ADR 0011).
  *
- * Walks the same nineteen scenes × two themes × desktop and phone as the
+ * Walks the same twenty scenes × two themes × desktop and phone as the
  * design review, and fails the build on three things:
  *
  *   1. a scene that will not render at all

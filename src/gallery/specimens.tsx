@@ -14,6 +14,7 @@
 /* eslint-disable react-refresh/only-export-components -- the registry is data about components and the stateful specimens are part of the data; they live together by design */
 import { useState, type ReactNode } from 'react';
 import { sideToken } from '../engine/layers/colors.js';
+import { subordinatesOf } from '../engine/formations.js';
 import { seed } from '../packs/seed.js';
 import { mediaById, portraitFor } from '../packs/media-index.js';
 import type { ScienceField } from '../packs/schema/index.js';
@@ -34,6 +35,7 @@ import { DecisionCardView } from '../ui/DecisionCardView.js';
 import { DiagramFigure } from '../ui/DiagramFigure.js';
 import { DocumentCardView } from '../ui/DocumentCardView.js';
 import { Dossier } from '../ui/Dossier.js';
+import { FormationCardView } from '../ui/FormationCardView.js';
 import { HumanCostLine } from '../ui/HumanCostLine.js';
 import { MediaCredit } from '../ui/MediaCredit.js';
 import { MediaFigure } from '../ui/MediaFigure.js';
@@ -95,6 +97,21 @@ const label = (id: string) => labeller.label(id);
 /** A view worth citing, for the copy-link glyph — the gallery has no clock in the URL. */
 const SHARE_URL =
   'https://sandtable.davetashner.com/?t=1914-09-06T06:00:00Z&branch=1914:historical&focus=1914:marne';
+
+/**
+ * A formation with everything on it — a commander with a portrait, a strength,
+ * a concentration area and something under it — so the specimen shows the card
+ * full rather than half its sections missing.
+ */
+const galleryFormation =
+  seed.formations.find(
+    (f) =>
+      f.commander &&
+      portraitFor(f.commander) &&
+      f.strength &&
+      f.concentration &&
+      subordinatesOf(seed.formations, f.id).length > 0,
+  ) ?? only(seed.formations, 'formation');
 
 const branch =
   pack.branches.find((b) => b.id === pack.defaultBranch) ?? only(pack.branches, 'branch');
@@ -748,6 +765,26 @@ export const SECTIONS: GallerySection[] = [
             sources={sources}
             labeller={labeller}
             cast={castEntry}
+            onBack={() => {}}
+          />
+        ),
+      },
+      {
+        id: 'card-formation',
+        title: 'Formation card',
+        note: 'What the map tokens have been pointing at: the army, its commander at name size, its strength at a date, where it assembled — and the plate set of what it wore and carried, where the pack has one (ADR 0014).',
+        covers: ['FormationCardView'],
+        column: true,
+        render: () => (
+          <FormationCardView
+            formation={galleryFormation}
+            sources={sources}
+            labeller={labeller}
+            sides={sides}
+            subordinates={subordinatesOf(seed.formations, galleryFormation.id)
+              .slice(0, 4)
+              .map((f) => ({ id: f.id, label: f.short ?? f.name }))}
+            resolveMedia={mediaById}
             onBack={() => {}}
           />
         ),
