@@ -830,6 +830,7 @@
     "id": "person:haig-douglas",
     "name": "Sir Douglas Haig",
     "sortName": "Haig, Douglas",
+    "media": ["media:person/haig-douglas/portrait-1914-colorized"],
     "born": "1861-06-19",
     "died": "1928-01-29",
     "nationality": "GB",
