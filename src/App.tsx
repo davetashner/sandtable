@@ -999,6 +999,7 @@ function DossierSurface() {
                 id: f.id,
                 label: f.short ?? f.name,
               }))}
+              routes={seed.routes.filter((r) => r.formation === card.card.id)}
               resolveMedia={mediaById}
               onBack={() => controls?.setCard(undefined)}
             />

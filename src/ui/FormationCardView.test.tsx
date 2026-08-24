@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { fireEvent, render as rtlRender, screen } from '@testing-library/react';
 import { ClockProvider } from '../engine/ClockContext.js';
 import { DAY } from '../engine/clock.js';
-import type { Formation, Side, Source } from '../packs/schema/index.js';
+import type { Formation, Route, Side, Source } from '../packs/schema/index.js';
 import { FormationCardView } from './FormationCardView.js';
 
 // The commander is a portrait chip that links to his card, and an entity link
@@ -201,5 +201,71 @@ describe('<FormationCardView>', () => {
     );
     fireEvent.click(screen.getByRole('button', { name: /Back to the narrative/ }));
     expect(onBack).toHaveBeenCalled();
+  });
+});
+
+describe('<FormationCardView> positions (sand-23b.4)', () => {
+  const routes: Route[] = [
+    {
+      id: '1914:route-bef',
+      formation: '1914:bef',
+      waypoints: [
+        [3.95, 50.45, '1914-08-21T12:00:00Z'],
+        [3.63, 50.44, '1914-08-23T12:00:00Z'],
+      ],
+      confidence: 'medium',
+      derivation: 'Centre of the two corps at noon each day from the Official History; ±10 km.',
+      sources: [{ source: 'source:edmonds-1922' }],
+    },
+    {
+      id: '1914:route-bef-schlieffen',
+      formation: '1914:bef',
+      branch: '1914:schlieffen-success',
+      waypoints: [
+        [2.8, 49.4, '1914-09-01T12:00:00Z'],
+        [1.5, 48.4, '1914-09-05T12:00:00Z'],
+      ],
+      confidence: 'low',
+      derivation: 'Hypothetical, schematic.',
+      sources: [{ source: 'source:herwig-2009' }],
+    },
+  ];
+
+  it('footnotes the historical legs and leaves the counterfactual out', () => {
+    render(
+      <FormationCardView
+        formation={bef}
+        sources={sources}
+        labeller={labeller}
+        sides={sides}
+        routes={routes}
+      />,
+    );
+    const section = screen.getByRole('region', { name: 'Positions on the map' });
+    expect(section).toHaveTextContent('On foot — inferred from the sources');
+    expect(section).toHaveTextContent(/Centre of the two corps at noon/);
+    expect(section).not.toHaveTextContent(/Hypothetical, schematic/);
+    expect(section).not.toHaveTextContent(/drawn on the map as approximate/);
+  });
+
+  it('says so when the pack calls the positions approximate', () => {
+    const schematic: Route = { ...routes[0]!, confidence: 'low' };
+    render(
+      <FormationCardView
+        formation={bef}
+        sources={sources}
+        labeller={labeller}
+        sides={sides}
+        routes={[schematic]}
+      />,
+    );
+    expect(screen.getByRole('region', { name: 'Positions on the map' })).toHaveTextContent(
+      /drawn on the map as approximate/,
+    );
+  });
+
+  it('says nothing about positions when the formation has no route', () => {
+    render(<FormationCardView formation={bef} sources={sources} labeller={labeller} />);
+    expect(screen.queryByRole('region', { name: 'Positions on the map' })).toBeNull();
   });
 });

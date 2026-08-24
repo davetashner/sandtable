@@ -132,6 +132,23 @@ const approxTrack = only(
 );
 const approxPerson =
   seed.people.find((p) => p.id === approxTrack.person) ?? only(seed.people, 'person');
+/**
+ * The same footnote on the other card a map token opens (sand-23b.25): a
+ * formation whose historical route the pack itself calls approximate, so the
+ * specimen shows the note rather than a card with the section missing.
+ */
+const approxRoute = only(
+  seed.routes.filter(
+    (r) =>
+      !r.branch &&
+      seed.formations.some((f) => f.id === r.formation) &&
+      (isApproximate(r.confidence) ||
+        r.waypoints.some((w) => isApproximate(waypointConfidence(w, r.confidence)))),
+  ),
+  'historical route with an approximate position',
+);
+const approxFormation =
+  seed.formations.find((f) => f.id === approxRoute.formation) ?? only(seed.formations, 'formation');
 const tour = only(seed.tours, 'tour');
 const tourStep = only(tour.steps, 'tour step');
 const diagram = only(Object.entries(seed.diagrams), 'diagram');
@@ -786,7 +803,7 @@ export const SECTIONS: GallerySection[] = [
         id: 'card-person-positions',
         title: 'Person card · how the positions were derived',
         note: 'The footnote under a commander: what his tracks are, at what resolution, and — where the pack says so — that the map draws them as approximate.',
-        covers: ['PersonCardView'],
+        covers: ['PersonCardView', 'Derivations'],
         column: true,
         render: () => (
           <PersonCardView
@@ -813,6 +830,25 @@ export const SECTIONS: GallerySection[] = [
             subordinates={subordinatesOf(seed.formations, galleryFormation.id)
               .slice(0, 4)
               .map((f) => ({ id: f.id, label: f.short ?? f.name }))}
+            routes={seed.routes.filter((r) => r.formation === galleryFormation.id)}
+            resolveMedia={mediaById}
+            onBack={() => {}}
+          />
+        ),
+      },
+      {
+        id: 'card-formation-positions',
+        title: 'Formation card · how the positions were derived',
+        note: 'The same footnote under an army: one entry per route leg, how it moved, and — where the pack says so — that this is why the token on the map wears the ≈ and the dashed halo.',
+        covers: ['FormationCardView', 'Derivations'],
+        column: true,
+        render: () => (
+          <FormationCardView
+            formation={approxFormation}
+            sources={sources}
+            labeller={labeller}
+            sides={sides}
+            routes={seed.routes.filter((r) => r.formation === approxFormation.id)}
             resolveMedia={mediaById}
             onBack={() => {}}
           />
