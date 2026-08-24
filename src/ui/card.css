@@ -66,7 +66,7 @@
 
 .card__body sup a {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: var(--fs-xs);
   text-decoration: none;
   padding: 0 2px;
 }

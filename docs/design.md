@@ -22,7 +22,22 @@ map style is `sand-neh.2`; components are `sand-neh.3`; motion is `sand-neh.4`.
 
 Theme model: bare `:root` is light; dark via `prefers-color-scheme` unless
 `[data-theme="light"]` is stamped on `<html>`; `[data-theme="dark"]` forces
-dark.
+dark. The two `[data-theme]` blocks are not anchored to `:root`, so any
+element can open a themed subtree — which is how the gallery below shows both
+themes on one page.
+
+## Reviewing components
+
+`gallery.html` is the component gallery (`sand-neh.3`): every component in
+`src/ui/`, in both themes, with the states worth arguing about. It is a second
+Vite entry, so none of it ships in the app bundle.
+
+- `npm run dev` → <http://localhost:5173/gallery.html>
+- built and deployed with the site, so every PR preview has
+  `https://pr-<n>.sandtable.davetashner.com/gallery.html`
+
+A test (`src/gallery/Gallery.test.tsx`) fails when a component in `src/ui/` has
+no specimen, so the gallery cannot quietly fall behind the library.
 
 ## Colour
 
@@ -62,14 +77,14 @@ Central Powers → `--army-1`, `--army-2`, `--army-3`; Entente → `--french`,
 
 ## Type
 
-| Token                     | Value                                             | Use                                                                                                                         |
-| ------------------------- | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `--font-display`          | Fraunces, Georgia, serif                          | titles, beat headings, the day counter; first-person vignettes at reading size, so a voice reads as a voice (`sand-1l0.24`) |
-| `--font-body`             | IBM Plex Sans, system-ui                          | running text, controls                                                                                                      |
-| `--font-mono`             | IBM Plex Mono, ui-monospace                       | dates, eyebrows, ticks, legends                                                                                             |
-| `--fs-xs` … `--fs-3xl`    | 10.5 / 12 / 14.5 / 17 / 21 / 26 / clamp(24–34) px | a 1.2 scale from a 14.5px body                                                                                              |
-| `--lh-tight`, `--lh-body` | 1.2, 1.55                                         | headings, prose                                                                                                             |
-| `--track-eyebrow`         | 0.12em                                            | uppercase mono eyebrows                                                                                                     |
+| Token                     | Value                                               | Use                                                                                                                         |
+| ------------------------- | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `--font-display`          | Fraunces, Georgia, serif                            | titles, beat headings, the day counter; first-person vignettes at reading size, so a voice reads as a voice (`sand-1l0.24`) |
+| `--font-body`             | IBM Plex Sans, system-ui                            | running text, controls                                                                                                      |
+| `--font-mono`             | IBM Plex Mono, ui-monospace                         | dates, eyebrows, ticks, legends                                                                                             |
+| `--fs-xs` … `--fs-3xl`    | 11.5 / 12.5 / 14.5 / 17 / 21 / 26 / clamp(24–34) px | ≈1.2 upward from a 14.5px body; compressed below it, where the 11px floor governs (ADR 0010)                                |
+| `--lh-tight`, `--lh-body` | 1.2, 1.55                                           | headings, prose                                                                                                             |
+| `--track-eyebrow`         | 0.12em                                              | uppercase mono eyebrows                                                                                                     |
 
 Fonts load from Google Fonts in `index.html` (Fraunces 500–700 incl. italic,
 Plex Sans 400–600, Plex Mono 400–600) with system fallbacks.
@@ -120,3 +135,7 @@ Era-agnostic by design: no period iconography in the mark.
 4. The three surfaces — map, dossier, timeline — are the only panels (ADR 0006).
 5. Change a value in `tokens.ts`, run `npm run tokens`, and let the contrast
    test tell you whether it still reads.
+6. **Nothing is smaller than `--fs-xs`** (ADR 0010). A literal `font-size` under
+   11px is a bug; the phone does not get smaller type than the desktop. The one
+   exception is a standalone `aria-hidden` glyph sized to its own frame — a
+   mark, not type.

@@ -19,8 +19,8 @@
   flex-wrap: wrap;
   gap: 6px 10px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.12em;
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--brass);
 }
@@ -102,7 +102,7 @@
   margin-top: 4px;
   font-family: var(--font-mono);
   font-style: normal;
-  font-size: 11px;
+  font-size: var(--fs-xs);
   color: var(--muted);
 }
 
@@ -126,7 +126,7 @@
 /* footnote references */
 .dossier__body sup a {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: var(--fs-xs);
   text-decoration: none;
   padding: 0 2px;
 }
@@ -181,7 +181,7 @@
   padding-top: 8px;
   border-top: 1px solid var(--line);
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: var(--fs-xs);
   color: var(--muted);
 }
 
@@ -235,8 +235,8 @@
 .dossier__about-body h3 {
   margin: 10px 0 4px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.12em;
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--brass);
 }

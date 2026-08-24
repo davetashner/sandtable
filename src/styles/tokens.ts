@@ -92,9 +92,11 @@ export const shared = {
   'font-display': "'Fraunces', Georgia, 'Times New Roman', serif",
   'font-body': "'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif",
   'font-mono': "'IBM Plex Mono', ui-monospace, Menlo, monospace",
-  // type scale — a 1.2 ratio from a 14.5px body, clamped where it needs to breathe
-  'fs-xs': '10.5px',
-  'fs-sm': '12px',
+  // Type scale — a 1.2 ratio upward from a 14.5px body, clamped where it needs
+  // to breathe; compressed below it, where the 11px legibility floor governs
+  // instead of the ratio (ADR 0010). Nothing in the app is smaller than fs-xs.
+  'fs-xs': '11.5px',
+  'fs-sm': '12.5px',
   'fs-md': '14.5px',
   'fs-lg': '17px',
   'fs-xl': '21px',
@@ -165,6 +167,9 @@ export function renderTokensCss(): string {
  *
  * Theme model: bare :root = light; dark via prefers-color-scheme unless
  * [data-theme="light"] is stamped; [data-theme="dark"] forces dark.
+ * The two [data-theme] blocks are not anchored to :root, so any element can
+ * open a themed subtree — which is how the component gallery shows both
+ * themes on one page (src/gallery, sand-neh.3).
  * Components use these variables only — never literal colours or typefaces.
  */
 :root {
@@ -182,8 +187,12 @@ ${block('dark')
   }
 }
 
-:root[data-theme='dark'] {
+[data-theme='dark'] {
 ${block('dark')}
+}
+
+[data-theme='light'] {
+${block('light')}
 }
 `;
 }

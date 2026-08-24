@@ -19,6 +19,7 @@ is merged.
 | [0007](0007-imagery.md)                  | Imagery: sourcing, licensing, colorization, content policy                           | `sand-y0u.1`    | accepted |
 | [0008](0008-audio.md)                    | Background score: generated audio, provenance and playback                           | `sand-1l0.34.1` | accepted |
 | [0009](0009-url-contract.md)             | The URL is the view: a citable deep-link contract                                    | `sand-shn.3`    | accepted |
+| [0010](0010-type-floor.md)               | The type floor: nothing below 11px, and one mark that is not type                    | `sand-neh.3`    | accepted |
 
 ## Template
 
