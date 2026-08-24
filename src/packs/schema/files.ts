@@ -121,6 +121,7 @@ export const JSON_SCHEMAS = {
   casualties: z.array(CasualtyRecord),
   vignettes: z.array(Vignette),
   tours: z.array(Tour),
+  tracks: z.array(PersonTrack),
   score: z.array(ScoreEntry),
   'beat-frontmatter': BeatFrontMatter,
   people: z.array(Person),

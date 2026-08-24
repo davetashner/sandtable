@@ -600,6 +600,12 @@ export const PersonTrack = z
       ),
     /** For an hq track, the post held — "OHL", "GQG", "BEF GHQ", "1. Armee". */
     post: z.string().min(1).optional().describe('The headquarters, for an hq track'),
+    postShort: z
+      .string()
+      .min(1)
+      .max(16)
+      .optional()
+      .describe('The headquarters in a word, for the map token: OHL, GQG, Paris'),
     side: Slug.optional().describe('Side id, for the ring colour; inferred from the post otherwise'),
     waypoints: z.array(Waypoint).min(2).describe('Strictly increasing in time'),
     confidence: Confidence.default('medium'),

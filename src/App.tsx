@@ -55,6 +55,7 @@ import { useMediaQuery, usePhone } from './engine/useMediaQuery.js';
 import { BottomSheet } from './ui/BottomSheet.js';
 import { BranchToggle } from './ui/BranchToggle.js';
 import { ScorePlayer } from './ui/ScorePlayer.js';
+import { CommanderToggle } from './ui/CommanderToggle.js';
 import { Breadcrumb } from './ui/Breadcrumb.js';
 import { Dossier, type CardChipLike } from './ui/Dossier.js';
 import { CastStrip, type CastMember } from './ui/CastStrip.js';
@@ -69,7 +70,7 @@ import { HumanCostLine } from './ui/HumanCostLine.js';
 import { vignetteNear, vignettesFor } from './engine/human.js';
 import { ClockCardView } from './ui/ClockCardView.js';
 import { decisionCrossed } from './engine/decisions.js';
-import { mediaById, portraitFor } from './packs/media-index.js';
+import { largestSrc, mediaById, portraitFor } from './packs/media-index.js';
 import { CausalView } from './ui/CausalView.js';
 import { DocumentCardView } from './ui/DocumentCardView.js';
 import { PersonCardView } from './ui/PersonCardView.js';
@@ -549,6 +550,42 @@ interface OpeningValue {
   camera: Camera | undefined;
 }
 
+/**
+ * Whether the commander portraits are on the map (sand-1l0.27). The switch is
+ * in the header and the layer is in the map section, which are siblings, so
+ * the state is a context rather than a prop threaded through both.
+ */
+const CommandersCtx = createContext<{ on: boolean; toggle: () => void }>({
+  on: false,
+  toggle: () => {},
+});
+
+/**
+ * The surname alone, for a map token. `sortName` is "Moltke, Helmuth von (the
+ * Younger)" and the full name is longer still; a campaign-zoom map already
+ * carries a label for every army and every town (sand-1l0.27).
+ */
+function shortPersonName(id: string): string | undefined {
+  const person = seed.people.find((p) => p.id === id);
+  if (!person) return undefined;
+  const sort = person.sortName;
+  if (sort) return (sort.split(',')[0] ?? sort).trim();
+  const words = person.name.trim().split(/\s+/);
+  return words.at(-1) ?? person.name;
+}
+
+function CommanderSwitch() {
+  const { on, toggle } = useContext(CommandersCtx);
+  return <CommanderToggle on={on} onToggle={toggle} available={seed.tracks.length > 0} />;
+}
+
+function CommandersProvider({ children }: { children: ReactNode }) {
+  const [on, setOn] = useState(false);
+  const toggle = useCallback(() => setOn((v) => !v), []);
+  const value = useMemo(() => ({ on, toggle }), [on, toggle]);
+  return <CommandersCtx.Provider value={value}>{children}</CommandersCtx.Provider>;
+}
+
 const OpeningCtx = createContext<OpeningValue>({ showing: false, camera: undefined });
 function useOpening(): OpeningValue {
   return useContext(OpeningCtx);
@@ -669,6 +706,7 @@ function MapSection() {
   }, [pos, reduced, opening.camera]);
   // Inside a zoom-in with its own routes the map animates those (sand-1l0.10).
   const movement = useMemo(() => movementSourceFor(focus, MOVEMENT_SOURCE), [focus]);
+  const commanders = useContext(CommandersCtx);
   return (
     <section className="surface surface--map" data-hypothetical={hypothetical || undefined}>
       {hypothetical && <p className="hypothetical-ribbon">Hypothetical · {branch.title}</p>}
@@ -682,6 +720,19 @@ function MapSection() {
           focusRegion={focus?.region}
           places={seed.places}
           tallies={focus ? [] : seed.tallies}
+          tracks={seed.tracks}
+          sides={seed.pack.sides}
+          showCommanders={commanders.on}
+          labelPerson={(id) => shortPersonName(id)}
+          portrait={(id) => {
+            const entry = portraitFor(id);
+            if (!entry) return undefined;
+            return {
+              src: largestSrc(entry),
+              ...(entry.focalPoint ? { focalPoint: entry.focalPoint } : {}),
+            };
+          }}
+          onSelectCommander={(id) => controls?.setCard(id)}
           cameraTarget={cameraTarget}
           onSelectTally={(id) => controls?.setCard(id)}
         />
@@ -1090,6 +1141,7 @@ function AppShell() {
         </div>
         <div className="app__header-controls">
           <ScorePlayer score={seed.score} opening={showing} vignette={vignetteMoment} />
+          <CommanderSwitch />
           <TourStart />
           <BranchToggle branches={seed.pack.branches} defaultBranch={seed.pack.defaultBranch} />
         </div>
@@ -1114,9 +1166,11 @@ export function App() {
     <ClockProvider range={RANGE}>
       <TourProvider>
         <MeanwhileProvider>
-          <OpeningProvider>
-            <AppShell />
-          </OpeningProvider>
+          <CommandersProvider>
+            <OpeningProvider>
+              <AppShell />
+            </OpeningProvider>
+          </CommandersProvider>
         </MeanwhileProvider>
       </TourProvider>
     </ClockProvider>

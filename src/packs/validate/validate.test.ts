@@ -899,6 +899,96 @@ describe('validateContent', () => {
     );
   });
 
+  it('checks commander tracks: one headquarters per man, ordered waypoints, in range', () => {
+    const track = (over: Record<string, unknown> = {}) => ({
+      id: '1914:track-kluck-hq',
+      person: 'person:kluck',
+      kind: 'hq',
+      post: '1. Armee',
+      postShort: '1. Armee',
+      waypoints: [
+        [4.0, 50.0, '1914-08-10T00:00:00Z'],
+        [4.5, 49.5, '1914-08-20T00:00:00Z'],
+      ],
+      confidence: 'medium',
+      derivation: 'Army headquarters day by day.',
+      sources: [{ source: 'source:herwig-2009' }],
+      ...over,
+    });
+    const withTracks = (data: unknown[]) => {
+      const raw = fixture();
+      raw.packs[0]!.collections['tracks.json'] = {
+        path: 'eras/1914-test/tracks.json',
+        data,
+      };
+      return raw;
+    };
+
+    expect(messages(validateContent(withTracks([track()])))).not.toContainEqual(
+      expect.stringMatching(/track/),
+    );
+
+    // A commander runs one headquarters at a time.
+    const twoHq = messages(
+      validateContent(withTracks([track(), track({ id: '1914:track-kluck-hq-2' })])),
+    );
+    expect(twoHq).toContainEqual(expect.stringMatching(/already has an hq track/));
+
+    // …but as many documented journeys as the sources give.
+    const hqAndJourney = validateContent(
+      withTracks([
+        track(),
+        track({
+          id: '1914:track-kluck-drive',
+          kind: 'journey',
+          post: undefined,
+          postShort: undefined,
+        }),
+      ]),
+    );
+    expect(hqAndJourney.errors.filter((e) => e.message.includes('hq track'))).toHaveLength(0);
+
+    // An hq has to say which headquarters it is.
+    expect(
+      messages(validateContent(withTracks([track({ post: undefined, postShort: undefined })]))),
+    ).toContainEqual(expect.stringMatching(/hq track must name the post/));
+
+    // Waypoints run forward, and inside the pack.
+    expect(
+      messages(
+        validateContent(
+          withTracks([
+            track({
+              waypoints: [
+                [4.0, 50.0, '1914-08-20T00:00:00Z'],
+                [4.5, 49.5, '1914-08-10T00:00:00Z'],
+              ],
+            }),
+          ]),
+        ),
+      ),
+    ).toContainEqual(expect.stringMatching(/waypoints\[1\] is not later/));
+    expect(
+      messages(
+        validateContent(
+          withTracks([
+            track({
+              waypoints: [
+                [4.0, 50.0, '1913-08-10T00:00:00Z'],
+                [4.5, 49.5, '1914-08-20T00:00:00Z'],
+              ],
+            }),
+          ]),
+        ),
+      ),
+    ).toContainEqual(expect.stringMatching(/outside the pack timeRange/));
+
+    // The man has to exist.
+    expect(
+      messages(validateContent(withTracks([track({ person: 'person:nobody' })]))),
+    ).toContainEqual(expect.stringMatching(/person:nobody/));
+  });
+
   it('rejects overlapping beats within a branch and unknown footnotes', () => {
     const raw = fixture();
     const beats = raw.packs[0]!.beats;

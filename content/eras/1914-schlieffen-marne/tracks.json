@@ -4,6 +4,7 @@
     "person": "person:moltke-helmuth-von-younger",
     "kind": "hq",
     "post": "OHL — the German supreme headquarters",
+    "postShort": "OHL",
     "side": "de",
     "waypoints": [
       [7.5886, 50.3569, "1914-08-17T00:00:00Z"],
@@ -30,6 +31,7 @@
     "person": "person:joffre-joseph",
     "kind": "hq",
     "post": "GQG — the French Grand Quartier Général",
+    "postShort": "GQG",
     "side": "fr",
     "waypoints": [
       [4.5847, 48.7247, "1914-08-05T00:00:00Z"],
@@ -53,6 +55,7 @@
     "person": "person:gallieni-joseph",
     "kind": "hq",
     "post": "Military Government of Paris",
+    "postShort": "Paris",
     "side": "fr",
     "waypoints": [
       [2.3125, 48.8566, "1914-08-26T00:00:00Z"],
