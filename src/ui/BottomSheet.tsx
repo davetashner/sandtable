@@ -4,14 +4,7 @@
  * handle up/down moves one detent. The sheet owns its vertical drags; the map
  * behind keeps pinch-zoom and pan.
  */
-import {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-  type PointerEvent,
-  type ReactNode,
-} from 'react';
+import { useCallback, useEffect, useRef, useState, type PointerEvent, type ReactNode } from 'react';
 import './bottom-sheet.css';
 
 export type Detent = 'peek' | 'half' | 'full';

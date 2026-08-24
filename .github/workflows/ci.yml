@@ -90,6 +90,10 @@ jobs:
         if: steps.app.outputs.present == 'true'
         run: npm run lint --if-present
 
+      - name: format check
+        if: steps.app.outputs.present == 'true'
+        run: npm run format:check --if-present
+
       - name: typecheck
         if: steps.app.outputs.present == 'true'
         run: npm run typecheck --if-present

@@ -228,7 +228,9 @@ export function ScorePlayer({ score, opening, vignette }: ScorePlayerProps) {
         aria-label="Background score"
         aria-pressed={enabled}
         onClick={toggle}
-        title={enabled ? 'Turn the background score off' : 'Play the background score (off by default)'}
+        title={
+          enabled ? 'Turn the background score off' : 'Play the background score (off by default)'
+        }
       >
         <span aria-hidden="true" className="score__glyph">
           ♪

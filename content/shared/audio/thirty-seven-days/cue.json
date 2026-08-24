@@ -21,8 +21,6 @@
     "model": "v5.5"
   },
   "credit": "Music: “Thirty-Seven Days”, generated with Suno for Sandtable, 2026.",
-  "used_by": [
-    "1914:beat-july-crisis"
-  ],
+  "used_by": ["1914:beat-july-crisis"],
   "notes": "Sarajevo and the July Crisis. The prompt is the one published in the cue sheet."
 }

@@ -141,7 +141,7 @@ describe('OpeningSequence', () => {
 });
 
 describe('the backstory action (sand-1l0.32)', () => {
-  it('uses the pack\'s own label and hint when it declares them', () => {
+  it("uses the pack's own label and hint when it declares them", () => {
     const onChain = vi.fn();
     setup({ onChain, chainLabel: 'Where did it begin?', chainHint: 'thirty-seven days' });
     const button = screen.getByRole('button', { name: /Where did it begin\?/ });

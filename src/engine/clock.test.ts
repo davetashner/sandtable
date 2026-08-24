@@ -144,7 +144,14 @@ describe('presets', () => {
 
   it('the campaign ladder brackets the reading pace and keeps a scrubbing speed', () => {
     const labels = speedPresetsFor({ start: START, end: END }).map((p) => p.label);
-    expect(labels).toEqual(['15 min / s', '1 h / s', '3 h / s', '6 h / s', '12 h / s', '1 day / s']);
+    expect(labels).toEqual([
+      '15 min / s',
+      '1 h / s',
+      '3 h / s',
+      '6 h / s',
+      '12 h / s',
+      '1 day / s',
+    ]);
   });
 
   it('speedLabel describes an off-ladder speed', () => {

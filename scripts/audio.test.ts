@@ -54,10 +54,7 @@ describe('loudnormFilter', () => {
 describe('sourcesFor', () => {
   it('offers Opus first and AAC as the fallback', () => {
     const s = sourcesFor('forty-days', 'the-clockwork-minute');
-    expect(s.map((x) => x.type)).toEqual([
-      'audio/ogg; codecs=opus',
-      'audio/mp4; codecs=mp4a.40.2',
-    ]);
+    expect(s.map((x) => x.type)).toEqual(['audio/ogg; codecs=opus', 'audio/mp4; codecs=mp4a.40.2']);
     expect(s[0]!.src).toBe(`forty-days/${DERIVED_DIR}/the-clockwork-minute.opus`);
     expect(s[1]!.src).toBe(`forty-days/${DERIVED_DIR}/the-clockwork-minute.m4a`);
     expect(s[0]!.bitrateKbps).toBe(OPUS_KBPS);
@@ -104,7 +101,10 @@ describe('the cues in the tree', () => {
     expect(index.base).toBe('/assets/audio/');
     for (const dir of dirs) {
       const c = Cue.parse(JSON.parse(readFileSync(join(AUDIO_ROOT, dir, 'cue.json'), 'utf8')));
-      expect(index.entries.some((e) => e.id === c.id), `${c.id} missing from index`).toBe(true);
+      expect(
+        index.entries.some((e) => e.id === c.id),
+        `${c.id} missing from index`,
+      ).toBe(true);
     }
     // Whatever came in, everything should leave at the same loudness.
     for (const e of index.entries) {

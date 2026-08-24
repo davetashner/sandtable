@@ -130,10 +130,14 @@ export interface Probe {
 
 export function probe(file: string): Probe {
   const out = run('ffprobe', [
-    '-v', 'error',
-    '-select_streams', 'a:0',
-    '-show_entries', 'format=duration:stream=channels,sample_rate',
-    '-of', 'json',
+    '-v',
+    'error',
+    '-select_streams',
+    'a:0',
+    '-show_entries',
+    'format=duration:stream=channels,sample_rate',
+    '-of',
+    'json',
     file,
   ]);
   const j = JSON.parse(out) as {
@@ -159,10 +163,15 @@ export interface LoudnormMeasurement {
 /** Pass one: measure. loudnorm prints its JSON report at the end of stderr. */
 export function measureLoudness(file: string): LoudnormMeasurement {
   const stderr = runCapturingStderr([
-    '-hide_banner', '-nostats',
-    '-i', file,
-    '-af', `loudnorm=I=${TARGET_LUFS}:TP=${TARGET_TP}:LRA=${TARGET_LRA}:print_format=json`,
-    '-f', 'null', '-',
+    '-hide_banner',
+    '-nostats',
+    '-i',
+    file,
+    '-af',
+    `loudnorm=I=${TARGET_LUFS}:TP=${TARGET_TP}:LRA=${TARGET_LRA}:print_format=json`,
+    '-f',
+    'null',
+    '-',
   ]);
   const start = stderr.lastIndexOf('{');
   const end = stderr.lastIndexOf('}');
@@ -173,10 +182,15 @@ export function measureLoudness(file: string): LoudnormMeasurement {
 /** Integrated loudness of a finished file, to confirm the second pass landed. */
 export function integratedLoudness(file: string): number {
   const stderr = runCapturingStderr([
-    '-hide_banner', '-nostats',
-    '-i', file,
-    '-af', 'ebur128=peak=true',
-    '-f', 'null', '-',
+    '-hide_banner',
+    '-nostats',
+    '-i',
+    file,
+    '-af',
+    'ebur128=peak=true',
+    '-f',
+    'null',
+    '-',
   ]);
   const m = /I:\s*(-?\d+(?:\.\d+)?)\s*LUFS/g;
   let last: RegExpExecArray | null = null;
@@ -201,7 +215,10 @@ export function loudnormFilter(m: LoudnormMeasurement, mixDb: number): string {
 export const OPUS_KBPS = 96;
 export const AAC_KBPS = 128;
 
-export function sourcesFor(dir: string, stem: string): { src: string; type: AudioSource['type']; bitrateKbps: number }[] {
+export function sourcesFor(
+  dir: string,
+  stem: string,
+): { src: string; type: AudioSource['type']; bitrateKbps: number }[] {
   return [
     {
       src: `${dir}/${DERIVED_DIR}/${stem}.opus`,
@@ -263,22 +280,43 @@ async function buildOne(
 
   const opus = join(outDir, `${stem}.opus`);
   runCapturingStderr([
-    '-hide_banner', '-nostats', '-y',
-    '-i', master,
-    '-af', filter,
-    '-c:a', 'libopus', '-b:a', `${OPUS_KBPS}k`, '-vbr', 'on', '-application', 'audio',
-    '-ar', '48000',
+    '-hide_banner',
+    '-nostats',
+    '-y',
+    '-i',
+    master,
+    '-af',
+    filter,
+    '-c:a',
+    'libopus',
+    '-b:a',
+    `${OPUS_KBPS}k`,
+    '-vbr',
+    'on',
+    '-application',
+    'audio',
+    '-ar',
+    '48000',
     opus,
   ]);
 
   const m4a = join(outDir, `${stem}.m4a`);
   runCapturingStderr([
-    '-hide_banner', '-nostats', '-y',
-    '-i', master,
-    '-af', filter,
-    '-c:a', 'aac', '-b:a', `${AAC_KBPS}k`,
-    '-ar', '48000',
-    '-movflags', '+faststart',
+    '-hide_banner',
+    '-nostats',
+    '-y',
+    '-i',
+    master,
+    '-af',
+    filter,
+    '-c:a',
+    'aac',
+    '-b:a',
+    `${AAC_KBPS}k`,
+    '-ar',
+    '48000',
+    '-movflags',
+    '+faststart',
     m4a,
   ]);
 
@@ -304,7 +342,9 @@ async function buildOne(
 }
 
 export function readIndex(): AudioIndex | undefined {
-  return existsSync(INDEX_FILE) ? (JSON.parse(readFileSync(INDEX_FILE, 'utf8')) as AudioIndex) : undefined;
+  return existsSync(INDEX_FILE)
+    ? (JSON.parse(readFileSync(INDEX_FILE, 'utf8')) as AudioIndex)
+    : undefined;
 }
 
 async function main() {
@@ -354,11 +394,18 @@ async function main() {
     execFileSync(
       'aws',
       [
-        's3', 'sync', AUDIO_ROOT, `s3://${BUCKET}/audio`,
-        '--exclude', '*',
-        '--include', '*.opus',
-        '--include', '*.m4a',
-        '--cache-control', 'public, max-age=31536000, immutable',
+        's3',
+        'sync',
+        AUDIO_ROOT,
+        `s3://${BUCKET}/audio`,
+        '--exclude',
+        '*',
+        '--include',
+        '*.opus',
+        '--include',
+        '*.m4a',
+        '--cache-control',
+        'public, max-age=31536000, immutable',
         '--only-show-errors',
       ],
       { stdio: 'inherit', env: { ...process.env, AWS_PROFILE: PROFILE } },
