@@ -26,11 +26,8 @@
   "caption": "Winston Churchill (1874–1965), First Lord of the Admiralty 1911–1915 — sent the Royal Naval Division to Antwerp in October 1914 and went there himself; a cross-era figure who reappears at Gallipoli, in the interwar years and in 1940. Colorized (AI-assisted) from a public-domain photograph.",
   "credit": "Original photograph: agency stringer, 16 Sept 1914; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
-    "1914:belgium-antwerp",
-    "other-fronts:gallipoli",
-    "1940:fall-of-france",
-    "thread:road-to-1914"
+    "1914:belgium-antwerp"
   ],
   "focal_point": { "x": 0.5, "y": 0.3 },
-  "notes": "Provided by Dave 2026-08-22. Cross-era Person — the first shared/people entry that spans both world wars."
+  "notes": "Provided by Dave 2026-08-22. Cross-era Person — the first shared/people entry that spans both world wars. Wanted again by the packs that do not exist yet — Gallipoli, and 1940; those placements belong to those packs when they are written."
 }

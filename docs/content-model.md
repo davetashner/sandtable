@@ -301,13 +301,24 @@ option, campaign routes using battle-level formations, plate sets outside two
 to four pictures or with the same picture or the same label twice, and the
 imagery policy on media manifests (flagged BLOCKED/UNVERIFIED/UNKNOWN/HOLD,
 colorized without saying so, Bundesarchiv without the credit string, no
-archive record).
+archive record), and a media `used_by` entry naming an id that does not exist.
+
+That last one was a warning until the registry was swept clean of the
+placements that predated it (`sand-y0u.24`). Nothing renders from `used_by` —
+it is an author's note of intent ([ADR 0014](decisions/0014-plate-sets.md)) —
+but it is also the one way a picture can claim a beat from outside, which is
+what the one-picture-per-beat rule polices, and that rule only bites on ids
+that really are beats. A stale entry therefore hides a genuine double claim
+until the day someone recreates the id. Fix the reference, or drop it and put
+the intention in `notes`: a picture wanted by a pack that does not exist yet
+belongs to that pack when it is written, and prose cannot rot into a false
+claim. Cue `used_by` is still a warning — no audio invariant rests on it yet.
 
 Warnings: formations without a historical route (non-seed packs), a
 formation's `concentration.position` outside the pack region, a leg faster
 than its `mode` sustained but not beyond it (a forced march is a warning, a
-teleport is an error), branches without beats (non-seed packs), media
-`person`/`used_by` pointing at entities that do not exist yet, thread steps
+teleport is an error), branches without beats (non-seed packs), media `person`
+and cue `used_by` pointing at entities that do not exist yet, thread steps
 with neither beat nor instant, unknown pack files.
 
 ## Extending the schema

@@ -1142,8 +1142,14 @@ describe('validateContent', () => {
     expect(msgs).toContainEqual(expect.stringMatching(/flagged BLOCKED\/UNVERIFIED/));
     expect(msgs).toContainEqual(expect.stringMatching(/caption does not say so/));
     expect(msgs).toContainEqual(expect.stringMatching(/Bundesarchiv, Bild/));
-    expect(report.warnings.map((w) => w.message)).toContainEqual(
-      expect.stringMatching(/used_by 1914:beat-missing does not exist yet/),
+    // A used_by that resolves to nothing is an error, not a backlog item: it is
+    // the one way a picture claims a beat from outside, so a stale entry hides
+    // a double claim (ADR 0012, ADR 0014).
+    expect(report.errors.map((e) => e.message)).toContainEqual(
+      expect.stringMatching(/used_by 1914:beat-missing does not exist/),
+    );
+    expect(report.warnings.map((w) => w.message)).not.toContainEqual(
+      expect.stringMatching(/used_by 1914:beat-missing/),
     );
   });
 
