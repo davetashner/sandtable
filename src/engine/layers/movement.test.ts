@@ -1,6 +1,18 @@
 import { describe, expect, it } from 'vitest';
-import type { Branch, Formation, Route, Side } from '../../packs/schema/index.js';
-import { buildMovementLayers, buildMovementScene, composeRoutes, positionAt } from './movement.js';
+import type { Branch, Formation, MovementMode, Route, Side } from '../../packs/schema/index.js';
+import {
+  buildMovementLayers,
+  buildMovementScene,
+  composeRoutes,
+  modeAt,
+  positionAt,
+} from './movement.js';
+
+/** A one-leg composed route: the same points as the whole path and as its only leg. */
+const oneLeg = (points: [number, number, number][], mode: MovementMode = 'march') => ({
+  points,
+  legs: [{ points, mode }],
+});
 
 const sides: Side[] = [
   { id: 'de', name: 'German Empire', alliance: 'Central Powers' },
@@ -133,13 +145,12 @@ describe('buildMovementLayers', () => {
     const mk = (f: ReturnType<typeof fmt>) => ({
       formation: f,
       side: sides[0]!,
-      points: [
+      ...oneLeg([
         [6, 50, Date.UTC(1914, 7, 20)],
         [5, 50, Date.UTC(1914, 7, 25)],
-      ] as [number, number, number][],
+      ]),
       hypothetical: false,
       confidence: 'medium' as const,
-      mode: 'march' as const,
     });
     const now = Date.UTC(1914, 7, 15);
     const tokensOf = (layers: ReturnType<typeof buildMovementLayers>) =>
@@ -203,13 +214,12 @@ describe('buildMovementLayers', () => {
     const mk = (fm: ReturnType<typeof f>, lng: number) => ({
       formation: fm,
       side: sides[0]!,
-      points: [
+      ...oneLeg([
         [lng, 50, Date.UTC(1914, 7, 20)],
         [lng, 50, Date.UTC(1914, 7, 25)],
-      ] as [number, number, number][],
+      ]),
       hypothetical: false,
       confidence: 'medium' as const,
-      mode: 'march' as const,
     });
     // an army and a corps 20 px apart: the army keeps the slot above, the corps takes another
     const routes = [mk(f('1. Armee', 'army'), 6.0), mk(f('II. AK', 'corps'), 6.2)];
@@ -242,13 +252,15 @@ describe('buildMovementLayers', () => {
     const rail = {
       formation: f,
       side: sides[0]!,
-      points: [
-        [7, 47.6, Date.UTC(1914, 7, 25, 12)],
-        [2.3, 49.9, Date.UTC(1914, 7, 27, 12)],
-      ] as [number, number, number][],
+      ...oneLeg(
+        [
+          [7, 47.6, Date.UTC(1914, 7, 25, 12)],
+          [2.3, 49.9, Date.UTC(1914, 7, 27, 12)],
+        ],
+        'rail',
+      ),
       hypothetical: false,
       confidence: 'medium' as const,
-      mode: 'rail' as const,
     };
     const base = { routes: [rail], rangeStart: Date.UTC(1914, 7, 2), sides };
     const tokensOf = (layers: ReturnType<typeof buildMovementLayers>) =>
@@ -265,5 +277,109 @@ describe('buildMovementLayers', () => {
     };
     expect(ghost.data[0]!.dashed).toBe(true);
     expect(ghost.getDashArray(ghost.data[0]!)).toEqual([6, 4]);
+  });
+});
+
+describe('a route written in legs', () => {
+  const leg = (id: string, waypoints: Route['waypoints'], mode?: Route['mode']): Route => ({
+    id,
+    formation: '1914:army-fr-6',
+    waypoints,
+    confidence: 'medium',
+    ...(mode ? { mode } : {}),
+    sources: [{ source: 'source:x' }],
+  });
+  // Castelnau in miniature: the Grand Couronné, the train west, Picardy.
+  const legs = [
+    leg('1914:route-fr-2', [
+      [6.4, 48.76, '1914-09-13T12:00:00Z'],
+      [6.4, 48.78, '1914-09-17T12:00:00Z'],
+    ]),
+    leg(
+      '1914:route-fr-2-by-rail',
+      [
+        [6.4, 48.78, '1914-09-17T12:00:00Z'],
+        [2.3, 49.9, '1914-09-21T12:00:00Z'],
+      ],
+      'rail',
+    ),
+    leg('1914:route-fr-2-picardy', [
+      [2.3, 49.9, '1914-09-21T12:00:00Z'],
+      [2.72, 49.66, '1914-09-25T12:00:00Z'],
+    ]),
+  ];
+  const rangeStart = Date.parse('1914-08-02T00:00:00Z');
+
+  it('joins the legs into one path, in time order, keeping each shared waypoint once', () => {
+    const out = composeRoutes(legs, formations, sides, historical);
+    expect(out).toHaveLength(1);
+    expect(out[0]!.legs.map((l) => l.mode)).toEqual(['march', 'rail', 'march']);
+    expect(out[0]!.points.map((p) => p[0])).toEqual([6.4, 6.4, 2.3, 2.72]);
+    expect(modeAt(out[0]!.legs, Date.parse('1914-09-19T12:00:00Z'))).toBe('rail');
+    expect(modeAt(out[0]!.legs, Date.parse('1914-09-23T12:00:00Z'))).toBe('march');
+  });
+
+  it('draws each leg the way it was covered: the train dashed between two solid marches', () => {
+    const composed = composeRoutes([...legs].reverse(), formations, sides, historical);
+    const ghost = buildMovementLayers({
+      routes: composed,
+      now: Date.parse('1914-09-19T12:00:00Z'),
+      rangeStart,
+      sides,
+    }).find((l) => l.id === 'movement-ghost')!.props as unknown as {
+      data: { mode: string; path: [number, number][] }[];
+      getDashArray: (d: { mode: string }) => number[];
+    };
+    expect(ghost.data.map((d) => d.mode)).toEqual(['march', 'rail', 'march']);
+    expect(ghost.data.map((d) => ghost.getDashArray(d))).toEqual([
+      [0, 0],
+      [6, 4],
+      [0, 0],
+    ]);
+  });
+
+  it('leaves a motor column on the map when it is not driving, where a train takes its token away', () => {
+    const drive = (mode: Route['mode']) =>
+      composeRoutes(
+        [
+          leg(
+            '1914:route-drive',
+            [
+              [6.13, 49.61, '1914-09-08T11:00:00Z'],
+              [3.08, 49.14, '1914-09-09T11:00:00Z'],
+            ],
+            mode,
+          ),
+        ],
+        formations,
+        sides,
+        historical,
+      );
+    const tokensAt = (mode: Route['mode'], at: string) =>
+      (
+        buildMovementLayers({
+          routes: drive(mode),
+          now: Date.parse(at),
+          rangeStart,
+          sides,
+        }).find((l) => l.id === 'movement-tokens')!.props as unknown as { data: unknown[] }
+      ).data.length;
+    expect(tokensAt('motor', '1914-09-07T12:00:00Z')).toBe(1);
+    expect(tokensAt('motor', '1914-09-08T18:00:00Z')).toBe(1);
+    expect(tokensAt('motor', '1914-09-10T12:00:00Z')).toBe(1);
+    expect(tokensAt('rail', '1914-09-07T12:00:00Z')).toBe(0);
+    expect(tokensAt('rail', '1914-09-08T18:00:00Z')).toBe(1);
+    expect(tokensAt('rail', '1914-09-10T12:00:00Z')).toBe(0);
+    const ghost = buildMovementLayers({
+      routes: drive('motor'),
+      now: Date.parse('1914-09-08T18:00:00Z'),
+      rangeStart,
+      sides,
+    }).find((l) => l.id === 'movement-ghost')!.props as unknown as {
+      data: { dashed: boolean; mode: string }[];
+      getDashArray: (d: { mode: string }) => number[];
+    };
+    expect(ghost.data[0]!.dashed).toBe(true);
+    expect(ghost.getDashArray(ghost.data[0]!)).toEqual([2, 3]); // the road, not the railway
   });
 });

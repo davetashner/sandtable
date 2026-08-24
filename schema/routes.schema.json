@@ -60,10 +60,11 @@
         "description": "high: documented; medium: inferred from sources; low: approximate; contested: historians disagree"
       },
       "mode": {
-        "description": "How the formation moved along this route; rail/sea/air legs draw dashed and show their token only while moving (default march)",
+        "description": "How the formation moved along this route; rail/sea/air are transfers and draw dashed with their token shown only while moving, motor draws with a finer dash and keeps its token (default march)",
         "type": "string",
         "enum": [
           "march",
+          "motor",
           "rail",
           "sea",
           "air"

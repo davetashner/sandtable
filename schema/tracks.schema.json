@@ -78,6 +78,17 @@
         ],
         "description": "high: documented; medium: inferred from sources; low: approximate; contested: historians disagree"
       },
+      "mode": {
+        "description": "How he travelled, where the sources say: Joffre and Hentsch by car (motor), a headquarters moving by train (rail). Absent is not a claim that he walked — the pace check reads an unmarked track as road travel",
+        "type": "string",
+        "enum": [
+          "march",
+          "motor",
+          "rail",
+          "sea",
+          "air"
+        ]
+      },
       "derivation": {
         "type": "string",
         "minLength": 1,

@@ -4,19 +4,10 @@
  * Pure; geometry only.
  */
 import type { Route, SupplyLine } from '../packs/schema/index.js';
+import { haversineKm } from './geo.js';
 import { positionAt } from './layers/movement.js';
 
-const R = 6371;
-const rad = (d: number) => (d * Math.PI) / 180;
-
-/** Great-circle distance in km between two [lng, lat] points. */
-export function haversineKm(a: [number, number], b: [number, number]): number {
-  const dLat = rad(b[1] - a[1]);
-  const dLng = rad(b[0] - a[0]);
-  const h =
-    Math.sin(dLat / 2) ** 2 + Math.cos(rad(a[1])) * Math.cos(rad(b[1])) * Math.sin(dLng / 2) ** 2;
-  return 2 * R * Math.asin(Math.min(1, Math.sqrt(h)));
-}
+export { haversineKm };
 
 /** Distance in km marched along `points` ([lng, lat, ms]) up to `now` (0 before the start). */
 export function distanceAlongKm(points: [number, number, number][], now: number): number {
@@ -66,11 +57,24 @@ export function supplyStatus(
   return out;
 }
 
-/** The historical (branch-less) route of a formation as [lng, lat, ms] points, if any. */
+/**
+ * The historical (branch-less) route of a formation as [lng, lat, ms] points,
+ * if any — every leg of it, in time order, sharing each join once (a route
+ * may be written in legs, one per mode; see `composeRoutes`).
+ */
 export function routePoints(
   routes: Route[],
   formationId: string,
 ): [number, number, number][] | undefined {
-  const r = routes.find((x) => x.formation === formationId && !x.branch);
-  return r?.waypoints.map((w) => [w[0], w[1], Date.parse(w[2])] as [number, number, number]);
+  const legs = routes
+    .filter((x) => x.formation === formationId && !x.branch)
+    .sort((a, b) => Date.parse(a.waypoints[0]![2]) - Date.parse(b.waypoints[0]![2]));
+  if (legs.length === 0) return undefined;
+  const out: [number, number, number][] = [];
+  for (const leg of legs)
+    for (const w of leg.waypoints) {
+      const at = Date.parse(w[2]);
+      if (out[out.length - 1]?.[2] !== at) out.push([w[0], w[1], at]);
+    }
+  return out;
 }

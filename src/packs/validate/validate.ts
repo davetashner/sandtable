@@ -53,6 +53,7 @@ import {
   type Vignette,
 } from '../schema/index.js';
 import { footnoteLabels, splitFrontMatter } from './frontmatter.js';
+import { paceFindings, paceMessage } from './pace.js';
 import type { RawContent, RawFile, RawPack } from './tree.js';
 
 // ------------------------------------------------------------------ report
@@ -630,7 +631,46 @@ function checkRoute(
       r.id,
     );
   }
+  // nothing teleports: every leg is held to the pace of its own mode
+  const mode = r.mode ?? 'march';
+  for (const f of paceFindings(r.waypoints, mode))
+    ctx[f.level === 'error' ? 'error' : 'warn'](path, paceMessage(f, mode), r.id);
   checkCitations(ctx, path, r.id, r.sources, true);
+}
+
+/**
+ * A formation's route may be written in legs, one per mode — march, then the
+ * train west, then march again — and the engine concatenates them into one
+ * path. So the legs must meet: each begins at the instant and the place the
+ * one before it ended. A gap would draw a line nobody sourced across it, and
+ * an overlap would put the formation in two places at once.
+ */
+function checkRouteLegs(ctx: Ctx, path: string, routes: Route[]) {
+  const byFormation = new Map<string, Route[]>();
+  for (const r of routes) {
+    const key = `${r.formation}|${r.branch ?? ''}`;
+    const legs = byFormation.get(key);
+    if (legs) legs.push(r);
+    else byFormation.set(key, [r]);
+  }
+  for (const [key, legs] of byFormation) {
+    if (legs.length < 2) continue;
+    const [formation, branch] = key.split('|') as [string, string];
+    const where = branch ? `branch ${branch}` : 'the historical branch';
+    const ordered = [...legs].sort((a, b) => t(a.waypoints[0]![2]) - t(b.waypoints[0]![2]));
+    for (let i = 1; i < ordered.length; i++) {
+      const prev = ordered[i - 1]!;
+      const next = ordered[i]!;
+      const end = prev.waypoints[prev.waypoints.length - 1]!;
+      const start = next.waypoints[0]!;
+      if (t(start[2]) === t(end[2]) && start[0] === end[0] && start[1] === end[1]) continue;
+      ctx.error(
+        path,
+        `does not join ${prev.id}, the previous leg of ${formation} in ${where}: that leg ends at [${end[0]}, ${end[1]}] on ${end[2]} and this one starts at [${start[0]}, ${start[1]}] on ${start[2]}. Legs of one route must meet — write the movement between them as a leg of its own, with the mode that carried it`,
+        next.id,
+      );
+    }
+  }
 }
 
 function checkEvent(
@@ -679,6 +719,7 @@ function checkBattle(ctx: Ctx, s: PackState, path: string, b: Battle, sideIds: S
   }
   for (const f of b.formations ?? []) checkFormation(ctx, s, path, f, sideIds, b);
   for (const r of b.routes ?? []) checkRoute(ctx, s, path, r, b.timeRange, b);
+  checkRouteLegs(ctx, path, b.routes ?? []);
   for (const ev of b.events ?? []) checkEvent(ctx, s, path, ev, b.timeRange, b);
   checkLinks(ctx, path, b.id, b.links);
   checkCitations(ctx, path, b.id, b.sources, true);
@@ -1039,18 +1080,11 @@ function checkDiagram(
  * `hq` track, because he cannot command from two places at once, while he may
  * have as many documented journeys as the sources record.
  */
-function checkTracks(
-  ctx: Ctx,
-  s: PackState,
-  path: string,
-  range: TimeRange,
-  sideIds: Set<string>,
-) {
+function checkTracks(ctx: Ctx, s: PackState, path: string, range: TimeRange, sideIds: Set<string>) {
   const hqOf = new Map<string, string>();
   for (const tk of s.tracks) {
     ctx.ref(path, tk.id, tk.person, ['person'], 'person');
-    if (tk.side && !sideIds.has(tk.side))
-      ctx.error(path, `unknown side ${tk.side}`, tk.id);
+    if (tk.side && !sideIds.has(tk.side)) ctx.error(path, `unknown side ${tk.side}`, tk.id);
     if (tk.kind === 'hq' && !tk.post)
       ctx.error(path, 'an hq track must name the post it commanded from', tk.id);
     if (tk.kind === 'journey' && tk.post)
@@ -1074,6 +1108,11 @@ function checkTracks(
       if (!within(range, w[2]))
         ctx.error(path, `waypoints[${i}] (${w[2]}) is outside the pack timeRange`, tk.id);
     });
+    // A commander travelled by car or by train, and a headquarters moves the
+    // same way; an unmarked track is read as road travel, never as a march.
+    const mode = tk.mode ?? 'motor';
+    for (const f of paceFindings(tk.waypoints, mode))
+      ctx[f.level === 'error' ? 'error' : 'warn'](path, paceMessage(f, mode), tk.id);
     checkCitations(ctx, path, tk.id, tk.sources, true);
   }
 }
@@ -1285,15 +1324,9 @@ export function validateContent(raw: RawContent): Report {
     const seenRoute = new Set<string>();
     for (const r of s.routes) {
       checkRoute(ctx, s, file('routes.json'), r, range);
-      const key = `${r.formation}|${r.branch ?? ''}`;
-      if (seenRoute.has(key))
-        ctx.error(
-          file('routes.json'),
-          `formation ${r.formation} already has a route for ${r.branch ?? 'the historical branch'}`,
-          r.id,
-        );
-      seenRoute.add(key);
+      seenRoute.add(`${r.formation}|${r.branch ?? ''}`);
     }
+    checkRouteLegs(ctx, file('routes.json'), s.routes);
     for (const f of s.formations) {
       if (!seenRoute.has(`${f.id}|`) && s.pack.status !== 'seed')
         ctx.warn(file('formations.json'), 'formation has no historical route', f.id);

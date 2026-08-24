@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import type { SupplyLine } from '../packs/schema/index.js';
-import { distanceAlongKm, haversineKm, supplyStatus } from './logistics.js';
+import type { Route, SupplyLine } from '../packs/schema/index.js';
+import { distanceAlongKm, haversineKm, routePoints, supplyStatus } from './logistics.js';
 
 const t = (s: string) => Date.parse(s);
 // 1° of longitude at 50°N ≈ 71.5 km
@@ -48,5 +48,33 @@ describe('logistics', () => {
       marchedKm: 0,
       strained: false,
     });
+  });
+  it('takes a formation’s route in all its legs, in time order, joining them once', () => {
+    const leg = (id: string, waypoints: Route['waypoints']): Route => ({
+      id,
+      formation: '1914:army',
+      waypoints,
+      confidence: 'medium',
+      sources: [{ source: 'source:x' }],
+    });
+    const routes = [
+      leg('1914:route-later', [
+        [4, 50, '1914-08-12T00:00:00Z'],
+        [3, 50, '1914-08-14T00:00:00Z'],
+      ]),
+      leg('1914:route', [
+        [5, 50, '1914-08-10T00:00:00Z'],
+        [4, 50, '1914-08-12T00:00:00Z'],
+      ]),
+      {
+        ...leg('1914:route-branch', [
+          [3, 50, '1914-08-14T00:00:00Z'],
+          [2, 50, '1914-08-16T00:00:00Z'],
+        ]),
+        branch: '1914:concept',
+      },
+    ];
+    expect(routePoints(routes, '1914:army')).toEqual(army);
+    expect(routePoints(routes, '1914:nobody')).toBeUndefined();
   });
 });

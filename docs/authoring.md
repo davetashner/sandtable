@@ -439,10 +439,14 @@ Entries must be in time order and inside the pack range; a positioned entry
 becomes a ring on the map once the clock passes it; the gauge under the
 timeline shows the running value and the card the full ledger (`?card=<id>`).
 
-### Rail against feet
+### Rail, road and feet
 
-Mark a transfer by train with `"mode": "rail"` on its route — it draws dashed
-and the corps token shows only while the train is under way:
+A route's `mode` says what carried the formation, and the validator holds
+every leg to the pace of that mode: a march that covers 80 km a day is an
+error, and the fix is to name what actually moved it (`sand-23b.8`).
+
+Mark a transfer by train with `"mode": "rail"` on its route — it draws with a
+long dash and the corps token shows only while the train is under way:
 
 ```json
 {
@@ -457,6 +461,19 @@ and the corps token shows only while the train is under way:
   "sources": [{ "source": "source:afgg-1-1" }]
 }
 ```
+
+Road movement is `"mode": "motor"` — Hentsch's staff car, the Paris taxis,
+Joffre's drive to Melun. It draws with a short, close dash and keeps its
+token: a column of cars is on the ground the whole way, not aboard something.
+A commander's track in `tracks.json` takes the same `mode` field, and an
+unmarked track is read as road travel rather than as a march.
+
+When a formation changed how it moved, write one route per leg and let them
+meet — each leg starts at the instant and the position the one before it
+ended. The French 2nd Army is three: `route-fr-2` in Lorraine to
+17 September, `route-fr-2-by-rail` west to Picardy, `route-fr-2-picardy`
+after it detrained. The map joins them into one path and draws each stretch
+the way that stretch was covered.
 
 A railhead is a formation of kind `other` with a route of its own; a
 `supply.json` line pairs it with the army it feeds:

@@ -474,11 +474,7 @@
       [6.3, 48.73, "1914-09-09T12:00:00Z"],
       [6.32, 48.73, "1914-09-11T12:00:00Z"],
       [6.4, 48.76, "1914-09-13T12:00:00Z"],
-      [6.4, 48.78, "1914-09-17T12:00:00Z"],
-      [2.3, 49.9, "1914-09-21T12:00:00Z"],
-      [2.72, 49.66, "1914-09-25T12:00:00Z"],
-      [2.65, 49.8, "1914-10-05T12:00:00Z"],
-      [2.65, 49.8, "1914-11-24T12:00:00Z"]
+      [6.4, 48.78, "1914-09-17T12:00:00Z"]
     ],
     "confidence": "medium",
     "derivation": "Approximate centre of the army at noon each day from the AFGG daily situation maps as summarised in Herwig; ±10–15 km.",
@@ -496,7 +492,57 @@
         "source": "source:strachan-2001"
       }
     ],
-    "notes": "14–19 Aug: to Morhange; 20 Aug: Morhange; 21–23 Aug: back to the Meurthe; 4–12 Sep: the Grand Couronné de Nancy. The IX and XVIII Corps left for the centre and left in the third week of August. Extended past 16 September only far enough to say where the army was while the front settled; the epilogue is a chapter, not a daily reconstruction (sand-1l0.12)."
+    "notes": "14–19 Aug: to Morhange; 20 Aug: Morhange; 21–23 Aug: back to the Meurthe; 4–12 Sep: the Grand Couronné de Nancy. The IX and XVIII Corps left for the centre and left in the third week of August. The leg ends where the army left Lorraine on 17 September; the journey west is its own leg, by rail."
+  },
+  {
+    "id": "1914:route-fr-2-by-rail",
+    "formation": "1914:army-fr-2",
+    "mode": "rail",
+    "waypoints": [
+      [6.4, 48.78, "1914-09-17T12:00:00Z"],
+      [2.3, 49.9, "1914-09-21T12:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "Castelnau's army out of the Grand Couronné from 17 September and on the Picardy front by the 21st, moved by train — the dates at the resolution the epilogue works at, days and not trains. The straight line is the transfer, not the track, and the corps went in successive trains across those days rather than all at once.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1",
+        "note": "the transfer of the 2nd Army from Lorraine to the north and the orders for it"
+      },
+      {
+        "source": "source:doughty-2005",
+        "note": "Joffre's use of the railways to shift armies to the open northern flank in September"
+      },
+      {
+        "source": "source:strachan-2001",
+        "note": "the Race to the Sea as successive redeployments north"
+      }
+    ],
+    "notes": "The redeployment the rail layer exists for (sand-1l0.21), and the largest of them: the army that had held Nancy since August is taken out of the line and set down beyond the Oise, and the Race to the Sea opens with it. Interior lines, one more time — and the last time they were fast enough to matter."
+  },
+  {
+    "id": "1914:route-fr-2-picardy",
+    "formation": "1914:army-fr-2",
+    "waypoints": [
+      [2.3, 49.9, "1914-09-21T12:00:00Z"],
+      [2.72, 49.66, "1914-09-25T12:00:00Z"],
+      [2.65, 49.8, "1914-10-05T12:00:00Z"],
+      [2.65, 49.8, "1914-11-24T12:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "Approximate centre of the army from the AFGG situation maps; ±10–15 km, and at intervals of days rather than daily.",
+    "sources": [
+      {
+        "source": "source:afgg-1-1"
+      },
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:strachan-2001"
+      }
+    ],
+    "notes": "Where the army was while the front settled between Amiens and the Oise, and no more than that: the epilogue is a chapter, not a daily reconstruction (sand-1l0.12)."
   },
   {
     "id": "1914:route-fr-3",

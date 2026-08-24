@@ -90,6 +90,11 @@ can point at anything anywhere.
 - Route waypoints are `[lng, lat, time]`, strictly increasing in time. A route
   carries a `confidence` (`high | medium | low | contested`) and a `derivation`
   note; per-waypoint confidence is a planned extension (`sand-23b.4`).
+- A formation that changed how it moved gets **one route per leg**: the French
+  2nd Army marched in Lorraine, entrained on 17 September and marched again in
+  Picardy, so it is three routes, each with its own `mode`. Legs must meet —
+  each begins at the instant and the position the one before it ended — and
+  the engine joins them into a single path that keeps its legs (`sand-23b.8`).
 
 ## Branches (ADR 0005)
 
@@ -110,8 +115,8 @@ So the shared prefix is literal: the base route before the divergence and the
 shared beats before it are written once. After the divergence, history says
 `branch: 1914:historical` and each counterfactual says its own id. The
 validator rejects a counterfactual route that starts before its branch
-diverges, two routes for the same formation and branch, and beats that are
-visible together in one branch yet overlap in time.
+diverges, route legs for one formation and branch that do not meet, and beats
+that are visible together in one branch yet overlap in time.
 
 ## Entities
 
@@ -130,10 +135,14 @@ generated JSON Schema; this is the intent of each.
   assembled, in words plus a representative position and date — the start
   token before its route begins) and `dissolved` (when it ceased to exist —
   its token disappears then), each with its own sources.
-- **Route** — a Formation's movement over time (see above); optional `mode`
-  (`march | rail | sea | air`): a rail/sea/air leg draws dashed and its token
-  shows only while it is under way (a transfer, not a position). Required
-  sources.
+- **Route** — a Formation's movement over time, in one leg or several (see
+  above); optional `mode` (`march | motor | rail | sea | air`, default
+  `march`). `rail`, `sea` and `air` are transfers: the formation is inside the
+  thing carrying it, so the leg draws with a long dash and its token shows
+  only while it is under way (a transfer, not a position). `motor` is the road
+  — Hentsch's staff car, the Paris taxis — and is not a transfer: it draws
+  with a short, close dash of its own and the token stays on the map, because
+  a column of cars is on the ground the whole way. Required sources.
 - **Event** — a point (`at`) or a span (`timeRange`); `kind`, `significance`
   (`major` events become timeline ticks), a Place or a position, summary,
   links, required sources.
@@ -240,8 +249,9 @@ Schema violations (with file and JSON path), duplicate ids, ids without the
 pack prefix, dangling references of every kind, `defaultBranch` not in
 `branches`, not exactly one historical branch, counterfactual without
 `divergesAt`, start ≥ end, anything outside its pack/battle range, unordered
-waypoints, counterfactual routes starting before the divergence, duplicate
-routes per formation and branch, beats visible together overlapping, unknown
+waypoints, counterfactual routes starting before the divergence, route legs
+for one formation and branch that do not meet, a route or track leg faster
+than its `mode` could go, beats visible together overlapping, unknown
 footnote labels (beats and cast bios), missing required citations, cast
 entries naming a person or side that does not exist or the same person twice,
 a formation's `concentration.asOf` or `dissolved` outside the pack range or
@@ -259,10 +269,11 @@ on media manifests (flagged BLOCKED/UNVERIFIED/UNKNOWN/HOLD, colorized without
 saying so, Bundesarchiv without the credit string, no archive record).
 
 Warnings: formations without a historical route (non-seed packs), a
-formation's `concentration.position` outside the pack region, branches
-without beats (non-seed packs), media `person`/`used_by` pointing at entities
-that do not exist yet, thread steps with neither beat nor instant, unknown
-pack files.
+formation's `concentration.position` outside the pack region, a leg faster
+than its `mode` sustained but not beyond it (a forced march is a warning, a
+teleport is an error), branches without beats (non-seed packs), media
+`person`/`used_by` pointing at entities that do not exist yet, thread steps
+with neither beat nor instant, unknown pack files.
 
 ## Extending the schema
 
