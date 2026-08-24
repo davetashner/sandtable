@@ -158,6 +158,19 @@ historical route should agree with it; its token appears from
 `"dissolved": "1914-08-26"` so its token disappears rather than parking at the
 end of its route.
 
+Everything you write here is a **card**: `?card=1914:army-de-4` opens the
+formation in the dossier — the name and kind, the side, the commander as a
+face at name size linked to his own card, the summary, the strength figures at
+their date, the concentration area, the formation above it and the ones under
+it as chips, and every source cited once. It opens by clicking the army's
+token on the map, from the commander's card, from `links.formations` on a beat
+or an event, from `[4. Armee](1914:army-de-4)` in prose — and from the legend
+where the side put a single army in the field, which is why Britain and
+Belgium are controls in the legend and Germany and France are not (there is no
+one formation called "France"). An optional `plates` set on the formation is
+the "who is who" of what that army wore and carried: two to four pictures on
+one declared axis, under [ADR 0014](decisions/0014-plate-sets.md)'s rules.
+
 `routes.json` — one default (historical) route per formation:
 
 ```json

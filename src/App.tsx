@@ -28,6 +28,7 @@ import {
 } from './engine/ClockContext.js';
 import { selectBeat } from './engine/beats.js';
 import { linksTouching } from './engine/causal.js';
+import { allFormations, sideFormation, subordinatesOf } from './engine/formations.js';
 import {
   battleRange,
   enterNow,
@@ -75,6 +76,7 @@ import { largestSrc, mediaById, portraitFor } from './packs/media-index.js';
 import { CausalView } from './ui/CausalView.js';
 import { DocumentCardView } from './ui/DocumentCardView.js';
 import { PersonCardView } from './ui/PersonCardView.js';
+import { FormationCardView } from './ui/FormationCardView.js';
 import { MeanwhileFilter } from './ui/MeanwhileFilter.js';
 import { ScienceCardView, SCIENCE_FIELDS } from './ui/ScienceCardView.js';
 import { TechCardView, type EntityLabeller } from './ui/TechCardView.js';
@@ -118,6 +120,13 @@ const MOVEMENT_SOURCE = {
   sides: seed.pack.sides,
 };
 
+/**
+ * Every formation a card slot can name: the campaign's order of battle plus
+ * the corps and divisions a zoom-in brings with it, because a token clicked
+ * inside a battle is one of those (sand-y0u.29).
+ */
+const FORMATIONS = allFormations(seed.formations, seed.battles);
+
 /** The battle the URL's focus slot names, if any. */
 function useFocus() {
   const { focus } = useViewState();
@@ -144,7 +153,7 @@ function useLabeller(): EntityLabeller {
           seed.documents.find((d) => d.id === id)?.title ??
           seed.events.find((e) => e.id === id)?.title ??
           seed.battles.find((b) => b.id === id)?.title ??
-          seed.formations.find((f) => f.id === id)?.name ??
+          FORMATIONS.find((f) => f.id === id)?.name ??
           seed.places.find((p) => p.id === id)?.name ??
           seed.beats.find((b) => b.id === id)?.title
         );
@@ -155,7 +164,8 @@ function useLabeller(): EntityLabeller {
           kind === 'science' ||
           kind === 'documents' ||
           kind === 'people' ||
-          kind === 'casualties'
+          kind === 'casualties' ||
+          kind === 'formations'
         )
           return () => controls?.setCard(id);
         if (kind === 'battles') return () => controls?.setFocus(id);
@@ -172,7 +182,7 @@ function useLabeller(): EntityLabeller {
   );
 }
 
-/** The card the URL's card slot names, if any — tech, science or document. */
+/** The card the URL's card slot names, if any — tech, science, document, formation… */
 function useCard():
   | { kind: 'tech'; card: (typeof seed.tech)[number] }
   | { kind: 'science'; card: (typeof seed.science)[number] }
@@ -184,6 +194,7 @@ function useCard():
   | { kind: 'tally'; card: (typeof seed.tallies)[number] }
   | { kind: 'supply'; card: (typeof seed.supply)[number] }
   | { kind: 'casualties'; card: (typeof seed.casualties)[number] }
+  | { kind: 'formation'; card: (typeof FORMATIONS)[number] }
   | undefined {
   const { card } = useViewState();
   if (!card) return undefined;
@@ -207,6 +218,8 @@ function useCard():
   if (link) return { kind: 'causal', card: link };
   const person = seed.people.find((p) => p.id === card);
   if (person) return { kind: 'person', card: person };
+  const formation = FORMATIONS.find((f) => f.id === card);
+  if (formation) return { kind: 'formation', card: formation };
   return undefined;
 }
 
@@ -760,6 +773,7 @@ function MapSection() {
             };
           }}
           onSelectCommander={(id) => controls?.setCard(id)}
+          onSelectFormation={(id) => controls?.setCard(id)}
           cameraTarget={cameraTarget}
           onSelectTally={(id) => controls?.setCard(id)}
         />
@@ -805,6 +819,17 @@ function DossierSurface() {
   const meanwhile = useMeanwhileContext();
   const controls = useViewStateControls();
   const labeller = useLabeller();
+  // The legend names sides; a formation card is one army's. Where a side put
+  // a single army in the field the entry opens it — the BEF, the Belgian
+  // Field Army — and where it put nine there is no card called "France", so
+  // the entry stays a swatch and a name (sand-y0u.29).
+  const openSide = useCallback(
+    (sideId: string) => {
+      const f = sideFormation(FORMATIONS, sideId);
+      return f ? { label: f.name, onClick: () => controls?.setCard(f.id) } : undefined;
+    },
+    [controls],
+  );
   const { now, range } = useClock();
   const beat = useMemo(
     () => selectBeat(seed.beats, now, branch.id, focus?.id, range.end),
@@ -889,6 +914,7 @@ function DossierSurface() {
         resolvePortrait={portraitFor}
         resolveMedia={mediaById}
         resolveDiagram={(file) => seed.diagrams[file]}
+        openSide={openSide}
         cast={
           <CastStrip
             members={CAST_MEMBERS}
@@ -931,6 +957,19 @@ function DossierSurface() {
                 .filter((f) => f.commander === card.card.id)
                 .map((f) => ({ id: f.id, label: f.name }))}
               cast={seed.cast.find((c) => c.person === card.card.id)}
+              onBack={() => controls?.setCard(undefined)}
+            />
+          ) : card?.kind === 'formation' ? (
+            <FormationCardView
+              formation={card.card}
+              sources={seed.sources}
+              labeller={labeller}
+              sides={seed.pack.sides}
+              subordinates={subordinatesOf(FORMATIONS, card.card.id).map((f) => ({
+                id: f.id,
+                label: f.short ?? f.name,
+              }))}
+              resolveMedia={mediaById}
               onBack={() => controls?.setCard(undefined)}
             />
           ) : card?.kind === 'supply' ? (

@@ -52,8 +52,12 @@ export function PersonCardView({
         `${r.title}${r.from || r.to ? ` (${[r.from && whenLabel(r.from), r.to && whenLabel(r.to)].filter(Boolean).join(' – ')})` : ''}`,
     )
     .join(' · ');
-  const chips = commands.map((c) => ({ id: c.id, label: c.label, kind: 'formation' }));
-  void labeller;
+  // The formations he commanded, as chips that now go somewhere: since
+  // sand-y0u.29 a formation id resolves to a card, so the labeller opens one.
+  const chips = commands.map((c) => {
+    const onClick = labeller.open?.(c.id, 'formations');
+    return { id: c.id, label: c.label, kind: 'formation', ...(onClick ? { onClick } : {}) };
+  });
   if (cast) {
     const bio = withFootnotes({ body: cast.bio, sources: cast.sources }, sources);
     return (

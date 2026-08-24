@@ -77,7 +77,7 @@ npm run tokens           # regenerate src/styles/tokens.css from src/styles/toke
 npm run media            # WebP derivatives + content/shared/media/index.json from media.json manifests; -- --upload syncs to the assets bucket
 npm run audio            # loudness-matched Opus/AAC + content/shared/audio/index.json from cue.json manifests; -- --upload syncs (needs ffmpeg)
 npm run build            # tsc -b && vite build → dist/ (bundles under dist/app/)
-npm run visual:check     # the visual gate: 19 scenes x 2 themes x 2 viewports, assets stubbed (ADR 0011); -- --update rewrites the baseline
+npm run visual:check     # the visual gate: 20 scenes x 2 themes x 2 viewports, assets stubbed (ADR 0011); -- --update rewrites the baseline
 npm run visual:review    # the on-demand design review against real assets (docs/design-review.md); needs a build + `npm run preview`
 npm run format           # Prettier (beat front matter is deliberately excluded — see .prettierignore)
 npm run format:check     # the same as a check; runs in CI's `web` job

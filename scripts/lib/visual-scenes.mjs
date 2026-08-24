@@ -39,6 +39,7 @@ export const SCENES = [
   ['july-crisis', `?t=1914-07-05T12:00:00Z&focus=1914:july-crisis`],
   ['card-person', `?t=${T20}&card=1914:cast-kluck-alexander-von`],
   ['card-tech', `?t=${T20}&card=1914:tech-heavy-siege-artillery`],
+  ['card-formation', `?t=${T20}&card=1914:army-de-1`],
   ['card-document', `?t=${T20}&card=1914:document-afgg-instruction-generale-2-1914-08-25`],
   ['card-decision', `?t=1914-08-30T12:00:00Z&card=1914:decision-1914-08-30-kluck-wheel`],
   ['card-casualty', `?t=${T35}&card=1914:casualties-marne`],

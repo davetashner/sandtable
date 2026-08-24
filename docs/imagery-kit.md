@@ -103,6 +103,32 @@ only picture on the card where the colour is the artefact's is item 1.
   is on them; the MG 08, the Vickers and the Belgian Maxim were not run down at
   all. Worth a later pass.
 
+## The formation card exists now, and still carries no plates
+
+`sand-y0u.29` built `FormationCardView` and routed `?card=<formation id>`, so
+the "who is who" set finally has somewhere to hang: `Formation.plates` renders
+through the same `PlateSet` the tech cards use, opened from an army's token on
+the map, from its commander's card, and from the legend where a side put one
+army in the field.
+
+**No `plates` were authored on the four armies, and the reason is the table
+above rather than a shortage of time.** ADR 0014's floor is two plates on a
+declared axis, and a per-army set needs the axis to be _that army's kit_ —
+headgear, rifle, machine gun, field gun. What this pass found is four rifles
+and one Pickelhaube. Germany could reach two plates (helmet and Gewehr 98) and
+no other army could reach the floor at all, so a per-army pass would ship one
+army with a set of two, three armies with nothing, and a card family that
+looks broken on three of the four sides it exists for. The cross-army cards
+are where those pictures already do their work, and they do it better: the
+comparison is between armies, which is the question the map raises.
+
+What has to be true before an army's own set is worth writing, in order: a
+verified 1914 **French képi**, **British service dress cap** and **Belgian
+shako** as museum objects (the headgear axis, `sand-y0u.5.2`); a German
+**7.7 cm FK 96 n.A.** and a **Belgian field gun** (`sand-y0u.5.1`); and the
+machine guns, which nobody has run down. Until then the field stays absent,
+which the renderer treats as "no set" rather than as an empty one.
+
 ## Excluded, and why
 
 **On provenance — ADR 0007 puts work "of unknown provenance" out:**

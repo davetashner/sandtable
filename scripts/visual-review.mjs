@@ -1,7 +1,7 @@
 /**
  * The Phase 1 design-review checklist, executable (sand-1l0.15).
  *
- * Walks the built app across nineteen scenes × two themes × desktop and
+ * Walks the built app across twenty scenes × two themes × desktop and
  * phone, screenshots each, and audits the DOM for the defects a reading of
  * the CSS does not catch: a page that scrolls sideways, text clipped by its
  * own container, type below the floor, tap targets below the floor.

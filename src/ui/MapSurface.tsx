@@ -58,6 +58,8 @@ export interface MapSurfaceProps {
   /** person id → the portrait to crop into a token. */
   portrait?: ((personId: string) => PortraitSource | undefined) | undefined;
   onSelectCommander?: ((personId: string) => void) | undefined;
+  /** Clicking an army token opens that formation's card (sand-y0u.29). */
+  onSelectFormation?: ((formationId: string) => void) | undefined;
   /**
    * A camera a guided tour asks for (sand-1l0.14). Applied whenever `key`
    * changes, after the region fit, so a tour step can frame something closer
@@ -82,6 +84,7 @@ export function MapSurface({
   labelPerson,
   portrait,
   onSelectCommander,
+  onSelectFormation,
   onSelectTally,
   cameraTarget,
 }: MapSurfaceProps) {
@@ -101,6 +104,7 @@ export function MapSurface({
   const { layers: movementLayers, labelBoxes } = useMovementLayers(movement, branch, {
     project: viewTick > 0 ? project : undefined,
     placementKey: viewTick,
+    onSelect: onSelectFormation,
   });
   // Portraits are cropped round on a canvas and cached per person; a redraw
   // when one lands is what puts it on the map (sand-1l0.27).
