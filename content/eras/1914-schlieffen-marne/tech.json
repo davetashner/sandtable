@@ -145,5 +145,54 @@
         "note": "Room 40 and the Zimmermann telegram"
       }
     ]
+  },
+  {
+    "id": "1914:tech-motor-transport-taxis",
+    "media": ["media:person/gallieni-joseph/portrait-colorized"],
+    "title": "Motor transport — six hundred taxis, and the road that fed Verdun",
+    "field": "motor-transport",
+    "introduced": {
+      "at": "1914-09-07",
+      "label": "The Paris taxis go out to the Ourcq, 6–7 September 1914"
+    },
+    "summary": "The most famous vehicles of the war carried a militarily trivial number of men. On [Gallieni](person:gallieni-joseph)'s requisition some six hundred Paris taxis took part of the 7th Division out to Nanteuil-le-Haudouin and Silly-le-Long on 6–7 September 1914, in two runs through the night — four to five thousand men, a fraction of the reinforcements Maunoury received that week.[^afgg-1-1] [^herwig-2009] The substance of 1914 was the opposite of the legend: armies that walked some thirty kilometres a day and were fed by horse from railheads they could outrun. The lorry became a logistic system only in 1916, on one road between Bar-le-Duc and Verdun.",
+    "body": "Take the military claim first, because it is small. The 7th Division was already coming up by rail from the 3rd Army; the taxis moved its second echelon, and by the time they reached the Ourcq [Maunoury](person:maunoury-michel-joseph) had been fighting there for two days.[^afgg-1-1] [^herwig-2009] The counts vary, which is itself the historiography: Sumpf's study of the photographs gives 630 taxis and rather more than three thousand men of the 103rd and 104th Infantry; the French official history and Herwig support the four-to-five thousand this pack uses; larger figures — eleven hundred vehicles, six thousand men — circulate freely.[^sumpf-2009] [^afgg-1-1] No version of the arithmetic makes the taxis a cause of the Marne.\n\nWhat they did instead was to put Paris inside its own battle. The government had left for Bordeaux on 2 September and the city had been told to expect a siege; four days later its cabs drove part of its defence out to the front, and there were photographs of it.[^herwig-2009] Gallieni signed the requisition, and spent what was left of his life arguing with Joffre over who had made the Marne — a dispute in which the taxis were a better witness than the orders.[^gallieni-1920] France kept the picture, and put it where the redeployment by rail should have been.\n\nThe substance is on ground the armies could not cover. A 1914 army moved at the pace of a walking man and ate at the pace of a horse: [Kluck](person:kluck-alexander-von)'s corps averaged some thirty kilometres a day for a fortnight to reach the Marne, and beyond the railhead the bread, fodder and shells came forward in horse-drawn columns whose practical reach Herwig and Strachan both put at about a hundred kilometres.[^herwig-2009] [^strachan-2001] Motor vehicles were in every army — staff cars, a few lorry columns, the tractors without which the 42 cm howitzers could not have been moved — but never in numbers that changed that arithmetic. The right wing was past the limit before the Sambre, and the pack's rail-versus-feet gauge reads the gap day by day. That gap, not a shortage of taxis, is one of the reasons the outer wing arrived at the Marne too weak to finish.\n\nThe answer came two years later, and outside this pack's span (the Verdun zoom-in is Phase 3, sand-g80.3). With the railways into Verdun cut or under fire from February 1916, the French fed a whole battle up one road from the railhead at Bar-le-Duc. Pétain divided it into six sections, each with its own commander, repair shops, refuelling points and traffic police; the Service automobile and a traffic commission created for the purpose ran it with some 9,000 officers and men and 3,900 vehicles, and in the battle's first fortnight the lorries carried 190,000 men, 22,500 tons of munitions and 2,500 tons of other stores.[^bruce-2008] The summer's figures — a lorry every fourteen seconds, one vehicle every five at the June peak, ninety thousand men and fifty thousand tonnes a week, twelve hundred territorials shovelling seven hundred thousand tonnes of stone under the wheels — are the round numbers of French commemoration rather than returns, and are quoted here as such.[^memorial-verdun-bataille] What had changed was not the vehicle. It was that the vehicles now ran to a timetable: motor transport had become to 1916 what the railway was to 1914.",
+    "links": {
+      "events": ["1914:event-battle-of-the-marne"],
+      "battles": ["1914:marne"],
+      "places": ["place:paris", "place:nanteuil-le-haudouin", "place:verdun"],
+      "people": ["person:gallieni-joseph", "person:maunoury-michel-joseph"],
+      "tech": ["1914:tech-railways-mobilization"]
+    },
+    "sources": [
+      {
+        "source": "source:afgg-1-1",
+        "note": "the reinforcements the taxis carried to the Ourcq, 6–7 September"
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "the 7th Division and the Ourcq; the government's departure for Bordeaux; the right wing's march rates and supply"
+      },
+      {
+        "source": "source:sumpf-2009",
+        "note": "630 taxis and more than three thousand men of the 103rd and 104th — the lower end of the range"
+      },
+      {
+        "source": "source:gallieni-1920",
+        "note": "the requisition of 6–7 September, and Gallieni's own case against Joffre; memoir, one side"
+      },
+      {
+        "source": "source:strachan-2001",
+        "note": "horse-drawn supply beyond the railheads and its practical limit"
+      },
+      {
+        "source": "source:bruce-2008",
+        "note": "Pétain's organisation of the Bar-le-Duc road and the first fortnight's loads, 1916"
+      },
+      {
+        "source": "source:memorial-verdun-bataille",
+        "note": "the peak traffic figures for the Voie Sacrée — commemorative round numbers, quoted as such"
+      }
+    ]
   }
 ]
