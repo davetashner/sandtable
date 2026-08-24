@@ -70,7 +70,7 @@
 .score__note {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: var(--fs-xs);
   line-height: 1.35;
   color: var(--muted);
   max-width: 22ch;

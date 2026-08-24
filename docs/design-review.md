@@ -91,10 +91,12 @@ Eight defects, all confirmed against production before being fixed.
 
 ## Known and deliberate
 
-- **10.5px meta type** (`--fs-xs`) on eyebrows, credits, chips and gauge
-  readouts is the instrument-panel voice of the design, not a defect. It is
-  below the audit's 11px floor and shows up on every scene; raising the floor
-  is a token-scale decision for `sand-neh.3`, not a per-component patch.
+- ~~**10.5px meta type** (`--fs-xs`) on eyebrows, credits, chips and gauge
+  readouts is the instrument-panel voice of the design, not a defect.~~
+  **Settled against, in ADR 0010** (`sand-neh.3`): the audit was right and the
+  scale was arithmetic. `--fs-xs` is 11.5px, `--fs-sm` 12.5px, and the
+  twenty-odd literal sub-11px sizes in the component CSS now read the token.
+  The only `tiny-text` left is the branch toggle's aria-hidden `?` mark.
 - **Tap targets between 24 and 44px** on chips, entity links and timeline
   markers. Real, and `sand-pmz.4` owns them; the controls this pass touched
   (branch options, chapter chips) were raised while they were open.

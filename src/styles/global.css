@@ -75,8 +75,8 @@ body {
 .eyebrow {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.14em;
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--brass);
 }
@@ -215,10 +215,6 @@ h1 {
   .surface--timeline {
     padding: 8px 10px 6px;
   }
-
-  .crumbs {
-    font-size: 10.5px;
-  }
 }
 
 .surface {
@@ -239,8 +235,8 @@ h1 {
 .surface__label {
   margin: 0 0 8px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.12em;
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--brass);
 }

@@ -42,6 +42,9 @@
   color: var(--brass);
 }
 
+/* The one thing in the app below the type floor, and deliberately so: this is
+   a mark, not type — an aria-hidden `?` sized to its 14px ring, read as the
+   hypothetical glyph and never as a word (ADR 0010). */
 .branch-toggle__mark {
   display: inline-grid;
   place-items: center;
@@ -82,8 +85,8 @@
   background: color-mix(in srgb, var(--panel) 88%, transparent);
   color: var(--brass);
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.12em;
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   pointer-events: none;
 }

@@ -1,0 +1,317 @@
+/* The gallery's own chrome (sand-neh.3) — tokens only, like everything else.
+   Nothing here is imported by the app: gallery.html is a separate entry. */
+
+.gallery {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 28px 64px;
+}
+
+.gallery > * {
+  min-width: 0;
+}
+
+.gallery__header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 22px 0 12px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.gallery__header .lede code {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+}
+
+.gallery__header .lede a {
+  color: var(--brass);
+}
+
+.gallery__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.gallery__group {
+  display: inline-flex;
+  padding: 3px;
+  gap: 2px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--panel-2);
+}
+
+.gallery__option {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  border-radius: var(--radius-pill);
+  padding: 5px 12px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  line-height: 1.2;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.gallery__option:hover {
+  color: var(--ink);
+}
+
+.gallery__option[data-active] {
+  background: var(--panel);
+  color: var(--ink);
+}
+
+.gallery__index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+}
+
+.gallery__index a {
+  color: var(--brass);
+  text-decoration: none;
+}
+
+.gallery__index a:hover {
+  text-decoration: underline;
+}
+
+.gallery__section {
+  padding-top: var(--space-6);
+  scroll-margin-top: 190px;
+}
+
+.gallery__section-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-2xl);
+  line-height: var(--lh-tight);
+}
+
+.gallery__section-note {
+  margin: var(--space-1) 0 0;
+  max-width: 70ch;
+  color: var(--muted);
+  font-size: var(--fs-md);
+}
+
+/* ------------------------------------------------------------- a specimen */
+
+.specimen {
+  margin-top: var(--space-5);
+  scroll-margin-top: 190px;
+}
+
+.specimen__head {
+  display: grid;
+  gap: 2px;
+  margin-bottom: var(--space-2);
+}
+
+.specimen__title {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-lg);
+}
+
+.specimen__covers {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.specimen__note {
+  margin: 0;
+  max-width: 80ch;
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+
+.specimen__panes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  align-items: start;
+}
+
+.specimen__panes--one {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 899.98px) {
+  .specimen__panes {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Each pane opens its own theme: the [data-theme] token blocks are not
+   anchored to :root, so everything inside resolves against this palette. */
+.pane {
+  background: var(--bg);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.pane__label {
+  margin: 0;
+  padding: 4px 10px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.pane__stage {
+  padding: var(--space-4);
+  overflow-x: auto;
+}
+
+.specimen__frame {
+  min-width: 0;
+}
+
+/* A component that positions itself against the viewport gets a stand-in:
+   a `transform` makes this the containing block for `position: fixed`, so the
+   bottom sheet and the opening sequence pin to the frame, not to the page. */
+.specimen__frame[data-contained] {
+  position: relative;
+  height: 520px;
+  transform: translateZ(0);
+  overflow: hidden;
+  border: 1px dashed var(--brass-dim);
+  border-radius: var(--radius-sm);
+}
+
+.gallery__action {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--ink);
+  border-radius: var(--radius-pill);
+  padding: 5px 12px;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+}
+
+.gallery__action:hover {
+  border-color: var(--brass);
+}
+
+.gallery__missing {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+
+/* ---------------------------------------------------------------- tokens */
+
+.tokens {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.tokens__swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-2);
+}
+
+.tokens__ground {
+  padding: var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.tokens__ground-name,
+.tokens__token {
+  margin: 0 0 var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tokens__ink {
+  margin: 0;
+  font-size: var(--fs-sm);
+}
+
+.tokens__scale {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.tokens__scale li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: var(--space-1);
+}
+
+.tokens__size {
+  font-family: var(--font-display);
+  line-height: var(--lh-tight);
+}
+
+.tokens__token {
+  flex: none;
+  color: var(--brass);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* --------------------------------------------------------------- footer */
+
+.gallery__footer {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line);
+}
+
+.gallery__footer ul {
+  margin: var(--space-2) 0 0;
+  padding-left: 18px;
+  max-width: 80ch;
+  color: var(--muted);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+}
+
+@media (max-width: 699.98px) {
+  .gallery {
+    padding: 0 10px 48px;
+  }
+
+  .gallery__header {
+    position: static;
+  }
+}

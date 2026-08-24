@@ -84,7 +84,7 @@
 
 .tour__narration sup a {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: var(--fs-xs);
   text-decoration: none;
   padding: 0 2px;
 }
@@ -201,7 +201,7 @@
 }
 
 .tour-launch__mark {
-  font-size: 10px;
+  font-size: var(--fs-xs);
 }
 
 .tour-launch__time {

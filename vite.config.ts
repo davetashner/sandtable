@@ -30,6 +30,11 @@ export default defineConfig({
     target: 'es2022',
     sourcemap: true,
     assetsDir: 'app',
+    // Two entries: the app, and the component gallery (sand-neh.3). The
+    // gallery is a page of its own so none of it can reach the app bundle,
+    // and so every deployment — production and PR previews — has one at
+    // /gallery.html for design review.
+    rollupOptions: { input: { main: 'index.html', gallery: 'gallery.html' } },
     // The map chunk (maplibre-gl + deck.gl, lazy-loaded by App) is large by
     // nature; the performance budget story (sand-pmz.3) tunes it further.
     chunkSizeWarningLimit: 1800,

@@ -139,12 +139,12 @@
 .timeline__band-label {
   /* Block, not inline-block, so the label is bounded by the band and can
      ellipsize: as an inline-block it was cut mid-glyph at the band's edge.
-     `line-height` matches the band's 22px because 11px text with 3px of
+     `line-height` matches the band's 22px because the label with 3px of
      padding measured 26px in a 22px box and lost its ascenders and
      descenders to `overflow: hidden` (sand-1l0.15). */
   display: block;
   padding: 0 4px;
-  font-size: 11px;
+  font-size: var(--fs-xs);
   line-height: 22px;
   color: var(--ink);
   opacity: 0.85;
@@ -179,7 +179,7 @@
   left: 0;
   transform: translateX(-50%);
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: var(--fs-xs);
   color: var(--muted);
   white-space: nowrap;
 }
@@ -220,7 +220,7 @@
 }
 
 .timeline__marker-label {
-  font-size: 10px;
+  font-size: var(--fs-xs);
   max-width: 90px;
   white-space: nowrap;
   overflow: hidden;
@@ -347,7 +347,7 @@
   }
 
   .timeline__date {
-    font-size: 11px;
+    font-size: var(--fs-xs);
   }
 
   .timeline__track {

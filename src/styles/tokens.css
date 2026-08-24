@@ -4,6 +4,9 @@
  *
  * Theme model: bare :root = light; dark via prefers-color-scheme unless
  * [data-theme="light"] is stamped; [data-theme="dark"] forces dark.
+ * The two [data-theme] blocks are not anchored to :root, so any element can
+ * open a themed subtree — which is how the component gallery shows both
+ * themes on one page (src/gallery, sand-neh.3).
  * Components use these variables only — never literal colours or typefaces.
  */
 :root {
@@ -28,8 +31,8 @@
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-body: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
-  --fs-xs: 10.5px;
-  --fs-sm: 12px;
+  --fs-xs: 11.5px;
+  --fs-sm: 12.5px;
   --fs-md: 14.5px;
   --fs-lg: 17px;
   --fs-xl: 21px;
@@ -75,7 +78,7 @@
   }
 }
 
-:root[data-theme='dark'] {
+[data-theme='dark'] {
   --bg: #10161a;
   --panel: #1a2228;
   --panel-2: #202a31;
@@ -93,4 +96,24 @@
   --land: #1d262c;
   --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
   color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --bg: #e6dfcb;
+  --panel: #efe9d8;
+  --panel-2: #e0d9c4;
+  --ink: #241f16;
+  --muted: #5f5849;
+  --brass: #745519;
+  --brass-dim: #b7a97c;
+  --line: #c9bfa4;
+  --accent-red: #9a2e22;
+  --army-1: #9a2e22;
+  --army-2: #832820;
+  --army-3: #6e241e;
+  --french: #24566e;
+  --sea: #d6ccae;
+  --land: #e6dfcb;
+  --shadow: 0 8px 24px rgba(40, 32, 16, 0.14);
+  color-scheme: light;
 }
