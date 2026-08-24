@@ -670,6 +670,14 @@ licence, credit, caption and archive record, or flagged
 BLOCKED/UNVERIFIED/UNKNOWN/HOLD. Reference the image from an entity by its
 `media:` id.
 
+**One picture per beat** ([ADR 0012](decisions/0012-photographs.md)). A beat's
+picture is its `media` hero slot — the one place that renders the caption, the
+credit and the colorized label. Two manifests naming the same beat in
+`used_by`, or a Markdown `![…](…)` in a beat body, are validator errors. The
+hero is cropped to a 3:2 band on the manifest's `focal_point`, so set the
+focal point on anything wider or taller than that; the whole picture is one
+click away at full size.
+
 ## 10. Add a new scenario pack
 
 ```text

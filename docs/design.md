@@ -99,6 +99,37 @@ Plex Sans 400–600, Plex Mono 400–600) with system fallbacks.
   `--dur-camera` 1400ms (map flights); `--ease-out`. Everything animated must
   honour `prefers-reduced-motion` (the global reset zeroes durations).
 
+## Photographs
+
+The imagery policy is [ADR 0007](decisions/0007-imagery.md); how a photograph
+looks on the page is [ADR 0012](decisions/0012-photographs.md). In short:
+
+- **Two placements.** A **plate** is a figure with its caption and credit
+  (`MediaFigure`, fits `band` / `portrait` / `contain`); a **chip** is a face
+  at name size (`PortraitChip`, round, 26–44px, cropped to the manifest's
+  focal point). A chip carries no credit — it is a name in the shape of a
+  face, and the credit is one click away on the card behind it.
+- **Toned at rest.** `--media-tone` is a per-theme filter chain: most of the
+  colour out, the rest pushed towards brass. Plates and chips carry it at
+  rest and come to full colour on hover or keyboard focus.
+- **Where there is no hover, there is no tone.** The treatment lives inside
+  `@media (hover: hover) and (pointer: fine)`, so a touch reader gets the
+  picture in colour from the first paint. `prefers-contrast: more` and
+  `forced-colors: active` drop it too, and the full-size view is never toned.
+- **One picture per beat**, in the hero slot at the top, cropped to a 3:2
+  band on the focal point so every beat opens the same way. The validator
+  refuses a second one, whether it arrives as Markdown in the body or as a
+  second manifest claiming the beat.
+- **Credit travels with the picture.** `MediaCredit` renders the colorized
+  label, the credit as the archive asks for it, and the way to the unaltered
+  original — a link to the archive record, or a toggle in place where the
+  project holds the original too.
+- **Loading.** `loading="lazy"`, `decoding="async"`, intrinsic `width`/
+  `height` so nothing reflows, and a `<picture>` source gated on
+  `prefers-reduced-data: reduce` that offers the narrowest derivative. A
+  missing file keeps its frame and its credit rather than showing a broken
+  image.
+
 ## Map style
 
 The basemap is Protomaps v4 (our own PMTiles archive) themed with the muted
@@ -139,3 +170,6 @@ Era-agnostic by design: no period iconography in the mark.
    11px is a bug; the phone does not get smaller type than the desktop. The one
    exception is a standalone `aria-hidden` glyph sized to its own frame — a
    mark, not type.
+7. **A photograph is a plate or a chip** (ADR 0012), toned at rest only where a
+   pointer can hover, and never toned at full size. A fourth round `<img>` rule
+   or a second picture in a beat is a bug.

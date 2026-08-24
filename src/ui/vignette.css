@@ -19,14 +19,10 @@
   margin: 0 0 6px 10px;
 }
 
-.vignette__face {
-  width: 44px;
-  height: 44px;
-  display: block;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid var(--line);
-  background: var(--panel-2);
+/* The voice's face is a portrait chip (portrait-chip.css); the ring here is
+   a hairline rather than a side colour — a witness is not a belligerent. */
+.vignette__facewrap .portrait-chip__face {
+  border-width: 1px;
 }
 
 .vignette__eyebrow {

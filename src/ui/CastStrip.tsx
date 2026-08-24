@@ -5,11 +5,16 @@
  * profile (?card=person:…); selecting it again returns to the narrative.
  * Era-agnostic: members come from the pack's cast.json joined to the shared
  * people and media registries by the caller.
+ *
+ * The face itself is a PortraitChip, so the crop, the tone, the initials
+ * fallback and the lazy fetch are the same here as in a vignette or a card
+ * (ADR 0012); the strip owns only the grouping and the side ring.
  */
 import type { CSSProperties } from 'react';
 import { sideToken } from '../engine/layers/colors.js';
 import type { MediaIndexEntry } from '../packs/media-index.js';
 import type { Side } from '../packs/schema/index.js';
+import { PortraitChip } from './PortraitChip.js';
 import './cast.css';
 import './prose.css';
 
@@ -35,14 +40,6 @@ export interface CastStripProps {
   base?: string;
 }
 
-const initials = (name: string) =>
-  name
-    .split(/\s+/)
-    .filter((w) => /^[A-ZÀ-Þ]/.test(w))
-    .slice(0, 2)
-    .map((w) => w[0])
-    .join('');
-
 export function CastStrip({
   members,
   sides,
@@ -63,7 +60,7 @@ export function CastStrip({
       {keys.map((key) => {
         const side = sides.find((s) => s.id === key);
         const style = side
-          ? ({ '--cast-ring': `var(${sideToken(side, sides)})` } as CSSProperties)
+          ? ({ '--chip-ring': `var(${sideToken(side, sides)})` } as CSSProperties)
           : undefined;
         return (
           <ul
@@ -72,42 +69,18 @@ export function CastStrip({
             aria-label={side ? (side.short ?? side.name) : 'Others'}
             style={style}
           >
-            {groups.get(key)!.map((m) => {
-              const pressed = m.person === selected;
-              const p = m.portrait;
-              const variant = p?.variants.find((v) => v.width >= 160) ?? p?.variants[0];
-              const position = p?.focalPoint
-                ? `${Math.round(p.focalPoint.x * 100)}% ${Math.round(p.focalPoint.y * 100)}%`
-                : '50% 25%';
-              return (
-                <li key={m.id} className="portrait-frame">
-                  <button
-                    type="button"
-                    className="cast__face"
-                    aria-pressed={pressed}
-                    aria-label={`${m.name} — ${m.role}`}
-                    onClick={() => onSelect(m.person)}
-                  >
-                    {p && variant ? (
-                      <img
-                        src={`${base}${variant.src}`}
-                        alt=""
-                        loading="lazy"
-                        decoding="async"
-                        style={{ objectPosition: position }}
-                      />
-                    ) : (
-                      <span className="cast__initials" aria-hidden="true">
-                        {initials(m.name)}
-                      </span>
-                    )}
-                  </button>
-                  <span className="portrait-name" aria-hidden="true">
-                    {m.name}
-                  </span>
-                </li>
-              );
-            })}
+            {groups.get(key)!.map((m) => (
+              <li key={m.id}>
+                <PortraitChip
+                  entry={m.portrait}
+                  name={m.name}
+                  role={m.role}
+                  base={base}
+                  pressed={m.person === selected}
+                  onSelect={() => onSelect(m.person)}
+                />
+              </li>
+            ))}
           </ul>
         );
       })}

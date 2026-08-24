@@ -1147,6 +1147,39 @@ describe('validateContent', () => {
     );
   });
 
+  it('holds a beat to one picture: no second claim on it, and none dropped into the prose', () => {
+    const raw = fixture();
+    const manifest = (slug: string) => ({
+      path: `shared/media/scenes/${slug}/media.json`,
+      data: {
+        id: `media:scene/${slug}/photo`,
+        file: 'photo.png',
+        width: 100,
+        height: 100,
+        colorized: false,
+        original: { licence: 'public domain', archive_url: 'https://example.org/item' },
+        content_policy: 'ok',
+        caption: 'A photograph.',
+        credit: 'Somebody; public domain.',
+        used_by: ['1914:beat-1'],
+      },
+    });
+    raw.shared.media.push(manifest('a'), manifest('b'));
+    const msgs = messages(validateContent(raw));
+    expect(msgs).toContainEqual(
+      expect.stringMatching(/2 images claim this beat as a placement .* one hero image/),
+    );
+
+    // …and the other way a second picture arrives: straight into the Markdown,
+    // where it would carry neither caption nor credit (ADR 0007, ADR 0012).
+    const clean = fixture();
+    const first = clean.packs[0]!.beats[0]!;
+    first.data = `${first.data as string}\n![A photograph](/assets/media/x.png)\n`;
+    expect(messages(validateContent(clean))).toContainEqual(
+      expect.stringMatching(/body embeds an image/),
+    );
+  });
+
   it('validates threads across packs', () => {
     const raw = fixture();
     (raw.threads[0]!.data as { steps: { beat: string }[] }).steps[1]!.beat = '1914:beat-x';

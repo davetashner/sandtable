@@ -53,6 +53,13 @@ export interface MediaIndexEntry {
   colorized: boolean;
   /** Where the unaltered original can be seen (archive item page). */
   originalUrl?: string;
+  /**
+   * Derivatives of the unaltered original, when the manifest names a copy of
+   * it beside itself (`original.file`). Their presence is what turns "show
+   * original" from a link out to the archive into a toggle in place
+   * (ADR 0012).
+   */
+  unaltered?: MediaVariant[];
   focalPoint?: { x: number; y: number };
   person?: string;
   /** Everyone the manifest identifies, for a photograph of more than one (sand-y0u.18). */
@@ -80,33 +87,44 @@ function walkManifests(dir: string, out: string[] = []): string[] {
 const mime = (file: string): MediaVariant['type'] =>
   extname(file).toLowerCase() === '.png' ? 'image/png' : 'image/jpeg';
 
+/** WebP derivatives of one file, written into the directory's .derived/. */
+async function derive(file: string, dir: string, rel: string): Promise<MediaVariant[]> {
+  const stem = basename(file, extname(file));
+  const outDir = join(dir, DERIVED_DIR);
+  mkdirSync(outDir, { recursive: true });
+  const meta = await sharp(file).metadata();
+  const variants: MediaVariant[] = [];
+  for (const w of WIDTHS) {
+    if (meta.width && w > meta.width) continue;
+    const out = join(outDir, `${stem}.w${w}.webp`);
+    const info = await sharp(file)
+      .resize({ width: w, withoutEnlargement: true })
+      .webp({ quality: 82 })
+      .toFile(out);
+    variants.push({
+      src: `${rel}/${DERIVED_DIR}/${stem}.w${w}.webp`,
+      width: info.width,
+      height: info.height,
+      type: 'image/webp',
+    });
+  }
+  return variants;
+}
+
 async function buildOne(manifestPath: string, opts: { derive: boolean }): Promise<MediaIndexEntry> {
   const m: MediaT = Media.parse(JSON.parse(readFileSync(manifestPath, 'utf8')));
   const dir = dirname(manifestPath);
   const rel = relative(MEDIA_ROOT, dir).split('\\').join('/');
   const file = join(dir, m.file);
   const present = existsSync(file);
-  const stem = basename(m.file, extname(m.file));
-  const variants: MediaVariant[] = [];
-  if (present && opts.derive) {
-    const outDir = join(dir, DERIVED_DIR);
-    mkdirSync(outDir, { recursive: true });
-    const meta = await sharp(file).metadata();
-    for (const w of WIDTHS) {
-      if (meta.width && w > meta.width) continue;
-      const out = join(outDir, `${stem}.w${w}.webp`);
-      const info = await sharp(file)
-        .resize({ width: w, withoutEnlargement: true })
-        .webp({ quality: 82 })
-        .toFile(out);
-      variants.push({
-        src: `${rel}/${DERIVED_DIR}/${stem}.w${w}.webp`,
-        width: info.width,
-        height: info.height,
-        type: 'image/webp',
-      });
-    }
-  }
+  const variants: MediaVariant[] = present && opts.derive ? await derive(file, dir, rel) : [];
+  // The same treatment for the unaltered original when the project holds one:
+  // it is shown in the same frames, so it needs the same sizes (ADR 0012).
+  const originalFile = m.original.file ? join(dir, m.original.file) : undefined;
+  const unaltered =
+    originalFile && existsSync(originalFile) && opts.derive
+      ? await derive(originalFile, dir, rel)
+      : [];
   const entry: MediaIndexEntry = {
     id: m.id,
     dir: rel,
@@ -122,6 +140,7 @@ async function buildOne(manifestPath: string, opts: { derive: boolean }): Promis
   };
   const originalUrl = m.original.archive_url ?? m.original.uncropped_url;
   if (originalUrl) entry.originalUrl = originalUrl;
+  if (unaltered.length) entry.unaltered = unaltered;
   if (m.focal_point) entry.focalPoint = m.focal_point;
   if (m.person) entry.person = m.person;
   if (Array.isArray(m.people) && m.people.length) entry.people = m.people as string[];

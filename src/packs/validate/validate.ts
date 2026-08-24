@@ -884,6 +884,21 @@ function checkProseLinks(
   }
 }
 
+/**
+ * A picture in the prose (ADR 0012). Markdown image syntax renders an <img>
+ * with no caption, no credit and no colorized label — everything ADR 0007
+ * requires — and it is the second picture a beat is not allowed. Pictures
+ * arrive through the `media` slot, which renders all three.
+ */
+function checkNoInlineImage(ctx: Ctx, path: string, id: string, text: string, what: string) {
+  if (/!\[[^\]]*\]\(/.test(text))
+    ctx.error(
+      path,
+      `${what} embeds an image — a picture belongs in the media slot, which renders its caption and credit`,
+      id,
+    );
+}
+
 function checkCasualties(
   ctx: Ctx,
   s: PackState,
@@ -1135,6 +1150,7 @@ function checkBeats(ctx: Ctx, s: PackState) {
     checkLinks(ctx, path, b.id, b.links);
     checkCitations(ctx, path, b.id, b.sources, true);
     checkProseLinks(ctx, path, b.id, b.body, 'body');
+    checkNoInlineImage(ctx, path, b.id, b.body, 'body');
     // inline footnotes [^slug] must be among the beat's citations
     const slugs = new Set(b.sources.map((c) => c.source.split(':')[1]));
     for (const label of footnoteLabels(b.body)) {
@@ -1204,6 +1220,32 @@ function checkMedia(ctx: Ctx, m: MediaT, path: string) {
   }
 }
 
+/**
+ * One picture per beat (ADR 0012). The schema gives a beat a single `media`
+ * id, so the only way a second photograph can reach one is a manifest naming
+ * it as a placement — which is how a dossier becomes a slideshow, one
+ * reasonable addition at a time. Only claims on ids that really are beats
+ * count; `used_by` is also where an author records intentions for cards and
+ * battles that do not exist yet.
+ */
+function checkOnePicturePerBeat(ctx: Ctx, media: MediaT[]) {
+  const claims = new Map<string, string[]>();
+  for (const m of media) {
+    for (const u of m.used_by ?? []) {
+      if (ctx.index.get(u)?.kind !== 'beat') continue;
+      claims.set(u, [...(claims.get(u) ?? []), m.id]);
+    }
+  }
+  for (const [beat, ids] of claims) {
+    if (ids.length < 2) continue;
+    ctx.error(
+      ctx.index.get(beat)!.path,
+      `${ids.length} images claim this beat as a placement (${ids.join(', ')}) — a beat has one hero image`,
+      beat,
+    );
+  }
+}
+
 function checkShared(ctx: Ctx, shared: ParsedContent['shared'], raw: RawContent) {
   const p = (file: string) => raw.shared.collections[file]?.path ?? `shared/${file}`;
   for (const person of shared.people) {
@@ -1218,6 +1260,7 @@ function checkShared(ctx: Ctx, shared: ParsedContent['shared'], raw: RawContent)
     const m = shared.media[i];
     if (m) checkMedia(ctx, m, f.path);
   });
+  checkOnePicturePerBeat(ctx, shared.media);
   (raw.shared.audio ?? []).forEach((f, i) => {
     const c = shared.audio[i];
     if (c) checkCue(ctx, c, f.path);

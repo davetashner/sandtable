@@ -1,8 +1,13 @@
-/* Media figures — ADR 0007: credit, colorized label and original always visible. */
+/* Media figures — ADR 0007: credit, colorized label and original always
+   visible. ADR 0012: toned at rest, full colour when attended to. */
 
 .media {
   position: relative;
   margin: 0 0 12px;
+}
+
+.media picture {
+  display: block;
 }
 
 .media__img {
@@ -17,6 +22,39 @@
 .media--portrait .media__img {
   aspect-ratio: 4 / 5;
   object-fit: cover;
+}
+
+/* The hero slot at the top of a beat: a fixed band cropped to the focal
+   point, so a tall portrait and a wide scene open a beat the same way and
+   the prose is always in view. The whole picture is one click away. */
+.media--band .media__img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* ---- the at-rest tone (ADR 0012) ----------------------------------------
+   Only where a reader can undo it. A pointer that can hover gets the toned
+   rest state and full colour on hover or keyboard focus; a touch reader,
+   who can never hover, gets the picture in colour from the start rather
+   than a state there is no way out of. */
+@media (hover: hover) and (pointer: fine) {
+  .media--toned .media__img {
+    filter: var(--media-tone);
+    transition: filter var(--dur-base) var(--ease-out);
+  }
+
+  .media--toned:hover .media__img,
+  .media--toned:focus-within .media__img {
+    filter: none;
+  }
+}
+
+/* A reader who has asked for more contrast, or whose system is driving the
+   colours, is not asking for an interpretation of the photograph. */
+@media (prefers-contrast: more), (forced-colors: active) {
+  .media--toned .media__img {
+    filter: none;
+  }
 }
 
 .media__label {
@@ -44,8 +82,54 @@
   color: var(--muted);
 }
 
+.media__provenance {
+  display: block;
+}
+
+/* "Show original" is a link out to the archive, or a button that swaps the
+   picture in place when the project holds the original too. One look. */
 .media__original {
+  appearance: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
   color: var(--brass);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* A picture the build or the bucket is short of. The frame keeps its place
+   in the layout, the caption underneath still says what is missing and who
+   it belongs to, and nothing shows a broken-image glyph. */
+.media__absent {
+  display: grid;
+  place-content: center;
+  gap: 4px;
+  aspect-ratio: 3 / 2;
+  border: 1px dashed var(--brass-dim);
+  border-radius: var(--radius-sm);
+  background: var(--panel-2);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.media--portrait .media__absent {
+  aspect-ratio: 4 / 5;
+}
+
+.media__absent-mark {
+  font-family: var(--font-mono);
+  font-size: var(--fs-lg);
+  color: var(--brass);
+}
+
+.media__absent-note {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .card__portrait {

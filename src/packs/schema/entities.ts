@@ -141,6 +141,14 @@ export const Media = z.looseObject({
   height: z.number().int().positive(),
   colorized: z.boolean(),
   original: z.looseObject({
+    file: z
+      .string()
+      .min(1)
+      .optional()
+      .describe(
+        'The unaltered original beside the manifest, when the project holds a copy of it: ' +
+          '"show original" then swaps the picture in place instead of linking out (ADR 0012)',
+      ),
     description: z.string().optional(),
     photographer: z.string().optional(),
     date: z.string().optional(),

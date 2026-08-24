@@ -1,0 +1,95 @@
+/* Portrait chips (ADR 0012) — a face at name size, wherever one is wanted:
+   the cast strip, a vignette's voice, a card's subject. Diameter and ring
+   colour come in as custom properties, so one rule serves every placement. */
+
+.portrait-chip {
+  /* position/display come from .portrait-frame (prose.css), which owns the
+     name label the chip reveals. */
+  line-height: 0;
+}
+
+.portrait-chip__face {
+  display: grid;
+  /* Explicit tracks. With auto tracks the img's `height: 100%` is cyclic and
+     resolves to `auto`, so a 3:4 portrait rendered 30x40 inside a 30px frame:
+     `object-fit`/`object-position` then framed a box 33% taller than the one
+     on screen and every face was cropped top and bottom, undoing the
+     placement pass (sand-y0u.8, sand-1l0.15). */
+  grid-template: 100% / 100%;
+  place-items: center;
+  width: var(--chip-size, 34px);
+  height: var(--chip-size, 34px);
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid var(--chip-ring, var(--line));
+  background: var(--panel-2);
+  overflow: hidden;
+  flex: none;
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+button.portrait-chip__face,
+a.portrait-chip__face {
+  cursor: pointer;
+}
+
+.portrait-chip__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portrait-chip__initials {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  line-height: 1;
+  color: var(--muted);
+}
+
+button.portrait-chip__face:hover,
+button.portrait-chip__face:focus-visible,
+a.portrait-chip__face:hover,
+a.portrait-chip__face:focus-visible {
+  outline: none;
+  transform: scale(1.08);
+  box-shadow:
+    0 0 0 2px var(--panel),
+    0 0 0 4px var(--brass);
+}
+
+.portrait-chip__face[aria-pressed='true'] {
+  box-shadow:
+    0 0 0 2px var(--panel),
+    0 0 0 4px var(--brass);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-chip__face {
+    transition: none;
+  }
+}
+
+/* The at-rest tone (ADR 0012), on the same terms as a figure's: only where a
+   pointer can hover, and a pressed chip — the profile that is open — stays in
+   colour, because it is the one the reader is on. */
+@media (hover: hover) and (pointer: fine) {
+  .portrait-chip__img {
+    filter: var(--media-tone);
+    transition: filter var(--dur-base) var(--ease-out);
+  }
+
+  .portrait-chip:hover .portrait-chip__img,
+  .portrait-chip:focus-within .portrait-chip__img,
+  .portrait-chip__face[aria-pressed='true'] .portrait-chip__img {
+    filter: none;
+  }
+}
+
+@media (prefers-contrast: more), (forced-colors: active) {
+  .portrait-chip__img {
+    filter: none;
+  }
+}
