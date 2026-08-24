@@ -191,6 +191,17 @@
   white-space: nowrap;
 }
 
+/* The first and last labels align to their edge rather than centring on it;
+   half a date hanging off the end of the strip is a horizontal scrollbar on
+   the whole page (ADR 0011's audit reads it as page-h-overflow). */
+.timeline__tick[data-edge='start'] .timeline__tick-label {
+  transform: none;
+}
+
+.timeline__tick[data-edge='end'] .timeline__tick-label {
+  transform: translateX(-100%);
+}
+
 .timeline__markers {
   position: absolute;
   left: 0;

@@ -19,8 +19,9 @@ const T20 = '1914-08-24T12:00:00Z';
 const T35 = '1914-09-08T12:00:00Z';
 
 /**
- * Campaign day 0/20/35, both zoom-in kinds, one of every card, the layer
- * switches off their defaults, and the component gallery.
+ * Campaign day 0/20/35, both zoom-in kinds, the epilogue chapter with a window
+ * of its own (ADR 0015), one of every card, the layer switches off their
+ * defaults, and the component gallery.
  *
  * Every scene is a URL and nothing else. The URL is the whole view (ADR
  * 0009), so a scene is reproduced by opening it, never by clicking into it —
@@ -37,6 +38,7 @@ export const SCENES = [
   ['battle-liege', `?t=1914-08-06T12:00:00Z&focus=1914:liege`],
   ['chapter-origins', `?t=${T0}&focus=1914:origins`],
   ['july-crisis', `?t=1914-07-05T12:00:00Z&focus=1914:july-crisis`],
+  ['chapter-epilogue', `?t=1915-11-25T00:00:00Z&focus=1914:meanwhile-epilogue`],
   ['card-person', `?t=${T20}&card=1914:cast-kluck-alexander-von`],
   ['card-tech', `?t=${T20}&card=1914:tech-heavy-siege-artillery`],
   ['card-formation', `?t=${T20}&card=1914:army-de-1`],

@@ -1188,6 +1188,126 @@ describe('validateContent', () => {
 
   // A card may hold a bounded comparison — four armies' kit, one army's four
   // weapons — where a beat still holds one picture (ADR 0014).
+  describe('what a level’s window means (ADR 0015)', () => {
+    /** A routeless chapter, and the beat that lives in it. */
+    const withChapter = (
+      chapter: Record<string, unknown>,
+      beatFrom = '1915-11-25T00:00:00Z',
+      beatTo = '1915-11-26T00:00:00Z',
+    ) => {
+      const raw = fixture();
+      const battles = raw.packs[0]!.collections['battles.json']!.data as Record<string, unknown>[];
+      battles.push({
+        id: '1914:epilogue',
+        title: 'Meanwhile, 1915–1919',
+        region: [2, 47, 8, 51],
+        camera: { center: [4.5, 49.5], zoom: 6 },
+        summary: 'An epilogue.',
+        sources: [{ source: 'source:herwig-2009' }],
+        ...chapter,
+      });
+      raw.packs[0]!.beats.push({
+        path: 'eras/1914-test/beats/90.md',
+        data:
+          `---\nid: 1914:beat-epilogue\ntitle: Epilogue\ndateLabel: '1915'\n` +
+          `from: ${beatFrom}\nto: ${beatTo}\nfocus: 1914:epilogue\n` +
+          `sources:\n  - source: source:herwig-2009\n---\nBody text.[^herwig-2009]\n`,
+      });
+      return raw;
+    };
+    const errs = (raw: RawContent) => validateContent(raw).errors.map((e) => e.message);
+
+    it('accepts a chapter that declares its window is outside the campaign, and its beats with it', () => {
+      const report = validateContent(
+        withChapter({
+          timeRange: { start: '1915-01-01T00:00:00Z', end: '1919-12-31T00:00:00Z' },
+          window: 'outside',
+        }),
+      );
+      expect(messages(report)).toEqual([]);
+      expect(report.ok).toBe(true);
+    });
+
+    it('still refuses a window outside the pack that says nothing about itself', () => {
+      expect(
+        errs(
+          withChapter({
+            timeRange: { start: '1915-01-01T00:00:00Z', end: '1919-12-31T00:00:00Z' },
+          }),
+        ),
+      ).toContainEqual(expect.stringMatching(/battle timeRange is outside the pack timeRange/));
+    });
+
+    it('refuses "outside" when the window is inside the campaign after all', () => {
+      expect(
+        errs(
+          withChapter(
+            {
+              timeRange: { start: '1914-09-05T00:00:00Z', end: '1914-09-12T00:00:00Z' },
+              window: 'outside',
+            },
+            '1914-09-06T00:00:00Z',
+            '1914-09-07T00:00:00Z',
+          ),
+        ),
+      ).toContainEqual(expect.stringMatching(/window "outside" but the timeRange is inside/));
+    });
+
+    it('refuses "outside" on a level that brings routes: it is for chapters', () => {
+      expect(
+        errs(
+          withChapter({
+            timeRange: { start: '1915-01-01T00:00:00Z', end: '1919-12-31T00:00:00Z' },
+            window: 'outside',
+            formations: [{ id: '1914:epi-corps', name: 'A corps', side: 'de', kind: 'corps' }],
+            routes: [
+              {
+                id: '1914:epi-route',
+                formation: '1914:epi-corps',
+                waypoints: [
+                  [4, 49, '1915-01-02T00:00:00Z'],
+                  [4.1, 49.1, '1915-01-03T00:00:00Z'],
+                ],
+                sources: [{ source: 'source:herwig-2009' }],
+              },
+            ],
+          }),
+        ),
+      ).toContainEqual(expect.stringMatching(/window "outside" is for chapters/));
+    });
+
+    it('holds an "outside" chapter’s beats to that chapter’s window, not the pack’s', () => {
+      expect(
+        errs(
+          withChapter(
+            {
+              timeRange: { start: '1915-01-01T00:00:00Z', end: '1919-12-31T00:00:00Z' },
+              window: 'outside',
+            },
+            '1922-01-01T00:00:00Z',
+            '1922-01-02T00:00:00Z',
+          ),
+        ),
+      ).toContainEqual(
+        expect.stringMatching(/beat from\/to is outside the timeRange of 1914:epilogue/),
+      );
+    });
+
+    it('accepts "placed": a chapter parked on the campaign strip', () => {
+      const report = validateContent(
+        withChapter(
+          {
+            timeRange: { start: '1914-08-01T00:00:00Z', end: '1914-08-02T00:00:00Z' },
+            window: 'placed',
+          },
+          '1914-08-01T00:00:00Z',
+          '1914-08-01T06:00:00Z',
+        ),
+      );
+      expect(messages(report)).toEqual([]);
+    });
+  });
+
   describe('plate sets', () => {
     /** A content tree with four usable manifests and a tech card to hang them on. */
     const withPlates = (plates: unknown) => {

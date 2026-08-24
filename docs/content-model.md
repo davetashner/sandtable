@@ -176,7 +176,16 @@ generated JSON Schema; this is the intent of each.
 - **Battle** — a focus for the zoom-in mechanism (`sand-a55.14`): its own
   `timeRange`, `region`, `camera`, `participants` (campaign formations), and
   optional battle-level `formations`, `routes` and `events` that live only
-  inside the zoom-in. Required sources.
+  inside the zoom-in. Required sources. A Battle with **no routes** is a
+  **chapter** — narrative and static markers, campaign tokens left on their
+  campaign movement — and the chrome reads that off the data, never off a
+  second string (ADR 0013). `window` says what `timeRange` means when it is
+  not the obvious thing (ADR 0015): absent, it is when the thing happened and
+  it sits inside `pack.timeRange`; `"placed"`, it is where a chapter sits on
+  the campaign strip and the beats carry the real dates in `dateLabel`;
+  `"outside"`, it is when the thing happened and the campaign does not contain
+  it — a prologue or an epilogue, which must be a chapter, keeps its own clock,
+  and holds its beats to its own window rather than the pack's.
 - **DecisionPoint** — `at`, actor, question, options (each may name a
   branch), the `historical` option, the reasoning available at the time, the
   verdict. Required sources.

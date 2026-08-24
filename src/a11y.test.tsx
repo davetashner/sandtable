@@ -81,7 +81,7 @@ describe('accessibility (axe-core)', () => {
     const { container } = render(<App />);
     await screen.findByRole('region', { name: /^Map/ }, { timeout: 8000 });
 
-    fireEvent.click(screen.getByRole('button', { name: '11 chapters and zoom-ins' }));
+    fireEvent.click(screen.getByRole('button', { name: '12 chapters and zoom-ins' }));
     expect(report(await violationsOf(container)), 'index open').toBe('');
 
     fireEvent.click(screen.getByRole('button', { name: 'Zoom in to First Battle of the Marne' }));

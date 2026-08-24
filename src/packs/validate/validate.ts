@@ -701,8 +701,33 @@ function checkEvent(
 
 function checkBattle(ctx: Ctx, s: PackState, path: string, b: Battle, sideIds: Set<string>) {
   checkRange(ctx, path, b.id, b.timeRange);
-  if (!within(s.pack.timeRange, b.timeRange.start) || !within(s.pack.timeRange, b.timeRange.end))
-    ctx.error(path, 'battle timeRange is outside the pack timeRange', b.id);
+  // What a level's window means is the pack's to say, not ours to guess
+  // (ADR 0015). Ordinarily it is when the thing happened and it sits inside
+  // the campaign; `placed` says it is a position on the campaign strip and
+  // not a period; `outside` says it is a real period the campaign does not
+  // contain, and buys the level its own clock.
+  const inPack =
+    within(s.pack.timeRange, b.timeRange.start) && within(s.pack.timeRange, b.timeRange.end);
+  if (b.window === 'outside') {
+    if (inPack)
+      ctx.error(
+        path,
+        'window "outside" but the timeRange is inside the pack timeRange — drop the declaration',
+        b.id,
+      );
+    if (b.routes?.length)
+      ctx.error(
+        path,
+        'window "outside" is for chapters: a zoom-in set outside the campaign would replay its routes against campaign tokens that are not there',
+        b.id,
+      );
+  } else if (!inPack) {
+    ctx.error(
+      path,
+      'battle timeRange is outside the pack timeRange (a prologue or an epilogue declares window "outside"; a chapter parked on the strip declares window "placed")',
+      b.id,
+    );
+  }
   const [w, so, e, n] = b.region;
   if (!(w < e && so < n))
     ctx.error(
@@ -1173,11 +1198,20 @@ function checkTracks(ctx: Ctx, s: PackState, path: string, range: TimeRange, sid
 
 function checkBeats(ctx: Ctx, s: PackState) {
   const { pack } = s;
+  // A chapter with `window: "outside"` is drawn on its own strip, so its beats
+  // are checked against that strip and not against the campaign's (ADR 0015).
+  const asides = new Map(s.battles.filter((b) => b.window === 'outside').map((b) => [b.id, b]));
   for (const b of s.beats) {
     const path = b.file;
     checkRange(ctx, path, b.id, { start: b.from, end: b.to }, 'from/to');
-    if (!within(pack.timeRange, b.from) || !within(pack.timeRange, b.to))
-      ctx.error(path, 'beat from/to is outside the pack timeRange', b.id);
+    const aside = b.focus ? asides.get(b.focus) : undefined;
+    const range = aside?.timeRange ?? pack.timeRange;
+    if (!within(range, b.from) || !within(range, b.to))
+      ctx.error(
+        path,
+        `beat from/to is outside the ${aside ? `timeRange of ${aside.id}` : 'pack timeRange'}`,
+        b.id,
+      );
     checkBranchRef(ctx, s, path, b.id, b.branch, true);
     if (b.focus) {
       const f = ctx.ref(path, b.id, b.focus, ['battle'], 'focus');

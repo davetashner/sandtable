@@ -37,7 +37,7 @@ describe('App shell', () => {
     render(<App />);
     expect(screen.getByText('Day 30')).toBeInTheDocument();
     // the index rests closed above the map (ADR 0013); open it, then pick the level
-    fireEvent.click(screen.getByRole('button', { name: '11 chapters and zoom-ins' }));
+    fireEvent.click(screen.getByRole('button', { name: '12 chapters and zoom-ins' }));
     fireEvent.click(screen.getByRole('button', { name: 'Zoom in to First Battle of the Marne' }));
     expect(window.location.search).toContain('focus=1914:marne');
     expect(screen.getByRole('navigation', { name: 'Focus' })).toHaveTextContent(
@@ -368,6 +368,48 @@ describe('App shell', () => {
       // and a field with nothing on the strip gets no filter chip to toggle
       expect(screen.queryByRole('button', { name: 'Mathematics' })).not.toBeInTheDocument();
       expect(screen.getByRole('button', { name: 'Physics' })).toBeInTheDocument();
+    });
+
+    it('gives the out-of-window cards a strip in the epilogue chapter (sand-9u2.6)', () => {
+      // The chapter keeps its own 1915–1919 window (ADR 0015), so the six cards
+      // the campaign strip could not place are placed here — Noether among them,
+      // which is the only mathematics card in the pack and gets a chip at last.
+      window.history.replaceState(null, '', '/?focus=1914:meanwhile-epilogue');
+      render(<App />);
+      // the strip is the chapter's own window, on a deep link as on a click
+      expect(
+        screen.getByText(/1 January 1915/, { selector: '.timeline__date' }),
+      ).toBeInTheDocument();
+      expect(
+        screen.getByRole('button', { name: /Open Noether's theorem, 1918/ }),
+      ).toBeInTheDocument();
+      expect(
+        screen.getByRole('button', { name: /Open The eclipse of 29 May 1919/ }),
+      ).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Mathematics' })).toBeInTheDocument();
+      // and the campaign's own cards are not on this strip
+      expect(
+        screen.queryByRole('button', { name: /Open The Manifesto of the Ninety-Three/ }),
+      ).not.toBeInTheDocument();
+      // leaving does not park the reader on the last day of the campaign
+      fireEvent.click(screen.getByRole('button', { name: 'Back to the campaign' }));
+      expect(window.location.search).not.toContain('focus=');
+      expect(screen.getByText('Day 0')).toBeInTheDocument();
+    });
+
+    it('reopens a link copied from inside a chapter with its own window', () => {
+      // `?t=` is applied while the clock still has the campaign's range, so
+      // 1918 would have been clamped to 25 November 1914 and lost (ADR 0009).
+      window.history.replaceState(
+        null,
+        '',
+        '/?t=1918-07-26T00:00:00Z&focus=1914:meanwhile-epilogue',
+      );
+      render(<App />);
+      expect(screen.getByText(/26 July 1918/, { selector: '.timeline__date' })).toBeInTheDocument();
+      expect(
+        screen.getByRole('heading', { level: 2, name: /an exact solution at the Russian front/ }),
+      ).toBeInTheDocument();
     });
 
     it('writes a switch into the URL, and takes it out again at its default', () => {

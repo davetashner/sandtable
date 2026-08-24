@@ -12,6 +12,7 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useSyncExternalStore,
   type ReactNode,
 } from 'react';
@@ -55,7 +56,14 @@ export function ClockProvider({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // The clock is created with this range, so applying it again on mount only
+  // undoes work: React runs child effects first, and a deep link to a focus
+  // (`?focus=1914:marne`) has already swapped the range for that level's by
+  // the time this runs. Only a *later* change to the prop is a real change.
+  const applied = useRef(range);
   useEffect(() => {
+    if (applied.current === range) return;
+    applied.current = range;
     value.clock.setRange(range);
   }, [value, range]);
 

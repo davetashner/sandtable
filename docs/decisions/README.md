@@ -24,6 +24,7 @@ is merged.
 | [0012](0012-photographs.md)              | Photographs in the war room: toned at rest, one picture per beat                     | `sand-y0u.4`    | accepted |
 | [0013](0013-chapter-index.md)            | The chapter index: a table of contents, not a chip row                               | `sand-neh.7`    | accepted |
 | [0014](0014-plate-sets.md)               | The plate set: four pictures on one axis, and why that is not a gallery              | `sand-neh.16`   | accepted |
+| [0015](0015-chapter-windows.md)          | A chapter may keep its own window, and has to say which kind it is                   | `sand-9u2.6`    | accepted |
 
 ## Template
 
