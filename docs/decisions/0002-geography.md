@@ -68,8 +68,8 @@ must show the political geography of the period (Alsace-Lorraine German in
     range-read, so the extra extent costs storage, not per-viewer bandwidth.
   - `western-europe-z10.pmtiles` (bbox −1.5,46 → 10.5,53, z≤10, 172 MB) — the
     original extract, retained in the bucket and no longer referenced. Styled by
-  `protomaps-themes-base` v4 with the muted palette in `src/engine/map/style.ts`
-  (replaced by the design-system map style, `sand-neh.2`).
+    `protomaps-themes-base` v4 with the muted palette in `src/engine/map/style.ts`
+    (replaced by the design-system map style, `sand-neh.2`).
 - Borders: `npm run borders` builds one world file per era year from
   aourednik/historical-basemaps (GPL-3.0); `content/shared/geo/borders/README.md`
   lists years, caveats and attribution. Drawn by `src/engine/map/borders.ts`.

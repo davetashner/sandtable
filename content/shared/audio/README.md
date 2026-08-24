@@ -44,6 +44,6 @@ audio/
 - Provenance is required: tool, model, prompt, excludes, date, licence. A cue
   whose provenance is a placeholder fails `scripts/check-content.sh`.
 - `role: "cue"` is stage music, one at a time. `role: "bed"` is an overlay
-  that fades in *under* the cue and carries a negative `mixDb`.
+  that fades in _under_ the cue and carries a negative `mixDb`.
 - Never autoplay, always offer a control, remember the choice, and never
   carry meaning in audio alone.

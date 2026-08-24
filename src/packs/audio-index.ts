@@ -49,6 +49,9 @@ export const cueById = (id: string): AudioIndexEntry | undefined => byId.get(id)
  * Absolute URLs for a cue, best first. The browser takes the first source it
  * can play, so Opus leads and AAC catches the rest.
  */
-export function sourcesFor(entry: AudioIndexEntry, base = audioIndex.base): { src: string; type: string }[] {
+export function sourcesFor(
+  entry: AudioIndexEntry,
+  base = audioIndex.base,
+): { src: string; type: string }[] {
   return entry.sources.map((s) => ({ src: `${base}${s.src}`, type: s.type }));
 }

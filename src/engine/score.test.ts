@@ -53,7 +53,9 @@ describe('cueFor', () => {
   });
 
   it('ignores a focus the score does not mention', () => {
-    expect(cueFor(SCORE, { t: t('1914-08-18T00:00:00Z'), focus: '1914:nowhere' }).cue).toBe('cue:e');
+    expect(cueFor(SCORE, { t: t('1914-08-18T00:00:00Z'), focus: '1914:nowhere' }).cue).toBe(
+      'cue:e',
+    );
   });
 });
 
@@ -90,8 +92,9 @@ describe('branches and beds', () => {
   });
 
   it('has no bed when the score does not name one', () => {
-    expect(bedFor([{ from: 'a', to: 'b', cue: 'cue:e' } as ScoreEntry], { t: 0, vignette: true }))
-      .toBeUndefined();
+    expect(
+      bedFor([{ from: 'a', to: 'b', cue: 'cue:e' } as ScoreEntry], { t: 0, vignette: true }),
+    ).toBeUndefined();
   });
 });
 
@@ -103,7 +106,14 @@ describe('the pack score', () => {
   });
 
   it('covers the campaign from the first day to the last', () => {
-    const days = ['1914-08-02', '1914-08-10', '1914-08-19', '1914-09-08', '1914-10-30', '1914-11-24'];
+    const days = [
+      '1914-08-02',
+      '1914-08-10',
+      '1914-08-19',
+      '1914-09-08',
+      '1914-10-30',
+      '1914-11-24',
+    ];
     for (const d of days) {
       const v = cueFor(score, { t: t(`${d}T12:00:00Z`) });
       expect(v.cue, `${d} has no cue`).toBeTruthy();
@@ -136,6 +146,7 @@ describe('the pack score', () => {
   it('names only cues that exist in the audio registry', async () => {
     const { audioIndex } = await import('../packs/audio-index.js');
     const known = new Set(audioIndex.entries.map((e) => e.id));
-    for (const id of cuesInScore(score)) expect(known.has(id), `${id} is not in the index`).toBe(true);
+    for (const id of cuesInScore(score))
+      expect(known.has(id), `${id} is not in the index`).toBe(true);
   });
 });

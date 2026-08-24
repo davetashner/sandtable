@@ -79,7 +79,8 @@ npm run audio            # loudness-matched Opus/AAC + content/shared/audio/inde
 npm run build            # tsc -b && vite build → dist/ (bundles under dist/app/)
 npm run visual:check     # the visual gate: 19 scenes x 2 themes x 2 viewports, assets stubbed (ADR 0011); -- --update rewrites the baseline
 npm run visual:review    # the on-demand design review against real assets (docs/design-review.md); needs a build + `npm run preview`
-npm run format           # Prettier
+npm run format           # Prettier (beat front matter is deliberately excluded — see .prettierignore)
+npm run format:check     # the same as a check; runs in CI's `web` job
 ```
 
 Both visual scripts need a browser once: `npx playwright install chromium`.
@@ -136,7 +137,7 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
 - CI (`.github/workflows/ci.yml`): `lint` = actionlint + markdownlint +
   `scripts/check-content.sh` (JSON validity, media-manifest policy, no tracked
   image binaries); `security` = gitleaks + dependency review; `web` =
-  npm lint/typecheck/test/validate:content/build, self-activating once
+  npm lint/format:check/typecheck/test/validate:content/build, self-activating once
   `package.json` exists; `visual` = `npm run visual:check` against a
   production-shaped build with the assets bucket stubbed, screenshots uploaded
   as an artifact (ADR 0011). CodeQL is added with the app scaffold.
