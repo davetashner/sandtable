@@ -1,0 +1,33 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:scene/1914-paris-requisition-chevaux/requisition-des-chevaux-1914-08-02",
+  "kind": "scene",
+  "file": "requisition-des-chevaux-1914-08-02.jpg",
+  "width": 2756,
+  "height": 2000,
+  "colorized": false,
+  "original": {
+    "description": "The requisition of horses in Paris, 2 August 1914. Catalogued by the Bibliothèque nationale de France as \"2-8-14, mobilisation, la réquisition des chevaux à Paris : [photographie de presse]\", with the subject headings \"Réquisitions militaires -- France; Cheval -- Utilisation militaire; France. Armée -- Mobilisation\".",
+    "photographer": "Agence Rol (press agency; the operator is not named)",
+    "date": "2 August 1914",
+    "archive": "Bibliothèque nationale de France, Agence Rol collection, reference Rol 41640; digitised on Gallica (btv1b6931088b), via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:2-8-14,_mobilisation,_la_r%C3%A9quisition_des_chevaux_%C3%A0_Paris_-_btv1b6931088b.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/2-8-14,%20mobilisation,%20la%20r%C3%A9quisition%20des%20chevaux%20%C3%A0%20Paris%20-%20btv1b6931088b.jpg",
+    "original_dimensions": "2756 × 2000",
+    "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; the record’s permission note is publication before 1 January 1931). Credit line on the record: Bibliothèque nationale de France."
+  },
+  "colorization": {
+    "status": "not colorized. Recommendation: leave as it is — the subject is logistics, and the point is legible in monochrome."
+  },
+  "content_policy": "ok — horses being registered in a street, no gore",
+  "caption": "The requisition of horses in Paris, 2 August 1914. The army that fought the Marne moved on hooves and rails; the lorries and taxis were the exception that got remembered.",
+  "credit": "Original photograph: Agence Rol, Paris, 2 August 1914; Bibliothèque nationale de France, Rol 41640, via Gallica and Wikimedia Commons; public domain.",
+  "used_by": [
+    "1914:tech-motor-transport-taxis"
+  ],
+  "focal_point": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. Deliberate counterweight to the taxis card: it stops the motor-transport story reading as though 1914 armies were motorised."
+}

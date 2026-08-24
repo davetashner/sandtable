@@ -1,0 +1,30 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:person/wilhelm-german-crown-prince/portrait-c1912",
+  "person": "person:wilhelm-german-crown-prince",
+  "file": "portrait-c1912.jpg",
+  "width": 506,
+  "height": 704,
+  "colorized": false,
+  "original": {
+    "description": "Crown Prince Wilhelm in the uniform of the 1. Leib-Husaren-Regiment; a detail cropped from a family portrait by the Hamburg studio of Emil Bieber.",
+    "photographer": "E. Bieber (Emil Bieber studio, Hamburg)",
+    "date": "1912/13 (Commons record)",
+    "archive": "Wikimedia Commons; the record cites the photograph collection of Huis Doorn (fotocollectie.huisdoorn.nl)",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Kronprinz_Wilhelm_1._Leib-Husarenregiment.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kronprinz%20Wilhelm%201.%20Leib-Husarenregiment.jpg",
+    "original_dimensions": "506 × 704",
+    "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; the record qualifies the non-US status separately)"
+  },
+  "colorization": {
+    "status": "not colorized. Recommendation: colorize — the Leib-Husaren attila is documented (black with white lace, the Totenkopf on the busby), which is exactly the kind of colour ADR 0007 allows to be asserted."
+  },
+  "content_policy": "ok — studio portrait, no gore",
+  "caption": "Wilhelm, German Crown Prince, who commanded the Fifth Army in the Ardennes and before Verdun in 1914. Photographed before the war in the uniform of the 1st Life Hussars.",
+  "credit": "Original photograph: E. Bieber, 1912/13; via Wikimedia Commons; public domain.",
+  "used_by": [
+    "1914:ardennes",
+    "1914:beat-ardennes-0822"
+  ],
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. Low resolution (506 px wide) — good enough for a person card, not for a hero image."
+}

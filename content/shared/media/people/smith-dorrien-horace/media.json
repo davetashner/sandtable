@@ -1,0 +1,30 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:person/smith-dorrien-horace/portrait-c1915",
+  "person": "person:smith-dorrien-horace",
+  "file": "portrait-c1915.jpg",
+  "width": 3898,
+  "height": 5501,
+  "colorized": false,
+  "original": {
+    "description": "Studio portrait of General Sir Horace Smith-Dorrien in service dress, by the Washington studio Harris & Ewing.",
+    "photographer": "Harris & Ewing",
+    "date": "between 1913 and 1917 (Commons record)",
+    "archive": "Library of Congress, Prints and Photographs Division, via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Horace_Smith-Dorrien.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Horace%20Smith-Dorrien.jpg",
+    "original_dimensions": "3898 × 5501",
+    "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; Permission \"PD-US\"). Harris & Ewing photographs at the Library of Congress carry no known restrictions."
+  },
+  "colorization": {
+    "status": "not colorized. Recommendation: colorize — BEF khaki service dress is documented, and this is the best-resolution portrait in the batch."
+  },
+  "content_policy": "ok — studio portrait, no gore",
+  "caption": "General Sir Horace Smith-Dorrien, who took command of II Corps of the BEF four days before Mons and turned to fight at Le Cateau on 26 August 1914 against Sir John French’s wishes.",
+  "credit": "Original photograph: Harris & Ewing, between 1913 and 1917; Library of Congress, Prints and Photographs Division; public domain.",
+  "used_by": [
+    "1914:frontiers-north",
+    "1914:beat-great-retreat"
+  ],
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. Smith-Dorrien is one of the larger gaps in the cast: Le Cateau is his decision and the pack has had no face for it."
+}

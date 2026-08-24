@@ -1,0 +1,35 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:scene/1914-skoda-siege-gun-belgium/austrian-siege-gun-bain-1914",
+  "kind": "scene",
+  "file": "austrian-siege-gun-bain-1914.jpg",
+  "width": 5817,
+  "height": 4260,
+  "colorized": false,
+  "original": {
+    "description": "An Austro-Hungarian siege gun in Belgium, from a Bain News Service glass negative (5 × 7 in. or smaller). The Library of Congress title reads \"Austrian siege gun in Belg. (i.e., Belgium)\".",
+    "photographer": "not named on the negative; published by Bain News Service",
+    "date": "1914 (Library of Congress record)",
+    "archive": "Library of Congress, Prints and Photographs Division, LCCN 2014698051, via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Austrian_siege_gun_in_Belg._(i.e.,_Belgium)_LCCN2014698051.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Austrian%20siege%20gun%20in%20Belg.%20(i.e.,%20Belgium)%20LCCN2014698051.jpg",
+    "original_dimensions": "5817 × 4260",
+    "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; Permission \"Image from Library of Congress Prints and Photographs division\"). The Bain collection carries no known restrictions; the record links the catalogue entry at https://lccn.loc.gov/2014698051."
+  },
+  "colorization": {
+    "status": "not colorized. Recommendation: colorize — the highest-resolution item in the shot list and the siege-artillery card’s natural hero."
+  },
+  "content_policy": "ok — a gun and its crew, no gore",
+  "caption": "An Austro-Hungarian siege gun in Belgium, 1914. Austria-Hungary lent Germany the Škoda 30.5 cm mortars that worked alongside Krupp’s 42 cm howitzers against the Belgian forts — the alliance’s most useful contribution in the west.",
+  "credit": "Original photograph: Bain News Service, 1914; Library of Congress, Prints and Photographs Division, LCCN 2014698051; public domain.",
+  "used_by": [
+    "1914:tech-heavy-siege-artillery",
+    "1914:liege",
+    "1914:beat-liege-0812"
+  ],
+  "focal_point": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. The archive title says \"Austrian siege gun\" and gives no model; the caption above names the Škoda 30.5 cm as the Austro-Hungarian type in Belgium in general terms rather than identifying the piece in frame. The image review (sand-y0u.7) should either confirm the model from the carriage or the caption should drop the number."
+}

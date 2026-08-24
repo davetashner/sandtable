@@ -1,0 +1,31 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:person/heeringen-josias-von/portrait-1914",
+  "person": "person:heeringen-josias-von",
+  "file": "portrait-1914.jpg",
+  "width": 443,
+  "height": 599,
+  "colorized": false,
+  "original": {
+    "description": "Cropped portrait of Josias von Heeringen, Prussian Minister of War, by Nicola Perscheid.",
+    "photographer": "Nicola Perscheid (1864–1930)",
+    "date": "1914 (Commons record)",
+    "archive": "Wikimedia Commons; the record cites a Getty Images editorial scan of the original print",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Josias_von_Heeringen_c1914_(cropped).jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Josias%20von%20Heeringen%20c1914%20(cropped).jpg",
+    "original_dimensions": "443 × 599",
+    "licence": "public domain (Commons record: LicenseShortName \"Public domain\"). Perscheid died in 1930, so the work is out of copyright on life + 70."
+  },
+  "colorization": {
+    "status": "not colorized. Recommendation: leave as it is until a larger scan is found — 443 px will not stand colour work."
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Josias von Heeringen, Prussian Minister of War until 1913 and commander of the German Seventh Army in Lorraine in 1914.",
+  "credit": "Original photograph: Nicola Perscheid, 1914; via Wikimedia Commons; public domain.",
+  "used_by": [
+    "1914:lorraine",
+    "1914:beat-lorraine-0820",
+    "1914:beat-lorraine-0824"
+  ],
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. Same provenance pattern as the Bülow portrait already in the registry — a Getty editorial scan of a print whose photographer died in 1930. Low resolution."
+}

@@ -1,0 +1,35 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:scene/1914-chasseur-d-afrique-marne/autochrome-gervais-courtellemont",
+  "kind": "scene",
+  "file": "autochrome-gervais-courtellemont.jpg",
+  "width": 3848,
+  "height": 2696,
+  "colorized": false,
+  "original": {
+    "description": "A brigadier of the 1st Regiment of Chasseurs d’Afrique with his horse, photographed on the Marne in 1914. An autochrome by Jules Gervais-Courtellemont — the Commons record states explicitly that this is an autochrome and not a colorized picture.",
+    "photographer": "Jules Gervais-Courtellemont",
+    "date": "1914",
+    "archive": "Bibliothèque nationale de France; digitised on Gallica, via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Chasseur_d'Afrique,_bataille_de_la_Marne_1914.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chasseur%20d'Afrique,%20bataille%20de%20la%20Marne%201914.jpg",
+    "original_dimensions": "3848 × 2696",
+    "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"). Credit line on the record: Gallica Digital Library."
+  },
+  "colorization": {
+    "status": "not colorized, and must not be — this is an original colour photograph (autochrome). Reproduce as it is; any colour change would falsify a documentary colour record."
+  },
+  "content_policy": "ok — a cavalryman and his horse, no gore",
+  "caption": "A brigadier of the 1st Chasseurs d’Afrique on the Marne, 1914. An autochrome by Jules Gervais-Courtellemont: real colour, exposed at the time, not added afterwards.",
+  "credit": "Original photograph: Jules Gervais-Courtellemont, 1914; Bibliothèque nationale de France, via Gallica and Wikimedia Commons; public domain.",
+  "used_by": [
+    "1914:marne",
+    "1914:beat-marne-0906",
+    "1914:beat-marne-0908"
+  ],
+  "focal_point": {
+    "x": 0.5,
+    "y": 0.45
+  },
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. The most valuable single item in this shot list: a documentary colour photograph of a French soldier in September 1914. It should be shown beside a project colorization somewhere in the UI so a reader can see the difference between colour that was recorded and colour that was inferred (ADR 0007). MUST NOT be recolorized or \"corrected\"."
+}

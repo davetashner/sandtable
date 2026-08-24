@@ -53,3 +53,11 @@ Person with a single portrait keeps the flat layout.
   `used_by` records intended placements; two manifests naming the same beat is
   a validator error, as is a Markdown image in a beat body. The beat's picture
   is its `media` hero slot, which is what renders the caption and the credit.
+
+## The Phase 1 shot list
+
+[`docs/imagery-phase-1.md`](../../../docs/imagery-phase-1.md) records what the
+1914 pack's imagery covers, what it still lacks, and what was rejected and why —
+including the licence and provenance calls that kept particular photographs out.
+Read it before going looking for images: the gaps are documented so nobody has to
+find them twice.

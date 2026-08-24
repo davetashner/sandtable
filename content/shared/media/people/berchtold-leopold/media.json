@@ -1,0 +1,30 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:person/berchtold-leopold/portrait-1922",
+  "person": "person:berchtold-leopold",
+  "file": "portrait-1922.jpg",
+  "width": 495,
+  "height": 676,
+  "colorized": false,
+  "original": {
+    "description": "Portrait of Leopold Graf Berchtold, described by the Bundesarchiv as \"Leopold Graf Berchtold, österr. Staatsmann, 1922\"; a cropped detail of the Bundesarchiv print.",
+    "photographer": "not identified in the Bundesarchiv record (\"Unknown\")",
+    "date": "1922 (Bundesarchiv record) — eight years after the July Crisis",
+    "archive": "Bundesarchiv (German Federal Archives), Bild 183-2004-1110-500, via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-2004-1110-500,_Leopold_Graf_Berchtold_(cropped).jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv%20Bild%20183-2004-1110-500,%20Leopold%20Graf%20Berchtold%20(cropped).jpg",
+    "original_dimensions": "495 × 676",
+    "licence": "CC BY-SA 3.0 DE (Commons record: LicenseShortName \"CC BY-SA 3.0 de\"). Share-alike: derivatives, colorization included, are CC BY-SA 3.0 DE, and the Bundesarchiv credit string is mandatory."
+  },
+  "colorization": {
+    "status": "not colorized. Recommendation: leave as it is — share-alike would follow a colorization, and a civilian portrait gains little from colour."
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Leopold Graf Berchtold, Austro-Hungarian foreign minister in July 1914, who drafted the note to Serbia. Photographed in 1922.",
+  "credit": "Bundesarchiv, Bild 183-2004-1110-500 / CC-BY-SA 3.0",
+  "used_by": [
+    "1914:july-crisis",
+    "1914:document-austro-hungarian-ultimatum-1914-07-23"
+  ],
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. Dated 1922 by the archive; the caption says so rather than letting a July 1914 placement imply a July 1914 likeness."
+}

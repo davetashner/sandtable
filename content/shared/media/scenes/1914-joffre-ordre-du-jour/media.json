@@ -1,0 +1,33 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:scene/1914-joffre-ordre-du-jour/socle-statue-joffre",
+  "kind": "scene",
+  "file": "socle-statue-joffre.jpg",
+  "width": 3202,
+  "height": 2754,
+  "colorized": false,
+  "original": {
+    "description": "The text of Joffre’s order of the day of 6 September 1914 as it is cut into the plinth of the equestrian statue of Marshal Joffre in front of the École Militaire in Paris. The Commons record reads \"Ordre du jour du 6 septembre 1914 (Bataille de la Marne) gravé sur le socle de la statue équestre du Maréchal Joffre, devant l’Ecole Militaire à Paris.\"",
+    "photographer": "Jebulon (Wikimedia Commons contributor)",
+    "date": "photographed 23 October 2011; the inscribed text is of 6 September 1914",
+    "archive": "Wikimedia Commons (contributor’s own work)",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Ordre_du_Jour_%C2%A7_septembre_1914_Bataille_de_la_Marne_socle_statue_Joffre_Ecole_Militaire.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ordre%20du%20Jour%20%C2%A7%20septembre%201914%20Bataille%20de%20la%20Marne%20socle%20statue%20Joffre%20Ecole%20Militaire.jpg",
+    "original_dimensions": "3202 × 2754",
+    "licence": "CC0 1.0 (Commons record: LicenseShortName \"CC0\"; UsageTerms \"Creative Commons Zero, Public Domain Dedication\"), released by the photographer."
+  },
+  "colorization": {
+    "status": "not colorized, and should not be — a modern colour photograph of an inscription."
+  },
+  "content_policy": "ok — a stone inscription, no gore",
+  "caption": "Joffre’s order of the day of 6 September 1914 — \"se faire tuer sur place plutôt que de reculer\" — cut into the plinth of his statue outside the École Militaire in Paris. A monument’s version of the order, not the signed original.",
+  "credit": "Photograph: Jebulon, Paris, 2011; Wikimedia Commons; CC0 / public domain.",
+  "used_by": [
+    "1914:document-joffre-order-of-the-day-1914-09-06"
+  ],
+  "focal_point": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. This is the ONE document image in the shot list, and it is a monument, not an archive scan — the caption is explicit about that, because a plinth is an interpretation of a document and the pack must not present it as a facsimile. Before it ships, the image review (sand-y0u.7) should compare the inscribed wording against the text the pack already cites in documents.json; if they differ, that difference is itself worth a beat. No archive facsimile of the July 1914 or August 1914 diplomatic documents was found under an admissible licence during this pass — see the gaps section of docs/imagery-phase-1.md."
+}

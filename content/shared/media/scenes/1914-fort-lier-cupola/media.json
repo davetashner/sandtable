@@ -1,0 +1,35 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:scene/1914-fort-lier-cupola/pantserkoepel-42cm-1914-09-30",
+  "kind": "scene",
+  "file": "pantserkoepel-42cm-1914-09-30.jpg",
+  "width": 2878,
+  "height": 1860,
+  "colorized": false,
+  "original": {
+    "description": "German soldiers standing on an armoured cupola of Fort Lier (Lierre), in the Antwerp ring, destroyed by a 42 cm mortar shell. The Nationaal Archief record describes a picture postcard: \"Ansichtkaart met de foto van Duitse soldaten op een door een 42 cm mortiergranaat verwoeste pantserkoepel van fort Lierre.\" Captioned on the card \"Fort Lierre. Wirkung eines 42 cm Mörsers auf einem Pantzerturm\".",
+    "photographer": "not identified in the record",
+    "date": "30 September 1914 (Nationaal Archief record)",
+    "archive": "Nationaal Archief (Netherlands), inventory reference Bestanddeelnr 158-0536, via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Fort_Lierre._Wirkung_eines_42_cm_M%C3%B6rsers_auf_einem_Pantzerturm._Fort_de_Lierre%E2%80%A6,_Bestanddeelnr_158-0536.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fort%20Lierre.%20Wirkung%20eines%2042%20cm%20M%C3%B6rsers%20auf%20einem%20Pantzerturm.%20Fort%20de%20Lierre%E2%80%A6,%20Bestanddeelnr%20158-0536.jpg",
+    "original_dimensions": "2878 × 1860",
+    "licence": "CC0 1.0 (Commons record: LicenseShortName \"CC0\"; UsageTerms \"Creative Commons Zero, Public Domain Dedication\")."
+  },
+  "colorization": {
+    "status": "not colorized. Recommendation: leave as it is — a postcard halftone, and the subject is the hole, which reads better in monochrome."
+  },
+  "content_policy": "ok — a wrecked gun turret with soldiers standing on it; no casualties in the archive description. The image review (sand-y0u.7) must confirm the frame before publication: this is a fort that was shelled, and the policy line is bodies, not damage.",
+  "caption": "What a 42 cm shell did to an armoured cupola: Fort Lier, in the Antwerp ring, 30 September 1914, with German soldiers standing on the wreckage. The forts were designed against 21 cm guns.",
+  "credit": "Original photograph: photographer not identified, 30 September 1914; Nationaal Archief, Bestanddeelnr 158-0536; CC0 / public domain.",
+  "used_by": [
+    "1914:tech-heavy-siege-artillery",
+    "1914:belgium-antwerp",
+    "1914:beat-belgium-0909"
+  ],
+  "focal_point": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. The single best illustration found for the siege-artillery card: it shows the effect rather than the gun, which is the argument the card is making. Fort Lier is Antwerp, not Liège — the caption says so."
+}

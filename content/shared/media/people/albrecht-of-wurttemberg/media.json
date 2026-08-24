@@ -1,0 +1,30 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:person/albrecht-of-wurttemberg/portrait-c1910",
+  "person": "person:albrecht-of-wurttemberg",
+  "file": "portrait-c1910.jpg",
+  "width": 2046,
+  "height": 2783,
+  "colorized": false,
+  "original": {
+    "description": "Pre-war portrait of Albrecht, Duke of Württemberg, in uniform, by the Stuttgart photographer Alfred Hirrlinger; reproduced in the magazine \"Daheim\", Jg. 51, Nr. 16, 16 January 1915, p. 9.",
+    "photographer": "Alfred Hirrlinger (died 1938)",
+    "date": "circa 1910 (Commons record); published January 1915",
+    "archive": "Wikimedia Commons; the record cites \"Daheim\", Jg. 51, Nr. 16, 16 January 1915, p. 9",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Albrecht-von-wuerttemberg-in-1915-01-16-daheim-jg51-nr16-s09-foto-hirrlinger.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht-von-wuerttemberg-in-1915-01-16-daheim-jg51-nr16-s09-foto-hirrlinger.jpg",
+    "original_dimensions": "2046 × 2783",
+    "licence": "public domain (Commons record: LicenseShortName \"Public domain\"). Hirrlinger died in 1938, so the work is out of copyright on life + 70."
+  },
+  "colorization": {
+    "status": "not colorized. Recommendation: colorize — Württemberg general officer’s uniform, and the resolution supports it."
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Albrecht, Duke of Württemberg, commander of the German Fourth Army in the Ardennes in August 1914.",
+  "credit": "Original photograph: Alfred Hirrlinger, c. 1910; published in \"Daheim\", 16 January 1915; via Wikimedia Commons; public domain.",
+  "used_by": [
+    "1914:ardennes",
+    "1914:beat-ardennes-0823"
+  ],
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. A pre-war portrait used for a 1914 command — the caption states the command, not the date of the likeness."
+}

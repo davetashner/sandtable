@@ -1,0 +1,30 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:person/rennenkampf-paul-von/portrait-c1910",
+  "person": "person:rennenkampf-paul-von",
+  "file": "portrait-c1910.jpg",
+  "width": 852,
+  "height": 1091,
+  "colorized": false,
+  "original": {
+    "description": "Portrait of Paul Georg von Rennenkampf (1854–1918), Baltic German general in Russian service.",
+    "photographer": "not identified in the record (\"Unknown author\")",
+    "date": "circa 1910 (Commons record)",
+    "archive": "Wikimedia Commons; the record cites Gallica (Bibliothèque nationale de France) as the source",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Paul_Rennenkampff_(cropped).jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Rennenkampff%20(cropped).jpg",
+    "original_dimensions": "852 × 1091",
+    "licence": "public domain (Commons record: LicenseShortName \"Public domain\")"
+  },
+  "colorization": {
+    "status": "not colorized. Recommendation: colorize — Russian general officer’s uniform is documented, and the East Prussian beats have no colour at all at present."
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Paul von Rennenkampf, commander of the Russian First Army in East Prussia in August 1914 — the army that did not come to Samsonov’s help at Tannenberg.",
+  "credit": "Original photograph: photographer not identified, c. 1910; via Wikimedia Commons (record cites Gallica / Bibliothèque nationale de France); public domain.",
+  "used_by": [
+    "1914:tannenberg-east",
+    "1914:beat-east-0831"
+  ],
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. The record names Gallica as the source but gives no ark identifier — for the image review (sand-y0u.7), the BnF item should be traced before this is used as a hero image."
+}

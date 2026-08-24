@@ -1,0 +1,33 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:scene/1914-paris-ordre-de-mobilisation/affiche-gouvernement-militaire-1914-08",
+  "kind": "scene",
+  "file": "affiche-gouvernement-militaire-1914-08.jpg",
+  "width": 2000,
+  "height": 2755,
+  "colorized": false,
+  "original": {
+    "description": "A press photograph of the mobilization order posted by the military government of Paris. Catalogued by the Bibliothèque nationale de France as \"Ordre de mobilisation émanant du gouvernement militaire de Paris : photographie de presse\", subject headings \"Guerre mondiale (1914-1918); France. Armée -- Mobilisation; Affiches -- France -- Paris (France)\", coverage August 1914.",
+    "photographer": "Agence Rol (press agency; the operator is not named)",
+    "date": "August 1914 (the record’s coverage date)",
+    "archive": "Bibliothèque nationale de France, Agence Rol collection, reference Rol 41830; digitised on Gallica (btv1b6931266f), via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Ordre_de_mobilisation_%C3%A9manant_du_gouvernement_militaire_de_Paris_-_btv1b6931266f.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ordre%20de%20mobilisation%20%C3%A9manant%20du%20gouvernement%20militaire%20de%20Paris%20-%20btv1b6931266f.jpg",
+    "original_dimensions": "2000 × 2755",
+    "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"). Credit line on the record: Bibliothèque nationale de France."
+  },
+  "colorization": {
+    "status": "not colorized, and should not be — a document is read, not looked at, and colour would add nothing but a claim."
+  },
+  "content_policy": "ok — a printed poster, no gore",
+  "caption": "The mobilization order of the military government of Paris, August 1914 — the piece of paper the crowd in the street outside was reading.",
+  "credit": "Original photograph: Agence Rol, Paris, August 1914; Bibliothèque nationale de France, Rol 41830, via Gallica and Wikimedia Commons; public domain.",
+  "used_by": [
+    "1914:tech-railways-mobilization"
+  ],
+  "focal_point": {
+    "x": 0.5,
+    "y": 0.4
+  },
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. Two other Commons photographs of mobilization posters were checked and rejected for this slot because their records date the *photograph* to 1918 (btv1b530054761) and 1928 (btv1b53206326g) — the poster is 1914, the exposure is not, and a document card should not blur the two."
+}
