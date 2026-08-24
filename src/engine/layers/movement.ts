@@ -15,15 +15,18 @@
 import type { Layer } from '@deck.gl/core';
 import { TripsLayer } from '@deck.gl/geo-layers';
 import { PathStyleExtension, type PathStyleExtensionProps } from '@deck.gl/extensions';
-import { PathLayer, ScatterplotLayer, TextLayer } from '@deck.gl/layers';
+import { IconLayer, PathLayer, ScatterplotLayer, TextLayer } from '@deck.gl/layers';
 import type {
   Branch,
+  Confidence,
   Formation,
   MovementMode,
   Route,
   Side,
   Waypoint,
 } from '../../packs/schema/index.js';
+import { APPROX_MARK, confidenceAt, isApproximate, waypointConfidence } from '../confidence.js';
+import { APPROX_HALO_ICON, haloSize } from './approx-halo.js';
 import { type RGBA, sideColor, tokenColor } from './colors.js';
 import {
   occupiedBoxes,
@@ -38,6 +41,8 @@ import {
 export interface ComposedLeg {
   /** [lng, lat, epoch ms]; a leg shares its first point with the leg before it. */
   points: [number, number, number][];
+  /** One per point: the waypoint's own confidence, or its route's (`sand-23b.4`). */
+  confidences: Confidence[];
   mode: MovementMode;
 }
 
@@ -48,6 +53,8 @@ export interface ComposedRoute {
   points: [number, number, number][];
   /** The path in the pieces it was written in, each with its own mode. */
   legs: ComposedLeg[];
+  /** One per point of `points`, aligned with it. */
+  confidences: Confidence[];
   /** True when any part of the path comes from a counterfactual branch. */
   hypothetical: boolean;
   confidence: Route['confidence'];
@@ -77,9 +84,13 @@ const byStart = (a: Route, b: Route) =>
 function legsOf(routes: Route[], cut: number): ComposedLeg[] {
   const out: ComposedLeg[] = [];
   for (const r of [...routes].sort(byStart)) {
-    const points = r.waypoints.map(toPoint).filter((p) => p[2] < cut);
-    if (points.length === 0) continue;
-    out.push({ points, mode: r.mode ?? 'march' });
+    const kept = r.waypoints.filter((w) => Date.parse(w[2]) < cut);
+    if (kept.length === 0) continue;
+    out.push({
+      points: kept.map(toPoint),
+      confidences: kept.map((w) => waypointConfidence(w, r.confidence)),
+      mode: r.mode ?? 'march',
+    });
   }
   return out;
 }
@@ -110,14 +121,20 @@ export function composeRoutes(
     const legs = [...legsOf(base, tail.length ? divergesAt : Infinity), ...legsOf(tail, Infinity)];
     // the legs meet at a shared waypoint; the joined path keeps it once
     const points: [number, number, number][] = [];
+    const confidences: Confidence[] = [];
     for (const leg of legs)
-      for (const p of leg.points) if (points[points.length - 1]?.[2] !== p[2]) points.push(p);
+      leg.points.forEach((p, i) => {
+        if (points[points.length - 1]?.[2] === p[2]) return;
+        points.push(p);
+        confidences.push(leg.confidences[i] ?? 'medium');
+      });
     if (points.length === 0) continue;
     out.push({
       formation: f,
       side,
       points,
       legs,
+      confidences,
       hypothetical: tail.length > 0,
       confidence: tail[0]?.confidence ?? base[0]?.confidence ?? 'medium',
     });
@@ -227,6 +244,11 @@ interface TokenDatum {
   radius: number;
   phase: Position['phase'];
   hypothetical: boolean;
+  /**
+   * The position at this instant is `low` or `contested` (`sand-23b.4`) — the
+   * token opens, wears a dashed halo and takes an `≈` in front of its label.
+   */
+  approximate: boolean;
 }
 
 const RADIUS: Partial<Record<Formation['kind'], number>> = {
@@ -314,14 +336,25 @@ export function buildMovementScene(o: MovementLayerOptions): MovementScene {
     // it is under way. A motor leg is not — the column is on the road, and on
     // the map, before and after it drives.
     if (isTransfer(modeAt(r.legs, o.now)) && pos.phase !== 'moving') continue;
+    const approximate = isApproximate(
+      confidenceAt(
+        r.points.map((p) => p[2]),
+        r.confidences,
+        o.now,
+        r.confidence,
+      ),
+    );
     tokens.push({
       id: r.formation.id,
-      label: r.formation.short ?? r.formation.name,
+      label: approximate
+        ? `${APPROX_MARK} ${r.formation.short ?? r.formation.name}`
+        : (r.formation.short ?? r.formation.name),
       position: pos.lngLat,
       color: sideColor(r.side, o.sides),
       radius: RADIUS[r.formation.kind] ?? 5,
       phase: pos.phase,
       hypothetical: r.hypothetical,
+      approximate,
     });
   }
   const currentTime = (o.now - o.rangeStart) / 1000;
@@ -382,6 +415,21 @@ export function buildMovementScene(o: MovementLayerOptions): MovementScene {
       currentTime,
       pickable: false,
     }),
+    // The dashed halo of an approximate position (`sand-23b.4`): the token is
+    // the middle of a zone, not a pin. Drawn under the token so the token
+    // keeps its edge, and in the side's own colour so it reads as part of the
+    // token rather than as a warning.
+    new IconLayer<TokenDatum>({
+      id: 'movement-approx',
+      data: tokens.filter((d) => d.approximate),
+      getPosition: (d) => d.position,
+      getIcon: () => APPROX_HALO_ICON,
+      getSize: (d) => haloSize(d.radius * (o.highlight === d.id ? 1.3 : 1)),
+      sizeUnits: 'pixels',
+      getColor: (d) => [d.color[0], d.color[1], d.color[2], 200],
+      pickable: false,
+      updateTriggers: { getSize: [o.highlight] },
+    }),
     // tokens at "now"
     new ScatterplotLayer<TokenDatum>({
       id: 'movement-tokens',
@@ -389,10 +437,19 @@ export function buildMovementScene(o: MovementLayerOptions): MovementScene {
       getPosition: (d) => d.position,
       getRadius: (d) => d.radius * (o.highlight === d.id ? 1.3 : 1),
       radiusUnits: 'pixels',
-      getFillColor: (d) =>
-        d.phase === 'before' ? [d.color[0], d.color[1], d.color[2], 120] : d.color,
-      getLineColor: () => ink,
-      getLineWidth: 1.5,
+      // A closed disc is a position the sources give. An approximate one opens
+      // — the fill all but empties and the outline, in the side's colour,
+      // becomes the token — so the two do not differ by colour alone.
+      getFillColor: (d) => {
+        const alpha = d.phase === 'before' ? 120 : 255;
+        return d.approximate
+          ? [d.color[0], d.color[1], d.color[2], Math.round(alpha * 0.22)]
+          : alpha === 255
+            ? d.color
+            : [d.color[0], d.color[1], d.color[2], alpha];
+      },
+      getLineColor: (d) => (d.approximate ? d.color : ink),
+      getLineWidth: (d) => (d.approximate ? 2 : 1.5),
       lineWidthUnits: 'pixels',
       stroked: true,
       pickable: true,
@@ -400,7 +457,12 @@ export function buildMovementScene(o: MovementLayerOptions): MovementScene {
         const d = info.object as TokenDatum | undefined;
         if (d) o.onSelect?.(d.id);
       },
-      updateTriggers: { getRadius: [o.highlight], getFillColor: [o.now] },
+      updateTriggers: {
+        getRadius: [o.highlight],
+        getFillColor: [o.now],
+        getLineColor: [o.now],
+        getLineWidth: [o.now],
+      },
     }),
     new TextLayer<TokenDatum>({
       id: 'movement-labels',

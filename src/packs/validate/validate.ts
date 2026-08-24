@@ -636,7 +636,7 @@ function checkRoute(
   }
   // nothing teleports: every leg is held to the pace of its own mode
   const mode = r.mode ?? 'march';
-  for (const f of paceFindings(r.waypoints, mode))
+  for (const f of paceFindings(r.waypoints, mode, r.confidence))
     ctx[f.level === 'error' ? 'error' : 'warn'](path, paceMessage(f, mode), r.id);
   checkCitations(ctx, path, r.id, r.sources, true);
 }
@@ -1165,7 +1165,7 @@ function checkTracks(ctx: Ctx, s: PackState, path: string, range: TimeRange, sid
     // A commander travelled by car or by train, and a headquarters moves the
     // same way; an unmarked track is read as road travel, never as a march.
     const mode = tk.mode ?? 'motor';
-    for (const f of paceFindings(tk.waypoints, mode))
+    for (const f of paceFindings(tk.waypoints, mode, tk.confidence))
       ctx[f.level === 'error' ? 'error' : 'warn'](path, paceMessage(f, mode), tk.id);
     checkCitations(ctx, path, tk.id, tk.sources, true);
   }

@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import type { Branch, Formation, MovementMode, Route, Side } from '../../packs/schema/index.js';
+import type {
+  Branch,
+  Confidence,
+  Formation,
+  MovementMode,
+  Route,
+  Side,
+} from '../../packs/schema/index.js';
 import {
   buildMovementLayers,
   buildMovementScene,
@@ -9,10 +16,14 @@ import {
 } from './movement.js';
 
 /** A one-leg composed route: the same points as the whole path and as its only leg. */
-const oneLeg = (points: [number, number, number][], mode: MovementMode = 'march') => ({
-  points,
-  legs: [{ points, mode }],
-});
+const oneLeg = (
+  points: [number, number, number][],
+  mode: MovementMode = 'march',
+  confidence: Confidence = 'medium',
+) => {
+  const confidences = points.map(() => confidence);
+  return { points, confidences, legs: [{ points, confidences, mode }] };
+};
 
 const sides: Side[] = [
   { id: 'de', name: 'German Empire', alliance: 'Central Powers' },
@@ -116,6 +127,7 @@ describe('buildMovementLayers', () => {
     expect(layers.map((l) => l.id)).toEqual([
       'movement-ghost',
       'movement-trail',
+      'movement-approx',
       'movement-tokens',
       'movement-labels',
     ]);
@@ -125,7 +137,7 @@ describe('buildMovementLayers', () => {
     };
     expect(trail.currentTime).toBe((Date.parse(t('22')) - start) / 1000);
     expect(trail.data[0]!.timestamps[0]).toBe((Date.parse(t('13')) - start) / 1000);
-    const tokens = layers[2]!.props as unknown as {
+    const tokens = layers[3]!.props as unknown as {
       data: { id: string; position: [number, number]; phase: string }[];
     };
     expect(tokens.data[0]).toMatchObject({ id: '1914:army-de-1', phase: 'moving' });
@@ -381,5 +393,63 @@ describe('a route written in legs', () => {
     };
     expect(ghost.data[0]!.dashed).toBe(true);
     expect(ghost.getDashArray(ghost.data[0]!)).toEqual([2, 3]); // the road, not the railway
+  });
+});
+
+describe('approximate positions (sand-23b.4)', () => {
+  const formation: Formation = {
+    id: '1914:army-de-6',
+    name: 'German 6th Army',
+    short: '6. Armee',
+    side: 'de',
+    kind: 'army',
+  };
+  const mk = (confidence: Confidence, fourth?: Confidence) => {
+    const points: [number, number, number][] = [
+      [6, 49, Date.UTC(1914, 7, 10)],
+      [6.5, 48.8, Date.UTC(1914, 7, 20)],
+    ];
+    const confidences: Confidence[] = [confidence, fourth ?? confidence];
+    return {
+      formation,
+      side: sides[0]!,
+      points,
+      confidences,
+      legs: [{ points, confidences, mode: 'march' as const }],
+      hypothetical: false,
+      confidence,
+    };
+  };
+  const scene = (confidence: Confidence, fourth?: Confidence) =>
+    buildMovementLayers({
+      routes: [mk(confidence, fourth)],
+      now: Date.UTC(1914, 7, 15),
+      rangeStart: Date.UTC(1914, 7, 2),
+      sides,
+    });
+  const dataOf = (layers: ReturnType<typeof buildMovementLayers>, id: string) =>
+    (layers.find((l) => l.id === id)!.props as unknown as { data: { label?: string }[] }).data;
+
+  it('opens the token, halos it and marks the label when the position is low', () => {
+    const layers = scene('low');
+    expect(dataOf(layers, 'movement-approx')).toHaveLength(1);
+    expect(dataOf(layers, 'movement-tokens')[0]!.label).toBe('≈ 6. Armee');
+  });
+
+  it('leaves a medium position as a closed disc with its own name', () => {
+    const layers = scene('medium');
+    expect(dataOf(layers, 'movement-approx')).toHaveLength(0);
+    expect(dataOf(layers, 'movement-tokens')[0]!.label).toBe('6. Armee');
+  });
+
+  it('reads the weaker of the two waypoints the clock is between', () => {
+    const layers = scene('high', 'contested');
+    expect(dataOf(layers, 'movement-approx')).toHaveLength(1);
+  });
+
+  it('lets a waypoint inherit its route, and composeRoutes carries it', () => {
+    const composed = composeRoutes(routes, formations, sides, historical);
+    const de1 = composed.find((r) => r.formation.id === '1914:army-de-1')!;
+    expect(de1.confidences).toEqual(de1.points.map(() => 'low'));
   });
 });

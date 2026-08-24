@@ -129,6 +129,10 @@ describe('<Dossier>', () => {
     expect(screen.getByText(/Herwig, Holger H\./)).toBeInTheDocument();
     expect(screen.getByText(/Tuchman, Barbara W\./)).toBeInTheDocument();
     expect(screen.getByLabelText('Legend')).toHaveTextContent('Germany');
+    // the key to the map's approximate positions (sand-23b.4)
+    expect(screen.getByLabelText('Legend')).toHaveTextContent(
+      '≈ approximate — derived, not recorded',
+    );
     expect(screen.queryByText(/^Hypothetical —/)).not.toBeInTheDocument();
   });
 

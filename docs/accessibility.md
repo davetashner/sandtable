@@ -269,6 +269,23 @@ the `alt` of the light lockup, and dark mode hides that image — taking the nam
 of the first tab stop, and of the document's only `h1`, out of the tree with it.
 The name is on the link now and both images are decoration.
 
+## Nothing on the map is said by colour alone
+
+Axe cannot see a WebGL canvas, so the rule the map has to keep is a rule of
+review rather than of test. Every distinction the map draws carries a second,
+non-colour channel:
+
+- **Side** — the colour, and always a label in `--ink` beside the token.
+- **Mode** — a dash pattern, not a hue: solid for a march, a fine dash for the
+  road, a long dash for rail, sea and air.
+- **Confidence** (`sand-23b.4`) — an approximate position opens its token,
+  wears a dashed halo, and takes an `≈` in front of its label. Three channels,
+  one of them literal text, because the disc and the ring differ in lightness
+  as well as shape and neither difference is safe on its own.
+
+A new treatment that is only a colour is not finished. The dossier legend
+carries the key for anything the map draws this way.
+
 ## Still open
 
 - **A canvas layer with a keyboard.** Commander tokens and tally markers on the

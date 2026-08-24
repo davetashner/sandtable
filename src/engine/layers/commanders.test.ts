@@ -140,3 +140,40 @@ describe('commanderLabelCandidates', () => {
     expect(commanderLabelCandidates(data).map((c) => c.text)).toEqual(['Moltke · OHL']);
   });
 });
+
+describe('approximate positions (sand-23b.4)', () => {
+  it('marks a track the pack calls low, and says so on the token', () => {
+    const heeringen: PersonTrack = { ...hq, id: '1914:track-x', confidence: 'low' };
+    const d = commandersAt(opts('1914-08-20T00:00:00Z', [heeringen]))[0]!;
+    expect(d.approximate).toBe(true);
+    expect(d.tokenLabel).toBe('≈ Moltke · OHL');
+    const layers = buildCommanderLayers(opts('1914-08-20T00:00:00Z', [heeringen]));
+    const halo = layers.find((l) => l.id === 'commander-approx')!;
+    expect((halo.props as unknown as { data: unknown[] }).data).toHaveLength(1);
+  });
+
+  it('leaves a documented track alone, halo and all', () => {
+    const d = commandersAt(opts('1914-08-20T00:00:00Z', [hq]))[0]!;
+    expect(d.approximate).toBe(false);
+    expect(d.tokenLabel).toBe('Moltke · OHL');
+    const layers = buildCommanderLayers(opts('1914-08-20T00:00:00Z', [hq]));
+    expect((layers[0]!.props as unknown as { data: unknown[] }).data).toHaveLength(0);
+  });
+
+  it('takes one waypoint’s word over the track’s, and only between its own legs', () => {
+    // the nominal hour on an otherwise hour-by-hour journey: the position is
+    // approximate on the legs that touch it and nowhere else
+    const gallieni: PersonTrack = {
+      ...journey,
+      confidence: 'high',
+      waypoints: [
+        [2.31, 48.86, '1914-09-04T13:30:00Z'],
+        [2.66, 48.54, '1914-09-04T15:00:00Z'],
+        [2.31, 48.86, '1914-09-04T18:30:00Z', 'low'],
+      ],
+    };
+    const at = (t: string) => commandersAt(opts(t, [gallieni]))[0]!.approximate;
+    expect(at('1914-09-04T14:00:00Z')).toBe(false);
+    expect(at('1914-09-04T17:00:00Z')).toBe(true);
+  });
+});

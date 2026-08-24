@@ -330,3 +330,28 @@
   color: var(--brass);
   margin-right: 5px;
 }
+
+/* how the positions on the map were derived (sand-23b.4) */
+.card__derivation + .card__derivation {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.card__derivation-head {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--brass);
+}
+
+.card__positions .card__derivation-prose {
+  color: var(--muted);
+}
+
+.card__positions .card__derivation-note {
+  margin: 0;
+  padding-left: 10px;
+  border-left: 2px dashed var(--brass-dim);
+  font-size: var(--fs-xs);
+  color: var(--ink);
+}

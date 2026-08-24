@@ -12,6 +12,9 @@ import type {
   NarrativeBeat,
   Vignette,
 } from '../packs/schema/index.js';
+import { weakest } from './confidence.js';
+
+export { weakest };
 
 /**
  * How long after a vignette's moment the score treats it as "now" — in
@@ -73,14 +76,6 @@ export function estimate(f: Pick<CasualtyFigure, 'value' | 'low' | 'high'>): Est
   }
   const v = f.value ?? 0;
   return { low: v, high: v, mid: v };
-}
-
-const CONFIDENCE_RANK: Record<Confidence, number> = { high: 0, medium: 1, low: 2, contested: 3 };
-
-/** The weaker of two confidences (contested < low < medium < high). */
-export function weakest(a: Confidence | undefined, b: Confidence): Confidence {
-  if (!a) return b;
-  return CONFIDENCE_RANK[b] > CONFIDENCE_RANK[a] ? b : a;
 }
 
 export interface SideTotal {

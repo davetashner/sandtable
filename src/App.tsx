@@ -956,6 +956,7 @@ function DossierSurface() {
               commands={seed.formations
                 .filter((f) => f.commander === card.card.id)
                 .map((f) => ({ id: f.id, label: f.name }))}
+              tracks={seed.tracks.filter((t) => t.person === card.card.id)}
               cast={seed.cast.find((c) => c.person === card.card.id)}
               onBack={() => controls?.setCard(undefined)}
             />

@@ -11,6 +11,7 @@
  */
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { useClock } from '../engine/ClockContext.js';
+import { APPROX_MARK } from '../engine/confidence.js';
 import { sideToken } from '../engine/layers/colors.js';
 import { selectBeat, withFootnotes } from '../engine/beats.js';
 import type { Branch, NarrativeBeat, Side, Source, Vignette } from '../packs/schema/index.js';
@@ -263,6 +264,16 @@ export function Dossier({
             </span>
           );
         })}
+        {/*
+          The key to the approximate treatment (sand-23b.4). A dashed, hollow
+          swatch, because that is what the map draws; the words, because a
+          shape on its own is not a footnote. Where the position came from is
+          on the card the token opens.
+        */}
+        <span className="dossier__side dossier__approx">
+          <span className="dossier__swatch dossier__swatch--approx" aria-hidden="true" />
+          {APPROX_MARK} approximate — derived, not recorded
+        </span>
       </footer>
     </aside>
   );

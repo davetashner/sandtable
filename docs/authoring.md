@@ -195,6 +195,14 @@ one declared axis, under [ADR 0014](decisions/0014-plate-sets.md)'s rules.
 - Say how you derived positions (`derivation`) and how sure you are
   (`confidence`: `high` documented · `medium` inferred · `low` approximate ·
   `contested`). Seed data is `low`; do not upgrade it without a source.
+- A single waypoint may take a **fourth element** — the same four words — when
+  it is worse (or better) than the path it sits on: `[2.31, 48.86,
+"1914-09-04T18:30:00Z", "low"]`. Use it only where the derivation already
+  says so in prose: the hour a memoir does not give, the position two orders
+  contradict. Do not stamp `medium` on every waypoint of a `medium` route —
+  that says nothing the route did not already say. A `low` or `contested`
+  waypoint draws as an approximate position on the map (open token, dashed
+  halo, `≈` before the label) and is judged more leniently by the pace check.
 - A **counterfactual continuation** is a second route for the same formation
   with `"branch": "1914:schlieffen-concept"` whose waypoints start at or after
   the branch's `divergesAt`; the engine appends them to the base route's
