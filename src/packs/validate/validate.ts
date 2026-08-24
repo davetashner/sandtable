@@ -223,6 +223,19 @@ function checkRange(ctx: Ctx, path: string, id: string, range: TimeRange, what =
     ctx.error(path, `${what}.start must precede ${what}.end`, id);
 }
 
+/**
+ * docs/sources.md §8: Wikipedia carries reference data — a person's dates, a
+ * place's coordinates — and never an operational claim. The shared people and
+ * place registries are where reference data lives, so a citation to it there
+ * is in order; anywhere else it is standing in front of a strength, a
+ * position, a time of day or a casualty figure, and owes the reader a real
+ * source. A warning, not an error: the standard admits the pointer "until a
+ * better reference replaces it", and the outstanding ones are on beads
+ * (sand-23b.5, sand-1l0.16).
+ */
+const REFERENCE_ONLY_SOURCE = 'source:wikipedia-en';
+const REFERENCE_REGISTRIES = /(?:^|\/)(?:people|places)\.json$/;
+
 function checkCitations(
   ctx: Ctx,
   path: string,
@@ -234,7 +247,16 @@ function checkCitations(
   if (required && (!citations || citations.length === 0)) {
     ctx.error(path, `${what}: at least one citation is required`, id);
   }
-  for (const c of citations ?? []) ctx.ref(path, id, c.source, ['source'], `${what}: citation`);
+  for (const c of citations ?? []) {
+    ctx.ref(path, id, c.source, ['source'], `${what}: citation`);
+    if (c.source === REFERENCE_ONLY_SOURCE && !REFERENCE_REGISTRIES.test(path)) {
+      ctx.warn(
+        path,
+        `${what}: ${REFERENCE_ONLY_SOURCE} is reference data only — an operational claim needs a source from the hierarchy of evidence (docs/sources.md §8)`,
+        id,
+      );
+    }
+  }
 }
 
 const LINK_KINDS: Record<keyof Links, Kind[]> = {

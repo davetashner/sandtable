@@ -35,9 +35,13 @@ War packs. Story: `sand-23b.1`; the fact-check workflow that applies it is
    with the original language and a translation, each cited to the archive
    or the edition that prints them (AFGG annexes, Reichsarchiv, the British
    Official History appendices).
-8. **Wikipedia** (`source:wikipedia-en`) is allowed only for uncontested
-   biographical dates until a better reference replaces it; never for
-   operational claims. Remove it from any entity that gains a proper source.
+8. **Wikipedia** (`source:wikipedia-en`) is **reference data only**: a
+   person's dates and dates of office in `people.json`, a place's coordinates
+   in `places.json`. Never an operational claim — a strength, a position, a
+   time of day, a casualty figure, an order — and never a footnote a reader
+   sees in the dossier. Remove it from any entity that gains a proper source.
+   The validator warns on every citation to it outside the two shared
+   registries; the standing exceptions are on beads.
 9. **Tertiary and popular works** (Tuchman, Keegan, Hastings) may carry
    narrative colour and well-known episodes; numbers and positions come from
    Herwig, Strachan or the official histories.
@@ -132,6 +136,8 @@ PR that first cites it (see `docs/authoring.md` §1).
 
 Content PRs are checked against this page by the fact-check workflow
 ([`docs/fact-check.md`](fact-check.md)); the contested points are listed in
-[`docs/historiography-1914.md`](historiography-1914.md). The reviewer checks: every claim cited, pages where contestable, contested points
+[`docs/historiography-1914.md`](historiography-1914.md); the Phase 1 review
+that applied it to the whole 1914 pack is
+[`docs/fact-check-1914.md`](fact-check-1914.md). The reviewer checks: every claim cited, pages where contestable, contested points
 as historiography, documents quoted not paraphrased, Wikipedia only for dates,
 images cited in their manifests.

@@ -233,7 +233,7 @@
     "lngLat": [6.184, 48.692],
     "voice": "\u00c9douard de Castelnau, 2nd Army",
     "kind": "reconstruction",
-    "text": "On the evening of the 6th, with the Amance plateau under three thousand shells and the Marne beginning two hundred kilometres away, Castelnau puts to GQG the question a commander is not supposed to ask: whether the army should come back behind the Meurthe and let Nancy go. Joffre tells him to hold where he is. He holds. He had been told on 20 August, in the middle of the retreat from Morhange, that one of his sons had been killed there.[^afgg-1-1] [^wikipedia-en]",
+    "text": "On the evening of the 6th, with the Amance plateau under three thousand shells and the Marne beginning two hundred kilometres away, Castelnau puts to GQG the question a commander is not supposed to ask: whether the army should come back behind the Meurthe and let Nancy go. Joffre tells him to hold where he is. He holds. He had been told on 20 August, in the middle of the retreat from Morhange, that one of his sons had been killed there. How near he actually came to ordering the withdrawal is not settled: the army's own record has the question asked and answered, while the later accounts, Castelnau's defenders and his critics alike, make more or less of it than that.[^afgg-1-1] [^doughty-2005]",
     "links": {
       "battles": ["1914:grand-couronne"],
       "places": ["place:nancy", "place:amance"],
@@ -241,10 +241,9 @@
     },
     "sources": [
       { "source": "source:afgg-1-1" },
-      { "source": "source:doughty-2005" },
       {
-        "source": "source:wikipedia-en",
-        "note": "the proposal to give up Nancy and the death of Castelnau's son at Morhange; accounts differ on how near he came to withdrawing \u2014 verify in the sourcing pass (sand-1l0.16)"
+        "source": "source:doughty-2005",
+        "note": "the Grand Couronn\u00e9, Castelnau's question to GQG and Joffre's answer; how far Castelnau meant to go is read differently by different accounts"
       }
     ]
   }

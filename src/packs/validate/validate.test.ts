@@ -808,6 +808,35 @@ describe('validateContent', () => {
     );
   });
 
+  it('warns when Wikipedia stands behind an operational claim, but not in the registries', () => {
+    // docs/sources.md §8. The shared registries are where reference data lives
+    // — a person's dates, a place's coordinates — so a citation there is in
+    // order; on a route it is standing in front of a position (sand-1l0.16).
+    const raw = fixture();
+    const sources = raw.shared.collections['sources/sources.json']!.data as { id: string }[];
+    sources.push({
+      id: 'source:wikipedia-en',
+      kind: 'web',
+      title: 'Wikipedia (English)',
+      author: 'Wikipedia contributors',
+      year: 2026,
+    } as never);
+    const routes = raw.packs[0]!.collections['routes.json']!.data as { sources: unknown[] }[];
+    routes[0]!.sources = [{ source: 'source:wikipedia-en' }];
+    const people = raw.shared.collections['people/people.json']!.data as { sources?: unknown[] }[];
+    people[0]!.sources = [{ source: 'source:wikipedia-en', note: 'dates' }];
+    const places = raw.shared.collections['places/places.json']!.data as { sources?: unknown[] }[];
+    places[0]!.sources = [{ source: 'source:wikipedia-en', note: 'coordinates' }];
+
+    const report = validateContent(raw);
+    const warned = report.warnings.filter((w) => w.message.includes('reference data only'));
+    expect(warned).toHaveLength(1);
+    expect(warned[0]!.path).toMatch(/routes\.json$/);
+    // …and it is a warning, not an error: the standard admits the pointer
+    // until a better reference replaces it.
+    expect(report.errors.filter((e) => e.message.includes('reference data only'))).toHaveLength(0);
+  });
+
   it('rejects overlapping beats within a branch and unknown footnotes', () => {
     const raw = fixture();
     const beats = raw.packs[0]!.beats;

@@ -130,17 +130,13 @@
       }
     ],
     "summary": "Plan XVII cost France more men in three weeks than any later month of the war would: the Lorraine offensive, the Ardennes, the Sambre and the Meuse, and the first week of the Retreat. The army that fought the Marne was the army that had survived August.[^herwig-2009] [^strachan-2001]",
-    "historiography": "The monthly return is the one hard number; estimates that count the missing later confirmed dead run higher — to something over 260,000 for the Frontiers and the opening of the Retreat, of whom some 75,000 killed — but no two authors agree on the period or the categories, so the higher figures are given here as the upper bound of the debate rather than as a fact.[^herwig-2009] [^wikipedia-en]",
+    "historiography": "The monthly return is the one hard number; estimates that count the missing later confirmed dead run higher — to something over 260,000 for the Frontiers and the opening of the Retreat, of whom some 75,000 killed — but no two authors agree on the period or the categories, so the higher figures are given here as the upper bound of the debate rather than as a fact.[^herwig-2009]",
     "sources": [
       {
         "source": "source:herwig-2009"
       },
       {
         "source": "source:strachan-2001"
-      },
-      {
-        "source": "source:wikipedia-en",
-        "note": "Battle of the Frontiers — casualty summary; tertiary, for the range of figures in circulation"
       }
     ]
   },
@@ -164,9 +160,6 @@
         "sources": [
           {
             "source": "source:herwig-2009"
-          },
-          {
-            "source": "source:wikipedia-en"
           }
         ]
       },
@@ -180,9 +173,6 @@
         "sources": [
           {
             "source": "source:herwig-2009"
-          },
-          {
-            "source": "source:wikipedia-en"
           }
         ]
       },
@@ -196,9 +186,6 @@
         "sources": [
           {
             "source": "source:edmonds-1922"
-          },
-          {
-            "source": "source:wikipedia-en"
           }
         ]
       }
@@ -211,10 +198,6 @@
       },
       {
         "source": "source:edmonds-1922"
-      },
-      {
-        "source": "source:wikipedia-en",
-        "note": "First Battle of the Marne — casualty summary; tertiary, for the range of figures in circulation"
       }
     ]
   },
