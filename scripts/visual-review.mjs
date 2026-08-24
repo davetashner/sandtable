@@ -150,13 +150,13 @@ const agg = new Map();
 for (const [scene, v] of Object.entries(report)) {
   if (v.error) console.log(`${scene}: ERROR ${v.error}`);
   for (const p of v.problems ?? []) {
-    const k = `${p.kind}\t${p.el ?? ''}`;
-    const e = agg.get(k) ?? { n: 0, detail: p.detail };
+    const k = `${p.kind} ${p.el ?? ''}`;
+    const e = agg.get(k) ?? { n: 0, kind: p.kind, el: p.el ?? '', detail: p.detail };
     e.n += 1;
     agg.set(k, e);
   }
 }
-for (const [k, e] of [...agg].sort((a, b) => b[1].n - a[1].n)) {
-  console.log(`${String(e.n).padStart(3)}  ${k.replace('\t', '  ')}  | ${e.detail}`);
+for (const e of [...agg.values()].sort((a, b) => b.n - a.n)) {
+  console.log(`${String(e.n).padStart(3)}  ${e.kind.padEnd(16)}  ${e.el}  | ${e.detail}`);
 }
 console.log(`\n${Object.keys(report).length} scenes, screenshots in ${OUT}/`);
