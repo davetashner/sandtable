@@ -14,7 +14,11 @@ import './lightbox.css';
 
 export interface MediaLightboxProps {
   entry: MediaIndexEntry;
-  /** What is pictured, for the dialog's accessible name. */
+  /**
+   * Who or what is pictured. Shown above the credit and used as the dialog's
+   * accessible name: at full size the reader is looking at a face, and the
+   * credit line is provenance, not an answer to "who is this?" (sand-y0u.18).
+   */
   name?: string | undefined;
   base?: string;
   open: boolean;
@@ -80,8 +84,12 @@ export function MediaLightbox({
           decoding="async"
         />
         <figcaption className="lightbox__caption">
+          {name && <span className="lightbox__subject">{name}</span>}
           {entry.colorized && (
-            <span className="media__label" title="Colour is an interpretation; only colour was changed">
+            <span
+              className="media__label"
+              title="Colour is an interpretation; only colour was changed"
+            >
               Colorized (AI-assisted)
             </span>
           )}

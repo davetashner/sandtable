@@ -26,6 +26,8 @@ export interface MediaIndexEntry {
   originalUrl?: string;
   focalPoint?: { x: number; y: number };
   person?: string;
+  /** Everyone the manifest identifies, for a photograph of more than one. */
+  people?: string[];
   present: boolean;
 }
 
@@ -43,6 +45,24 @@ const byPerson = new Map(mediaIndex.entries.filter((e) => e.person).map((e) => [
 export const mediaById = (id: string): MediaIndexEntry | undefined => byId.get(id);
 export const portraitFor = (personId: string): MediaIndexEntry | undefined =>
   byPerson.get(personId);
+
+/**
+ * Who is in the picture, as a readable phrase, for the full-size view
+ * (sand-y0u.18). A portrait names its sitter; a photograph of several names
+ * them in the manifest's order; a photograph of a place names nobody, and the
+ * caller shows the credit alone rather than a blank line.
+ */
+export function subjectOf(
+  entry: MediaIndexEntry,
+  label: (id: string) => string | undefined,
+): string | undefined {
+  const ids = entry.people?.length ? entry.people : entry.person ? [entry.person] : [];
+  const names = ids.map((id) => label(id)).filter((n): n is string => Boolean(n));
+  if (names.length === 0) return undefined;
+  if (names.length === 1) return names[0];
+  if (names.length === 2) return `${names[0]} and ${names[1]}`;
+  return `${names.slice(0, -1).join(', ')} and ${names.at(-1)}`;
+}
 
 /**
  * The widest derivative available, falling back to the original file — what a
