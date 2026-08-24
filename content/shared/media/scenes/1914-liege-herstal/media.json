@@ -1,0 +1,28 @@
+{
+  "id": "media:scene/1914-liege-herstal/belgian-infantry-herstal-colorized",
+  "kind": "scene",
+  "file": "belgian-infantry-herstal-colorized.png",
+  "width": 1688,
+  "height": 932,
+  "colorized": true,
+  "original": {
+    "description": "A line of Belgian infantry lying prone along the verge of a dirt road, firing to the left towards a hedgerow, packs still on their backs. They wear the dark blue greatcoat and the oilcloth-covered shako of the pre-1915 Belgian army, and carry Mauser rifles; a road curves away empty to the right.",
+    "photographer": "not established — an agency photograph as reprinted in the illustrated press",
+    "date": "August 1914 (as captioned by the publication)",
+    "archive": "Published in Le Miroir, no. 38, p. 11, under the caption 'La Belgique envahie a gardé son sang-froid', and in the Russian periodical 'Velikaya voyna v obrazakh i kartinakh' (The Great War in Images and Pictures), ed. Ivan Lazarevsky, publisher D. Ya. Makovsky, 1914; the Commons record credits Aleksandr Matveyevich Azancheev (1870–1937) as the author of that Russian publication. Digitised from the Russian State Library and Tomsk library copies.",
+    "archive_url": "https://en.wikipedia.org/wiki/File:Li%C3%A9ge_-_1914_-_Soldats_d'infanterie_prenant_part_%C3%A0_la_d%C3%A9fense_de_Li%C3%A8ge_dans_les_faubourgs_d'Herstal.jpg",
+    "licence": "public domain — published in the Russian Empire before 7 November 1917, and in the United States before 1 January 1931"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'. Documented colours: the dark blue greatcoat and trousers of the Belgian line infantry before the 1915 change to khaki, the brown leather equipment, the oilcloth shako cover. The yellow regimental flash on two of the shakos is the colorizer's reading and is not matched to a reference — for the image review (sand-y0u.7)."
+  },
+  "content_policy": "ok — a firing line in action; no casualties and no dead in frame",
+  "caption": "Belgian infantry in the fighting line in the suburbs of Herstal, north-east of Liège, August 1914 — the dark blue greatcoat and oilcloth shako the army still wore in 1914. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: photographer not established; published in Le Miroir no. 38 (1914) and in 'The Great War in Images and Pictures' (Moscow, 1914); public domain. Colorization: Sandtable, AI-assisted, 2026.",
+  "used_by": ["1914:beat-liege-0806"],
+  "focal_point": { "x": 0.35, "y": 0.5 },
+  "notes": "Supplied by Dave 2026-08-23. CAUTION for the image review (sand-y0u.7): the caption is the illustrated press's, not an archive record. Le Miroir and its Russian counterpart printed a great deal of posed and re-captioned material in 1914, and a firing line strung along an open road verge in full view, with packs still on, reads more like a demonstration or a manoeuvre than a fight. The uniforms and the rifles are right for the Belgian army in August 1914 and the place may well be Herstal; whether this is the defence of Liège or a photograph captioned as it is not established. The pack's caption therefore says where and when the publication places it and claims nothing about the moment."
+}

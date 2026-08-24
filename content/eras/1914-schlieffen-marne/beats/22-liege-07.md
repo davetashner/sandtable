@@ -6,6 +6,7 @@ from: 1914-08-07T00:00:00Z
 to: 1914-08-12T00:00:00Z
 branch: 1914:historical
 focus: 1914:liege
+media: media:scene/1914-liege-german-car/german-soldiers-liege-colorized
 links:
   battles: ['1914:liege']
   people:
