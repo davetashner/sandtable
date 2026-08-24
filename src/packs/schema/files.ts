@@ -50,6 +50,7 @@ import {
   TechCard,
   Thread,
   Tour,
+  PersonTrack,
   CastEntry,
   CasualtyRecord,
   SupplyLine,
@@ -77,6 +78,7 @@ export const PACK_COLLECTIONS = {
   'casualties.json': CasualtyRecord,
   'vignettes.json': Vignette,
   'tours.json': Tour,
+  'tracks.json': PersonTrack,
   'score.json': ScoreEntry,
 } as const;
 

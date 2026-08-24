@@ -575,6 +575,43 @@ export const Route = z
   })
   .strict();
 
+// -------------------------------------------------------- PersonTrack
+
+/**
+ * Where a commander was, as against where his army was (sand-1l0.27).
+ *
+ * Two kinds, and the difference is the whole point. An `hq` track is the
+ * headquarters his army was run from — evidence for it is good, day by day,
+ * but a headquarters is a place on a map and not the man, who spent much of
+ * the campaign in a car. A `journey` track is a documented movement of the
+ * person himself, at the hours the sources give: Hentsch's drive of 8–9
+ * September, Joffre's visits, Moltke's one tour of the front. The UI says
+ * which it is showing, because an HQ pin is not a claim about where anybody
+ * stood at that hour.
+ */
+export const PersonTrack = z
+  .object({
+    id: Id,
+    person: Id.describe('person:<slug> — the commander this track belongs to'),
+    kind: z
+      .enum(['hq', 'journey'])
+      .describe(
+        'hq: the headquarters he commanded from, day by day. journey: the man himself, at documented hours',
+      ),
+    /** For an hq track, the post held — "OHL", "GQG", "BEF GHQ", "1. Armee". */
+    post: z.string().min(1).optional().describe('The headquarters, for an hq track'),
+    side: Slug.optional().describe('Side id, for the ring colour; inferred from the post otherwise'),
+    waypoints: z.array(Waypoint).min(2).describe('Strictly increasing in time'),
+    confidence: Confidence.default('medium'),
+    derivation: z
+      .string()
+      .min(1)
+      .describe('How the positions were derived, and at what resolution'),
+    notes: z.string().optional(),
+    sources: Sources,
+  })
+  .strict();
+
 // -------------------------------------------------------------------- Event
 
 export const Event = z
@@ -1065,6 +1102,7 @@ export type Pack = z.infer<typeof Pack>;
 export type Formation = z.infer<typeof Formation>;
 export type Waypoint = z.infer<typeof Waypoint>;
 export type Route = z.infer<typeof Route>;
+export type PersonTrack = z.infer<typeof PersonTrack>;
 export type Event = z.infer<typeof Event>;
 export type Battle = z.infer<typeof Battle>;
 export type DecisionPoint = z.infer<typeof DecisionPoint>;
