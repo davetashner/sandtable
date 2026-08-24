@@ -28,9 +28,25 @@ import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&ur
 import { Protocol } from 'pmtiles';
 import { useEffect, useImperativeHandle, useRef, useState, type Ref } from 'react';
 import type { BBox, Camera } from '../../packs/schema/index.js';
+import { OWNS_KEYS } from '../shortcuts.js';
 import { BORDERS_SOURCE, bordersLayers, decorateBorders, fetchBorders } from './borders.js';
 import { buildStyle, detectTheme, type MapTheme } from './style.js';
 import './map.css';
+
+/**
+ * A camera flight is motion, and the reader who asked for less of it means
+ * this as much as a CSS transition (sand-pmz.4). The global reduced-motion
+ * reset in `global.css` cannot reach a WebGL camera, so the handle checks for
+ * itself and jumps instead of flying. Read at call time, not at mount, so the
+ * setting takes effect the moment it is changed.
+ */
+const reducedMotion = () =>
+  typeof window !== 'undefined' &&
+  typeof window.matchMedia === 'function' &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/** What a focused map canvas is called, and what its keys do. */
+const CANVAS_LABEL = 'Map — pan with the arrow keys, zoom with plus and minus';
 
 let maplibreConfigured = false;
 /** One-time MapLibre globals: the bundled worker URL and the PMTiles protocol. */
@@ -125,7 +141,7 @@ export function MapView({
         ...(t.pitch !== undefined ? { pitch: t.pitch } : {}),
         essential: true,
       };
-      if (t.duration === 0) map.jumpTo(opts);
+      if (t.duration === 0 || reducedMotion()) map.jumpTo(opts);
       else map.flyTo({ ...opts, duration: t.duration ?? 1400, curve: 1.3 });
     },
     fitRegion(region, o = {}) {
@@ -137,7 +153,7 @@ export function MapView({
       ];
       map.fitBounds(bounds, {
         padding: o.padding ?? 40,
-        duration: o.duration ?? 1400,
+        duration: reducedMotion() ? 0 : (o.duration ?? 1400),
         maxZoom: o.maxZoom ?? 12,
         essential: true,
       });
@@ -185,6 +201,11 @@ export function MapView({
       touchPitch: false,
     });
     map.addControl(new NavigationControl({ showCompass: false }), 'top-right');
+    // MapLibre gives the canvas `tabindex="0"` and the pan/zoom keys but no
+    // name, so it reached the keyboard as an unlabelled stop that appeared to
+    // do nothing. The region around it carries the date; this says what the
+    // thing under the keyboard is and which keys drive it (sand-pmz.4).
+    map.getCanvas().setAttribute('aria-label', CANVAS_LABEL);
     map.addControl(new ScaleControl({ maxWidth: 120, unit: 'metric' }), 'bottom-left');
     bridgeTransformForDeck(map);
     const overlay = new MapboxOverlay({ interleaved: true, layers: deckLayers ?? [] });
@@ -274,6 +295,11 @@ export function MapView({
       className="mapview"
       role="region"
       aria-label={label}
+      // MapLibre's canvas is a focusable control: the arrows pan it and +/-
+      // zoom it. Saying so here keeps the timeline's and the tour's global
+      // shortcuts off the map, which is what makes those keys reach it at all
+      // (src/engine/shortcuts.ts, sand-pmz.4).
+      {...{ [OWNS_KEYS]: '' }}
       data-theme={activeTheme}
     />
   );

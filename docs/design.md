@@ -26,6 +26,10 @@ dark. The two `[data-theme]` blocks are not anchored to `:root`, so any
 element can open a themed subtree — which is how the gallery below shows both
 themes on one page.
 
+The accessibility floor the identity has to clear — the keyboard run-through,
+the 24px target rule and its two exemptions, what axe checks on every push —
+is `docs/accessibility.md`.
+
 ## Reviewing components
 
 `gallery.html` is the component gallery (`sand-neh.3`): every component in
@@ -97,7 +101,12 @@ Plex Sans 400–600, Plex Mono 400–600) with system fallbacks.
   `--radius-pill` (chips, toggles). Shadow: `--shadow` per theme.
 - Motion: `--dur-fast` 120ms (hover), `--dur-base` 260ms (panel transitions),
   `--dur-camera` 1400ms (map flights); `--ease-out`. Everything animated must
-  honour `prefers-reduced-motion` (the global reset zeroes durations).
+  honour `prefers-reduced-motion` (the global reset zeroes durations; a map
+  flight is not a duration, so `MapView` checks the query itself and jumps).
+- Targets: **nothing a reader operates is under 24×24px**, and the exceptions
+  are the two WCAG names by name — a link inside a sentence, a footnote
+  reference on one. `docs/accessibility.md` has the measurements and the
+  argument.
 
 ## Photographs
 
@@ -179,3 +188,8 @@ Era-agnostic by design: no period iconography in the mark.
 7. **A photograph is a plate or a chip** (ADR 0012), toned at rest only where a
    pointer can hover, and never toned at full size. A fourth round `<img>` rule
    or a second picture in a beat is a bug.
+8. **A control is at least 24×24px, and shows where the keyboard is**
+   (`sand-pmz.4`, `docs/accessibility.md`). `outline: none` on `:focus-visible`
+   is a bug even when something else changes colour — in every place this
+   project tried it, the something else was already saying "hovered" or
+   "selected".

@@ -102,9 +102,15 @@
 
 /* ---- track ---- */
 
+/* The track is four stacked rows, and after sand-pmz.4 they no longer share
+   pixels: a marker's 24px target and the scrubber's 24px target cannot both
+   live in the same band, because whichever is later in the DOM takes the
+   overlap. Phases 0–22 · markers 24–48 · scrubber 50–74 (its 4px rail at 60,
+   where the progress fill sits) · ticks from 68. Eight pixels taller than it
+   was; that is what a 24px floor costs on a strip this dense. */
 .timeline__track {
   position: relative;
-  height: 88px;
+  height: 96px;
   margin-top: 4px;
 }
 
@@ -156,8 +162,9 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 56px;
+  top: 68px;
   height: 24px;
+  pointer-events: none;
 }
 
 .timeline__tick {
@@ -188,10 +195,15 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 26px;
-  height: 18px;
+  top: 24px;
+  height: 24px;
 }
 
+/* A 24px square centred on the instant (sand-pmz.4). It used to be as wide
+   as its label — 90px of invisible, opacity-0 text that still took clicks, so
+   two markers a fortnight apart on a campaign strip had overlapping targets
+   and the dot you aimed at was 9px of it. The label is out of flow now and
+   takes no pointer events, so what you can hit is exactly what you can see. */
 .timeline__marker {
   position: absolute;
   top: 0;
@@ -202,8 +214,9 @@
   padding: 0;
   cursor: pointer;
   display: grid;
-  justify-items: center;
-  gap: 2px;
+  place-items: center;
+  width: 24px;
+  height: 24px;
   color: var(--muted);
 }
 
@@ -220,13 +233,18 @@
 }
 
 .timeline__marker-label {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: var(--fs-xs);
   max-width: 90px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   opacity: 0;
-  transition: opacity 120ms;
+  pointer-events: none;
+  transition: opacity var(--dur-fast) var(--ease-out);
 }
 
 .timeline__marker:hover .timeline__marker-label,
@@ -237,7 +255,7 @@
 .timeline__progress {
   position: absolute;
   left: 0;
-  top: 48px;
+  top: 60px;
   height: 4px;
   background: var(--brass);
   border-radius: 2px;
@@ -248,9 +266,11 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 40px;
+  top: 50px;
   width: 100%;
-  height: 20px;
+  /* 24px, not 20: the scrubber is the control the whole strip is for, and it
+     was the one under the target floor (sand-pmz.4). The rail stays 4px. */
+  height: 24px;
   margin: 0;
   appearance: none;
   background: transparent;
@@ -287,15 +307,6 @@
   background: var(--brass);
   border: 2px solid var(--panel);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
 }
 
 @media (max-width: 640px) {
@@ -350,27 +361,36 @@
     font-size: var(--fs-xs);
   }
 
+  /* Below 640px the band already shows no label, so the phase row can be a
+     stripe rather than a bar — which is where the markers' 24px comes from
+     (sand-pmz.4). Rows: phases 0–12 · markers 16–40 · scrubber 42–70, rail at
+     54 · ticks from 58. */
+  .timeline__phases,
+  .timeline__band {
+    height: 12px;
+  }
+
   .timeline__track {
-    height: 64px;
+    height: 78px;
     touch-action: pan-y;
+  }
+
+  .timeline__markers {
+    top: 16px;
   }
 
   .timeline__scrubber {
     touch-action: none;
     height: 28px;
-    top: 36px;
+    top: 42px;
   }
 
   .timeline__progress {
-    top: 48px;
+    top: 54px;
   }
 
   .timeline__ticks {
-    top: 52px;
-  }
-
-  .timeline__tick-label:nth-child(n) {
-    font-size: 9.5px;
+    top: 58px;
   }
 
   .timeline__marker-label {

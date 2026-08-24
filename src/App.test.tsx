@@ -128,7 +128,7 @@ describe('App shell', () => {
     window.history.replaceState(null, '', '/?t=1914-08-17T12:00:00Z');
     render(<App />);
     const gauge = await screen.findByRole(
-      'listitem',
+      'button',
       { name: /The plan's timetable: M\+15/ },
       { timeout: 8000 },
     );
@@ -141,7 +141,7 @@ describe('App shell', () => {
     ).toBeInTheDocument();
     // the Russian clock reads ahead: the armies crossed on M+15 against an assumption of M+40
     expect(
-      screen.getByRole('listitem', { name: /The Russian clock: M\+15, 25 d ahead/ }),
+      screen.getByRole('button', { name: /The Russian clock: M\+15, 25 d ahead/ }),
     ).toBeInTheDocument();
   });
 
@@ -149,7 +149,7 @@ describe('App shell', () => {
     window.history.replaceState(null, '', '/?t=1914-09-05T12:00:00Z');
     render(<App />);
     const gauge = await screen.findByRole(
-      'listitem',
+      'button',
       { name: /The right wing bleeds: 13 of 16 corps, 3 gone/ },
       { timeout: 8000 },
     );
@@ -176,7 +176,7 @@ describe('App shell', () => {
     expect(voices).toHaveTextContent('Rossignol: the colonial division in the fog');
     expect(voices).toHaveTextContent('Reconstruction');
     // the day has not ended: the line is still quiet
-    const line = screen.getByRole('listitem', { name: /Human cost to date/ });
+    const line = screen.getByRole('button', { name: /Human cost to date/ });
     expect(line).toHaveAccessibleName(/No recorded losses yet/);
     // the beat's chip opens the record
     fireEvent.click(screen.getByRole('button', { name: /22 August 1914 — the bloodiest day/ }));
@@ -192,7 +192,7 @@ describe('App shell', () => {
     window.history.replaceState(null, '', '/?t=1914-09-13T00:00:00Z');
     render(<App />);
     const line = await screen.findByRole(
-      'listitem',
+      'button',
       {
         name: /Human cost to date: Germany 200,000–250,000 killed, wounded and missing · France 406,515–456,515 killed, wounded and missing · France 27,000 killed/,
       },
@@ -208,7 +208,7 @@ describe('App shell', () => {
     window.history.replaceState(null, '', '/?t=1914-09-05T12:00:00Z');
     render(<App />);
     const gauge = await screen.findByRole(
-      'listitem',
+      'button',
       { name: /1\. Armee: marched \d+ km, railhead \d+ km behind/ },
       { timeout: 8000 },
     );

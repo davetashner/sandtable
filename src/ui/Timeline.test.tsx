@@ -3,6 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { ClockProvider } from '../engine/ClockContext.js';
 import { DAY } from '../engine/clock.js';
 import { Timeline } from './Timeline.js';
+import { OWNS_KEYS } from '../engine/shortcuts.js';
 
 const START = Date.UTC(1914, 7, 4);
 const END = START + 42 * DAY;
@@ -54,6 +55,25 @@ describe('<Timeline>', () => {
     expect(screen.getByText(/Hypothetical · The wide wheel/)).toBeInTheDocument();
     fireEvent.keyDown(slider, { key: 'Home' });
     expect(screen.getByText('Day 0')).toBeInTheDocument();
+  });
+
+  // sand-pmz.4: the transport listens on `window`, which is right for a reader
+  // whose focus is nowhere and wrong for one standing on the map, where the
+  // same arrows are the only way to pan.
+  it('keeps its global shortcuts off a surface that owns its keys', () => {
+    mount();
+    const map = document.createElement('div');
+    map.setAttribute(OWNS_KEYS, '');
+    const canvas = document.createElement('canvas');
+    map.append(canvas);
+    document.body.append(map);
+
+    fireEvent.keyDown(canvas, { key: 'ArrowRight', shiftKey: true });
+    expect(screen.getByText('Day 0')).toBeInTheDocument();
+    // …and still answers to a key pressed with focus nowhere in particular.
+    fireEvent.keyDown(document.body, { key: 'ArrowRight', shiftKey: true });
+    expect(screen.getByText('Day 1')).toBeInTheDocument();
+    map.remove();
   });
 
   it('toggles play with the button and space, changes speed with the select', () => {

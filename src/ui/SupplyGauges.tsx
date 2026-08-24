@@ -22,7 +22,7 @@ export function SupplyGauges({ lines, routes, label, onSelect, selected }: Suppl
   const { now } = useClock();
   if (lines.length === 0) return null;
   return (
-    <div className="clocks clocks--tallies" role="list" aria-label="Rail against feet">
+    <ul className="clocks clocks--tallies" aria-label="Rail against feet">
       {lines.map((l) => {
         const st = supplyStatus(
           l,
@@ -34,32 +34,32 @@ export function SupplyGauges({ lines, routes, label, onSelect, selected }: Suppl
         const gap = st.gapKm === undefined ? undefined : Math.round(st.gapKm);
         const pct = Math.min(100, (st.marchedKm / 600) * 100);
         return (
-          <button
-            key={l.id}
-            type="button"
-            role="listitem"
-            className="clocks__gauge clocks__gauge--tally"
-            data-tone={st.strained ? 'behind' : gap === undefined ? 'none' : 'ontime'}
-            data-selected={l.id === selected || undefined}
-            onClick={() => onSelect?.(l.id)}
-            aria-label={`${label(l.army) ?? l.army}: marched ${marched} km${gap === undefined ? '' : `, railhead ${gap} km behind`}`}
-            title={l.title}
-          >
-            <span className="clocks__title">{label(l.army) ?? l.title}</span>
-            <span className="clocks__bars" aria-hidden="true">
-              <span className="clocks__row clocks__row--tally">
-                <span className="clocks__fill clocks__fill--march" style={{ width: `${pct}%` }} />
+          <li key={l.id}>
+            <button
+              type="button"
+              className="clocks__gauge clocks__gauge--tally"
+              data-tone={st.strained ? 'behind' : gap === undefined ? 'none' : 'ontime'}
+              data-selected={l.id === selected || undefined}
+              onClick={() => onSelect?.(l.id)}
+              aria-label={`${label(l.army) ?? l.army}: marched ${marched} km${gap === undefined ? '' : `, railhead ${gap} km behind`}`}
+              title={l.title}
+            >
+              <span className="clocks__title">{label(l.army) ?? l.title}</span>
+              <span className="clocks__bars" aria-hidden="true">
+                <span className="clocks__row clocks__row--tally">
+                  <span className="clocks__fill clocks__fill--march" style={{ width: `${pct}%` }} />
+                </span>
               </span>
-            </span>
-            <span className="clocks__readout">
-              <span className="clocks__day">{marched} km marched</span>
-              <span className="clocks__slip">
-                {gap === undefined ? '—' : `railhead ${gap} km behind`}
+              <span className="clocks__readout">
+                <span className="clocks__day">{marched} km marched</span>
+                <span className="clocks__slip">
+                  {gap === undefined ? '—' : `railhead ${gap} km behind`}
+                </span>
               </span>
-            </span>
-          </button>
+            </button>
+          </li>
         );
       })}
-    </div>
+    </ul>
   );
 }

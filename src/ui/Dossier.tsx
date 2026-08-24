@@ -116,7 +116,11 @@ export function Dossier({
         </p>
         {branch.kind === 'counterfactual' && (
           <details className="dossier__about" open={!beat}>
-            <summary className="dossier__badge" role="note">
+            {/* No `role="note"` here: a summary's role is what makes it the
+                thing you press to open the details, and an explicit role
+                replaces it — the badge kept its look and lost its control
+                (sand-pmz.4). The disclosure state is the announcement. */}
+            <summary className="dossier__badge">
               Hypothetical — an authored branch, not what happened
             </summary>
             <div className="dossier__about-body">

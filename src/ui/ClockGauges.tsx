@@ -20,7 +20,7 @@ export function ClockGauges({ clocks, onSelect, selected }: ClockGaugesProps) {
   const { now, range } = useClock();
   if (clocks.length === 0) return null;
   return (
-    <div className="clocks" role="list" aria-label="Plan against reality">
+    <ul className="clocks" aria-label="Plan against reality">
       {clocks.map((c) => {
         const st = timetableStatus(c, now);
         const dayLabel = c.dayLabel ?? 'M+';
@@ -41,57 +41,57 @@ export function ClockGauges({ clocks, onSelect, selected }: ClockGaugesProps) {
                 ? 'ahead'
                 : 'ontime';
         return (
-          <button
-            key={c.id}
-            type="button"
-            role="listitem"
-            className="clocks__gauge"
-            data-tone={tone}
-            data-selected={c.id === selected || undefined}
-            onClick={() => onSelect?.(c.id)}
-            aria-label={`${c.title}: ${dayLabel}${Math.floor(st.day)}, ${slipLabel(slip)}${st.current ? ` on ${st.current.label}` : ''}`}
-            title={c.subtitle ?? c.title}
-          >
-            <span className="clocks__title">{c.title}</span>
-            <span className="clocks__bars" aria-hidden="true">
-              <span className="clocks__row clocks__row--plan">
-                {c.milestones
-                  .filter((m) => m.plannedDay !== undefined)
-                  .map((m) => (
-                    <i
-                      key={m.id}
-                      className="clocks__tick clocks__tick--plan"
-                      data-due={m.plannedDay! <= st.day || undefined}
-                      style={{ left: x(m.plannedDay!) }}
-                      title={`${dayLabel}${m.plannedDay}: ${m.label}`}
-                    />
-                  ))}
+          <li key={c.id}>
+            <button
+              type="button"
+              className="clocks__gauge"
+              data-tone={tone}
+              data-selected={c.id === selected || undefined}
+              onClick={() => onSelect?.(c.id)}
+              aria-label={`${c.title}: ${dayLabel}${Math.floor(st.day)}, ${slipLabel(slip)}${st.current ? ` on ${st.current.label}` : ''}`}
+              title={c.subtitle ?? c.title}
+            >
+              <span className="clocks__title">{c.title}</span>
+              <span className="clocks__bars" aria-hidden="true">
+                <span className="clocks__row clocks__row--plan">
+                  {c.milestones
+                    .filter((m) => m.plannedDay !== undefined)
+                    .map((m) => (
+                      <i
+                        key={m.id}
+                        className="clocks__tick clocks__tick--plan"
+                        data-due={m.plannedDay! <= st.day || undefined}
+                        style={{ left: x(m.plannedDay!) }}
+                        title={`${dayLabel}${m.plannedDay}: ${m.label}`}
+                      />
+                    ))}
+                </span>
+                <span className="clocks__row clocks__row--actual">
+                  {c.milestones
+                    .filter((m) => m.actualAt)
+                    .map((m) => (
+                      <i
+                        key={m.id}
+                        className="clocks__tick clocks__tick--actual"
+                        data-reached={Date.parse(m.actualAt!) <= now || undefined}
+                        style={{ left: x(dayOf(c, Date.parse(m.actualAt!))) }}
+                        title={m.label}
+                      />
+                    ))}
+                </span>
+                <span className="clocks__needle" style={{ left: x(st.day) }} />
               </span>
-              <span className="clocks__row clocks__row--actual">
-                {c.milestones
-                  .filter((m) => m.actualAt)
-                  .map((m) => (
-                    <i
-                      key={m.id}
-                      className="clocks__tick clocks__tick--actual"
-                      data-reached={Date.parse(m.actualAt!) <= now || undefined}
-                      style={{ left: x(dayOf(c, Date.parse(m.actualAt!))) }}
-                      title={m.label}
-                    />
-                  ))}
+              <span className="clocks__readout">
+                <span className="clocks__day">
+                  {dayLabel}
+                  {Math.max(0, Math.floor(st.day))}
+                </span>
+                <span className="clocks__slip">{slipLabel(slip)}</span>
               </span>
-              <span className="clocks__needle" style={{ left: x(st.day) }} />
-            </span>
-            <span className="clocks__readout">
-              <span className="clocks__day">
-                {dayLabel}
-                {Math.max(0, Math.floor(st.day))}
-              </span>
-              <span className="clocks__slip">{slipLabel(slip)}</span>
-            </span>
-          </button>
+            </button>
+          </li>
         );
       })}
-    </div>
+    </ul>
   );
 }

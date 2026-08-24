@@ -27,7 +27,7 @@ describe('<ClockGauges>', () => {
         <ClockGauges clocks={[clock]} onSelect={onSelect} />
       </ClockProvider>,
     );
-    const gauge = screen.getByRole('listitem', { name: /The plan: M\+15, 2 d behind on Liège/ });
+    const gauge = screen.getByRole('button', { name: /The plan: M\+15, 2 d behind on Liège/ });
     expect(gauge).toHaveAttribute('data-tone', 'behind');
     fireEvent.click(gauge);
     expect(onSelect).toHaveBeenCalledWith('1914:clock-x');

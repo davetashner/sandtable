@@ -19,10 +19,17 @@
  * range request, no S3, no CloudFront — and assert the invariants that survive
  * that: structure, not colour.
  *
- * `tiny-text` and `small-target` are counted and printed but never fatal. The
- * design's 10.5px meta voice is below the audit's floor by decision, and the
- * tap targets between 24 and 44px belong to sand-pmz.4; a gate that went red
- * for either would be enforcing a rule nobody agreed to.
+ * `small-target` **is** fatal, as of sand-pmz.4. It was not when this gate was
+ * written, and the reason given was exactly right: the tap targets belonged to
+ * another bead and a gate red on them would have been enforcing a rule nobody
+ * had agreed to. That bead has since agreed it — 24×24px, with the two inline
+ * cases WCAG names by name allowed on the baseline in writing
+ * (docs/accessibility.md). A rule with a written record is a rule a gate may
+ * hold.
+ *
+ * `tiny-text` is still counted and printed and never fatal. The type floor is
+ * ADR 0010's, and one of the two things still under it is a label inside an
+ * authored SVG rather than type on a page — not the gate's to rule on.
  *
  * The pixels are still taken. `--shots <dir>` writes one screenshot per scene
  * for a human to look at; in CI they are an artifact of the run, never a
@@ -51,7 +58,13 @@ const opt = (name) => {
 };
 
 /** The defects that are regressions. Everything else is reported, not gated. */
-const GATED = new Set(['page-h-overflow', 'clipped-x', 'clipped-y', 'overflows-right']);
+const GATED = new Set([
+  'page-h-overflow',
+  'clipped-x',
+  'clipped-y',
+  'overflows-right',
+  'small-target',
+]);
 
 const BASELINE = fileURLToPath(new URL('./visual-baseline.json', import.meta.url));
 const SHOTS = opt('shots') ?? process.env.SHOTS ?? null;
@@ -181,8 +194,8 @@ const advisory = rolled.filter((e) => !GATED.has(e.kind));
 if (advisory.length) {
   const total = advisory.reduce((n, e) => n + e.n, 0);
   console.log(
-    `\n  reported, not gated: ${total} tiny-text / small-target findings across ` +
-      `${advisory.length} elements (sand-neh.3, sand-pmz.4 — docs/design-review.md).`,
+    `\n  reported, not gated: ${total} tiny-text finding(s) across ` +
+      `${advisory.length} element(s) (ADR 0010 — docs/design-review.md).`,
   );
 }
 

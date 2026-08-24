@@ -262,6 +262,19 @@ h1 {
   outline-offset: 2px;
 }
 
+/* Read, not seen. Four components and the shell rely on it, so it lives here
+   rather than in whichever component stylesheet happened to declare it first
+   (it was `timeline.css`). */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .surface--dossier {
   display: grid;
   min-height: 0;

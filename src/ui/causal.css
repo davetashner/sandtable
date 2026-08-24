@@ -33,11 +33,14 @@
   gap: 6px;
 }
 
+/* Padded to the 24px floor rather than laid out as a flex box, because the
+   heads row aligns on the baseline and these are its words (sand-pmz.4). */
 .causal__entity {
   appearance: none;
   border: 0;
   background: none;
-  padding: 0;
+  padding: 3px 4px;
+  margin: 0 -4px;
   font: inherit;
   font-weight: 600;
   color: var(--ink);
@@ -86,6 +89,7 @@
 
 .causal__debate summary {
   cursor: pointer;
+  padding: 4px 0;
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
   letter-spacing: var(--track-eyebrow);
@@ -118,9 +122,11 @@
 
 .causal__alt {
   appearance: none;
+  display: inline-block;
   border: 0;
   background: none;
-  padding: 0;
+  min-height: 24px;
+  padding: 4px 0;
   font: inherit;
   color: var(--brass);
   cursor: pointer;

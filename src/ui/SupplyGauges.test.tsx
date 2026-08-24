@@ -67,7 +67,7 @@ describe('<SupplyGauges> and <SupplyCardView>', () => {
         />,
       ),
     );
-    const gauge = screen.getByRole('listitem', {
+    const gauge = screen.getByRole('button', {
       name: /1\. Armee: marched 14\d km, railhead 14\d km behind/,
     });
     expect(gauge).toHaveAttribute('data-tone', 'behind');

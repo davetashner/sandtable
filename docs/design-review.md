@@ -26,6 +26,11 @@ and the record says plainly what that does and does not catch.
 
 ### The review
 
+A third instrument runs beside them and needs no browser at all: axe-core over
+jsdom in `src/a11y.test.tsx`, which is a gate on every push and checks the half
+of accessibility that is structure — names, roles, lists, headings
+(`docs/accessibility.md`).
+
 ```bash
 npm run build
 npm run preview -- --port 4174 &
@@ -65,9 +70,15 @@ reason forward and marking each new row `TODO`. Write the reason before
 committing: a row nobody has justified is visible in the diff, and that is the
 point of keeping the baseline as text rather than as an image.
 
-Only `page-h-overflow`, `clipped-x`, `clipped-y` and `overflows-right` are
-gated. `tiny-text` and `small-target` are counted and printed and never fatal
-— the type floor is ADR 0010's and the tap targets are `sand-pmz.4`'s.
+`page-h-overflow`, `clipped-x`, `clipped-y`, `overflows-right` and
+`small-target` are gated. `small-target` was not, when the gate was written,
+and the reason was right: the tap targets belonged to `sand-pmz.4` and a gate
+red on them would have been enforcing a rule nobody had agreed to. That bead
+has since agreed it in writing (`docs/accessibility.md`), so the gate holds it,
+with the two inline cases WCAG exempts by name allowed on the baseline.
+`tiny-text` is still counted and never fatal: the type floor is ADR 0010's, and
+what is left under it is a label inside an authored SVG rather than type on a
+page.
 
 ## What the audit looks for
 
@@ -134,10 +145,18 @@ Eight defects, all confirmed against production before being fixed.
   **Settled against, in ADR 0010** (`sand-neh.3`): the audit was right and the
   scale was arithmetic. `--fs-xs` is 11.5px, `--fs-sm` 12.5px, and the
   twenty-odd literal sub-11px sizes in the component CSS now read the token.
-  The only `tiny-text` left is the branch toggle's aria-hidden `?` mark.
-- **Tap targets between 24 and 44px** on chips, entity links and timeline
-  markers. Real, and `sand-pmz.4` owns them; the controls this pass touched
-  (branch options, chapter chips) were raised while they were open.
+  The last two out were the timeline's 9.5px date labels on a phone — which now
+  read at the token size, with half as many of them — and the `Esc` key cap on
+  the opening sequence's skip control (`sand-pmz.4`). The only `tiny-text` left
+  is the labels inside the prologue's authored SVG schematics, which are part of
+  a drawing rather than type on a page.
+- ~~**Tap targets between 24 and 44px** on chips, entity links and timeline
+  markers.~~ **Settled in `sand-pmz.4`**, `docs/accessibility.md`: everything
+  the audit reports is at the 24px floor except the two inline cases the WCAG
+  target-size rule exempts by name — a person's name in a sentence and a
+  footnote reference on one — both of which have a full-size equivalent on the
+  same screen. The timeline marker was the interesting one: it was _passing_
+  the audit on the width of a 90px invisible label that still took clicks.
 - ~~**Chapter chips wrap to three rows on desktop.** Legible, but it is the
   heaviest chrome above the map. An IA question, adjacent to `sand-neh.7`.~~
   **Settled in ADR 0013** (`sand-neh.7`): the chip row is now an index that
