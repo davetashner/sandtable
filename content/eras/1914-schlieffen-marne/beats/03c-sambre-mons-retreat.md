@@ -4,6 +4,7 @@ title: Charleroi, Mons, and the order to fall back
 dateLabel: 23–24 August 1914
 from: 1914-08-23T00:00:00Z
 to: 1914-08-25T00:00:00Z
+media: media:scene/1914-mons-royal-fusiliers/royal-fusiliers-mons-colorized
 links:
   casualties: ['1914:casualties-mons']
   events: ['1914:event-battle-of-the-frontiers']

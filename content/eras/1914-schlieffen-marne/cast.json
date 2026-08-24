@@ -327,6 +327,27 @@
     ]
   },
   {
+    "id": "1914:cast-haig-douglas",
+    "person": "person:haig-douglas",
+    "side": "gb",
+    "role": "Commander, I Corps, British Expeditionary Force",
+    "bio": "Haig brought I Corps to Mons on the BEF's right, east of the canal salient, and it was barely engaged on 23 August while Smith-Dorrien's II Corps fought the battle.[^edmonds-1922] The retreat separated them: the Forest of Mormal stood between the two corps and Haig went round it to the east, so that when II Corps stood at Le Cateau on 26 August it stood without him.[^edmonds-1922][^herwig-2009]\n\nHis own bad night was Landrecies, 25 August, when a German column blundered into the town and I Corps headquarters believed for some hours that it was being overrun.[^edmonds-1922][^hastings-2013] From 6 September I Corps advanced into the gap between Kluck and Bülow, then to the Aisne, and in October and November held the line east of Ypres through the German attacks.[^herwig-2009][^edmonds-1925] He took the First Army in December 1914 and the whole BEF a year later.[^hastings-2013]",
+    "sources": [
+      {
+        "source": "source:edmonds-1922"
+      },
+      {
+        "source": "source:edmonds-1925"
+      },
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:hastings-2013"
+      }
+    ]
+  },
+  {
     "id": "1914:cast-churchill-winston",
     "person": "person:churchill-winston",
     "side": "gb",

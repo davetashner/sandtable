@@ -1,0 +1,28 @@
+{
+  "id": "media:person/haig-douglas/portrait-1914-colorized",
+  "person": "person:haig-douglas",
+  "file": "portrait-1914-colorized.png",
+  "width": 992,
+  "height": 1310,
+  "colorized": true,
+  "original": {
+    "description": "Full-length photograph of Sir Douglas Haig mounted on a bay horse, halted on open ground before a line of trees, facing the camera. He wears service dress with a peaked cap, Sam Browne belt and field boots; the horse is in a double bridle with a brass-mounted headstall. The agency's reference is written on the plate at lower left.",
+    "photographer": "Agence Rol (press agency; the operator is not named on the plate)",
+    "date": "September 1914",
+    "archive": "Bibliothèque nationale de France, département Estampes et photographie, EST EI-13 (391); Agence Rol reference 42304; Gallica ark:/12148/btv1b6931733s. Catalogued as 'Général Sir Douglas Haig de l'expédition de Sir John French'.",
+    "archive_url": "https://gallica.bnf.fr/ark:/12148/btv1b6931733s",
+    "licence": "public domain in France and the United States — an Agence Rol press photograph of 1914; the agency's work is out of copyright"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'. Documented colours: BEF khaki service dress, the brown leather of the Sam Browne and the field boots, the bay of the horse. The cap band and the medal ribbons are the colorizer's reading and are not matched to a reference — for the image review (sand-y0u.7)."
+  },
+  "content_policy": "ok — portrait on horseback, no gore",
+  "caption": "Sir Douglas Haig in September 1914, when he commanded I Corps of the British Expeditionary Force — in reserve at Mons, then the retreat, the Marne and the Aisne. Colorized (AI-assisted) from a public-domain press photograph.",
+  "credit": "Original photograph: Agence Rol, September 1914; Bibliothèque nationale de France, EST EI-13 (391), Rol 42304, via Gallica; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+  "used_by": ["1914:cast-haig-douglas"],
+  "focal_point": { "x": 0.55, "y": 0.28 },
+  "notes": "Supplied by Dave 2026-08-23. The French catalogue title calls him 'général'; in September 1914 his substantive rank was Lieutenant-General and he commanded I Corps — the caption says the command rather than the rank, which is the part that matters here. He was promoted General in November 1914, took First Army in December 1914 and the BEF in December 1915. This is the registry's first portrait of Haig."
+}

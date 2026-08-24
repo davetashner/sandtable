@@ -1,0 +1,28 @@
+{
+  "id": "media:scene/1914-mons-royal-fusiliers/royal-fusiliers-mons-colorized",
+  "kind": "scene",
+  "file": "royal-fusiliers-mons-colorized.png",
+  "width": 1609,
+  "height": 977,
+  "colorized": true,
+  "original": {
+    "description": "British infantry of A Company, 4th Battalion, Royal Fusiliers sitting and lying on the cobbles of the Grand-Place at Mons, packs and rifles beside them, some looking at the camera. Behind them the arcaded gothic front of the town hall and the houses of the square, with Belgian flags hanging from two of them; a few civilians stand among the men.",
+    "photographer": "not identified in the catalogue record",
+    "date": "22 August 1914",
+    "archive": "Imperial War Museums, catalogue number Q 70071, from the Mons War Museum collection. The catalogue reads: 'Troops of the A Company, 4th Battalion, Royal Fusiliers (7th Brigade, 3rd Division) resting in the Grand Place, Mons. On the following day the Battalion won two Victoria Crosses (Lieutenant Maurice Dease and Private Sidney Godley) on the canal bridge at Nimy, two miles north of Mons.'",
+    "archive_url": "https://en.wikipedia.org/wiki/File:4th_Bn_Royal_Fusiliers_22_August_1914.jpg",
+    "licence": "public domain — a work of the United Kingdom government created before 1 June 1957 (PD-UKGov); the photograph dates from 1914"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the public-domain original, 2026",
+    "licence": "Sandtable project licence; underlying photograph public domain",
+    "status": "ok — label 'colorized (AI-assisted)'. Documented colours: BEF khaki service dress and the 1908 webbing, the black-and-yellow Belgian flags on the houses, the stone of the town hall. The particular shade of the khaki and the civilians' clothes are the colorizer's reading rather than matched to a reference — for the image review (sand-y0u.7)."
+  },
+  "content_policy": "ok — soldiers at rest before the battle; no casualties, no dead, nothing of what happened to them the next day",
+  "caption": "A Company, 4th Battalion, Royal Fusiliers resting in the Grand-Place at Mons on 22 August 1914 — the day before the battle. On the 23rd the battalion held the canal bridge at Nimy and won the first two Victoria Crosses of the war. Colorized (AI-assisted) from a public-domain photograph.",
+  "credit": "Original photograph: photographer not identified, Mons, 22 August 1914; Imperial War Museums Q 70071; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+  "used_by": ["1914:beat-sambre-mons-retreat"],
+  "focal_point": { "x": 0.45, "y": 0.55 },
+  "notes": "Supplied by Dave 2026-08-23. IDENTIFICATION DISCREPANCY, left recorded rather than resolved: the IWM catalogue text places the 4th Royal Fusiliers in 7th Brigade, while the British order of battle for August 1914 has the battalion in 9th Brigade, 3rd Division, II Corps — which is how the pack's own formations read. The battalion, the place and the date are not in doubt; the brigade in the archive record is. For the image review (sand-y0u.7), and for the fact-check pass if the caption is ever made to name a brigade."
+}

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23",
+  "generatedAt": "2026-08-24",
   "base": "/assets/media/",
   "entries": [
     {
@@ -431,6 +431,43 @@
         "y": 0.28
       },
       "person": "person:gallieni-joseph"
+    },
+    {
+      "id": "media:person/haig-douglas/portrait-1914-colorized",
+      "dir": "people/haig-douglas",
+      "original": {
+        "src": "people/haig-douglas/portrait-1914-colorized.png",
+        "width": 992,
+        "height": 1310,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/haig-douglas/.derived/portrait-1914-colorized.w320.webp",
+          "width": 320,
+          "height": 423,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/haig-douglas/.derived/portrait-1914-colorized.w640.webp",
+          "width": 640,
+          "height": 845,
+          "type": "image/webp"
+        }
+      ],
+      "width": 992,
+      "height": 1310,
+      "caption": "Sir Douglas Haig in September 1914, when he commanded I Corps of the British Expeditionary Force — in reserve at Mons, then the retreat, the Marne and the Aisne. Colorized (AI-assisted) from a public-domain press photograph.",
+      "credit": "Original photograph: Agence Rol, September 1914; Bibliothèque nationale de France, EST EI-13 (391), Rol 42304, via Gallica; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain in France and the United States — an Agence Rol press photograph of 1914; the agency's work is out of copyright",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://gallica.bnf.fr/ark:/12148/btv1b6931733s",
+      "focalPoint": {
+        "x": 0.55,
+        "y": 0.28
+      },
+      "person": "person:haig-douglas"
     },
     {
       "id": "media:person/hausen-max-von/portrait-colorized",
@@ -1051,16 +1088,16 @@
       "credit": "Original photograph: Bundesarchiv, Bild 183-R43302 / CC-BY-SA 3.0 (Allgemeiner Deutscher Nachrichtendienst — Zentralbild), 1905. Colorization: Sandtable, AI-assisted, 2026, under the same CC-BY-SA 3.0 licence.",
       "licence": "CC-BY-SA 3.0 DE — the attribution string 'Bundesarchiv, Bild 183-R43302 / CC-BY-SA 3.0' is mandatory, and the colorization inherits share-alike",
       "colorized": true,
-      "people": [
-        "person:wilhelm-ii",
-        "person:nicholas-ii"
-      ],
       "present": true,
       "originalUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-R43302,_Kaiser_Wilhelm_II._und_Zar_Nikolaus_II..jpg",
       "focalPoint": {
         "x": 0.5,
         "y": 0.35
-      }
+      },
+      "people": [
+        "person:wilhelm-ii",
+        "person:nicholas-ii"
+      ]
     },
     {
       "id": "media:scene/1910-franz-ferdinand-family/franz-ferdinand-family-1910-colorized",
@@ -1097,16 +1134,16 @@
       "credit": "Original photograph: Bain News Service, 1910; Library of Congress, George Grantham Bain Collection (LCCN 2014697443, ggbain.17181); no known restrictions on publication. Colorization: Sandtable, AI-assisted, 2026.",
       "licence": "public domain — Library of Congress: no known restrictions on publication; pre-1931",
       "colorized": true,
-      "people": [
-        "person:franz-ferdinand-of-austria",
-        "person:sophie-chotek"
-      ],
       "present": true,
       "originalUrl": "https://commons.wikimedia.org/wiki/File:Franz_Ferdinand_%26_family_LCCN2014697443.jpg",
       "focalPoint": {
         "x": 0.2,
         "y": 0.5
-      }
+      },
+      "people": [
+        "person:franz-ferdinand-of-austria",
+        "person:sophie-chotek"
+      ]
     },
     {
       "id": "media:scene/1914-ausflug-nach-paris/railway-wagon-august-1914-colorized",
@@ -1319,6 +1356,48 @@
       }
     },
     {
+      "id": "media:scene/1914-mons-royal-fusiliers/royal-fusiliers-mons-colorized",
+      "dir": "scenes/1914-mons-royal-fusiliers",
+      "original": {
+        "src": "scenes/1914-mons-royal-fusiliers/royal-fusiliers-mons-colorized.png",
+        "width": 1609,
+        "height": 977,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-mons-royal-fusiliers/.derived/royal-fusiliers-mons-colorized.w320.webp",
+          "width": 320,
+          "height": 194,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-mons-royal-fusiliers/.derived/royal-fusiliers-mons-colorized.w640.webp",
+          "width": 640,
+          "height": 389,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-mons-royal-fusiliers/.derived/royal-fusiliers-mons-colorized.w1024.webp",
+          "width": 1024,
+          "height": 622,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1609,
+      "height": 977,
+      "caption": "A Company, 4th Battalion, Royal Fusiliers resting in the Grand-Place at Mons on 22 August 1914 — the day before the battle. On the 23rd the battalion held the canal bridge at Nimy and won the first two Victoria Crosses of the war. Colorized (AI-assisted) from a public-domain photograph.",
+      "credit": "Original photograph: photographer not identified, Mons, 22 August 1914; Imperial War Museums Q 70071; public domain. Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "public domain — a work of the United Kingdom government created before 1 June 1957 (PD-UKGov); the photograph dates from 1914",
+      "colorized": true,
+      "present": true,
+      "originalUrl": "https://en.wikipedia.org/wiki/File:4th_Bn_Royal_Fusiliers_22_August_1914.jpg",
+      "focalPoint": {
+        "x": 0.45,
+        "y": 0.55
+      }
+    },
+    {
       "id": "media:scene/1914-sarajevo-motorcade-detail/sarajevo-motorcade-detail-colorized",
       "dir": "scenes/1914-sarajevo-motorcade-detail",
       "original": {
@@ -1353,16 +1432,16 @@
       "credit": "Original photograph: photographer not identified, Sarajevo, 28 June 1914; Imperial War Museums Q 91848, via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
       "licence": "public domain — PD-UKGov for the IWM copy (UK Government work created before 1 June 1957); the photograph itself dates from 1914 and is out of copyright in its country of origin",
       "colorized": true,
-      "people": [
-        "person:franz-ferdinand-of-austria",
-        "person:sophie-chotek"
-      ],
       "present": true,
       "originalUrl": "https://commons.wikimedia.org/wiki/File:Archduke_Franz_Ferdinand_in_Sarajevo,_June_1914_Q91848.jpg",
       "focalPoint": {
         "x": 0.78,
         "y": 0.4
-      }
+      },
+      "people": [
+        "person:franz-ferdinand-of-austria",
+        "person:sophie-chotek"
+      ]
     },
     {
       "id": "media:scene/1914-sarajevo-motorcade-wide/sarajevo-motorcade-wide-colorized",
@@ -1399,16 +1478,16 @@
       "credit": "Original photograph: photographer not identified, Sarajevo, 28 June 1914; Imperial War Museums Q 91848, via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
       "licence": "public domain — PD-UKGov for the IWM copy (UK Government work created before 1 June 1957); the photograph itself dates from 1914 and is out of copyright in its country of origin",
       "colorized": true,
-      "people": [
-        "person:franz-ferdinand-of-austria",
-        "person:sophie-chotek"
-      ],
       "present": true,
       "originalUrl": "https://commons.wikimedia.org/wiki/File:Archduke_Franz_Ferdinand_in_Sarajevo,_June_1914_Q91848.jpg",
       "focalPoint": {
         "x": 0.62,
         "y": 0.42
-      }
+      },
+      "people": [
+        "person:franz-ferdinand-of-austria",
+        "person:sophie-chotek"
+      ]
     },
     {
       "id": "media:scene/1916-douaumont-officers/haupt-oven-brandis-1916-colorized",
@@ -1445,17 +1524,17 @@
       "credit": "Original photograph: Die Woche 1918 Nr. 2, August Scherl Verlag; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
       "licence": "public domain — life + 70 / published before 1931",
       "colorized": true,
-      "people": [
-        "person:haupt-hans-joachim",
-        "person:oven-von",
-        "person:brandis-cordt-von"
-      ],
       "present": true,
       "originalUrl": "https://commons.wikimedia.org/wiki/File:OffiziereHauptOvenBrandis.jpg",
       "focalPoint": {
         "x": 0.5,
         "y": 0.3
-      }
+      },
+      "people": [
+        "person:haupt-hans-joachim",
+        "person:oven-von",
+        "person:brandis-cordt-von"
+      ]
     },
     {
       "id": "media:scene/1916-somme-royal-irish-rifles/royal-irish-rifles-somme-colorized",
