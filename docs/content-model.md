@@ -143,6 +143,24 @@ generated JSON Schema; this is the intent of each.
   — Hentsch's staff car, the Paris taxis — and is not a transfer: it draws
   with a short, close dash of its own and the token stays on the map, because
   a column of cars is on the ground the whole way. Required sources.
+- **PersonTrack** (`tracks.json`) — where a **commander** was, as against where
+  his army was (`sand-1l0.27`). `person`, `kind`, waypoints, optional `mode`
+  (the same `MovementMode` a Route takes; an unmarked track is read as road
+  travel, never as a march), and a required `derivation` that must say at what
+  resolution the sources support the track — towns and days, or the hour.
+  Two kinds, and the difference is the point. An `hq` track is the
+  headquarters an army was run from, and must name the `post`; a commander has
+  at most one, because he cannot run two headquarters at once, and a pin on
+  Koblenz is not a claim that Moltke stood there at that hour. A `journey`
+  track is the man himself at the hours a source gives, and a commander may
+  have as many as the record documents. **A commander's documented movement is
+  a PersonTrack and never a Route on a formation invented to carry him**
+  (`sand-23b.9`): a staff officer in a car is a man, not a unit, and the
+  pseudo-formation dodge costs the portrait token, puts the man inside one
+  battle's zoom-in when his drive crossed four armies, and makes the order of
+  battle lie. Where the sources are silent for a day, leave the day out — a
+  track with gaps the derivation explains is honest; a track with interpolated
+  positions is not. Required sources.
 - **Event** — a point (`at`) or a span (`timeRange`); `kind`, `significance`
   (`major` events become timeline ticks), a Place or a position, summary,
   links, required sources.

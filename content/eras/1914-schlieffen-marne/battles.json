@@ -157,33 +157,6 @@
             "source": "source:herwig-2009"
           }
         ]
-      },
-      {
-        "id": "1914:marne-hentsch-mission",
-        "name": "Hentsch's mission",
-        "short": "Hentsch",
-        "side": "de",
-        "kind": "other",
-        "commander": "person:hentsch-richard",
-        "concentration": {
-          "area": "OHL, Luxembourg",
-          "asOf": "1914-09-08T11:00:00Z",
-          "sources": [
-            {
-              "source": "source:herwig-2009"
-            }
-          ]
-        },
-        "dissolved": "1914-09-10T06:00:00Z",
-        "summary": "Lieutenant-Colonel Hentsch's car from Luxembourg to the army headquarters, 8–9 September — the journey that ended the battle.",
-        "sources": [
-          {
-            "source": "source:herwig-2009"
-          },
-          {
-            "source": "source:tuchman-1962"
-          }
-        ]
       }
     ],
     "routes": [
@@ -1123,34 +1096,6 @@
           }
         ],
         "notes": "Eydoux's XI Corps on Foch's right, pushed back towards Mailly by Hausen's night attack."
-      },
-      {
-        "id": "1914:marne-route-hentsch",
-        "formation": "1914:marne-hentsch-mission",
-        "mode": "motor",
-        "waypoints": [
-          [6.13, 49.61, "1914-09-08T11:00:00Z"],
-          [5.04, 49.23, "1914-09-08T13:00:00Z"],
-          [4.5, 48.98, "1914-09-08T15:00:00Z"],
-          [4.37, 48.96, "1914-09-08T16:00:00Z"],
-          [3.82, 48.92, "1914-09-08T20:00:00Z"],
-          [3.82, 48.92, "1914-09-09T07:00:00Z"],
-          [3.08, 49.14, "1914-09-09T11:00:00Z"],
-          [3.08, 49.14, "1914-09-09T13:00:00Z"],
-          [3.82, 48.92, "1914-09-09T20:00:00Z"],
-          [6.13, 49.61, "1914-09-10T06:00:00Z"]
-        ],
-        "confidence": "medium",
-        "derivation": "Hentsch's itinerary by car as reconstructed in Herwig: Luxembourg, the 5th, 4th and 3rd Army headquarters on 8 Sep, Bülow's at Montmort that evening, Kluck's at Mareuil-sur-Ourcq late on the morning of the 9th, back to Luxembourg on the 10th.",
-        "sources": [
-          {
-            "source": "source:herwig-2009"
-          },
-          {
-            "source": "source:tuchman-1962"
-          }
-        ],
-        "notes": "Times are the sources' approximations; the route shows the order of the visits, not the roads taken. It is a car journey, not a march: the hours Herwig gives imply about 45 km/h on the fastest stretch, which is why the campaign's decision could be carried between five headquarters in two days."
       }
     ],
     "events": [
@@ -1295,7 +1240,7 @@
         "place": "place:montmort",
         "summary": "Having visited the 5th, 4th and 3rd Army headquarters, Hentsch reaches Bülow at Montmort in the evening. Bülow and his staff judge the 2nd Army's position untenable once the BEF crosses the Marne into the gap; the two agree that if it does, the 2nd Army will retreat and the 1st must conform.",
         "links": {
-          "formations": ["1914:marne-hentsch-mission", "1914:army-de-2"],
+          "formations": ["1914:army-de-2"],
           "people": ["person:hentsch-richard", "person:bulow-karl-von"]
         },
         "sources": [
@@ -1356,7 +1301,7 @@
         "place": "place:mareuil-sur-ourcq",
         "summary": "Hentsch reaches Mareuil-sur-Ourcq late in the morning, after a drive through the retreating columns of the 2nd Army's right, and tells Kluck's chief of staff, Kuhl, that the 2nd Army is retreating and the 1st must fall back to the Aisne. Kluck, who believes he is winning on the Ourcq, obeys. Whether Hentsch had the authority — Vollmacht — to order it, and whether the battle was already lost, is the oldest dispute about the Marne.",
         "links": {
-          "formations": ["1914:marne-hentsch-mission", "1914:army-de-1"],
+          "formations": ["1914:army-de-1"],
           "people": ["person:hentsch-richard", "person:kluck-alexander-von"]
         },
         "sources": [

@@ -175,7 +175,6 @@
       ],
       "events": ["1914:marne-event-hentsch-mareuil", "1914:marne-event-bulow-retreats"],
       "battles": ["1914:marne"],
-      "formations": ["1914:marne-hentsch-mission"],
       "documents": ["1914:document-hentsch-first-army-minute-1914-09-09"]
     },
     "sources": [

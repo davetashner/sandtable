@@ -83,7 +83,8 @@
     "title": "Military Operations: France and Belgium, 1914, Volume I: Mons, the Retreat to the Seine, the Marne and the Aisne, August–October 1914",
     "year": 1922,
     "publisher": "Macmillan, London (History of the Great War based on Official Documents)",
-    "notes": "British official history. Authoritative for the BEF's daily positions and the Le Cateau/Marne/Aisne narrative."
+    "notes": "British official history. Authoritative for the BEF's daily positions and the Le Cateau/Marne/Aisne narrative. The volume was revised twice; where this pack gives a page number for Volume I it cites source:edmonds-1933, the third edition, because that is the edition that is digitised and was read. Page numbers do not carry between the two.",
+    "url": "https://archive.org/details/3edmilitaryopera01edmouoft"
   },
   {
     "id": "source:afgg-1-1",
@@ -199,7 +200,8 @@
     "title": "My War Memories, 1914–1918 (Meine Kriegserinnerungen 1914–1918)",
     "year": 1919,
     "publisher": "Hutchinson, London; E. S. Mittler, Berlin",
-    "notes": "Ludendorff's memoir; the first-hand account of the 14th Brigade's night march into Liège and the surrender of the citadel on 7 August 1914. Self-serving on everything after; reliable for the Liège episode where the Reichsarchiv agrees."
+    "notes": "Ludendorff's memoir; the first-hand account of the 14th Brigade's night march into Liège and the surrender of the citadel on 7 August 1914. Self-serving on everything after; reliable for the Liège episode where the Reichsarchiv agrees.",
+    "url": "https://archive.org/details/mywarmemories19101lude"
   },
   {
     "id": "source:foch-1931",
@@ -789,5 +791,36 @@
     "publisher": "NobelPrize.org, Stockholm",
     "url": "https://www.nobelprize.org/prizes/chemistry/1918/summary/",
     "notes": "The awarding body's own record. Cited only for the prize itself: the Chemistry prize for 1918 to Fritz Haber 'for the synthesis of ammonia from its elements', reserved and awarded in 1919, with the Nobel lecture delivered in June 1920. Reference data, in the same register as the biographical dates rule in docs/sources.md — not a source for anything about the gas programme."
+  },
+  {
+    "id": "source:reichsarchiv-weltkrieg-3",
+    "kind": "official-history",
+    "author": "Reichsarchiv",
+    "title": "Der Weltkrieg 1914 bis 1918. Die militärischen Operationen zu Lande, Band 3: Der Marne-Feldzug — Von der Sambre zur Marne",
+    "year": 1926,
+    "publisher": "E. S. Mittler & Sohn, Berlin",
+    "url": "https://archive.org/details/weltkrieg-1914-1918-band-3-der",
+    "notes": "German official history, the volume between the frontier battles and the Marne: the operations of the German western armies from the Sambre to the Marne, roughly 23 August to 4 September 1914. It names, day by day and in its own words, the town each Armee-Oberkommando moved its Hauptquartier to, which is this pack's citation for the German commander tracks over the advance; it also carries the move of the Große Hauptquartier from Koblenz to Luxembourg on the morning of 30 August (p. 190). Bd. 4, which would carry the battle itself and Moltke's tour of 11 September, is not digitised. Apologetic on command decisions, like Bd. 1, and it measures the campaign by what the German army did."
+  },
+  {
+    "id": "source:edmonds-1933",
+    "kind": "official-history",
+    "author": "Edmonds, J. E.",
+    "title": "Military Operations: France and Belgium, 1914, Volume I: Mons, the Retreat to the Seine, the Marne and the Aisne, August–October 1914",
+    "year": 1933,
+    "publisher": "Macmillan, London (History of the Great War based on Official Documents)",
+    "edition": "Third edition, 1933 (reprinted 1937) — a thorough revision of the 1922 first edition against the French and German official histories; its pagination differs from the first edition's",
+    "url": "https://archive.org/details/3edmilitaryopera01edmouoft",
+    "notes": "The edition of Edmonds Vol. I that is digitised and was read, and therefore the one this pack cites whenever it gives a page number for the BEF in 1914. It names where GHQ was on most nights of the retreat and prints the GHQ operation orders in its appendices, which is this pack's citation for the GHQ track. Do not carry page numbers between this and source:edmonds-1922."
+  },
+  {
+    "id": "source:lanrezac-1920",
+    "kind": "book",
+    "author": "Lanrezac, Charles",
+    "title": "Le plan de campagne français et le premier mois de la guerre (2 août – 3 septembre 1914)",
+    "year": 1920,
+    "publisher": "Payot, Paris",
+    "url": "https://archive.org/details/leplandecampagne00lanruoft",
+    "notes": "The French 5th Army commander's own book, published after his relief and written to answer it. Day by day, and it names his own headquarters — Rethel, Chimay, the command post at Philippeville on the day of Charleroi, Sézanne — which is this pack's citation for the 5th Army track. It also gives the hour Joffre reached Sézanne on 3 September to relieve him (p. 276). Self-exculpatory throughout on the retreat from Charleroi and on the BEF; cite for where his headquarters was and what he says he was told, and check the judgements against the official histories."
   }
 ]
