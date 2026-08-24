@@ -352,6 +352,22 @@ describe('App shell', () => {
       ).toBeInTheDocument();
     });
 
+    it('keeps "Meanwhile" cards from outside the campaign off the strip, but reachable', () => {
+      // sand-9u2.2: the physics cards run 1905–1919 and the strip only spans
+      // August–November 1914, which clamps anything outside it to an edge.
+      window.history.replaceState(null, '', '/?card=1914:science-noether-theorem-1918');
+      render(<App />);
+      expect(
+        screen.getByRole('heading', { level: 2, name: /Noether's theorem, 1918/ }),
+      ).toBeInTheDocument();
+      expect(
+        screen.queryByRole('button', { name: /Open Noether's theorem, 1918/ }),
+      ).not.toBeInTheDocument();
+      // and a field with nothing on the strip gets no filter chip to toggle
+      expect(screen.queryByRole('button', { name: 'Mathematics' })).not.toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Physics' })).toBeInTheDocument();
+    });
+
     it('writes a switch into the URL, and takes it out again at its default', () => {
       window.history.replaceState(null, '', '/?t=1914-09-06T06:00:00Z');
       render(<App />);

@@ -488,5 +488,226 @@
     "publisher": "Mémorial de Verdun – Champ de bataille, Fleury-devant-Douaumont",
     "url": "https://memorial-verdun.fr/ressources/la-bataille-de-verdun",
     "notes": "The battlefield museum's own account. Cited only for the traffic figures it states for the Bar-le-Duc–Verdun road: 3,500 lorries, 2,000 cars and 800 ambulances in rotation, a lorry every 14 seconds and one vehicle every 5 seconds at the June–July peak, 90,000 men and 50,000 tonnes a week, and 1,200 territorials shovelling 700,000 tonnes of stone. These are the round figures French commemoration has settled on rather than archival returns, and the card says so; the specific loads come from Bruce."
+  },
+  {
+    "id": "source:einstein-1905-elektrodynamik",
+    "kind": "article",
+    "author": "Einstein, Albert",
+    "title": "Zur Elektrodynamik bewegter Körper",
+    "year": 1905,
+    "publisher": "Annalen der Physik 322 (ser. 4, vol. 17), no. 10, pp. 891–921",
+    "url": "https://doi.org/10.1002/andp.19053221004",
+    "notes": "The special-relativity paper: received 30 June 1905, published 26 September 1905. Cite for what the paper contains and for its date; contemporary volume numbering is 17, the modern continuous series numbering is 322."
+  },
+  {
+    "id": "source:einstein-1905-traegheit",
+    "kind": "article",
+    "author": "Einstein, Albert",
+    "title": "Ist die Trägheit eines Körpers von seinem Energieinhalt abhängig?",
+    "year": 1905,
+    "publisher": "Annalen der Physik 323 (ser. 4, vol. 18), no. 13, pp. 639–641",
+    "url": "https://doi.org/10.1002/andp.19053231314",
+    "notes": "Three pages; the mass–energy relation, written as a body radiating energy L losing mass L/c². Cite for what the paper says, not for anything later done with it."
+  },
+  {
+    "id": "source:bohr-1913",
+    "kind": "article",
+    "author": "Bohr, Niels",
+    "title": "On the Constitution of Atoms and Molecules, Parts I–III",
+    "year": 1913,
+    "publisher": "Philosophical Magazine, ser. 6, vol. 26: pp. 1–25 (no. 151, July), 476–502 (no. 153, September), 857–875 (no. 155, November)",
+    "notes": "The quantum atom as Bohr first stated it. Cite for the model, the stationary states and the hydrogen spectrum; the three parts are one argument and are cited here as one work."
+  },
+  {
+    "id": "source:moseley-1913",
+    "kind": "article",
+    "author": "Moseley, Henry G. J.",
+    "title": "The High-Frequency Spectra of the Elements, Parts I and II",
+    "year": 1913,
+    "publisher": "Philosophical Magazine, ser. 6, vol. 26, pp. 1024–1034 (December 1913); vol. 27, pp. 703–713 (April 1914)",
+    "notes": "Moseley's law and the atomic number, in the two papers that established it. Part II is the one that fixes the gaps at 43, 61, 72 and 75. Cite for the physics and for the papers' dates."
+  },
+  {
+    "id": "source:einstein-1915-perihel",
+    "kind": "article",
+    "author": "Einstein, Albert",
+    "title": "Erklärung der Perihelbewegung des Merkur aus der allgemeinen Relativitätstheorie",
+    "year": 1915,
+    "publisher": "Sitzungsberichte der Königlich Preußischen Akademie der Wissenschaften (Berlin), 1915, pp. 831–839",
+    "notes": "Read 18 November 1915: Mercury's anomalous perihelion advance and the doubled light deflection, on field equations Einstein revised again a week later. Cite for the perihelion result and the date."
+  },
+  {
+    "id": "source:einstein-1915-feldgleichungen",
+    "kind": "article",
+    "author": "Einstein, Albert",
+    "title": "Die Feldgleichungen der Gravitation",
+    "year": 1915,
+    "publisher": "Sitzungsberichte der Königlich Preußischen Akademie der Wissenschaften (Berlin), 1915, pp. 844–847",
+    "notes": "Read 25 November 1915; four pages, the last of the four November papers, and the field equations in their final form. Cite for the equations and the date, not for the priority argument with Hilbert."
+  },
+  {
+    "id": "source:corry-renn-stachel-1997",
+    "kind": "article",
+    "author": "Corry, Leo; Renn, Jürgen; Stachel, John",
+    "title": "Belated Decision in the Hilbert-Einstein Priority Dispute",
+    "year": 1997,
+    "publisher": "Science 278, no. 5341, pp. 1270–1273",
+    "url": "https://doi.org/10.1126/science.278.5341.1270",
+    "notes": "The printer's proofs of Hilbert's paper of 20 November 1915, read as showing that what Hilbert first submitted was not generally covariant and did not contain the explicit field equations. One side of a live argument — Winterberg (2004) and others dispute the reading of the proofs; cite it as a position, not a verdict."
+  },
+  {
+    "id": "source:schwarzschild-1916",
+    "kind": "article",
+    "author": "Schwarzschild, Karl",
+    "title": "Über das Gravitationsfeld eines Massenpunktes nach der Einsteinschen Theorie",
+    "year": 1916,
+    "publisher": "Sitzungsberichte der Königlich Preußischen Akademie der Wissenschaften (Berlin), 1916, pp. 189–196",
+    "notes": "The first exact solution of the field equations, written on the Russian front and presented for the author by Einstein on 13 January 1916. The header carries the presentation date; the paper opens by naming the problem Einstein set in the Mercury paper of 18 November 1915."
+  },
+  {
+    "id": "source:cpae-8",
+    "kind": "archive",
+    "author": "Schulmann, Robert; Kox, A. J.; Janssen, Michel; Illy, József (eds)",
+    "title": "The Collected Papers of Albert Einstein, Volume 8: The Berlin Years — Correspondence, 1914–1918",
+    "year": 1998,
+    "publisher": "Princeton University Press, Princeton",
+    "url": "https://einsteinpapers.press.princeton.edu/vol8a-doc/",
+    "notes": "The wartime correspondence. Schwarzschild's letter of 22 December 1915 enclosing his solution is doc. 169; quotations here follow the English supplement translation and are cited as translations."
+  },
+  {
+    "id": "source:schwarzschild-werke-1992",
+    "kind": "book",
+    "author": "Voigt, Hans-Heinrich (ed.)",
+    "title": "Karl Schwarzschild: Gesammelte Werke / Collected Works, Volume 1",
+    "year": 1992,
+    "publisher": "Springer-Verlag, Berlin",
+    "isbn": "978-3-540-52455-6",
+    "notes": "The collected works, opening with the biographical essay: Schwarzschild's war service (weather station in Belgium, artillery trajectory work in France, then Russia), the pemphigus contracted at the front, the return home in March 1916 and his death on 11 May 1916."
+  },
+  {
+    "id": "source:noether-1918",
+    "kind": "article",
+    "author": "Noether, Emmy",
+    "title": "Invariante Variationsprobleme",
+    "year": 1918,
+    "publisher": "Nachrichten von der Königlichen Gesellschaft der Wissenschaften zu Göttingen, Mathematisch-Physikalische Klasse, 1918, pp. 235–257",
+    "notes": "The two Noether theorems. Presented for her by Felix Klein at the session of 26 July 1918, Noether not being a member; dedicated to Klein. Cite for the theorems and the date."
+  },
+  {
+    "id": "source:kosmann-schwarzbach-2011",
+    "kind": "book",
+    "author": "Kosmann-Schwarzbach, Yvette",
+    "title": "The Noether Theorems: Invariance and Conservation Laws in the Twentieth Century",
+    "year": 2011,
+    "publisher": "Springer, New York",
+    "isbn": "978-0-387-87867-6",
+    "notes": "Translation of the 1918 paper with a scholarly history of both theorems and their reception, including the energy-conservation problem in general relativity that Hilbert and Klein set her. The standard modern treatment."
+  },
+  {
+    "id": "source:dick-1981",
+    "kind": "book",
+    "author": "Dick, Auguste",
+    "title": "Emmy Noether 1882–1935",
+    "year": 1981,
+    "publisher": "Birkhäuser, Boston",
+    "isbn": "978-3-7643-3019-4",
+    "notes": "The standard short biography (translated from the 1970 German). Cite for the Göttingen years: the refused habilitation, the courses announced under Hilbert's name, the habilitation of 1919 and the unsalaried years to 1923."
+  },
+  {
+    "id": "source:rutherford-1919",
+    "kind": "article",
+    "author": "Rutherford, Ernest",
+    "title": "Collision of α Particles with Light Atoms, Parts I–IV",
+    "year": 1919,
+    "publisher": "Philosophical Magazine, ser. 6, vol. 37, no. 222, pp. 537–587; Part IV, 'An anomalous effect in nitrogen', pp. 581–587",
+    "notes": "The four papers reporting the first artificial disintegration of a nucleus. Cite for what Rutherford observed and concluded in 1919 — not for the reaction as now written, which is Blackett (1925)."
+  },
+  {
+    "id": "source:blackett-1925",
+    "kind": "article",
+    "author": "Blackett, Patrick M. S.",
+    "title": "The Ejection of Protons from Nitrogen Nuclei, Photographed by the Wilson Method",
+    "year": 1925,
+    "publisher": "Proceedings of the Royal Society A 107, pp. 349–360",
+    "url": "https://doi.org/10.1098/rspa.1925.0029",
+    "notes": "The cloud-chamber photographs — eight forked tracks in some 400,000 — showing that the alpha particle is absorbed and not scattered, so that the 1919 result is a transmutation of nitrogen into oxygen. Cite for the corrected reading of Rutherford's experiment."
+  },
+  {
+    "id": "source:eve-1939",
+    "kind": "book",
+    "author": "Eve, Arthur Stewart",
+    "title": "Rutherford: Being the Life and Letters of the Rt Hon. Lord Rutherford, O.M.",
+    "year": 1939,
+    "publisher": "Cambridge University Press, Cambridge",
+    "notes": "The letters-and-recollections life by a colleague; the source for most of the well-known Rutherford anecdotes, including the reply about the missed anti-submarine meetings and the 'moonshine' remark of 1933. Cite the anecdotes as anecdotes — Eve rarely dates or stages them precisely, and later tellings vary."
+  },
+  {
+    "id": "source:wilson-1983",
+    "kind": "book",
+    "author": "Wilson, David",
+    "title": "Rutherford: Simple Genius",
+    "year": 1983,
+    "publisher": "Hodder & Stoughton, London",
+    "isbn": "978-0-340-23805-3",
+    "notes": "The modern biography. Cite for the wartime work on submarine detection for the Admiralty's Board of Invention and Research, the Manchester nitrogen experiments alongside it, and the move to the Cavendish in 1919."
+  },
+  {
+    "id": "source:pais-1991",
+    "kind": "book",
+    "author": "Pais, Abraham",
+    "title": "Niels Bohr's Times: In Physics, Philosophy, and Polity",
+    "year": 1991,
+    "publisher": "Oxford University Press, Oxford",
+    "isbn": "978-0-19-852049-8",
+    "notes": "The companion volume to Pais's Einstein biography: Bohr's Manchester year, the 1913 trilogy and its reception, and Bohr's later life. Same strength and same bias as Pais on Einstein — a physicist writing about physics, thin on the social setting."
+  },
+  {
+    "id": "source:dyson-eddington-davidson-1920",
+    "kind": "article",
+    "author": "Dyson, Frank W.; Eddington, Arthur S.; Davidson, Charles",
+    "title": "A Determination of the Deflection of Light by the Sun's Gravitational Field, from Observations Made at the Total Eclipse of May 29, 1919",
+    "year": 1920,
+    "publisher": "Philosophical Transactions of the Royal Society A 220, pp. 291–333",
+    "url": "https://doi.org/10.1098/rsta.1920.0009",
+    "notes": "The expedition report itself: the three plate sets, the reductions, the published deflections and the stated grounds for setting the Sobral astrographic plates aside. Cite for the numbers as published; the argument about whether the rejection was justified is Earman & Glymour, Kennefick and Gilmore & Tausch-Pebody."
+  },
+  {
+    "id": "source:earman-glymour-1980",
+    "kind": "article",
+    "author": "Earman, John; Glymour, Clark",
+    "title": "Relativity and Eclipses: The British Eclipse Expeditions of 1919 and Their Predecessors",
+    "year": 1980,
+    "publisher": "Historical Studies in the Physical Sciences 11, no. 1, pp. 49–85",
+    "url": "https://doi.org/10.2307/27757471",
+    "notes": "The case that the 1919 announcement outran its data and that the discordant plates were dropped because they disagreed with Einstein. The sceptical side of the argument; cite it as one side."
+  },
+  {
+    "id": "source:kennefick-2019",
+    "kind": "book",
+    "author": "Kennefick, Daniel",
+    "title": "No Shadow of a Doubt: The 1919 Eclipse That Confirmed Einstein's Theory of Relativity",
+    "year": 2019,
+    "publisher": "Princeton University Press, Princeton",
+    "isbn": "978-0-691-18386-2",
+    "notes": "The reply to Earman & Glymour, developed from Kennefick's 2009 Physics Today article: the astrographic plates were rejected by Dyson on instrumental grounds, and Dyson, not Eddington, made the call. The defending side; cite it as one side."
+  },
+  {
+    "id": "source:gilmore-tausch-pebody-2022",
+    "kind": "article",
+    "author": "Gilmore, Gerard; Tausch-Pebody, Gudrun",
+    "title": "The 1919 Eclipse Results That Verified General Relativity and Their Later Detractors: A Story Re-told",
+    "year": 2022,
+    "publisher": "Notes and Records of the Royal Society 76, no. 1, pp. 155–180",
+    "url": "https://doi.org/10.1098/rsnr.2020.0040",
+    "notes": "A re-examination of the 1919 reductions and of the twentieth-century criticism of them, concluding that the published result stands. The most recent round of the argument; cite alongside Earman & Glymour, not instead of them."
+  },
+  {
+    "id": "source:mhs-oxford-moseley",
+    "kind": "web",
+    "author": "Museum of the History of Science, University of Oxford",
+    "title": "'Dear Harry…' — Henry Moseley: A Scientist Lost to War",
+    "year": 2015,
+    "url": "https://www.mhs.ox.ac.uk/moseley/",
+    "notes": "The museum's exhibition and research site, built on Moseley's letters and the family papers it holds. Cite for the circumstances of his death on 10 August 1915 — the 38th Brigade signal section, the Turkish counter-attack on Chunuk Bair, the body never recovered, the name on the Helles Memorial — and for the 1915 Nobel nominations."
   }
 ]

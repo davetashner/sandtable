@@ -100,6 +100,43 @@ and cite them, and must not settle the question for the learner (rule 6 of
   what happened with Horne & Kramer as the source; the science card on the
   Manifesto notes the denial; no atrocity imagery (ADR 0007).
 
+## 7. Did the 1919 eclipse actually confirm general relativity?
+
+- **The popular version:** Eddington sailed to Príncipe, photographed the
+  eclipse of 29 May 1919, measured the deflection, proved Einstein right, and
+  the announcement of 6 November made him famous.
+- **The charge** (Earman & Glymour, _HSPS_ 11:1, 1980): of the three plate
+  sets, the Sobral astrographic plates gave 0.93″ — close to the Newtonian
+  half-value — and were discarded; the two sets that were kept gave
+  1.98″ ± 0.12″ and 1.61″ ± 0.30″ against a prediction of about 1.7″. On this
+  reading a theory chose its own evidence, and the error bars did not support
+  the confidence of the announcement.
+- **The defence** (Kennefick, _No Shadow of a Doubt_, 2019; Gilmore &
+  Tausch-Pebody, _Notes and Records_ 76:1, 2022): the astrographic plates were
+  rejected on stated instrumental grounds — a focus shift — and the decision
+  was Dyson's, not Eddington's, Dyson being the more sceptical of the two;
+  modern re-reductions of the surviving plates support the published figures.
+- **How the pack presents it:** the eclipse card gives the three numbers as
+  published, names Earman & Glymour on one side and Kennefick and Gilmore &
+  Tausch-Pebody on the other, and does not settle it. The card is explicit
+  that what is _not_ in dispute is the reception, not the reduction.
+
+## 8. Did Hilbert get to the field equations before Einstein?
+
+- **The charge:** Hilbert submitted a generally covariant theory of gravitation
+  at Göttingen on 20 November 1915, five days before Einstein read
+  'Die Feldgleichungen der Gravitation' in Berlin.
+- **The reply** (Corry, Renn & Stachel, _Science_ 278, 1997): the printer's
+  proofs of Hilbert's paper — published only on 31 March 1916 — show that what
+  he first submitted was neither generally covariant nor in possession of the
+  explicit equations, and that the proofs were revised after Einstein's paper
+  appeared. Winterberg (2004) and others dispute the reading of the proofs,
+  which are damaged.
+- **How the pack presents it:** the general-relativity card names the dispute,
+  cites Corry, Renn & Stachel as one position, notes that the reading has been
+  contested since, and goes no further than the point both sides accept — that
+  the two men were corresponding through the autumn.
+
 ## Using these notes
 
 Link a beat to the relevant note by naming the historians in the prose with

@@ -1,5 +1,107 @@
 [
   {
+    "id": "1914:science-special-relativity-1905",
+    "title": "Special relativity, 1905 — the year of the memorandum",
+    "field": "physics",
+    "at": "1905-09-26",
+    "summary": "On 26 September 1905 the *Annalen der Physik* printed 'Zur Elektrodynamik bewegter Körper', by a twenty-six-year-old technical examiner in the Bern patent office. It threw out the ether, made the speed of light the same for every observer however fast they were moving, and made simultaneity a question you had to finish with 'for whom'. Three months later, in Berlin, Schlieffen finished [the memorandum this pack is named for](1914:document-schlieffen-memorandum-1905-12).",
+    "body": "The paper was received on 30 June 1905 and published on 26 September, at pp. 891–921 of volume 17.[^einstein-1905-elektrodynamik] A three-page sequel later the same year — 'Ist die Trägheit eines Körpers von seinem Energieinhalt abhängig?' — drew out the consequence: a body that radiates energy *L* loses mass *L/c²*, the relation later written *E = mc²*.[^einstein-1905-traegheit]\n\nNeither paper mentions gravity, and neither made Einstein famous. He was still examining patent applications in Bern; he left the office only in 1909, for an associate professorship at Zurich, and the theory of gravitation he began groping towards in 1907 took him until November 1915 to finish.[^pais-1982] What 1905 fixed was the frame everything afterwards had to fit inside — including, eventually, the timetables. The card is here because the two documents of 1905 in this pack were written six months apart by men who never heard of each other, and only one of them is remembered for what he got right.",
+    "connections": [
+      {
+        "to": "The field equations, 25 November 1915 (1914:science-general-relativity-1915)",
+        "note": "special relativity holds locally; gravity took another decade"
+      },
+      {
+        "to": "E = mc² and nuclear energy",
+        "note": "a bookkeeping relation, not a recipe — what to do with it needed Rutherford's nucleus first"
+      },
+      {
+        "to": "GPS",
+        "note": "a satellite clock runs slow by special relativity and fast by general; the receiver corrects for both"
+      }
+    ],
+    "sources": [
+      {
+        "source": "source:einstein-1905-elektrodynamik",
+        "pages": "891–921",
+        "note": "the paper, its content and its dates of receipt and publication"
+      },
+      {
+        "source": "source:einstein-1905-traegheit",
+        "pages": "639–641",
+        "note": "the mass–energy relation as Einstein first stated it"
+      },
+      {
+        "source": "source:pais-1982",
+        "note": "Einstein's circumstances in 1905 and the ten years to the field equations"
+      }
+    ]
+  },
+  {
+    "id": "1914:science-bohr-atom-1913",
+    "title": "Bohr's atom, 1913",
+    "field": "physics",
+    "at": "1913-07",
+    "summary": "In three papers in the *Philosophical Magazine* — July, September and November 1913 — Niels Bohr, twenty-seven, put Rutherford's nucleus at the centre of an atom whose electrons may sit only in certain orbits and may move between them only by swallowing or emitting a whole quantum of light. By the mechanics of 1913 this was indefensible. It got the hydrogen spectrum right to four figures.",
+    "body": "'On the Constitution of Atoms and Molecules' ran as Parts I–III of volume 26: pp. 1–25, 476–502 and 857–875.[^bohr-1913] Bohr had spent 1912 in Rutherford's Manchester laboratory, where the nucleus was barely a year old and nobody could explain why the orbiting electrons did not radiate their energy away and spiral into it within a fraction of a second.[^pais-1991] Bohr's answer was to forbid the question. There are stationary states in which the electron simply does not radiate; radiation happens only in the jump between two of them, at a frequency fixed by the difference in energy divided by Planck's constant. Out of that fell the Balmer formula for the hydrogen lines — an empirical fit since 1885 — with the Rydberg constant now written in terms of the electron's charge and mass and Planck's constant.[^bohr-1913] [^pais-1991]\n\nBohr's atom is wrong the way a scaffold is wrong: quantum mechanics took the orbits away in 1925–26 and kept the energy levels.[^pais-1991] What it did in 1913 was make the atom a thing that could be calculated rather than pictured — and give [Moseley](1914:science-moseley-atomic-number) a ladder whose rungs he could go and measure.",
+    "connections": [
+      {
+        "to": "Moseley's law, 1913–14 (1914:science-moseley-atomic-number)",
+        "note": "the experiment that showed the rungs are numbered by nuclear charge"
+      },
+      {
+        "to": "Quantum mechanics, 1925–26",
+        "note": "Heisenberg and Schrödinger removed the orbits; the energy levels survived"
+      },
+      {
+        "to": "Fission, and the physicists who carried the news west",
+        "note": "the same man, a quarter-century on, in a war that used what this one only interrupted"
+      }
+    ],
+    "sources": [
+      {
+        "source": "source:bohr-1913",
+        "note": "the model, the stationary states and the hydrogen spectrum"
+      },
+      {
+        "source": "source:pais-1991",
+        "note": "the Manchester year, the reception of the trilogy, and what 1925–26 kept"
+      }
+    ]
+  },
+  {
+    "id": "1914:science-moseley-enlists",
+    "title": "Moseley joins the Royal Engineers",
+    "field": "physics",
+    "at": "1914-08-20",
+    "summary": "Henry Moseley, twenty-six, had just shown that the atomic number — not the atomic weight — orders the elements, from the X-ray spectra of the metals. In August 1914 he left Rutherford's laboratory and the Manchester–Oxford circle to take a commission as a signals officer. He was killed at Gallipoli on 10 August 1915.",
+    "body": "Moseley's law (1913) turned Mendeleev's table from an empirical arrangement into a count of nuclear charge, predicted the missing elements (43, 61, 72, 75), and tied chemistry to Rutherford's nucleus and Bohr's atom.[^heilbron-1974] His death on the Sari Bair ridge above Suvla is the case usually cited when the war's cost to science is counted; after 1915 Britain kept more of its scientists out of the line.[^heilbron-1974] The card stands for the others who enlisted in August 1914 — among them Lawrence Bragg and the young Göttingen and Cambridge physicists — and for the question of what a year of silence in the laboratories cost.",
+    "connections": [
+      {
+        "to": "Moseley's number, and the hill above Suvla (1914:science-moseley-atomic-number)",
+        "note": "the work he left behind, and the day it ended"
+      },
+      {
+        "to": "The periodic table by atomic number",
+        "note": "the modern table follows Moseley"
+      },
+      {
+        "to": "Bohr's atom, 1913 (1914:science-bohr-atom-1913)",
+        "note": "the quantum atom the law confirmed"
+      }
+    ],
+    "sources": [
+      {
+        "source": "source:heilbron-1974",
+        "note": "Moseley's law, enlistment and death"
+      },
+      {
+        "source": "source:mhs-oxford-moseley",
+        "note": "where and how he was killed on 10 August 1915"
+      }
+    ]
+  },
+  {
     "id": "1914:science-freundlich-eclipse",
     "title": "The eclipse that did not test relativity",
     "field": "physics",
@@ -9,14 +111,17 @@
     "body": "Einstein's 1911 prediction (half the value general relativity would give in 1915) could have been tested — and 'disproved' — that August. War spared the theory an embarrassment and delayed its test until Eddington's expedition of May 1919, which made Einstein famous months after Versailles.[^pais-1982] Freundlich and his instruments were held in Russia and exchanged for Russian officers in September 1914.[^crelinsten-2006] Meanwhile in Berlin, Einstein spent the autumn of 1914 on the flawed 'Entwurf' theory, the last detour before the field equations of November 1915.[^pais-1982]",
     "connections": [
       {
-        "to": "General relativity, November 1915 (sand-9u2.2)",
+        "to": "The field equations, 25 November 1915 (1914:science-general-relativity-1915)",
         "note": "the correct deflection, twice the 1911 value"
       },
       {
-        "to": "Eddington's eclipse expedition, 29 May 1919",
+        "to": "The eclipse of 29 May 1919 (1914:science-eddington-eclipse-1919)",
         "note": "the test that finally happened — and made relativity a world story"
       },
-      { "to": "GPS", "note": "satellite clocks are corrected for general relativity every day" }
+      {
+        "to": "GPS",
+        "note": "satellite clocks are corrected for general relativity every day"
+      }
     ],
     "sources": [
       {
@@ -28,20 +133,6 @@
         "note": "Freundlich's internment and the astronomers' reception of relativity"
       }
     ]
-  },
-  {
-    "id": "1914:science-moseley-enlists",
-    "title": "Moseley joins the Royal Engineers",
-    "field": "physics",
-    "at": "1914-08-20",
-    "summary": "Henry Moseley, twenty-six, had just shown that the atomic number — not the atomic weight — orders the elements, from the X-ray spectra of the metals. In August 1914 he left Rutherford's laboratory and the Manchester–Oxford circle to take a commission as a signals officer. He was killed at Gallipoli on 10 August 1915.",
-    "body": "Moseley's law (1913) turned Mendeleev's table from an empirical arrangement into a count of nuclear charge, predicted the missing elements (43, 61, 72, 75), and tied chemistry to Rutherford's nucleus and Bohr's atom.[^heilbron-1974] His death at Suvla Bay is the case usually cited when the war's cost to science is counted; after 1915 Britain kept more of its scientists out of the line.[^heilbron-1974] The card stands for the others who enlisted in August 1914 — among them Lawrence Bragg and the young Göttingen and Cambridge physicists — and for the question of what a year of silence in the laboratories cost.",
-    "connections": [
-      { "to": "Gallipoli, 10 August 1915 (sand-aie.1)", "note": "Moseley's death at Suvla" },
-      { "to": "The periodic table by atomic number", "note": "the modern table follows Moseley" },
-      { "to": "Bohr's atom (1913) and the nucleus", "note": "the quantum atom the law confirmed" }
-    ],
-    "sources": [{ "source": "source:heilbron-1974", "note": "Moseley's law, enlistment and death" }]
   },
   {
     "id": "1914:science-manifesto-of-the-93",
@@ -69,7 +160,260 @@
         "source": "source:ungern-sternberg-1996",
         "note": "the text, the signatories and the aftermath"
       },
-      { "source": "source:pais-1982", "note": "Einstein and the counter-manifesto" }
+      {
+        "source": "source:pais-1982",
+        "note": "Einstein and the counter-manifesto"
+      }
+    ]
+  },
+  {
+    "id": "1914:science-moseley-atomic-number",
+    "title": "Moseley's number, and the hill above Suvla",
+    "field": "physics",
+    "at": "1915-08-10",
+    "summary": "In two papers, in December 1913 and April 1914, Henry Moseley showed that the X-ray lines of the elements march in step with a whole number that is not the atomic weight but the charge on the nucleus — the element's place in the table, and the reason there is a table. On 10 August 1915 he was shot through the head on the Sari Bair ridge above Suvla, telephoning a report back to divisional headquarters. He was twenty-seven.",
+    "body": "'The High-Frequency Spectra of the Elements' appeared in the *Philosophical Magazine* in December 1913 (vol. 26, pp. 1024–1034) and April 1914 (vol. 27, pp. 703–713).[^moseley-1913] Fire electrons at a metal and it gives back X-rays at frequencies characteristic of that metal. Moseley photographed those lines for element after element and found that the square root of the frequency of the strongest line climbs in equal steps from one element to the next. The step is one unit of nuclear charge — one place in the periodic table. Atomic weight had only ever approximated that order, and where the two disagreed, as at argon and potassium or cobalt and nickel, the number was right and the weight was wrong. The same measurement counted the gaps: between aluminium and gold exactly four elements were still missing, at 43, 61, 72 and 75.[^moseley-1913] It also confirmed [Bohr's atom](1914:science-bohr-atom-1913) from the outside, which was not what Moseley set out to do.\n\n[He took a commission in August 1914](1914:science-moseley-enlists) and went to Gallipoli as a signals officer with the 38th Brigade. He was killed on 10 August 1915 in the Turkish counter-attack that retook Chunuk Bair; his body was never recovered, and his name is on the Helles Memorial. He had been nominated that year for a Nobel Prize, which is not awarded posthumously.[^mhs-oxford-moseley]\n\nHis death is the case usually cited when the war's cost to science is counted, and it is usually credited with changing British practice — that after 1915 men of his training were kept out of the firing line and set to technical work.[^heilbron-1974] Whether one death changed a policy, or gave a name to a change the shortage of trained men was forcing anyway, is not a question the sources settle.",
+    "connections": [
+      {
+        "to": "The periodic table as it is taught",
+        "note": "the modern table is ordered by Moseley's number, not by weight"
+      },
+      {
+        "to": "Elements 43, 61, 72 and 75",
+        "note": "technetium, promethium, hafnium and rhenium — the four gaps he counted were all filled later"
+      },
+      {
+        "to": "Scientists and conscription, 1915–1918",
+        "note": "the argument about who is worth more in a laboratory than in a trench"
+      }
+    ],
+    "sources": [
+      {
+        "source": "source:moseley-1913",
+        "note": "the law, the papers and the four missing elements"
+      },
+      {
+        "source": "source:mhs-oxford-moseley",
+        "note": "the circumstances of his death, the Helles Memorial and the 1915 Nobel nominations"
+      },
+      {
+        "source": "source:heilbron-1974",
+        "note": "Moseley's life and letters, and the claim about British practice after 1915"
+      }
+    ]
+  },
+  {
+    "id": "1914:science-general-relativity-1915",
+    "title": "The field equations, 25 November 1915",
+    "field": "physics",
+    "at": "1915-11-25",
+    "summary": "On four Thursdays in November 1915 — the 4th, 11th, 18th and 25th — Einstein read papers to the Prussian Academy in Berlin, correcting himself each week. The paper of 18 November explained Mercury's stubborn perihelion with nothing tuned to fit it. The paper of 25 November, four pages long, gave the field equations of general relativity. The war was in its sixteenth month.",
+    "body": "Both papers are in the *Sitzungsberichte* of the Academy for 1915: the perihelion of Mercury at pp. 831–839, read 18 November, and 'Die Feldgleichungen der Gravitation' at pp. 844–847, read 25 November.[^einstein-1915-perihel] [^einstein-1915-feldgleichungen] Gravity in this account is not a force but the curvature of spacetime, and the equations say how matter and energy do the curving. Two numbers came out of it at once. Mercury's perihelion, drifting about 43 seconds of arc a century more than Newtonian gravity and the other planets could account for, came out right.[^einstein-1915-perihel] And starlight grazing the Sun should be bent by about 1.7 seconds of arc — twice the value Einstein had published in 1911 from an incomplete theory, and twice what Newtonian gravity gives a light corpuscle.[^pais-1982] [The expedition the war interned in the Crimea in August 1914](1914:science-freundlich-eclipse) would have gone looking for the smaller number.\n\nWhether Einstein was first is one of the few genuine priority disputes in the field. David Hilbert submitted a paper at Göttingen dated 20 November 1915, five days before Einstein's, containing equations essentially equivalent; it was published on 31 March 1916. Corry, Renn and Stachel found the printer's proofs in 1997 and argued that what Hilbert originally submitted was not generally covariant and did not contain the explicit equations — that the proofs were revised after Einstein's paper appeared.[^corry-renn-stachel-1997] That reading has been contested ever since. What is agreed is that the two men had been corresponding through the autumn and that neither worked in ignorance of the other; the pack goes no further than that.",
+    "connections": [
+      {
+        "to": "Schwarzschild's solution, January 1916 (1914:science-schwarzschild-solution)",
+        "note": "the first exact solution, worked out at the Russian front a month later"
+      },
+      {
+        "to": "The eclipse of 29 May 1919 (1914:science-eddington-eclipse-1919)",
+        "note": "the deflection measured, and the theory made a world story"
+      },
+      {
+        "to": "Noether's theorem, 1918 (1914:science-noether-theorem-1918)",
+        "note": "the conservation-of-energy problem these equations created, and its answer"
+      },
+      {
+        "to": "GPS and satellite navigation",
+        "note": "clocks in orbit run at a different rate; uncorrected, the fix drifts away within hours"
+      }
+    ],
+    "sources": [
+      {
+        "source": "source:einstein-1915-feldgleichungen",
+        "pages": "844–847",
+        "note": "the field equations, read 25 November 1915"
+      },
+      {
+        "source": "source:einstein-1915-perihel",
+        "pages": "831–839",
+        "note": "Mercury's perihelion, read 18 November 1915"
+      },
+      {
+        "source": "source:pais-1982",
+        "note": "the November series as a whole, the 1911 deflection and its doubling"
+      },
+      {
+        "source": "source:corry-renn-stachel-1997",
+        "pages": "1270–1273",
+        "note": "the Hilbert proofs — one side of the priority argument"
+      }
+    ]
+  },
+  {
+    "id": "1914:science-schwarzschild-solution",
+    "title": "Schwarzschild solves the field equations at the Russian front",
+    "field": "physics",
+    "at": "1916-01-13",
+    "summary": "Karl Schwarzschild, forty-two, director of the observatory at Potsdam and a volunteer since August 1914, was computing trajectories for an artillery unit on the Russian front when [Einstein's November papers](1914:science-general-relativity-1915) reached him. Within weeks he had the first exact solution of the field equations and sent it to Einstein in a letter of 22 December 1915. Einstein read it to the Academy on his behalf on 13 January 1916. Schwarzschild was dead by May.",
+    "body": "'Über das Gravitationsfeld eines Massenpunktes nach der Einsteinschen Theorie' fills pp. 189–196 of the *Sitzungsberichte* for 1916 and opens by saying plainly what it is: an answer to the problem Einstein had set in the Mercury paper of 18 November 1915.[^schwarzschild-1916] Einstein had solved his own equations only approximately. Schwarzschild solved them exactly for the field outside a single spherical mass — and the formula contains a radius at which the arithmetic stops making sense.\n\n'As you see, the war treated me kindly enough, in spite of the heavy gunfire, to allow me to get away from it all and take this walk in the land of your ideas,' he wrote on 22 December, in the letter that carried the solution. Einstein replied that he had not expected an exact solution could be stated so simply, and presented the paper for him.[^cpae-8]\n\nSchwarzschild had served at a weather station in Belgium, then with an artillery unit in France on trajectory calculations, then in Russia. He contracted pemphigus — an autoimmune disease of the skin, untreatable then — at the front, was invalided home in March 1916 and died on 11 May, four months after the paper was read.[^schwarzschild-werke-1992] The radius in his formula was treated for decades as an artefact of the coordinates he happened to choose. The object it actually describes did not acquire the name it now has until long after everyone named on this card was dead.",
+    "connections": [
+      {
+        "to": "Black holes",
+        "note": "the Schwarzschild radius is the horizon; half a century passed before it was read as physics rather than a coordinate accident"
+      },
+      {
+        "to": "The field equations, 25 November 1915 (1914:science-general-relativity-1915)",
+        "note": "one month old when he solved them exactly"
+      },
+      {
+        "to": "Gravitational-wave astronomy",
+        "note": "every merger detected since is read against solutions descended from this one"
+      }
+    ],
+    "sources": [
+      {
+        "source": "source:schwarzschild-1916",
+        "pages": "189–196",
+        "note": "the solution, and the presentation date in the paper's header"
+      },
+      {
+        "source": "source:cpae-8",
+        "note": "Schwarzschild to Einstein, 22 December 1915 (doc. 169), and Einstein's reply; quotations follow the English supplement translation"
+      },
+      {
+        "source": "source:schwarzschild-werke-1992",
+        "note": "the biographical essay: war service, the pemphigus, the return home in March 1916 and the death on 11 May"
+      }
+    ]
+  },
+  {
+    "id": "1914:science-noether-theorem-1918",
+    "title": "Noether's theorem, 1918",
+    "field": "mathematics",
+    "at": "1918-07-26",
+    "summary": "Hilbert and Klein had brought Emmy Noether to Göttingen in 1915 to sort out a problem [the new theory of gravitation](1914:science-general-relativity-1915) had created: in general relativity, the conservation of energy would not behave as it did in every other theory of physics. On 26 July 1918 Klein read her answer to the Göttingen scientific society, because she was not a member and could not read it herself. It is the deepest thing anyone proved about physics that decade, and the university would not pay her to lecture.",
+    "body": "'Invariante Variationsprobleme' fills pp. 235–257 of the Göttingen *Nachrichten* for 1918.[^noether-1918] The first theorem says that every continuous symmetry of a system's action corresponds to a conserved quantity, and the correspondence is exact and mechanical: laws that do not care when you start the clock give you conservation of energy; laws that do not care where you stand give momentum; laws that do not care which way you face give angular momentum. Conservation stops being a brute fact about the world and becomes a statement about its symmetries.\n\nThe second theorem handles symmetries that depend on arbitrary functions rather than on constants — gauge symmetries, of which the general covariance of Einstein's theory is one. These, she showed, do not yield conservation laws at all but identities among the field equations, which is precisely why energy in general relativity does not behave like energy in Newton's, and why the argument Hilbert and Klein had been having about it could not be settled on its own terms.[^kosmann-schwarzbach-2011]\n\nNoether had a doctorate from Erlangen and had been working at Göttingen since 1915 without pay. Her habilitation — the qualification to lecture in her own name — was refused by the philosophical faculty on the ground that she was a woman; Hilbert and Klein argued for her and lost. For four years she taught courses announced in the catalogue under Hilbert's name. She habilitated in 1919, once the rule had gone the way of the empire that made it, and was not paid for the work until 1923.[^dick-1981]",
+    "connections": [
+      {
+        "to": "The Standard Model of particle physics",
+        "note": "every conservation law in it is read off a symmetry by Noether's first theorem"
+      },
+      {
+        "to": "The field equations, 25 November 1915 (1914:science-general-relativity-1915)",
+        "note": "the theory whose energy problem she was brought to Göttingen to solve"
+      },
+      {
+        "to": "Women in the German universities",
+        "note": "the regulation that blocked her habilitation did not outlive the state that wrote it"
+      }
+    ],
+    "sources": [
+      {
+        "source": "source:noether-1918",
+        "pages": "235–257",
+        "note": "the two theorems, and the session of 26 July 1918 at which Klein presented them"
+      },
+      {
+        "source": "source:kosmann-schwarzbach-2011",
+        "note": "the theorems, their setting in the energy problem of general relativity, and their reception"
+      },
+      {
+        "source": "source:dick-1981",
+        "note": "the Göttingen years: the refused habilitation, the courses under Hilbert's name, 1919 and 1923"
+      }
+    ]
+  },
+  {
+    "id": "1914:science-eddington-eclipse-1919",
+    "title": "The eclipse of 29 May 1919",
+    "field": "physics",
+    "at": "1919-05-29",
+    "summary": "Two British expeditions photographed the stars around the eclipsed Sun on 29 May 1919 — one at Sobral in Brazil, one on the island of Príncipe. On 6 November, at a joint meeting of the Royal Society and the Royal Astronomical Society, they reported that the starlight had been deflected by roughly the amount Einstein's theory required. *The Times* the next morning: 'Revolution in Science… Newtonian Ideas Overthrown.' A British expedition had confirmed a German's theory, months after the peace was signed at Versailles.",
+    "body": "The full report is Dyson, Eddington and Davidson, *Philosophical Transactions of the Royal Society A* 220 (1920), pp. 291–333.[^dyson-eddington-davidson-1920] General relativity predicted a deflection at the Sun's limb of about 1.7 seconds of arc; Newtonian gravity acting on a light corpuscle gives half of that.[^pais-1982] Three sets of plates were exposed. The Sobral four-inch lens gave 1.98 ± 0.12 seconds of arc; Príncipe, shooting through cloud, gave 1.61 ± 0.30 from two usable plates; and the Sobral astrographic plates, whose focus had shifted, gave 0.93 and were set aside as discordant by more than their accidental error could explain.[^dyson-eddington-davidson-1920]\n\nThat third set is why this is not a clean story, and the pack does not pretend it is one. Earman and Glymour argued in 1980 that the astrographic plates were dropped because they disagreed with Einstein, and that the 1919 announcement was a case of a theory choosing its own evidence.[^earman-glymour-1980] Kennefick, and more recently Gilmore and Tausch-Pebody, have answered that the rejection was made on stated instrumental grounds, that it was Dyson — the sceptic of the two — and not Eddington who made the call, and that later re-reductions of the surviving plates support the published figures.[^kennefick-2019] [^gilmore-tausch-pebody-2022] The argument is still running; a reader who wants a verdict will have to read all three and pick.\n\nWhat is not in dispute is what happened next. J. J. Thomson, in the chair on 6 November, called it the most important result obtained in connection with the theory of gravitation since Newton's day, and the newspapers took it from there.[^kennefick-2019] Within a fortnight a middle-aged pacifist from the losing side, whose colleagues had signed [the Manifesto of the Ninety-Three](1914:science-manifesto-of-the-93) and were still shut out of international science, was the most famous living human being.[^crelinsten-2006]",
+    "connections": [
+      {
+        "to": "The eclipse that did not test relativity, 21 August 1914 (1914:science-freundlich-eclipse)",
+        "note": "the expedition the war interned, five years and one theory earlier"
+      },
+      {
+        "to": "The isolation of German science, 1919–1926 (1914:science-manifesto-of-the-93)",
+        "note": "the confirmation came from the country that had done the excluding"
+      },
+      {
+        "to": "Gravitational lensing",
+        "note": "the deflection is now an instrument — the same effect, used to weigh galaxies"
+      }
+    ],
+    "sources": [
+      {
+        "source": "source:dyson-eddington-davidson-1920",
+        "pages": "291–333",
+        "note": "the three plate sets, the published deflections and the stated grounds for the rejection"
+      },
+      {
+        "source": "source:earman-glymour-1980",
+        "pages": "49–85",
+        "note": "the case that the announcement outran its data — one side"
+      },
+      {
+        "source": "source:kennefick-2019",
+        "note": "the reply: Dyson's instrumental grounds, and the meeting of 6 November — the other side"
+      },
+      {
+        "source": "source:gilmore-tausch-pebody-2022",
+        "pages": "155–180",
+        "note": "the most recent re-examination of the reductions and of their critics"
+      },
+      {
+        "source": "source:pais-1982",
+        "note": "the predicted deflection and its Newtonian half-value"
+      },
+      {
+        "source": "source:crelinsten-2006",
+        "note": "the astronomers' reception of relativity and the making of Einstein's fame"
+      }
+    ]
+  },
+  {
+    "id": "1914:science-rutherford-transmutation",
+    "title": "Rutherford breaks a nitrogen nucleus",
+    "field": "physics",
+    "at": "1919-06",
+    "summary": "Ernest Rutherford spent most of the war on the Admiralty's Board of Invention and Research, working on the detection of submarines, and the rest of it in a room at Manchester firing alpha particles into gases. In June 1919 he published four papers reporting that when the gas was nitrogen, something came out the far side that behaved exactly like a hydrogen nucleus. He had knocked a piece off a nucleus: the first artificial transmutation of an element.",
+    "body": "'Collision of α Particles with Light Atoms', Parts I–IV, fill pp. 537–587 of volume 37 of the *Philosophical Magazine*; Part IV, 'An anomalous effect in nitrogen', is pp. 581–587.[^rutherford-1919] The apparatus was a brass box, a radium source, a gas, and a zinc-sulphide screen watched by eye in the dark for scintillations, counted one at a time. In nitrogen Rutherford counted long-range particles that could not be alpha particles and were indistinguishable from hydrogen nuclei, and concluded that the nitrogen nucleus had been disintegrated and a hydrogen nucleus — soon named the proton — driven out of it.[^rutherford-1919]\n\nWhat actually happened he could not see. Blackett's cloud-chamber photographs of 1925 — eight forked tracks among some four hundred thousand — showed the alpha particle is not deflected but absorbed: nitrogen plus helium gives oxygen-17 plus a proton. A transmutation, not a chipping.[^blackett-1925]\n\nRutherford had begun the nitrogen work around 1917, between meetings of the Board of Invention and Research; his biographer records his answer to a complaint about the meetings he had missed — that if the atom really could be artificially disintegrated it was of far greater importance than the war.[^eve-1939] The staging of the remark varies in the telling. In 1919 he moved to Cambridge to succeed J. J. Thomson at the Cavendish, where the neutron and the first accelerator-driven disintegration were found under him in 1932; in 1933 he was still calling the prospect of drawing useful power from the atom 'moonshine'.[^wilson-1983] [^eve-1939]",
+    "connections": [
+      {
+        "to": "The neutron, and the Cavendish of the 1930s",
+        "note": "Chadwick, Cockcroft and Walton worked in the laboratory Rutherford took over in 1919"
+      },
+      {
+        "to": "Fission, and the bomb",
+        "note": "the line runs from this experiment to 1945 — and Rutherford, who started it, thought it went nowhere"
+      },
+      {
+        "to": "The proton",
+        "note": "the name Rutherford gave the thing his 1919 experiment knocked loose"
+      }
+    ],
+    "sources": [
+      {
+        "source": "source:rutherford-1919",
+        "pages": "537–587",
+        "note": "the four papers and what Rutherford concluded from them in 1919"
+      },
+      {
+        "source": "source:blackett-1925",
+        "pages": "349–360",
+        "note": "the cloud-chamber photographs and the reaction as now written"
+      },
+      {
+        "source": "source:wilson-1983",
+        "note": "the Board of Invention and Research, the Manchester experiments alongside it, and the move to the Cavendish in 1919"
+      },
+      {
+        "source": "source:eve-1939",
+        "note": "the anecdotes — the missed meetings and the 'moonshine' remark — cited as anecdotes"
+      }
     ]
   }
 ]

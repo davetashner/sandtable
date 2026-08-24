@@ -110,6 +110,40 @@ specific with a `note`; when they disagree on meaning, write historiography.
 | `source:bruce-2008`                        | Bruce, _Pétain: Verdun to Vichy_ (2008)                                      | Pétain's motor supply at Verdun 1916; the Bar-le-Duc road's organisation  |
 | `source:memorial-verdun-bataille`          | Mémorial de Verdun, 'La bataille de Verdun'                                  | the Voie Sacrée's peak traffic figures — commemorative round numbers      |
 
+## History of science, 1905–1919 — the "Meanwhile" layer (in the registry)
+
+The rule for this layer is the one in §1 with a sharper edge: **cite the paper
+for what the paper says**, and a secondary work for anything about the person,
+the laboratory or the reception. The papers below are the ones the physics
+cards rest on (`sand-9u2.2`); the 1919 eclipse result is a contested point and
+is written as the argument it still is.
+
+| id                                     | Work                                                                      | Use it for                                                                      |
+| -------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `source:einstein-1905-elektrodynamik`  | Einstein, 'Zur Elektrodynamik bewegter Körper', _Ann. Phys._ 17 (1905)    | special relativity as published; the dates of receipt and publication           |
+| `source:einstein-1905-traegheit`       | Einstein, 'Ist die Trägheit …', _Ann. Phys._ 18 (1905)                    | the mass–energy relation as Einstein first stated it                            |
+| `source:bohr-1913`                     | Bohr, 'On the Constitution of Atoms and Molecules' I–III, _Phil. Mag._ 26 | the quantum atom, the stationary states, the hydrogen spectrum                  |
+| `source:moseley-1913`                  | Moseley, 'The High-Frequency Spectra of the Elements' I–II (1913–14)      | the atomic number, Moseley's law and the four missing elements                  |
+| `source:einstein-1915-perihel`         | Einstein, 'Erklärung der Perihelbewegung des Merkur' (18 Nov 1915)        | Mercury's perihelion and the doubled deflection                                 |
+| `source:einstein-1915-feldgleichungen` | Einstein, 'Die Feldgleichungen der Gravitation' (25 Nov 1915)             | the field equations, and the date they were read                                |
+| `source:corry-renn-stachel-1997`       | Corry, Renn & Stachel, _Science_ 278 (1997)                               | the Hilbert priority argument — one side, contested since                       |
+| `source:schwarzschild-1916`            | Schwarzschild, 'Über das Gravitationsfeld eines Massenpunktes' (1916)     | the first exact solution; the presentation date in the header                   |
+| `source:cpae-8`                        | _Collected Papers of Albert Einstein_, vol. 8 (1998)                      | the wartime correspondence; Schwarzschild's letter of 22 Dec 1915 (doc. 169)    |
+| `source:schwarzschild-werke-1992`      | Schwarzschild, _Gesammelte Werke_, ed. Voigt, vol. 1 (1992)               | the biographical essay: the fronts, the pemphigus, the death on 11 May 1916     |
+| `source:noether-1918`                  | Noether, 'Invariante Variationsprobleme', _Nachr. Göttingen_ (1918)       | the two theorems, and Klein's presentation of 26 July 1918                      |
+| `source:kosmann-schwarzbach-2011`      | Kosmann-Schwarzbach, _The Noether Theorems_ (2011)                        | the theorems in context; the energy problem in general relativity               |
+| `source:dick-1981`                     | Dick, _Emmy Noether 1882–1935_ (1981)                                     | the refused habilitation, the courses under Hilbert's name, 1919 and 1923       |
+| `source:rutherford-1919`               | Rutherford, 'Collision of α Particles with Light Atoms' I–IV (1919)       | what Rutherford observed and concluded in 1919                                  |
+| `source:blackett-1925`                 | Blackett, _Proc. R. Soc. A_ 107 (1925)                                    | the cloud-chamber photographs; the reaction as now written                      |
+| `source:eve-1939`                      | Eve, _Rutherford_ (1939)                                                  | the anecdotes, cited as anecdotes — Eve rarely dates or stages them             |
+| `source:wilson-1983`                   | Wilson, _Rutherford: Simple Genius_ (1983)                                | the Board of Invention and Research; the move to the Cavendish in 1919          |
+| `source:pais-1991`                     | Pais, _Niels Bohr's Times_ (1991)                                         | Bohr's Manchester year and the reception of the 1913 trilogy                    |
+| `source:dyson-eddington-davidson-1920` | Dyson, Eddington & Davidson, _Phil. Trans. A_ 220 (1920)                  | the eclipse report: three plate sets, the numbers, the stated rejection         |
+| `source:earman-glymour-1980`           | Earman & Glymour, _HSPS_ 11:1 (1980)                                      | the case that the 1919 announcement outran its data — one side                  |
+| `source:kennefick-2019`                | Kennefick, _No Shadow of a Doubt_ (2019)                                  | the reply: Dyson's instrumental grounds — the other side                        |
+| `source:gilmore-tausch-pebody-2022`    | Gilmore & Tausch-Pebody, _Notes and Records_ 76:1 (2022)                  | the most recent re-examination of the reductions and their critics              |
+| `source:mhs-oxford-moseley`            | Museum of the History of Science, Oxford, "'Dear Harry…'"                 | Moseley's death: the brigade, Chunuk Bair, the Helles Memorial, the nominations |
+
 ## To add as the content lands (not yet in the registry)
 
 - Reichsarchiv, _Der Weltkrieg_, Bd. 3 (the Marne) and Bd. 4 (the Aisne and

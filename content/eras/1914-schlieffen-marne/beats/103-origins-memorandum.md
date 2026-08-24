@@ -10,6 +10,7 @@ pullQuote:
   attribution: 'Schlieffen, memorandum "Krieg gegen Frankreich", December 1905'
 links:
   documents: ['1914:document-schlieffen-memorandum-1905-12']
+  science: ['1914:science-special-relativity-1905']
   people: ['person:schlieffen-alfred-von']
   places: ['place:liege', 'place:namur', 'place:maubeuge']
   battles: ['1914:origins']
