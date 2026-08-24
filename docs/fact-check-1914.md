@@ -79,7 +79,8 @@ It is being closed volume by volume, and the count is the measure of it:
 | `sand-1l0.16`, August 2026 (this record) |     1,620 |          7 |
 | after `sand-23b.5` (Liège forts)         |     1,629 |         35 |
 | after `sand-23b.9` (commander tracks)    |     1,694 |         76 |
-| after `sand-23b.6`, first tranche        | **1,705** |    **117** |
+| after `sand-23b.6`, first tranche        |     1,705 |        117 |
+| after `sand-23b.6.1` (`formations.json`) | **1,764** |    **244** |
 
 The first tranche of `sand-23b.6` worked the three files the bead names in
 priority order and stopped where the volumes stopped. `casualties.json` goes
@@ -91,8 +92,34 @@ Liège assault, Brussels, Namur, the BEF from Casteau to the Aisne, the taxis.
 Everything still without pages rests on a work that could not be opened from
 here — Herwig, Strachan, Tuchman, Doughty, Showalter, Zuber, Steg, Horne &
 Kramer, Van Pul, Tyng, and the AFGG volumes behind Gallica's block
-(`sand-23b.20`). `formations.json` (273 citations), `routes.json` (124) and
-the two shared registries are untouched and want their own beads.
+(`sand-23b.20`). At the end of that tranche `formations.json` (273
+citations), `routes.json` (124) and the two shared registries were untouched
+and wanted their own beads.
+
+The second tranche worked `formations.json`, the biggest single file left and,
+after casualties, the file with the most contestable numbers in it: strengths
+and orders of battle. It goes **0 → 127 of 332** citations with pages. What
+made that possible is that four of the five volumes the file leans on print an
+order of battle as an appendix, and all four are digitised: Reichsarchiv Bd. 1
+Anlage 1, "Das deutsche Westheer am 18. August 1914" (pp. 664–687), which
+gives every German army and corps with its divisions and its commander;
+Edmonds Vol. I Appendix 1 for the BEF (pp. 471–484), Appendix 3 for the French
+armies (pp. 488–489) and Appendix 5 for the Belgian army (p. 492). Bd. 1
+pp. 69–70 gives the deployment area of each German army as the
+Aufmarschanweisungen laid it down, and Edmonds p. 45 prints the seven German
+army strengths for 17 August — 320,000, 260,000, 180,000, 180,000, 200,000,
+220,000, 125,000 — which are exactly the figures this pack had been carrying
+on a secondary work that cannot be opened from here. **Fifty-nine citations
+were added** to entities that had none that could be read, and **eight moved
+from `source:edmonds-1922` to `source:edmonds-1933`**. The 104 Herwig
+citations, the 54 AFGG citations and the Strachan, Hastings, Unruh, Showalter,
+Tuchman, Tyng, Van Pul and Stone citations keep no pages, because none of
+those works can be opened from here.
+
+Six places where the volume said something other than the card are recorded in
+the citation `note` beside the claim and, where they are contested rather than
+simply wrong, in `docs/historiography-1914.md` (notes 12 and 13). Nothing was
+quietly corrected.
 
 **Never a page that was not read.** Every number above was pulled from
 archive.org's hOCR search-text and page-index files for the digitisation
