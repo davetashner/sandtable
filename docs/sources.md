@@ -120,6 +120,12 @@ specific with a `note`; when they disagree on meaning, write historiography.
 | `source:friedrich-hoffmann-2016`           | Friedrich & Hoffmann, 'Clara Haber, née Immerwahr', _ZAAC_ 642 (2016)         | Clara Immerwahr's doctorate; the historiography of her death                    |
 | `source:erisman-2008`                      | Erisman et al., 'How a century of ammonia synthesis changed the world' (2008) | the 1908 patent; the dependence of the modern world on fixed nitrogen           |
 | `source:nobel-chemistry-1918`              | NobelPrize.org, 'The Nobel Prize in Chemistry 1918'                           | the prize, its wording and its date — reference data only                       |
+| `source:sumner-1995`                       | Sumner, _The French Army 1914–18_ (Osprey MAA 286, 1995)                      | French 1914 dress, the trials from 1911, horizon blue; plates are reconstructions |
+| `source:mollo-1977`                        | Mollo, _Army Uniforms of World War I_ (1977)                                  | feldgrau and the covered helmet, khaki service dress, Belgian blue; the load    |
+| `source:hogg-weeks-1977`                   | Hogg & Weeks, _Military Small Arms of the 20th Century_ (1977)                | calibre, action and magazine of the Lebel, Gewehr 98, SMLE and Mauser m/1889    |
+| `source:jones-2012`                        | Jones, _From Boer War to World War_ (2012)                                    | British musketry reform; fifteen aimed rounds a minute; the fire at Mons        |
+| `source:messimy-1937`                      | Messimy, _Mes souvenirs_ (1937)                                               | the fight over the pantalon rouge, 1911–14; memoir, one side                    |
+| `source:armemuseum-digitaltmuseum`         | Armémuseum, object records on DigitaltMuseum                                  | the identification and licence of the four rifles in the kit plate set          |
 
 ## History of science, 1905–1919 — the "Meanwhile" layer (in the registry)
 
