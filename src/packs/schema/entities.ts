@@ -551,6 +551,32 @@ export const Waypoint = z
   .tuple([z.number().min(-180).max(180), z.number().min(-90).max(90), IsoTime])
   .describe('[lng, lat, ISO time]');
 
+/**
+ * How a formation — or a man — covered the ground, and the reason the model
+ * has the field at all: what moved something says how fast it could move, and
+ * the validator holds every leg to the rate of its mode (`sand-23b.8`).
+ *
+ * `march` is the default and the whole war on foot. `rail`, `sea` and `air`
+ * are **transfers**: the formation is inside the train, the ship or the
+ * aeroplane, so the leg draws dashed and the token appears only while it is
+ * under way. `motor` is the road — Hentsch's staff car, the Paris taxis,
+ * Joffre's drive to Melun — and it is not a transfer: a column of cars is on
+ * the ground the whole way and stays on the map, drawn with its own finer
+ * dash.
+ */
+export const MovementMode = z
+  .enum(['march', 'motor', 'rail', 'sea', 'air'])
+  .describe('march (on foot), motor (road), rail, sea, air');
+
+/**
+ * A formation's movement, as one leg of it. Most formations need only one
+ * route; a formation that changed how it moved needs one route per leg, each
+ * beginning where and when the one before it ended — the French 2nd Army
+ * marched in Lorraine, entrained for Picardy on 17 September and marched
+ * again when it got there, and each of those is a Route of its own so that
+ * each can carry its own `mode` (`sand-23b.8`). The engine joins the legs
+ * into one path.
+ */
 export const Route = z
   .object({
     id: Id,
@@ -560,12 +586,9 @@ export const Route = z
     ),
     waypoints: z.array(Waypoint).min(2).describe('Strictly increasing in time'),
     confidence: Confidence.default('medium'),
-    mode: z
-      .enum(['march', 'rail', 'sea', 'air'])
-      .optional()
-      .describe(
-        'How the formation moved along this route; rail/sea/air legs draw dashed and show their token only while moving (default march)',
-      ),
+    mode: MovementMode.optional().describe(
+      'How the formation moved along this route; rail/sea/air are transfers and draw dashed with their token shown only while moving, motor draws with a finer dash and keeps its token (default march)',
+    ),
     derivation: z
       .string()
       .optional()
@@ -609,6 +632,9 @@ export const PersonTrack = z
     side: Slug.optional().describe('Side id, for the ring colour; inferred from the post otherwise'),
     waypoints: z.array(Waypoint).min(2).describe('Strictly increasing in time'),
     confidence: Confidence.default('medium'),
+    mode: MovementMode.optional().describe(
+      'How he travelled, where the sources say: Joffre and Hentsch by car (motor), a headquarters moving by train (rail). Absent is not a claim that he walked — the pace check reads an unmarked track as road travel',
+    ),
     derivation: z
       .string()
       .min(1)
@@ -1107,6 +1133,7 @@ export type Opening = z.infer<typeof Opening>;
 export type Pack = z.infer<typeof Pack>;
 export type Formation = z.infer<typeof Formation>;
 export type Waypoint = z.infer<typeof Waypoint>;
+export type MovementMode = z.infer<typeof MovementMode>;
 export type Route = z.infer<typeof Route>;
 export type PersonTrack = z.infer<typeof PersonTrack>;
 export type Event = z.infer<typeof Event>;

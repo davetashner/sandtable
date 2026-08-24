@@ -31,7 +31,8 @@ scenario pack it is given.
   citation reads; used by the dossier.
 - `layers/` — data layers on the deck.gl overlay: `places.ts` (cities and
   fortress rings from the shared registry), `movement.ts`
-  (composeRoutes per branch, positionAt, ghost + TripsLayer trail + tokens +
+  (composeRoutes per branch — a formation's route legs joined into one path,
+  each keeping its own mode — positionAt, ghost + TripsLayer trail + tokens +
   labels), `colors.ts` (design tokens → RGBA per side), `useMovementLayers`.
 
 Coming: branches

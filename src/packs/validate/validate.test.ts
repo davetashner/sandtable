@@ -789,6 +789,98 @@ describe('validateContent', () => {
     expect(msgs).toContainEqual(expect.stringMatching(/starts before the branch diverges/));
   });
 
+  it('holds every route leg to the pace of its mode, and takes the mode at its word', () => {
+    const withRoute = (over: Record<string, unknown>) => {
+      const raw = fixture();
+      const r = raw.packs[0]!.collections['routes.json']!.data as Record<string, unknown>[];
+      Object.assign(r[2]!, over);
+      return validateContent(raw);
+    };
+    // Nancy to Picardy in four days: no army walked that, whatever the route says
+    const acrossFrance = [
+      [6.4, 48.78, '1914-09-17T12:00:00Z'],
+      [2.3, 49.9, '1914-09-21T12:00:00Z'],
+    ];
+    expect(messages(withRoute({ waypoints: acrossFrance }))).toContainEqual(
+      expect.stringMatching(/waypoints\[1\] covers 322 km in 96 h \(81 km\/day\) — beyond march/),
+    );
+    // …and by train it is unremarkable
+    const byRail = withRoute({ waypoints: acrossFrance, mode: 'rail' });
+    expect(messages(byRail)).toEqual([]);
+    expect(byRail.warnings.filter((w) => /km\/day/.test(w.message))).toHaveLength(0);
+
+    // A staff car covers in two hours what a corps needs two days for
+    const drive = [
+      [6.13, 49.61, '1914-09-08T11:00:00Z'],
+      [5.04, 49.23, '1914-09-08T13:00:00Z'],
+    ];
+    expect(messages(withRoute({ waypoints: drive }))).toContainEqual(
+      expect.stringMatching(/beyond march/),
+    );
+    expect(messages(withRoute({ waypoints: drive, mode: 'motor' }))).toEqual([]);
+
+    // Between the two bars: a hard march is a warning, not an error — the
+    // IX Reserve Corps really did run for the Ourcq.
+    const forced = withRoute({
+      waypoints: [
+        [4.3, 50.95, '1914-09-05T12:00:00Z'],
+        [3.55, 50.5, '1914-09-06T12:00:00Z'],
+      ],
+    });
+    expect(messages(forced)).toEqual([]);
+    expect(forced.warnings.map((w) => w.message)).toContainEqual(
+      expect.stringMatching(/faster than march sustained/),
+    );
+  });
+
+  it('requires a formation’s route legs to meet, and reads an unmarked track as road travel', () => {
+    const raw = fixture();
+    const r = raw.packs[0]!.collections['routes.json']!.data as Record<string, unknown>[];
+    const secondLeg = {
+      id: '1914:route-fr-6-later',
+      formation: '1914:army-fr-6',
+      waypoints: [
+        [3.5, 48.5, '1914-09-08T06:00:00Z'],
+        [3.6, 48.6, '1914-09-10T06:00:00Z'],
+      ],
+      sources: [{ source: 'source:herwig-2009' }],
+    };
+    r.push(secondLeg);
+    expect(messages(validateContent(raw))).toContainEqual(
+      expect.stringMatching(/does not join 1914:route-fr-6, the previous leg/),
+    );
+    // joined to where and when the first leg ended, the two are one route
+    secondLeg.waypoints[0] = [2.88, 48.96, '1914-09-05T06:00:00Z'];
+    expect(messages(validateContent(raw))).toEqual([]);
+
+    // A commander's track is never a march: unmarked, it is read as a car.
+    const withTrack = (over: Record<string, unknown>) => {
+      const tree = fixture();
+      tree.packs[0]!.collections['tracks.json'] = {
+        path: 'eras/1914-test/tracks.json',
+        data: [
+          {
+            id: '1914:track-joffre-melun',
+            person: 'person:kluck',
+            kind: 'journey',
+            waypoints: [
+              [4.71, 48.23, '1914-09-05T09:00:00Z'],
+              [2.66, 48.54, '1914-09-05T14:00:00Z'],
+            ],
+            derivation: 'The drive to Melun.',
+            sources: [{ source: 'source:herwig-2009' }],
+            ...over,
+          },
+        ],
+      };
+      return validateContent(tree);
+    };
+    expect(messages(withTrack({}))).toEqual([]);
+    expect(messages(withTrack({ mode: 'march' }))).toContainEqual(
+      expect.stringMatching(/beyond march/),
+    );
+  });
+
   it('requires citations on routes, events, battles, beats and links', () => {
     const raw = fixture();
     const c = raw.packs[0]!.collections;

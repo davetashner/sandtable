@@ -703,20 +703,16 @@
         "notes": "Boëlle's IV Corps, railed from the 3rd Army to Paris, reached the Ourcq front at Nanteuil on 8 Sep — part of its 7th Division by taxi."
       },
       {
-        "id": "1914:marne-route-fr-div-7",
+        "id": "1914:marne-route-fr-div-7-by-taxi",
         "formation": "1914:marne-div-fr-7",
+        "mode": "motor",
         "waypoints": [
           [2.53, 48.9, "1914-09-07T18:00:00Z"],
           [2.55, 48.93, "1914-09-07T22:00:00Z"],
-          [2.8, 49.13, "1914-09-08T02:00:00Z"],
-          [2.81, 49.14, "1914-09-08T12:00:00Z"],
-          [2.82, 49.15, "1914-09-09T12:00:00Z"],
-          [2.96, 49.16, "1914-09-10T12:00:00Z"],
-          [2.89, 49.23, "1914-09-11T12:00:00Z"],
-          [3.05, 49.4, "1914-09-12T00:00:00Z"]
+          [2.8, 49.13, "1914-09-08T02:00:00Z"]
         ],
         "confidence": "medium",
-        "derivation": "The taxi lift from Gagny/Livry to Nanteuil and Silly-le-Long on the night of 7/8 Sep (two runs, about 600 taxis, some 4,000–5,000 men of the 103rd and 104th Regiments); then with the IV Corps.",
+        "derivation": "The taxi lift from Gagny/Livry to Nanteuil and Silly-le-Long on the night of 7/8 Sep (two runs, about 600 taxis, some 4,000–5,000 men of the 103rd and 104th Regiments); the loading and then the drive.",
         "sources": [
           {
             "source": "source:afgg-1-1"
@@ -728,7 +724,30 @@
             "source": "source:tuchman-1962"
           }
         ],
-        "notes": "Only part of the division rode in taxis; the rest came by rail and on foot. The episode's military weight was small, its legend large."
+        "notes": "Only part of the division rode in taxis; the rest came by rail and on foot. The episode's military weight was small, its legend large — and it is the one troop movement of the campaign that went at the speed of a motor car, because it went in motor cars."
+      },
+      {
+        "id": "1914:marne-route-fr-div-7",
+        "formation": "1914:marne-div-fr-7",
+        "waypoints": [
+          [2.8, 49.13, "1914-09-08T02:00:00Z"],
+          [2.81, 49.14, "1914-09-08T12:00:00Z"],
+          [2.82, 49.15, "1914-09-09T12:00:00Z"],
+          [2.96, 49.16, "1914-09-10T12:00:00Z"],
+          [2.89, 49.23, "1914-09-11T12:00:00Z"],
+          [3.05, 49.4, "1914-09-12T00:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "With the IV Corps on the Ourcq from the morning of 8 Sep, on foot: approximate positions from the AFGG as summarised in Herwig.",
+        "sources": [
+          {
+            "source": "source:afgg-1-1"
+          },
+          {
+            "source": "source:herwig-2009"
+          }
+        ],
+        "notes": "Where the taxis put the division down, and where it fought afterwards."
       },
       {
         "id": "1914:marne-route-fr-div-45",
@@ -1108,6 +1127,7 @@
       {
         "id": "1914:marne-route-hentsch",
         "formation": "1914:marne-hentsch-mission",
+        "mode": "motor",
         "waypoints": [
           [6.13, 49.61, "1914-09-08T11:00:00Z"],
           [5.04, 49.23, "1914-09-08T13:00:00Z"],
@@ -1130,7 +1150,7 @@
             "source": "source:tuchman-1962"
           }
         ],
-        "notes": "Times are the sources' approximations; the route shows the order of the visits, not the roads taken."
+        "notes": "Times are the sources' approximations; the route shows the order of the visits, not the roads taken. It is a car journey, not a march: the hours Herwig gives imply about 45 km/h on the fastest stretch, which is why the campaign's decision could be carried between five headquarters in two days."
       }
     ],
     "events": [

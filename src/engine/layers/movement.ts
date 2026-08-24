@@ -2,7 +2,8 @@
  * The animated movement layer — Routes rendered on the map as the clock runs.
  *
  *   composeRoutes(...)  which waypoints each formation follows in a branch
- *                       (the base route before divergesAt + the branch tail)
+ *                       (the base route's legs before divergesAt + the branch
+ *                       tail), joined into one path that keeps its legs
  *   positionAt(...)     where a formation is at an instant (linear between
  *                       waypoints; parked at the ends)
  *   buildMovementLayers(...) deck.gl layers: faint ghost of the whole route,
@@ -15,7 +16,14 @@ import type { Layer } from '@deck.gl/core';
 import { TripsLayer } from '@deck.gl/geo-layers';
 import { PathStyleExtension, type PathStyleExtensionProps } from '@deck.gl/extensions';
 import { PathLayer, ScatterplotLayer, TextLayer } from '@deck.gl/layers';
-import type { Branch, Formation, Route, Side, Waypoint } from '../../packs/schema/index.js';
+import type {
+  Branch,
+  Formation,
+  MovementMode,
+  Route,
+  Side,
+  Waypoint,
+} from '../../packs/schema/index.js';
 import { type RGBA, sideColor, tokenColor } from './colors.js';
 import {
   occupiedBoxes,
@@ -26,23 +34,59 @@ import {
   type LabelPlacement,
 } from './places.js';
 
+/** One stretch of a route covered by one means (sand-23b.8). */
+export interface ComposedLeg {
+  /** [lng, lat, epoch ms]; a leg shares its first point with the leg before it. */
+  points: [number, number, number][];
+  mode: MovementMode;
+}
+
 export interface ComposedRoute {
   formation: Formation;
   side: Side;
-  /** [lng, lat, epoch ms] strictly increasing. */
+  /** Every leg joined into one path: [lng, lat, epoch ms] strictly increasing. */
   points: [number, number, number][];
+  /** The path in the pieces it was written in, each with its own mode. */
+  legs: ComposedLeg[];
   /** True when any part of the path comes from a counterfactual branch. */
   hypothetical: boolean;
   confidence: Route['confidence'];
-  /** How it moves: rail/sea/air legs draw dashed and show the token only while moving. */
-  mode: NonNullable<Route['mode']>;
 }
 
 const toPoint = (w: Waypoint): [number, number, number] => [w[0], w[1], Date.parse(w[2])];
 
+/** rail, sea and air are transfers: the formation is inside the thing carrying it. */
+export function isTransfer(mode: MovementMode): boolean {
+  return mode === 'rail' || mode === 'sea' || mode === 'air';
+}
+
+/** The mode in force at `now` — the last leg to have begun (the first, before any has). */
+export function modeAt(legs: ComposedLeg[], now: number): MovementMode {
+  let current = legs[0];
+  for (const leg of legs) {
+    if (leg.points[0]![2] > now) break;
+    current = leg;
+  }
+  return current?.mode ?? 'march';
+}
+
+const byStart = (a: Route, b: Route) =>
+  Date.parse(a.waypoints[0]![2]) - Date.parse(b.waypoints[0]![2]);
+
+/** Routes in time order as legs, dropping anything at or after `cut`. */
+function legsOf(routes: Route[], cut: number): ComposedLeg[] {
+  const out: ComposedLeg[] = [];
+  for (const r of [...routes].sort(byStart)) {
+    const points = r.waypoints.map(toPoint).filter((p) => p[2] < cut);
+    if (points.length === 0) continue;
+    out.push({ points, mode: r.mode ?? 'march' });
+  }
+  return out;
+}
+
 /**
- * For each formation: the default route's waypoints before the branch's
- * divergence, then the branch route's waypoints (if the branch has one).
+ * For each formation: its default route's legs before the branch's
+ * divergence, then the branch route's legs (if the branch has one).
  * Formations without a default route in this branch are omitted.
  */
 export function composeRoutes(
@@ -54,27 +98,28 @@ export function composeRoutes(
   const sideById = new Map(sides.map((s) => [s.id, s]));
   const out: ComposedRoute[] = [];
   for (const f of formations) {
-    const base = routes.find((r) => r.formation === f.id && !r.branch);
+    const base = routes.filter((r) => r.formation === f.id && !r.branch);
     const tail =
       branch.kind === 'counterfactual'
-        ? routes.find((r) => r.formation === f.id && r.branch === branch.id)
-        : undefined;
-    if (!base && !tail) continue;
+        ? routes.filter((r) => r.formation === f.id && r.branch === branch.id)
+        : [];
+    if (base.length === 0 && tail.length === 0) continue;
     const side = sideById.get(f.side);
     if (!side) continue;
     const divergesAt = branch.divergesAt ? Date.parse(branch.divergesAt) : Infinity;
-    let points: [number, number, number][] = (base?.waypoints ?? []).map(toPoint);
-    if (tail) {
-      points = [...points.filter((p) => p[2] < divergesAt), ...tail.waypoints.map(toPoint)];
-    }
+    const legs = [...legsOf(base, tail.length ? divergesAt : Infinity), ...legsOf(tail, Infinity)];
+    // the legs meet at a shared waypoint; the joined path keeps it once
+    const points: [number, number, number][] = [];
+    for (const leg of legs)
+      for (const p of leg.points) if (points[points.length - 1]?.[2] !== p[2]) points.push(p);
     if (points.length === 0) continue;
     out.push({
       formation: f,
       side,
       points,
-      hypothetical: Boolean(tail),
-      confidence: tail?.confidence ?? base?.confidence ?? 'medium',
-      mode: tail?.mode ?? base?.mode ?? 'march',
+      legs,
+      hypothetical: tail.length > 0,
+      confidence: tail[0]?.confidence ?? base[0]?.confidence ?? 'medium',
     });
   }
   return out;
@@ -150,13 +195,29 @@ export interface MovementLayerOptions {
 
 interface RouteDatum {
   id: string;
-  /** rail/sea/air legs are dashed. */
+  mode: MovementMode;
+  /** Anything but a march is dashed. */
   dashed: boolean;
   path: [number, number][];
   timestamps: number[];
   color: RGBA;
   hypothetical: boolean;
 }
+
+/**
+ * How each mode draws. A march is a solid line — the army is on the ground
+ * the whole way. A transfer by rail, sea or air is the long dash: the
+ * formation is aboard something and off the map until it arrives. The road
+ * gets a dash of its own, short and close, so a column of cars reads as
+ * movement over the ground but not as a march (sand-23b.8).
+ */
+const DASH: Record<MovementMode, [number, number]> = {
+  march: [0, 0],
+  motor: [2, 3],
+  rail: [6, 4],
+  sea: [6, 4],
+  air: [6, 4],
+};
 
 interface TokenDatum {
   id: string;
@@ -226,14 +287,21 @@ export interface MovementScene {
 
 /** Layers plus the screen space the tokens and their labels occupy. */
 export function buildMovementScene(o: MovementLayerOptions): MovementScene {
-  const routeData: RouteDatum[] = o.routes.map((r) => ({
-    id: r.formation.id,
-    path: r.points.map((p) => [p[0], p[1]] as [number, number]),
-    timestamps: r.points.map((p) => (p[2] - o.rangeStart) / 1000),
-    color: sideColor(r.side, o.sides),
-    hypothetical: r.hypothetical,
-    dashed: Boolean(r.mode) && r.mode !== 'march',
-  }));
+  // one datum per leg, so a route that marched, entrained and marched again
+  // draws each stretch the way that stretch was covered
+  const routeData: RouteDatum[] = o.routes.flatMap((r) =>
+    r.legs
+      .filter((leg) => leg.points.length > 1)
+      .map((leg) => ({
+        id: r.formation.id,
+        mode: leg.mode,
+        path: leg.points.map((p) => [p[0], p[1]] as [number, number]),
+        timestamps: leg.points.map((p) => (p[2] - o.rangeStart) / 1000),
+        color: sideColor(r.side, o.sides),
+        hypothetical: r.hypothetical,
+        dashed: leg.mode !== 'march',
+      })),
+  );
   const tokens: TokenDatum[] = [];
   for (const r of o.routes) {
     const pos = positionAt(r.points, o.now);
@@ -242,8 +310,10 @@ export function buildMovementScene(o: MovementLayerOptions): MovementScene {
     // formed (the French 6th and 9th Armies, the Army of Alsace).
     if (pos.phase === 'before' && !existsAt(r.formation, o.now)) continue;
     if (dissolvedBy(r.formation, o.now)) continue;
-    // a rail/sea/air leg is a transfer: the token exists on the map only while it is under way
-    if (r.mode && r.mode !== 'march' && pos.phase !== 'moving') continue;
+    // a rail/sea/air leg is a transfer: the token exists on the map only while
+    // it is under way. A motor leg is not — the column is on the road, and on
+    // the map, before and after it drives.
+    if (isTransfer(modeAt(r.legs, o.now)) && pos.phase !== 'moving') continue;
     tokens.push({
       id: r.formation.id,
       label: r.formation.short ?? r.formation.name,
@@ -290,7 +360,7 @@ export function buildMovementScene(o: MovementLayerOptions): MovementScene {
       widthMinPixels: 1.5,
       capRounded: true,
       extensions: [new PathStyleExtension({ dash: true })],
-      getDashArray: (d) => (d.dashed ? [6, 4] : [0, 0]),
+      getDashArray: (d) => DASH[d.mode],
       dashJustified: true,
       jointRounded: true,
       pickable: false,
