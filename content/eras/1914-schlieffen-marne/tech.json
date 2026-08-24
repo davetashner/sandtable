@@ -194,5 +194,57 @@
         "note": "the peak traffic figures for the Voie Sacrée — commemorative round numbers, quoted as such"
       }
     ]
+  },
+  {
+    "id": "1914:tech-poison-gas-chemistry",
+    "title": "Poison gas and industrial chemistry — the weapon that worked and the breakthrough that did not",
+    "field": "chemistry",
+    "introduced": {
+      "at": "1914-10-27",
+      "label": "Germany's first gas shell, near Neuve-Chapelle, October 1914"
+    },
+    "summary": "Gas arrived inside this pack's own four months and did nothing at all. The French used rifle grenades filled with tear gas in the first weeks of the war; in October 1914, at Neuve-Chapelle south-west of [Lille](place:lille), the Germans fired shells filled with irritants at the Allied line; and in January 1915 they tried shell again on the Eastern Front, at Bolimów. Every one of these attempts was ineffective.[^1914-1918-online-gas-warfare] What made chemistry a weapon came five months after this pack closes, and the shape of the whole thing was set on its first afternoon: at [Ypres](place:ypres) on 22 April 1915 the gas worked and the breakthrough did not.",
+    "body": "Take that first attack, because everything after it is a commentary on it. Pioneer Regiment 35 had emplaced 1,600 large and 4,130 small cylinders holding 168 tons of chlorine in the German front line by 10 March 1915, and then the German 4th Army waited more than a month for a wind that would carry the cloud the right way.[^heller-1984] On the evening of 22 April the cylinders were opened against two French divisions — the 87th Territorial and the 45th Algerian — which broke, leaving a gap about four miles wide. The Germans went about four and a half miles into it and stopped: the French and the Canadians on the flank were already scraping together positions a thousand to three thousand yards back; a month of waiting on the weather had taken the edge off the assault divisions; and the attacking infantry had almost no protection of their own and, having seen what the cloud did, had no wish to walk any further into it.[^heller-1984]\n\nThat is the argument in one afternoon. A cloud released from cylinders belonged to the wind and not to the timetable; it could not be carried forward with the advance; and the attacker had to cross ground he had just poisoned, wearing less protection than his enemy would have within a year. The weapon made a hole. It could not make a breakthrough, because a breakthrough is a matter of pushing reserves through a hole faster than the enemy can close it, and gas did nothing whatever for that.\n\nFritz Haber directed the release in person, and he is where this stops being about a weapon and becomes about an industry.[^1914-1918-online-gas-warfare] He had filed a patent on 13 October 1908 on the 'synthesis of ammonia from its elements', and Carl Bosch and BASF turned it into plant.[^erisman-2008] Two things came out of it and they do not separate. The first is food: fixing nitrogen out of the air is why the modern world eats, and the centenary assessment of the process puts it that a hundred years on 'we live in a world transformed by and highly dependent upon Haber–Bosch nitrogen'.[^erisman-2008] The second is that Germany could keep fighting. Propellant and high explosive are nitrogen too, and Germany's had come by sea from Chile until the British blockade closed that route. BASF was making the annual equivalent of 6,000 tons of nitrogen as ammonium sulphate in July 1914; under a state guarantee of profit it raised output to 200,000 tons a year, and by the end of 1915 German industry was supplying ninety per cent of the nitrogen for explosives and seventy per cent of the demand from agriculture.[^1914-1918-online-blockade] The same answer fed the country and armed it. Haber had signed the [Manifesto of the Ninety-Three](1914:science-manifesto-of-the-93) six months before Ypres, and was given the Nobel Prize in Chemistry for 1918 for the ammonia synthesis — reserved that year, awarded in 1919.[^nobel-chemistry-1918]\n\nHis wife Clara Immerwahr, who had taken her doctorate in chemistry at Breslau in 1900, the first woman there to do so, and then found there was no scientific career on the other side of it, took her own life at their house in Dahlem on 2 May 1915, ten days after the attack. Popular accounts make this a protest against his gas work and repeat it as settled. It is not. Friedrich and Hoffmann, reviewing what survives, point out that neither Clara nor Fritz Haber left diaries or correspondence from which her motives could be reconstructed, that there is no farewell letter, and that the protest reading was supplied by later writers — Morris Goran in 1947 and 1967, and Gerit von Leitner's *Der Fall Clara Immerwahr* in 1993 — without sources for it; they place her death in a confluence that included an unfulfilled life, her marriage, and the deaths of her doctoral supervisor Richard Abegg and of her friend the physical chemist Otto Sackur.[^friedrich-hoffmann-2016] This card states both readings and settles neither. The sequence is not in dispute; the causation is.\n\nAfter Ypres the weapon and the answer to it drove each other for three years. Chlorine gave way to phosgene — German from December 1915, French in shell at Verdun on 22 February 1916 — and phosgene to mustard in July 1917, which defeated the respirator by not needing to be breathed at all: a liquid that burned skin hours after contact and stayed in the ground and on equipment afterwards.[^1914-1918-online-gas-warfare] [^heller-1984] Protection ran the same race the other way — cotton pads in early May 1915, a chemically treated flannel hood later that year, then the phenate-hexamine helmet, then from early 1916 the box respirator with its filter canister carried on the chest.[^heller-1984] Every answer provoked the next agent, and every new agent was in the line before the answer to the last one had reached every man. Delivery moved too: cylinders needed a wind that in western Europe usually blew the wrong way for the Germans, so the German army shifted to gas-filled shell, which could be fired upwind and at a chosen hour.[^heller-1984]\n\nThe reckoning has to be given as a range, because the figures do not agree. The table the scholarship uses is L. F. Haber's, and it covers four countries: about 186,000 gas casualties for Britain, 130,000 for France, 107,000 for Germany and 73,000 for the United States — some 496,000, published with the warning that gas casualty data are inherently inaccurate and that for some nations only generalized estimates exist.[^haber-1986] [^1914-1918-online-gas-warfare] Totals for all the belligerents run far higher — more than 1.3 million casualties and about 90,000 deaths by the armistice — because they take in armies, Russia's above all, whose numbers are estimates.[^fitzgerald-2008] What both accounts agree on is the ratio inside the number: of Britain's roughly 186,000 chemical casualties about 2.6 per cent died, and of the American gas casualties about 1,500 did.[^fitzgerald-2008] Gas was a very large producer of casualties and a small producer of deaths, and against troops who were prepared and equipped it produced fewer of both.[^fitzgerald-2008]\n\nSo it never broke a front. It could not be relied on, because it was hostage to the weather; it could not be carried forward, because the attacker had to cross what he had just poisoned; the answer to it arrived faster than the next version of it did; and the casualty table is its own proof that both sides had it, every army in it appearing as user and victim at once, so that it conferred no advantage outlasting the gap between an agent and its respirator. What it changed was not where the line ran but what it cost to stand in it — a mask carried, an alarm listened for, a wind watched, for four years. That is the opposite of the [firepower of 1914](1914:tech-firepower-1914), which changed the line's shape in a week and then held it for the rest of the war.\n\nNone of this belongs to this pack. Second Ypres, the mask race and the gas of 1917–18 are the Western Front 1915–1918 (sand-g80); what August–November 1914 contributes is a shell near Neuve-Chapelle that did nothing, and an industry already standing that made everything after it possible.",
+    "links": {
+      "events": ["1914:event-first-ypres", "1914:event-continuous-front"],
+      "places": ["place:ypres", "place:lille"],
+      "science": ["1914:science-manifesto-of-the-93"],
+      "tech": ["1914:tech-firepower-1914"]
+    },
+    "sources": [
+      {
+        "source": "source:1914-1918-online-gas-warfare",
+        "note": "the sequence of first uses — tear gas in 1914, Neuve-Chapelle, Bolimów, chlorine at Ypres under Haber's direction, phosgene in December 1915, mustard in July 1917 — and the four-nation casualty table with its caveat"
+      },
+      {
+        "source": "source:heller-1984",
+        "note": "22 April 1915: the cylinders and the 168 tons, the month's wait for the wind, the two French divisions, the four-mile gap and why the advance stopped; the respirator sequence; the shift from cylinder to shell"
+      },
+      {
+        "source": "source:haber-1986",
+        "pages": "243",
+        "note": "the casualty table itself — cited at the page 1914-1918-online gives for it, not from the volume in hand"
+      },
+      {
+        "source": "source:fitzgerald-2008",
+        "note": "the higher all-belligerent total and the deaths inside it: 2.6 per cent of British chemical casualties, about 1,500 American"
+      },
+      {
+        "source": "source:1914-1918-online-blockade",
+        "note": "the nitrogen figures: BASF in July 1914, the wartime expansion, and 90 per cent of explosives nitrogen by the end of 1915"
+      },
+      {
+        "source": "source:erisman-2008",
+        "note": "the 1908 patent and the modern world's dependence on Haber–Bosch nitrogen"
+      },
+      {
+        "source": "source:friedrich-hoffmann-2016",
+        "note": "Clara Immerwahr's doctorate, and the case against reading her death as a protest — the absent evidence and the writers who supplied the reading"
+      },
+      {
+        "source": "source:nobel-chemistry-1918",
+        "note": "the 1918 Chemistry prize, its wording and its award in 1919"
+      }
+    ]
   }
 ]

@@ -709,5 +709,85 @@
     "year": 2015,
     "url": "https://www.mhs.ox.ac.uk/moseley/",
     "notes": "The museum's exhibition and research site, built on Moseley's letters and the family papers it holds. Cite for the circumstances of his death on 10 August 1915 — the 38th Brigade signal section, the Turkish counter-attack on Chunuk Bair, the body never recovered, the name on the Helles Memorial — and for the 1915 Nobel nominations."
+  },
+  {
+    "id": "source:haber-1986",
+    "kind": "book",
+    "author": "Haber, L. F.",
+    "title": "The Poisonous Cloud: Chemical Warfare in the First World War",
+    "year": 1986,
+    "publisher": "Clarendon Press, Oxford",
+    "isbn": "9780198581420",
+    "notes": "The standard scholarly account of chemical warfare in the war, and the source everyone else's casualty table comes from: p. 243 gives about 186,000 gas casualties for Britain, 130,000 for France, 107,000 for Germany and 73,000 for the United States. Its verdict is that gas was militarily disappointing and a poor return on the industry it consumed. Ludwig Fritz Haber was Fritz Haber's son and an economic historian; he says so, and the book is markedly unsentimental about his father — the bias to watch is a professional economist's scepticism about the weapon's value, not filial defence."
+  },
+  {
+    "id": "source:1914-1918-online-gas-warfare",
+    "kind": "article",
+    "author": "Faith, Thomas I.",
+    "title": "Gas Warfare",
+    "year": 2016,
+    "publisher": "1914-1918-online. International Encyclopedia of the First World War (Freie Universität Berlin)",
+    "url": "https://encyclopedia.1914-1918-online.net/article/gas_warfare/",
+    "notes": "Peer-reviewed survey article. Cited for the sequence of first uses — French tear-gas rifle grenades in August 1914, German irritant shell at Neuve-Chapelle in October 1914 and at Bolimów in January 1915, all ineffective; chlorine at Ypres on 22 April 1915 under Haber's direction; phosgene in December 1915; mustard in July 1917 — and for the four-nation casualty table it reprints from Haber (1986) with the caveat that gas casualty data are inherently inaccurate and that for some nations only generalized estimates exist."
+  },
+  {
+    "id": "source:heller-1984",
+    "kind": "book",
+    "author": "Heller, Charles E.",
+    "title": "Chemical Warfare in World War I: The American Experience, 1917–1918",
+    "year": 1984,
+    "publisher": "Combat Studies Institute, US Army Command and General Staff College, Fort Leavenworth (Leavenworth Papers No. 10)",
+    "url": "https://www.armyupress.army.mil/Portals/7/combat-studies-institute/csi-books/leavenworth-papers-10-chemical-warfare-in-world-war-i-the-american-experience-1917-1918.pdf",
+    "notes": "A staff-college study, open access, with a careful narrative of the first gas attacks before it reaches the American chapters. Cited for the mechanics of 22 April 1915 — the release in the early evening, the two French divisions hit (the 87th Territorial and the 45th Algerian) and the gap of about four miles — and for the first French phosgene shells at Verdun on 22 February 1916. It is a doctrinal study written to draw lessons for the US Army, so its interest is in what worked and why; the operational judgements are conventional."
+  },
+  {
+    "id": "source:fitzgerald-2008",
+    "kind": "article",
+    "author": "Fitzgerald, Gerard J.",
+    "title": "Chemical Warfare and Medical Response During World War I",
+    "year": 2008,
+    "publisher": "American Journal of Public Health 98(4), 611–625",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2376985/",
+    "notes": "Peer-reviewed and open access; the medical and public-health side of gas warfare. Cited for the high end of the casualty range — more than 1.3 million gas casualties and approximately 90,000 deaths by the armistice — and for the ratio inside it: of about 186,000 British chemical casualties, a death toll of about 2.6 per cent, and of the AEF's gas casualties about 1,500 died. Its judgement is that chemical weapons killed proportionally few soldiers and that a chlorine or phosgene attack produced many casualties but few deaths against troops properly prepared and outfitted. Written from the medical literature rather than the operational archives, and one sentence in it garbles the share of casualties gas caused — take the figures it attributes, not its arithmetic."
+  },
+  {
+    "id": "source:1914-1918-online-blockade",
+    "kind": "article",
+    "author": "Kramer, Alan",
+    "title": "Naval Blockade (of Germany)",
+    "year": 2020,
+    "publisher": "1914-1918-online. International Encyclopedia of the First World War (Freie Universität Berlin)",
+    "url": "https://encyclopedia.1914-1918-online.net/article/naval-blockade-of-germany/",
+    "notes": "Peer-reviewed survey of the blockade and its effects. Cited for the nitrogen figures: BASF producing the annual equivalent of 6,000 tons of nitrogen as ammonium sulphate by July 1914, output raised to 200,000 tons a year under a state guarantee, and German industry supplying 90 per cent of the nitrogen for explosives and 70 per cent of agricultural demand by the end of 1915. Kramer's argument elsewhere in the article is that the blockade's effects on German civilians were severe and are understated in some of the literature — a position to note, though the nitrogen figures are not the contested part."
+  },
+  {
+    "id": "source:friedrich-hoffmann-2016",
+    "kind": "article",
+    "author": "Friedrich, Bretislav; Hoffmann, Dieter",
+    "title": "Clara Haber, née Immerwahr (1870–1915): Life, Work and Legacy",
+    "year": 2016,
+    "publisher": "Zeitschrift für anorganische und allgemeine Chemie 642(6), 437–448",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1002/zaac.201600035",
+    "notes": "The scholarly reassessment of Clara Immerwahr, by a Fritz Haber Institute director and a historian of science, published with a companion piece by Eckart Henning ('Freitod in Dahlem (1915)', same issue, 432–436). Cited for the doctorate at Breslau in 1900 and for the historiography of her death: that neither Clara nor Fritz Haber left diaries or correspondence from which her motives could be reconstructed, that no farewell letter survives, and that the reading of her suicide as a protest against chemical weapons rests on later authors — Morris Goran in 1947 and 1967, and Gerit von Leitner's Der Fall Clara Immerwahr (1993) — who give no sources for it. Friedrich and Hoffmann are correcting a myth and press their case hard; the pack states their position as a position and names the popular reading beside it."
+  },
+  {
+    "id": "source:erisman-2008",
+    "kind": "article",
+    "author": "Erisman, Jan Willem; Sutton, Mark A.; Galloway, James; Klimont, Zbigniew; Winiwarter, Wilfried",
+    "title": "How a century of ammonia synthesis changed the world",
+    "year": 2008,
+    "publisher": "Nature Geoscience 1(10), 636–639",
+    "url": "https://www.nature.com/articles/ngeo325",
+    "notes": "The centenary assessment of the Haber–Bosch process, by nitrogen-cycle scientists rather than historians. Cited for the patent date — Haber filed on 13 October 1908 on the 'synthesis of ammonia from its elements' — and for its own summary that a hundred years on 'we live in a world transformed by and highly dependent upon Haber–Bosch nitrogen'. The paper's often-quoted estimate of the share of world population fed by synthetic nitrogen is behind the paywall and is deliberately not quoted here."
+  },
+  {
+    "id": "source:nobel-chemistry-1918",
+    "kind": "web",
+    "author": "The Nobel Foundation",
+    "title": "The Nobel Prize in Chemistry 1918 — Fritz Haber",
+    "year": 1918,
+    "publisher": "NobelPrize.org, Stockholm",
+    "url": "https://www.nobelprize.org/prizes/chemistry/1918/summary/",
+    "notes": "The awarding body's own record. Cited only for the prize itself: the Chemistry prize for 1918 to Fritz Haber 'for the synthesis of ammonia from its elements', reserved and awarded in 1919, with the Nobel lecture delivered in June 1920. Reference data, in the same register as the biographical dates rule in docs/sources.md — not a source for anything about the gas programme."
   }
 ]
