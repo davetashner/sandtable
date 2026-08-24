@@ -6,6 +6,10 @@ from: 1914-08-02T05:00:00Z
 to: 1914-08-02T10:00:00Z
 focus: 1914:origins
 media: media:person/schlieffen-alfred-von/portrait-c1906-colorized
+diagram:
+  file: cannae
+  caption: 'Cannae, 216 BC, as the German staff read it: the centre gives ground on purpose, and the wings come round behind. Schlieffen wanted the shape, not the ground.'
+  alt: 'A schematic of the double envelopment at Cannae. A heavy Roman column pushes into a Carthaginian centre that bows backwards rather than breaking, while both Carthaginian wings sweep round and close behind the Roman rear.'
 links:
   people: ['person:schlieffen-alfred-von', 'person:moltke-helmuth-von-elder']
   battles: ['1914:origins']

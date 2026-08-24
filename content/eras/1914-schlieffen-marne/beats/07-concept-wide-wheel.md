@@ -5,6 +5,10 @@ dateLabel: 'Hypothetical — late August 1914'
 from: 1914-08-25T00:00:00Z
 to: 1914-08-30T00:00:00Z
 branch: 1914:schlieffen-concept
+diagram:
+  file: wide-wheel
+  caption: 'The wheel the memorandum drew, and the one that was walked. Both turn on Metz; the difference is which side of Paris the outer army passes, and what is on its right when it turns.'
+  alt: 'A schematic of the German right wing wheeling through Belgium into France. A heavy line passes west of Paris and curves back east behind the city; a dashed line marks the shorter turn that was actually made, passing east of Paris.'
 links:
   documents: ['1914:document-schlieffen-memorandum-1905-12']
   people:

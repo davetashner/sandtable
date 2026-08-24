@@ -20,6 +20,8 @@ export interface RawPack {
   collections: Record<string, RawFile>;
   /** beats/*.md as text. */
   beats: RawFile[];
+  /** diagrams/*.svg as text — inlined into beats, so the validator reads them. */
+  diagrams?: RawFile[];
 }
 
 export interface RawShared {

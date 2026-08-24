@@ -82,6 +82,14 @@ const beatsRaw = import.meta.glob('../../content/eras/1914-schlieffen-marne/beat
   eager: true,
 }) as Record<string, string>;
 
+// Concept schematics (sand-1l0.33), keyed by file stem. Bundled as text, not
+// as URLs: they are inlined so they can use the design tokens.
+const diagramsRaw = import.meta.glob('../../content/eras/1914-schlieffen-marne/diagrams/*.svg', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+}) as Record<string, string>;
+
 export interface SeedPack {
   pack: PackT;
   events: EventT[];
@@ -118,6 +126,8 @@ export interface SeedPack {
   tours: TourT[];
   /** Which cue plays when (score.json, ADR 0008). */
   score: ScoreEntryT[];
+  /** Concept schematics by file stem, as SVG source (sand-1l0.33). */
+  diagrams: Record<string, string>;
 }
 
 function loadSeed(): SeedPack {
@@ -174,6 +184,12 @@ function loadSeed(): SeedPack {
     vignettes,
     tours,
     score,
+    diagrams: Object.fromEntries(
+      Object.entries(diagramsRaw).map(([file, svg]) => [
+        (file.split('/').pop() ?? '').replace(/\.svg$/, ''),
+        svg,
+      ]),
+    ),
   };
 }
 

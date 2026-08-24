@@ -817,6 +817,22 @@ export const BeatFrontMatter = z
       .strict()
       .optional(),
     media: Id.optional().describe('Hero image'),
+    diagram: z
+      .object({
+        file: Slug.describe("Stem of an SVG in the pack's diagrams/ directory"),
+        caption: z.string().min(1).describe('What the schematic shows and what to read from it'),
+        alt: z
+          .string()
+          .min(1)
+          .describe('The same, for a reader who cannot see it — not "a diagram"'),
+      })
+      .strict()
+      .optional()
+      .describe(
+        'A concept schematic inlined above the prose (sand-1l0.33). Inlined, not an <img>, ' +
+          'because the drawings are built from the design tokens and have to follow the theme; ' +
+          "the claims they make are the beat's, and cite the beat's sources",
+      ),
     links: Links.optional(),
     sources: z.array(Citation).min(1),
   })

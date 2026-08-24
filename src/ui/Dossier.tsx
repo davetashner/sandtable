@@ -16,6 +16,7 @@ import { selectBeat, withFootnotes } from '../engine/beats.js';
 import type { Branch, NarrativeBeat, Side, Source, Vignette } from '../packs/schema/index.js';
 import { VignetteView } from './VignetteView.js';
 import './card.css';
+import { DiagramFigure } from './DiagramFigure.js';
 import { MediaFigure } from './MediaFigure.js';
 import type { MediaIndexEntry } from '../packs/media-index.js';
 import './dossier.css';
@@ -35,6 +36,8 @@ export interface DossierProps {
   cast?: ReactNode;
   /** Resolves a beat's hero `media` id to an index entry (sand-y0u.10). */
   resolveMedia?: ((id: string) => MediaIndexEntry | undefined) | undefined;
+  /** Resolves a beat's `diagram.file` stem to SVG source (sand-1l0.33). */
+  resolveDiagram?: ((file: string) => string | undefined) | undefined;
   /** Chips for the beat's links (tech cards, battles, people…). */
   related?: CardChipLike[];
   /** First-person vignettes the clock has reached within this beat (sand-1l0.24). */
@@ -62,6 +65,7 @@ export function Dossier({
   card,
   cast,
   resolveMedia,
+  resolveDiagram,
   related = [],
   vignettes = [],
   label,
@@ -75,6 +79,7 @@ export function Dossier({
   const markdown = useMemo(() => (beat ? withFootnotes(beat, sources) : ''), [beat, sources]);
   const hypothetical = branch.kind === 'counterfactual';
   const hero = beat?.media && resolveMedia ? resolveMedia(beat.media) : undefined;
+  const diagram = beat?.diagram && resolveDiagram ? resolveDiagram(beat.diagram.file) : undefined;
 
   // Fade on beat change.
   const [shown, setShown] = useState(beat?.id);
@@ -157,6 +162,9 @@ export function Dossier({
               zoomable
               className="dossier__hero"
             />
+          )}
+          {diagram && beat.diagram && (
+            <DiagramFigure svg={diagram} caption={beat.diagram.caption} alt={beat.diagram.alt} />
           )}
           {beat.pullQuote && (
             <blockquote className="dossier__pull">

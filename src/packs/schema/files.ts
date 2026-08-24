@@ -93,6 +93,8 @@ export type SharedCollectionFile = keyof typeof SHARED_COLLECTIONS;
 
 export const PACK_FILE = 'pack.json';
 export const BEATS_DIR = 'beats';
+/** Hand-drawn concept schematics a beat can inline (sand-1l0.33). */
+export const DIAGRAMS_DIR = 'diagrams';
 export const MEDIA_MANIFEST = 'media.json';
 export const CUE_MANIFEST = 'cue.json';
 export const THREAD_FILE = 'thread.json';

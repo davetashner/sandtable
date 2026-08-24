@@ -63,6 +63,33 @@
       "type": "string",
       "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$"
     },
+    "diagram": {
+      "description": "A concept schematic inlined above the prose (sand-1l0.33). Inlined, not an <img>, because the drawings are built from the design tokens and have to follow the theme; the claims they make are the beat's, and cite the beat's sources",
+      "type": "object",
+      "properties": {
+        "file": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$",
+          "description": "Stem of an SVG in the pack's diagrams/ directory"
+        },
+        "caption": {
+          "type": "string",
+          "minLength": 1,
+          "description": "What the schematic shows and what to read from it"
+        },
+        "alt": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The same, for a reader who cannot see it — not \"a diagram\""
+        }
+      },
+      "required": [
+        "file",
+        "caption",
+        "alt"
+      ],
+      "additionalProperties": false
+    },
     "links": {
       "type": "object",
       "properties": {

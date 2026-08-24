@@ -89,6 +89,8 @@ export interface ParsedPack {
   tours: Tour[];
   score: ScoreEntryT[];
   beats: NarrativeBeat[];
+  /** Stems of diagrams/*.svg, and the text, for the beats that inline them. */
+  diagrams: Map<string, string>;
 }
 
 export interface ParsedContent {
@@ -365,6 +367,12 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     tours: [],
     score: [],
     beats: [],
+    diagrams: new Map(
+      (raw.diagrams ?? []).map((f) => [
+        (f.path.split('/').pop() ?? '').replace(/\.svg$/, ''),
+        typeof f.data === 'string' ? f.data : '',
+      ]),
+    ),
     files: {},
     branchById: new Map(),
   };
@@ -986,6 +994,39 @@ function checkLink(ctx: Ctx, path: string, l: CausalLink) {
   checkCitations(ctx, path, l.id, l.evidence, true, 'evidence');
 }
 
+/**
+ * A beat's schematic must be there and must be a drawing, not a stray file.
+ * The SVG is inlined into the page (sand-1l0.33), so it inherits the theme
+ * tokens — and so anything in it runs: a <script> or an event handler in
+ * content is a hole, and the validator is where that is caught, not review.
+ */
+function checkDiagram(
+  ctx: Ctx,
+  s: PackState,
+  path: string,
+  id: string,
+  diagram: { file: string; caption: string; alt: string },
+) {
+  const svg = s.diagrams.get(diagram.file);
+  if (svg === undefined) {
+    ctx.error(path, `diagram.file "${diagram.file}.svg" is not in the pack's diagrams/`, id);
+    return;
+  }
+  if (!/<svg[\s>]/i.test(svg)) {
+    ctx.error(path, `diagrams/${diagram.file}.svg has no <svg> element`, id);
+  }
+  if (/<script[\s>]/i.test(svg) || /\son[a-z]+\s*=/i.test(svg)) {
+    ctx.error(
+      path,
+      `diagrams/${diagram.file}.svg carries a script or an inline event handler; a schematic is a drawing`,
+      id,
+    );
+  }
+  if (!/viewBox=/i.test(svg)) {
+    ctx.warn(path, `diagrams/${diagram.file}.svg has no viewBox, so it will not scale`, id);
+  }
+}
+
 function checkBeats(ctx: Ctx, s: PackState) {
   const { pack } = s;
   for (const b of s.beats) {
@@ -999,6 +1040,7 @@ function checkBeats(ctx: Ctx, s: PackState) {
       if (f && f.pack !== s.dir) ctx.error(path, `focus ${b.focus} belongs to another pack`, b.id);
     }
     if (b.media) ctx.ref(path, b.id, b.media, ['media'], 'media');
+    if (b.diagram) checkDiagram(ctx, s, path, b.id, b.diagram);
     checkLinks(ctx, path, b.id, b.links);
     checkCitations(ctx, path, b.id, b.sources, true);
     checkProseLinks(ctx, path, b.id, b.body, 'body');
@@ -1129,7 +1171,11 @@ function checkCue(ctx: Ctx, c: CueT, path: string) {
     .filter((x): x is string => typeof x === 'string')
     .join(' ');
   if (/\b(BLOCKED|UNVERIFIED|UNKNOWN|HOLD|TODO|TBD)\b/i.test(flagged))
-    ctx.error(path, 'cue is flagged BLOCKED/UNVERIFIED/UNKNOWN/HOLD/TODO — resolve before merging', c.id);
+    ctx.error(
+      path,
+      'cue is flagged BLOCKED/UNVERIFIED/UNKNOWN/HOLD/TODO — resolve before merging',
+      c.id,
+    );
   // A generated cue without its prompt cannot be regenerated or defended.
   if (/suno|udio|generated|ai/i.test(c.provenance.tool) && !c.provenance.prompt)
     ctx.warn(path, 'generated audio without provenance.prompt — record what produced it', c.id);

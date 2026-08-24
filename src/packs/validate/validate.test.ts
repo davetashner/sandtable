@@ -258,7 +258,9 @@ describe('validateContent', () => {
     expect(errs).toContainEqual(expect.stringMatching(/opening\.claim\.card/));
     expect(errs).toContainEqual(expect.stringMatching(/opening\.sources: citation/));
     expect(errs).toContainEqual(
-      expect.stringMatching(/opening\.lede footnote \[\^nobody\] is not one of the entity's sources/),
+      expect.stringMatching(
+        /opening\.lede footnote \[\^nobody\] is not one of the entity's sources/,
+      ),
     );
     expect(report.warnings.map((w) => w.message)).toContainEqual(
       expect.stringMatching(/opening\.camera\.center is outside the pack region/),
@@ -835,6 +837,66 @@ describe('validateContent', () => {
     // …and it is a warning, not an error: the standard admits the pointer
     // until a better reference replaces it.
     expect(report.errors.filter((e) => e.message.includes('reference data only'))).toHaveLength(0);
+  });
+
+  it('checks a beat diagram: the file is in the pack, and it is a drawing not a program', () => {
+    // The SVG is inlined so it can use the design tokens (sand-1l0.33), which
+    // means anything in it runs. That is caught here, not in review.
+    const withDiagram = (file: string) => {
+      const raw = fixture();
+      const beat = raw.packs[0]!.beats[0]!;
+      beat.data = (beat.data as string).replace(
+        /^sources:/m,
+        `diagram:\n  file: ${file}\n  caption: What it shows.\n  alt: A schematic.\nsources:`,
+      );
+      return raw;
+    };
+
+    const missing = messages(validateContent(withDiagram('nope')));
+    expect(missing).toContainEqual(
+      expect.stringMatching(/diagram\.file "nope\.svg" is not in the pack's diagrams\//),
+    );
+
+    const withScript = withDiagram('plan');
+    withScript.packs[0]!.diagrams = [
+      {
+        path: 'eras/1914-test/diagrams/plan.svg',
+        data: '<svg viewBox="0 0 10 10"><script>fetch("//evil")</script></svg>',
+      },
+    ];
+    expect(messages(validateContent(withScript))).toContainEqual(
+      expect.stringMatching(/carries a script or an inline event handler/),
+    );
+
+    const withHandler = withDiagram('plan');
+    withHandler.packs[0]!.diagrams = [
+      {
+        path: 'eras/1914-test/diagrams/plan.svg',
+        data: '<svg viewBox="0 0 10 10"><rect onclick="steal()" /></svg>',
+      },
+    ];
+    expect(messages(validateContent(withHandler))).toContainEqual(
+      expect.stringMatching(/carries a script or an inline event handler/),
+    );
+
+    const good = withDiagram('plan');
+    good.packs[0]!.diagrams = [
+      {
+        path: 'eras/1914-test/diagrams/plan.svg',
+        data: '<svg viewBox="0 0 10 10"><rect fill="var(--army-1)" /></svg>',
+      },
+    ];
+    const report = validateContent(good);
+    expect(report.errors.filter((e) => e.message.includes('diagram'))).toHaveLength(0);
+
+    // …and one that cannot scale is worth saying, without blocking.
+    const noViewBox = withDiagram('plan');
+    noViewBox.packs[0]!.diagrams = [
+      { path: 'eras/1914-test/diagrams/plan.svg', data: '<svg><rect /></svg>' },
+    ];
+    expect(validateContent(noViewBox).warnings.map((w) => w.message)).toContainEqual(
+      expect.stringMatching(/has no viewBox/),
+    );
   });
 
   it('rejects overlapping beats within a branch and unknown footnotes', () => {
