@@ -55,6 +55,8 @@ export interface MediaIndexEntry {
   originalUrl?: string;
   focalPoint?: { x: number; y: number };
   person?: string;
+  /** Everyone the manifest identifies, for a photograph of more than one (sand-y0u.18). */
+  people?: string[];
   /** True when the binary was present locally when the index was built. */
   present: boolean;
 }
@@ -93,8 +95,16 @@ async function buildOne(manifestPath: string, opts: { derive: boolean }): Promis
     for (const w of WIDTHS) {
       if (meta.width && w > meta.width) continue;
       const out = join(outDir, `${stem}.w${w}.webp`);
-      const info = await sharp(file).resize({ width: w, withoutEnlargement: true }).webp({ quality: 82 }).toFile(out);
-      variants.push({ src: `${rel}/${DERIVED_DIR}/${stem}.w${w}.webp`, width: info.width, height: info.height, type: 'image/webp' });
+      const info = await sharp(file)
+        .resize({ width: w, withoutEnlargement: true })
+        .webp({ quality: 82 })
+        .toFile(out);
+      variants.push({
+        src: `${rel}/${DERIVED_DIR}/${stem}.w${w}.webp`,
+        width: info.width,
+        height: info.height,
+        type: 'image/webp',
+      });
     }
   }
   const entry: MediaIndexEntry = {
@@ -114,11 +124,14 @@ async function buildOne(manifestPath: string, opts: { derive: boolean }): Promis
   if (originalUrl) entry.originalUrl = originalUrl;
   if (m.focal_point) entry.focalPoint = m.focal_point;
   if (m.person) entry.person = m.person;
+  if (Array.isArray(m.people) && m.people.length) entry.people = m.people as string[];
   return entry;
 }
 
 export function readIndex(): MediaIndex | undefined {
-  return existsSync(INDEX_FILE) ? (JSON.parse(readFileSync(INDEX_FILE, 'utf8')) as MediaIndex) : undefined;
+  return existsSync(INDEX_FILE)
+    ? (JSON.parse(readFileSync(INDEX_FILE, 'utf8')) as MediaIndex)
+    : undefined;
 }
 
 async function main() {
@@ -130,7 +143,9 @@ async function main() {
       .map((p) => Media.parse(JSON.parse(readFileSync(p, 'utf8'))).id)
       .filter((id) => !index?.entries.some((e) => e.id === id));
     if (!index || missing.length) {
-      console.error(`media index is stale — missing: ${missing.join(', ') || '(no index)'} — run: npm run media`);
+      console.error(
+        `media index is stale — missing: ${missing.join(', ') || '(no index)'} — run: npm run media`,
+      );
       process.exit(1);
     }
     console.log(`media index covers ${index.entries.length} images`);
@@ -140,16 +155,44 @@ async function main() {
   for (const p of manifests) {
     const e = await buildOne(p, { derive: true });
     entries.push(e);
-    console.log(`${e.present ? '✓' : '·'} ${e.id} ${e.variants.length ? `(${e.variants.map((v) => v.width).join('/')}w)` : '(no local binary)'}`);
+    console.log(
+      `${e.present ? '✓' : '·'} ${e.id} ${e.variants.length ? `(${e.variants.map((v) => v.width).join('/')}w)` : '(no local binary)'}`,
+    );
   }
-  const index: MediaIndex = { generatedAt: new Date().toISOString().slice(0, 10), base: '/assets/media/', entries };
+  const index: MediaIndex = {
+    generatedAt: new Date().toISOString().slice(0, 10),
+    base: '/assets/media/',
+    entries,
+  };
   writeFileSync(INDEX_FILE, JSON.stringify(index, null, 2) + '\n');
-  console.log(`wrote ${INDEX_FILE} (${entries.length} images, ${entries.filter((e) => e.present).length} present locally)`);
+  console.log(
+    `wrote ${INDEX_FILE} (${entries.length} images, ${entries.filter((e) => e.present).length} present locally)`,
+  );
   if (args.has('--upload')) {
     console.log(`→ aws s3 sync ${MEDIA_ROOT} s3://${BUCKET}/media (images only)`);
     execFileSync(
       'aws',
-      ['s3', 'sync', MEDIA_ROOT, `s3://${BUCKET}/media`, '--exclude', '*', '--include', '*.png', '--include', '*.jpg', '--include', '*.jpeg', '--include', '*.webp', '--include', '*.avif', '--cache-control', 'public, max-age=31536000, immutable', '--only-show-errors'],
+      [
+        's3',
+        'sync',
+        MEDIA_ROOT,
+        `s3://${BUCKET}/media`,
+        '--exclude',
+        '*',
+        '--include',
+        '*.png',
+        '--include',
+        '*.jpg',
+        '--include',
+        '*.jpeg',
+        '--include',
+        '*.webp',
+        '--include',
+        '*.avif',
+        '--cache-control',
+        'public, max-age=31536000, immutable',
+        '--only-show-errors',
+      ],
       { stdio: 'inherit', env: { ...process.env, AWS_PROFILE: PROFILE } },
     );
     console.log('uploaded');

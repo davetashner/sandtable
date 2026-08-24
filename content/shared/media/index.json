@@ -1051,6 +1051,10 @@
       "credit": "Original photograph: Bundesarchiv, Bild 183-R43302 / CC-BY-SA 3.0 (Allgemeiner Deutscher Nachrichtendienst — Zentralbild), 1905. Colorization: Sandtable, AI-assisted, 2026, under the same CC-BY-SA 3.0 licence.",
       "licence": "CC-BY-SA 3.0 DE — the attribution string 'Bundesarchiv, Bild 183-R43302 / CC-BY-SA 3.0' is mandatory, and the colorization inherits share-alike",
       "colorized": true,
+      "people": [
+        "person:wilhelm-ii",
+        "person:nicholas-ii"
+      ],
       "present": true,
       "originalUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-R43302,_Kaiser_Wilhelm_II._und_Zar_Nikolaus_II..jpg",
       "focalPoint": {
@@ -1093,6 +1097,10 @@
       "credit": "Original photograph: Bain News Service, 1910; Library of Congress, George Grantham Bain Collection (LCCN 2014697443, ggbain.17181); no known restrictions on publication. Colorization: Sandtable, AI-assisted, 2026.",
       "licence": "public domain — Library of Congress: no known restrictions on publication; pre-1931",
       "colorized": true,
+      "people": [
+        "person:franz-ferdinand-of-austria",
+        "person:sophie-chotek"
+      ],
       "present": true,
       "originalUrl": "https://commons.wikimedia.org/wiki/File:Franz_Ferdinand_%26_family_LCCN2014697443.jpg",
       "focalPoint": {
@@ -1345,6 +1353,10 @@
       "credit": "Original photograph: photographer not identified, Sarajevo, 28 June 1914; Imperial War Museums Q 91848, via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
       "licence": "public domain — PD-UKGov for the IWM copy (UK Government work created before 1 June 1957); the photograph itself dates from 1914 and is out of copyright in its country of origin",
       "colorized": true,
+      "people": [
+        "person:franz-ferdinand-of-austria",
+        "person:sophie-chotek"
+      ],
       "present": true,
       "originalUrl": "https://commons.wikimedia.org/wiki/File:Archduke_Franz_Ferdinand_in_Sarajevo,_June_1914_Q91848.jpg",
       "focalPoint": {
@@ -1387,6 +1399,10 @@
       "credit": "Original photograph: photographer not identified, Sarajevo, 28 June 1914; Imperial War Museums Q 91848, via Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
       "licence": "public domain — PD-UKGov for the IWM copy (UK Government work created before 1 June 1957); the photograph itself dates from 1914 and is out of copyright in its country of origin",
       "colorized": true,
+      "people": [
+        "person:franz-ferdinand-of-austria",
+        "person:sophie-chotek"
+      ],
       "present": true,
       "originalUrl": "https://commons.wikimedia.org/wiki/File:Archduke_Franz_Ferdinand_in_Sarajevo,_June_1914_Q91848.jpg",
       "focalPoint": {
@@ -1429,6 +1445,11 @@
       "credit": "Original photograph: Die Woche 1918 Nr. 2, August Scherl Verlag; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
       "licence": "public domain — life + 70 / published before 1931",
       "colorized": true,
+      "people": [
+        "person:haupt-hans-joachim",
+        "person:oven-von",
+        "person:brandis-cordt-von"
+      ],
       "present": true,
       "originalUrl": "https://commons.wikimedia.org/wiki/File:OffiziereHauptOvenBrandis.jpg",
       "focalPoint": {

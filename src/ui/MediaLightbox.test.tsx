@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { MediaFigure } from './MediaFigure.js';
-import { largestSrc, type MediaIndexEntry } from '../packs/media-index.js';
+import { largestSrc, subjectOf, type MediaIndexEntry } from '../packs/media-index.js';
 
 const entry: MediaIndexEntry = {
   id: 'media:person/x/portrait',
@@ -73,5 +73,56 @@ describe('<MediaFigure zoomable>', () => {
     expect(dialog.querySelector('a.media__original')?.getAttribute('href')).toBe(
       'https://example.org/original',
     );
+  });
+});
+
+describe('subjectOf', () => {
+  const label = (id: string) =>
+    ({
+      'person:french-john': 'Sir John French',
+      'person:joffre-joseph': 'Joseph Joffre',
+      'person:haig-douglas': 'Sir Douglas Haig',
+    })[id];
+
+  it('names the sitter of a portrait', () => {
+    expect(subjectOf({ ...entry, person: 'person:french-john' }, label)).toBe('Sir John French');
+  });
+
+  it("names everyone in a group photograph, in the manifest's order", () => {
+    const group = {
+      ...entry,
+      people: ['person:french-john', 'person:joffre-joseph', 'person:haig-douglas'],
+    };
+    expect(subjectOf(group, label)).toBe('Sir John French, Joseph Joffre and Sir Douglas Haig');
+    expect(subjectOf({ ...entry, people: group.people.slice(0, 2) }, label)).toBe(
+      'Sir John French and Joseph Joffre',
+    );
+  });
+
+  it('names nobody for a photograph of a place, and skips ids it cannot resolve', () => {
+    expect(subjectOf(entry, label)).toBeUndefined();
+    expect(subjectOf({ ...entry, people: ['person:nobody'] }, label)).toBeUndefined();
+    expect(subjectOf({ ...entry, people: ['person:nobody', 'person:joffre-joseph'] }, label)).toBe(
+      'Joseph Joffre',
+    );
+  });
+});
+
+describe('<MediaLightbox>', () => {
+  it('shows who is in the picture, not only the credit line', () => {
+    render(<MediaFigure entry={entry} name="Sir John French" zoomable />);
+    fireEvent.click(screen.getByRole('button', { name: /full size/i }));
+    const dialog = screen.getByRole('dialog', { hidden: true });
+    expect(dialog).toHaveAccessibleName('Sir John French — full size');
+    // …and visibly, for the reader who is looking at the face (sand-y0u.18)
+    expect(dialog.querySelector('.lightbox__subject')?.textContent).toBe('Sir John French');
+  });
+
+  it('shows the credit alone when nothing names the subject', () => {
+    render(<MediaFigure entry={entry} zoomable />);
+    fireEvent.click(screen.getByRole('button', { name: /full size/i }));
+    const dialog = screen.getByRole('dialog', { hidden: true });
+    expect(dialog.querySelector('.lightbox__subject')).toBeNull();
+    expect(dialog.textContent).toContain('Original photograph: nobody.');
   });
 });

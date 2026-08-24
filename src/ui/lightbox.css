@@ -48,6 +48,17 @@
   color: var(--muted);
 }
 
+/* Who is in the picture, above the provenance (sand-y0u.18): at full size the
+   reader is looking at a face, and the credit line does not answer that. */
+.lightbox__subject {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: 1.3;
+  color: var(--ink);
+}
+
 .lightbox__close {
   justify-self: end;
   appearance: none;

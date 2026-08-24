@@ -18,7 +18,7 @@ import { VignetteView } from './VignetteView.js';
 import './card.css';
 import { DiagramFigure } from './DiagramFigure.js';
 import { MediaFigure } from './MediaFigure.js';
-import type { MediaIndexEntry } from '../packs/media-index.js';
+import { subjectOf, type MediaIndexEntry } from '../packs/media-index.js';
 import './dossier.css';
 import { Prose } from './Prose.js';
 
@@ -79,6 +79,9 @@ export function Dossier({
   const markdown = useMemo(() => (beat ? withFootnotes(beat, sources) : ''), [beat, sources]);
   const hypothetical = branch.kind === 'counterfactual';
   const hero = beat?.media && resolveMedia ? resolveMedia(beat.media) : undefined;
+  // A hero opens full size (sand-neh.10); name whoever the manifest identifies
+  // so the modal is not a face with a credit line under it (sand-y0u.18).
+  const heroSubject = hero && label ? subjectOf(hero, label) : undefined;
   const diagram = beat?.diagram && resolveDiagram ? resolveDiagram(beat.diagram.file) : undefined;
 
   // Fade on beat change.
@@ -161,6 +164,7 @@ export function Dossier({
               fit="contain"
               zoomable
               className="dossier__hero"
+              {...(heroSubject ? { name: heroSubject } : {})}
             />
           )}
           {diagram && beat.diagram && (
