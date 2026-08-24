@@ -11,9 +11,9 @@
  * than nowhere.
  */
 import { withFootnotes } from '../engine/beats.js';
-import { isApproximate, waypointConfidence, APPROX_MARK } from '../engine/confidence.js';
 import { portraitFor } from '../packs/media-index.js';
-import type { CastEntry, Confidence, Person, PersonTrack, Source } from '../packs/schema/index.js';
+import type { CastEntry, Person, PersonTrack, Source } from '../packs/schema/index.js';
+import { Derivations, trackDerivations } from './Derivations.js';
 import { Card } from './Card.js';
 import { MediaFigure } from './MediaFigure.js';
 import { whenLabel } from './ScienceCardView.js';
@@ -39,54 +39,6 @@ export interface PersonCardViewProps {
    */
   tracks?: PersonTrack[];
   onBack?: () => void;
-}
-
-const CONFIDENCE_LABEL: Record<Confidence, string> = {
-  high: 'documented',
-  medium: 'inferred from the sources',
-  low: 'approximate',
-  contested: 'the sources disagree',
-};
-
-const KIND_LABEL: Record<PersonTrack['kind'], string> = {
-  hq: 'Headquarters',
-  journey: 'Journey',
-};
-
-/**
- * How positions were derived, per track. The prose is the pack's own — the
- * card adds only the two things a reader cannot get from it: what the
- * confidence word means, and whether that is why the token on the map is
- * drawn open inside a dashed ring.
- */
-function Derivations({ tracks }: { tracks: PersonTrack[] }) {
-  if (tracks.length === 0) return null;
-  return (
-    <section className="card__section card__positions" aria-label="Positions on the map">
-      <h3>Positions on the map</h3>
-      {tracks.map((tk) => {
-        const approx =
-          isApproximate(tk.confidence) ||
-          tk.waypoints.some((w) => isApproximate(waypointConfidence(w, tk.confidence)));
-        return (
-          <div key={tk.id} className="card__derivation" data-confidence={tk.confidence}>
-            <p className="card__derivation-head">
-              {KIND_LABEL[tk.kind]}
-              {tk.post ? ` · ${tk.post}` : ''} — {CONFIDENCE_LABEL[tk.confidence]}
-            </p>
-            <p className="card__derivation-prose">{tk.derivation}</p>
-            {approx && (
-              <p className="card__derivation-note">
-                <span aria-hidden="true">{APPROX_MARK}</span> Positions on this track are drawn on
-                the map as approximate: an open token inside a dashed ring, and an {APPROX_MARK}{' '}
-                before the label.
-              </p>
-            )}
-          </div>
-        );
-      })}
-    </section>
-  );
 }
 
 const lifeLabel = (p: Person) => {
@@ -149,7 +101,7 @@ export function PersonCardView({
           <h3>In brief</h3>
           <Prose>{person.summary}</Prose>
         </section>
-        <Derivations tracks={tracks} />
+        <Derivations items={trackDerivations(tracks)} />
       </Card>
     );
   }
@@ -174,7 +126,7 @@ export function PersonCardView({
           className="card__portrait"
         />
       )}
-      <Derivations tracks={tracks} />
+      <Derivations items={trackDerivations(tracks)} />
     </Card>
   );
 }

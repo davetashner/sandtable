@@ -11,6 +11,11 @@
  * other end. Opened from a token, from the legend where a side is one army,
  * from those chips, and deep-linked as `?card=<formation id>`.
  *
+ * Since `sand-23b.25` it is also where an army's positions are footnoted: the
+ * token a reader clicks may be drawn open inside a dashed halo with an `≈`
+ * before its name, and the `Derivations` section — the same one the commander
+ * card carries — is where that mark is explained, leg by leg.
+ *
  * It renders no picture of its own. The formation's own slot is a
  * `MediaFigure`, the commander is a `PortraitChip`, and the set is `PlateSet`
  * — the three placements ADR 0012 and ADR 0014 allow, and no fourth.
@@ -18,8 +23,9 @@
 /* eslint-disable react-refresh/only-export-components -- the card view and the kind labels it renders live together, as in TechCardView */
 import { sideToken } from '../engine/layers/colors.js';
 import { portraitFor, type MediaIndexEntry } from '../packs/media-index.js';
-import type { Citation, Formation, Side, Source } from '../packs/schema/index.js';
+import type { Citation, Formation, Route, Side, Source } from '../packs/schema/index.js';
 import { Card, type CardChip } from './Card.js';
+import { Derivations, routeDerivations } from './Derivations.js';
 import { MediaFigure } from './MediaFigure.js';
 import { PlateSet, plateItems } from './PlateSet.js';
 import { PortraitChip } from './PortraitChip.js';
@@ -75,6 +81,11 @@ export interface FormationCardViewProps {
   sides?: Side[];
   /** The formations immediately under this one, as chips. */
   subordinates?: { id: string; label: string }[];
+  /**
+   * This formation's routes (`sand-23b.4`): the card footnotes each leg with
+   * how its positions were derived, which is what the `≈` on the map means.
+   */
+  routes?: Route[];
   /** Resolves a manifest id to the index entry a plate renders (ADR 0014). */
   resolveMedia?: ((id: string) => MediaIndexEntry | undefined) | undefined;
   onBack?: () => void;
@@ -86,6 +97,7 @@ export function FormationCardView({
   labeller,
   sides = [],
   subordinates = [],
+  routes = [],
   resolveMedia,
   onBack,
 }: FormationCardViewProps) {
@@ -197,6 +209,8 @@ export function FormationCardView({
           <p>{concentration.area}</p>
         </section>
       )}
+
+      <Derivations items={routeDerivations(routes)} />
     </Card>
   );
 }

@@ -27,6 +27,19 @@ rests closed as one control and names each level for what the engine says it
 is — `isChapter` in `src/engine/focus.ts` — rather than calling the whole row
 one thing (ADR 0013).
 
+`Derivations.tsx` is the footnote under a card that says how the map's
+positions were derived (`sand-23b.4`): the pack's own `derivation` sentence
+per route leg or commander track, what the confidence word means, and — where
+the pack says the position is `low` or `contested` — that this is why the
+token on the map is drawn open inside a dashed ring. It renders in
+`FormationCardView` and `PersonCardView`, which are the two cards a map token
+opens; ADR 0006 is why it is a section of a card rather than a tooltip or a
+panel of its own. A formation's counterfactual route legs are left out on
+purpose: a branch is labelled as hypothetical wherever it is shown, and its
+derivation is a statement about a line nobody marched. There is exactly one
+component rendering this footnote, and adding a third caller means giving it
+`Derivation[]`, not writing a second one.
+
 `CopyLink.tsx` is the ⧉ glyph in the header that copies the address of the
 current view; what makes it work is that the URL is always the whole view
 (ADR 0009, `src/engine/url-state.ts`).
