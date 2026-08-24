@@ -810,6 +810,7 @@ function DossierSurface() {
         label={(id) => labeller.label(id)}
         resolvePortrait={portraitFor}
         resolveMedia={mediaById}
+        resolveDiagram={(file) => seed.diagrams[file]}
         cast={
           <CastStrip
             members={CAST_MEMBERS}
@@ -1058,11 +1059,7 @@ function AppShell() {
   // moment a first-person voice arrives, wherever the reader is looking.
   const { now } = useClock();
   const { branch: branchId } = useViewState();
-  const vignetteMoment = vignetteNear(
-    seed.vignettes,
-    now,
-    branchId ?? seed.pack.defaultBranch,
-  );
+  const vignetteMoment = vignetteNear(seed.vignettes, now, branchId ?? seed.pack.defaultBranch);
   return (
     <div className="app" inert={showing || undefined}>
       <header className="app__header">

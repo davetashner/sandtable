@@ -5,6 +5,10 @@ dateLabel: 'The French frontier after 1871 (chapter)'
 from: 1914-08-02T10:00:00Z
 to: 1914-08-02T16:00:00Z
 focus: 1914:origins
+diagram:
+  file: fortress-line
+  caption: 'The Séré de Rivières forts from Verdun to Belfort closed the direct road from Germany into France. Everything that follows is an argument about the way round the top.'
+  alt: 'A schematic of the French eastern frontier after 1871. A chain of fortresses — Verdun, Toul, Épinal, Belfort — runs down the frontier, and an arrow driving straight west into it is struck through. A second, much heavier arrow curves north around the top of the chain and down through Belgium.'
 links:
   places:
     [

@@ -1,0 +1,31 @@
+/* Concept schematics in the dossier (sand-1l0.33). Tokens only — the drawings
+   themselves reference the same variables, which is why they are inlined. */
+
+.diagram {
+  margin: var(--space-4) 0;
+  padding: var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel-2);
+}
+
+.diagram__frame {
+  display: block;
+}
+
+.diagram__frame svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* The drawings are authored around 320px wide; let one grow on a wide
+     dossier but never past its natural size, where the labels thin out. */
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.diagram__caption {
+  margin-top: var(--space-2);
+  font-size: var(--fs-xs);
+  line-height: 1.45;
+  color: var(--muted);
+}

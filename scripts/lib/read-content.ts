@@ -6,6 +6,7 @@ import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 import {
   BEATS_DIR,
+  DIAGRAMS_DIR,
   CUE_MANIFEST,
   MEDIA_MANIFEST,
   PACK_FILE,
@@ -80,11 +81,16 @@ export function readContent(root = 'content'): ReadResult {
       path: rel(p),
       data: readFileSync(p, 'utf8'),
     }));
+    const diagrams = walk(join(dir, DIAGRAMS_DIR), (n) => n.endsWith('.svg')).map((p) => ({
+      path: rel(p),
+      data: readFileSync(p, 'utf8'),
+    }));
     return {
       dir: relative(join(root, 'eras'), dir).split(sep).join('/'),
       pack,
       collections,
       beats,
+      diagrams,
     };
   };
 

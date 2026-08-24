@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 210" width="320" height="210">
+  <defs>
+    <marker id="wheel-head" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="context-stroke" />
+    </marker>
+  </defs>
+
+  <!-- the Channel, top left; everything else is ground -->
+  <rect x="0" y="0" width="320" height="210" fill="var(--land)" />
+  <path d="M0,0 L150,0 C120,18 78,30 44,46 C24,55 10,58 0,58 Z" fill="var(--sea)" />
+  <path d="M150,0 C120,18 78,30 44,46 C24,55 10,58 0,58" fill="none" stroke="var(--brass-dim)"
+    stroke-width="1.2" />
+
+  <!-- the hinge the whole manoeuvre turns on -->
+  <circle cx="250" cy="132" r="4.5" fill="none" stroke="var(--brass)" stroke-width="2" />
+  <text x="250" y="152" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace"
+    font-size="8.5" fill="var(--brass)">Metz: the pivot</text>
+
+  <!-- the concept: west of Paris, then round behind it -->
+  <path d="M244,52 C196,38 132,44 92,64 C56,82 44,116 56,144 C68,172 100,184 132,176"
+    fill="none" stroke="var(--army-1)" stroke-width="3.5" stroke-linecap="round"
+    marker-end="url(#wheel-head)" />
+  <text x="10" y="92" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="8.5"
+    font-weight="600" fill="var(--army-1)">the concept</text>
+
+  <!-- what happened: inside Paris, with an open flank on the right -->
+  <path d="M240,58 C200,50 166,60 148,82 C134,100 136,122 148,138"
+    fill="none" stroke="var(--muted)" stroke-width="2.2" stroke-dasharray="5 4"
+    stroke-linecap="round" marker-end="url(#wheel-head)" />
+  <text x="176" y="106" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="8.5"
+    fill="var(--muted)">what happened</text>
+
+  <!-- Paris, with the concept passing to its west and the reality to its east -->
+  <circle cx="104" cy="132" r="3.5" fill="var(--ink)" />
+  <text x="104" y="122" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace"
+    font-size="9" fill="var(--ink)">Paris</text>
+
+  <text x="160" y="202" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace"
+    font-size="9" letter-spacing="0.08em" fill="var(--muted)">WEST OF PARIS, OR EAST OF IT</text>
+</svg>
