@@ -13,6 +13,7 @@
  */
 /* eslint-disable react-refresh/only-export-components -- the registry is data about components and the stateful specimens are part of the data; they live together by design */
 import { useState, type ReactNode } from 'react';
+import { sideToken } from '../engine/layers/colors.js';
 import { seed } from '../packs/seed.js';
 import { mediaById, portraitFor } from '../packs/media-index.js';
 import type { ScienceField } from '../packs/schema/index.js';
@@ -33,11 +34,13 @@ import { DiagramFigure } from '../ui/DiagramFigure.js';
 import { DocumentCardView } from '../ui/DocumentCardView.js';
 import { Dossier } from '../ui/Dossier.js';
 import { HumanCostLine } from '../ui/HumanCostLine.js';
+import { MediaCredit } from '../ui/MediaCredit.js';
 import { MediaFigure } from '../ui/MediaFigure.js';
 import { MediaLightbox } from '../ui/MediaLightbox.js';
 import { MeanwhileFilter } from '../ui/MeanwhileFilter.js';
 import { OpeningSequence } from '../ui/OpeningSequence.js';
 import { PersonCardView } from '../ui/PersonCardView.js';
+import { PortraitChip } from '../ui/PortraitChip.js';
 import { Prose } from '../ui/Prose.js';
 import { ScienceCardView, SCIENCE_FIELDS } from '../ui/ScienceCardView.js';
 import { ScorePlayer } from '../ui/ScorePlayer.js';
@@ -105,6 +108,18 @@ const portrait = portraitFor(castEntry.person);
 const photograph =
   seed.beats.map((b) => (b.media ? mediaById(b.media) : undefined)).find((e) => e?.present) ??
   portrait;
+
+/**
+ * Two states the seed content cannot supply, built from a real entry so the
+ * caption and credit are still the pack's: a picture the build or the bucket
+ * is short of, and a manifest that carries the unaltered original as well as
+ * the colorization (ADR 0012). No manifest names an `original.file` yet.
+ */
+const absent = photograph ? { ...photograph, present: false } : undefined;
+const paired =
+  photograph && photograph.variants.length
+    ? { ...photograph, unaltered: photograph.variants }
+    : undefined;
 
 const castMembers: CastMember[] = seed.cast.map((c) => {
   const person = seed.people.find((p) => p.id === c.person);
@@ -462,9 +477,30 @@ export const SECTIONS: GallerySection[] = [
       {
         id: 'cast-strip',
         title: 'Cast strip',
-        note: 'Portraits keyed to the side colours; click a face to select it.',
+        note: 'Portraits keyed to the side colours; click a face to select it. The selected face stays in colour.',
         covers: ['CastStrip'],
         render: () => <CastStripSpecimen />,
+      },
+      {
+        id: 'portrait-chip',
+        title: 'Portrait chip',
+        note: 'A face at name size, in the three sizes the app uses and with the initials fallback. Hover one for the name and the colour.',
+        covers: ['PortraitChip'],
+        render: () => (
+          <div className="gallery__row">
+            <PortraitChip entry={portrait} name={castPerson.name} role={castEntry.role} size={26} />
+            <PortraitChip
+              entry={portrait}
+              name={castPerson.name}
+              role={castEntry.role}
+              ring={`var(${sideToken(sides[0]!, sides)})`}
+              onSelect={() => {}}
+              pressed
+            />
+            <PortraitChip entry={portrait} name={castPerson.name} size={44} />
+            <PortraitChip name="Nobody Photographed" size={44} />
+          </div>
+        ),
       },
       {
         id: 'prose',
@@ -477,12 +513,72 @@ export const SECTIONS: GallerySection[] = [
       {
         id: 'media-figure',
         title: 'Media figure',
-        note: 'Archive photograph with caption and credit; colorized images say so (ADR 0007).',
-        covers: ['MediaFigure'],
+        note: 'Archive photograph with caption and credit; colorized images say so (ADR 0007). Toned at rest — hover it, or tab to it, for full colour (ADR 0012).',
+        covers: ['MediaFigure', 'MediaCredit'],
         column: true,
         render: () =>
           photograph ? (
             <MediaFigure entry={photograph} width={320} name={undefined} />
+          ) : (
+            <p className="gallery__missing">No image in the media index.</p>
+          ),
+      },
+      {
+        id: 'media-hero',
+        title: 'Media figure — the hero slot',
+        note: 'One picture per beat, cropped to a 3:2 band on the focal point, so a tall portrait and a wide scene open a beat the same way. Click it for the whole picture.',
+        covers: ['MediaFigure'],
+        column: true,
+        render: () =>
+          photograph ? (
+            <MediaFigure
+              entry={photograph}
+              width={360}
+              fit="band"
+              zoomable
+              className="dossier__hero"
+            />
+          ) : (
+            <p className="gallery__missing">No image in the media index.</p>
+          ),
+      },
+      {
+        id: 'media-absent',
+        title: 'Media figure — the picture is missing',
+        note: 'The build or the bucket is short of the file. The frame keeps its place, the credit still shows, and nothing renders a broken-image glyph.',
+        covers: ['MediaFigure'],
+        column: true,
+        render: () =>
+          absent ? (
+            <MediaFigure entry={absent} width={320} fit="band" />
+          ) : (
+            <p className="gallery__missing">No image in the media index.</p>
+          ),
+      },
+      {
+        id: 'media-credit',
+        title: 'Credit line',
+        note: 'What travels with every picture (ADR 0007): the colorized label, the credit exactly as the archive asks for it, and the way to the unaltered original.',
+        covers: ['MediaCredit'],
+        column: true,
+        render: () =>
+          photograph ? (
+            <span className="media__caption">
+              <MediaCredit entry={photograph} />
+            </span>
+          ) : (
+            <p className="gallery__missing">No image in the media index.</p>
+          ),
+      },
+      {
+        id: 'media-original',
+        title: 'Show original — in place',
+        note: 'Where the project holds the unaltered original as well as the colorization, the credit line swaps the picture rather than sending the reader to the archive. No manifest carries one yet, so this pairs the picture with itself.',
+        covers: ['MediaFigure', 'MediaCredit'],
+        column: true,
+        render: () =>
+          paired ? (
+            <MediaFigure entry={paired} width={320} fit="band" />
           ) : (
             <p className="gallery__missing">No image in the media index.</p>
           ),

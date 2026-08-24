@@ -66,7 +66,8 @@ describe('<CastStrip>', () => {
       'France',
       'Others',
     ]);
-    expect((groups[0] as HTMLElement).style.getPropertyValue('--cast-ring')).toMatch(/^var\(--/);
+    // The group hands its side colour down to the chips as the ring.
+    expect((groups[0] as HTMLElement).style.getPropertyValue('--chip-ring')).toMatch(/^var\(--/);
     const joffre = screen.getByRole('button', { name: 'Joseph Joffre — C-in-C' });
     expect(joffre).toHaveAttribute('aria-pressed', 'true');
     expect(joffre.querySelector('img')).toHaveAttribute(

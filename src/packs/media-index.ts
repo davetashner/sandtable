@@ -23,7 +23,18 @@ export interface MediaIndexEntry {
   credit: string;
   licence: string;
   colorized: boolean;
+  /**
+   * The archive record for the unaltered original — always available, and the
+   * fallback when the project holds no copy of the original itself.
+   */
   originalUrl?: string;
+  /**
+   * Derivatives of the unaltered original, when the project holds a copy
+   * beside the manifest (`original.file`). Their presence is what turns
+   * "show original" from a link out to the archive into a toggle in place
+   * (ADR 0012); colour is the only difference between these and `variants`.
+   */
+  unaltered?: MediaVariant[];
   focalPoint?: { x: number; y: number };
   person?: string;
   /** Everyone the manifest identifies, for a photograph of more than one. */
@@ -62,6 +73,24 @@ export function subjectOf(
   if (names.length === 1) return names[0];
   if (names.length === 2) return `${names[0]} and ${names[1]}`;
   return `${names.slice(0, -1).join(', ')} and ${names.at(-1)}`;
+}
+
+/**
+ * The narrowest derivative that still covers a rendered width, falling back to
+ * the widest there is. Every fixed-size placement — a figure, a portrait chip
+ * — picks this way, so the same picture in the same frame fetches the same
+ * file wherever it appears (sand-y0u.4).
+ */
+export function variantFor(
+  variants: readonly MediaVariant[],
+  width: number,
+): MediaVariant | undefined {
+  return variants.find((v) => v.width >= width) ?? variants.at(-1);
+}
+
+/** `srcset` for a set of derivatives; empty when there are none to offer. */
+export function srcSetOf(variants: readonly MediaVariant[], base = '/assets/media/'): string {
+  return variants.map((v) => `${base}${v.src} ${v.width}w`).join(', ');
 }
 
 /**

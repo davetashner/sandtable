@@ -128,6 +128,24 @@ export const shadows: Record<ThemeName, string> = {
   dark: '0 12px 32px rgba(0, 0, 0, 0.45)',
 };
 
+/**
+ * How a photograph sits in the panel before anyone attends to it (ADR 0012):
+ * most of the colour pulled out and what is left pushed towards brass, so an
+ * archive picture reads as an instrument of the war room rather than as a
+ * window cut through it. A filter chain rather than a duotone blend, because
+ * it composites in one pass, needs no extra element over the picture, and
+ * cannot leak onto the caption underneath.
+ *
+ * Deliberately mild: the rest state has to be legible on its own, since full
+ * colour is a reveal and half the audience — every touch reader — never
+ * hovers. Light tones warm, into the parchment; dark tones cooler and a stop
+ * down, so a bright photograph does not glare out of a slate panel.
+ */
+export const mediaTone: Record<ThemeName, string> = {
+  light: 'grayscale(0.72) sepia(0.4) saturate(1.3) contrast(1.02) brightness(1.02)',
+  dark: 'grayscale(0.7) sepia(0.28) saturate(1.15) contrast(1.06) brightness(0.86)',
+};
+
 // ------------------------------------------------------------- contrast
 
 /** WCAG 2.x relative luminance of a #rrggbb colour. */
@@ -152,6 +170,7 @@ function block(theme: ThemeName): string {
   const c = colors[theme];
   const lines = Object.entries(c).map(([k, v]) => `  --${k}: ${v};`);
   lines.push(`  --shadow: ${shadows[theme]};`);
+  lines.push(`  --media-tone: ${mediaTone[theme]};`);
   lines.push(`  color-scheme: ${theme};`);
   return lines.join('\n');
 }

@@ -18,7 +18,12 @@ WebP derivatives (320/640/1024 px, in a git-ignored `.derived/` beside the
 original), writes the attribution manifest the app renders (`index.json`,
 tracked), and with `-- --upload` syncs originals and derivatives to the assets
 bucket (`/assets/media/<path>`). `MediaFigure` renders every image with its
-credit, the colorized label and a link to the original (ADR 0007).
+credit, the colorized label and the way to the original (ADR 0007).
+
+A manifest may also name `original.file` — a copy of the **unaltered original**
+beside the colorization, kept out of git the same way. The pipeline derives it
+at the same widths, and "show original" then swaps the picture in place
+instead of linking out to the archive ([ADR 0012](../../../docs/decisions/0012-photographs.md)).
 
 ## Layout
 
@@ -44,3 +49,7 @@ Person with a single portrait keeps the flat layout.
 - Colorizations are labelled **colorized (AI-assisted)**, the original is one
   click away, and colour is the only thing changed — nothing added or removed.
 - No gore: no dead or mutilated bodies, no atrocity imagery.
+- **One picture per beat** ([ADR 0012](../../../docs/decisions/0012-photographs.md)).
+  `used_by` records intended placements; two manifests naming the same beat is
+  a validator error, as is a Markdown image in a beat body. The beat's picture
+  is its `media` hero slot, which is what renders the caption and the credit.

@@ -6,10 +6,15 @@
  * Escape, an inert background and focus restored to the trigger — all of it
  * behaviour the OpeningSequence had to hand-roll, and all of it easy to get
  * subtly wrong. ADR 0007 travels with the picture: the credit, the colorized
- * label and the link to the unaltered original appear here too.
+ * label and the way to the unaltered original appear here too.
+ *
+ * This is where a photograph is always in full colour (ADR 0012). The panel
+ * tones pictures at rest; the full-size view is the reveal, so nothing here
+ * is toned and no input device is asked to hover for it.
  */
 import { useCallback, useEffect, useRef, type MouseEvent } from 'react';
 import { largestSrc, type MediaIndexEntry } from '../packs/media-index.js';
+import { MediaCredit, type MediaShowing } from './MediaCredit.js';
 import './lightbox.css';
 
 export interface MediaLightboxProps {
@@ -21,6 +26,12 @@ export interface MediaLightboxProps {
    */
   name?: string | undefined;
   base?: string;
+  /**
+   * Which of the colorized/original pair the figure behind is showing, so the
+   * modal opens on the same picture and the toggle drives both (ADR 0012).
+   */
+  showing?: MediaShowing;
+  onShow?: ((which: MediaShowing) => void) | undefined;
   open: boolean;
   onClose: () => void;
 }
@@ -29,6 +40,8 @@ export function MediaLightbox({
   entry,
   name,
   base = '/assets/media/',
+  showing = 'colorized',
+  onShow,
   open,
   onClose,
 }: MediaLightboxProps) {
@@ -68,6 +81,7 @@ export function MediaLightbox({
   );
 
   const label = name ? `${name} — full size` : 'Image at full size';
+  const pair = entry.unaltered?.length ? entry.unaltered : undefined;
 
   return (
     <dialog ref={ref} className="lightbox" aria-label={label} onClick={onBackdrop}>
@@ -77,7 +91,10 @@ export function MediaLightbox({
         </button>
         <img
           className="lightbox__img"
-          src={largestSrc(entry, base)}
+          src={largestSrc(
+            showing === 'original' && pair ? { ...entry, variants: pair } : entry,
+            base,
+          )}
           alt={entry.caption}
           width={entry.width}
           height={entry.height}
@@ -85,28 +102,7 @@ export function MediaLightbox({
         />
         <figcaption className="lightbox__caption">
           {name && <span className="lightbox__subject">{name}</span>}
-          {entry.colorized && (
-            <span
-              className="media__label"
-              title="Colour is an interpretation; only colour was changed"
-            >
-              Colorized (AI-assisted)
-            </span>
-          )}
-          <span className="media__credit">{entry.credit}</span>
-          {entry.originalUrl && (
-            <>
-              {' · '}
-              <a
-                className="media__original"
-                href={entry.originalUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Show original
-              </a>
-            </>
-          )}
+          <MediaCredit entry={entry} showing={showing} {...(pair && onShow ? { onShow } : {})} />
         </figcaption>
       </div>
     </dialog>

@@ -26,6 +26,7 @@
   --sea: #d6ccae;
   --land: #e6dfcb;
   --shadow: 0 8px 24px rgba(40, 32, 16, 0.14);
+  --media-tone: grayscale(0.72) sepia(0.4) saturate(1.3) contrast(1.02) brightness(1.02);
   color-scheme: light;
 
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
@@ -74,6 +75,7 @@
     --sea: #0b1013;
     --land: #1d262c;
     --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    --media-tone: grayscale(0.7) sepia(0.28) saturate(1.15) contrast(1.06) brightness(0.86);
     color-scheme: dark;
   }
 }
@@ -95,6 +97,7 @@
   --sea: #0b1013;
   --land: #1d262c;
   --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  --media-tone: grayscale(0.7) sepia(0.28) saturate(1.15) contrast(1.06) brightness(0.86);
   color-scheme: dark;
 }
 
@@ -115,5 +118,6 @@
   --sea: #d6ccae;
   --land: #e6dfcb;
   --shadow: 0 8px 24px rgba(40, 32, 16, 0.14);
+  --media-tone: grayscale(0.72) sepia(0.4) saturate(1.3) contrast(1.02) brightness(1.02);
   color-scheme: light;
 }

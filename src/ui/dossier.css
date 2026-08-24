@@ -83,7 +83,10 @@
   text-wrap: balance;
 }
 
-/* Hero image on a beat (sand-y0u.10): full width of the panel, caption below. */
+/* The hero slot (sand-y0u.10, ADR 0012): one picture per beat, full width of
+   the panel, cropped to a 3:2 band by `fit="band"` so a portrait and a wide
+   scene both leave the same amount of prose in view. Caption below, never
+   over the picture; the whole photograph is a click away at full size. */
 .dossier__hero {
   margin: 6px 0 12px;
 }

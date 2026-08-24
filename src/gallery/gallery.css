@@ -226,6 +226,14 @@
   font-size: var(--fs-sm);
 }
 
+/* One specimen, several sizes of the same control side by side. */
+.gallery__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
 /* ---------------------------------------------------------------- tokens */
 
 .tokens {

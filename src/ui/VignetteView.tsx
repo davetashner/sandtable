@@ -8,8 +8,8 @@
 import { withFootnotes } from '../engine/beats.js';
 import type { Source, Vignette } from '../packs/schema/index.js';
 import type { MediaIndexEntry } from '../packs/media-index.js';
+import { PortraitChip } from './PortraitChip.js';
 import './vignette.css';
-import { EntityLink } from './Prose.js';
 import { Prose } from './Prose.js';
 
 const KIND_LABEL: Record<Vignette['kind'], string> = {
@@ -61,39 +61,17 @@ export function VignetteView({
         const voiceId = v.people?.[0];
         const face = portrait && voiceId ? portrait(voiceId) : undefined;
         const faceName = (voiceId && label ? label(voiceId) : undefined) ?? v.voice;
-        const variant = face?.variants.find((x) => x.width >= 160) ?? face?.variants[0];
-        const position = face?.focalPoint
-          ? `${Math.round(face.focalPoint.x * 100)}% ${Math.round(face.focalPoint.y * 100)}%`
-          : '50% 25%';
         return (
           <article key={v.id} className="vignette" data-kind={v.kind} aria-label={v.title}>
-            {face && variant && (
-              <span className="vignette__facewrap portrait-frame">
-                {voiceId ? (
-                  <EntityLink id={voiceId} label={faceName} className="entity-link--portrait">
-                    <img
-                      className="vignette__face"
-                      src={`${base}${variant.src}`}
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                      style={{ objectPosition: position }}
-                    />
-                  </EntityLink>
-                ) : (
-                  <img
-                    className="vignette__face"
-                    src={`${base}${variant.src}`}
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    style={{ objectPosition: position }}
-                  />
-                )}
-                <span className="portrait-name" aria-hidden="true">
-                  {faceName}
-                </span>
-              </span>
+            {face && (
+              <PortraitChip
+                className="vignette__facewrap"
+                entry={face}
+                name={faceName}
+                size={44}
+                base={base}
+                {...(voiceId ? { entity: voiceId } : {})}
+              />
             )}
             <p className="vignette__eyebrow">
               <span className="vignette__voice">{v.voice}</span>

@@ -78,6 +78,9 @@ export function Dossier({
   );
   const markdown = useMemo(() => (beat ? withFootnotes(beat, sources) : ''), [beat, sources]);
   const hypothetical = branch.kind === 'counterfactual';
+  // One picture per beat, in one slot, at the top (ADR 0012): the schema gives
+  // a beat a single `media` id and the validator refuses a second claim on it,
+  // so a beat cannot become a slideshow by accretion.
   const hero = beat?.media && resolveMedia ? resolveMedia(beat.media) : undefined;
   // A hero opens full size (sand-neh.10); name whoever the manifest identifies
   // so the modal is not a face with a credit line under it (sand-y0u.18).
@@ -161,7 +164,7 @@ export function Dossier({
             <MediaFigure
               entry={hero}
               width={360}
-              fit="contain"
+              fit="band"
               zoomable
               className="dossier__hero"
               {...(heroSubject ? { name: heroSubject } : {})}
