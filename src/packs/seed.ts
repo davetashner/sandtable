@@ -28,6 +28,7 @@ import casualtiesJson from '../../content/eras/1914-schlieffen-marne/casualties.
 import vignettesJson from '../../content/eras/1914-schlieffen-marne/vignettes.json';
 import toursJson from '../../content/eras/1914-schlieffen-marne/tours.json';
 import scoreJson from '../../content/eras/1914-schlieffen-marne/score.json';
+import tracksJson from '../../content/eras/1914-schlieffen-marne/tracks.json';
 import {
   Battle,
   BeatFrontMatter,
@@ -49,6 +50,7 @@ import {
   Tally,
   Timetable,
   Tour,
+  PersonTrack,
   ScoreEntry,
   Vignette,
   type Battle as BattleT,
@@ -72,6 +74,7 @@ import {
   type Tally as TallyT,
   type Timetable as TimetableT,
   type Tour as TourT,
+  type PersonTrack as PersonTrackT,
   type ScoreEntry as ScoreEntryT,
 } from './schema/index.js';
 import { splitFrontMatter } from './validate/frontmatter.js';
@@ -126,6 +129,8 @@ export interface SeedPack {
   tours: TourT[];
   /** Which cue plays when (score.json, ADR 0008). */
   score: ScoreEntryT[];
+  /** Where the commanders were (tracks.json, sand-1l0.27). */
+  tracks: PersonTrackT[];
   /** Concept schematics by file stem, as SVG source (sand-1l0.33). */
   diagrams: Record<string, string>;
 }
@@ -158,6 +163,7 @@ function loadSeed(): SeedPack {
     .sort((a, b) => Date.parse(a.at) - Date.parse(b.at));
   const tours = Tour.array().parse(toursJson);
   const score = ScoreEntry.array().parse(scoreJson);
+  const tracks = PersonTrack.array().parse(tracksJson);
   const decisions = DecisionPoint.array()
     .parse(decisionsJson)
     .sort((a, b) => Date.parse(a.at) - Date.parse(b.at));
@@ -184,6 +190,7 @@ function loadSeed(): SeedPack {
     vignettes,
     tours,
     score,
+    tracks,
     diagrams: Object.fromEntries(
       Object.entries(diagramsRaw).map(([file, svg]) => [
         (file.split('/').pop() ?? '').replace(/\.svg$/, ''),

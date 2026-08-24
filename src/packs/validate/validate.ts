@@ -48,6 +48,7 @@ import {
   type SupplyLine,
   type Tally,
   type Timetable,
+  type PersonTrack as PersonTrackT,
   type Tour,
   type Vignette,
 } from '../schema/index.js';
@@ -87,6 +88,7 @@ export interface ParsedPack {
   casualties: CasualtyRecord[];
   vignettes: Vignette[];
   tours: Tour[];
+  tracks: PersonTrackT[];
   score: ScoreEntryT[];
   beats: NarrativeBeat[];
   /** Stems of diagrams/*.svg, and the text, for the beats that inline them. */
@@ -125,6 +127,7 @@ type Kind =
   | 'casualties'
   | 'vignette'
   | 'tour'
+  | 'track'
   | 'branch'
   | 'formation'
   | 'route'
@@ -365,6 +368,7 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     casualties: [],
     vignettes: [],
     tours: [],
+    tracks: [],
     score: [],
     beats: [],
     diagrams: new Map(
@@ -400,6 +404,7 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     'casualties.json': 'casualties',
     'vignettes.json': 'vignette',
     'tours.json': 'tour',
+    'tracks.json': 'track',
     'score.json': 'score',
   };
   for (const [file, schema] of Object.entries(PACK_COLLECTIONS) as [
@@ -1027,6 +1032,52 @@ function checkDiagram(
   }
 }
 
+/**
+ * Commander tracks (sand-1l0.27). A track says where a man — or the
+ * headquarters he commanded from — was, so the checks are the route checks
+ * plus the one rule that keeps the two kinds honest: a person has at most one
+ * `hq` track, because he cannot command from two places at once, while he may
+ * have as many documented journeys as the sources record.
+ */
+function checkTracks(
+  ctx: Ctx,
+  s: PackState,
+  path: string,
+  range: TimeRange,
+  sideIds: Set<string>,
+) {
+  const hqOf = new Map<string, string>();
+  for (const tk of s.tracks) {
+    ctx.ref(path, tk.id, tk.person, ['person'], 'person');
+    if (tk.side && !sideIds.has(tk.side))
+      ctx.error(path, `unknown side ${tk.side}`, tk.id);
+    if (tk.kind === 'hq' && !tk.post)
+      ctx.error(path, 'an hq track must name the post it commanded from', tk.id);
+    if (tk.kind === 'journey' && tk.post)
+      ctx.warn(path, 'a journey is the man, not a headquarters; drop `post`', tk.id);
+    if (tk.kind === 'hq') {
+      const seen = hqOf.get(tk.person);
+      if (seen)
+        ctx.error(
+          path,
+          `${tk.person} already has an hq track (${seen}); a commander runs one headquarters at a time — split the posts by time in a single track, or make this a journey`,
+          tk.id,
+        );
+      else hqOf.set(tk.person, tk.id);
+    }
+    let prev = -Infinity;
+    tk.waypoints.forEach((w, i) => {
+      const at = t(w[2]);
+      if (!(at > prev))
+        ctx.error(path, `waypoints[${i}] is not later than the previous waypoint`, tk.id);
+      prev = at;
+      if (!within(range, w[2]))
+        ctx.error(path, `waypoints[${i}] (${w[2]}) is outside the pack timeRange`, tk.id);
+    });
+    checkCitations(ctx, path, tk.id, tk.sources, true);
+  }
+}
+
 function checkBeats(ctx: Ctx, s: PackState) {
   const { pack } = s;
   for (const b of s.beats) {
@@ -1260,6 +1311,7 @@ export function validateContent(raw: RawContent): Report {
     for (const c of s.casualties) checkCasualties(ctx, s, file('casualties.json'), c, sideIds);
     for (const v of s.vignettes) checkVignette(ctx, s, file('vignettes.json'), v);
     for (const tr of s.tours) checkTour(ctx, s, file('tours.json'), tr);
+    checkTracks(ctx, s, file('tracks.json'), range, sideIds);
     checkScore(ctx, s, file('score.json'));
     const seenCast = new Set<string>();
     for (const c of s.cast) {

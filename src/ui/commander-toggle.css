@@ -1,0 +1,33 @@
+/* The commander-portrait switch, matched to the score control beside it
+   (sand-1l0.27). Tokens only. */
+
+.commanders__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--panel-2);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.commanders__toggle:hover {
+  color: var(--ink);
+  border-color: var(--brass-dim);
+}
+
+.commanders__toggle[aria-pressed='true'] {
+  color: var(--brass);
+  border-color: var(--brass);
+}
+
+.commanders__glyph {
+  font-size: 11px;
+  line-height: 1;
+}

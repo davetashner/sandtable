@@ -16,9 +16,23 @@ import {
 import { buildStyle, type MapTheme } from '../engine/map/style.js';
 import { useMovementLayers, type MovementSource } from '../engine/layers/useMovementLayers.js';
 import { buildTallyLayers, tallyLabelCandidates } from '../engine/layers/tallies.js';
+import {
+  buildCommanderLayers,
+  commanderLabelCandidates,
+  commandersAt,
+} from '../engine/layers/commanders.js';
+import { createPortraitIcons, type PortraitSource } from '../engine/layers/portrait-icons.js';
 import { MapView, type CameraTarget, type MapHandle } from '../engine/map/MapView.js';
 import { labelNow } from '../engine/ticks.js';
-import type { BBox, Branch, Camera, Place, Tally } from '../packs/schema/index.js';
+import type {
+  BBox,
+  Branch,
+  Camera,
+  PersonTrack,
+  Place,
+  Side,
+  Tally,
+} from '../packs/schema/index.js';
 
 export interface MapSurfaceProps {
   camera: Camera;
@@ -33,6 +47,17 @@ export interface MapSurfaceProps {
   places?: Place[];
   /** Strength ledgers whose positioned entries appear as markers (sand-1l0.19). */
   tallies?: Tally[];
+  /** Where the commanders were, as portrait tokens (sand-1l0.27). */
+  tracks?: PersonTrack[];
+  /** Sides, for the ring colour on a commander token. */
+  sides?: Side[];
+  /** Off by default: the portraits are a second population on a busy map. */
+  showCommanders?: boolean;
+  /** person id → display name, for the commander labels. */
+  labelPerson?: ((personId: string) => string | undefined) | undefined;
+  /** person id → the portrait to crop into a token. */
+  portrait?: ((personId: string) => PortraitSource | undefined) | undefined;
+  onSelectCommander?: ((personId: string) => void) | undefined;
   /**
    * A camera a guided tour asks for (sand-1l0.14). Applied whenever `key`
    * changes, after the region fit, so a tour step can frame something closer
@@ -51,6 +76,12 @@ export function MapSurface({
   focusRegion,
   places = [],
   tallies = [],
+  tracks = [],
+  sides = [],
+  showCommanders = false,
+  labelPerson,
+  portrait,
+  onSelectCommander,
   onSelectTally,
   cameraTarget,
 }: MapSurfaceProps) {
@@ -71,20 +102,87 @@ export function MapSurface({
     project: viewTick > 0 ? project : undefined,
     placementKey: viewTick,
   });
-  // Three passes, in order of who may not be pushed aside: army tokens first
-  // (above), then the tally markers that sit on their route, then the towns.
-  // Each avoids the boxes the passes before it took (sand-320, sand-1l0.15).
+  // Portraits are cropped round on a canvas and cached per person; a redraw
+  // when one lands is what puts it on the map (sand-1l0.27).
+  const [iconTick, setIconTick] = useState(0);
+  const iconsRef = useRef<ReturnType<typeof createPortraitIcons> | null>(null);
+  iconsRef.current ??= createPortraitIcons(() => setIconTick((n) => n + 1));
+  const icons = iconsRef.current;
+
+  const commanders = useMemo(
+    () =>
+      showCommanders
+        ? commandersAt({
+            tracks,
+            now,
+            sides,
+            label: (id) => labelPerson?.(id),
+            icon: (id) => icons.get(id),
+          })
+        : [],
+    // iconTick is a deliberate extra dependency: same inputs, a new portrait.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [showCommanders, tracks, now, sides, labelPerson, icons, iconTick],
+  );
+  useEffect(() => {
+    if (!portrait) return;
+    for (const c of commanders) icons.request(c.person, portrait(c.person));
+  }, [commanders, portrait, icons]);
+
+  // Four passes, in order of who may not be pushed aside: army tokens first
+  // (above), then the commanders, then the tally markers that sit on their
+  // route, then the towns. Each avoids the boxes the passes before it took
+  // (sand-320, sand-1l0.15, sand-1l0.27).
+  const commanderCandidates = useMemo(() => commanderLabelCandidates(commanders), [commanders]);
+  const commanderPlacement = useMemo(
+    () => (viewTick > 0 ? placeLabels(commanderCandidates, project, labelBoxes) : undefined),
+    [commanderCandidates, viewTick, project, labelBoxes],
+  );
+  const afterCommanders = useMemo(
+    () =>
+      commanderPlacement
+        ? [...labelBoxes, ...occupiedBoxes(commanderCandidates, commanderPlacement, project)]
+        : labelBoxes,
+    [labelBoxes, commanderCandidates, commanderPlacement, project],
+  );
   const tallyCandidates = useMemo(() => tallyLabelCandidates(tallies, now), [tallies, now]);
   const tallyPlacement = useMemo(
-    () => (viewTick > 0 ? placeLabels(tallyCandidates, project, labelBoxes) : undefined),
-    [tallyCandidates, viewTick, project, labelBoxes],
+    () => (viewTick > 0 ? placeLabels(tallyCandidates, project, afterCommanders) : undefined),
+    [tallyCandidates, viewTick, project, afterCommanders],
   );
   const takenBoxes = useMemo(
     () =>
       tallyPlacement
-        ? [...labelBoxes, ...occupiedBoxes(tallyCandidates, tallyPlacement, project)]
-        : labelBoxes,
-    [labelBoxes, tallyCandidates, tallyPlacement, project],
+        ? [...afterCommanders, ...occupiedBoxes(tallyCandidates, tallyPlacement, project)]
+        : afterCommanders,
+    [afterCommanders, tallyCandidates, tallyPlacement, project],
+  );
+  const commanderLayers = useMemo(
+    () =>
+      commanders.length
+        ? buildCommanderLayers({
+            tracks,
+            now,
+            sides,
+            label: (id) => labelPerson?.(id),
+            icon: (id) => icons.get(id),
+            placement: commanderPlacement,
+            placementKey: `${viewTick}:${iconTick}`,
+            ...(onSelectCommander ? { onSelect: onSelectCommander } : {}),
+          })
+        : [],
+    [
+      commanders,
+      tracks,
+      now,
+      sides,
+      labelPerson,
+      icons,
+      commanderPlacement,
+      viewTick,
+      iconTick,
+      onSelectCommander,
+    ],
   );
   const candidates = useMemo(() => placeLabelCandidates(places), [places]);
   const placeLayers = useMemo(() => {
@@ -117,8 +215,8 @@ export function MapSurface({
     [tallies, now, tallyPlacement, viewTick, onSelectTally],
   );
   const layers = useMemo(
-    () => [...placeLayers, ...tallyLayers, ...movementLayers],
-    [placeLayers, tallyLayers, movementLayers],
+    () => [...placeLayers, ...tallyLayers, ...movementLayers, ...commanderLayers],
+    [placeLayers, tallyLayers, movementLayers, commanderLayers],
   );
   const first = useRef(true);
 

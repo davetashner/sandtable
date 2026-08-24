@@ -1,0 +1,99 @@
+[
+  {
+    "id": "1914:track-moltke-ohl",
+    "person": "person:moltke-helmuth-von-younger",
+    "kind": "hq",
+    "post": "OHL — the German supreme headquarters",
+    "postShort": "OHL",
+    "side": "de",
+    "waypoints": [
+      [7.5886, 50.3569, "1914-08-17T00:00:00Z"],
+      [7.5886, 50.3569, "1914-08-29T23:00:00Z"],
+      [6.13, 49.611, "1914-08-30T12:00:00Z"],
+      [6.13, 49.611, "1914-09-14T12:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "The towns OHL worked from and the dates it moved between them, not a building and not an hour: Koblenz from 17 August, Luxembourg from 30 August. Before that OHL was in Berlin, off the western map, so the track begins at Koblenz. It ends on 14 September, when Falkenhayn replaced Moltke. The distance from Koblenz to the right wing — some 300 km, on a telegraph and wireless net that lost messages — is the point the track is making.",
+    "notes": "An hq track is where the army was commanded from. Moltke himself left it once in the campaign, for the tour of 11 September; that journey is not yet reconstructed at hour resolution (sand-23b.9).",
+    "sources": [
+      {
+        "source": "source:herwig-2009",
+        "note": "OHL at Koblenz and its move to Luxembourg; the distance to the right wing and its effect on control"
+      },
+      {
+        "source": "source:mombauer-2001",
+        "note": "Moltke's headquarters and his command of the campaign from it"
+      }
+    ]
+  },
+  {
+    "id": "1914:track-joffre-gqg",
+    "person": "person:joffre-joseph",
+    "kind": "hq",
+    "post": "GQG — the French Grand Quartier Général",
+    "postShort": "GQG",
+    "side": "fr",
+    "waypoints": [
+      [4.5847, 48.7247, "1914-08-05T00:00:00Z"],
+      [4.5847, 48.7247, "1914-09-04T23:00:00Z"],
+      [4.7063, 48.2331, "1914-09-05T12:00:00Z"],
+      [4.7063, 48.2331, "1914-11-25T00:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "The towns GQG worked from and the dates it moved: Vitry-le-François from 5 August, Bar-sur-Aube from 5 September, as the retreat carried the front south. Towns, not buildings; days, not hours.",
+    "notes": "Joffre commanded from GQG and drove out from it; the journeys are separate tracks.",
+    "sources": [
+      {
+        "source": "source:herwig-2009",
+        "note": "GQG at Vitry-le-François and the move to Bar-sur-Aube on 5 September"
+      },
+      { "source": "source:afgg-1-1", "note": "the French headquarters and its orders" }
+    ]
+  },
+  {
+    "id": "1914:track-gallieni-paris",
+    "person": "person:gallieni-joseph",
+    "kind": "hq",
+    "post": "Military Government of Paris",
+    "postShort": "Paris",
+    "side": "fr",
+    "waypoints": [
+      [2.3125, 48.8566, "1914-08-26T00:00:00Z"],
+      [2.3125, 48.8566, "1914-11-25T00:00:00Z"]
+    ],
+    "confidence": "high",
+    "derivation": "Gallieni was appointed Military Governor of Paris on 26 August and commanded from the Lycée Victor-Duruy beside the Invalides for the rest of the campaign. The position is the Invalides quarter; the track is static because the post was.",
+    "sources": [
+      {
+        "source": "source:gallieni-1920",
+        "note": "his own account of the governorship and where he worked; memoir, one side"
+      },
+      { "source": "source:herwig-2009", "note": "the appointment and the defence of Paris" }
+    ]
+  },
+  {
+    "id": "1914:track-joffre-melun-1914-09-05",
+    "person": "person:joffre-joseph",
+    "kind": "journey",
+    "side": "fr",
+    "waypoints": [
+      [4.7063, 48.2331, "1914-09-05T09:00:00Z"],
+      [2.6597, 48.5392, "1914-09-05T14:00:00Z"],
+      [2.6597, 48.5392, "1914-09-05T16:00:00Z"],
+      [4.7063, 48.2331, "1914-09-05T21:00:00Z"]
+    ],
+    "confidence": "medium",
+    "derivation": "The drive to Melun on the afternoon of 5 September to ask Sir John French, in person, to turn the British round and join the attack — the one journey of the campaign Joffre is remembered for making himself. The hours are the sources' approximations for the meeting; the line shows that he went and came back, not the roads he took.",
+    "notes": "A journey is the man. On this afternoon Joffre was not at GQG, which his hq track shows at Bar-sur-Aube throughout.",
+    "sources": [
+      {
+        "source": "source:herwig-2009",
+        "note": "Joffre at Melun on 5 September and what he asked for"
+      },
+      {
+        "source": "source:edmonds-1922",
+        "note": "the meeting from the British side and the BEF's orders after it"
+      }
+    ]
+  }
+]
