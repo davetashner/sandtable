@@ -1,0 +1,30 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:person/pau-paul/portrait-autochrome-1920",
+  "person": "person:pau-paul",
+  "file": "portrait-autochrome-1920.jpg",
+  "width": 1254,
+  "height": 1671,
+  "colorized": false,
+  "original": {
+    "description": "Autochrome portrait of General Paul Pau, made at Boulogne on 20 May 1920 by Auguste Léon for Albert Kahn’s Archives de la Planète. An original colour photograph, not a colorization.",
+    "photographer": "Auguste Léon",
+    "date": "20 May 1920",
+    "archive": "Musée Albert-Kahn, Archives de la Planète, via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:1920_General_Paul_Pau.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/1920%20General%20Paul%20Pau.jpg",
+    "original_dimensions": "1254 × 1671",
+    "licence": "public domain (Commons record: LicenseShortName \"Public domain\")"
+  },
+  "colorization": {
+    "status": "not colorized, and must not be — this is an original colour photograph (autochrome). Reproduce as it is; any colour change would falsify a documentary colour record."
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "General Paul Pau, who commanded the improvised Army of Alsace in August 1914. An autochrome of 1920 — a colour photograph of the period, not a colorization.",
+  "credit": "Original photograph: Auguste Léon, Boulogne, 20 May 1920; Musée Albert-Kahn, Archives de la Planète; public domain.",
+  "used_by": [
+    "1914:lorraine",
+    "1914:beat-lorraine-0821"
+  ],
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. Pau lost his right arm in 1870 — a detail worth keeping in frame when the focal point is set. Valuable to the pack as documentary colour: it lets the UI show a real 1914-era colour photograph beside the project’s own colorizations."
+}

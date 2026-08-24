@@ -1,0 +1,34 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:scene/1922-taxi-de-la-marne-invalides/taxi-et-chauffeurs-1922-12-21",
+  "kind": "scene",
+  "file": "taxi-et-chauffeurs-1922-12-21.jpg",
+  "width": 8623,
+  "height": 6256,
+  "colorized": false,
+  "original": {
+    "description": "The preserved \"taxi de la Marne\" at the Invalides on 21 December 1922, with, beside it, the drivers Étienne Germain and Louis Gouault and General Malleterre. Catalogued by the Bibliothèque nationale de France as \"Le taxi de la Marne aux Invalides [près du taxi, de g. à d. le chauffeur Etienne] Germain, [le chauffeur Louis] Gouault, [le] général Maleterre [i.e. Malleterre, le 21 décembre 1922] : [photographie de presse] / [Agence Rol]\".",
+    "photographer": "Agence Rol (press agency; the operator is not named)",
+    "date": "21 December 1922",
+    "archive": "Bibliothèque nationale de France, Agence Rol collection; digitised on Gallica (btv1b53095000q), via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Le_taxi_de_la_Marne_aux_Invalides_(pr%C3%A8s_du_taxi,_de_g._%C3%A0_d._le_chauffeur_Etienne)_Germain_(le_chauffeur_Louis)_Gouault_(le)_g%C3%A9n%C3%A9ral_Maleterre_(i.e._Malleterrre,_le_21_d%C3%A9cembre_1922)_-_btv1b53095000q.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20taxi%20de%20la%20Marne%20aux%20Invalides%20(pr%C3%A8s%20du%20taxi,%20de%20g.%20%C3%A0%20d.%20le%20chauffeur%20Etienne)%20Germain%20(le%20chauffeur%20Louis)%20Gouault%20(le)%20g%C3%A9n%C3%A9ral%20Maleterre%20(i.e.%20Malleterrre,%20le%2021%20d%C3%A9cembre%201922)%20-%20btv1b53095000q.jpg",
+    "original_dimensions": "8623 × 6256",
+    "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; the record’s permission note is publication before 1931). Credit line on the record: Bibliothèque nationale de France."
+  },
+  "colorization": {
+    "status": "not colorized. Recommendation: colorize — the Paris taxi livery of the period is documented, and this is the taxis card’s one chance at the actual vehicle."
+  },
+  "content_policy": "ok — a car and three men, no gore",
+  "caption": "A taxi de la Marne at the Invalides on 21 December 1922 with two of the drivers who drove that night, Étienne Germain and Louis Gouault, and General Malleterre. The photograph is of the commemoration, eight years after the run to the Ourcq.",
+  "credit": "Original photograph: Agence Rol, Paris, 21 December 1922; Bibliothèque nationale de France, via Gallica and Wikimedia Commons; public domain.",
+  "used_by": [
+    "1914:tech-motor-transport-taxis",
+    "1914:beat-marne-0907"
+  ],
+  "focal_point": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. Deliberately dated 1922 in the caption. No photograph of the taxis actually loading on the night of 6/7 September 1914 was found in an archive record during this pass; three Commons files that turn up under \"taxi de la Marne 1914\" are a 2008 motor-show snapshot, a 2024 own-work upload and a museum exhibit, and all three were rejected. If the pack ever wants the night itself it will have to be the map and the text, not a photograph."
+}

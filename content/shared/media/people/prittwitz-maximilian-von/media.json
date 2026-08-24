@@ -1,0 +1,30 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:person/prittwitz-maximilian-von/portrait-1915",
+  "person": "person:prittwitz-maximilian-von",
+  "file": "portrait-1915.jpg",
+  "width": 476,
+  "height": 635,
+  "colorized": false,
+  "original": {
+    "description": "Portrait of Maximilian von Prittwitz und Gaffron, Generaloberst, by the Berlin portraitist Nicola Perscheid.",
+    "photographer": "Nicola Perscheid (1864–1930)",
+    "date": "1915 (Commons record)",
+    "archive": "Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Maximilian-vp-1.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maximilian-vp-1.jpg",
+    "original_dimensions": "476 × 635",
+    "licence": "public domain (Commons record: LicenseShortName \"Public domain\"). Perscheid died in 1930, so the work is out of copyright on life + 70."
+  },
+  "colorization": {
+    "status": "not colorized. Recommendation: colorize only if a larger scan is found — 476 px is a person card at best."
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Maximilian von Prittwitz und Gaffron, commander of the German Eighth Army in East Prussia until Moltke relieved him on 22 August 1914 for proposing to fall back behind the Vistula.",
+  "credit": "Original photograph: Nicola Perscheid, 1915; via Wikimedia Commons; public domain.",
+  "used_by": [
+    "1914:tannenberg-east",
+    "1914:beat-east-0820"
+  ],
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. The Commons record notes third-party claims over the digitisation but licenses the work itself as public domain; the underlying photograph is unambiguously out of copyright (Perscheid d. 1930)."
+}

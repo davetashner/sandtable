@@ -1,0 +1,30 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:person/hindenburg-paul-von/portrait-1920s",
+  "person": "person:hindenburg-paul-von",
+  "file": "portrait-1920s.jpg",
+  "width": 573,
+  "height": 768,
+  "colorized": false,
+  "original": {
+    "description": "Head-and-shoulders portrait of Paul von Hindenburg in uniform, a cropped detail of a Bundesarchiv print. The Bundesarchiv record dates the photograph between 1919 and 1928 — it is a post-war portrait, not one of the man who was recalled from retirement in August 1914.",
+    "photographer": "not identified in the Bundesarchiv record (\"Unknown author\")",
+    "date": "between 1919 and 1928 (Bundesarchiv record)",
+    "archive": "Bundesarchiv (German Federal Archives), Bild 183-C06886, via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-C06886,_Paul_v._Hindenburg_(cropped)(2).jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv%20Bild%20183-C06886,%20Paul%20v.%20Hindenburg%20(cropped)(2).jpg",
+    "original_dimensions": "573 × 768",
+    "licence": "CC BY-SA 3.0 DE (Commons record: LicenseShortName \"CC BY-SA 3.0 de\"; UsageTerms \"Creative Commons Attribution-Share Alike 3.0 de\"). Share-alike: any derivative, colorization included, is itself CC BY-SA 3.0 DE, and the Bundesarchiv credit string is mandatory."
+  },
+  "colorization": {
+    "status": "not colorized. Recommendation: leave as it is. The Bundesarchiv licence is share-alike, so a colorization would have to ship as CC BY-SA 3.0 DE rather than under the project licence, and the sitter is here for recognition rather than atmosphere."
+  },
+  "content_policy": "ok — studio portrait, no gore",
+  "caption": "Paul von Hindenburg, recalled from retirement on 22 August 1914 to command the German Eighth Army in East Prussia, with Ludendorff as his chief of staff. Photographed after the war.",
+  "credit": "Bundesarchiv, Bild 183-C06886 / CC-BY-SA 3.0",
+  "used_by": [
+    "1914:tannenberg-east",
+    "1914:beat-east-0824"
+  ],
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. The date is the record's, and it is post-war: the caption says when he was recalled and separately that the portrait is later, rather than implying a 1914 likeness. If a dated 1914–16 Bundesarchiv portrait is found it should replace this one. Bundesarchiv share-alike applies to derivatives — see the licence field."
+}

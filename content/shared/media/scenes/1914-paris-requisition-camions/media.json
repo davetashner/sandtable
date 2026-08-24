@@ -1,0 +1,33 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:scene/1914-paris-requisition-camions/requisition-des-camions-1914-08-05",
+  "kind": "scene",
+  "file": "requisition-des-camions-1914-08-05.jpg",
+  "width": 2764,
+  "height": 2000,
+  "colorized": false,
+  "original": {
+    "description": "The requisition of lorries on the Esplanade des Invalides, Paris, 5 August 1914 — the Commons record reads \"Réquisition des poids lourds sur l’esplanade des Invalides, Paris le 5 août 1914.\"",
+    "photographer": "Agence Rol (press agency; the operator is not named)",
+    "date": "5 August 1914",
+    "archive": "Bibliothèque nationale de France, Agence Rol collection; digitised on Gallica, via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:R%C3%A9quisition_camions_1914.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/R%C3%A9quisition%20camions%201914.jpg",
+    "original_dimensions": "2764 × 2000",
+    "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"). Credit line on the record: Gallica Digital Library."
+  },
+  "colorization": {
+    "status": "not colorized. Recommendation: leave as it is if the motor-car photograph beside it is colorized."
+  },
+  "content_policy": "ok — lorries parked on an esplanade, no gore",
+  "caption": "Lorries requisitioned on the Esplanade des Invalides, Paris, 5 August 1914. Motor transport in 1914 was something an army borrowed from a city, not something it owned.",
+  "credit": "Original photograph: Agence Rol, Paris, 5 August 1914; Bibliothèque nationale de France, via Gallica and Wikimedia Commons; public domain.",
+  "used_by": [
+    "1914:tech-motor-transport-taxis"
+  ],
+  "focal_point": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. Same caveat as the motor cars: no Rol reference number on the Commons record."
+}

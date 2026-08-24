@@ -1,0 +1,30 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:person/dubail-auguste/portrait-bain",
+  "person": "person:dubail-auguste",
+  "file": "portrait-bain.jpg",
+  "width": 523,
+  "height": 684,
+  "colorized": false,
+  "original": {
+    "description": "Portrait of General Augustin Dubail, from a Bain News Service negative.",
+    "photographer": "not named on the negative; published by Bain News Service",
+    "date": "not established in the record (\"Unknown date\")",
+    "archive": "Library of Congress, Prints and Photographs Division, digital ID ggbain.17063, via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Augustin_Dubail.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Augustin%20Dubail.jpg",
+    "original_dimensions": "523 × 684",
+    "licence": "public domain (Commons record: LicenseShortName \"Public domain\"). The Bain collection at the Library of Congress carries no known restrictions."
+  },
+  "colorization": {
+    "status": "not colorized. Recommendation: colorize if a larger scan is fetched from the Library of Congress first — at 523 px this crop is a person card only."
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "General Auguste Dubail, commander of the French First Army in Lorraine in August 1914 — the right-hand army of Plan XVII’s offensive.",
+  "credit": "Original photograph: Bain News Service; Library of Congress, Prints and Photographs Division, ggbain.17063; public domain.",
+  "used_by": [
+    "1914:lorraine",
+    "1914:beat-lorraine-0814"
+  ],
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. The Commons title is the French spelling \"Augustin\"; the pack’s person is \"Auguste Dubail\" — the same man (1851–1934). The Library of Congress item ggbain.17063 has a far larger master than the Commons crop; fetch that instead if the card ever needs it."
+}

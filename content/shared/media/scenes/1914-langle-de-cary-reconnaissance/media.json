@@ -1,0 +1,37 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:scene/1914-langle-de-cary-reconnaissance/capitaine-leclerc-1914-10",
+  "kind": "scene",
+  "people": [
+    "person:langle-de-cary-fernand-de"
+  ],
+  "file": "capitaine-leclerc-1914-10.jpg",
+  "width": 2752,
+  "height": 2000,
+  "colorized": false,
+  "original": {
+    "description": "On an inspection tour, Capitaine Leclerc brings intelligence to General de Langle de Cary, who is on horseback; a Dorand aircraft stands in the background. Catalogued by the Bibliothèque nationale de France under the subject headings for Langle de Cary, Fernand de (1849–1927), First World War aviation, military aircraft, pilots, generals and messengers, reference Rol 42920, October 1914.",
+    "photographer": "Agence Rol (press agency; the operator is not named)",
+    "date": "October 1914",
+    "archive": "Bibliothèque nationale de France, Agence Rol collection, reference Rol 42920; digitised on Gallica (btv1b69323396), via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Tourn%C3%A9e_d'inspection,_le_capitaine_Leclerc_apportant_des_renseignements_au_g%C3%A9n%C3%A9ral_Langle_de_Cary_(%C3%A0_cheval),_en_arri%C3%A8re-plan_un_avion_Dorand_-_btv1b69323396.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tourn%C3%A9e%20d'inspection,%20le%20capitaine%20Leclerc%20apportant%20des%20renseignements%20au%20g%C3%A9n%C3%A9ral%20Langle%20de%20Cary%20(%C3%A0%20cheval),%20en%20arri%C3%A8re-plan%20un%20avion%20Dorand%20-%20btv1b69323396.jpg",
+    "original_dimensions": "2752 × 2000",
+    "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"). Credit line on the record: Bibliothèque nationale de France."
+  },
+  "colorization": {
+    "status": "not colorized. Recommendation: colorize — the aerial-reconnaissance card has no photograph of its own yet, and this one carries the whole idea in a single frame."
+  },
+  "content_policy": "ok — officers and an aircraft, no gore",
+  "caption": "October 1914: an aviator brings a reconnaissance report to General de Langle de Cary, who receives it on horseback, with the aeroplane that carried it standing behind. The two ways an army learned where the enemy was, in one photograph.",
+  "credit": "Original photograph: Agence Rol, October 1914; Bibliothèque nationale de France, Rol 42920, via Gallica and Wikimedia Commons; public domain.",
+  "used_by": [
+    "1914:tech-aerial-reconnaissance",
+    "1914:ardennes"
+  ],
+  "focal_point": {
+    "x": 0.45,
+    "y": 0.5
+  },
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. This is also the only photograph in the batch showing Langle de Cary; a separate portrait of him was rejected (see the shot-list note in docs/imagery-phase-1.md). The archive says October 1914 — after the Marne, not during it — so the placement on the reconnaissance card is the honest one and the Marne beat should use it only if the caption keeps the date."
+}

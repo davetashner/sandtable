@@ -1,0 +1,30 @@
+{
+  "$comment": "Shot list entry (sand-y0u.6): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-phase-1.md, then `npm run media`. Provenance verified against the archive record on 2026-08-24.",
+  "id": "media:person/hoffmann-max/portrait-1913",
+  "person": "person:hoffmann-max",
+  "file": "portrait-1913.jpg",
+  "width": 1183,
+  "height": 1828,
+  "colorized": false,
+  "original": {
+    "description": "Portrait of Max Hoffmann in uniform.",
+    "photographer": "not established; the Commons record gives the artist field as \"M. Hoffmann\"",
+    "date": "1913 (Commons record)",
+    "archive": "Wikimedia Commons; the record cites the plate in E. O. Volkmann, \"Der große Krieg 1914–1918\" (Berlin, 1938)",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:GeneralMaxHoffmann.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/GeneralMaxHoffmann.jpg",
+    "original_dimensions": "1183 × 1828",
+    "licence": "public domain (Commons record: LicenseShortName \"Public domain\")"
+  },
+  "colorization": {
+    "status": "not colorized. Recommendation: colorize — German staff uniform, documented; the East Prussian beats need faces."
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "Max Hoffmann, the Eighth Army staff officer whose plan for the concentration against Samsonov became the battle of Tannenberg.",
+  "credit": "Original photograph: photographer not established, 1913; reproduced in E. O. Volkmann, \"Der große Krieg 1914–1918\" (Berlin, 1938); via Wikimedia Commons; public domain.",
+  "used_by": [
+    "1914:tannenberg-east",
+    "1914:tech-wireless-signals"
+  ],
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. CAUTION for the image review (sand-y0u.7): the provenance runs through a 1938 book plate rather than an archive record, and the \"M. Hoffmann\" artist field is more likely the sitter than the photographer. The identification and the public-domain status are not in doubt; the photographer is."
+}
