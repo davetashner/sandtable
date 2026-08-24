@@ -56,6 +56,7 @@ import { BottomSheet } from './ui/BottomSheet.js';
 import { BranchToggle } from './ui/BranchToggle.js';
 import { ScorePlayer } from './ui/ScorePlayer.js';
 import { CommanderToggle } from './ui/CommanderToggle.js';
+import { CopyLink } from './ui/CopyLink.js';
 import { Breadcrumb } from './ui/Breadcrumb.js';
 import { Dossier, type CardChipLike } from './ui/Dossier.js';
 import { CastStrip, type CastMember } from './ui/CastStrip.js';
@@ -78,7 +79,7 @@ import { MeanwhileFilter } from './ui/MeanwhileFilter.js';
 import { ScienceCardView, SCIENCE_FIELDS } from './ui/ScienceCardView.js';
 import { TechCardView, type EntityLabeller } from './ui/TechCardView.js';
 import { Timeline, type TimelineMarker, type TimelinePhase } from './ui/Timeline.js';
-import { parseViewState } from './engine/url-state.js';
+import { layerOn, parseViewState } from './engine/url-state.js';
 import type { Camera, Links, ScienceField } from './packs/schema/index.js';
 
 // MapLibre + deck.gl are the heaviest dependencies; load the whole map surface
@@ -219,24 +220,27 @@ function MeanwhileProvider({ children }: { children: ReactNode }) {
   return <MeanwhileCtx.Provider value={value}>{children}</MeanwhileCtx.Provider>;
 }
 
-/** Science fields present in the pack, and which are shown (all, by default). */
+/** The layer switch a science field answers to: `meanwhile.physics`. */
+const meanwhileLayer = (field: ScienceField) => `meanwhile.${field}`;
+
+/**
+ * Science fields present in the pack, and which are shown (all, by default).
+ * The switches live in the URL so a link carries the timeline you filtered,
+ * not the one the app opens with (sand-shn.3); on by default, so only the
+ * fields you hid are written, as `-meanwhile.<field>`.
+ */
 function useMeanwhile() {
   const available = useMemo(
     () => SCIENCE_FIELDS.filter((f) => seed.science.some((c) => c.field === f)),
     [],
   );
-  const [hidden, setHidden] = useState<ReadonlySet<ScienceField>>(() => new Set());
+  const { layers } = useViewState();
+  const controls = useViewStateControls();
   const active = useMemo(
-    () => new Set(available.filter((f) => !hidden.has(f))),
-    [available, hidden],
+    () => new Set(available.filter((f) => layerOn(layers, meanwhileLayer(f), true))),
+    [available, layers],
   );
-  const toggle = (f: ScienceField) =>
-    setHidden((h) => {
-      const next = new Set(h);
-      if (next.has(f)) next.delete(f);
-      else next.add(f);
-      return next;
-    });
+  const toggle = (f: ScienceField) => controls?.setLayer(meanwhileLayer(f), !active.has(f), true);
   return { available, active, toggle };
 }
 
@@ -553,8 +557,12 @@ interface OpeningValue {
 /**
  * Whether the commander portraits are on the map (sand-1l0.27). The switch is
  * in the header and the layer is in the map section, which are siblings, so
- * the state is a context rather than a prop threaded through both.
+ * the state is a context rather than a prop threaded through both. It is held
+ * in the URL as `layers=commanders` — off by default, so an ordinary link says
+ * nothing about it (sand-shn.3).
  */
+const COMMANDERS_LAYER = 'commanders';
+
 const CommandersCtx = createContext<{ on: boolean; toggle: () => void }>({
   on: false,
   toggle: () => {},
@@ -580,8 +588,10 @@ function CommanderSwitch() {
 }
 
 function CommandersProvider({ children }: { children: ReactNode }) {
-  const [on, setOn] = useState(false);
-  const toggle = useCallback(() => setOn((v) => !v), []);
+  const { layers } = useViewState();
+  const controls = useViewStateControls();
+  const on = layerOn(layers, COMMANDERS_LAYER);
+  const toggle = useCallback(() => controls?.setLayer(COMMANDERS_LAYER, !on), [controls, on]);
   const value = useMemo(() => ({ on, toggle }), [on, toggle]);
   return <CommandersCtx.Provider value={value}>{children}</CommandersCtx.Provider>;
 }
@@ -602,7 +612,7 @@ function OpeningProvider({ children }: { children: ReactNode }) {
   if (deepLinked.current === null) {
     const v = parseViewState(typeof window === 'undefined' ? '' : window.location.search);
     deepLinked.current = Boolean(
-      v.t !== undefined || v.card || v.focus || v.tour || v.pick || v.branch,
+      v.t !== undefined || v.card || v.focus || v.tour || v.pick || v.branch || v.layers?.length,
     );
   }
   const [dismissed, setDismissed] = useState(() => openingSeen());
@@ -1141,6 +1151,7 @@ function AppShell() {
         </div>
         <div className="app__header-controls">
           <ScorePlayer score={seed.score} opening={showing} vignette={vignetteMoment} />
+          <CopyLink />
           <CommanderSwitch />
           <TourStart />
           <BranchToggle branches={seed.pack.branches} defaultBranch={seed.pack.defaultBranch} />

@@ -1,0 +1,67 @@
+/* The copy-link glyph, matched to the commander switch and the score control
+   beside it (sand-shn.3). Tokens only. */
+
+.copy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.copy-link__button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--panel-2);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.copy-link__button:hover {
+  color: var(--ink);
+  border-color: var(--brass-dim);
+}
+
+.copy-link__glyph {
+  font-size: 11px;
+  line-height: 1;
+}
+
+/* The confirmation is carried by the label; the live region carries it for
+   screen readers without taking a line of the header. */
+.copy-link__status {
+  margin: 0;
+}
+
+.copy-link__status-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Only when the clipboard refused us: the link, selected, to copy by hand. */
+.copy-link__field {
+  width: 22ch;
+  padding: 5px 8px;
+  border: 1px solid var(--brass-dim);
+  border-radius: var(--radius-sm);
+  background: var(--panel);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+}
+
+@media (max-width: 640px) {
+  .copy-link__label {
+    display: none;
+  }
+}

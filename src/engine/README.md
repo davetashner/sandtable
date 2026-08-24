@@ -10,8 +10,12 @@ scenario pack it is given.
   weeks for an era). Framework-free; tests inject the scheduler.
 - `ticks.ts` — nice axis ticks (15 min → 10 years, UTC calendar-aware) and the
   labels for "now" (`Day 20 — Monday, 24 August 1914, 12:00`).
-- `url-state.ts` — deep links: `?t=…&branch=…&focus=…` ⇄ clock + view slots,
-  throttled while playing (`bindUrlState`).
+- `url-state.ts` — deep links (ADR 0009): `?t=…&branch=…&focus=…&layers=…` ⇄
+  clock + view slots, throttled while playing (`bindUrlState`). Every on/off
+  switch shares one `layers` parameter that lists only the deviations from
+  default (`commanders`, `-meanwhile.physics`); ask `layerOn` / `withLayer`
+  rather than reading it. Parameters this build does not know are carried
+  through untouched, so an old or newer link is never demolished by a write.
 - `ClockContext.tsx` — React binding: `<ClockProvider range>`, `useClock()`
   (re-renders on ticks), `useClockControls()` (stable), `useViewState()`.
 
