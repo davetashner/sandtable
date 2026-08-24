@@ -25,9 +25,7 @@
   "caption": "Gérard Leman (1851–1920), commander of the fortified position of Liège — held the ring of forts from 4 August until he was pulled unconscious from the ruins of Fort Loncin on 15 August; the delay cost the German timetable its first days. Colorized (AI-assisted) from a public-domain photograph (1918, after his release from captivity).",
   "credit": "Original photograph: anonymous, 1918; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
-    "1914:liege",
-    "1914:two-clocks-first-delay",
-    "1914:vignette-fort-loncin"
+    "1914:liege"
   ],
   "focal_point": { "x": 0.5, "y": 0.25 },
   "notes": "Provided by Dave 2026-08-22. Provenance chain is a blog upload — acceptable as PD-anonymous but trace to an archive print for the pipeline."

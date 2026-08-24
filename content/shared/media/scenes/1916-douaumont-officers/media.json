@@ -29,11 +29,6 @@
   "content_policy": "ok — group portrait, no gore",
   "caption": "Haupt, von Oven and von Brandis of the 24th Brandenburg Infantry, the officers credited with taking Fort Douaumont on 25 February 1916 — though it was Haupt's company, and Pionier-Sergeant Kunze who climbed in first; Brandis wrote the book and got the fame. Colorized (AI-assisted) from a public-domain photograph.",
   "credit": "Original photograph: Die Woche 1918 Nr. 2, August Scherl Verlag; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
-  "used_by": [
-    "ww1-west:verdun",
-    "ww1-west:verdun-vignette-douaumont-capture",
-    "ww1-west:verdun-historiography-who-took-douaumont"
-  ],
   "focal_point": { "x": 0.5, "y": 0.3 },
   "notes": "Provided by Dave 2026-08-22. Belongs to the Phase 3 Verdun zoom-in (epic sand-g80) — the 'who really took Douaumont' story (Kunze vs. Haupt vs. Brandis) is a ready-made historiography beat. Also a strong uniforms-and-kit reference for the 1915–16 field-grey."
 }

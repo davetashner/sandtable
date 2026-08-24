@@ -1251,10 +1251,23 @@ function checkMedia(ctx: Ctx, m: MediaT, path: string) {
       "Bundesarchiv image without the required 'Bundesarchiv, Bild …' credit string",
       m.id,
     );
-  // Provisional manifests predate the registries: dangling person/used_by are warnings until sand-y0u.2.
+  // Provisional manifests predate the person registry: a dangling `person` is
+  // still a warning until sand-y0u.2 formalizes the Media entity.
   if (m.person) ctx.ref(path, m.id, m.person, ['person'], 'person', 'warning');
+  // `used_by` is an author's note of intent (ADR 0014) — nothing renders from
+  // it — but it is also the one place a picture can claim a beat from outside,
+  // which is what ADR 0012's one-picture-per-beat rule polices. That rule only
+  // bites on ids that really are beats, so a stale entry hides a genuine
+  // double-claim until the day someone recreates the id. An id that does not
+  // resolve is therefore a mistake, not a backlog item: fix it, or drop it and
+  // put the intention in `notes`, where prose cannot rot into a false claim.
   for (const u of m.used_by ?? []) {
-    if (!ctx.index.has(u)) ctx.warn(path, `used_by ${u} does not exist yet`, m.id);
+    if (!ctx.index.has(u))
+      ctx.error(
+        path,
+        `used_by ${u} does not exist — fix the reference, or drop it and record the intention in notes`,
+        m.id,
+      );
   }
 }
 
@@ -1353,6 +1366,9 @@ function checkCue(ctx: Ctx, c: CueT, path: string) {
     ctx.warn(path, 'generated audio without provenance.prompt — record what produced it', c.id);
   if (c.role === 'bed' && (c.mixDb === undefined || c.mixDb >= 0))
     ctx.warn(path, 'a bed should carry a negative mixDb so it sits under the cue it joins', c.id);
+  // Softer than the media rule above, deliberately: no audio invariant depends
+  // on a cue's `used_by` the way one picture per beat depends on media's, and
+  // the cue registry is still being built. Promote it when it has one.
   for (const u of c.used_by ?? [])
     if (!ctx.index.has(u)) ctx.warn(path, `used_by ${u} does not exist yet`, c.id);
 }

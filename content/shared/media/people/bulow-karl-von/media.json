@@ -25,11 +25,11 @@
   "caption": "Karl von Bülow (1846–1921), commander of the German 2nd Army — Liège, Namur, Charleroi, Guise; his call for Kluck to wheel inward and his decision to retreat from the Marne on 9 September, in consultation with Hentsch. Photographed c. 1916 as Generalfeldmarschall. Colorized (AI-assisted) from a public-domain photograph.",
   "credit": "Original photograph: Rudolf Dührkoop, c. 1916, Berliner Illustrirte Zeitung; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
-    "1914:formation-german-2nd-army",
+    "1914:army-de-2",
     "1914:liege",
-    "1914:frontiers-north-great-retreat",
+    "1914:frontiers-north",
     "1914:guise",
-    "1914:decision-1914-09-08-hentsch",
+    "1914:decision-1914-09-09-hentsch-retreat",
     "1914:marne"
   ],
   "focal_point": { "x": 0.5, "y": 0.2 },

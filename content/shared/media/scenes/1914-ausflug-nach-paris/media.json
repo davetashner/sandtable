@@ -33,11 +33,7 @@
   "caption": "'Excursion to Paris — see you on the Boulevard.' German infantry in a goods wagon of the Alsace-Lorraine railways, August 1914: the mobilization timetable in human form, and the confidence that it would all be over in six weeks. Colorized (AI-assisted) from a public-domain photograph.",
   "credit": "Original photograph: anonymous, August 1914, via greatwar.nl and Wikimedia Commons; public domain. Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
-    "1914:prologue-mobilization",
-    "1914:tech-railways-and-timetables",
-    "1914:two-clocks-intro",
-    "1914:opening-sequence",
-    "1914:human-scale-vignettes"
+    "1914:tech-railways-mobilization"
   ],
   "focal_point": {
     "x": 0.55,

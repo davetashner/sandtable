@@ -699,6 +699,14 @@ hero is cropped to a 3:2 band on the manifest's `focal_point`, so set the
 focal point on anything wider or taller than that; the whole picture is one
 click away at full size.
 
+**`used_by` names things that exist.** It is a note of intent — nothing
+renders from it — but every id in it must resolve, or the build fails. If the
+entity was renamed, fix the reference; if it never existed, or the picture is
+wanted by a pack not yet written, drop the entry and say so in `notes`. The
+rule exists because `used_by` is also how a picture claims a beat from
+outside: an entry that resolves to nothing can quietly sit on top of a beat id
+that someone recreates later, and two pictures then collide on one hero slot.
+
 ## 10. Add a new scenario pack
 
 ```text

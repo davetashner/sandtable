@@ -26,12 +26,11 @@
   "caption": "Helmuth von Moltke the Younger (1848–1916), Chief of the General Staff 1906–1914, who inherited Schlieffen's plan and altered it. Photographed in 1906 on taking office. Colorized (AI-assisted) from a public-domain photograph.",
   "credit": "Original photograph: E. Bieber studio, 1906, published in Die Woche; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
-    "1914:prologue-origins",
-    "1914:moltke-changes",
-    "1914:decision-1914-08-25-corps-east",
-    "1914:decision-1914-09-04-directive",
-    "thread:road-to-1914"
+    "1914:origins",
+    "1914:beat-origins-the-heir",
+    "1914:decision-1914-08-25-two-corps-east",
+    "1914:decision-1914-09-04-halt-facing-paris"
   ],
   "focal_point": { "x": 0.48, "y": 0.26 },
-  "notes": "Provided by Dave on 2026-08-22. Pairs with the Schlieffen portrait (same studio, same year) — ideal for a side-by-side 'the author and the heir' moment in the prologue."
+  "notes": "Provided by Dave on 2026-08-22. Pairs with the Schlieffen portrait (same studio, same year) — ideal for a side-by-side 'the author and the heir' moment in the prologue. Also wanted by a \"road to 1914\" learning thread when one is written."
 }

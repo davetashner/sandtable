@@ -27,10 +27,8 @@
   "used_by": [
     "1914:liege",
     "1914:vignette-ludendorff-citadel",
-    "1914:eastern-cross-reference-tannenberg",
-    "ww1-east:tannenberg",
-    "ww1-west:1918-spring-offensive"
+    "1914:tannenberg-east"
   ],
   "focal_point": { "x": 0.5, "y": 0.28 },
-  "notes": "Provided by Dave 2026-08-22 (via a kiddle.co mirror of the Commons cropped(b) file). The only image in the set whose licence is share-alike rather than PD — the Media schema must carry per-image licence so the credit line renders correctly."
+  "notes": "Provided by Dave 2026-08-22 (via a kiddle.co mirror of the Commons cropped(b) file). The only image in the set whose licence is share-alike rather than PD — the Media schema must carry per-image licence so the credit line renders correctly. Wanted again by an eastern-front pack (Tannenberg) and a 1918 pack (the spring offensive) when those exist."
 }

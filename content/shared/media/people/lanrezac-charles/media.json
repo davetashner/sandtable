@@ -25,11 +25,10 @@
   "caption": "Charles Lanrezac (1852–1925), commander of the French 5th Army — saw the German wheel coming before Joffre believed it, was mauled at Charleroi, counterattacked at Guise, and was dismissed on 3 September, three days before the Marne. Colorized (AI-assisted) from a public-domain photograph.",
   "credit": "Original photograph: anonymous, reproduced in Hanotaux, Histoire illustrée de la guerre de 1914 (1916); public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
-    "1914:formation-french-5th-army",
-    "1914:frontiers-north-great-retreat",
+    "1914:army-fr-5",
+    "1914:frontiers-north",
     "1914:guise",
-    "1914:vignette-rethel-lanrezac-french",
-    "1914:decision-points-joffre-sackings"
+    "1914:vignette-rethel-lanrezac-french"
   ],
   "focal_point": { "x": 0.5, "y": 0.22 },
   "notes": "Provided by Dave 2026-08-22. Source scan is small; acceptable for cards, seek a better scan before hero use."

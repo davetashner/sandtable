@@ -26,10 +26,9 @@
   "credit": "Original photograph: Henri Manuel, BnF Gallica; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
     "1914:guise",
-    "1914:formation-french-5th-army",
-    "1914:marne",
-    "other-fronts:salonika-1918"
+    "1914:army-fr-5",
+    "1914:marne"
   ],
   "focal_point": { "x": 0.45, "y": 0.28 },
-  "notes": "Provided by Dave 2026-08-22. Strong provenance (Gallica, 2222 × 3161). Horizon blue is anachronistic for 1914 — caption it when shown beside 1914 beats."
+  "notes": "Provided by Dave 2026-08-22. Strong provenance (Gallica, 2222 × 3161). Horizon blue is anachronistic for 1914 — caption it when shown beside 1914 beats. Wanted again by a Salonika 1918 pack when one exists."
 }

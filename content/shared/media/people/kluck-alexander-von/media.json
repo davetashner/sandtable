@@ -25,10 +25,10 @@
   "caption": "Alexander von Kluck (1846–1934), commander of the German 1st Army — the outer edge of the wheel, who fought the BEF at Mons and Le Cateau and turned southeast short of Paris, opening the gap the Allies struck at the Marne. Colorized (AI-assisted) from a public-domain photograph.",
   "credit": "Original photograph: Mayer, Dresden; postcard by Gustav Liersch & Co., Berlin, c. 1914; public domain (via Wikimedia Commons, Wartenberg Trust). Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
-    "1914:formation-german-1st-army",
-    "1914:frontiers-north-great-retreat",
+    "1914:army-de-1",
+    "1914:frontiers-north",
     "1914:guise",
-    "1914:decision-1914-08-30-kluck-wheels-inward",
+    "1914:decision-1914-08-30-kluck-wheel",
     "1914:marne"
   ],
   "focal_point": { "x": 0.5, "y": 0.22 },

@@ -26,10 +26,8 @@
   "caption": "Alfred Graf von Schlieffen (1833–1913), Chief of the German General Staff 1891–1906, author of the December 1905 memorandum. Colorized (AI-assisted) from a public-domain photograph.",
   "credit": "Original photograph: public domain (archive to confirm). Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
-    "1914:prologue-origins",
-    "1905:consequences-memorandum",
-    "thread:road-to-1914"
+    "1914:origins"
   ],
   "focal_point": { "x": 0.5, "y": 0.28 },
-  "notes": "Provided by Dave on 2026-08-22 for the Phase 1 prologue and the Person card. Hero image candidate for the prologue beat."
+  "notes": "Provided by Dave on 2026-08-22 for the Phase 1 prologue and the Person card. Hero image candidate for the prologue beat. Also wanted by a 1905 memorandum pack and a \"road to 1914\" learning thread when those are written."
 }

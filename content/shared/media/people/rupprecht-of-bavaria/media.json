@@ -25,10 +25,9 @@
   "caption": "Rupprecht, Crown Prince of Bavaria (1869–1955), commander of the German 6th Army — the hinge at Metz; his counteroffensive in Lorraine (20 Aug) and assault on the Grand Couronné drew the left wing into battle Schlieffen meant it to avoid. Colorized (AI-assisted) from a public-domain photograph.",
   "credit": "Original photograph: Bernhard Dittmar, c. 1914, Library of Congress; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
-    "1914:formation-german-6th-army",
-    "1914:frontiers-lorraine",
-    "1914:chapter-grand-couronne",
-    "1914:right-wing-bleeds-left-wing-reinforced"
+    "1914:army-de-6",
+    "1914:lorraine",
+    "1914:grand-couronne"
   ],
   "focal_point": { "x": 0.5, "y": 0.22 },
   "notes": "Provided by Dave 2026-08-22. Pull the high-resolution LoC master (ggbain.31339) before hero use."
