@@ -25,7 +25,10 @@ of battle-level `events` as static markers, and beats with `focus` — but
 leaves the campaign tokens on their campaign movement
 (`movementSourceFor` in `src/engine/focus.ts`), so a chapter reads as
 narrative plus markers rather than as a reconstruction that plays. Their
-beats say `(chapter)` in `dateLabel` where a zoom-in says `(zoom-in)`.
+beats say `(chapter)` in `dateLabel` where a zoom-in says `(zoom-in)`. The
+chrome reads the same distinction off the data — no routes means chapter — and
+names each one accordingly in the index above the map (ADR 0013), so an author
+never labels a level by hand.
 
 Chapters: `1914:origins` (`sand-1l0.3`), `1914:ardennes` (`sand-1l0.6`),
 `1914:grand-couronne` (`sand-1l0.9`), `1914:tannenberg-east` (`sand-1l0.13`),

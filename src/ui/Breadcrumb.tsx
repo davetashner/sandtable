@@ -1,10 +1,12 @@
 /**
  * Focus breadcrumb: "Campaign › First Battle of the Marne" with a way back,
- * plus the chips that enter a zoom-in. Lives above the map; the zoom-in
- * mechanism itself is in src/engine/focus.ts and the App's FocusController.
+ * plus the index of everything the pack can be focused on. Lives above the
+ * map; the zoom-in mechanism itself is in src/engine/focus.ts and the App's
+ * FocusController. The trail names the level you are on for what it is — a
+ * chapter or a zoom-in, from the engine, not a fixed word (sand-neh.7).
  */
-import { useMemo } from 'react';
 import type { Battle } from '../packs/schema/index.js';
+import { ChapterIndex, kindLabel } from './ChapterIndex.js';
 import './breadcrumb.css';
 
 export interface BreadcrumbProps {
@@ -16,16 +18,6 @@ export interface BreadcrumbProps {
 }
 
 export function Breadcrumb({ campaignTitle, battles, focus, onEnter, onExit }: BreadcrumbProps) {
-  // The chapters read in the order the campaign ran, not the order the pack
-  // file happens to list them (sand-neh.12). The sort is stable, so the two
-  // backstory chapters — which share the clamped window at the start of the
-  // pack — keep the pack's order: the origins of the plan, then the crisis
-  // that set it off.
-  const chapters = useMemo(
-    () =>
-      [...battles].sort((a, b) => Date.parse(a.timeRange.start) - Date.parse(b.timeRange.start)),
-    [battles],
-  );
   return (
     <nav className="crumbs" aria-label="Focus">
       <ol className="crumbs__trail">
@@ -48,6 +40,7 @@ export function Breadcrumb({ campaignTitle, battles, focus, onEnter, onExit }: B
             <span className="crumbs__current" aria-current="page">
               {focus.title}
             </span>
+            <span className="crumbs__kind">{kindLabel(focus)}</span>
             <button
               type="button"
               className="crumbs__exit"
@@ -60,22 +53,7 @@ export function Breadcrumb({ campaignTitle, battles, focus, onEnter, onExit }: B
           </li>
         )}
       </ol>
-      {!focus && battles.length > 0 && (
-        <div className="crumbs__battles" role="group" aria-label="Zoom in to a battle">
-          <span className="crumbs__label">Zoom in:</span>
-          {chapters.map((b) => (
-            <button
-              type="button"
-              key={b.id}
-              className="crumbs__chip"
-              onClick={() => onEnter(b.id)}
-              title={b.summary}
-            >
-              {b.title}
-            </button>
-          ))}
-        </div>
-      )}
+      {!focus && <ChapterIndex battles={battles} onEnter={onEnter} />}
     </nav>
   );
 }

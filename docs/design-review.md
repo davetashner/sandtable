@@ -100,8 +100,12 @@ Eight defects, all confirmed against production before being fixed.
 - **Tap targets between 24 and 44px** on chips, entity links and timeline
   markers. Real, and `sand-pmz.4` owns them; the controls this pass touched
   (branch options, chapter chips) were raised while they were open.
-- **Chapter chips wrap to three rows on desktop.** Legible, but it is the
-  heaviest chrome above the map. An IA question, adjacent to `sand-neh.7`.
+- ~~**Chapter chips wrap to three rows on desktop.** Legible, but it is the
+  heaviest chrome above the map. An IA question, adjacent to `sand-neh.7`.~~
+  **Settled in ADR 0013** (`sand-neh.7`): the chip row is now an index that
+  rests closed as one control and opens as one list, the same shape on every
+  screen, with every entry named for what it is — a chapter or a zoom-in. The
+  phone rail went with it.
 - **A band narrower than its own title shows an ellipsis.** Inherent; band
   labels are already hidden below 640px.
 
@@ -110,6 +114,6 @@ Eight defects, all confirmed against production before being fixed.
 68 scenes, no page errors, no console errors, and no `page-h-overflow` at
 either viewport. Three things still report and all three are the audit reading
 a deliberate design as a defect: the timeline band label's ellipsis, the
-chapter chips sitting past the viewport inside their own scroll rail, and the
-collapsed bottom sheet clipping its peek. Everything else is `tiny-text` and
-`small-target`, both listed above.
+chapter chips sitting past the viewport inside their own scroll rail (that
+rail is gone as of ADR 0013), and the collapsed bottom sheet clipping its
+peek. Everything else is `tiny-text` and `small-target`, both listed above.

@@ -1,0 +1,99 @@
+/* The chapter/zoom-in index (ADR 0013) — tokens only.
+
+   Closed, it is one pill at the end of the breadcrumb row, cut from the same
+   cloth as the header's on/off controls. Open, the list takes a wrapped line
+   of its own across the full width of the row, so it reads down a page rather
+   than sideways past the edge — the same shape on a phone as on a desktop. */
+
+.chapter-index__toggle {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 28px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--panel-2);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.chapter-index__toggle:hover {
+  color: var(--ink);
+  border-color: var(--brass-dim);
+}
+
+.chapter-index__toggle[aria-expanded='true'] {
+  color: var(--brass);
+  border-color: var(--brass);
+}
+
+.chapter-index__caret {
+  font-size: var(--fs-xs);
+  line-height: 1;
+}
+
+/* `flex-basis: 100%` puts the list on its own line of the breadcrumb's flex
+   row; the columns fill as the screen allows and collapse to one on a phone.
+   The track is wide enough that a battle's title takes at most two lines —
+   narrower columns fit more of them but shred the long ones into three. */
+.chapter-index__list {
+  flex-basis: 100%;
+  width: 100%;
+  margin: 0;
+  padding: var(--space-2) 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2px var(--space-4);
+}
+
+.chapter-index__entry {
+  appearance: none;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  width: 100%;
+  min-height: 28px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-tight);
+  text-align: left;
+  cursor: pointer;
+}
+
+.chapter-index__entry:hover {
+  background: var(--panel-2);
+  color: var(--brass);
+}
+
+.chapter-index__title {
+  min-width: 0;
+}
+
+/* The label follows from the entity: a routeless battle is a chapter, one
+   that brings its own routes is a zoom-in (src/engine/focus.ts). */
+.chapter-index__kind {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.chapter-index__entry:hover .chapter-index__kind {
+  color: var(--brass);
+}

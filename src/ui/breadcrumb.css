@@ -1,4 +1,5 @@
-/* Focus breadcrumb + zoom-in chips — tokens only. */
+/* Focus breadcrumb — tokens only. The index of chapters and zoom-ins that
+   shares this row is `chapter-index.css`; it wraps onto a line of its own. */
 
 .crumbs {
   display: flex;
@@ -27,8 +28,7 @@
 }
 
 .crumbs__link,
-.crumbs__exit,
-.crumbs__chip {
+.crumbs__exit {
   appearance: none;
   border: 0;
   background: none;
@@ -38,8 +38,7 @@
   cursor: pointer;
 }
 
-.crumbs__link:hover,
-.crumbs__chip:hover {
+.crumbs__link:hover {
   text-decoration: underline;
 }
 
@@ -64,55 +63,14 @@
   line-height: 1;
 }
 
-.crumbs__battles {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.crumbs__label {
+/* What the focused level is, from the engine rather than a fixed word: a
+   routeless battle is a chapter, one with routes of its own is a zoom-in
+   (sand-neh.7). */
+.crumbs__kind {
+  margin-left: 6px;
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
   color: var(--muted);
-}
-
-.crumbs__chip {
-  padding: 3px 10px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--panel);
-  color: var(--ink);
-}
-
-.crumbs__chip:hover {
-  border-color: var(--brass);
-  text-decoration: none;
-}
-
-/* On a phone the eleven chapter chips wrapped into eleven rows and pushed the
-   map off the screen — more chrome than content. One scrolling rail instead,
-   with the cut edge faded so it reads as continuing (sand-1l0.15). */
-@media (max-width: 699.98px) {
-  .crumbs__battles {
-    width: 100%;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    padding-bottom: 2px;
-    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
-    mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
-  }
-
-  .crumbs__battles::-webkit-scrollbar {
-    display: none;
-  }
-
-  .crumbs__label,
-  .crumbs__chip {
-    flex: none;
-    white-space: nowrap;
-  }
-
-  .crumbs__chip {
-    padding: 6px 10px;
-  }
+  white-space: nowrap;
 }
