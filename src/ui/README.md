@@ -44,6 +44,20 @@ derivation is a statement about a line nobody marched. There is exactly one
 component rendering this footnote, and adding a third caller means giving it
 `Derivation[]`, not writing a second one.
 
+`Bibliography.tsx` holds two cards, not a page: `BibliographyView` (the works
+this pack cites, grouped by the hierarchy of evidence in `docs/sources.md`,
+each with the registry's own note on its use and bias) and `SourceCardView`
+(one work — where it stands, what it is good for, how often the pack leans on
+it, and where to read it). A bibliography is the loudest argument in the app
+for a fourth panel and it does not get one: ADR 0006 says sources render "as
+footnotes under the beat and as a bibliography card", and `?card=bibliography`
+is a reserved value of the card slot the URL already carries (ADR 0009). The
+list is built from the pack's own citations — `src/engine/bibliography.ts` —
+so a work nothing cites is not on it. Every citation anywhere in the app links
+to its work's card, because `formatCitation` writes the title as a link and
+`Prose` resolves it; the door back to the whole list sits under every card's
+Sources block and under every beat.
+
 `CopyLink.tsx` is the ⧉ glyph in the header that copies the address of the
 current view; what makes it work is that the URL is always the whole view
 (ADR 0009, `src/engine/url-state.ts`).

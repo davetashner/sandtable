@@ -13,9 +13,15 @@ War packs. Story: `sand-23b.1`; the fact-check workflow that applies it is
 2. **Sources are entities** in `content/shared/sources/sources.json`
    (pack-local `sources.json` only for works used by one pack). Fields: `id`
    (`source:<surname>-<year>`, or a short slug for official histories),
-   `kind`, `author` ("Surname, Given; Surname, Given"), `title`, `year`,
-   `publisher` ("Publisher, City"), `edition`, `url`, `isbn`, and `notes`
-   saying what the work is good for and what its bias is.
+   `kind`, `tier`, `author` ("Surname, Given; Surname, Given"), `title`,
+   `year`, `publisher` ("Publisher, City"), `edition`, `url`, `isbn`, and
+   `notes` saying what the work is good for and what its bias is. `kind` is
+   what the thing physically is; **`tier` is where it stands in the hierarchy
+   of evidence below**, and it is the field a reader sees, because the
+   bibliography groups by it. File a work by its **form**, not by the use one
+   pack makes of it: an edition that prints a document is `primary` even when
+   its editor also argues a case, and a monograph is a `study` even when it
+   prints a document in an appendix. `notes` carries the rest.
 3. **A citation is `{ source, pages?, note? }`.** Give pages for anything
    contestable — a strength, a time of day, a position, a quotation. `note`
    says what the citation supports when an entity cites several works.
@@ -60,19 +66,59 @@ War packs. Story: `sand-23b.1`; the fact-check workflow that applies it is
 
 ## Hierarchy of evidence (for when sources disagree)
 
-1. Official histories and their document annexes (Reichsarchiv, AFGG,
-   Edmonds) for orders, strengths, positions and times — read knowing each
-   defends its own army.
-2. Archive-based modern operational studies (Herwig, Mombauer, Strachan,
-   Stevenson, Holmes, Foley, Zuber) for interpretation and for corrections to
-   the official accounts.
-3. Regimental and divisional histories for battle zoom-ins (hourly detail).
-4. Memoirs (Kluck, Bülow, Joffre, French, Gallieni, Ludendorff, Hoffmann) for
-   what commanders believed — cited as such, never as fact.
-5. General histories and popular narratives for context and colour.
+The five rungs, strongest first, and the `tier` value each one is written as.
+Two more values sit outside the ranking because rules 7 and 8 above govern
+them instead: `primary` above it — the record itself, cited for what it says —
+and `reference` below it, which is never evidence for an operational claim.
+
+1. `official-history` — official histories and their document annexes
+   (Reichsarchiv, AFGG, Edmonds) for orders, strengths, positions and times —
+   read knowing each defends its own army.
+2. `study` — archive-based modern operational studies (Herwig, Mombauer,
+   Strachan, Stevenson, Holmes, Foley, Zuber) for interpretation and for
+   corrections to the official accounts.
+3. `unit-history` — regimental and divisional histories for battle zoom-ins
+   (hourly detail). None are in the registry yet; the works wanted are in
+   "to add as the content lands" below.
+4. `memoir` — memoirs (Kluck, Bülow, Joffre, French, Gallieni, Ludendorff,
+   Hoffmann) for what commanders believed — cited as such, never as fact.
+5. `general` — general histories, surveys and handbooks for context, colour
+   and uncontested matters of record.
 
 When two works disagree on a number or a time, cite both and pick the more
 specific with a `note`; when they disagree on meaning, write historiography.
+
+## What a reader sees (`sand-shn.5`)
+
+The apparatus is not a document written beside the pack; it is **generated
+from the pack's own citations**, so it cannot drift from what the content
+actually cites.
+
+- **Every citation resolves.** A footnote under a beat, and a numbered line in
+  a card's Sources block, names its work as a link to that work's card —
+  `?card=source:<slug>` — which carries the full reference, the rung it sits
+  on and what that rung means, the registry's `notes`, how often this pack
+  leans on it and how many of those citations give pages, and a link to the
+  scan where `url` says there is one. Pages read as `p. 45` or `pp. 105–120`.
+- **The bibliography is a card**, `?card=bibliography`, reached from under any
+  beat and from any card's Sources block. Not a panel and not a page: ADR 0006
+  allows three surfaces and says in as many words that sources render "as
+  footnotes under the beat and as a bibliography card". The address is a
+  reserved value of the card slot (ADR 0009) and cannot collide with an entity
+  id, because entity ids are qualified with a colon and this one is not.
+- **Only works the pack cites are listed.** A bibliography is the list of
+  works a piece of writing used; padding it with works the project has merely
+  heard of would claim they were read. An entry in the registry that nothing
+  cites is therefore invisible to a reader, which is why the validator warns
+  about it rather than leaving it to rot.
+- **There is no separate "further reading" list, and that is a decision.**
+  Each entry already carries the registry's note on what the work is good for
+  and where it is partisan, and that note is the recommendation — the only one
+  this pack is entitled to make, because it is the only one it has read. The
+  list below is an **authoring backlog**, not reader-facing: printing "works
+  we wish we had" in a bibliography would look exactly like a bibliography and
+  mean the opposite, and several of its entries exist precisely because a
+  claim in the pack is _not_ yet supported the way it should be.
 
 ## Core bibliography — 1914 in the West (in the registry)
 
@@ -175,6 +221,9 @@ is written as the argument it still is.
 | `source:mhs-oxford-moseley`            | Museum of the History of Science, Oxford, "'Dear Harry…'"                 | Moseley's death: the brigade, Chunuk Bair, the Helles Memorial, the nominations |
 
 ## To add as the content lands (not yet in the registry)
+
+An authoring backlog. It is deliberately not shown to readers — see "What a
+reader sees" above.
 
 - Reichsarchiv, _Der Weltkrieg_, Bd. 4 — the battle of the Marne itself and
   the retreat, 5–14 September. Bd. 1 and Bd. 3 are in the registry and

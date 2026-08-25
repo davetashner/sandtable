@@ -20,8 +20,9 @@ const T35 = '1914-09-08T12:00:00Z';
 
 /**
  * Campaign day 0/20/35, both zoom-in kinds, the epilogue chapter with a window
- * of its own (ADR 0015), one of every card, the layer switches off their
- * defaults, and the component gallery.
+ * of its own (ADR 0015), one of every card — including the bibliography, which
+ * is the longest card in the app and therefore the one most likely to overflow
+ * a phone — the layer switches off their defaults, and the component gallery.
  *
  * Every scene is a URL and nothing else. The URL is the whole view (ADR
  * 0009), so a scene is reproduced by opening it, never by clicking into it —
@@ -48,6 +49,8 @@ export const SCENES = [
   ['card-vignette', `?t=${T35}&card=1914:vignette-taxis`],
   ['card-causal', `?t=${T20}&card=1914:link-wheel-to-marne`],
   ['card-science', `?t=${T20}&card=1914:science-manifesto-of-the-93`],
+  ['card-bibliography', `?t=${T20}&card=bibliography`],
+  ['card-source', `?t=${T20}&card=source:edmonds-1933`],
   ['tour-step', `?tour=1914:tour-the-campaign`],
   ['layers-off-default', `?t=${T20}&layers=commanders,-meanwhile.physics`],
   ['gallery', 'gallery.html'],

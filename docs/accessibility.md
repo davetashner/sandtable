@@ -18,7 +18,7 @@ The split is deliberate. axe runs against jsdom, which has no layout, so it is
 strong exactly where the DOM is the whole story and blind where pixels are.
 Contrast is not sampled from a screenshot but computed from the tokens, which
 is stricter. Everything left over — how big a thing is on screen — is measured
-in a browser by `sand-pmz.2`'s harness (ADR 0011), which walks twenty scenes
+in a browser by `sand-pmz.2`'s harness (ADR 0011), which walks twenty-two scenes
 × two themes × desktop and phone.
 
 That harness reported `small-target` and never failed on it, and said why: the
@@ -150,8 +150,9 @@ constrained by the line-height of non-target text". Two things in the app take
 it and keep their type:
 
 - **`a.entity-link`** (≈50×20) — a person's name inside a sentence of the
-  narrative. A 24px box around it means 24px of leading in the middle of a
-  paragraph, or a control overlapping the line above.
+  narrative, and the title of a work inside a citation (`sand-shn.5`). A 24px
+  box around either means 24px of leading in the middle of a paragraph, or a
+  control overlapping the line above.
 - **`sup a`**, the footnote reference (11×15) — a mark on a sentence, the same
   argument.
 - **The basemap's attribution links** (`a` inside `.maplibregl-ctrl-attrib`,
@@ -161,8 +162,10 @@ it and keep their type:
   thicken the map's corner strip to say nothing new.
 
 The first two have a full-size equivalent on the same screen: every name the
-prose links is also a Related chip under the beat, and every footnote is an
-entry in the numbered Sources list under the card. That equivalence is the condition of the
+prose links is also a Related chip under the beat, every footnote is an entry
+in the numbered Sources list under the card, and every work a citation names is
+an entry in the bibliography card, which the "All works cited" control under
+every beat and every Sources block reaches at full size. That equivalence is the condition of the
 exemption, not an excuse for it — a pack that links a card only from prose has
 put it out of reach, and the validator's `links` rules are what keep that from
 happening.

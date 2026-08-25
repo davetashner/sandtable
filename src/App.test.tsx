@@ -85,6 +85,32 @@ describe('App shell', () => {
     expect(screen.getByText('Day 0')).toBeInTheDocument(); // 2 Aug 1914 = pack start
   }, 15000);
 
+  it('gets from a footnote to the work, and from the work to the bibliography (sand-shn.5)', async () => {
+    window.history.replaceState(null, '', '/?t=1914-08-10T00:00:00Z');
+    render(<App />);
+    // A citation under the beat is a link to the work it names.
+    const cited = await screen.findAllByRole(
+      'link',
+      { name: /The First World War, Volume I: To Arms/ },
+      { timeout: 8000 },
+    );
+    fireEvent.click(cited[0]!);
+    expect(window.location.search).toContain('card=source:strachan-2001');
+    expect(screen.getByText('Source · Modern study')).toBeInTheDocument();
+    // …and the work is one control from the whole apparatus.
+    fireEvent.click(screen.getByRole('link', { name: 'All works this pack cites' }));
+    expect(window.location.search).toContain('card=bibliography');
+    expect(screen.getByRole('heading', { level: 2, name: 'Works cited' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', {
+        level: 3,
+        name: 'Official histories and their document annexes',
+      }),
+    ).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: /Back to the narrative/ }));
+    expect(window.location.search).not.toContain('card=');
+  }, 15000);
+
   it('opens a person profile from the cast strip and toggles back to the narrative', async () => {
     render(<App />);
     const strip = screen.getByRole('navigation', { name: 'Cast' });

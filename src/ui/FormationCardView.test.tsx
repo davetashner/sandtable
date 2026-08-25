@@ -20,6 +20,7 @@ const sources: Source[] = [
   {
     id: 'source:edmonds-1922',
     kind: 'official-history',
+    tier: 'official-history',
     author: 'Edmonds, James E.',
     title: 'Military Operations: France and Belgium, 1914',
     year: 1922,
@@ -27,6 +28,7 @@ const sources: Source[] = [
   {
     id: 'source:herwig-2009',
     kind: 'book',
+    tier: 'study',
     author: 'Herwig, Holger H.',
     title: 'The Marne, 1914',
     year: 2009,

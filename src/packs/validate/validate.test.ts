@@ -189,6 +189,7 @@ function fixture(): RawContent {
             {
               id: 'source:herwig-2009',
               kind: 'book',
+              tier: 'study',
               title: 'The Marne, 1914',
               author: 'Herwig, Holger H.',
               year: 2009,
@@ -196,6 +197,7 @@ function fixture(): RawContent {
             {
               id: 'source:zuber-2002',
               kind: 'book',
+              tier: 'study',
               title: 'Inventing the Schlieffen Plan',
               author: 'Zuber, Terence',
               year: 2002,
@@ -742,6 +744,41 @@ describe('validateContent', () => {
     expect(report.ok).toBe(false);
     expect(report.errors[0]?.path).toBe('eras/1914-test/pack.json');
     expect(report.errors[0]?.message).toMatch(/camera\.center\.0/);
+  });
+
+  it('tells an author what a missing source tier means, in the standard’s own terms', () => {
+    // A source is added by whoever is writing content, in the PR that first
+    // cites it, and every PR after this one will add sources. The message they
+    // see has to ask the question `docs/sources.md` asks (sand-shn.5).
+    const raw = fixture();
+    const sources = raw.shared.collections['sources/sources.json']!.data as Record<
+      string,
+      unknown
+    >[];
+    delete sources[0]!.tier;
+    const report = validateContent(raw);
+    expect(report.ok).toBe(false);
+    expect(report.errors[0]?.path).toBe('shared/sources/sources.json');
+    expect(report.errors[0]?.message).toMatch(/0\.tier: a source must say where it stands/);
+    expect(report.errors[0]?.message).toMatch(/docs\/sources\.md/);
+  });
+
+  it('warns about a source in the registry that nothing cites', () => {
+    // The bibliography is generated from the citations, so such an entry is
+    // not a spare row on a list — it is a work no reader will ever see.
+    const raw = fixture();
+    const sources = raw.shared.collections['sources/sources.json']!.data as { id: string }[];
+    sources.push({
+      id: 'source:unread-1999',
+      kind: 'book',
+      tier: 'general',
+      title: 'A Book Nobody Opened',
+    } as (typeof sources)[number]);
+    const report = validateContent(raw);
+    expect(report.ok).toBe(true);
+    expect(report.warnings.map((w) => `${w.id}: ${w.message}`)).toContainEqual(
+      expect.stringMatching(/source:unread-1999: nothing cites this source/),
+    );
   });
 
   it('rejects dangling references of every kind', () => {

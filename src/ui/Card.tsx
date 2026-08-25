@@ -6,9 +6,11 @@
  */
 import type { ReactNode } from 'react';
 import { formatCitation } from '../engine/beats.js';
+import { BIBLIOGRAPHY_CARD } from '../engine/bibliography.js';
 import type { Citation, Source } from '../packs/schema/index.js';
 import './card.css';
-import { Prose } from './Prose.js';
+import './bibliography.css';
+import { EntityLink, Prose } from './Prose.js';
 
 export interface CardChip {
   id: string;
@@ -99,6 +101,14 @@ export function Card({
               </li>
             ))}
           </ol>
+          {/* The way out of a footnote and into the whole apparatus
+              (sand-shn.5). Every card's Sources block carries it, so the
+              bibliography is one control away from any claim that rests on
+              it — which is the entire reason it does not need a panel or a
+              page of its own (ADR 0006). */}
+          <p className="bib__door">
+            <EntityLink id={BIBLIOGRAPHY_CARD}>All works cited</EntityLink>
+          </p>
         </section>
       )}
     </article>

@@ -98,9 +98,20 @@ export function useClockControls(): Clock {
 const noopSubscribe = () => () => {};
 const EMPTY = Object.freeze({}) as Slots;
 
-/** Branch, focus, card, tour position and layers from the URL (empty when URL sync is off). */
+/**
+ * Branch, focus, card, tour position and layers from the URL (empty when URL
+ * sync is off).
+ *
+ * These two do not insist on a provider, and the reason is `EntityLink`: a
+ * citation now carries a link to its work's card, so every card frame that
+ * renders a source list renders one, and a component specimen or a unit test
+ * that mounts a card on its own would otherwise crash on a hook it never asked
+ * for. `Prose` has always documented that behaviour ("falls back to plain
+ * navigation when no URL binding is present") — it now holds. `useClock` and
+ * `useClockControls` still throw, because a clock has no honest fallback.
+ */
 export function useViewState(): Slots {
-  const { url } = useCtx();
+  const url = useContext(ClockCtx)?.url ?? null;
   return useSyncExternalStore(
     url ? url.subscribe : noopSubscribe,
     url ? url.get : () => EMPTY,
@@ -112,5 +123,5 @@ export function useViewStateControls(): Pick<
   UrlBinding,
   'setBranch' | 'setFocus' | 'setCard' | 'setPick' | 'setTour' | 'setLayer'
 > | null {
-  return useCtx().url;
+  return useContext(ClockCtx)?.url ?? null;
 }

@@ -100,6 +100,43 @@ export const PlateSet = z
 
 // ------------------------------------------------------------------- Source
 
+/**
+ * Where a work stands in the hierarchy of evidence (`docs/sources.md`).
+ *
+ * `kind` says what the thing physically is — a book, an article, a web page.
+ * That is a librarian's answer and it puts Kluck's memoir, Tuchman's narrative
+ * and Herwig's archive study in one undifferentiated pile of fifty, which is
+ * precisely the distinction `docs/sources.md` says matters when two works
+ * disagree. `tier` says how much weight the work carries and why, so the
+ * hierarchy the standard declares in prose is in the data, checkable by the
+ * validator and visible to a reader in the bibliography.
+ *
+ * A work is filed by its **form**, not by the use one pack makes of it: an
+ * edition that prints a document is `primary` even when its editor also
+ * argues a case, and a monograph is a `study` even when it prints a document
+ * in an appendix. `notes` carries the rest. The five middle values are the
+ * five rungs of the hierarchy in `docs/sources.md`, in its order; `primary`
+ * sits above them (rule 7 — the record itself) and `reference` below them
+ * (rule 8 — never an operational claim).
+ */
+export const EvidenceTier = z
+  .enum(
+    ['primary', 'official-history', 'study', 'unit-history', 'memoir', 'general', 'reference'],
+    {
+      // The message is the whole point of overriding it. A source is added by
+      // whoever is writing content, in the PR that first cites it, and the
+      // default enum error names seven slugs with no way to choose between
+      // them. This one asks the question `docs/sources.md` asks and says where
+      // the answer is written down.
+      error:
+        'a source must say where it stands in the hierarchy of evidence — one of ' +
+        'primary, official-history, study, unit-history, memoir, general, reference. ' +
+        'File the work by its form, not by the use one pack makes of it (docs/sources.md).',
+    },
+  )
+  .describe('Standing in the hierarchy of evidence (docs/sources.md)');
+export type EvidenceTier = z.infer<typeof EvidenceTier>;
+
 export const Source = z
   .object({
     id: Id,
@@ -113,6 +150,7 @@ export const Source = z
       'web',
       'other',
     ]),
+    tier: EvidenceTier,
     title: z.string().min(1),
     author: z.string().optional().describe('"Surname, Given" — separate several with ";"'),
     year: z.number().int().min(1000).max(2100).optional(),

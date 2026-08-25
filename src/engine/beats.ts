@@ -25,16 +25,36 @@ export function selectBeat(
   });
 }
 
-/** "Herwig, Holger H., *The Marne, 1914* (Random House, New York, 2009), pp. 112–115." */
+/**
+ * A page locator, as a printed citation writes it: `p. 45` for one page,
+ * `pp. 105–120` for a range or a list. The registry's locators are all
+ * numeric (`docs/sources.md` §3), so the test is "does it name one number".
+ */
+export function formatPages(pages: string): string {
+  return `${/^\d+$/.test(pages.trim()) ? 'p.' : 'pp.'} ${pages}`;
+}
+
+/**
+ * "Herwig, Holger H., [*The Marne, 1914*](source:herwig-2009) (Random House,
+ * New York, 2009), pp. 112–115."
+ *
+ * The title is a Markdown link to the work's own card, which is what turns a
+ * footnote from a string into something a reader can follow: `Prose` resolves
+ * an entity href into a card change without leaving the clock, and the card on
+ * the other end carries the work's standing, its `notes` on use and bias, and
+ * the link to the scan (sand-shn.5). The URL used to be printed here in full
+ * and is not any more — a footnote is not the place for eighty unbreakable
+ * characters when the card behind the title has the same link with a name on
+ * it.
+ */
 export function formatCitation(source: Source | undefined, slug: string, pages?: string): string {
   if (!source) return `Source \`${slug}\` (not in the registry)`;
   const parts: string[] = [];
   if (source.author) parts.push(source.author);
-  parts.push(`*${source.title}*`);
+  parts.push(`[*${source.title}*](${source.id})`);
   const pub = [source.publisher, source.year].filter(Boolean).join(', ');
   let text = parts.join(', ') + (pub ? ` (${pub})` : '');
-  if (pages) text += `, pp. ${pages}`;
-  if (source.url) text += ` — <${source.url}>`;
+  if (pages) text += `, ${formatPages(pages)}`;
   return text + '.';
 }
 
@@ -50,7 +70,12 @@ export function withFootnotes(
   const byId = new Map(sources.map((s) => [s.id, s]));
   const defs = beat.sources.map((c) => {
     const slug = c.source.split(':')[1] ?? c.source;
-    return `[^${slug}]: ${formatCitation(byId.get(c.source), slug, c.pages)}`;
+    // The citation's `note` says what this work is standing behind, and where
+    // the work supports the claim only at day or part-of-day resolution it is
+    // where that is admitted (`docs/sources.md` §3). A card has shown it since
+    // the frame was written; a footnote was dropping it on the floor.
+    const note = c.note ? ` — ${c.note}` : '';
+    return `[^${slug}]: ${formatCitation(byId.get(c.source), slug, c.pages)}${note}`;
   });
   const cited = new Set([...beat.body.matchAll(/\[\^([^\]\s]+)\]/g)].map((m) => m[1]));
   const uncited = beat.sources

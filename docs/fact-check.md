@@ -13,7 +13,9 @@ This is the fact reviewer's checklist and the author's pre-flight. Story:
 - `npm run validate:content` is clean; `npm test -- --run` passes.
 - The PR description says which lesson question each beat/card serves
   (`docs/lesson-1914.md`) — or why it exists if none.
-- Every new source is in the registry with `notes` (use and bias).
+- Every new source is in the registry with a `tier` and with `notes` (use and
+  bias). Both are reader-facing: the tier is the group it appears under in the
+  bibliography and the notes are the line printed beneath it (`sand-shn.5`).
 
 ## Reviewer checklist
 
