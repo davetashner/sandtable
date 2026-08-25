@@ -773,7 +773,14 @@ Then formations → routes → events → beats, in that order, validating as yo
 go. A pack is valid alone; the shared registries are its only dependency. If
 the era needs a new tile extract or border year, see `scripts/tiles-extract.sh`
 and `npm run borders`. The atlas/loader story (`sand-shn.1`) will pick up new
-packs automatically; until then the shell bundles the 1914 seed.
+packs automatically; until then the shell boots into the 1914 seed, which it
+**fetches** rather than bundles: `npm run build` assembles `content/` into one
+`dist/pack/<id>-<hash>.json` and the app asks for it (ADR 0018). Two things
+follow for an author. Writing a beat no longer changes a byte of the JavaScript
+bundle, so a content pull request is no longer also a performance pull request.
+And content has a ceiling of its own — `pack` in `scripts/bundle-budget.json`,
+checked by `npm run bundle:budget` — which is the one number a content change
+can still move.
 
 ## 11. Before you open the PR
 

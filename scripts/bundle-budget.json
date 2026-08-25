@@ -1,17 +1,25 @@
 {
-  "$comment": "The performance budget CI holds (ADR 0016, sand-pmz.3). Two ceilings on the built bundle, in kilobytes of gzip, checked by `npm run bundle:budget` in the web job. Raise one only with a sentence saying what the app gained for the bytes — the number and the reason are reviewed together in the diff. Measure with `npm run perf`, which prints the same figures and what each chunk is made of.",
+  "$comment": "The performance budget CI holds (ADR 0016, sand-pmz.3; decomposed in ADR 0018, sand-shn.1.1). Three ceilings on the built output, in kilobytes of gzip, checked by `npm run bundle:budget` in the web job. Raise one only with a sentence saying what the app gained for the bytes — the number and the reason are reviewed together in the diff. Measure with `npm run perf`, which prints the same figures and what each chunk is made of.",
   "budgets": {
     "eager": {
-      "maxGzipKb": 490,
-      "measuredKb": 475.0,
+      "maxGzipKb": 230,
+      "measuredKb": 206.1,
       "measuredOn": "2026-08-25",
-      "why": "Everything index.html names — the entry, its modulepreloads, its stylesheet — plus index.html itself. This is what stands between a reader and first paint on a cold load, so it is the number worth a ceiling. What is still in it and why: the 1914 pack's JSON (~135 kB gzip, bundled until the lazy pack loader lands, sand-shn.1), react-dom, zod (the pack is re-validated in the browser), yaml (beat front matter), and the react-markdown stack (the dossier's prose). 470 held from the deck.gl split (432.5 kB) until sand-23b.28 and sand-23b.31, which went 5 kB over a ceiling that had 2.7 kB of headroom left (sand-pmz.18). The split was measured rather than assumed: of the 7.7 kB those two beads add, the twelfth card family — its view, its stylesheet, the App wiring and the gallery specimen — is 0.3 kB, and the other 7.4 kB is the contested point's prose and the text of Instruction générale no 6. No choice of entity kind would have avoided it; the argument weighs what it weighs wherever it is filed. 490 buys back roughly two more content passes. It is a stay of execution and not a fix: the eager number is dominated by pack JSON that no reader needs before first paint, every content PR pays for it, and the ceiling will keep being raised by content until sand-shn.1 fetches the pack instead of bundling it."
+      "why": "Everything index.html names — the entry, its modulepreloads, its stylesheet — plus index.html itself. This is the code that stands between a reader and first paint on a cold load. It was 483.5 kB against a 490 kB ceiling that had itself been raised from 470 to let two content beads through (sand-pmz.18) — 6.5 kB of headroom, and the last content pull request had eaten 8.5 kB of it on its own. 277.4 kB of the 483.5 was the 1914 pack's JSON, which sand-shn.1.1 now fetches instead of bundling (ADR 0018). The measurement is worth recording because the estimate it replaces was wrong: ADR 0016 put the pack at ~135 kB gzip by its share of source characters, and it was in fact 57% of the eager bundle — prose gzips worse than minified JavaScript. What is left and why: react-dom, zod (the pack is re-validated in the browser on arrival, 34 ms), yaml (beat front matter), the react-markdown stack (the dossier's prose, on screen immediately), and the app's own code. 230 is about 12% above where the fetch left it — room for ordinary growth of the shell, and the number no longer moves when a beat is written.",
+      "$note": "history: 470 (deck.gl split, 432.5 kB) → 490 (sand-23b.28 + sand-23b.31, 475.0 kB) → 230 (sand-shn.1.1, 206.1 kB)."
     },
-    "total": {
-      "maxGzipKb": 1100,
-      "measuredKb": 1028.3,
+    "code": {
+      "maxGzipKb": 890,
+      "measuredKb": 805.6,
       "measuredOn": "2026-08-25",
-      "why": "Every emitted chunk, eager and on demand. A second ceiling because the first one alone can be met by moving bytes behind a dynamic import forever, and a reader who opens the map pays for those too. Loose on purpose: MapLibre and deck.gl are 590 kB gzip of it and neither is going anywhere (ADR 0001)."
+      "why": "Every emitted chunk under dist/app/, eager and on demand, plus index.html. A second ceiling because the first one alone can be met by moving bytes behind a dynamic import forever, and a reader who opens the map pays for those too. Loose on purpose: MapLibre and deck.gl are 590 kB gzip of it and neither is going anywhere (ADR 0001). This was called `total` and included the pack JSON; it is code-only as of ADR 0018, because a ceiling a content pull request can turn red is the toll that record removes.",
+      "$note": "history: 1100 including the pack (1082.2 kB) → 890 code-only (805.6 kB), sand-shn.1.1."
+    },
+    "pack": {
+      "maxGzipKb": 340,
+      "measuredKb": 279.4,
+      "measuredOn": "2026-08-25",
+      "why": "dist/pack/ — the content bundle the app fetches: one era's pack.json, its collections, its beats and schematics, the shared people/places/sources registries, and the generated media and audio manifests (ADR 0018). It is downloaded on every cold load, so it is gated; it is gated separately because content and code grow for different reasons, and the whole point of fetching it was that a content pull request should stop being a performance pull request. 340 is about 22% above today's 279.4 kB — roughly the next dozen content passes at the rate of sand-23b.28 and sand-23b.31. When it does go red the answer is not a bigger number: it is that one era is now too heavy for one fetch, and the bundle should be split by chapter or by era the way sand-shn.1's atlas landing page will want anyway."
     }
   }
 }

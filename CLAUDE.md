@@ -79,7 +79,7 @@ npm run audio            # loudness-matched Opus/AAC + content/shared/audio/inde
 npm run build            # tsc -b && vite build → dist/ (bundles under dist/app/)
 npm run visual:check     # the visual gate: 22 scenes x 2 themes x 2 viewports, assets stubbed (ADR 0011); -- --update rewrites the baseline
 npm run visual:review    # the on-demand design review against real assets (docs/design-review.md); needs a build + `npm run preview`
-npm run bundle:budget    # the performance gate: eager and total gzip against scripts/bundle-budget.json (ADR 0016)
+npm run bundle:budget    # the performance gate: eager, code and pack gzip against scripts/bundle-budget.json (ADR 0016, ADR 0018)
 npm run perf             # measure bundle, first map paint, frame rate, PMTiles cost; -- --live for the real bucket, -- --headed for a real GPU
 npm run format           # Prettier (beat front matter is deliberately excluded — see .prettierignore)
 npm run format:check     # the same as a check; runs in CI's `web` job
@@ -126,12 +126,21 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
   (`sand-neh`): `src/styles/tokens.ts` → `npm run tokens` → `tokens.css`, reference
   in `docs/design.md`; don't introduce ad-hoc colours or typefaces.
 - **Performance:** ADR 0016 — bundle size is the one number CI holds
-  (`scripts/bundle-budget.json`, two ceilings with the reason for each written
-  next to them); first map paint, frame rate and PMTiles cost are measured by
-  `npm run perf` and reported, because a runner rasterising through SwiftShader
-  runs the campaign six times slower than a laptop. Don't import deck.gl or
-  MapLibre from anything the shell can reach — `src/ui/MapSurface.tsx` is the
-  lazy boundary and the budget is what notices when it leaks.
+  (`scripts/bundle-budget.json`, three ceilings with the reason for each written
+  next to them: `eager` code before first paint, `code` every chunk, `pack` the
+  fetched content bundle); first map paint, frame rate and PMTiles cost are
+  measured by `npm run perf` and reported, because a runner rasterising through
+  SwiftShader runs the campaign six times slower than a laptop. Don't import
+  deck.gl or MapLibre from anything the shell can reach —
+  `src/ui/MapSurface.tsx` is the lazy boundary and the budget is what notices
+  when it leaks.
+- **Content is fetched, not bundled:** ADR 0018 — `content/` is assembled into
+  one `dist/pack/<id>-<hash>.json` by `scripts/lib/vite-plugin-pack.ts` and
+  fetched from the app's own origin (never `/assets/`, which the visual gate
+  stubs). `src/packs/pack-loader.ts` is the only module that knows that, and it
+  has a **top-level `await`** on purpose: every module that reads the pack at
+  module scope stays unchanged. The pack is still re-validated with the schema
+  on arrival.
 - **Accessibility:** `docs/accessibility.md` — the keyboard run-through, the
   24×24px target floor and its two inline exemptions, the focus-ring rule, and
   what `src/a11y.test.tsx` (axe-core over jsdom) checks on every push. Write

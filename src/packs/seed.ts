@@ -1,35 +1,16 @@
 /**
- * Stop-gap pack access until the lazy pack loader and the "atlas of eras"
- * landing page land (sand-shn.1): the 1914 seed pack is bundled at build time
- * and parsed with the schema, so the shell has a real clock range, real
- * phases and real events to drive the timeline.
+ * The seed pack, parsed.
  *
- * Nothing here is era-specific beyond the import paths; swap the glob and the
- * JSON imports for fetches and the rest of the app does not change.
+ * The 1914 pack is fetched rather than bundled (ADR 0018,
+ * `src/packs/pack-loader.ts`); this module is what turns the fetched bundle
+ * into typed content. Every field is parsed with the schema on arrival, which
+ * is why zod is in the eager bundle and is the reason it earns its place: the
+ * app validates what it was served rather than trusting it, and the validation
+ * costs about 35 ms.
+ *
+ * Nothing here is era-specific beyond the pack id the loader was given.
  */
-import battlesJson from '../../content/eras/1914-schlieffen-marne/battles.json';
-import eventsJson from '../../content/eras/1914-schlieffen-marne/events.json';
-import formationsJson from '../../content/eras/1914-schlieffen-marne/formations.json';
-import packJson from '../../content/eras/1914-schlieffen-marne/pack.json';
-import routesJson from '../../content/eras/1914-schlieffen-marne/routes.json';
-import peopleJson from '../../content/shared/people/people.json';
-import placesJson from '../../content/shared/places/places.json';
-import sourcesJson from '../../content/shared/sources/sources.json';
-import techJson from '../../content/eras/1914-schlieffen-marne/tech.json';
-import scienceJson from '../../content/eras/1914-schlieffen-marne/science.json';
-import documentsJson from '../../content/eras/1914-schlieffen-marne/documents.json';
-import historiographyJson from '../../content/eras/1914-schlieffen-marne/historiography.json';
-import linksJson from '../../content/eras/1914-schlieffen-marne/links.json';
-import castJson from '../../content/eras/1914-schlieffen-marne/cast.json';
-import decisionsJson from '../../content/eras/1914-schlieffen-marne/decisions.json';
-import clocksJson from '../../content/eras/1914-schlieffen-marne/clocks.json';
-import talliesJson from '../../content/eras/1914-schlieffen-marne/tallies.json';
-import supplyJson from '../../content/eras/1914-schlieffen-marne/supply.json';
-import casualtiesJson from '../../content/eras/1914-schlieffen-marne/casualties.json';
-import vignettesJson from '../../content/eras/1914-schlieffen-marne/vignettes.json';
-import toursJson from '../../content/eras/1914-schlieffen-marne/tours.json';
-import scoreJson from '../../content/eras/1914-schlieffen-marne/score.json';
-import tracksJson from '../../content/eras/1914-schlieffen-marne/tracks.json';
+import { contentBundle } from './pack-loader.js';
 import {
   Battle,
   BeatFrontMatter,
@@ -83,19 +64,8 @@ import {
 import { splitFrontMatter } from './validate/frontmatter.js';
 import { mark } from '../engine/perf.js';
 
-const beatsRaw = import.meta.glob('../../content/eras/1914-schlieffen-marne/beats/*.md', {
-  query: '?raw',
-  import: 'default',
-  eager: true,
-}) as Record<string, string>;
-
-// Concept schematics (sand-1l0.33), keyed by file stem. Bundled as text, not
-// as URLs: they are inlined so they can use the design tokens.
-const diagramsRaw = import.meta.glob('../../content/eras/1914-schlieffen-marne/diagrams/*.svg', {
-  query: '?raw',
-  import: 'default',
-  eager: true,
-}) as Record<string, string>;
+/** A pack collection by file name; an absent file is an empty collection. */
+const collection = (file: string): unknown => contentBundle.collections[file] ?? [];
 
 export interface SeedPack {
   pack: PackT;
@@ -143,37 +113,37 @@ export interface SeedPack {
 
 function loadSeed(): SeedPack {
   mark('sandtable:pack-start');
-  const pack = Pack.parse(packJson);
-  const events = Event.array().parse(eventsJson);
-  const battles = Battle.array().parse(battlesJson);
-  const formations = Formation.array().parse(formationsJson);
-  const routes = Route.array().parse(routesJson);
-  const beats: NarrativeBeat[] = Object.entries(beatsRaw)
-    .map(([file, text]) => ({ file, split: splitFrontMatter(text) }))
+  const pack = Pack.parse(contentBundle.pack);
+  const events = Event.array().parse(collection('events.json'));
+  const battles = Battle.array().parse(collection('battles.json'));
+  const formations = Formation.array().parse(collection('formations.json'));
+  const routes = Route.array().parse(collection('routes.json'));
+  const beats: NarrativeBeat[] = contentBundle.beats
+    .map(({ file, text }) => ({ file, split: splitFrontMatter(text) }))
     .filter((x): x is { file: string; split: NonNullable<typeof x.split> } => x.split !== null)
     .map((x) => ({ ...BeatFrontMatter.parse(x.split.data), body: x.split.body, file: x.file }))
     .sort((a, b) => Date.parse(a.from) - Date.parse(b.from));
-  const sources = Source.array().parse(sourcesJson);
-  const places = Place.array().parse(placesJson);
-  const people = Person.array().parse(peopleJson);
-  const tech = TechCard.array().parse(techJson);
-  const science = ScienceCard.array().parse(scienceJson);
-  const documents = Document.array().parse(documentsJson);
-  const historiography = Historiography.array().parse(historiographyJson);
-  const links = CausalLink.array().parse(linksJson);
-  const cast = CastEntry.array().parse(castJson);
-  const clocks = Timetable.array().parse(clocksJson);
-  const tallies = Tally.array().parse(talliesJson);
-  const supply = SupplyLine.array().parse(supplyJson);
-  const casualties = CasualtyRecord.array().parse(casualtiesJson);
+  const sources = Source.array().parse(contentBundle.shared.sources);
+  const places = Place.array().parse(contentBundle.shared.places);
+  const people = Person.array().parse(contentBundle.shared.people);
+  const tech = TechCard.array().parse(collection('tech.json'));
+  const science = ScienceCard.array().parse(collection('science.json'));
+  const documents = Document.array().parse(collection('documents.json'));
+  const historiography = Historiography.array().parse(collection('historiography.json'));
+  const links = CausalLink.array().parse(collection('links.json'));
+  const cast = CastEntry.array().parse(collection('cast.json'));
+  const clocks = Timetable.array().parse(collection('clocks.json'));
+  const tallies = Tally.array().parse(collection('tallies.json'));
+  const supply = SupplyLine.array().parse(collection('supply.json'));
+  const casualties = CasualtyRecord.array().parse(collection('casualties.json'));
   const vignettes = Vignette.array()
-    .parse(vignettesJson)
+    .parse(collection('vignettes.json'))
     .sort((a, b) => Date.parse(a.at) - Date.parse(b.at));
-  const tours = Tour.array().parse(toursJson);
-  const score = ScoreEntry.array().parse(scoreJson);
-  const tracks = PersonTrack.array().parse(tracksJson);
+  const tours = Tour.array().parse(collection('tours.json'));
+  const score = ScoreEntry.array().parse(collection('score.json'));
+  const tracks = PersonTrack.array().parse(collection('tracks.json'));
   const decisions = DecisionPoint.array()
-    .parse(decisionsJson)
+    .parse(collection('decisions.json'))
     .sort((a, b) => Date.parse(a.at) - Date.parse(b.at));
   return {
     pack,
@@ -200,12 +170,7 @@ function loadSeed(): SeedPack {
     tours,
     score,
     tracks,
-    diagrams: Object.fromEntries(
-      Object.entries(diagramsRaw).map(([file, svg]) => [
-        (file.split('/').pop() ?? '').replace(/\.svg$/, ''),
-        svg,
-      ]),
-    ),
+    diagrams: contentBundle.diagrams,
   };
 }
 
