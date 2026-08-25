@@ -375,6 +375,13 @@ optional forward `connections`.
 - **DecisionPoint** (`decisions.json`): `at`, `actor`, `question`, `options`
   (each may name a branch), `historical` option, `reasoning` available at the
   time, `verdict`, sources.
+- **Historiography** (`historiography.json`): a contested point, carried as an
+  argument (ADR 0017) — `question`, **two or more** `positions` (each a
+  `label`, the `who` that holds it, and a footnoted `summary`), `settled`,
+  `unread`, sources. Point at it from every entity the dispute touches with
+  `links.historiography`, and reduce the matching note in
+  `docs/historiography-1914.md` to its register entry in the same PR: the card
+  carries the positions and the pages, the doc says where they are.
 - **CausalLink** (`links.json`): `from` → `to` any entity id in any pack,
   `relation`, the `claim`, `confidence`, `historiography`, ≥1 `evidence`
   citation. Cross-pack links (`1870:sedan` → `1914:…`) are how the eras

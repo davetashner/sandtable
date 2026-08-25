@@ -195,6 +195,7 @@
       "events": ["1914:event-kluck-wheels-south-east", "1914:event-battle-of-the-marne"],
       "battles": ["1914:marne"],
       "documents": [
+        "1914:document-joffre-instruction-generale-6-1914-09-04",
         "1914:document-gallieni-ordre-general-5-1914-09-04",
         "1914:document-ohl-wireless-1914-09-04"
       ]
@@ -301,7 +302,8 @@
       ],
       "events": ["1914:marne-event-hentsch-mareuil", "1914:marne-event-bulow-retreats"],
       "battles": ["1914:marne"],
-      "documents": ["1914:document-hentsch-first-army-minute-1914-09-09"]
+      "documents": ["1914:document-hentsch-first-army-minute-1914-09-09"],
+      "historiography": ["1914:historiography-hentsch-authority"]
     },
     "sources": [
       {

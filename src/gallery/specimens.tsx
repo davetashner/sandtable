@@ -41,6 +41,7 @@ import { Dossier } from '../ui/Dossier.js';
 import { FormationCardView } from '../ui/FormationCardView.js';
 import { HumanCostLine } from '../ui/HumanCostLine.js';
 import { MediaCredit } from '../ui/MediaCredit.js';
+import { HistoriographyCardView } from '../ui/HistoriographyCardView.js';
 import { MapObjects, type MapObject } from '../ui/MapObjects.js';
 import { MediaFigure } from '../ui/MediaFigure.js';
 import { MediaLightbox } from '../ui/MediaLightbox.js';
@@ -978,6 +979,21 @@ export const SECTIONS: GallerySection[] = [
         render: () => (
           <DocumentCardView
             doc={only(seed.documents, 'document')}
+            sources={sources}
+            labeller={labeller}
+            onBack={() => {}}
+          />
+        ),
+      },
+      {
+        id: 'card-historiography',
+        title: 'Contested point',
+        note: 'A dispute carried as a dispute: the positions side by side with their holders named, what is not in dispute, and — dashed, like the approximate key — what would settle it and is unread.',
+        covers: ['HistoriographyCardView'],
+        column: true,
+        render: () => (
+          <HistoriographyCardView
+            point={only(seed.historiography, 'contested point')}
             sources={sources}
             labeller={labeller}
             onBack={() => {}}

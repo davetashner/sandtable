@@ -303,6 +303,50 @@
     ]
   },
   {
+    "id": "1914:document-joffre-instruction-generale-6-1914-09-04",
+    "title": "Joffre's Instruction générale no 6, 4 September 1914, 22 hours",
+    "date": "1914-09-04T22:00:00Z",
+    "author": "person:joffre-joseph",
+    "kind": "directive",
+    "language": "en",
+    "excerpt": "(1) The time has come to profit by the adventurous position of the German First Army and concentrate against that Army all the efforts of the Allied Armies of the extreme left. All dispositions will be made during the 5th September for beginning the attack on the 6th.\n\n(2) The following will be the positions to be attained by the evening of the 5th:\n\n(a) All available forces of the Sixth Army north-east of Meaux, ready to cross the Ourcq between Lizy sur Ourcq and May en Multien in the general direction of Chateau Thierry. The available portions of the I. Cavalry Corps which are at hand will be placed under the orders of General Maunoury for this operation.\n\n(b) The British Army, established on the front Changis — Coulommiers, ready to attack in the general direction of Montmirail, the II. Cavalry Corps ensuring liaison between the British Army and the Fifth Army.\n\n(c) The Fifth Army, closing slightly to the left, will be established on the general front Courtacon — Esternay — Sezanne, ready to attack in a general south-north direction.\n\n(d) The Ninth Army (General Foch) will cover the right of the Fifth Army, holding the southern exits of the Marshes of St. Gond and sending a part of its forces on to the plateau north of Sezanne.\n\n(3) These various Armies will take the offensive on the morning of the 6th September.",
+    "archive": "G.Q.G., 4 septembre 1914, 22 heures — 'Instruction générale no 6'. The text on this card is the English translation printed as Appendix 30 of the British official history, headed 'INSTRUCTION No. 6' and dated 'G.Q.G., 4th September 1914. 22 hours.'; Edmonds's footnote gives his source as the French official history's annexe no 2332. Points 1 to 3 are the instruction itself; the appendix continues with the orders given on the morning of the 5th to the Fourth and Third Armies, and closes '(No time of issue stated.)'. The French original is in the AFGG annexes, which cannot be opened from this environment (sand-23b.20), so no French text is given here rather than one reconstructed from a translation.",
+    "links": {
+      "events": ["1914:event-battle-of-the-marne"],
+      "battles": ["1914:marne"],
+      "people": [
+        "person:joffre-joseph",
+        "person:gallieni-joseph",
+        "person:maunoury-michel-joseph",
+        "person:franchet-desperey-louis",
+        "person:foch-ferdinand",
+        "person:french-john"
+      ],
+      "formations": ["1914:army-fr-5", "1914:army-fr-6", "1914:army-fr-9", "1914:bef"],
+      "places": ["place:meaux", "place:sezanne", "place:coulommiers", "place:montmirail"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1933",
+        "pages": "295–296, 543–544",
+        "note": "Appendix 30, 'General Joffre's Instruction for the battle of the Marne (translation)', pp. 543–544 — the text quoted here, and the page the table of appendices gives it (p. xx). The narrative at pp. 295–296 says how it travelled: 'In the early morning of the 5th, a little after 3 a.m., a copy of General Joffre's Instruction No. 6 for an offensive on the 6th was brought to British G.H.Q. by Colonel Huguet of the French Mission', too late to stop columns that had marched — the II. Corps before midnight, the I. and III. before daybreak — so that the BEF spent the night of the 5th/6th ten miles behind on the right and twenty on the left of where Joffre expected it; Franchet d'Espèrey had it at 4 a.m. and could not stop his march either, and the Fifth Army ended the day on Sézanne–Provins rather than the Sézanne–Courtaçon the instruction ordered. Two readings of §2(d) sit side by side in this volume: the appendix has the Ninth Army putting part of its force 'on the plateau north of Sezanne', the narrative 'on the plateau west of the marshes'. Third edition of 1933: pages do not carry to the 1922 first edition."
+      },
+      {
+        "source": "source:gallieni-1920",
+        "pages": "132–133",
+        "note": "the hour from the other end of the telephone: 'A 22 heures, toutes les dispositions précédentes étant déjà prises, puisque mon ordre général n° 5 était daté de 20 h. 30, le G. Q. G. informait que l'offensive générale était décidée pour le 6 au matin' (p. 132), with his summary of what the instruction gave each army and the phrase he had asked for — the Army of Paris to keep 'sur la rive nord de la Marne, de manière à atteindre environ le méridien de Meaux' (p. 133). A memoir written inside the priority dispute, and one side of it."
+      },
+      {
+        "source": "source:afgg-1-2-annexes-1",
+        "note": "annexe no 2332, the French text as filed, and the source Edmonds translated from. Cited without pages and unread: gallica.bnf.fr answers this environment with a security check (sand-23b.20)."
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "the instruction as the order that turned the Allied left. No pages: not readable from this environment."
+      }
+    ]
+  },
+  {
     "id": "1914:document-joffre-order-of-the-day-1914-09-06",
     "title": "Joffre's order of the day, 6 September 1914",
     "date": "1914-09-06",
@@ -347,7 +391,8 @@
         "person:moltke-helmuth-von-younger"
       ],
       "formations": ["1914:army-de-1", "1914:army-de-2"],
-      "places": ["place:mareuil-sur-ourcq", "place:soissons"]
+      "places": ["place:mareuil-sur-ourcq", "place:soissons"],
+      "historiography": ["1914:historiography-hentsch-authority"]
     },
     "sources": [
       {

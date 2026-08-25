@@ -57,18 +57,33 @@ and cite them, and must not settle the question for the learner (rule 6 of
   and when; decision point 25 August presents the eastern detachment as a
   choice with the information available; beats name Mombauer and Herwig.
 
-## 4. Hentsch's authority at the Marne
+## 4. Hentsch's authority at the Marne — **carried by a card**
 
-- **The charge** (Kluck, and the post-war German debate): a lieutenant-colonel
-  ordered the retreat of two armies without authority, when the 1st Army was
-  winning on the Ourcq.
-- **The defence** (the 1917 Hentsch inquiry that cleared him; Herwig): Moltke
-  gave him full powers (_Vollmacht_) to co-ordinate the right wing; Bülow
-  had already decided to retreat when Hentsch reached him; the gap was real
-  and the BEF was in it.
-- **How the pack presents it:** decision point 8–9 September; the Hentsch
-  report as a document card when its text is in hand (`sand-1l0.25`); the
-  Marne zoom-in narrates both versions.
+`1914:historiography-hentsch-authority` is the argument, and it is the source
+of truth for it. This entry is the register: what the point is, where it is
+carried, and what cannot be read. The positions, the quotations and the pages
+are on the card and are not repeated here (ADR 0017).
+
+- **The point.** Whether a lieutenant-colonel of the General Staff had the
+  authority to order the 1st Army to break off the battle of the Ourcq at
+  Mareuil on 9 September, and — a separate question the German literature of
+  the 1920s raises — whether powers of that reach were ever given to him at
+  all. Four positions on the card: Kluck and the First Army; Müller-Loebnitz
+  and Schultze on the commission itself; Hentsch, Kuhl and the 1917 inquiry;
+  and Edmonds, who declines the controversy and then prints the two facts that
+  bear on it hardest.
+- **How the pack presents it:** the card, reached from
+  `1914:decision-1914-09-09-hentsch-retreat`,
+  `1914:document-hentsch-first-army-minute-1914-09-09`,
+  `1914:vignette-hentsch-drive` and `1914:marne`, each of which names it in
+  `links.historiography`. The decision card records what was decided, the
+  document card the words said at Mareuil, and neither settles the authority.
+- **What cannot be read**, and is on the card's `unread`: Reichsarchiv Bd. 4
+  (`sand-23b.21`), which carries the Hentsch report and the OHL account;
+  Müller-Loebnitz's _Die Sendung des Oberstleutnants Hentsch_ and Kuhl's _Der
+  Marnefeldzug 1914_, both quoted only at second hand through
+  `source:faulde-1925`; Bülow's _Mein Bericht zur Marneschlacht_, not in the
+  registry; and Herwig, unreadable from this environment.
 
 ## 5. The "miracle of the Marne" framing
 
@@ -405,3 +420,25 @@ Link a beat to the relevant note by naming the historians in the prose with
 footnotes (`[^zuber-2002]`, `[^mombauer-2001]`, …) and, where a causal link
 or route is affected, set `confidence: contested`. When a new contested point
 arises, add a section here in the same PR.
+
+### Notes with a card, and notes without
+
+A contested point can be carried by a `Historiography` entity — its own card
+family, `historiography.json`, addressed `?card=<id>` and reached from every
+entity it is about through `links.historiography` (ADR 0017). Where a note has
+one, **the card is the source of truth and this file is the register**: the
+note keeps what the point is, where it is carried and what cannot be read, and
+the positions, quotations and page numbers live in the entity so that they
+exist once. The doc points at the card; the card carries no field pointing
+back, because note numbers move and a second pointer is a second thing to keep
+in step.
+
+| Note | Card                                    |
+| ---- | --------------------------------------- |
+| 4    | `1914:historiography-hentsch-authority` |
+
+**The other fifteen have no card yet**, and keep their positions in prose here
+until they get one. That is a backlog, not a policy: notes 1, 3, 5, 7, 8, 14
+and 15 are all disputes that more than one entity touches, which is the test
+ADR 0017 gives for wanting a card. When you write one, reduce the note to its
+register entry in the same PR and add a row above.

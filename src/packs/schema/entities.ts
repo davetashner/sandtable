@@ -34,6 +34,8 @@ export const Links = z
     science: z.array(Id).optional(),
     documents: z.array(Id).optional(),
     casualties: z.array(Id).optional(),
+    /** The dispute a claim on this entity is part of (`Historiography`). */
+    historiography: z.array(Id).optional(),
     media: z.array(Id).optional(),
   })
   .strict()
@@ -987,6 +989,62 @@ export const Document = z
   })
   .strict();
 
+// ----------------------------------------------------------- Historiography
+
+/**
+ * One side of a dispute: who argues it, and the argument in its own terms.
+ * `who` is prose rather than ids because the people who argue about 1914 are
+ * historians and staff officers writing after it, and this pack's `Person`
+ * registry is of the people who fought it.
+ */
+export const Position = z
+  .object({
+    label: z.string().min(1).describe('“The charge”, “The defence”, “The correction”'),
+    who: z.string().min(1).describe('Who argues it — named, so the reader can weigh it'),
+    summary: Markdown.describe('The argument as its holders would put it, with footnotes'),
+  })
+  .strict();
+
+/**
+ * A contested point, carried as the argument it is (`sand-23b.28`, ADR 0017).
+ *
+ * The other eleven card families each carry a claim: an event happened, an
+ * order said this, a commander chose that. A `Historiography` card carries a
+ * *disagreement* — the question, at least two positions with their holders
+ * named, what is not in dispute, and what evidence would settle it and cannot
+ * be read from here. It has no moment, so it has no timeline glyph: a dispute
+ * about 9 September 1914 ran from 1914 to now. It is reached from the
+ * entities it is about, which name it in `links.historiography`.
+ *
+ * **Two positions is the floor and it is enforced.** Rule 6 of
+ * `docs/sources.md` says a contested point must not be settled for the
+ * learner; a `historiography` *field* holding one side satisfies no schema,
+ * and this is the version of the rule a validator can hold.
+ */
+export const Historiography = z
+  .object({
+    id: Id,
+    title: z.string().min(1),
+    question: Markdown.describe('The dispute stated as a question, not as a finding'),
+    positions: z
+      .array(Position)
+      .min(2, {
+        // The message is the rule. Rule 6 of `docs/sources.md` — a contested
+        // point is not settled for the learner — is the reason this family
+        // exists, and the default "expected array to have >=2 items" says
+        // nothing about it to the author who has just written one side.
+        error:
+          'a contested point needs at least two positions: a card that carries one is a verdict ' +
+          'in costume. Name who holds each one and cite it (docs/sources.md rule 6, ADR 0017).',
+      })
+      .describe('At least two: a card that carries one position is a verdict in costume'),
+    settled: Markdown.optional().describe('What is *not* in dispute'),
+    unread: Markdown.optional().describe('The evidence that would settle it, and why it is unread'),
+    links: Links.optional(),
+    sources: Sources,
+  })
+  .strict();
+
 // --------------------------------------------------------------- CausalLink
 
 export const CausalLink = z
@@ -1291,6 +1349,8 @@ export type TechCard = z.infer<typeof TechCard>;
 export type ScienceField = z.infer<typeof ScienceField>;
 export type ScienceCard = z.infer<typeof ScienceCard>;
 export type Document = z.infer<typeof Document>;
+export type Position = z.infer<typeof Position>;
+export type Historiography = z.infer<typeof Historiography>;
 export type CausalLink = z.infer<typeof CausalLink>;
 export type BeatFrontMatter = z.infer<typeof BeatFrontMatter>;
 export type NarrativeBeat = z.infer<typeof NarrativeBeat>;

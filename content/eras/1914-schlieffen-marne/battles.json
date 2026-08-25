@@ -41,7 +41,8 @@
       "tech": ["1914:tech-aerial-reconnaissance"],
       "documents": [
         "1914:document-joffre-order-of-the-day-1914-09-06",
-        "1914:document-gallieni-proclamation-1914-09-03"
+        "1914:document-gallieni-proclamation-1914-09-03",
+        "1914:document-joffre-instruction-generale-6-1914-09-04"
       ],
       "places": [
         "place:meaux",
@@ -52,7 +53,8 @@
         "place:montmirail",
         "place:sezanne",
         "place:fere-champenoise"
-      ]
+      ],
+      "historiography": ["1914:historiography-hentsch-authority"]
     },
     "sources": [
       {

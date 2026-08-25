@@ -74,14 +74,15 @@ the pack's largest citation gap and it was filed as `sand-23b.6`.
 
 It is being closed volume by volume, and the count is the measure of it:
 
-| Pass                                     | Citations | With pages |
-| ---------------------------------------- | --------: | ---------: |
-| `sand-1l0.16`, August 2026 (this record) |     1,620 |          7 |
-| after `sand-23b.5` (Liège forts)         |     1,629 |         35 |
-| after `sand-23b.9` (commander tracks)    |     1,694 |         76 |
-| after `sand-23b.6`, first tranche        |     1,705 |        117 |
-| after `sand-23b.6.1` (`formations.json`) | **1,764** |    **244** |
-| after `sand-23b.6.2` (the routes)        | **1,817** |    **322** |
+| Pass                                      | Citations | With pages |
+| ----------------------------------------- | --------: | ---------: |
+| `sand-1l0.16`, August 2026 (this record)  |     1,620 |          7 |
+| after `sand-23b.5` (Liège forts)          |     1,629 |         35 |
+| after `sand-23b.9` (commander tracks)     |     1,694 |         76 |
+| after `sand-23b.6`, first tranche         |     1,705 |        117 |
+| after `sand-23b.6.1` (`formations.json`)  | **1,764** |    **244** |
+| after `sand-23b.6.2` (the routes)         | **1,817** |    **322** |
+| after `sand-23b.28`/`.31` (Hentsch, IG 6) | **1,825** |    **327** |
 
 The first tranche of `sand-23b.6` worked the three files the bead names in
 priority order and stopped where the volumes stopped. `casualties.json` goes
@@ -217,6 +218,16 @@ Fischer and Albertini in the July Crisis; Horne & Kramer on Belgium in six
 beats; Unruh on Langemarck; Stone on the East. The Hentsch verdict names the
 1917 inquiry, Herwig, the older German account and Tuchman, and does not
 settle the question.
+
+**One of the sixteen now has a card of its own.** `sand-23b.28` made the
+contested point a card family (ADR 0017), and note 4 — what authority a
+lieutenant-colonel carried at Mareuil — is carried by
+`1914:historiography-hentsch-authority`: four positions with their holders
+named, what is not in dispute, and what would settle it and cannot be read.
+The doc entry for a note with a card is now its register, so the argument
+exists once. The schema refuses a card with fewer than two positions, which is
+rule 6 of `docs/sources.md` made checkable for the first time. Fifteen notes
+still have no card; the doc says which and why.
 
 Verdict words: one use of "brilliant" in the whole pack, attributed to Ritter
 by name — which is what the checklist asks for. No "miracle", no "blunder",

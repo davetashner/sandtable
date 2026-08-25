@@ -76,6 +76,7 @@ import { decisionCrossed } from './engine/decisions.js';
 import { largestSrc, mediaById, portraitFor } from './packs/media-index.js';
 import { CausalView } from './ui/CausalView.js';
 import { DocumentCardView } from './ui/DocumentCardView.js';
+import { HistoriographyCardView } from './ui/HistoriographyCardView.js';
 import { PersonCardView } from './ui/PersonCardView.js';
 import { FormationCardView } from './ui/FormationCardView.js';
 import { MeanwhileFilter } from './ui/MeanwhileFilter.js';
@@ -164,6 +165,7 @@ function useLabeller(): EntityLabeller {
           seed.tech.find((t) => t.id === id)?.title ??
           seed.science.find((t) => t.id === id)?.title ??
           seed.documents.find((d) => d.id === id)?.title ??
+          seed.historiography.find((h) => h.id === id)?.title ??
           seed.events.find((e) => e.id === id)?.title ??
           seed.battles.find((b) => b.id === id)?.title ??
           FORMATIONS.find((f) => f.id === id)?.name ??
@@ -176,6 +178,7 @@ function useLabeller(): EntityLabeller {
           kind === 'tech' ||
           kind === 'science' ||
           kind === 'documents' ||
+          kind === 'historiography' ||
           kind === 'people' ||
           kind === 'casualties' ||
           kind === 'formations'
@@ -202,6 +205,7 @@ function useCard():
   | { kind: 'tech'; card: (typeof seed.tech)[number] }
   | { kind: 'science'; card: (typeof seed.science)[number] }
   | { kind: 'document'; card: (typeof seed.documents)[number] }
+  | { kind: 'historiography'; card: (typeof seed.historiography)[number] }
   | { kind: 'causal'; card: (typeof seed.links)[number] }
   | { kind: 'person'; card: (typeof seed.people)[number] }
   | { kind: 'decision'; card: (typeof seed.decisions)[number] }
@@ -235,6 +239,8 @@ function useCard():
   if (science) return { kind: 'science', card: science };
   const document = seed.documents.find((d) => d.id === card);
   if (document) return { kind: 'document', card: document };
+  const point = seed.historiography.find((h) => h.id === card);
+  if (point) return { kind: 'historiography', card: point };
   const link = seed.links.find((l) => l.id === card);
   if (link) return { kind: 'causal', card: link };
   const person = seed.people.find((p) => p.id === card);
@@ -1004,6 +1010,13 @@ function DossierSurface() {
           ) : card?.kind === 'document' ? (
             <DocumentCardView
               doc={card.card}
+              sources={seed.sources}
+              labeller={labeller}
+              onBack={() => controls?.setCard(undefined)}
+            />
+          ) : card?.kind === 'historiography' ? (
+            <HistoriographyCardView
+              point={card.card}
               sources={seed.sources}
               labeller={labeller}
               onBack={() => controls?.setCard(undefined)}

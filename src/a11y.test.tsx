@@ -113,6 +113,24 @@ describe('accessibility (axe-core)', () => {
     expect(report(await violationsOf(work.container)), 'one work').toBe('');
   }, 30000);
 
+  /**
+   * A contested point (ADR 0017) is the card with the most structure per
+   * pixel: an ordered list of positions, each with its own heading and its own
+   * attribution, then two more headed asides. Opened by its own URL, because
+   * the chip on the decision card and the link in a beat both land here.
+   */
+  it('finds nothing in a contested point’s card', async () => {
+    window.history.replaceState(
+      null,
+      '',
+      '/?t=1914-09-09T12:00:00Z&card=1914:historiography-hentsch-authority',
+    );
+    const { container } = render(<App />);
+    await screen.findByRole('region', { name: /^Map/ }, { timeout: 8000 });
+    await screen.findByRole('heading', { level: 3, name: 'The charge' });
+    expect(report(await violationsOf(container))).toBe('');
+  }, 30000);
+
   it('finds nothing in the component gallery — every component, both themes', async () => {
     const { container } = render(<Gallery />);
     const violations = await violationsOf(container, GALLERY_OPTIONS);

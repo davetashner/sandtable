@@ -2,10 +2,10 @@
   "$comment": "The performance budget CI holds (ADR 0016, sand-pmz.3). Two ceilings on the built bundle, in kilobytes of gzip, checked by `npm run bundle:budget` in the web job. Raise one only with a sentence saying what the app gained for the bytes — the number and the reason are reviewed together in the diff. Measure with `npm run perf`, which prints the same figures and what each chunk is made of.",
   "budgets": {
     "eager": {
-      "maxGzipKb": 470,
-      "measuredKb": 432.5,
+      "maxGzipKb": 490,
+      "measuredKb": 475.0,
       "measuredOn": "2026-08-25",
-      "why": "Everything index.html names — the entry, its modulepreloads, its stylesheet — plus index.html itself. This is what stands between a reader and first paint on a cold load, so it is the number worth a ceiling. 432 kB is where the deck.gl split left it; 470 is about two months of ordinary growth and a hard stop before the number doubles by accident. What is still in it and why: the 1914 pack's JSON (~130 kB gzip, bundled until the lazy pack loader lands, sand-shn.1), react-dom, zod (the pack is re-validated in the browser), yaml (beat front matter), and the react-markdown stack (the dossier's prose)."
+      "why": "Everything index.html names — the entry, its modulepreloads, its stylesheet — plus index.html itself. This is what stands between a reader and first paint on a cold load, so it is the number worth a ceiling. What is still in it and why: the 1914 pack's JSON (~135 kB gzip, bundled until the lazy pack loader lands, sand-shn.1), react-dom, zod (the pack is re-validated in the browser), yaml (beat front matter), and the react-markdown stack (the dossier's prose). 470 held from the deck.gl split (432.5 kB) until sand-23b.28 and sand-23b.31, which went 5 kB over a ceiling that had 2.7 kB of headroom left (sand-pmz.18). The split was measured rather than assumed: of the 7.7 kB those two beads add, the twelfth card family — its view, its stylesheet, the App wiring and the gallery specimen — is 0.3 kB, and the other 7.4 kB is the contested point's prose and the text of Instruction générale no 6. No choice of entity kind would have avoided it; the argument weighs what it weighs wherever it is filed. 490 buys back roughly two more content passes. It is a stay of execution and not a fix: the eager number is dominated by pack JSON that no reader needs before first paint, every content PR pays for it, and the ceiling will keep being raised by content until sand-shn.1 fetches the pack instead of bundling it."
     },
     "total": {
       "maxGzipKb": 1100,

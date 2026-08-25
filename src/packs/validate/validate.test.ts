@@ -1593,4 +1593,108 @@ describe('validateContent', () => {
     expect(msgs).toContainEqual(expect.stringMatching(/original\.licence/));
     expect(msgs).toContainEqual(expect.stringMatching(/credit/));
   });
+  /**
+   * A contested point carried as an entity (ADR 0017). The schema holds the
+   * floor of two positions; the validator holds the part a schema cannot say —
+   * that the two are actually two.
+   */
+  describe('contested points', () => {
+    const point = (positions: unknown, rest: Record<string, unknown> = {}) => {
+      const raw = fixture();
+      raw.packs[0]!.collections['historiography.json'] = {
+        path: 'eras/1914-test/historiography.json',
+        data: [
+          {
+            id: '1914:historiography-hentsch-authority',
+            title: 'What authority did he carry?',
+            question: 'A question, and it stays one.',
+            positions,
+            sources: [{ source: 'source:herwig-2009', pages: '270' }],
+            ...rest,
+          },
+        ],
+      };
+      return raw;
+    };
+    const charge = { label: 'The charge', who: 'The First Army', summary: 'He had no power.' };
+    const defence = {
+      label: 'The defence',
+      who: 'The 1917 inquiry',
+      summary: 'He did not exceed it.',
+    };
+
+    it('accepts a point with two positions, and indexes it as its own kind', () => {
+      const report = validateContent(point([charge, defence]));
+      expect(messages(report)).toEqual([]);
+      expect(report.counts).toMatchObject({ historiography: 1 });
+    });
+
+    it('refuses a point that carries only one position', () => {
+      const msgs = messages(validateContent(point([charge])));
+      expect(msgs).toContainEqual(expect.stringMatching(/a verdict in costume/));
+    });
+
+    it('refuses two positions with the same label, or the same holder', () => {
+      expect(
+        messages(validateContent(point([charge, { ...defence, label: 'The charge' }]))),
+      ).toContainEqual(expect.stringMatching(/two positions are labelled "The charge"/));
+      expect(
+        messages(validateContent(point([charge, { ...defence, who: 'The First Army' }]))),
+      ).toContainEqual(expect.stringMatching(/not one side twice/));
+    });
+
+    it('holds a position’s footnotes and entity links to the point’s own sources', () => {
+      const msgs = messages(
+        validateContent(
+          point([
+            { ...charge, summary: 'He had no power.[^nobody] See [this](1914:no-such-thing).' },
+            defence,
+          ]),
+        ),
+      );
+      expect(msgs).toContainEqual(
+        expect.stringMatching(/positions\[0\]\.summary footnote \[\^nobody\]/),
+      );
+      expect(msgs).toContainEqual(
+        expect.stringMatching(/positions\[0\]\.summary link 1914:no-such-thing does not exist/),
+      );
+    });
+
+    /** The loop this bead closes: a `used_by` that names a card that now exists. */
+    it('lets a media manifest name a contested point in used_by', () => {
+      const raw = point([charge, defence]);
+      raw.shared.media.push({
+        path: 'shared/media/people/hentsch/media.json',
+        data: {
+          id: 'media:person/hentsch/portrait',
+          file: 'portrait.png',
+          width: 900,
+          height: 1200,
+          colorized: false,
+          original: { licence: 'public domain', archive_url: 'https://example.org/item' },
+          content_policy: 'ok',
+          caption: 'A portrait.',
+          credit: 'Somebody; public domain.',
+          used_by: ['1914:historiography-hentsch-authority'],
+        },
+      });
+      expect(messages(validateContent(raw))).toEqual([]);
+    });
+
+    it('lets any entity point at one through links.historiography, and refuses a dangling one', () => {
+      const raw = point([charge, defence]);
+      const events = raw.packs[0]!.collections['events.json']!.data as Record<string, unknown>[];
+      (events[0]!['links'] as Record<string, unknown>)['historiography'] = [
+        '1914:historiography-hentsch-authority',
+      ];
+      expect(messages(validateContent(raw))).toEqual([]);
+
+      (events[0]!['links'] as Record<string, unknown>)['historiography'] = [
+        '1914:historiography-nope',
+      ];
+      expect(messages(validateContent(raw))).toContainEqual(
+        expect.stringMatching(/links\.historiography 1914:historiography-nope does not exist/),
+      );
+    });
+  });
 });
