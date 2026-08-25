@@ -418,7 +418,13 @@ function printTiles(t) {
 
 const result = { at: new Date().toISOString(), live: LIVE, runs: RUNS };
 
-const bundle = bundleReport();
+let bundle;
+try {
+  bundle = bundleReport();
+} catch (e) {
+  console.error(`no usable dist/ — run \`npm run build\` first (${e.message}).`);
+  process.exit(2);
+}
 result.bundle = {
   eagerGzip: bundle.eagerGzip,
   lazyGzip: bundle.lazyGzip,
