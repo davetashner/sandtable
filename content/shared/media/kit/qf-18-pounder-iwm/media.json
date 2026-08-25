@@ -1,0 +1,28 @@
+{
+  "$comment": "Kit manifest (sand-y0u.5.1): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-kit.md, then `npm run media`. Provenance verified against the archive record on 2026-08-25.",
+  "id": "media:kit/qf-18-pounder-iwm/qf-18-pounder",
+  "kind": "kit",
+  "file": "qf-18-pounder.jpg",
+  "width": 800,
+  "height": 600,
+  "colorized": false,
+  "original": {
+    "description": "An Ordnance QF 18-pounder Mark II field gun on display at the Imperial War Museum, London. The Commons record carries the museum's gallery label in full: the 18-pounder entered service in 1904, 1,226 had been made in Britain by the outbreak of war in 1914, and this particular gun fired 16,513 rounds on the Western Front between September 1916 and November 1917 before being relined and reissued to 53rd Battery, Royal Field Artillery. The label gives the calibre as 3.3 in (8.4 cm), the weight in action as 2,820 lb (1,279 kg) and the range as 6,525 yd (5,966 m).",
+    "photographer": "Emőke Dénes, 10 February 2012",
+    "date": "10 February 2012 (the photograph); the object is an 18-pounder Mk II, the pattern in service through the First World War",
+    "archive": "Imperial War Museum, London (the collection); photograph by a Wikimedia Commons contributor, held on Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:British_18-pounder_mark_II_field_gun_-_Imperial_War_Museum_1.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/British%2018-pounder%20mark%20II%20field%20gun%20-%20Imperial%20War%20Museum%201.jpg",
+    "original_dimensions": "800 × 600",
+    "licence": "CC BY-SA (Commons record: LicenseShortName \"CC BY-SA 4.0\"; UsageTerms \"Creative Commons Attribution-Share Alike 4.0\"; AttributionRequired true; the page also carries the older cc-by-sa-2.5 tag and a confirmed VRTS permission from the photographer). Attribution to Emőke Dénes is mandatory and the share-alike condition applies to derivatives. This is the photographer's own licence, not the Imperial War Museum's: IWM's Non-Commercial Licence covers the museum's own collection images and is not an open licence under ADR 0007. Nothing here is taken from an IWM-supplied file."
+  },
+  "colorization": {
+    "status": "not colorized, and must not be — a modern colour photograph of the object, and the licence is share-alike."
+  },
+  "content_policy": "ok — a museum object on display; no casualties",
+  "caption": "The Ordnance QF 18-pounder, the field gun of the British Expeditionary Force, in the Imperial War Museum, London. This gun fired 16,513 rounds on the Western Front before its barrel had to be relined.",
+  "credit": "Photograph: Emőke Dénes, 2012, of an object in the Imperial War Museum, London; via Wikimedia Commons; CC BY-SA 4.0.",
+  "used_by": ["1914:tech-field-guns-1914"],
+  "focal_point": { "x": 0.5, "y": 0.5 },
+  "notes": "Verified 2026-08-25 against the Commons file record via the MediaWiki API (Artist, Credit, DateTimeOriginal, LicenseShortName, UsageTerms, AttributionRequired, Permission read from extmetadata) and against the page wikitext for the gallery label and the licence templates. The one weakness is size: 800 × 600 is the smallest plate in the pack, and the full-size view will be modest. A 4288 × 2848 photograph of the Royal Artillery Museum's 18-pounder exists on Commons (File:18 pounder mark II QF field gun, British, 1915 (16857508220).jpg, CC BY-SA 2.0), but its record does not name the museum — only a Commons category added by a third party does — so it was not taken. Swap the two if that record is ever fixed."
+}

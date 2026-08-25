@@ -1,0 +1,27 @@
+{
+  "$comment": "Kit manifest (sand-y0u.5.4): the manifest is ahead of the binary, and ahead of the card. The image has NOT been fetched yet — run the download in docs/imagery-kit.md, then `npm run media`. Provenance verified against the archive record on 2026-08-25.",
+  "id": "media:kit/vickers-york-castle-museum/vickers-mk-i",
+  "kind": "kit",
+  "file": "vickers-mk-i.jpg",
+  "width": 5184,
+  "height": 3456,
+  "colorized": false,
+  "original": {
+    "description": "A .303-inch Vickers machine gun with its tripod mount, belt, ammunition box and condenser can, from the collection of the York Castle Museum, released to Wikimedia Commons by York Museums Trust under a GLAMwiki partnership. The record is a museum catalogue record: title \".303inch Vickers Machine Gun\", accession number YORCM : CA78.a-c, department Social History, object dated between 1914 and 1918, and the museum's own description — \"The Vickers Gun was the standard British machine gun from 1912. It was heavy and mounted on a tripod, requiring a team of six men to transport it to and operate it on the battlefield.\"",
+    "photographer": "York Museums Trust — the record credits the trust rather than an individual photographer",
+    "date": "catalogued image released through the York Museums Trust GLAMwiki donation; the object is dated 1914–1918 by the museum",
+    "archive": "York Castle Museum, York; York Museums Trust, accession YORCM : CA78.a-c; via Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:Vickers_Machine_Gun_YORCM_CA78ac.JPG",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vickers%20Machine%20Gun%20YORCM%20CA78ac.JPG",
+    "original_dimensions": "5184 × 3456",
+    "licence": "CC BY-SA 4.0 (Commons record: LicenseShortName \"CC BY-SA 4.0\"; UsageTerms \"Creative Commons Attribution-Share Alike 4.0\"; AttributionRequired true; credit line on the record: \"Courtesy of York Museums Trust\"). Attribution to York Museums Trust is mandatory and the share-alike condition applies to derivatives."
+  },
+  "colorization": {
+    "status": "not colorized, and must not be — a modern colour photograph of the object, and the licence is share-alike."
+  },
+  "content_policy": "ok — a museum object photographed on its own; no casualties",
+  "caption": "The .303-inch Vickers, the British heavy machine gun of 1914, with its tripod, belt and condenser can. York Castle Museum, YORCM : CA78.a-c.",
+  "focal_point": { "x": 0.5, "y": 0.5 },
+  "notes": "Verified 2026-08-25 against the Commons file record via the MediaWiki API (Credit, DateTimeOriginal, LicenseShortName, UsageTerms, AttributionRequired read from extmetadata) and against the page wikitext for the institution, the accession number and the credit line. The record names no individual photographer, which is why the credit is to the trust; Commons flags the file as having no machine-readable author for the same reason. No `used_by`: the machine-gun card does not exist yet, for the reason recorded on the MG 08 manifest and in docs/imagery-kit.md.",
+  "credit": "Photograph: York Museums Trust (York Castle Museum), object YORCM : CA78.a-c; via Wikimedia Commons; CC BY-SA 4.0."
+}

@@ -1,0 +1,28 @@
+{
+  "$comment": "Kit manifest (sand-y0u.5.1): the manifest is ahead of the binary. The image has NOT been fetched yet — run the download in docs/imagery-kit.md, then `npm run media`. Provenance verified against the archive record on 2026-08-25.",
+  "id": "media:kit/fk-96-na-awm/fk-96-na",
+  "kind": "kit",
+  "file": "fk-96-na.jpg",
+  "width": 2513,
+  "height": 1532,
+  "colorized": false,
+  "original": {
+    "description": "A German 7.7 cm Feldkanone 96 neuer Art displayed in the Australian War Memorial, Canberra. The Commons record's description names both the object and the institution: \"7,7 cm Feldkanone 96 neuer Art (7,7 cm FK 96 n.A.) displayed in Australian War Memorial, Canberra, Australia.\" The Memorial's holdings of these guns are captured pieces, and the file sits in the Commons category \"Captured weapons of World War I\".",
+    "photographer": "Bukvoed (Wikimedia Commons contributor), January 2007",
+    "date": "January 2007 (the photograph); the object is a 7.7 cm FK 96 n.A., the recoil-carriage rebuild of the 1896 gun that the German field artillery took to war in 1914",
+    "archive": "Australian War Memorial, Canberra (the collection); photograph held on Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:AWM-7,7-cm-Feldkanone-96-nA-3.jpg",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/AWM-7%2C7-cm-Feldkanone-96-nA-3.jpg",
+    "original_dimensions": "2513 × 1532",
+    "licence": "CC BY 2.5 (Commons record: LicenseShortName \"CC BY 2.5\"; UsageTerms \"Creative Commons Attribution 2.5\"; AttributionRequired true; the record also offers GFDL and a migrated CC BY-SA 3.0). Attribution to the photographer is mandatory; the CC BY 2.5 term chosen here carries no share-alike condition."
+  },
+  "colorization": {
+    "status": "not colorized, and must not be — a modern colour photograph of the object."
+  },
+  "content_policy": "ok — a museum object on display; no casualties",
+  "caption": "The 7.7 cm Feldkanone 96 n.A., the German field gun of 1914, in the Australian War Memorial, Canberra — one of the pieces captured on the Western Front.",
+  "credit": "Photograph: Bukvoed, 2007, of an object in the Australian War Memorial, Canberra; via Wikimedia Commons; CC BY 2.5.",
+  "used_by": ["1914:tech-field-guns-1914"],
+  "focal_point": { "x": 0.5, "y": 0.5 },
+  "notes": "Verified 2026-08-25 against the Commons file record via the MediaWiki API (Artist, Credit, DateTimeOriginal, LicenseShortName, UsageTerms, AttributionRequired, Permission read from extmetadata). This is the German field-gun plate the Phase-2 kit pass could not find: the candidate it refused (a collector's Flickr scan of an unposted postcard) had no holding institution, and this one names the museum and the sub-pattern — neuer Art, not the 1896 original — in the record itself. The photographer is a Commons regular, not the museum, which is the same footing as the Braunschweig Pickelhaube."
+}
