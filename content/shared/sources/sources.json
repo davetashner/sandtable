@@ -223,7 +223,7 @@
     "title": "My War Memories, 1914–1918 (Meine Kriegserinnerungen 1914–1918)",
     "year": 1919,
     "publisher": "Hutchinson, London; E. S. Mittler, Berlin",
-    "notes": "Ludendorff's memoir; the first-hand account of the 14th Brigade's night march into Liège and the surrender of the citadel on 7 August 1914. Self-serving on everything after; reliable for the Liège episode where the Reichsarchiv agrees. The citadel episode of 7 August — the white flags seen from La Chartreuse, the drive to the gate in a commandeered Belgian car, hammering on it, and the surrender of the few hundred Belgians inside — is at pp. 36–37; he gives no clock time for it.",
+    "notes": "Ludendorff's memoir; the first-hand account of the 14th Brigade's night march into Liège and the surrender of the citadel on 7 August 1914. Self-serving on everything after; reliable for the Liège episode where the Reichsarchiv agrees. The citadel episode of 7 August — the white flags seen from La Chartreuse, the drive to the gate in a commandeered Belgian car, hammering on it, and the surrender of the few hundred Belgians inside — is at pp. 36–37; he gives no clock time for it. Volume II (archive.org item mywarmemories19102lude) carries the German reading of the tank battles: the surprise at Cambrai on 20 November 1917, and the sentence 'August 8th was the black day of the German Army in the history of this war.' Cited without pages, from the archive text.",
     "url": "https://archive.org/details/mywarmemories19101lude"
   },
   {
@@ -1000,5 +1000,60 @@
     "author": "National World War I Museum and Memorial, Kansas City; Imperial War Museum, London; Australian War Memorial, Canberra; Gunfire Artilleriemuseum, Brasschaat",
     "title": "Object records and gallery labels behind the four field-gun photographs in the kit plate set",
     "notes": "The authority for what object is in each of the four field-gun frames, and for the figures the museums themselves publish about them — including the Imperial War Museum's label for its 18-pounder Mark II, which gives the calibre as 3.3 in (8.4 cm), the weight in action as 2,820 lb (1,279 kg), the range as 6,525 yd (5,966 m), and the gun's own service record. Each record is transcribed on the Wikimedia Commons file page for the photograph and is quoted in the corresponding manifest: File:France 75 mm field gun, Model 1897 - National World War I Museum - Kansas City, MO - DSC07528.JPG; File:British 18-pounder mark II field gun - Imperial War Museum 1.jpg; File:AWM-7,7-cm-Feldkanone-96-nA-3.jpg; File:Canon de 75 mle TR (tir rapide Krupp) Gunfire Museum Brasschaat 13-03-2021 10-58-44.jpg. Unlike the rifle set, these are four institutions and four photographers rather than one museum photographing four objects the same way, and the plate set does not pretend otherwise. Cite it for identification and for museum-published figures, never for how the guns were used."
+  },
+  {
+    "id": "source:fuller-1920",
+    "kind": "book",
+    "tier": "unit-history",
+    "author": "Fuller, J. F. C.",
+    "title": "Tanks in the Great War, 1914–1918",
+    "year": 1920,
+    "publisher": "John Murray, London",
+    "url": "https://archive.org/details/tanksingreatwar00john",
+    "notes": "Written by the man who was GSO1 of the Tank Corps and who drafted the Cambrai plan, and published while he was arguing for an armoured army. It is the fullest contemporary account of the Tank Corps' battles and it reprints the founding papers — Swinton's proposal of October 1914 and his tactical paper of February 1916 among them — which is what it is best used for. It is also a brief for the weapon: Fuller calls Cambrai 'the Valmy of a new epoch in war', and his machine counts are the Tank Corps' own. Cite it for the documents and for the counts it states, beside another account wherever the count matters; do not cite it for whether the weapon was decisive. Read from the archive.org text; the pack's tech cards carry no page numbers."
+  },
+  {
+    "id": "source:haig-despatches-1919",
+    "kind": "official-history",
+    "tier": "primary",
+    "author": "Haig, Douglas; Boraston, J. H. (ed.)",
+    "title": "Sir Douglas Haig's Despatches (December 1915 – April 1919)",
+    "year": 1919,
+    "publisher": "J. M. Dent, London and Toronto",
+    "url": "https://archive.org/details/sirdouglashaigsd00haiguoft",
+    "notes": "The despatches as the Commander-in-Chief wrote and published them: the Somme, Cambrai, Amiens and the Hundred Days, with the final despatch of March 1919 in which Haig set out his own reading of the war. Precise on times, frontages, formations and the sequence of an attack, because it was written from the operation orders. It is also self-justification, published in the middle of the argument about his own conduct, and silent or thin wherever the record is against him — read every judgement in it as advocacy. The exception worth citing is the final despatch's insistence that tanks and aircraft 'are incapable of effective independent action', which argues against his own weapons. Read from the archive.org text; the pack's tech cards carry no page numbers."
+  },
+  {
+    "id": "source:1914-1918-online-tanks",
+    "kind": "article",
+    "tier": "study",
+    "author": "Kennedy, Michael David",
+    "title": "Tanks and Tank Warfare",
+    "year": 2016,
+    "publisher": "1914-1918-online. International Encyclopedia of the First World War (Freie Universität Berlin)",
+    "url": "https://encyclopedia.1914-1918-online.net/article/tanks_and_tank_warfare/",
+    "notes": "Peer-reviewed survey of tank development and use in all the belligerent armies. Cited here for the second count of the first tank action — forty-nine Mark I tanks deployed to France on 15 September 1916 and thirty-one across the German lines — which measures something different from Fuller's forty-nine allotted and thirty-two at the starting-point, and is given beside it. A survey, not an operational history: it is thin on the battles themselves and carries nothing on Amiens."
+  },
+  {
+    "id": "source:1914-1918-online-hundred-days",
+    "kind": "article",
+    "tier": "study",
+    "author": "Lloyd, Nicholas",
+    "title": "Hundred Days Offensive",
+    "year": 2014,
+    "publisher": "1914-1918-online. International Encyclopedia of the First World War (Freie Universität Berlin)",
+    "url": "https://encyclopedia.1914-1918-online.net/article/hundred-days-offensive/",
+    "notes": "Peer-reviewed survey of the Allied offensive of August–November 1918. Cited for the Amiens advance of 'up to eight miles' — the outer end of a three-way range this pack gives in full — and for the list in which the tank appears fourth of five: logistical support, artillery dominance, air superiority, tanks 'with mixed success', and infantry tactics. Lloyd's larger argument, that the British army of 1918 had learned a method rather than acquired a weapon, is the position this card takes; it is a position, and not the only one."
+  },
+  {
+    "id": "source:lupfer-1981",
+    "kind": "book",
+    "tier": "study",
+    "author": "Lupfer, Timothy T.",
+    "title": "The Dynamics of Doctrine: The Changes in German Tactical Doctrine During the First World War",
+    "year": 1981,
+    "publisher": "Combat Studies Institute, US Army Command and General Staff College, Fort Leavenworth (Leavenworth Papers No. 4)",
+    "url": "https://archive.org/details/dynamicsofdoctri00timo",
+    "notes": "Open-access staff-college study of how the German army rewrote its defensive and then its offensive doctrine between 1915 and 1918. Cited for the German side of Cambrai: the British surprise attack of 20 November 1917, the deliberate counter-attack ten days later, the lessons drawn from it that winter, and anti-tank defence becoming 'of particular importance in light of the Cambrai experience'. Like Heller (Leavenworth Papers 10) it is written to draw lessons for the US Army, so its interest is in what worked; its operational judgements are conventional and it is not an archive study of the battle."
   }
 ]
