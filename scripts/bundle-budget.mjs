@@ -8,13 +8,18 @@
  * different question from a reader's laptop, and a gate that goes red for
  * reasons unrelated to the change is worse than no gate (ADR 0011).
  *
- * Two ceilings, both in `scripts/bundle-budget.json` with the reason for each
+ * Three ceilings, all in `scripts/bundle-budget.json` with the reason for each
  * written next to it:
  *
- *   eager  index.html plus everything it names — what the reader downloads
- *          before anything is on screen
- *   total  every emitted chunk, so the eager ceiling cannot be met forever by
+ *   eager  index.html plus everything it names — the code the reader
+ *          downloads before anything is on screen
+ *   code   every emitted chunk, so the eager ceiling cannot be met forever by
  *          moving bytes behind a dynamic import
+ *   pack   dist/pack/ — the content bundle the app fetches (ADR 0018)
+ *
+ * Three rather than two because code weight and content weight move for
+ * different reasons and neither should be able to break the other's gate
+ * (ADR 0018). `npm run perf` still prints the sum.
  *
  *   npm run build && npm run bundle:budget
  *   npm run bundle:budget -- --update   # rewrite `measuredKb`, never the max
@@ -41,7 +46,11 @@ try {
 }
 
 const doc = JSON.parse(readFileSync(BUDGET, 'utf8'));
-const measured = { eager: kb(report.eagerGzip), total: kb(report.totalGzip) };
+const measured = {
+  eager: kb(report.eagerGzip),
+  code: kb(report.codeGzip),
+  pack: kb(report.packGzip),
+};
 
 const headroom = (r) =>
   r.over ? `${(-r.head).toFixed(1)} kB over` : `${r.head.toFixed(1)} kB of headroom`;
@@ -65,10 +74,12 @@ for (const r of rows) {
 console.log('\n  chunks:');
 for (const f of report.files) {
   console.log(
-    `    ${f.eager ? '▶' : ' '} ${f.file.padEnd(38)} ${kb(f.gzip).toFixed(1).padStart(8)} kB gzip`,
+    `    ${f.eager ? '▶' : f.group === 'pack' ? '◆' : ' '} ${f.file.padEnd(38)}` +
+      ` ${kb(f.gzip).toFixed(1).padStart(8)} kB gzip`,
   );
 }
-console.log('    ▶ = named by index.html, downloaded before first paint\n');
+console.log('    ▶ = named by index.html, downloaded before first paint');
+console.log('    ◆ = the content bundle, fetched alongside it (ADR 0018)\n');
 
 if (update) {
   const today = new Date().toISOString().slice(0, 10);

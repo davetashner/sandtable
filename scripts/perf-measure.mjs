@@ -4,8 +4,8 @@
  * Four numbers, taken separately because they are not equally trustworthy:
  *
  *   bundle   what the browser must download before anything is on screen,
- *            split into what index.html asks for and what the app fetches
- *            later. Read off `dist/`; deterministic, and the one thing CI
+ *            split into what index.html asks for, the content bundle fetched
+ *            alongside it, and what the app fetches later. Read off `dist/`; deterministic, and the one thing CI
  *            gates (`scripts/bundle-budget.mjs`).
  *   boot     navigation → first contentful paint → seed pack parsed → the map
  *            reporting its style live, per scene, from the marks in
@@ -67,12 +67,13 @@ function printBundle(r) {
   console.log('  (gzip is what the wire carries; CloudFront compresses — ADR 0004)\n');
   for (const f of r.files) {
     console.log(
-      `  ${f.eager ? '▶' : ' '} ${f.file.padEnd(38)} ${kb(f.raw).padStart(9)} kB  ` +
-        `gzip ${kb(f.gzip).padStart(8)} kB`,
+      `  ${f.eager ? '▶' : f.group === 'pack' ? '◆' : ' '} ${f.file.padEnd(38)}` +
+        ` ${kb(f.raw).padStart(9)} kB  gzip ${kb(f.gzip).padStart(8)} kB`,
     );
   }
   console.log(
     `\n  ▶ eager (index.html + preloads): ${kb(r.eagerGzip)} kB gzip` +
+      `\n  ◆ content bundle, fetched in parallel (ADR 0018): ${kb(r.packGzip)} kB gzip` +
       `\n    on demand (map surface, worker, gallery): ${kb(r.lazyGzip)} kB gzip` +
       `\n    everything: ${kb(r.totalGzip)} kB gzip`,
   );
@@ -427,6 +428,7 @@ try {
 }
 result.bundle = {
   eagerGzip: bundle.eagerGzip,
+  packGzip: bundle.packGzip,
   lazyGzip: bundle.lazyGzip,
   totalGzip: bundle.totalGzip,
   files: bundle.files,

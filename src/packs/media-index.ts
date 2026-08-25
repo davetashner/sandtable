@@ -1,9 +1,11 @@
 /**
  * The attribution manifest the app renders images from —
  * content/shared/media/index.json, written by `npm run media`
- * (scripts/media-pipeline.ts). Bundled with the seed until the loader lands.
+ * (scripts/media-pipeline.ts). It arrives in the same fetched bundle as the
+ * pack (ADR 0018), for the same reason: 75 kB of manifest is content, and the
+ * reader does not need it before first paint.
  */
-import indexJson from '../../content/shared/media/index.json';
+import { contentBundle } from './pack-loader.js';
 
 export interface MediaVariant {
   src: string;
@@ -48,7 +50,7 @@ export interface MediaIndex {
   entries: MediaIndexEntry[];
 }
 
-export const mediaIndex = indexJson as MediaIndex;
+export const mediaIndex = contentBundle.shared.media as MediaIndex;
 
 const byId = new Map(mediaIndex.entries.map((e) => [e.id, e]));
 const byPerson = new Map(mediaIndex.entries.filter((e) => e.person).map((e) => [e.person!, e]));

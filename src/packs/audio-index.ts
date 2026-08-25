@@ -1,12 +1,12 @@
 /**
  * The score manifest the app plays from — content/shared/audio/index.json,
- * written by `npm run audio` (scripts/audio-pipeline.ts). Bundled with the
- * seed until the loader lands, exactly as media-index.ts is.
+ * written by `npm run audio` (scripts/audio-pipeline.ts). It arrives in the
+ * same fetched bundle as the pack (ADR 0018), exactly as media-index.ts does.
  *
  * Every entry is already normalised to the same loudness, so the player sets
  * one volume and never has to ride the level between cues.
  */
-import indexJson from '../../content/shared/audio/index.json';
+import { contentBundle } from './pack-loader.js';
 
 export interface AudioSource {
   src: string;
@@ -39,7 +39,7 @@ export interface AudioIndex {
   entries: AudioIndexEntry[];
 }
 
-export const audioIndex = indexJson as AudioIndex;
+export const audioIndex = contentBundle.shared.audio as AudioIndex;
 
 const byId = new Map(audioIndex.entries.map((e) => [e.id, e]));
 

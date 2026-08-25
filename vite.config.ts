@@ -2,6 +2,7 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
+import { packBundlePlugin } from './scripts/lib/vite-plugin-pack.js';
 
 /**
  * `/assets/*` is the assets bucket (tiles, borders, media) on every
@@ -25,7 +26,11 @@ const assetsProxy = {
 
 // https://vite.dev/config/ — test options are Vitest's (vitest/config extends Vite's defineConfig)
 export default defineConfig({
-  plugins: [react()],
+  // The content bundle is fetched, not imported: it is emitted to `dist/pack/`
+  // and served from the app's own origin, which is why it is not under
+  // `/assets/` — that is the bucket, and the visual gate answers it from
+  // inside the browser (ADR 0011, ADR 0018).
+  plugins: [react(), packBundlePlugin()],
   build: {
     target: 'es2022',
     sourcemap: true,

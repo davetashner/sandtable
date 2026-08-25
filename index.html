@@ -27,9 +27,45 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <!-- The boot frame, below. Inline because it has to be painted by the
+         markup alone: it is what stands in for the app while the content
+         bundle is on its way (ADR 0018). -->
+    <style>
+      .boot {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        text-align: center;
+        padding: 24px;
+      }
+      .boot__mark {
+        margin: 0;
+        font-family: var(--font-display, Georgia, 'Times New Roman', serif);
+        font-size: 30px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+      }
+      .boot__note {
+        margin: 0;
+        font-size: 14px;
+        opacity: 0.6;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- The app cannot render before the pack it renders arrives, and the pack
+         is fetched rather than bundled (ADR 0018). This is what a reader looks
+         at in the meantime; React replaces the whole of #root on its first
+         commit, so nothing here survives into the app's DOM. -->
+    <div id="root">
+      <div class="boot" role="status">
+        <p class="boot__mark">Sandtable</p>
+        <p class="boot__note">Laying out the campaign…</p>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
