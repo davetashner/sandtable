@@ -26,8 +26,12 @@
   "credit": "Original photograph: Bain News Service, Library of Congress; public domain (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
     "1914:army-fr-6",
-    "1914:marne"
+    "1914:marne",
+    "1914:decision-1914-09-04-turn-and-attack"
   ],
-  "focal_point": { "x": 0.52, "y": 0.3 },
+  "focal_point": {
+    "x": 0.52,
+    "y": 0.3
+  },
   "notes": "Provided by Dave 2026-08-22. Smallest source of the set (324 × 418) — the LoC master (ggbain.17444) must replace it in the pipeline."
 }

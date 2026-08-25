@@ -8,7 +8,7 @@ fixed, and what still needs the printed volumes.
 
 Scope: 11 battles and chapters, 71 beats, 117 events, 173 routes, 141
 formations, 14 documents, 8 casualty records, 18 causal links, 11 vignettes,
-4 decision points, 5 tech and 3 science cards, 55 people, 86 places, 49
+4 decision points (6 since `sand-23b.27` and `sand-23b.29`), 5 tech and 3 science cards, 55 people, 86 places, 49
 sources — 1,620 citations.
 
 ## Result by section of the checklist

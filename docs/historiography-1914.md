@@ -250,6 +250,126 @@ Edmonds citation's `note` records the divergence, because a distance that has
 not been re-measured against the fort plan should not be quietly replaced by
 one taken from a single conversion.
 
+## 14. Lanrezac: a defeatist removed, or a subordinate who had been right?
+
+On 3 September, at about five in the afternoon, Joffre drove to Sézanne and
+took the Fifth Army from Lanrezac. It was the largest of a great many
+removals — Doughty counts some fifty French general officers relieved in
+August and September, Ruffey four days earlier — and it is the one still
+argued about, because the man removed had been right about the German right
+wing before Joffre was and because his successor's answer the following
+afternoon fixed the day of the Marne.
+
+- **Lanrezac's case**, in his own book (_Le plan de campagne français_, 1920,
+  the only account of the interview): Joffre said he was obliged to take the
+  army away because "vous êtes hésitant, indécis", and, asked for facts,
+  repeated only that Lanrezac "made observations on every order he was given"
+  (pp. 276–277). Lanrezac answers that his orders show no indecision, that
+  events proved his observations right, and that he bowed to the decision
+  "sachant qu'après une grande défaite, il faut des responsables" (p. 277).
+  He records what he says he learned only in December 1916: that on
+  29 August at Laon, before Guise was fought, Joffre had already sent for
+  Franchet d'Espèrey and had recalled the order after seeing him (p. 280) —
+  which he offers as proof that Joffre cannot have thought him incapable of
+  decision, since Joffre then left him to fight the offensive on which, in
+  what Lanrezac gives as Joffre's own words, the fate of the campaign turned.
+  His chief of staff, Hély d'Oissel, wrote to him on 25 December 1916 that
+  the Fifth Army was whole at the rendezvous of the Marne because of the
+  dispositions Lanrezac made (pp. 278–279: Lanrezac dates the exchange at
+  p. 278 and prints the reply at p. 279).
+- **What GQG was saying**, as Lanrezac himself reports it (p. 278): "Le
+  général Lanrezac avait perdu la tête dès la bataille de Charleroi; il était
+  dès lors incapable de prendre une décision en temps voulu." That is the
+  charge, in the words of the men who made it — reported by the accused, and
+  to be read as such.
+- **Joffre's own account** (_Mémoires_, 1932) is not in this pack's registry
+  and has not been read for any entity here. Neither have the AFGG annexes
+  that would print the order relieving him, which are behind Gallica's block
+  from this environment (`sand-23b.20`).
+- **The British official history** takes no side: Edmonds records only that
+  Franchet d'Espèrey "had taken over command of the Fifth Army from General
+  Lanrezac the previous day" and refers the reader, in a footnote, to
+  Lanrezac's own book "p. 276 et seq." for "an account of his sudden removal"
+  (Vol. I, 3rd edn 1933, p. 277).
+- **Gallieni**, to whom Joffre sent him and who then had no employment for
+  him, had handed Lanrezac the Fifth Army and his own seat on the Conseil
+  supérieur de la guerre on reaching the age limit, thought him "l'un de nos
+  meilleurs manœuvriers" (_Mémoires_, 1920, pp. 10–11), and wrote that the
+  Germans had tried to turn the Fifth Army's left ever since Charleroi and
+  that Lanrezac "l'avait toujours déjouée" (p. 142).
+- **The modern narratives** — Tuchman's and Herwig's — take opposite tempers
+  on whether he was a scapegoat for Plan XVII or a commander who had lost his
+  nerve. Neither can be opened from this environment, so neither is quoted
+  and neither carries pages.
+
+**How the pack presents it.** `1914:decision-1914-09-03-relieve-lanrezac`
+puts the two defensible options side by side — relieve him now, or leave him
+the army for the battle — makes the historical choice the one Joffre took,
+and gives the verdict as the debate rather than as a finding. The words in
+the reasoning are Lanrezac's report of them and are attributed to him in the
+citation note. `1914:event-lanrezac-relieved` carries the hour from the same
+memoir and says so.
+
+## 15. Whose directive was the Allied attack of 4 September?
+
+Two headquarters decided on the evening of 4 September, and the pack carries
+both: `1914:decision-1914-09-04-halt-facing-paris` for OHL, which held the
+right wing between the Oise and the Marne facing Paris, and
+`1914:decision-1914-09-04-turn-and-attack` for the Allied left, which turned
+onto Kluck's flank. Whose the second one was is a live question, and the two
+readable accounts do not agree.
+
+- **Gallieni's**, in his _Mémoires_ (1920): the plan was made in Paris. He
+  sent Maunoury a warning order at nine in the morning, and "la décision bien
+  prise et les ordres étant déjà donnés, mon chef d'état-major téléphonait au
+  grand quartier général pour le mettre au courant des dispositions
+  réalisées" (p. 114) — GQG was informed, not asked. He drove to Melun at
+  half past one to get the British to conform, sat three hours with a chief
+  of staff who could decide nothing in Sir John French's absence (pp.
+  119–123), and on his return telephoned Joffre himself (p. 129). His Ordre
+  général no 5 was dated 20 h. 30; GQG's message that the general offensive
+  was fixed for the morning of the 6th reached him at 22 h., "toutes les
+  dispositions précédentes étant déjà prises" (p. 132). In a footnote he goes
+  further: the original of the order of the day by which Joffre took "l'initiative"
+  of the Marne, "écrit tout entier de la main du chef du 3e Bureau du G.Q.G.
+  et signé Joffre, porte trois dates différentes surchargées !!!" (p. 133).
+- **The British official history's**, in Note II at the end of Chapter XIII
+  (Vol. I, 3rd edn 1933, pp. 293–294), written from the AFGG annexes, from
+  Clergerie and from Gallieni's own p. 114: Gallieni's plan went to GQG
+  "about 11 a.m. (possibly as early as 10 a.m.), with the suggestion that
+  'an order should be issued from G.Q.G.'"; Joffre's reply, sent 12.20 p.m.
+  and received in Paris 2.50 p.m., preferred the Sixth Army south of the
+  Marne; the staff at Bar sur Aube was divided, some wanting to let the
+  Germans come further in first; and Joffre's decision "ripened" through the
+  afternoon until, "towards 6 p.m., without waiting for the information he
+  had requested, he ordered the draft of an Instruction in this sense to be
+  prepared". At about 8 p.m. Gallieni telephoned to insist on the north bank,
+  Joffre accepted, and only then could Gallieni issue his order.
+- **A small discrepancy inside the large one.** Gallieni prints Joffre's
+  telegram as written at 13 h. and received at 14 h. 50 (p. 124); Edmonds
+  gives it as sent 12.20 p.m. and received 2.50 p.m. The hour of receipt
+  agrees; the hour of dispatch does not, by forty minutes. Both are recorded
+  in the citation notes on
+  `1914:decision-1914-09-04-turn-and-attack`; neither is preferred.
+- **Sir John French's part** is contested in the same way. Edmonds has him
+  return from Haig's headquarters to find his chief and sub-chief of staff
+  had made two different arrangements, one with Gallieni and one with
+  Franchet d'Espèrey, and, "much troubled by what appeared to him to be
+  constant changes of plan", order the BEF at 6.35 p.m. to retire further
+  south (p. 280). Gallieni had it from Huguet at 21 h. as a decision "pour le
+  moins inattendue" (p. 128). French's own _1914_ (1919), which Edmonds cites
+  at p. 280 for the pressure on Haig, is not in this pack's registry.
+- **Joffre's _Mémoires_ (1932)** are the third account and are not in the
+  registry; the AFGG annexes that print Instruction générale no 6 and the
+  telegrams as filed are behind Gallica's block (`sand-23b.20`). Until one
+  of them can be read, this note is what the reader of that bead should start
+  from.
+
+**How the pack presents it.** The decision card names Gallieni's morning and
+Joffre's afternoon, quotes both, gives the hours from both with the
+divergence recorded, and does not award the initiative to either man. The
+verdict card for the German decision is unchanged: the pair is the point.
+
 ## Using these notes
 
 Link a beat to the relevant note by naming the historians in the prose with

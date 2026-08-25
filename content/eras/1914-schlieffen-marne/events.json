@@ -765,6 +765,40 @@
     ]
   },
   {
+    "id": "1914:event-lanrezac-relieved",
+    "title": "Joffre relieves Lanrezac",
+    "at": "1914-09-03T17:00:00Z",
+    "kind": "decision",
+    "significance": "minor",
+    "place": "place:sezanne",
+    "summary": "Joffre drives to Sézanne with Lieutenant-Colonel Gamelin and takes the Fifth Army from Lanrezac — 'vous êtes hésitant, indécis' — giving it to Franchet d'Espèrey, who had led the counter-attack at Guise. It is the largest of the removals: Doughty counts some fifty French general officers relieved in August and September, Ruffey four days earlier. Lanrezac's own account, the only one that records the words, is the source for the hour.[^lanrezac-1920] [^edmonds-1933] [^doughty-2005]",
+    "links": {
+      "people": [
+        "person:lanrezac-charles",
+        "person:franchet-desperey-louis",
+        "person:joffre-joseph"
+      ],
+      "formations": ["1914:army-fr-5"],
+      "battles": ["1914:guise", "1914:marne"]
+    },
+    "sources": [
+      {
+        "source": "source:lanrezac-1920",
+        "pages": "276–278, 281–282",
+        "note": "'Le 3 septembre, vers 17 heures, le général Joffre, accompagné du lieutenant-colonel Gamelin, arriva à Sézanne' and the words spoken (pp. 276–277); the hour repeated at pp. 281–282. A memoir, and the only account of the interview."
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "277",
+        "note": "Franchet d'Espèrey 'had taken over command of the Fifth Army from General Lanrezac the previous day' — the 4th being the day described — with a footnote referring the reader to Lanrezac's own book for the removal. The volume gives the day, not the hour."
+      },
+      {
+        "source": "source:doughty-2005",
+        "note": "the scale of Joffre's removals, as `1914:event-ruffey-relieved` already carries it. No pages: the work cannot be opened from this environment."
+      }
+    ]
+  },
+  {
     "id": "1914:event-grand-couronne",
     "title": "The Grand Couronné: Nancy holds",
     "timeRange": {
@@ -806,9 +840,15 @@
       "people": ["person:moltke-helmuth-von-younger"]
     },
     "sources": [
-      { "source": "source:herwig-2009" },
-      { "source": "source:mombauer-2001" },
-      { "source": "source:showalter-2004" }
+      {
+        "source": "source:herwig-2009"
+      },
+      {
+        "source": "source:mombauer-2001"
+      },
+      {
+        "source": "source:showalter-2004"
+      }
     ]
   }
 ]
