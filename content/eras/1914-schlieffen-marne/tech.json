@@ -286,7 +286,11 @@
     "links": {
       "events": ["1914:event-battle-of-the-frontiers"],
       "places": ["place:mons", "place:charleroi"],
-      "tech": ["1914:tech-firepower-1914", "1914:tech-infantry-kit-1914"]
+      "tech": [
+        "1914:tech-firepower-1914",
+        "1914:tech-infantry-kit-1914",
+        "1914:tech-field-guns-1914"
+      ]
     },
     "sources": [
       {
@@ -362,7 +366,7 @@
     },
     "links": {
       "places": ["place:mons", "place:liege"],
-      "tech": ["1914:tech-firepower-1914", "1914:tech-uniforms-1914"]
+      "tech": ["1914:tech-firepower-1914", "1914:tech-uniforms-1914", "1914:tech-field-guns-1914"]
     },
     "sources": [
       {
@@ -392,6 +396,87 @@
       {
         "source": "source:mollo-1977",
         "note": "the composition of the marching load, and the caution that the figures vary"
+      }
+    ]
+  },
+  {
+    "id": "1914:tech-field-guns-1914",
+    "media": ["media:scene/1914-paris-depart-artillerie/depart-de-l-artillerie-1914-08-09"],
+    "title": "The field gun of each army — four answers to one French invention, and the gun that was missing behind them",
+    "field": "artillery",
+    "introduced": {
+      "at": "1914-08-22",
+      "label": "The Battle of the Frontiers, 20–23 August 1914"
+    },
+    "summary": "Four armies came to the frontier in 1914 with a quick-firing field gun of nearly the same size, and all four were answers to the same French invention. The Canon de 75 mm modèle 1897 was the first field gun whose carriage swallowed its own recoil: it stayed laid between rounds instead of leaping back to be re-aimed, and a trained crew could put fifteen aimed rounds a minute into the same patch of ground.[^hogg-1998-allied-artillery] Germany rebuilt its 1896 gun around a recoil carriage as the 7.7 cm Feldkanone 96 *neuer Art*;[^jaeger-2001-german-artillery] Britain brought in the Ordnance QF 18-pounder in 1904, out of the lessons of South Africa;[^hogg-1998-allied-artillery] [^jones-2012] Belgium bought Krupp's design and built it under licence as the 75 mm mle 1905.[^hogg-1998-allied-artillery] Set the four side by side and the armies look evenly matched. The difference that decided things was not on the card — it was what stood behind the field guns.[^strachan-2001]",
+    "body": "The 75's trick was hydro-pneumatic long recoil, and it is worth being exact about what it bought. Before 1897 a field gun's whole carriage jumped backwards when it fired, and the crew had to heave it forward and lay it again for every round. The 75's barrel slid back along a cradle against oil and compressed air and returned itself; the wheels never moved. That is the difference between two or three rounds a minute and fifteen, and it is why every army in Europe either copied the principle or rebuilt what it already had around it.[^hogg-1998-allied-artillery] Germany's rebuild is the *neuer Art* of the plate below — the same 7.7 cm gun of 1896 on a new carriage.[^jaeger-2001-german-artillery] The British answer was a new gun, and the shortest-ranged of the four: the Imperial War Museum's own label for the 18-pounder in the plate gives 3.3 inches of calibre and 6,525 yards, against something over eight kilometres for the 75 and the German gun.[^field-gun-museum-records-1914] [^hogg-1998-allied-artillery] [^jaeger-2001-german-artillery]\n\nWhat was not equal was the gun behind the field gun. The German army had put light field howitzers into every corps and heavier ones behind them, and a howitzer lobs its shell over a crest and down onto whatever is sheltering on the far side — which is precisely what a flat-shooting field gun cannot do.[^strachan-2001] [^herwig-2009] France went to war believing the 75 was enough — fast enough, accurate enough, and mobile enough to be everywhere — and had almost nothing heavier in the field to put beside it.[^doughty-2005] [^greenhalgh-2014] The doctrine and the gun agreed with each other: an army whose answer to everything was to attack did not think it would be shooting at men who were dug in.[^doughty-2005]\n\nThe Frontiers made the point in four days, and it is the same point the firepower card makes from the infantry's side. French batteries could sweep open ground better than anyone; they could not reach German infantry on a reverse slope, and German howitzers could reach French infantry anywhere.[^strachan-2001] [^zuber-2007] By the autumn both sides were digging, and the gun that mattered was the one that could shoot downwards.\n\nBelgium's plate is the one that says something the other three do not. The 75 mm mle 1905 in the field batteries was a current gun, bought from the best gunmakers in Europe, and it was not the Belgian army's problem. The problem was everything else: the forts at [Liège](place:liege) had been armoured in the 1880s against the shells of the 1880s, and the siege howitzers Germany brought up were of a size no field gun in the world could answer.[^herwig-2009] Twelve days after the first shots, the ring was open. That story is the heavy siege artillery card; this one only notes that Belgium lost it holding a perfectly good field gun.\n\nA word about the four photographs, because they are not the rifle set. Those four rifles came from one museum, photographed the same way, which is why they compare so cleanly. These are four museums on three continents and four photographers, and the frames, the light and the backgrounds are all different — the shared crop is this card's doing, not the archive's. Each credit below says whose picture it is, and each manifest records which museum's label the identification comes from.",
+    "plates": {
+      "axis": "The field gun each army took to war, 1914",
+      "fit": "band",
+      "items": [
+        {
+          "media": "media:kit/fk-96-na-awm/fk-96-na",
+          "label": "Germany — 7.7 cm FK 96 n.A."
+        },
+        {
+          "media": "media:kit/canon-de-75-mle-1897-kansas-city/canon-de-75-mle-1897",
+          "label": "France — Canon de 75 mle 1897"
+        },
+        {
+          "media": "media:kit/qf-18-pounder-iwm/qf-18-pounder",
+          "label": "Britain — QF 18-pounder"
+        },
+        {
+          "media": "media:kit/canon-de-75-tr-1905-brasschaat/canon-de-75-tr-1905",
+          "label": "Belgium — 75 mm mle 1905 TR"
+        }
+      ]
+    },
+    "links": {
+      "events": ["1914:event-battle-of-the-frontiers"],
+      "places": ["place:liege", "place:mons"],
+      "tech": [
+        "1914:tech-firepower-1914",
+        "1914:tech-heavy-siege-artillery",
+        "1914:tech-infantry-kit-1914"
+      ]
+    },
+    "sources": [
+      {
+        "source": "source:hogg-1998-allied-artillery",
+        "note": "the 75 mle 1897 and its recoil system, the QF 18-pounder of 1904, and the Belgian 75 mm mle 1905 built under licence from Krupp"
+      },
+      {
+        "source": "source:jaeger-2001-german-artillery",
+        "note": "the 7.7 cm FK 96 and its neuer Art rebuild on a recoil carriage"
+      },
+      {
+        "source": "source:field-gun-museum-records-1914",
+        "note": "the identification of the four objects in the plate set, and the Imperial War Museum label figures for the 18-pounder"
+      },
+      {
+        "source": "source:jones-2012",
+        "note": "the British artillery and musketry reforms that came out of South Africa"
+      },
+      {
+        "source": "source:strachan-2001",
+        "note": "the German field howitzer establishment, and the field gun that could not reach a reverse slope"
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "German artillery in the campaign; the forts at Liège and the siege guns that opened them"
+      },
+      {
+        "source": "source:doughty-2005",
+        "note": "France's want of heavy artillery in 1914, and the doctrine that agreed with the 75"
+      },
+      {
+        "source": "source:greenhalgh-2014",
+        "note": "the French army and its artillery on the eve of the war"
+      },
+      {
+        "source": "source:zuber-2007",
+        "note": "the Battle of the Frontiers, where the difference showed"
       }
     ]
   }

@@ -1,0 +1,27 @@
+{
+  "$comment": "Kit manifest (sand-y0u.5.4): the manifest is ahead of the binary, and ahead of the card. The image has NOT been fetched yet — run the download in docs/imagery-kit.md, then `npm run media`. Provenance verified against the archive record on 2026-08-25.",
+  "id": "media:kit/hotchkiss-mle-1914-verdun/hotchkiss-mle-1914",
+  "kind": "kit",
+  "file": "hotchkiss-mle-1914.jpg",
+  "width": 2048,
+  "height": 1536,
+  "colorized": false,
+  "original": {
+    "description": "A French Hotchkiss mle 1914 machine gun photographed against a plain ground. The Commons record's description names both the object and the holding institution in one line: \"French machine-gun Hotchkiss model 1914 (in coll. Mémorial de Verdun)\". The file sits in the Commons categories \"Hotchkiss Mle 14\", \"Verdun Memorial\" and \"Machine guns on white background\".",
+    "photographer": "Jean-Frédéric (Wikimedia Commons contributor, signing as historicair), 13 October 2006",
+    "date": "13 October 2006 (the photograph); the object is a Hotchkiss mle 1914, the French heavy machine gun of the war — the 1914 pattern was the successor to the mle 1900 that the French army had in the field in August",
+    "archive": "Mémorial de Verdun, Fleury-devant-Douaumont (the collection); photograph held on Wikimedia Commons",
+    "archive_url": "https://commons.wikimedia.org/wiki/File:French_machine-gun_Hotchkiss_model_1914.JPG",
+    "file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/French%20machine-gun%20Hotchkiss%20model%201914.JPG",
+    "original_dimensions": "2048 × 1536",
+    "licence": "CC BY-SA 3.0 (Commons record: LicenseShortName \"CC BY-SA 3.0\"; UsageTerms \"Creative Commons Attribution-Share Alike 3.0\"; AttributionRequired true; the record also offers GFDL and CC BY-SA 2.5/2.0/1.0). Attribution to the photographer is mandatory and the share-alike condition applies to derivatives."
+  },
+  "colorization": {
+    "status": "not colorized, and must not be — a modern colour photograph of the object, and the licence is share-alike."
+  },
+  "content_policy": "ok — a museum object photographed on its own; no casualties",
+  "caption": "The Hotchkiss mle 1914, the French heavy machine gun — gas-operated and air-cooled where the German and British guns were water-cooled Maxims. Collection of the Mémorial de Verdun.",
+  "focal_point": { "x": 0.5, "y": 0.5 },
+  "notes": "Verified 2026-08-25 against the Commons file record via the MediaWiki API (Artist, Credit, DateTimeOriginal, LicenseShortName, UsageTerms, AttributionRequired, Permission read from extmetadata). Two better-known alternatives were passed over on identification rather than licence: the Musée de l'Armée files by Rama carry no object name in their description at all — only the file title asserts what is in the frame — and a card must not be captioned from a file name. A Springfield Armory Museum catalogue photograph (File:Hotchkiss model 1914 MG.jpg, public domain, serial 26634) has the better record but is only 629 × 480. A caution for the card when it is written: the mle 1914 is the pattern the French army fought most of the war with, and in August 1914 the machine-gun companies still had the mle 1900 alongside it. No `used_by`: the machine-gun card does not exist yet, for the reason recorded on the MG 08 manifest and in docs/imagery-kit.md.",
+  "credit": "Photograph: Jean-Frédéric (historicair), 2006, of an object in the collection of the Mémorial de Verdun; via Wikimedia Commons; CC BY-SA 3.0."
+}
