@@ -77,9 +77,11 @@ and `reference` below it, which is never evidence for an operational claim.
 2. `study` — archive-based modern operational studies (Herwig, Mombauer,
    Strachan, Stevenson, Holmes, Foley, Zuber) for interpretation and for
    corrections to the official accounts.
-3. `unit-history` — regimental and divisional histories for battle zoom-ins
-   (hourly detail). None are in the registry yet; the works wanted are in
-   "to add as the content lands" below.
+3. `unit-history` — regimental, divisional and corps histories for battle
+   zoom-ins (hourly detail), read knowing each defends its own formation.
+   `source:fuller-1920` is the first in the registry: the Tank Corps' history
+   written by its own senior staff officer while he was arguing for an armoured
+   army. The regimental works wanted are in "to add as the content lands" below.
 4. `memoir` — memoirs (Kluck, Bülow, Joffre, French, Gallieni, Ludendorff,
    Hoffmann) for what commanders believed — cited as such, never as fact.
 5. `general` — general histories, surveys and handbooks for context, colour
@@ -185,6 +187,11 @@ actually cites.
 | `source:hogg-1998-allied-artillery`        | Hogg, _Allied Artillery of World War One_ (1998)                              | the 75 mle 1897 and its recoil carriage, the QF 18-pounder, the Belgian 75 mm mle 1905                                                                                                        |
 | `source:jaeger-2001-german-artillery`      | Jäger, _German Artillery of World War One_ (2001)                             | the 7.7 cm FK 96 and the _neuer Art_ rebuild; technical catalogue, not operational history                                                                                                    |
 | `source:field-gun-museum-records-1914`     | Object records behind the four field-gun photographs                          | the identification of each gun in the plate set; the IWM label figures for its 18-pounder                                                                                                     |
+| `source:fuller-1920`                       | Fuller, _Tanks in the Great War, 1914–1918_ (1920)                            | the Tank Corps' founding papers and its own machine counts — partisan, cite beside another account                                                                                            |
+| `source:haig-despatches-1919`              | Haig, _Sir Douglas Haig's Despatches_ (ed. Boraston, 1919)                    | times, frontages and formations for the Somme, Cambrai and Amiens; the final despatch on mechanical weapons — advocacy throughout                                                             |
+| `source:1914-1918-online-tanks`            | Kennedy, 'Tanks and Tank Warfare', _1914-1918-online_                         | the second count for 15 September 1916: 49 deployed to France, 31 across the German lines                                                                                                     |
+| `source:1914-1918-online-hundred-days`     | Lloyd, 'Hundred Days Offensive', _1914-1918-online_                           | Amiens 'up to eight miles'; the tank fourth of five causes of the 1918 victories                                                                                                              |
+| `source:lupfer-1981`                       | Lupfer, _The Dynamics of Doctrine_ (Leavenworth Papers 4, 1981)               | the German side of Cambrai: the counter-attack of 30 November and anti-tank defence as doctrine                                                                                               |
 
 ## History of science, 1905–1919 — the "Meanwhile" layer (in the registry)
 

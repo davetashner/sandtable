@@ -370,6 +370,35 @@ Joffre's afternoon, quotes both, gives the hours from both with the
 divergence recorded, and does not award the initiative to either man. The
 verdict card for the German decision is unchanged: the pair is the point.
 
+## 16. How many tanks, and how far — the counts at Flers-Courcelette and Amiens
+
+`1914:tech-tank-armour` gives two sets of numbers for 15 September 1916 and
+three for 8 August 1918, and does not choose between them, because the
+disagreement is about what is being counted rather than about the facts.
+
+For the first tank action, Fuller — who had the Tank Corps' own returns —
+writes that "of the forty-nine machines allotted for the attack, thirty-two
+reached their starting-points in time for the battle". Kennedy's encyclopedia
+article says that "out of forty-nine total British Mark I tanks deployed to
+France, only thirty-one crossed the German lines". Those are not the same
+measurement: _allotted to an attack_, _reached a starting-point_, _deployed to
+a theatre_ and _crossed the enemy's front line_ are four different counts, and
+the popular figures for the tank's debut are usually one of them with the label
+of another. The card states Fuller's pair and Kennedy's pair side by side and
+says in terms that delivered, started and reached the line are three numbers.
+
+For the advance at Amiens on 8 August 1918 the same day is measured three ways:
+Haig's despatch says the troops "had completed an advance of between six and
+seven miles"; Fuller gives "the maximum penetration effected being about 7½
+miles"; Lloyd's survey says the operation "drove up to eight miles into the
+German lines". A maximum is not an average and an army's front is not a point,
+so all three can be right at once. The card gives the range and attributes each
+figure, and this note is why it does not quote a single distance.
+
+The general rule this illustrates is §9 of `docs/sources.md` applied to
+machines: a tank count in a popular account is almost always downstream of one
+of these figures with its qualifier removed.
+
 ## Using these notes
 
 Link a beat to the relevant note by naming the historians in the prose with
