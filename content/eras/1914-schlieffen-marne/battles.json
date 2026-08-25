@@ -54,7 +54,10 @@
         "place:sezanne",
         "place:fere-champenoise"
       ],
-      "historiography": ["1914:historiography-hentsch-authority"]
+      "historiography": [
+        "1914:historiography-hentsch-authority",
+        "1914:historiography-marne-initiative"
+      ]
     },
     "sources": [
       {

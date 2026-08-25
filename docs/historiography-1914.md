@@ -265,125 +265,62 @@ Edmonds citation's `note` records the divergence, because a distance that has
 not been re-measured against the fort plan should not be quietly replaced by
 one taken from a single conversion.
 
-## 14. Lanrezac: a defeatist removed, or a subordinate who had been right?
+## 14. Lanrezac's removal — **carried by a card**
 
-On 3 September, at about five in the afternoon, Joffre drove to Sézanne and
-took the Fifth Army from Lanrezac. It was the largest of a great many
-removals — Doughty counts some fifty French general officers relieved in
-August and September, Ruffey four days earlier — and it is the one still
-argued about, because the man removed had been right about the German right
-wing before Joffre was and because his successor's answer the following
-afternoon fixed the day of the Marne.
+`1914:historiography-lanrezac-removal` is the argument, and it is the source of
+truth for it. This entry is the register (ADR 0017).
 
-- **Lanrezac's case**, in his own book (_Le plan de campagne français_, 1920,
-  the only account of the interview): Joffre said he was obliged to take the
-  army away because "vous êtes hésitant, indécis", and, asked for facts,
-  repeated only that Lanrezac "made observations on every order he was given"
-  (pp. 276–277). Lanrezac answers that his orders show no indecision, that
-  events proved his observations right, and that he bowed to the decision
-  "sachant qu'après une grande défaite, il faut des responsables" (p. 277).
-  He records what he says he learned only in December 1916: that on
-  29 August at Laon, before Guise was fought, Joffre had already sent for
-  Franchet d'Espèrey and had recalled the order after seeing him (p. 280) —
-  which he offers as proof that Joffre cannot have thought him incapable of
-  decision, since Joffre then left him to fight the offensive on which, in
-  what Lanrezac gives as Joffre's own words, the fate of the campaign turned.
-  His chief of staff, Hély d'Oissel, wrote to him on 25 December 1916 that
-  the Fifth Army was whole at the rendezvous of the Marne because of the
-  dispositions Lanrezac made (pp. 278–279: Lanrezac dates the exchange at
-  p. 278 and prints the reply at p. 279).
-- **What GQG was saying**, as Lanrezac himself reports it (p. 278): "Le
-  général Lanrezac avait perdu la tête dès la bataille de Charleroi; il était
-  dès lors incapable de prendre une décision en temps voulu." That is the
-  charge, in the words of the men who made it — reported by the accused, and
-  to be read as such.
-- **Joffre's own account** (_Mémoires_, 1932) is not in this pack's registry
-  and has not been read for any entity here. Neither have the AFGG annexes
-  that would print the order relieving him, which are behind Gallica's block
-  from this environment (`sand-23b.20`).
-- **The British official history** takes no side: Edmonds records only that
-  Franchet d'Espèrey "had taken over command of the Fifth Army from General
-  Lanrezac the previous day" and refers the reader, in a footnote, to
-  Lanrezac's own book "p. 276 et seq." for "an account of his sudden removal"
-  (Vol. I, 3rd edn 1933, p. 277).
-- **Gallieni**, to whom Joffre sent him and who then had no employment for
-  him, had handed Lanrezac the Fifth Army and his own seat on the Conseil
-  supérieur de la guerre on reaching the age limit, thought him "l'un de nos
-  meilleurs manœuvriers" (_Mémoires_, 1920, pp. 10–11), and wrote that the
-  Germans had tried to turn the Fifth Army's left ever since Charleroi and
-  that Lanrezac "l'avait toujours déjouée" (p. 142).
-- **The modern narratives** — Tuchman's and Herwig's — take opposite tempers
-  on whether he was a scapegoat for Plan XVII or a commander who had lost his
-  nerve. Neither can be opened from this environment, so neither is quoted
-  and neither carries pages.
+- **The point.** Whether Joffre's removal of the Fifth Army's commander at
+  Sézanne on the afternoon of 3 September was a commander-in-chief cutting out
+  a subordinate who had lost his nerve or a headquarters getting rid of the man
+  who had read the German right wing before it did. Four positions on the card:
+  the charge, in Joffre's words at Sézanne and GQG's afterwards; the defence, in
+  Lanrezac's own book and his chief of staff's letter; Gallieni's estimate from
+  outside GQG; and the British official history, which declines the quarrel and
+  prints instead the successor's telegram of 4 p.m. on the 4th.
+- **How the pack presents it:** the card, reached from
+  `1914:decision-1914-09-03-relieve-lanrezac` and
+  `1914:event-lanrezac-relieved`, each of which names it in
+  `links.historiography`. The decision puts the two courses side by side and
+  makes the historical one Joffre's; neither it nor the event settles the
+  reason.
+- **What cannot be read**, and is on the card's `unread`: Joffre's _Mémoires_
+  (1932), which are not in this pack's registry, so that every word attributed
+  to Joffre or to GQG on the card is Lanrezac's report of it; the AFGG annexes
+  that would print the order relieving him (`sand-23b.20`); Spears's _Liaison
+  1914_, in the registry without a digitisation; and Tuchman and Herwig, who
+  take opposite tempers on scapegoat against lost nerve and cannot be opened
+  from this environment.
 
-**How the pack presents it.** `1914:decision-1914-09-03-relieve-lanrezac`
-puts the two defensible options side by side — relieve him now, or leave him
-the army for the battle — makes the historical choice the one Joffre took,
-and gives the verdict as the debate rather than as a finding. The words in
-the reasoning are Lanrezac's report of them and are attributed to him in the
-citation note. `1914:event-lanrezac-relieved` carries the hour from the same
-memoir and says so.
+## 15. Whose directive was the Allied attack of 4 September? — **carried by a card**
 
-## 15. Whose directive was the Allied attack of 4 September?
+`1914:historiography-marne-initiative` is the argument, and it is the source of
+truth for it. This entry is the register (ADR 0017).
 
-Two headquarters decided on the evening of 4 September, and the pack carries
-both: `1914:decision-1914-09-04-halt-facing-paris` for OHL, which held the
-right wing between the Oise and the Marne facing Paris, and
-`1914:decision-1914-09-04-turn-and-attack` for the Allied left, which turned
-onto Kluck's flank. Whose the second one was is a live question, and the two
-readable accounts do not agree.
-
-- **Gallieni's**, in his _Mémoires_ (1920): the plan was made in Paris. He
-  sent Maunoury a warning order at nine in the morning, and "la décision bien
-  prise et les ordres étant déjà donnés, mon chef d'état-major téléphonait au
-  grand quartier général pour le mettre au courant des dispositions
-  réalisées" (p. 114) — GQG was informed, not asked. He drove to Melun at
-  half past one to get the British to conform, sat three hours with a chief
-  of staff who could decide nothing in Sir John French's absence (pp.
-  119–123), and on his return telephoned Joffre himself (p. 129). His Ordre
-  général no 5 was dated 20 h. 30; GQG's message that the general offensive
-  was fixed for the morning of the 6th reached him at 22 h., "toutes les
-  dispositions précédentes étant déjà prises" (p. 132). In a footnote he goes
-  further: the original of the order of the day by which Joffre took "l'initiative"
-  of the Marne, "écrit tout entier de la main du chef du 3e Bureau du G.Q.G.
-  et signé Joffre, porte trois dates différentes surchargées !!!" (p. 133).
-- **The British official history's**, in Note II at the end of Chapter XIII
-  (Vol. I, 3rd edn 1933, pp. 293–294), written from the AFGG annexes, from
-  Clergerie and from Gallieni's own p. 114: Gallieni's plan went to GQG
-  "about 11 a.m. (possibly as early as 10 a.m.), with the suggestion that
-  'an order should be issued from G.Q.G.'"; Joffre's reply, sent 12.20 p.m.
-  and received in Paris 2.50 p.m., preferred the Sixth Army south of the
-  Marne; the staff at Bar sur Aube was divided, some wanting to let the
-  Germans come further in first; and Joffre's decision "ripened" through the
-  afternoon until, "towards 6 p.m., without waiting for the information he
-  had requested, he ordered the draft of an Instruction in this sense to be
-  prepared". At about 8 p.m. Gallieni telephoned to insist on the north bank,
-  Joffre accepted, and only then could Gallieni issue his order.
-- **A small discrepancy inside the large one.** Gallieni prints Joffre's
-  telegram as written at 13 h. and received at 14 h. 50 (p. 124); Edmonds
-  gives it as sent 12.20 p.m. and received 2.50 p.m. The hour of receipt
-  agrees; the hour of dispatch does not, by forty minutes. Both are recorded
-  in the citation notes on
-  `1914:decision-1914-09-04-turn-and-attack`; neither is preferred.
-- **Sir John French's part** is contested in the same way. Edmonds has him
-  return from Haig's headquarters to find his chief and sub-chief of staff
-  had made two different arrangements, one with Gallieni and one with
-  Franchet d'Espèrey, and, "much troubled by what appeared to him to be
-  constant changes of plan", order the BEF at 6.35 p.m. to retire further
-  south (p. 280). Gallieni had it from Huguet at 21 h. as a decision "pour le
-  moins inattendue" (p. 128). French's own _1914_ (1919), which Edmonds cites
-  at p. 280 for the pressure on Haig, is not in this pack's registry.
-- **Joffre's _Mémoires_ (1932)** are the third account and are not in the
-  registry; the AFGG annexes that print Instruction générale no 6 and the
-  telegrams as filed are behind Gallica's block (`sand-23b.20`). Until one
-  of them can be read, this note is what the reader of that bead should start
-  from.
-
-**How the pack presents it.** The decision card names Gallieni's morning and
-Joffre's afternoon, quotes both, gives the hours from both with the
-divergence recorded, and does not award the initiative to either man. The
-verdict card for the German decision is unchanged: the pair is the point.
+- **The point.** Two orders turned the Allied left onto Kluck's flank on the
+  evening of 4 September — Gallieni's Ordre général no 5, dated 20 h. 30, and
+  Joffre's Instruction générale no 6, drafted at Bar-sur-Aube that evening —
+  and which headquarters decided it has been argued since the battle. Three
+  positions on the card: Paris's claim, in Gallieni's _Mémoires_; GQG's, in the
+  account by Joffre's officier d'ordonnance which this pack reads only through
+  the British official history; and Edmonds's own hour-by-hour sequence, which
+  awards it to neither.
+- **How the pack presents it:** the card, reached from
+  `1914:decision-1914-09-04-turn-and-attack`,
+  `1914:document-joffre-instruction-generale-6-1914-09-04`,
+  `1914:document-gallieni-ordre-general-5-1914-09-04` and `1914:marne`, each of
+  which names it in `links.historiography`. The decision card quotes both men
+  and gives the hours from both with the divergence recorded; the verdict card
+  for the German decision of the same evening,
+  `1914:decision-1914-09-04-halt-facing-paris`, is unchanged — the pair is the
+  point.
+- **What cannot be read**, and is on the card's `unread`: Joffre's _Mémoires_
+  (1932) and Muller's _Joffre et la Marne_, neither in this pack's registry, so
+  that GQG's position is carried at second hand and labelled as such;
+  Clergerie's account of the Paris government's part; and the AFGG annexes
+  2326–2327 (`sand-23b.20`) — which would not close it either, since Edmonds
+  notes that annexe 2326 holds Joffre's answer but not the telephone message
+  that occasioned it.
 
 ## 16. How many tanks, and how far — the counts at Flers-Courcelette and Amiens
 
@@ -421,7 +358,7 @@ footnotes (`[^zuber-2002]`, `[^mombauer-2001]`, …) and, where a causal link
 or route is affected, set `confidence: contested`. When a new contested point
 arises, add a section here in the same PR.
 
-### Notes with a card, and notes without
+### Notes with a card, notes that do not want one, and notes waiting on a book
 
 A contested point can be carried by a `Historiography` entity — its own card
 family, `historiography.json`, addressed `?card=<id>` and reached from every
@@ -433,12 +370,36 @@ exist once. The doc points at the card; the card carries no field pointing
 back, because note numbers move and a second pointer is a second thing to keep
 in step.
 
-| Note | Card                                    |
-| ---- | --------------------------------------- |
-| 4    | `1914:historiography-hentsch-authority` |
+**The test for wanting a card** is a live dispute between named holders that
+more than one entity touches. **The test for being able to write one** is
+separate and stricter: a card asserts who holds a position, so every position
+has to cite a work that was read, with pages where the volume gives them. A
+note can pass the first test and fail the second, and when it does the honest
+outcome is to leave it here and say why — a card whose positions are attributed
+to books nobody opened is worse than no card.
 
-**The other fifteen have no card yet**, and keep their positions in prose here
-until they get one. That is a backlog, not a policy: notes 1, 3, 5, 7, 8, 14
-and 15 are all disputes that more than one entity touches, which is the test
-ADR 0017 gives for wanting a card. When you write one, reduce the note to its
-register entry in the same PR and add a row above.
+So each note is in one of three states, and the table says which.
+
+| Note | State                  | Card, or the reason there is none                                                                                                                                                                                                             |
+| ---- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | **Wants one, blocked** | Zuber, Mombauer, Holmes, Foley and Herwig are all in copyright and unreadable from here; every position would be an attribution at second hand                                                                                                |
+| 2    | **Wants one, blocked** | The same quarrel in operational dress, and the "not so clearly against" side has a school rather than a holder to name                                                                                                                        |
+| 3    | **Wants one, blocked** | The charge and the defence as stated are Mombauer's and Herwig's. A card could be built instead from contemporaries who _can_ be read — Ludendorff, Kluck, Reichsarchiv Bd. 1 and Bd. 3, Faulde — but that is a reading pass, not a migration |
+| 4    | **Card**               | `1914:historiography-hentsch-authority`                                                                                                                                                                                                       |
+| 5    | **Stays**              | The "framing" has no holder to name and the correction is not contested among historians. What is live inside it is the taxi count, which is a measurement on one entity (§9 of `docs/sources.md`), not a dispute                             |
+| 6    | **Stays**              | The note says it: contested in 1914, settled since. A second position would have to be manufactured                                                                                                                                           |
+| 7    | **Wants one, blocked** | Earman & Glymour is paywalled and Kennefick's book is in copyright; the primary (Dyson, Eddington & Davidson 1920) is open but is not a side                                                                                                  |
+| 8    | **Wants one, blocked** | Corry, Renn & Stachel in _Science_ is paywalled and the replies that dispute their reading of the proofs have not been read here                                                                                                              |
+| 9    | **Stays**              | A 1915 point belonging to a pack that does not exist (`sand-g80`). Out of this reader's scope by construction, not by omission                                                                                                                |
+| 10   | **Stays**              | Two counts of different populations rather than a dispute between historians; the chemistry card already gives both, says which armies each covers, and draws its conclusion from the ratio inside them rather than from either total         |
+| 11   | **Wants one, blocked** | Sir John French's _1914_ (1919) is not in this pack's registry and no digitisation was found; Spears is in the registry without one. Only Edmonds's side can be read                                                                          |
+| 12   | **Stays**              | Two official histories differing on an order of battle. ADR 0017 names this class as one the doc keeps: it is a citation note, and it touches one entity                                                                                      |
+| 13   | **Stays**              | One card against one volume on a distance, waiting on a measurement rather than on an argument                                                                                                                                                |
+| 14   | **Card**               | `1914:historiography-lanrezac-removal`                                                                                                                                                                                                        |
+| 15   | **Card**               | `1914:historiography-marne-initiative`                                                                                                                                                                                                        |
+| 16   | **Stays**              | The note says it: the disagreement is about what is being counted. §9 of `docs/sources.md`, and one entity                                                                                                                                    |
+
+**Stays** means no card is wanted and none is coming; the note is finished as
+it is. **Wants one, blocked** means the note passes the test and the books do
+not; when one of them can be opened, write the card and reduce the note to its
+register entry in the same PR, and move its row up here.

@@ -129,7 +129,8 @@
       ],
       "formations": ["1914:army-fr-5"],
       "events": ["1914:event-lanrezac-relieved", "1914:event-ruffey-relieved"],
-      "battles": ["1914:guise", "1914:marne"]
+      "battles": ["1914:guise", "1914:marne"],
+      "historiography": ["1914:historiography-lanrezac-removal"]
     },
     "sources": [
       {
@@ -198,7 +199,8 @@
         "1914:document-joffre-instruction-generale-6-1914-09-04",
         "1914:document-gallieni-ordre-general-5-1914-09-04",
         "1914:document-ohl-wireless-1914-09-04"
-      ]
+      ],
+      "historiography": ["1914:historiography-marne-initiative"]
     },
     "sources": [
       {

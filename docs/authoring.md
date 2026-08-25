@@ -381,7 +381,15 @@ optional forward `connections`.
   `unread`, sources. Point at it from every entity the dispute touches with
   `links.historiography`, and reduce the matching note in
   `docs/historiography-1914.md` to its register entry in the same PR: the card
-  carries the positions and the pages, the doc says where they are.
+  carries the positions and the pages, the doc says where they are. A card
+  asserts _who holds a position_, so the bar for one is higher than for any
+  other family: every position cites a work that was read, with pages where the
+  volume gives them, and a holder quoted through somebody else is labelled as
+  such on the card. A point can be worth a card and still not be writable —
+  when the historians who hold the sides cannot be opened from here, leave the
+  note in the doc, mark it in the table there and say why. A card built on
+  second-hand attribution misrepresents a named historian, which is the one
+  failure this family exists to prevent.
 - **CausalLink** (`links.json`): `from` → `to` any entity id in any pack,
   `relation`, the `claim`, `confidence`, `historiography`, ≥1 `evidence`
   citation. Cross-pack links (`1870:sedan` → `1914:…`) are how the eras

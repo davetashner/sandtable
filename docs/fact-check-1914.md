@@ -219,15 +219,28 @@ beats; Unruh on Langemarck; Stone on the East. The Hentsch verdict names the
 1917 inquiry, Herwig, the older German account and Tuchman, and does not
 settle the question.
 
-**One of the sixteen now has a card of its own.** `sand-23b.28` made the
+**Three of the sixteen now have cards of their own.** `sand-23b.28` made the
 contested point a card family (ADR 0017), and note 4 — what authority a
 lieutenant-colonel carried at Mareuil — is carried by
 `1914:historiography-hentsch-authority`: four positions with their holders
 named, what is not in dispute, and what would settle it and cannot be read.
-The doc entry for a note with a card is now its register, so the argument
-exists once. The schema refuses a card with fewer than two positions, which is
-rule 6 of `docs/sources.md` made checkable for the first time. Fifteen notes
-still have no card; the doc says which and why.
+`sand-23b.40` added `1914:historiography-lanrezac-removal` (four positions) and
+`1914:historiography-marne-initiative` (three), and worked down the rest of the
+table. The doc entry for a note with a card is now its register, so the
+argument exists once. The schema refuses a card with fewer than two positions,
+which is rule 6 of `docs/sources.md` made checkable for the first time.
+
+The thirteen without one are **not** an undifferentiated backlog, and the doc's
+table now says which is which: seven are finished as notes — a framing with no
+holder to name, a point settled since 1914, a point belonging to a pack that
+does not exist, two official histories differing on an order of battle, a
+distance waiting on a measurement, two counts of different populations, a
+count of tanks whose disagreement is about what is being counted — and six
+want a card and cannot have one, because the historians who hold the positions
+cannot be read from here. That distinction is the finding of the pass: a card
+whose positions are attributed to books nobody opened would assert who holds a
+position on no evidence, which is the one failure this family exists to
+prevent.
 
 Verdict words: one use of "brilliant" in the whole pack, attributed to Ritter
 by name — which is what the checklist asks for. No "miracle", no "blunder",
