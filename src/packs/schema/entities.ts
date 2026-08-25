@@ -120,15 +120,20 @@ export const PlateSet = z
  * (rule 8 — never an operational claim).
  */
 export const EvidenceTier = z
-  .enum([
-    'primary',
-    'official-history',
-    'study',
-    'unit-history',
-    'memoir',
-    'general',
-    'reference',
-  ])
+  .enum(
+    ['primary', 'official-history', 'study', 'unit-history', 'memoir', 'general', 'reference'],
+    {
+      // The message is the whole point of overriding it. A source is added by
+      // whoever is writing content, in the PR that first cites it, and the
+      // default enum error names seven slugs with no way to choose between
+      // them. This one asks the question `docs/sources.md` asks and says where
+      // the answer is written down.
+      error:
+        'a source must say where it stands in the hierarchy of evidence — one of ' +
+        'primary, official-history, study, unit-history, memoir, general, reference. ' +
+        'File the work by its form, not by the use one pack makes of it (docs/sources.md).',
+    },
+  )
   .describe('Standing in the hierarchy of evidence (docs/sources.md)');
 export type EvidenceTier = z.infer<typeof EvidenceTier>;
 
