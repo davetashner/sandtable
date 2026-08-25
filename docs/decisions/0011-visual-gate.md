@@ -43,7 +43,9 @@ rather than assumed:
    its canvas from a `ResizeObserver`, and on a machine running two of these
    at once that frame lands whenever it lands. A wait on the container's width
    did not help, because the container had already resized and the canvas had
-   not.
+   not. (**Amended 2026-08-25, `sand-pmz.2.6`** — see "The viewport is reached
+   by resizing" below. The resize is back, because the wait was wrong rather
+   than the idea: wait on the _canvas_, not on the container.)
 
 That third one is the whole argument in miniature. A gate that goes red for
 reasons unrelated to the change is worse than no gate: it teaches everyone to
@@ -79,11 +81,46 @@ With a well-formed empty archive the map builds its style, reports ready, lays
 out its labels and draws no basemap. Nothing on the console is the harness's
 own voice. No S3, no CloudFront, no proxy, no flake.
 
-**The viewport gets a fresh load.** The theme does not — `emulateMedia`
+**The viewport is reached by resizing** — amended 2026-08-25, `sand-pmz.2.6`;
+it used to get a fresh load. The theme never needed one: `emulateMedia`
 recolours the page without moving a box, so both themes are audited off one
-load — but the viewport is reached by opening the scene again in a context of
-that size. It costs about ninety seconds of the run and it is the difference
-between three green runs in a row and the resize lottery described above.
+load. The viewport does move boxes, and the first version of this gate paid
+for a second load rather than lose three green runs in a row to the resize
+lottery in point 3 above.
+
+The lottery had a cause, and waiting for it is cheaper than reloading. The
+walk now resizes, and `settleResize` says what "the resize has arrived" means:
+every `<canvas>` is the width of the element it sits in — polled on animation
+frames, which is the clock the `ResizeObserver` is on — and then no finite CSS
+animation is still running, because a card re-mounted by the new width fades
+in, and a box measured on its way in is a fraction of a pixel short of the box
+it settles at. Both waits are bounded; on timeout the walk audits anyway and
+reports what it sees rather than hiding it.
+
+**The scene loads at the narrowest viewport and resizes up.** The phone layout
+is the one with a component that exists only at phone width — the bottom sheet
+— and a sheet reached by resize has had a settled desktop layout to grow out
+of, which is not the sheet a reader gets. Measured, not assumed: with the load
+at desktop, `card-source__phone` stopped reporting the `clipped-y
+section.sheet` that a fresh phone load reports.
+
+The evidence for the whole change is five walks of the same tree — three in
+the old shape, two in the new — with the faithful walk (`walkFaithful`: one
+load per cell, one page at a time, an eight-second settle) as ground truth.
+**No finding present in any old-shape run is absent from every new-shape run.**
+Every kind, element and count is identical across all five except the two the
+gate has always been least sure of, and both move the same way:
+
+| in 24 cells the faithful walk was run over | old shape  | new shape |
+| ------------------------------------------ | ---------- | --------- |
+| `small-target a.` (truth: 24 of 24)        | 19, 18, 16 | 22, 24    |
+| `clipped-y section.sheet` (truth: 6 of 6)  | 3, 2, 4    | 6, 6      |
+
+Neither shape reports anything the faithful walk does not. The gate was
+under-reporting both, because two full-size maps contending for one machine
+leave the page less settled at the instant it is asked, and one load per scene
+instead of two leaves it more settled. Fewer loads bought accuracy as well as
+time.
 
 **The baseline is a text file with reasons in it.** Eleven rows, each naming a
 defect kind and an element and saying in a sentence why it is allowed: a
@@ -151,9 +188,25 @@ what the reviewer looks at.
 - `playwright` is a devDependency, pinned. CI downloads Chromium once per
   lockfile and caches it under `~/.cache/ms-playwright`.
 - The `visual` job runs in parallel with `lint`, `security` and `web`, and
-  takes about three to six minutes: build, then seventy-six cells at roughly
-  two and a half seconds each. `CONCURRENCY` and `SETTLE` tune it; concurrency
-  above two buys little, because software GL saturates first.
+  takes about two to four minutes: build, then ninety-six cells off
+  twenty-four loads — about two and a half minutes on a laptop running two
+  pages, against four before `sand-pmz.2.6` halved the loads. `CONCURRENCY`
+  and `SETTLE` tune it; concurrency above two buys little, because software GL
+  saturates first.
+- **The walk costs what the app's first map render costs, and nothing else is
+  close** (`sand-pmz.2.6`, measured with `npm run visual:check -- --timings`,
+  which prints the phase table). Per load: `goto`→load ~300 ms, the settle
+  1,200 ms, and then a **single main-thread task of about five seconds** —
+  software-GL shader compilation, once per WebGL context, once per load. The
+  DOM audit's own work inside the page is **2.6 ms**. Whatever the harness
+  asks the page for after the settle waits on that one task and is billed for
+  it on the harness's stopwatch, which is how PR #119 came to read five
+  seconds of the app's boot off the audit's clock and file a bead to optimise
+  a function that costs three milliseconds. The phase table now prints both
+  numbers — the wall time around `page.evaluate(AUDIT)` and the audit's own —
+  so the next person does not have to make the same mistake to find out.
+  The remaining lever is loads, and the walk now spends one per scene rather
+  than one per scene per viewport.
 - **`visual` is a new check, and it is not a required one.** The `main`
   ruleset requires `lint`, `security` and `web`; adding a fourth is a
   repository-settings change, made deliberately and not by this record.
