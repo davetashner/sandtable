@@ -195,7 +195,7 @@
   /* One height for both shapes, so a legend of buttons and swatches still
      reads as one row — and 24px is the tap-target floor the visual gate
      holds every control to (docs/accessibility.md). */
-  min-height: 24px;
+  min-height: var(--target-min);
 }
 
 /* A side the pack answers for: the entry opens that army's card (sand-y0u.29).

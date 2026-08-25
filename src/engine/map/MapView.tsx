@@ -26,7 +26,7 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 // hand us its real URL to register before the first map is created.
 import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 import { Protocol } from 'pmtiles';
-import { useEffect, useImperativeHandle, useRef, useState, type Ref } from 'react';
+import { useEffect, useImperativeHandle, useRef, useState, type ReactNode, type Ref } from 'react';
 import type { BBox, Camera } from '../../packs/schema/index.js';
 import { OWNS_KEYS } from '../shortcuts.js';
 import { BORDERS_SOURCE, bordersLayers, decorateBorders, fetchBorders } from './borders.js';
@@ -111,6 +111,13 @@ export interface MapViewProps {
   label?: string;
   /** Build the style (tests inject a stub). */
   styleFor?: (theme: MapTheme, tilesUrl?: string) => StyleSpecification;
+  /**
+   * Rendered inside the map's region, over the canvas. The map surface's
+   * keyboard roster is the only thing here (sand-pmz.11); it belongs inside
+   * the region so a screen reader meets it as part of the map, and inside the
+   * `data-owns-keys` boundary so the arrows it takes are its own.
+   */
+  children?: ReactNode;
 }
 
 export function MapView({
@@ -123,6 +130,7 @@ export function MapView({
   ref,
   label = 'Map',
   styleFor,
+  children,
 }: MapViewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
@@ -293,7 +301,6 @@ export function MapView({
 
   return (
     <div
-      ref={containerRef}
       className="mapview"
       role="region"
       aria-label={label}
@@ -303,6 +310,14 @@ export function MapView({
       // (src/engine/shortcuts.ts, sand-pmz.4).
       {...{ [OWNS_KEYS]: '' }}
       data-theme={activeTheme}
-    />
+    >
+      {/* Before the canvas, not after it: this is the map's table of
+          contents, and a reader who has just arrived at the region should
+          meet it before the thing it describes (sand-pmz.11). */}
+      {children}
+      {/* MapLibre owns this element and fills it with its own children; ours
+          are siblings of it, not of the canvas. */}
+      <div ref={containerRef} className="mapview__canvas" />
+    </div>
   );
 }

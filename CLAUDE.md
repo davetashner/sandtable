@@ -134,7 +134,10 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
   lazy boundary and the budget is what notices when it leaks.
 - **Accessibility:** `docs/accessibility.md` — the keyboard run-through, the
   24×24px target floor and its two inline exemptions, the focus-ring rule, and
-  what `src/a11y.test.tsx` (axe-core over jsdom) checks on every push.
+  what `src/a11y.test.tsx` (axe-core over jsdom) checks on every push. Write
+  `var(--target-min)` (26px) rather than 24, and remember the gate is blind to
+  the map: a keyboard route across a WebGL canvas is `src/ui/MapObjects.tsx`
+  and is tested rather than audited.
 
 ## CI & branch rules
 

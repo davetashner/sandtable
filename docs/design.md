@@ -107,6 +107,14 @@ Plex Sans 400–600, Plex Mono 400–600) with system fallbacks.
   are the two WCAG names by name — a link inside a sentence, a footnote
   reference on one. `docs/accessibility.md` has the measurements and the
   argument.
+- **`--target-min` (26px) is the number you write**, not 24. 24 is the
+  standard's floor and the gate's, and a control authored _at_ it has no
+  slack: `.card__chip` computed to 24.000px — a line box, its padding and
+  whatever font had loaded — and the gate, which fails under 24, went red on
+  one run and green on the next two (`sand-pmz.15`). 26 is the smallest whole
+  pixel above every height these controls reach on their own, so the minimum
+  binds rather than sitting there inert. Do not conflate it with `--space-5`,
+  which is also a number near 24 and means something else.
 
 ## Photographs
 

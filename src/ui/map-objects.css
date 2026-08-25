@@ -1,0 +1,143 @@
+/* The map's keyboard roster (sand-pmz.11) — tokens only.
+
+   Two states and nothing between them. Closed, it is a skip link: a 1px box
+   in the map's top-left corner that a pointer never finds and the keyboard
+   always does, and which draws itself the moment it takes focus. Open, it is
+   a panel over the corner of the map for as long as the keyboard is inside
+   it — a mode of the map surface, not a fourth panel (ADR 0006), which is why
+   nothing here survives losing focus. */
+
+.map-objects {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 2;
+  max-width: calc(100% - var(--space-4));
+  max-height: calc(100% - var(--space-4));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* The skip-link idiom: 1px and clipped, so it is in the tab order and in the
+   accessibility tree and takes no pointer events and no space. The visual
+   gate skips anything 2px or smaller for exactly this reason, so the button
+   is audited in the state a reader can see it in and not in this one. */
+.map-objects__enter {
+  appearance: none;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  background: none;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.map-objects__enter:focus {
+  width: auto;
+  height: auto;
+  min-height: var(--target-min);
+  overflow: visible;
+  clip-path: none;
+  padding: 4px 12px;
+  border: 1px solid var(--brass);
+  border-radius: var(--radius-pill);
+  background: var(--panel);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+}
+
+.map-objects__panel {
+  /* The panel never grows past the map: it is a column whose list scrolls,
+     so a campaign with forty formations on it is still a panel and not a
+     column of buttons running off the bottom of the screen. */
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: 100%;
+  width: min(320px, 100%);
+  padding: var(--space-2);
+  border: 1px solid var(--brass);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.map-objects__when,
+.map-objects__hint {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  color: var(--muted);
+}
+
+.map-objects__when {
+  padding: 0 4px var(--space-2);
+  border-bottom: 1px solid var(--line);
+  color: var(--brass);
+}
+
+.map-objects__hint {
+  padding: var(--space-2) 4px 0;
+  border-top: 1px solid var(--line);
+}
+
+.map-objects__list {
+  margin: 0;
+  padding: 2px 0;
+  min-height: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.map-objects__item {
+  appearance: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1);
+  width: 100%;
+  min-height: var(--target-min);
+  padding: 3px 4px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-tight);
+  text-align: left;
+  cursor: pointer;
+}
+
+.map-objects__item:hover {
+  background: var(--panel-2);
+}
+
+/* What the thing is, before what it is called: the roster reads the way the
+   legend does, and a reader walking it hears the kind first. */
+.map-objects__kind {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass-dim);
+}
+
+.map-objects__name {
+  font-weight: 600;
+}
+
+.map-objects__where {
+  flex-basis: 100%;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}

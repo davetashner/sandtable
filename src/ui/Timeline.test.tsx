@@ -91,6 +91,63 @@ describe('<Timeline>', () => {
     map.remove();
   });
 
+  // sand-pmz.12: the strip's own handler has to step around the markers row
+  // for the same reason the global one steps around the map.
+  describe('the markers row', () => {
+    const MANY = Array.from({ length: 5 }, (_, i) => ({
+      id: `m${i}`,
+      title: `Event ${i}`,
+      at: START + i * 5 * DAY,
+    }));
+    const mountMany = () =>
+      render(
+        <ClockProvider range={{ start: START, end: END }} syncUrl={false}>
+          <Timeline title="Test" markers={MANY} />
+        </ClockProvider>,
+      );
+    const markers = () =>
+      [...document.querySelectorAll<HTMLButtonElement>('.timeline__marker')] as HTMLButtonElement[];
+
+    it('is one tab stop for fifty events, not fifty', () => {
+      mountMany();
+      expect(markers().map((b) => b.getAttribute('tabindex'))).toEqual([
+        '0',
+        '-1',
+        '-1',
+        '-1',
+        '-1',
+      ]);
+    });
+
+    it('enters at the event the clock has passed, not at the outbreak', () => {
+      mountMany();
+      fireEvent.keyDown(screen.getByRole('slider', { name: 'Time — Test' }), { key: 'End' });
+      expect(markers().map((b) => b.getAttribute('tabindex'))).toEqual([
+        '-1',
+        '-1',
+        '-1',
+        '-1',
+        '0',
+      ]);
+    });
+
+    it('takes the arrows off the transport while the keyboard is inside it', () => {
+      mountMany();
+      const row = markers();
+      fireEvent.keyDown(row[0]!, { key: 'ArrowRight' });
+      // The clock did not move; the focus did.
+      expect(screen.getByText('Day 0')).toBeInTheDocument();
+      expect(document.activeElement).toBe(row[1]);
+    });
+
+    it("leaves the scrubber's arrows to the clock", () => {
+      mountMany();
+      const slider = screen.getByRole('slider', { name: 'Time — Test' });
+      fireEvent.keyDown(slider, { key: 'ArrowRight', shiftKey: true });
+      expect(screen.getByText('Day 1')).toBeInTheDocument();
+    });
+  });
+
   it('toggles play with the button and space, changes speed with the select', () => {
     mount();
     const play = screen.getByRole('button', { name: 'Play' });

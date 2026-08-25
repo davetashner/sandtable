@@ -81,8 +81,12 @@ const DASH: Record<MovementMode, [number, number]> = {
   air: [6, 4],
 };
 
-interface TokenDatum {
+export interface TokenDatum {
   id: string;
+  /** What kind of formation it is — "Army", "Corps" — for anything that has to name it. */
+  kind: Formation['kind'];
+  /** Whose it is; the roster names the side the map draws in colour. */
+  sideId: string;
   label: string;
   position: [number, number];
   color: RGBA;
@@ -94,6 +98,53 @@ interface TokenDatum {
    * token opens, wears a dashed halo and takes an `≈` in front of its label.
    */
   approximate: boolean;
+}
+
+/**
+ * The formations on the map at `now`, in route order — the data behind the
+ * token layer, and what the map's keyboard roster reads (sand-pmz.11). Pure,
+ * and the rules about who is on the map live here rather than in the layer,
+ * so the roster and the tokens cannot disagree about what is drawn.
+ */
+export function movementTokens(
+  o: Pick<MovementLayerOptions, 'routes' | 'now' | 'sides'>,
+): TokenDatum[] {
+  const tokens: TokenDatum[] = [];
+  for (const r of o.routes) {
+    const pos = positionAt(r.points, o.now);
+    // Before its route begins a formation shows only once it exists — from
+    // its concentration date (an army deploying), never for one not yet
+    // formed (the French 6th and 9th Armies, the Army of Alsace).
+    if (pos.phase === 'before' && !existsAt(r.formation, o.now)) continue;
+    if (dissolvedBy(r.formation, o.now)) continue;
+    // a rail/sea/air leg is a transfer: the token exists on the map only while
+    // it is under way. A motor leg is not — the column is on the road, and on
+    // the map, before and after it drives.
+    if (isTransfer(modeAt(r.legs, o.now)) && pos.phase !== 'moving') continue;
+    const approximate = isApproximate(
+      confidenceAt(
+        r.points.map((p) => p[2]),
+        r.confidences,
+        o.now,
+        r.confidence,
+      ),
+    );
+    tokens.push({
+      id: r.formation.id,
+      kind: r.formation.kind,
+      sideId: r.side.id,
+      label: approximate
+        ? `${APPROX_MARK} ${r.formation.short ?? r.formation.name}`
+        : (r.formation.short ?? r.formation.name),
+      position: pos.lngLat,
+      color: sideColor(r.side, o.sides),
+      radius: RADIUS[r.formation.kind] ?? 5,
+      phase: pos.phase,
+      hypothetical: r.hypothetical,
+      approximate,
+    });
+  }
+  return tokens;
 }
 
 const RADIUS: Partial<Record<Formation['kind'], number>> = {
@@ -133,6 +184,8 @@ export function buildMovementLayers(o: MovementLayerOptions): Layer[] {
 
 export interface MovementScene {
   layers: Layer[];
+  /** The formations drawn at this instant (sand-pmz.11). */
+  tokens: TokenDatum[];
   /** Screen boxes of the token dots and their placed labels (empty without `project`). */
   labelBoxes: Box[];
 }
@@ -154,39 +207,7 @@ export function buildMovementScene(o: MovementLayerOptions): MovementScene {
         dashed: leg.mode !== 'march',
       })),
   );
-  const tokens: TokenDatum[] = [];
-  for (const r of o.routes) {
-    const pos = positionAt(r.points, o.now);
-    // Before its route begins a formation shows only once it exists — from
-    // its concentration date (an army deploying), never for one not yet
-    // formed (the French 6th and 9th Armies, the Army of Alsace).
-    if (pos.phase === 'before' && !existsAt(r.formation, o.now)) continue;
-    if (dissolvedBy(r.formation, o.now)) continue;
-    // a rail/sea/air leg is a transfer: the token exists on the map only while
-    // it is under way. A motor leg is not — the column is on the road, and on
-    // the map, before and after it drives.
-    if (isTransfer(modeAt(r.legs, o.now)) && pos.phase !== 'moving') continue;
-    const approximate = isApproximate(
-      confidenceAt(
-        r.points.map((p) => p[2]),
-        r.confidences,
-        o.now,
-        r.confidence,
-      ),
-    );
-    tokens.push({
-      id: r.formation.id,
-      label: approximate
-        ? `${APPROX_MARK} ${r.formation.short ?? r.formation.name}`
-        : (r.formation.short ?? r.formation.name),
-      position: pos.lngLat,
-      color: sideColor(r.side, o.sides),
-      radius: RADIUS[r.formation.kind] ?? 5,
-      phase: pos.phase,
-      hypothetical: r.hypothetical,
-      approximate,
-    });
-  }
+  const tokens = movementTokens(o);
   const currentTime = (o.now - o.rangeStart) / 1000;
   const ink = tokenColor('--panel');
   const halo = tokenColor('--ink');
@@ -314,5 +335,5 @@ export function buildMovementScene(o: MovementLayerOptions): MovementScene {
       pickable: false,
     }),
   ];
-  return { layers, labelBoxes };
+  return { layers, tokens, labelBoxes };
 }

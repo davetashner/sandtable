@@ -10,11 +10,14 @@ import { tokenColor } from './colors.js';
 import { deltaLabel } from '../tally.js';
 import { PLACE_SLOTS, type LabelCandidate, type LabelPlacement } from './places.js';
 
-interface MarkerDatum {
+export interface MarkerDatum {
   id: string;
   tallyId: string;
   position: [number, number];
+  /** What the marker reads: the delta and its unit. */
   label: string;
+  /** What the ledger says happened — "to East Prussia" (sand-pmz.11). */
+  entryLabel: string;
   sign: 'minus' | 'plus' | 'zero';
 }
 
@@ -43,6 +46,7 @@ export function tallyMarkers(tallies: Tally[], now: number): MarkerDatum[] {
         tallyId: t.id,
         position: e.lngLat,
         label: `${deltaLabel(e.delta)} ${t.unit === 'corps' && Math.abs(e.delta) === 1 ? 'corps' : t.unit}`,
+        entryLabel: e.label,
         sign: e.delta < 0 ? 'minus' : e.delta > 0 ? 'plus' : 'zero',
       });
     }

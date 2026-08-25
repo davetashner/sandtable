@@ -43,19 +43,44 @@ app.
    `Enter` opens the list, `Escape` closes it and puts the keyboard back on the
    control, and choosing an entry moves it to the level you have just entered
    (`sand-pmz.4.2`).
-4. **The map** — the canvas is one stop, then its two zoom buttons.
+4. **The map** — **what is on the map** (one stop; `Enter` opens the roster),
+   then the canvas, then its two zoom buttons and the attribution.
 5. **The cast** — one stop per portrait, in pack order.
 6. **The dossier** — the beat's picture (opens full size), its credit, the
    names in the prose, the footnote references and their backrefs, then the
    Related chips.
 7. **The Meanwhile filter** — one toggle per science field.
 8. **The transport** — jump to start · play · step · speed.
-9. **The scrubber**, then the timeline's markers, then the gauges under it.
+9. **The scrubber**, then the timeline's markers — **one stop for the row** —
+   then the gauges under it.
 
-118 stops on that scene, of which 50 are timeline markers and 21 are cast
-portraits: the chrome is 15 and the rest is content. The scrubber sits **before**
-the markers even though it is drawn below them, because it is the control the
-strip exists for and nobody should have to pass fifty events to reach it.
+89 stops on that scene, of which 21 are cast portraits and **one** is the
+timeline's fifty-six event markers: the chrome is 15 and the rest is content.
+Two of those numbers used to be much larger, and are the subject of the
+sections below. The scrubber sits **before** the markers even though it is
+drawn below them, because it is the control the strip exists for.
+
+### The markers row is one stop (`sand-pmz.12`)
+
+Every marker is a button, which is correct and was tedious: fifty-six of them
+on the campaign, in front of the gauges. The row is a roving `tabindex` now —
+one stop, `←`/`→` to move within it, `Home`/`End` to its ends, `Enter` to seek
+and open — and `Tab` lands on **the last event the clock has passed**, so a
+reader enters the row at "now" rather than at the outbreak of the war. Once
+they have moved, the row remembers where they left it.
+
+The cost of that is the arrows, which the transport owns globally, and the
+mechanism for settling it already existed: the row declares `data-owns-keys`
+(`src/engine/shortcuts.ts`), which is how the map got its arrows back in
+`sand-pmz.4`. Two things had to be added rather than reused. The transport's
+_own_ handler runs on the whole strip and had to learn to step around a
+declarer inside itself; and it had to do so by `declaresOwnKeys` rather than
+`ownsKeys`, because the scrubber is an `<input>` — it owns its keys by that
+rule, and it must not, since `←`/`→` on the scrubber are the clock's step and
+not the range's.
+
+The hook is `src/engine/roving.ts`, and it is deliberately shared: the map's
+roster is the same shape and the same problem.
 
 ### Keys
 
@@ -71,6 +96,10 @@ strip exists for and nobody should have to pass fifty events to reach it.
 | `Escape`            | close the chapter index, the full-size view, the premise; leave a tour | in each                                  |
 | `Space` / `→` / `←` | let a tour on, forward, back                                           | while a tour is running                  |
 | `↑` / `↓`           | raise or lower the dossier sheet                                       | on the sheet's handle, on a phone        |
+| `←` `→`             | move between events                                                    | in the timeline's markers row            |
+| `↑` `↓` `←` `→`     | move between the things on the map                                     | in the map's roster                      |
+| `Home` / `End`      | the first and the last of either row                                   | ”                                        |
+| `Enter`             | open the roster; open what the keyboard is on                          | ”                                        |
 
 **"Anywhere the focus does not own its keys"** is `src/engine/shortcuts.ts`, and
 it is the fix that made the map reachable at all. The transport and the tour
@@ -94,22 +123,142 @@ says which keys drive it, because MapLibre gives it `tabindex` and nothing else.
   platform's rather than ours.
 - **The premise** (the opening sequence) is a modal over an `inert` app, with a
   hand-rolled trap, `Escape` to leave, and focus starting on Skip.
+- **The map's roster** opens with the keyboard on the first object; `Escape`
+  closes it and returns the keyboard to the control that opened it, the way
+  the chapter index does. Tabbing off the end closes it too and does _not_
+  drag the keyboard back — the reader is already somewhere else, and chasing
+  them would be a trap rather than a courtesy.
 - **A card** opens in the dossier where the beat was; "← Back to the narrative"
   is its first stop.
 
-### What has no keyboard route of its own
+### The map has a keyboard now (`sand-pmz.11`)
 
-The commander tokens and the tally markers **drawn on the map** are deck.gl
-geometry, not DOM, so they answer to a click and to nothing else. Both have a
-full keyboard equivalent on the same screen: a commander's card is on the cast
-strip, and a tally's is a gauge under the timeline. That is an equivalence, not
-a fix — a canvas layer with its own roving focus is a real piece of work and
-belongs in its own bead.
+The army tokens, the commander portraits and the tally markers are deck.gl
+geometry on a WebGL canvas. There is nothing there to focus — no element, no
+role, no name — so until this pass they answered to a click and to nothing
+else, and axe could not see them to say so. Each had an equivalent elsewhere
+(a commander's card is on the cast strip, a tally's is a gauge under the
+timeline), and an equivalent is not the map.
+
+**What the map's accessible representation is.** One stop in the tab order,
+immediately before the canvas, that says how many things the map is showing:
+_What is on the map (20)_. `Enter` opens a **roster** of them — the same
+objects, the same labels, in the order they are drawn — as a roving list, so
+the whole thing costs the tab order one stop however busy the map is. Each
+entry reads what it is, what it is called, whose it is and where it is:
+
+> ARMY · **1. Armee** · Germany · 18 km from Mons
+
+`Enter` on an entry does exactly what a click on its token does — it opens
+that formation's, that commander's or that ledger's card in the dossier.
+`Escape` closes the roster and hands the keyboard back to the control that
+opened it. The entry control is off-screen until it has focus, the way a skip
+link is, and it draws itself the moment it takes focus, so a reader who never
+presses `Tab` never meets it and one who does can see where they are.
+
+It is a **mode of the map**, which is what ADR 0006 allows; it is not a fourth
+panel, which is what ADR 0006 forbids. Nothing here survives losing focus, and
+the roster states no fact the map does not already draw: it is built from the
+same data as the layers — the tokens the movement scene drew, the commanders
+`commandersAt` placed, the tally entries the clock has passed — so the two
+cannot disagree about what is on the map.
+`src/engine/layers/movement-layers.ts` exports `movementTokens` for exactly
+that reason.
+
+The one thing the roster adds is _where_, because a lng/lat pair tells a reader
+nothing: each entry names the nearest place the pack has already labelled, and
+says nothing at all past 120 km, where a distance stops being a location and
+becomes a direction.
+
+### What was rejected
+
+- **A visible list beside the map.** A fourth surface, which ADR 0006 exists
+  to refuse, and a permanent tax on every reader for a route only some need.
+- **Roving focus driven by key events on the canvas, with a live region
+  announcing the focused object.** The closest thing to "walking the map", and
+  the least honest: focus would be somewhere the accessibility tree cannot
+  point at, the announcement would be an `aria-live` string rather than a
+  named control, `Enter` would have no element to fire on, and nothing about
+  it could be tested except by asserting our own bookkeeping. A named button
+  that is really focused is worth more than a simulation of one.
+- **An always-present off-screen list, with no mode.** Simpler, and it puts
+  twenty to forty items into browse mode permanently, in front of the canvas,
+  for every reader on every screen. The mode costs one keystroke and keeps the
+  tree the size of the page.
+- **Moving the camera to the focused object.** Motion nobody asked for, on the
+  surface where this app's motion is already largest.
+
+### The run-through
+
+Walked in Chrome at 1440×900, on the campaign at 22 August 1914:
+
+| Step                         | What happens                                                              |
+| ---------------------------- | ------------------------------------------------------------------------- |
+| `Tab` past the chapter index | _What is on the map (20)_ draws itself in the map's top-left corner       |
+| `Enter`                      | the roster opens; the keyboard is on **1. Armee**, `tabindex="0"`         |
+| `↓` or `→`                   | **2. Armee**; the stop moves with the focus, and the clock does not move  |
+| `Enter`                      | the formation card opens in the dossier; the keyboard stays in the roster |
+| `Escape`                     | the roster closes; the keyboard is back on _What is on the map_           |
+| `Tab`                        | the canvas — `←`/`→` pan it, as before                                    |
+
+Because axe reads the DOM and this component stands in for a canvas, what the
+roster promises is asserted in `src/ui/MapObjects.test.tsx` rather than by the
+gate: one tab stop, a name for every object, the arrows inside it, `Enter`
+doing what a click does, and `Escape` returning the keyboard. The gallery
+carries a specimen of it open, which is the state axe can audit — the closed
+control is a skip link, and 1px.
 
 ## Target size
 
 The floor is **24×24 CSS px**, WCAG 2.5.8 (AA). The review harness reports
-anything under it as `small-target`.
+anything under it as `small-target`, and fails on it.
+
+### The number you write is 26 (`sand-pmz.15`)
+
+24 is the standard's floor and the gate's; **`--target-min` is 26px** and it is
+what a component's CSS says. The two are different on purpose.
+
+`button.card__chip` was the case that made the argument. Its height was a line
+box, six pixels of padding and two of border, and it came to **24.000px** — not
+because anyone chose 24 but because IBM Plex Sans's metrics at `--fs-sm` round
+to a 16px line box. Its `min-height: 24px` was therefore doing nothing at all:
+the chip had zero slack over a gate that fails below 24, and the gate tripped
+`small-target` on one epilogue cell and not on the next two runs. A gate exactly
+on its threshold goes red at random, and a floor that is not binding is not a
+floor.
+
+26 is not arbitrary. It is the smallest whole pixel above every height these
+controls reach on their own — the tallest, `.causal__alt`, is 11.5px × 1.5 plus
+8px of padding, 25.25 — so the minimum now binds on all of them rather than
+sitting inert on some. It is also two pixels clear of the gate, which is what
+buys the slack: a font that has not swapped, a type-scale change, a padding
+change, none of them can now walk a control under 24 without something visibly
+moving first.
+
+**What it governs, and what it does not.** `--target-min` is the floor under a
+size that is _derived_ — from a line box, from type metrics, from padding —
+which is where the drift is. It is not a rule that every control must be 26px.
+A control drawn at an exact size has no drift to catch: `.timeline__marker` is
+a 24px square and `.timeline__scrubber` a 24px band, both measure 24.000 by
+construction, and re-deriving the strip's four-row budget (twelve hand-computed
+offsets across two breakpoints) to buy them slack they cannot lose would cost
+the timeline another 4px of height for nothing. They stay at 24. The two places
+where a hard size had to follow the token are the ones where a minimum and a
+size disagreed: the breadcrumb's `✕` has to stay a circle, and the footnote
+backref pins its own `line-height` to the floor so the glyph stays centred.
+
+Grew by 2px in this pass, all through the token: `.card__chip`, `.card__back`,
+`.meanwhile__field`, `.crumbs__link`, `.crumbs__exit`, `.media__original`,
+`.opening__claim-link`, `.bib__read`, `.bib__door .entity-link`,
+`.dossier__side`, `.clocks__gauge`, `.causal__alt`, `.data-footnote-backref`
+and `.sheet__handle`. `.causal__debate summary` gained a minimum it never had
+(it computed to 25.25px, and the gate audits buttons, anchors, inputs and
+selects — not summaries, so nothing would have said so).
+
+The gate keeps testing 24 rather than 26. It is checking the standard; the
+design system builds above it. Moving the gate's constant would make it
+enforce a rule of ours rather than WCAG's, and would immediately fail the four
+controls above that are deliberately drawn at exactly 24.
 
 Raised in this pass, measured before and after in Chrome at 1440×900 and
 390×844:
@@ -291,13 +440,17 @@ carries the key for anything the map draws this way.
 
 ## Still open
 
-- **A canvas layer with a keyboard.** Commander tokens and tally markers on the
-  map are reachable by pointer only; the equivalence above is real but it is not
-  the same as being able to walk the map.
-- **Fifty tab stops on the timeline strip.** Every marker is a button, which is
-  correct and tedious. A roving `tabindex` over the markers row would make it one
-  stop and the arrows within it, at the cost of the arrows the transport already
-  owns — an argument worth having in its own bead rather than settling here.
+- **The roster is the map's contents, not its geography.** It says what is on
+  the map and how far each thing is from the nearest named place; it does not
+  say what is next to what, and walking it does not move the camera. A reader
+  who cannot see the map still cannot read the shape of the front from it.
+- **The cast strip is still one stop per portrait** — twenty-one of them. It is
+  the same shape as the markers row and `src/engine/roving.ts` is now sitting
+  there; it was left out of this pass because the strip is also a horizontal
+  scroller and that is a second question.
+- **`.dossier__about summary`** takes no minimum. Like `.causal__debate
+summary` it is invisible to the gate, which audits buttons, anchors, inputs
+  and selects; unlike it, it was never measured.
 - **Landmark density inside a card.** `card__sources`, `card__section`,
   `card__connections`, `decision`, `ratio` and `human-todate` are each a
   `<section aria-label>`, so each is a landmark; a card can put five inside the

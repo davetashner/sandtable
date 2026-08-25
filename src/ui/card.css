@@ -13,7 +13,7 @@
   appearance: none;
   display: inline-flex;
   align-items: center;
-  min-height: 24px;
+  min-height: var(--target-min);
   border: 0;
   background: none;
   margin: 0 0 8px;
@@ -148,7 +148,7 @@
   appearance: none;
   display: inline-flex;
   align-items: center;
-  min-height: 24px;
+  min-height: var(--target-min);
   border: 1px solid var(--line);
   background: var(--panel-2);
   color: var(--ink);
@@ -308,7 +308,7 @@
   appearance: none;
   display: inline-flex;
   align-items: center;
-  min-height: 24px;
+  min-height: var(--target-min);
   border: 1px solid var(--line);
   background: transparent;
   color: var(--muted);

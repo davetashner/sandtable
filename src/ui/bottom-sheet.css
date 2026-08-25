@@ -30,7 +30,7 @@
   border: 0;
   background: none;
   width: 100%;
-  height: 24px;
+  height: var(--target-min);
   display: grid;
   place-items: center;
   cursor: grab;

@@ -6,13 +6,19 @@
  * Keyboard (when the strip or a control has focus — and globally unless an
  * input is focused): Space play/pause · ←/→ step · Shift+←/→ big step ·
  * Home/End jump · , and . slower/faster.
+ *
+ * The markers row is the one exception, and it declares it (sand-pmz.12): it
+ * is one button per event, about fifty of them, so it is a roving `tabindex` —
+ * one tab stop, the arrows to move within it — and taking the arrows means
+ * taking them off the transport for as long as focus is in the row.
  */
 import { useCallback, useEffect, useId, useMemo, useRef, type KeyboardEvent } from 'react';
 import { speedLabel, speedPresetsFor, stepFor } from '../engine/clock.js';
 import { useClock, useClockControls } from '../engine/ClockContext.js';
 import { usePhone } from '../engine/useMediaQuery.js';
 import { labelNow, ticksFor } from '../engine/ticks.js';
-import { ownsKeys } from '../engine/shortcuts.js';
+import { declaresOwnKeys, ownsKeys, OWNS_KEYS } from '../engine/shortcuts.js';
+import { useRoving } from '../engine/roving.js';
 import './timeline.css';
 
 export interface TimelinePhase {
@@ -93,6 +99,18 @@ export function Timeline({
   );
   const steps = useMemo(() => stepFor(range), [range]);
   const label = labelNow(now, range);
+  // Where Tab lands in the markers row before the reader has moved: the last
+  // event the clock has passed, so entering the row puts them at "now" rather
+  // than at the outbreak of the war.
+  const markerEntry = useMemo(() => {
+    let i = 0;
+    for (let k = 0; k < markers.length; k++) if (markers[k]!.at <= now) i = k;
+    return i;
+  }, [markers, now]);
+  const roving = useRoving<HTMLDivElement>(markers.length, {
+    orientation: 'horizontal',
+    entry: markerEntry,
+  });
   const activePhase = phases.find(
     (p) => now >= p.from && (now < p.to || (now >= range.end && p.to >= range.end)),
   );
@@ -112,6 +130,11 @@ export function Timeline({
   const onKey = useCallback(
     (e: KeyboardEvent | globalThis.KeyboardEvent) => {
       if (e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey) return;
+      // A row inside the strip that took its own keys — the markers
+      // (sand-pmz.12). `declaresOwnKeys` rather than `ownsKeys` on purpose:
+      // the scrubber is an `<input>` and would own its keys by that rule,
+      // and ←/→ on the scrubber are the clock's step, not the range's.
+      if (declaresOwnKeys(e.target)) return;
       const big = e.shiftKey;
       switch (e.key) {
         case ' ':
@@ -270,13 +293,24 @@ export function Timeline({
           aria-label={title ? `Time — ${title}` : 'Time'}
           aria-valuetext={label.aria}
         />
-        <div className="timeline__markers">
-          {markers.map((m) => {
+        {/* One tab stop, not fifty (sand-pmz.12): the row owns ←/→ while the
+            keyboard is inside it, which is what `data-owns-keys` keeps the
+            transport's hands off. */}
+        <div
+          className="timeline__markers"
+          role="group"
+          aria-label="Events — walk them with the arrow keys"
+          ref={roving.ref}
+          onKeyDown={roving.onKeyDown}
+          {...{ [OWNS_KEYS]: '' }}
+        >
+          {markers.map((m, i) => {
             const kind = m.kind ?? 'event';
             return (
               <button
                 type="button"
                 key={m.id}
+                {...roving.itemProps(i)}
                 className="timeline__marker"
                 data-kind={kind}
                 data-past={m.at <= now || undefined}

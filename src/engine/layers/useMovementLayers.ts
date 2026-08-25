@@ -8,7 +8,7 @@ import { useMemo, useState } from 'react';
 import type { Branch, Formation, Route, Side } from '../../packs/schema/index.js';
 import { useClock } from '../ClockContext.js';
 import { composeRoutes } from './movement.js';
-import { buildMovementScene } from './movement-layers.js';
+import { buildMovementScene, type TokenDatum } from './movement-layers.js';
 import type { Box } from './places.js';
 
 export interface MovementSource {
@@ -36,6 +36,8 @@ export function useMovementLayers(
   layout: MovementLayoutOptions = {},
 ): {
   layers: Layer[];
+  /** The formations drawn at this instant — what the keyboard roster reads (sand-pmz.11). */
+  tokens: TokenDatum[];
   /** Screen boxes of token dots and labels — obstacles for the place labels. */
   labelBoxes: Box[];
   selected: string | undefined;
@@ -66,5 +68,11 @@ export function useMovementLayers(
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [composed, now, range.start, source.sides, selected, project, placementKey, onSelect],
   );
-  return { layers: scene.layers, labelBoxes: scene.labelBoxes, selected, select };
+  return {
+    layers: scene.layers,
+    tokens: scene.tokens,
+    labelBoxes: scene.labelBoxes,
+    selected,
+    select,
+  };
 }

@@ -41,6 +41,7 @@ import { Dossier } from '../ui/Dossier.js';
 import { FormationCardView } from '../ui/FormationCardView.js';
 import { HumanCostLine } from '../ui/HumanCostLine.js';
 import { MediaCredit } from '../ui/MediaCredit.js';
+import { MapObjects, type MapObject } from '../ui/MapObjects.js';
 import { MediaFigure } from '../ui/MediaFigure.js';
 import { MediaLightbox } from '../ui/MediaLightbox.js';
 import { MeanwhileFilter } from '../ui/MeanwhileFilter.js';
@@ -444,6 +445,56 @@ function OpeningSpecimen() {
       onClaim={() => {}}
       tourMinutes={tourMinutes(tour)}
     />
+  );
+}
+
+/**
+ * The map's keyboard roster on real content: the first few formations the pack
+ * fields, a commander with a headquarters, and the first tally entry that has
+ * a place. Shown open, which is the state the reader who needs it is in — and
+ * the only state axe can audit, since the closed control is a skip link.
+ */
+function MapObjectsSpecimen() {
+  const track = only(seed.tracks, 'person track');
+  const tally = only(seed.tallies, 'tally');
+  const entry = only(
+    tally.entries.filter((e) => e.lngLat),
+    'tally entry with a position',
+  );
+  const person = seed.people.find((p) => p.id === track.person);
+  const objects: MapObject[] = [
+    ...seed.formations.slice(0, 4).map<MapObject>((f) => {
+      const side = sides.find((x) => x.id === f.side);
+      return {
+        id: f.id,
+        kind: f.kind.charAt(0).toUpperCase() + f.kind.slice(1).replace('-', ' '),
+        name: f.short ?? f.name,
+        detail: side?.short ?? side?.name,
+        where: 'near Aachen',
+        open: () => {},
+      };
+    }),
+    {
+      id: track.id,
+      kind: track.kind === 'hq' ? 'Headquarters' : 'Commander',
+      name: person?.name ?? track.person,
+      detail: track.post,
+      where: '34 km from Liège',
+      open: () => {},
+    },
+    {
+      id: entry.id,
+      kind: 'Strength',
+      name: `−${Math.abs(entry.delta)} ${tally.unit}`,
+      detail: entry.label,
+      where: 'near Namur',
+      open: () => {},
+    },
+  ];
+  return (
+    <div className="specimen-map">
+      <MapObjects objects={objects} when="22 August 1914" defaultOpen />
+    </div>
   );
 }
 
@@ -1096,6 +1147,25 @@ export const SECTIONS: GallerySection[] = [
         note: 'The running total by side, in muted type. It states; it does not shout.',
         covers: ['HumanCostLine'],
         render: () => <HumanCostLine records={seed.casualties} sides={sides} />,
+      },
+    ],
+  },
+  {
+    id: 'map',
+    title: 'The map',
+    note:
+      'The map itself is a WebGL canvas and is reviewed in the app, not in a pane. This is the ' +
+      'one part of it that is DOM: the roster that makes what the map draws reachable from a ' +
+      'keyboard (sand-pmz.11).',
+    specimens: [
+      {
+        id: 'map-objects',
+        title: 'What is on the map',
+        note:
+          'Open. Closed it is a skip link in the map’s corner — one tab stop that says how many ' +
+          'objects there are. Arrows walk the list, Enter opens the same card the token opens.',
+        covers: ['MapObjects'],
+        render: () => <MapObjectsSpecimen />,
       },
     ],
   },
