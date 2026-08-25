@@ -81,7 +81,7 @@ It is being closed volume by volume, and the count is the measure of it:
 | after `sand-23b.9` (commander tracks)    |     1,694 |         76 |
 | after `sand-23b.6`, first tranche        |     1,705 |        117 |
 | after `sand-23b.6.1` (`formations.json`) | **1,764** |    **244** |
-| after `sand-23b.6.2` (the routes)        | **1,811** |    **322** |
+| after `sand-23b.6.2` (the routes)        | **1,817** |    **322** |
 
 The first tranche of `sand-23b.6` worked the three files the bead names in
 priority order and stopped where the volumes stopped. `casualties.json` goes
