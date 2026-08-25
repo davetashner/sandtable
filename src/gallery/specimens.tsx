@@ -494,7 +494,9 @@ export const SECTIONS: GallerySection[] = [
       {
         id: 'crumbs-campaign',
         title: 'Breadcrumb — campaign',
-        note: 'At the campaign level the trail is one item and the index rests as one control.',
+        note:
+          'At the campaign level the trail is one item and the index rests as one control — ' +
+          'closed, it carries no dates, only the count.',
         covers: ['Breadcrumb'],
         render: () => <BreadcrumbSpecimen inside={false} />,
       },
@@ -508,7 +510,10 @@ export const SECTIONS: GallerySection[] = [
       {
         id: 'chapter-index',
         title: 'Chapter index — open',
-        note: 'The pack in campaign order, each entry named for what it is (ADR 0013).',
+        note:
+          'The pack in campaign order, each entry named for what it is (ADR 0013) and dated by ' +
+          'what its window means (ADR 0015). The two backstory chapters say "dates inside" — ' +
+          'their window is where they sit on the strip, not when they happened (sand-neh.23).',
         covers: ['ChapterIndex'],
         render: () => <ChapterIndexSpecimen />,
       },

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { DAY, HOUR } from './clock.js';
-import { labelNow, pickStep, ticksFor, toIsoNoMs } from './ticks.js';
+import { labelNow, labelSpan, pickStep, ticksFor, toIsoNoMs } from './ticks.js';
 
 const AUG2 = Date.UTC(1914, 7, 2);
 
@@ -69,5 +69,31 @@ describe('labelNow', () => {
 describe('toIsoNoMs', () => {
   it('formats without milliseconds', () => {
     expect(toIsoNoMs(Date.UTC(1914, 7, 24, 12))).toBe('1914-08-24T12:00:00Z');
+  });
+});
+
+describe('labelSpan', () => {
+  const span = (a: [number, number, number], b: [number, number, number]) =>
+    labelSpan({ start: Date.UTC(...a), end: Date.UTC(...b) });
+
+  it('drops what the two ends share', () => {
+    // the Marne: one month, one year
+    expect(span([1914, 8, 5], [1914, 8, 12])).toBe('5–12 Sep 1914');
+    // Belgium beyond Liège: two months, one year
+    expect(span([1914, 7, 18], [1914, 8, 14])).toBe('18 Aug – 14 Sep 1914');
+    // a span that crosses a new year keeps both
+    expect(span([1914, 5, 28], [1915, 1, 3])).toBe('28 Jun 1914 – 3 Feb 1915');
+  });
+
+  it('writes a single day once', () => {
+    expect(span([1914, 7, 24], [1914, 7, 24])).toBe('24 Aug 1914');
+  });
+
+  it('writes whole calendar years as years', () => {
+    // the epilogue (ADR 0015): the years, not two dates nobody chose
+    expect(span([1915, 0, 1], [1919, 11, 31])).toBe('1915–1919');
+    expect(span([1916, 0, 1], [1916, 11, 31])).toBe('1916');
+    // one day short of the year is a date range again
+    expect(span([1915, 0, 1], [1919, 11, 30])).toBe('1 Jan 1915 – 30 Dec 1919');
   });
 });

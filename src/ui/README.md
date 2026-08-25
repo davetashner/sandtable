@@ -25,7 +25,11 @@ mostly credit.
 `ChapterIndex.tsx` is the pack's table of contents in the breadcrumb row: it
 rests closed as one control and names each level for what the engine says it
 is — `isChapter` in `src/engine/focus.ts` — rather than calling the whole row
-one thing (ADR 0013).
+one thing (ADR 0013). Each open entry is dated by what its `window` means
+(ADR 0015, `sand-neh.23`): a real window prints as a span, and a `"placed"`
+one — a chapter sitting somewhere on the campaign strip rather than at its own
+date — says `dates inside`, because a gap in a column of dates reads as a
+defect rather than as a silence anybody chose.
 
 `Derivations.tsx` is the footnote under a card that says how the map's
 positions were derived (`sand-23b.4`): the pack's own `derivation` sentence

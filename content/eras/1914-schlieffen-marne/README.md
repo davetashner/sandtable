@@ -42,7 +42,9 @@ in the campaign spine are now the ultimatum beat (`81-ultimatum-to-belgium`).
 `1914:origins` narrates the decades before the war rather than days of it, so it
 carries no events either. Both of them are `"window": "placed"` (ADR 0015): the
 2–4 August window in the file is where they sit on the campaign strip, not when
-they happened, and each beat says its real date in `dateLabel`. What the map
+they happened, and each beat says its real date in `dateLabel`. That is also
+what the chapter index shows for them: every other level is dated from its
+window, and these two say `dates inside`, which is where their dates are. What the map
 contributes for `1914:origins` is the ground the argument is about: the fortress
 line from Verdun to Belfort and the Meuse crossings, already drawn from the
 shared places registry. `1914:tannenberg-east`

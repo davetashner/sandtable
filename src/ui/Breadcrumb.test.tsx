@@ -40,7 +40,7 @@ describe('<Breadcrumb>', () => {
     const battles = [battle('1914:liege', 'Liège', [{}])];
     const { rerender } = render(<Breadcrumb {...props} battles={battles} focus={undefined} />);
     fireEvent.click(screen.getByRole('button', { name: '1 zoom-in' }));
-    fireEvent.click(screen.getByRole('button', { name: 'Zoom in to Liège' }));
+    fireEvent.click(screen.getByRole('button', { name: /^Zoom in to Liège,/ }));
     rerender(<Breadcrumb {...props} battles={battles} focus={battles[0]} />);
     expect(screen.getByText('Liège')).toHaveFocus();
   });
