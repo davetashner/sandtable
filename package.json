@@ -17,6 +17,8 @@
     "format:check": "prettier --check .",
     "validate:content": "bash scripts/check-content.sh && tsx scripts/validate-content.ts",
     "visual:check": "node scripts/visual-check.mjs",
+    "bundle:budget": "node scripts/bundle-budget.mjs",
+    "perf": "node scripts/perf-measure.mjs",
     "visual:review": "node scripts/visual-review.mjs",
     "schema": "tsx scripts/generate-schema.ts",
     "borders": "tsx scripts/fetch-borders.ts",

@@ -78,6 +78,7 @@ import {
   type ScoreEntry as ScoreEntryT,
 } from './schema/index.js';
 import { splitFrontMatter } from './validate/frontmatter.js';
+import { mark } from '../engine/perf.js';
 
 const beatsRaw = import.meta.glob('../../content/eras/1914-schlieffen-marne/beats/*.md', {
   query: '?raw',
@@ -136,6 +137,7 @@ export interface SeedPack {
 }
 
 function loadSeed(): SeedPack {
+  mark('sandtable:pack-start');
   const pack = Pack.parse(packJson);
   const events = Event.array().parse(eventsJson);
   const battles = Battle.array().parse(battlesJson);
@@ -201,3 +203,4 @@ function loadSeed(): SeedPack {
 }
 
 export const seed: SeedPack = loadSeed();
+mark('sandtable:pack-ready');

@@ -36,7 +36,11 @@ export default defineConfig({
     // /gallery.html for design review.
     rollupOptions: { input: { main: 'index.html', gallery: 'gallery.html' } },
     // The map chunk (maplibre-gl + deck.gl, lazy-loaded by App) is large by
-    // nature; the performance budget story (sand-pmz.3) tunes it further.
+    // nature and this only silences the generic warning about it. The number
+    // that is actually held is in `scripts/bundle-budget.json`, checked by
+    // `npm run bundle:budget` in CI, and it distinguishes the bytes a reader
+    // downloads before first paint from the ones the map fetches later
+    // (ADR 0016).
     chunkSizeWarningLimit: 1800,
   },
   // MapLibre's worker is an ES module (it imports maplibre-gl-shared); see

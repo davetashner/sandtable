@@ -32,6 +32,7 @@ import { OWNS_KEYS } from '../shortcuts.js';
 import { BORDERS_SOURCE, bordersLayers, decorateBorders, fetchBorders } from './borders.js';
 import { buildStyle, detectTheme, type MapTheme } from './style.js';
 import './map.css';
+import { mark } from '../perf.js';
 
 /**
  * A camera flight is motion, and the reader who asked for less of it means
@@ -224,6 +225,7 @@ export function MapView({
     const announce = () => {
       if (announced) return;
       announced = true;
+      mark('sandtable:map-ready');
       setReady(true);
       onReady?.(handle);
     };

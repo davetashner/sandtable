@@ -7,7 +7,8 @@ import type { Layer } from '@deck.gl/core';
 import { useMemo, useState } from 'react';
 import type { Branch, Formation, Route, Side } from '../../packs/schema/index.js';
 import { useClock } from '../ClockContext.js';
-import { buildMovementScene, composeRoutes } from './movement.js';
+import { composeRoutes } from './movement.js';
+import { buildMovementScene } from './movement-layers.js';
 import type { Box } from './places.js';
 
 export interface MovementSource {
