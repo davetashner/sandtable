@@ -7,13 +7,8 @@ import type {
   Route,
   Side,
 } from '../../packs/schema/index.js';
-import {
-  buildMovementLayers,
-  buildMovementScene,
-  composeRoutes,
-  modeAt,
-  positionAt,
-} from './movement.js';
+import { composeRoutes, modeAt, positionAt } from './movement.js';
+import { buildMovementLayers, buildMovementScene } from './movement-layers.js';
 
 /** A one-leg composed route: the same points as the whole path and as its only leg. */
 const oneLeg = (

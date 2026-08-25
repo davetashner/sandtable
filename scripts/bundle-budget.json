@@ -1,0 +1,17 @@
+{
+  "$comment": "The performance budget CI holds (ADR 0016, sand-pmz.3). Two ceilings on the built bundle, in kilobytes of gzip, checked by `npm run bundle:budget` in the web job. Raise one only with a sentence saying what the app gained for the bytes — the number and the reason are reviewed together in the diff. Measure with `npm run perf`, which prints the same figures and what each chunk is made of.",
+  "budgets": {
+    "eager": {
+      "maxGzipKb": 470,
+      "measuredKb": 432.5,
+      "measuredOn": "2026-08-25",
+      "why": "Everything index.html names — the entry, its modulepreloads, its stylesheet — plus index.html itself. This is what stands between a reader and first paint on a cold load, so it is the number worth a ceiling. 432 kB is where the deck.gl split left it; 470 is about two months of ordinary growth and a hard stop before the number doubles by accident. What is still in it and why: the 1914 pack's JSON (~130 kB gzip, bundled until the lazy pack loader lands, sand-shn.1), react-dom, zod (the pack is re-validated in the browser), yaml (beat front matter), and the react-markdown stack (the dossier's prose)."
+    },
+    "total": {
+      "maxGzipKb": 1100,
+      "measuredKb": 1028.3,
+      "measuredOn": "2026-08-25",
+      "why": "Every emitted chunk, eager and on demand. A second ceiling because the first one alone can be met by moving bytes behind a dynamic import forever, and a reader who opens the map pays for those too. Loose on purpose: MapLibre and deck.gl are 590 kB gzip of it and neither is going anywhere (ADR 0001)."
+    }
+  }
+}

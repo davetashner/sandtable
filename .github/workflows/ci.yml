@@ -110,6 +110,14 @@ jobs:
         if: steps.app.outputs.present == 'true'
         run: npm run build --if-present
 
+      # The one performance number that is a function of the source alone
+      # (ADR 0016). First map paint and frame rate are measured by
+      # `npm run perf` and reported, never gated: this runner rasterises
+      # through SwiftShader and answers a different question from a laptop.
+      - name: bundle budget
+        if: steps.app.outputs.present == 'true'
+        run: npm run bundle:budget --if-present
+
   visual:
     # The visual gate (ADR 0011): nineteen scenes × two themes × desktop and
     # phone, walked against a production-shaped build with the assets bucket

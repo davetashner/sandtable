@@ -194,7 +194,7 @@ function serveRange(route, body, contentType) {
  * archive. Every one of them is a well-formed answer, so nothing the gate
  * hears on the console is the harness's own voice.
  */
-async function stubAssets(ctx) {
+export async function stubAssets(ctx) {
   await ctx.route('**/assets/**', (route) => {
     const url = route.request().url().split('?')[0];
     if (/\.pmtiles$/i.test(url)) return serveRange(route, PMTILES, 'application/octet-stream');

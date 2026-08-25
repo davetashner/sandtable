@@ -79,11 +79,13 @@ npm run audio            # loudness-matched Opus/AAC + content/shared/audio/inde
 npm run build            # tsc -b && vite build → dist/ (bundles under dist/app/)
 npm run visual:check     # the visual gate: 20 scenes x 2 themes x 2 viewports, assets stubbed (ADR 0011); -- --update rewrites the baseline
 npm run visual:review    # the on-demand design review against real assets (docs/design-review.md); needs a build + `npm run preview`
+npm run bundle:budget    # the performance gate: eager and total gzip against scripts/bundle-budget.json (ADR 0016)
+npm run perf             # measure bundle, first map paint, frame rate, PMTiles cost; -- --live for the real bucket, -- --headed for a real GPU
 npm run format           # Prettier (beat front matter is deliberately excluded — see .prettierignore)
 npm run format:check     # the same as a check; runs in CI's `web` job
 ```
 
-Both visual scripts need a browser once: `npx playwright install chromium`.
+The visual scripts and `npm run perf` need a browser once: `npx playwright install chromium`.
 
 CI runs the same commands in the `web` job; `lint` and `security` jobs cover docs, content manifests, secrets and dependencies; `visual` runs `visual:check` and uploads its screenshots. Open `poc/schlieffen-plan.html` directly for the original proof of concept.
 
@@ -123,6 +125,13 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
 - **Design:** tokens and the war-room identity come from the design-system epic
   (`sand-neh`): `src/styles/tokens.ts` → `npm run tokens` → `tokens.css`, reference
   in `docs/design.md`; don't introduce ad-hoc colours or typefaces.
+- **Performance:** ADR 0016 — bundle size is the one number CI holds
+  (`scripts/bundle-budget.json`, two ceilings with the reason for each written
+  next to them); first map paint, frame rate and PMTiles cost are measured by
+  `npm run perf` and reported, because a runner rasterising through SwiftShader
+  runs the campaign six times slower than a laptop. Don't import deck.gl or
+  MapLibre from anything the shell can reach — `src/ui/MapSurface.tsx` is the
+  lazy boundary and the budget is what notices when it leaks.
 - **Accessibility:** `docs/accessibility.md` — the keyboard run-through, the
   24×24px target floor and its two inline exemptions, the focus-ring rule, and
   what `src/a11y.test.tsx` (axe-core over jsdom) checks on every push.
@@ -137,8 +146,8 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
 - CI (`.github/workflows/ci.yml`): `lint` = actionlint + markdownlint +
   `scripts/check-content.sh` (JSON validity, media-manifest policy, no tracked
   image binaries); `security` = gitleaks + dependency review; `web` =
-  npm lint/format:check/typecheck/test/validate:content/build, self-activating once
-  `package.json` exists; `visual` = `npm run visual:check` against a
+  npm lint/format:check/typecheck/test/validate:content/build/bundle:budget,
+  self-activating once `package.json` exists; `visual` = `npm run visual:check` against a
   production-shaped build with the assets bucket stubbed, screenshots uploaded
   as an artifact (ADR 0011). CodeQL is added with the app scaffold.
 - Merged branches are deleted automatically (`delete_branch_on_merge`); keep
