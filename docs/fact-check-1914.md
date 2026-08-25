@@ -81,6 +81,7 @@ It is being closed volume by volume, and the count is the measure of it:
 | after `sand-23b.9` (commander tracks)    |     1,694 |         76 |
 | after `sand-23b.6`, first tranche        |     1,705 |        117 |
 | after `sand-23b.6.1` (`formations.json`) | **1,764** |    **244** |
+| after `sand-23b.6.2` (the routes)        | **1,797** |    **314** |
 
 The first tranche of `sand-23b.6` worked the three files the bead names in
 priority order and stopped where the volumes stopped. `casualties.json` goes
@@ -120,6 +121,66 @@ Six places where the volume said something other than the card are recorded in
 the citation `note` beside the claim and, where they are contested rather than
 simply wrong, in `docs/historiography-1914.md` (notes 12 and 13). Nothing was
 quietly corrected.
+
+The third tranche worked the routes — the paths themselves. A route asserts a
+position on a date, which §3 counts as contestable, and there are two sets of
+them: the 44 campaign routes in `routes.json`, which had **no** pages at all,
+and the 130 battle-level routes inside `battles.json`, of which only the twelve
+Liège fort routes from `sand-23b.5` had any. `routes.json` goes **0 → 20 of
+126** and the battle routes **12 → 60 of 247**. What made it possible is that
+the Reichsarchiv and Edmonds do not only narrate: Bd. 1 carries dated situation
+sketches printed in the text — Skizze 2 (p. 195), the 6th and 7th Armies on the
+morning of 14 August; Skizze 3 (p. 347) and Skizze 7 (p. 506), the 1st, 2nd and
+3rd Armies on the mornings of the 21st and the 25th; Skizze 8 (p. 538), the 4th
+and 5th on the morning of the 24th — and Edmonds prints Sir John French's
+operation orders in his appendices, each with its march table and billeting
+areas, night by night from 20 August (pp. 508–529, 551). Those are the
+documents a daily path is actually made of, and they are what the routes now
+cite.
+
+Bd. 1 pp. 69–70, already read for `formations.json`, turn out to fix the first
+waypoint of all seven German army routes: the deployment area each army was
+given — Crefeld–Erkelenz–Jülich–Bergheim, Düren–Aachen–Eupen–Malmedy, the Eifel
+about Prüm and St. Vith, Trier–Diekirch–Luxemburg, Lebach–Diedenhofen–Metz,
+Saargemünd–Château-Salins–Saarburg, Straßburg–Mülhausen–Freiburg — matches
+where each of those seven paths begins.
+
+**Three citations pointed at volumes that do not cover their own dates**, and
+that is a bigger finding than any single page. Bd. 1 is _Die Grenzschlachten im
+Westen_ and its narrative stops on 27 August: the seven German corps routes at
+Guise (28–30 August) and the fourteen at the Marne (5–12 September) cited it
+anyway. The Guise seven were re-pointed to Bd. 3, which prints the battle of
+St. Quentin corps by corps at pp. 145–179 and was read. The Marne fourteen keep
+no pages: Bd. 3 stops at the end of 4 September and Bd. 4, which would carry
+the battle, is not digitised (`sand-23b.21`). Edmonds Vol. II's narrative
+begins on 19 September, so the sixteen `routes.json` citations to it on paths
+that run in August and September, and the five on the Belgian and Antwerp
+battle routes that end on 13 September, keep no pages either; the nine that
+do fall inside its Flanders front — the Belgian field army on the Yser, the
+Tenth Army, d'Urbal's detachment, the four new German reserve corps, the BEF's
+move north — were read and cite it.
+
+**Seventeen citations moved from `source:edmonds-1922` to
+`source:edmonds-1933`** in this tranche, each after the third edition was read
+and found to support the path beside it.
+
+One discrepancy in this tranche is large enough to name here. In
+`1914:lorraine` the German 6th Army's Bavarian corps are placed the other way
+round from the German official history: Bd. 1 has the III. Bavarian Corps on
+the army's right attacking Delme and taking the height north-west of
+Château-Salins (pp. 265, 267, 281) and the I. Bavarian Corps taking Saarburg
+(p. 273), where this pack has the I. Bavarian at Morhange and the III. Bavarian
+at Sarrebourg. The XXI. Corps (Dieuze, p. 269) and the I. Bavarian Reserve
+Corps (Bisping, p. 271) sit some 30 km from where the pack puts them too.
+**Nothing was moved.** The pages are recorded in the citation notes so the next
+reader can check it against Herwig, which cannot be opened from here, and the
+correction wants a bead of its own.
+
+No waypoint was given a `confidence` of its own. The rule `sand-23b.4` set is
+that the fourth element is the exception the derivation already names, and
+reading the volumes produced no such exception: where the official history
+disagrees with a path it disagrees with the whole path, not with one point on
+it, and marking a single waypoint would say the wrong thing.
 
 **Never a page that was not read.** Every number above was pulled from
 archive.org's hOCR search-text and page-index files for the digitisation
