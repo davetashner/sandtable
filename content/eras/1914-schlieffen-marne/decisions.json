@@ -100,6 +100,132 @@
     ]
   },
   {
+    "id": "1914:decision-1914-09-03-relieve-lanrezac",
+    "at": "1914-09-03T17:00:00Z",
+    "title": "Take the Fifth Army from Lanrezac?",
+    "actor": "person:joffre-joseph",
+    "question": "**3 September, Sézanne, about five in the afternoon.** You have driven over from GQG with Lieutenant-Colonel Gamelin to see the commander of the Fifth Army. He read the German right wing before you did; he pulled his army off the Sambre on his own authority before it could be enveloped; five days ago, when you told him to turn and strike, he checked Bülow at Guise and bought the day your redeployment needed. He has also made observations on almost every order you have sent him, ordered the retreat on the night of 23 August without telling the British on his left, and your own staff say he has been beaten since Charleroi. At Laon on 29 August you sent for his successor and then recalled the order. In three days you mean to stop retreating and attack. Do you take the army away from him now?",
+    "options": [
+      {
+        "id": "relieve",
+        "label": "Relieve him now and give the army to Franchet d'Espèrey",
+        "summary": "Tell him this evening. The I Corps commander who led the counter-attack at Guise takes the Fifth Army tonight and has two days to learn it before the battle; Lanrezac goes to Gallieni in Paris, and from Paris to Bordeaux and a second-line command."
+      },
+      {
+        "id": "keep",
+        "label": "Leave him the army for the battle",
+        "summary": "Keep the one army commander who read the sweep correctly, whose headquarters has brought an unbroken army 250 kilometres back from the Sambre to the Marne in eleven days, and who knows where his corps are; change the commander after the battle, if at all. Hypothetical: this option is authored as an alternative and described rather than played — no branch moves the tokens for it."
+      }
+    ],
+    "historical": "relieve",
+    "reasoning": "The only account of the interview is the one Lanrezac wrote in 1916 and published in 1920. Joffre took him aside and said he was obliged to take the Fifth Army from him — *vous êtes hésitant, indécis* — and, asked for facts, would only repeat that he was hesitant, indecisive, and 'made observations on every order he was given'. The charge was not invented that afternoon: on the morning of 29 August at Laon, before Guise was fought, Joffre had already told an officer of the Fifth Army's own staff to send for Franchet d'Espèrey, and had the order recalled after seeing Lanrezac. Set against it was a retreat that had not broken, an army behind the Marne intact that day, and an offensive at Guise which Joffre had entrusted to this commander five days earlier and — in what Lanrezac gives as his own words — expected the fate of the campaign to turn on. Joffre ended by saying he was sending him to Gallieni, who had asked for a general officer to second him on tactical questions.[^lanrezac-1920] [^edmonds-1933]",
+    "verdict": "Franchet d'Espèrey took the army that evening. The next afternoon, with one day's command behind him, he answered Joffre's telegram asking whether the Fifth Army was in a state to fight: not tomorrow but the day after, on the 6th, and only if Maunoury was on the Ourcq — 'If not the British won't march.' That reply fixed the day of the Marne, so the removal cannot be argued about apart from the victory that followed it. What Joffre was removing is the part that stays open. Lanrezac's case, and his chief of staff's in a letter of December 1916, is that the Fifth Army reached the Marne whole because of the dispositions he made; Gallieni, whose command of the Fifth Army Lanrezac had inherited when Gallieni reached the age limit, had thought him one of the best manoeuvrers in the army and wrote that the Germans had never once succeeded in turning his left; the British official history refers its readers to Lanrezac's own account of 'his sudden removal' and takes no side. He was one of many — Doughty counts some fifty French general officers relieved in August and September, Ruffey among them four days before. Whether he was a scapegoat for Plan XVII or a commander who had lost his nerve is still argued.[^lanrezac-1920] [^gallieni-1920] [^edmonds-1933] [^doughty-2005] [^tuchman-1962] [^herwig-2009]",
+    "links": {
+      "people": [
+        "person:joffre-joseph",
+        "person:lanrezac-charles",
+        "person:franchet-desperey-louis",
+        "person:gallieni-joseph"
+      ],
+      "formations": ["1914:army-fr-5"],
+      "events": ["1914:event-lanrezac-relieved", "1914:event-ruffey-relieved"],
+      "battles": ["1914:guise", "1914:marne"]
+    },
+    "sources": [
+      {
+        "source": "source:lanrezac-1920",
+        "pages": "276–283",
+        "note": "Chapter IX, 'Mon départ de la Vᵉ armée'. The interview at Sézanne, 'le 3 septembre, vers 17 heures', with Gamelin in the car and Joffre's words as Lanrezac reports them (pp. 276–277); Joffre sending him to Gallieni and Gallieni having no employment for him (pp. 277–278); Hély d'Oissel's reply, dated at p. 278 and printed at p. 279 (pp. 278–279); the order for Franchet d'Espèrey sent and recalled at Laon on 29 August, and the offensive 'dont il attendait le sort de la campagne' (pp. 280–281); 'c'est seulement cinq jours plus tard, le 3 septembre, à 17 heures ... que le général Joffre m'a relevé du commandement de la Vᵉ armée' (pp. 281–282); and the retreat he asks history to credit him with, 'de la Sambre à la Marne pendant 250 kilomètres, du 24 août au 3 septembre' (p. 283). A memoir written to answer the charge: one side, and the only side that records the words."
+      },
+      {
+        "source": "source:edmonds-1933",
+        "pages": "277, 279",
+        "note": "'General Franchet d'Esperey, who had taken over command of the Fifth Army from General Lanrezac the previous day' (p. 277), with the footnote that sends the reader to Lanrezac's own book, 'p. 276 et seq.', for 'an account of his sudden removal' — the pages cited above; the new commander's reply to Joffre, timed 4 p.m. on the 4th, with his handwritten conditions and 'If not the British won't march' (p. 279). Third edition of 1933: pages do not carry to the 1922 first edition."
+      },
+      {
+        "source": "source:gallieni-1920",
+        "pages": "10–11, 142",
+        "note": "Lanrezac as Gallieni's successor in the Fifth Army and in his seat on the Conseil supérieur de la guerre when Gallieni reached the age limit, and 'le général Lanrezac était considéré comme l'un de nos meilleurs manœuvriers' (pp. 10–11); the German attempts on the Fifth Army's left since Charleroi, 'que le général Lanrezac avait toujours déjouée' (p. 142). Memoir, and generous about a man for whom Gallieni then had no employment."
+      },
+      {
+        "source": "source:doughty-2005",
+        "note": "the scale of the removals — some fifty French general officers in August and September, the figure `1914:event-ruffey-relieved` already carries. No pages: the work cannot be opened from this environment."
+      },
+      {
+        "source": "source:tuchman-1962",
+        "note": "the scapegoat reading, as the pack's cast card already carries it. No pages: not readable from this environment."
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "the operational account of the Fifth Army's retreat and of the change of command. No pages: not readable from this environment."
+      }
+    ]
+  },
+  {
+    "id": "1914:decision-1914-09-04-turn-and-attack",
+    "at": "1914-09-04T18:00:00Z",
+    "title": "Turn on Kluck's flank, or hold to the Seine?",
+    "actor": "person:joffre-joseph",
+    "question": "**4 September, Bar-sur-Aube, late afternoon.** Kluck has turned across the front of Paris and is marching south-east away from it, showing his right flank and his communications to whatever is in the capital. Your own notes of 1 and 2 September ordered the retreat continued behind the Seine and the Yonne, and the armies are carrying them out; the Fifth Army changed hands yesterday; the British commander proposed four days ago to take his army out of the line altogether. In Paris, Gallieni started Maunoury's army eastwards at nine this morning and then had you told. Part of your operations staff wants to let the Germans come further into the space between Verdun and Paris before striking. The heat is stifling. Do you stop the retreat and give battle the day after tomorrow?",
+    "options": [
+      {
+        "id": "attack",
+        "label": "Stop the retreat and attack on the 6th",
+        "summary": "Cancel the retirement. The Sixth Army out of Paris onto the Ourcq, the British and the Fifth Army facing about to the north and north-east, the Ninth holding the passages of the Saint-Gond marshes, the Third attacking from Verdun — the whole left wing onto the flank of a German right wing that has walked past the capital. This is the order that became Instruction générale no 6."
+      },
+      {
+        "id": "seine",
+        "label": "Hold to the Seine and strike when ready",
+        "summary": "Let the retirement of 1–2 September run to its end behind the Seine and the Yonne, let the German right wing extend and thin itself further between Verdun and Paris, and counter-attack later with rested armies, a Sixth Army complete and the corps still coming west by rail. Not a fantasy: it is what part of the operations staff at GQG argued for that afternoon. Hypothetical all the same — authored as an alternative and described rather than played, with no branch to move the tokens for it."
+      }
+    ],
+    "historical": "attack",
+    "reasoning": "By the late afternoon Joffre had a shape and not much more. Gallieni had sent Maunoury a warning order at nine that morning — 'It is my intention to send your Army forward against their flank, that is in an eastward direction, in liaison with the British troops' — and had it telephoned to GQG about eleven; in Gallieni's own account the decision was taken and the orders given before the telephone was picked up. Joffre's reply, sent about midday and in Paris by ten to three, accepted the attack but wanted the Sixth Army on the south bank of the Marne; a letter went to Sir John French the same morning saying the same thing; a telegram went to Franchet d'Espèrey asking whether the Fifth Army could fight, and one to Foch, who answered yes at once. Franchet d'Espèrey's answer, timed four o'clock, said the 6th and not before, and only if Maunoury reached the Ourcq. Towards six, without waiting for the rest of what he had asked for, Joffre ordered the Instruction drafted. Towards eight, with that answer in front of him, he took Gallieni's telephone call insisting that the Army of Paris was already committed north of the Marne and could not be turned about — and accepted it.[^edmonds-1933] [^gallieni-1920]",
+    "verdict": "The two directives of 4 September went out inside the same evening hour and told the two right wings opposite things. OHL's separate orders to the First and Second Armies were issued 'in der achten Abendstunde', between seven and eight, and held them between the Oise and the Marne facing Paris; Gallieni's Ordre général no 5 was dated 20 h. 30 and sent the Army of Paris east onto the Ourcq. GQG told Paris at ten that the general offensive was fixed for the morning of the 6th — by which time, Gallieni notes, his own order had been dated an hour and a half — and Instruction générale no 6 reached British GHQ a little after three in the morning of the 5th, carried by Colonel Huguet. By the afternoon of the 5th Maunoury's advance guard was in contact with Gronau's flank guard north-east of Meaux, and the order OHL had sent the evening before had been at Kluck's headquarters since seven that morning. Whose directive it was is argued still. Gallieni's memoirs put the plan in Paris at nine in the morning and observe, with three exclamation marks, that the original of Joffre's order of the day — the one whose date and hour would let him claim the initiative before history — 'carries three different dates written over one another'; the British official history, working from the French annexes, from Clergerie and from Gallieni's own page 114, has Joffre's decision ripen through the afternoon under the weeping ash at Bar-sur-Aube and harden on Gallieni's telephone call. Joffre's own side of it cannot be read here: his memoirs are not in this registry, and the AFGG annexes that print the telegrams as filed are behind Gallica's block.[^reichsarchiv-weltkrieg-3] [^gallieni-1920] [^edmonds-1933]",
+    "links": {
+      "people": [
+        "person:joffre-joseph",
+        "person:gallieni-joseph",
+        "person:maunoury-michel-joseph",
+        "person:french-john",
+        "person:franchet-desperey-louis",
+        "person:foch-ferdinand"
+      ],
+      "formations": ["1914:army-fr-6", "1914:army-fr-5", "1914:bef"],
+      "events": ["1914:event-kluck-wheels-south-east", "1914:event-battle-of-the-marne"],
+      "battles": ["1914:marne"],
+      "documents": [
+        "1914:document-gallieni-ordre-general-5-1914-09-04",
+        "1914:document-ohl-wireless-1914-09-04"
+      ]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1933",
+        "pages": "277, 279–280, 293–296",
+        "note": "Note II, 'The Genesis of the Battle of the Marne — Sequence of Events on the 4th September 1914', pp. 293–294: Gallieni's 9 a.m. warning order to Maunoury quoted entire; the plan telephoned to G.Q.G. 'about 11 a.m. (possibly as early as 10 a.m.)'; Joffre's cipher telegram 'sent off at 12.20 p.m., received in Paris 2.50 p.m.'; the telegram to the Fifth Army and Foch's immediate reply; Joffre at Bar sur Aube — 'Towards 6 p.m., without waiting for the information he had requested, he ordered the draft of an Instruction in this sense to be prepared' — and the 8 p.m. telephone call after which 'he irrevocably decided'. Franchet d'Espèrey's reply timed 4 p.m. at p. 279; Sir John French's day, Joffre's letter to him and the 6.35 p.m. orders from Melun at p. 280; the Flying Corps reports of the 4th at p. 277; Instruction No. 6 at British G.H.Q. 'a little after 3 a.m.' on the 5th, and its army-by-army purport, at pp. 295–296. Edmonds's own footnotes name his sources as AFGG annexes 2326–2327, Clergerie, and Gallieni's Mémoires p. 114. Third edition of 1933: pages do not carry to the 1922 first edition."
+      },
+      {
+        "source": "source:gallieni-1920",
+        "pages": "113–116, 119–123, 124, 127–133",
+        "note": "His own day. The 9 a.m. order to the Army of Paris and his reasoning for the north bank (pp. 113–116); 'la décision bien prise et les ordres étant déjà donnés, mon chef d'état-major téléphonait au grand quartier général' (p. 114); leaving for Melun at 1.30, arriving at 3, three hours with a British chief of staff who could decide nothing in Sir John French's absence, away again about 5 (pp. 119–123); Joffre's telegram, which Gallieni dates 13 h., received 14 h. 50, where Edmonds has 12.20 p.m. (p. 124); Wilson's telegram of 18 h. 30 and Huguet's of 21 h. carrying the Marshal's 'decision' (pp. 127–128); his own telephone call to Joffre and the 20 h. 30 order (pp. 129–130); GQG's 22 h. message and the footnote on the three overwritten dates on Joffre's order of the day (pp. 132–133). Memoir, written in a priority dispute, and one side of it."
+      },
+      {
+        "source": "source:reichsarchiv-weltkrieg-3",
+        "pages": "311",
+        "note": "the German counterpart, for the hour only: OHL's separate orders to the First and Second Armies issued 'in der achten Abendstunde' of 4 September. The decision itself is `1914:decision-1914-09-04-halt-facing-paris`."
+      },
+      {
+        "source": "source:herwig-2009",
+        "note": "the Joffre–Gallieni priority dispute as historiography, as `1914:document-gallieni-ordre-general-5-1914-09-04` already carries it. No pages: not readable from this environment."
+      },
+      {
+        "source": "source:afgg-1-2-annexes-1",
+        "note": "Instruction générale no 6 and the telegrams of 4 September as filed. Cited without pages and unread: gallica.bnf.fr answers this environment with a security check (sand-23b.20)."
+      }
+    ]
+  },
+  {
     "id": "1914:decision-1914-09-04-halt-facing-paris",
     "at": "1914-09-04T20:00:00Z",
     "title": "Halt the right wing and face Paris?",

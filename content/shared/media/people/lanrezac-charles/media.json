@@ -28,8 +28,12 @@
     "1914:army-fr-5",
     "1914:frontiers-north",
     "1914:guise",
-    "1914:vignette-rethel-lanrezac-french"
+    "1914:vignette-rethel-lanrezac-french",
+    "1914:decision-1914-09-03-relieve-lanrezac"
   ],
-  "focal_point": { "x": 0.5, "y": 0.22 },
+  "focal_point": {
+    "x": 0.5,
+    "y": 0.22
+  },
   "notes": "Provided by Dave 2026-08-22. Source scan is small; acceptable for cards, seek a better scan before hero use."
 }

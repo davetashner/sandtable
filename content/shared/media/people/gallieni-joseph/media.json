@@ -29,8 +29,12 @@
     "1914:marne",
     "1914:tech-aerial-reconnaissance",
     "1914:tech-motor-transport-taxis",
-    "1914:vignette-taxis"
+    "1914:vignette-taxis",
+    "1914:decision-1914-09-04-turn-and-attack"
   ],
-  "focal_point": { "x": 0.5, "y": 0.28 },
+  "focal_point": {
+    "x": 0.5,
+    "y": 0.28
+  },
   "notes": "Provided by Dave 2026-08-22. Excellent archive provenance (LoC glass negative, 3700 × 5200) — a good candidate for the 'show original' demonstration."
 }
