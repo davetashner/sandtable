@@ -107,7 +107,9 @@ Four things the epilogue found, none of them invented for it:
   none for the `placed` ones. Not done here — ADR 0013's index landed
   yesterday and this is a design change to it, so it is a follow-up rather
   than something smuggled in here. The data is now able to answer, which was
-  the blocker it named.
+  the blocker it named. **Done in `sand-neh.23`**, as an amendment to ADR
+  0013: a real window is printed as a span, and a `placed` one says
+  `dates inside` rather than leaving a gap that reads as a defect.
 - A pack that wants a prologue gets one for free: `window: "outside"` with a
   window before `pack.timeRange` reads the same way.
 - One new scene, `chapter-epilogue`, joins the visual gate; the scene list is

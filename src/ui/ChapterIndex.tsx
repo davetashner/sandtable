@@ -11,9 +11,16 @@
  * Lives in the focus breadcrumb row, which is the shell chrome ADR 0006
  * allows; entering an entry is `setFocus`, so the `focus` slot in the URL
  * stays the source of truth and deep links are unaffected (ADR 0009).
+ *
+ * It prints dates now (`sand-neh.23`). ADR 0013 shipped without them because
+ * two of the pack's chapters sit in a window that is not when they happened
+ * and nothing in the data said so; ADR 0015's `window` says it, so the index
+ * can date the levels whose windows are real and say something else — not
+ * nothing — for the ones that are placed.
  */
 import { useMemo, useRef, useState } from 'react';
-import { isChapter } from '../engine/focus.js';
+import { battleRange, isChapter } from '../engine/focus.js';
+import { labelSpan } from '../engine/ticks.js';
 import type { Battle } from '../packs/schema/index.js';
 import './chapter-index.css';
 
@@ -24,6 +31,23 @@ export const kindLabel = (b: Battle): string => (isChapter(b) ? 'Chapter' : 'Zoo
 /** "Open the chapter Liège" / "Zoom in to Liège" — the accessible name. */
 const openLabel = (b: Battle): string =>
   isChapter(b) ? `Open the chapter ${b.title}` : `Zoom in to ${b.title}`;
+
+/**
+ * The words a `placed` level shows where every other level shows a date.
+ *
+ * A `placed` window is where a chapter sits on the campaign strip, not when it
+ * happened (ADR 0015), so printing it would be printing a date the pack knows
+ * to be false — which is the whole reason ADR 0013 printed none at all. The
+ * blank that leaves is worse than it looks: in a column where ten of twelve
+ * entries carry a date, an empty one reads as data that failed to load rather
+ * than as a silence anybody chose. So the slot says why it is empty, and where
+ * the answer is: the chapter's own beats, each of which carries its real date.
+ */
+const PLACED = 'dates inside';
+
+/** What an entry shows for "when": a real span, or why there isn't one. */
+const whenLabel = (b: Battle): string =>
+  b.window === 'placed' ? PLACED : labelSpan(battleRange(b));
 
 const plural = (n: number, word: string) => `${n} ${n === 1 ? word : `${word}s`}`;
 
@@ -99,7 +123,7 @@ export function ChapterIndex({ battles, onEnter, defaultOpen = false }: ChapterI
               <button
                 type="button"
                 className="chapter-index__entry"
-                aria-label={openLabel(b)}
+                aria-label={`${openLabel(b)}, ${whenLabel(b)}`}
                 title={b.summary}
                 onClick={() => {
                   setOpen(false);
@@ -107,8 +131,14 @@ export function ChapterIndex({ battles, onEnter, defaultOpen = false }: ChapterI
                 }}
               >
                 <span className="chapter-index__title">{b.title}</span>
-                <span aria-hidden="true" className="chapter-index__kind">
-                  {kindLabel(b)}
+                {/* The kind and the when read as one eyebrow under the title.
+                    On one line beside it the longest span — "18 Aug – 14 Sep
+                    1914" — takes half the column and shreds the long titles
+                    into four lines; under it, both are whole. */}
+                <span aria-hidden="true" className="chapter-index__meta">
+                  <span className="chapter-index__kind">{kindLabel(b)}</span>
+                  <span className="chapter-index__sep">·</span>
+                  <span className="chapter-index__when">{whenLabel(b)}</span>
                 </span>
               </button>
             </li>

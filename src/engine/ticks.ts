@@ -206,6 +206,39 @@ export function labelNow(now: number, range: ClockRange): NowLabel {
   };
 }
 
+/**
+ * A whole span in one phrase, for a list rather than an axis: "21–24 Aug
+ * 1914", "18 Aug – 14 Sep 1914", "1915–1919". `labelNow` says where the clock
+ * is, `ticksFor` marks the strip; this says how long a thing lasted, which is
+ * what a table of contents wants beside a title (`sand-neh.23`).
+ *
+ * It drops what the two ends share, the way a date range is written by hand:
+ * the month when both ends are in it, the year when both ends are in that.
+ * A run of whole calendar years is written as years — an epilogue from 1
+ * January 1915 to 31 December 1919 is "1915–1919", not two dates nobody
+ * chose. The dash is tight between bare numbers and spaced between phrases,
+ * which is the same typography the packs' own `dateLabel`s use.
+ */
+export function labelSpan(range: ClockRange): string {
+  const a = new Date(range.start);
+  const b = new Date(range.end);
+  const [ya, yb] = [a.getUTCFullYear(), b.getUTCFullYear()];
+  const wholeYears =
+    a.getUTCMonth() === 0 &&
+    a.getUTCDate() === 1 &&
+    a.getUTCHours() === 0 &&
+    a.getUTCMinutes() === 0 &&
+    b.getUTCMonth() === 11 &&
+    b.getUTCDate() === 31;
+  if (wholeYears) return ya === yb ? String(ya) : `${ya}–${yb}`;
+  const dayA = `${a.getUTCDate()} ${MONTHS[a.getUTCMonth()]}`;
+  const dayB = `${b.getUTCDate()} ${MONTHS[b.getUTCMonth()]}`;
+  if (ya !== yb) return `${dayA} ${ya} – ${dayB} ${yb}`;
+  if (a.getUTCMonth() !== b.getUTCMonth()) return `${dayA} – ${dayB} ${yb}`;
+  if (a.getUTCDate() !== b.getUTCDate()) return `${a.getUTCDate()}–${dayB} ${yb}`;
+  return `${dayA} ${yb}`;
+}
+
 /** ISO-8601 without milliseconds, for URLs: 1914-08-24T12:00:00Z */
 export function toIsoNoMs(t: number): string {
   return new Date(t).toISOString().replace(/\.\d{3}Z$/, 'Z');

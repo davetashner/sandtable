@@ -84,7 +84,7 @@ describe('accessibility (axe-core)', () => {
     fireEvent.click(screen.getByRole('button', { name: '12 chapters and zoom-ins' }));
     expect(report(await violationsOf(container)), 'index open').toBe('');
 
-    fireEvent.click(screen.getByRole('button', { name: 'Zoom in to First Battle of the Marne' }));
+    fireEvent.click(screen.getByRole('button', { name: /^Zoom in to First Battle of the Marne,/ }));
     expect(report(await violationsOf(container)), 'inside a zoom-in').toBe('');
 
     fireEvent.click(screen.getByRole('button', { name: 'Back to the campaign' }));

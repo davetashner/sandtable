@@ -38,7 +38,7 @@ describe('App shell', () => {
     expect(screen.getByText('Day 30')).toBeInTheDocument();
     // the index rests closed above the map (ADR 0013); open it, then pick the level
     fireEvent.click(screen.getByRole('button', { name: '12 chapters and zoom-ins' }));
-    fireEvent.click(screen.getByRole('button', { name: 'Zoom in to First Battle of the Marne' }));
+    fireEvent.click(screen.getByRole('button', { name: /^Zoom in to First Battle of the Marne,/ }));
     expect(window.location.search).toContain('focus=1914:marne');
     expect(screen.getByRole('navigation', { name: 'Focus' })).toHaveTextContent(
       'First Battle of the Marne',

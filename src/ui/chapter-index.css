@@ -41,7 +41,9 @@
 /* `flex-basis: 100%` puts the list on its own line of the breadcrumb's flex
    row; the columns fill as the screen allows and collapse to one on a phone.
    The track is wide enough that a battle's title takes at most two lines —
-   narrower columns fit more of them but shred the long ones into three. */
+   narrower columns fit more of them but shred the long ones into three. The
+   title has the whole track to itself now that the kind has moved under it
+   with the date, so the same 280px holds more of it than it did. */
 .chapter-index__list {
   flex-basis: 100%;
   width: 100%;
@@ -57,8 +59,9 @@
 .chapter-index__entry {
   appearance: none;
   display: flex;
-  align-items: baseline;
-  gap: var(--space-2);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
   width: 100%;
   min-height: 28px;
   padding: 4px 8px;
@@ -82,18 +85,32 @@
   min-width: 0;
 }
 
-/* The label follows from the entity: a routeless battle is a chapter, one
-   that brings its own routes is a zoom-in (src/engine/focus.ts). */
-.chapter-index__kind {
-  margin-left: auto;
+/* The eyebrow under the title: what the level is, and when it was. Both are
+   one mono line at the type floor (ADR 0010), muted against the title above.
+   `nowrap` because a span broken across two lines stops being one date. */
+.chapter-index__meta {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
   letter-spacing: var(--track-eyebrow);
-  text-transform: uppercase;
   color: var(--muted);
   white-space: nowrap;
 }
 
-.chapter-index__entry:hover .chapter-index__kind {
+/* The label follows from the entity: a routeless battle is a chapter, one
+   that brings its own routes is a zoom-in (src/engine/focus.ts). */
+.chapter-index__kind {
+  text-transform: uppercase;
+}
+
+/* Left in the reader's case: "5–12 Sep 1914" is a date, not an eyebrow, and
+   a `placed` chapter's "dates inside" is a sentence about where they are. */
+.chapter-index__when {
+  text-transform: none;
+}
+
+.chapter-index__entry:hover .chapter-index__meta {
   color: var(--brass);
 }

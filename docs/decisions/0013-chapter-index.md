@@ -115,3 +115,78 @@ enters focus from inside the story where the reader actually is.
   list in the chrome.
 - `docs/design-review.md`'s open item — "chapter chips wrap to three rows on
   desktop" — is settled here.
+
+## Amendment — 2026-08-25: the index prints dates (`sand-neh.23`)
+
+This record shipped an index with no dates in it, and PR #98 wrote down why:
+`1914:origins` and `1914:july-crisis` sit in a clamped 2–4 August window that
+is not when they happened, "and the data cannot tell the component which
+windows are real. Their beats carry the true dates in `dateLabel`; the index
+stays silent rather than lying." That was a statement about the data, not
+about tables of contents, and [ADR 0015](0015-chapter-windows.md) changed the
+data: `Battle.window` now says what `timeRange` means. **The index speaks.**
+
+Each entry carries an eyebrow under its title — the kind it already had, and
+now the span beside it:
+
+| `window`    | The entry shows              | In the 1914 pack             |
+| ----------- | ---------------------------- | ---------------------------- |
+| _(absent)_  | the window, as a date span   | nine levels, `5–12 Sep 1914` |
+| `"outside"` | the same, from its own clock | the epilogue, `1915–1919`    |
+| `"placed"`  | **`dates inside`**           | the origins, the July Crisis |
+
+The interesting half is the third row. A `placed` window must not be printed —
+that is the lie 0013 refused — but a blank in a column where ten of twelve
+entries carry a date does not read as a silence anybody chose; it reads as
+data that failed to load. So the slot says why it is empty and where the
+answer is: inside the chapter, on beats that each carry their real date. The
+words are the same for every pack, because `placed` is the only thing the
+engine knows.
+
+`labelSpan` in `src/engine/ticks.ts` writes the span the way a person would —
+dropping the month when both ends share it, the year when both ends share
+that, and writing a run of whole calendar years as years, so the epilogue is
+`1915–1919` and not `1 Jan 1915 – 31 Dec 1919`.
+
+### Rejected, in order of how nearly they worked
+
+- **The real span, derived from the chapter's beats' `dateLabel`.** The
+  obvious answer, and it does not survive contact with the field. The nine
+  beats of `1914:origins` carry `1871–1894`, `1891–1905`, `The French frontier
+after 1871`, `December 1905`, **`The argument since 1956`**, `1906–1914`,
+  `1911–1914`, `1839–1914` and `The plan as a machine`. Two of those are not
+  dates, and one is a date in the 1950s about historiography. A min/max over
+  them prints `1839–1956`, which is worse than silence: a false span, stated
+  with confidence. `dateLabel` is authored prose for a reader — the content
+  model says so — and parsing prose to fill a data slot is how a pack starts
+  lying by accident.
+- **Nothing at all, as before.** The status quo, and the thing this amendment
+  exists to overturn: it was right while the data could not tell the two kinds
+  apart, and once the data can, an unexplained gap is the only remaining
+  ambiguity in the column.
+- **A word like "Prologue".** True of both of the 1914 pack's `placed`
+  chapters and false in general. `placed` means "somewhere on the campaign
+  strip", not "before it" — an interlude placed mid-campaign is as legal — and
+  deriving the word from where the window sits relative to `pack.timeRange`
+  would be inference dressed as data, which is exactly what 0015 removed.
+- **A new field, `Battle.dateLabel`, carrying the real span in the author's
+  own words.** The fully informative answer, and the right one eventually: it
+  is the only way `1914:july-crisis` gets to say `28 June – 4 August 1914` in
+  the index. It is also a content-model change — schema, JSON Schema,
+  validator, every pack — two days after 0015 settled the field that says what
+  a window means, and 0015 explicitly rejected a second string beside it.
+  Filed as a follow-up rather than smuggled in behind a chrome bead.
+- **Dates on the breadcrumb trail as well, once you are inside a level.**
+  The trail says where you are, and the timeline under it is already showing
+  that level's window at full width. A date there is a second answer to a
+  question nothing asked.
+
+### What it costs
+
+- An index entry is two lines rather than one: the title, then
+  `CHAPTER · 21–24 Aug 1914`. Beside the title the longest span the pack has —
+  `18 Aug – 14 Sep 1914` — takes half a 280px column and shreds the long
+  titles into four lines. Under it, both are whole, and the title has gained
+  the width the kind tag used to occupy.
+- The closed control is untouched: one pill, one count, no dates. ADR 0006's
+  single thin header row is what the resting state still is.
