@@ -2,10 +2,10 @@
   "$comment": "The performance budget CI holds (ADR 0016, sand-pmz.3). Two ceilings on the built bundle, in kilobytes of gzip, checked by `npm run bundle:budget` in the web job. Raise one only with a sentence saying what the app gained for the bytes — the number and the reason are reviewed together in the diff. Measure with `npm run perf`, which prints the same figures and what each chunk is made of.",
   "budgets": {
     "eager": {
-      "maxGzipKb": 470,
-      "measuredKb": 432.5,
+      "maxGzipKb": 490,
+      "measuredKb": 474.6,
       "measuredOn": "2026-08-25",
-      "why": "Everything index.html names — the entry, its modulepreloads, its stylesheet — plus index.html itself. This is what stands between a reader and first paint on a cold load, so it is the number worth a ceiling. 432 kB is where the deck.gl split left it; 470 is about two months of ordinary growth and a hard stop before the number doubles by accident. What is still in it and why: the 1914 pack's JSON (~130 kB gzip, bundled until the lazy pack loader lands, sand-shn.1), react-dom, zod (the pack is re-validated in the browser), yaml (beat front matter), and the react-markdown stack (the dossier's prose)."
+      "why": "Everything index.html names — the entry, its modulepreloads, its stylesheet — plus index.html itself. This is what stands between a reader and first paint on a cold load, so it is the number worth a ceiling. What is still in it and why: the 1914 pack's JSON (~135 kB gzip, bundled until the lazy pack loader lands, sand-shn.1), react-dom, zod (the pack is re-validated in the browser), yaml (beat front matter), and the react-markdown stack (the dossier's prose). 470 held from the deck.gl split (432.5 kB) until sand-23b.28 added the twelfth card family and sand-23b.31 the text of Instruction générale no 6 — 7.5 kB of gzip, almost all of it prose and citations — and went 4.4 kB over a ceiling that had 3.1 kB of headroom left before this PR. 490 buys back roughly two more content passes. It is a stay of execution and not a fix: the eager number is now dominated by pack JSON that no reader needs before first paint, every content PR pays for it, and the ceiling will keep being raised by content until sand-shn.1 fetches the pack instead of bundling it."
     },
     "total": {
       "maxGzipKb": 1100,

@@ -39,6 +39,7 @@ content/
     tech.json                  TechCard[]
     science.json               ScienceCard[]
     documents.json             Document[]
+    historiography.json        Historiography[]  (contested points, ADR 0017)
     links.json                 CausalLink[]
     sources.json               Source[]   (pack-local; most sources live in shared/)
     casualties.json            CasualtyRecord[]
@@ -201,6 +202,19 @@ generated JSON Schema; this is the intent of each.
   four weapons. Never on a beat: a beat has one picture (ADR 0012).
 - **Document** — the real text: title, date, author, kind, `excerpt` (original
   language), `translation`, archive, links, required sources.
+- **Historiography** (`historiography.json`) — a contested point carried as
+  the argument it is (ADR 0017): the `question`, **at least two `positions`**
+  each with a `label`, the `who` that holds it and a footnoted summary, what
+  is not in dispute (`settled`), and what would settle it and has not been
+  read (`unread`). The floor of two is in the schema, with the reason in its
+  error message: rule 6 of `docs/sources.md` says a contested point is not
+  settled for the learner, and a card carrying one position is a verdict in
+  costume. The validator adds that two positions may not share a label or a
+  holder. It has no timeline glyph — a dispute has no moment — and is reached
+  from the entities it is about, each of which names it in
+  `links.historiography`. Where a note in `docs/historiography-1914.md` has a
+  card, the card is the source of truth and the note is the register.
+  Required sources.
 - **CausalLink** — `from` → `to` (any entity, any pack), `relation`, the
   `claim`, `confidence`, historiography, and at least one piece of `evidence`.
 - **CastEntry** (`cast.json`) — the pack's dramatis personae: `person` (a

@@ -27,8 +27,12 @@
   "credit": "Original photograph: J. F. R. von Goetz, 1918, Deutsche Digitale Bibliothek, CC-BY 3.0 (via Wikimedia Commons). Colorization: Sandtable, AI-assisted, 2026.",
   "used_by": [
     "1914:decision-1914-09-09-hentsch-retreat",
-    "1914:marne"
+    "1914:marne",
+    "1914:historiography-hentsch-authority"
   ],
-  "focal_point": { "x": 0.5, "y": 0.2 },
+  "focal_point": {
+    "x": 0.5,
+    "y": 0.2
+  },
   "notes": "Provided by Dave 2026-08-22. The single image in the set that needs a fidelity check before it is used — the scene looks richer than a 387 × 600 bust portrait would support."
 }

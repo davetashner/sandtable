@@ -22,7 +22,8 @@ const T35 = '1914-09-08T12:00:00Z';
  * Campaign day 0/20/35, both zoom-in kinds, the epilogue chapter with a window
  * of its own (ADR 0015), one of every card — including the bibliography, which
  * is the longest card in the app and therefore the one most likely to overflow
- * a phone — the layer switches off their defaults, and the component gallery.
+ * a phone, and the contested point, which is the densest structure in one —
+ * the layer switches off their defaults, and the component gallery.
  *
  * Every scene is a URL and nothing else. The URL is the whole view (ADR
  * 0009), so a scene is reproduced by opening it, never by clicking into it —
@@ -45,6 +46,7 @@ export const SCENES = [
   ['card-formation', `?t=${T20}&card=1914:army-de-1`],
   ['card-document', `?t=${T20}&card=1914:document-afgg-instruction-generale-2-1914-08-25`],
   ['card-decision', `?t=1914-08-30T12:00:00Z&card=1914:decision-1914-08-30-kluck-wheel`],
+  ['card-historiography', `?t=${T35}&card=1914:historiography-hentsch-authority`],
   ['card-casualty', `?t=${T35}&card=1914:casualties-marne`],
   ['card-vignette', `?t=${T35}&card=1914:vignette-taxis`],
   ['card-causal', `?t=${T20}&card=1914:link-wheel-to-marne`],

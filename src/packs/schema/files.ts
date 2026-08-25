@@ -11,6 +11,7 @@
  *     tech.json          TechCard[]
  *     science.json       ScienceCard[]
  *     documents.json     Document[]
+ *     historiography.json Historiography[]  (contested points, ADR 0017)
  *     links.json         CausalLink[]
  *     sources.json       Source[]          (pack-local; shared/sources for the rest)
  *     casualties.json    CasualtyRecord[]
@@ -39,6 +40,7 @@ import {
   Document,
   Event,
   Formation,
+  Historiography,
   Media,
   Pack,
   Person,
@@ -69,6 +71,7 @@ export const PACK_COLLECTIONS = {
   'tech.json': TechCard,
   'science.json': ScienceCard,
   'documents.json': Document,
+  'historiography.json': Historiography,
   'links.json': CausalLink,
   'sources.json': Source,
   'cast.json': CastEntry,
@@ -112,6 +115,7 @@ export const JSON_SCHEMAS = {
   tech: z.array(TechCard),
   science: z.array(ScienceCard),
   documents: z.array(Document),
+  historiography: z.array(Historiography),
   links: z.array(CausalLink),
   sources: z.array(Source),
   cast: z.array(CastEntry),

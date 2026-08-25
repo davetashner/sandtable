@@ -20,6 +20,7 @@ import {
   type Document,
   type Event,
   type Formation,
+  type Historiography,
   type Links,
   Cue,
   type Cue as CueT,
@@ -81,6 +82,7 @@ export interface ParsedPack {
   tech: TechCard[];
   science: ScienceCard[];
   documents: Document[];
+  historiography: Historiography[];
   links: CausalLink[];
   sources: Source[];
   cast: CastEntry[];
@@ -139,6 +141,7 @@ type Kind =
   | 'tech'
   | 'science'
   | 'document'
+  | 'historiography'
   | 'link'
   | 'source'
   | 'beat'
@@ -280,6 +283,7 @@ const LINK_KINDS: Record<keyof Links, Kind[]> = {
   science: ['science'],
   documents: ['document'],
   casualties: ['casualties'],
+  historiography: ['historiography'],
   media: ['media'],
 };
 
@@ -365,6 +369,7 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     tech: [],
     science: [],
     documents: [],
+    historiography: [],
     links: [],
     sources: [],
     cast: [],
@@ -401,6 +406,7 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     'tech.json': 'tech',
     'science.json': 'science',
     'documents.json': 'document',
+    'historiography.json': 'historiography',
     'links.json': 'link',
     'sources.json': 'source',
     'cast.json': 'cast',
@@ -993,6 +999,49 @@ function checkCasualties(
   checkFootnotes(ctx, path, c.id, c.historiography, c.sources, 'historiography');
 }
 
+/**
+ * A contested point (ADR 0017). The schema already refuses a card with fewer
+ * than two positions; what a schema cannot say is that the two must be
+ * *different* positions and that each must be attributable — a card whose two
+ * sides carry the same label, or the same holders, is one argument written
+ * twice, which is rule 6 of `docs/sources.md` evaded rather than met.
+ *
+ * `unread` is not required, but a card that has one is making the pack's most
+ * frequent honest admission — the volume that would settle it cannot be
+ * opened from here — and it has to cite nothing, because "we have not read
+ * it" needs no source.
+ */
+function checkHistoriography(ctx: Ctx, path: string, h: Historiography) {
+  const labels = new Set<string>();
+  const holders = new Set<string>();
+  h.positions.forEach((p, i) => {
+    const label = p.label.trim().toLowerCase();
+    if (labels.has(label))
+      ctx.error(path, `positions[${i}]: two positions are labelled "${p.label}"`, h.id);
+    labels.add(label);
+    const who = p.who.trim().toLowerCase();
+    if (holders.has(who))
+      ctx.error(
+        path,
+        `positions[${i}]: "${p.who}" is given as the holder of two positions — a dispute needs two sides, not one side twice`,
+        h.id,
+      );
+    holders.add(who);
+    checkFootnotes(ctx, path, h.id, p.summary, h.sources, `positions[${i}].summary`);
+    checkProseLinks(ctx, path, h.id, p.summary, `positions[${i}].summary`);
+  });
+  for (const [what, text] of [
+    ['question', h.question],
+    ['settled', h.settled],
+    ['unread', h.unread],
+  ] as const) {
+    checkFootnotes(ctx, path, h.id, text, h.sources, what);
+    checkProseLinks(ctx, path, h.id, text, what);
+  }
+  checkLinks(ctx, path, h.id, h.links);
+  checkCitations(ctx, path, h.id, h.sources, true);
+}
+
 function checkVignette(ctx: Ctx, s: PackState, path: string, v: Vignette) {
   if (!within(s.pack.timeRange, v.at)) ctx.error(path, 'at is outside the pack timeRange', v.id);
   checkBranchRef(ctx, s, path, v.id, v.branch, true);
@@ -1494,6 +1543,7 @@ export function validateContent(raw: RawContent): Report {
     for (const c of s.tech) checkCard(ctx, file('tech.json'), c);
     for (const c of s.science) checkCard(ctx, file('science.json'), c);
     for (const c of s.documents) checkCard(ctx, file('documents.json'), c);
+    for (const h of s.historiography) checkHistoriography(ctx, file('historiography.json'), h);
     for (const l of s.links) checkLink(ctx, file('links.json'), l);
     for (const c of s.clocks) checkClock(ctx, file('clocks.json'), c);
     for (const c of s.tallies) checkTally(ctx, s, file('tallies.json'), c);

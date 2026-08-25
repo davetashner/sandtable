@@ -18,6 +18,7 @@ import sourcesJson from '../../content/shared/sources/sources.json';
 import techJson from '../../content/eras/1914-schlieffen-marne/tech.json';
 import scienceJson from '../../content/eras/1914-schlieffen-marne/science.json';
 import documentsJson from '../../content/eras/1914-schlieffen-marne/documents.json';
+import historiographyJson from '../../content/eras/1914-schlieffen-marne/historiography.json';
 import linksJson from '../../content/eras/1914-schlieffen-marne/links.json';
 import castJson from '../../content/eras/1914-schlieffen-marne/cast.json';
 import decisionsJson from '../../content/eras/1914-schlieffen-marne/decisions.json';
@@ -38,6 +39,7 @@ import {
   DecisionPoint,
   Event,
   Formation,
+  Historiography,
   Pack,
   Person,
   Place,
@@ -60,6 +62,7 @@ import {
   type DecisionPoint as DecisionPointT,
   type CausalLink as CausalLinkT,
   type Document as DocumentT,
+  type Historiography as HistoriographyT,
   type ScienceCard as ScienceCardT,
   type Event as EventT,
   type Formation as FormationT,
@@ -111,6 +114,8 @@ export interface SeedPack {
   tech: TechCardT[];
   science: ScienceCardT[];
   documents: DocumentT[];
+  /** Contested points carried as arguments (historiography.json, ADR 0017). */
+  historiography: HistoriographyT[];
   links: CausalLinkT[];
   /** The pack's dramatis personae (cast.json), in file order. */
   cast: CastEntryT[];
@@ -154,6 +159,7 @@ function loadSeed(): SeedPack {
   const tech = TechCard.array().parse(techJson);
   const science = ScienceCard.array().parse(scienceJson);
   const documents = Document.array().parse(documentsJson);
+  const historiography = Historiography.array().parse(historiographyJson);
   const links = CausalLink.array().parse(linksJson);
   const cast = CastEntry.array().parse(castJson);
   const clocks = Timetable.array().parse(clocksJson);
@@ -182,6 +188,7 @@ function loadSeed(): SeedPack {
     tech,
     science,
     documents,
+    historiography,
     links,
     cast,
     decisions,

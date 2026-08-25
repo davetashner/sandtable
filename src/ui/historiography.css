@@ -1,0 +1,83 @@
+/* Contested-point card (sand-23b.28, ADR 0017): the positions side by side,
+   in a column, both readable at once. Tokens only (ADR 0010). */
+
+.hgraphy__positions {
+  list-style: none;
+  margin: var(--space-2) 0 var(--space-3);
+  padding: 0;
+  display: grid;
+  gap: var(--space-2);
+  /* Numbering would rank them. The order on the card is the order the
+     argument was made in, and that is not a score. */
+  counter-reset: none;
+}
+
+.hgraphy__position {
+  padding: var(--space-2) var(--space-3);
+  border-left: 3px solid var(--brass-dim);
+  background: var(--panel-2);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.hgraphy__label {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.hgraphy__who {
+  margin: var(--space-1) 0 var(--space-2);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  color: var(--muted);
+}
+
+.hgraphy__body {
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+}
+
+.hgraphy__body > :last-child {
+  margin-bottom: 0;
+}
+
+.hgraphy__aside {
+  margin: var(--space-3) 0 0;
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+}
+
+.hgraphy__aside h3 {
+  margin: 0 0 var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+/* The unread block is the pack's standing admission that a volume it cannot
+   open would decide the question. Dashed, like the approximate-position key
+   in the legend, and for the same reason: this is a hole, drawn as one. */
+.hgraphy__aside--unread {
+  padding: var(--space-2) var(--space-3);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+}
+
+.hgraphy__aside--unread > :last-child {
+  margin-bottom: 0;
+}
+
+/* The chip that gets a reader here from the entity the dispute is about.
+   The scales, because the card weighs rather than decides. */
+.card__chip[data-kind='historiography']::before {
+  content: '⚖';
+  font-family: var(--font-mono);
+  color: var(--brass);
+  margin-right: 5px;
+}
