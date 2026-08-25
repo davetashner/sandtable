@@ -34,6 +34,7 @@ Every claim cites a `Source`. If the work you are citing is not yet in
 {
   "id": "source:tyng-1935",
   "kind": "book",
+  "tier": "study",
   "author": "Tyng, Sewell",
   "title": "The Campaign of the Marne 1914",
   "year": 1935,
@@ -44,6 +45,15 @@ Every claim cites a `Source`. If the work you are citing is not yet in
 
 - `id` is `source:<surname>-<year>` (or a short slug for official histories,
   e.g. `source:afgg-1-1`).
+- `tier` is where the work stands in the hierarchy of evidence — `primary`,
+  `official-history`, `study`, `unit-history`, `memoir`, `general` or
+  `reference` — and it is what the reader-facing bibliography groups by, so
+  pick it by the work's **form** and let `notes` carry the nuance
+  ([`docs/sources.md`](sources.md)).
+- `notes` is not optional in practice: it is the line a reader is shown under
+  the work in the bibliography, and it is the whole of "further reading".
+- Add the entry **in the PR that first cites it**. A registry entry nothing
+  cites appears in no bibliography, and the validator warns about it.
 - Cite with `{ "source": "source:tyng-1935", "pages": "112–115" }`. `pages`
   is optional but wanted for anything contestable.
 - Inline in beats: `[^tyng-1935]` — the slug after the colon. The validator

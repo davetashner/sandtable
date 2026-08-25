@@ -7,6 +7,7 @@ const sources: Source[] = [
   {
     id: 'source:herwig-2009',
     kind: 'book',
+    tier: 'study',
     author: 'Herwig, Holger H.',
     title: 'The Marne, 1914',
     year: 2009,

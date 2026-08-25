@@ -7,6 +7,7 @@ const sources: Source[] = [
   {
     id: 'source:strachan-2001',
     kind: 'book',
+    tier: 'study',
     author: 'Strachan, Hew',
     title: 'To Arms',
     year: 2001,

@@ -82,6 +82,8 @@ import { MeanwhileFilter } from './ui/MeanwhileFilter.js';
 import { ScienceCardView, SCIENCE_FIELDS } from './ui/ScienceCardView.js';
 import { TechCardView, type EntityLabeller } from './ui/TechCardView.js';
 import { Timeline, type TimelineMarker, type TimelinePhase } from './ui/Timeline.js';
+import { BibliographyView, SourceCardView } from './ui/Bibliography.js';
+import { BIBLIOGRAPHY_CARD, countCitations, type SourceUse } from './engine/bibliography.js';
 import { layerOn, parseViewState } from './engine/url-state.js';
 import { ownsKeys } from './engine/shortcuts.js';
 import type { Battle, Camera, Links, ScienceField } from './packs/schema/index.js';
@@ -90,6 +92,15 @@ import type { ClockRange } from './engine/clock.js';
 // MapLibre + deck.gl are the heaviest dependencies; load the whole map surface
 // on demand so the shell, timeline and dossier paint first.
 const MapSurface = lazy(() => import('./ui/MapSurface.js'));
+
+/**
+ * How often the pack cites each work, counted once and lazily (sand-shn.5).
+ *
+ * It is a walk of the whole pack, and nothing needs it until a reader opens
+ * the bibliography or a work's card, so it does not run on boot.
+ */
+let citationUse: Map<string, SourceUse> | null = null;
+const sourceUse = () => (citationUse ??= countCitations(seed));
 
 const RANGE = {
   start: Date.parse(seed.pack.timeRange.start),
@@ -186,6 +197,8 @@ function useLabeller(): EntityLabeller {
 
 /** The card the URL's card slot names, if any — tech, science, document, formation… */
 function useCard():
+  | { kind: 'bibliography'; card: { id: string } }
+  | { kind: 'source'; card: (typeof seed.sources)[number] }
   | { kind: 'tech'; card: (typeof seed.tech)[number] }
   | { kind: 'science'; card: (typeof seed.science)[number] }
   | { kind: 'document'; card: (typeof seed.documents)[number] }
@@ -200,6 +213,12 @@ function useCard():
   | undefined {
   const { card } = useViewState();
   if (!card) return undefined;
+  // The two source families first, and the reserved word before the registry
+  // lookups: `bibliography` is the one card id with no entity behind it, and
+  // the schema's `Id` requires a colon, so no entity can ever claim it.
+  if (card === BIBLIOGRAPHY_CARD) return { kind: 'bibliography', card: { id: card } };
+  const source = seed.sources.find((s) => s.id === card);
+  if (source) return { kind: 'source', card: source };
   const supply = seed.supply.find((c) => c.id === card);
   if (supply) return { kind: 'supply', card: supply };
   const casualties = seed.casualties.find((c) => c.id === card);
@@ -955,7 +974,19 @@ function DossierSurface() {
           />
         }
         card={
-          card?.kind === 'tech' ? (
+          card?.kind === 'bibliography' ? (
+            <BibliographyView
+              sources={seed.sources}
+              use={sourceUse()}
+              onBack={() => controls?.setCard(undefined)}
+            />
+          ) : card?.kind === 'source' ? (
+            <SourceCardView
+              source={card.card}
+              use={sourceUse().get(card.card.id)}
+              onBack={() => controls?.setCard(undefined)}
+            />
+          ) : card?.kind === 'tech' ? (
             <TechCardView
               card={card.card}
               sources={seed.sources}

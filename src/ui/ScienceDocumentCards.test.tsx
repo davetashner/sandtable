@@ -9,6 +9,7 @@ const sources: Source[] = [
   {
     id: 'source:pais-1982',
     kind: 'book',
+    tier: 'study',
     author: 'Pais, Abraham',
     title: 'Subtle is the Lord',
     year: 1982,

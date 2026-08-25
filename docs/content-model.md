@@ -271,7 +271,11 @@ casualties`), each a point `value` or a `low`–`high` range with its own
   references `[^herwig-2009]` must name one of the beat's sources by slug.
 - **Person / Place / Source / Media** — shared registries. Places carry
   period and modern names; Sources are books, chapters, articles, official
-  histories, archives, maps and web pages; Media manifests are the provisional
+  histories, archives, maps and web pages, and each declares a `tier` —
+  where it stands in the hierarchy of evidence (`primary`, `official-history`,
+  `study`, `unit-history`, `memoir`, `general`, `reference`), which is what the
+  bibliography groups by and what tells a reader whether the figure they are
+  reading came from an official history or from a memoir (`docs/sources.md`); Media manifests are the provisional
   per-image records (`content/shared/media/README.md`) pending `sand-y0u.2`.
 - **Thread** — a learning path: ordered steps of (pack, beat or instant,
   branch, connective note).
@@ -284,6 +288,11 @@ battles, decision points, tech and science cards, documents, beats, cast
 entries and causal links (`evidence`); optional on formations, people, places, branches and
 packs. Every citation must resolve to a Source. The citation standard and the
 bibliography for WWI are `sand-23b.1`.
+
+The reader-facing bibliography is **generated from these citations** and not
+written beside them (`sand-shn.5`): the works listed are the works the pack
+actually cites, grouped by `Source.tier`. A registry entry nothing cites
+therefore appears nowhere, and the validator warns about it.
 
 ## Validator rules (errors)
 
@@ -328,7 +337,10 @@ formation's `concentration.position` outside the pack region, a leg faster
 than its `mode` sustained but not beyond it (a forced march is a warning, a
 teleport is an error), branches without beats (non-seed packs), media `person`
 and cue `used_by` pointing at entities that do not exist yet, thread steps
-with neither beat nor instant, unknown pack files.
+with neither beat nor instant, unknown pack files, and a `Source` in the
+registry that nothing cites — which is not a spare entry on a list but a work
+no reader will ever see, since the bibliography is generated from the
+citations (`sand-shn.5`).
 
 ## Extending the schema
 

@@ -1,0 +1,148 @@
+/*
+ * The bibliography card and the single-work card (sand-shn.5). Tokens only;
+ * nothing below the type floor (ADR 0010).
+ *
+ * The column is 340–380px on desktop and the sheet's width on a phone, and
+ * ninety works have to read as a bibliography in it rather than as a wall.
+ * Three devices do that and no others: a hanging indent, so a scanning eye
+ * finds the surnames down the left; a rule under each rung of the hierarchy,
+ * so the groups are visible without boxes; and three voices per entry — the
+ * reference in body type, the registry's note in the muted secondary size,
+ * and the usage readout in the instrument-panel mono.
+ */
+
+.bib__group + .bib__group {
+  margin-top: var(--space-4);
+}
+
+.bib__heading {
+  margin: 0 0 2px;
+  padding-top: 6px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.bib__rubric {
+  margin: 0 0 8px;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  color: var(--muted);
+}
+
+/* A bibliography is a list and is announced as one; the markers go, because
+   the hanging indent is what carries the eye here and a disc in front of a
+   surname carries it nowhere. */
+.bib__works {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bib__works > li {
+  margin: 0 0 10px;
+  padding-left: var(--space-3);
+  text-indent: calc(-1 * var(--space-3));
+}
+
+.bib__ref {
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  color: var(--ink);
+}
+
+.bib__ref cite {
+  font-style: italic;
+}
+
+/* The registry's own line on what the work is good for and where it leans —
+   the reason this list is worth reading rather than skipping. */
+.bib__note {
+  margin: 2px 0 0;
+  text-indent: 0;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  color: var(--muted);
+}
+
+.bib__note--card {
+  margin-top: 8px;
+  color: var(--ink);
+}
+
+.bib__imprint,
+.bib__use {
+  margin: 2px 0 0;
+  text-indent: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.bib__online,
+.bib__all {
+  margin: 8px 0 0;
+}
+
+/* Not a word in a sentence but a control appended after one, so it takes the
+   24px floor rather than WCAG 2.5.8's inline exception (docs/accessibility.md). */
+.bib__read,
+.bib__all .entity-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.bib__read {
+  text-decoration: none;
+  border-bottom: 1px dotted var(--brass-dim);
+}
+
+.bib__read:hover,
+.bib__read:focus-visible {
+  border-bottom-style: solid;
+}
+
+/* The door into the bibliography, under a card's Sources list and under the
+   beat's footnotes. Same control in both places, so it is learned once. */
+.card__sources .bib__door,
+.dossier__body .bib__door {
+  margin: 6px 0 0;
+}
+
+.bib__door .entity-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  border-bottom: none;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+}
+
+.bib__door .entity-link::after {
+  content: ' →';
+  white-space: pre;
+}
+
+/* The edition, where the registry gives one. Its own line, because these are
+   written as sentences — what the edition revised, and whether its pagination
+   can be trusted against the first (`docs/sources.md` §3). */
+.bib__edition {
+  margin: 2px 0 0;
+  text-indent: 0;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  color: var(--muted);
+  font-style: italic;
+}

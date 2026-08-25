@@ -24,6 +24,19 @@
           "other"
         ]
       },
+      "tier": {
+        "type": "string",
+        "enum": [
+          "primary",
+          "official-history",
+          "study",
+          "unit-history",
+          "memoir",
+          "general",
+          "reference"
+        ],
+        "description": "Standing in the hierarchy of evidence (docs/sources.md)"
+      },
       "title": {
         "type": "string",
         "minLength": 1
@@ -58,6 +71,7 @@
     "required": [
       "id",
       "kind",
+      "tier",
       "title"
     ],
     "additionalProperties": false

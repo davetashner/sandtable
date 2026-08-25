@@ -189,6 +189,7 @@ function fixture(): RawContent {
             {
               id: 'source:herwig-2009',
               kind: 'book',
+              tier: 'study',
               title: 'The Marne, 1914',
               author: 'Herwig, Holger H.',
               year: 2009,
@@ -196,6 +197,7 @@ function fixture(): RawContent {
             {
               id: 'source:zuber-2002',
               kind: 'book',
+              tier: 'study',
               title: 'Inventing the Schlieffen Plan',
               author: 'Zuber, Terence',
               year: 2002,

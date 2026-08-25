@@ -17,6 +17,7 @@ import { isApproximate, waypointConfidence } from '../engine/confidence.js';
 import { sideToken } from '../engine/layers/colors.js';
 import { subordinatesOf } from '../engine/formations.js';
 import { seed } from '../packs/seed.js';
+import { countCitations, EVIDENCE_ORDER } from '../engine/bibliography.js';
 import { mediaById, portraitFor } from '../packs/media-index.js';
 import type { ScienceField } from '../packs/schema/index.js';
 import { tourMinutes } from '../engine/tour.js';
@@ -27,6 +28,7 @@ import { Card } from '../ui/Card.js';
 import { CastStrip, type CastMember } from '../ui/CastStrip.js';
 import { ChapterIndex } from '../ui/ChapterIndex.js';
 import { CasualtyCardView } from '../ui/CasualtyCardView.js';
+import { BibliographyView, SourceCardView } from '../ui/Bibliography.js';
 import { CausalView } from '../ui/CausalView.js';
 import { ClockCardView } from '../ui/ClockCardView.js';
 import { ClockGauges } from '../ui/ClockGauges.js';
@@ -69,6 +71,33 @@ function only<T>(xs: readonly T[], what: string): T {
 
 const { pack, sources } = seed;
 const sides = pack.sides;
+
+/**
+ * The bibliography specimens run on the real registry and the real citation
+ * counts; only the *number* of works is a fixture. The app's list is ninety
+ * works long, which is a bibliography in the dossier and a wall in a 400px
+ * gallery pane rendered twice, so the specimen keeps the two most-cited works
+ * on each rung of the hierarchy. Every rung the pack uses still appears, with
+ * its rubric, its notes and its real counts.
+ */
+const ALL_USE = countCitations(seed);
+const SAMPLE_USE = new Map(
+  EVIDENCE_ORDER.flatMap((tier) =>
+    sources
+      .filter((s) => s.tier === tier && ALL_USE.has(s.id))
+      .sort((a, b) => ALL_USE.get(b.id)!.citations - ALL_USE.get(a.id)!.citations)
+      .slice(0, 2)
+      .map((s) => [s.id, ALL_USE.get(s.id)!] as const),
+  ),
+);
+
+/** The work a citation lands on: the most-cited one the registry has. */
+const bibWork = only(
+  [...sources]
+    .filter((s) => ALL_USE.has(s.id))
+    .sort((a, b) => ALL_USE.get(b.id)!.citations - ALL_USE.get(a.id)!.citations),
+  'cited source',
+);
 
 /** Labels every id the cards ask about; every chip is live but goes nowhere. */
 const labeller = {
@@ -990,6 +1019,24 @@ export const SECTIONS: GallerySection[] = [
             onOpenEntity={() => () => {}}
             onBack={() => {}}
           />
+        ),
+      },
+      {
+        id: 'card-bibliography',
+        title: 'Bibliography',
+        note: 'Works cited, grouped by the hierarchy of evidence, each with the registry’s note on its use and bias. Cut to two works a rung: the app’s runs to ninety.',
+        covers: ['Bibliography'],
+        column: true,
+        render: () => <BibliographyView sources={sources} use={SAMPLE_USE} onBack={() => {}} />,
+      },
+      {
+        id: 'card-source',
+        title: 'One work',
+        note: 'Where a citation lands: what the work is, where it stands, what it is good for, and how often this pack leans on it.',
+        covers: ['Bibliography'],
+        column: true,
+        render: () => (
+          <SourceCardView source={bibWork} use={ALL_USE.get(bibWork.id)} onBack={() => {}} />
         ),
       },
       {

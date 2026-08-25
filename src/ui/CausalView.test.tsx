@@ -27,6 +27,7 @@ const sources: Source[] = [
   {
     id: 'source:herwig-2009',
     kind: 'book',
+    tier: 'study',
     author: 'Herwig, Holger H.',
     title: 'The Marne, 1914',
     year: 2009,
@@ -104,7 +105,7 @@ describe('<CausalView>', () => {
     expect(steps[0]).toHaveAttribute('data-focal');
     expect(steps[1]).toHaveAttribute('data-confidence', 'contested');
     expect(screen.getByText(/Because 1914:e-wheel happened/)).toBeInTheDocument();
-    expect(screen.getByRole('region', { name: 'Evidence' })).toHaveTextContent(/Herwig.*pp\. 220/);
+    expect(screen.getByRole('region', { name: 'Evidence' })).toHaveTextContent(/Herwig.*p\. 220/);
     expect(screen.getByText('The debate')).toBeInTheDocument();
     // the focal step's "to" (the gap) has another cause — offered as an alternative
     expect(screen.getByText(/Also:/)).toHaveTextContent("Joffre's redeployment");

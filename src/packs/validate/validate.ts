@@ -162,6 +162,8 @@ class Ctx {
   readonly errors: Problem[] = [];
   readonly warnings: Problem[] = [];
   readonly index = new Map<string, IndexEntry>();
+  /** Every source id anything cites, so the registry can be checked for rot. */
+  readonly cited = new Set<string>();
 
   error(path: string, message: string, id?: string) {
     this.errors.push(
@@ -256,6 +258,7 @@ function checkCitations(
     ctx.error(path, `${what}: at least one citation is required`, id);
   }
   for (const c of citations ?? []) {
+    ctx.cited.add(c.source);
     ctx.ref(path, id, c.source, ['source'], `${what}: citation`);
     if (c.source === REFERENCE_ONLY_SOURCE && !REFERENCE_REGISTRIES.test(path)) {
       ctx.warn(
@@ -1346,10 +1349,32 @@ function checkShared(ctx: Ctx, shared: ParsedContent['shared'], raw: RawContent)
     if (m) checkMedia(ctx, m, f.path);
   });
   checkOnePicturePerBeat(ctx, shared.media);
+  checkRegistryIsUsed(ctx, shared.sources, p('sources/sources.json'));
   (raw.shared.audio ?? []).forEach((f, i) => {
     const c = shared.audio[i];
     if (c) checkCue(ctx, c, f.path);
   });
+}
+
+/**
+ * A work in the registry that nothing cites (sand-shn.5).
+ *
+ * The bibliography is generated from the pack's own citations and lists only
+ * the works it uses, so an entry nothing cites is invisible to every reader —
+ * it is not a quiet extra on a list, it is a row of metadata nobody will ever
+ * see. A warning rather than an error, because a registry entry legitimately
+ * lands one PR ahead of the content that cites it; a warning that stays is a
+ * work that was added and then not used.
+ */
+function checkRegistryIsUsed(ctx: Ctx, sources: Source[], path: string) {
+  for (const s of sources) {
+    if (ctx.cited.has(s.id)) continue;
+    ctx.warn(
+      path,
+      'nothing cites this source, so it appears in no bibliography — cite it or drop it (docs/sources.md)',
+      s.id,
+    );
+  }
 }
 
 function checkScore(ctx: Ctx, s: PackState, path: string) {

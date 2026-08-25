@@ -14,6 +14,7 @@ const sources: Source[] = [
   {
     id: 'source:herwig-2009',
     kind: 'book',
+    tier: 'study',
     author: 'Herwig, Holger H.',
     title: 'The Marne, 1914',
     year: 2009,
@@ -22,6 +23,7 @@ const sources: Source[] = [
   {
     id: 'source:tuchman-1962',
     kind: 'book',
+    tier: 'study',
     author: 'Tuchman, Barbara W.',
     title: 'The Guns of August',
     year: 1962,
@@ -106,7 +108,7 @@ describe('selectBeat / citations', () => {
 
   it('formats citations and appends footnote definitions', () => {
     expect(formatCitation(sources[0], 'herwig-2009', '90–95')).toBe(
-      'Herwig, Holger H., *The Marne, 1914* (Random House, New York, 2009), pp. 90–95.',
+      'Herwig, Holger H., [*The Marne, 1914*](source:herwig-2009) (Random House, New York, 2009), pp. 90–95.',
     );
     expect(formatCitation(undefined, 'ghost')).toMatch(/not in the registry/);
     const md = withFootnotes(beats[0]!, sources);

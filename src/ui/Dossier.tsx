@@ -14,6 +14,7 @@ import { useClock } from '../engine/ClockContext.js';
 import { APPROX_MARK } from '../engine/confidence.js';
 import { sideToken } from '../engine/layers/colors.js';
 import { selectBeat, withFootnotes } from '../engine/beats.js';
+import { BIBLIOGRAPHY_CARD } from '../engine/bibliography.js';
 import type { Branch, NarrativeBeat, Side, Source, Vignette } from '../packs/schema/index.js';
 import { VignetteView } from './VignetteView.js';
 import './card.css';
@@ -21,7 +22,8 @@ import { DiagramFigure } from './DiagramFigure.js';
 import { MediaFigure } from './MediaFigure.js';
 import { subjectOf, type MediaIndexEntry } from '../packs/media-index.js';
 import './dossier.css';
-import { Prose } from './Prose.js';
+import { EntityLink, Prose } from './Prose.js';
+import './bibliography.css';
 
 export interface DossierProps {
   beats: NarrativeBeat[];
@@ -195,6 +197,14 @@ export function Dossier({
           )}
           <div className="dossier__body">
             <Prose>{markdown}</Prose>
+            {/* The same door the cards carry, under the beat's footnotes: a
+                reader who has just read a citation can go from it to the work
+                and from the work to the whole bibliography (sand-shn.5). */}
+            {beat.sources.length > 0 && (
+              <p className="bib__door">
+                <EntityLink id={BIBLIOGRAPHY_CARD}>All works cited</EntityLink>
+              </p>
+            )}
           </div>
           <VignetteView
             vignettes={vignettes}

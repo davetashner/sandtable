@@ -92,6 +92,27 @@ describe('accessibility (axe-core)', () => {
     expect(report(await violationsOf(container)), 'a card open').toBe('');
   }, 30000);
 
+  /**
+   * The bibliography is ninety works of links and headings inside one card
+   * (sand-shn.5) — the longest list in the app, and the place where a skipped
+   * heading level, a list that is not a list, or a wall of identically-named
+   * links would matter most. It is opened by its own URL (ADR 0009) rather
+   * than clicked into, because that is what a link in a footnote will do.
+   */
+  it('finds nothing in the bibliography, or in a work’s card', async () => {
+    window.history.replaceState(null, '', '/?t=1914-08-24T12:00:00Z&card=bibliography');
+    const { container, unmount } = render(<App />);
+    await screen.findByRole('region', { name: /^Map/ }, { timeout: 8000 });
+    await screen.findByRole('heading', { level: 2, name: 'Works cited' });
+    expect(report(await violationsOf(container)), 'the bibliography').toBe('');
+    unmount();
+
+    window.history.replaceState(null, '', '/?t=1914-08-24T12:00:00Z&card=source:edmonds-1933');
+    const work = render(<App />);
+    await screen.findByRole('region', { name: /^Map/ }, { timeout: 8000 });
+    expect(report(await violationsOf(work.container)), 'one work').toBe('');
+  }, 30000);
+
   it('finds nothing in the component gallery — every component, both themes', async () => {
     const { container } = render(<Gallery />);
     const violations = await violationsOf(container, GALLERY_OPTIONS);

@@ -2,6 +2,7 @@
   {
     "id": "source:herwig-2009",
     "kind": "book",
+    "tier": "study",
     "author": "Herwig, Holger H.",
     "title": "The Marne, 1914: The Opening of World War I and the Battle That Changed the World",
     "year": 2009,
@@ -12,6 +13,7 @@
   {
     "id": "source:tuchman-1962",
     "kind": "book",
+    "tier": "general",
     "author": "Tuchman, Barbara W.",
     "title": "The Guns of August",
     "year": 1962,
@@ -21,6 +23,7 @@
   {
     "id": "source:strachan-2001",
     "kind": "book",
+    "tier": "study",
     "author": "Strachan, Hew",
     "title": "The First World War, Volume I: To Arms",
     "year": 2001,
@@ -31,6 +34,7 @@
   {
     "id": "source:zuber-2002",
     "kind": "book",
+    "tier": "study",
     "author": "Zuber, Terence",
     "title": "Inventing the Schlieffen Plan: German War Planning 1871–1914",
     "year": 2002,
@@ -41,6 +45,7 @@
   {
     "id": "source:mombauer-2001",
     "kind": "book",
+    "tier": "study",
     "author": "Mombauer, Annika",
     "title": "Helmuth von Moltke and the Origins of the First World War",
     "year": 2001,
@@ -51,6 +56,7 @@
   {
     "id": "source:keegan-1998",
     "kind": "book",
+    "tier": "general",
     "author": "Keegan, John",
     "title": "The First World War",
     "year": 1998,
@@ -60,6 +66,7 @@
   {
     "id": "source:hastings-2013",
     "kind": "book",
+    "tier": "general",
     "author": "Hastings, Max",
     "title": "Catastrophe: Europe Goes to War 1914",
     "year": 2013,
@@ -69,6 +76,7 @@
   {
     "id": "source:reichsarchiv-weltkrieg-1",
     "kind": "official-history",
+    "tier": "official-history",
     "author": "Reichsarchiv",
     "title": "Der Weltkrieg 1914 bis 1918. Die militärischen Operationen zu Lande, Band 1: Die Grenzschlachten im Westen",
     "year": 1925,
@@ -79,6 +87,7 @@
   {
     "id": "source:edmonds-1922",
     "kind": "official-history",
+    "tier": "official-history",
     "author": "Edmonds, J. E.",
     "title": "Military Operations: France and Belgium, 1914, Volume I: Mons, the Retreat to the Seine, the Marne and the Aisne, August–October 1914",
     "year": 1922,
@@ -89,6 +98,7 @@
   {
     "id": "source:afgg-1-1",
     "kind": "official-history",
+    "tier": "official-history",
     "author": "Ministère de la Guerre, État-major de l'Armée, Service historique",
     "title": "Les Armées françaises dans la Grande Guerre, Tome I, 1er volume: La guerre de mouvement (opérations antérieures au 14 novembre 1914)",
     "year": 1922,
@@ -98,6 +108,7 @@
   {
     "id": "source:wikipedia-en",
     "kind": "web",
+    "tier": "reference",
     "author": "Wikipedia contributors",
     "title": "Wikipedia, the free encyclopedia (English)",
     "url": "https://en.wikipedia.org/",
@@ -106,6 +117,7 @@
   {
     "id": "source:pais-1982",
     "kind": "book",
+    "tier": "study",
     "author": "Pais, Abraham",
     "title": "'Subtle is the Lord…': The Science and the Life of Albert Einstein",
     "year": 1982,
@@ -115,6 +127,7 @@
   {
     "id": "source:crelinsten-2006",
     "kind": "book",
+    "tier": "study",
     "author": "Crelinsten, Jeffrey",
     "title": "Einstein's Jury: The Race to Test Relativity",
     "year": 2006,
@@ -124,6 +137,7 @@
   {
     "id": "source:heilbron-1974",
     "kind": "book",
+    "tier": "study",
     "author": "Heilbron, J. L.",
     "title": "H. G. J. Moseley: The Life and Letters of an English Physicist, 1887–1915",
     "year": 1974,
@@ -133,6 +147,7 @@
   {
     "id": "source:ungern-sternberg-1996",
     "kind": "book",
+    "tier": "study",
     "author": "Ungern-Sternberg, Jürgen von; Ungern-Sternberg, Wolfgang von",
     "title": "Der Aufruf 'An die Kulturwelt!': Das Manifest der 93 und die Anfänge der Kriegspropaganda im Ersten Weltkrieg",
     "year": 1996,
@@ -142,6 +157,7 @@
   {
     "id": "source:beesly-1982",
     "kind": "book",
+    "tier": "study",
     "author": "Beesly, Patrick",
     "title": "Room 40: British Naval Intelligence 1914–1918",
     "year": 1982,
@@ -151,6 +167,7 @@
   {
     "id": "source:horne-kramer-2001",
     "kind": "book",
+    "tier": "study",
     "author": "Horne, John; Kramer, Alan",
     "title": "German Atrocities, 1914: A History of Denial",
     "year": 2001,
@@ -160,6 +177,7 @@
   {
     "id": "source:edmonds-1925",
     "kind": "official-history",
+    "tier": "official-history",
     "author": "Edmonds, J. E.",
     "title": "Military Operations: France and Belgium, 1914, Volume II: Antwerp, La Bassée, Armentières, Messines and Ypres, October–November 1914",
     "year": 1925,
@@ -170,6 +188,7 @@
   {
     "id": "source:tyng-1935",
     "kind": "book",
+    "tier": "study",
     "author": "Tyng, Sewell",
     "title": "The Campaign of the Marne 1914",
     "year": 1935,
@@ -179,6 +198,7 @@
   {
     "id": "source:steg-2013",
     "kind": "book",
+    "tier": "study",
     "author": "Steg, Jean-Michel",
     "title": "Le jour le plus meurtrier de l'histoire de France: 22 août 1914",
     "year": 2013,
@@ -188,6 +208,7 @@
   {
     "id": "source:spears-1930",
     "kind": "book",
+    "tier": "memoir",
     "author": "Spears, Edward L.",
     "title": "Liaison 1914: A Narrative of the Great Retreat",
     "year": 1930,
@@ -197,6 +218,7 @@
   {
     "id": "source:ludendorff-1919",
     "kind": "book",
+    "tier": "memoir",
     "author": "Ludendorff, Erich",
     "title": "My War Memories, 1914–1918 (Meine Kriegserinnerungen 1914–1918)",
     "year": 1919,
@@ -207,6 +229,7 @@
   {
     "id": "source:foch-1931",
     "kind": "book",
+    "tier": "memoir",
     "author": "Foch, Ferdinand",
     "title": "Mémoires pour servir à l'histoire de la guerre de 1914–1918",
     "year": 1931,
@@ -216,6 +239,7 @@
   {
     "id": "source:gallieni-1920",
     "kind": "book",
+    "tier": "memoir",
     "author": "Gallieni, Joseph",
     "title": "Mémoires du général Gallieni: Défense de Paris, 25 août – 11 septembre 1914",
     "year": 1920,
@@ -226,6 +250,7 @@
   {
     "id": "source:kluck-1920",
     "kind": "book",
+    "tier": "memoir",
     "author": "Kluck, Alexander von",
     "title": "The March on Paris and the Battle of the Marne, 1914",
     "year": 1920,
@@ -237,6 +262,7 @@
   {
     "id": "source:afgg-1-2-annexes-1",
     "kind": "official-history",
+    "tier": "official-history",
     "author": "Ministère de la Guerre, État-major de l'Armée, Service historique",
     "title": "Les Armées françaises dans la Grande Guerre, Tome I, 2e volume: Annexes, 1er volume",
     "year": 1925,
@@ -247,6 +273,7 @@
   {
     "id": "source:belgian-grey-book-1914",
     "kind": "official-history",
+    "tier": "primary",
     "author": "Ministère des Affaires étrangères de Belgique",
     "title": "Correspondance diplomatique relative à la guerre de 1914 (24 juillet – 29 août): the Belgian Grey Book",
     "year": 1914,
@@ -257,6 +284,7 @@
   {
     "id": "source:gallica-le-radical-1914-08-05",
     "kind": "web",
+    "tier": "primary",
     "author": "Le Radical (Paris)",
     "title": "Le Radical, 5 août 1914 — 'La réponse de la Belgique', p. 2",
     "year": 1914,
@@ -266,6 +294,7 @@
   {
     "id": "source:bsb-1000dokumente-schlieffen-1905",
     "kind": "web",
+    "tier": "primary",
     "author": "Bayerische Staatsbibliothek (ed.); Epkenhans, Michael (introduction)",
     "title": "Alfred Graf von Schlieffen, Denkschrift 'Krieg gegen Frankreich' [Schlieffen-Plan], Dezember 1905 — Volltext und Faksimile",
     "year": 2010,
@@ -275,6 +304,7 @@
   {
     "id": "source:ehlert-epkenhans-gross-2006",
     "kind": "book",
+    "tier": "study",
     "author": "Ehlert, Hans; Epkenhans, Michael; Groß, Gerhard P. (eds)",
     "title": "Der Schlieffenplan: Analysen und Dokumente",
     "year": 2006,
@@ -284,6 +314,7 @@
   {
     "id": "source:ritter-1958",
     "kind": "book",
+    "tier": "study",
     "author": "Ritter, Gerhard",
     "title": "The Schlieffen Plan: Critique of a Myth",
     "year": 1958,
@@ -294,6 +325,7 @@
   {
     "id": "source:van-pul-2006",
     "kind": "book",
+    "tier": "study",
     "author": "Van Pul, Paul",
     "title": "In Flanders Flooded Fields: Before Ypres There Was Yser",
     "year": 2006,
@@ -304,6 +336,7 @@
   {
     "id": "source:unruh-1986",
     "kind": "book",
+    "tier": "study",
     "author": "Unruh, Karl",
     "title": "Langemarck: Legende und Wirklichkeit",
     "year": 1986,
@@ -313,6 +346,7 @@
   {
     "id": "source:1914-1918-online-langemarck",
     "kind": "article",
+    "tier": "study",
     "author": "Grawe, Lukas",
     "title": "Langemarck Myth",
     "year": 2020,
@@ -323,6 +357,7 @@
   {
     "id": "source:1914-1918-online-ypres",
     "kind": "article",
+    "tier": "study",
     "author": "Jones, Spencer",
     "title": "Ypres, Battles of",
     "year": 2015,
@@ -333,6 +368,7 @@
   {
     "id": "source:clark-2012",
     "kind": "book",
+    "tier": "study",
     "author": "Clark, Christopher",
     "title": "The Sleepwalkers: How Europe Went to War in 1914",
     "year": 2012,
@@ -343,6 +379,7 @@
   {
     "id": "source:fischer-1967",
     "kind": "book",
+    "tier": "study",
     "author": "Fischer, Fritz",
     "title": "Germany's Aims in the First World War",
     "year": 1967,
@@ -353,6 +390,7 @@
   {
     "id": "source:albertini-1952",
     "kind": "book",
+    "tier": "study",
     "author": "Albertini, Luigi",
     "title": "The Origins of the War of 1914",
     "year": 1952,
@@ -363,6 +401,7 @@
   {
     "id": "source:mombauer-2013",
     "kind": "book",
+    "tier": "primary",
     "author": "Mombauer, Annika",
     "title": "The Origins of the First World War: Diplomatic and Military Documents",
     "year": 2013,
@@ -373,6 +412,7 @@
   {
     "id": "source:hmso-collected-1915",
     "kind": "official-history",
+    "tier": "primary",
     "author": "Great Britain, Foreign Office",
     "title": "Collected Diplomatic Documents Relating to the Outbreak of the European War",
     "year": 1915,
@@ -383,6 +423,7 @@
   {
     "id": "source:kautsky-1924",
     "kind": "archive",
+    "tier": "primary",
     "author": "Kautsky, Karl; Montgelas, Max; Schucking, Walther",
     "title": "Outbreak of the World War: German Documents Collected by Karl Kautsky",
     "year": 1924,
@@ -393,6 +434,7 @@
   {
     "id": "source:byu-wwi-archive",
     "kind": "web",
+    "tier": "primary",
     "author": "Brigham Young University Library",
     "title": "The World War I Document Archive",
     "url": "https://wwi.lib.byu.edu/",
@@ -401,6 +443,7 @@
   {
     "id": "source:doughty-2005",
     "kind": "book",
+    "tier": "study",
     "author": "Doughty, Robert A.",
     "title": "Pyrrhic Victory: French Strategy and Operations in the Great War",
     "year": 2005,
@@ -410,6 +453,7 @@
   {
     "id": "source:greenhalgh-2014",
     "kind": "book",
+    "tier": "study",
     "author": "Greenhalgh, Elizabeth",
     "title": "The French Army and the First World War",
     "year": 2014,
@@ -419,6 +463,7 @@
   {
     "id": "source:zuber-2007",
     "kind": "book",
+    "tier": "study",
     "author": "Zuber, Terence",
     "title": "The Battle of the Frontiers: Ardennes 1914",
     "year": 2007,
@@ -428,6 +473,7 @@
   {
     "id": "source:foley-2003",
     "kind": "book",
+    "tier": "primary",
     "author": "Foley, Robert T. (ed. and trans.)",
     "title": "Alfred von Schlieffen's Military Writings",
     "year": 2003,
@@ -437,6 +483,7 @@
   {
     "id": "source:holmes-2001",
     "kind": "article",
+    "tier": "study",
     "author": "Holmes, Terence M.",
     "title": "The Reluctant March on Paris: A Reply to Terence Zuber's 'The Schlieffen Plan Reconsidered'",
     "year": 2001,
@@ -446,6 +493,7 @@
   {
     "id": "source:showalter-2004",
     "kind": "book",
+    "tier": "study",
     "author": "Showalter, Dennis E.",
     "title": "Tannenberg: Clash of Empires, 1914",
     "year": 2004,
@@ -457,6 +505,7 @@
   {
     "id": "source:stone-1975",
     "kind": "book",
+    "tier": "study",
     "author": "Stone, Norman",
     "title": "The Eastern Front 1914-1917",
     "year": 1975,
@@ -467,6 +516,7 @@
   {
     "id": "source:sumpf-2009",
     "kind": "article",
+    "tier": "general",
     "author": "Sumpf, Alban",
     "title": "Les taxis de la Marne",
     "year": 2009,
@@ -477,6 +527,7 @@
   {
     "id": "source:bruce-2008",
     "kind": "book",
+    "tier": "study",
     "author": "Bruce, Robert B.",
     "title": "Pétain: Verdun to Vichy",
     "year": 2008,
@@ -486,6 +537,7 @@
   {
     "id": "source:memorial-verdun-bataille",
     "kind": "web",
+    "tier": "reference",
     "author": "Mémorial de Verdun",
     "title": "La bataille de Verdun (museum resource page)",
     "publisher": "Mémorial de Verdun – Champ de bataille, Fleury-devant-Douaumont",
@@ -495,6 +547,7 @@
   {
     "id": "source:einstein-1905-elektrodynamik",
     "kind": "article",
+    "tier": "primary",
     "author": "Einstein, Albert",
     "title": "Zur Elektrodynamik bewegter Körper",
     "year": 1905,
@@ -505,6 +558,7 @@
   {
     "id": "source:einstein-1905-traegheit",
     "kind": "article",
+    "tier": "primary",
     "author": "Einstein, Albert",
     "title": "Ist die Trägheit eines Körpers von seinem Energieinhalt abhängig?",
     "year": 1905,
@@ -515,6 +569,7 @@
   {
     "id": "source:bohr-1913",
     "kind": "article",
+    "tier": "primary",
     "author": "Bohr, Niels",
     "title": "On the Constitution of Atoms and Molecules, Parts I–III",
     "year": 1913,
@@ -524,6 +579,7 @@
   {
     "id": "source:moseley-1913",
     "kind": "article",
+    "tier": "primary",
     "author": "Moseley, Henry G. J.",
     "title": "The High-Frequency Spectra of the Elements, Parts I and II",
     "year": 1913,
@@ -533,6 +589,7 @@
   {
     "id": "source:einstein-1915-perihel",
     "kind": "article",
+    "tier": "primary",
     "author": "Einstein, Albert",
     "title": "Erklärung der Perihelbewegung des Merkur aus der allgemeinen Relativitätstheorie",
     "year": 1915,
@@ -542,6 +599,7 @@
   {
     "id": "source:einstein-1915-feldgleichungen",
     "kind": "article",
+    "tier": "primary",
     "author": "Einstein, Albert",
     "title": "Die Feldgleichungen der Gravitation",
     "year": 1915,
@@ -551,6 +609,7 @@
   {
     "id": "source:corry-renn-stachel-1997",
     "kind": "article",
+    "tier": "study",
     "author": "Corry, Leo; Renn, Jürgen; Stachel, John",
     "title": "Belated Decision in the Hilbert-Einstein Priority Dispute",
     "year": 1997,
@@ -561,6 +620,7 @@
   {
     "id": "source:schwarzschild-1916",
     "kind": "article",
+    "tier": "primary",
     "author": "Schwarzschild, Karl",
     "title": "Über das Gravitationsfeld eines Massenpunktes nach der Einsteinschen Theorie",
     "year": 1916,
@@ -570,6 +630,7 @@
   {
     "id": "source:cpae-8",
     "kind": "archive",
+    "tier": "primary",
     "author": "Schulmann, Robert; Kox, A. J.; Janssen, Michel; Illy, József (eds)",
     "title": "The Collected Papers of Albert Einstein, Volume 8: The Berlin Years — Correspondence, 1914–1918",
     "year": 1998,
@@ -580,6 +641,7 @@
   {
     "id": "source:schwarzschild-werke-1992",
     "kind": "book",
+    "tier": "primary",
     "author": "Voigt, Hans-Heinrich (ed.)",
     "title": "Karl Schwarzschild: Gesammelte Werke / Collected Works, Volume 1",
     "year": 1992,
@@ -590,6 +652,7 @@
   {
     "id": "source:noether-1918",
     "kind": "article",
+    "tier": "primary",
     "author": "Noether, Emmy",
     "title": "Invariante Variationsprobleme",
     "year": 1918,
@@ -599,6 +662,7 @@
   {
     "id": "source:kosmann-schwarzbach-2011",
     "kind": "book",
+    "tier": "study",
     "author": "Kosmann-Schwarzbach, Yvette",
     "title": "The Noether Theorems: Invariance and Conservation Laws in the Twentieth Century",
     "year": 2011,
@@ -609,6 +673,7 @@
   {
     "id": "source:dick-1981",
     "kind": "book",
+    "tier": "study",
     "author": "Dick, Auguste",
     "title": "Emmy Noether 1882–1935",
     "year": 1981,
@@ -619,6 +684,7 @@
   {
     "id": "source:rutherford-1919",
     "kind": "article",
+    "tier": "primary",
     "author": "Rutherford, Ernest",
     "title": "Collision of α Particles with Light Atoms, Parts I–IV",
     "year": 1919,
@@ -628,6 +694,7 @@
   {
     "id": "source:blackett-1925",
     "kind": "article",
+    "tier": "primary",
     "author": "Blackett, Patrick M. S.",
     "title": "The Ejection of Protons from Nitrogen Nuclei, Photographed by the Wilson Method",
     "year": 1925,
@@ -638,6 +705,7 @@
   {
     "id": "source:eve-1939",
     "kind": "book",
+    "tier": "general",
     "author": "Eve, Arthur Stewart",
     "title": "Rutherford: Being the Life and Letters of the Rt Hon. Lord Rutherford, O.M.",
     "year": 1939,
@@ -647,6 +715,7 @@
   {
     "id": "source:wilson-1983",
     "kind": "book",
+    "tier": "study",
     "author": "Wilson, David",
     "title": "Rutherford: Simple Genius",
     "year": 1983,
@@ -657,6 +726,7 @@
   {
     "id": "source:pais-1991",
     "kind": "book",
+    "tier": "study",
     "author": "Pais, Abraham",
     "title": "Niels Bohr's Times: In Physics, Philosophy, and Polity",
     "year": 1991,
@@ -667,6 +737,7 @@
   {
     "id": "source:dyson-eddington-davidson-1920",
     "kind": "article",
+    "tier": "primary",
     "author": "Dyson, Frank W.; Eddington, Arthur S.; Davidson, Charles",
     "title": "A Determination of the Deflection of Light by the Sun's Gravitational Field, from Observations Made at the Total Eclipse of May 29, 1919",
     "year": 1920,
@@ -677,6 +748,7 @@
   {
     "id": "source:earman-glymour-1980",
     "kind": "article",
+    "tier": "study",
     "author": "Earman, John; Glymour, Clark",
     "title": "Relativity and Eclipses: The British Eclipse Expeditions of 1919 and Their Predecessors",
     "year": 1980,
@@ -687,6 +759,7 @@
   {
     "id": "source:kennefick-2019",
     "kind": "book",
+    "tier": "study",
     "author": "Kennefick, Daniel",
     "title": "No Shadow of a Doubt: The 1919 Eclipse That Confirmed Einstein's Theory of Relativity",
     "year": 2019,
@@ -697,6 +770,7 @@
   {
     "id": "source:gilmore-tausch-pebody-2022",
     "kind": "article",
+    "tier": "study",
     "author": "Gilmore, Gerard; Tausch-Pebody, Gudrun",
     "title": "The 1919 Eclipse Results That Verified General Relativity and Their Later Detractors: A Story Re-told",
     "year": 2022,
@@ -707,6 +781,7 @@
   {
     "id": "source:mhs-oxford-moseley",
     "kind": "web",
+    "tier": "reference",
     "author": "Museum of the History of Science, University of Oxford",
     "title": "'Dear Harry…' — Henry Moseley: A Scientist Lost to War",
     "year": 2015,
@@ -716,6 +791,7 @@
   {
     "id": "source:haber-1986",
     "kind": "book",
+    "tier": "study",
     "author": "Haber, L. F.",
     "title": "The Poisonous Cloud: Chemical Warfare in the First World War",
     "year": 1986,
@@ -726,6 +802,7 @@
   {
     "id": "source:1914-1918-online-gas-warfare",
     "kind": "article",
+    "tier": "study",
     "author": "Faith, Thomas I.",
     "title": "Gas Warfare",
     "year": 2016,
@@ -736,6 +813,7 @@
   {
     "id": "source:heller-1984",
     "kind": "book",
+    "tier": "study",
     "author": "Heller, Charles E.",
     "title": "Chemical Warfare in World War I: The American Experience, 1917–1918",
     "year": 1984,
@@ -746,6 +824,7 @@
   {
     "id": "source:fitzgerald-2008",
     "kind": "article",
+    "tier": "study",
     "author": "Fitzgerald, Gerard J.",
     "title": "Chemical Warfare and Medical Response During World War I",
     "year": 2008,
@@ -756,6 +835,7 @@
   {
     "id": "source:1914-1918-online-blockade",
     "kind": "article",
+    "tier": "study",
     "author": "Kramer, Alan",
     "title": "Naval Blockade (of Germany)",
     "year": 2020,
@@ -766,6 +846,7 @@
   {
     "id": "source:friedrich-hoffmann-2016",
     "kind": "article",
+    "tier": "study",
     "author": "Friedrich, Bretislav; Hoffmann, Dieter",
     "title": "Clara Haber, née Immerwahr (1870–1915): Life, Work and Legacy",
     "year": 2016,
@@ -776,6 +857,7 @@
   {
     "id": "source:erisman-2008",
     "kind": "article",
+    "tier": "study",
     "author": "Erisman, Jan Willem; Sutton, Mark A.; Galloway, James; Klimont, Zbigniew; Winiwarter, Wilfried",
     "title": "How a century of ammonia synthesis changed the world",
     "year": 2008,
@@ -786,6 +868,7 @@
   {
     "id": "source:nobel-chemistry-1918",
     "kind": "web",
+    "tier": "reference",
     "author": "The Nobel Foundation",
     "title": "The Nobel Prize in Chemistry 1918 — Fritz Haber",
     "year": 1918,
@@ -796,6 +879,7 @@
   {
     "id": "source:reichsarchiv-weltkrieg-3",
     "kind": "official-history",
+    "tier": "official-history",
     "author": "Reichsarchiv",
     "title": "Der Weltkrieg 1914 bis 1918. Die militärischen Operationen zu Lande, Band 3: Der Marne-Feldzug — Von der Sambre zur Marne",
     "year": 1926,
@@ -806,6 +890,7 @@
   {
     "id": "source:edmonds-1933",
     "kind": "official-history",
+    "tier": "official-history",
     "author": "Edmonds, J. E.",
     "title": "Military Operations: France and Belgium, 1914, Volume I: Mons, the Retreat to the Seine, the Marne and the Aisne, August–October 1914",
     "year": 1933,
@@ -817,6 +902,7 @@
   {
     "id": "source:lanrezac-1920",
     "kind": "book",
+    "tier": "memoir",
     "author": "Lanrezac, Charles",
     "title": "Le plan de campagne français et le premier mois de la guerre (2 août – 3 septembre 1914)",
     "year": 1920,
@@ -827,6 +913,7 @@
   {
     "id": "source:sumner-1995",
     "kind": "book",
+    "tier": "general",
     "author": "Sumner, Ian",
     "title": "The French Army 1914–18",
     "year": 1995,
@@ -837,6 +924,7 @@
   {
     "id": "source:mollo-1977",
     "kind": "book",
+    "tier": "general",
     "author": "Mollo, Andrew",
     "title": "Army Uniforms of World War I: European and United States Armies and Aviation Services",
     "year": 1977,
@@ -846,6 +934,7 @@
   {
     "id": "source:hogg-weeks-1977",
     "kind": "book",
+    "tier": "general",
     "author": "Hogg, Ian V.; Weeks, John",
     "title": "Military Small Arms of the 20th Century",
     "year": 1977,
@@ -855,6 +944,7 @@
   {
     "id": "source:jones-2012",
     "kind": "book",
+    "tier": "study",
     "author": "Jones, Spencer",
     "title": "From Boer War to World War: Tactical Reform of the British Army, 1902–1914",
     "year": 2012,
@@ -865,6 +955,7 @@
   {
     "id": "source:messimy-1937",
     "kind": "book",
+    "tier": "memoir",
     "author": "Messimy, Adolphe",
     "title": "Mes souvenirs",
     "year": 1937,
@@ -874,6 +965,7 @@
   {
     "id": "source:armemuseum-digitaltmuseum",
     "kind": "archive",
+    "tier": "reference",
     "author": "Armémuseum (Swedish Army Museum), Stockholm",
     "title": "Object records on DigitaltMuseum — Gevär m/1898, m/1886 Lebel, Mk III Lee-Enfield (AM.032056), m/1889 Mauser",
     "url": "https://digitaltmuseum.se/owners/S-AM",
