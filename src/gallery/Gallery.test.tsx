@@ -28,7 +28,11 @@ describe('component gallery', () => {
     expect(new Set(ids).size).toBe(ids.length);
   });
 
-  it('renders every specimen in both themes', () => {
+  // Mounts all fifty-seven specimens twice, on real seed-pack content — seconds
+  // of work by construction, and it grows with the library. The default 5s is a
+  // boundary a CI runner crosses (it took 5,240ms on one), so the budget is set
+  // where it says "this got slow" rather than where it says "the box was busy".
+  it('renders every specimen in both themes', { timeout: 30_000 }, () => {
     render(<Gallery />);
     for (const spec of SECTIONS.flatMap((s) => s.specimens)) {
       expect(screen.getAllByLabelText(spec.title).length).toBeGreaterThan(0);
