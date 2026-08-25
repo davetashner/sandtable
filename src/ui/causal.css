@@ -89,6 +89,10 @@
 
 .causal__debate summary {
   cursor: pointer;
+  /* 4px of padding on an 11.5px line came to 25.25px — under the floor, and
+     invisible to the gate, which audits buttons and anchors and not
+     summaries (sand-pmz.15). */
+  min-height: var(--target-min);
   padding: 4px 0;
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
@@ -125,7 +129,7 @@
   display: inline-block;
   border: 0;
   background: none;
-  min-height: 24px;
+  min-height: var(--target-min);
   padding: 4px 0;
   font: inherit;
   color: var(--brass);

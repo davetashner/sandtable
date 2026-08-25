@@ -58,13 +58,27 @@ to its work's card, because `formatCitation` writes the title as a link and
 `Prose` resolves it; the door back to the whole list sits under every card's
 Sources block and under every beat.
 
+`MapObjects.tsx` is the map's keyboard (`sand-pmz.11`). The armies, the
+commander portraits and the tally markers are deck.gl geometry on a WebGL
+canvas, with no element to focus and nothing axe can see; this is the one stop
+in the tab order that says how many of them there are, and opens a roving list
+of the same objects with the same labels, where `Enter` does what a click on
+the token does. It is a mode of the map and not a fourth panel (ADR 0006):
+nothing it draws survives losing focus, and it states no fact the layers do
+not — it is built from `movementTokens`, `commandersAt` and `tallyMarkers`, so
+the roster and the map cannot disagree. It is the only component here that is
+tested for its keyboard rather than audited for it, because the surface it
+represents is invisible to the gate.
+
 `CopyLink.tsx` is the ⧉ glyph in the header that copies the address of the
 current view; what makes it work is that the URL is always the whole view
 (ADR 0009, `src/engine/url-state.ts`).
 
 Two rules bind everything here and are checked rather than asked for: a
-control is at least 24×24px and keeps its `:focus-visible` ring, and a role is
-never written down that the element already has — `role="listitem"` on a button
+control is at least 24×24px — write `var(--target-min)`, which is 26 and has
+the slack the gate's 24 does not (`sand-pmz.15`) — and keeps its
+`:focus-visible` ring, and a role is never written down that the element
+already has — `role="listitem"` on a button
 takes the button away. The keyboard run-through, the measurements and the two
 inline cases the target rule exempts are `docs/accessibility.md`; the axe gate
 that runs on every push is `src/a11y.test.tsx`.

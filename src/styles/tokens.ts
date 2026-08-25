@@ -112,6 +112,17 @@ export const shared = {
   'space-4': '16px',
   'space-5': '24px',
   'space-6': '32px',
+  // The floor a control is allowed to compute to (sand-pmz.15). WCAG 2.5.8
+  // asks for 24×24 and the visual gate holds the app to exactly that; this is
+  // two pixels above it on purpose. A control whose height comes from a line
+  // box, its padding and the metrics of whatever font has loaded lands on a
+  // number nobody chose — `.card__chip` landed on 24.000, which passes a
+  // `< 24` gate by nothing at all and went red on one run and not the next.
+  // 26px is the smallest whole pixel above every height these controls reach
+  // on their own (`.causal__alt`, the tallest, is 11.5px × 1.5 + 8px of
+  // padding = 25.25), so the minimum is binding everywhere rather than inert,
+  // which is the difference between a floor and a coincidence.
+  'target-min': '26px',
   // shape and motion
   radius: '10px',
   'radius-sm': '8px',

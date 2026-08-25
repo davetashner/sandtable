@@ -15,7 +15,7 @@ import {
 } from '../engine/layers/places.js';
 import { buildStyle, type MapTheme } from '../engine/map/style.js';
 import { useMovementLayers, type MovementSource } from '../engine/layers/useMovementLayers.js';
-import { buildTallyLayers, tallyLabelCandidates } from '../engine/layers/tallies.js';
+import { buildTallyLayers, tallyLabelCandidates, tallyMarkers } from '../engine/layers/tallies.js';
 import {
   buildCommanderLayers,
   commanderLabelCandidates,
@@ -24,6 +24,8 @@ import {
 import { createPortraitIcons, type PortraitSource } from '../engine/layers/portrait-icons.js';
 import { MapView, type CameraTarget, type MapHandle } from '../engine/map/MapView.js';
 import { labelNow } from '../engine/ticks.js';
+import { haversineKm } from '../engine/geo.js';
+import { MapObjects, type MapObject } from './MapObjects.js';
 import type {
   BBox,
   Branch,
@@ -101,7 +103,11 @@ export function MapSurface({
     const q = map.project(p);
     return Number.isFinite(q.x) && Number.isFinite(q.y) ? [q.x, q.y] : null;
   }, []);
-  const { layers: movementLayers, labelBoxes } = useMovementLayers(movement, branch, {
+  const {
+    layers: movementLayers,
+    tokens,
+    labelBoxes,
+  } = useMovementLayers(movement, branch, {
     project: viewTick > 0 ? project : undefined,
     placementKey: viewTick,
     onSelect: onSelectFormation,
@@ -222,6 +228,76 @@ export function MapSurface({
     () => [...placeLayers, ...tallyLayers, ...movementLayers, ...commanderLayers],
     [placeLayers, tallyLayers, movementLayers, commanderLayers],
   );
+
+  // The keyboard's copy of the map (sand-pmz.11). Built from the same data the
+  // layers are built from — the tokens the movement scene actually drew, the
+  // commanders `commandersAt` actually placed, the tally entries the clock has
+  // passed — so the roster cannot claim something the map is not showing.
+  const nearest = useCallback(
+    (at: [number, number]) => {
+      let best: { name: string; km: number } | undefined;
+      for (const p of places) {
+        const km = haversineKm(at, p.lngLat);
+        if (!best || km < best.km) best = { name: p.name, km };
+      }
+      // A lng/lat pair tells a reader nothing. The nearest town the pack has
+      // already labelled is the map's own vocabulary, and beyond a couple of
+      // hours' march it stops being a location and becomes a direction, so
+      // past that the roster says nothing rather than something misleading.
+      if (!best || best.km > 120) return undefined;
+      return best.km < 12 ? `near ${best.name}` : `${Math.round(best.km)} km from ${best.name}`;
+    },
+    [places],
+  );
+  const sideName = useCallback(
+    (id: string) => {
+      const s = sides.find((x) => x.id === id);
+      return s?.short ?? s?.name ?? id;
+    },
+    [sides],
+  );
+  const objects = useMemo<MapObject[]>(() => {
+    const kindOf = (k: string) => k.charAt(0).toUpperCase() + k.slice(1).replace('-', ' ');
+    const out: MapObject[] = [];
+    for (const t of tokens)
+      out.push({
+        id: `formation/${t.id}`,
+        kind: kindOf(t.kind),
+        name: t.label,
+        detail: sideName(t.sideId),
+        where: nearest(t.position),
+        open: () => onSelectFormation?.(t.id),
+      });
+    for (const c of commanders)
+      out.push({
+        id: `commander/${c.id}`,
+        kind: c.kind === 'hq' ? 'Headquarters' : 'Commander',
+        name: c.name,
+        detail: c.post,
+        where: nearest(c.position),
+        open: () => onSelectCommander?.(c.person),
+      });
+    for (const m of tallyMarkers(tallies, now))
+      out.push({
+        id: `tally/${m.id}`,
+        kind: 'Strength',
+        name: m.label,
+        detail: m.entryLabel,
+        where: nearest(m.position),
+        open: () => onSelectTally?.(m.tallyId),
+      });
+    return out;
+  }, [
+    tokens,
+    commanders,
+    tallies,
+    now,
+    nearest,
+    sideName,
+    onSelectFormation,
+    onSelectCommander,
+    onSelectTally,
+  ]);
   const first = useRef(true);
 
   // Re-lay-out labels as the camera moves (one layout per animation frame at most).
@@ -280,7 +356,9 @@ export function MapSurface({
         onReadyLayout(h);
         if (focusRegion) h.fitRegion(focusRegion, { padding: 48, maxZoom: 11, duration: 0 });
       }}
-    />
+    >
+      <MapObjects objects={objects} when={label.date} />
+    </MapView>
   );
 }
 

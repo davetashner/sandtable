@@ -41,9 +41,9 @@
    app, and it takes the floor. */
 .data-footnote-backref {
   display: inline-block;
-  min-width: 24px;
-  min-height: 24px;
-  line-height: 24px;
+  min-width: var(--target-min);
+  min-height: var(--target-min);
+  line-height: var(--target-min);
   text-align: center;
   text-decoration: none;
   vertical-align: middle;

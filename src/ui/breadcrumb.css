@@ -27,15 +27,15 @@
   gap: 6px;
 }
 
-/* Both are 24px tall: the trail's own line is 11.5px mono, which made the
-   way back out of a zoom-in a 17px target (sand-pmz.4). */
+/* Both take the target floor: the trail's own line is 11.5px mono, which
+   made the way back out of a zoom-in a 17px target (sand-pmz.4). */
 .crumbs__link,
 .crumbs__exit {
   appearance: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 24px;
+  min-height: var(--target-min);
   border: 0;
   background: none;
   padding: 0;
@@ -62,8 +62,10 @@
   /* `flex: none` because the trail is a flex row: at 20px the ✕ was being
      shrunk to 11px wide by a long campaign title beside it. */
   flex: none;
-  width: 24px;
-  height: 24px;
+  /* A square, not a minimum: the ✕ has to stay a circle, so the floor is
+     the size rather than the floor under one (sand-pmz.15). */
+  width: var(--target-min);
+  height: var(--target-min);
   border-radius: 50%;
   border: 1px solid var(--line);
   background: var(--panel-2);

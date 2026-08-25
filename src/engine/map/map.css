@@ -10,6 +10,14 @@
   background: var(--sea);
 }
 
+/* MapLibre's container. It is a child of the region rather than the region
+   itself so the map can carry things MapLibre does not know about — the
+   keyboard roster (sand-pmz.11) — inside its own accessible region. */
+.mapview__canvas {
+  position: absolute;
+  inset: 0;
+}
+
 .mapview .maplibregl-ctrl-group {
   background: var(--panel);
   border: 1px solid var(--line);

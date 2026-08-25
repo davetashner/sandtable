@@ -95,7 +95,7 @@
 .media__original {
   appearance: none;
   display: inline-block;
-  min-height: 24px;
+  min-height: var(--target-min);
   padding: 4px 0;
   border: 0;
   background: none;

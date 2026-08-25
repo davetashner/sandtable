@@ -27,7 +27,7 @@
   /* A full-width row that is 22px tall is still under the 24px target floor
      (sand-pmz.4); the human-cost line, which carries no bar, was the one that
      measured it. */
-  min-height: 24px;
+  min-height: var(--target-min);
   padding: 2px 6px;
   border-radius: var(--radius-sm);
   display: grid;

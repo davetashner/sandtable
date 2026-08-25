@@ -323,3 +323,13 @@
     position: static;
   }
 }
+
+/* A stand-in for the map: the roster positions itself in the corner of the
+   surface it rides on, and the surface itself is a WebGL canvas that has no
+   business in a 400px pane (sand-pmz.11). */
+.specimen-map {
+  position: relative;
+  height: 320px;
+  border-radius: var(--radius);
+  background: var(--sea);
+}
