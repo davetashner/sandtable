@@ -119,9 +119,10 @@ jobs:
         run: npm run bundle:budget --if-present
 
   visual:
-    # The visual gate (ADR 0011): nineteen scenes × two themes × desktop and
-    # phone, walked against a production-shaped build with the assets bucket
-    # stubbed inside the browser, asserting that every scene renders, that
+    # The visual gate (ADR 0011): twenty-four scenes × two themes × desktop
+    # and phone, every cell off one load per scene, walked against a
+    # production-shaped build with the assets bucket stubbed inside the
+    # browser, asserting that every scene renders, that
     # nothing shouts on the console, and that no structural layout defect
     # appears outside scripts/visual-baseline.json. It does not diff pixels —
     # the screenshots are an artifact for a human, not a comparison.

@@ -1,7 +1,7 @@
 /**
  * The visual gate (sand-pmz.2, ADR 0011).
  *
- * Walks the same twenty-two scenes × two themes × desktop and phone as the
+ * Walks the same twenty-four scenes × two themes × desktop and phone as the
  * design review, and fails the build on three things:
  *
  *   1. a scene that will not render at all
@@ -40,15 +40,24 @@
  *   npm run visual:check                        # the gate
  *   npm run visual:check -- --shots visual-check
  *   npm run visual:check -- --update            # rewrite the baseline
+ *   npm run visual:check -- --timings           # where the time goes
  *
  * `BASE=<url>` walks a deployment instead of an in-process `vite preview`; the
  * stub still applies, so the answer means the same thing either way.
+ *
+ * `--timings` exists because the obvious reading of the clock is wrong. The
+ * wall time around `page.evaluate(AUDIT)` is not the audit: the app's first
+ * map render is a single main-thread task of about five seconds — software-GL
+ * shader compilation, once per load — and whatever the harness asks the page
+ * for next queues behind it. The audit's own work, on the page's own clock, is
+ * under three milliseconds, and the table prints it on its own line
+ * (`sand-pmz.2.6`, ADR 0011).
  */
 import { chromium } from 'playwright';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { preview } from 'vite';
-import { LAUNCH_ARGS, rollUp, walk } from './lib/visual-scenes.mjs';
+import { LAUNCH_ARGS, newTimings, rollUp, walk } from './lib/visual-scenes.mjs';
 
 const argv = process.argv.slice(2);
 const flag = (name) => argv.includes(`--${name}`);
@@ -89,6 +98,7 @@ if (!base) {
 }
 
 const started = Date.now();
+const timings = flag('timings') ? newTimings() : null;
 const browser = await chromium.launch({ args: LAUNCH_ARGS });
 const report = await walk(browser, {
   base,
@@ -97,6 +107,7 @@ const report = await walk(browser, {
   concurrency: CONCURRENCY,
   settleMs: () => SETTLE,
   shots: SHOTS,
+  timings,
 });
 await browser.close();
 await server?.close();
@@ -175,6 +186,30 @@ for (const [cell, v] of Object.entries(report)) {
 // ── output ─────────────────────────────────────────────────────────────────
 const secs = ((Date.now() - started) / 1000).toFixed(0);
 console.log(`${Object.keys(report).length} cells walked at ${base}, assets stubbed, ${secs}s\n`);
+
+if (timings) {
+  // Summed across the contending pages, so the columns add to more than the
+  // wall clock; the point is the ratio between them, not the total.
+  const rows = [
+    ['goto → load', timings.goto, timings.loads],
+    ['settle', timings.settle, timings.loads],
+    ['viewport resize', timings.resize, timings.loads],
+    ['theme (emulateMedia)', timings.theme, timings.audits],
+    ['audit (wall)', timings.audit, timings.audits],
+    ['audit (inside the page)', Math.round(timings.auditInPageMs), timings.audits],
+    ...(timings.shot ? [['screenshots', timings.shot, timings.audits]] : []),
+  ];
+  console.log(`  phase, summed over ${timings.loads} loads on ${CONCURRENCY} pages:`);
+  for (const [label, ms = 0, n] of rows)
+    console.log(
+      `    ${label.padEnd(26)}${String(ms).padStart(7)} ms   ${(ms / n).toFixed(1)} ms each`,
+    );
+  console.log(
+    '\n    The audit is the last row, not the second-to-last: the wall time\n' +
+      '    around page.evaluate(AUDIT) is mostly the queue in front of it —\n' +
+      "    the map's first render is one main-thread task of several seconds.\n",
+  );
+}
 
 for (const e of [...unexpected.values()].sort((a, b) => b.n - a.n)) {
   console.log(`  ✗ ${e.kind.padEnd(16)} ${e.el}  ×${e.n}  | ${e.detail}`);

@@ -57,11 +57,21 @@ npx playwright install chromium
 npm run visual:check                                  # what CI runs
 npm run visual:check -- --shots visual-check          # …and keep the pixels
 npm run visual:check -- --update                      # rewrite the baseline
+npm run visual:check -- --timings                     # where the time goes
 ```
 
 It serves the build itself, so nothing needs to be running first. It takes
-about three minutes; `CONCURRENCY` and `SETTLE` tune it, and `BASE=<url>` walks
-a deployment instead.
+about two and a half minutes; `CONCURRENCY` and `SETTLE` tune it, and
+`BASE=<url>` walks a deployment instead.
+
+**`--timings` prints the phase table**, and the reason it exists is that the
+obvious reading of the clock is wrong. The wall time around
+`page.evaluate(AUDIT)` is not the audit: the app's first map render is a
+single main-thread task of about five seconds — software-GL shader
+compilation, once per load — and whatever the harness asks for next queues
+behind it. The audit's own work inside the page is under three milliseconds,
+and the table prints that on its own line so the two are never confused again
+(`sand-pmz.2.6`, ADR 0011).
 
 **Updating the baseline.** `scripts/visual-baseline.json` lists the structural
 defects we have decided to live with — the "Known and deliberate" section
