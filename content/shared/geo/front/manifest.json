@@ -4,7 +4,7 @@
   "snapshots": 20,
   "controlPoints": 223,
   "accuracy": "about 5 km; a schematic through named control points, not a digitised trace",
-  "bytes": 185591,
+  "bytes": 185075,
   "entries": [
     {
       "date": "1914-11-25",
@@ -55,8 +55,8 @@
       "date": "1916-07-11",
       "label": "Verdun: the German high-water mark",
       "precision": "medium",
-      "controlPoints": 113,
-      "lengthKm": 752,
+      "controlPoints": 112,
+      "lengthKm": 745,
       "sources": [
         "source:foley-2005",
         "source:memorial-verdun-bataille"
@@ -66,8 +66,8 @@
       "date": "1916-09-15",
       "label": "Flers-Courcelette: the tanks",
       "precision": "medium",
-      "controlPoints": 109,
-      "lengthKm": 755,
+      "controlPoints": 108,
+      "lengthKm": 748,
       "sources": [
         "source:harris-1995",
         "source:prior-wilson-2005"
@@ -77,8 +77,8 @@
       "date": "1916-12-18",
       "label": "The Somme closed; Verdun recovered",
       "precision": "medium",
-      "controlPoints": 107,
-      "lengthKm": 752,
+      "controlPoints": 106,
+      "lengthKm": 745,
       "sources": [
         "source:prior-wilson-2005",
         "source:foley-2005"
@@ -88,8 +88,8 @@
       "date": "1917-04-05",
       "label": "The withdrawal to the Hindenburg Line",
       "precision": "medium",
-      "controlPoints": 97,
-      "lengthKm": 705,
+      "controlPoints": 96,
+      "lengthKm": 698,
       "sources": [
         "source:stevenson-2004",
         "source:haig-despatches-1919"
@@ -99,8 +99,8 @@
       "date": "1917-05-20",
       "label": "Arras, Vimy and the Nivelle offensive",
       "precision": "medium",
-      "controlPoints": 96,
-      "lengthKm": 695,
+      "controlPoints": 95,
+      "lengthKm": 688,
       "sources": [
         "source:doughty-2005",
         "source:haig-despatches-1919"
@@ -110,8 +110,8 @@
       "date": "1917-06-14",
       "label": "Messines Ridge",
       "precision": "medium",
-      "controlPoints": 96,
-      "lengthKm": 704,
+      "controlPoints": 95,
+      "lengthKm": 697,
       "sources": [
         "source:prior-wilson-1996",
         "source:haig-despatches-1919"

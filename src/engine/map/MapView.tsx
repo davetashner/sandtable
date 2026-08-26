@@ -346,29 +346,48 @@ export function MapView({
 
   useEffect(() => {
     const map = mapRef.current;
-    const geo = frontRef.current;
     if (!map || !ready) return;
-    const source = map.getSource(FRONT_SOURCE) as { setData: (d: unknown) => void } | undefined;
-    if (!geo || !wantsFront || frontAt === undefined) {
-      if (source) {
-        for (const id of FRONT_LAYER_IDS) if (map.getLayer(id)) map.removeLayer(id);
-        map.removeSource(FRONT_SOURCE);
+    let cancelled = false;
+
+    const apply = () => {
+      const m = mapRef.current;
+      const geo = frontRef.current;
+      if (cancelled || !m) return;
+      const source = m.getSource(FRONT_SOURCE) as { setData: (d: unknown) => void } | undefined;
+      if (!geo || !wantsFront || frontAt === undefined) {
+        if (source) {
+          for (const id of FRONT_LAYER_IDS) if (m.getLayer(id)) m.removeLayer(id);
+          m.removeSource(FRONT_SOURCE);
+        }
+        return;
       }
-      return;
-    }
-    const wanted = only(snapshotAt(geo, frontAt));
-    if (source) {
-      source.setData(wanted);
-      return;
-    }
-    map.addSource(FRONT_SOURCE, {
-      type: 'geojson',
-      data: wanted as never,
-      attribution: geo.attribution ?? '',
-    });
-    // Above the borders, below the labels, so place names stay readable.
-    const firstSymbol = map.getStyle().layers.find((l) => l.type === 'symbol')?.id;
-    for (const l of frontLayers(activeTheme)) map.addLayer(l, firstSymbol);
+      const wanted = only(snapshotAt(geo, frontAt));
+      if (source) {
+        source.setData(wanted);
+        return;
+      }
+      m.addSource(FRONT_SOURCE, {
+        type: 'geojson',
+        data: wanted as never,
+        attribution: geo.attribution ?? '',
+      });
+      // Above the borders, below the labels, so place names stay readable.
+      const firstSymbol = m.getStyle().layers.find((l) => l.type === 'symbol')?.id;
+      for (const l of frontLayers(activeTheme)) m.addLayer(l, firstSymbol);
+    };
+
+    // `ready` goes true on the first `styledata`, which fires well before the
+    // style has finished loading — and `addLayer` throws "Style is not done
+    // loading" until it has. The borders effect never trips over this only
+    // because it runs inside a fetch's `.then`, by which time the style is up;
+    // this one can run synchronously off a series that is already in hand, so
+    // it has to ask.
+    if (map.isStyleLoaded()) apply();
+    else map.once('idle', apply);
+
+    return () => {
+      cancelled = true;
+    };
   }, [ready, wantsFront, frontAt, frontLoaded, activeTheme]);
 
   // deck.gl layers.

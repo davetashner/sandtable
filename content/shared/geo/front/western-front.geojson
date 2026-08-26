@@ -2474,7 +2474,6 @@
           "La Harazée",
           "Boureuilles",
           "Vauquois",
-          "Malancourt",
           "Avocourt",
           "Côte 304",
           "Le Mort-Homme",
@@ -2507,7 +2506,7 @@
           "Seppois",
           "Pfetterhouse"
         ],
-        "lengthKm": 752
+        "lengthKm": 745
       },
       "geometry": {
         "type": "LineString",
@@ -2837,10 +2836,6 @@
             49.203
           ],
           [
-            5.212,
-            49.22
-          ],
-          [
             5.18,
             49.183
           ],
@@ -3064,7 +3059,6 @@
           "La Harazée",
           "Boureuilles",
           "Vauquois",
-          "Malancourt",
           "Avocourt",
           "Côte 304",
           "Le Mort-Homme",
@@ -3097,7 +3091,7 @@
           "Seppois",
           "Pfetterhouse"
         ],
-        "lengthKm": 755
+        "lengthKm": 748
       },
       "geometry": {
         "type": "LineString",
@@ -3409,10 +3403,6 @@
           [
             5.07,
             49.203
-          ],
-          [
-            5.212,
-            49.22
           ],
           [
             5.18,
@@ -3638,7 +3628,6 @@
           "La Harazée",
           "Boureuilles",
           "Vauquois",
-          "Malancourt",
           "Avocourt",
           "Côte 304",
           "Le Mort-Homme",
@@ -3669,7 +3658,7 @@
           "Seppois",
           "Pfetterhouse"
         ],
-        "lengthKm": 752
+        "lengthKm": 745
       },
       "geometry": {
         "type": "LineString",
@@ -3983,10 +3972,6 @@
             49.203
           ],
           [
-            5.212,
-            49.22
-          ],
-          [
             5.18,
             49.183
           ],
@@ -4192,7 +4177,6 @@
           "La Harazée",
           "Boureuilles",
           "Vauquois",
-          "Malancourt",
           "Avocourt",
           "Côte 304",
           "Le Mort-Homme",
@@ -4223,7 +4207,7 @@
           "Seppois",
           "Pfetterhouse"
         ],
-        "lengthKm": 705
+        "lengthKm": 698
       },
       "geometry": {
         "type": "LineString",
@@ -4497,10 +4481,6 @@
             49.203
           ],
           [
-            5.212,
-            49.22
-          ],
-          [
             5.18,
             49.183
           ],
@@ -4705,7 +4685,6 @@
           "La Harazée",
           "Boureuilles",
           "Vauquois",
-          "Malancourt",
           "Avocourt",
           "Côte 304",
           "Le Mort-Homme",
@@ -4736,7 +4715,7 @@
           "Seppois",
           "Pfetterhouse"
         ],
-        "lengthKm": 695
+        "lengthKm": 688
       },
       "geometry": {
         "type": "LineString",
@@ -5006,10 +4985,6 @@
             49.203
           ],
           [
-            5.212,
-            49.22
-          ],
-          [
             5.18,
             49.183
           ],
@@ -5214,7 +5189,6 @@
           "La Harazée",
           "Boureuilles",
           "Vauquois",
-          "Malancourt",
           "Avocourt",
           "Côte 304",
           "Le Mort-Homme",
@@ -5245,7 +5219,7 @@
           "Seppois",
           "Pfetterhouse"
         ],
-        "lengthKm": 704
+        "lengthKm": 697
       },
       "geometry": {
         "type": "LineString",
@@ -5513,10 +5487,6 @@
           [
             5.07,
             49.203
-          ],
-          [
-            5.212,
-            49.22
           ],
           [
             5.18,

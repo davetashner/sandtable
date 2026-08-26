@@ -53,6 +53,10 @@ class FakeMap {
   removeLayer(id: string) {
     this.layers = this.layers.filter((l) => l.id !== id);
   }
+  styleLoaded = true;
+  isStyleLoaded() {
+    return this.styleLoaded;
+  }
   getStyle() {
     return {
       layers: [
@@ -355,5 +359,76 @@ describe('<MapView> front line (sand-g80.1)', () => {
     const source = map.getSource('front') as { data: { features: { id: string }[] } };
     expect(source.data.features.map((f) => f.id)).toEqual(['front:1918-11-11']);
     expect(vi.mocked(fetch).mock.calls.length).toBe(fetches);
+  });
+});
+
+describe('<MapView> front line waits for the style (sand-g80.1)', () => {
+  const at = (d: string) => Date.parse(`${d}T00:00:00Z`);
+  const SERIES = {
+    type: 'FeatureCollection',
+    features: [
+      {
+        type: 'Feature',
+        id: 'front:1914-11-25',
+        properties: { date: '1914-11-25', at: at('1914-11-25'), precision: 'medium' },
+        geometry: {
+          type: 'LineString',
+          coordinates: [
+            [2.75, 51.13],
+            [7.15, 47.5],
+          ],
+        },
+      },
+    ],
+  };
+
+  beforeEach(() => {
+    maps.length = 0;
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => ({ ok: true, json: async () => SERIES })),
+    );
+  });
+
+  /**
+   * `styledata` fires long before the style is done, and `addLayer` throws until
+   * it is — 46 visual-gate scenes died of exactly this. The layers must wait.
+   */
+  it('does not touch the map until the style is loaded, then mounts on idle', async () => {
+    render(
+      <MapView
+        camera={{ center: [4, 50], zoom: 6 }}
+        styleFor={() => ({ version: 8, sources: {}, layers: [] })}
+        frontSeries="western-front"
+        frontAt={at('1917-01-01')}
+      />,
+    );
+    const map = maps.at(-1)!;
+    map.styleLoaded = false;
+    map.addLayer = vi.fn(() => {
+      throw new Error('Style is not done loading');
+    });
+
+    await act(async () => {
+      map.fire('styledata');
+    });
+    await vi.waitFor(() => expect(fetch).toHaveBeenCalled());
+    expect(map.addLayer).not.toHaveBeenCalled();
+    expect(map.getSource('front')).toBeUndefined();
+
+    // The style finishes; `idle` is where the work was parked.
+    map.styleLoaded = true;
+    const added: { id: string }[] = [];
+    map.addLayer = vi.fn((l: { id: string }) => added.push(l));
+    await act(async () => {
+      map.fire('idle');
+    });
+    expect(added.map((l) => l.id)).toEqual([
+      'front-halo',
+      'front-wash-central',
+      'front-wash-entente',
+      'front-line',
+      'front-line-approx',
+    ]);
   });
 });
