@@ -73,6 +73,7 @@ npm test -- --run        # Vitest, single pass
 npm run validate:content # scripts/check-content.sh + the pack validator (docs/content-model.md)
 npm run schema           # regenerate schema/*.schema.json from src/packs/schema (tests fail if stale)
 npm run borders          # rebuild content/shared/geo/borders/<year>.geojson from historical-basemaps (pinned commit)
+npm run front            # rebuild content/shared/geo/front/western-front.geojson from the authored snapshots; -- --check fails on a stale commit
 npm run tokens           # regenerate src/styles/tokens.css from src/styles/tokens.ts (docs/design.md; AA contrast tested)
 npm run media            # WebP derivatives + content/shared/media/index.json from media.json manifests; -- --upload syncs to the assets bucket
 npm run audio            # loudness-matched Opus/AAC + content/shared/audio/index.json from cue.json manifests; -- --upload syncs (needs ffmpeg)

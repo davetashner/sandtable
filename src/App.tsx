@@ -808,6 +808,7 @@ function MapSection() {
         <MapSurface
           camera={seed.pack.camera}
           borderYear={seed.pack.borderYear}
+          frontSeries={seed.pack.frontLine}
           branch={branch}
           movement={movement}
           region={seed.pack.region}

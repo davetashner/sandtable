@@ -1066,5 +1066,85 @@
     "publisher": "Inaugural-Dissertation, Schlesische Friedrich-Wilhelms-Universität, Breslau",
     "url": "https://archive.org/details/IA41543122_0047",
     "notes": "A doctoral dissertation of 1925 given entirely to the Hentsch mission of 8–10 September 1914 — the one work in this registry whose whole subject is the contested point in 1914:historiography-hentsch-authority. Filed as a study by its form: an independent source-critical monograph, not an official history, though it works almost wholly on the official material. Its value here is that it reads the surviving evidence *as* evidence: it sets Tappen's four reports beside Dommes's recollections and shows the two accounts of Moltke's verbal order borrowing each other's wording between 1917 and 1920, which is why the wording of that order is quoted on the card as a recollection and not as a text. It is also this pack's only readable route to Müller-Loebnitz's Die Sendung des Oberstleutnants Hentsch and to Kuhl's Der Marnefeldzug, both of which Faulde quotes by page; the pack cites Faulde for what Faulde says, and names those works as unread. Partisan in one direction that the reader should know: Faulde argues for Bülow's influence as the centre of the affair and is correspondingly sceptical of Hentsch's own two reports. Pagination: the scan prints only two legible folios, '— 48 —' on leaf 50 and a damaged '— 3[1] —' on leaf 33, both giving a leaf-to-page offset of 2; the Inhaltsangabe's section ranges (Der Auftrag 17–29, Hentsch in Mareuil 39–50, Hentsch auf dem Rückwege 50–52) fall on that offset at four boundaries. Every page cited from it was read on the leaf that offset gives and its quoted phrase grepped back."
+  },
+  {
+    "id": "source:stevenson-2004",
+    "kind": "book",
+    "tier": "general",
+    "author": "Stevenson, David",
+    "title": "1914–1918: The History of the First World War",
+    "year": 2004,
+    "publisher": "Allen Lane, London",
+    "notes": "The standard one-volume history of the war as a whole, strong on strategy, economics and the way the fronts interacted. Used for the shape of the Western Front year by year and for the collapse of 1918; it supports the line at the resolution of a campaign, not of a map sheet."
+  },
+  {
+    "id": "source:foley-2005",
+    "kind": "book",
+    "tier": "study",
+    "author": "Foley, Robert T.",
+    "title": "German Strategy and the Path to Verdun: Erich von Falkenhayn and the Development of Attrition, 1870–1916",
+    "year": 2005,
+    "publisher": "Cambridge University Press, Cambridge",
+    "notes": "Archive-based reconstruction of German strategy to the end of 1916 and the standard corrective to the \"bleed France white\" account of Verdun. Used for the German offensive on both banks of the Meuse and for where it stopped."
+  },
+  {
+    "id": "source:prior-wilson-2005",
+    "kind": "book",
+    "tier": "study",
+    "author": "Prior, Robin; Wilson, Trevor",
+    "title": "The Somme",
+    "year": 2005,
+    "publisher": "Yale University Press, New Haven",
+    "notes": "The Somme attack by attack, worked from the operation orders and the war diaries, and severe on the command decisions behind them. Used for the ground gained between 1 July and 18 November 1916 — one side of a live argument about Haig."
+  },
+  {
+    "id": "source:prior-wilson-1996",
+    "kind": "book",
+    "tier": "study",
+    "author": "Prior, Robin; Wilson, Trevor",
+    "title": "Passchendaele: The Untold Story",
+    "year": 1996,
+    "publisher": "Yale University Press, New Haven",
+    "notes": "Third Ypres phase by phase, including Messines, argued against the campaign having a coherent purpose after August. Used for the dates and the ground; its verdict is one side and is written as such."
+  },
+  {
+    "id": "source:harris-1995",
+    "kind": "book",
+    "tier": "study",
+    "author": "Harris, J. P.",
+    "title": "Men, Ideas and Tanks: British Military Thought and Armoured Forces, 1903–1939",
+    "year": 1995,
+    "publisher": "Manchester University Press, Manchester",
+    "notes": "The tank from its committees to the interwar arguments, and the corrective to Fuller’s own account of Cambrai. Used for the numbers at Flers-Courcelette and for what the machines could actually do (sand-23b.35)."
+  },
+  {
+    "id": "source:hammond-2008",
+    "kind": "book",
+    "tier": "study",
+    "author": "Hammond, Bryn",
+    "title": "Cambrai 1917: The Myth of the First Great Tank Battle",
+    "year": 2008,
+    "publisher": "Weidenfeld & Nicolson, London",
+    "notes": "Cambrai from the war diaries, arguing that the battle was an all-arms operation that the tank has taken the credit for. Used for the first day, the depth reached, and the German counter-attack of 30 November (sand-23b.35)."
+  },
+  {
+    "id": "source:zabecki-2006",
+    "kind": "book",
+    "tier": "study",
+    "author": "Zabecki, David T.",
+    "title": "The German 1918 Offensives: A Case Study in the Operational Level of War",
+    "year": 2006,
+    "publisher": "Routledge, London",
+    "notes": "The five spring offensives analysed as operations, with the argument that they were tactically brilliant and operationally aimless. Used for the frontages, the depths reached and the shape of the salients Michael, Georgette and Blücher left behind."
+  },
+  {
+    "id": "source:sheffield-2001",
+    "kind": "book",
+    "tier": "study",
+    "author": "Sheffield, Gary",
+    "title": "Forgotten Victory: The First World War — Myths and Realities",
+    "year": 2001,
+    "publisher": "Headline, London",
+    "notes": "The \"learning curve\" case: that the BEF became an effective all-arms army and won the war in 1918. Used for the Hundred Days; it is one side of the argument about British command and is cited as such."
   }
 ]

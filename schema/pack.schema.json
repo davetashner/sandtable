@@ -81,6 +81,11 @@
       "maximum": 9007199254740991,
       "description": "Which shared/geo/borders/<year>.geojson to draw"
     },
+    "frontLine": {
+      "description": "Shared front-line series to draw as the clock moves, e.g. \"western-front\" (content/shared/geo/front/<name>.geojson, sand-g80.1); omit for none",
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
     "camera": {
       "type": "object",
       "properties": {

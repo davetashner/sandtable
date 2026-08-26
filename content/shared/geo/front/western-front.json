@@ -1,0 +1,3162 @@
+{
+  "$comment": "The Western Front, dated snapshot by dated snapshot (sand-g80.1). AUTHORED FILE — western-front.geojson beside it is generated from this one by `npm run front` and is what the app fetches. Read README.md in this directory before editing: in particular, this is a schematic through named control points, not a digitised trace, and it is accurate to about five kilometres.",
+  "gazetteer": {
+    "ailles": {
+      "name": "Ailles",
+      "lngLat": [3.72, 49.45]
+    },
+    "albert": {
+      "name": "Albert",
+      "lngLat": [2.65, 50.003]
+    },
+    "ambleny": {
+      "name": "Ambleny",
+      "lngLat": [3.2, 49.4]
+    },
+    "ammertzwiller": {
+      "name": "Ammertzwiller",
+      "lngLat": [7.17, 47.68]
+    },
+    "angres": {
+      "name": "Angres",
+      "lngLat": [2.76, 50.415]
+    },
+    "anizy-le-chateau": {
+      "name": "Anizy-le-Château",
+      "lngLat": [3.45, 49.503]
+    },
+    "apremont-la-foret": {
+      "name": "Apremont-la-Forêt",
+      "lngLat": [5.64, 48.848]
+    },
+    "arracourt": {
+      "name": "Arracourt",
+      "lngLat": [6.535, 48.727]
+    },
+    "arras-east": {
+      "name": "east of Arras",
+      "lngLat": [2.83, 50.291]
+    },
+    "aspach": {
+      "name": "Aspach",
+      "lngLat": [7.18, 47.78]
+    },
+    "ath": {
+      "name": "Ath",
+      "lngLat": [3.778, 50.63]
+    },
+    "auberive": {
+      "name": "Auberive",
+      "lngLat": [4.283, 49.2]
+    },
+    "aubers": {
+      "name": "Aubers",
+      "lngLat": [2.828, 50.593]
+    },
+    "avesnes": {
+      "name": "Avesnes-sur-Helpe",
+      "lngLat": [3.928, 50.123]
+    },
+    "avion": {
+      "name": "Avion",
+      "lngLat": [2.83, 50.41]
+    },
+    "avocourt": {
+      "name": "Avocourt",
+      "lngLat": [5.18, 49.183]
+    },
+    "ayette": {
+      "name": "Ayette",
+      "lngLat": [2.755, 50.155]
+    },
+    "badonviller": {
+      "name": "Badonviller",
+      "lngLat": [6.917, 48.492]
+    },
+    "bailleul": {
+      "name": "Bailleul",
+      "lngLat": [2.735, 50.735]
+    },
+    "ban-de-sapt": {
+      "name": "Ban-de-Sapt",
+      "lngLat": [7.02, 48.36]
+    },
+    "barleux": {
+      "name": "Barleux",
+      "lngLat": [2.86, 49.905]
+    },
+    "beaumont-hamel": {
+      "name": "Beaumont-Hamel",
+      "lngLat": [2.663, 50.077]
+    },
+    "becelaere": {
+      "name": "Becelaere",
+      "lngLat": [3.03, 50.855]
+    },
+    "belleau": {
+      "name": "Belleau",
+      "lngLat": [3.29, 49.09]
+    },
+    "berry-au-bac": {
+      "name": "Berry-au-Bac",
+      "lngLat": [3.892, 49.407]
+    },
+    "bezonvaux": {
+      "name": "Bezonvaux",
+      "lngLat": [5.49, 49.235]
+    },
+    "bikschote": {
+      "name": "Bikschote",
+      "lngLat": [2.873, 50.938]
+    },
+    "blamont": {
+      "name": "Blâmont",
+      "lngLat": [6.845, 48.588]
+    },
+    "boesinghe": {
+      "name": "Boesinghe",
+      "lngLat": [2.885, 50.895]
+    },
+    "bois-des-caures": {
+      "name": "Bois des Caures",
+      "lngLat": [5.42, 49.27]
+    },
+    "bois-grenier": {
+      "name": "Bois-Grenier",
+      "lngLat": [2.905, 50.653]
+    },
+    "bois-le-pretre": {
+      "name": "Bois-le-Prêtre",
+      "lngLat": [6.02, 48.88]
+    },
+    "bouchavesnes": {
+      "name": "Bouchavesnes",
+      "lngLat": [2.895, 49.965]
+    },
+    "boureuilles": {
+      "name": "Boureuilles",
+      "lngLat": [5.048, 49.213]
+    },
+    "bourlon": {
+      "name": "Bourlon Wood",
+      "lngLat": [3.09, 50.18]
+    },
+    "brabant-sur-meuse": {
+      "name": "Brabant-sur-Meuse",
+      "lngLat": [5.312, 49.302]
+    },
+    "braine": {
+      "name": "Braine",
+      "lngLat": [3.54, 49.35]
+    },
+    "brimont": {
+      "name": "Brimont",
+      "lngLat": [3.985, 49.316]
+    },
+    "broodseinde": {
+      "name": "Broodseinde",
+      "lngLat": [3.01, 50.873]
+    },
+    "bucquoy": {
+      "name": "Bucquoy",
+      "lngLat": [2.702, 50.128]
+    },
+    "bullecourt": {
+      "name": "Bullecourt",
+      "lngLat": [2.933, 50.19]
+    },
+    "butte-de-tahure": {
+      "name": "Butte de Tahure",
+      "lngLat": [4.53, 49.225]
+    },
+    "canny-sur-matz": {
+      "name": "Canny-sur-Matz",
+      "lngLat": [2.79, 49.61]
+    },
+    "celles-sur-plaine": {
+      "name": "Celles-sur-Plaine",
+      "lngLat": [6.965, 48.462]
+    },
+    "cerny-en-laonnois": {
+      "name": "Cerny-en-Laonnois",
+      "lngLat": [3.653, 49.443]
+    },
+    "chateau-porcien": {
+      "name": "Château-Porcien",
+      "lngLat": [4.25, 49.53]
+    },
+    "chateau-thierry": {
+      "name": "Château-Thierry",
+      "lngLat": [3.403, 49.046]
+    },
+    "chaulnes": {
+      "name": "Chaulnes",
+      "lngLat": [2.803, 49.813]
+    },
+    "chavignon": {
+      "name": "Chavignon",
+      "lngLat": [3.55, 49.47]
+    },
+    "chavonne": {
+      "name": "Chavonne",
+      "lngLat": [3.577, 49.408]
+    },
+    "col-du-bonhomme": {
+      "name": "Col du Bonhomme",
+      "lngLat": [7.1, 48.163]
+    },
+    "combles": {
+      "name": "Combles",
+      "lngLat": [2.865, 50]
+    },
+    "combres": {
+      "name": "Combres",
+      "lngLat": [5.64, 49.07]
+    },
+    "consenvoye": {
+      "name": "Consenvoye",
+      "lngLat": [5.32, 49.31]
+    },
+    "cote-304": {
+      "name": "Côte 304",
+      "lngLat": [5.26, 49.235]
+    },
+    "craonne": {
+      "name": "Craonne",
+      "lngLat": [3.795, 49.443]
+    },
+    "croisilles": {
+      "name": "Croisilles",
+      "lngLat": [2.888, 50.185]
+    },
+    "crouy": {
+      "name": "Crouy",
+      "lngLat": [3.36, 49.4]
+    },
+    "cuinchy": {
+      "name": "Cuinchy",
+      "lngLat": [2.755, 50.518]
+    },
+    "cumieres": {
+      "name": "Cumières",
+      "lngLat": [5.32, 49.24]
+    },
+    "curlu": {
+      "name": "Curlu",
+      "lngLat": [2.808, 49.965]
+    },
+    "damloup": {
+      "name": "Damloup",
+      "lngLat": [5.5, 49.19]
+    },
+    "damvillers": {
+      "name": "Damvillers",
+      "lngLat": [5.395, 49.34]
+    },
+    "dixmude": {
+      "name": "Dixmude",
+      "lngLat": [2.865, 51.033]
+    },
+    "dompierre": {
+      "name": "Dompierre-Becquincourt",
+      "lngLat": [2.827, 49.898]
+    },
+    "dormans": {
+      "name": "Dormans",
+      "lngLat": [3.635, 49.068]
+    },
+    "douaumont": {
+      "name": "Fort Douaumont",
+      "lngLat": [5.44, 49.212]
+    },
+    "dranouter": {
+      "name": "Dranouter",
+      "lngLat": [2.775, 50.767]
+    },
+    "dun-sur-meuse": {
+      "name": "Dun-sur-Meuse",
+      "lngLat": [5.183, 49.383]
+    },
+    "dutch-frontier-scheldt": {
+      "name": "the Dutch frontier on the Scheldt",
+      "lngLat": [3.83, 51.25]
+    },
+    "epehy": {
+      "name": "Épehy",
+      "lngLat": [3.135, 49.992]
+    },
+    "etain": {
+      "name": "Étain",
+      "lngLat": [5.64, 49.215]
+    },
+    "fay": {
+      "name": "Fay",
+      "lngLat": [2.84, 49.88]
+    },
+    "festubert": {
+      "name": "Festubert",
+      "lngLat": [2.735, 50.545]
+    },
+    "ficheux": {
+      "name": "Ficheux",
+      "lngLat": [2.72, 50.23]
+    },
+    "fismes": {
+      "name": "Fismes",
+      "lngLat": [3.68, 49.31]
+    },
+    "flesquieres": {
+      "name": "Flesquières",
+      "lngLat": [3.09, 50.117]
+    },
+    "fleury": {
+      "name": "Fleury-devant-Douaumont",
+      "lngLat": [5.42, 49.19]
+    },
+    "flirey": {
+      "name": "Flirey",
+      "lngLat": [5.87, 48.87]
+    },
+    "forges-sur-meuse": {
+      "name": "Forges-sur-Meuse",
+      "lngLat": [5.278, 49.283]
+    },
+    "frelinghien": {
+      "name": "Frelinghien",
+      "lngLat": [3, 50.7]
+    },
+    "fresnes-en-woevre": {
+      "name": "Fresnes-en-Woëvre",
+      "lngLat": [5.63, 49.03]
+    },
+    "frezenberg": {
+      "name": "Frezenberg",
+      "lngLat": [2.955, 50.862]
+    },
+    "fricourt": {
+      "name": "Fricourt",
+      "lngLat": [2.716, 49.997]
+    },
+    "frise": {
+      "name": "Frise",
+      "lngLat": [2.808, 49.935]
+    },
+    "fromelles": {
+      "name": "Fromelles",
+      "lngLat": [2.855, 50.607]
+    },
+    "fromezey": {
+      "name": "Fromezey",
+      "lngLat": [5.56, 49.18]
+    },
+    "gavrelle": {
+      "name": "Gavrelle",
+      "lngLat": [2.88, 50.33]
+    },
+    "geraardsbergen": {
+      "name": "Geraardsbergen",
+      "lngLat": [3.87, 50.77]
+    },
+    "gheluvelt": {
+      "name": "Gheluvelt",
+      "lngLat": [3, 50.836]
+    },
+    "ghent-east": {
+      "name": "east of Ghent",
+      "lngLat": [3.83, 51.05]
+    },
+    "givenchy": {
+      "name": "Givenchy-lès-la-Bassée",
+      "lngLat": [2.74, 50.523]
+    },
+    "gommecourt": {
+      "name": "Gommecourt",
+      "lngLat": [2.66, 50.107]
+    },
+    "gouzeaucourt": {
+      "name": "Gouzeaucourt",
+      "lngLat": [3.128, 50.055]
+    },
+    "grandcourt": {
+      "name": "Grandcourt",
+      "lngLat": [2.72, 50.065]
+    },
+    "grandpre": {
+      "name": "Grandpré",
+      "lngLat": [4.87, 49.34]
+    },
+    "gravenstafel": {
+      "name": "Gravenstafel",
+      "lngLat": [2.968, 50.888]
+    },
+    "gueudecourt": {
+      "name": "Gueudecourt",
+      "lngLat": [2.83, 50.045]
+    },
+    "guise": {
+      "name": "Guise",
+      "lngLat": [3.627, 49.899]
+    },
+    "hamel": {
+      "name": "Le Hamel",
+      "lngLat": [2.585, 49.897]
+    },
+    "hartmannswillerkopf": {
+      "name": "Hartmannswillerkopf",
+      "lngLat": [7.13, 47.863]
+    },
+    "havrincourt": {
+      "name": "Havrincourt",
+      "lngLat": [3.075, 50.108]
+    },
+    "hebuterne": {
+      "name": "Hébuterne",
+      "lngLat": [2.65, 50.117]
+    },
+    "hermies": {
+      "name": "Hermies",
+      "lngLat": [3.045, 50.105]
+    },
+    "hill-60": {
+      "name": "Hill 60",
+      "lngLat": [2.929, 50.825]
+    },
+    "hirson": {
+      "name": "Hirson",
+      "lngLat": [4.083, 49.923]
+    },
+    "hollebeke": {
+      "name": "Hollebeke",
+      "lngLat": [2.958, 50.797]
+    },
+    "hooge": {
+      "name": "Hooge",
+      "lngLat": [2.945, 50.848]
+    },
+    "hulluch": {
+      "name": "Hulluch",
+      "lngLat": [2.79, 50.472]
+    },
+    "itancourt": {
+      "name": "Itancourt",
+      "lngLat": [3.35, 49.8]
+    },
+    "kemmel": {
+      "name": "Mount Kemmel",
+      "lngLat": [2.815, 50.788]
+    },
+    "la-boisselle": {
+      "name": "La Boisselle",
+      "lngLat": [2.699, 50.017]
+    },
+    "la-fere": {
+      "name": "La Fère",
+      "lngLat": [3.365, 49.663]
+    },
+    "la-harazee": {
+      "name": "La Harazée",
+      "lngLat": [4.93, 49.192]
+    },
+    "laffaux": {
+      "name": "Laffaux",
+      "lngLat": [3.475, 49.443]
+    },
+    "langemarck": {
+      "name": "Langemarck",
+      "lngLat": [2.917, 50.917]
+    },
+    "lassigny": {
+      "name": "Lassigny",
+      "lngLat": [2.821, 49.583]
+    },
+    "le-cateau": {
+      "name": "Le Cateau",
+      "lngLat": [3.543, 50.104]
+    },
+    "le-linge": {
+      "name": "Le Linge",
+      "lngLat": [7.17, 48.063]
+    },
+    "le-sars": {
+      "name": "Le Sars",
+      "lngLat": [2.77, 50.055]
+    },
+    "le-verguier": {
+      "name": "Le Verguier",
+      "lngLat": [3.222, 49.918]
+    },
+    "les-eparges": {
+      "name": "Les Éparges",
+      "lngLat": [5.63, 49.055]
+    },
+    "lesboeufs": {
+      "name": "Lesbœufs",
+      "lngLat": [2.845, 50.02]
+    },
+    "lihons": {
+      "name": "Lihons",
+      "lngLat": [2.782, 49.833]
+    },
+    "loivre": {
+      "name": "Loivre",
+      "lngLat": [3.955, 49.331]
+    },
+    "longpont": {
+      "name": "Longpont",
+      "lngLat": [3.22, 49.27]
+    },
+    "loos": {
+      "name": "Loos-en-Gohelle",
+      "lngLat": [2.796, 50.455]
+    },
+    "louvemont": {
+      "name": "Louvemont",
+      "lngLat": [5.42, 49.245]
+    },
+    "malancourt": {
+      "name": "Malancourt",
+      "lngLat": [5.212, 49.22]
+    },
+    "mametz": {
+      "name": "Mametz",
+      "lngLat": [2.735, 49.995]
+    },
+    "marcoing": {
+      "name": "Marcoing",
+      "lngLat": [3.17, 50.117]
+    },
+    "maricourt": {
+      "name": "Maricourt",
+      "lngLat": [2.783, 49.983]
+    },
+    "marle": {
+      "name": "Marle",
+      "lngLat": [3.772, 49.74]
+    },
+    "masnieres": {
+      "name": "Masnières",
+      "lngLat": [3.22, 50.107]
+    },
+    "massiges": {
+      "name": "Massiges",
+      "lngLat": [4.66, 49.208]
+    },
+    "maubeuge": {
+      "name": "Maubeuge",
+      "lngLat": [3.973, 50.278]
+    },
+    "merville": {
+      "name": "Merville",
+      "lngLat": [2.64, 50.645]
+    },
+    "messines": {
+      "name": "Messines",
+      "lngLat": [2.897, 50.762]
+    },
+    "mezieres": {
+      "name": "Mézières",
+      "lngLat": [4.72, 49.762]
+    },
+    "monchy-au-bois": {
+      "name": "Monchy-au-Bois",
+      "lngLat": [2.65, 50.175]
+    },
+    "mons": {
+      "name": "Mons",
+      "lngLat": [3.952, 50.454]
+    },
+    "montauban": {
+      "name": "Montauban-de-Picardie",
+      "lngLat": [2.752, 49.998]
+    },
+    "montdidier": {
+      "name": "Montdidier",
+      "lngLat": [2.568, 49.65]
+    },
+    "moreuil": {
+      "name": "Moreuil",
+      "lngLat": [2.485, 49.775]
+    },
+    "morlancourt": {
+      "name": "Morlancourt",
+      "lngLat": [2.61, 49.955]
+    },
+    "mort-homme": {
+      "name": "Le Mort-Homme",
+      "lngLat": [5.3, 49.235]
+    },
+    "moulin-sous-touvent": {
+      "name": "Moulin-sous-Touvent",
+      "lngLat": [3.1, 49.483]
+    },
+    "navarin": {
+      "name": "Ferme Navarin",
+      "lngLat": [4.42, 49.215]
+    },
+    "neuve-chapelle": {
+      "name": "Neuve-Chapelle",
+      "lngLat": [2.777, 50.584]
+    },
+    "neuve-eglise": {
+      "name": "Neuve-Église",
+      "lngLat": [2.79, 50.75]
+    },
+    "neuville-saint-vaast": {
+      "name": "Neuville-Saint-Vaast",
+      "lngLat": [2.766, 50.36]
+    },
+    "neuville-vitasse": {
+      "name": "Neuville-Vitasse",
+      "lngLat": [2.815, 50.256]
+    },
+    "nieuwpoort": {
+      "name": "Nieuwpoort",
+      "lngLat": [2.752, 51.13]
+    },
+    "nogent-labbesse": {
+      "name": "Nogent-l'Abbesse",
+      "lngLat": [4.128, 49.222]
+    },
+    "nomeny": {
+      "name": "Nomeny",
+      "lngLat": [6.23, 48.888]
+    },
+    "noordschote": {
+      "name": "Noordschote",
+      "lngLat": [2.845, 50.965]
+    },
+    "nouvron-vingre": {
+      "name": "Nouvron-Vingré",
+      "lngLat": [3.183, 49.442]
+    },
+    "noyon": {
+      "name": "Noyon",
+      "lngLat": [3, 49.583]
+    },
+    "oosttaverne": {
+      "name": "Oosttaverne",
+      "lngLat": [2.925, 50.775]
+    },
+    "oppy": {
+      "name": "Oppy",
+      "lngLat": [2.87, 50.35]
+    },
+    "ornes": {
+      "name": "Ornes",
+      "lngLat": [5.48, 49.23]
+    },
+    "oudenaarde": {
+      "name": "Oudenaarde",
+      "lngLat": [3.6, 50.85]
+    },
+    "ovillers": {
+      "name": "Ovillers-la-Boisselle",
+      "lngLat": [2.708, 50.03]
+    },
+    "passchendaele": {
+      "name": "Passchendaele",
+      "lngLat": [3.02, 50.898]
+    },
+    "perthes-les-hurlus": {
+      "name": "Perthes-lès-Hurlus",
+      "lngLat": [4.47, 49.235]
+    },
+    "pfetterhouse": {
+      "name": "Pfetterhouse",
+      "lngLat": [7.147, 47.503]
+    },
+    "pinon": {
+      "name": "Pinon",
+      "lngLat": [3.51, 49.485]
+    },
+    "ploegsteert": {
+      "name": "Ploegsteert",
+      "lngLat": [2.879, 50.727]
+    },
+    "poelkapelle": {
+      "name": "Poelkapelle",
+      "lngLat": [2.96, 50.913]
+    },
+    "pont-a-mousson": {
+      "name": "Pont-à-Mousson",
+      "lngLat": [6.055, 48.905]
+    },
+    "prunay": {
+      "name": "Prunay",
+      "lngLat": [4.17, 49.18]
+    },
+    "queant": {
+      "name": "Quéant",
+      "lngLat": [2.986, 50.183]
+    },
+    "rancourt": {
+      "name": "Rancourt",
+      "lngLat": [2.885, 49.985]
+    },
+    "regnieville": {
+      "name": "Regniéville",
+      "lngLat": [5.92, 48.89]
+    },
+    "reims-north": {
+      "name": "north of Reims",
+      "lngLat": [4.032, 49.28]
+    },
+    "rethel": {
+      "name": "Rethel",
+      "lngLat": [4.37, 49.51]
+    },
+    "ribecourt-oise": {
+      "name": "Ribécourt-Dreslincourt",
+      "lngLat": [2.918, 49.512]
+    },
+    "robecq": {
+      "name": "Robecq",
+      "lngLat": [2.545, 50.585]
+    },
+    "roclincourt": {
+      "name": "Roclincourt",
+      "lngLat": [2.794, 50.322]
+    },
+    "rocroi": {
+      "name": "Rocroi",
+      "lngLat": [4.522, 49.925]
+    },
+    "roye": {
+      "name": "Roye",
+      "lngLat": [2.792, 49.7]
+    },
+    "saint-mihiel": {
+      "name": "Saint-Mihiel",
+      "lngLat": [5.545, 48.888]
+    },
+    "saint-quentin": {
+      "name": "Saint-Quentin",
+      "lngLat": [3.287, 49.847]
+    },
+    "sanctuary-wood": {
+      "name": "Sanctuary Wood",
+      "lngLat": [2.94, 50.838]
+    },
+    "schoorbakke": {
+      "name": "Schoorbakke",
+      "lngLat": [2.83, 51.075]
+    },
+    "sedan": {
+      "name": "Sedan",
+      "lngLat": [4.94, 49.702]
+    },
+    "seppois": {
+      "name": "Seppois",
+      "lngLat": [7.18, 47.545]
+    },
+    "serre": {
+      "name": "Serre",
+      "lngLat": [2.68, 50.093]
+    },
+    "sint-elooi": {
+      "name": "Sint-Elooi",
+      "lngLat": [2.905, 50.813]
+    },
+    "sint-joris": {
+      "name": "Sint-Joris",
+      "lngLat": [2.795, 51.115]
+    },
+    "sint-juliaan": {
+      "name": "Sint-Juliaan",
+      "lngLat": [2.94, 50.885]
+    },
+    "soissons-north": {
+      "name": "north of Soissons",
+      "lngLat": [3.323, 49.41]
+    },
+    "souain": {
+      "name": "Souain",
+      "lngLat": [4.4, 49.23]
+    },
+    "souchez": {
+      "name": "Souchez",
+      "lngLat": [2.74, 50.398]
+    },
+    "souville": {
+      "name": "Fort Souville",
+      "lngLat": [5.415, 49.175]
+    },
+    "steenstraat": {
+      "name": "Steenstraat",
+      "lngLat": [2.855, 50.945]
+    },
+    "steinbach": {
+      "name": "Steinbach",
+      "lngLat": [7.16, 47.845]
+    },
+    "stenay": {
+      "name": "Stenay",
+      "lngLat": [5.19, 49.49]
+    },
+    "stuivekenskerke": {
+      "name": "Stuivekenskerke",
+      "lngLat": [2.855, 51.06]
+    },
+    "tahure": {
+      "name": "Tahure",
+      "lngLat": [4.52, 49.24]
+    },
+    "thiaucourt": {
+      "name": "Thiaucourt",
+      "lngLat": [5.86, 48.95]
+    },
+    "thiepval": {
+      "name": "Thiepval",
+      "lngLat": [2.686, 50.055]
+    },
+    "tournai": {
+      "name": "Tournai",
+      "lngLat": [3.39, 50.607]
+    },
+    "tracy-le-val": {
+      "name": "Tracy-le-Val",
+      "lngLat": [3.01, 49.5]
+    },
+    "vailly-sur-aisne": {
+      "name": "Vailly-sur-Aisne",
+      "lngLat": [3.532, 49.4]
+    },
+    "valenciennes": {
+      "name": "Valenciennes",
+      "lngLat": [3.523, 50.357]
+    },
+    "vauquois": {
+      "name": "Vauquois",
+      "lngLat": [5.07, 49.203]
+    },
+    "vaux": {
+      "name": "Fort Vaux",
+      "lngLat": [5.47, 49.198]
+    },
+    "vauxaillon": {
+      "name": "Vauxaillon",
+      "lngLat": [3.42, 49.475]
+    },
+    "vermelles": {
+      "name": "Vermelles",
+      "lngLat": [2.755, 50.483]
+    },
+    "vervins": {
+      "name": "Vervins",
+      "lngLat": [3.909, 49.835]
+    },
+    "vic-sur-aisne": {
+      "name": "Vic-sur-Aisne",
+      "lngLat": [3.11, 49.408]
+    },
+    "vienne-le-chateau": {
+      "name": "Vienne-le-Château",
+      "lngLat": [4.9, 49.202]
+    },
+    "ville-sur-tourbe": {
+      "name": "Ville-sur-Tourbe",
+      "lngLat": [4.75, 49.19]
+    },
+    "villers-bretonneux": {
+      "name": "Villers-Bretonneux",
+      "lngLat": [2.52, 49.868]
+    },
+    "villers-cotterets": {
+      "name": "Villers-Cotterêts",
+      "lngLat": [3.09, 49.253]
+    },
+    "voormezele": {
+      "name": "Voormezele",
+      "lngLat": [2.865, 50.815]
+    },
+    "vouziers": {
+      "name": "Vouziers",
+      "lngLat": [4.7, 49.4]
+    },
+    "wancourt": {
+      "name": "Wancourt",
+      "lngLat": [2.859, 50.253]
+    },
+    "warneton": {
+      "name": "Warneton",
+      "lngLat": [3, 50.755]
+    },
+    "wieltje": {
+      "name": "Wieltje",
+      "lngLat": [2.918, 50.876]
+    },
+    "wijtschate": {
+      "name": "Wijtschate",
+      "lngLat": [2.888, 50.782]
+    },
+    "zandvoorde": {
+      "name": "Zandvoorde",
+      "lngLat": [2.982, 50.813]
+    }
+  },
+  "snapshots": [
+    {
+      "date": "1914-11-25",
+      "label": "The line reaches the sea",
+      "precision": "medium",
+      "summary": "The end of the war of movement in the West. From the Yser inundation south to the Swiss frontier the front is continuous, and it will not be continuous anywhere else for four years.",
+      "sources": [
+        {
+          "source": "source:edmonds-1925",
+          "note": "the Allied line in Flanders at the close of First Ypres; the volume gives dispositions, not a surveyed trace"
+        },
+        {
+          "source": "source:van-pul-2006",
+          "note": "the Yser inundation, which fixes the northern anchor between Nieuwpoort and Dixmude"
+        },
+        {
+          "source": "source:afgg-1-1",
+          "note": "the French line from the Oise to the Vosges at the close of the war of movement"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "bikschote",
+        "langemarck",
+        "sint-juliaan",
+        "gravenstafel",
+        "broodseinde",
+        "becelaere",
+        "gheluvelt",
+        "zandvoorde",
+        "hollebeke",
+        "sint-elooi",
+        "wijtschate",
+        "messines",
+        "ploegsteert",
+        "frelinghien",
+        "bois-grenier",
+        "fromelles",
+        "aubers",
+        "neuve-chapelle",
+        "festubert",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "angres",
+        "souchez",
+        "neuville-saint-vaast",
+        "roclincourt",
+        "arras-east",
+        "ficheux",
+        "monchy-au-bois",
+        "gommecourt",
+        "hebuterne",
+        "serre",
+        "beaumont-hamel",
+        "thiepval",
+        "ovillers",
+        "la-boisselle",
+        "fricourt",
+        "mametz",
+        "montauban",
+        "maricourt",
+        "curlu",
+        "frise",
+        "dompierre",
+        "fay",
+        "lihons",
+        "chaulnes",
+        "roye",
+        "canny-sur-matz",
+        "lassigny",
+        "noyon",
+        "ribecourt-oise",
+        "tracy-le-val",
+        "moulin-sous-touvent",
+        "nouvron-vingre",
+        "vic-sur-aisne",
+        "soissons-north",
+        "crouy",
+        "vailly-sur-aisne",
+        "chavonne",
+        "cerny-en-laonnois",
+        "craonne",
+        "berry-au-bac",
+        "loivre",
+        "brimont",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "souain",
+        "perthes-les-hurlus",
+        "tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "avocourt",
+        "malancourt",
+        "forges-sur-meuse",
+        "brabant-sur-meuse",
+        "consenvoye",
+        "bois-des-caures",
+        "ornes",
+        "fromezey",
+        "combres",
+        "les-eparges",
+        "saint-mihiel",
+        "apremont-la-foret",
+        "flirey",
+        "regnieville",
+        "bois-le-pretre",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1915-03-15",
+      "label": "Neuve-Chapelle",
+      "precision": "low",
+      "summary": "The first deliberate British breakthrough attempt takes the village and stops two kilometres in. At this scale the line does not move.",
+      "sources": [
+        {
+          "source": "source:stevenson-2004",
+          "note": "the Western Front in 1915; supports the shape of the line at year resolution, not the day"
+        },
+        {
+          "source": "source:doughty-2005",
+          "note": "Neuve-Chapelle and the French winter offensives"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "bikschote",
+        "langemarck",
+        "sint-juliaan",
+        "gravenstafel",
+        "broodseinde",
+        "becelaere",
+        "gheluvelt",
+        "zandvoorde",
+        "hollebeke",
+        "sint-elooi",
+        "wijtschate",
+        "messines",
+        "ploegsteert",
+        "frelinghien",
+        "bois-grenier",
+        "fromelles",
+        "aubers",
+        "neuve-chapelle",
+        "festubert",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "angres",
+        "souchez",
+        "neuville-saint-vaast",
+        "roclincourt",
+        "arras-east",
+        "ficheux",
+        "monchy-au-bois",
+        "gommecourt",
+        "hebuterne",
+        "serre",
+        "beaumont-hamel",
+        "thiepval",
+        "ovillers",
+        "la-boisselle",
+        "fricourt",
+        "mametz",
+        "montauban",
+        "maricourt",
+        "curlu",
+        "frise",
+        "dompierre",
+        "fay",
+        "lihons",
+        "chaulnes",
+        "roye",
+        "canny-sur-matz",
+        "lassigny",
+        "noyon",
+        "ribecourt-oise",
+        "tracy-le-val",
+        "moulin-sous-touvent",
+        "nouvron-vingre",
+        "vic-sur-aisne",
+        "soissons-north",
+        "crouy",
+        "vailly-sur-aisne",
+        "chavonne",
+        "cerny-en-laonnois",
+        "craonne",
+        "berry-au-bac",
+        "loivre",
+        "brimont",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "souain",
+        "perthes-les-hurlus",
+        "tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "avocourt",
+        "malancourt",
+        "forges-sur-meuse",
+        "brabant-sur-meuse",
+        "consenvoye",
+        "bois-des-caures",
+        "ornes",
+        "fromezey",
+        "combres",
+        "les-eparges",
+        "saint-mihiel",
+        "apremont-la-foret",
+        "flirey",
+        "regnieville",
+        "bois-le-pretre",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1915-05-25",
+      "label": "After Second Ypres: the salient contracts",
+      "precision": "medium",
+      "summary": "Chlorine is released at Langemarck on 22 April. When the fighting stops a month later the Germans hold the ridges and the British have pulled the salient back to within three kilometres of Ypres — the only visible change the year makes in Flanders.",
+      "sources": [
+        {
+          "source": "source:1914-1918-online-ypres",
+          "note": "Second Ypres: the dates, the ground given up, and the shortened salient"
+        },
+        {
+          "source": "source:haber-1986",
+          "note": "the chlorine release of 22 April and the sector it was released against"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "boesinghe",
+        "wieltje",
+        "frezenberg",
+        "hooge",
+        "sanctuary-wood",
+        "hill-60",
+        "sint-elooi",
+        "wijtschate",
+        "messines",
+        "ploegsteert",
+        "frelinghien",
+        "bois-grenier",
+        "fromelles",
+        "aubers",
+        "neuve-chapelle",
+        "festubert",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "angres",
+        "souchez",
+        "neuville-saint-vaast",
+        "roclincourt",
+        "arras-east",
+        "ficheux",
+        "monchy-au-bois",
+        "gommecourt",
+        "hebuterne",
+        "serre",
+        "beaumont-hamel",
+        "thiepval",
+        "ovillers",
+        "la-boisselle",
+        "fricourt",
+        "mametz",
+        "montauban",
+        "maricourt",
+        "curlu",
+        "frise",
+        "dompierre",
+        "fay",
+        "lihons",
+        "chaulnes",
+        "roye",
+        "canny-sur-matz",
+        "lassigny",
+        "noyon",
+        "ribecourt-oise",
+        "tracy-le-val",
+        "moulin-sous-touvent",
+        "nouvron-vingre",
+        "vic-sur-aisne",
+        "soissons-north",
+        "crouy",
+        "vailly-sur-aisne",
+        "chavonne",
+        "cerny-en-laonnois",
+        "craonne",
+        "berry-au-bac",
+        "loivre",
+        "brimont",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "souain",
+        "perthes-les-hurlus",
+        "tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "avocourt",
+        "malancourt",
+        "forges-sur-meuse",
+        "brabant-sur-meuse",
+        "consenvoye",
+        "bois-des-caures",
+        "ornes",
+        "fromezey",
+        "combres",
+        "les-eparges",
+        "saint-mihiel",
+        "apremont-la-foret",
+        "flirey",
+        "regnieville",
+        "bois-le-pretre",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1915-10-15",
+      "label": "After Loos and Second Champagne",
+      "precision": "low",
+      "summary": "The autumn offensives in Artois and Champagne buy a few kilometres for a quarter of a million casualties. A year of attacking has moved the line less than the width of the stroke that draws it.",
+      "sources": [
+        {
+          "source": "source:doughty-2005",
+          "note": "Joffre's autumn offensives in Artois and Champagne and what they gained"
+        },
+        {
+          "source": "source:stevenson-2004",
+          "note": "the 1915 balance sheet — casualties against ground"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "boesinghe",
+        "wieltje",
+        "frezenberg",
+        "hooge",
+        "sanctuary-wood",
+        "hill-60",
+        "sint-elooi",
+        "wijtschate",
+        "messines",
+        "ploegsteert",
+        "frelinghien",
+        "bois-grenier",
+        "fromelles",
+        "aubers",
+        "neuve-chapelle",
+        "festubert",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "loos",
+        "angres",
+        "souchez",
+        "neuville-saint-vaast",
+        "roclincourt",
+        "arras-east",
+        "ficheux",
+        "monchy-au-bois",
+        "gommecourt",
+        "hebuterne",
+        "serre",
+        "beaumont-hamel",
+        "thiepval",
+        "ovillers",
+        "la-boisselle",
+        "fricourt",
+        "mametz",
+        "montauban",
+        "maricourt",
+        "curlu",
+        "frise",
+        "dompierre",
+        "fay",
+        "lihons",
+        "chaulnes",
+        "roye",
+        "canny-sur-matz",
+        "lassigny",
+        "noyon",
+        "ribecourt-oise",
+        "tracy-le-val",
+        "moulin-sous-touvent",
+        "nouvron-vingre",
+        "vic-sur-aisne",
+        "soissons-north",
+        "crouy",
+        "vailly-sur-aisne",
+        "chavonne",
+        "cerny-en-laonnois",
+        "craonne",
+        "berry-au-bac",
+        "loivre",
+        "brimont",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "navarin",
+        "butte-de-tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "avocourt",
+        "malancourt",
+        "forges-sur-meuse",
+        "brabant-sur-meuse",
+        "consenvoye",
+        "bois-des-caures",
+        "ornes",
+        "fromezey",
+        "combres",
+        "les-eparges",
+        "saint-mihiel",
+        "apremont-la-foret",
+        "flirey",
+        "regnieville",
+        "bois-le-pretre",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1916-07-11",
+      "label": "Verdun: the German high-water mark",
+      "precision": "medium",
+      "summary": "Five months of attack on both banks of the Meuse have taken Douaumont, Vaux, Côte 304 and the Mort-Homme. On 11 July the last attack stops short of Fort Souville, four kilometres from the citadel.",
+      "sources": [
+        {
+          "source": "source:foley-2005",
+          "note": "the German offensive on both banks of the Meuse and the halt before Souville on 11 July"
+        },
+        {
+          "source": "source:memorial-verdun-bataille",
+          "note": "the phases of the battle and the ground held at its deepest"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "boesinghe",
+        "wieltje",
+        "frezenberg",
+        "hooge",
+        "sanctuary-wood",
+        "hill-60",
+        "sint-elooi",
+        "wijtschate",
+        "messines",
+        "ploegsteert",
+        "frelinghien",
+        "bois-grenier",
+        "fromelles",
+        "aubers",
+        "neuve-chapelle",
+        "festubert",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "loos",
+        "angres",
+        "souchez",
+        "neuville-saint-vaast",
+        "roclincourt",
+        "arras-east",
+        "ficheux",
+        "monchy-au-bois",
+        "gommecourt",
+        "hebuterne",
+        "serre",
+        "beaumont-hamel",
+        "thiepval",
+        "ovillers",
+        "la-boisselle",
+        "fricourt",
+        "mametz",
+        "montauban",
+        "maricourt",
+        "curlu",
+        "frise",
+        "dompierre",
+        "fay",
+        "lihons",
+        "chaulnes",
+        "roye",
+        "canny-sur-matz",
+        "lassigny",
+        "noyon",
+        "ribecourt-oise",
+        "tracy-le-val",
+        "moulin-sous-touvent",
+        "nouvron-vingre",
+        "vic-sur-aisne",
+        "soissons-north",
+        "crouy",
+        "vailly-sur-aisne",
+        "chavonne",
+        "cerny-en-laonnois",
+        "craonne",
+        "berry-au-bac",
+        "loivre",
+        "brimont",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "navarin",
+        "butte-de-tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "malancourt",
+        "avocourt",
+        "cote-304",
+        "mort-homme",
+        "cumieres",
+        "douaumont",
+        "fleury",
+        "souville",
+        "vaux",
+        "damloup",
+        "combres",
+        "les-eparges",
+        "saint-mihiel",
+        "apremont-la-foret",
+        "flirey",
+        "regnieville",
+        "bois-le-pretre",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1916-09-15",
+      "label": "Flers-Courcelette: the tanks",
+      "precision": "medium",
+      "summary": "Forty-nine tanks are sent forward on the Somme, thirty-two reach the start line, and the ones that keep going take Flers. The line has moved some five kilometres since 1 July.",
+      "sources": [
+        {
+          "source": "source:harris-1995",
+          "note": "Flers-Courcelette: the tanks that started, the tanks that arrived, and what they did"
+        },
+        {
+          "source": "source:prior-wilson-2005",
+          "note": "the Somme front on 15 September and the advance since 1 July"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "boesinghe",
+        "wieltje",
+        "frezenberg",
+        "hooge",
+        "sanctuary-wood",
+        "hill-60",
+        "sint-elooi",
+        "wijtschate",
+        "messines",
+        "ploegsteert",
+        "frelinghien",
+        "bois-grenier",
+        "fromelles",
+        "aubers",
+        "neuve-chapelle",
+        "festubert",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "loos",
+        "angres",
+        "souchez",
+        "neuville-saint-vaast",
+        "roclincourt",
+        "arras-east",
+        "ficheux",
+        "monchy-au-bois",
+        "gommecourt",
+        "hebuterne",
+        "serre",
+        "beaumont-hamel",
+        "grandcourt",
+        "le-sars",
+        "gueudecourt",
+        "lesboeufs",
+        "combles",
+        "rancourt",
+        "bouchavesnes",
+        "barleux",
+        "chaulnes",
+        "roye",
+        "canny-sur-matz",
+        "lassigny",
+        "noyon",
+        "ribecourt-oise",
+        "tracy-le-val",
+        "moulin-sous-touvent",
+        "nouvron-vingre",
+        "vic-sur-aisne",
+        "soissons-north",
+        "crouy",
+        "vailly-sur-aisne",
+        "chavonne",
+        "cerny-en-laonnois",
+        "craonne",
+        "berry-au-bac",
+        "loivre",
+        "brimont",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "navarin",
+        "butte-de-tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "malancourt",
+        "avocourt",
+        "cote-304",
+        "mort-homme",
+        "cumieres",
+        "douaumont",
+        "fleury",
+        "souville",
+        "vaux",
+        "damloup",
+        "combres",
+        "les-eparges",
+        "saint-mihiel",
+        "apremont-la-foret",
+        "flirey",
+        "regnieville",
+        "bois-le-pretre",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1916-12-18",
+      "label": "The Somme closed; Verdun recovered",
+      "precision": "medium",
+      "summary": "The Somme ends in November having taken about ten kilometres at its deepest. At Verdun the French counter-offensives of October and December retake Douaumont, Vaux and the ground up to Louvemont and Bezonvaux, and the year ends roughly where it began.",
+      "sources": [
+        {
+          "source": "source:prior-wilson-2005",
+          "note": "the line at the close of the Somme in November"
+        },
+        {
+          "source": "source:foley-2005",
+          "note": "the French counter-offensives of October and December at Verdun"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "boesinghe",
+        "wieltje",
+        "frezenberg",
+        "hooge",
+        "sanctuary-wood",
+        "hill-60",
+        "sint-elooi",
+        "wijtschate",
+        "messines",
+        "ploegsteert",
+        "frelinghien",
+        "bois-grenier",
+        "fromelles",
+        "aubers",
+        "neuve-chapelle",
+        "festubert",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "loos",
+        "angres",
+        "souchez",
+        "neuville-saint-vaast",
+        "roclincourt",
+        "arras-east",
+        "ficheux",
+        "monchy-au-bois",
+        "gommecourt",
+        "hebuterne",
+        "serre",
+        "beaumont-hamel",
+        "grandcourt",
+        "le-sars",
+        "gueudecourt",
+        "lesboeufs",
+        "combles",
+        "rancourt",
+        "bouchavesnes",
+        "barleux",
+        "chaulnes",
+        "roye",
+        "canny-sur-matz",
+        "lassigny",
+        "noyon",
+        "ribecourt-oise",
+        "tracy-le-val",
+        "moulin-sous-touvent",
+        "nouvron-vingre",
+        "vic-sur-aisne",
+        "soissons-north",
+        "crouy",
+        "vailly-sur-aisne",
+        "chavonne",
+        "cerny-en-laonnois",
+        "craonne",
+        "berry-au-bac",
+        "loivre",
+        "brimont",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "navarin",
+        "butte-de-tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "malancourt",
+        "avocourt",
+        "cote-304",
+        "mort-homme",
+        "cumieres",
+        "louvemont",
+        "bezonvaux",
+        "damloup",
+        "combres",
+        "les-eparges",
+        "saint-mihiel",
+        "apremont-la-foret",
+        "flirey",
+        "regnieville",
+        "bois-le-pretre",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1917-04-05",
+      "label": "The withdrawal to the Hindenburg Line",
+      "precision": "medium",
+      "summary": "Operation Alberich: between 16 March and 5 April the German army walks back up to forty kilometres to a shorter prepared line, wrecking the ground it leaves. The Noyon salient — the closest the war ever came to Paris — disappears, and with it thirteen German divisions’ worth of front.",
+      "sources": [
+        {
+          "source": "source:stevenson-2004",
+          "note": "Operation Alberich: the dates, the depth of the withdrawal and the divisions it freed"
+        },
+        {
+          "source": "source:haig-despatches-1919",
+          "note": "the British follow-up and the line reached in early April 1917"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "boesinghe",
+        "wieltje",
+        "frezenberg",
+        "hooge",
+        "sanctuary-wood",
+        "hill-60",
+        "sint-elooi",
+        "wijtschate",
+        "messines",
+        "ploegsteert",
+        "frelinghien",
+        "bois-grenier",
+        "fromelles",
+        "aubers",
+        "neuve-chapelle",
+        "festubert",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "loos",
+        "angres",
+        "souchez",
+        "neuville-saint-vaast",
+        "roclincourt",
+        "arras-east",
+        "neuville-vitasse",
+        "wancourt",
+        "croisilles",
+        "bullecourt",
+        "queant",
+        "hermies",
+        "havrincourt",
+        "gouzeaucourt",
+        "epehy",
+        "le-verguier",
+        "saint-quentin",
+        "itancourt",
+        "la-fere",
+        "anizy-le-chateau",
+        "vauxaillon",
+        "crouy",
+        "vailly-sur-aisne",
+        "chavonne",
+        "cerny-en-laonnois",
+        "craonne",
+        "berry-au-bac",
+        "loivre",
+        "brimont",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "navarin",
+        "butte-de-tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "malancourt",
+        "avocourt",
+        "cote-304",
+        "mort-homme",
+        "cumieres",
+        "louvemont",
+        "bezonvaux",
+        "damloup",
+        "combres",
+        "les-eparges",
+        "saint-mihiel",
+        "apremont-la-foret",
+        "flirey",
+        "regnieville",
+        "bois-le-pretre",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1917-05-20",
+      "label": "Arras, Vimy and the Nivelle offensive",
+      "precision": "medium",
+      "summary": "The Canadian Corps takes Vimy Ridge on 9 April. On the Aisne, Nivelle promises a breakthrough in forty-eight hours, gains the forward slope of the Chemin des Dames, and by the end of May half the French army has refused to attack again.",
+      "sources": [
+        {
+          "source": "source:doughty-2005",
+          "note": "the Nivelle offensive, its gains on the Chemin des Dames, and the mutinies that followed"
+        },
+        {
+          "source": "source:haig-despatches-1919",
+          "note": "Arras and Vimy: the ground taken in April"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "boesinghe",
+        "wieltje",
+        "frezenberg",
+        "hooge",
+        "sanctuary-wood",
+        "hill-60",
+        "sint-elooi",
+        "wijtschate",
+        "messines",
+        "ploegsteert",
+        "frelinghien",
+        "bois-grenier",
+        "fromelles",
+        "aubers",
+        "neuve-chapelle",
+        "festubert",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "hulluch",
+        "loos",
+        "avion",
+        "oppy",
+        "gavrelle",
+        "neuville-vitasse",
+        "wancourt",
+        "croisilles",
+        "bullecourt",
+        "queant",
+        "hermies",
+        "havrincourt",
+        "gouzeaucourt",
+        "epehy",
+        "le-verguier",
+        "saint-quentin",
+        "itancourt",
+        "la-fere",
+        "anizy-le-chateau",
+        "vauxaillon",
+        "laffaux",
+        "pinon",
+        "chavignon",
+        "ailles",
+        "craonne",
+        "berry-au-bac",
+        "loivre",
+        "brimont",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "navarin",
+        "butte-de-tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "malancourt",
+        "avocourt",
+        "cote-304",
+        "mort-homme",
+        "cumieres",
+        "louvemont",
+        "bezonvaux",
+        "damloup",
+        "combres",
+        "les-eparges",
+        "saint-mihiel",
+        "apremont-la-foret",
+        "flirey",
+        "regnieville",
+        "bois-le-pretre",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1917-06-14",
+      "label": "Messines Ridge",
+      "precision": "medium",
+      "summary": "Nineteen mines under the ridge, some of them dug for two years, go up at 3.10 a.m. on 7 June. The ridge is taken in a morning — the most completely successful set-piece attack of the war so far, and one that was never meant to go further than the ridge.",
+      "sources": [
+        {
+          "source": "source:prior-wilson-1996",
+          "note": "Messines as the preliminary operation, and the objectives taken on 7 June"
+        },
+        {
+          "source": "source:haig-despatches-1919",
+          "note": "the Messines attack and the line consolidated on the ridge"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "boesinghe",
+        "wieltje",
+        "frezenberg",
+        "hooge",
+        "sanctuary-wood",
+        "hill-60",
+        "sint-elooi",
+        "oosttaverne",
+        "warneton",
+        "ploegsteert",
+        "frelinghien",
+        "bois-grenier",
+        "fromelles",
+        "aubers",
+        "neuve-chapelle",
+        "festubert",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "hulluch",
+        "loos",
+        "avion",
+        "oppy",
+        "gavrelle",
+        "neuville-vitasse",
+        "wancourt",
+        "croisilles",
+        "bullecourt",
+        "queant",
+        "hermies",
+        "havrincourt",
+        "gouzeaucourt",
+        "epehy",
+        "le-verguier",
+        "saint-quentin",
+        "itancourt",
+        "la-fere",
+        "anizy-le-chateau",
+        "vauxaillon",
+        "laffaux",
+        "pinon",
+        "chavignon",
+        "ailles",
+        "craonne",
+        "berry-au-bac",
+        "loivre",
+        "brimont",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "navarin",
+        "butte-de-tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "malancourt",
+        "avocourt",
+        "cote-304",
+        "mort-homme",
+        "cumieres",
+        "louvemont",
+        "bezonvaux",
+        "damloup",
+        "combres",
+        "les-eparges",
+        "saint-mihiel",
+        "apremont-la-foret",
+        "flirey",
+        "regnieville",
+        "bois-le-pretre",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1917-11-10",
+      "label": "Passchendaele",
+      "precision": "medium",
+      "summary": "Third Ypres closes on the ridge it was named for, eight kilometres from where it started in July, in mud that swallowed the guns. The salient is deeper than it was in 1915 and harder to hold.",
+      "sources": [
+        {
+          "source": "source:prior-wilson-1996",
+          "note": "Third Ypres: the phases, the ground gained and the closing date"
+        },
+        {
+          "source": "source:1914-1918-online-ypres",
+          "note": "the capture of Passchendaele village and the shape of the salient"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "boesinghe",
+        "langemarck",
+        "poelkapelle",
+        "passchendaele",
+        "broodseinde",
+        "becelaere",
+        "gheluvelt",
+        "zandvoorde",
+        "hollebeke",
+        "sint-elooi",
+        "oosttaverne",
+        "warneton",
+        "ploegsteert",
+        "frelinghien",
+        "bois-grenier",
+        "fromelles",
+        "aubers",
+        "neuve-chapelle",
+        "festubert",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "hulluch",
+        "loos",
+        "avion",
+        "oppy",
+        "gavrelle",
+        "neuville-vitasse",
+        "wancourt",
+        "croisilles",
+        "bullecourt",
+        "queant",
+        "hermies",
+        "havrincourt",
+        "gouzeaucourt",
+        "epehy",
+        "le-verguier",
+        "saint-quentin",
+        "itancourt",
+        "la-fere",
+        "anizy-le-chateau",
+        "vauxaillon",
+        "laffaux",
+        "pinon",
+        "chavignon",
+        "ailles",
+        "craonne",
+        "berry-au-bac",
+        "loivre",
+        "brimont",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "navarin",
+        "butte-de-tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "avocourt",
+        "malancourt",
+        "forges-sur-meuse",
+        "brabant-sur-meuse",
+        "consenvoye",
+        "bois-des-caures",
+        "ornes",
+        "fromezey",
+        "combres",
+        "les-eparges",
+        "saint-mihiel",
+        "apremont-la-foret",
+        "flirey",
+        "regnieville",
+        "bois-le-pretre",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1917-11-23",
+      "label": "Cambrai: the tanks break the line",
+      "precision": "medium",
+      "summary": "Four hundred and seventy-six tanks attack without a preliminary bombardment on 20 November and tear a six-kilometre hole in the Hindenburg Line in a morning. The church bells are rung in England. There is nothing to push through the hole with.",
+      "sources": [
+        {
+          "source": "source:hammond-2008",
+          "note": "Cambrai: the first day, its depth, and what the bells were rung for"
+        },
+        {
+          "source": "source:harris-1995",
+          "note": "the tank numbers and the method of 20 November"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "boesinghe",
+        "langemarck",
+        "poelkapelle",
+        "passchendaele",
+        "broodseinde",
+        "becelaere",
+        "gheluvelt",
+        "zandvoorde",
+        "hollebeke",
+        "sint-elooi",
+        "oosttaverne",
+        "warneton",
+        "ploegsteert",
+        "frelinghien",
+        "bois-grenier",
+        "fromelles",
+        "aubers",
+        "neuve-chapelle",
+        "festubert",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "hulluch",
+        "loos",
+        "avion",
+        "oppy",
+        "gavrelle",
+        "neuville-vitasse",
+        "wancourt",
+        "croisilles",
+        "bullecourt",
+        "queant",
+        "bourlon",
+        "flesquieres",
+        "marcoing",
+        "masnieres",
+        "gouzeaucourt",
+        "epehy",
+        "le-verguier",
+        "saint-quentin",
+        "itancourt",
+        "la-fere",
+        "anizy-le-chateau",
+        "vauxaillon",
+        "laffaux",
+        "pinon",
+        "chavignon",
+        "ailles",
+        "craonne",
+        "berry-au-bac",
+        "loivre",
+        "brimont",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "navarin",
+        "butte-de-tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "avocourt",
+        "malancourt",
+        "forges-sur-meuse",
+        "brabant-sur-meuse",
+        "consenvoye",
+        "bois-des-caures",
+        "ornes",
+        "fromezey",
+        "combres",
+        "les-eparges",
+        "saint-mihiel",
+        "apremont-la-foret",
+        "flirey",
+        "regnieville",
+        "bois-le-pretre",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1917-12-07",
+      "label": "Cambrai: the counter-attack",
+      "precision": "medium",
+      "summary": "On 30 November German infantry attacking in small infiltrating groups, behind a short hurricane bombardment, take back most of the salient and some ground beyond it. Both halves of 1918 are visible in this fortnight.",
+      "sources": [
+        {
+          "source": "source:hammond-2008",
+          "note": "the German counter-attack of 30 November and the ground held at the close"
+        },
+        {
+          "source": "source:lupfer-1981",
+          "note": "the counter-attack as the first full use of the new German attack doctrine"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "boesinghe",
+        "langemarck",
+        "poelkapelle",
+        "passchendaele",
+        "broodseinde",
+        "becelaere",
+        "gheluvelt",
+        "zandvoorde",
+        "hollebeke",
+        "sint-elooi",
+        "oosttaverne",
+        "warneton",
+        "ploegsteert",
+        "frelinghien",
+        "bois-grenier",
+        "fromelles",
+        "aubers",
+        "neuve-chapelle",
+        "festubert",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "hulluch",
+        "loos",
+        "avion",
+        "oppy",
+        "gavrelle",
+        "neuville-vitasse",
+        "wancourt",
+        "croisilles",
+        "bullecourt",
+        "queant",
+        "hermies",
+        "flesquieres",
+        "marcoing",
+        "gouzeaucourt",
+        "epehy",
+        "le-verguier",
+        "saint-quentin",
+        "itancourt",
+        "la-fere",
+        "anizy-le-chateau",
+        "vauxaillon",
+        "laffaux",
+        "pinon",
+        "chavignon",
+        "ailles",
+        "craonne",
+        "berry-au-bac",
+        "loivre",
+        "brimont",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "navarin",
+        "butte-de-tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "avocourt",
+        "malancourt",
+        "forges-sur-meuse",
+        "brabant-sur-meuse",
+        "consenvoye",
+        "bois-des-caures",
+        "ornes",
+        "fromezey",
+        "combres",
+        "les-eparges",
+        "saint-mihiel",
+        "apremont-la-foret",
+        "flirey",
+        "regnieville",
+        "bois-le-pretre",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1918-04-05",
+      "label": "Operation Michael",
+      "precision": "medium",
+      "summary": "On 21 March seventy-six divisions attack on a eighty-kilometre front behind a five-hour bombardment. In sixteen days the Germans advance sixty kilometres — the deepest advance by anyone on this front since 1914 — retake everything the Somme cost and stop, exhausted, in front of Amiens.",
+      "sources": [
+        {
+          "source": "source:zabecki-2006",
+          "note": "Michael: the frontage, the depth reached, and the halt before Amiens"
+        },
+        {
+          "source": "source:lupfer-1981",
+          "note": "the attack method and why it outran its own supply"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "boesinghe",
+        "langemarck",
+        "poelkapelle",
+        "passchendaele",
+        "broodseinde",
+        "becelaere",
+        "gheluvelt",
+        "zandvoorde",
+        "hollebeke",
+        "sint-elooi",
+        "oosttaverne",
+        "warneton",
+        "ploegsteert",
+        "frelinghien",
+        "bois-grenier",
+        "fromelles",
+        "aubers",
+        "neuve-chapelle",
+        "festubert",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "hulluch",
+        "loos",
+        "avion",
+        "oppy",
+        "gavrelle",
+        "arras-east",
+        "ayette",
+        "bucquoy",
+        "hebuterne",
+        "albert",
+        "morlancourt",
+        "hamel",
+        "villers-bretonneux",
+        "moreuil",
+        "montdidier",
+        "lassigny",
+        "noyon",
+        "ribecourt-oise",
+        "tracy-le-val",
+        "moulin-sous-touvent",
+        "nouvron-vingre",
+        "vic-sur-aisne",
+        "soissons-north",
+        "laffaux",
+        "pinon",
+        "chavignon",
+        "ailles",
+        "craonne",
+        "berry-au-bac",
+        "loivre",
+        "brimont",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "navarin",
+        "butte-de-tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "avocourt",
+        "malancourt",
+        "forges-sur-meuse",
+        "brabant-sur-meuse",
+        "consenvoye",
+        "bois-des-caures",
+        "ornes",
+        "fromezey",
+        "combres",
+        "les-eparges",
+        "saint-mihiel",
+        "apremont-la-foret",
+        "flirey",
+        "regnieville",
+        "bois-le-pretre",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1918-04-29",
+      "label": "Operation Georgette: the Lys",
+      "precision": "medium",
+      "summary": "The second blow falls in Flanders on 9 April. Messines, Bailleul and Mount Kemmel go; Haig issues the \"backs to the wall\" order; and the British give up Passchendaele — every metre of the previous autumn — in a night, to shorten the line.",
+      "sources": [
+        {
+          "source": "source:zabecki-2006",
+          "note": "Georgette: the Lys front, Kemmel, and the evacuation of the Passchendaele salient"
+        },
+        {
+          "source": "source:haig-despatches-1919",
+          "note": "the order of 11 April and the shortening of the Ypres salient"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "boesinghe",
+        "wieltje",
+        "hooge",
+        "hill-60",
+        "voormezele",
+        "kemmel",
+        "dranouter",
+        "neuve-eglise",
+        "bailleul",
+        "merville",
+        "robecq",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "hulluch",
+        "loos",
+        "avion",
+        "oppy",
+        "gavrelle",
+        "arras-east",
+        "ayette",
+        "bucquoy",
+        "hebuterne",
+        "albert",
+        "morlancourt",
+        "hamel",
+        "villers-bretonneux",
+        "moreuil",
+        "montdidier",
+        "lassigny",
+        "noyon",
+        "ribecourt-oise",
+        "tracy-le-val",
+        "moulin-sous-touvent",
+        "nouvron-vingre",
+        "vic-sur-aisne",
+        "soissons-north",
+        "laffaux",
+        "pinon",
+        "chavignon",
+        "ailles",
+        "craonne",
+        "berry-au-bac",
+        "loivre",
+        "brimont",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "navarin",
+        "butte-de-tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "avocourt",
+        "malancourt",
+        "forges-sur-meuse",
+        "brabant-sur-meuse",
+        "consenvoye",
+        "bois-des-caures",
+        "ornes",
+        "fromezey",
+        "combres",
+        "les-eparges",
+        "saint-mihiel",
+        "apremont-la-foret",
+        "flirey",
+        "regnieville",
+        "bois-le-pretre",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1918-07-17",
+      "label": "The high-water mark: the Marne again",
+      "precision": "medium",
+      "summary": "Blücher breaks the Chemin des Dames on 27 May and runs twenty kilometres in a day. By 3 June the Germans are on the Marne at Château-Thierry, fifty-six miles from Paris, holding a salient that is all flank and no railway. On 15 July they attack out of it for the last time.",
+      "sources": [
+        {
+          "source": "source:zabecki-2006",
+          "note": "Blücher-Yorck and the Marne salient; the Friedensturm of 15 July"
+        },
+        {
+          "source": "source:doughty-2005",
+          "note": "the French defence on the Aisne and the shape of the salient"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "boesinghe",
+        "wieltje",
+        "hooge",
+        "hill-60",
+        "voormezele",
+        "kemmel",
+        "dranouter",
+        "neuve-eglise",
+        "bailleul",
+        "merville",
+        "robecq",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "hulluch",
+        "loos",
+        "avion",
+        "oppy",
+        "gavrelle",
+        "arras-east",
+        "ayette",
+        "bucquoy",
+        "hebuterne",
+        "albert",
+        "morlancourt",
+        "hamel",
+        "villers-bretonneux",
+        "moreuil",
+        "montdidier",
+        "lassigny",
+        "noyon",
+        "ribecourt-oise",
+        "ambleny",
+        "villers-cotterets",
+        "longpont",
+        "belleau",
+        "chateau-thierry",
+        "dormans",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "navarin",
+        "butte-de-tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "avocourt",
+        "malancourt",
+        "forges-sur-meuse",
+        "brabant-sur-meuse",
+        "consenvoye",
+        "bois-des-caures",
+        "ornes",
+        "fromezey",
+        "combres",
+        "les-eparges",
+        "saint-mihiel",
+        "apremont-la-foret",
+        "flirey",
+        "regnieville",
+        "bois-le-pretre",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1918-08-06",
+      "label": "The Second Marne: the tide turns",
+      "precision": "medium",
+      "summary": "On 18 July Mangin attacks the salient’s western flank out of the Forest of Villers-Cotterêts with tanks and no preliminary bombardment. By 6 August the salient is gone and the Germans are back behind the Vesle. It is the last day of the war on which the German army holds the initiative.",
+      "sources": [
+        {
+          "source": "source:doughty-2005",
+          "note": "the counter-offensive of 18 July and the reduction of the salient to the Vesle"
+        },
+        {
+          "source": "source:sheffield-2001",
+          "note": "the Second Marne as the turn of the campaign"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "boesinghe",
+        "wieltje",
+        "hooge",
+        "hill-60",
+        "voormezele",
+        "kemmel",
+        "dranouter",
+        "neuve-eglise",
+        "bailleul",
+        "merville",
+        "robecq",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "hulluch",
+        "loos",
+        "avion",
+        "oppy",
+        "gavrelle",
+        "arras-east",
+        "ayette",
+        "bucquoy",
+        "hebuterne",
+        "albert",
+        "morlancourt",
+        "hamel",
+        "villers-bretonneux",
+        "moreuil",
+        "montdidier",
+        "lassigny",
+        "noyon",
+        "ribecourt-oise",
+        "tracy-le-val",
+        "nouvron-vingre",
+        "soissons-north",
+        "braine",
+        "fismes",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "navarin",
+        "butte-de-tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "avocourt",
+        "malancourt",
+        "forges-sur-meuse",
+        "brabant-sur-meuse",
+        "consenvoye",
+        "bois-des-caures",
+        "ornes",
+        "fromezey",
+        "combres",
+        "les-eparges",
+        "saint-mihiel",
+        "apremont-la-foret",
+        "flirey",
+        "regnieville",
+        "bois-le-pretre",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1918-09-26",
+      "label": "Back to the Hindenburg Line; Saint-Mihiel gone",
+      "precision": "medium",
+      "summary": "Amiens on 8 August — \"the black day of the German army\" — begins seven weeks of attacks that never let go. By late September the salients of the spring have been given back, the Americans have pinched out Saint-Mihiel in four days, and the Allies stand in front of the Hindenburg Line again.",
+      "sources": [
+        {
+          "source": "source:sheffield-2001",
+          "note": "Amiens and the successive attacks that returned the Allies to the Hindenburg Line"
+        },
+        {
+          "source": "source:1914-1918-online-hundred-days",
+          "note": "the reduction of the Saint-Mihiel salient and the September front"
+        }
+      ],
+      "through": [
+        "nieuwpoort",
+        "sint-joris",
+        "schoorbakke",
+        "stuivekenskerke",
+        "dixmude",
+        "noordschote",
+        "steenstraat",
+        "boesinghe",
+        "wieltje",
+        "hooge",
+        "hill-60",
+        "sint-elooi",
+        "oosttaverne",
+        "warneton",
+        "ploegsteert",
+        "frelinghien",
+        "bois-grenier",
+        "fromelles",
+        "aubers",
+        "neuve-chapelle",
+        "festubert",
+        "givenchy",
+        "cuinchy",
+        "vermelles",
+        "hulluch",
+        "loos",
+        "avion",
+        "oppy",
+        "gavrelle",
+        "neuville-vitasse",
+        "wancourt",
+        "croisilles",
+        "bullecourt",
+        "queant",
+        "hermies",
+        "havrincourt",
+        "gouzeaucourt",
+        "epehy",
+        "le-verguier",
+        "saint-quentin",
+        "itancourt",
+        "la-fere",
+        "anizy-le-chateau",
+        "vauxaillon",
+        "laffaux",
+        "pinon",
+        "chavignon",
+        "ailles",
+        "craonne",
+        "berry-au-bac",
+        "loivre",
+        "brimont",
+        "reims-north",
+        "nogent-labbesse",
+        "prunay",
+        "auberive",
+        "navarin",
+        "butte-de-tahure",
+        "massiges",
+        "ville-sur-tourbe",
+        "vienne-le-chateau",
+        "la-harazee",
+        "boureuilles",
+        "vauquois",
+        "avocourt",
+        "malancourt",
+        "forges-sur-meuse",
+        "brabant-sur-meuse",
+        "consenvoye",
+        "bois-des-caures",
+        "ornes",
+        "fromezey",
+        "etain",
+        "fresnes-en-woevre",
+        "thiaucourt",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1918-10-20",
+      "label": "The Hindenburg Line broken",
+      "precision": "low",
+      "summary": "The line is broken on 29 September across the Saint-Quentin canal. Flanders is cleared, the Belgian coast with it; in the Argonne the Americans grind north towards Sedan. From here the German army retreats until it is told to stop.",
+      "sources": [
+        {
+          "source": "source:sheffield-2001",
+          "note": "the breaking of the Hindenburg Line on 29 September and the general advance"
+        },
+        {
+          "source": "source:haig-despatches-1919",
+          "note": "the October advance to the Scheldt and the Sambre"
+        }
+      ],
+      "through": [
+        "dutch-frontier-scheldt",
+        "ghent-east",
+        "oudenaarde",
+        "tournai",
+        "valenciennes",
+        "le-cateau",
+        "guise",
+        "vervins",
+        "marle",
+        "chateau-porcien",
+        "rethel",
+        "vouziers",
+        "grandpre",
+        "vauquois",
+        "avocourt",
+        "malancourt",
+        "forges-sur-meuse",
+        "brabant-sur-meuse",
+        "consenvoye",
+        "bois-des-caures",
+        "ornes",
+        "fromezey",
+        "etain",
+        "fresnes-en-woevre",
+        "thiaucourt",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    },
+    {
+      "date": "1918-11-11",
+      "label": "The Armistice line",
+      "precision": "medium",
+      "summary": "At 11 a.m. the guns stop on a line that runs from the Dutch frontier to Switzerland and lies, almost everywhere, on ground the German army held in 1914. No Allied soldier is standing in Germany. Within a month there is no German Empire, no Austria-Hungary, no Ottoman Empire and no Russian Empire either.",
+      "sources": [
+        {
+          "source": "source:1914-1918-online-hundred-days",
+          "note": "the line reached on 11 November 1918"
+        },
+        {
+          "source": "source:stevenson-2004",
+          "note": "the Armistice terms and the collapse of the four empires"
+        }
+      ],
+      "through": [
+        "dutch-frontier-scheldt",
+        "ghent-east",
+        "geraardsbergen",
+        "ath",
+        "mons",
+        "maubeuge",
+        "avesnes",
+        "hirson",
+        "rocroi",
+        "mezieres",
+        "sedan",
+        "stenay",
+        "dun-sur-meuse",
+        "damvillers",
+        "etain",
+        "fresnes-en-woevre",
+        "thiaucourt",
+        "pont-a-mousson",
+        "nomeny",
+        "arracourt",
+        "blamont",
+        "badonviller",
+        "celles-sur-plaine",
+        "ban-de-sapt",
+        "col-du-bonhomme",
+        "le-linge",
+        "hartmannswillerkopf",
+        "steinbach",
+        "aspach",
+        "ammertzwiller",
+        "seppois",
+        "pfetterhouse"
+      ]
+    }
+  ]
+}

@@ -30,6 +30,15 @@ import { useEffect, useImperativeHandle, useRef, useState, type ReactNode, type 
 import type { BBox, Camera } from '../../packs/schema/index.js';
 import { OWNS_KEYS } from '../shortcuts.js';
 import { BORDERS_SOURCE, bordersLayers, decorateBorders, fetchBorders } from './borders.js';
+import {
+  FRONT_LAYER_IDS,
+  FRONT_SOURCE,
+  fetchFront,
+  frontLayers,
+  only,
+  snapshotAt,
+  type FrontGeoJSON,
+} from './front.js';
 import { buildStyle, detectTheme, type MapTheme } from './style.js';
 import './map.css';
 import { mark } from '../perf.js';
@@ -97,6 +106,17 @@ export interface MapViewProps {
   camera: Camera;
   /** Which content/shared/geo/borders/<year>.geojson to draw; omit for none. */
   borderYear?: number;
+  /**
+   * Which shared front-line series to draw (`pack.frontLine`, e.g.
+   * `western-front`); omit for none.
+   */
+  frontSeries?: string | undefined;
+  /**
+   * Where the clock is (epoch ms). The snapshot in force at that instant is
+   * the one drawn (sand-g80.1). Nothing is drawn before the first snapshot,
+   * because before that there was no continuous front to draw.
+   */
+  frontAt?: number | undefined;
   /** Light/dark; defaults to the document setting and follows it. */
   theme?: MapTheme;
   /** `pmtiles://` or plain URL of the archive; defaults to the assets-bucket extract. */
@@ -123,6 +143,8 @@ export interface MapViewProps {
 export function MapView({
   camera,
   borderYear,
+  frontSeries,
+  frontAt,
   theme,
   tilesUrl,
   deckLayers,
@@ -293,6 +315,61 @@ export function MapView({
       cancelled = true;
     };
   }, [ready, borderYear, activeTheme]);
+
+  // The front-line series: fetched once, then the clock picks a snapshot out of
+  // it. Two effects, because the fetch must not repeat every time `frontAt`
+  // moves — a reader scrubbing the timeline would otherwise refetch on
+  // every frame.
+  const frontRef = useRef<FrontGeoJSON | null>(null);
+  /** The series being fetched, so StrictMode's double effect fetches once. */
+  const frontFetching = useRef<string | null>(null);
+  const [frontLoaded, setFrontLoaded] = useState(0);
+  const wantsFront = frontSeries !== undefined && frontAt !== undefined;
+  useEffect(() => {
+    if (!frontSeries || frontRef.current || frontFetching.current === frontSeries) return;
+    frontFetching.current = frontSeries;
+    let cancelled = false;
+    fetchFront(frontSeries)
+      .then((geo) => {
+        if (cancelled) return;
+        frontRef.current = geo;
+        setFrontLoaded((n) => n + 1);
+      })
+      .catch((e: unknown) => {
+        frontFetching.current = null;
+        console.warn('[map] front line', e);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [frontSeries]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    const geo = frontRef.current;
+    if (!map || !ready) return;
+    const source = map.getSource(FRONT_SOURCE) as { setData: (d: unknown) => void } | undefined;
+    if (!geo || !wantsFront || frontAt === undefined) {
+      if (source) {
+        for (const id of FRONT_LAYER_IDS) if (map.getLayer(id)) map.removeLayer(id);
+        map.removeSource(FRONT_SOURCE);
+      }
+      return;
+    }
+    const wanted = only(snapshotAt(geo, frontAt));
+    if (source) {
+      source.setData(wanted);
+      return;
+    }
+    map.addSource(FRONT_SOURCE, {
+      type: 'geojson',
+      data: wanted as never,
+      attribution: geo.attribution ?? '',
+    });
+    // Above the borders, below the labels, so place names stay readable.
+    const firstSymbol = map.getStyle().layers.find((l) => l.type === 'symbol')?.id;
+    for (const l of frontLayers(activeTheme)) map.addLayer(l, firstSymbol);
+  }, [ready, wantsFront, frontAt, frontLoaded, activeTheme]);
 
   // deck.gl layers.
   useEffect(() => {

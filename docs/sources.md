@@ -228,6 +228,26 @@ is written as the argument it still is.
 | `source:gilmore-tausch-pebody-2022`    | Gilmore & Tausch-Pebody, _Notes and Records_ 76:1 (2022)                  | the most recent re-examination of the reductions and their critics              |
 | `source:mhs-oxford-moseley`            | Museum of the History of Science, Oxford, "'Dear Harry…'"                 | Moseley's death: the brigade, Chunuk Bair, the Helles Memorial, the nominations |
 
+## Core bibliography — the Western Front 1915–1918 (in the registry)
+
+Added with the front-line evolution layer (`sand-g80.1`), which is the first
+content to reach past November 1914. Every one of them is cited **without page
+numbers**: they were used for what happened and where the line ran, at the
+resolution each work gives, and `docs/sources.md` §3 forbids writing a page
+nobody read. Replacing them with the official histories for 1915–18 is
+`sand-23b.36`.
+
+| id                         | Work                                                   | Use it for                                                         |
+| -------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------ |
+| `source:stevenson-2004`    | Stevenson, _1914–1918_ (2004)                          | the war as a whole; the shape of the front year by year; 1918      |
+| `source:foley-2005`        | Foley, _German Strategy and the Path to Verdun_ (2005) | Verdun 1916 and Falkenhayn; the corrective to "bleed France white" |
+| `source:prior-wilson-2005` | Prior & Wilson, _The Somme_ (2005)                     | the Somme attack by attack — severe on Haig, and one side          |
+| `source:prior-wilson-1996` | Prior & Wilson, _Passchendaele_ (1996)                 | Messines and Third Ypres — one side                                |
+| `source:harris-1995`       | Harris, _Men, Ideas and Tanks_ (1995)                  | the tank: Flers-Courcelette, Cambrai, what the machines could do   |
+| `source:hammond-2008`      | Hammond, _Cambrai 1917_ (2008)                         | Cambrai from the war diaries; the counter-attack of 30 November    |
+| `source:zabecki-2006`      | Zabecki, _The German 1918 Offensives_ (2006)           | Michael, Georgette and Blücher as operations                       |
+| `source:sheffield-2001`    | Sheffield, _Forgotten Victory_ (2001)                  | the Hundred Days and the "learning curve" case — one side          |
+
 ## To add as the content lands (not yet in the registry)
 
 An authoring backlog. It is deliberately not shown to readers — see "What a
@@ -253,7 +273,6 @@ reader sees" above.
   The Belgian official narrative (_L'action de l'armée belge pour la défense
   du pays et le respect de sa neutralité_, 1914–1918) is the work to bring in,
   with Van Pul beside it.
-- Stevenson, _1914–1918: The History of the First World War_ (2004).
 - The later rounds of the Zuber exchange in _War in History_ (2002–2014),
   beyond Holmes's opening reply, which is now in the registry.
 - Terraine, _Mons: The Retreat to Victory_ (1960) and the Bavarian and French

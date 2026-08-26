@@ -583,6 +583,10 @@ export const Pack = z
     timeRange: TimeRange.describe('The campaign clock: the timeline spans this range'),
     region: BBox.describe('Geographic extent of the pack'),
     borderYear: z.number().int().describe('Which shared/geo/borders/<year>.geojson to draw'),
+    frontLine: Slug.optional().describe(
+      'Shared front-line series to draw as the clock moves, e.g. "western-front" ' +
+        '(content/shared/geo/front/<name>.geojson, sand-g80.1); omit for none',
+    ),
     camera: Camera.describe('Opening camera'),
     sides: z.array(Side).min(1),
     branches: z.array(Branch).min(1),
