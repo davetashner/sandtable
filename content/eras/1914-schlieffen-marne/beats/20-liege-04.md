@@ -8,8 +8,7 @@ branch: 1914:historical
 focus: 1914:liege
 links:
   battles: ['1914:liege']
-  people:
-    ['person:leman-gerard', 'person:albert-i-of-belgium']
+  people: ['person:leman-gerard', 'person:albert-i-of-belgium']
   places: ['place:liege', 'place:vise']
   events: ['1914:liege-event-frontier', '1914:liege-event-ultimatum']
   tech: ['1914:tech-heavy-siege-artillery']

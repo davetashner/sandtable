@@ -9,7 +9,13 @@ links:
   casualties: ['1914:casualties-mons']
   events: ['1914:event-battle-of-the-frontiers']
   battles: ['1914:frontiers-north', '1914:ardennes']
-  people: ['person:lanrezac-charles', 'person:french-john', 'person:smith-dorrien-horace', 'person:joffre-joseph']
+  people:
+    [
+      'person:lanrezac-charles',
+      'person:french-john',
+      'person:smith-dorrien-horace',
+      'person:joffre-joseph',
+    ]
   places: ['place:mons', 'place:charleroi', 'place:namur']
 sources:
   - source: source:herwig-2009

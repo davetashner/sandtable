@@ -9,7 +9,12 @@ focus: 1914:frontiers-north
 links:
   battles: ['1914:frontiers-north']
   people:
-    ['person:kluck-alexander-von', 'person:bulow-karl-von', 'person:lanrezac-charles', 'person:french-john']
+    [
+      'person:kluck-alexander-von',
+      'person:bulow-karl-von',
+      'person:lanrezac-charles',
+      'person:french-john',
+    ]
   places: ['place:saint-quentin', 'place:maubeuge']
   events: ['1914:frontiers-event-kluck-released']
 sources:

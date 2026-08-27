@@ -8,10 +8,15 @@ branch: 1914:historical
 focus: 1914:liege
 links:
   battles: ['1914:liege']
-  people:
-    ['person:leman-gerard']
+  people: ['person:leman-gerard']
   places: ['place:liege', 'place:vise']
-  events: ['1914:liege-event-first-42cm', '1914:liege-event-13-aug', '1914:liege-event-loncin', '1914:liege-event-vise']
+  events:
+    [
+      '1914:liege-event-first-42cm',
+      '1914:liege-event-13-aug',
+      '1914:liege-event-loncin',
+      '1914:liege-event-vise',
+    ]
   tech: ['1914:tech-heavy-siege-artillery']
 sources:
   - source: source:herwig-2009

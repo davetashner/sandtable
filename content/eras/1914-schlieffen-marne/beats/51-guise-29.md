@@ -8,10 +8,15 @@ branch: 1914:historical
 focus: 1914:guise
 links:
   battles: ['1914:guise']
-  people:
-    ['person:lanrezac-charles', 'person:franchet-desperey-louis', 'person:bulow-karl-von']
+  people: ['person:lanrezac-charles', 'person:franchet-desperey-louis', 'person:bulow-karl-von']
   places: ['place:guise', 'place:ribemont', 'place:saint-quentin']
-  events: ['1914:guise-event-attack-west', '1914:guise-event-oise-crossed', '1914:guise-event-counterattack', '1914:guise-event-bulow-halts']
+  events:
+    [
+      '1914:guise-event-attack-west',
+      '1914:guise-event-oise-crossed',
+      '1914:guise-event-counterattack',
+      '1914:guise-event-bulow-halts',
+    ]
 sources:
   - source: source:afgg-1-1
   - source: source:herwig-2009

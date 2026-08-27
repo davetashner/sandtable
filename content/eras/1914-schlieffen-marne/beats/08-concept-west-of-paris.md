@@ -6,8 +6,7 @@ from: 1914-08-30T00:00:00Z
 to: 1914-09-07T00:00:00Z
 branch: 1914:schlieffen-concept
 links:
-  people:
-    ['person:schlieffen-alfred-von', 'person:kluck-alexander-von', 'person:bulow-karl-von']
+  people: ['person:schlieffen-alfred-von', 'person:kluck-alexander-von', 'person:bulow-karl-von']
   places: ['place:paris']
 sources:
   - source: source:herwig-2009

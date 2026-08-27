@@ -11,8 +11,7 @@ diagram:
   alt: 'A schematic of the German right wing wheeling through Belgium into France. A heavy line passes west of Paris and curves back east behind the city; a dashed line marks the shorter turn that was actually made, passing east of Paris.'
 links:
   documents: ['1914:document-schlieffen-memorandum-1905-12']
-  people:
-    ['person:schlieffen-alfred-von', 'person:kluck-alexander-von']
+  people: ['person:schlieffen-alfred-von', 'person:kluck-alexander-von']
   places: ['place:amiens', 'place:paris']
 sources:
   - source: source:herwig-2009

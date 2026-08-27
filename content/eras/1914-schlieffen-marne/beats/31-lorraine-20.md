@@ -9,7 +9,12 @@ focus: 1914:lorraine
 links:
   battles: ['1914:lorraine']
   people:
-    ['person:rupprecht-of-bavaria', 'person:foch-ferdinand', 'person:castelnau-edouard-de', 'person:dubail-auguste']
+    [
+      'person:rupprecht-of-bavaria',
+      'person:foch-ferdinand',
+      'person:castelnau-edouard-de',
+      'person:dubail-auguste',
+    ]
   places: ['place:morhange', 'place:sarrebourg', 'place:chateau-salins']
   events: ['1914:lorraine-event-morhange', '1914:lorraine-event-retreat-ordered']
   tech: ['1914:tech-firepower-1914']

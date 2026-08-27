@@ -9,9 +9,21 @@ focus: 1914:frontiers-north
 links:
   battles: ['1914:frontiers-north']
   people:
-    ['person:smith-dorrien-horace', 'person:kluck-alexander-von', 'person:hausen-max-von', 'person:franchet-desperey-louis', 'person:lanrezac-charles', 'person:french-john']
+    [
+      'person:smith-dorrien-horace',
+      'person:kluck-alexander-von',
+      'person:hausen-max-von',
+      'person:franchet-desperey-louis',
+      'person:lanrezac-charles',
+      'person:french-john',
+    ]
   places: ['place:mons', 'place:dinant', 'place:charleroi']
-  events: ['1914:frontiers-event-mons', '1914:frontiers-event-dinant', '1914:frontiers-event-lanrezac-retreats']
+  events:
+    [
+      '1914:frontiers-event-mons',
+      '1914:frontiers-event-dinant',
+      '1914:frontiers-event-lanrezac-retreats',
+    ]
   tech: ['1914:tech-firepower-1914']
 sources:
   - source: source:edmonds-1922

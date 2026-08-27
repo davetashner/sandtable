@@ -9,9 +9,19 @@ focus: 1914:lorraine
 links:
   battles: ['1914:lorraine']
   people:
-    ['person:dubail-auguste', 'person:castelnau-edouard-de', 'person:rupprecht-of-bavaria', 'person:moltke-helmuth-von-younger']
+    [
+      'person:dubail-auguste',
+      'person:castelnau-edouard-de',
+      'person:rupprecht-of-bavaria',
+      'person:moltke-helmuth-von-younger',
+    ]
   places: ['place:sarrebourg', 'place:dieuze', 'place:metz']
-  events: ['1914:lorraine-event-offensive-opens', '1914:lorraine-event-ohl-authorises', '1914:lorraine-event-sarrebourg-taken']
+  events:
+    [
+      '1914:lorraine-event-offensive-opens',
+      '1914:lorraine-event-ohl-authorises',
+      '1914:lorraine-event-sarrebourg-taken',
+    ]
 sources:
   - source: source:afgg-1-1
   - source: source:herwig-2009

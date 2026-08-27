@@ -8,8 +8,7 @@ branch: 1914:historical
 focus: 1914:lorraine
 links:
   battles: ['1914:lorraine']
-  people:
-    ['person:castelnau-edouard-de', 'person:rupprecht-of-bavaria', 'person:joffre-joseph']
+  people: ['person:castelnau-edouard-de', 'person:rupprecht-of-bavaria', 'person:joffre-joseph']
   places: ['place:luneville', 'place:nancy', 'place:toul']
   events: ['1914:lorraine-event-luneville']
 sources:

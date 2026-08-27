@@ -366,6 +366,10 @@ function TourProvider({ children }: { children: ReactNode }) {
   // timers arm only once the view has actually settled on the step.
   const [armed, setArmed] = useState<string | null>(null);
   const slotsFor = useRef<string | null>(null);
+  /** Bumped to ask effect 1 to apply a step's view again (sand-pmz.25). */
+  const [reapply, setReapply] = useState(0);
+  /** Set by a resume out of a diverged view: play once the step is armed again. */
+  const runWhenArmed = useRef(false);
   const speedBefore = useRef<number | null>(null);
 
   const exit = useCallback(() => {
@@ -374,6 +378,7 @@ function TourProvider({ children }: { children: ReactNode }) {
     setWaiting(false);
     setStopIndex(0);
     slotsFor.current = null;
+    runWhenArmed.current = false;
     clock.pause();
     if (speedBefore.current) clock.setSpeed(speedBefore.current);
     speedBefore.current = null;
@@ -403,7 +408,39 @@ function TourProvider({ children }: { children: ReactNode }) {
     controls.setTour(tour.id, tour.steps[0]!.id);
   }, [controls, clock]);
 
-  const toggle = useCallback(() => setRunning((r) => !r), []);
+  /**
+   * Pause, or resume — and resuming means "put me back where the tour was".
+   *
+   * Effect 6 pauses whenever the view diverges from the step, which is right:
+   * the reader opened a card, switched branch or left the zoom-in, and has
+   * taken over. Turning `running` straight back on could never work, because
+   * effect 6 has `running` in its dependencies: it re-ran, found the same
+   * divergence, and switched it off again in the same tick. The button did
+   * nothing, however often it was pressed, and nothing said why (sand-pmz.25).
+   *
+   * So a resume out of a diverged view does not set `running` at all. It drops
+   * effect 1's one-application-per-step latch and asks it to run again, which
+   * restores the step's focus, branch and card; effect 2 re-seeks the clock and
+   * arms the step; and only then — with the view actually back on the step —
+   * does the tour start playing. Setting `running` any earlier would just hand
+   * effect 6 a diverged view again, which is the bug.
+   *
+   * A plain pause and resume, with nothing taken over, keeps carrying on from
+   * where it stopped rather than jumping back to the top of the step.
+   */
+  const toggle = useCallback(() => {
+    if (running) {
+      setRunning(false);
+      return;
+    }
+    if (expected && diverged(expected, { focus, branch, card }, now)) {
+      slotsFor.current = null;
+      runWhenArmed.current = true;
+      setReapply((n) => n + 1);
+      return;
+    }
+    setRunning(true);
+  }, [running, expected, focus, branch, card, now]);
 
   // Where this step stops so the reader can catch up, and which one we are at.
   const stops = useMemo(
@@ -448,7 +485,7 @@ function TourProvider({ children }: { children: ReactNode }) {
     controls.setFocus(expected.focus);
     controls.setBranch(expected.branch);
     controls.setCard(expected.card);
-  }, [pos, expected, controls]);
+  }, [pos, expected, controls, reapply]);
 
   // 2. the clock, once the focus swap has given us the range the step lives in.
   useEffect(() => {
@@ -460,6 +497,11 @@ function TourProvider({ children }: { children: ReactNode }) {
     setArmed(pos.key);
     // A step that reveals a card stops on the reveal before it plays.
     setWaiting(stops.length > 0 && stops[0]!.at <= expected.t);
+    // A resume that had to rebuild the view waited for this moment to play.
+    if (runWhenArmed.current) {
+      runWhenArmed.current = false;
+      setRunning(true);
+    }
   }, [pos, expected, armed, focus, range.start, range.end, clock, stops]);
 
   // 3. play up to the next stop, or hold still there.
@@ -513,7 +555,7 @@ function TourProvider({ children }: { children: ReactNode }) {
         // Space is the master switch: let a pause go, or pause the playback.
         e.preventDefault();
         if (waiting) advance();
-        else setRunning((r) => !r);
+        else toggle();
       } else if (e.key === 'ArrowRight') {
         // → is always forward: past this break, or on to the next step.
         e.preventDefault();
@@ -526,7 +568,7 @@ function TourProvider({ children }: { children: ReactNode }) {
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [pos, exit, advance, goto, waiting]);
+  }, [pos, exit, advance, goto, waiting, toggle]);
 
   const minutes = useMemo(() => (seed.tours[0] ? tourMinutes(seed.tours[0]) : 0), []);
   const value = useMemo<TourValue>(

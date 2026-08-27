@@ -7,8 +7,7 @@ to: 1914-08-03T08:00:00Z
 focus: 1914:origins
 media: media:person/moltke-helmuth-von-younger/portrait-1906-colorized
 links:
-  people:
-    ['person:moltke-helmuth-von-younger', 'person:schlieffen-alfred-von']
+  people: ['person:moltke-helmuth-von-younger', 'person:schlieffen-alfred-von']
   places: ['place:liege', 'place:metz']
   battles: ['1914:origins']
 sources:

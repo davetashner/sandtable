@@ -10,7 +10,12 @@ links:
   documents: ['1914:document-bulow-kluck-wireless-1914-08-30']
   battles: ['1914:guise']
   people:
-    ['person:bulow-karl-von', 'person:kluck-alexander-von', 'person:lanrezac-charles', 'person:joffre-joseph']
+    [
+      'person:bulow-karl-von',
+      'person:kluck-alexander-von',
+      'person:lanrezac-charles',
+      'person:joffre-joseph',
+    ]
   places: ['place:guise', 'place:marle']
   events: ['1914:guise-event-retreat-resumed', '1914:guise-event-bulow-asks-kluck']
 sources:

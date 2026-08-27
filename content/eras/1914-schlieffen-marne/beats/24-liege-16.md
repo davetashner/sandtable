@@ -9,8 +9,7 @@ focus: 1914:liege
 media: media:scene/1917-liege-turret-gun-cambrai/liege-turret-gun-cambrai-1917-colorized
 links:
   battles: ['1914:liege']
-  people:
-    ['person:leman-gerard', 'person:moltke-helmuth-von-younger']
+  people: ['person:leman-gerard', 'person:moltke-helmuth-von-younger']
   places: ['place:liege']
   events: ['1914:liege-event-last-forts']
 sources:

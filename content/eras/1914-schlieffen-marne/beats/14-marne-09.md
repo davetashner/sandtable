@@ -10,9 +10,19 @@ links:
   documents: ['1914:document-hentsch-first-army-minute-1914-09-09']
   battles: ['1914:marne']
   people:
-    ['person:hentsch-richard', 'person:bulow-karl-von', 'person:kluck-alexander-von', 'person:french-john']
+    [
+      'person:hentsch-richard',
+      'person:bulow-karl-von',
+      'person:kluck-alexander-von',
+      'person:french-john',
+    ]
   places: ['place:la-ferte-sous-jouarre', 'place:mareuil-sur-ourcq', 'place:chateau-thierry']
-  events: ['1914:marne-event-bef-crosses-marne', '1914:marne-event-bulow-retreats', '1914:marne-event-hentsch-mareuil']
+  events:
+    [
+      '1914:marne-event-bef-crosses-marne',
+      '1914:marne-event-bulow-retreats',
+      '1914:marne-event-hentsch-mareuil',
+    ]
   tech: ['1914:tech-aerial-reconnaissance']
 sources:
   - source: source:edmonds-1922

@@ -7,7 +7,12 @@ to: 1914-09-07T00:00:00Z
 branch: 1914:schlieffen-success
 links:
   people:
-    ['person:schlieffen-alfred-von', 'person:kluck-alexander-von', 'person:french-john', 'person:franchet-desperey-louis']
+    [
+      'person:schlieffen-alfred-von',
+      'person:kluck-alexander-von',
+      'person:french-john',
+      'person:franchet-desperey-louis',
+    ]
   places: ['place:paris', 'place:reims']
 sources:
   - source: source:herwig-2009

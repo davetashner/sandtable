@@ -9,9 +9,20 @@ focus: 1914:frontiers-north
 links:
   battles: ['1914:frontiers-north']
   people:
-    ['person:smith-dorrien-horace', 'person:french-john', 'person:kluck-alexander-von', 'person:joffre-joseph', 'person:lanrezac-charles']
+    [
+      'person:smith-dorrien-horace',
+      'person:french-john',
+      'person:kluck-alexander-von',
+      'person:joffre-joseph',
+      'person:lanrezac-charles',
+    ]
   places: ['place:le-cateau', 'place:saint-quentin']
-  events: ['1914:frontiers-event-smith-dorrien-stands', '1914:frontiers-event-le-cateau', '1914:frontiers-event-saint-quentin']
+  events:
+    [
+      '1914:frontiers-event-smith-dorrien-stands',
+      '1914:frontiers-event-le-cateau',
+      '1914:frontiers-event-saint-quentin',
+    ]
 sources:
   - source: source:edmonds-1922
   - source: source:herwig-2009

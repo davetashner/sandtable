@@ -9,7 +9,13 @@ focus: 1914:grand-couronne
 links:
   battles: ['1914:grand-couronne', '1914:lorraine']
   events: ['1914:grand-couronne-event-dig-in', '1914:grand-couronne-event-corps-west']
-  people: ['person:castelnau-edouard-de', 'person:foch-ferdinand', 'person:balfourier-maurice', 'person:joffre-joseph']
+  people:
+    [
+      'person:castelnau-edouard-de',
+      'person:foch-ferdinand',
+      'person:balfourier-maurice',
+      'person:joffre-joseph',
+    ]
   places: ['place:nancy', 'place:amance', 'place:morhange', 'place:toul']
 sources:
   - source: source:afgg-1-1
