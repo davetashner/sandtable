@@ -355,10 +355,48 @@ function parseShared(ctx: Ctx, raw: RawContent): ParsedContent['shared'] {
   return shared;
 }
 
-function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
-  const pack = parseWith(ctx, Pack, raw.pack, 'pack.json');
-  if (!pack) return undefined;
-  const state: PackState = {
+/** Which entity kind each pack collection file holds. */
+const PACK_COLLECTION_KINDS: Record<PackCollectionFile, Kind> = {
+  'formations.json': 'formation',
+  'routes.json': 'route',
+  'events.json': 'event',
+  'battles.json': 'battle',
+  'decisions.json': 'decision',
+  'tech.json': 'tech',
+  'science.json': 'science',
+  'documents.json': 'document',
+  'historiography.json': 'historiography',
+  'links.json': 'link',
+  'sources.json': 'source',
+  'cast.json': 'cast',
+  'clocks.json': 'clock',
+  'tallies.json': 'tally',
+  'supply.json': 'supply',
+  'casualties.json': 'casualties',
+  'vignettes.json': 'vignette',
+  'tours.json': 'tour',
+  'tracks.json': 'track',
+  'score.json': 'score',
+};
+
+/**
+ * `diagrams/<stem>.svg` → its text, keyed by the stem, because that is what a
+ * beat names in `diagram.file`. A file that somehow arrived as JSON rather
+ * than text becomes the empty string, and `checkDiagram` reports it as an SVG
+ * with no `<svg>` element rather than crashing on it here.
+ */
+function indexDiagrams(files: RawFile[] | undefined): Map<string, string> {
+  return new Map(
+    (files ?? []).map((f) => [
+      (f.path.split('/').pop() ?? '').replace(/\.svg$/, ''),
+      typeof f.data === 'string' ? f.data : '',
+    ]),
+  );
+}
+
+/** The state pass 1 fills: the pack itself, and every collection still empty. */
+function emptyPackState(raw: RawPack, pack: PackT): PackState {
+  return {
     dir: raw.dir,
     pack,
     formations: [],
@@ -382,43 +420,35 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     tracks: [],
     score: [],
     beats: [],
-    diagrams: new Map(
-      (raw.diagrams ?? []).map((f) => [
-        (f.path.split('/').pop() ?? '').replace(/\.svg$/, ''),
-        typeof f.data === 'string' ? f.data : '',
-      ]),
-    ),
+    diagrams: indexDiagrams(raw.diagrams),
     files: {},
     branchById: new Map(),
   };
-  ctx.register(pack.id, { kind: 'pack', path: raw.pack.path, pack: raw.dir });
-  for (const b of pack.branches) {
-    ctx.register(b.id, { kind: 'branch', path: raw.pack.path, pack: raw.dir });
-    state.branchById.set(b.id, b);
-  }
+}
 
-  const kindOf: Record<PackCollectionFile, Kind> = {
-    'formations.json': 'formation',
-    'routes.json': 'route',
-    'events.json': 'event',
-    'battles.json': 'battle',
-    'decisions.json': 'decision',
-    'tech.json': 'tech',
-    'science.json': 'science',
-    'documents.json': 'document',
-    'historiography.json': 'historiography',
-    'links.json': 'link',
-    'sources.json': 'source',
-    'cast.json': 'cast',
-    'clocks.json': 'clock',
-    'tallies.json': 'tally',
-    'supply.json': 'supply',
-    'casualties.json': 'casualties',
-    'vignettes.json': 'vignette',
-    'tours.json': 'tour',
-    'tracks.json': 'track',
-    'score.json': 'score',
-  };
+/**
+ * A battle carries its own formations, routes and events for the zoom-in.
+ * They are referable like any others, so they are indexed too — tagged with
+ * the battle they belong to, which is how pass 2 tells a battle-level unit
+ * from a campaign-level one.
+ */
+function registerBattleParts(ctx: Ctx, battles: Battle[], path: string, dir: string) {
+  for (const b of battles) {
+    for (const x of b.formations ?? [])
+      ctx.register(x.id, { kind: 'formation', path, pack: dir, battle: b.id });
+    for (const x of b.routes ?? [])
+      ctx.register(x.id, { kind: 'route', path, pack: dir, battle: b.id });
+    for (const x of b.events ?? [])
+      ctx.register(x.id, { kind: 'event', path, pack: dir, battle: b.id });
+  }
+}
+
+/**
+ * Parse each collection file against its schema, index every id it defines and
+ * hang the items on the state under the collection's own name. A file we do
+ * not recognise is reported and ignored rather than silently dropped.
+ */
+function parseCollections(ctx: Ctx, raw: RawPack, state: PackState) {
   for (const [file, schema] of Object.entries(PACK_COLLECTIONS) as [
     PackCollectionFile,
     ZodType,
@@ -428,29 +458,28 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     state.files[file] = f.path;
     const items = parseWith(ctx, schema.array(), f, file) as { id: string }[] | undefined;
     if (!items) continue;
-    const kind = kindOf[file];
+    const kind = PACK_COLLECTION_KINDS[file];
     // Score entries are anonymous — they say when a cue plays, they are not
     // themselves referable.
     for (const item of items)
       if (item.id) ctx.register(item.id, { kind, path: f.path, pack: raw.dir });
     const key = file.replace('.json', '') as keyof ParsedPack;
     (state as unknown as Record<string, unknown>)[key] = items;
-    if (kind === 'battle') {
-      for (const b of items as Battle[]) {
-        for (const x of b.formations ?? [])
-          ctx.register(x.id, { kind: 'formation', path: f.path, pack: raw.dir, battle: b.id });
-        for (const x of b.routes ?? [])
-          ctx.register(x.id, { kind: 'route', path: f.path, pack: raw.dir, battle: b.id });
-        for (const x of b.events ?? [])
-          ctx.register(x.id, { kind: 'event', path: f.path, pack: raw.dir, battle: b.id });
-      }
-    }
+    if (kind === 'battle') registerBattleParts(ctx, items as Battle[], f.path, raw.dir);
   }
   for (const unknownFile of Object.keys(raw.collections)) {
     if (!(unknownFile in PACK_COLLECTIONS))
       ctx.warn(raw.collections[unknownFile]!.path, `unknown pack file ${unknownFile} is ignored`);
   }
+}
 
+/**
+ * A beat is Markdown with YAML front matter, so it is three things before it
+ * is a beat: text, front matter that parses, and a body under it. Each failure
+ * is reported against the file and the remaining beats still parse — an author
+ * fixing one broken beat should see the rest of the report, not just this one.
+ */
+function parseBeats(ctx: Ctx, raw: RawPack, state: PackState) {
   for (const f of raw.beats) {
     if (typeof f.data !== 'string') {
       ctx.error(f.path, 'beat must be Markdown text');
@@ -470,6 +499,21 @@ function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
     ctx.register(fm.id, { kind: 'beat', path: f.path, pack: raw.dir });
     state.beats.push({ ...fm, body: split.body, file: f.path });
   }
+}
+
+function parsePack(ctx: Ctx, raw: RawPack): PackState | undefined {
+  const pack = parseWith(ctx, Pack, raw.pack, 'pack.json');
+  if (!pack) return undefined;
+  const state = emptyPackState(raw, pack);
+  // The pack and its branches are declared in pack.json itself; every other id
+  // arrives from a collection file or a beat.
+  ctx.register(pack.id, { kind: 'pack', path: raw.pack.path, pack: raw.dir });
+  for (const b of pack.branches) {
+    ctx.register(b.id, { kind: 'branch', path: raw.pack.path, pack: raw.dir });
+    state.branchById.set(b.id, b);
+  }
+  parseCollections(ctx, raw, state);
+  parseBeats(ctx, raw, state);
   return state;
 }
 
@@ -1248,70 +1292,98 @@ function checkTracks(ctx: Ctx, s: PackState, path: string, range: TimeRange, sid
   }
 }
 
-function checkBeats(ctx: Ctx, s: PackState) {
-  const { pack } = s;
-  // A chapter with `window: "outside"` is drawn on its own strip, so its beats
-  // are checked against that strip and not against the campaign's (ADR 0015).
-  const asides = new Map(s.battles.filter((b) => b.window === 'outside').map((b) => [b.id, b]));
-  for (const b of s.beats) {
-    const path = b.file;
-    checkRange(ctx, path, b.id, { start: b.from, end: b.to }, 'from/to');
-    const aside = b.focus ? asides.get(b.focus) : undefined;
-    const range = aside?.timeRange ?? pack.timeRange;
-    if (!within(range, b.from) || !within(range, b.to))
+/**
+ * A beat's inline footnotes `[^slug]` must be among its own citations. The
+ * message spells the shape out because what goes in the brackets is the
+ * source's slug, not the full `source:` id — the mistake every author makes
+ * once. The generic `checkFootnotes` says the same thing less helpfully; a
+ * beat is where prose and citations meet often enough to earn its own wording.
+ */
+function checkBeatFootnotes(ctx: Ctx, b: NarrativeBeat) {
+  const slugs = new Set(b.sources.map((c) => c.source.split(':')[1]));
+  for (const label of footnoteLabels(b.body)) {
+    if (!slugs.has(label))
       ctx.error(
-        path,
-        `beat from/to is outside the ${aside ? `timeRange of ${aside.id}` : 'pack timeRange'}`,
+        b.file,
+        `footnote [^${label}] is not one of this beat's sources (use the source slug, e.g. [^herwig-2009])`,
         b.id,
       );
-    checkBranchRef(ctx, s, path, b.id, b.branch, true);
-    if (b.focus) {
-      const f = ctx.ref(path, b.id, b.focus, ['battle'], 'focus');
-      if (f && f.pack !== s.dir) ctx.error(path, `focus ${b.focus} belongs to another pack`, b.id);
-    }
-    if (b.media) ctx.ref(path, b.id, b.media, ['media'], 'media');
-    if (b.diagram) checkDiagram(ctx, s, path, b.id, b.diagram);
-    checkLinks(ctx, path, b.id, b.links);
-    checkCitations(ctx, path, b.id, b.sources, true);
-    checkProseLinks(ctx, path, b.id, b.body, 'body');
-    checkNoInlineImage(ctx, path, b.id, b.body, 'body');
-    // inline footnotes [^slug] must be among the beat's citations
-    const slugs = new Set(b.sources.map((c) => c.source.split(':')[1]));
-    for (const label of footnoteLabels(b.body)) {
-      if (!slugs.has(label))
-        ctx.error(
-          path,
-          `footnote [^${label}] is not one of this beat's sources (use the source slug, e.g. [^herwig-2009])`,
-          b.id,
-        );
+  }
+}
+
+/**
+ * One beat on its own: it sits inside a time range, everything it names
+ * resolves, and its prose stays within what a dossier page can render.
+ * `asides` is the chapters drawn on their own strip, so a beat that focuses on
+ * one is measured against that strip.
+ */
+function checkBeat(ctx: Ctx, s: PackState, b: NarrativeBeat, asides: Map<string, Battle>) {
+  const path = b.file;
+  checkRange(ctx, path, b.id, { start: b.from, end: b.to }, 'from/to');
+  const aside = b.focus ? asides.get(b.focus) : undefined;
+  const range = aside?.timeRange ?? s.pack.timeRange;
+  if (!within(range, b.from) || !within(range, b.to))
+    ctx.error(
+      path,
+      `beat from/to is outside the ${aside ? `timeRange of ${aside.id}` : 'pack timeRange'}`,
+      b.id,
+    );
+  checkBranchRef(ctx, s, path, b.id, b.branch, true);
+  if (b.focus) {
+    const f = ctx.ref(path, b.id, b.focus, ['battle'], 'focus');
+    if (f && f.pack !== s.dir) ctx.error(path, `focus ${b.focus} belongs to another pack`, b.id);
+  }
+  if (b.media) ctx.ref(path, b.id, b.media, ['media'], 'media');
+  if (b.diagram) checkDiagram(ctx, s, path, b.id, b.diagram);
+  checkLinks(ctx, path, b.id, b.links);
+  checkCitations(ctx, path, b.id, b.sources, true);
+  checkProseLinks(ctx, path, b.id, b.body, 'body');
+  checkNoInlineImage(ctx, path, b.id, b.body, 'body');
+  checkBeatFootnotes(ctx, b);
+}
+
+/** Beats a reader sees together, in time order, must not run into each other. */
+function checkNoOverlap(ctx: Ctx, beats: NarrativeBeat[], branchId: string, focus: string) {
+  const sorted = [...beats].sort((a, b) => t(a.from) - t(b.from));
+  for (let i = 1; i < sorted.length; i++) {
+    const prev = sorted[i - 1]!;
+    const cur = sorted[i]!;
+    if (t(cur.from) < t(prev.to)) {
+      ctx.error(
+        cur.file,
+        `overlaps ${prev.id} (${prev.file}) in branch ${branchId}${focus ? ` / focus ${focus}` : ''}: beats visible together must not overlap in time`,
+        cur.id,
+      );
     }
   }
+}
 
-  // Coverage: for each branch, shared beats ∪ that branch's beats (same focus) must not overlap.
-  for (const branch of pack.branches) {
+/**
+ * Coverage. What a reader sees at one moment is one branch — the shared beats
+ * plus that branch's own — on one strip, so overlap is checked per branch and
+ * per focus, and a branch with nothing to read at all is worth saying out loud
+ * once the pack is past `seed`.
+ */
+function checkBeatCoverage(ctx: Ctx, s: PackState) {
+  for (const branch of s.pack.branches) {
     const visible = s.beats.filter((b) => !b.branch || b.branch === branch.id);
     const byFocus = new Map<string, NarrativeBeat[]>();
     for (const b of visible) {
       const key = b.focus ?? '';
       byFocus.set(key, [...(byFocus.get(key) ?? []), b]);
     }
-    for (const [focus, beats] of byFocus) {
-      const sorted = [...beats].sort((a, b) => t(a.from) - t(b.from));
-      for (let i = 1; i < sorted.length; i++) {
-        const prev = sorted[i - 1]!;
-        const cur = sorted[i]!;
-        if (t(cur.from) < t(prev.to)) {
-          ctx.error(
-            cur.file,
-            `overlaps ${prev.id} (${prev.file}) in branch ${branch.id}${focus ? ` / focus ${focus}` : ''}: beats visible together must not overlap in time`,
-            cur.id,
-          );
-        }
-      }
-    }
-    if (visible.length === 0 && pack.status !== 'seed')
+    for (const [focus, beats] of byFocus) checkNoOverlap(ctx, beats, branch.id, focus);
+    if (visible.length === 0 && s.pack.status !== 'seed')
       ctx.warn(`eras/${s.dir}/pack.json`, `branch ${branch.id} has no narrative beats`, branch.id);
   }
+}
+
+function checkBeats(ctx: Ctx, s: PackState) {
+  // A chapter with `window: "outside"` is drawn on its own strip, so its beats
+  // are checked against that strip and not against the campaign's (ADR 0015).
+  const asides = new Map(s.battles.filter((b) => b.window === 'outside').map((b) => [b.id, b]));
+  for (const b of s.beats) checkBeat(ctx, s, b, asides);
+  checkBeatCoverage(ctx, s);
 }
 
 function checkMedia(ctx: Ctx, m: MediaT, path: string) {
