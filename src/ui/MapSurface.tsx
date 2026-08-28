@@ -14,6 +14,7 @@ import {
   placeLabels,
 } from '../engine/layers/places.js';
 import { buildStyle, type MapTheme } from '../engine/map/style.js';
+import { tilesUrlFor } from '../engine/map/tiles.js';
 import { useMovementLayers, type MovementSource } from '../engine/layers/useMovementLayers.js';
 import { buildTallyLayers, tallyLabelCandidates, tallyMarkers } from '../engine/layers/tallies.js';
 import {
@@ -52,8 +53,16 @@ export interface MapSurfaceProps {
   movement: MovementSource;
   /** Campaign extent, fitted when leaving a zoom-in. */
   region: BBox;
+  /** Basemap archive the pack names (`pack.tiles`); omit for the default. */
+  tiles?: string | undefined;
   /** Battle extent while zoomed in. */
   focusRegion?: BBox | undefined;
+  /**
+   * The zoom-in's own archive (`battle.tiles`), for an assault at a scale the
+   * campaign's archive does not reach — Betio at z14 is not inside
+   * `central-pacific-z10` (ADR 0002). Omit to stay on the pack's.
+   */
+  focusTiles?: string | undefined;
   /** Cities and fortresses to label. */
   places?: Place[];
   /** Strength ledgers whose positioned entries appear as markers (sand-1l0.19). */
@@ -92,7 +101,9 @@ export function MapSurface({
   branch,
   movement,
   region,
+  tiles,
   focusRegion,
+  focusTiles,
   places = [],
   tallies = [],
   tracks = [],
@@ -219,6 +230,14 @@ export function MapSurface({
   const labelledPoints = useMemo(
     () => places.filter((p) => DEFAULT_PLACE_KINDS.includes(p.kind)).map((p) => p.lngLat),
     [places],
+  );
+  // Which archive the map is drawn on: the battle's while a zoom-in with one
+  // of its own is open, the pack's otherwise, the default when neither names
+  // one. Changing it restyles the map, which is why it is a URL rather than a
+  // name by the time MapView sees it (sand-lry.18).
+  const tilesUrl = useMemo(
+    () => tilesUrlFor(focusRegion ? (focusTiles ?? tiles) : tiles),
+    [focusRegion, focusTiles, tiles],
   );
   const styleFor = useCallback(
     (theme: MapTheme, tilesUrl?: string) =>
@@ -368,6 +387,7 @@ export function MapSurface({
       camera={camera}
       borderYear={borderYear}
       inset={inset}
+      tilesUrl={tilesUrl}
       frontSeries={frontSeries}
       frontAt={now}
       label={`Map — ${label.date}`}

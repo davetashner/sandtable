@@ -1,0 +1,133 @@
+{
+  "$comment": "Provenance for the PMTiles basemap archives a pack may name in pack.json `tiles` (sand-lry.18). Hand-maintained: the archives are built and uploaded by scripts/tiles-extract.sh outside CI, so nothing regenerates this file. The bboxes and the reasoning are ADR 0002; the names are mirrored by src/packs/schema/tiles.ts and held in step by src/engine/map/tiles.test.ts.",
+  "dataset": "https://build.protomaps.com",
+  "schemaVersion": "Protomaps basemap v4",
+  "licence": "OpenStreetMap contributors, ODbL. The Protomaps daily planet build is a free artifact: copy it, never hotlink it.",
+  "attribution": "Protomaps © OpenStreetMap contributors",
+  "servedFrom": "/assets/tiles/<name>.pmtiles",
+  "builtBy": "scripts/tiles-extract.sh <name> <west,south,east,north> <maxzoom> [build-date]",
+  "updatedAt": "2026-08-28",
+  "statuses": {
+    "uploaded": "in the assets bucket; a pack that names it gets a basemap",
+    "planned": "the extract is decided and not yet run — naming it is correct and draws no basemap until sand-lry.17 uploads it",
+    "retired": "still in the bucket, no longer offered to packs"
+  },
+  "entries": [
+    {
+      "name": "central-europe-z10",
+      "bbox": [-1.5, 42, 24, 56],
+      "maxzoom": 10,
+      "status": "uploaded",
+      "build": "20260821",
+      "sizeMb": 541,
+      "serves": "the default: 1914, 1915, and every western-front pack. Stops at 24°E/56°N — short of Lemberg, Riga and Petrograd."
+    },
+    {
+      "name": "world-z6",
+      "bbox": [-180, -85, 180, 85],
+      "maxzoom": 6,
+      "status": "planned",
+      "serves": "the atlas landing view; every Pacific crossing; the Russian Civil War's continental sweep. The one archive that survives the antimeridian."
+    },
+    {
+      "name": "eastern-europe-z10",
+      "bbox": [13, 40, 46, 61],
+      "maxzoom": 10,
+      "status": "planned",
+      "serves": "the Eastern Front 1914-17, the Russian Revolution and Civil War, and the Eastern Front 1941-45. Cuts off Baku and Arkhangelsk; world-z6 covers those."
+    },
+    {
+      "name": "east-asia-z10",
+      "bbox": [112, 20, 146, 47],
+      "maxzoom": 10,
+      "status": "planned",
+      "serves": "Mukden 1931, the Home Islands, Formosa, Korea and Okinawa at theatre scale, and the Russo-Japanese War."
+    },
+    {
+      "name": "central-pacific-z10",
+      "bbox": [130, -2, 178, 30],
+      "maxzoom": 10,
+      "status": "planned",
+      "serves": "the Gilberts, Marshalls, Carolines, Palaus, Marianas, Bonins and the Philippine Sea."
+    },
+    {
+      "name": "sw-pacific-z10",
+      "bbox": [140, -18, 168, 2],
+      "maxzoom": 10,
+      "status": "planned",
+      "serves": "Guadalcanal, the Slot, Rabaul, Bougainville, New Guinea and the Coral Sea."
+    },
+    {
+      "name": "philippines-z10",
+      "bbox": [116, 4, 128, 20],
+      "maxzoom": 10,
+      "status": "planned",
+      "serves": "Leyte Gulf, Surigao Strait, Cape Engaño, Luzon, Lingayen and Corregidor."
+    },
+    {
+      "name": "oahu-z13",
+      "bbox": [-158.4, 21.2, -157.6, 21.8],
+      "maxzoom": 13,
+      "status": "planned",
+      "serves": "Pearl Harbor: Ford Island, Hickam, Wheeler, Kaneohe."
+    },
+    {
+      "name": "midway-z13",
+      "bbox": [-177.45, 28.14, -177.28, 28.28],
+      "maxzoom": 13,
+      "status": "planned",
+      "serves": "Midway: Sand and Eastern Islands."
+    },
+    {
+      "name": "guadalcanal-z13",
+      "bbox": [159.6, -9.85, 160.35, -9.2],
+      "maxzoom": 13,
+      "status": "planned",
+      "serves": "Henderson Field, the Tenaru, Bloody Ridge, Savo."
+    },
+    {
+      "name": "betio-z14",
+      "bbox": [172.88, 1.3, 173.08, 1.65],
+      "maxzoom": 14,
+      "status": "planned",
+      "serves": "Tarawa: Betio, the pier, the reef, the lagoon."
+    },
+    {
+      "name": "peleliu-z14",
+      "bbox": [134.1, 6.86, 134.32, 7.1],
+      "maxzoom": 14,
+      "status": "planned",
+      "serves": "Peleliu: the Umurbrogol, the airfield, Angaur."
+    },
+    {
+      "name": "iwo-jima-z14",
+      "bbox": [141.26, 24.71, 141.42, 24.85],
+      "maxzoom": 14,
+      "status": "planned",
+      "serves": "Iwo Jima: Suribachi and the Motoyama airfields. OSM has a coastline and little else."
+    },
+    {
+      "name": "okinawa-z13",
+      "bbox": [127.55, 26.0, 128.4, 26.9],
+      "maxzoom": 13,
+      "status": "planned",
+      "serves": "the Hagushi beaches, Kadena, the Shuri line."
+    },
+    {
+      "name": "port-arthur-z14",
+      "bbox": [121.14, 38.75, 121.42, 38.95],
+      "maxzoom": 14,
+      "status": "planned",
+      "serves": "the siege of Port Arthur: 203 Metre Hill, the inner harbour."
+    },
+    {
+      "name": "western-europe-z10",
+      "bbox": [-1.5, 46, 10.5, 53],
+      "maxzoom": 10,
+      "status": "retired",
+      "build": "20260821",
+      "sizeMb": 172,
+      "serves": "nothing: the original 1914 extract, superseded by central-europe-z10 (sand-pmz.6) because it stopped short of Tannenberg and Sarajevo. Kept in the bucket, not offered to packs."
+    }
+  ]
+}

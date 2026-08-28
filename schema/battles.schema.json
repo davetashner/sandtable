@@ -113,6 +113,27 @@
         ],
         "additionalProperties": false
       },
+      "tiles": {
+        "description": "Basemap archive for this zoom-in, when the campaign’s own archive does not reach this scale — an assault extract like \"betio-z14\" (ADR 0002); omit to keep the pack’s",
+        "type": "string",
+        "enum": [
+          "central-europe-z10",
+          "world-z6",
+          "eastern-europe-z10",
+          "east-asia-z10",
+          "central-pacific-z10",
+          "sw-pacific-z10",
+          "philippines-z10",
+          "oahu-z13",
+          "midway-z13",
+          "guadalcanal-z13",
+          "betio-z14",
+          "peleliu-z14",
+          "iwo-jima-z14",
+          "okinawa-z13",
+          "port-arthur-z14"
+        ]
+      },
       "place": {
         "type": "string",
         "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",

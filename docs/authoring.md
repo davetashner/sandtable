@@ -808,14 +808,42 @@ that someone recreates later, and two pictures then collide on one hero slot.
 content/eras/<yyyy>-<slug>/
   pack.json    id "<era>:<slug>", idPrefix "<era>" (unique across packs),
                timeRange, region, borderYear (one of content/shared/geo/borders),
-               camera, sides, branches (exactly one historical), defaultBranch,
-               status "seed"
+               tiles (one of content/shared/geo/tiles/manifest.json — omit only
+               if the pack is inside central Europe), camera, sides,
+               branches (exactly one historical), defaultBranch, status "seed"
   README.md    what the pack covers and its sourcing status
 ```
+
+### Say which map you are on
+
+`borderYear` picks the political geography; **`tiles` picks the ground**. Omit
+it and you get `central-europe-z10` — the box −1.5,42 → 24,56, which was every
+pack there was until there were Pacific ones. A pack outside that box that says
+nothing draws its borders and its armies over an empty field, which is not a
+map with a mistake in it, it is a mistake that looks like a map.
+
+```json
+{ "borderYear": 1941, "tiles": "central-pacific-z10" }
+```
+
+An **archive name**, not a URL: the engine resolves it to the assets bucket, and
+the list is closed, so your editor and the validator will both refuse a typo.
+`content/shared/geo/tiles/manifest.json` says what each archive covers and
+whether it is uploaded yet — most are not (`sand-lry.17`), and naming one that
+is not is still the right thing to write. You will see the map say _the basemap
+for this map is not on the table yet_ over the borders and the movement until
+the extract is run; that is the honest state, and the pack is finished the day
+it is.
+
+A **zoom-in may need a different archive from its campaign**, because a theatre
+extract stops at z10 and an assault is measured in hundreds of metres: Betio at
+z14 is not inside `central-pacific-z10`. Put `tiles` on the battle in
+`battles.json` and it applies while that zoom-in is open, and only then.
 
 Then formations → routes → events → beats, in that order, validating as you
 go. A pack is valid alone; the shared registries are its only dependency. If
 the era needs a new tile extract or border year, see `scripts/tiles-extract.sh`
+(and add the archive to `content/shared/geo/tiles/README.md`'s four steps)
 and `npm run borders`. The atlas/loader story (`sand-shn.1`) will pick up new
 packs automatically; until then the shell boots into the 1914 seed, which it
 **fetches** rather than bundles: `npm run build` assembles `content/` into one

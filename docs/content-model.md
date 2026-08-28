@@ -130,6 +130,39 @@ documented exceptions cost less than that.
   what that mode has ever physically done. The declaration is there to say
   what an era's ships and aircraft did, not to switch the check off.
 
+### Which map the map is drawn on
+
+A pack's `region` says where it happens; `pack.json#tiles` says which basemap
+archive that ground comes out of ([ADR 0002](decisions/0002-geography.md),
+`sand-lry.18`). It is an **archive name**, never a URL:
+
+```json
+{ "tiles": "central-pacific-z10" }
+```
+
+Where those archives are served from is a deployment fact that has already
+changed once, so content does not carry it — the engine turns the name into
+`/assets/tiles/<name>.pmtiles` (`src/engine/map/tiles.ts`). The names are a
+closed list, mirrored by the JSON Schema, so a mistyped one is caught in the
+editor and by the validator rather than becoming a URL nobody serves; what each
+archive covers, and whether it has been uploaded yet, is
+`content/shared/geo/tiles/manifest.json`.
+
+Two things follow for an author:
+
+- **Omitting `tiles` is fine and means Central Europe** — the archive every
+  pack was drawn on before the field existed. A pack outside that box
+  (−1.5,42 → 24,56) must name one, or it draws borders over an empty field.
+- **A battle may name its own**, and that is the point of the assault-scale
+  extracts: Betio at z14 is not inside `central-pacific-z10`. `battles.json`
+  takes the same `tiles` field, it applies only while that zoom-in is open, and
+  omitting it keeps the campaign's.
+
+Naming an archive that has not been uploaded yet is a legitimate state, not an
+error: most of them are extracted by hand (`sand-lry.17`). The map says so — a
+line reading _the basemap for this map is not on the table yet_ — and draws the
+borders, places and movement over the empty ground meanwhile.
+
 ## Branches (ADR 0005)
 
 `pack.json#branches` lists exactly one `historical` branch and any number of
@@ -158,7 +191,9 @@ Field-level detail is in the schema (`src/packs/schema/entities.ts`) and the
 generated JSON Schema; this is the intent of each.
 
 - **Pack** — id, `idPrefix`, title, summary, `timeRange` (the campaign clock),
-  `region`, `borderYear` (which shared border file to draw), opening `camera`,
+  `region`, `borderYear` (which shared border file to draw), `tiles` (which
+  basemap archive to draw them on — see _Which map the map is drawn on_ under
+  **Time and space**), opening `camera`,
   `sides` (short ids such as `de`, `fr`, `gb`, `be`, with an alliance that
   drives the colour family), `branches`, `defaultBranch`, `status`
   (`seed | draft | review | published`), a general bibliography, and an
@@ -201,7 +236,9 @@ generated JSON Schema; this is the intent of each.
   (`major` events become timeline ticks), a Place or a position, summary,
   links, required sources.
 - **Battle** — a focus for the zoom-in mechanism (`sand-a55.14`): its own
-  `timeRange`, `region`, `camera`, `participants` (campaign formations), and
+  `timeRange`, `region`, `camera`, optional `tiles` (an assault-scale basemap
+  archive, when the campaign's does not reach this scale),
+  `participants` (campaign formations), and
   optional battle-level `formations`, `routes` and `events` that live only
   inside the zoom-in. Required sources. A Battle with **no routes** is a
   **chapter** — narrative and static markers, campaign tokens left on their

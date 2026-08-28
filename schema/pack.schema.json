@@ -81,6 +81,27 @@
       "maximum": 9007199254740991,
       "description": "Which shared/geo/borders/<year>.geojson to draw"
     },
+    "tiles": {
+      "description": "Basemap archive this campaign is drawn on, by name — \"central-pacific-z10\", never a URL (content/shared/geo/tiles/manifest.json, ADR 0002); omit for the Central-Europe default",
+      "type": "string",
+      "enum": [
+        "central-europe-z10",
+        "world-z6",
+        "eastern-europe-z10",
+        "east-asia-z10",
+        "central-pacific-z10",
+        "sw-pacific-z10",
+        "philippines-z10",
+        "oahu-z13",
+        "midway-z13",
+        "guadalcanal-z13",
+        "betio-z14",
+        "peleliu-z14",
+        "iwo-jima-z14",
+        "okinawa-z13",
+        "port-arthur-z14"
+      ]
+    },
     "frontLine": {
       "description": "Shared front-line series to draw as the clock moves, e.g. \"western-front\" (content/shared/geo/front/<name>.geojson, sand-g80.1); omit for none",
       "type": "string",

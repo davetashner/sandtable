@@ -7,9 +7,11 @@
 #   scripts/tiles-extract.sh central-europe-z10 -1.5,42,24,56 10 20260821
 #
 # Needs the pmtiles CLI (brew install pmtiles) and the sandtable-deployer AWS
-# profile. The app reads /assets/tiles/<name>.pmtiles (see
-# src/engine/map/style.ts DEFAULT_TILES_URL); record new extracts in
-# docs/decisions/0002-geography.md.
+# profile. The app reads /assets/tiles/<name>.pmtiles (src/engine/map/tiles.ts),
+# and a pack asks for one by name. A new extract therefore needs three records
+# as well as the upload: docs/decisions/0002-geography.md (why),
+# content/shared/geo/tiles/manifest.json (what), and TILE_ARCHIVES in
+# src/packs/schema/tiles.ts + `npm run schema` (so a pack may name it).
 set -euo pipefail
 
 name=${1:?name, e.g. central-europe-z10}
