@@ -19,6 +19,7 @@ import {
   TimeRange,
   When,
 } from './primitives.js';
+import { TileArchive } from './tiles.js';
 
 // ------------------------------------------------------------------ shared
 
@@ -656,6 +657,10 @@ export const Pack = z
     timeRange: TimeRange.describe('The campaign clock: the timeline spans this range'),
     region: BBox.describe('Geographic extent of the pack'),
     borderYear: z.number().int().describe('Which shared/geo/borders/<year>.geojson to draw'),
+    tiles: TileArchive.optional().describe(
+      'Basemap archive this campaign is drawn on, by name — "central-pacific-z10", never a URL ' +
+        '(content/shared/geo/tiles/manifest.json, ADR 0002); omit for the Central-Europe default',
+    ),
     frontLine: Slug.optional().describe(
       'Shared front-line series to draw as the clock moves, e.g. "western-front" ' +
         '(content/shared/geo/front/<name>.geojson, sand-g80.1); omit for none',
@@ -899,6 +904,10 @@ export const Battle = z
       ),
     region: BBox,
     camera: Camera,
+    tiles: TileArchive.optional().describe(
+      'Basemap archive for this zoom-in, when the campaign’s own archive does not reach this ' +
+        'scale — an assault extract like "betio-z14" (ADR 0002); omit to keep the pack’s',
+    ),
     place: Id.optional(),
     summary: Markdown,
     outcome: Markdown.optional(),

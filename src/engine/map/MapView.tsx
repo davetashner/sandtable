@@ -31,7 +31,7 @@ import type { BBox, Camera } from '../../packs/schema/index.js';
 import { OWNS_KEYS } from '../shortcuts.js';
 import { fetchBorders, mountBorders } from './borders.js';
 import { fetchFront, mountFront, unmountFront, type FrontGeoJSON } from './front.js';
-import { buildStyle, detectTheme, type MapTheme } from './style.js';
+import { BASEMAP_SOURCE, buildStyle, detectTheme, type MapTheme } from './style.js';
 import './map.css';
 import { mark } from '../perf.js';
 
@@ -130,7 +130,10 @@ export interface MapViewProps {
   frontAt?: number | undefined;
   /** Light/dark; defaults to the document setting and follows it. */
   theme?: MapTheme;
-  /** `pmtiles://` or plain URL of the archive; defaults to the assets-bucket extract. */
+  /**
+   * `pmtiles://` or plain URL of the archive; defaults to the assets-bucket
+   * extract. `src/engine/map/tiles.ts` builds it from the archive a pack names.
+   */
   tilesUrl?: string;
   /** deck.gl layers rendered interleaved with the basemap. */
   deckLayers?: DeckLayer[];
@@ -171,6 +174,15 @@ export function MapView({
   const overlayRef = useRef<MapboxOverlay | null>(null);
   const [systemTheme, setSystemTheme] = useState<MapTheme>(() => detectTheme());
   const [ready, setReady] = useState(false);
+  /**
+   * The archive the pack named could not be read (`sand-lry.18`). Every era's
+   * extract is uploaded by hand (`sand-lry.17`), so a pack can legitimately
+   * name one that is not in the bucket yet, and the failure has to be legible:
+   * the borders, the places and the movement still draw, and the map says why
+   * the ground under them is empty rather than leaving a blank field and a
+   * console full of range requests that 404.
+   */
+  const [basemapMissing, setBasemapMissing] = useState(false);
   const activeTheme = theme ?? systemTheme;
 
   /**
@@ -288,6 +300,26 @@ export function MapView({
     };
     map.once('load', announce);
     map.once('styledata', announce);
+    // MapLibre reports a source it cannot read through `error`, once per
+    // failed request — the archive's header first, then every tile the camera
+    // asks for. Registering a listener is also what stops MapLibre logging
+    // each of them itself, so the flood becomes one warning and one line on
+    // the map. Errors from anything else (a deck layer, a sprite) keep their
+    // old behaviour of being logged and otherwise ignored.
+    let warned = false;
+    map.on('error', (e) => {
+      // `sourceId` rides along on anything a source fires (MapLibre attaches
+      // it when the style adopts the source); it is not on the event's type.
+      const sourceId = (e as { sourceId?: string }).sourceId;
+      if (sourceId !== BASEMAP_SOURCE) {
+        console.warn('[map]', e.error);
+        return;
+      }
+      setBasemapMissing(true);
+      if (warned) return;
+      warned = true;
+      console.warn('[map] basemap unavailable:', tilesUrl ?? '(default archive)', e.error);
+    });
     return () => {
       mapRef.current = null;
       overlayRef.current = null;
@@ -311,6 +343,9 @@ export function MapView({
     );
     map.setStyle(style, { diff: false });
     setReady(false);
+    // A zoom-in may swap the archive as well as the theme (a battle's own
+    // `tiles`), so the verdict on the old one does not carry over: ask again.
+    setBasemapMissing(false);
     map.once('styledata', () => setReady(true));
   }, [activeTheme, tilesUrl, styleFor]);
 
@@ -402,6 +437,20 @@ export function MapView({
       {...{ [OWNS_KEYS]: '' }}
       data-theme={activeTheme}
     >
+      {/* What the reader is looking at, when what they are looking at is not
+          the ground: the archive this map wants is not in the bucket yet
+          (sand-lry.17). Said once, over the terrain, and never in the way of
+          it — the campaign underneath is still readable, which is the whole
+          reason this is a line and not a failure page. */}
+      {basemapMissing && (
+        <p className="mapview__notice" role="status">
+          <span className="mapview__notice-label">No terrain</span>
+          <span>
+            The basemap for this map is not on the table yet. Borders, places and movement are drawn
+            without it.
+          </span>
+        </p>
+      )}
       {/* Before the canvas, not after it: this is the map's table of
           contents, and a reader who has just arrived at the region should
           meet it before the thing it describes (sand-pmz.11). */}

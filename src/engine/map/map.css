@@ -18,6 +18,44 @@
   inset: 0;
 }
 
+/* The archive this map wants is not in the bucket (sand-lry.18). Centred under
+   the top row of controls, which clears the key at top-left and the zoom at
+   top-right; the same material as the key, because it is the same kind of
+   thing — a small panel laid on the terrain, not a dialog over it. */
+.mapview__notice {
+  position: absolute;
+  z-index: 2;
+  top: calc(var(--space-4) + var(--target-min) + var(--space-2));
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(440px, calc(100% - 2 * var(--space-4)));
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--panel) 88%, transparent);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  /* Nothing to press: the map keeps its whole drag area. */
+  pointer-events: none;
+}
+
+.mapview__notice-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+  white-space: nowrap;
+}
+
 .mapview .maplibregl-ctrl-group {
   background: var(--panel);
   border: 1px solid var(--line);

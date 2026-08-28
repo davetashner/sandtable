@@ -24,12 +24,17 @@ class FakeMap {
   getCanvas() {
     return this.canvas;
   }
+  standing = new Map<string, ((e?: unknown) => void)[]>();
   once(ev: string, fn: () => void) {
     this.handlers.set(ev, [...(this.handlers.get(ev) ?? []), fn]);
   }
-  fire(ev: string) {
+  on(ev: string, fn: (e?: unknown) => void) {
+    this.standing.set(ev, [...(this.standing.get(ev) ?? []), fn]);
+  }
+  fire(ev: string, e?: unknown) {
     for (const fn of this.handlers.get(ev) ?? []) fn();
     this.handlers.delete(ev);
+    for (const fn of this.standing.get(ev) ?? []) fn(e);
   }
   getSource(id: string) {
     return this.sources.get(id);
@@ -279,6 +284,73 @@ describe('<MapView>', () => {
       await Promise.resolve();
     });
     expect(onReady).toHaveBeenCalledTimes(1);
+  });
+
+  describe('an archive that is not in the bucket (sand-lry.18)', () => {
+    const warn = () => vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const notice = () => screen.queryByText(/basemap for this map is not on the table/i);
+
+    const mount = (tilesUrl: string) =>
+      render(
+        <MapView
+          camera={{ center: [172.98, 1.35], zoom: 12 }}
+          theme="light"
+          tilesUrl={tilesUrl}
+          styleFor={() => ({ version: 8, sources: {}, layers: [] })}
+        />,
+      );
+
+    it('says so on the map, once, however many tiles fail', () => {
+      const spy = warn();
+      mount('/assets/tiles/betio-z14.pmtiles');
+      const map = maps[0]!;
+      expect(notice()).toBeNull();
+      act(() => {
+        map.fire('error', { sourceId: 'basemap', error: new Error('404') });
+        map.fire('error', { sourceId: 'basemap', error: new Error('404') });
+        map.fire('error', { sourceId: 'basemap', error: new Error('404') });
+      });
+      // The failure has a face, and the campaign underneath is still readable:
+      // a line laid on the map, not a page over it.
+      expect(notice()).toBeInTheDocument();
+      expect(screen.getByRole('status')).toBeInTheDocument();
+      expect(screen.getByRole('region')).toContainElement(notice());
+      // One warning for a developer, not one per range request — registering
+      // this listener is also what stops MapLibre logging each of them.
+      expect(spy).toHaveBeenCalledTimes(1);
+      expect(spy.mock.calls[0]).toContain('/assets/tiles/betio-z14.pmtiles');
+      spy.mockRestore();
+    });
+
+    it('leaves an error from anything else alone', () => {
+      const spy = warn();
+      mount('/assets/tiles/central-europe-z10.pmtiles');
+      act(() => {
+        maps[0]!.fire('error', { sourceId: 'borders', error: new Error('nope') });
+      });
+      expect(notice()).toBeNull();
+      spy.mockRestore();
+    });
+
+    it('asks again when a zoom-in swaps the archive', () => {
+      const spy = warn();
+      const { rerender } = mount('/assets/tiles/betio-z14.pmtiles');
+      act(() => {
+        maps[0]!.fire('error', { sourceId: 'basemap', error: new Error('404') });
+      });
+      expect(notice()).toBeInTheDocument();
+      rerender(
+        <MapView
+          camera={{ center: [172.98, 1.35], zoom: 12 }}
+          theme="light"
+          tilesUrl="/assets/tiles/central-europe-z10.pmtiles"
+          styleFor={() => ({ version: 8, sources: {}, layers: [] })}
+        />,
+      );
+      // The verdict belonged to the archive, not to the map.
+      expect(notice()).toBeNull();
+      spy.mockRestore();
+    });
   });
 });
 

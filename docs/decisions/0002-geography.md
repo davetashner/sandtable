@@ -203,15 +203,55 @@ so an assault map's detail comes from the pack, not the basemap. And the
 `maxzoom` is a floor, not a ceiling on what a reader sees: MapLibre overzooms
 past it, so z14 on Betio means crisp to about 1:15 000 and stretched below.
 
-### The gap that makes these unreachable today
+### The gap that made these unreachable — closed by `sand-lry.18`
 
-`src/engine/map/style.ts` exports `DEFAULT_TILES_URL` and `buildStyle` takes a
-`tilesUrl`, and `MapView`/`MapSurface` thread one through — but **nothing sets
-it**. There is no `tiles` field in `pack.json` (`src/packs/schema/entities.ts`
-gives a pack a `region` and a `borderYear` and no archive), so every pack
-resolves to the one default. Uploading these archives is necessary and not
-sufficient: until a pack can name one, the Pacific will render as central
-Europe. Filed as `sand-lry.18`.
+`src/engine/map/style.ts` exported `DEFAULT_TILES_URL` and `buildStyle` took a
+`tilesUrl`, and `MapView`/`MapSurface` threaded one through — but **nothing set
+it**. There was no `tiles` field in `pack.json`, so every pack resolved to the
+one default and uploading these archives would not have been enough: until a
+pack could name one, the Pacific would have rendered as central Europe. There
+is one now, and it settles three things.
+
+**A pack names an archive, not a URL.** `"tiles": "central-pacific-z10"`.
+Where the archives are served from is a deployment fact — this decision put
+them behind `/assets/`, ADR 0004 owns that path, and it has changed once
+already — and a URL in `pack.json` writes that fact into every pack ever
+authored. `src/engine/map/tiles.ts` is the one module that resolves the name;
+content says which map it wants. The names are a **closed list**
+(`src/packs/schema/tiles.ts`, a Zod enum, so it reaches the generated JSON
+Schema too), because an archive that is not on it is a typo rather than an
+upload we have not done: the extracts in the tables above were all written down
+before they were extracted, so the list costs nothing to keep and catches the
+mistake in the editor, in the validator and again in the browser. Provenance —
+bbox, maximum zoom, whether it is uploaded, what it serves — lives in
+`content/shared/geo/tiles/manifest.json`, the way border years' provenance
+lives beside the border files; a test holds the manifest and the enum in step.
+
+**A battle gets one too**, which is what the assault-scale table above is for:
+Betio at z14 is not inside `central-pacific-z10`, and the two are not the same
+map at different zooms. `Battle.tiles` applies while that zoom-in is open and
+nowhere else; absent, the campaign's archive stands. It was built with the
+pack's field rather than deferred, because the plumbing is the same prop and
+deferring it would have left the assault extracts as archives nothing could
+reach — the exact shape of the gap this note is about.
+
+**A missing archive degrades to a legible map, not a blank one.** Naming an
+archive that is not uploaded yet is legitimate — most of the list is
+`sand-lry.17`, a manual run — so the failure is a state to design, not an
+error to avoid. MapLibre reports the failed range requests through `error`
+with the source id; `MapView` listens, turns the flood into one console warning
+and one line laid over the terrain — _the basemap for this map is not on the
+table yet_ — and leaves the borders, the places and the movement drawing
+underneath. That follows PR #139's rule for the failed pack fetch: the failure
+gets a face, in the place that knows about it, at the size of the actual
+damage. A campaign without its terrain is still a campaign; it does not want a
+failure page.
+
+Backwards compatibility is the reason `tiles` is optional: a pack that names
+none is drawn on `central-europe-z10`, which is what it was drawn on before,
+so 1914 and 1915 do not move. The eras already merged still declare nothing —
+1917 waits for `eastern-europe-z10` to reach the bucket rather than trading a
+partial basemap for a notice (`sand-lry.21`).
 
 ### The manual run
 
@@ -267,7 +307,7 @@ as `sand-neh.31`.
   reproducibly; a second one builds the PMTiles extracts.
 - The map style is a designed artefact with light and dark variants
   (`sand-neh.2`).
-- Packs declare a region, a zoom range and a border year; the engine loads
-  accordingly.
+- Packs declare a region, a zoom range, a border year and a tile archive
+  (`sand-lry.18`); the engine loads accordingly.
 - Period place names (Lemberg/Lwów/Lviv, Port Arthur/Lüshun) come from the
   shared gazetteer, not the basemap.

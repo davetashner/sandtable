@@ -1125,8 +1125,10 @@ function MapSection() {
           branch={branch}
           movement={movement}
           region={seed.pack.region}
+          tiles={seed.pack.tiles}
           inset={inset}
           focusRegion={focus?.region}
+          focusTiles={focus?.tiles}
           places={seed.places}
           tallies={focus ? [] : seed.tallies}
           tracks={seed.tracks}
