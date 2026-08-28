@@ -27,6 +27,30 @@ const RAW = `https://raw.githubusercontent.com/${REPO}`;
 /** Pinned upstream commit so the pipeline is reproducible. */
 export const UPSTREAM_COMMIT = '62d8f1a03a71f2d3ff17f2d166f7553f256bce68';
 
+/**
+ * Default mapshaper simplification. Continent-scale data drawn for a
+ * continent-scale map: 12% throws away nine tenths of the vertices and a
+ * European frontier still lands within a few kilometres of itself.
+ */
+const DEFAULT_SIMPLIFY = '12%';
+
+/**
+ * What the Pacific years keep instead (sand-lry.1). 12% is a land-map setting:
+ * it shrinks every coastline inward, which costs nothing on the Rhine and
+ * deletes islands. Measured on world_1938, the polygon that contains a place
+ * survives at:
+ *
+ *   12% → 143 kB — Saipan, Guam. Formosa, Oahu, Okinawa, Port Arthur all gone.
+ *   50% → 391 kB — Formosa, Oahu, Okinawa, Port Arthur back.
+ *   80% → 577 kB — adds Iwo Jima, and nothing else.
+ *
+ * 50% is where the archipelago the Pacific war was fought over actually draws.
+ * The extra 250 kB is fetched from the assets bucket, not bundled (ADR 0018),
+ * and 80% buys one 8 km island for another 186 kB — Iwo Jima is a dot at basin
+ * scale anyway and its pack gets a z13 tile extract.
+ */
+const PACIFIC_SIMPLIFY = '50%';
+
 export interface Target {
   /** Year a pack declares as borderYear. */
   year: number;
@@ -34,6 +58,8 @@ export interface Target {
   source: number;
   /** What to know about using it for the target year. */
   caveat: string;
+  /** mapshaper `-simplify` percentage; default `DEFAULT_SIMPLIFY`. */
+  simplify?: string;
 }
 
 /** Target years from the roadmap → nearest upstream file, with caveats. */
@@ -63,16 +89,37 @@ export const TARGETS: Target[] = [
       'Upstream 1920 (post-Versailles/Trianon/Saint-Germain; some eastern frontiers still unsettled). For 11 November 1918 the legal borders are still those of 1914 with the front line overlaid — packs that need the armistice-day map should use 1914 plus the front-line layer (sand-g80.1).',
   },
   {
+    year: 1931,
+    source: 1930,
+    simplify: PACIFIC_SIMPLIFY,
+    caveat:
+      'East Asia only (sand-lry.1). Upstream 1930 is right for the eve of the Mukden Incident: Manchuria is a polity of its own (Zhang Xueliang), not yet Manchukuo, and Korea and Formosa are inside the Empire of Japan. It is badly wrong for Russia — Moscow, Minsk, Kyiv and Stalingrad fall inside a polygon named "White Russia" and Vladivostok inside the "Far Eastern SSR", both Civil-War entities gone by 1922, and there is no USSR west of the Urals. China is one "Chinese Warlords" polygon four years after the Northern Expedition. Never use this year for a Russian or Near-Eastern map.',
+  },
+  {
     year: 1939,
     source: 1938,
     caveat:
-      'Upstream 1938 — confirm whether Austria (March 1938) and the Sudetenland (October 1938) are included before using for September 1939; Czechoslovakia, Memel and Albania changed in 1939.',
+      'Upstream 1938 — confirm whether Austria (March 1938) and the Sudetenland (October 1938) are included before using for September 1939; Czechoslovakia, Memel and Albania changed in 1939. Vienna does fall inside Germany, so the Anschluss is drawn.',
   },
+  {
+    year: 1941,
+    source: 1938,
+    simplify: PACIFIC_SIMPLIFY,
+    caveat:
+      'Pacific only (sand-lry.1). Upstream has nothing between 1930 and 1945, so 1938 is the only candidate, and it is right about the colonial frame the Pacific war was fought over: the Philippines under the United States, the Netherlands East Indies under the Netherlands, Malaya and the Gilberts under the United Kingdom, Guam under the United States, Saipan and the mandate under Japan, French Indochina under France with Cochin China and Cambodia already marked subject to Japan. Three things are wrong. Manchukuo is not drawn — Mukden, Harbin and Port Arthur fall inside "Empire of Japan", so a puppet state reads as annexation. There is no Republic of China, only "Chinese warlords". And Europe is the 1938 map: none of the German conquests of 1939–41 are there. Also: the mandate and the atolls barely exist as geometry — Truk, Palau, Kwajalein, Tarawa, Wake, Midway and Rabaul have no polygon at all, and neither Singapore nor Batavia falls inside one. Borders are context at basin scale here; the islands come from the tiles.',
+  },
+  // There is deliberately no 1944. sand-lry.1 asked for one and the dataset
+  // cannot honestly supply it: upstream jumps 1938 → 1945, and 1945 is a map of
+  // the *aftermath* — Germany in four occupation zones, "Japan (USA)", "Korea
+  // (USA)" and "Korea (USSR)" — so the empire the Marianas and the Philippines
+  // were fought over has already been dissolved on it. A 1944 Pacific pack
+  // should declare `borderYear: 1941` and draw the Japanese perimeter as its
+  // own dated series, the same answer the 1918 caveat gives for armistice day.
   {
     year: 1945,
     source: 1945,
     caveat:
-      'Upstream 1945; check whether it shows May or December 1945 (Poland shifted west, Germany in zones).',
+      'Upstream 1945 is post-surrender, not the fighting year: Germany appears as four occupation zones, Japan as "Japan (USA)", Korea split into US and Soviet halves, Manchuria detached again. Use it for the settlement; a pack about the 1945 campaigns wants 1939/1941 plus its own front line.',
   },
   {
     year: 1950,
@@ -114,11 +161,14 @@ export async function buildOne(t: Target, dir = BORDERS_DIR): Promise<ManifestEn
   const raw = await fetchUpstream(t.source);
   const input = `world_${t.source}.geojson`;
   const output = `${t.year}.geojson`;
-  // Simplify hard (continent-scale data anyway), snap vertices, drop fields we
-  // don't use, round coordinates to 3 decimals (~100 m) and write compact.
+  // Simplify (hard by default — continent-scale data anyway; gently for the
+  // Pacific years, where hard simplification deletes islands), snap vertices,
+  // drop fields we don't use, round coordinates to 3 decimals (~100 m) and
+  // write compact.
+  const simplify = t.simplify ?? DEFAULT_SIMPLIFY;
   const cmd = [
     `-i ${input} snap`,
-    '-simplify 12% keep-shapes planar',
+    `-simplify ${simplify} keep-shapes planar`,
     `-filter-fields ${FIELDS.join(',')}`,
     '-clean',
     `-o ${output} format=geojson precision=0.001 rfc7946`,
@@ -192,8 +242,7 @@ async function main() {
       'Historical borders © aourednik/historical-basemaps contributors, GPL-3.0, simplified by Sandtable',
     upstreamCommit: UPSTREAM_COMMIT,
     generatedAt: new Date().toISOString().slice(0, 10),
-    simplification:
-      'mapshaper: snap, simplify 12% keep-shapes (planar), clean, precision 0.001, fields NAME/SUBJECTO/PARTOF/BORDERPRECISION',
+    simplification: `mapshaper: snap, simplify ${DEFAULT_SIMPLIFY} keep-shapes (planar) — ${PACIFIC_SIMPLIFY} for the years marked so, see each entry's simplify — clean, precision 0.001, fields NAME/SUBJECTO/PARTOF/BORDERPRECISION`,
     fields: FIELDS,
     entries,
   };

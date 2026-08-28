@@ -28,9 +28,10 @@ must show the political geography of the period (Alsace-Lorraine German in
   1904–05; the Eastern Front for 1914–17 and 1941–45; the Middle East later).
 - **Period borders:** GeoJSON overlays derived from the open
   _historical-basemaps_ dataset (aourednik) for each era year the roadmap
-  needs (1870, 1871, 1905, 1914, 1918, 1939, 1945, 1950), simplified for the
-  web, stored in `content/shared/geo/borders/<year>.geojson`, selected by
-  the pack's declared year. Known inaccuracies are documented and corrected
+  needs (1870, 1871, 1905, 1914, 1918, 1931, 1939, 1941, 1945, 1950),
+  simplified for the web, stored in
+  `content/shared/geo/borders/<year>.geojson`, selected by the pack's
+  declared year. Known inaccuracies are documented and corrected
   locally where they matter (e.g. the 1914 Franco-German frontier).
 - **Terrain:** rivers are first-class in the style; hill-shade or contours
   only where ground decided events (Grand Couronné, Argonne, Meuse heights),
@@ -70,12 +71,188 @@ must show the political geography of the period (Alsace-Lorraine German in
     original extract, retained in the bucket and no longer referenced. Styled by
     `protomaps-themes-base` v4 with the muted palette in `src/engine/map/style.ts`
     (replaced by the design-system map style, `sand-neh.2`).
+  - The Eastern-Front and Pacific extracts are listed in the 2026-08-27 note
+    below, with their bboxes and the command that builds each; none of them is
+    uploaded yet (`sand-lry.17`).
 - Borders: `npm run borders` builds one world file per era year from
   aourednik/historical-basemaps (GPL-3.0); `content/shared/geo/borders/README.md`
   lists years, caveats and attribution. Drawn by `src/engine/map/borders.ts`.
 - deck.gl (`MapboxOverlay`, interleaved) is mounted by `MapView` for the data
   layers of `sand-a55.11`; `MapHandle.flyTo/fitRegion` is the camera API for
   tours and zoom-ins.
+
+## Implementation note (2026-08-27, `sand-en0.1` / `sand-lry.1`)
+
+Extending the geography east and then across the Pacific. Nothing here has been
+uploaded — every `pmtiles extract` below needs the `pmtiles` CLI and the
+`sandtable-deployer` profile, so they are collected as a manual run at the end
+of this note (`sand-lry.17`).
+
+### What the pinned borders dataset actually has
+
+Checked before promising a year, by listing `geojson/` at
+`aourednik/historical-basemaps@62d8f1a` and testing which polygon contains each
+place that matters. The files near the years these arcs need are **1900, 1914,
+1920, 1930, 1938, 1945, 1960** — there is no 1931, no 1941 and no 1944.
+
+- **The Eastern Front needs no new year.** `world_1914` is right where it has to
+  be: Lemberg and Przemyśl inside the Austro-Hungarian Empire as one polity,
+  Königsberg and Tannenberg inside the German Empire, Warsaw and Riga inside the
+  Russian Empire, Belgrade in Serbia, Sarajevo in Austria-Hungary, Bucharest in
+  Romania, with Montenegro, Bulgaria and the Ottoman Empire all present. The
+  committed `1914.geojson` already serves the whole Eastern arc; `sand-en0.1`'s
+  border half was done before it was asked for. (One gap: the Ottoman polygon
+  does not reach Constantinople, so a Gallipoli or Thrace pack must draw the
+  straits itself.)
+- **1931 ← `world_1930`**, added. Right for the eve of Mukden: Manchuria is its
+  own polity, not yet Manchukuo, and Korea and Formosa are inside the Empire of
+  Japan. **Badly wrong for Russia** — Moscow, Minsk, Kyiv and Stalingrad fall
+  inside a polygon named "White Russia" and Vladivostok inside the "Far Eastern
+  SSR", Civil-War entities gone since 1922, with no USSR west of the Urals.
+  East Asia only.
+- **1941 ← `world_1938`**, added; the only candidate between 1930 and 1945. It
+  is right about the colonial frame the war was fought over — the Philippines
+  under the United States, the Netherlands East Indies under the Netherlands,
+  Malaya and the Gilberts under the United Kingdom, Guam American, Saipan and
+  the mandate Japanese, Indochina French with Cochin China and Cambodia already
+  marked subject to Japan. It is wrong in three ways: **Manchukuo is not drawn**
+  (Mukden, Harbin and Port Arthur fall inside "Empire of Japan", so a puppet
+  state reads as annexation), there is **no Republic of China** (only "Chinese
+  warlords"), and Europe is the 1938 map.
+- **1944: not added, on purpose.** Upstream jumps 1938 → 1945 and `world_1945`
+  is a map of the _aftermath_ — Germany in four occupation zones, "Japan (USA)",
+  "Korea (USA)" and "Korea (USSR)". The empire the Marianas and the Philippines
+  were fought over has already been dissolved on it. A 1944 pack declares
+  `borderYear: 1941` and draws the Japanese perimeter as its own dated series,
+  which is the answer the 1918 caveat already gives for armistice day
+  (`sand-lry.19`).
+- **Simplification is the Pacific's real border problem.** The pipeline's
+  `-simplify 12%` is a land-map setting: it pulls every coastline inward, which
+  costs nothing on the Rhine and deletes islands. At 12% only Saipan and Guam
+  still contain their own place; Formosa, Oahu, Okinawa and Port Arthur are all
+  gone. The Pacific years are therefore built at **50%** (391 kB rather than
+  143 kB, fetched from the assets bucket and not bundled — ADR 0018), which
+  brings those four back. 80% adds Iwo Jima and nothing else, for another
+  186 kB. Even at 50%, **Truk, Palau, Kwajalein, Tarawa, Wake, Midway and
+  Rabaul have no polygon at any setting**, and neither Singapore nor Batavia
+  falls inside one. In the Pacific the borders layer is basin-scale context;
+  the islands come from the tiles.
+
+### The extracts
+
+Two scales, because the Pacific has two. An ocean crossing is measured in
+thousands of kilometres (Pearl Harbor to Midway is 2,100 km); an assault is
+measured in hundreds of metres (Betio is 3.2 km long, and the pier the first
+waves waded from is 500 m of it). No single archive serves both, and unlike
+Europe the two are not the same map at different zooms — one is nearly all
+water and the other is nearly all beach.
+
+Three things make ocean extracts cheap where European ones are not: an ocean
+tile carries almost no features, `pmtiles extract` keeps **every** zoom up to
+`--maxzoom` inside the bbox (so a theatre archive is self-sufficient from the
+whole-theatre view down), and PMTiles is range-read, so extent costs storage
+rather than per-viewer bandwidth.
+
+The exception that forces a world extract: **the Pacific crosses the
+antimeridian.** Midway sits at −177.4° and Tarawa at +172.9°, ten degrees apart
+and on opposite sides of it, so no `west,south,east,north` box holds the
+strategic Pacific. The whole-world low-zoom archive this ADR decided on and
+never built is that box, and it earns its keep three ways over: the atlas
+landing view, every Pacific crossing, and the continental sweep of the Russian
+Civil War (`sand-ekc.8`, which reaches from Arkhangelsk to Vladivostok).
+
+**Theatre scale** — run these first; they are what the waiting beads need.
+
+| Archive               | bbox (W,S,E,N)    | z≤  | Serves                                                                                                                                                                  |
+| --------------------- | ----------------- | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `world-z6`            | `-180,-85,180,85` | 6   | the atlas landing view; every Pacific crossing; the Russian Civil War's continental sweep                                                                               |
+| `eastern-europe-z10`  | `13,40,46,61`     | 10  | `sand-en0.*` (Tannenberg, Galicia, Serbia, Gorlice–Tarnów, Brusilov, Romania, Riga), `sand-ekc.7/.8`, `sand-c6p.*` (Barbarossa, Stalingrad, Kursk, Bagration to Berlin) |
+| `east-asia-z10`       | `112,20,146,47`   | 10  | `sand-lry.4` (Mukden), the Home Islands, Formosa, Korea, Okinawa at theatre scale — **and `sand-6dh`** (Port Arthur, Mukden, Tsushima, Vladivostok)                     |
+| `central-pacific-z10` | `130,-2,178,30`   | 10  | `sand-lry.8/.9/.10/.12` — the Gilberts, Marshalls, Carolines, Palaus, Marianas, Bonins, Philippine Sea                                                                  |
+| `sw-pacific-z10`      | `140,-18,168,2`   | 10  | `sand-lry.7` — Guadalcanal, the Slot, Rabaul, Bougainville, New Guinea, the Coral Sea                                                                                   |
+| `philippines-z10`     | `116,4,128,20`    | 10  | `sand-lry.11` — Leyte Gulf, Surigao Strait, Cape Engaño, Luzon, Lingayen, Corregidor                                                                                    |
+
+`eastern-europe-z10` overlaps `central-europe-z10` (which stops at 24°E/56°N,
+short of Lemberg, Lutsk, Bucharest, Riga and Petrograd) from 13°E to 24°E, and
+the seam is deliberately wide. Its own edges cut two things off, both noted
+rather than paid for: Baku (49.9°E) and Arkhangelsk (64.5°N), which the Civil
+War reaches and `world-z6` covers instead.
+
+**Assault scale** — one per battle, run when that pack is authored. Each is a
+box a few tens of kilometres on a side, so each archive is small.
+
+| Archive           | bbox (W,S,E,N)                | z≤  | Serves                                                             |
+| ----------------- | ----------------------------- | --- | ------------------------------------------------------------------ |
+| `oahu-z13`        | `-158.4,21.2,-157.6,21.8`     | 13  | `sand-lry.5` — Pearl Harbor, Ford Island, Hickam, Wheeler, Kaneohe |
+| `midway-z13`      | `-177.45,28.14,-177.28,28.28` | 13  | `sand-lry.6` — Sand and Eastern Islands                            |
+| `guadalcanal-z13` | `159.6,-9.85,160.35,-9.2`     | 13  | `sand-lry.7` — Henderson Field, the Tenaru, Bloody Ridge, Savo     |
+| `betio-z14`       | `172.88,1.3,173.08,1.65`      | 14  | `sand-lry.8` — Betio, the pier, the reef, the lagoon               |
+| `peleliu-z14`     | `134.1,6.86,134.32,7.1`       | 14  | `sand-lry.10` — Umurbrogol, the airfield, Angaur                   |
+| `iwo-jima-z14`    | `141.26,24.71,141.42,24.85`   | 14  | `sand-lry.12` — Suribachi, the Motoyama airfields                  |
+| `okinawa-z13`     | `127.55,26.0,128.4,26.9`      | 13  | `sand-lry.13` — the Hagushi beaches, Kadena, the Shuri line        |
+| `port-arthur-z14` | `121.14,38.75,121.42,38.95`   | 14  | `sand-6dh.3` — the siege, 203 Metre Hill, the inner harbour        |
+
+Two caveats on the small ones. OSM coverage of an uninhabited former battlefield
+is thin — Iwo Jima has a coastline, Suribachi and the airstrips and little else —
+so an assault map's detail comes from the pack, not the basemap. And the
+`maxzoom` is a floor, not a ceiling on what a reader sees: MapLibre overzooms
+past it, so z14 on Betio means crisp to about 1:15 000 and stretched below.
+
+### The gap that makes these unreachable today
+
+`src/engine/map/style.ts` exports `DEFAULT_TILES_URL` and `buildStyle` takes a
+`tilesUrl`, and `MapView`/`MapSurface` thread one through — but **nothing sets
+it**. There is no `tiles` field in `pack.json` (`src/packs/schema/entities.ts`
+gives a pack a `region` and a `borderYear` and no archive), so every pack
+resolves to the one default. Uploading these archives is necessary and not
+sufficient: until a pack can name one, the Pacific will render as central
+Europe. Filed as `sand-lry.18`.
+
+### The manual run
+
+Every command below needs the `pmtiles` CLI (`brew install pmtiles`) and the
+`sandtable-deployer` AWS profile. `scripts/tiles-extract.sh` extracts and
+uploads in one step; sizes are unknown until it runs, and the `Extracts` list
+above should be amended with each archive's real size afterwards.
+
+```bash
+# Theatre scale — run these first; the waiting beads need them.
+scripts/tiles-extract.sh world-z6            -180,-85,180,85   6
+scripts/tiles-extract.sh eastern-europe-z10  13,40,46,61       10
+scripts/tiles-extract.sh east-asia-z10       112,20,146,47     10
+scripts/tiles-extract.sh central-pacific-z10 130,-2,178,30     10
+scripts/tiles-extract.sh sw-pacific-z10      140,-18,168,2     10
+scripts/tiles-extract.sh philippines-z10     116,4,128,20      10
+
+# Assault scale — run each when its pack is authored.
+scripts/tiles-extract.sh oahu-z13        -158.4,21.2,-157.6,21.8     13
+scripts/tiles-extract.sh midway-z13      -177.45,28.14,-177.28,28.28 13
+scripts/tiles-extract.sh guadalcanal-z13 159.6,-9.85,160.35,-9.2     13
+scripts/tiles-extract.sh betio-z14       172.88,1.3,173.08,1.65      14
+scripts/tiles-extract.sh peleliu-z14     134.1,6.86,134.32,7.1       14
+scripts/tiles-extract.sh iwo-jima-z14    141.26,24.71,141.42,24.85   14
+scripts/tiles-extract.sh okinawa-z13     127.55,26.0,128.4,26.9      13
+scripts/tiles-extract.sh port-arthur-z14 121.14,38.75,121.42,38.95   14
+```
+
+The borders half needs no manual step: `npm run borders` has already written
+`1931.geojson` and `1941.geojson`, and the deploy workflows sync
+`content/shared/geo` to the assets bucket on every push to `main`.
+
+### The ocean look
+
+`sand-lry.1` asks whether the style built for land survives a map that is
+mostly water, and the answer is no. The palette pairs `--sea` with `--land` at
+a contrast ratio of **1.20:1** in light and **1.24:1** in dark; the `water`
+layer against `earth` is 1.38:1 and 1.17:1. On the Marne that is right — the
+coast is an edge of a shape you are already reading from rivers, roads and
+towns. On a map where the ocean is nine tenths of the frame and the subject is
+a 3 km atoll, it leaves the one thing that matters indistinguishable from the
+background, and Protomaps has no bathymetry to give the water any structure of
+its own. Assessed and not fixed here: `--sea` and `--land` are design tokens
+that every scene in the visual baseline is drawn against, so changing them is a
+design decision under `sand-neh`, not a side effect of a geography bead. Filed
+as `sand-neh.31`.
 
 ## Consequences
 
