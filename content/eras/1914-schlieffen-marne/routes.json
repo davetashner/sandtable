@@ -195,10 +195,10 @@
       [6.5, 49.85, "1914-08-15T12:00:00Z"],
       [6.5, 49.85, "1914-08-16T12:00:00Z"],
       [6.45, 49.82, "1914-08-17T12:00:00Z"],
-      [6.2, 49.75, "1914-08-18T12:00:00Z"],
-      [5.95, 49.72, "1914-08-19T12:00:00Z"],
-      [5.7, 49.75, "1914-08-20T12:00:00Z"],
-      [5.5, 49.78, "1914-08-21T12:00:00Z"],
+      [6.2, 49.75, "1914-08-18T12:00:00Z", "low"],
+      [5.95, 49.72, "1914-08-19T12:00:00Z", "low"],
+      [5.7, 49.75, "1914-08-20T12:00:00Z", "low"],
+      [5.5, 49.78, "1914-08-21T12:00:00Z", "low"],
       [5.4, 49.75, "1914-08-22T12:00:00Z"],
       [5.3, 49.72, "1914-08-23T12:00:00Z"],
       [5.15, 49.68, "1914-08-24T12:00:00Z"],
@@ -230,15 +230,15 @@
       [3.02, 50.92, "1914-11-24T12:00:00Z"]
     ],
     "confidence": "medium",
-    "derivation": "Approximate centre of the army (the mass of its corps, not its headquarters) at noon each day, read off the day-by-day sketch maps in Herwig and the Reichsarchiv volume; ±10–15 km.",
+    "derivation": "Approximate centre of the army (the mass of its corps, not its headquarters) at noon each day, read off the day-by-day sketch maps in Herwig and the Reichsarchiv volume; ±10–15 km — except across the Ardennes. For 18–21 August Bd. 1 fixes this army by its right wing and by the depth of its march and gives no centre at all (pp. 224–225), so those four positions rest on Herwig alone and are marked low, which is the ±30 km the pack means by that word (sand-23b.39).",
     "sources": [
       {
         "source": "source:herwig-2009"
       },
       {
         "source": "source:reichsarchiv-weltkrieg-1",
-        "pages": "70, 225–231, 537–546",
-        "note": "Bd. 1 carries this path only as far as 25 August. p. 70: the 4th Army’s deployment area \"im Raume um Trier–Diekirch–Luxemburg–Sierck–Wadern\". pp. 225–231 are the advance of the centre, and p. 224 records how loosely the volume fixes this army: its right wing \"erreichte erst die Gegend von Amberloup\" on 20 August, leaving a 25 km gap to the 3rd Army, and the road net forced it to march \"in großer Tiefe\", three corps up and three formations behind them — so the volume gives a wing and a depth, not a centre. pp. 537–546 are the fighting of 24–25 August. Skizze 8 (p. 538) is the sketch of the 4th and 5th Armies’ positions on the morning of 24 August."
+        "pages": "70, 224–231, 537–546",
+        "note": "Bd. 1 carries this path only as far as 25 August. p. 70: the 4th Army's deployment area \"im Raume um Trier–Diekirch–Luxemburg–Sierck–Wadern\". pp. 225–231 are the advance of the centre. p. 224 records how loosely the volume fixes this army: its right wing \"erreichte erst die Gegend von Amberloup\" on 20 August, leaving a 25 km gap in a straight line to the 3rd Army; and p. 225 has the road net forcing it to march \"in großer Tiefe\", three corps in front and three formations behind them. A wing and a depth are not a centre, which is why the 18–21 August positions on this path carry their own low confidence. pp. 537–546 are the fighting of 24–25 August. Skizze 8 (p. 538) is the sketch of the 4th and 5th Armies' positions on the morning of 24 August."
       },
       {
         "source": "source:edmonds-1925",
@@ -852,20 +852,20 @@
     "id": "1914:route-fr-lorraine",
     "formation": "1914:army-fr-lorraine",
     "waypoints": [
-      [5.8, 49.0, "1914-08-21T12:00:00Z"],
+      [5.8, 49.0, "1914-08-19T12:00:00Z"],
       [5.78, 49.02, "1914-08-24T12:00:00Z"],
       [5.75, 49.02, "1914-08-26T12:00:00Z"]
     ],
     "confidence": "low",
-    "derivation": "Centre of the reserve divisions on the Hauts-de-Meuse; the army existed from 21 to 26 Aug.",
+    "derivation": "Centre of the reserve divisions on the Hauts-de-Meuse; the army was ordered into being on 19 August and broken up on 26 August, and this path runs between those two dates. Maunoury did not reach Verdun and take command until the evening of the 21st, so the first two days are Durand's group under the new army's name (sand-23b.39).",
     "sources": [
       {
         "source": "source:afgg-1-1"
       },
       {
         "source": "source:reichsarchiv-weltkrieg-1",
-        "pages": "251",
-        "note": "Added because this route’s only other source cannot be opened from here. Bd. 1 p. 251 records the formation: \"In einer 'Ordre particulier Nr. 14' vom 19. August wurde die Bildung einer Armee de Lorraine unter General Maunoury angeordnet, die die Aufgaben der Gruppe Durand übernahm\", with the 65th and 75th Reserve Divisions to be brought by rail to Sorcy west of Toul between the 21st and the 23rd. The order is dated 19 August; this path begins on the 21st, which is when the army had its reinforcements rather than when it was ordered into being."
+        "pages": "251, 470–471",
+        "note": "Added because this route's only other source cannot be opened from here. p. 251: \"In einer 'Ordre particulier Nr. 14' vom 19. August wurde die Bildung einer Armee de Lorraine unter General Maunoury angeordnet, die die Aufgaben der Gruppe Durand übernahm\", with the 65th and 75th Reserve Divisions to be brought by rail to Sorcy west of Toul between the 21st and the 23rd. p. 470 places the divisions that were to join it on the evening of the 20th — the 73rd at Domèvre north of Toul, the 55th north of Thiaucourt, the 56th at Woël–Doncourt, the 72nd inside Verdun, the 54th on the heights between Ornes and Samogneux — still under General Durand; p. 471 has Maunoury arrive at Verdun on the evening of the 21st and take command. The order is dated the 19th, and this path now begins there rather than on the 21st."
       }
     ],
     "notes": "Broken up on 26 Aug; Maunoury and two divisions went west to form the 6th Army."
@@ -1420,17 +1420,17 @@
     "id": "1914:route-det-fr-belgique",
     "formation": "1914:det-fr-belgique",
     "waypoints": [
-      [2.9, 50.9, "1914-10-15T12:00:00Z"],
+      [2.9, 50.9, "1914-10-20T12:00:00Z"],
       [2.88, 50.95, "1914-10-24T12:00:00Z"],
       [2.88, 50.92, "1914-11-24T12:00:00Z"]
     ],
     "confidence": "low",
-    "derivation": "Schematic: the sector held by the French forces in Flanders, not their daily positions.",
+    "derivation": "Schematic: the sector held by the French forces in Flanders, not their daily positions. Begins on 20 October, the day Edmonds gives for d'Urbal taking command and for the name; French divisions and territorials were in Flanders before that, but not as this formation (sand-23b.39).",
     "sources": [
       {
         "source": "source:edmonds-1925",
         "pages": "103, 147",
-        "note": "p. 147: \"On this day General d’Urbal took over command of the French forces in the north, which were now given the name of 'Le Detachement d'Armee de Belgique' ; and he established his headquarters at Rousbrugge (7 miles north-west of Poperinghe).\" The day is 20 October — five days after this path begins, and worth knowing: before the 20th the French troops in Flanders were there but not yet this formation. p. 103 gives where they were on 15 October: the 87th and 89th Territorial Divisions under General Bidon \"Between Poperinghe and Ypres\", the French Naval Brigade at Dixmude."
+        "note": "p. 147, under 20 October: \"On this day General d'Urbal took over command of the French forces in the north, which were now given the name of 'Le Detachement d'Armee de Belgique'; and he established his headquarters at Rousbrugge (7 miles north-west of Poperinghe).\" This path used to begin on the 15th, five days early; p. 103 gives what was there on 15 October — the 87th and 89th Territorial Divisions under General Bidon \"Between Poperinghe and Ypres\", the French Naval Brigade at Dixmude — French troops in the north, but not yet this detachment."
       },
       {
         "source": "source:van-pul-2006"
@@ -1441,17 +1441,18 @@
     "id": "1914:route-de-xxii-res",
     "formation": "1914:corps-de-xxii-res",
     "waypoints": [
+      [4.2, 50.82, "1914-10-13T12:00:00Z"],
       [3.22, 51.1, "1914-10-17T12:00:00Z"],
       [2.95, 51.06, "1914-10-21T12:00:00Z"],
       [2.92, 51.03, "1914-11-24T12:00:00Z"]
     ],
     "confidence": "low",
-    "derivation": "Schematic: detraining area to the corps' sector on the lower Yser; not daily positions.",
+    "derivation": "Schematic: the detrainment area west and south-west of Brussels on 13 October, then the corps' sector on the lower Yser; not daily positions. Edmonds gives the four new corps one detrainment area and does not distinguish them inside it, so all four paths share that first point; the later points are this corps' own (sand-23b.39).",
     "sources": [
       {
         "source": "source:edmonds-1925",
         "pages": "122, 168, 170",
-        "note": "p. 122 is this path’s first leg from the German side: the transport of the new corps of the Fourth Army began on 10 October, \"by the 13th their detrainment was in full progress west and south-west of Brussels\", on the 14th they advanced westwards in four columns to the line Eecloo–Deynze–Wortegem, and \"on the 17th the heads of the XXII., XXIII., XXVI. and XXVII. Reserve Corps reached a line about twenty miles from the Yser, defined by a point six miles east of Courtrai — Thielt — Oostcamp\", standing on the evening of the 18th \"in their appointed positions on a line Courtrai to Thourout\". Note that the detrainment this route’s derivation calls its first point was west of Brussels on the 13th; the 17th–18th points are where the volume puts the corps’ heads, not where they left their trains. p. 168: on 19 October \"the XXII. Reserve Corps fought its way up in line with the III. Reserve with its left directed on Dixmude\". p. 170: \"The 43rd Reserve and 44th Reserve Division (XXII. Reserve Corps) closed in round Dixmude\" — the sector this path ends in."
+        "note": "p. 122: \"The transport of the new corps of the Fourth Army to the Western Front began on the 10th October; by the 13th their detrainment was in full progress west and south-west of Brussels; and on the 14th they began their advance westwards in four columns to the line Eecloo—Deynze—Wortegem\", and \"on the 17th the heads of the XXII., XXIII., XXVI. and XXVII. Reserve Corps reached a line about twenty miles from the Yser, defined by a point six miles east of Courtrai—Thielt—Oostcamp\", standing on the evening of the 18th \"in their appointed positions on a line Courtrai to Thourout\". This path's first point is now that detrainment area, which is where the volume puts the corps on the 13th; before this correction the path called its 17 October point a detraining area, which the volume does not support. p. 168: on 19 October \"the XXII. Reserve Corps fought its way up in line with the III. Reserve with its left directed on Dixmude\". p. 170: \"The 43rd Reserve and 44th Reserve Division (XXII. Reserve Corps) closed in round Dixmude\" — the sector this path ends in."
       },
       {
         "source": "source:unruh-1986"
@@ -1462,17 +1463,18 @@
     "id": "1914:route-de-xxiii-res",
     "formation": "1914:corps-de-xxiii-res",
     "waypoints": [
+      [4.2, 50.82, "1914-10-13T12:00:00Z"],
       [3.6, 51.02, "1914-10-17T12:00:00Z"],
       [2.95, 51.0, "1914-10-22T12:00:00Z"],
       [2.93, 50.99, "1914-11-24T12:00:00Z"]
     ],
     "confidence": "low",
-    "derivation": "Schematic: detraining area to the corps' sector before Dixmude; not daily positions.",
+    "derivation": "Schematic: the detrainment area west and south-west of Brussels on 13 October, then the corps' sector before Dixmude; not daily positions. Edmonds gives the four new corps one detrainment area and does not distinguish them inside it, so all four paths share that first point; the later points are this corps' own (sand-23b.39).",
     "sources": [
       {
         "source": "source:edmonds-1925",
         "pages": "122, 168",
-        "note": "p. 122 is this path’s first leg from the German side: the transport of the new corps of the Fourth Army began on 10 October, \"by the 13th their detrainment was in full progress west and south-west of Brussels\", on the 14th they advanced westwards in four columns to the line Eecloo–Deynze–Wortegem, and \"on the 17th the heads of the XXII., XXIII., XXVI. and XXVII. Reserve Corps reached a line about twenty miles from the Yser, defined by a point six miles east of Courtrai — Thielt — Oostcamp\", standing on the evening of the 18th \"in their appointed positions on a line Courtrai to Thourout\". Note that the detrainment this route’s derivation calls its first point was west of Brussels on the 13th; the 17th–18th points are where the volume puts the corps’ heads, not where they left their trains. p. 168: on 19 October, \"In the XXIII. Reserve, which engaged the French cavalry, the 45th Reserve Division reached Handzaeme (6 miles east of Dixmude) and the 46th, Staden\" — the sector before Dixmude this path ends in. The path’s 17 October point sits some 20 km east of Thielt, which is where p. 122 puts this corps’ head that day; the volume follows the heads and the path follows the mass, and the two are a day apart."
+        "note": "p. 122: \"The transport of the new corps of the Fourth Army to the Western Front began on the 10th October; by the 13th their detrainment was in full progress west and south-west of Brussels; and on the 14th they began their advance westwards in four columns to the line Eecloo—Deynze—Wortegem\", and \"on the 17th the heads of the XXII., XXIII., XXVI. and XXVII. Reserve Corps reached a line about twenty miles from the Yser, defined by a point six miles east of Courtrai—Thielt—Oostcamp\", standing on the evening of the 18th \"in their appointed positions on a line Courtrai to Thourout\". This path's first point is now that detrainment area, which is where the volume puts the corps on the 13th; before this correction the path called its 17 October point a detraining area, which the volume does not support. p. 168: on 19 October, \"In the XXIII. Reserve, which engaged the French cavalry, the 45th Reserve Division reached Handzaeme (6 miles east of Dixmude) and the 46th, Staden\" — the sector before Dixmude this path ends in. The path’s 17 October point sits some 20 km east of Thielt, which is where p. 122 puts this corps’ head that day; the volume follows the heads and the path follows the mass, and the two are a day apart."
       },
       {
         "source": "source:unruh-1986"
@@ -1483,17 +1485,18 @@
     "id": "1914:route-de-xxvi-res",
     "formation": "1914:corps-de-xxvi-res",
     "waypoints": [
+      [4.2, 50.82, "1914-10-13T12:00:00Z"],
       [3.1, 51.03, "1914-10-18T12:00:00Z"],
       [2.95, 50.94, "1914-10-22T12:00:00Z"],
       [2.93, 50.92, "1914-11-24T12:00:00Z"]
     ],
     "confidence": "low",
-    "derivation": "Schematic: detraining area to the corps' sector about Langemarck; not daily positions.",
+    "derivation": "Schematic: the detrainment area west and south-west of Brussels on 13 October, then the corps' sector about Langemarck; not daily positions. Edmonds gives the four new corps one detrainment area and does not distinguish them inside it, so all four paths share that first point; the later points are this corps' own (sand-23b.39).",
     "sources": [
       {
         "source": "source:edmonds-1925",
         "pages": "122, 168, 173",
-        "note": "p. 122 is this path’s first leg from the German side: the transport of the new corps of the Fourth Army began on 10 October, \"by the 13th their detrainment was in full progress west and south-west of Brussels\", on the 14th they advanced westwards in four columns to the line Eecloo–Deynze–Wortegem, and \"on the 17th the heads of the XXII., XXIII., XXVI. and XXVII. Reserve Corps reached a line about twenty miles from the Yser, defined by a point six miles east of Courtrai — Thielt — Oostcamp\", standing on the evening of the 18th \"in their appointed positions on a line Courtrai to Thourout\". Note that the detrainment this route’s derivation calls its first point was west of Brussels on the 13th; the 17th–18th points are where the volume puts the corps’ heads, not where they left their trains. p. 168: on 19 October \"the 51st Reserve Division of the XXVI. Reserve Corps captured Roulers from the French, and the 52nd drove back the British 3rd Cavalry Division\". p. 173: the attack of 21 October \"against Langemarck and the Allied line near this place, came mainly against the 1st Division and was carried out by the greater part of the XXVI. Reserve Corps\" — the sector about Langemarck this path ends in."
+        "note": "p. 122: \"The transport of the new corps of the Fourth Army to the Western Front began on the 10th October; by the 13th their detrainment was in full progress west and south-west of Brussels; and on the 14th they began their advance westwards in four columns to the line Eecloo—Deynze—Wortegem\", and \"on the 17th the heads of the XXII., XXIII., XXVI. and XXVII. Reserve Corps reached a line about twenty miles from the Yser, defined by a point six miles east of Courtrai—Thielt—Oostcamp\", standing on the evening of the 18th \"in their appointed positions on a line Courtrai to Thourout\". This path's first point is now that detrainment area, which is where the volume puts the corps on the 13th; before this correction the path called its 17 October point a detraining area, which the volume does not support. p. 168: on 19 October \"the 51st Reserve Division of the XXVI. Reserve Corps captured Roulers from the French, and the 52nd drove back the British 3rd Cavalry Division\". p. 173: the attack of 21 October \"against Langemarck and the Allied line near this place, came mainly against the 1st Division and was carried out by the greater part of the XXVI. Reserve Corps\" — the sector about Langemarck this path ends in."
       },
       {
         "source": "source:unruh-1986"
@@ -1507,17 +1510,18 @@
     "id": "1914:route-de-xxvii-res",
     "formation": "1914:corps-de-xxvii-res",
     "waypoints": [
+      [4.2, 50.82, "1914-10-13T12:00:00Z"],
       [3.26, 50.83, "1914-10-18T12:00:00Z"],
       [3.05, 50.84, "1914-10-22T12:00:00Z"],
       [3.0, 50.84, "1914-11-24T12:00:00Z"]
     ],
     "confidence": "low",
-    "derivation": "Schematic: detraining area to the corps' sector on the Menin road; not daily positions.",
+    "derivation": "Schematic: the detrainment area west and south-west of Brussels on 13 October, then the corps' sector on the Menin road; not daily positions. Edmonds gives the four new corps one detrainment area and does not distinguish them inside it, so all four paths share that first point; the later points are this corps' own (sand-23b.39).",
     "sources": [
       {
         "source": "source:edmonds-1925",
         "pages": "122, 168, 173",
-        "note": "p. 122 is this path’s first leg from the German side: the transport of the new corps of the Fourth Army began on 10 October, \"by the 13th their detrainment was in full progress west and south-west of Brussels\", on the 14th they advanced westwards in four columns to the line Eecloo–Deynze–Wortegem, and \"on the 17th the heads of the XXII., XXIII., XXVI. and XXVII. Reserve Corps reached a line about twenty miles from the Yser, defined by a point six miles east of Courtrai — Thielt — Oostcamp\", standing on the evening of the 18th \"in their appointed positions on a line Courtrai to Thourout\". Note that the detrainment this route’s derivation calls its first point was west of Brussels on the 13th; the 17th–18th points are where the volume puts the corps’ heads, not where they left their trains. p. 168: on 19 October \"the 53rd Reserve Division of the XXVII. Reserve Corps was in action against the British 3rd Cavalry Division and 7th [Division]\". p. 173: the first attack of 21 October, \"from the south-east, against Zandvoorde–Becelaere–Zonnebeke, was assigned to the XXVII. Reserve Corps and the V. Cavalry Corps\" — the Menin road sector this path ends in."
+        "note": "p. 122: \"The transport of the new corps of the Fourth Army to the Western Front began on the 10th October; by the 13th their detrainment was in full progress west and south-west of Brussels; and on the 14th they began their advance westwards in four columns to the line Eecloo—Deynze—Wortegem\", and \"on the 17th the heads of the XXII., XXIII., XXVI. and XXVII. Reserve Corps reached a line about twenty miles from the Yser, defined by a point six miles east of Courtrai—Thielt—Oostcamp\", standing on the evening of the 18th \"in their appointed positions on a line Courtrai to Thourout\". This path's first point is now that detrainment area, which is where the volume puts the corps on the 13th; before this correction the path called its 17 October point a detraining area, which the volume does not support. p. 168: on 19 October \"the 53rd Reserve Division of the XXVII. Reserve Corps was in action against the British 3rd Cavalry Division and 7th [Division]\". p. 173: the first attack of 21 October, \"from the south-east, against Zandvoorde–Becelaere–Zonnebeke, was assigned to the XXVII. Reserve Corps and the V. Cavalry Corps\" — the Menin road sector this path ends in."
       },
       {
         "source": "source:unruh-1986"

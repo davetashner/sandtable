@@ -936,7 +936,7 @@
     "kind": "corps",
     "short": "I. bAK",
     "parent": "1914:army-de-6",
-    "summary": "1st and 2nd Bavarian Divisions. Morhange on 20 August; the Trouée de Charmes; sent north in September.",
+    "summary": "1st and 2nd Bavarian Divisions. The 6th Army's left-hand corps, attacking under the 7th Army's orders on 20 August: Sarrebourg taken house by house; then Blâmont, the Blette and Baccarat; sent north in September.",
     "sources": [
       {
         "source": "source:reichsarchiv-weltkrieg-1",
@@ -955,7 +955,7 @@
     "kind": "corps",
     "short": "II. bAK",
     "parent": "1914:army-de-6",
-    "summary": "3rd and 4th Bavarian Divisions. Morhange–Sarrebourg; the Grand Couronné; north to the Somme in late September.",
+    "summary": "3rd and 4th Bavarian Divisions. Château-Bréhain and Château-Salins on 20–21 August; across the Meurthe at Blainville; the Grand Couronné; north to the Somme in late September.",
     "sources": [
       {
         "source": "source:reichsarchiv-weltkrieg-1",
@@ -974,7 +974,7 @@
     "kind": "corps",
     "short": "III. bAK",
     "parent": "1914:army-de-6",
-    "summary": "5th and 6th Bavarian Divisions. Sarrebourg; the attacks on Nancy in September.",
+    "summary": "5th and 6th Bavarian Divisions. The 6th Army's right-hand corps: Delme and the heights north-west of Château-Salins on 20 August, then the flank guard facing Nancy; the attacks on the Grand Couronné in September.",
     "sources": [
       {
         "source": "source:reichsarchiv-weltkrieg-1",
@@ -993,7 +993,7 @@
     "kind": "corps",
     "short": "XXI. AK",
     "parent": "1914:army-de-6",
-    "summary": "31st and 42nd Divisions (Lorraine). Sarrebourg and the Vosges foothills.",
+    "summary": "31st and 42nd Divisions (Lorraine). Dieuze on 20 August; the heights north of Lunéville and the Mortagne at Gerbéviller.",
     "sources": [
       {
         "source": "source:reichsarchiv-weltkrieg-1",
@@ -1012,7 +1012,7 @@
     "kind": "corps",
     "short": "I. bRK",
     "parent": "1914:army-de-6",
-    "summary": "1st and 5th Bavarian Reserve Divisions. Lorraine; the Grand Couronné.",
+    "summary": "1st and 5th Bavarian Reserve Divisions. The army's left: the Mittersheim woods and the Saar canal at Bisping on 20 August; then broken up between Fort Manonviller, Lunéville and the 7th Army; the Grand Couronné.",
     "sources": [
       {
         "source": "source:reichsarchiv-weltkrieg-1",
@@ -1451,16 +1451,21 @@
       ]
     },
     "concentration": {
-      "area": "The Hauts-de-Meuse south of Verdun, 21–26 August",
+      "area": "The Hauts-de-Meuse between Verdun and Toul, 19–26 August",
       "position": [5.8, 49.0],
-      "asOf": "1914-08-21",
+      "asOf": "1914-08-19",
       "sources": [
         {
           "source": "source:afgg-1-1"
+        },
+        {
+          "source": "source:reichsarchiv-weltkrieg-1",
+          "pages": "251, 470–471",
+          "note": "Added because this entity's only other source cannot be opened from here. p. 251: \"In einer 'Ordre particulier Nr. 14' vom 19. August wurde die Bildung einer Armee de Lorraine unter General Maunoury angeordnet, die die Aufgaben der Gruppe Durand übernahm\", with the 65th and 75th Reserve Divisions to be railed to Sorcy west of Toul between the 21st and the 23rd. p. 470 gives the divisions that were to join it where they stood on the evening of the 20th — the 73rd at Domèvre north of Toul, the 55th north of Thiaucourt, the 56th at Woël–Doncourt, the 72nd inside Verdun, the 54th on the heights between Ornes and Samogneux — under Durand, who was still commanding; p. 471 has Maunoury reach Verdun on the evening of the 21st and take over. So the army was ordered into being on the 19th and had its named commander on the 21st, which is why this record now begins on the 19th."
         }
       ]
     },
-    "summary": "A short-lived army of reserve divisions (the 3rd Group — 54th, 55th, 56th — with the 65th, 67th and 75th) under Maunoury to cover the gap between Verdun and Toul; broken up on 26 August, its commander and two divisions going west to form the 6th Army.",
+    "summary": "A short-lived army of reserve divisions (the 3rd Group — 54th, 55th, 56th — with the 65th, 67th and 75th) under Maunoury to cover the gap between Verdun and Toul; ordered into being on 19 August, commanded by Maunoury from the evening of the 21st, broken up on 26 August, its commander and two divisions going west to form the 6th Army.",
     "sources": [
       {
         "source": "source:afgg-1-1"
@@ -2572,14 +2577,14 @@
     "kind": "detachment",
     "commander": "person:urbal-victor-d",
     "concentration": {
-      "area": "Flanders, between the Belgians on the Yser and the British before Ypres",
+      "area": "Flanders, between the Belgians on the Yser and the British before Ypres; named, and d'Urbal in command, on 20 October",
       "position": [2.9, 50.9],
-      "asOf": "1914-10-15",
+      "asOf": "1914-10-20",
       "sources": [
         {
           "source": "source:edmonds-1925",
-          "pages": "120, 147",
-          "note": "'On this day General d'Urbal took over command of the French forces in the north, which were now given the name of \"Le Detachement d'Armee de Belgique\"; and he established his headquarters at Rousbrugge' — the volume dates that to 20 October, not 15 October (p. 147). The Brigade de Fusiliers Marins under Rear-Admiral Ronarc'h, '6,000 seamen and 2,000 Zouaves' (p. 42), holds Dixmude in the line as given at p. 120."
+          "pages": "103, 120, 147",
+          "note": "p. 147, under 20 October: \"On this day General d'Urbal took over command of the French forces in the north, which were now given the name of 'Le Detachement d'Armee de Belgique'; and he established his headquarters at Rousbrugge (7 miles north-west of Poperinghe).\" That is the day this formation begins, and it is why the date here is the 20th and not the 15th: p. 103 shows what was in Flanders on 15 October — Bidon's 87th and 89th Territorial Divisions between Poperinghe and Ypres, the Naval Brigade at Dixmude — French troops in the north, but not yet this detachment. The Brigade de Fusiliers Marins under Rear-Admiral Ronarc'h, \"6,000 seamen and 2,000 Zouaves\" (p. 42), holds Dixmude in the line as given at p. 120."
         }
       ]
     },
@@ -2603,14 +2608,14 @@
     "kind": "corps",
     "parent": "1914:army-de-4",
     "concentration": {
-      "area": "Raised in Germany in August–September 1914; detrained in Flanders in the second half of October",
-      "position": [3.22, 51.1],
-      "asOf": "1914-10-17",
+      "area": "Raised in Germany in August–September 1914; detrained west and south-west of Brussels, in full progress by 13 October, and marched into Flanders",
+      "position": [4.2, 50.82],
+      "asOf": "1914-10-13",
       "sources": [
         {
           "source": "source:edmonds-1925",
           "pages": "122",
-          "note": "'The transport of the new corps of the Fourth Army to the Western Front began on the 10th October; by the 13th their detrainment was in full progress west and south-west of Brussels; and on the 14th they began their advance westwards in four columns'; by the 17th their heads were on a line about twenty miles from the Yser. The volume therefore has them detraining near Brussels in the first half of October, not in Flanders in the second half."
+          "note": "p. 122 is where this concentration point comes from: \"The transport of the new corps of the Fourth Army to the Western Front began on the 10th October; by the 13th their detrainment was in full progress west and south-west of Brussels; and on the 14th they began their advance westwards in four columns to the line Eecloo (15 miles east of Bruges)—Deynze—Wortegem (4 miles west of Audenarde)\", and \"on the 17th the heads of the XXII., XXIII., XXVI. and XXVII. Reserve Corps reached a line about twenty miles from the Yser, defined by a point six miles east of Courtrai—Thielt—Oostcamp\", standing on the evening of the 18th \"in their appointed positions on a line Courtrai to Thourout\". The volume gives the four corps one detrainment area and does not say which of them stood where inside it, so all four corps are placed at the same point on 13 October; only from the 17th do their paths follow each corps' own front."
         },
         {
           "source": "source:unruh-1986"
@@ -2637,14 +2642,14 @@
     "kind": "corps",
     "parent": "1914:army-de-4",
     "concentration": {
-      "area": "Raised in Germany in August–September 1914; detrained in Flanders in the second half of October",
-      "position": [3.6, 51.02],
-      "asOf": "1914-10-17",
+      "area": "Raised in Germany in August–September 1914; detrained west and south-west of Brussels, in full progress by 13 October, and marched into Flanders",
+      "position": [4.2, 50.82],
+      "asOf": "1914-10-13",
       "sources": [
         {
           "source": "source:edmonds-1925",
           "pages": "122",
-          "note": "'The transport of the new corps of the Fourth Army to the Western Front began on the 10th October; by the 13th their detrainment was in full progress west and south-west of Brussels; and on the 14th they began their advance westwards in four columns'; by the 17th their heads were on a line about twenty miles from the Yser. The volume therefore has them detraining near Brussels in the first half of October, not in Flanders in the second half."
+          "note": "p. 122 is where this concentration point comes from: \"The transport of the new corps of the Fourth Army to the Western Front began on the 10th October; by the 13th their detrainment was in full progress west and south-west of Brussels; and on the 14th they began their advance westwards in four columns to the line Eecloo (15 miles east of Bruges)—Deynze—Wortegem (4 miles west of Audenarde)\", and \"on the 17th the heads of the XXII., XXIII., XXVI. and XXVII. Reserve Corps reached a line about twenty miles from the Yser, defined by a point six miles east of Courtrai—Thielt—Oostcamp\", standing on the evening of the 18th \"in their appointed positions on a line Courtrai to Thourout\". The volume gives the four corps one detrainment area and does not say which of them stood where inside it, so all four corps are placed at the same point on 13 October; only from the 17th do their paths follow each corps' own front."
         },
         {
           "source": "source:unruh-1986"
@@ -2671,14 +2676,14 @@
     "kind": "corps",
     "parent": "1914:army-de-4",
     "concentration": {
-      "area": "Raised in Germany in August–September 1914; detrained in Flanders in the second half of October",
-      "position": [3.1, 51.03],
-      "asOf": "1914-10-18",
+      "area": "Raised in Germany in August–September 1914; detrained west and south-west of Brussels, in full progress by 13 October, and marched into Flanders",
+      "position": [4.2, 50.82],
+      "asOf": "1914-10-13",
       "sources": [
         {
           "source": "source:edmonds-1925",
           "pages": "122",
-          "note": "'The transport of the new corps of the Fourth Army to the Western Front began on the 10th October; by the 13th their detrainment was in full progress west and south-west of Brussels; and on the 14th they began their advance westwards in four columns'; by the 17th their heads were on a line about twenty miles from the Yser. The volume therefore has them detraining near Brussels in the first half of October, not in Flanders in the second half."
+          "note": "p. 122 is where this concentration point comes from: \"The transport of the new corps of the Fourth Army to the Western Front began on the 10th October; by the 13th their detrainment was in full progress west and south-west of Brussels; and on the 14th they began their advance westwards in four columns to the line Eecloo (15 miles east of Bruges)—Deynze—Wortegem (4 miles west of Audenarde)\", and \"on the 17th the heads of the XXII., XXIII., XXVI. and XXVII. Reserve Corps reached a line about twenty miles from the Yser, defined by a point six miles east of Courtrai—Thielt—Oostcamp\", standing on the evening of the 18th \"in their appointed positions on a line Courtrai to Thourout\". The volume gives the four corps one detrainment area and does not say which of them stood where inside it, so all four corps are placed at the same point on 13 October; only from the 17th do their paths follow each corps' own front."
         },
         {
           "source": "source:unruh-1986"
@@ -2708,14 +2713,14 @@
     "kind": "corps",
     "parent": "1914:army-de-4",
     "concentration": {
-      "area": "Raised in Germany in August–September 1914; detrained in Flanders in the second half of October",
-      "position": [3.26, 50.83],
-      "asOf": "1914-10-18",
+      "area": "Raised in Germany in August–September 1914; detrained west and south-west of Brussels, in full progress by 13 October, and marched into Flanders",
+      "position": [4.2, 50.82],
+      "asOf": "1914-10-13",
       "sources": [
         {
           "source": "source:edmonds-1925",
           "pages": "122",
-          "note": "'The transport of the new corps of the Fourth Army to the Western Front began on the 10th October; by the 13th their detrainment was in full progress west and south-west of Brussels; and on the 14th they began their advance westwards in four columns'; by the 17th their heads were on a line about twenty miles from the Yser. The volume therefore has them detraining near Brussels in the first half of October, not in Flanders in the second half."
+          "note": "p. 122 is where this concentration point comes from: \"The transport of the new corps of the Fourth Army to the Western Front began on the 10th October; by the 13th their detrainment was in full progress west and south-west of Brussels; and on the 14th they began their advance westwards in four columns to the line Eecloo (15 miles east of Bruges)—Deynze—Wortegem (4 miles west of Audenarde)\", and \"on the 17th the heads of the XXII., XXIII., XXVI. and XXVII. Reserve Corps reached a line about twenty miles from the Yser, defined by a point six miles east of Courtrai—Thielt—Oostcamp\", standing on the evening of the 18th \"in their appointed positions on a line Courtrai to Thourout\". The volume gives the four corps one detrainment area and does not say which of them stood where inside it, so all four corps are placed at the same point on 13 October; only from the 17th do their paths follow each corps' own front."
         },
         {
           "source": "source:unruh-1986"
