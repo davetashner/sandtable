@@ -6,6 +6,7 @@
 #      flagged BLOCKED / UNVERIFIED / UNKNOWN
 #   3. no image binaries are tracked in git (they live in S3 — decision 0004)
 #   4. every cue.json carries its provenance, and no audio binaries are tracked
+#   5. the generated index.json the app reads still covers every manifest
 set -euo pipefail
 
 fail=0
@@ -67,6 +68,61 @@ if git ls-files -z -- 'content/**/*.wav' 'content/**/*.aif' 'content/**/*.aiff' 
   bad "audio binaries are tracked under content/ — masters stay local, derivatives go to the assets bucket (docs/decisions/0008-audio.md)"
   git ls-files -- 'content/**/*.wav' 'content/**/*.m4a' 'content/**/*.opus' | sed 's/^/    /'
 fi
+
+echo "6) generated indexes cover their manifests"
+# `npm run media` and `npm run audio` write the index.json files the app reads,
+# from the manifests that sit beside the binaries. The validator reads the
+# manifests; the app reads the index. When the two drift, content citing an
+# image passes every gate and the picture silently does not render — which is
+# what happened to 49 images between PR #89 and sand-shn.16, because
+# regenerating needs the git-ignored binaries and only one checkout has them.
+#
+# Both pipelines answer this themselves with `-- --check`, but this script also
+# runs in the `lint` job, which has no node_modules; the same question in jq
+# costs nothing and asks it in both places.
+tmp=$(mktemp -d)
+trap 'rm -rf "$tmp"' EXIT
+
+# kind, manifest root, manifest name, index, the command that rebuilds it, and
+# optionally a file of ids allowed to be missing while a known gap is closed.
+check_index() {
+  local kind=$1 root=$2 manifest=$3 index=$4 rebuild=$5 backlog=${6:-}
+  [ -d "$root" ] || return 0
+  if [ ! -f "$index" ]; then bad "$index is missing — run: $rebuild"; return; fi
+  find "$root" -name "$manifest" -exec jq -r '.id' {} \; | sort > "$tmp/$kind.manifests"
+  jq -r '.entries[].id' "$index" | sort > "$tmp/$kind.index"
+  if [ -n "$backlog" ]; then
+    { grep -Ev '^[[:space:]]*(#|$)' "$backlog" || true; } | sort > "$tmp/$kind.backlog"
+  else
+    : > "$tmp/$kind.backlog"
+  fi
+
+  while IFS= read -r id; do
+    bad "$id has a $manifest but no entry in $index — run: $rebuild"
+  done < <(comm -23 "$tmp/$kind.manifests" "$tmp/$kind.index" | comm -23 - "$tmp/$kind.backlog")
+
+  # An allowance must not outlive its reason, or the next reader trusts it. Both
+  # ways it can go stale are a failure, so closing the gap forces the file out.
+  while IFS= read -r id; do
+    bad "$backlog lists $id, which $index now covers — delete that line"
+  done < <(comm -12 "$tmp/$kind.backlog" "$tmp/$kind.index")
+  while IFS= read -r id; do
+    bad "$backlog lists $id, which has no $manifest — delete that line"
+  done < <(comm -23 "$tmp/$kind.backlog" "$tmp/$kind.manifests")
+
+  local allowed
+  allowed=$(wc -l < "$tmp/$kind.backlog" | tr -d ' ')
+  if [ "$allowed" -gt 0 ]; then
+    note "$index holds $(wc -l < "$tmp/$kind.index" | tr -d ' ') of" \
+         "$(wc -l < "$tmp/$kind.manifests" | tr -d ' ') $kind manifests; $allowed are"
+    note "allowed to be missing by $backlog — those pictures do not render"
+  fi
+}
+
+check_index media content/shared/media media.json \
+  content/shared/media/index.json 'npm run media' scripts/media-index-backlog.txt
+check_index audio content/shared/audio cue.json \
+  content/shared/audio/index.json 'npm run audio'
 
 if [ "$fail" -ne 0 ]; then
   echo "content checks FAILED"; exit 1
