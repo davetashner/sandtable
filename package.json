@@ -24,6 +24,7 @@
     "borders": "tsx scripts/fetch-borders.ts",
     "front": "tsx scripts/build-front.ts",
     "tokens": "tsx scripts/generate-tokens.ts",
+    "new-pack": "tsx scripts/new-pack.ts",
     "media": "tsx scripts/media-pipeline.ts",
     "audio": "tsx scripts/audio-pipeline.ts"
   },

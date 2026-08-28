@@ -42,7 +42,7 @@
 import { chromium } from 'playwright';
 import { writeFileSync } from 'node:fs';
 import { preview } from 'vite';
-import { bundleReport, chunkOrigins } from './lib/bundle-size.mjs';
+import { bundleReport, chunkOrigins, distFreshness, stamp } from './lib/bundle-size.mjs';
 import { LAUNCH_ARGS, stubAssets } from './lib/visual-scenes.mjs';
 
 const argv = process.argv.slice(2);
@@ -425,6 +425,18 @@ try {
 } catch (e) {
   console.error(`no usable dist/ — run \`npm run build\` first (${e.message}).`);
   process.exit(2);
+}
+// A warning rather than a refusal, because this report is also run against a
+// deployment (`--base`), where dist/ is only where the chunk names come from.
+// The gate that refuses is `npm run bundle:budget` (sand-pmz.31).
+{
+  const f = process.env.CI ? { stale: false } : distFreshness();
+  if (f.stale)
+    console.error(
+      `  ! dist/ was built ${stamp(f.builtAt)} and ${f.newest.path} changed at ` +
+        `${stamp(f.newest.mtimeMs)}.\n    Every number below describes the older build — ` +
+        'run `npm run build` first.\n',
+    );
 }
 result.bundle = {
   eagerGzip: bundle.eagerGzip,

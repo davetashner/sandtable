@@ -26,6 +26,14 @@
  *   npm run build && npm run bundle:budget
  *   npm run bundle:budget -- --update   # rewrite `measuredKb`, never the max
  *
+ * The build is not optional and the script refuses without it (`sand-pmz.31`).
+ * It reads `dist/`, which is a fact about the last build rather than about the
+ * working tree, and a number with no date on it is indistinguishable from a
+ * current one. Refusing rather than rebuilding is deliberate: a thirty-second
+ * build nobody asked for is its own kind of confusion, and the person running
+ * this by hand is usually deciding something and should be told what they are
+ * looking at rather than made to wait for it.
+ *
  * Gzip is recomputed here rather than read off a header, so it can drift a
  * byte or two with the zlib version. The headroom in the budget is larger
  * than that drift by three orders of magnitude; if it ever is not, the budget
@@ -33,7 +41,7 @@
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { bundleReport } from './lib/bundle-size.mjs';
+import { bundleReport, distFreshness, stamp } from './lib/bundle-size.mjs';
 
 const BUDGET = fileURLToPath(new URL('./bundle-budget.json', import.meta.url));
 const update = process.argv.includes('--update');
@@ -44,6 +52,27 @@ try {
   report = bundleReport();
 } catch (e) {
   console.error(`no usable dist/ — run \`npm run build\` first (${e.message}).`);
+  process.exit(2);
+}
+
+// Skipped in CI, where `build` runs in the step immediately before this one and
+// the reading cannot be stale. That is not only an optimisation: a checkout
+// gives every file the same mtime and a runner's clock is not the one that
+// stamped the cache, so the one place this check could go spuriously red is the
+// one place it has nothing to catch.
+const freshness = process.env.CI ? { stale: false } : distFreshness();
+if (freshness.stale && !process.argv.includes('--allow-stale')) {
+  console.error(
+    'dist/ is older than the sources it was built from — the number would be a\n' +
+      'fact about a build that no longer exists.\n\n' +
+      `    newest source   ${freshness.newest.path}\n` +
+      `                    ${stamp(freshness.newest.mtimeMs)}\n` +
+      `    dist/ built     ${stamp(freshness.builtAt)}\n\n` +
+      '  Run `npm run build && npm run bundle:budget`.\n\n' +
+      '  `--allow-stale` measures dist/ as it stands. It is only ever right when\n' +
+      '  you know the build is current and the timestamps are not — a restored\n' +
+      '  cache, a `touch`, a checkout that rewrote mtimes without changing bytes.',
+  );
   process.exit(2);
 }
 
