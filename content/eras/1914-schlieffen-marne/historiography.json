@@ -193,5 +193,59 @@
         "note": "the Joffre–Gallieni priority dispute as modern historiography, as `1914:document-gallieni-ordre-general-5-1914-09-04` already carries it. No pages: not readable from this environment, and no position on this card rests on it."
       }
     ]
+  },
+  {
+    "id": "1914:historiography-langemarck-myth",
+    "title": "Langemarck: who were the “young regiments”, and did they sing?",
+    "question": "The German Supreme Command's communiqué of 11 November 1914 contains one sentence about Flanders: west of Langemarck, young regiments went forward against the enemy's first line singing “Deutschland, Deutschland über alles”, and took it. Out of that sentence grew the *Kindermord bei Ypern* — the massacre of the innocents at Ypres — a national story about student volunteers who walked into machine guns with a song, which Germany taught in its schools, built a memorial hall for, and after 1933 marched under.\n\nThe [event card](1914:ypres-event-kindermord-communique) carries the sentence and the [Langemarck fighting](1914:ypres-event-langemarck) carries the days it is attached to. This card is the question the two of them raise together: who those men were, what they did, and how much of what was afterwards commemorated is traceable to the fighting rather than to the sentence about it.",
+    "positions": [
+      {
+        "label": "The legend as Germany received it",
+        "who": "The Supreme Command's communiqué of 11 November 1914; the wartime press that reprinted it; and the commemorative literature of the 1920s and 1930s, the student associations, the Langemarck cemetery and the Langemarckhalle in Berlin",
+        "summary": "Volunteer students, schoolboys with a term's training, went forward at Langemarck in October 1914 singing the national anthem and died in front of the British line. Their deaths were not a failure but an offering — the purest thing the war produced — and the nation that received it owed them the war they had died for. The story was carried by the students' own associations through the Weimar years, given a day in the calendar and a hall at the Olympic stadium, and taken over wholesale after 1933.[^1914-1918-online-langemarck]"
+      },
+      {
+        "label": "The correction from the records",
+        "who": "Karl Unruh, whose *Langemarck: Legende und Wirklichkeit* (1986) went through what survives of the personnel and casualty records of the four reserve corps",
+        "summary": "Almost none of it holds. War volunteers were a minority of the men in the four reserve corps of the Fourth Army, and students were a minority of the volunteers: the corps were built mainly from older reservists, men of the *Landwehr* and *Landsturm*, and men who had never served, under officers recalled from retirement. The fighting the communiqué described was in November and west of Langemarck, not the Langemarck battle of 21–24 October that the legend attached itself to. And the singing has no source but the communiqué: no participant account of that day records it, and men going forward in close order under fire do not sing.[^unruh-1986]"
+      },
+      {
+        "label": "What the legend was for",
+        "who": "The cultural history of the myth, as the 1914-1918-online account summarises it",
+        "summary": "Read as reporting, the communiqué is simply wrong, and asking whether it is accurate misses what it was doing. It turned a costly failure — an attack by half-trained formations that gained a few hundred metres and cost tens of thousands of casualties — into a redemptive sacrifice of youth, at the moment when the German public had to be told what the autumn in Flanders had bought. The myth then acquired uses of its own, and each generation that used it added to it. Its accuracy was never the point of it, which is why correcting it took seventy years and did not end it.[^1914-1918-online-langemarck]"
+      }
+    ],
+    "settled": "That the losses were real and very heavy. That the four reserve corps of the Fourth Army were raised in August and September 1914, were short of training and shorter of trained officers, and attacked between Bixschoote and Langemarck on 21–24 October without breaking the line.[^edmonds-1925] [^unruh-1986] That the sentence in the communiqué of 11 November was published, and that everything afterwards called *Langemarck* descends from it rather than from any account written on the day.[^1914-1918-online-langemarck]",
+    "unread": "The evidence that would fix the proportions unit by unit is the regimental war diaries and casualty rolls of the XXII, XXIII, XXVI and XXVII Reserve Corps. Unruh worked from what survived; most of the Prussian army's records burned at Potsdam in 1945, and what he could not read then cannot be read now. Unruh's own book has not been read in the original for this pack — it is cited here at the resolution of its findings, not its pages — and neither has the German official history's volume on Flanders, which is not digitised (`sand-23b.21`). This card states what the correction is, and does not pretend to have counted anybody.",
+    "links": {
+      "battles": ["1914:ypres"],
+      "events": [
+        "1914:ypres-event-langemarck",
+        "1914:ypres-event-kindermord-communique",
+        "1914:event-first-ypres"
+      ],
+      "formations": [
+        "1914:corps-de-xxvi-res",
+        "1914:corps-de-xxvii-res",
+        "1914:corps-de-xxii-res",
+        "1914:corps-de-xxiii-res"
+      ],
+      "places": ["place:langemarck", "place:ypres"],
+      "casualties": ["1914:casualties-first-ypres"]
+    },
+    "sources": [
+      {
+        "source": "source:unruh-1986",
+        "note": "The study the correction rests on: the composition of the four reserve corps, the dating of the fighting the communiqué described, and the absence of any contemporary account of the singing. Cited at the resolution of its findings — the work has not been read in the original for this pack and no page is given, because a plausible page is worse than none (docs/sources.md rule 3)."
+      },
+      {
+        "source": "source:1914-1918-online-langemarck",
+        "note": "The reference account of the myth: the text of the communiqué, the cultivation of the story in the 1920s, its appropriation after 1933, and the scholarship that dismantled it."
+      },
+      {
+        "source": "source:edmonds-1925",
+        "note": "The other side of the line on 21–24 October: what the British 1st Division and the French held in front of Langemarck, and what the attacks achieved. Day resolution."
+      }
+    ]
   }
 ]

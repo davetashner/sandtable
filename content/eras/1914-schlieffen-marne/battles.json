@@ -6206,6 +6206,1205 @@
     ]
   },
   {
+    "id": "1914:ypres",
+    "title": "First Ypres — the salient and the Yser",
+    "timeRange": {
+      "start": "1914-10-19T00:00:00Z",
+      "end": "1914-11-23T00:00:00Z"
+    },
+    "region": [2.55, 50.7, 3.2, 51.22],
+    "camera": {
+      "center": [2.88, 50.96],
+      "zoom": 9.4
+    },
+    "place": "place:ypres",
+    "summary": "The last unclosed ground in Europe, and the five weeks that close it. The BEF comes off the Aisne into Flanders in front of a cloth town called Ypres; the Belgian field army, out of Antwerp with six worn divisions, holds twenty kilometres of the Yser with the sea behind it; and Falkenhayn throws at the gap between them a Fourth Army rebuilt out of reserve corps raised in August. Four times the attack nearly gets through — Langemarck on 21–24 October, the Yser at Tervaete on the night of the 21st, Gheluvelt on 31 October, Nonne Bosschen on 11 November — and four times it is stopped by whatever happened to be within reach: three hundred and fifty Worcesters, a brigade of Breton fishermen, cooks and orderlies and engineers, and, north of Dixmude, the North Sea, let in through the sluice gates at Nieuwpoort by a water bailiff and a bargeman. The salient is twelve kilometres across and the battle is thirty-five days long, which is the opposite shape from the Marne.",
+    "outcome": "Falkenhayn breaks the offensive off on 22 November. From Nieuwpoort to the Swiss frontier there is no flank left to turn, and the war the plan was built to avoid has begun. The Ypres salient stays where 22 November left it for two and a half years; the Messines ridge, lost on 1 November, is retaken in June 1917. The infantry that landed in August is spent: 58,155 British casualties at Ypres and 89,864 since the landing, out of an expeditionary force of some 160,000.",
+    "participants": [
+      "1914:bef",
+      "1914:corps-gb-i",
+      "1914:belgian-field-army",
+      "1914:det-fr-belgique",
+      "1914:corps-fr-ix",
+      "1914:army-de-4",
+      "1914:army-de-6",
+      "1914:corps-de-xxii-res",
+      "1914:corps-de-xxiii-res",
+      "1914:corps-de-xxvi-res",
+      "1914:corps-de-xxvii-res"
+    ],
+    "links": {
+      "events": [
+        "1914:event-first-ypres",
+        "1914:event-battle-of-the-yser",
+        "1914:event-yser-inundation",
+        "1914:event-gheluvelt",
+        "1914:event-nonne-bosschen",
+        "1914:event-continuous-front"
+      ],
+      "people": [
+        "person:falkenhayn-erich",
+        "person:french-john",
+        "person:haig-douglas",
+        "person:rawlinson-henry",
+        "person:fitzclarence-charles",
+        "person:albrecht-of-wurttemberg",
+        "person:fabeck-max-von",
+        "person:albert-i-of-belgium",
+        "person:urbal-victor-d",
+        "person:ronarch-pierre",
+        "person:cogge-karel",
+        "person:geeraert-hendrik",
+        "person:foch-ferdinand"
+      ],
+      "places": [
+        "place:ypres",
+        "place:gheluvelt",
+        "place:langemarck",
+        "place:nieuwpoort",
+        "place:dixmude"
+      ],
+      "casualties": [
+        "1914:casualties-first-ypres",
+        "1914:casualties-yser",
+        "1914:casualties-bef-1914"
+      ],
+      "historiography": ["1914:historiography-langemarck-myth"],
+      "tech": ["1914:tech-firepower-1914"]
+    },
+    "sources": [
+      {
+        "source": "source:edmonds-1925",
+        "note": "the spine of this level: the Fourth and Sixth Armies against Ypres, the British order of battle and its daily state, and the casualty notes at pp. 466–468"
+      },
+      {
+        "source": "source:belgian-army-report-1915",
+        "pages": "ch. VIII",
+        "note": "the Belgian side of this level: the Yser front, the inundation and the fall of Dixmude, in the army command's own report of 1915 (Chapter VIII). Days, not hours, and no page written from it"
+      },
+      {
+        "source": "source:van-pul-2006",
+        "note": "the Yser, the Ganzepoot and the inundation of the last week of October"
+      },
+      {
+        "source": "source:unruh-1986",
+        "note": "who the men of the four reserve corps actually were"
+      },
+      {
+        "source": "source:1914-1918-online-langemarck",
+        "note": "the Langemarck myth, its making and its uses"
+      },
+      {
+        "source": "source:1914-1918-online-ypres",
+        "note": "the reference account of the battle and its phases"
+      },
+      {
+        "source": "source:strachan-2001",
+        "note": "the strategic shape of the race to the sea and the French reinforcement"
+      },
+      {
+        "source": "source:foley-2005",
+        "note": "Falkenhayn’s decision to break off and what he concluded from it"
+      }
+    ],
+    "formations": [
+      {
+        "id": "1914:ypres-corps-gb-iv",
+        "name": "BEF IV Corps",
+        "short": "IV Corps",
+        "side": "gb",
+        "kind": "corps",
+        "commander": "person:rawlinson-henry",
+        "parent": "1914:bef",
+        "dissolved": "1914-10-27T00:00:00Z",
+        "summary": "The corps improvised for the relief of Antwerp — the 7th Division and the 3rd Cavalry Division, landed at Zeebrugge and Ostend — which arrived too late for the city and occupied Ypres on 14 October instead. Its headquarters was withdrawn on 27 October and its two divisions passed to Haig, which is where its token stops.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the IV Corps at Ostend and Ypres, and the transfer of its divisions to the I Corps on 27 October; day resolution"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-div-gb-7",
+        "name": "British 7th Division",
+        "short": "7th Division",
+        "side": "gb",
+        "kind": "division",
+        "parent": "1914:ypres-corps-gb-iv",
+        "strength": {
+          "men": 12000,
+          "asOf": "1914-10-19",
+          "sources": [
+            {
+              "source": "source:edmonds-1925",
+              "note": "the division landed with about 400 officers and 12,000 men; the figure is the official history's and is given at the resolution of the landing, not of a daily return"
+            }
+          ]
+        },
+        "summary": "Capper's division, the only regular division not already in France in August, landed at Zeebrugge on 6–7 October to relieve Antwerp and put into the line east of Ypres instead. It held the Menin road ground from 20 October, took the weight of Fabeck's attack, and was relieved on 5 November with 44 officers and 2,336 other ranks of the 400 officers and 12,000 men it had landed with.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the division at Zeebrugge, on the Menin road, and its strength on relief on 5 November; day resolution"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-div-gb-3-cav",
+        "name": "British 3rd Cavalry Division",
+        "short": "3rd Cav Div",
+        "side": "gb",
+        "kind": "division",
+        "parent": "1914:ypres-corps-gb-iv",
+        "summary": "Byng's division, landed with the 7th and fighting dismounted for the whole of the battle, which is what cavalry did on this ground from the day it arrived. Its 7th Cavalry Brigade was shelled off the Zandvoorde ridge on 30 October, and the Household Cavalry lost heavily there.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the division at Ypres and the loss of the Zandvoorde ridge on 30 October; day resolution"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-cav-corps-gb",
+        "name": "BEF Cavalry Corps",
+        "short": "Cav Corps",
+        "side": "gb",
+        "kind": "corps",
+        "parent": "1914:bef",
+        "summary": "Allenby's two cavalry divisions, holding the Messines–Wytschaete ridge on the salient's southern shoulder as infantry: a frontage of some ten kilometres for a force with the rifle strength of a brigade and a half, and no reserve behind it but the French.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the Cavalry Corps on the Messines ridge, 20 October – 2 November; day resolution"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-bn-london-scottish",
+        "name": "1/14th (County of London) Battalion, London Scottish",
+        "short": "London Scot.",
+        "side": "gb",
+        "kind": "regiment",
+        "parent": "1914:ypres-cav-corps-gb",
+        "strength": {
+          "men": 750,
+          "asOf": "1914-10-31T18:00:00Z",
+          "sources": [
+            {
+              "source": "source:edmonds-1925",
+              "note": "about 750 of all ranks into the line on the evening of 31 October; the losses on the ridge are usually given as 394. Both figures are at day resolution"
+            }
+          ]
+        },
+        "summary": "The first Territorial infantry battalion to go into action as a battalion, put onto the Messines ridge on the night of 31 October because the cavalry holding it had nothing left. It came out having lost about half its strength, and it fought much of the night with rifles whose recently changed magazines would not feed — the men worked them as single-loaders. It is in this level because what replaced the old army is part of what the old army’s destruction means.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the battalion on the Messines ridge on the night of 31 October/1 November and the state of its rifles; day resolution"
+          },
+          {
+            "source": "source:hastings-2013",
+            "note": "the episode as narrative colour only (docs/sources.md rule 9); no number here rests on it"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-div-gb-1",
+        "name": "British 1st Division",
+        "short": "1st Division",
+        "side": "gb",
+        "kind": "division",
+        "parent": "1914:corps-gb-i",
+        "summary": "Lomax's division, astride the Menin road at Gheluvelt on 31 October, and the division whose headquarters was sharing Hooge château with the 2nd's when a shell came through the window that afternoon.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the division on the Menin road and at Hooge on 31 October; day resolution"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-div-gb-2",
+        "name": "British 2nd Division",
+        "short": "2nd Division",
+        "side": "gb",
+        "kind": "division",
+        "parent": "1914:corps-gb-i",
+        "summary": "Monro's division, north of the Menin road through Polygon Wood, and the parent of the battalion that was within reach of Gheluvelt when nothing else was.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the division north of the Menin road, 29 October – 12 November; day resolution"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-bn-worcesters-2",
+        "name": "2nd Battalion, Worcestershire Regiment",
+        "short": "2/Worcesters",
+        "side": "gb",
+        "kind": "regiment",
+        "parent": "1914:ypres-div-gb-2",
+        "strength": {
+          "men": 357,
+          "asOf": "1914-10-31T14:00:00Z",
+          "sources": [
+            {
+              "source": "source:edmonds-1925",
+              "note": "seven officers and 357 other ranks went forward at Gheluvelt — the official history’s figure, which is where the \"about 350 men\" of the campaign beat comes from"
+            }
+          ]
+        },
+        "summary": "The last formed body of British infantry within reach of the break at Gheluvelt on 31 October: a battalion in brigade reserve at Polygon Wood, about a third of its establishment, which crossed a thousand yards of open ground under shellfire and went into the château grounds with the bayonet.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the counter-attack of 31 October, its strength, its route and its losses; the official history gives it by the hour"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-bde-fusiliers-marins",
+        "name": "French Brigade of Fusiliers Marins",
+        "short": "Fus. marins",
+        "side": "fr",
+        "kind": "brigade",
+        "commander": "person:ronarch-pierre",
+        "parent": "1914:det-fr-belgique",
+        "strength": {
+          "men": 6000,
+          "asOf": "1914-10-19",
+          "sources": [
+            {
+              "source": "source:van-pul-2006",
+              "note": "the brigade’s strength on arrival in Flanders, at the resolution of a nominal establishment rather than a daily return"
+            }
+          ]
+        },
+        "summary": "Ronarc'h's naval reservists and Breton fishermen, sent to Flanders as infantry because there was no infantry to send, and holding Dixmude from 16 October until the town was given up on 10 November. Most of the brigade was gone by then.",
+        "sources": [
+          {
+            "source": "source:van-pul-2006",
+            "note": "the brigade at Dixmude, 16 October – 10 November; day resolution"
+          },
+          {
+            "source": "source:belgian-army-report-1915",
+            "pages": "ch. VIII",
+            "note": "the Belgian army command's own narrative of the Yser, Chapter VIII — the withdrawal to the railway embankment, the inundation and the German retirement behind the river. It gives days and rarely hours, so every hour drawn from it here is nominal within its day; no page is written from it (see the registry entry)"
+          },
+          {
+            "source": "source:edmonds-1925",
+            "note": "Dixmude in the British account of the Yser"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-det-be-nieuwpoort",
+        "name": "Belgian engineers and lock-keepers at Nieuwpoort",
+        "short": "Nieuwpoort",
+        "side": "be",
+        "kind": "detachment",
+        "parent": "1914:belgian-field-army",
+        "concentration": {
+          "area": "The Ganzepoot lock complex at Nieuwpoort, where eight waterways meet",
+          "position": [2.755, 51.131],
+          "asOf": "1914-10-21",
+          "sources": [
+            {
+              "source": "source:van-pul-2006",
+              "note": "the Ganzepoot and the gates worked from it; position from the lock complex itself"
+            }
+          ]
+        },
+        "summary": "The party that worked the Ganzepoot — the lock complex where eight waterways meet behind Nieuwpoort — on the nights of the last week of October: Belgian engineer officers, and two civilians who knew which gates did what because they worked the polders for a living. Karel Cogge was water bailiff of the Noordwatering of Veurne; Hendrik Geeraert was a bargeman who could find a sluice in the dark. They have a token on this map because the northern anchor of the Western Front is a piece of civil engineering and not a fortress.",
+        "sources": [
+          {
+            "source": "source:van-pul-2006",
+            "note": "the sluice operations of 21 October – 2 November, the men who carried them out, and the geography of the Ganzepoot"
+          },
+          {
+            "source": "source:belgian-army-report-1915",
+            "pages": "ch. VIII",
+            "note": "the Belgian army command's own narrative of the Yser, Chapter VIII — the withdrawal to the railway embankment, the inundation and the German retirement behind the river. It gives days and rarely hours, so every hour drawn from it here is nominal within its day; no page is written from it (see the registry entry)"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-gruppe-fabeck",
+        "name": "Armeegruppe Fabeck",
+        "short": "Gr. Fabeck",
+        "side": "de",
+        "kind": "army-group",
+        "commander": "person:fabeck-max-von",
+        "parent": "1914:army-de-6",
+        "concentration": {
+          "area": "Behind the Comines–Wervicq front, between the Fourth and Sixth Armies",
+          "position": [3.05, 50.785],
+          "asOf": "1914-10-28",
+          "sources": [
+            {
+              "source": "source:edmonds-1925",
+              "note": "the assembly area of the group behind the Comines front; day resolution, position ±5 km"
+            }
+          ]
+        },
+        "summary": "What Falkenhayn scraped together on 27 October for one more attempt on the Menin road: the XV Corps, the II Bavarian Corps, the 26th Division and the 6th Bavarian Reserve Division, inserted between the Fourth and Sixth Armies on the eight kilometres from Gheluvelt to Messines, with the heaviest weight of artillery yet put behind an attack on this front. It went in on 29 October and broke the line on the 31st.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the composition, frontage and artillery of the group, and its attack of 29–31 October; day resolution"
+          },
+          {
+            "source": "source:1914-1918-online-ypres",
+            "note": "the group in the reference account of the battle"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-div-de-guard",
+        "name": "German Guard Division (Winckler)",
+        "short": "Garde",
+        "side": "de",
+        "kind": "division",
+        "summary": "The composite Guard force brought up for the attack of 11 November astride the Menin road. The British official history names it as the 1st and 4th Guard Brigades under Winckler; its 1st and 3rd Foot Guards broke into the line between Polygon Wood and Nonne Bosschen and were stopped there. It is written as a division here because that is the size and the role it had at Ypres, not a peacetime order of battle.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the composition of the Guard force of 11 November and the attack astride the Menin road, as the British official history gives it; the attribution is the official history’s and is flagged as such in the summary"
+          }
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "id": "1914:ypres-route-be-field-army",
+        "formation": "1914:belgian-field-army",
+        "waypoints": [
+          [2.833, 51.075, "1914-10-19T12:00:00Z"],
+          [2.831, 51.073, "1914-10-21T12:00:00Z"],
+          [2.822, 51.076, "1914-10-23T12:00:00Z"],
+          [2.808, 51.082, "1914-10-25T12:00:00Z"],
+          [2.796, 51.088, "1914-10-27T12:00:00Z"],
+          [2.793, 51.091, "1914-10-30T12:00:00Z"],
+          [2.799, 51.087, "1914-11-03T12:00:00Z"],
+          [2.805, 51.084, "1914-11-10T12:00:00Z"],
+          [2.809, 51.081, "1914-11-22T12:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "The centre of the Belgian sector, which ran from Nieuwpoort to Dixmude throughout and never moved as a whole. What the path draws is the twenty kilometres of front giving up the far bank of the Yser between 22 and 27 October and settling onto the Nieuwpoort–Dixmude railway embankment behind it — three kilometres of movement in nine days, which is why this level runs at a day to the step. Positions ±3 km.",
+        "notes": "21/22 Oct: the Yser forced at Tervaete. 24–27 Oct: the far bank given up for the railway embankment. 30 Oct: Ramscappelle lost and retaken. From 31 Oct the water in front holds the ground the army cannot.",
+        "sources": [
+          {
+            "source": "source:van-pul-2006",
+            "note": "the daily situation of the Belgian divisions between Nieuwpoort and Dixmude, 16 October – 3 November; day resolution"
+          },
+          {
+            "source": "source:belgian-army-report-1915",
+            "pages": "ch. VIII",
+            "note": "the Belgian army command's own narrative of the Yser, Chapter VIII — the withdrawal to the railway embankment, the inundation and the German retirement behind the river. It gives days and rarely hours, so every hour drawn from it here is nominal within its day; no page is written from it (see the registry entry)"
+          },
+          {
+            "source": "source:edmonds-1925",
+            "note": "the Yser front in the British account"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-route-fusiliers-marins",
+        "formation": "1914:ypres-bde-fusiliers-marins",
+        "waypoints": [
+          [2.865, 51.033, "1914-10-19T12:00:00Z"],
+          [2.866, 51.034, "1914-10-25T12:00:00Z"],
+          [2.865, 51.033, "1914-10-31T12:00:00Z"],
+          [2.864, 51.032, "1914-11-05T12:00:00Z"],
+          [2.858, 51.031, "1914-11-10T12:00:00Z"],
+          [2.845, 51.029, "1914-11-11T12:00:00Z"],
+          [2.843, 51.028, "1914-11-22T12:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "The brigade’s sector at Dixmude, held without relief from 16 October to 10 November, and then the west bank of the Yser opposite it. A sector centre at day resolution, ±2 km; the path barely moves because for twenty-five days the brigade barely moved.",
+        "notes": "A path that is almost a point is the claim here: Dixmude was held, not manoeuvred.",
+        "sources": [
+          {
+            "source": "source:van-pul-2006",
+            "note": "the brigade at Dixmude and its withdrawal to the west bank on 10 November; day resolution"
+          },
+          {
+            "source": "source:belgian-army-report-1915",
+            "pages": "ch. VIII",
+            "note": "the Belgian army command's own narrative of the Yser, Chapter VIII — the withdrawal to the railway embankment, the inundation and the German retirement behind the river. It gives days and rarely hours, so every hour drawn from it here is nominal within its day; no page is written from it (see the registry entry)"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-route-de-xxii-res",
+        "formation": "1914:corps-de-xxii-res",
+        "waypoints": [
+          [2.93, 51.07, "1914-10-19T12:00:00Z"],
+          [2.874, 51.072, "1914-10-21T12:00:00Z"],
+          [2.833, 51.076, "1914-10-22T12:00:00Z"],
+          [2.812, 51.082, "1914-10-25T12:00:00Z"],
+          [2.801, 51.089, "1914-10-28T12:00:00Z"],
+          [2.79, 51.098, "1914-10-30T12:00:00Z"],
+          [2.812, 51.085, "1914-10-31T18:00:00Z"],
+          [2.845, 51.072, "1914-11-02T12:00:00Z"],
+          [2.872, 51.068, "1914-11-05T12:00:00Z"],
+          [2.879, 51.066, "1914-11-22T12:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "The centre of the ground this formation held, not a headquarters, at one position a day — the resolution the sources support here and the resolution the fighting had. At Ypres the line moved by hundreds of metres over weeks; an hourly path would be invention with a timestamp on it. Positions ±2–3 km.",
+        "notes": "The only path in this level that goes forward and comes all the way back. What turned it round was not a counter-attack: it was the water.",
+        "sources": [
+          {
+            "source": "source:van-pul-2006",
+            "note": "the corps across the Yser at Tervaete, its bridgehead, Ramscappelle, and the withdrawal behind the river; day resolution"
+          },
+          {
+            "source": "source:belgian-army-report-1915",
+            "pages": "ch. VIII",
+            "note": "the Belgian army command's own narrative of the Yser, Chapter VIII — the withdrawal to the railway embankment, the inundation and the German retirement behind the river. It gives days and rarely hours, so every hour drawn from it here is nominal within its day; no page is written from it (see the registry entry)"
+          },
+          {
+            "source": "source:edmonds-1925",
+            "note": "the German order of battle on the Yser"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-route-de-xxiii-res",
+        "formation": "1914:corps-de-xxiii-res",
+        "waypoints": [
+          [2.952, 51.032, "1914-10-19T12:00:00Z"],
+          [2.905, 51.036, "1914-10-22T12:00:00Z"],
+          [2.888, 51.036, "1914-10-26T12:00:00Z"],
+          [2.879, 51.035, "1914-10-31T12:00:00Z"],
+          [2.871, 51.034, "1914-11-05T12:00:00Z"],
+          [2.865, 51.033, "1914-11-10T12:00:00Z"],
+          [2.862, 51.032, "1914-11-22T12:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "The centre of the ground this formation held, not a headquarters, at one position a day — the resolution the sources support here and the resolution the fighting had. At Ypres the line moved by hundreds of metres over weeks; an hourly path would be invention with a timestamp on it. Positions ±2–3 km.",
+        "notes": "Three weeks and four kilometres, to take a town of five thousand people.",
+        "sources": [
+          {
+            "source": "source:van-pul-2006",
+            "note": "the corps in front of Dixmude, 18 October – 10 November; day resolution"
+          },
+          {
+            "source": "source:belgian-army-report-1915",
+            "pages": "ch. VIII",
+            "note": "the Belgian army command's own narrative of the Yser, Chapter VIII — the withdrawal to the railway embankment, the inundation and the German retirement behind the river. It gives days and rarely hours, so every hour drawn from it here is nominal within its day; no page is written from it (see the registry entry)"
+          },
+          {
+            "source": "source:edmonds-1925",
+            "note": "the German order of battle on the Yser"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-route-de-xxvi-res",
+        "formation": "1914:corps-de-xxvi-res",
+        "waypoints": [
+          [3.02, 50.948, "1914-10-19T12:00:00Z"],
+          [2.962, 50.93, "1914-10-21T12:00:00Z"],
+          [2.941, 50.925, "1914-10-22T12:00:00Z"],
+          [2.932, 50.922, "1914-10-24T12:00:00Z"],
+          [2.926, 50.92, "1914-10-27T12:00:00Z"],
+          [2.921, 50.918, "1914-10-31T12:00:00Z"],
+          [2.908, 50.915, "1914-11-10T12:00:00Z"],
+          [2.903, 50.914, "1914-11-22T12:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "The centre of the ground this formation held, not a headquarters, at one position a day — the resolution the sources support here and the resolution the fighting had. At Ypres the line moved by hundreds of metres over weeks; an hourly path would be invention with a timestamp on it. Positions ±2–3 km.",
+        "notes": "Six kilometres in five weeks, four of them on the first two days. The rest of the line is the Langemarck legend.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the reserve corps of the Fourth Army in front of Langemarck, 21–24 October and after; day resolution"
+          },
+          {
+            "source": "source:1914-1918-online-ypres",
+            "note": "the sequence of the Fourth Army’s attacks"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-route-de-xxvii-res",
+        "formation": "1914:corps-de-xxvii-res",
+        "waypoints": [
+          [3.09, 50.9, "1914-10-19T12:00:00Z"],
+          [3.042, 50.876, "1914-10-21T12:00:00Z"],
+          [3.021, 50.866, "1914-10-24T12:00:00Z"],
+          [3.011, 50.856, "1914-10-29T12:00:00Z"],
+          [3.0, 50.846, "1914-10-31T12:00:00Z"],
+          [2.992, 50.848, "1914-11-03T12:00:00Z"],
+          [2.987, 50.85, "1914-11-11T12:00:00Z"],
+          [2.986, 50.851, "1914-11-22T12:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "The centre of the ground this formation held, not a headquarters, at one position a day — the resolution the sources support here and the resolution the fighting had. At Ypres the line moved by hundreds of metres over weeks; an hourly path would be invention with a timestamp on it. Positions ±2–3 km.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the corps on the Becelaere–Gheluvelt front, 21 October – 11 November; day resolution"
+          },
+          {
+            "source": "source:1914-1918-online-ypres",
+            "note": "the Fourth Army’s share of the attacks on the Menin road"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-route-gb-i-corps",
+        "formation": "1914:corps-gb-i",
+        "waypoints": [
+          [2.888, 50.862, "1914-10-19T12:00:00Z"],
+          [2.918, 50.882, "1914-10-20T12:00:00Z"],
+          [2.941, 50.896, "1914-10-21T12:00:00Z"],
+          [2.946, 50.886, "1914-10-23T12:00:00Z"],
+          [2.954, 50.876, "1914-10-26T12:00:00Z"],
+          [2.956, 50.865, "1914-10-29T12:00:00Z"],
+          [2.95, 50.856, "1914-10-31T12:00:00Z"],
+          [2.943, 50.855, "1914-11-05T12:00:00Z"],
+          [2.94, 50.853, "1914-11-11T12:00:00Z"],
+          [2.936, 50.853, "1914-11-22T12:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "The centre of the ground this formation held, not a headquarters, at one position a day — the resolution the sources support here and the resolution the fighting had. At Ypres the line moved by hundreds of metres over weeks; an hourly path would be invention with a timestamp on it. Positions ±2–3 km.",
+        "notes": "The one kilometre-and-a-half of gain on 21 October is the last British advance on this ground until 1917. Everything after it is the line bending west.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the I Corps’ advance of 21 October and the ground it held afterwards; day resolution"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-route-div-gb-7",
+        "formation": "1914:ypres-div-gb-7",
+        "waypoints": [
+          [2.988, 50.846, "1914-10-19T12:00:00Z"],
+          [3.004, 50.846, "1914-10-21T12:00:00Z"],
+          [3.0, 50.843, "1914-10-24T12:00:00Z"],
+          [2.99, 50.839, "1914-10-29T12:00:00Z"],
+          [2.976, 50.838, "1914-10-31T12:00:00Z"],
+          [2.966, 50.841, "1914-11-03T12:00:00Z"],
+          [2.938, 50.846, "1914-11-05T18:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "The centre of the ground this formation held, not a headquarters, at one position a day — the resolution the sources support here and the resolution the fighting had. At Ypres the line moved by hundreds of metres over weeks; an hourly path would be invention with a timestamp on it. Positions ±2–3 km.",
+        "notes": "The path stops on 5 November because the division did: it was relieved that evening with a fifth of the men it had landed with.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the division’s sector on the Menin road, 20 October – 5 November, and its relief; day resolution"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-route-cav-corps-gb",
+        "formation": "1914:ypres-cav-corps-gb",
+        "waypoints": [
+          [2.901, 50.792, "1914-10-19T12:00:00Z"],
+          [2.899, 50.786, "1914-10-25T12:00:00Z"],
+          [2.898, 50.78, "1914-10-30T12:00:00Z"],
+          [2.895, 50.775, "1914-10-31T12:00:00Z"],
+          [2.885, 50.782, "1914-11-01T12:00:00Z"],
+          [2.878, 50.786, "1914-11-03T12:00:00Z"],
+          [2.875, 50.789, "1914-11-12T12:00:00Z"],
+          [2.873, 50.791, "1914-11-22T12:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "The centre of the ground this formation held, not a headquarters, at one position a day — the resolution the sources support here and the resolution the fighting had. At Ypres the line moved by hundreds of metres over weeks; an hourly path would be invention with a timestamp on it. Positions ±2–3 km.",
+        "notes": "Two kilometres of retirement on 1 November, and the ridge behind them stays German until June 1917.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the Cavalry Corps on the Messines–Wytschaete ridge and its loss on 31 October – 1 November; day resolution"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-route-london-scottish",
+        "formation": "1914:ypres-bn-london-scottish",
+        "waypoints": [
+          [2.871, 50.8, "1914-10-31T14:00:00Z", "low"],
+          [2.888, 50.782, "1914-10-31T21:00:00Z", "low"],
+          [2.893, 50.776, "1914-11-01T01:00:00Z", "low"],
+          [2.882, 50.783, "1914-11-01T09:00:00Z", "low"],
+          [2.871, 50.791, "1914-11-02T12:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "The battalion’s move from reserve behind Wytschaete onto the Messines ridge and off it again. Every waypoint is marked `low` on purpose: the ground is documented and the hours are not, and this is the one path in the level where the difference had to be written down rather than smoothed over.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the battalion’s move onto the Messines ridge on the evening of 31 October and its withdrawal on the morning of the 1st; the sources give the evening and the night, not the clock, and the hours here are nominal within them"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-route-worcesters",
+        "formation": "1914:ypres-bn-worcesters-2",
+        "waypoints": [
+          [2.995, 50.857, "1914-10-31T11:00:00Z", "low"],
+          [2.973, 50.845, "1914-10-31T13:00:00Z"],
+          [2.988, 50.838, "1914-10-31T14:00:00Z"],
+          [2.996, 50.836, "1914-10-31T15:00:00Z"],
+          [2.991, 50.837, "1914-11-01T00:00:00Z"],
+          [2.976, 50.84, "1914-11-01T12:00:00Z"]
+        ],
+        "confidence": "high",
+        "derivation": "The one path in this level written in hours instead of days, because here the sources give hours and the hours are the whole point: about ninety minutes separate FitzClarence finding the battalion from the battalion being in the château grounds. Positions are the named places — Polygon Wood, Veldhoek, the Polderhoek spur, the Gheluvelt château grounds — so they are good to a few hundred metres; the first waypoint is marked `low` because \"in brigade reserve at Polygon Wood\" is an area and not a point.",
+        "notes": "About a thousand yards of open ground, crossed in artillery fire, by a battalion at a third of establishment. The salient held on this.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the counter-attack of 31 October by the hour: the battalion in brigade reserve, the move by Veldhoek to the Polderhoek spur, the advance across the open and the château grounds"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-route-gruppe-fabeck",
+        "formation": "1914:ypres-gruppe-fabeck",
+        "waypoints": [
+          [3.058, 50.784, "1914-10-28T12:00:00Z"],
+          [3.021, 50.792, "1914-10-29T12:00:00Z"],
+          [3.0, 50.802, "1914-10-30T12:00:00Z"],
+          [2.984, 50.814, "1914-10-31T12:00:00Z"],
+          [2.962, 50.803, "1914-11-02T12:00:00Z"],
+          [2.947, 50.805, "1914-11-06T12:00:00Z"],
+          [2.941, 50.81, "1914-11-11T12:00:00Z"],
+          [2.937, 50.812, "1914-11-22T12:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "The centre of the ground this formation held, not a headquarters, at one position a day — the resolution the sources support here and the resolution the fighting had. At Ypres the line moved by hundreds of metres over weeks; an hourly path would be invention with a timestamp on it. Positions ±2–3 km.",
+        "notes": "Ten kilometres of gain in a fortnight, bought with the heaviest artillery concentration of the campaign, and stopped four kilometres short of Ypres.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the assembly of the group and its attack from Gheluvelt to Messines, 29 October – 2 November; day resolution"
+          },
+          {
+            "source": "source:1914-1918-online-ypres",
+            "note": "the group in the reference account"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-route-de-guard",
+        "formation": "1914:ypres-div-de-guard",
+        "waypoints": [
+          [3.021, 50.845, "1914-11-09T12:00:00Z"],
+          [3.001, 50.845, "1914-11-10T12:00:00Z"],
+          [2.995, 50.845, "1914-11-11T06:30:00Z"],
+          [2.982, 50.85, "1914-11-11T10:00:00Z"],
+          [2.988, 50.848, "1914-11-11T15:00:00Z"],
+          [2.99, 50.847, "1914-11-12T12:00:00Z"],
+          [2.99, 50.847, "1914-11-22T12:00:00Z"]
+        ],
+        "confidence": "medium",
+        "derivation": "The second of the two paths written in hours: the 11 November attack lasted a morning, and a day-resolution path would draw it as no movement at all. The approach on 9–10 November is at day resolution; the three waypoints of the 11th are the bombardment, the deepest penetration into Nonne Bosschen and the position after it was cleared.",
+        "notes": "Twelve hundred metres forward and eight hundred back, in one morning, by the best infantry in the German army. That is the shape of the whole battle in miniature.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the Guard’s approach on 9–10 November and its attack of the 11th, which the official history gives by the hour from the bombardment at 06:30"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-route-fr-ix",
+        "formation": "1914:corps-fr-ix",
+        "waypoints": [
+          [2.861, 50.881, "1914-10-21T12:00:00Z"],
+          [2.9, 50.895, "1914-10-23T12:00:00Z"],
+          [2.929, 50.896, "1914-10-25T12:00:00Z"],
+          [2.938, 50.89, "1914-10-29T12:00:00Z"],
+          [2.934, 50.885, "1914-11-03T12:00:00Z"],
+          [2.93, 50.881, "1914-11-11T12:00:00Z"],
+          [2.928, 50.879, "1914-11-22T12:00:00Z"]
+        ],
+        "confidence": "low",
+        "derivation": "The centre of the ground this formation held, not a headquarters, at one position a day — the resolution the sources support here and the resolution the fighting had. At Ypres the line moved by hundreds of metres over weeks; an hourly path would be invention with a timestamp on it. Positions ±2–3 km.",
+        "notes": "The reason the salient held is partly arithmetic: from the last week of October more than half the men in front of Ypres were French.",
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the French IX Corps taking over the northern face of the salient from 23 October; day resolution"
+          },
+          {
+            "source": "source:strachan-2001",
+            "note": "the French reinforcement of the Ypres front under d’Urbal"
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "1914:ypres-event-last-open-ground",
+        "title": "Four armies on forty kilometres",
+        "timeRange": {
+          "start": "1914-10-19T00:00:00Z",
+          "end": "1914-10-21T00:00:00Z"
+        },
+        "kind": "phase",
+        "significance": "major",
+        "place": "place:ypres",
+        "summary": "What stands on the last unclosed ground in Europe on 19 October, north to south: the Belgian field army on the Yser embankment from Nieuwpoort to Dixmude, six divisions that have been retreating for ten weeks; Ronarc’h’s naval brigade in Dixmude; Rawlinson’s IV Corps in Ypres with Haig’s I Corps detraining behind it; Allenby’s cavalry on the Messines ridge. Against them the Fourth Army — four reserve corps raised in August and September and barely trained — and the Sixth Army coming up from Lille. Nobody on the Allied side yet knows how many they are.",
+        "links": {
+          "formations": ["1914:bef", "1914:belgian-field-army", "1914:army-de-4", "1914:army-de-6"],
+          "places": ["place:nieuwpoort", "place:dixmude"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the Allied and German order of battle in Flanders on 19 October; day resolution"
+          },
+          {
+            "source": "source:strachan-2001",
+            "note": "the strategic shape of the race to the sea"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-haig-advance",
+        "title": "The last order to advance",
+        "at": "1914-10-21T08:00:00Z",
+        "kind": "order",
+        "significance": "major",
+        "lngLat": [2.941, 50.896],
+        "summary": "Haig’s I Corps is ordered north-east from Ypres towards Thourout and Bruges, on a GHQ appreciation that puts perhaps one German corps in front of it. There are four, and two more coming. The corps makes something over a kilometre, is stopped, and digs in on the ground it stopped on. It is the last order to advance given on this front in 1914, and the British do not attack here again until 1917.",
+        "links": {
+          "formations": ["1914:corps-gb-i"],
+          "people": ["person:haig-douglas", "person:french-john"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the I Corps’ advance of 21 October and the intelligence appreciation behind it; the hour is nominal within the morning"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-langemarck",
+        "title": "Langemarck",
+        "timeRange": {
+          "start": "1914-10-21T00:00:00Z",
+          "end": "1914-10-24T23:00:00Z"
+        },
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:langemarck",
+        "summary": "The Fourth Army’s new reserve corps attack the northern face of the salient between Bixschoote and Langemarck: formations raised ten weeks earlier, short of training and shorter of officers, going forward in close order against regular infantry with fifteen aimed rounds a minute in their hands. They gain a few hundred metres and lose very heavily. This is the fighting the *Kindermord bei Ypern* is attached to. The sentence that made it famous is written three weeks later and describes a different day.",
+        "links": {
+          "formations": ["1914:corps-de-xxvi-res", "1914:corps-de-xxvii-res"],
+          "historiography": ["1914:historiography-langemarck-myth"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the attacks of 21–24 October on the Langemarck front; day resolution"
+          },
+          {
+            "source": "source:unruh-1986",
+            "note": "the composition and training of the four reserve corps"
+          },
+          {
+            "source": "source:1914-1918-online-langemarck",
+            "note": "what the Langemarck fighting was and what the legend made of it"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-yser-forced",
+        "title": "The Yser forced at Tervaete",
+        "at": "1914-10-22T02:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "lngLat": [2.833, 51.077],
+        "summary": "On the night of 21/22 October the XXII Reserve Corps gets across the Yser at the Tervaete bend and holds a bridgehead on the west bank. Over the next five days the Belgians give up the far bank altogether and fall back onto the embankment of the Nieuwpoort–Dixmude railway — a line of ballast a metre and a half high, and the last defensible thing between the German army and the Channel ports the British Army lives on.",
+        "links": {
+          "formations": ["1914:corps-de-xxii-res", "1914:belgian-field-army"],
+          "people": ["person:albert-i-of-belgium"]
+        },
+        "sources": [
+          {
+            "source": "source:van-pul-2006",
+            "note": "the crossing at Tervaete and the withdrawal to the railway embankment, 22–27 October; the hour is nominal within the night"
+          },
+          {
+            "source": "source:belgian-army-report-1915",
+            "pages": "ch. VIII",
+            "note": "the Belgian army command's own narrative of the Yser, Chapter VIII — the withdrawal to the railway embankment, the inundation and the German retirement behind the river. It gives days and rarely hours, so every hour drawn from it here is nominal within its day; no page is written from it (see the registry entry)"
+          },
+          {
+            "source": "source:edmonds-1925",
+            "note": "the Yser in the British account"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-decision-to-flood",
+        "title": "The decision to let the sea in",
+        "at": "1914-10-25T12:00:00Z",
+        "kind": "decision",
+        "significance": "major",
+        "lngLat": [2.663, 51.07],
+        "summary": "At Furnes, with the army on its last line and no reserve in the country, the Belgian command accepts what it has been arguing about for days: to flood the ground between the Yser and the railway embankment with sea water, on purpose, and leave it flooded. It is possible only because the Ganzepoot at Nieuwpoort is still in Belgian hands, and practical only because two men who work the polders know which gates do what.",
+        "links": {
+          "people": ["person:albert-i-of-belgium", "person:cogge-karel", "person:geeraert-hendrik"],
+          "formations": ["1914:ypres-det-be-nieuwpoort"]
+        },
+        "sources": [
+          {
+            "source": "source:van-pul-2006",
+            "note": "the decision taken at Furnes on 25 October; day resolution, the hour nominal"
+          },
+          {
+            "source": "source:belgian-army-report-1915",
+            "pages": "ch. VIII",
+            "note": "the Belgian army command's own narrative of the Yser, Chapter VIII — the withdrawal to the railway embankment, the inundation and the German retirement behind the river. It gives days and rarely hours, so every hour drawn from it here is nominal within its day; no page is written from it (see the registry entry)"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-first-gates",
+        "title": "The first gates",
+        "at": "1914-10-27T02:00:00Z",
+        "kind": "other",
+        "significance": "major",
+        "lngLat": [2.752, 51.128],
+        "summary": "On the night of 26/27 October, with Karel Cogge showing the way, Belgian engineers open the old Veurne lock and let the tide into the ground behind the railway embankment. The water spreads, slowly, and not far enough. The gates that will do the work are the Noordvaart’s, at the Ganzepoot itself, and the man who can work them in the dark under fire is a bargeman.",
+        "links": {
+          "people": ["person:cogge-karel"],
+          "formations": ["1914:ypres-det-be-nieuwpoort"]
+        },
+        "sources": [
+          {
+            "source": "source:van-pul-2006",
+            "note": "the first sluice operation of the night of 26/27 October; accounts differ by a night on this one, and the hour here is nominal within the night"
+          },
+          {
+            "source": "source:belgian-army-report-1915",
+            "pages": "ch. VIII",
+            "note": "the Belgian army command's own narrative of the Yser, Chapter VIII — the withdrawal to the railway embankment, the inundation and the German retirement behind the river. It gives days and rarely hours, so every hour drawn from it here is nominal within its day; no page is written from it (see the registry entry)"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-noordvaart",
+        "title": "Geeraert opens the Noordvaart",
+        "at": "1914-10-30T02:00:00Z",
+        "kind": "other",
+        "significance": "major",
+        "lngLat": [2.7548, 51.1315],
+        "summary": "On the nights of 29/30 and 30/31 October Hendrik Geeraert works the overflow gates of the Noordvaart at the Ganzepoot: open to the flood tide, shut to the ebb, so that every tide leaves more water behind than it takes away. It is repeated until 2 November. The plain between the Yser and the railway fills at the rate the North Sea decides, and no army can do anything about it.",
+        "links": {
+          "people": ["person:geeraert-hendrik"],
+          "formations": ["1914:ypres-det-be-nieuwpoort"],
+          "places": ["place:nieuwpoort"]
+        },
+        "sources": [
+          {
+            "source": "source:van-pul-2006",
+            "note": "the Noordvaart operations of 29 October – 2 November; the hours are nominal within the nights"
+          },
+          {
+            "source": "source:belgian-army-report-1915",
+            "pages": "ch. VIII",
+            "note": "the Belgian army command's own narrative of the Yser, Chapter VIII — the withdrawal to the railway embankment, the inundation and the German retirement behind the river. It gives days and rarely hours, so every hour drawn from it here is nominal within its day; no page is written from it (see the registry entry)"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-ramscappelle",
+        "title": "Ramscappelle, with the water behind",
+        "at": "1914-10-30T12:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "lngLat": [2.786, 51.1],
+        "summary": "The Germans take Ramscappelle on the railway embankment on 30 October and are thrown out of it that night by Belgian and French infantry. It is the deepest they get on the Yser, and by the time they are in it the ground they crossed to reach it is going under water.",
+        "links": {
+          "formations": [
+            "1914:belgian-field-army",
+            "1914:det-fr-belgique",
+            "1914:corps-de-xxii-res"
+          ]
+        },
+        "sources": [
+          {
+            "source": "source:van-pul-2006",
+            "note": "the loss and recapture of Ramscappelle on 30 October; day resolution"
+          },
+          {
+            "source": "source:belgian-army-report-1915",
+            "pages": "ch. VIII",
+            "note": "the Belgian army command's own narrative of the Yser, Chapter VIII — the withdrawal to the railway embankment, the inundation and the German retirement behind the river. It gives days and rarely hours, so every hour drawn from it here is nominal within its day; no page is written from it (see the registry entry)"
+          },
+          {
+            "source": "source:edmonds-1925",
+            "note": "the Yser in the British account"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-yser-abandoned",
+        "title": "The far bank abandoned",
+        "timeRange": {
+          "start": "1914-10-31T00:00:00Z",
+          "end": "1914-11-03T00:00:00Z"
+        },
+        "kind": "movement",
+        "significance": "major",
+        "lngLat": [2.82, 51.072],
+        "summary": "With a metre of salt water over the polders and more arriving twice a day, the German corps west of the Yser pull back across it. The northern end of the Western Front is settled for the next four years, and what settles it is a set of sluice gates worked by a water bailiff and a bargeman. No fortress in Belgium held anything for as long as the Ganzepoot did.",
+        "links": {
+          "formations": ["1914:corps-de-xxii-res", "1914:belgian-field-army"],
+          "places": ["place:nieuwpoort", "place:dixmude"]
+        },
+        "sources": [
+          {
+            "source": "source:van-pul-2006",
+            "note": "the German withdrawal behind the Yser, 31 October – 3 November; day resolution"
+          },
+          {
+            "source": "source:belgian-army-report-1915",
+            "pages": "ch. VIII",
+            "note": "the Belgian army command's own narrative of the Yser, Chapter VIII — the withdrawal to the railway embankment, the inundation and the German retirement behind the river. It gives days and rarely hours, so every hour drawn from it here is nominal within its day; no page is written from it (see the registry entry)"
+          },
+          {
+            "source": "source:edmonds-1925",
+            "note": "the close of the Yser fighting"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-fabeck-attacks",
+        "title": "Armeegruppe Fabeck attacks",
+        "at": "1914-10-29T06:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "lngLat": [2.962, 50.808],
+        "summary": "Six divisions and the heaviest artillery yet put behind an attack on this front go in on the eight kilometres between Gheluvelt and Messines. Zandvoorde ridge is lost on the 30th, with most of two Household Cavalry squadrons on it. On the 31st the line on the Menin road breaks.",
+        "links": {
+          "formations": ["1914:ypres-gruppe-fabeck", "1914:ypres-div-gb-3-cav"],
+          "people": ["person:fabeck-max-von", "person:falkenhayn-erich"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the attack of Armeegruppe Fabeck, 29–31 October, and the loss of Zandvoorde; day resolution"
+          },
+          {
+            "source": "source:1914-1918-online-ypres"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-gheluvelt-lost",
+        "title": "Gheluvelt lost",
+        "at": "1914-10-31T11:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:gheluvelt",
+        "summary": "The line on the Menin road goes at Gheluvelt. Two British brigades are broken through, the village is taken, and for some hours there is no formed body of British infantry between the German attack and Ypres four kilometres behind. It is the nearest the German army comes, in 1914 or afterwards, to a clean break of the line in the West.",
+        "links": {
+          "formations": [
+            "1914:ypres-div-gb-1",
+            "1914:corps-de-xxvii-res",
+            "1914:ypres-gruppe-fabeck"
+          ],
+          "casualties": ["1914:casualties-first-ypres"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the breakthrough at Gheluvelt on the morning of 31 October; the hour is nominal within the late morning"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-hooge-shell",
+        "title": "One shell, two divisional staffs",
+        "at": "1914-10-31T13:15:00Z",
+        "kind": "other",
+        "significance": "major",
+        "lngLat": [2.947, 50.847],
+        "summary": "A shell comes through the window of Hooge château, where the headquarters of the 1st and 2nd Divisions are sharing a room. Lomax is mortally wounded and Monro stunned; most of both staffs are killed or hurt. The sector loses the command of two of its three divisions in the same hour in which its front is broken, which is the reason the counter-attack that saves it is ordered by a brigadier who happens to be there.",
+        "links": {
+          "formations": ["1914:ypres-div-gb-1", "1914:ypres-div-gb-2"],
+          "people": ["person:haig-douglas"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the shell at Hooge on the afternoon of 31 October and the casualties among the two divisional staffs; the hour is the official history’s, at part-of-hour resolution"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-worcesters",
+        "title": "The 2nd Worcesters retake Gheluvelt",
+        "at": "1914-10-31T14:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "place": "place:gheluvelt",
+        "summary": "FitzClarence, commanding the 1st (Guards) Brigade, goes looking for a reserve and finds one battalion: seven officers and 357 other ranks of the 2nd Worcestershire, in brigade reserve at Polygon Wood. He sends them at the village. They cross about a thousand yards of open ground in shellfire, lose something over a hundred men doing it, and go into the château grounds with the bayonet, where they find the South Wales Borderers still holding on. The line closes. It was not a plan; it was what happened to be within reach.",
+        "links": {
+          "formations": ["1914:ypres-bn-worcesters-2", "1914:ypres-div-gb-2"],
+          "people": ["person:fitzclarence-charles"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the counter-attack of 31 October: the battalion’s strength, its route, its losses and its arrival in the château grounds, which the official history gives by the hour"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-messines-ridge",
+        "title": "The Messines ridge goes",
+        "timeRange": {
+          "start": "1914-10-31T00:00:00Z",
+          "end": "1914-11-02T00:00:00Z"
+        },
+        "kind": "battle",
+        "significance": "major",
+        "lngLat": [2.897, 50.766],
+        "summary": "Messines and Wytschaete are lost on 31 October and 1 November, held to the end by dismounted cavalry and, on the night of the 31st, by the London Scottish — the first Territorial infantry battalion to go into action as a battalion, fighting much of the night with rifles whose recently changed magazines would not feed. The ridge is German ground until the mines go up under it in June 1917.",
+        "links": {
+          "formations": ["1914:ypres-cav-corps-gb", "1914:ypres-bn-london-scottish"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the loss of Messines and Wytschaete and the London Scottish on the ridge, 31 October – 1 November; day resolution"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-seventh-division-out",
+        "title": "What is left of the 7th Division",
+        "at": "1914-11-05T18:00:00Z",
+        "kind": "other",
+        "significance": "major",
+        "lngLat": [2.938, 50.846],
+        "summary": "Relieved after sixteen days on the Menin road, the 7th Division musters 44 officers and 2,336 other ranks. It landed at Zeebrugge four weeks earlier with 400 officers and 12,000 men. Nothing was done wrong to produce that number: it is what holding a line costs when there are no reserves behind it and the enemy has six divisions for your two.",
+        "links": {
+          "formations": ["1914:ypres-div-gb-7"],
+          "casualties": ["1914:casualties-first-ypres", "1914:casualties-bef-1914"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the division’s strength on relief, 5 November; day resolution"
+          },
+          {
+            "source": "source:hastings-2013",
+            "note": "the episode as narrative colour only"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-nonne-bosschen",
+        "title": "The Guard at Nonne Bosschen",
+        "at": "1914-11-11T09:00:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "lngLat": [2.976, 50.851],
+        "summary": "After a bombardment from half past six, twelve and a half German divisions attack on a nine-mile front from Messines to the Menin road. The Guard breaks the 1st (Guards) Brigade’s line and pushes into Nonne Bosschen — Nuns’ Wood — where it meets the 2nd Oxfordshire and Buckinghamshire Light Infantry and, behind them, cooks, orderlies, engineers and gunners’ details put into the gap because there was nobody else. The Guard is thrown out by the afternoon. It is the last serious German attempt of the year in the West.",
+        "links": {
+          "formations": ["1914:ypres-div-de-guard", "1914:ypres-div-gb-2"],
+          "casualties": ["1914:casualties-first-ypres"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "the attack of 11 November: the frontage, the divisions engaged, the penetration at Nonne Bosschen and the troops that cleared it; the official history gives the day by the hour"
+          },
+          {
+            "source": "source:1914-1918-online-ypres"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-kindermord-communique",
+        "title": "The sentence that made a legend",
+        "at": "1914-11-11T12:00:00Z",
+        "kind": "political",
+        "significance": "major",
+        "lngLat": [2.917, 50.917],
+        "summary": "The German Supreme Command’s communiqué of 11 November reports that \"west of Langemarck young regiments went forward against the first line of the enemy’s positions, singing ‘Deutschland, Deutschland über alles’, and took them.\" Three things about it are worth holding together. The fighting it describes is not the Langemarck battle of 21–24 October. The \"young regiments\" of the reserve corps were mostly not students and mostly not boys. And the singing rests on the sentence itself. Out of it came the *Kindermord bei Ypern*, the massacre of the innocents, which Germany taught, commemorated and eventually marched under — and which is a legend about a defeat, not a report of one.",
+        "links": {
+          "historiography": ["1914:historiography-langemarck-myth"],
+          "places": ["place:langemarck"],
+          "formations": ["1914:corps-de-xxvi-res"]
+        },
+        "sources": [
+          {
+            "source": "source:unruh-1986",
+            "note": "the composition of the four reserve corps and what the communiqué actually described"
+          },
+          {
+            "source": "source:1914-1918-online-langemarck",
+            "note": "the making and the uses of the Langemarck myth"
+          },
+          {
+            "source": "source:edmonds-1925",
+            "note": "the dating of the fighting west of Langemarck in November"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-fitzclarence-killed",
+        "title": "FitzClarence killed",
+        "at": "1914-11-12T00:30:00Z",
+        "kind": "other",
+        "significance": "minor",
+        "lngLat": [2.99, 50.856],
+        "summary": "Leading a night counter-attack towards Polygon Wood, Charles FitzClarence is shot dead. Eleven days earlier he had found the Worcesters and sent them into Gheluvelt. He is the senior of a very long list: by the middle of November the brigades in the salient are commanded by whoever is left.",
+        "links": {
+          "people": ["person:fitzclarence-charles"],
+          "casualties": ["1914:casualties-bef-1914"]
+        },
+        "sources": [
+          {
+            "source": "source:edmonds-1925",
+            "note": "FitzClarence killed on the night of 11/12 November near Polygon Wood; the hour is nominal within the night"
+          }
+        ]
+      },
+      {
+        "id": "1914:ypres-event-offensive-closed",
+        "title": "Falkenhayn closes it down",
+        "timeRange": {
+          "start": "1914-11-17T00:00:00Z",
+          "end": "1914-11-22T00:00:00Z"
+        },
+        "kind": "decision",
+        "significance": "major",
+        "lngLat": [2.94, 50.85],
+        "summary": "The heavy artillery and the Guard begin to move east; snow falls on the 19th; the attacks stop. On 18 November Falkenhayn tells the Chancellor what the autumn has taught him: that Germany can no longer defeat the whole coalition outright, and that the object now is to detach one of its members by a separate peace. It is the first time the man running the war says so, and he says it three and a half months after the timetable was to have produced a decision in the West.",
+        "links": {
+          "people": ["person:falkenhayn-erich"],
+          "events": ["1914:event-continuous-front"]
+        },
+        "sources": [
+          {
+            "source": "source:foley-2005",
+            "note": "Falkenhayn’s memorandum to Bethmann Hollweg of 18 November 1914 and the strategic conclusion he drew from Flanders"
+          },
+          {
+            "source": "source:edmonds-1925",
+            "note": "the close of the fighting, 17–22 November; day resolution"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "1914:meanwhile-epilogue",
     "title": "Meanwhile, 1915–1919: physics after the campaign",
     "timeRange": {

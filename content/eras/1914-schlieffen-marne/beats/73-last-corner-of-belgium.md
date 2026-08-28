@@ -7,6 +7,7 @@ to: 1914-10-22T00:00:00Z
 branch: 1914:historical
 links:
   events: ['1914:event-battle-of-the-yser', '1914:event-first-ypres']
+  battles: ['1914:ypres']
   formations:
     [
       '1914:belgian-field-army',
