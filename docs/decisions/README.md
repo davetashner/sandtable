@@ -29,6 +29,7 @@ is merged.
 | [0017](0017-historiography-cards.md)     | A contested point is a card, and the doc is its register                                  | `sand-23b.28`   | accepted                         |
 | [0018](0018-fetching-the-pack.md)        | The pack is fetched, not bundled, and content gets a budget of its own                    | `sand-shn.1.1`  | accepted                         |
 | [0019](0019-second-world-war-arc.md)     | The Second World War arc: the Pacific first, and a pack name that survives a crowded year | `sand-lry.16`   | accepted                         |
+| [0020](0020-pace-bands.md)               | The pack declares how fast its century moved, and cannot declare its way past physics     | `sand-lry.2`    | accepted                         |
 
 ## Template
 

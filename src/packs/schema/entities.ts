@@ -573,6 +573,79 @@ export const Opening = z
   })
   .strict();
 
+// ----------------------------------------------------------------- movement
+
+/**
+ * How a formation — or a man — covered the ground, and the reason the model
+ * has the field at all: what moved something says how fast it could move, and
+ * the validator holds every leg to the rate of its mode (`sand-23b.8`).
+ *
+ * `march` is the default and the whole war on foot. `rail`, `sea` and `air`
+ * are **transfers**: the formation is inside the train, the ship or the
+ * aeroplane, so the leg draws dashed and the token appears only while it is
+ * under way. `motor` is the road — Hentsch's staff car, the Paris taxis,
+ * Joffre's drive to Melun — and it is not a transfer: a column of cars is on
+ * the ground the whole way and stays on the map, drawn with its own finer
+ * dash.
+ */
+export const MovementMode = z
+  .enum(['march', 'motor', 'rail', 'sea', 'air'])
+  .describe('march (on foot), motor (road), rail, sea, air');
+
+/**
+ * What one mode could do in this pack's decade, in km/h of straight-line
+ * displacement (ADR 0020).
+ *
+ * The validator's built-in table is 1914's, and a fast carrier task force at
+ * 25–33 knots is above the 1914 `sea` *limit*. A pack whose technology
+ * outran the default says so here rather than having the check quietly
+ * widened underneath every pack at once.
+ *
+ * `note` and `sources` are required and are the whole point: a pace band is a
+ * number about the past, and in this project every number about the past
+ * cites a source. It sits in `pack.json`, where a content reviewer will see
+ * it next to the reasoning that justifies it, rather than as a constant in a
+ * validator nobody reviewing content ever opens.
+ */
+export const PaceBand = z
+  .object({
+    sustained: z
+      .number()
+      .positive()
+      .describe('km/h this mode held day after day in this era — above it, a warning'),
+    limit: z
+      .number()
+      .positive()
+      .describe('km/h this mode could not beat on any leg in this era — above it, an error'),
+    note: z
+      .string()
+      .min(1)
+      .describe(
+        'What these are the speeds of, in words: "US fast carrier task force, 25–33 knots economical to flank"',
+      ),
+    sources: Sources.describe('Where the numbers come from; at least one citation'),
+  })
+  .strict();
+
+/**
+ * The pack's pace table: one band per mode whose technology differs from
+ * 1914's. **Every mode left out keeps the 1914 default**, which is why no
+ * existing pack moved when this was introduced and why a Pacific pack
+ * declares `sea` and `air` but says nothing about `march` — a Marine on Betio
+ * walks no faster than a poilu on the Marne.
+ */
+export const PaceTable = z
+  .object({
+    march: PaceBand.optional(),
+    motor: PaceBand.optional(),
+    rail: PaceBand.optional(),
+    sea: PaceBand.optional(),
+    air: PaceBand.optional(),
+  })
+  .strict();
+
+// ------------------------------------------------------------------- Pack
+
 export const Pack = z
   .object({
     id: Id.describe('<era>:pack, e.g. 1914:schlieffen-marne'),
@@ -596,6 +669,9 @@ export const Pack = z
       .enum(['seed', 'draft', 'review', 'published'])
       .describe('seed: scaffolding; draft: being authored; review: in fact-check; published'),
     sources: Sources.optional().describe('General bibliography for the pack'),
+    pace: PaceTable.optional().describe(
+      'How fast this era’s technology moved, per mode, where it differs from the 1914 default (ADR 0020); omit a mode to keep the default',
+    ),
     opening: Opening.optional().describe('The first thirty seconds (sand-1l0.26)'),
   })
   .strict();
@@ -687,23 +763,6 @@ export const Waypoint = z
     ),
   ])
   .describe('[lng, lat, ISO time, confidence?]');
-
-/**
- * How a formation — or a man — covered the ground, and the reason the model
- * has the field at all: what moved something says how fast it could move, and
- * the validator holds every leg to the rate of its mode (`sand-23b.8`).
- *
- * `march` is the default and the whole war on foot. `rail`, `sea` and `air`
- * are **transfers**: the formation is inside the train, the ship or the
- * aeroplane, so the leg draws dashed and the token appears only while it is
- * under way. `motor` is the road — Hentsch's staff car, the Paris taxis,
- * Joffre's drive to Melun — and it is not a transfer: a column of cars is on
- * the ground the whole way and stays on the map, drawn with its own finer
- * dash.
- */
-export const MovementMode = z
-  .enum(['march', 'motor', 'rail', 'sea', 'air'])
-  .describe('march (on foot), motor (road), rail, sea, air');
 
 /**
  * A formation's movement, as one leg of it. Most formations need only one
@@ -1339,6 +1398,8 @@ export type ScoreEntry = z.infer<typeof ScoreEntry>;
 export type Side = z.infer<typeof Side>;
 export type Branch = z.infer<typeof Branch>;
 export type Opening = z.infer<typeof Opening>;
+export type PaceBand = z.infer<typeof PaceBand>;
+export type PaceTable = z.infer<typeof PaceTable>;
 export type Pack = z.infer<typeof Pack>;
 export type Formation = z.infer<typeof Formation>;
 export type Waypoint = z.infer<typeof Waypoint>;

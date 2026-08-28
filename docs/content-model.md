@@ -117,6 +117,18 @@ documented exceptions cost less than that.
   Picardy, so it is three routes, each with its own `mode`. Legs must meet —
   each begins at the instant and the position the one before it ended — and
   the engine joins them into a single path that keeps its legs (`sand-23b.8`).
+- **How fast a mode could go depends on the century, so the pack says so**
+  ([ADR 0020](decisions/0020-pace-bands.md)). The validator's built-in table
+  is 1914's; a pack whose technology outran it declares its own bands in
+  `pack.json#pace`, one per mode, each with a `note` and required `sources`.
+  Every mode a pack leaves out keeps the 1914 default, which is why a Pacific
+  pack declares `sea` and `air` and says nothing about `march`. See
+  [authoring](authoring.md#rail-road-and-feet).
+
+  A declared band is still bounded: `sustained` may not exceed `limit`, and
+  neither may pass the per-mode ceiling in `src/packs/validate/pace.ts` for
+  what that mode has ever physically done. The declaration is there to say
+  what an era's ships and aircraft did, not to switch the check off.
 
 ## Branches (ADR 0005)
 
@@ -149,7 +161,9 @@ generated JSON Schema; this is the intent of each.
   `region`, `borderYear` (which shared border file to draw), opening `camera`,
   `sides` (short ids such as `de`, `fr`, `gb`, `be`, with an alliance that
   drives the colour family), `branches`, `defaultBranch`, `status`
-  (`seed | draft | review | published`), a general bibliography.
+  (`seed | draft | review | published`), a general bibliography, and an
+  optional `pace` table saying how fast this era's technology moved where it
+  differs from 1914 (ADR 0020).
 - **Formation** — an army, corps, division, fleet…: name, `short` token
   label, `side`, `kind`, `commander` (a Person), `parent` (the order of battle
   is a tree: corps under armies, divisions under corps), optional `strength`
@@ -328,7 +342,10 @@ pack prefix, dangling references of every kind, `defaultBranch` not in
 `divergesAt`, start ≥ end, anything outside its pack/battle range, unordered
 waypoints, counterfactual routes starting before the divergence, route legs
 for one formation and branch that do not meet, a route or track leg faster
-than its `mode` could go, beats visible together overlapping, unknown
+than its `mode` could go (at the pack's declared pace for that mode, or at
+1914's), a declared pace band without a citation, with `sustained` above its
+own `limit`, or above the physical ceiling for its mode,
+beats visible together overlapping, unknown
 footnote labels (beats and cast bios), missing required citations, cast
 entries naming a person or side that does not exist or the same person twice,
 a formation's `concentration.asOf` or `dissolved` outside the pack range or
@@ -361,7 +378,8 @@ claim. Cue `used_by` is still a warning — no audio invariant rests on it yet.
 Warnings: formations without a historical route (non-seed packs), a
 formation's `concentration.position` outside the pack region, a leg faster
 than its `mode` sustained but not beyond it (a forced march is a warning, a
-teleport is an error), branches without beats (non-seed packs), media `person`
+teleport is an error), a declared pace band for a mode nothing in the pack
+moves by, branches without beats (non-seed packs), media `person`
 and cue `used_by` pointing at entities that do not exist yet, thread steps
 with neither beat nor instant, unknown pack files, and a `Source` in the
 registry that nothing cites — which is not a spare entry on a list but a work

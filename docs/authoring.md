@@ -515,7 +515,9 @@ timeline shows the running value and the card the full ledger (`?card=<id>`).
 
 A route's `mode` says what carried the formation, and the validator holds
 every leg to the pace of that mode: a march that covers 80 km a day is an
-error, and the fix is to name what actually moved it (`sand-23b.8`).
+error, and the fix is to name what actually moved it (`sand-23b.8`). How fast
+each mode could go is 1914's by default and is declared by the pack when its
+century was faster — see [below](#when-your-century-is-faster-than-1914).
 
 Mark a transfer by train with `"mode": "rail"` on its route — it draws with a
 long dash and the corps token shows only while the train is under way:
@@ -564,6 +566,48 @@ A railhead is a formation of kind `other` with a route of its own; a
 
 The gauge under the timeline reads kilometres marched and the railhead gap at
 the clock; the card (`?card=<id>`) carries the argument.
+
+### When your century is faster than 1914
+
+The speeds the pace check uses are 1914's: `march` 1.7/2.7 km/h, `motor`
+45/70, `rail` 15/30, `sea` 15/40, `air` 60/150 — the sustained bar, then the
+limit nothing beat. They are the default for every pack, and for most modes in
+most eras they are still about right.
+
+They are not right for a fast carrier task force (25–33 knots, so 46–61 km/h,
+which is above the 1914 `sea` **limit**) or for anything with a radial engine.
+When your pack's technology outran 1914's, say so once in `pack.json`, per
+mode ([ADR 0020](decisions/0020-pace-bands.md)):
+
+```json
+"pace": {
+  "sea": {
+    "sustained": 46,
+    "limit": 61,
+    "note": "US fast carrier task force: 25 knots economical, 33 knots flank.",
+    "sources": [{ "source": "source:morison-1949", "pages": "iv. 88" }]
+  }
+}
+```
+
+`note` and `sources` are required, because a pace band is a number about the
+past and every number about the past cites a source. Write it once for the
+whole pack; there is no per-route override, on purpose.
+
+Three things to know:
+
+- **Declare only the modes that changed.** Anything you leave out keeps the
+  1914 default, and that is usually what you want: a Marine on Betio walks no
+  faster than a poilu on the Marne, so a Pacific pack declares `sea` and `air`
+  and leaves `march` alone. If you find yourself wanting to raise `march`, the
+  problem is almost always a date or a mode on a route, not the band.
+- **There is a ceiling.** `sustained` may not exceed `limit`, and neither may
+  pass what the mode has ever physically done (`PACE_CEILING` in
+  `src/packs/validate/pace.ts`). A band above it is an error: at that point
+  you have stopped describing the mode.
+- **A band nothing uses is a warning.** If you declare `sea` and no route or
+  track in the pack has `"mode": "sea"`, the band judges nothing — usually a
+  mode missing from the routes it was written for.
 
 ### The human scale
 

@@ -22,6 +22,8 @@ import {
   type Formation,
   type Historiography,
   type Links,
+  type MovementMode,
+  type PaceBand,
   Cue,
   type Cue as CueT,
   type ScoreEntry as ScoreEntryT,
@@ -55,7 +57,7 @@ import {
   type Vignette,
 } from '../schema/index.js';
 import { footnoteLabels, splitFrontMatter } from './frontmatter.js';
-import { paceFindings, paceMessage } from './pace.js';
+import { PACE_CEILING, paceBandMessages, paceFindings, paceMessage } from './pace.js';
 import type { RawContent, RawFile, RawPack } from './tree.js';
 
 // ------------------------------------------------------------------ report
@@ -558,6 +560,7 @@ function checkPack(ctx: Ctx, s: PackState, allPrefixes: Map<string, string>) {
       checkCitations(ctx, path, b.id, f.sources, false, 'feasibility.sources');
   }
   checkCitations(ctx, path, pack.id, pack.sources, false);
+  checkPaceTable(ctx, s, path);
   checkOpening(ctx, path, pack);
 
   // every pack-scoped id carries the prefix
@@ -567,6 +570,36 @@ function checkPack(ctx: Ctx, s: PackState, allPrefixes: Map<string, string>) {
     }
   }
   return { path, sideIds };
+}
+
+/**
+ * The pack's own pace bands (ADR 0020): the three things a declaration can be
+ * wrong about that the schema cannot say.
+ *
+ * The band is a claim about the past like any other, so its citations are
+ * required and are checked the way every other citation is. The ceiling is
+ * what stops the declaration being an off switch. And a band nobody moves by
+ * is a warning rather than an error for the same reason an uncited `Source`
+ * is: nothing is broken, but somebody wrote a sourced number that judges
+ * nothing, and that is usually a mode left off the routes it belongs on.
+ */
+function checkPaceTable(ctx: Ctx, s: PackState, path: string) {
+  const { pace } = s.pack;
+  if (!pace) return;
+  const moved = new Set<MovementMode>([
+    ...s.routes.map((r) => r.mode ?? 'march'),
+    ...s.tracks.map((tk) => tk.mode ?? 'motor'),
+  ]);
+  for (const [mode, band] of Object.entries(pace) as [MovementMode, PaceBand][]) {
+    if (!band) continue;
+    checkCitations(ctx, path, s.pack.id, band.sources, true, `pace.${mode}.sources`);
+    if (band.sustained > band.limit) ctx.error(path, paceBandMessages.inverted(mode), s.pack.id);
+    for (const bar of ['sustained', 'limit'] as const)
+      if (band[bar] > PACE_CEILING[mode][bar])
+        ctx.error(path, paceBandMessages.aboveCeiling(mode, bar, band[bar]), s.pack.id);
+    if (!moved.has(mode) && s.pack.status !== 'seed')
+      ctx.warn(path, paceBandMessages.unused(mode), s.pack.id);
+  }
 }
 
 /**
@@ -687,9 +720,10 @@ function checkRoute(
       r.id,
     );
   }
-  // nothing teleports: every leg is held to the pace of its own mode
+  // nothing teleports: every leg is held to the pace of its own mode, at this
+  // pack's declared speeds for that mode or at 1914's (ADR 0020)
   const mode = r.mode ?? 'march';
-  for (const f of paceFindings(r.waypoints, mode, r.confidence))
+  for (const f of paceFindings(r.waypoints, mode, r.confidence, s.pack.pace))
     ctx[f.level === 'error' ? 'error' : 'warn'](path, paceMessage(f, mode), r.id);
   checkCitations(ctx, path, r.id, r.sources, true);
 }
@@ -1286,7 +1320,7 @@ function checkTracks(ctx: Ctx, s: PackState, path: string, range: TimeRange, sid
     // A commander travelled by car or by train, and a headquarters moves the
     // same way; an unmarked track is read as road travel, never as a march.
     const mode = tk.mode ?? 'motor';
-    for (const f of paceFindings(tk.waypoints, mode, tk.confidence))
+    for (const f of paceFindings(tk.waypoints, mode, tk.confidence, s.pack.pace))
       ctx[f.level === 'error' ? 'error' : 'warn'](path, paceMessage(f, mode), tk.id);
     checkCitations(ctx, path, tk.id, tk.sources, true);
   }

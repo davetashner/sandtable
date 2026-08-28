@@ -13,11 +13,16 @@
  * `limit` is what the mode could not exceed on any leg at all; above it the
  * mode is simply wrong, and that is an error.
  *
+ * The bars are era-aware (ADR 0020). `MOVEMENT_PACE` below is 1914's and is
+ * the default; a pack whose technology outran it declares its own bands in
+ * `pack.json#pace`, per mode, with a note and sources, and `PACE_CEILING` is
+ * the outer edge no declaration may pass.
+ *
  * Pure geometry and arithmetic; no filesystem, no schema parsing.
  */
 import { haversineKm } from '../../engine/geo.js';
 import { waypointConfidence } from '../../engine/confidence.js';
-import type { Confidence, MovementMode, Waypoint } from '../schema/index.js';
+import type { Confidence, MovementMode, PaceTable, Waypoint } from '../schema/index.js';
 
 /**
  * How far apart a leg's endpoints may be for reasons that are not movement —
@@ -54,6 +59,12 @@ export interface Pace {
  * than road or track distance, which is the direction that keeps the check
  * conservative.
  *
+ * **This is the default table, and it stays 1914's** (ADR 0020). It is not a
+ * statement about movement in general; a pack whose ships or aircraft were
+ * faster says so in `pack.json#pace` rather than having these numbers widened
+ * underneath every pack at once. What it *is* good for beyond 1914 is
+ * `march`, which barely moved between Caesar and Okinawa.
+ *
  * `march`: a corps made 20–30 km on an ordinary day and 40 on a hard one; the
  * fastest marches of the campaign (Kluck's right wing, the IX Reserve Corps
  * running for the Ourcq) reach the low 60s per day and no further.
@@ -71,6 +82,51 @@ export const MOVEMENT_PACE: Record<MovementMode, Pace> = {
   air: { sustained: 60, limit: 150 },
 };
 
+/**
+ * The outer edge of each mode, whatever the era — the one number a pack may
+ * not talk its way past (ADR 0020).
+ *
+ * A pack declares its own bands in `pack.json#pace` because 1914's ships and
+ * aeroplanes cannot hold 1942's, and that declaration is what keeps the check
+ * useful across eras. But a declaration that could say anything would also be
+ * a way to switch the check off: raise `march` far enough and the transfer
+ * written as a march — the case this module exists for — passes.
+ *
+ * So the ceiling is what the mode has ever physically done, as against what
+ * it did in one decade. It is deliberately generous: this is a floor under
+ * review, not a second band, and every honest declaration is far below it.
+ * Above it the author has stopped describing the mode and is describing
+ * something else, which is an error the same way naming the wrong mode is.
+ *
+ * `march`: no formation of men on foot has averaged more than about 6 km/h of
+ * displacement over a leg — that is a fit man walking with no rest, no
+ * baggage and no column behind him. `motor` and `rail`: 110 and 120 km/h are
+ * a car and an express train running without a stop, which no movement of
+ * troops does. `sea`: 85 km/h is 46 knots, past the fastest ship ever built
+ * (Le Terrible's 45.25 knots on trials, 1935). `air`: 1,100 km/h is beyond
+ * every piston fighter and the jets of 1945.
+ *
+ * The period this project covers ends in 1945. A pack that genuinely needs
+ * more — a jet-age or high-speed-rail era — raises the number here, in a code
+ * change with a reason next to it, which is exactly the visibility that
+ * makes this a ceiling rather than a formality.
+ */
+export const PACE_CEILING: Record<MovementMode, Pace> = {
+  march: { sustained: 4, limit: 6 },
+  motor: { sustained: 60, limit: 110 },
+  rail: { sustained: 60, limit: 120 },
+  sea: { sustained: 55, limit: 85 },
+  air: { sustained: 700, limit: 1100 },
+};
+
+/** The band a leg of `mode` is judged against, and where that band came from. */
+export function paceFor(mode: MovementMode, table?: PaceTable): Pace & { declared: boolean } {
+  const band = table?.[mode];
+  return band
+    ? { sustained: band.sustained, limit: band.limit, declared: true }
+    : { ...MOVEMENT_PACE[mode], declared: false };
+}
+
 export interface PaceFinding {
   /** Index of the leg's later waypoint, the one the message points at. */
   index: number;
@@ -79,6 +135,8 @@ export interface PaceFinding {
   /** km allowed over these hours at the bar that was broken. */
   allowed: number;
   level: 'error' | 'warning';
+  /** Whether the bar came from the pack's own table or from the 1914 default. */
+  declared: boolean;
 }
 
 const allowedKm = (kmh: number, hours: number, tolerance: number) => tolerance + kmh * hours;
@@ -99,13 +157,18 @@ function legTolerance(a: Confidence, b: Confidence): number {
  *
  * `pathConfidence` is the route's or track's own, which every waypoint
  * inherits unless it carries one of its own.
+ *
+ * `table` is the pack's own pace declaration (`pack.json#pace`). Absent, or
+ * silent about this mode, and the leg is judged at 1914 — which is what every
+ * pack written before ADR 0020 gets, unchanged.
  */
 export function paceFindings(
   waypoints: Waypoint[],
   mode: MovementMode,
   pathConfidence: Confidence = 'medium',
+  table?: PaceTable,
 ): PaceFinding[] {
-  const pace = MOVEMENT_PACE[mode];
+  const pace = paceFor(mode, table);
   const out: PaceFinding[] = [];
   for (let i = 1; i < waypoints.length; i++) {
     const a = waypoints[i - 1]!;
@@ -124,6 +187,7 @@ export function paceFindings(
         hours,
         allowed: allowedKm(pace.limit, hours, tolerance),
         level: 'error',
+        declared: pace.declared,
       });
     else if (km > allowedKm(pace.sustained, hours, tolerance))
       out.push({
@@ -132,6 +196,7 @@ export function paceFindings(
         hours,
         allowed: allowedKm(pace.sustained, hours, tolerance),
         level: 'warning',
+        declared: pace.declared,
       });
   }
   return out;
@@ -142,12 +207,35 @@ const round = (n: number, places = 0) => {
   return Math.round(n * f) / f;
 };
 
-/** The sentence the validator prints for a finding. */
+/**
+ * The sentence the validator prints for a finding.
+ *
+ * Which band was broken changes what the author should do about it, so the
+ * message says which one it was. Under the 1914 default it offers the way out
+ * ADR 0019 found missing: an author whose ships really were faster than 1914's
+ * was being told to name a mode that does not exist, when what they needed was
+ * `pack.json#pace`. Under the pack's own table that advice would be circular —
+ * the number is already theirs — so it points at the number instead.
+ */
 export function paceMessage(f: PaceFinding, mode: MovementMode): string {
   const leg = `waypoints[${f.index}] covers ${round(f.km)} km in ${round(f.hours, 1)} h (${round(
     (f.km / f.hours) * 24,
   )} km/day)`;
-  return f.level === 'error'
-    ? `${leg} — beyond ${mode}, which could not make more than ${round(f.allowed)} km in that time. Name the mode that carried it (motor, rail, sea, air) or split the transfer into a route of its own`
-    : `${leg} — faster than ${mode} sustained (${round(f.allowed)} km); check the dates and the mode`;
+  const band = f.declared ? 'this pack’s declared pace' : 'the default 1914 pace';
+  if (f.level === 'warning')
+    return `${leg} — faster than ${mode} sustained at ${band} (${round(f.allowed)} km); check the dates and the mode`;
+  const fix = f.declared
+    ? `Check the dates and the positions, or the number in pack.json#pace.${mode}`
+    : `Name the mode that carried it (motor, rail, sea, air), split the transfer into a route of its own, or — if this era’s ${mode} outran 1914’s — declare pack.json#pace.${mode} with the sources for the number`;
+  return `${leg} — beyond ${mode} at ${band}, which could not make more than ${round(f.allowed)} km in that time. ${fix}`;
 }
+
+/** The sentences the validator prints for a pack's own pace table. */
+export const paceBandMessages = {
+  inverted: (mode: MovementMode) =>
+    `pace.${mode}: sustained must not exceed limit — sustained is the ordinary day, limit is the day nothing beat`,
+  aboveCeiling: (mode: MovementMode, bar: keyof Pace, value: number) =>
+    `pace.${mode}.${bar} of ${value} km/h is beyond what ${mode} has ever physically done (${PACE_CEILING[mode][bar]} km/h). That is not this era being faster; that is the wrong mode, or a number that would switch the pace check off for this pack`,
+  unused: (mode: MovementMode) =>
+    `pace.${mode} is declared but no route or track in this pack moves by ${mode}, so the band judges nothing — drop it, or set the mode on the routes it was written for`,
+};
