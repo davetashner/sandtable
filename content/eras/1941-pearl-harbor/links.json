@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1941-pearl-harbor:link-the-outline-and-the-sortie",
+    "from": "1941-pearl-harbor:event-hull-note",
+    "to": "1941-pearl-harbor:event-striking-force-sails",
+    "relation": "other",
+    "claim": "The usual telling has the American outline of 26 November provoke the sortie. **It cannot have done, and the arrow on this link points the wrong way on purpose.** The striking force left Hitokappu Bay at 0600 on 26 November, Tokyo time — which is still the afternoon of 25 November in Washington, hours before the outline was handed over. The decision had been taken, the force assembled and the sailing ordered while the conversations were still going on.\n\nWhat the American outline did was not start this operation. It arrived to find one already at sea.",
+    "confidence": "high",
+    "historiography": "That the note was read in Tokyo as an ultimatum is not disputed; whether it was one, and whether a different American paper that week would have changed anything, is argued about still. The dates are the part that is not arguable, and they are what this link is for.",
+    "evidence": [
+      {
+        "source": "source:japanese-monograph-97",
+        "pages": "21",
+        "note": "the departure from Hitokappu Bay on 26 November, Tokyo time"
+      },
+      {
+        "source": "source:peace-and-war-1943",
+        "note": "doc. 257, dated Washington, 26 November 1941"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:link-one-oclock-to-the-first-bomb",
+    "from": "1941-pearl-harbor:event-memorandum-delivered",
+    "to": "1941-pearl-harbor:event-first-wave-attacks",
+    "relation": "other",
+    "claim": "Tokyo ordered its embassy to break off the negotiations at one o'clock, Washington time, and the first wave was over Oahu at 0755, Honolulu time. Those two instants are twenty-five minutes apart, and the second one came first only because the embassy was late.\n\nThe margin the plan allowed was less than half an hour on a document that had to be decoded and typed in a foreign capital. Whatever was intended by it, the effect of the delay was that the attack was delivered without notice of any kind — which is the phrase the American declaration of war rests on.",
+    "confidence": "high",
+    "historiography": "Whether the one o'clock instruction was meant to give notice or to give the appearance of it is a question about intentions in Tokyo that this pack cannot answer from anything it has read. What is documented is the instruction, the ambassador's own statement that he did not know why one o'clock, and the times.",
+    "evidence": [
+      {
+        "source": "source:peace-and-war-1943",
+        "note": "doc. 265 — the instruction, the ambassador's explanation, and the four clock times of the appointment"
+      },
+      {
+        "source": "source:craven-cate-aaf-1",
+        "note": "ch. 6 — the first aircraft over Oahu at 0755"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:link-third-strike-to-the-six-months",
+    "from": "1941-pearl-harbor:event-nagumo-turns-away",
+    "to": "1941-pearl-harbor:the-six-months",
+    "relation": "shaped",
+    "claim": "The base survived the day it was attacked. The fuel, the dry docks and the submarine pens were untouched, which meant that Pearl Harbor went on being a fleet base two thousand miles forward of California — the thing the whole of the next six months was run from.\n\nThis is the weakest-looking and most consequential claim in the pack, and it is marked contested because the argument about it is unresolved: one school holds that the surviving installations were the difference between a war fought from Hawaii and a war fought from the west coast, and another holds that the fuel was neither as vulnerable nor as decisive as that, and that a third strike was never on the table to begin with.",
+    "confidence": "contested",
+    "historiography": "See the historiography card. Two of its four positions could only be reached at second hand from this environment, and the card says which.",
+    "evidence": [
+      {
+        "source": "source:japanese-monograph-97",
+        "pages": "13",
+        "note": "the order to withdraw once the second wave was launched"
+      },
+      {
+        "source": "source:building-bases-1947",
+        "note": "ch. 22 — the fuel installations, and the underground project that was not yet usable"
+      },
+      {
+        "source": "source:parshall-2010",
+        "note": "the case that the third-strike proposal is postwar; read through source:combinedfleet"
+      }
+    ]
+  }
+]

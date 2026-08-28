@@ -1,0 +1,53 @@
+[
+  {
+    "id": "1941-pearl-harbor:decision-1941-12-07-the-third-strike",
+    "at": "1941-12-07T22:45:00Z",
+    "title": "Go back a third time?",
+    "actor": "person:nagumo-chuichi",
+    "question": "It is the early afternoon of 7 December, Honolulu time, and you are a couple of hundred miles north of Oahu with the last of your aircraft back aboard.\n\nWhat you have done: eight battleships, three light cruisers and three destroyers sunk or out of action in under two hours; nearly two hundred American aircraft destroyed. What it cost: about fifty aircraft, and the crews in them.\n\nWhat you have not done: the fuel tank farms, the submarine base and the repair yard are untouched, and they are what makes the harbour a base. What you do not know: where the three American carriers are. They were not in port this morning and nobody can tell you where they went.\n\nYour orders say withdraw. There are four hours of usable daylight left.",
+    "options": [
+      {
+        "id": "withdraw",
+        "label": "Withdraw north, as ordered",
+        "summary": "Turn away at twenty-four knots and be out of aircraft range by dark. The operation is complete as it was written; the carriers cannot find you if you are not there."
+      },
+      {
+        "id": "strike-again",
+        "label": "Rearm and go back for the base itself",
+        "summary": "Hold south through the afternoon, arm for shore targets, and fly a third strike at the tanks, the docks and the submarine pens — targets nobody has briefed, against a defence that is now awake, with the enemy's carriers still unlocated.",
+        "branch": "1941-pearl-harbor:third-wave"
+      }
+    ],
+    "historical": "withdraw",
+    "reasoning": "What Nagumo actually had in front of him is smaller than the argument that grew around it. His operation order told him to withdraw once the second wave was launched, and it named the speed to do it at. It contained no third wave — only a contingency for repeated attacks if the destruction of enemy air strength went well, which is a clause about air superiority and not about a naval base's plumbing. His aircrew had been trained and briefed for warships. His fuel had to take him three thousand miles home. And three enemy carriers were somewhere over the horizon.\n\nWhat he did not have was a staff thinking about the other side's logistics. That is a claim about the whole Imperial Navy rather than about one admiral, and it is the strongest part of the case against this counterfactual.",
+    "verdict": "He withdrew, and the argument started after the war rather than during it. It is usually traced to Gordon Prange and to Edwin Layton, who published Nimitz's remark that destroying the oil would have prolonged the war by two years; against them Alan Zimm argues that the third wave was never planned and would have achieved little, and Jonathan Parshall argues that the conference at which it is said to have been urged is a postwar invention of the man who told the story — Fuchida — whose account of it moved between his 1948 and 1963 interviews.\n\nThis pack labels the branch hypothetical and does not pick a winner. Read the historiography card before you decide you have one: two of the four positions on it could only be reached at second hand, and the pack says which.",
+    "links": {
+      "people": ["person:nagumo-chuichi", "person:fuchida-mitsuo"],
+      "formations": ["1941-pearl-harbor:kido-butai", "1941-pearl-harbor:us-carriers"],
+      "events": ["1941-pearl-harbor:event-nagumo-turns-away"],
+      "documents": ["1941-pearl-harbor:document-operation-order"],
+      "historiography": ["1941-pearl-harbor:historiography-the-third-wave"]
+    },
+    "sources": [
+      {
+        "source": "source:japanese-monograph-97",
+        "pages": "13–14",
+        "note": "the order to withdraw after the second wave, and the only clause in the plan that provides for further attacks"
+      },
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI — the day's losses on both sides, and the carriers at sea"
+      },
+      {
+        "source": "source:parshall-2010",
+        "note": "the case that the proposal itself is postwar; read through source:combinedfleet"
+      },
+      {
+        "source": "source:zimm-2011",
+        "note": "the operational case against; read through a review"
+      },
+      { "source": "source:prange-1981", "note": "the case for; not read" },
+      { "source": "source:layton-1985", "note": "the case for; not read" }
+    ]
+  }
+]

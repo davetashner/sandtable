@@ -1,0 +1,132 @@
+[
+  {
+    "id": "1941-pearl-harbor:clock-the-operational-clock",
+    "title": "The operational clock",
+    "subtitle": "Sixteen days at sea, run to the order",
+    "origin": "1941-11-25T21:00:00Z",
+    "dayLabel": "S+",
+    "assumption": "The Hawaii operation order is a timetable of positions. It names the day of departure and the speed to sail at, a standby point in the middle of the North Pacific, an approaching point south of it, the hour to turn south and the speed to turn south at, and two launching positions given as distances due north of the aiming point with an hour against each.[^japanese-monograph-97]\n\nWhat this clock is for is the comparison with the other one. Almost nothing on it slipped. The striking force sailed on the day it was ordered to sail, was where it was supposed to be on the evening of the 3rd, turned south at the hour it was told to, and launched from the distance and at the minute the order set — which the American accounts confirm from the other side, because 0130 on X Day in Tokyo is 0600 in Honolulu, and 0600 in Honolulu is when the American air force history says the take-off was ordered.[^craven-cate-aaf-1]\n\nThe days here are counted from the sortie and are whole days; the hour of each milestone is in its note, because that is where the interest is.",
+    "milestones": [
+      {
+        "id": "sortie",
+        "label": "Sails from Hitokappu Bay",
+        "plannedDay": 0,
+        "actualAt": "1941-11-25T21:00:00Z",
+        "place": "place:hitokappu-bay",
+        "note": "0600 on 26 November, Tokyo time. Twelve to fourteen knots, radio silent."
+      },
+      {
+        "id": "standby-point",
+        "label": "The standby point, 42°N",
+        "plannedDay": 7,
+        "actualAt": "1941-12-03T09:00:00Z",
+        "note": "The evening of 3 December. The order gives the longitude twice and differently — 165°W in one place and 170°W in another — and the pack takes 170°W and marks the waypoint low."
+      },
+      {
+        "id": "turn-south",
+        "label": "Turns south at twenty-four knots",
+        "plannedDay": 11,
+        "actualAt": "1941-12-06T22:00:00Z",
+        "note": "0700 on X-1 Day, Tokyo time, from the approaching point at 32°N 157°W: course 180 degrees, speed increased to 24 knots."
+      },
+      {
+        "id": "first-wave",
+        "label": "First wave launched, 230 miles out",
+        "plannedDay": 12,
+        "actualAt": "1941-12-07T16:30:00Z",
+        "note": "0130 on X Day in Tokyo — 0600 in Honolulu, which is when the American accounts say the order to take off was given."
+      },
+      {
+        "id": "second-wave",
+        "label": "Second wave launched, 200 miles out",
+        "plannedDay": 12,
+        "actualAt": "1941-12-07T17:45:00Z",
+        "note": "0245 in Tokyo, 0715 in Honolulu."
+      },
+      {
+        "id": "withdraw",
+        "label": "Withdraws north at twenty-four knots",
+        "plannedDay": 12,
+        "actualAt": "1941-12-07T22:45:00Z",
+        "note": "The order says the force withdraws once the second wave has been launched. It did."
+      },
+      {
+        "id": "assembly-point",
+        "label": "Home, by way of the assembly point at 30°N 165°E",
+        "plannedDay": 27,
+        "note": "X+15 Day, which is outside this pack's window; the clock shows it as not reached because the campaign ends first, not because the force failed to reach it."
+      }
+    ],
+    "sources": [
+      {
+        "source": "source:japanese-monograph-97",
+        "pages": "7, 10, 11, 13, 21",
+        "note": "every planned day and position on this clock"
+      },
+      {
+        "source": "source:craven-cate-aaf-1",
+        "note": "ch. 6, for the 0600 take-off in Honolulu that confirms the order's own hour"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:clock-the-washington-clock",
+    "title": "The Washington clock",
+    "subtitle": "A negotiation with a delivery time",
+    "origin": "1941-11-26T00:00:00Z",
+    "dayLabel": "D+",
+    "assumption": "The other clock in this pack is a set of documents, and it is running eleven days behind the first one before it starts: the striking force was already at sea on 26 November when the Secretary of State handed the Japanese ambassador the American outline.[^peace-and-war-1943]\n\nWhat makes it a clock rather than a sequence is its last instruction. Tokyo told its embassy to deliver the memorandum breaking off the negotiations at one o'clock in the afternoon, Washington time. One o'clock in Washington was half past seven in Honolulu — twenty-five minutes before the first bomb. The embassy could not decode and type the document in time. The ambassador asked for one o'clock, put it back to a quarter to two, arrived at five past and was received at twenty past, and by then the attack was fifty-five minutes old.[^peace-and-war-1943]\n\nAn eighty-minute slip is not something a clock counting whole days can draw, so this card carries it in the notes rather than in the gauge. The instants are the true ones and the arithmetic is on them: Hawaii kept a standard time ten and a half hours behind Greenwich in 1941, and Washington five.",
+    "milestones": [
+      {
+        "id": "outline",
+        "label": "The American outline handed to Nomura",
+        "plannedDay": 0,
+        "actualAt": "1941-11-26T21:00:00Z",
+        "place": "place:washington-dc",
+        "note": "The document carries the date and no hour; the instant is nominal. The striking force had sailed the day before."
+      },
+      {
+        "id": "emperor",
+        "label": "Roosevelt writes to the Emperor",
+        "actualAt": "1941-12-06T17:00:00Z",
+        "place": "place:washington-dc",
+        "note": "6 December. The striking force was a day and a half from its launching point. Date documented, hour nominal."
+      },
+      {
+        "id": "one-oclock",
+        "label": "The hour Tokyo ordered: 1 p.m. in Washington",
+        "plannedDay": 11,
+        "actualAt": "1941-12-07T18:00:00Z",
+        "place": "place:washington-dc",
+        "note": "0730 in Honolulu. Twenty-five minutes of margin, if the embassy had managed it."
+      },
+      {
+        "id": "first-bomb",
+        "label": "The first bomb falls",
+        "actualAt": "1941-12-07T18:25:00Z",
+        "place": "place:pearl-harbor",
+        "note": "0755 in Honolulu; 1325 in Washington."
+      },
+      {
+        "id": "handed-over",
+        "label": "The memorandum handed over",
+        "actualAt": "1941-12-07T19:20:00Z",
+        "place": "place:washington-dc",
+        "note": "1420 in Washington. Eighty minutes after the hour it was ordered for, and fifty-five minutes after the first bomb."
+      },
+      {
+        "id": "declaration",
+        "label": "Congress declares war",
+        "actualAt": "1941-12-08T17:00:00Z",
+        "place": "place:washington-dc",
+        "note": "8 December. Date documented, hour nominal."
+      }
+    ],
+    "sources": [
+      {
+        "source": "source:peace-and-war-1943",
+        "note": "docs. 257, 264, 265, 267 and 268 — the outline, the message to the Emperor, the conversation of 7 December with all four of its clock times, the address to Congress and the joint resolution"
+      }
+    ]
+  }
+]

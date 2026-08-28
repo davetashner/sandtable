@@ -1,0 +1,98 @@
+[
+  {
+    "id": "1941-pearl-harbor:oahu",
+    "title": "Oahu, 7 December",
+    "timeRange": { "start": "1941-12-07T16:00:00Z", "end": "1941-12-07T22:00:00Z" },
+    "region": [-158.35, 21.15, -157.55, 21.8],
+    "camera": { "center": [-157.96, 21.42], "zoom": 10 },
+    "place": "place:pearl-harbor",
+    "summary": "Six hours over one island, from the take-off north of it to the last aircraft turning away. Nothing on this map moves except the two strike waves, which are on their campaign tracks: the fighting was done by aircraft against ships that were tied up and aircraft that were parked.\n\nWhat the map shows instead are the places — the moorings along Ford Island where the battle line lay, the two Army airfields whose aircraft were drawn up in rows, the naval air station on the windward side, and the radar set on the north shore that saw the first wave coming an hour out and was told not to worry.",
+    "outcome": "Eight battleships, three light cruisers and three destroyers sunk or put out of action in under two hours; 92 naval aircraft destroyed and 31 damaged; 96 Army aircraft lost; 2,403 dead and 1,178 wounded. Japanese losses: about fifty aircraft and five midget submarines. The fuel tank farms, the repair yard and the submarine base were not touched, and the three carriers were at sea.",
+    "participants": [
+      "1941-pearl-harbor:strike-first-wave",
+      "1941-pearl-harbor:strike-second-wave",
+      "1941-pearl-harbor:pacific-fleet",
+      "1941-pearl-harbor:hawaiian-department"
+    ],
+    "links": {
+      "places": [
+        "place:pearl-harbor",
+        "place:ford-island",
+        "place:battleship-row",
+        "place:hickam-field",
+        "place:wheeler-field",
+        "place:kaneohe-bay",
+        "place:opana-point",
+        "place:honolulu"
+      ],
+      "historiography": ["1941-pearl-harbor:historiography-the-third-wave"]
+    },
+    "sources": [
+      {
+        "source": "source:craven-cate-aaf-1",
+        "note": "ch. 6 — the radar plot at 0702, the first aircraft over the island at 0755, the second attack at 0840, and the battleships: “The *Arizona*, *California*, and *West Virginia* had been sunk, the *Oklahoma* capsized, the *Nevada* severely damaged, and three others damaged.” The other three are not named there and are not named here"
+      },
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI — the totals in the outcome above, all quoted from the same passage"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:the-other-openings",
+    "title": "The rest of the day",
+    "timeRange": { "start": "1941-12-07T16:00:00Z", "end": "1941-12-10T18:00:00Z" },
+    "region": [99, -2, 168, 26],
+    "camera": { "center": [130, 12], "zoom": 3 },
+    "summary": "The other half of 7 December, which happened on 8 December. West of the date line the calendar had already turned, so Malaya, Hong Kong, Guam, Wake and the Philippines were all attacked on “the 8th” while Hawaii was still living through the 7th — and the landings in Malaya went in before the first bomb fell on Oahu.\n\nThis chapter exists because a pack that shows only the harbour teaches the American memory of the day rather than the day. Nothing moves on this map either: the pack could not open a source giving a track for any of these forces, so what is here is a set of places and the hours at which each of them was attacked.",
+    "outcome": "Within about seventy-two hours: a beachhead in Malaya, the Far East Air Force destroyed on the ground in the Philippines, Kai Tak bombed, Guam surrendered, Wake under daily attack, and two British capital ships on the bottom off Kuantan.",
+    "links": {
+      "places": [
+        "place:kota-bharu",
+        "place:singora",
+        "place:patani",
+        "place:hong-kong",
+        "place:agana",
+        "place:wake-island",
+        "place:clark-field",
+        "place:iba-field",
+        "place:manila",
+        "place:singapore",
+        "place:kuantan"
+      ],
+      "events": [
+        "1941-pearl-harbor:event-kota-bharu",
+        "1941-pearl-harbor:event-hong-kong",
+        "1941-pearl-harbor:event-guam-learns",
+        "1941-pearl-harbor:event-wake-attacked",
+        "1941-pearl-harbor:event-clark-field",
+        "1941-pearl-harbor:event-guam-surrenders",
+        "1941-pearl-harbor:event-force-z-sunk"
+      ]
+    },
+    "sources": [
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI — “Almost simultaneously the Japanese attacked Hawaii, the Philippines, Wake, Guam, Singapore, Hong Kong, Malaya and Thailand”, and the individual openings"
+      },
+      { "source": "source:morton-1953", "note": "ch. 5 — the Philippines" },
+      { "source": "source:hough-ludwig-shaw-1958", "note": "chs. II and III — Guam and Wake" }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:the-six-months",
+    "title": "The six months Yamamoto asked for",
+    "timeRange": { "start": "1941-12-11T00:00:00Z", "end": "1942-06-07T00:00:00Z" },
+    "window": "outside",
+    "region": [-180, -12, 180, 46],
+    "camera": { "center": [175, 15], "zoom": 2.2 },
+    "summary": "An epilogue, on its own clock, outside the campaign. Yamamoto's estimate was that he could run wild in the Pacific for six months or a year and had no confidence in what came after; the Hawaii operation was a bet on buying that time.\n\nThe six months are counted from December 1941. They ended, almost to the week, at Midway.",
+    "sources": [
+      {
+        "source": "source:agawa-1979",
+        "note": "the Yamamoto estimate, from the standard Japanese life of him in translation. Not read at page level from this environment; no pages are given and nothing is quoted"
+      },
+      { "source": "source:morton-1962", "note": "ch. VI and after — the first months of the war" }
+    ]
+  }
+]

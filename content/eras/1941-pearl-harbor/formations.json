@@ -1,0 +1,171 @@
+[
+  {
+    "id": "1941-pearl-harbor:kido-butai",
+    "name": "First Air Fleet — the Hawaii striking force",
+    "short": "Kidō Butai",
+    "side": "jp",
+    "kind": "fleet",
+    "commander": "person:nagumo-chuichi",
+    "concentration": {
+      "area": "Hitokappu Bay, Etorofu, in the southern Kurils",
+      "position": [147.672, 44.965],
+      "asOf": "1941-11-25T13:00:00Z",
+      "sources": [
+        {
+          "source": "source:japanese-monograph-97",
+          "pages": "21",
+          "note": "the force was to “depart with utmost secrecy from Hitokappu Bay on 26 November”"
+        }
+      ]
+    },
+    "sources": [
+      {
+        "source": "source:japanese-monograph-97",
+        "pages": "9",
+        "note": "the task organisation: six carriers under the commander of the First Air Fleet — Akagi and Kaga, Hiryu and Soryu, Zuikaku and Shokaku — with a screening unit of destroyers, a support force of battleships and heavy cruisers, a patrol unit of three submarines, and a supply force of oilers"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:supply-force",
+    "name": "Supply Force — the oilers",
+    "short": "Oilers",
+    "side": "jp",
+    "kind": "flotilla",
+    "parent": "1941-pearl-harbor:kido-butai",
+    "sources": [
+      {
+        "source": "source:japanese-monograph-97",
+        "pages": "9, 12",
+        "note": "the supply force in two units, Kyokuto Maru and Toho Maru among them; it was to accompany the main force to the approaching point carrying out refuellings, and to skirt 800 nautical miles north of Midway"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:strike-first-wave",
+    "name": "First attack wave",
+    "short": "1st wave",
+    "side": "jp",
+    "kind": "squadron",
+    "parent": "1941-pearl-harbor:kido-butai",
+    "commander": "person:fuchida-mitsuo",
+    "sources": [
+      {
+        "source": "source:japanese-monograph-97",
+        "pages": "13, 15–16",
+        "note": "the plan's first wave: 50 level bombers with 800 kg armour-piercing bombs, 40 torpedo bombers, 54 dive bombers and 43 fighters, launched 230 nautical miles due north of point Z at 0130 hours X Day (Tokyo time)"
+      },
+      {
+        "source": "source:ussbs-interrogations",
+        "note": "Nav. No. 6, 18 October 1945 — Fuchida's own figures four years later are rounder and larger (50 level bombers, 40 torpedo bombers, 50 dive bombers, 50 fighters), and are recorded here as what he said rather than as a correction"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:strike-second-wave",
+    "name": "Second attack wave",
+    "short": "2nd wave",
+    "side": "jp",
+    "kind": "squadron",
+    "parent": "1941-pearl-harbor:kido-butai",
+    "sources": [
+      {
+        "source": "source:japanese-monograph-97",
+        "pages": "13, 15–16",
+        "note": "the plan's second wave: 54 level bombers with 250 kg and 60 kg bombs, 72 dive bombers and 36 fighters, launched 200 nautical miles due north of point Z at 0245 hours X Day (Tokyo time), under Commander Shimazaki, as the plan's air organisation chart names him"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:pacific-fleet",
+    "name": "United States Pacific Fleet",
+    "short": "Pacific Fleet",
+    "side": "us",
+    "kind": "fleet",
+    "commander": "person:kimmel-husband",
+    "concentration": {
+      "area": "Pearl Harbor, Oahu",
+      "position": [-157.9771, 21.3679],
+      "asOf": "1941-11-25T13:00:00Z",
+      "sources": [
+        {
+          "source": "source:morton-1962",
+          "note": "ch. VI — “Except for the richest prize, the three carriers and their escort, the entire Pacific Fleet was in port.” No page is written here; see the pack README"
+        }
+      ]
+    },
+    "sources": [
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI, for the fleet in port on the morning of 7 December and for what was sunk or put out of action: eight battleships, three light cruisers and three destroyers, in under two hours"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:us-carriers",
+    "name": "The three carriers and their escorts",
+    "short": "Carriers",
+    "side": "us",
+    "kind": "fleet",
+    "sources": [
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI — the carriers and their escorts were the one part of the Pacific Fleet not in port, and “the three carriers had escaped the attack and were available for limited missions”. This pack gives them no position and no track: it holds no source it can open that says where they were on the morning of 7 December, and would rather show nothing than draw a guess"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:hawaiian-department",
+    "name": "Hawaiian Department, United States Army",
+    "short": "Hawaiian Dept",
+    "side": "us",
+    "kind": "garrison",
+    "commander": "person:short-walter",
+    "concentration": {
+      "area": "Oahu — Hickam, Wheeler and the aircraft warning service",
+      "position": [-157.9529, 21.3276],
+      "asOf": "1941-11-25T13:00:00Z",
+      "sources": [
+        {
+          "source": "source:craven-cate-aaf-1",
+          "note": "ch. 6 — the Army's air and ground defence of the islands, and the loss of 96 Army aircraft on 7 December"
+        }
+      ]
+    },
+    "sources": [
+      {
+        "source": "source:craven-cate-aaf-1",
+        "note": "ch. 6, 'Pearl Harbor and Clark Field'"
+      },
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI, for the Army's losses: 96 aircraft, including those destroyed in depots"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:force-z",
+    "name": "Force Z — Prince of Wales and Repulse",
+    "short": "Force Z",
+    "side": "gb",
+    "kind": "squadron",
+    "dissolved": "1941-12-10",
+    "concentration": {
+      "area": "Singapore",
+      "position": [103.8333, 1.2833],
+      "asOf": "1941-11-25T13:00:00Z",
+      "sources": [
+        {
+          "source": "source:morton-1962",
+          "note": "ch. VI — the two capital ships “ventured forth from Singapore without air cover” and were sunk by land-based naval aircraft the day after the main body of the 25th Army began to arrive off Malaya"
+        }
+      ]
+    },
+    "sources": [
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI. The pack draws no route for Force Z: no source it could open gives the sortie's track or the hour of the sinking, only the day"
+      }
+    ]
+  }
+]

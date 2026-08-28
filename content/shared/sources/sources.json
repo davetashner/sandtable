@@ -2023,5 +2023,120 @@
     "publisher": "Военная литература (militera.lib.ru)",
     "url": "http://militera.lib.ru/db/nikolay-2/1917.html",
     "notes": "An online transcription of the emperor's own diary for 1917, with the editor's expansions of his abbreviations in square brackets. The weakness is real and is stated rather than hidden: the site does not say which printed edition it transcribes, so the wording used in this pack was confirmed against a second, independent transcription (doc20vek.ru) before being quoted. Cited for what Nicholas wrote on the day, which is what a diary is evidence of."
+  },
+  {
+    "id": "source:japanese-monograph-97",
+    "kind": "official-history",
+    "tier": "official-history",
+    "author": "Japanese Research Division, Military History Section, Headquarters, Army Forces Far East",
+    "title": "Japanese Monograph No. 97: Pearl Harbor Operations — General Outline of Orders and Plans",
+    "publisher": "Military History Section, Headquarters, Army Forces Far East, Tokyo",
+    "url": "https://www.ibiblio.org/pha/myths/jm-097.html",
+    "notes": "The one monograph of the series this project has so far leaned on hard enough to earn its own entry, as source:japanese-monographs said one would. It is the Hawaii operation reduced to its orders: the task organisation of the striking force ship by ship, the speed it was to sail at, the named points it was to pass through, the hours the two waves were to be launched, and what was to happen after them. Everything this pack says about what the operation was *supposed* to do comes from here. Read it under the series' own warning, which is quoted in full in source:japanese-monographs: the originals were destroyed before the surrender and much of this was reconstructed from memory by the officers who had held the appointments, so it is evidence of what a Japanese commander said the plan was, in the manner of a memoir, and not the text of an order. Two internal inconsistencies were noticed and are not resolved here: the standby point is given as 42°N 165°W on p. 7 and as 42°N 170°W on p. 21, and the aircraft totals differ from those Fuchida gave the US Strategic Bombing Survey in 1945 (source:ussbs-interrogations). No year is recorded because the transcription carries none; the series ran from 1946 to 1960. Pages are as marked in the HyperWar transcription at ibiblio.org, which is a transcription and not a page scan — see the pack README on how far this project can promise a page number read through it."
+  },
+  {
+    "id": "source:peace-and-war-1943",
+    "kind": "official-history",
+    "tier": "primary",
+    "author": "United States Department of State",
+    "title": "Peace and War: United States Foreign Policy, 1931–1941",
+    "year": 1943,
+    "publisher": "United States Government Printing Office, Washington",
+    "edition": "Department of State Publication 1983; 274 documents",
+    "url": "https://www.ibiblio.org/pha/paw/index.html",
+    "notes": "The State Department's own documentary record of the road to the Pacific war, printed in 1943 while it was being fought, and therefore a collection assembled by one of the parties to make a case. Filed as primary because that is its form — it prints the documents, in full, with their file numbers — and the case it makes is made by selection rather than by alteration. It is where the texts this pack quotes come from: the American outline of 26 November 1941 (doc. 257), Roosevelt's message to the Emperor (doc. 264), the memorandum of the conversation of 7 December with the Japanese memorandum printed inside it and the clock times of the appointment (doc. 265), and the address to Congress and the joint resolution of 8 December (docs. 267–268). Read it knowing what a 1943 collection is for, and beside a work that reads the Japanese side of the same negotiation — source:hotta-2013 is the counterpart in this registry."
+  },
+  {
+    "id": "source:ussbs-interrogations",
+    "kind": "archive",
+    "tier": "primary",
+    "author": "United States Strategic Bombing Survey, Naval Analysis Division",
+    "title": "Interrogations of Japanese Officials",
+    "year": 1946,
+    "publisher": "United States Government Printing Office, Washington",
+    "edition": "USSBS Reports (Pacific), vols. I–II; 118 interrogations conducted in Tokyo, October–December 1945",
+    "url": "https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/index.html",
+    "notes": "Japanese officers questioned in Tokyo within weeks of the surrender, in English translation, with the interrogating officer named and the date and place given for each. Primary in form: it is the transcript, not an account built from it. It is also the earliest layer of the postwar testimony that later became the received Western account, which makes it useful in a particular way — Nav. No. 6 (USSBS No. 40, 18 October 1945) is Fuchida Mitsuo three months after the surrender, and what he says there can be set against what he said in 1948 and 1963 and against the operation orders in source:japanese-monograph-97. Cite it for what a Japanese officer said in 1945, never for what happened."
+  },
+  {
+    "id": "source:craven-cate-aaf-1",
+    "kind": "official-history",
+    "tier": "official-history",
+    "author": "Craven, Wesley Frank; Cate, James Lea (eds.)",
+    "title": "The Army Air Forces in World War II, Volume I: Plans and Early Operations, January 1939 to August 1942",
+    "url": "https://www.ibiblio.org/hyperwar/AAF/I/index.html",
+    "notes": "The US Army Air Forces' own history, and the volume that carries chapter 6, 'Pearl Harbor and Clark Field' — the two air disasters of the first day treated as one subject, which is the right frame and not the usual one. Used in this pack for the clock times of the two waves over Oahu and for the aircraft lost in the Philippines. A US government work in the public domain. **No publisher, city or year is recorded here, and that is deliberate**: the HyperWar transcription carries no imprint, copyright line or title page, and none could be opened from this environment, so under rule 3 the fields are left empty rather than filled from a catalogue. The editors and the volume title are as printed on the transcription's own index page. Same reachability note as source:morton-1962 — the official host answers 403 to this repository, the url is the HyperWar transcription, and page numbers read through it are treated as approximate (see the pack README)."
+  },
+  {
+    "id": "source:building-bases-1947",
+    "kind": "official-history",
+    "tier": "official-history",
+    "author": "United States Bureau of Yards and Docks",
+    "title": "Building the Navy's Bases in World War II: History of the Bureau of Yards and Docks and the Civil Engineer Corps, 1940–1946",
+    "year": 1947,
+    "publisher": "United States Government Printing Office, Washington",
+    "edition": "Two volumes",
+    "url": "https://www.ibiblio.org/hyperwar/USN/Building_Bases/index.html",
+    "notes": "The Navy's construction history, and the only work in this registry that describes the thing the Pearl Harbor counterfactual turns on: the fuel storage at Pearl Harbor and what state it was in. Cited here for a negative finding rather than a positive one. Its chapter 22 lists 'two fuel-oil tank farms (above ground)' in the pre-war navy yard and gives no capacity for them, and the six-million-barrel figure it does give belongs to the *underground* project, which was begun late in December 1940 and whose first vault was not usable until September 1942 — so that number is not a December 1941 number, however often it is quoted as one. Title, publisher, city and year read off the title page reproduced in the transcription. Same reachability note as source:morton-1962."
+  },
+  {
+    "id": "source:zimm-2011",
+    "kind": "book",
+    "tier": "study",
+    "author": "Zimm, Alan D.",
+    "title": "Attack on Pearl Harbor: Strategy, Combat, Myths, Deceptions",
+    "year": 2011,
+    "publisher": "Casemate, Havertown, Pennsylvania",
+    "notes": "An operations analyst's reconstruction of the attack — weapons effects, target selection, the arithmetic of what the aircraft carried against what they hit — and the standard modern statement of the case that the third wave is a myth: that no third strike was in the plan, that the fuel tanks were not the soft target they are described as, and that the conference on Akagi's bridge at which Fuchida is said to have urged one did not happen as he told it. **Not read.** No copy could be opened from this environment. What this registry knows of the argument comes from a signed review by Charles C. Kolb for the Naval Historical Foundation, and the bibliographic detail — publisher, city, year, 464 pages — comes from that review rather than from the item. No ISBN is recorded, for the reason given in docs/sources.md. Where the pack states Zimm's position it says on the card that it is stated at second hand."
+  },
+  {
+    "id": "source:parshall-2010",
+    "kind": "article",
+    "tier": "study",
+    "author": "Parshall, Jonathan",
+    "title": "Research & Debate — Reflecting on Fuchida, or “A Tale of Three Whoppers”",
+    "year": 2010,
+    "publisher": "Naval War College Review, vol. 63, no. 2 (Spring 2010), pp. 127–138",
+    "url": "https://digital-commons.usnwc.edu/nwc-review/vol63/iss2/10/",
+    "notes": "The article that put the case against Fuchida's postwar testimony into a peer-reviewed journal, three of whose claims it takes apart one at a time — the first of them being that he had mentally earmarked the Pearl Harbor tank farms as targets. It is the reason this project cites Fuchida as a subject and not as an authority, and the companion to source:parshall-tully-2005. **The article's own PDF could not be opened from this environment**: the landing page above resolves, and the download returns 403, as history.army.mil does. What was read is Parshall's own restatement of the argument on his website (source:combinedfleet), which quotes the 1948 and 1963 interviews at issue; the citation chain is stated on the historiography card rather than hidden, in the manner docs/sources.md §7 asks for."
+  },
+  {
+    "id": "source:combinedfleet",
+    "kind": "web",
+    "tier": "study",
+    "author": "Parshall, Jonathan; Tully, Anthony; and contributors",
+    "title": "Imperial Japanese Navy Page (combinedfleet.com)",
+    "url": "https://www.combinedfleet.com/",
+    "notes": "The website of the authors of source:parshall-tully-2005, and the working notes behind it: ship-by-ship service records of the Imperial Japanese Navy, translations, and the long-running arguments about Midway and Pearl Harbor. Self-published, and cited here for exactly one thing — Parshall's own restatement of his Naval War College Review argument about Fuchida, in the rebuttal page answering Martin Bennett, which is the only place his wording could actually be read from this environment. Cited as a historian's own statement of his position, never as evidence for what happened. The page carries no publication date."
+  },
+  {
+    "id": "source:prange-1981",
+    "kind": "book",
+    "tier": "study",
+    "author": "Prange, Gordon W.; Goldstein, Donald M.; Dillon, Katherine V.",
+    "title": "At Dawn We Slept: The Untold Story of Pearl Harbor",
+    "year": 1981,
+    "publisher": "McGraw-Hill, New York",
+    "isbn": "0070506698",
+    "notes": "Thirty-seven years of research, published after Prange's death by two of his students, and still the fullest narrative of the attack from both sides; it is also the book through which Fuchida's account reached the English-language literature, since Prange interviewed him repeatedly from 1948 onwards and the interviews are the source of the third-wave story. It holds, with source:layton-1985, the position that the fuel and repair installations were the great missed target. **Not read.** The Internet Archive's copies are lending copies; nothing is quoted from it here and no page is given. Bibliographic detail is from the Internet Archive's catalogue record of the McGraw-Hill printing, not from the item."
+  },
+  {
+    "id": "source:layton-1985",
+    "kind": "book",
+    "tier": "memoir",
+    "author": "Layton, Edwin T.; Pineau, Roger; Costello, John",
+    "title": "“And I Was There”: Pearl Harbor and Midway — Breaking the Secrets",
+    "year": 1985,
+    "publisher": "William Morrow, New York",
+    "notes": "Fleet intelligence officer to Kimmel and then to Nimitz, writing forty years later with a case to make about who was blamed for 7 December and who should have been; filed as a memoir for that reason, not as a study. It is the best-known statement of the argument that the fuel tanks and the repair yard were the targets that would have mattered, and the usual source for Nimitz's remark that destroying the oil would have prolonged the war by two years. **Not read.** Every Internet Archive copy is a lending copy; nothing is quoted from it here and no page is given. Bibliographic detail is from the Internet Archive's catalogue records of the W. Morrow printing, not from the item."
+  },
+  {
+    "id": "source:openstreetmap",
+    "kind": "map",
+    "tier": "reference",
+    "author": "OpenStreetMap contributors",
+    "title": "OpenStreetMap",
+    "url": "https://www.openstreetmap.org/",
+    "notes": "Reference data only, under the same rule as source:wikipedia-en (docs/sources.md §8): a coordinate for a place in content/shared/places/places.json, and nothing else. Never an operational claim and never a footnote a reader sees. It is in the registry because several Pacific airfields have no coordinate box in any encyclopaedia and OpenStreetMap's aerodrome node is the only check available. Licence ODbL; attribution © OpenStreetMap contributors."
   }
 ]
