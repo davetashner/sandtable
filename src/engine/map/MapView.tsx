@@ -29,16 +29,8 @@ import { Protocol } from 'pmtiles';
 import { useEffect, useImperativeHandle, useRef, useState, type ReactNode, type Ref } from 'react';
 import type { BBox, Camera } from '../../packs/schema/index.js';
 import { OWNS_KEYS } from '../shortcuts.js';
-import { BORDERS_SOURCE, bordersLayers, decorateBorders, fetchBorders } from './borders.js';
-import {
-  FRONT_LAYER_IDS,
-  FRONT_SOURCE,
-  fetchFront,
-  frontLayers,
-  only,
-  snapshotAt,
-  type FrontGeoJSON,
-} from './front.js';
+import { fetchBorders, mountBorders } from './borders.js';
+import { fetchFront, mountFront, unmountFront, type FrontGeoJSON } from './front.js';
 import { buildStyle, detectTheme, type MapTheme } from './style.js';
 import './map.css';
 import { mark } from '../perf.js';
@@ -330,20 +322,7 @@ export function MapView({
     fetchBorders(borderYear)
       .then((geo) => {
         if (cancelled || !mapRef.current) return;
-        const m = mapRef.current;
-        if (m.getSource(BORDERS_SOURCE)) {
-          for (const l of bordersLayers(activeTheme)) if (m.getLayer(l.id)) m.removeLayer(l.id);
-          m.removeSource(BORDERS_SOURCE);
-        }
-        m.addSource(BORDERS_SOURCE, {
-          type: 'geojson',
-          data: decorateBorders(geo) as never,
-          attribution: geo.attribution ?? '',
-        });
-        // Sit below the first label layer so place names stay readable.
-        const firstSymbol = m.getStyle().layers.find((l) => l.type === 'symbol')?.id;
-        for (const l of bordersLayers(activeTheme))
-          m.addLayer(l, l.type === 'symbol' ? undefined : firstSymbol);
+        mountBorders(mapRef.current, geo, activeTheme);
       })
       .catch((e: unknown) => console.warn('[map] borders', e));
     return () => {
@@ -388,27 +367,8 @@ export function MapView({
       const m = mapRef.current;
       const geo = frontRef.current;
       if (cancelled || !m) return;
-      const source = m.getSource(FRONT_SOURCE) as { setData: (d: unknown) => void } | undefined;
-      if (!geo || !wantsFront || frontAt === undefined) {
-        if (source) {
-          for (const id of FRONT_LAYER_IDS) if (m.getLayer(id)) m.removeLayer(id);
-          m.removeSource(FRONT_SOURCE);
-        }
-        return;
-      }
-      const wanted = only(snapshotAt(geo, frontAt));
-      if (source) {
-        source.setData(wanted);
-        return;
-      }
-      m.addSource(FRONT_SOURCE, {
-        type: 'geojson',
-        data: wanted as never,
-        attribution: geo.attribution ?? '',
-      });
-      // Above the borders, below the labels, so place names stay readable.
-      const firstSymbol = m.getStyle().layers.find((l) => l.type === 'symbol')?.id;
-      for (const l of frontLayers(activeTheme)) m.addLayer(l, firstSymbol);
+      if (!geo || !wantsFront || frontAt === undefined) unmountFront(m);
+      else mountFront(m, geo, frontAt, activeTheme);
     };
 
     // `ready` goes true on the first `styledata`, which fires well before the
