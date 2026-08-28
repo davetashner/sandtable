@@ -1,0 +1,9 @@
+{
+  "id": "place:bertrix",
+  "name": "Bertrix",
+  "kind": "town",
+  "lngLat": [5.257, 49.854],
+  "country": "Belgium",
+  "notes": "Where the French 4th Army's XVII Corps was broken in the woods on 22 August 1914.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

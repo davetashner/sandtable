@@ -1,0 +1,8 @@
+{
+  "id": "place:ribemont",
+  "name": "Ribemont",
+  "kind": "town",
+  "lngLat": [3.458, 49.799],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

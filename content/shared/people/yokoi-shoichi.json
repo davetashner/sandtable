@@ -1,0 +1,23 @@
+{
+  "id": "person:yokoi-shoichi",
+  "name": "Yokoi Shōichi",
+  "sortName": "Yokoi Shōichi",
+  "names": [
+    { "name": "横井 庄一", "language": "ja" },
+    {
+      "name": "Shoichi Yokoi",
+      "language": "en",
+      "kind": "transliteration",
+      "period": "given-name-first order, as English-language catalogues index him"
+    }
+  ],
+  "born": "1915-03-31",
+  "died": "1997-09-22",
+  "nationality": "JP",
+  "roles": [
+    { "title": "Sergeant, Imperial Japanese Army, Guam", "from": "1943-02", "to": "1945" },
+    { "title": "Holdout in the interior of Guam", "from": "1944-08", "to": "1972-01-24" }
+  ],
+  "summary": "A tailor from Aichi conscripted in 1941 and sent to Guam, where the garrison was destroyed in August 1944. He went into the jungle and stayed there for twenty-eight years, living for most of them alone in a cave he had dug beside a river, wearing cloth he wove from tree bark on a loom he made. Two fishermen found him in January 1972. He came home to a country he did not recognise and said the sentence that made him famous — that he was ashamed to have returned alive — and it is worth setting beside the men who went over the cliffs at Marpi Point, because it is the same instruction, obeyed by a conscript who had wanted none of it.",
+  "sources": [{ "source": "source:wikipedia-en" }]
+}

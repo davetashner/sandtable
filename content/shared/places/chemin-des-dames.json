@@ -1,0 +1,12 @@
+{
+  "id": "place:chemin-des-dames",
+  "name": "Chemin des Dames",
+  "kind": "region",
+  "lngLat": [3.62, 49.44],
+  "country": "France",
+  "notes": "The ridge between the Aisne and the Ailette where the German right wing turned and dug in on 13–14 September 1914; the line held there until 1917.",
+  "sources": [
+    { "source": "source:edmonds-1922" },
+    { "source": "source:wikipedia-en", "note": "coordinates" }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "place:washington-dc",
+  "name": "Washington",
+  "kind": "city",
+  "lngLat": [-77.0164, 38.9047],
+  "country": "United States",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

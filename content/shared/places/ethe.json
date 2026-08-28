@@ -1,0 +1,9 @@
+{
+  "id": "place:ethe",
+  "name": "Ethe",
+  "kind": "village",
+  "lngLat": [5.585, 49.585],
+  "country": "Belgium",
+  "notes": "Village east of Virton, fought over by the French 3rd Army on 22 August 1914 and the scene of German reprisals against civilians.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

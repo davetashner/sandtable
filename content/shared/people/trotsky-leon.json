@@ -1,0 +1,28 @@
+{
+  "id": "person:trotsky-leon",
+  "name": "Leon Trotsky",
+  "sortName": "Trotsky, Leon (Lev Davidovich Bronstein)",
+  "names": [
+    {
+      "name": "Lev Davidovich Bronstein",
+      "language": "en",
+      "kind": "period",
+      "period": "the name he was born with"
+    }
+  ],
+  "born": "1879-11-07",
+  "died": "1940-08-21",
+  "nationality": "RU",
+  "roles": [
+    { "title": "Chairman of the St Petersburg Soviet", "from": "1905", "to": "1905" },
+    { "title": "Chairman of the Petrograd Soviet", "from": "1917-10-08", "to": "1918" },
+    { "title": "People's Commissar for Foreign Affairs", "from": "1917-11", "to": "1918-03" },
+    { "title": "People's Commissar for Military Affairs", "from": "1918-03", "to": "1925" }
+  ],
+  "summary": "A Ukrainian farmer's son who had chaired the St Petersburg Soviet in 1905 at twenty-six, spent the years between in exile writing about permanent revolution, and stood outside both wings of Russian social democracy until the summer of 1917, when he joined the Bolsheviks. Elected chairman of the Petrograd Soviet in September, he chaired the Military Revolutionary Committee that took the capital in October, negotiated at Brest-Litovsk, and built the Red Army. He lost the succession to Stalin, was expelled and deported, wrote the fullest participant's history of the revolution, and was murdered in Mexico in 1940.",
+  "sources": [
+    { "source": "source:figes-1996" },
+    { "source": "source:rabinowitch-1976" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

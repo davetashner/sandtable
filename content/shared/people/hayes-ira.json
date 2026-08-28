@@ -1,0 +1,20 @@
+{
+  "id": "person:hayes-ira",
+  "name": "Ira Hayes",
+  "sortName": "Hayes, Ira",
+  "born": "1923-01-12",
+  "died": "1955-01-24",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Private First Class, Company E, 2nd Battalion, 28th Marines, 5th Marine Division",
+      "from": "1944-01",
+      "to": "1945-12"
+    }
+  ],
+  "summary": "Akimel O'odham from the Gila River Indian Community in Arizona, a parachute-qualified Marine who fought at Bougainville and Iwo Jima and is the figure with his hands open at the left of Rosenthal's photograph. He insisted, against the Corps' own identification and at cost to himself, that the man at the base of the pole was Harlon Block and not Henry Hansen, and made the correction stick. Sent home on the bond tour, he asked to be returned to his unit; the tour and what followed it never let go, and he died of exposure and alcohol on the reservation in January 1955, aged thirty-two. He is the reason the record was corrected the first time and part of the reason it was looked at again seventy years later.",
+  "sources": [
+    { "source": "source:robertson-2019" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

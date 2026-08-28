@@ -1,0 +1,17 @@
+{
+  "id": "person:yudenich-nikolai",
+  "name": "Nikolai Yudenich",
+  "sortName": "Yudenich, Nikolai Nikolayevich",
+  "born": "1862-07-30",
+  "died": "1933-10-05",
+  "nationality": "RU",
+  "roles": [
+    { "title": "Commander, Caucasus Army", "from": "1915", "to": "1917" },
+    { "title": "Commander, North-Western Army", "from": "1919-01", "to": "1919-11" }
+  ],
+  "summary": "The most successful Russian field commander of the First World War - Erzurum in 1916 was a genuine victory in a war that gave Russia few - and the least successful of the White generals. His North-Western Army, raised in Estonia, made a dash for Petrograd in October 1919, reached the Pulkovo heights within sight of the city and was thrown back inside a fortnight. Estonia, negotiating its own peace with Moscow, then disarmed and interned what was left of him.",
+  "sources": [
+    { "source": "source:chamberlin-1935-2" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

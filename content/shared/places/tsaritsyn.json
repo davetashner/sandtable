@@ -1,0 +1,19 @@
+{
+  "id": "place:tsaritsyn",
+  "name": "Tsaritsyn",
+  "kind": "city",
+  "lngLat": [44.513, 48.708],
+  "country": "Russian Empire",
+  "notes": "The Volga city that Stalin was sent to in 1918 to move grain and stayed to command. It was renamed Stalingrad for what happened there in the civil war, and is known now for what happened there in the next one.",
+  "sources": [
+    { "source": "source:wikipedia-en", "note": "coordinates" },
+    {
+      "source": "source:chamberlin-1935-2",
+      "note": "the dates in this note; the chronological table and narrative"
+    }
+  ],
+  "names": [
+    { "name": "Stalingrad", "kind": "period" },
+    { "name": "Volgograd", "kind": "modern" }
+  ]
+}

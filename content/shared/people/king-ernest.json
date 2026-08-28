@@ -1,0 +1,22 @@
+{
+  "id": "person:king-ernest",
+  "name": "Ernest J. King",
+  "sortName": "King, Ernest J.",
+  "born": "1878-11-23",
+  "died": "1956-06-25",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Commander in Chief, United States Fleet",
+      "from": "1941-12-30",
+      "to": "1945-12-15"
+    },
+    { "title": "Chief of Naval Operations", "from": "1942-03-26", "to": "1945-12-15" }
+  ],
+  "summary": "Held both American naval commands at once — operational as Commander in Chief, United States Fleet and administrative as Chief of Naval Operations — and used them to stop the Pacific being adjourned. Germany-first was Allied policy and King never overturned it; what he did was keep enough shipping, escorts and Marines flowing west that the Guadalcanal landing of August 1942 could happen at all, eight months into a war the coalition had agreed to fight elsewhere first. Cordially disliked by almost everyone he worked with, which he treated as evidence he was doing the job.",
+  "sources": [
+    { "source": "source:toll-2012" },
+    { "source": "source:morison-usnowii" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

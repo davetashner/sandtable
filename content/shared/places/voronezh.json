@@ -1,0 +1,15 @@
+{
+  "id": "place:voronezh",
+  "name": "Voronezh",
+  "kind": "city",
+  "lngLat": [39.21, 51.672],
+  "country": "Russian Empire",
+  "notes": "Fought over repeatedly in 1919: Mamontov's raiders battled its garrison for several days in September, and the Whites took it on 6 October.",
+  "sources": [
+    { "source": "source:wikipedia-en", "note": "coordinates" },
+    {
+      "source": "source:chamberlin-1935-2",
+      "note": "the dates in this note; the chronological table and narrative"
+    }
+  ]
+}

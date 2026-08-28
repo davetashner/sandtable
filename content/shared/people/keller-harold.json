@@ -1,0 +1,20 @@
+{
+  "id": "person:keller-harold",
+  "name": "Harold P. Keller",
+  "sortName": "Keller, Harold P.",
+  "born": "1921-08-03",
+  "died": "1979-03-13",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Corporal, Company E, 2nd Battalion, 28th Marines, 5th Marine Division",
+      "from": "1944-01",
+      "to": "1945-11"
+    }
+  ],
+  "summary": "An Iowa farmer who had been a Marine Raider before the Raider battalions were broken up into the 5th Marine Division. In October 2019 a second Marine Corps board found that the figure previously identified as Rene Gagnon — the third man from the left, partly hidden — was Keller. He came home, went back to farming near Brooklyn, Iowa, and told his family almost nothing; his daughter learned he was in the photograph from the 2019 announcement, twenty-eight years after his death.",
+  "sources": [
+    { "source": "source:robertson-2019" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

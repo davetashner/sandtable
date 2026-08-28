@@ -1,0 +1,15 @@
+{
+  "id": "person:bulow-karl-von",
+  "name": "Karl von Bülow",
+  "sortName": "Bülow, Karl von",
+  "born": "1846-03-24",
+  "died": "1921-08-31",
+  "nationality": "DE",
+  "roles": [{ "title": "Commander, German 2nd Army", "from": "1914-08-02", "to": "1915-04" }],
+  "summary": "Commander of the German 2nd Army, for a time also directing the 1st and 3rd. Fought the Sambre and Guise; his decision to pull back from the Marne on 9 September, after Hentsch's visit, ended the campaign's offensive phase.",
+  "media": ["media:person/bulow-karl-von/portrait-c1916-colorized"],
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

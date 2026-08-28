@@ -1,0 +1,12 @@
+{
+  "id": "place:zeebrugge",
+  "name": "Zeebrugge",
+  "kind": "town",
+  "lngLat": [3.208, 51.331],
+  "country": "Belgium",
+  "notes": "Channel port on the Flanders coast, in German hands from mid-October 1914 — one of the objectives that made the coast worth fighting for.",
+  "sources": [
+    { "source": "source:edmonds-1925" },
+    { "source": "source:wikipedia-en", "note": "coordinates" }
+  ]
+}

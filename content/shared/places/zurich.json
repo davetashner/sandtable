@@ -1,0 +1,10 @@
+{
+  "id": "place:zurich",
+  "name": "Zurich",
+  "names": [{ "name": "Zürich", "language": "de", "kind": "period" }],
+  "kind": "city",
+  "lngLat": [8.5417, 47.3769],
+  "country": "Switzerland",
+  "notes": "Where Lenin spent the last of his exile, and where he boarded the train home on 9 April 1917 (N.S.).",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

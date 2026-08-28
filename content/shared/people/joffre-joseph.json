@@ -1,0 +1,17 @@
+{
+  "id": "person:joffre-joseph",
+  "name": "Joseph Joffre",
+  "sortName": "Joffre, Joseph",
+  "born": "1852-01-12",
+  "died": "1931-01-03",
+  "nationality": "FR",
+  "roles": [
+    { "title": "Commander-in-Chief, French armies", "from": "1914-08-02", "to": "1916-12" }
+  ],
+  "summary": "Commander-in-Chief of the French armies 1914–1916: author of Plan XVII's frontier offensive, and of the retreat, the redeployment west by rail and the 6 September counterstroke that won the Marne.",
+  "media": ["media:person/joffre-joseph/portrait-colorized"],
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

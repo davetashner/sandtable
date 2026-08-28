@@ -1,0 +1,8 @@
+{
+  "id": "place:amiens",
+  "name": "Amiens",
+  "kind": "city",
+  "lngLat": [2.296, 49.894],
+  "country": "France",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

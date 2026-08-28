@@ -1,0 +1,23 @@
+{
+  "id": "person:mitscher-marc",
+  "name": "Marc A. Mitscher",
+  "sortName": "Mitscher, Marc A.",
+  "born": "1887-01-26",
+  "died": "1947-02-03",
+  "nationality": "US",
+  "roles": [
+    { "title": "Commanding Officer, USS *Hornet* (CV-8)", "from": "1941-10-20", "to": "1942-06" },
+    { "title": "Commander, Air, Solomon Islands", "from": "1943-04", "to": "1943-07" },
+    {
+      "title": "Commander, Fast Carrier Task Force (Task Force 58 / 38)",
+      "from": "1944-01",
+      "to": "1945-07"
+    }
+  ],
+  "summary": "Captained *Hornet* for the Doolittle raid and then made Task Force 58 into the instrument that the Central Pacific drive ran on: fifteen carriers operating as one formation, capable of suppressing an island's air for a week and of destroying a fleet in a day. On the evening of 20 June 1944, with his aircraft returning from a strike at the limit of their fuel in the dark, he turned the task force's lights on — an order that gave away his position to submarines and got most of his pilots back, and which the men who flew that night never stopped repeating.",
+  "sources": [
+    { "source": "source:toll-2015" },
+    { "source": "source:toll-2020" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

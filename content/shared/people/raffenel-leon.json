@@ -1,0 +1,14 @@
+{
+  "id": "person:raffenel-leon",
+  "name": "Léon Raffenel",
+  "sortName": "Raffenel, Léon",
+  "born": "1856-08-14",
+  "died": "1914-08-22",
+  "nationality": "FR",
+  "roles": [{ "title": "Commander, French 3rd Colonial Infantry Division", "to": "1914-08-22" }],
+  "summary": "Commanded the 3rd Colonial Infantry Division of the French 4th Army and was killed with most of his division at Rossignol on 22 August 1914, eight days after his fifty-eighth birthday — one of the first French general officers to die in the war.",
+  "sources": [
+    { "source": "source:greenhalgh-2014" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

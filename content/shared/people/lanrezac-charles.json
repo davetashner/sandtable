@@ -1,0 +1,15 @@
+{
+  "id": "person:lanrezac-charles",
+  "name": "Charles Lanrezac",
+  "sortName": "Lanrezac, Charles",
+  "born": "1852-07-31",
+  "died": "1925-01-18",
+  "nationality": "FR",
+  "roles": [{ "title": "Commander, French 5th Army", "from": "1914-08-02", "to": "1914-09-03" }],
+  "summary": "Commander of the French 5th Army on the Allied left. He read the German wheel through Belgium earlier than GQG, fought Charleroi and the counterattack at Guise on 29 August, and was replaced by Franchet d'Espèrey on 3 September.",
+  "media": ["media:person/lanrezac-charles/portrait-colorized"],
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

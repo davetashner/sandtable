@@ -1,0 +1,12 @@
+{
+  "id": "place:roye",
+  "name": "Roye",
+  "kind": "town",
+  "lngLat": [2.792, 49.7],
+  "country": "France",
+  "notes": "Picardy town on the front of the French Second Army's northward attempt of 22–26 September 1914.",
+  "sources": [
+    { "source": "source:edmonds-1925" },
+    { "source": "source:wikipedia-en", "note": "coordinates" }
+  ]
+}

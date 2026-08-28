@@ -1,0 +1,8 @@
+{
+  "id": "place:dinant",
+  "name": "Dinant",
+  "kind": "town",
+  "lngLat": [4.912, 50.261],
+  "country": "Belgium",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

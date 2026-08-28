@@ -1,0 +1,21 @@
+{
+  "id": "person:french-john",
+  "name": "Sir John French",
+  "sortName": "French, John",
+  "born": "1852-09-28",
+  "died": "1925-05-22",
+  "nationality": "GB",
+  "roles": [
+    {
+      "title": "Commander-in-Chief, British Expeditionary Force",
+      "from": "1914-08-04",
+      "to": "1915-12"
+    }
+  ],
+  "summary": "Commander of the British Expeditionary Force in 1914: Mons, Le Cateau, the retreat almost to the Seine, and — after Kitchener's intervention — the advance into the gap at the Marne.",
+  "media": ["media:person/french-john/portrait-colorized"],
+  "sources": [
+    { "source": "source:edmonds-1922" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

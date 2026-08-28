@@ -1,0 +1,9 @@
+{
+  "id": "place:kronstadt",
+  "name": "Kronstadt",
+  "kind": "fortress",
+  "lngLat": [29.7667, 59.9833],
+  "country": "Russian Empire",
+  "notes": "The naval fortress and base on Kotlin Island, some thirty kilometres west of Petrograd in the Gulf of Finland; the most radical garrison in Russia in 1917.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

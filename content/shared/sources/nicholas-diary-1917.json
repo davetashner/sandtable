@@ -1,0 +1,11 @@
+{
+  "id": "source:nicholas-diary-1917",
+  "kind": "web",
+  "tier": "primary",
+  "author": "Nicholas II",
+  "title": "Дневник Николая II, 1917 год (diary of Nicholas II for 1917)",
+  "year": 1917,
+  "publisher": "Военная литература (militera.lib.ru)",
+  "url": "http://militera.lib.ru/db/nikolay-2/1917.html",
+  "notes": "An online transcription of the emperor's own diary for 1917, with the editor's expansions of his abbreviations in square brackets. The weakness is real and is stated rather than hidden: the site does not say which printed edition it transcribes, so the wording used in this pack was confirmed against a second, independent transcription (doc20vek.ru) before being quoted. Cited for what Nicholas wrote on the day, which is what a diary is evidence of."
+}

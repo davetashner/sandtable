@@ -1,0 +1,27 @@
+{
+  "id": "person:ozawa-jisaburo",
+  "name": "Ozawa Jisaburō",
+  "sortName": "Ozawa Jisaburō",
+  "names": [
+    { "name": "小沢 治三郎", "language": "ja" },
+    {
+      "name": "Jisaburō Ozawa",
+      "language": "en",
+      "kind": "transliteration",
+      "period": "given-name-first order, as English-language catalogues index him"
+    }
+  ],
+  "born": "1886-10-02",
+  "died": "1966-11-09",
+  "nationality": "JP",
+  "roles": [
+    { "title": "Commander-in-Chief, Third Fleet (carriers)", "from": "1942-11", "to": "1944-11" },
+    { "title": "Commander-in-Chief, Combined Fleet", "from": "1945-05-29", "to": "1945-10" }
+  ],
+  "summary": "The Imperial Navy's most thoughtful carrier commander, and the one who inherited the arm after its aircrew had been used up. In the Philippine Sea in June 1944 he attacked at ranges his aircraft could reach and American aircraft could not, and lost about four hundred of them in a day to radar-directed fighters and proximity-fuzed anti-aircraft fire; the Americans called it the Marianas Turkey Shoot. Four months later at Leyte he took what was left of the carriers north with almost no aircraft aboard, as a decoy, and it worked: Halsey went after him and left San Bernardino Strait open. Ozawa's fleet existed by then to be sacrificed, and he knew it.",
+  "sources": [
+    { "source": "source:toll-2015" },
+    { "source": "source:toll-2020" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

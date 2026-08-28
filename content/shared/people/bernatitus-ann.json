@@ -1,0 +1,15 @@
+{
+  "id": "person:bernatitus-ann",
+  "name": "Ann A. Bernatitus",
+  "sortName": "Bernatitus, Ann A.",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Lieutenant, Navy Nurse Corps, Philippines (Cañacao, Bataan, Corregidor)",
+      "from": "1940-12",
+      "to": "1942-05-03"
+    }
+  ],
+  "summary": "Navy nurse at Cañacao, then at Army Field Hospital No. 1 on Bataan through the retreat and the surrender fighting, then on Corregidor, operating in a tunnel under bombardment on a diet that had been cut to a third of a ration. Evacuated by the submarine *Spearfish* on 3 May 1942, days before the fortress fell; the eighty-odd Army and Navy nurses left behind spent the next three years interned at Santo Tomas and Los Baños. She was the first person awarded the Legion of Merit.",
+  "sources": [{ "source": "source:wikipedia-en" }]
+}

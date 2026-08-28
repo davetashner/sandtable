@@ -1,0 +1,18 @@
+{
+  "id": "person:dzerzhinsky-felix",
+  "name": "Felix Dzerzhinsky",
+  "sortName": "Dzerzhinsky, Felix Edmundovich",
+  "born": "1877-09-11",
+  "died": "1926-07-20",
+  "nationality": "RU",
+  "roles": [
+    { "title": "Chairman of the Cheka", "from": "1917-12-20", "to": "1922-02" },
+    { "title": "Chairman of the GPU / OGPU", "from": "1922-02", "to": "1926-07" }
+  ],
+  "summary": "A Polish nobleman's son who spent much of the two decades before 1917 in tsarist prisons and exile, and who from 20 December 1917 ran the All-Russian Extraordinary Commission - the Cheka - which is the institution the civil war left behind it. Ascetic, incorruptible and entirely without doubt, he is the reason the argument about the terror is an argument about a state organ rather than about a mob.",
+  "sources": [
+    { "source": "source:chamberlin-1935-2" },
+    { "source": "source:werth-2008" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

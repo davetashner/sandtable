@@ -1,0 +1,19 @@
+{
+  "id": "place:brest-litovsk",
+  "name": "Brest-Litovsk",
+  "kind": "fortress",
+  "lngLat": [23.734, 52.098],
+  "country": "Russian Empire (German-occupied from August 1915)",
+  "notes": "The fortress town on the Bug where the peace of 3 March 1918 was negotiated and signed. The Red Army took it on 1 August 1920 on the way to Warsaw and lost it again on 21 August.",
+  "sources": [
+    { "source": "source:wikipedia-en", "note": "coordinates" },
+    {
+      "source": "source:chamberlin-1935-2",
+      "note": "the dates in this note; the chronological table and narrative"
+    }
+  ],
+  "names": [
+    { "name": "Brest", "kind": "modern" },
+    { "name": "Brzesc nad Bugiem", "language": "pl", "period": "1919-1939" }
+  ]
+}

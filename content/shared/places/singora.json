@@ -1,0 +1,9 @@
+{
+  "id": "place:singora",
+  "name": "Singora",
+  "names": [{ "name": "Songkhla", "language": "th", "kind": "modern" }],
+  "kind": "town",
+  "lngLat": [100.5967, 7.2061],
+  "country": "Thailand",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "place:konigsberg",
+  "name": "Königsberg",
+  "names": [{ "name": "Kaliningrad", "language": "ru", "kind": "modern" }],
+  "kind": "fortress",
+  "lngLat": [20.51, 54.71],
+  "country": "German Empire (East Prussia)",
+  "notes": "The province's fortress and capital; holding it, or abandoning it behind the Vistula, was the question Prittwitz put to Moltke on 20 August.",
+  "sources": [{ "source": "source:showalter-2004" }]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "person:kolchak-alexander",
+  "name": "Alexander Kolchak",
+  "sortName": "Kolchak, Alexander Vasilyevich",
+  "born": "1874-11-16",
+  "died": "1920-02-07",
+  "nationality": "RU",
+  "roles": [
+    { "title": "Commander, Black Sea Fleet", "from": "1916-08", "to": "1917-06" },
+    { "title": "Supreme Ruler of Russia", "from": "1918-11-18", "to": "1920-01-04" }
+  ],
+  "summary": "A naval officer and Arctic explorer who commanded the Black Sea Fleet in 1916. Made War Minister of the anti-Bolshevik Directory at Omsk, he was raised to a personal dictatorship as Supreme Ruler by a coup on 18 November 1918 and held the title for thirteen months, through an offensive that reached towards the Volga in the spring of 1919 and a retreat that did not stop until Irkutsk. He was handed over by the Czechoslovak Legion that had been guarding him and shot on 7 February 1920; his body went under the ice of the Angara.",
+  "sources": [
+    { "source": "source:chamberlin-1935-2" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

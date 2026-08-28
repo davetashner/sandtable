@@ -1,0 +1,12 @@
+{
+  "id": "place:tamines",
+  "name": "Tamines",
+  "kind": "town",
+  "lngLat": [4.606, 50.433],
+  "country": "Belgium",
+  "notes": "On the Sambre between Charleroi and Namur; where the German 2nd Army forced the river on 21–22 August and shot the townspeople on the 22nd.",
+  "sources": [
+    { "source": "source:horne-kramer-2001" },
+    { "source": "source:wikipedia-en", "note": "coordinates" }
+  ]
+}

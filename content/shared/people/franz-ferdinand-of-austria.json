@@ -1,0 +1,30 @@
+{
+  "id": "person:franz-ferdinand-of-austria",
+  "name": "Franz Ferdinand",
+  "sortName": "Franz Ferdinand, Archduke of Austria-Este",
+  "born": "1863-12-18",
+  "died": "1914-06-28",
+  "nationality": "AT-HU",
+  "roles": [
+    {
+      "title": "Heir presumptive to the Austro-Hungarian throne",
+      "from": "1896-05-19",
+      "to": "1914-06-28"
+    },
+    {
+      "title": "Inspector General of the Austro-Hungarian armed forces",
+      "from": "1913-08-17",
+      "to": "1914-06-28"
+    }
+  ],
+  "summary": "Heir to the Habsburg throne and, on the evidence of his own papers, one of the more cautious voices in Vienna on war with Serbia - he had opposed the annexation crisis policy and doubted the army's readiness. He and his wife Sophie were shot at Sarajevo on 28 June 1914 by Gavrilo Princip. His death removed the chief restraint on the war party at the moment it gave that party its occasion.",
+  "media": [
+    "media:scene/1910-franz-ferdinand-family/franz-ferdinand-family-1910-colorized",
+    "media:scene/1914-sarajevo-motorcade-detail/sarajevo-motorcade-detail-colorized"
+  ],
+  "sources": [
+    { "source": "source:clark-2012" },
+    { "source": "source:albertini-1952" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

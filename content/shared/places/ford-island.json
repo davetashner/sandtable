@@ -1,0 +1,10 @@
+{
+  "id": "place:ford-island",
+  "name": "Ford Island",
+  "names": [{ "name": "Mokuʻumeʻume", "language": "haw" }],
+  "kind": "other",
+  "lngLat": [-157.9603, 21.3639],
+  "country": "Territory of Hawaii, United States",
+  "notes": "The island in the middle of Pearl Harbor, with a naval air station on it and the battleship moorings along its south-east shore.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

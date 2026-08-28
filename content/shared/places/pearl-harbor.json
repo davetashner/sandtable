@@ -1,0 +1,10 @@
+{
+  "id": "place:pearl-harbor",
+  "name": "Pearl Harbor",
+  "names": [{ "name": "Puʻuloa", "language": "haw", "period": "the Hawaiian name for the lochs" }],
+  "kind": "other",
+  "lngLat": [-157.9771, 21.3679],
+  "country": "Territory of Hawaii, United States",
+  "notes": "The fleet base on the south coast of Oahu: three lochs behind a single dredged entrance channel, which is why eight battleships could be found in one place and why a ship sunk in the channel could have closed the base.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

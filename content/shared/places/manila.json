@@ -1,0 +1,8 @@
+{
+  "id": "place:manila",
+  "name": "Manila",
+  "kind": "city",
+  "lngLat": [120.9772, 14.5958],
+  "country": "Commonwealth of the Philippines",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

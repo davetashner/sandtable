@@ -1,0 +1,9 @@
+{
+  "id": "place:rostov-on-don",
+  "name": "Rostov-on-Don",
+  "kind": "city",
+  "lngLat": [39.72, 47.222],
+  "country": "Russian Empire",
+  "notes": "The seat of Denikin's government and the gateway between the Don country and the Caucasus, taken by the Red Army on 8 January 1920.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

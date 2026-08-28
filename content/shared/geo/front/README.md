@@ -41,7 +41,7 @@ Each key is an entry in the `gazetteer` at the top of the file, which gives its
 display name and its coordinate once. So a diff between two snapshots reads as
 history — `neuville-saint-vaast` becomes `avion`, and the line has crossed Vimy
 Ridge — instead of four hundred changed numbers. Coordinates that also appear in
-`content/shared/places/places.json` are kept identical to the registry's.
+`content/shared/places/` are kept identical to the registry's.
 
 ## What this is, and what it is not
 
@@ -83,7 +83,7 @@ script prints it per snapshot into `manifest.json`:
 `npm run front` refuses to build a line that does not run from the northern
 anchor to the Swiss frontier, that leaves a gap wider than 45 km between two
 control points, that comes out outside 500–850 km, or that cites a work which is
-not in `content/shared/sources/sources.json`. `scripts/front.test.ts` checks that
+not in `content/shared/sources/`. `scripts/front.test.ts` checks that
 those checks work.
 
 ## Serving

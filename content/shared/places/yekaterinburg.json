@@ -1,0 +1,16 @@
+{
+  "id": "place:yekaterinburg",
+  "name": "Ekaterinburg",
+  "kind": "city",
+  "lngLat": [60.612, 56.838],
+  "country": "Russian Empire / Urals",
+  "notes": "Where the former Tsar, his family and their servants were shot by the local Ural Soviet on 16 July 1918, days before the town fell to the Czechoslovaks and the Whites.",
+  "sources": [
+    { "source": "source:wikipedia-en", "note": "coordinates" },
+    {
+      "source": "source:chamberlin-1935-2",
+      "note": "the dates in this note; the chronological table and narrative"
+    }
+  ],
+  "names": [{ "name": "Yekaterinburg", "kind": "modern" }]
+}

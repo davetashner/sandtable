@@ -1,0 +1,20 @@
+{
+  "id": "person:schultz-harold",
+  "name": "Harold H. Schultz",
+  "sortName": "Schultz, Harold H.",
+  "born": "1925-01-28",
+  "died": "1995-05-16",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Private First Class, Company E, 2nd Battalion, 28th Marines, 5th Marine Division",
+      "from": "1944-01",
+      "to": "1945-10"
+    }
+  ],
+  "summary": "A Detroit Marine wounded on Iwo Jima on 13 March 1945, discharged, and employed for thirty years by the Los Angeles post office. In June 2016 a Marine Corps board concluded from photogrammetric comparison of uniforms, weapons and equipment — work begun by two amateur researchers examining the frames around Rosenthal's — that Schultz, and not the Navy corpsman John Bradley, was the second figure from the left in the photograph. He appears to have known. Once, late in his life, he said at a dinner table that he had been one of the flag raisers, and when his stepdaughter asked, said only: I was.",
+  "sources": [
+    { "source": "source:robertson-2019" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "person:bradley-john",
+  "name": "John H. Bradley",
+  "sortName": "Bradley, John H.",
+  "born": "1923-07-10",
+  "died": "1994-01-11",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Pharmacist's Mate Second Class, USN, attached to 2nd Battalion, 28th Marines",
+      "from": "1944-01",
+      "to": "1945-11"
+    }
+  ],
+  "summary": "A Navy pharmacist's mate attached to the 28th Marines, awarded the Navy Cross on Iwo Jima for treating wounded men in the open under fire, and identified for seventy-one years as one of the six in Rosenthal's photograph. He was on Suribachi that morning and helped with the **first** flag, which is what the 2016 board concluded he is seen doing in the other photographs of the day; the man in Rosenthal's frame was Harold Schultz. Bradley was sent on the bond tour, came home to Antigo, Wisconsin, ran a funeral home and refused interviews for the rest of his life. His son's book *Flags of Our Fathers* is the reason most people know the story, and the correction landed after both of them were dead.",
+  "sources": [
+    { "source": "source:robertson-2019" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

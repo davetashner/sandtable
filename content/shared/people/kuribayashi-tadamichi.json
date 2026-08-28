@@ -1,0 +1,30 @@
+{
+  "id": "person:kuribayashi-tadamichi",
+  "name": "Kuribayashi Tadamichi",
+  "sortName": "Kuribayashi Tadamichi",
+  "names": [
+    { "name": "栗林 忠道", "language": "ja" },
+    {
+      "name": "Tadamichi Kuribayashi",
+      "language": "en",
+      "kind": "transliteration",
+      "period": "given-name-first order, as English-language catalogues index him"
+    }
+  ],
+  "born": "1891-07-07",
+  "died": "1945-03-26",
+  "nationality": "JP",
+  "roles": [
+    {
+      "title": "Commanding General, 109th Division and Ogasawara Army District (Iwo Jima)",
+      "from": "1944-06",
+      "to": "1945-03"
+    }
+  ],
+  "summary": "Had spent two years in the United States in the 1920s and told his family that America was the last country Japan should fight. Given Iwo Jima in June 1944, he threw out the doctrine that had failed everywhere else — no defence at the waterline, no banzai charge — and spent eight months digging eleven miles of tunnels into the volcanic rock, so that the island itself was the fortification and the Americans would have to take it a bunker at a time. He forbade suicide attacks and told the garrison each man was to kill ten. The battle cost the Marine Corps more casualties than it inflicted, the only such battle of the Pacific war. His letters home, about the kitchen floor and his daughter's schooling, were published in Japan in 2005.",
+  "sources": [
+    { "source": "source:kakehashi-2007" },
+    { "source": "source:toll-2020" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

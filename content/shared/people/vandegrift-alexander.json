@@ -1,0 +1,23 @@
+{
+  "id": "person:vandegrift-alexander",
+  "name": "Alexander A. Vandegrift",
+  "sortName": "Vandegrift, Alexander A.",
+  "born": "1887-03-13",
+  "died": "1973-05-08",
+  "nationality": "US",
+  "roles": [
+    { "title": "Commanding General, 1st Marine Division", "from": "1942-03", "to": "1943-07" },
+    {
+      "title": "Commanding General, I Marine Amphibious Corps",
+      "from": "1943-07",
+      "to": "1943-11"
+    },
+    { "title": "Commandant of the Marine Corps", "from": "1944-01-01", "to": "1947-12-31" }
+  ],
+  "summary": "Landed the 1st Marine Division on Guadalcanal on 7 August 1942 with an incomplete plan, two-thirds of its supplies still in the transports when the transports left, and no assurance of naval cover; held the airfield perimeter for four months against attacks that came in nightly and in force, and was awarded the Medal of Honor for it. As Commandant after the war he fought the fight that decided the Marine Corps still existed, testifying against the 1946 unification proposals in a statement the Corps still quotes.",
+  "sources": [
+    { "source": "source:frank-1990" },
+    { "source": "source:toll-2015" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

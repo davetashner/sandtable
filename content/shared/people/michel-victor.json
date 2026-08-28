@@ -1,0 +1,22 @@
+{
+  "id": "person:michel-victor",
+  "name": "Victor Michel",
+  "sortName": "Michel, Victor",
+  "born": "1850-06-09",
+  "died": "1937-03-05",
+  "nationality": "FR",
+  "roles": [
+    {
+      "title": "Vice-President of the Conseil superieur de la guerre (commander-in-chief designate)",
+      "from": "1910-01",
+      "to": "1911-07"
+    },
+    { "title": "Military Governor of Paris", "from": "1912", "to": "1914-08-26" }
+  ],
+  "summary": "The French commander-in-chief designate who, in February 1911, proposed meeting a German attack through Belgium: a deployment reaching north to Lille and Mezieres, with reserve regiments paired to active ones to man the extra front. The Conseil superieur de la guerre rejected the plan as defensive and unaffordable in manpower, and he was moved to the Paris governorship within months; his successors built Plan XVII on the opposite assumption. He was relieved of Paris on 26 August 1914 and replaced by Gallieni.",
+  "sources": [
+    { "source": "source:doughty-2005" },
+    { "source": "source:strachan-2001" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

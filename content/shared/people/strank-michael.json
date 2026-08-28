@@ -1,0 +1,20 @@
+{
+  "id": "person:strank-michael",
+  "name": "Michael Strank",
+  "sortName": "Strank, Michael",
+  "born": "1919-11-10",
+  "died": "1945-03-01",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Sergeant, Company E, 2nd Battalion, 28th Marines, 5th Marine Division",
+      "from": "1944-01",
+      "to": "1945-03-01"
+    }
+  ],
+  "summary": "Born in a village in what is now Slovakia and brought to the Pennsylvania coalfields at three; a Marine since 1939 and the sergeant who led the four-man detail up Suribachi on 23 February 1945 with the second flag. He is the figure at the back of Rosenthal's photograph, the only one of the six whose identification has never been questioned, and the only one who was a regular rather than a wartime enlistment. Killed by an American shell six days later, on 1 March, while sketching a plan for his squad in the sand. He had been made a United States citizen automatically by his father's naturalisation and was never told.",
+  "sources": [
+    { "source": "source:robertson-2019" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "place:moscow",
+  "name": "Moscow",
+  "names": [{ "name": "Moskva", "language": "ru", "kind": "period" }],
+  "kind": "city",
+  "lngLat": [37.6175, 55.752],
+  "country": "Russian Empire",
+  "notes": "The old capital and the second city; capital again from March 1918. Its own October fighting ran a week longer than Petrograd's and cost far more.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

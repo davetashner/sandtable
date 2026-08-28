@@ -1,0 +1,15 @@
+{
+  "id": "place:perm",
+  "name": "Perm",
+  "kind": "city",
+  "lngLat": [56.23, 58.01],
+  "country": "Russian Empire",
+  "notes": "The northern shoulder of Kolchak's front through the winter of 1918-19; the Red Army took it on 1 July 1919.",
+  "sources": [
+    { "source": "source:wikipedia-en", "note": "coordinates" },
+    {
+      "source": "source:chamberlin-1935-2",
+      "note": "the dates in this note; the chronological table and narrative"
+    }
+  ]
+}

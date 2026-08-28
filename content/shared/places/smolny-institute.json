@@ -1,0 +1,9 @@
+{
+  "id": "place:smolny-institute",
+  "name": "The Smolny Institute",
+  "kind": "other",
+  "lngLat": [30.3961, 59.9469],
+  "country": "Russian Empire",
+  "notes": "A girls' boarding school on the eastern edge of the city; from August 1917 the seat of the Petrograd Soviet, and in October of its Military Revolutionary Committee.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

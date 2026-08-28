@@ -1,0 +1,9 @@
+{
+  "id": "place:luga",
+  "name": "Luga",
+  "kind": "town",
+  "lngLat": [29.845, 58.737],
+  "country": "Russian Empire",
+  "notes": "A junction on the Pskov-Petrograd railway, some 135 kilometres south of the capital, and the point the leading trains of Kornilov's cavalry did not get past.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

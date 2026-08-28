@@ -1,0 +1,15 @@
+{
+  "id": "person:pau-paul",
+  "name": "Paul Pau",
+  "sortName": "Pau, Paul",
+  "born": "1848-11-29",
+  "died": "1932-01-02",
+  "nationality": "FR",
+  "roles": [{ "title": "Commander, Army of Alsace", "from": "1914-08-10", "to": "1914-08-26" }],
+  "summary": "A one-armed veteran of 1870 recalled from retirement to command the Army of Alsace, which retook Mulhouse on 19 August and was dissolved a week later when Joffre pulled its troops west for the new 6th Army.",
+  "sources": [
+    { "source": "source:afgg-1-1" },
+    { "source": "source:tuchman-1962" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

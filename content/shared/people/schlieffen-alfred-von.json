@@ -1,0 +1,16 @@
+{
+  "id": "person:schlieffen-alfred-von",
+  "name": "Alfred von Schlieffen",
+  "sortName": "Schlieffen, Alfred von",
+  "born": "1833-02-28",
+  "died": "1913-01-04",
+  "nationality": "DE",
+  "roles": [{ "title": "Chief of the German General Staff", "from": "1891", "to": "1906-01-01" }],
+  "summary": "Chief of the German General Staff 1891–1906. His December 1905 memorandum — a massive right-wing sweep through Belgium and northern France to envelop the French armies — is the document the 1914 campaign is measured against, and whether it was ever an operational plan is itself a historiographical debate.",
+  "media": ["media:person/schlieffen-alfred-von/portrait-c1906-colorized"],
+  "sources": [
+    { "source": "source:zuber-2002" },
+    { "source": "source:mombauer-2001" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

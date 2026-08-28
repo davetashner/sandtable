@@ -1,0 +1,21 @@
+{
+  "id": "person:fitzclarence-charles",
+  "name": "Charles FitzClarence",
+  "sortName": "FitzClarence, Charles",
+  "nationality": "GB",
+  "roles": [
+    {
+      "title": "Commanding, 1st (Guards) Brigade, British 1st Division",
+      "from": "1914-08",
+      "to": "1914-11"
+    }
+  ],
+  "summary": "Irish-born brigadier-general, holder of the Victoria Cross from Mafeking, commanding the 1st (Guards) Brigade at Ypres. On the afternoon of 31 October 1914, with the line broken at Gheluvelt and two divisional staffs shelled out of their headquarters, he found the one battalion still in reserve and sent it to retake the village. He was killed leading a night counter-attack near Polygon Wood on 11/12 November.",
+  "sources": [
+    {
+      "source": "source:edmonds-1925",
+      "note": "the order to the 2nd Worcesters on 31 October, and his death on the night of 11/12 November"
+    },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

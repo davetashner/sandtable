@@ -1,0 +1,10 @@
+{
+  "id": "place:kiev",
+  "name": "Kiev",
+  "kind": "city",
+  "lngLat": [30.524, 50.45],
+  "country": "Russian Empire / Ukraine",
+  "notes": "The city that changed hands more often than any other in Europe in these years - the Rada, the Germans, the Hetman, Petliura, the Bolsheviks, Denikin, the Poles, the Bolsheviks again.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }],
+  "names": [{ "name": "Kyiv", "kind": "modern" }]
+}

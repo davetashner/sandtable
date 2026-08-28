@@ -1,0 +1,12 @@
+{
+  "id": "place:albert",
+  "name": "Albert",
+  "kind": "town",
+  "lngLat": [2.65, 50.003],
+  "country": "France",
+  "notes": "Santerre town taken as the outflanking moved north in late September 1914.",
+  "sources": [
+    { "source": "source:edmonds-1925" },
+    { "source": "source:wikipedia-en", "note": "coordinates" }
+  ]
+}

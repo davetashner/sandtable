@@ -1,0 +1,9 @@
+{
+  "id": "place:patani",
+  "name": "Patani",
+  "names": [{ "name": "Pattani", "language": "th", "kind": "modern" }],
+  "kind": "town",
+  "lngLat": [101.2508, 6.8664],
+  "country": "Thailand",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

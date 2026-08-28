@@ -1,0 +1,15 @@
+{
+  "id": "person:ronarch-pierre",
+  "name": "Pierre Ronarc'h",
+  "sortName": "Ronarc'h, Pierre",
+  "nationality": "FR",
+  "roles": [
+    { "title": "Commanding, Brigade of Fusiliers Marins", "from": "1914-08", "to": "1915-11" }
+  ],
+  "summary": "French rear-admiral who took a brigade of naval reservists and Breton fishermen — the fusiliers marins — to Flanders in October 1914 and held Dixmude on the Yser for three weeks against far heavier forces, at the cost of most of the brigade.",
+  "sources": [
+    { "source": "source:van-pul-2006" },
+    { "source": "source:edmonds-1925" },
+    { "source": "source:wikipedia-en", "note": "career dates" }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "place:krasnovodsk",
+  "name": "Krasnovodsk",
+  "kind": "town",
+  "lngLat": [52.958, 40.021],
+  "country": "Russian Empire / Transcaspia",
+  "notes": "The Caspian port the twenty-six Baku commissars were taken to in September 1918, and from which they were carried into the desert and shot.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }],
+  "names": [{ "name": "Turkmenbashi", "kind": "modern" }]
+}

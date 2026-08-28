@@ -1,0 +1,16 @@
+{
+  "id": "place:louvain",
+  "name": "Louvain",
+  "names": [
+    { "name": "Leuven", "language": "nl", "kind": "translation" },
+    { "name": "Löwen", "language": "de", "kind": "translation" }
+  ],
+  "kind": "city",
+  "lngLat": [4.701, 50.879],
+  "country": "Belgium",
+  "notes": "University town on the Dyle, on the Liège–Brussels railway; burned by German troops on 25–28 August 1914, the library with it.",
+  "sources": [
+    { "source": "source:horne-kramer-2001" },
+    { "source": "source:wikipedia-en", "note": "coordinates" }
+  ]
+}

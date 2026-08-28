@@ -1,0 +1,15 @@
+{
+  "id": "person:churchill-winston",
+  "name": "Winston Churchill",
+  "sortName": "Churchill, Winston",
+  "born": "1874-11-30",
+  "died": "1965-01-24",
+  "nationality": "GB",
+  "roles": [{ "title": "First Lord of the Admiralty", "from": "1911-10", "to": "1915-05" }],
+  "summary": "First Lord of the Admiralty in 1914; sent the Royal Naval Division to Antwerp in October and went there himself. Appears again at Gallipoli and, in 1940, as the figure the whole multi-era arc bends toward.",
+  "media": ["media:person/churchill-winston/portrait-c1914-colorized"],
+  "sources": [
+    { "source": "source:hastings-2013" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

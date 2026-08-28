@@ -1,0 +1,9 @@
+{
+  "id": "place:penza",
+  "name": "Penza",
+  "kind": "city",
+  "lngLat": [45, 53.195],
+  "country": "Russian Empire",
+  "notes": "The westernmost of the six groups the Czechoslovak Legion was strung out in when the fighting began - five thousand miles from the easternmost.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "person:princip-gavrilo",
+  "name": "Gavrilo Princip",
+  "sortName": "Princip, Gavrilo",
+  "born": "1894-07-25",
+  "died": "1918-04-28",
+  "nationality": "AT-HU",
+  "roles": [
+    {
+      "title": "Member of Mlada Bosna; assassin of Archduke Franz Ferdinand",
+      "from": "1914-06-28",
+      "to": "1914-06-28"
+    }
+  ],
+  "summary": "Bosnian Serb student, a member of the Young Bosnia circle, who shot the Archduke and Duchess at Sarajevo on 28 June 1914 with a pistol supplied through Serbian military intelligence contacts. Too young for the death penalty, he was sentenced to twenty years and died of tuberculosis in the fortress of Theresienstadt in April 1918. How far his act was directed from Belgrade is one of the central disputes of the origins debate.",
+  "sources": [
+    { "source": "source:clark-2012" },
+    { "source": "source:albertini-1952" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

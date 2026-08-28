@@ -1,0 +1,20 @@
+{
+  "id": "person:maud-huy-louis-de",
+  "name": "Louis de Maud'huy",
+  "sortName": "Maud'huy, Louis de",
+  "nationality": "FR",
+  "roles": [
+    { "title": "Commanding, XVIII Corps", "from": "1914-08", "to": "1914-09" },
+    {
+      "title": "Commanding, French Tenth Army (initially the Détachement d'armée de Maud'huy)",
+      "from": "1914-10",
+      "to": "1915-04"
+    }
+  ],
+  "summary": "French corps commander given the improvised army that Joffre pushed north to Arras at the beginning of October 1914 — the third of the successive attempts to find and turn the German northern flank. He held Arras when the attempt failed, and the town stayed in French hands for the rest of the war.",
+  "sources": [
+    { "source": "source:edmonds-1925" },
+    { "source": "source:strachan-2001" },
+    { "source": "source:wikipedia-en", "note": "career dates" }
+  ]
+}

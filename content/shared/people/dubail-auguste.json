@@ -1,0 +1,15 @@
+{
+  "id": "person:dubail-auguste",
+  "name": "Auguste Dubail",
+  "sortName": "Dubail, Auguste",
+  "born": "1851-04-15",
+  "died": "1934-01-07",
+  "nationality": "FR",
+  "roles": [{ "title": "Commander, French 1st Army", "from": "1914-08-02", "to": "1915-01" }],
+  "summary": "Commanded the French 1st Army on the right of Plan XVII — the advance into Alsace and Lorraine towards Sarrebourg, the retreat after Morhange, and the defence of the Vosges and the Trouée de Charmes; later commander of the Eastern Army Group.",
+  "sources": [
+    { "source": "source:afgg-1-1" },
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

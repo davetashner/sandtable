@@ -1,0 +1,14 @@
+{
+  "id": "place:clark-field",
+  "name": "Clark Field",
+  "kind": "other",
+  "lngLat": [120.5597, 15.1858],
+  "country": "Commonwealth of the Philippines",
+  "notes": "The bomber base on the Luzon plain north of Manila, and the place where the Far East Air Force's B-17s were caught on the ground nine hours after the news of Pearl Harbor reached them.",
+  "sources": [
+    {
+      "source": "source:wikipedia-en",
+      "note": "coordinates, from the present air base on the site"
+    }
+  ]
+}

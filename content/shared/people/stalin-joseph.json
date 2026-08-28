@@ -1,0 +1,23 @@
+{
+  "id": "person:stalin-joseph",
+  "name": "Joseph Stalin",
+  "sortName": "Stalin, Joseph (Iosif Vissarionovich Dzhugashvili)",
+  "born": "1878-12-18",
+  "died": "1953-03-05",
+  "nationality": "RU",
+  "roles": [
+    { "title": "People's Commissar for Nationalities", "from": "1917-11", "to": "1923" },
+    {
+      "title": "Extraordinary Plenipotentiary for food supply in South Russia, at Tsaritsyn",
+      "from": "1918-06",
+      "to": "1918-10"
+    },
+    { "title": "General Secretary of the Communist Party", "from": "1922-04", "to": "1952" }
+  ],
+  "summary": "A Georgian seminarian turned bank-robber turned party organiser, one of the few Bolshevik leaders who had neither emigrated nor been an intellectual. The civil war is where he learned to govern: sent to Tsaritsyn in the summer of 1918 to get grain moving, he took over the military command there instead, shot officers he suspected, and quarrelled with Trotsky over the employment of former tsarist officers - a quarrel that ran on until one of them had the other killed. The party's General Secretaryship, created in 1922 as an administrative post, was the instrument he used to inherit the state the civil war had made.",
+  "sources": [
+    { "source": "source:chamberlin-1935-2" },
+    { "source": "source:figes-1996" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

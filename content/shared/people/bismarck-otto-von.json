@@ -1,0 +1,18 @@
+{
+  "id": "person:bismarck-otto-von",
+  "name": "Otto von Bismarck",
+  "sortName": "Bismarck, Otto von",
+  "born": "1815-04-01",
+  "died": "1898-07-30",
+  "nationality": "DE",
+  "roles": [
+    { "title": "Minister President of Prussia", "from": "1862-09-23", "to": "1890-03-20" },
+    { "title": "Chancellor of the German Empire", "from": "1871-03-21", "to": "1890-03-20" }
+  ],
+  "summary": "United Germany in three wars and then spent twenty years insuring it against the coalition those wars invited: the League of the Three Emperors, the alliance with Austria-Hungary, and the Reinsurance Treaty of 1887 that kept a line open to St Petersburg. Wilhelm II dismissed him in March 1890 and let the treaty lapse; France and Russia allied in 1894. The two-front problem the Schlieffen Plan was written to answer is the shape Europe took after he left it.",
+  "media": ["media:person/bismarck-otto-von/portrait-1890-colorized"],
+  "sources": [
+    { "source": "source:clark-2012" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

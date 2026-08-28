@@ -1,0 +1,9 @@
+{
+  "id": "place:verdun",
+  "name": "Verdun",
+  "kind": "fortress",
+  "lngLat": [5.387, 49.16],
+  "country": "France",
+  "notes": "Northern anchor of the French fortress line; the hinge of the 1914 front.",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

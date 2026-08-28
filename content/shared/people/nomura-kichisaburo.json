@@ -1,0 +1,29 @@
+{
+  "id": "person:nomura-kichisaburo",
+  "name": "Nomura Kichisaburō",
+  "sortName": "Nomura Kichisaburō",
+  "names": [
+    { "name": "野村 吉三郎", "language": "ja" },
+    {
+      "name": "Kichisaburo Nomura",
+      "language": "en",
+      "kind": "transliteration",
+      "period": "given-name-first order, as English-language catalogues index him"
+    }
+  ],
+  "born": "1877-12-16",
+  "died": "1964-05-08",
+  "nationality": "JP",
+  "roles": [
+    { "title": "Minister for Foreign Affairs", "from": "1939-09", "to": "1940-01" },
+    { "title": "Ambassador of Japan to the United States", "from": "1941-02", "to": "1941-12" }
+  ],
+  "summary": "A retired admiral sent to Washington in 1941 rather than a professional diplomat: he had been naval attaché there during the First World War, he knew Roosevelt personally, and he was thought the more likely of the two to be believed. He negotiated for nine months. On 7 December he was instructed to deliver a memorandum breaking off the talks at one o'clock in the afternoon, Washington time; his embassy could not decode and type it by then, and he handed it over at twenty past two, by which time the attack was an hour old. He and Kurusu left the Secretary of State's room without a word.",
+  "sources": [
+    {
+      "source": "source:peace-and-war-1943",
+      "note": "doc. 265 — the conversation of 7 December: the appointment requested for 1 p.m., the arrival at 2.05, the reception at 2.20, and Nomura's own explanation that decoding had delayed him"
+    },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

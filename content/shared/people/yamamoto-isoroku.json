@@ -1,0 +1,27 @@
+{
+  "id": "person:yamamoto-isoroku",
+  "name": "Yamamoto Isoroku",
+  "sortName": "Yamamoto Isoroku",
+  "names": [
+    { "name": "山本 五十六", "language": "ja" },
+    {
+      "name": "Isoroku Yamamoto",
+      "language": "en",
+      "kind": "transliteration",
+      "period": "given-name-first order, as English-language catalogues index him"
+    }
+  ],
+  "born": "1884-04-04",
+  "died": "1943-04-18",
+  "nationality": "JP",
+  "roles": [
+    { "title": "Vice-Minister of the Navy", "from": "1936-12-01", "to": "1939-08-30" },
+    { "title": "Commander-in-Chief, Combined Fleet", "from": "1939-08-30", "to": "1943-04-18" }
+  ],
+  "summary": "Opposed the war he then planned. He had been a student at Harvard and a naval attaché in Washington, argued against the Tripartite Pact until his life was threatened by the ultranationalist right, and told the prime minister in 1940 that he could run wild for six months or a year but had no confidence in the second and third. He built the Pearl Harbor plan on that estimate — a single blow to buy the time — and pressed the Midway operation as the decisive battle that would end the war before American production made it unwinnable. Killed on 18 April 1943 when American fighters, flying on decrypted itinerary traffic, shot down his aircraft over Bougainville.",
+  "sources": [
+    { "source": "source:agawa-1979" },
+    { "source": "source:toll-2012" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

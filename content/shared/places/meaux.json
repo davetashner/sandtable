@@ -1,0 +1,9 @@
+{
+  "id": "place:meaux",
+  "name": "Meaux",
+  "kind": "town",
+  "lngLat": [2.879, 48.96],
+  "country": "France",
+  "notes": "On the Marne east of Paris; Maunoury's attack toward the Ourcq opened here on 5 September 1914.",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

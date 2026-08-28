@@ -1,0 +1,9 @@
+{
+  "id": "place:kazan",
+  "name": "Kazan",
+  "kind": "city",
+  "lngLat": [49.107, 55.796],
+  "country": "Russian Empire",
+  "notes": "Taken by the Czechoslovaks and the Volga anti-Bolsheviks on 6 August 1918 - with the Imperial gold reserve in it - and retaken by the Red Army on 10 September. Chamberlin calls the fight for it one of the most decisive of the war, and possibly the most decisive.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

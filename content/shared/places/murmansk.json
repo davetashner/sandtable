@@ -1,0 +1,16 @@
+{
+  "id": "place:murmansk",
+  "name": "Murmansk",
+  "kind": "city",
+  "lngLat": [33.075, 68.97],
+  "country": "Russian Empire",
+  "notes": "The ice-free Arctic port where a small mixed force under British command sat from early 1918 guarding Allied military stores - with, while it stayed defensive, no objection from the Soviet government. At the end of June it turned aggressive and concluded a separate agreement with the Murmansk Soviet, which was not loyal to Moscow.",
+  "sources": [
+    { "source": "source:wikipedia-en", "note": "coordinates" },
+    {
+      "source": "source:chamberlin-1935-2",
+      "pages": "62-63",
+      "note": "the British force at Murmansk and the agreement with the Murmansk Soviet"
+    }
+  ]
+}

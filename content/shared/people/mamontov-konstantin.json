@@ -1,0 +1,15 @@
+{
+  "id": "person:mamontov-konstantin",
+  "name": "Konstantin Mamontov",
+  "sortName": "Mamontov, Konstantin Konstantinovich",
+  "nationality": "RU",
+  "roles": [
+    {
+      "title": "Commander, 4th Don Cavalry Corps (Armed Forces of South Russia)",
+      "from": "1919",
+      "to": "1920"
+    }
+  ],
+  "summary": "A Don Cossack cavalry general whose forty-day raid through the rear of the Red Southern Front in August and September 1919 is the single most famous act of movement in the war and the clearest demonstration of what the war's geography allowed: seven or eight thousand horsemen went through a front nobody could hold, rode some five hundred miles, took Tambov, Kozlov and Yelets, wrecked the railways behind an offensive, and achieved nothing that lasted, partly because his Cossacks would not stop looting and drifted home with what they had taken. His dates are not given here because this project could not confirm them.",
+  "sources": [{ "source": "source:chamberlin-1935-2" }]
+}

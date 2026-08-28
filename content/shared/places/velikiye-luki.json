@@ -1,0 +1,9 @@
+{
+  "id": "place:velikiye-luki",
+  "name": "Velikiye Luki",
+  "kind": "town",
+  "lngLat": [30.5167, 56.35],
+  "country": "Russian Empire",
+  "notes": "A railway town behind the Northern Front, in the area where the 3rd Cavalry Corps lay in August 1917 before it was ordered towards Petrograd.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

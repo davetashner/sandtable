@@ -1,0 +1,9 @@
+{
+  "id": "source:byu-wwi-archive",
+  "kind": "web",
+  "tier": "primary",
+  "author": "Brigham Young University Library",
+  "title": "The World War I Document Archive",
+  "url": "https://wwi.lib.byu.edu/",
+  "notes": "Transcriptions of the published diplomatic collections. Used here for the working text of documents whose authoritative printing is cited alongside it; the transcriptions carry occasional OCR slips, corrected silently against the printed collection."
+}

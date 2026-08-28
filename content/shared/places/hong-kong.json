@@ -1,0 +1,10 @@
+{
+  "id": "place:hong-kong",
+  "name": "Hong Kong",
+  "names": [{ "name": "香港", "language": "zh" }],
+  "kind": "city",
+  "lngLat": [114.1744, 22.2783],
+  "country": "British Crown Colony of Hong Kong",
+  "notes": "The coordinate is Victoria, the colony's capital on the island; the airfield bombed on the morning of 8 December was at Kai Tak in Kowloon, on the mainland across the harbour.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

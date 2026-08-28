@@ -1,0 +1,8 @@
+{
+  "id": "place:fere-champenoise",
+  "name": "Fère-Champenoise",
+  "kind": "town",
+  "lngLat": [3.992, 48.753],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

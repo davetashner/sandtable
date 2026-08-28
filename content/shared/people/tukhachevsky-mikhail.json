@@ -1,0 +1,18 @@
+{
+  "id": "person:tukhachevsky-mikhail",
+  "name": "Mikhail Tukhachevsky",
+  "sortName": "Tukhachevsky, Mikhail Nikolayevich",
+  "born": "1893-02-16",
+  "died": "1937-06-12",
+  "nationality": "RU",
+  "roles": [
+    { "title": "Commander, Red 5th Army (Eastern Front)", "from": "1918-06", "to": "1919-12" },
+    { "title": "Commander, Western Front", "from": "1920-04", "to": "1921" },
+    { "title": "Marshal of the Soviet Union", "from": "1935-11", "to": "1937-05" }
+  ],
+  "summary": "A guards lieutenant of the old army, taken prisoner in 1915, who joined the Bolsheviks in 1918 and at twenty-seven commanded the army group that ran from the Berezina to the outskirts of Warsaw and back. He put down Kronstadt in March 1921 and the Tambov peasants that summer, became the Red Army's leading theorist of mechanised war, and was shot in June 1937 as the first and most senior victim of the purge of the officer corps he had built.",
+  "sources": [
+    { "source": "source:chamberlin-1935-2" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

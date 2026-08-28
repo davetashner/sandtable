@@ -1,0 +1,12 @@
+{
+  "id": "person:geeraert-hendrik",
+  "name": "Hendrik Geeraert",
+  "sortName": "Geeraert, Hendrik",
+  "nationality": "BE",
+  "roles": [{ "title": "Bargeman, Nieuwpoort", "from": "1880", "to": "1925" }],
+  "summary": "Nieuwpoort bargeman who could work the sluice gates of the Ganzepoot lock complex in the dark and under fire, and did so on the nights of the last week of October 1914. Belgium later put his face on its banknotes.",
+  "sources": [
+    { "source": "source:van-pul-2006" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

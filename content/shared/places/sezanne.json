@@ -1,0 +1,8 @@
+{
+  "id": "place:sezanne",
+  "name": "Sézanne",
+  "kind": "town",
+  "lngLat": [3.723, 48.722],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "place:vladivostok",
+  "name": "Vladivostok",
+  "kind": "city",
+  "lngLat": [131.885, 43.115],
+  "country": "Russian Empire / Far East",
+  "notes": "The Pacific terminus of the Trans-Siberian, nine thousand kilometres from Petrograd, where the largest single group of the Czechoslovak Legion - about fourteen thousand men - sat in May 1918, and where the Japanese made a landing on 6 April 1918.",
+  "sources": [
+    { "source": "source:wikipedia-en", "note": "coordinates" },
+    {
+      "source": "source:chamberlin-1935-2",
+      "note": "the dates in this note; the chronological table and narrative"
+    }
+  ]
+}

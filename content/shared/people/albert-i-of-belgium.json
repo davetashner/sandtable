@@ -1,0 +1,15 @@
+{
+  "id": "person:albert-i-of-belgium",
+  "name": "Albert I, King of the Belgians",
+  "sortName": "Albert I",
+  "born": "1875-04-08",
+  "died": "1934-02-17",
+  "nationality": "BE",
+  "roles": [{ "title": "Commander-in-Chief, Belgian Army", "from": "1914-08-04", "to": "1918-11" }],
+  "summary": "King and commander-in-chief who refused the German ultimatum, fought for the Gette line, withdrew the field army into Antwerp and held the Yser in October — keeping a corner of Belgium unoccupied for four years.",
+  "media": ["media:person/albert-i-of-belgium/portrait-colorized"],
+  "sources": [
+    { "source": "source:hastings-2013" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

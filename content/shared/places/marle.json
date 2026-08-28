@@ -1,0 +1,8 @@
+{
+  "id": "place:marle",
+  "name": "Marle",
+  "kind": "town",
+  "lngLat": [3.772, 49.74],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

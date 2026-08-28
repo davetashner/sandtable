@@ -1,0 +1,9 @@
+{
+  "id": "place:baku",
+  "name": "Baku",
+  "kind": "city",
+  "lngLat": [49.867, 40.409],
+  "country": "Russian Empire / Azerbaijan",
+  "notes": "The oil city on the Caspian: a Bolshevik commune until July 1918, a small British force under Dunsterville from 14 August, Ottoman troops and a massacre of Armenians from 14 September, and the place where twenty-six commissars left from to be shot in the desert. The Red Army took it on 27 April 1920.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

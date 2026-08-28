@@ -1,0 +1,8 @@
+{
+  "id": "place:maissin",
+  "name": "Maissin",
+  "kind": "village",
+  "lngLat": [5.181, 49.985],
+  "country": "Belgium",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

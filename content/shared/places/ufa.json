@@ -1,0 +1,9 @@
+{
+  "id": "place:ufa",
+  "name": "Ufa",
+  "kind": "city",
+  "lngLat": [55.968, 54.735],
+  "country": "Russian Empire",
+  "notes": "Where the anti-Bolshevik governments of Siberia and the eastern Volga met in September 1918 and agreed on the Directory that Kolchak's coup would displace two months later. Taken by Kolchak on 13 March 1919, retaken by the Reds on 9 June.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

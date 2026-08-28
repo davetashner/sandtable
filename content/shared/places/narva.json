@@ -1,0 +1,9 @@
+{
+  "id": "place:narva",
+  "name": "Narva",
+  "kind": "town",
+  "lngLat": [28.19, 59.377],
+  "country": "Estonia",
+  "notes": "The Estonian border town Yudenich's North-Western Army came out of in October 1919 and was driven back behind in November, to be disarmed and interned by the state that had sheltered it.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

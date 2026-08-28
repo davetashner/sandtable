@@ -1,0 +1,11 @@
+{
+  "id": "place:iba-field",
+  "name": "Iba Field",
+  "kind": "other",
+  "lngLat": [119.9685, 15.326],
+  "country": "Commonwealth of the Philippines",
+  "notes": "The fighter base on the Zambales coast, attacked at the same time as Clark, and the site of one of the two radar sets in the Philippines.",
+  "sources": [
+    { "source": "source:wikipedia-en", "note": "coordinates, from the present airport on the site" }
+  ]
+}

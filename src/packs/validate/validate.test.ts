@@ -1,6 +1,16 @@
 import { describe, expect, it } from 'vitest';
-import type { RawContent } from './tree.js';
+import { registryFileName, type SharedRegistryDir } from '../schema/files.js';
+import type { RawContent, RawFile } from './tree.js';
 import { validateContent } from './validate.js';
+
+/**
+ * One shared entity in its own file, the way `content/shared/` holds them
+ * (ADR 0022) — the file is named for the id, which is a rule the validator
+ * checks, so a fixture that made one up would be testing the wrong thing.
+ */
+function entity(dir: SharedRegistryDir, data: { id: string } & Record<string, unknown>): RawFile {
+  return { path: `shared/${dir}/${registryFileName(data.id)}`, data };
+}
 
 /** A minimal, valid content tree: one pack, two branches, shared registries. */
 function fixture(): RawContent {
@@ -168,42 +178,40 @@ function fixture(): RawContent {
       },
     ],
     shared: {
-      collections: {
-        'people/people.json': {
-          path: 'shared/people/people.json',
-          data: [
-            {
-              id: 'person:kluck',
-              name: 'Alexander von Kluck',
-              summary: 'Commander of the 1st Army.',
-            },
-          ],
-        },
-        'places/places.json': {
-          path: 'shared/places/places.json',
-          data: [{ id: 'place:meaux', name: 'Meaux', kind: 'town', lngLat: [2.88, 48.96] }],
-        },
-        'sources/sources.json': {
-          path: 'shared/sources/sources.json',
-          data: [
-            {
-              id: 'source:herwig-2009',
-              kind: 'book',
-              tier: 'study',
-              title: 'The Marne, 1914',
-              author: 'Herwig, Holger H.',
-              year: 2009,
-            },
-            {
-              id: 'source:zuber-2002',
-              kind: 'book',
-              tier: 'study',
-              title: 'Inventing the Schlieffen Plan',
-              author: 'Zuber, Terence',
-              year: 2002,
-            },
-          ],
-        },
+      registries: {
+        people: [
+          entity('people', {
+            id: 'person:kluck',
+            name: 'Alexander von Kluck',
+            summary: 'Commander of the 1st Army.',
+          }),
+        ],
+        places: [
+          entity('places', {
+            id: 'place:meaux',
+            name: 'Meaux',
+            kind: 'town',
+            lngLat: [2.88, 48.96],
+          }),
+        ],
+        sources: [
+          entity('sources', {
+            id: 'source:herwig-2009',
+            kind: 'book',
+            tier: 'study',
+            title: 'The Marne, 1914',
+            author: 'Herwig, Holger H.',
+            year: 2009,
+          }),
+          entity('sources', {
+            id: 'source:zuber-2002',
+            kind: 'book',
+            tier: 'study',
+            title: 'Inventing the Schlieffen Plan',
+            author: 'Zuber, Terence',
+            year: 2002,
+          }),
+        ],
       },
       media: [],
       audio: [],
@@ -825,29 +833,41 @@ describe('validateContent', () => {
     // cites it, and every PR after this one will add sources. The message they
     // see has to ask the question `docs/sources.md` asks (sand-shn.5).
     const raw = fixture();
-    const sources = raw.shared.collections['sources/sources.json']!.data as Record<
-      string,
-      unknown
-    >[];
-    delete sources[0]!.tier;
+    const first = raw.shared.registries.sources[0]!;
+    delete (first.data as Record<string, unknown>).tier;
     const report = validateContent(raw);
     expect(report.ok).toBe(false);
-    expect(report.errors[0]?.path).toBe('shared/sources/sources.json');
-    expect(report.errors[0]?.message).toMatch(/0\.tier: a source must say where it stands/);
+    // The problem names the work's own file, which is the one the author opens.
+    expect(report.errors[0]?.path).toBe('shared/sources/herwig-2009.json');
+    expect(report.errors[0]?.message).toMatch(/tier: a source must say where it stands/);
     expect(report.errors[0]?.message).toMatch(/docs\/sources\.md/);
+  });
+
+  it('refuses a registry file that does not hold the entity its name promises', () => {
+    // The file name is the id (ADR 0022), and that is what makes a directory
+    // listing and an id index the same thing. A half-finished rename would
+    // otherwise leave a registry nobody could look anything up in by hand.
+    const raw = fixture();
+    raw.shared.registries.sources[0]!.path = 'shared/sources/herwig-2010.json';
+    const report = validateContent(raw);
+    expect(report.ok).toBe(false);
+    expect(messages(report)).toContainEqual(
+      'source:herwig-2009: source:herwig-2009 belongs in shared/sources/herwig-2009.json',
+    );
   });
 
   it('warns about a source in the registry that nothing cites', () => {
     // The bibliography is generated from the citations, so such an entry is
     // not a spare row on a list — it is a work no reader will ever see.
     const raw = fixture();
-    const sources = raw.shared.collections['sources/sources.json']!.data as { id: string }[];
-    sources.push({
-      id: 'source:unread-1999',
-      kind: 'book',
-      tier: 'general',
-      title: 'A Book Nobody Opened',
-    } as (typeof sources)[number]);
+    raw.shared.registries.sources.push(
+      entity('sources', {
+        id: 'source:unread-1999',
+        kind: 'book',
+        tier: 'general',
+        title: 'A Book Nobody Opened',
+      }),
+    );
     const report = validateContent(raw);
     expect(report.ok).toBe(true);
     expect(report.warnings.map((w) => `${w.id}: ${w.message}`)).toContainEqual(
@@ -1018,20 +1038,21 @@ describe('validateContent', () => {
     // — a person's dates, a place's coordinates — so a citation there is in
     // order; on a route it is standing in front of a position (sand-1l0.16).
     const raw = fixture();
-    const sources = raw.shared.collections['sources/sources.json']!.data as { id: string }[];
-    sources.push({
-      id: 'source:wikipedia-en',
-      kind: 'web',
-      title: 'Wikipedia (English)',
-      author: 'Wikipedia contributors',
-      year: 2026,
-    } as never);
+    raw.shared.registries.sources.push(
+      entity('sources', {
+        id: 'source:wikipedia-en',
+        kind: 'web',
+        title: 'Wikipedia (English)',
+        author: 'Wikipedia contributors',
+        year: 2026,
+      }),
+    );
     const routes = raw.packs[0]!.collections['routes.json']!.data as { sources: unknown[] }[];
     routes[0]!.sources = [{ source: 'source:wikipedia-en' }];
-    const people = raw.shared.collections['people/people.json']!.data as { sources?: unknown[] }[];
-    people[0]!.sources = [{ source: 'source:wikipedia-en', note: 'dates' }];
-    const places = raw.shared.collections['places/places.json']!.data as { sources?: unknown[] }[];
-    places[0]!.sources = [{ source: 'source:wikipedia-en', note: 'coordinates' }];
+    const person = raw.shared.registries.people[0]!.data as { sources?: unknown[] };
+    person.sources = [{ source: 'source:wikipedia-en', note: 'dates' }];
+    const place = raw.shared.registries.places[0]!.data as { sources?: unknown[] };
+    place.sources = [{ source: 'source:wikipedia-en', note: 'coordinates' }];
 
     const report = validateContent(raw);
     const warned = report.warnings.filter((w) => w.message.includes('reference data only'));

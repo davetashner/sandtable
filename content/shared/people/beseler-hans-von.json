@@ -1,0 +1,17 @@
+{
+  "id": "person:beseler-hans-von",
+  "name": "Hans von Beseler",
+  "sortName": "Beseler, Hans von",
+  "born": "1850-04-27",
+  "died": "1921-12-20",
+  "nationality": "DE",
+  "roles": [
+    { "title": "Commanding General, III Reserve Corps", "from": "1914-08-02", "to": "1915-08" },
+    { "title": "Governor-General of Warsaw", "from": "1915-08", "to": "1918-11" }
+  ],
+  "summary": "Engineer general recalled from retirement to command the III Reserve Corps; turned off the wheel on 20 August to mask Antwerp, besieged and took the fortress in October 1914, and later governed occupied Poland.",
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

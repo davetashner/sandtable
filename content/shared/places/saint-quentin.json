@@ -1,0 +1,8 @@
+{
+  "id": "place:saint-quentin",
+  "name": "Saint-Quentin",
+  "kind": "town",
+  "lngLat": [3.287, 49.847],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

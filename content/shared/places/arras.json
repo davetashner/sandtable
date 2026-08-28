@@ -1,0 +1,12 @@
+{
+  "id": "place:arras",
+  "name": "Arras",
+  "kind": "city",
+  "lngLat": [2.777, 50.291],
+  "country": "France",
+  "notes": "Artois city held by de Maud'huy's Tenth Army from the beginning of October 1914; the front stopped a few kilometres east of it and stayed there.",
+  "sources": [
+    { "source": "source:edmonds-1925" },
+    { "source": "source:wikipedia-en", "note": "coordinates" }
+  ]
+}

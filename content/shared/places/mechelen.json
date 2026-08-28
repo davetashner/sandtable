@@ -1,0 +1,13 @@
+{
+  "id": "place:mechelen",
+  "name": "Malines",
+  "names": [{ "name": "Mechelen", "language": "nl", "kind": "translation" }],
+  "kind": "city",
+  "lngLat": [4.478, 51.028],
+  "country": "Belgium",
+  "notes": "Between Antwerp and Brussels; the Belgian sortie of 25 August went out from here and the town was shelled when it came back.",
+  "sources": [
+    { "source": "source:edmonds-1925" },
+    { "source": "source:wikipedia-en", "note": "coordinates" }
+  ]
+}

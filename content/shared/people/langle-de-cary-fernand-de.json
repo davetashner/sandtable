@@ -1,0 +1,15 @@
+{
+  "id": "person:langle-de-cary-fernand-de",
+  "name": "Fernand de Langle de Cary",
+  "sortName": "Langle de Cary, Fernand de",
+  "born": "1849-07-04",
+  "died": "1927-02-19",
+  "nationality": "FR",
+  "roles": [{ "title": "Commander, French 4th Army", "from": "1914-08-02", "to": "1915-12" }],
+  "summary": "Commanded the French 4th Army into the Ardennes on 21–23 August (Neufchâteau, Rossignol), in the retreat over the Meuse and at the Marne around Vitry-le-François; later the Central Army Group and the early defence of Verdun.",
+  "sources": [
+    { "source": "source:afgg-1-1" },
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

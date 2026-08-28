@@ -1,0 +1,15 @@
+{
+  "id": "person:ruffey-pierre",
+  "name": "Pierre Ruffey",
+  "sortName": "Ruffey, Pierre",
+  "born": "1851-03-17",
+  "died": "1928-09-16",
+  "nationality": "FR",
+  "roles": [{ "title": "Commander, French 3rd Army", "from": "1914-08-02", "to": "1914-08-30" }],
+  "summary": "Commanded the French 3rd Army in the Ardennes offensive of 21–23 August around Longwy and Virton; relieved by Joffre on 30 August and replaced by Sarrail.",
+  "sources": [
+    { "source": "source:afgg-1-1" },
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

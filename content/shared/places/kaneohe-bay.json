@@ -1,0 +1,9 @@
+{
+  "id": "place:kaneohe-bay",
+  "name": "Kaneohe Bay Naval Air Station",
+  "kind": "other",
+  "lngLat": [-157.7697, 21.4458],
+  "country": "Territory of Hawaii, United States",
+  "notes": "The Navy's flying-boat base on the windward side of Oahu, attacked on the morning of 7 December 1941.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "person:fournier-joseph",
+  "name": "Joseph Anthelme Fournier",
+  "sortName": "Fournier, Joseph",
+  "born": "1854-03-15",
+  "died": "1928-06-23",
+  "nationality": "FR",
+  "roles": [
+    {
+      "title": "Governor of the fortified position of Maubeuge",
+      "from": "1914-08-02",
+      "to": "1914-09-08"
+    }
+  ],
+  "summary": "Governor of Maubeuge; held the fortress against the VII Reserve Corps and the siege guns from 25 August to 7 September, longer than Liège or Namur, was court-martialled for the surrender like the other governors who had capitulated — and acquitted in May 1920.",
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates; the 1920 acquittal (fr.wikipedia)" }
+  ]
+}

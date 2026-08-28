@@ -1,0 +1,9 @@
+{
+  "id": "place:vyritsa",
+  "name": "Vyritsa",
+  "kind": "village",
+  "lngLat": [30.35, 59.408],
+  "country": "Russian Empire",
+  "notes": "A station on the line into Petrograd from the south, about sixty kilometres out, where the trains of the Native Division came to a stand.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

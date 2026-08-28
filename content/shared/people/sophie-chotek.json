@@ -1,0 +1,18 @@
+{
+  "id": "person:sophie-chotek",
+  "name": "Sophie Chotek",
+  "sortName": "Hohenberg, Sophie, Duchess of",
+  "born": "1868-03-01",
+  "died": "1914-06-28",
+  "nationality": "AT-HU",
+  "roles": [{ "title": "Duchess of Hohenberg", "from": "1909-10-04", "to": "1914-06-28" }],
+  "summary": "A Bohemian countess whose marriage to the heir in 1900 was permitted only as morganatic: she could not share his rank, her children were barred from the throne, and at court she walked behind the youngest archduchess. On military inspections that protocol did not apply, which is part of why she was beside him in the car at Sarajevo on their fourteenth wedding anniversary. She was shot with him and died first.",
+  "media": [
+    "media:scene/1910-franz-ferdinand-family/franz-ferdinand-family-1910-colorized",
+    "media:scene/1914-sarajevo-motorcade-detail/sarajevo-motorcade-detail-colorized"
+  ],
+  "sources": [
+    { "source": "source:clark-2012" },
+    { "source": "source:wikipedia-en", "note": "dates and titles" }
+  ]
+}

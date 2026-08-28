@@ -1,0 +1,15 @@
+{
+  "id": "person:franchet-desperey-louis",
+  "name": "Louis Franchet d'Espèrey",
+  "sortName": "Franchet d'Espèrey, Louis",
+  "born": "1856-05-25",
+  "died": "1942-07-08",
+  "nationality": "FR",
+  "roles": [{ "title": "Commander, French 5th Army", "from": "1914-09-03", "to": "1916-03" }],
+  "summary": "Took over the French 5th Army on 3 September 1914 and drove it back north into the gap between Kluck and Bülow during the Marne; 'Desperate Frankie' to the British.",
+  "media": ["media:person/franchet-desperey-louis/portrait-colorized"],
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

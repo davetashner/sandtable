@@ -1,0 +1,21 @@
+{
+  "id": "person:hentsch-richard",
+  "name": "Richard Hentsch",
+  "sortName": "Hentsch, Richard",
+  "born": "1869-12-18",
+  "died": "1918-02-13",
+  "nationality": "DE",
+  "roles": [
+    {
+      "title": "Head of intelligence, OHL; Moltke's emissary to the armies",
+      "from": "1914-08",
+      "to": "1914-09"
+    }
+  ],
+  "summary": "Lieutenant-colonel on the General Staff whom Moltke sent by car to the right-wing armies on 8–9 September 1914. His authority and the retreat order he sanctioned at 1st and 2nd Army headquarters are among the most argued-over moments of the campaign.",
+  "media": ["media:person/hentsch-richard/portrait-colorized"],
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

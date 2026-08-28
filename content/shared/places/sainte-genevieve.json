@@ -1,0 +1,9 @@
+{
+  "id": "place:sainte-genevieve",
+  "name": "Sainte-Geneviève",
+  "kind": "village",
+  "lngLat": [6.086, 48.849],
+  "country": "France",
+  "notes": "Village on the Moselle heights at the northern end of the Grand Couronné position.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

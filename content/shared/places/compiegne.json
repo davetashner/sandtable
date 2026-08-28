@@ -1,0 +1,8 @@
+{
+  "id": "place:compiegne",
+  "name": "Compiègne",
+  "kind": "town",
+  "lngLat": [2.826, 49.418],
+  "country": "France",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

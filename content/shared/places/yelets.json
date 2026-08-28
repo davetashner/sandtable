@@ -1,0 +1,9 @@
+{
+  "id": "place:yelets",
+  "name": "Yelets",
+  "kind": "town",
+  "lngLat": [38.501, 52.623],
+  "country": "Russian Empire",
+  "notes": "The western limit of Mamontov's raid, some two hundred kilometres behind the Red front line.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

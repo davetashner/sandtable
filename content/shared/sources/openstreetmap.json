@@ -1,0 +1,9 @@
+{
+  "id": "source:openstreetmap",
+  "kind": "map",
+  "tier": "reference",
+  "author": "OpenStreetMap contributors",
+  "title": "OpenStreetMap",
+  "url": "https://www.openstreetmap.org/",
+  "notes": "Reference data only, under the same rule as source:wikipedia-en (docs/sources.md §8): a coordinate for a place in content/shared/places/places.json, and nothing else. Never an operational claim and never a footnote a reader sees. It is in the registry because several Pacific airfields have no coordinate box in any encyclopaedia and OpenStreetMap's aerodrome node is the only check available. Licence ODbL; attribution © OpenStreetMap contributors."
+}

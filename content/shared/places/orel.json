@@ -1,0 +1,9 @@
+{
+  "id": "place:orel",
+  "name": "Orel",
+  "kind": "town",
+  "lngLat": [36.062, 52.97],
+  "country": "Russian Empire",
+  "notes": "The high-water mark of the White movement. Denikin's Volunteer Army took it on 13 October 1919, two hundred and fifty miles from Moscow, and lost it on 20 October.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

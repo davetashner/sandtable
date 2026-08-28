@@ -1,0 +1,8 @@
+{
+  "id": "place:sarrebourg",
+  "name": "Sarrebourg",
+  "kind": "town",
+  "lngLat": [7.053, 48.735],
+  "country": "Germany (annexed Lorraine)",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

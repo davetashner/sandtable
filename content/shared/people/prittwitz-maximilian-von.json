@@ -1,0 +1,15 @@
+{
+  "id": "person:prittwitz-maximilian-von",
+  "name": "Maximilian von Prittwitz",
+  "sortName": "Prittwitz, Maximilian von",
+  "born": "1848-11-27",
+  "died": "1917-03-29",
+  "nationality": "DE",
+  "roles": [{ "title": "Commander, German Eighth Army", "from": "1914-08-02", "to": "1914-08-23" }],
+  "summary": "Commanded the single army left to hold East Prussia. After Gumbinnen on 20 August he telephoned Moltke proposing to fall back behind the Vistula and abandon the province; he was relieved within two days, and the alarm he raised was still travelling when Moltke took two corps off the right wing to send east.",
+  "sources": [
+    { "source": "source:showalter-2004" },
+    { "source": "source:mombauer-2001" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

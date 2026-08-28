@@ -1,0 +1,10 @@
+{
+  "id": "place:aachen",
+  "name": "Aachen",
+  "names": [{ "name": "Aix-la-Chapelle", "language": "fr", "kind": "translation" }],
+  "kind": "city",
+  "lngLat": [6.084, 50.776],
+  "country": "Germany",
+  "notes": "Assembly area of the German 1st and 2nd Armies.",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

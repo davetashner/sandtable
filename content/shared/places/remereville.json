@@ -1,0 +1,9 @@
+{
+  "id": "place:remereville",
+  "name": "Réméréville",
+  "kind": "village",
+  "lngLat": [6.353, 48.687],
+  "country": "France",
+  "notes": "Village east of Nancy from which German heavy guns shelled the city on 9 September 1914.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "place:peter-and-paul-fortress",
+  "name": "The Peter and Paul Fortress",
+  "kind": "fortress",
+  "lngLat": [30.3167, 59.95],
+  "country": "Russian Empire",
+  "notes": "The fortress on Zayachy Island, across the Neva from the Winter Palace: arsenal, garrison and political prison, and on 25 October (O.S.) the place the signal for the assault was to come from.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

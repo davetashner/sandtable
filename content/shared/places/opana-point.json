@@ -1,0 +1,9 @@
+{
+  "id": "place:opana-point",
+  "name": "Opana Point",
+  "kind": "other",
+  "lngLat": [-158.01, 21.6856],
+  "country": "Territory of Hawaii, United States",
+  "notes": "The Army's northernmost mobile radar set on Oahu, on the ridge above Kahuku, and the one that saw the first wave coming in.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

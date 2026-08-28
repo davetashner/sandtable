@@ -1,0 +1,8 @@
+{
+  "id": "place:bavay",
+  "name": "Bavay",
+  "kind": "town",
+  "lngLat": [3.793, 50.299],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

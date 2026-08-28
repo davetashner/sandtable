@@ -1,0 +1,9 @@
+{
+  "id": "place:sedan",
+  "name": "Sedan",
+  "kind": "town",
+  "lngLat": [4.94, 49.702],
+  "country": "France",
+  "notes": "Napoleon III's surrender in 1870; crossed by the German 4th Army in August 1914 — the 1870 thread's anchor.",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

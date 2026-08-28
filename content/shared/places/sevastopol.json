@@ -1,0 +1,9 @@
+{
+  "id": "place:sevastopol",
+  "name": "Sevastopol",
+  "kind": "city",
+  "lngLat": [33.52, 44.617],
+  "country": "Russian Empire",
+  "notes": "The Black Sea naval base from which Wrangel's fleet took the last White army out of Russia on 14 November 1920.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

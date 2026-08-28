@@ -1,0 +1,15 @@
+{
+  "id": "person:maunoury-michel-joseph",
+  "name": "Michel-Joseph Maunoury",
+  "sortName": "Maunoury, Michel-Joseph",
+  "born": "1847-12-17",
+  "died": "1923-03-28",
+  "nationality": "FR",
+  "roles": [{ "title": "Commander, French 6th Army", "from": "1914-08-26", "to": "1915-03" }],
+  "summary": "Recalled from retirement to command the new French 6th Army, formed at the end of August from troops railed west. Its attack on Kluck's flank along the Ourcq on 5 September opened the Battle of the Marne.",
+  "media": ["media:person/maunoury-michel-joseph/portrait-colorized"],
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

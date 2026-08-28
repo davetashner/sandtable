@@ -1,0 +1,29 @@
+{
+  "id": "person:saito-yoshitsugu",
+  "name": "Saitō Yoshitsugu",
+  "sortName": "Saitō Yoshitsugu",
+  "names": [
+    { "name": "斎藤 義次", "language": "ja" },
+    {
+      "name": "Yoshitsugu Saitō",
+      "language": "en",
+      "kind": "transliteration",
+      "period": "given-name-first order, as English-language catalogues index him"
+    }
+  ],
+  "born": "1890-11-02",
+  "died": "1944-07-06",
+  "nationality": "JP",
+  "roles": [
+    {
+      "title": "Commanding General, 43rd Division; senior army commander, Saipan",
+      "from": "1944-04",
+      "to": "1944-07"
+    }
+  ],
+  "summary": "Commanded the 43rd Division and the army garrison on Saipan, where the Japanese defence changed the war's arithmetic: about thirty thousand defenders, almost none of whom surrendered, and a civilian population of some twenty thousand Japanese settlers who had been told what Americans did to prisoners. His last order told the garrison there was no longer any distinction between advancing and dying, and the banzai attack of 7 July 1944 was the largest of the war. He killed himself the same week. What followed on the cliffs at Marpi Point — civilians going over the edge in front of American loudspeakers begging them not to — is the reason Saipan is the hinge of the whole argument about how the war would have to be ended.",
+  "sources": [
+    { "source": "source:toll-2015" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "place:minsk",
+  "name": "Minsk",
+  "kind": "city",
+  "lngLat": [27.567, 53.9],
+  "country": "Russian Empire / Belarus",
+  "notes": "Occupied by the Red Army in December 1918 as the German army went home, and retaken on 11 July 1920 as the offensive towards Warsaw opened.",
+  "sources": [
+    { "source": "source:wikipedia-en", "note": "coordinates" },
+    {
+      "source": "source:chamberlin-1935-2",
+      "note": "the dates in this note; the chronological table and narrative"
+    }
+  ]
+}

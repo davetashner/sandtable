@@ -1,0 +1,12 @@
+{
+  "id": "place:strasbourg",
+  "name": "Strasbourg",
+  "names": [
+    { "name": "Straßburg", "language": "de", "kind": "translation", "period": "1871–1918" }
+  ],
+  "kind": "fortress",
+  "lngLat": [7.752, 48.573],
+  "country": "Germany",
+  "notes": "German since 1871.",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

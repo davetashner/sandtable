@@ -1,0 +1,9 @@
+{
+  "id": "place:kota-bharu",
+  "name": "Kota Bharu",
+  "kind": "town",
+  "lngLat": [102.25, 6.1333],
+  "country": "Kelantan, British Malaya",
+  "notes": "The north-eastern corner of British Malaya, with an airfield behind the beach. The first Japanese landing of the Pacific war was made here.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "person:foch-ferdinand",
+  "name": "Ferdinand Foch",
+  "sortName": "Foch, Ferdinand",
+  "born": "1851-10-02",
+  "died": "1929-03-20",
+  "nationality": "FR",
+  "roles": [
+    { "title": "Commander, XX Corps", "from": "1914-08-02", "to": "1914-08-28" },
+    { "title": "Commander, French 9th Army", "from": "1914-08-29", "to": "1915-01" }
+  ],
+  "summary": "Commanded XX Corps in Lorraine, then the improvised 9th Army that held the marshes of Saint-Gond at the Marne. Later Allied generalissimo in 1918 — one person who spans the whole war.",
+  "media": ["media:person/foch-ferdinand/portrait-colorized"],
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

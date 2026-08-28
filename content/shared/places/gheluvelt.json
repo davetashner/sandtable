@@ -1,0 +1,13 @@
+{
+  "id": "place:gheluvelt",
+  "name": "Gheluvelt",
+  "names": [{ "name": "Geluveld", "language": "nl", "kind": "modern" }],
+  "kind": "village",
+  "lngLat": [3, 50.836],
+  "country": "Belgium",
+  "notes": "Village on the Menin road east of Ypres, lost and retaken on 31 October 1914 — the crisis of the First Battle of Ypres.",
+  "sources": [
+    { "source": "source:edmonds-1925" },
+    { "source": "source:wikipedia-en", "note": "coordinates" }
+  ]
+}

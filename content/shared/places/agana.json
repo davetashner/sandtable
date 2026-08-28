@@ -1,0 +1,17 @@
+{
+  "id": "place:agana",
+  "name": "Agana",
+  "names": [
+    {
+      "name": "Hagåtña",
+      "language": "ch",
+      "kind": "modern",
+      "period": "Chamorro name, official since 1998"
+    }
+  ],
+  "kind": "town",
+  "lngLat": [144.75, 13.4792],
+  "country": "Territory of Guam, United States",
+  "notes": "The capital of Guam, an American island lying inside the ring of the Japanese South Seas mandate.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

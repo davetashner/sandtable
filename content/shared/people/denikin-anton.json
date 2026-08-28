@@ -1,0 +1,21 @@
+{
+  "id": "person:denikin-anton",
+  "name": "Anton Denikin",
+  "sortName": "Denikin, Anton Ivanovich",
+  "born": "1872-12-16",
+  "died": "1947-08-07",
+  "nationality": "RU",
+  "roles": [
+    { "title": "Commander, Volunteer Army", "from": "1918-04-13", "to": "1919-01" },
+    {
+      "title": "Commander-in-Chief, Armed Forces of South Russia",
+      "from": "1919-01",
+      "to": "1920-04-04"
+    }
+  ],
+  "summary": "A professional officer of modest origins, which made him something of an outsider among the men he ended up commanding. He took over the Volunteer Army when Kornilov was killed at Ekaterinodar in April 1918 and led the White south to within two hundred and fifty miles of Moscow in October 1919 before the front came apart behind him. His slogan - Russia one, great and indivisible - cost him the Ukrainians, the Cossack governments and the Caucasus, and is the standing exhibit for the argument that the Whites lost politically. He resigned in favour of Wrangel in April 1920 and spent the rest of his life writing, refusing in the Second World War to have anything to do with the Germans.",
+  "sources": [
+    { "source": "source:chamberlin-1935-2" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

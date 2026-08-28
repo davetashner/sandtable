@@ -1,0 +1,13 @@
+{
+  "id": "place:ypres",
+  "name": "Ypres",
+  "names": [{ "name": "Ieper", "language": "nl", "kind": "modern" }],
+  "kind": "town",
+  "lngLat": [2.885, 50.851],
+  "country": "Belgium",
+  "notes": "Flemish cloth town at the centre of the last unoccupied corner of Belgium; the salient held around it from October 1914 became the most fought-over ground of the war.",
+  "sources": [
+    { "source": "source:edmonds-1925" },
+    { "source": "source:wikipedia-en", "note": "coordinates" }
+  ]
+}

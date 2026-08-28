@@ -1,0 +1,16 @@
+{
+  "id": "person:haig-douglas",
+  "name": "Sir Douglas Haig",
+  "sortName": "Haig, Douglas",
+  "media": ["media:person/haig-douglas/portrait-1914-colorized"],
+  "born": "1861-06-19",
+  "died": "1928-01-29",
+  "nationality": "GB",
+  "roles": [{ "title": "Commander, I Corps, BEF", "from": "1914-08-05", "to": "1914-12-26" }],
+  "summary": "Commanded I Corps of the BEF in 1914 — in reserve at Mons, the retreat from Landrecies to the Marne, the advance to the Aisne, and the defence of Ypres in October–November; commanded the First Army from December 1914 and the BEF from December 1915.",
+  "sources": [
+    { "source": "source:edmonds-1922" },
+    { "source": "source:hastings-2013" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

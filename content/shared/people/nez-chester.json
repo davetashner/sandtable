@@ -1,0 +1,17 @@
+{
+  "id": "person:nez-chester",
+  "name": "Chester Nez",
+  "sortName": "Nez, Chester",
+  "born": "1921-01-23",
+  "died": "2014-06-04",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Private, later Corporal, code talker, United States Marine Corps",
+      "from": "1942-05",
+      "to": "1945"
+    }
+  ],
+  "summary": "One of the original twenty-nine Navajo recruited by the Marine Corps in May 1942 to build a code out of their own language — a vocabulary of several hundred terms improvised in a room at Camp Elliott, in which a submarine was an iron fish and a dive bomber a chicken hawk, layered over an alphabet of Navajo words. He carried it through Guadalcanal, Bougainville, Guam and Peleliu. The code was never broken. It stayed classified until 1968, so the men who made it came home to twenty-three years of not being able to say what they had done; Nez had been beaten at boarding school for speaking the language the Corps then asked him for.",
+  "sources": [{ "source": "source:wikipedia-en" }]
+}

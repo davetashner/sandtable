@@ -1,0 +1,10 @@
+{
+  "id": "place:kozlov",
+  "name": "Kozlov",
+  "kind": "town",
+  "lngLat": [40.483, 52.883],
+  "country": "Russian Empire",
+  "notes": "A railway town in Tambov province taken by Mamontov's raiders in August 1919; the headquarters of the Red Southern Front was there.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }],
+  "names": [{ "name": "Michurinsk", "kind": "modern", "period": "from 1932" }]
+}

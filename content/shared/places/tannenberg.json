@@ -1,0 +1,10 @@
+{
+  "id": "place:tannenberg",
+  "name": "Tannenberg",
+  "names": [{ "name": "Stebark", "language": "pl", "kind": "modern" }],
+  "kind": "village",
+  "lngLat": [20.135, 53.497],
+  "country": "German Empire (East Prussia)",
+  "notes": "The village the battle of 26-30 August 1914 was named for, at Hindenburg's request, to answer the defeat of the Teutonic Knights on the same ground in 1410.",
+  "sources": [{ "source": "source:showalter-2004" }]
+}

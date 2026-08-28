@@ -1,0 +1,9 @@
+{
+  "id": "place:winter-palace",
+  "name": "The Winter Palace",
+  "kind": "other",
+  "lngLat": [30.3146, 59.941],
+  "country": "Russian Empire",
+  "notes": "The imperial residence on the Neva embankment; from March 1917 the seat of the Provisional Government, and the building the Military Revolutionary Committee took in the small hours of 26 October (O.S.).",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

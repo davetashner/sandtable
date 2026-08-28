@@ -1,0 +1,21 @@
+{
+  "id": "person:rochefort-joseph",
+  "name": "Joseph J. Rochefort",
+  "sortName": "Rochefort, Joseph J.",
+  "born": "1900-05-12",
+  "died": "1976-07-20",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Officer in Charge, Combat Intelligence Unit (Station HYPO), 14th Naval District",
+      "from": "1941-06",
+      "to": "1942-10"
+    }
+  ],
+  "summary": "Ran Station HYPO in the basement at Pearl Harbor, the combat intelligence unit that was reading enough of the Japanese fleet code by May 1942 to say that the objective designated AF was Midway — and proved it by having Midway signal in clear that its distillation plant had failed and then reading the Japanese report that AF was short of water. Washington's own analysts had said the Aleutians or the south-west Pacific. Nimitz believed Rochefort, and the battle was fought where he said it would be. The Distinguished Service Medal Nimitz recommended was blocked in Washington; it was awarded in 1986, ten years after Rochefort's death.",
+  "sources": [
+    { "source": "source:parshall-tully-2005" },
+    { "source": "source:toll-2012" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

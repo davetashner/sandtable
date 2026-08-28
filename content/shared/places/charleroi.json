@@ -1,0 +1,9 @@
+{
+  "id": "place:charleroi",
+  "name": "Charleroi",
+  "kind": "town",
+  "lngLat": [4.444, 50.411],
+  "country": "Belgium",
+  "notes": "Bülow forced the Sambre here, 21–23 August 1914.",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

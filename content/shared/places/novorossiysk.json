@@ -1,0 +1,9 @@
+{
+  "id": "place:novorossiysk",
+  "name": "Novorossiysk",
+  "kind": "city",
+  "lngLat": [37.768, 44.723],
+  "country": "Russian Empire",
+  "notes": "The Black Sea port where Denikin's army came apart in March 1920: what could be lifted went to the Crimea, and what could not was left on the quays.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

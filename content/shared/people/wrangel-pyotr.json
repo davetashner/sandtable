@@ -1,0 +1,25 @@
+{
+  "id": "person:wrangel-pyotr",
+  "name": "Pyotr Wrangel",
+  "sortName": "Wrangel, Pyotr Nikolayevich",
+  "born": "1878-08-27",
+  "died": "1928-04-25",
+  "nationality": "RU",
+  "roles": [
+    {
+      "title": "Commander, Caucasian Army (Armed Forces of South Russia)",
+      "from": "1919-05",
+      "to": "1919-12"
+    },
+    {
+      "title": "Commander-in-Chief, the Russian Army in the Crimea",
+      "from": "1920-04-04",
+      "to": "1920-11"
+    }
+  ],
+  "summary": "A Baltic German baron and a cavalryman, the last White commander-in-chief and the only one who tried to govern rather than merely to win: in the Crimea in 1920 he issued a land law that gave the peasants the land they had taken, and by then there was almost nowhere left for it to be applied. He held the peninsula for seven months, came out into Northern Tavria and was driven back, and organised the one White operation of the war that went as planned - the evacuation of the army and a great many civilians from the Crimean ports in November 1920.",
+  "sources": [
+    { "source": "source:chamberlin-1935-2" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

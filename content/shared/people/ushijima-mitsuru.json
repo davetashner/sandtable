@@ -1,0 +1,30 @@
+{
+  "id": "person:ushijima-mitsuru",
+  "name": "Ushijima Mitsuru",
+  "sortName": "Ushijima Mitsuru",
+  "names": [
+    { "name": "牛島 満", "language": "ja" },
+    {
+      "name": "Mitsuru Ushijima",
+      "language": "en",
+      "kind": "transliteration",
+      "period": "given-name-first order, as English-language catalogues index him"
+    }
+  ],
+  "born": "1887-07-31",
+  "died": "1945-06-22",
+  "nationality": "JP",
+  "roles": [
+    {
+      "title": "Commanding General, Thirty-Second Army, Okinawa",
+      "from": "1944-08",
+      "to": "1945-06-22"
+    }
+  ],
+  "summary": "Commanded the Thirty-Second Army on Okinawa and fought the same battle Kuribayashi had, on a larger island with a civilian population on it. He let the Americans land unopposed on 1 April 1945 and held the fortified lines across the southern third of the island — Kakazu, Shuri, the Yaeju-Dake — for eighty-two days, which was the point: every day bought was a day the invasion of the home islands was delayed. Around a quarter of Okinawa's civilians died in the ground fighting, and the campaign's cost on both sides is cited by both sides of the argument about the atomic bombs. He killed himself on 22 June 1945 as the line reached the southern cliffs.",
+  "sources": [
+    { "source": "source:toll-2020" },
+    { "source": "source:sledge-1981" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "person:gallieni-joseph",
+  "name": "Joseph Gallieni",
+  "sortName": "Gallieni, Joseph",
+  "born": "1849-04-24",
+  "died": "1916-05-27",
+  "nationality": "FR",
+  "roles": [{ "title": "Military Governor of Paris", "from": "1914-08-26", "to": "1915-10" }],
+  "summary": "Military Governor of Paris from late August 1914. Saw the opening offered by Kluck's wheel, pushed Joffre to attack, and sent Maunoury's reinforcements forward — some of them in the requisitioned taxis that became the battle's legend.",
+  "media": ["media:person/gallieni-joseph/portrait-colorized"],
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

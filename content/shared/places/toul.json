@@ -1,0 +1,8 @@
+{
+  "id": "place:toul",
+  "name": "Toul",
+  "kind": "fortress",
+  "lngLat": [5.892, 48.675],
+  "country": "France",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

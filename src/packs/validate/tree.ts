@@ -4,6 +4,8 @@
  * values — the validator parses them against the schema and reports.
  */
 
+import type { SharedRegistryDir } from '../schema/files.js';
+
 /** One file's raw contents, with the path used in messages. */
 export interface RawFile {
   /** Path relative to the content root, e.g. eras/1914-schlieffen-marne/routes.json */
@@ -25,8 +27,13 @@ export interface RawPack {
 }
 
 export interface RawShared {
-  /** Optional registry files keyed by relative path (people/people.json, …). */
-  collections: Record<string, RawFile>;
+  /**
+   * The shared registries, one file per entity, keyed by directory (ADR 0022).
+   * A `RawFile` here holds a single Person, Place or Source — the same shape
+   * `media` and `audio` have always had, and for the same reason: an entity
+   * per file is an entity per diff.
+   */
+  registries: Record<SharedRegistryDir, RawFile[]>;
   /** Every media.json manifest. */
   media: RawFile[];
   /** Every cue.json manifest (the score). */

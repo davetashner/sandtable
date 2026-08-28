@@ -1,0 +1,8 @@
+{
+  "id": "place:coulommiers",
+  "name": "Coulommiers",
+  "kind": "town",
+  "lngLat": [3.085, 48.815],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "place:namur",
+  "name": "Namur",
+  "names": [{ "name": "Namen", "language": "nl", "kind": "translation" }],
+  "kind": "fortress",
+  "lngLat": [4.867, 50.467],
+  "country": "Belgium",
+  "notes": "Nine-fort ring at the Sambre–Meuse confluence; fell 21–25 August 1914.",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

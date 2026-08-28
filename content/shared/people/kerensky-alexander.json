@@ -1,0 +1,28 @@
+{
+  "id": "person:kerensky-alexander",
+  "name": "Alexander Kerensky",
+  "sortName": "Kerensky, Alexander Fyodorovich",
+  "born": "1881-05-04",
+  "died": "1970-06-11",
+  "nationality": "RU",
+  "roles": [
+    { "title": "Deputy for Saratov, Fourth State Duma", "from": "1912", "to": "1917" },
+    {
+      "title": "Minister of Justice, Provisional Government",
+      "from": "1917-03-15",
+      "to": "1917-05"
+    },
+    { "title": "Minister of War and the Navy", "from": "1917-05", "to": "1917-09" },
+    {
+      "title": "Minister-President of the Provisional Government",
+      "from": "1917-07-21",
+      "to": "1917-11-07"
+    }
+  ],
+  "summary": "A defence lawyer who had made his name in political trials, the only man to sit in both the Duma Committee and the Petrograd Soviet in the first days of the revolution, and the figure through whom the two halves of dual power were briefly joined. He rose in eight months from Minister of Justice to head of government and Supreme Commander, staked the government on a summer offensive that failed, quarrelled fatally with his own Supreme Commander in August, and left Petrograd by car on the morning of 25 October (O.S.) to find troops that did not come. He lived another fifty-three years, most of them in the United States, arguing his case.",
+  "sources": [
+    { "source": "source:figes-1996" },
+    { "source": "source:wade-2017" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

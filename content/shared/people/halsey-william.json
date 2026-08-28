@@ -1,0 +1,23 @@
+{
+  "id": "person:halsey-william",
+  "name": "William F. Halsey Jr.",
+  "sortName": "Halsey, William F., Jr.",
+  "born": "1882-10-30",
+  "died": "1959-08-16",
+  "nationality": "US",
+  "roles": [
+    { "title": "Commander, Carrier Division 2 / Task Force 16", "from": "1941", "to": "1942-05" },
+    {
+      "title": "Commander, South Pacific Area and South Pacific Force",
+      "from": "1942-10-18",
+      "to": "1944-06"
+    },
+    { "title": "Commander, Third Fleet", "from": "1944-06", "to": "1945-11" }
+  ],
+  "summary": "The carrier admiral the American public knew by name, and the one the Navy sent where morale was the problem: the early raids on the Marshalls and the Doolittle launch in 1942, then the South Pacific command in October of that year, when Guadalcanal was being lost by degrees and was not lost after he arrived. Missed Midway in hospital with dermatitis and gave Spruance his carriers. At Leyte Gulf on 24–25 October 1944 he took the whole of Third Fleet north after Ozawa's aircraft-less carriers and left San Bernardino Strait unwatched; whether that was the decoy working as designed or a commander's error is the most argued single decision of the Pacific war.",
+  "sources": [
+    { "source": "source:toll-2015" },
+    { "source": "source:toll-2020" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

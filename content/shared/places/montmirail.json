@@ -1,0 +1,8 @@
+{
+  "id": "place:montmirail",
+  "name": "Montmirail",
+  "kind": "town",
+  "lngLat": [3.54, 48.871],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

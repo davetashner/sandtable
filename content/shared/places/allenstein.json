@@ -1,0 +1,10 @@
+{
+  "id": "place:allenstein",
+  "name": "Allenstein",
+  "names": [{ "name": "Olsztyn", "language": "pl", "kind": "modern" }],
+  "kind": "city",
+  "lngLat": [20.48, 53.778],
+  "country": "German Empire (East Prussia)",
+  "notes": "Objective of the Russian Second Army's centre as it advanced north-west into East Prussia.",
+  "sources": [{ "source": "source:showalter-2004" }]
+}

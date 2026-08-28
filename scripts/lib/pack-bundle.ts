@@ -23,6 +23,7 @@ import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { PACK_BUNDLE_DIR, type ContentBundle } from '../../src/packs/content-bundle.js';
 import { BEATS_DIR, DIAGRAMS_DIR, PACK_FILE } from '../../src/packs/schema/files.js';
+import { readRegistry } from './registry.js';
 import { sharedFor, type SharedRegistries } from './shared-refs.js';
 
 /** The pack the shell boots into when the URL names none (`sand-shn.1`). */
@@ -135,9 +136,12 @@ export function buildContentBundle(root: string, id = SEED_PACK_ID): ContentBund
   }
 
   const registries: SharedRegistries = {
-    people: optionalJson(join(shared, 'people', 'people.json')) ?? [],
-    places: optionalJson(join(shared, 'places', 'places.json')) ?? [],
-    sources: optionalJson(join(shared, 'sources', 'sources.json')) ?? [],
+    // One file per entity (ADR 0022), gathered back into the array the browser
+    // is handed. Name order, so the bundle — and therefore its content hash —
+    // does not depend on what order a filesystem happens to list a directory in.
+    people: readRegistry(root, 'people'),
+    places: readRegistry(root, 'places'),
+    sources: readRegistry(root, 'sources'),
     // Written by `npm run media` / `npm run audio`; absent on a fresh clone
     // that has not run them, and an empty manifest is the honest stand-in.
     media: optionalJson(join(shared, 'media', 'index.json')) ?? {

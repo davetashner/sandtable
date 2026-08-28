@@ -1,0 +1,9 @@
+{
+  "id": "place:pskov",
+  "name": "Pskov",
+  "kind": "city",
+  "lngLat": [28.332, 57.8194],
+  "country": "Russian Empire",
+  "notes": "Headquarters of the Northern Front, about 250 kilometres south-west of Petrograd. The imperial train was diverted here on 1 March (O.S.) 1917 and Nicholas II abdicated in it the following night.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

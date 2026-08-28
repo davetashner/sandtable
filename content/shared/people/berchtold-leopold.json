@@ -1,0 +1,17 @@
+{
+  "id": "person:berchtold-leopold",
+  "name": "Leopold Berchtold",
+  "sortName": "Berchtold, Leopold von",
+  "born": "1863-04-18",
+  "died": "1942-11-21",
+  "nationality": "AT-HU",
+  "roles": [
+    { "title": "Foreign Minister of Austria-Hungary", "from": "1912-02-17", "to": "1915-01-13" }
+  ],
+  "summary": "Austro-Hungarian foreign minister through the July Crisis. He sought and obtained the German assurance of 5-6 July, presided over the drafting of the note to Serbia in terms meant to be refused, judged the Serbian reply of 25 July unsatisfactory, and pressed the declaration of war of 28 July - by his own account partly to foreclose the mediation proposals then circulating.",
+  "sources": [
+    { "source": "source:clark-2012" },
+    { "source": "source:albertini-1952" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

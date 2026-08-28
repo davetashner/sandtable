@@ -1,0 +1,25 @@
+{
+  "id": "person:basilone-john",
+  "name": "John Basilone",
+  "sortName": "Basilone, John",
+  "born": "1916-11-04",
+  "died": "1945-02-19",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Sergeant, 1st Battalion, 7th Marines, 1st Marine Division",
+      "from": "1942-08",
+      "to": "1943-07"
+    },
+    {
+      "title": "Gunnery Sergeant, 1st Battalion, 27th Marines, 5th Marine Division",
+      "from": "1944-12",
+      "to": "1945-02-19"
+    }
+  ],
+  "summary": "Machine-gun section leader in 1st Battalion, 7th Marines on Guadalcanal on the night of 24–25 October 1942, when his two sections were reduced to a handful of men and he kept the guns firing, repaired one under fire and carried ammunition up through the Japanese positions; Medal of Honor for it. Sent home to sell war bonds, he asked repeatedly to be returned to a rifle company, got his way, and was killed in the first hours on Iwo Jima on 19 February 1945 leading a machine-gun platoon off the beach. Navy Cross, posthumously — the only enlisted Marine of the war to hold both decorations.",
+  "sources": [
+    { "source": "source:frank-1990" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

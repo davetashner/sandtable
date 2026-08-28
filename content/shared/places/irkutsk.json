@@ -1,0 +1,9 @@
+{
+  "id": "place:irkutsk",
+  "name": "Irkutsk",
+  "kind": "city",
+  "lngLat": [104.281, 52.287],
+  "country": "Russian Empire / Siberia",
+  "notes": "Where the retreat down the Trans-Siberian ended for Kolchak: handed over by the Czechoslovak Legion on 15 January 1920, shot on 7 February by order of the local revolutionary committee, and put through a hole in the ice of the Angara.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

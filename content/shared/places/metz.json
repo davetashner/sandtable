@@ -1,0 +1,9 @@
+{
+  "id": "place:metz",
+  "name": "Metz",
+  "kind": "fortress",
+  "lngLat": [6.176, 49.12],
+  "country": "Germany",
+  "notes": "German since 1871; the hinge of the German left wing.",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "place:tambov",
+  "name": "Tambov",
+  "kind": "city",
+  "lngLat": [41.452, 52.721],
+  "country": "Russian Empire",
+  "notes": "The provincial capital that Mamontov's cavalry held for three days in August 1919, and the centre of the province that rose against grain requisitioning in August 1920 - the largest peasant insurrection against Soviet power.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

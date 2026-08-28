@@ -1,0 +1,19 @@
+{
+  "id": "place:hitokappu-bay",
+  "name": "Hitokappu Bay",
+  "names": [
+    { "name": "単冠湾", "language": "ja" },
+    {
+      "name": "Kasatka Bay",
+      "language": "ru",
+      "kind": "modern",
+      "period": "the Russian name for the bay on Iturup, after 1945"
+    },
+    { "name": "Tankan Bay", "language": "en", "kind": "transliteration" }
+  ],
+  "kind": "other",
+  "lngLat": [147.672, 44.965],
+  "country": "Etorofu, Kuril Islands, Empire of Japan",
+  "notes": "A wide, empty anchorage in the southern Kurils, a long way from anywhere with people in it — which is why the striking force was assembled there and why nobody saw it go. The English and Japanese encyclopaedia coordinates differ by about a kilometre and a half; this is the English one.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

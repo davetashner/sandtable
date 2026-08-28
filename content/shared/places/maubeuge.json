@@ -1,0 +1,8 @@
+{
+  "id": "place:maubeuge",
+  "name": "Maubeuge",
+  "kind": "fortress",
+  "lngLat": [3.973, 50.278],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

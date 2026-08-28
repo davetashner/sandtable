@@ -21,6 +21,7 @@
  */
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { readRegistry } from './lib/registry.js';
 
 export const FRONT_DIR = 'content/shared/geo/front';
 export const SOURCE_FILE = 'western-front.json';
@@ -226,10 +227,7 @@ export function buildGeoJSON(doc: FrontSource) {
 }
 
 function sourceRegistry(): Set<string> {
-  const p = 'content/shared/sources/sources.json';
-  if (!existsSync(p)) return new Set();
-  const rows = JSON.parse(readFileSync(p, 'utf8')) as { id: string }[];
-  return new Set(rows.map((r) => r.id));
+  return new Set(readRegistry<{ id: string }>('content', 'sources').map((r) => r.id));
 }
 
 function render(doc: FrontSource): string {
