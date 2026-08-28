@@ -11,6 +11,7 @@ import {
   Suspense,
   createContext,
   lazy,
+  type ReactElement,
   type ReactNode,
   useCallback,
   useContext,
@@ -250,6 +251,9 @@ function useCard():
   if (formation) return { kind: 'formation', card: formation };
   return undefined;
 }
+
+/** A card the URL has opened — whatever kind `useCard` resolved it to. */
+type OpenCard = NonNullable<ReturnType<typeof useCard>>;
 
 const MeanwhileCtx = createContext<ReturnType<typeof useMeanwhile> | null>(null);
 function useMeanwhileContext() {
@@ -992,20 +996,171 @@ function DecisionPauser() {
   return null;
 }
 
-function DossierSurface() {
-  const branch = useBranch();
-  const focus = useFocus();
-  const card = useCard();
+/**
+ * Glyph → card (ADR 0006): every family of thing the pack holds has one view,
+ * and this is the whole of the mapping from the one to the other. `useCard`
+ * has already decided which family the URL's card id belongs to, so the switch
+ * is exhaustive by construction — a new family cannot be added to the union
+ * without the compiler asking for its arm here.
+ */
+function DossierCard({ card }: { card: OpenCard }): ReactElement {
   const { pick } = useViewState();
-  const meanwhile = useMeanwhileContext();
   const controls = useViewStateControls();
   const labeller = useLabeller();
-  const { now, range } = useClock();
-  const beat = useMemo(
-    () => selectBeat(seed.beats, now, branch.id, focus?.id, range.end),
-    [now, branch.id, focus?.id, range.end],
-  );
-  const related = useMemo<CardChipLike[]>(() => {
+  // Every card carries the same door back to the beat it was opened from.
+  const onBack = () => controls?.setCard(undefined);
+  switch (card.kind) {
+    case 'bibliography':
+      return <BibliographyView sources={seed.sources} use={sourceUse()} onBack={onBack} />;
+    case 'source':
+      return (
+        <SourceCardView source={card.card} use={sourceUse().get(card.card.id)} onBack={onBack} />
+      );
+    case 'tech':
+      return (
+        <TechCardView
+          card={card.card}
+          sources={seed.sources}
+          labeller={labeller}
+          resolveMedia={mediaById}
+          onBack={onBack}
+        />
+      );
+    case 'science':
+      return (
+        <ScienceCardView
+          card={card.card}
+          sources={seed.sources}
+          labeller={labeller}
+          onBack={onBack}
+        />
+      );
+    case 'document':
+      return (
+        <DocumentCardView
+          doc={card.card}
+          sources={seed.sources}
+          labeller={labeller}
+          onBack={onBack}
+        />
+      );
+    case 'historiography':
+      return (
+        <HistoriographyCardView
+          point={card.card}
+          sources={seed.sources}
+          labeller={labeller}
+          onBack={onBack}
+        />
+      );
+    case 'person':
+      return (
+        <PersonCardView
+          person={card.card}
+          sources={seed.sources}
+          labeller={labeller}
+          commands={seed.formations
+            .filter((f) => f.commander === card.card.id)
+            .map((f) => ({ id: f.id, label: f.name }))}
+          tracks={seed.tracks.filter((t) => t.person === card.card.id)}
+          cast={seed.cast.find((c) => c.person === card.card.id)}
+          onBack={onBack}
+        />
+      );
+    case 'formation':
+      return (
+        <FormationCardView
+          formation={card.card}
+          sources={seed.sources}
+          labeller={labeller}
+          sides={seed.pack.sides}
+          subordinates={subordinatesOf(FORMATIONS, card.card.id).map((f) => ({
+            id: f.id,
+            label: f.short ?? f.name,
+          }))}
+          routes={seed.routes.filter((r) => r.formation === card.card.id)}
+          resolveMedia={mediaById}
+          onBack={onBack}
+        />
+      );
+    case 'supply':
+      return (
+        <SupplyCardView
+          line={card.card}
+          routes={seed.routes}
+          sources={seed.sources}
+          labeller={labeller}
+          onBack={onBack}
+        />
+      );
+    case 'casualties':
+      return (
+        <CasualtyCardView
+          record={card.card}
+          records={seed.casualties}
+          sides={seed.pack.sides}
+          sources={seed.sources}
+          labeller={labeller}
+          onBack={onBack}
+        />
+      );
+    case 'tally':
+      return (
+        <TallyCardView
+          tally={card.card}
+          sources={seed.sources}
+          labeller={labeller}
+          onBack={onBack}
+        />
+      );
+    case 'clock':
+      return <ClockCardView clock={card.card} sources={seed.sources} onBack={onBack} />;
+    case 'decision':
+      return (
+        <DecisionCardView
+          decision={card.card}
+          sources={seed.sources}
+          labeller={labeller}
+          pick={pick}
+          onPick={(id) => controls?.setPick(id)}
+          onPlayBranch={(b) => controls?.setBranch(b)}
+          onBack={onBack}
+        />
+      );
+    case 'causal':
+      return (
+        <CausalView
+          links={seed.links}
+          focal={card.card}
+          sources={seed.sources}
+          label={(id) => labeller.label(id)}
+          onOpenLink={(id) => controls?.setCard(id)}
+          onOpenEntity={(id) => {
+            if (seed.events.some((e) => e.id === id)) return labeller.open?.(id, 'events');
+            if (seed.battles.some((b) => b.id === id)) return labeller.open?.(id, 'battles');
+            if (seed.tech.some((t) => t.id === id)) return labeller.open?.(id, 'tech');
+            return undefined;
+          }}
+          onBack={onBack}
+        />
+      );
+  }
+}
+
+/**
+ * The chips under a beat: everything the beat links to, in the order the
+ * families are listed, and then the causal links that touch what it names.
+ *
+ * A chip either opens a card or enters a focus level — the two doors ADR 0006
+ * gives the dossier — and the battle you are already standing in is dropped,
+ * because a chip back to here is not a door.
+ */
+function useRelatedChips(beat: ReturnType<typeof selectBeat>): CardChipLike[] {
+  const focus = useFocus();
+  const controls = useViewStateControls();
+  const labeller = useLabeller();
+  const focusId = focus?.id;
+  return useMemo<CardChipLike[]>(() => {
     const links = beat?.links;
     if (!links) return [];
     const out: CardChipLike[] = [];
@@ -1023,7 +1178,7 @@ function DossierSurface() {
     }
     for (const id of links.battles ?? []) {
       const label = labeller.label(id);
-      if (label && id !== focus?.id)
+      if (label && id !== focusId)
         out.push({ id, label, kind: 'battle', onClick: () => controls?.setFocus(id) });
     }
     for (const l of linksTouching(seed.links, [
@@ -1040,7 +1195,39 @@ function DossierSurface() {
       });
     }
     return out;
-  }, [beat, labeller, controls, focus?.id]);
+  }, [beat, labeller, controls, focusId]);
+}
+
+/**
+ * The cast for the dossier's disclosure (sand-9ts). A face opens its person
+ * card, and pressing the open one again closes it — so the strip is a toggle
+ * rather than a one-way door into a card you then have to back out of.
+ */
+function DossierCast({ card }: { card: OpenCard | undefined }) {
+  const controls = useViewStateControls();
+  const open = card?.kind === 'person' ? card.card.id : undefined;
+  return (
+    <CastStrip
+      members={CAST_MEMBERS}
+      sides={seed.pack.sides}
+      selected={open}
+      onSelect={(id) => controls?.setCard(open === id ? undefined : id)}
+    />
+  );
+}
+
+function DossierSurface() {
+  const branch = useBranch();
+  const focus = useFocus();
+  const card = useCard();
+  const meanwhile = useMeanwhileContext();
+  const labeller = useLabeller();
+  const { now, range } = useClock();
+  const beat = useMemo(
+    () => selectBeat(seed.beats, now, branch.id, focus?.id, range.end),
+    [now, branch.id, focus?.id, range.end],
+  );
+  const related = useRelatedChips(beat);
   const voices = useMemo(
     () => vignettesFor(seed.vignettes, beat, now, branch.id),
     [beat, now, branch.id],
@@ -1065,141 +1252,8 @@ function DossierSurface() {
         resolveMedia={mediaById}
         resolveDiagram={(file) => seed.diagrams[file]}
         castLabel={`${CAST_MEMBERS.length} in the cast`}
-        cast={
-          <CastStrip
-            members={CAST_MEMBERS}
-            sides={seed.pack.sides}
-            selected={card?.kind === 'person' ? card.card.id : undefined}
-            onSelect={(id) =>
-              controls?.setCard(card?.kind === 'person' && card.card.id === id ? undefined : id)
-            }
-          />
-        }
-        card={
-          card?.kind === 'bibliography' ? (
-            <BibliographyView
-              sources={seed.sources}
-              use={sourceUse()}
-              onBack={() => controls?.setCard(undefined)}
-            />
-          ) : card?.kind === 'source' ? (
-            <SourceCardView
-              source={card.card}
-              use={sourceUse().get(card.card.id)}
-              onBack={() => controls?.setCard(undefined)}
-            />
-          ) : card?.kind === 'tech' ? (
-            <TechCardView
-              card={card.card}
-              sources={seed.sources}
-              labeller={labeller}
-              resolveMedia={mediaById}
-              onBack={() => controls?.setCard(undefined)}
-            />
-          ) : card?.kind === 'science' ? (
-            <ScienceCardView
-              card={card.card}
-              sources={seed.sources}
-              labeller={labeller}
-              onBack={() => controls?.setCard(undefined)}
-            />
-          ) : card?.kind === 'document' ? (
-            <DocumentCardView
-              doc={card.card}
-              sources={seed.sources}
-              labeller={labeller}
-              onBack={() => controls?.setCard(undefined)}
-            />
-          ) : card?.kind === 'historiography' ? (
-            <HistoriographyCardView
-              point={card.card}
-              sources={seed.sources}
-              labeller={labeller}
-              onBack={() => controls?.setCard(undefined)}
-            />
-          ) : card?.kind === 'person' ? (
-            <PersonCardView
-              person={card.card}
-              sources={seed.sources}
-              labeller={labeller}
-              commands={seed.formations
-                .filter((f) => f.commander === card.card.id)
-                .map((f) => ({ id: f.id, label: f.name }))}
-              tracks={seed.tracks.filter((t) => t.person === card.card.id)}
-              cast={seed.cast.find((c) => c.person === card.card.id)}
-              onBack={() => controls?.setCard(undefined)}
-            />
-          ) : card?.kind === 'formation' ? (
-            <FormationCardView
-              formation={card.card}
-              sources={seed.sources}
-              labeller={labeller}
-              sides={seed.pack.sides}
-              subordinates={subordinatesOf(FORMATIONS, card.card.id).map((f) => ({
-                id: f.id,
-                label: f.short ?? f.name,
-              }))}
-              routes={seed.routes.filter((r) => r.formation === card.card.id)}
-              resolveMedia={mediaById}
-              onBack={() => controls?.setCard(undefined)}
-            />
-          ) : card?.kind === 'supply' ? (
-            <SupplyCardView
-              line={card.card}
-              routes={seed.routes}
-              sources={seed.sources}
-              labeller={labeller}
-              onBack={() => controls?.setCard(undefined)}
-            />
-          ) : card?.kind === 'casualties' ? (
-            <CasualtyCardView
-              record={card.card}
-              records={seed.casualties}
-              sides={seed.pack.sides}
-              sources={seed.sources}
-              labeller={labeller}
-              onBack={() => controls?.setCard(undefined)}
-            />
-          ) : card?.kind === 'tally' ? (
-            <TallyCardView
-              tally={card.card}
-              sources={seed.sources}
-              labeller={labeller}
-              onBack={() => controls?.setCard(undefined)}
-            />
-          ) : card?.kind === 'clock' ? (
-            <ClockCardView
-              clock={card.card}
-              sources={seed.sources}
-              onBack={() => controls?.setCard(undefined)}
-            />
-          ) : card?.kind === 'decision' ? (
-            <DecisionCardView
-              decision={card.card}
-              sources={seed.sources}
-              labeller={labeller}
-              pick={pick}
-              onPick={(id) => controls?.setPick(id)}
-              onPlayBranch={(b) => controls?.setBranch(b)}
-              onBack={() => controls?.setCard(undefined)}
-            />
-          ) : card?.kind === 'causal' ? (
-            <CausalView
-              links={seed.links}
-              focal={card.card}
-              sources={seed.sources}
-              label={(id) => labeller.label(id)}
-              onOpenLink={(id) => controls?.setCard(id)}
-              onOpenEntity={(id) => {
-                if (seed.events.some((e) => e.id === id)) return labeller.open?.(id, 'events');
-                if (seed.battles.some((b) => b.id === id)) return labeller.open?.(id, 'battles');
-                if (seed.tech.some((t) => t.id === id)) return labeller.open?.(id, 'tech');
-                return undefined;
-              }}
-              onBack={() => controls?.setCard(undefined)}
-            />
-          ) : undefined
-        }
+        cast={<DossierCast card={card} />}
+        card={card && <DossierCard card={card} />}
       />
       <MeanwhileFilter
         available={meanwhile.available}
