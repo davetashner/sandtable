@@ -3,8 +3,16 @@
  * by the App so MapLibre and deck.gl stay out of the shell bundle. When a
  * focus region is set (zoom-in), the camera fits it; when cleared, it fits
  * the campaign region again.
+ *
+ * `MapSurface` itself is the assembly: gather the data, build the four layer
+ * families from it, render. Every rule it used to hold inline is a hook below
+ * it, named for the rule it owns — the screen projection the labels are laid
+ * out in, the commander portraits, the order the label passes take, the
+ * basemap's deference to the pack's own labels, the keyboard's copy of the
+ * map, and what the camera is looking at.
  */
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } from 'react';
+import type { Layer } from '@deck.gl/core';
 import { useClock } from '../engine/ClockContext.js';
 import {
   DEFAULT_PLACE_KINDS,
@@ -12,6 +20,8 @@ import {
   occupiedBoxes,
   placeLabelCandidates,
   placeLabels,
+  type Box,
+  type LabelPlacement,
 } from '../engine/layers/places.js';
 import { buildStyle, type MapTheme } from '../engine/map/style.js';
 import { tilesUrlFor } from '../engine/map/tiles.js';
@@ -21,8 +31,13 @@ import {
   buildCommanderLayers,
   commanderLabelCandidates,
   commandersAt,
+  type CommanderDatum,
 } from '../engine/layers/commanders.js';
-import { createPortraitIcons, type PortraitSource } from '../engine/layers/portrait-icons.js';
+import {
+  createPortraitIcons,
+  type PortraitIcons,
+  type PortraitSource,
+} from '../engine/layers/portrait-icons.js';
 import {
   MapView,
   type CameraTarget,
@@ -30,8 +45,9 @@ import {
   type MapInset,
 } from '../engine/map/MapView.js';
 import { labelNow } from '../engine/ticks.js';
-import { haversineKm } from '../engine/geo.js';
-import { MapObjects, type MapObject } from './MapObjects.js';
+import { MapObjects } from './MapObjects.js';
+import { buildMapRoster } from './map-roster.js';
+import type { TokenDatum } from '../engine/layers/movement-layers.js';
 import type {
   BBox,
   Branch,
@@ -93,6 +109,11 @@ export interface MapSurfaceProps {
 const insetKeyOf = (i?: MapInset) =>
   i ? `${i.top ?? 0}:${i.right ?? 0}:${i.bottom ?? 0}:${i.left ?? 0}` : '';
 
+/** Screen projection, or nothing while the map has not been drawn yet. */
+type Project = (lngLat: [number, number]) => [number, number] | null;
+/** What one label pass decided: candidate id → where its text goes. */
+type Placement = Map<string, LabelPlacement>;
+
 export function MapSurface({
   camera,
   borderYear,
@@ -116,20 +137,10 @@ export function MapSurface({
   onSelectTally,
   cameraTarget,
 }: MapSurfaceProps) {
-  const insetKey = insetKeyOf(inset);
   const { now, range } = useClock();
   const label = labelNow(now, range);
   const handle = useRef<MapHandle | null>(null);
-  // Labels are laid out in screen space (sand-320, sand-4xz): tokens first,
-  // then places around them. `viewTick` bumps on every map move so the layout
-  // follows the camera; `project` reads the live map when called.
-  const [viewTick, setViewTick] = useState(0);
-  const project = useCallback((p: [number, number]): [number, number] | null => {
-    const map = handle.current?.getMap();
-    if (!map) return null;
-    const q = map.project(p);
-    return Number.isFinite(q.x) && Number.isFinite(q.y) ? [q.x, q.y] : null;
-  }, []);
+  const { project, viewTick, follow } = useScreenProjection(handle);
   const {
     layers: movementLayers,
     tokens,
@@ -139,10 +150,160 @@ export function MapSurface({
     placementKey: viewTick,
     onSelect: onSelectFormation,
   });
-  // Portraits are cropped round on a canvas and cached per person; a redraw
-  // when one lands is what puts it on the map (sand-1l0.27).
+  const { commanders, drawCommanders } = useCommanderTokens({
+    tracks,
+    sides,
+    showCommanders,
+    labelPerson,
+    portrait,
+    onSelect: onSelectCommander,
+  });
+  const placed = useLabelPasses({
+    commanders,
+    tallies,
+    places,
+    under: labelBoxes,
+    project,
+    viewTick,
+  });
+
+  // The four layer families, in the order deck draws them: towns under the
+  // strength markers, both under the army tokens, commanders on top. Each is
+  // independent of the others — only the placements above are ordered.
+  const placeLayers = useMemo(
+    () => buildPlacesLayers({ places, placement: placed.places, placementKey: viewTick }),
+    [places, placed.places, viewTick],
+  );
+  const tallyLayers = useMemo(
+    () =>
+      buildTallyLayers({
+        tallies,
+        now,
+        placement: placed.tallies,
+        placementKey: viewTick,
+        ...(onSelectTally ? { onSelect: onSelectTally } : {}),
+      }),
+    [tallies, now, placed.tallies, viewTick, onSelectTally],
+  );
+  const commanderLayers = useMemo(
+    () => drawCommanders(placed.commanders, viewTick),
+    [drawCommanders, placed.commanders, viewTick],
+  );
+  const layers = useMemo(
+    () => [...placeLayers, ...tallyLayers, ...movementLayers, ...commanderLayers],
+    [placeLayers, tallyLayers, movementLayers, commanderLayers],
+  );
+
+  const { tilesUrl, styleFor } = useBasemapStyle({ places, tiles, focusTiles, focusRegion });
+  const objects = useMapRoster({
+    tokens,
+    commanders,
+    tallies,
+    places,
+    sides,
+    onSelectFormation,
+    onSelectCommander,
+    onSelectTally,
+  });
+  useMapFraming(handle, { region, focusRegion, insetKey: insetKeyOf(inset), cameraTarget });
+
+  return (
+    <MapView
+      ref={handle}
+      camera={camera}
+      borderYear={borderYear}
+      inset={inset}
+      tilesUrl={tilesUrl}
+      frontSeries={frontSeries}
+      frontAt={now}
+      label={`Map — ${label.date}`}
+      styleFor={styleFor}
+      deckLayers={layers}
+      onReady={(h) => {
+        handle.current = h;
+        follow(h);
+        if (focusRegion) h.fitRegion(focusRegion, { padding: 48, maxZoom: 11, duration: 0 });
+      }}
+    >
+      <MapObjects objects={objects} when={label.date} />
+    </MapView>
+  );
+}
+
+/**
+ * The screen space the labels are laid out in (sand-320, sand-4xz).
+ *
+ * `project` reads the live map when it is called; `viewTick` bumps on every
+ * map move so the layout follows the camera, at most once per animation
+ * frame. `follow` is what subscribes, once there is a map to subscribe to.
+ */
+function useScreenProjection(handle: RefObject<MapHandle | null>): {
+  project: Project;
+  viewTick: number;
+  follow: (h: MapHandle) => void;
+} {
+  const [viewTick, setViewTick] = useState(0);
+  const project = useCallback<Project>(
+    (p) => {
+      const map = handle.current?.getMap();
+      if (!map) return null;
+      const q = map.project(p);
+      return Number.isFinite(q.x) && Number.isFinite(q.y) ? [q.x, q.y] : null;
+    },
+    [handle],
+  );
+  const follow = useCallback((h: MapHandle) => {
+    const map = h.getMap();
+    if (!map) return;
+    let raf = 0;
+    const bump = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        setViewTick((t) => t + 1);
+      });
+    };
+    map.on('move', bump);
+    map.on('resize', bump);
+    bump();
+  }, []);
+  return { project, viewTick, follow };
+}
+
+/**
+ * Where the commanders were, as portrait tokens (sand-1l0.27).
+ *
+ * Portraits are cropped round on a canvas and cached per person, and they land
+ * after the tokens that want them; a redraw when one arrives is what puts it
+ * on the map, which is all `iconTick` is for. That tick stays inside this hook
+ * — hence `drawCommanders` rather than the pieces to build the layers from:
+ * the label pass has to run between the commanders and their layers (it needs
+ * to know where the names are), and everything else the layers want is the
+ * portrait cache's business rather than the map's.
+ */
+function useCommanderTokens({
+  tracks,
+  sides,
+  showCommanders,
+  labelPerson,
+  portrait,
+  onSelect,
+}: {
+  tracks: PersonTrack[];
+  sides: Side[];
+  showCommanders: boolean;
+  labelPerson: ((personId: string) => string | undefined) | undefined;
+  portrait: ((personId: string) => PortraitSource | undefined) | undefined;
+  onSelect: ((personId: string) => void) | undefined;
+}): {
+  /** The commanders on the map at this instant — what the roster reads. */
+  commanders: CommanderDatum[];
+  /** Their layers, once the label pass has said where the names go. */
+  drawCommanders: (placement: Placement | undefined, viewTick: number) => Layer[];
+} {
+  const { now } = useClock();
   const [iconTick, setIconTick] = useState(0);
-  const iconsRef = useRef<ReturnType<typeof createPortraitIcons> | null>(null);
+  const iconsRef = useRef<PortraitIcons | null>(null);
   iconsRef.current ??= createPortraitIcons(() => setIconTick((n) => n + 1));
   const icons = iconsRef.current;
 
@@ -166,36 +327,8 @@ export function MapSurface({
     for (const c of commanders) icons.request(c.person, portrait(c.person));
   }, [commanders, portrait, icons]);
 
-  // Four passes, in order of who may not be pushed aside: army tokens first
-  // (above), then the commanders, then the tally markers that sit on their
-  // route, then the towns. Each avoids the boxes the passes before it took
-  // (sand-320, sand-1l0.15, sand-1l0.27).
-  const commanderCandidates = useMemo(() => commanderLabelCandidates(commanders), [commanders]);
-  const commanderPlacement = useMemo(
-    () => (viewTick > 0 ? placeLabels(commanderCandidates, project, labelBoxes) : undefined),
-    [commanderCandidates, viewTick, project, labelBoxes],
-  );
-  const afterCommanders = useMemo(
-    () =>
-      commanderPlacement
-        ? [...labelBoxes, ...occupiedBoxes(commanderCandidates, commanderPlacement, project)]
-        : labelBoxes,
-    [labelBoxes, commanderCandidates, commanderPlacement, project],
-  );
-  const tallyCandidates = useMemo(() => tallyLabelCandidates(tallies, now), [tallies, now]);
-  const tallyPlacement = useMemo(
-    () => (viewTick > 0 ? placeLabels(tallyCandidates, project, afterCommanders) : undefined),
-    [tallyCandidates, viewTick, project, afterCommanders],
-  );
-  const takenBoxes = useMemo(
-    () =>
-      tallyPlacement
-        ? [...afterCommanders, ...occupiedBoxes(tallyCandidates, tallyPlacement, project)]
-        : afterCommanders,
-    [afterCommanders, tallyCandidates, tallyPlacement, project],
-  );
-  const commanderLayers = useMemo(
-    () =>
+  const drawCommanders = useCallback(
+    (placement: Placement | undefined, viewTick: number) =>
       commanders.length
         ? buildCommanderLayers({
             tracks,
@@ -203,155 +336,201 @@ export function MapSurface({
             sides,
             label: (id) => labelPerson?.(id),
             icon: (id) => icons.get(id),
-            placement: commanderPlacement,
+            placement,
             placementKey: `${viewTick}:${iconTick}`,
-            ...(onSelectCommander ? { onSelect: onSelectCommander } : {}),
+            ...(onSelect ? { onSelect } : {}),
           })
         : [],
-    [
-      commanders,
-      tracks,
-      now,
-      sides,
-      labelPerson,
-      icons,
-      commanderPlacement,
-      viewTick,
-      iconTick,
-      onSelectCommander,
-    ],
+    [commanders, tracks, now, sides, labelPerson, icons, iconTick, onSelect],
   );
-  const candidates = useMemo(() => placeLabelCandidates(places), [places]);
-  const placeLayers = useMemo(() => {
-    const placement = viewTick > 0 ? placeLabels(candidates, project, takenBoxes) : undefined;
-    return buildPlacesLayers({ places, placement, placementKey: viewTick });
-  }, [places, candidates, viewTick, project, takenBoxes]);
-  // The basemap must not label the cities the pack labels itself (sand-3uq).
-  const labelledPoints = useMemo(
-    () => places.filter((p) => DEFAULT_PLACE_KINDS.includes(p.kind)).map((p) => p.lngLat),
-    [places],
+
+  return { commanders, drawCommanders };
+}
+
+/**
+ * Four passes over the labels, in order of who may not be pushed aside: army
+ * tokens first (laid out with the movement scene, and arriving here as
+ * `under`), then the commanders, then the tally markers that sit on their
+ * route, then the towns. Each pass avoids the boxes the passes before it took
+ * (sand-320, sand-1l0.15, sand-1l0.27).
+ *
+ * Until the map has been projected once (`viewTick > 0`) there is no screen
+ * space to lay anything out in, so every pass is `undefined` and each layer
+ * falls back to its static slot.
+ */
+function useLabelPasses({
+  commanders,
+  tallies,
+  places,
+  under,
+  project,
+  viewTick,
+}: {
+  commanders: CommanderDatum[];
+  tallies: Tally[];
+  places: Place[];
+  under: Box[];
+  project: Project;
+  viewTick: number;
+}): {
+  commanders: Placement | undefined;
+  tallies: Placement | undefined;
+  places: Placement | undefined;
+} {
+  const { now } = useClock();
+
+  const commanderCandidates = useMemo(() => commanderLabelCandidates(commanders), [commanders]);
+  const commanderPlacement = useMemo(
+    () => (viewTick > 0 ? placeLabels(commanderCandidates, project, under) : undefined),
+    [commanderCandidates, viewTick, project, under],
   );
-  // Which archive the map is drawn on: the battle's while a zoom-in with one
-  // of its own is open, the pack's otherwise, the default when neither names
-  // one. Changing it restyles the map, which is why it is a URL rather than a
-  // name by the time MapView sees it (sand-lry.18).
+  const afterCommanders = useMemo(
+    () =>
+      commanderPlacement
+        ? [...under, ...occupiedBoxes(commanderCandidates, commanderPlacement, project)]
+        : under,
+    [under, commanderCandidates, commanderPlacement, project],
+  );
+
+  const tallyCandidates = useMemo(() => tallyLabelCandidates(tallies, now), [tallies, now]);
+  const tallyPlacement = useMemo(
+    () => (viewTick > 0 ? placeLabels(tallyCandidates, project, afterCommanders) : undefined),
+    [tallyCandidates, viewTick, project, afterCommanders],
+  );
+  const afterTallies = useMemo(
+    () =>
+      tallyPlacement
+        ? [...afterCommanders, ...occupiedBoxes(tallyCandidates, tallyPlacement, project)]
+        : afterCommanders,
+    [afterCommanders, tallyCandidates, tallyPlacement, project],
+  );
+
+  const placeCandidates = useMemo(() => placeLabelCandidates(places), [places]);
+  const placePlacement = useMemo(
+    () => (viewTick > 0 ? placeLabels(placeCandidates, project, afterTallies) : undefined),
+    [placeCandidates, viewTick, project, afterTallies],
+  );
+
+  return useMemo(
+    () => ({ commanders: commanderPlacement, tallies: tallyPlacement, places: placePlacement }),
+    [commanderPlacement, tallyPlacement, placePlacement],
+  );
+}
+
+/**
+ * The basemap: which archive it is drawn from, and how it is styled.
+ *
+ * The archive is the battle's while a zoom-in with one of its own is open,
+ * the pack's otherwise, and the default when neither names one. Changing it
+ * restyles the map, which is why it is a URL rather than a name by the time
+ * MapView sees it (sand-lry.18).
+ *
+ * The style's own rule is that the basemap must not label the cities the pack
+ * labels itself (sand-3uq): the pack draws those with deck.gl, outside
+ * MapLibre's collision system, so both would otherwise print on top of each
+ * other.
+ */
+function useBasemapStyle({
+  places,
+  tiles,
+  focusTiles,
+  focusRegion,
+}: {
+  places: Place[];
+  tiles: string | undefined;
+  focusTiles: string | undefined;
+  focusRegion: BBox | undefined;
+}) {
   const tilesUrl = useMemo(
     () => tilesUrlFor(focusRegion ? (focusTiles ?? tiles) : tiles),
     [focusRegion, focusTiles, tiles],
   );
+  const labelledPoints = useMemo(
+    () => places.filter((p) => DEFAULT_PLACE_KINDS.includes(p.kind)).map((p) => p.lngLat),
+    [places],
+  );
   const styleFor = useCallback(
-    (theme: MapTheme, tilesUrl?: string) =>
+    (theme: MapTheme, url?: string) =>
       buildStyle({
         theme,
-        ...(tilesUrl ? { tilesUrl } : {}),
+        ...(url ? { tilesUrl: url } : {}),
         suppressLocalityLabelsNear: labelledPoints,
       }),
     [labelledPoints],
   );
-  const tallyLayers = useMemo(
+  return { tilesUrl, styleFor };
+}
+
+/**
+ * The keyboard's copy of the map (sand-pmz.11) — the rules it follows are in
+ * `map-roster.ts`. Built from the same data the layers are built from, at the
+ * same instant, so the roster cannot claim something the map is not showing.
+ */
+function useMapRoster({
+  tokens,
+  commanders,
+  tallies,
+  places,
+  sides,
+  onSelectFormation,
+  onSelectCommander,
+  onSelectTally,
+}: {
+  tokens: TokenDatum[];
+  commanders: CommanderDatum[];
+  tallies: Tally[];
+  places: Place[];
+  sides: Side[];
+  onSelectFormation: ((formationId: string) => void) | undefined;
+  onSelectCommander: ((personId: string) => void) | undefined;
+  onSelectTally: ((tallyId: string) => void) | undefined;
+}) {
+  const { now } = useClock();
+  const markers = useMemo(() => tallyMarkers(tallies, now), [tallies, now]);
+  return useMemo(
     () =>
-      buildTallyLayers({
-        tallies,
-        now,
-        placement: tallyPlacement,
-        placementKey: viewTick,
-        ...(onSelectTally ? { onSelect: onSelectTally } : {}),
+      buildMapRoster({
+        tokens,
+        commanders,
+        markers,
+        places,
+        sides,
+        onSelectFormation,
+        onSelectCommander,
+        onSelectTally,
       }),
-    [tallies, now, tallyPlacement, viewTick, onSelectTally],
+    [
+      tokens,
+      commanders,
+      markers,
+      places,
+      sides,
+      onSelectFormation,
+      onSelectCommander,
+      onSelectTally,
+    ],
   );
-  const layers = useMemo(
-    () => [...placeLayers, ...tallyLayers, ...movementLayers, ...commanderLayers],
-    [placeLayers, tallyLayers, movementLayers, commanderLayers],
-  );
+}
 
-  // The keyboard's copy of the map (sand-pmz.11). Built from the same data the
-  // layers are built from — the tokens the movement scene actually drew, the
-  // commanders `commandersAt` actually placed, the tally entries the clock has
-  // passed — so the roster cannot claim something the map is not showing.
-  const nearest = useCallback(
-    (at: [number, number]) => {
-      let best: { name: string; km: number } | undefined;
-      for (const p of places) {
-        const km = haversineKm(at, p.lngLat);
-        if (!best || km < best.km) best = { name: p.name, km };
-      }
-      // A lng/lat pair tells a reader nothing. The nearest town the pack has
-      // already labelled is the map's own vocabulary, and beyond a couple of
-      // hours' march it stops being a location and becomes a direction, so
-      // past that the roster says nothing rather than something misleading.
-      if (!best || best.km > 120) return undefined;
-      return best.km < 12 ? `near ${best.name}` : `${Math.round(best.km)} km from ${best.name}`;
-    },
-    [places],
-  );
-  const sideName = useCallback(
-    (id: string) => {
-      const s = sides.find((x) => x.id === id);
-      return s?.short ?? s?.name ?? id;
-    },
-    [sides],
-  );
-  const objects = useMemo<MapObject[]>(() => {
-    const kindOf = (k: string) => k.charAt(0).toUpperCase() + k.slice(1).replace('-', ' ');
-    const out: MapObject[] = [];
-    for (const t of tokens)
-      out.push({
-        id: `formation/${t.id}`,
-        kind: kindOf(t.kind),
-        name: t.label,
-        detail: sideName(t.sideId),
-        where: nearest(t.position),
-        open: () => onSelectFormation?.(t.id),
-      });
-    for (const c of commanders)
-      out.push({
-        id: `commander/${c.id}`,
-        kind: c.kind === 'hq' ? 'Headquarters' : 'Commander',
-        name: c.name,
-        detail: c.post,
-        where: nearest(c.position),
-        open: () => onSelectCommander?.(c.person),
-      });
-    for (const m of tallyMarkers(tallies, now))
-      out.push({
-        id: `tally/${m.id}`,
-        kind: 'Strength',
-        name: m.label,
-        detail: m.entryLabel,
-        where: nearest(m.position),
-        open: () => onSelectTally?.(m.tallyId),
-      });
-    return out;
-  }, [
-    tokens,
-    commanders,
-    tallies,
-    now,
-    nearest,
-    sideName,
-    onSelectFormation,
-    onSelectCommander,
-    onSelectTally,
-  ]);
+/**
+ * What the camera is looking at: the campaign region, the battle extent while
+ * zoomed in, and a tour's own camera over both.
+ */
+function useMapFraming(
+  handle: RefObject<MapHandle | null>,
+  {
+    region,
+    focusRegion,
+    insetKey,
+    cameraTarget,
+  }: {
+    region: BBox;
+    focusRegion: BBox | undefined;
+    insetKey: string;
+    cameraTarget: (CameraTarget & { key: string }) | undefined;
+  },
+) {
   const first = useRef(true);
-
-  // Re-lay-out labels as the camera moves (one layout per animation frame at most).
-  const onReadyLayout = useCallback((h: MapHandle) => {
-    const map = h.getMap();
-    if (!map) return;
-    let raf = 0;
-    const bump = () => {
-      if (raf) return;
-      raf = requestAnimationFrame(() => {
-        raf = 0;
-        setViewTick((t) => t + 1);
-      });
-    };
-    map.on('move', bump);
-    map.on('resize', bump);
-    bump();
-  }, []);
-
   useEffect(() => {
     if (first.current) {
       first.current = false;
@@ -364,7 +543,7 @@ export function MapSurface({
     // `inset` is a dependency because the framing has to answer the panel:
     // when the tour's lower third appears or goes, the same region wants a
     // different camera (sand-neh.29).
-  }, [focusRegion, region, insetKey]);
+  }, [handle, focusRegion, region, insetKey]);
 
   // A tour's camera wins over the region fit for as long as the step lasts.
   const lastCameraKey = useRef<string | null>(null);
@@ -379,29 +558,7 @@ export function MapSurface({
     lastCameraKey.current = cameraTarget.key;
     const { key: _key, ...target } = cameraTarget;
     h.flyTo(target);
-  }, [cameraTarget]);
-
-  return (
-    <MapView
-      ref={handle}
-      camera={camera}
-      borderYear={borderYear}
-      inset={inset}
-      tilesUrl={tilesUrl}
-      frontSeries={frontSeries}
-      frontAt={now}
-      label={`Map — ${label.date}`}
-      styleFor={styleFor}
-      deckLayers={layers}
-      onReady={(h) => {
-        handle.current = h;
-        onReadyLayout(h);
-        if (focusRegion) h.fitRegion(focusRegion, { padding: 48, maxZoom: 11, duration: 0 });
-      }}
-    >
-      <MapObjects objects={objects} when={label.date} />
-    </MapView>
-  );
+  }, [handle, cameraTarget]);
 }
 
 export default MapSurface;
