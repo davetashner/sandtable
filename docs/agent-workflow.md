@@ -25,19 +25,33 @@ From the main checkout:
 ```bash
 git fetch origin main
 git worktree add .claude/worktrees/<branch> -b <branch> origin/main
-ln -s "$PWD/node_modules" .claude/worktrees/<branch>/node_modules
 cd .claude/worktrees/<branch>
+cp -R "$(git rev-parse --git-common-dir)/../node_modules" node_modules   # or: npm ci
 ```
 
-Node resolves through the symlink, so Vite, Vitest, ESLint and `tsx` all behave
-as if the tree had its own install. Two caveats, both obvious once stated: if
-your branch changes `package.json` or the lockfile, run `npm ci` in the worktree
-instead, because a symlinked tree is the main checkout's dependencies and not
-yours; and the link is not tracked by git, so a fresh clone of the branch will
-not have it.
+`--git-common-dir` points at the main checkout's `.git` from any worktree, so
+that line works whatever the branch is called — a relative `../../..` breaks the
+moment a branch name contains a slash, which most of them do.
+
+A copy costs about 600 MB and thirty seconds of disk I/O, against three minutes
+for `npm ci`. If your branch changes `package.json` or the lockfile, run
+`npm ci` instead — a copied tree is the main checkout's dependencies, not
+yours.
+
+> **Do not symlink `node_modules` into a worktree.** It is the obvious
+> optimisation and it destroys the main checkout. `git worktree remove --force`
+> deletes the worktree's files, follows the symlink out of the tree, and empties
+> the directory it points at — so cleaning up one worktree uninstalls
+> everything, for every tree, including the checkout you are standing in. It
+> fails quietly and at a distance: the next test run reports a smaller number of
+> tests rather than an error, and only later does a command go missing
+> altogether. This is not hypothetical; it happened here, and it is why the line
+> above is a copy.
 
 Branch names are `feat/…`, `fix/…`, `chore/…`, `content/…`, `docs/…`. Clean up
-after the merge: `git worktree remove <path>` and `git fetch --prune`.
+after the merge: `git worktree remove <path>` and `git fetch --prune`. If you
+ever do find a symlinked `node_modules` in a worktree, delete the **link**
+first (`rm node_modules`) and only then remove the worktree.
 
 ## Run the gates in the order that fails fastest
 

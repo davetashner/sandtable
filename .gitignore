@@ -67,3 +67,6 @@ visual-review/
 # artifact and a local convenience; the baseline that is committed is the JSON
 # beside the script, never the pixels
 visual-check/
+
+# Stringer static-analysis scan output (local tool, not part of the build)
+.stringer/
