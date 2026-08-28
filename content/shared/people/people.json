@@ -2912,5 +2912,114 @@
         "source": "source:wikipedia-en"
       }
     ]
+  },
+  {
+    "id": "person:lenin-vladimir",
+    "name": "Vladimir Lenin",
+    "sortName": "Lenin, Vladimir Ilyich (Ulyanov)",
+    "names": [
+      {
+        "name": "Vladimir Ilyich Ulyanov",
+        "language": "en",
+        "kind": "period",
+        "period": "the name he was born with"
+      },
+      { "name": "Vladimir Ilyich Ulyanov (Lenin)", "language": "ru", "kind": "period" }
+    ],
+    "born": "1870-04-22",
+    "died": "1924-01-21",
+    "nationality": "RU",
+    "roles": [
+      {
+        "title": "Leader of the Bolshevik faction, Russian Social Democratic Labour Party",
+        "from": "1903"
+      },
+      {
+        "title": "Chairman of the Council of People's Commissars",
+        "from": "1917-11-08",
+        "to": "1924-01-21"
+      }
+    ],
+    "summary": "A lawyer's son from Simbirsk who spent most of his adult life in exile arguing about organisation, and who arrived at the argument that a disciplined party of professional revolutionaries was the necessary instrument of a revolution rather than its expression. He was in Zurich when the Tsar fell and reached Petrograd only in April 1917, having crossed Germany in a sealed carriage the German government was glad to provide. From that April his position - no support for the Provisional Government, no continuation of the war, all power to the Soviets - was for six months a minority view even inside his own party, and by October it was the majority view in the capital. He headed the government that resulted until his health broke in 1922.",
+    "sources": [
+      { "source": "source:figes-1996" },
+      { "source": "source:merridale-2016" },
+      { "source": "source:wikipedia-en", "note": "dates" }
+    ]
+  },
+  {
+    "id": "person:trotsky-leon",
+    "name": "Leon Trotsky",
+    "sortName": "Trotsky, Leon (Lev Davidovich Bronstein)",
+    "names": [
+      {
+        "name": "Lev Davidovich Bronstein",
+        "language": "en",
+        "kind": "period",
+        "period": "the name he was born with"
+      }
+    ],
+    "born": "1879-11-07",
+    "died": "1940-08-21",
+    "nationality": "RU",
+    "roles": [
+      { "title": "Chairman of the St Petersburg Soviet", "from": "1905", "to": "1905" },
+      { "title": "Chairman of the Petrograd Soviet", "from": "1917-10-08", "to": "1918" },
+      { "title": "People's Commissar for Foreign Affairs", "from": "1917-11", "to": "1918-03" },
+      { "title": "People's Commissar for Military Affairs", "from": "1918-03", "to": "1925" }
+    ],
+    "summary": "A Ukrainian farmer's son who had chaired the St Petersburg Soviet in 1905 at twenty-six, spent the years between in exile writing about permanent revolution, and stood outside both wings of Russian social democracy until the summer of 1917, when he joined the Bolsheviks. Elected chairman of the Petrograd Soviet in September, he chaired the Military Revolutionary Committee that took the capital in October, negotiated at Brest-Litovsk, and built the Red Army. He lost the succession to Stalin, was expelled and deported, wrote the fullest participant's history of the revolution, and was murdered in Mexico in 1940.",
+    "sources": [
+      { "source": "source:figes-1996" },
+      { "source": "source:rabinowitch-1976" },
+      { "source": "source:wikipedia-en", "note": "dates" }
+    ]
+  },
+  {
+    "id": "person:kerensky-alexander",
+    "name": "Alexander Kerensky",
+    "sortName": "Kerensky, Alexander Fyodorovich",
+    "born": "1881-05-04",
+    "died": "1970-06-11",
+    "nationality": "RU",
+    "roles": [
+      { "title": "Deputy for Saratov, Fourth State Duma", "from": "1912", "to": "1917" },
+      {
+        "title": "Minister of Justice, Provisional Government",
+        "from": "1917-03-15",
+        "to": "1917-05"
+      },
+      { "title": "Minister of War and the Navy", "from": "1917-05", "to": "1917-09" },
+      {
+        "title": "Minister-President of the Provisional Government",
+        "from": "1917-07-21",
+        "to": "1917-11-07"
+      }
+    ],
+    "summary": "A defence lawyer who had made his name in political trials, the only man to sit in both the Duma Committee and the Petrograd Soviet in the first days of the revolution, and the figure through whom the two halves of dual power were briefly joined. He rose in eight months from Minister of Justice to head of government and Supreme Commander, staked the government on a summer offensive that failed, quarrelled fatally with his own Supreme Commander in August, and left Petrograd by car on the morning of 25 October (O.S.) to find troops that did not come. He lived another fifty-three years, most of them in the United States, arguing his case.",
+    "sources": [
+      { "source": "source:figes-1996" },
+      { "source": "source:wade-2017" },
+      { "source": "source:wikipedia-en", "note": "dates" }
+    ]
+  },
+  {
+    "id": "person:kornilov-lavr",
+    "name": "Lavr Kornilov",
+    "sortName": "Kornilov, Lavr Georgievich",
+    "born": "1870-08-30",
+    "died": "1918-04-13",
+    "nationality": "RU",
+    "roles": [
+      { "title": "Commander, Petrograd Military District", "from": "1917-03", "to": "1917-04" },
+      { "title": "Commander-in-Chief, South-Western Front", "from": "1917-07", "to": "1917-08" },
+      { "title": "Supreme Commander of the Russian Army", "from": "1917-08-01", "to": "1917-09-09" }
+    ],
+    "summary": "A Siberian Cossack officer, an explorer of Turkestan and a military attache in Peking before the war, who escaped from Austrian captivity in 1916 and came out of it a public figure. Appointed Supreme Commander in the summer of 1917 to restore discipline, he sent a cavalry corps towards Petrograd in late August in circumstances that have been argued about ever since, was declared a rebel by the head of the government who had wanted the troops, and was arrested. He escaped to the Don, helped found the Volunteer Army, and was killed by a shell at Ekaterinodar in April 1918.",
+    "sources": [
+      { "source": "source:katkov-1980" },
+      { "source": "source:figes-1996" },
+      { "source": "source:wikipedia-en", "note": "dates" }
+    ]
   }
 ]

@@ -1,0 +1,221 @@
+[
+  {
+    "id": "1917-russian-revolution:event-putilov-lockout",
+    "title": "The Putilov works lock out their workforce",
+    "at": "1917-03-07T12:00:00Z",
+    "kind": "political",
+    "significance": "major",
+    "place": "place:putilov-works",
+    "summary": "**22 February (O.S.) / 7 March (N.S.).** The management of the largest armaments plant in the capital answers a wage dispute in the gun shop by closing the works and putting some thirty thousand men on the street. The bread demonstrations begin the next day, and the locked-out Putilov men are already outside to join them. The hour is not recorded; the day is.",
+    "links": { "places": ["place:putilov-works"] },
+    "sources": [
+      {
+        "source": "source:hasegawa-1981",
+        "note": "the February days from the factory floor; no pages - see the pack README on what has and has not been read"
+      },
+      { "source": "source:figes-1996" }
+    ]
+  },
+  {
+    "id": "1917-russian-revolution:event-womens-day",
+    "title": "International Women's Day: the bread demonstrations begin",
+    "at": "1917-03-08T12:00:00Z",
+    "kind": "political",
+    "significance": "major",
+    "place": "place:petrograd",
+    "summary": "**23 February (O.S.) / 8 March (N.S.).** Women textile workers on the Vyborg side strike over bread and pull the metalworkers out with them. Nobody plans it: the socialist parties had asked for meetings, not a general strike, and the day the calendar makes International Women's Day in the West is an ordinary Thursday in Petrograd. By evening something like ninety thousand are out.\n\nThe coincidence of the two calendars is not decoration. The day is 8 March by the calendar the rest of Europe keeps, which is why the revolution that begins on it is remembered as an event of March everywhere except in Russia, where it was February.",
+    "links": { "places": ["place:petrograd"] },
+    "sources": [{ "source": "source:hasegawa-1981" }, { "source": "source:figes-1996" }]
+  },
+  {
+    "id": "1917-russian-revolution:event-garrison-mutiny",
+    "title": "The Petrograd garrison changes sides",
+    "at": "1917-03-12T08:00:00Z",
+    "kind": "political",
+    "significance": "major",
+    "place": "place:petrograd",
+    "summary": "**27 February (O.S.) / 12 March (N.S.).** The Volynsky Regiment's training detachment refuses to parade, shoots its own officer and goes out into the streets to bring the other barracks with it. By the afternoon the Preobrazhensky, Litovsky, Moscow and Pavlovsky regiments have followed, the arsenal has been broken open and the Kresty prison emptied. The government has no force left in the capital.\n\nThis, not the bread queues, is the moment. A crowd that is not shot at is a demonstration; a crowd with the garrison inside it is a revolution.",
+    "links": { "places": ["place:petrograd"] },
+    "sources": [{ "source": "source:hasegawa-1981" }, { "source": "source:figes-1996" }]
+  },
+  {
+    "id": "1917-russian-revolution:event-dual-power-begins",
+    "title": "Two bodies form in the same building",
+    "at": "1917-03-12T21:00:00Z",
+    "kind": "political",
+    "significance": "major",
+    "place": "place:tauride-palace",
+    "summary": "**27 February (O.S.) / 12 March (N.S.), evening.** In one wing of the Tauride Palace the Duma's members constitute a Provisional Committee; in another, released socialists and soldiers' delegates constitute the Petrograd Soviet of Workers' Deputies, joined within days by soldiers' deputies. Neither body was elected to do what it is about to do, and for the next eight months Russia has two governments in one building - one with the authority and one with the crowds.",
+    "links": { "places": ["place:tauride-palace"] },
+    "sources": [{ "source": "source:figes-1996" }, { "source": "source:smith-2017" }]
+  },
+  {
+    "id": "1917-russian-revolution:event-order-no-1",
+    "title": "Order No. 1",
+    "at": "1917-03-14T12:00:00Z",
+    "kind": "order",
+    "significance": "major",
+    "place": "place:tauride-palace",
+    "summary": "**1 March (O.S.) / 14 March (N.S.).** The Petrograd Soviet issues an order to the garrison: elect committees in every unit, put the unit's weapons under the committee's control, drop the honorifics and the saluting off duty - and obey the orders of the Duma's Military Commission only where they do not contradict the Soviet's.\n\nIt was written for the Petrograd garrison and for the week it was in, by men who feared the officers would take the regiments back. It was read at the front as a charter, and what it did to the discipline of an army of eleven million is the first great argument about 1917.",
+    "links": {
+      "places": ["place:tauride-palace"],
+      "documents": ["1917-russian-revolution:document-order-no-1"]
+    },
+    "sources": [{ "source": "source:figes-1996" }, { "source": "source:wade-2017" }]
+  },
+  {
+    "id": "1917-russian-revolution:event-abdication",
+    "title": "Nicholas II abdicates, in a railway carriage at Pskov",
+    "at": "1917-03-15T15:05:00Z",
+    "kind": "political",
+    "significance": "major",
+    "place": "place:pskov",
+    "summary": "**2 March (O.S.) / 15 March (N.S.).** Told by his own front commanders, by telegram, that they could no longer answer for their armies, the Emperor renounces the throne for himself and - a few hours later, on a doctor's advice about his son's health - for his son as well, in favour of his brother Michael. Three hundred and four years of Romanov rule end in the saloon car of a train standing in a siding.\n\nThe document is not a manifesto and does not call itself one: its own title is **Akt**, an act. It is timed **15.05**, and that time is a convention rather than a fact - the final text was signed at about 11.40 that night, before Guchkov and Shulgin, and dated back to the hour of the decision. The instant stored here is the one the document carries, and the pack marks the discrepancy rather than choosing between them.",
+    "links": {
+      "people": ["person:nicholas-ii"],
+      "places": ["place:pskov"],
+      "documents": ["1917-russian-revolution:document-act-of-abdication"]
+    },
+    "sources": [{ "source": "source:figes-1996" }, { "source": "source:wade-2017" }]
+  },
+  {
+    "id": "1917-russian-revolution:event-michael-declines",
+    "title": "Grand Duke Michael declines the throne",
+    "at": "1917-03-16T12:00:00Z",
+    "kind": "political",
+    "significance": "minor",
+    "place": "place:petrograd",
+    "summary": "**3 March (O.S.) / 16 March (N.S.).** Michael, told by almost everyone in the room that the capital would not accept him and that his safety could not be guaranteed, declines to take the crown unless a Constituent Assembly offers it. Nobody ever does. The Provisional Government is now provisional in the exact sense: it holds power on loan from an assembly that has not been elected.",
+    "links": { "places": ["place:petrograd"] },
+    "sources": [{ "source": "source:figes-1996" }, { "source": "source:wade-2017" }]
+  },
+  {
+    "id": "1917-russian-revolution:event-lenin-finland-station",
+    "title": "Lenin arrives at the Finland Station",
+    "at": "1917-04-16T23:10:00Z",
+    "kind": "political",
+    "significance": "major",
+    "place": "place:finland-station",
+    "summary": "**3 April (O.S.) / 16 April (N.S.), late evening.** Eight days out of Zurich, across Germany in a carriage the German government had every reason to speed on its way, Lenin steps off the train into a guard of honour of Kronstadt sailors and a welcome from the Soviet leaders he is about to break with. He does not answer the welcome in kind. The clock time is the one the accounts agree on to within a few minutes; the pack writes it as local time in Petrograd.",
+    "links": {
+      "people": ["person:lenin-vladimir"],
+      "places": ["place:finland-station"]
+    },
+    "sources": [{ "source": "source:merridale-2016" }, { "source": "source:figes-1996" }]
+  },
+  {
+    "id": "1917-russian-revolution:event-april-theses",
+    "title": "The April Theses",
+    "at": "1917-04-17T12:00:00Z",
+    "kind": "political",
+    "significance": "major",
+    "place": "place:tauride-palace",
+    "summary": "**4 April (O.S.) / 17 April (N.S.).** Lenin puts ten theses to a meeting of Bolsheviks at the Tauride Palace: no support for the Provisional Government, no continuation of the war, all power to the Soviets. His own party has spent six weeks doing the opposite, and the theses are voted down before they are adopted. They are printed in *Pravda* on 7 April (O.S.) over his signature alone, because the editorial board would not carry them as the party's line.",
+    "links": {
+      "people": ["person:lenin-vladimir"],
+      "places": ["place:tauride-palace"],
+      "documents": ["1917-russian-revolution:document-april-theses"]
+    },
+    "sources": [{ "source": "source:figes-1996" }, { "source": "source:smith-2017" }]
+  },
+  {
+    "id": "1917-russian-revolution:event-kerensky-offensive",
+    "title": "The June offensive",
+    "timeRange": { "start": "1917-07-01T00:00:00Z", "end": "1917-07-19T00:00:00Z" },
+    "kind": "battle",
+    "significance": "minor",
+    "lngLat": [25.6, 49.55],
+    "summary": "**18 June - 6 July (O.S.) / 1 - 19 July (N.S.).** The Provisional Government's answer to the question of the war is to fight it: an offensive in Galicia, prepared by Kerensky's speeches as much as by the guns. It gains ground for a week, and then the counter-attack turns the retreat into a rout as whole units vote not to move. The revolution had promised the soldiers that the war would change; the offensive told them it would not, and the July Days follow it by ten days.\n\nThe campaign itself belongs to the eastern-front pack, not to this one; it is here because it is the hinge between the February settlement and the July crisis.",
+    "sources": [{ "source": "source:stone-1975" }, { "source": "source:figes-1996" }]
+  },
+  {
+    "id": "1917-russian-revolution:event-july-days",
+    "title": "The July Days",
+    "timeRange": { "start": "1917-07-16T00:00:00Z", "end": "1917-07-19T00:00:00Z" },
+    "kind": "political",
+    "significance": "major",
+    "place": "place:petrograd",
+    "summary": "**3 - 5 July (O.S.) / 16 - 18 July (N.S.).** Machine-gunners, Kronstadt sailors and Vyborg workers come out armed and demand that the Soviet take the power it will not take. The Bolshevik leadership arrives late and spends the three days trying to be at the head of something it did not start and cannot stop. It ends in rain, in shooting on the Nevsky, and in the publication of documents accusing Lenin of being a German agent; Lenin goes into hiding in Finland and Trotsky goes to prison.\n\nWhether this was a rising the Bolsheviks led, a rising they were dragged into, or a rising they tried to head off is one of the pack's contested points.",
+    "links": {
+      "places": ["place:petrograd"],
+      "historiography": ["1917-russian-revolution:historiography-german-gold"]
+    },
+    "sources": [{ "source": "source:rabinowitch-1976" }, { "source": "source:figes-1996" }]
+  },
+  {
+    "id": "1917-russian-revolution:event-kornilov-affair",
+    "title": "The Kornilov affair",
+    "timeRange": { "start": "1917-09-09T00:00:00Z", "end": "1917-09-15T00:00:00Z" },
+    "kind": "political",
+    "significance": "major",
+    "place": "place:petrograd",
+    "summary": "**27 August - 2 September (O.S.) / 9 - 15 September (N.S.).** The Supreme Commander sends a cavalry corps towards the capital; the Minister-President who had wanted troops sent declares him a rebel and dismisses him; Kornilov refuses to go. To stop the corps the government arms the Petrograd workers and releases the Bolsheviks it had gaoled in July. The corps never fights: railwaymen tear up the track and the soldiers' committees talk the trains to a stand short of the city.\n\nSeven weeks later the men who were armed to stop Kornilov take the Winter Palace.",
+    "links": {
+      "people": ["person:kornilov-lavr", "person:kerensky-alexander"],
+      "places": ["place:petrograd", "place:luga", "place:vyritsa"]
+    },
+    "sources": [{ "source": "source:katkov-1980" }, { "source": "source:rabinowitch-1976" }]
+  },
+  {
+    "id": "1917-russian-revolution:event-republic-proclaimed",
+    "title": "Russia is declared a republic",
+    "at": "1917-09-14T12:00:00Z",
+    "kind": "political",
+    "significance": "minor",
+    "place": "place:petrograd",
+    "summary": "**1 September (O.S.) / 14 September (N.S.).** With Kornilov under arrest and the government's authority gone, Kerensky proclaims a republic - a decision that was supposed to wait for the Constituent Assembly, taken by a directory of five because there was nobody left to object.",
+    "links": { "people": ["person:kerensky-alexander"], "places": ["place:petrograd"] },
+    "sources": [{ "source": "source:figes-1996" }, { "source": "source:wade-2017" }]
+  },
+  {
+    "id": "1917-russian-revolution:event-central-committee-votes",
+    "title": "The Bolshevik Central Committee votes for insurrection",
+    "at": "1917-10-23T22:00:00Z",
+    "kind": "decision",
+    "significance": "major",
+    "place": "place:petrograd",
+    "summary": "**10 October (O.S.) / 23 October (N.S.).** Lenin, back from Finland in a wig and clean-shaven, argues through the night in a flat on the Karpovka and carries the Central Committee ten votes to two. Zinoviev and Kamenev, the two, go on to say so in the press a week later. The resolution puts armed insurrection \"on the order of the day\" and fixes no date, which is the argument of the fortnight that follows.",
+    "links": { "people": ["person:lenin-vladimir"], "places": ["place:petrograd"] },
+    "sources": [{ "source": "source:rabinowitch-1976" }, { "source": "source:figes-1996" }]
+  },
+  {
+    "id": "1917-russian-revolution:event-mrc-takes-the-garrison",
+    "title": "The Military Revolutionary Committee takes the garrison",
+    "timeRange": { "start": "1917-11-02T00:00:00Z", "end": "1917-11-06T12:00:00Z" },
+    "kind": "order",
+    "significance": "major",
+    "place": "place:smolny-institute",
+    "summary": "**20 - 24 October (O.S.) / 2 - 6 November (N.S.).** The Petrograd Soviet's Military Revolutionary Committee, set up in October on the argument that the government meant to move the garrison to the front, sends commissars to the units and the arsenals and instructs them that no order of the district command is valid without its counter-signature. By 24 October (O.S.) the garrison takes its orders from Smolny. The insurrection is largely over before it starts, and it is fought over telephone exchanges, bridges and railway stations rather than barricades.",
+    "links": { "places": ["place:smolny-institute"] },
+    "sources": [{ "source": "source:rabinowitch-1976" }, { "source": "source:trotsky-1932" }]
+  },
+  {
+    "id": "1917-russian-revolution:event-october-insurrection",
+    "title": "The night of 25 October",
+    "timeRange": { "start": "1917-11-07T01:00:00Z", "end": "1917-11-08T02:10:00Z" },
+    "kind": "political",
+    "significance": "major",
+    "place": "place:petrograd",
+    "summary": "**25 - 26 October (O.S.) / 7 - 8 November (N.S.).** Detachments of the Military Revolutionary Committee occupy the bridges, the telegraph, the telephone exchange, the state bank and the stations through the night and the following day, mostly without a shot. Kerensky leaves the city by car about eleven in the morning to look for troops. The Winter Palace, defended by cadets, a women's battalion and a bicycle unit, is entered in the small hours of the 26th and the ministers are arrested at about ten past two.\n\nTwo people were killed on the government side. The storming everyone can picture is Eisenstein's, filmed in 1927.",
+    "links": {
+      "places": ["place:winter-palace", "place:peter-and-paul-fortress"],
+      "documents": ["1917-russian-revolution:document-to-the-citizens-of-russia"],
+      "historiography": ["1917-russian-revolution:historiography-october-coup-or-revolution"]
+    },
+    "sources": [{ "source": "source:rabinowitch-1976" }, { "source": "source:figes-1996" }]
+  },
+  {
+    "id": "1917-russian-revolution:event-second-congress-decrees",
+    "title": "The Second Congress of Soviets: the decrees on peace and land",
+    "at": "1917-11-08T22:00:00Z",
+    "kind": "political",
+    "significance": "major",
+    "place": "place:smolny-institute",
+    "summary": "**26 October (O.S.) / 8 November (N.S.).** The Second All-Russian Congress of Soviets, sitting at Smolny while the Winter Palace is being taken, hears the Mensheviks and Right SRs walk out in protest and then passes Lenin's decrees on peace and on land, and constitutes a government of People's Commissars. Land had been the Socialist Revolutionaries' programme for twenty years; the decree adopts it wholesale, which is one reason the countryside did not rise against the new government.",
+    "links": {
+      "people": ["person:lenin-vladimir", "person:trotsky-leon"],
+      "places": ["place:smolny-institute"]
+    },
+    "sources": [{ "source": "source:figes-1996" }, { "source": "source:smith-2017" }]
+  }
+]

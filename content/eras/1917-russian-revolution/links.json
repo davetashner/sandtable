@@ -1,0 +1,51 @@
+[
+  {
+    "id": "1917-russian-revolution:link-war-to-the-bread-queues",
+    "from": "1914:event-continuous-front",
+    "to": "1917-russian-revolution:event-womens-day",
+    "relation": "enabled",
+    "claim": "The war settling in November 1914 into a form nobody could win quickly is what put the queues on the streets of Petrograd in February 1917. Russia was not starving: the 1916 harvest was adequate and the empire had grain. What had failed was everything between the grain and the city - a railway network carrying an army of eleven million, a currency the government was printing to pay for the war, and a peasantry with less and less reason to sell into it. Petrograd, at the far end of the longest supply line in Europe and swollen by war industry, was where the failure showed first.",
+    "confidence": "medium",
+    "historiography": "That the food crisis was one of distribution and money rather than of absolute shortage is Stone's argument and is now the general view. What remains argued is how much weight to put on it against the political crisis of the winter - a government that had lost the confidence of the propertied classes as well as the streets - and against the plain fact that other belligerents endured worse shortages without a revolution.",
+    "evidence": [
+      {
+        "source": "source:stone-1975",
+        "note": "the Russian war economy: distribution and inflation, not shortage"
+      },
+      { "source": "source:smith-2017" },
+      { "source": "source:figes-1996" }
+    ]
+  },
+  {
+    "id": "1917-russian-revolution:link-garrison-to-abdication",
+    "from": "1917-russian-revolution:event-garrison-mutiny",
+    "to": "1917-russian-revolution:event-abdication",
+    "relation": "caused",
+    "claim": "The dynasty fell because the garrison of one city changed sides, and because the generals believed the rest of the army would follow it. What the front commanders told Nicholas by telegram on 2 March (O.S.) was not that he ought to go but that they could not answer for their own men if he stayed - and it was the news from the Petrograd barracks that made them believe it. There was no rising at the front and no advance on the capital: three hundred years ended in a series of telegrams about what soldiers elsewhere might do.",
+    "confidence": "high",
+    "evidence": [{ "source": "source:figes-1996" }, { "source": "source:wade-2017" }]
+  },
+  {
+    "id": "1917-russian-revolution:link-order-no-1-to-the-offensive",
+    "from": "1917-russian-revolution:event-order-no-1",
+    "to": "1917-russian-revolution:event-kerensky-offensive",
+    "relation": "shaped",
+    "claim": "Order No. 1 put every unit's weapons under an elected committee and made the Soviet, not the government, the authority whose orders finally counted. Written for one garrison in one week, it was read at the front as the charter of an army that could debate whether to attack - which is what happened in June, when whole units held meetings and voted not to advance.",
+    "confidence": "contested",
+    "historiography": "This is the oldest argument about 1917 and it was a political argument before it was a historical one. The officers' version, and Kerensky's afterwards, is that the Soviet destroyed the army with a single document. Against it: the order was addressed to the Petrograd garrison and to nobody else; the collapse of discipline was already under way in 1916; and an army in its third winter of a war it did not understand was not held together by saluting. What is not in dispute is that it was read everywhere and that both sides understood it as a transfer of authority.",
+    "evidence": [
+      { "source": "source:wade-2017" },
+      { "source": "source:figes-1996" },
+      { "source": "source:stone-1975", "note": "the state of the Russian army before 1917" }
+    ]
+  },
+  {
+    "id": "1917-russian-revolution:link-kornilov-to-october",
+    "from": "1917-russian-revolution:event-kornilov-affair",
+    "to": "1917-russian-revolution:event-october-insurrection",
+    "relation": "enabled",
+    "claim": "To stop the cavalry the government did two things it could not undo: it handed out rifles to the Petrograd workers, and it let the Bolsheviks it had gaoled in July out to help. The Red Guards of October are the men armed in September, and the party that had been a discredited minority in July had, by the middle of September, majorities in the Petrograd and Moscow Soviets. Kerensky won the argument with Kornilov and lost everything else in it.",
+    "confidence": "high",
+    "evidence": [{ "source": "source:rabinowitch-1976" }, { "source": "source:figes-1996" }]
+  }
+]

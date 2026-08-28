@@ -1,0 +1,175 @@
+[
+  {
+    "id": "1917-russian-revolution:february-petrograd",
+    "title": "Petrograd, 22 February – 3 March (O.S.)",
+    "timeRange": { "start": "1917-03-07T00:00:00Z", "end": "1917-03-16T12:00:00Z" },
+    "region": [30.2, 59.85, 30.46, 60.0],
+    "camera": { "center": [30.33, 59.93], "zoom": 11.2 },
+    "place": "place:petrograd",
+    "summary": "The February Revolution happened in about six kilometres of one city, in nine days, in a temperature that had just come up after a hard freeze. This chapter is that ground at street scale: the mills on the Vyborg side where it started, the frozen Neva the crowds walked across to reach the centre, the square where the troops fired, the barracks where they decided not to fire again, and the palace where two governments formed in two wings on the same evening.\n\nIt carries no unit movement, because there was none to draw. Nothing manoeuvred; the question was only ever which way the garrison would face.",
+    "outcome": "The abdication of Nicholas II on 2 March (O.S.), and a capital run by two bodies neither of which had been elected to run it.",
+    "events": [
+      {
+        "id": "1917-russian-revolution:feb-event-vyborg-mills",
+        "title": "The women come out on the Vyborg side",
+        "at": "1917-03-08T09:00:00Z",
+        "kind": "political",
+        "significance": "major",
+        "lngLat": [30.345, 59.958],
+        "summary": "**23 February (O.S.).** Women in the textile mills of the Vyborg district strike over bread and send delegates into the metalworking plants to bring the men out. The industrial suburb north of the Neva was the most militant quarter of the city and the one furthest from the government's eye. The position is the district, not a building.",
+        "sources": [{ "source": "source:hasegawa-1981" }]
+      },
+      {
+        "id": "1917-russian-revolution:feb-event-across-the-ice",
+        "title": "Across the ice to the Nevsky",
+        "at": "1917-03-09T12:00:00Z",
+        "kind": "movement",
+        "significance": "minor",
+        "lngLat": [30.32, 59.945],
+        "summary": "**24 February (O.S.).** The authorities held the bridges. The crowds walked across the frozen Neva instead, in daylight, in tens of thousands, and were on the Nevsky Prospekt by the afternoon. Holding a bridge in February in Petrograd holds nothing.",
+        "sources": [{ "source": "source:hasegawa-1981" }, { "source": "source:figes-1996" }]
+      },
+      {
+        "id": "1917-russian-revolution:feb-event-znamenskaya-volley",
+        "title": "The volleys on Znamenskaya Square",
+        "at": "1917-03-11T15:00:00Z",
+        "kind": "political",
+        "significance": "major",
+        "place": "place:znamenskaya-square",
+        "summary": "**26 February (O.S.).** On the fourth day the government at last uses the garrison as a garrison. Training detachments fire into the crowd on the Nevsky and on Znamenskaya Square and kill several dozen people. It is the high-water mark of the old order, and the last day it holds: the soldiers who fired go back to barracks and argue about it all night.",
+        "links": { "places": ["place:znamenskaya-square"] },
+        "sources": [{ "source": "source:hasegawa-1981" }, { "source": "source:figes-1996" }]
+      },
+      {
+        "id": "1917-russian-revolution:feb-event-the-liteiny",
+        "title": "The arsenal is broken open and the Kresty emptied",
+        "at": "1917-03-12T14:00:00Z",
+        "kind": "political",
+        "significance": "major",
+        "lngLat": [30.3485, 59.954],
+        "summary": "**27 February (O.S.).** The mutinous regiments and the crowd take the arsenal on the Liteiny, burn the district court and the headquarters of the secret police, and open the Kresty prison across the river. Something like forty thousand rifles go into the city in a day, and the government never gets them back. The position covers the Liteiny quarter and the prison on the far bank; it is not one building.",
+        "sources": [{ "source": "source:hasegawa-1981" }, { "source": "source:figes-1996" }]
+      },
+      {
+        "id": "1917-russian-revolution:feb-event-two-wings",
+        "title": "Two wings of one palace",
+        "at": "1917-03-12T21:00:00Z",
+        "kind": "political",
+        "significance": "major",
+        "place": "place:tauride-palace",
+        "summary": "**27 February (O.S.), evening.** The geography of dual power is a corridor. The Duma's Provisional Committee sits in one part of the Tauride Palace and the Petrograd Soviet in another, with the soldiers and the delegations filling the hall between them. For a week the two bodies negotiate by walking down it.",
+        "links": { "places": ["place:tauride-palace"] },
+        "sources": [{ "source": "source:figes-1996" }, { "source": "source:hasegawa-1981" }]
+      }
+    ],
+    "links": {
+      "places": [
+        "place:petrograd",
+        "place:putilov-works",
+        "place:znamenskaya-square",
+        "place:tauride-palace"
+      ]
+    },
+    "sources": [{ "source": "source:hasegawa-1981" }, { "source": "source:figes-1996" }]
+  },
+  {
+    "id": "1917-russian-revolution:october-petrograd",
+    "title": "Petrograd, 24–26 October (O.S.)",
+    "timeRange": { "start": "1917-11-06T00:00:00Z", "end": "1917-11-09T00:00:00Z" },
+    "region": [30.24, 59.9, 30.44, 59.98],
+    "camera": { "center": [30.335, 59.94], "zoom": 12.2 },
+    "place": "place:petrograd",
+    "summary": "The same city, eight months later, at the same scale - and a completely different kind of event. February was a crowd; October was a checklist. Over about thirty hours, detachments acting on the orders of a committee in a girls' school occupied the bridges, the telegraph, the telephone exchange, the state bank, the power station and the railway termini, mostly by walking in and telling the guard it was relieved.\n\nWhat is worth looking at here is how little of the map is contested. Almost every point on it changed hands without a shot; the only one that had to be taken was the last.",
+    "outcome": "The Provisional Government arrested in the Winter Palace at about 2.10 a.m. on 26 October (O.S.); two dead on the government side.",
+    "events": [
+      {
+        "id": "1917-russian-revolution:oct-event-smolny",
+        "title": "Smolny: the committee that gives the orders",
+        "at": "1917-11-06T18:00:00Z",
+        "kind": "order",
+        "significance": "major",
+        "place": "place:smolny-institute",
+        "summary": "**24 October (O.S.).** The Military Revolutionary Committee works out of the Soviet's building on the eastern edge of the city, three kilometres from the government it is about to remove. Its instrument is not a column of troops but a commissar in each unit with the authority to say which orders count.",
+        "links": { "places": ["place:smolny-institute"] },
+        "sources": [{ "source": "source:rabinowitch-1976" }]
+      },
+      {
+        "id": "1917-russian-revolution:oct-event-telephone-exchange",
+        "title": "The telephone exchange",
+        "at": "1917-11-07T07:00:00Z",
+        "kind": "movement",
+        "significance": "minor",
+        "lngLat": [30.311, 59.9345],
+        "summary": "**25 October (O.S.), morning.** The central exchange on the Bolshaya Morskaya is taken without resistance, and the Winter Palace's lines are cut - which is why the government spent its last day sending messengers. The position is the street, to within a hundred metres or so.",
+        "sources": [{ "source": "source:rabinowitch-1976" }]
+      },
+      {
+        "id": "1917-russian-revolution:oct-event-pre-parliament",
+        "title": "The Pre-Parliament is sent home",
+        "at": "1917-11-07T12:00:00Z",
+        "kind": "political",
+        "significance": "minor",
+        "place": "place:mariinsky-palace",
+        "summary": "**25 October (O.S.), midday.** The Provisional Council of the Republic, sitting in the Mariinsky Palace, is surrounded and dispersed. It had been meeting for three weeks and had no power to lose.",
+        "links": { "places": ["place:mariinsky-palace"] },
+        "sources": [{ "source": "source:rabinowitch-1976" }]
+      },
+      {
+        "id": "1917-russian-revolution:oct-event-aurora",
+        "title": "The Aurora at the Nikolaevsky Bridge",
+        "at": "1917-11-07T21:40:00Z",
+        "kind": "political",
+        "significance": "major",
+        "lngLat": [30.29, 59.933],
+        "summary": "**25 October (O.S.), evening.** The cruiser, brought up the Neva by her own crew's committee, fires a blank round at about twenty to ten. It was a signal, not a bombardment, and it did no damage to anything; the shells that hit the palace came from the Peter and Paul Fortress, and there were few of those. The position is her mooring near the Nikolaevsky Bridge and is approximate.",
+        "sources": [{ "source": "source:rabinowitch-1976" }, { "source": "source:figes-1996" }]
+      },
+      {
+        "id": "1917-russian-revolution:oct-event-fortress-guns",
+        "title": "The fortress opens fire, more or less",
+        "at": "1917-11-07T23:00:00Z",
+        "kind": "political",
+        "significance": "minor",
+        "place": "place:peter-and-paul-fortress",
+        "summary": "**25 October (O.S.), late evening.** The Peter and Paul Fortress had been talked over to the committee days earlier. Its guns were the plan's artillery, and on the night they turned out to need work; a few live rounds were eventually fired across the river at the palace and two or three hit it. Almost every element of the night's plan ran late or went wrong, and it made no difference, because there was nothing on the other side.",
+        "links": { "places": ["place:peter-and-paul-fortress"] },
+        "sources": [{ "source": "source:rabinowitch-1976" }]
+      },
+      {
+        "id": "1917-russian-revolution:oct-event-winter-palace",
+        "title": "The Winter Palace",
+        "at": "1917-11-08T02:10:00Z",
+        "kind": "political",
+        "significance": "major",
+        "place": "place:winter-palace",
+        "summary": "**26 October (O.S.), about 2.10 a.m.** Attackers had been trickling in through unguarded side entrances for hours; the defence - officer cadets, a women's battalion, a bicycle unit - had been draining away for longer. The ministers were arrested in a first-floor dining room and taken across the river to the fortress. There was no storming and no charge across the square. The one everybody can see is Eisenstein's, staged for the tenth anniversary in 1927 with, by some accounts, more casualties than the original.",
+        "links": {
+          "places": ["place:winter-palace"],
+          "historiography": ["1917-russian-revolution:historiography-october-coup-or-revolution"]
+        },
+        "sources": [{ "source": "source:rabinowitch-1976" }, { "source": "source:figes-1996" }]
+      }
+    ],
+    "links": {
+      "places": [
+        "place:petrograd",
+        "place:smolny-institute",
+        "place:winter-palace",
+        "place:peter-and-paul-fortress",
+        "place:mariinsky-palace"
+      ]
+    },
+    "sources": [{ "source": "source:rabinowitch-1976" }, { "source": "source:figes-1996" }]
+  },
+  {
+    "id": "1917-russian-revolution:epilogue-the-thirteen-days",
+    "title": "Epilogue: the thirteen days that never happened",
+    "timeRange": { "start": "1918-01-20T00:00:00Z", "end": "1918-02-25T00:00:00Z" },
+    "window": "outside",
+    "region": [30.2, 59.85, 30.46, 60.0],
+    "camera": { "center": [30.33, 59.94], "zoom": 10.5 },
+    "place": "place:petrograd",
+    "summary": "This chapter is outside the campaign, and it keeps its own clock. Three months after October the new government abolished the calendar the two revolutions are named for, and Russia joined the rest of Europe by deleting thirteen days from the middle of a February.\n\nIt is the pack's own instrument, closing. Every date in the eight months before it has two forms; every date after it has one.",
+    "sources": [{ "source": "source:figes-1996" }, { "source": "source:smith-2017" }]
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "id": "1917-russian-revolution:cast-nicholas-ii",
+    "person": "person:nicholas-ii",
+    "side": "crown",
+    "role": "Emperor of Russia and his own Supreme Commander, to 2 March (O.S.)",
+    "bio": "He had been at Stavka in Mogilev, eight hundred kilometres of railway from his capital, since taking personal command of the army in 1915 - a decision that put the government in the hands of the Empress and Rasputin's nominees and made every subsequent failure his own.[^figes-1996] He left Mogilev on the morning of 28 February (O.S.) for Tsarskoe Selo, was turned back at Malaya Vishera because the line ahead was in revolutionary hands, and reached the Northern Front headquarters at Pskov on the evening of 1 March.[^wade-2017]\n\nWhat ended the dynasty there was not a crowd but a set of telegrams. Asked by the Chief of Staff whether they could answer for their armies if the Emperor refused, every front and fleet commander answered that they could not, and advised abdication.[^figes-1996] He renounced the throne for himself on 2 March and then, after a doctor told him his son would not survive separation from the family, for his son as well - a second abdication of doubtful legality that skipped the boy and named his brother instead.[^wade-2017]\n\nHe and his family were held at Tsarskoe Selo, moved to Tobolsk in August 1917 by a government afraid of what Petrograd might do to them, and shot at Ekaterinburg in July 1918.[^figes-1996]",
+    "sources": [
+      { "source": "source:figes-1996" },
+      { "source": "source:wade-2017", "note": "the sequence of the abdication" }
+    ]
+  },
+  {
+    "id": "1917-russian-revolution:cast-kerensky-alexander",
+    "person": "person:kerensky-alexander",
+    "side": "provisional",
+    "role": "Minister of Justice, then of War, then Minister-President",
+    "bio": "In the first days he was the hinge of the whole arrangement: a Duma deputy who was also a member of the Soviet's executive, and the one man the two bodies in the Tauride Palace could both accept in the cabinet. The Soviet had resolved that none of its members should take office; Kerensky took the Ministry of Justice anyway and went back and asked the Soviet to ratify it, which it did by acclamation.[^wade-2017]\n\nHis answer to the war was to fight it better. As Minister of War he toured the front making the speeches that gave the June offensive its other name, and when the offensive collapsed the government's credit collapsed with it.[^figes-1996] Made Minister-President in July, he spent August looking for a soldier who would give him force without taking his place, and in September had destroyed the only such soldier he found - and armed the men who would remove him seven weeks later.[^rabinowitch-1976]\n\nHe left the Winter Palace by car on the morning of 25 October (O.S.) to bring up troops from the front. The story that he escaped dressed as a nurse he denied for the rest of his life, and there is no contemporary evidence for it.[^figes-1996] He died in New York in 1970, fifty-three years after the government he headed for four months, and outlived Lenin, Stalin and Khrushchev arguing his case against all three of them.",
+    "sources": [
+      { "source": "source:figes-1996" },
+      { "source": "source:wade-2017" },
+      { "source": "source:rabinowitch-1976" }
+    ]
+  },
+  {
+    "id": "1917-russian-revolution:cast-lenin-vladimir",
+    "person": "person:lenin-vladimir",
+    "side": "bolshevik",
+    "role": "Leader of the Bolsheviks; absent until April, in hiding from July to October",
+    "bio": "He was not there for February. He read about it in the Zurich newspapers, and it took him a month and a bargain with the German government to get home - across Germany in a carriage granted extraterritorial status, then Sweden, then the Finnish border, reaching the Finland Station late on 3 April (O.S.).[^merridale-2016]\n\nWhat he brought was a position nobody in his own party held. The Bolsheviks in Petrograd had spent March supporting the Provisional Government conditionally and talking about reunion with the Mensheviks; Lenin's theses said the revolution was already passing into its second stage, that the government should get no support at all, that the war remained an imperialist war under a new flag, and that power belonged to the Soviets.[^figes-1996] They were voted down at first and printed over his name alone.\n\nHe was out of the capital for the crisis that made his party's fortune. Accused in July of taking German money, he went into hiding in Finland and directed the autumn by letter, arguing furiously with a Central Committee that thought him premature; he came back in disguise on 10 October (O.S.) to carry the vote for insurrection, and was in a wig in a flat on the Vyborg side while the Military Revolutionary Committee took the city in his party's name and not, at first, on his timetable.[^rabinowitch-1976]",
+    "sources": [
+      { "source": "source:merridale-2016" },
+      { "source": "source:figes-1996" },
+      { "source": "source:rabinowitch-1976" }
+    ]
+  },
+  {
+    "id": "1917-russian-revolution:cast-trotsky-leon",
+    "person": "person:trotsky-leon",
+    "side": "bolshevik",
+    "role": "Chairman of the Petrograd Soviet from September; chairman of the Military Revolutionary Committee",
+    "bio": "He spent the first half of 1917 outside the Bolshevik party, arrived from New York in May, was arrested after the July Days, and joined the party formally at its July congress while he was in prison.[^figes-1996] Released after Kornilov, he was elected chairman of the Petrograd Soviet on 25 September (O.S.) - the same body he had chaired in 1905.\n\nThe October insurrection was run from that chair. Where Lenin argued for a rising in the party's name, Trotsky insisted it be made in the Soviet's, timed to the Second Congress of Soviets, and executed through the Military Revolutionary Committee that the Soviet had set up to defend the garrison against being sent to the front. The distinction was tactical and it was also a claim about legitimacy, and it is at the centre of the argument about what October was.[^rabinowitch-1976]\n\nHis own history of the revolution, written in exile a dozen years later, is a participant's account and is filed in this pack as a memoir; it is one of the positions on the historiography cards rather than a source for what happened.[^trotsky-1932]",
+    "sources": [
+      { "source": "source:figes-1996" },
+      { "source": "source:rabinowitch-1976" },
+      {
+        "source": "source:trotsky-1932",
+        "note": "cited as a participant's argument, not as evidence"
+      }
+    ]
+  },
+  {
+    "id": "1917-russian-revolution:cast-kornilov-lavr",
+    "person": "person:kornilov-lavr",
+    "side": "provisional",
+    "role": "Supreme Commander of the Russian Army, August to September",
+    "bio": "He is filed here on the government's side because that is where he was: the Provisional Government's own Supreme Commander, appointed by Kerensky at the end of July to restore an army that had voted itself out of the June offensive.[^figes-1996] Whether the cavalry he sent towards Petrograd at the end of August was moving for that government or against it is the question the whole affair turns on, and the pack does not answer it.[^katkov-1980]\n\nWhat is not in dispute is the result. The corps was stopped without a battle, by railwaymen and by agitators who talked to the troops in the sidings; Kornilov was arrested; the officer corps concluded that the government would not stand behind it; and the workers who had been armed to meet him kept the rifles.[^rabinowitch-1976] He broke out to the Don, helped raise the Volunteer Army, and was killed by a shell outside Ekaterinodar in April 1918.[^figes-1996]",
+    "sources": [
+      { "source": "source:figes-1996" },
+      { "source": "source:katkov-1980" },
+      { "source": "source:rabinowitch-1976" }
+    ]
+  }
+]

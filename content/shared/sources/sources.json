@@ -1848,5 +1848,180 @@
     "publisher": "Alfred A. Knopf, New York",
     "edition": "Published in Britain in 2007 by HarperPress as Nemesis: The Battle for Japan, 1944–45; the two are the same book under different titles and their pagination is not interchangeable",
     "notes": "The last year at human scale — the Philippines, the submarine campaign, the firebombing, Okinawa, the atomic bombs and the Soviet entry — told through participants on both sides, in the manner of source:hastings-2013 for 1914. Rule 9 of docs/sources.md applies exactly as it does there: take narrative colour and well-known episodes from it, and take numbers and positions from Morison, the Green Books or the Marine histories. Hastings also passes judgement freely, on Japanese conduct and on Allied commanders alike, and those judgements are cited as his. Verified against the Internet Archive's cataloguing of the physical book (New York, Alfred A. Knopf, 2008), whose record carries the British title as a variant; no ISBN is recorded."
+  },
+  {
+    "id": "source:figes-1996",
+    "kind": "book",
+    "tier": "study",
+    "author": "Figes, Orlando",
+    "title": "A People's Tragedy: The Russian Revolution, 1891–1924",
+    "year": 1996,
+    "publisher": "Jonathan Cape, London",
+    "isbn": "0-224-04162-2",
+    "notes": "The narrative backbone for the 1917 pack: a social and cultural history arguing that the revolution was made from below by the collapse of Russian civil society rather than by a party. Strong on the countryside, on individual lives followed across the whole period, and on why February and October are two different kinds of event. Written against the Soviet account and against the coup thesis alike, and its judgements on the Bolsheviks are severe. Not readable at page level from this project's environment (the Internet Archive copy is borrow-only), so citations to it carry no pages."
+  },
+  {
+    "id": "source:smith-2017",
+    "kind": "book",
+    "tier": "study",
+    "author": "Smith, S. A.",
+    "title": "Russia in Revolution: An Empire in Crisis, 1890 to 1928",
+    "year": 2017,
+    "publisher": "Oxford University Press, Oxford",
+    "isbn": "978-0-19-873482-6",
+    "notes": "The post-revisionist synthesis, and the one that keeps the empire in view: 1917 as the middle of a crisis running from the 1890s to the end of the 1920s, with the nationalities, the peasantry and the war economy given the weight the Petrograd-centred accounts cannot give them. Use it for the empire-wide frame and for what the revolution looked like outside the capital. Borrow-only; cited without pages."
+  },
+  {
+    "id": "source:fitzpatrick-2017",
+    "kind": "book",
+    "tier": "general",
+    "author": "Fitzpatrick, Sheila",
+    "title": "The Russian Revolution",
+    "year": 2017,
+    "publisher": "Oxford University Press, Oxford",
+    "edition": "4th edition (first published 1982)",
+    "isbn": "978-0-19-880670-7",
+    "notes": "The short revisionist survey that made the case for treating 1917 as the opening of a revolutionary process running to the end of the 1930s rather than as a political rupture in one year. Cited here for that framing rather than for narrative detail. Borrow-only; cited without pages."
+  },
+  {
+    "id": "source:rabinowitch-1976",
+    "kind": "book",
+    "tier": "study",
+    "author": "Rabinowitch, Alexander",
+    "title": "The Bolsheviks Come to Power: The Revolution of 1917 in Petrograd",
+    "year": 1976,
+    "publisher": "W. W. Norton, New York",
+    "notes": "The standard bottom-up study of Petrograd from July to October, and the work that dismantled the picture of a disciplined conspiracy: on Rabinowitch's evidence the Bolshevik party of 1917 was open, argumentative and internally divided, and won because it was responsive to what the city's workers and soldiers were already demanding. The indispensable corrective to both the Soviet and the coup accounts. Borrow-only; cited without pages."
+  },
+  {
+    "id": "source:hasegawa-1981",
+    "kind": "book",
+    "tier": "study",
+    "author": "Hasegawa, Tsuyoshi",
+    "title": "The February Revolution: Petrograd, 1917",
+    "year": 1981,
+    "publisher": "University of Washington Press, Seattle",
+    "isbn": "0-295-95765-4",
+    "notes": "The fullest reconstruction of the nine days of February, arguing that the monarchy fell to an insurrection of workers and soldiers that no party organised and that the liberal politicians then scrambled to contain by inventing dual power. An expanded edition appeared as The February Revolution, Petrograd, 1917: The End of the Tsarist Regime and the Birth of Dual Power (Brill, 2017, Historical Materialism Book Series 149) — pages do not carry between the two. Borrow-only; cited without pages."
+  },
+  {
+    "id": "source:pipes-1990",
+    "kind": "book",
+    "tier": "study",
+    "author": "Pipes, Richard",
+    "title": "The Russian Revolution",
+    "year": 1990,
+    "publisher": "Alfred A. Knopf, New York",
+    "isbn": "0-394-50241-8",
+    "notes": "The major conservative counter-narrative: the revolution as the work of a radical intelligentsia minority who seized power in a coup and whose terror was present from the first, not a response to civil war. It is cited here as one position in an argument and not as a neutral account — which is exactly how its author intended it. Borrow-only; cited without pages."
+  },
+  {
+    "id": "source:wade-2017",
+    "kind": "book",
+    "tier": "general",
+    "author": "Wade, Rex A.",
+    "title": "The Russian Revolution, 1917",
+    "year": 2017,
+    "publisher": "Cambridge University Press, Cambridge",
+    "edition": "3rd edition (New Approaches to European History 53)",
+    "isbn": "978-1-107-13032-6",
+    "notes": "The classroom overview, and the most reliable single place to check the sequence of political events between February and October against the social history. Used here for uncontested matters of record. Borrow-only; cited without pages."
+  },
+  {
+    "id": "source:merridale-2016",
+    "kind": "book",
+    "tier": "study",
+    "author": "Merridale, Catherine",
+    "title": "Lenin on the Train",
+    "year": 2016,
+    "publisher": "Allen Lane, London",
+    "isbn": "978-0-241-01132-4",
+    "notes": "The sealed train reconstructed stage by stage from the German, Swedish and Russian records, together with the German Foreign Ministry's reasons for wanting Lenin delivered. It is the source of this pack's rail pace band and of the journey track. Borrow-only; cited without pages."
+  },
+  {
+    "id": "source:lyandres-1995",
+    "kind": "article",
+    "tier": "study",
+    "author": "Lyandres, Semion",
+    "title": "The Bolsheviks' \"German Gold\" Revisited: An Inquiry into the 1917 Accusations",
+    "year": 1995,
+    "publisher": "The Carl Beck Papers in Russian and East European Studies 1106, Center for Russian and East European Studies, University of Pittsburgh",
+    "url": "https://carlbeckpapers.pitt.edu/ojs/index.php/cbp/article/view/63",
+    "notes": "A documentary re-examination of the evidence on which the Provisional Government accused the Bolsheviks of taking German money in July 1917. Open access, and one of only two works in this pack's bibliography whose full text can actually be read from here — which is why it carries page numbers where the others do not."
+  },
+  {
+    "id": "source:zeman-1958",
+    "kind": "book",
+    "tier": "primary",
+    "author": "Zeman, Z. A. B. (ed.)",
+    "title": "Germany and the Revolution in Russia, 1915–1918: Documents from the Archives of the German Foreign Ministry",
+    "year": 1958,
+    "publisher": "Oxford University Press, London",
+    "url": "https://archive.org/details/Germany-and-Revolution-in-Russia-1915-1918",
+    "notes": "The German documentary base for every subsequent argument about Berlin's subsidies to Russian revolutionaries — the papers the Foreign Ministry itself kept, printed in translation. Cited for what the German government said it was doing and why, which is not the same question as what the money did. The Internet Archive copy is a third-party upload whose rights status is not established; it is linked because it is what can be read, not as a rights-cleared edition."
+  },
+  {
+    "id": "source:trotsky-1932",
+    "kind": "book",
+    "tier": "memoir",
+    "author": "Trotsky, Leon",
+    "title": "The History of the Russian Revolution",
+    "year": 1932,
+    "publisher": "Victor Gollancz, London",
+    "edition": "translated by Max Eastman; three volumes, 1932–33",
+    "url": "https://www.marxists.org/archive/trotsky/1930/hrr/",
+    "notes": "A participant's history, written in exile by the man who chaired the Petrograd Soviet and ran the Military Revolutionary Committee, and filed here as a memoir for that reason: it is evidence of what one of the principals argued, never of what happened. Its account of who led February and of the party's role in October is one of the positions on this pack's historiography cards. Full text at the Marxists Internet Archive, which is why it can be quoted directly; the online edition prints chapter titles rather than the Gollancz pagination, so citations name the chapter."
+  },
+  {
+    "id": "source:katkov-1980",
+    "kind": "book",
+    "tier": "study",
+    "author": "Katkov, George",
+    "title": "Russia 1917, the Kornilov Affair: Kerensky and the Break-up of the Russian Army",
+    "year": 1980,
+    "publisher": "Longman, London",
+    "notes": "The case that Kerensky, not Kornilov, precipitated the crisis of late August, and that its real cost was the destruction of the army's command structure. A partisan book about a partisan quarrel; cited as one reading of a disputed episode. Borrow-only; cited without pages."
+  },
+  {
+    "id": "source:lenin-cw",
+    "kind": "book",
+    "tier": "primary",
+    "author": "Lenin, V. I.",
+    "title": "Collected Works",
+    "year": 1964,
+    "publisher": "Progress Publishers, Moscow",
+    "edition": "English edition, 45 vols, 1960–1970; vol. 24 trans. Bernard Isaacs, vol. 26 trans. Yuri Sdobnikov and George Hanna",
+    "url": "https://www.marxists.org/archive/lenin/works/cw/",
+    "notes": "The standard English edition of Lenin's writings, and the text this pack quotes for the April Theses (vol. 24) and for the Military Revolutionary Committee's proclamation of 25 October (vol. 26). It is a Soviet edition: the translations are reliable, the selection and the editorial notes are not neutral, and the volumes were produced by a state whose founding this pack is about. Read for what the documents say, not for what the apparatus says about them. Full text at the Marxists Internet Archive."
+  },
+  {
+    "id": "source:bsb-1000dokumente-russia-1917",
+    "kind": "web",
+    "tier": "primary",
+    "author": "Bayerische Staatsbibliothek (ed.)",
+    "title": "100(0) Schlüsseldokumente zur russischen und sowjetischen Geschichte (1917–1991)",
+    "publisher": "Bayerische Staatsbibliothek, Munich",
+    "url": "https://www.1000dokumente.de/",
+    "notes": "A curated digital edition of key documents of Russian and Soviet history, each with a facsimile, a transcription and an archival reference — which is what makes it usable where a volunteer transcription is not. This pack takes from it the Russian text of the Military Revolutionary Committee's proclamation of 25 October 1917 and of the act of abdication (its record cites ГАРФ, ф. 601, оп. 1, д. 2470). The registry's Schlieffen memorandum entry is from the same edition's German series."
+  },
+  {
+    "id": "source:wikisource-ru",
+    "kind": "web",
+    "tier": "primary",
+    "author": "Russian Wikisource contributors",
+    "title": "Русский Викитека (Russian Wikisource)",
+    "url": "https://ru.wikisource.org/",
+    "notes": "A volunteer transcription library, not a scholarly edition, and cited here only for the Russian text of documents whose wording could be confirmed against a second, independent transcription elsewhere — Order No. 1 and the act of abdication. Where it is the only witness to a text, this pack does not quote it. A scholarly edition would be better and is named in the relevant document's notes where one is known."
+  },
+  {
+    "id": "source:nicholas-diary-1917",
+    "kind": "web",
+    "tier": "primary",
+    "author": "Nicholas II",
+    "title": "Дневник Николая II, 1917 год (diary of Nicholas II for 1917)",
+    "year": 1917,
+    "publisher": "Военная литература (militera.lib.ru)",
+    "url": "http://militera.lib.ru/db/nikolay-2/1917.html",
+    "notes": "An online transcription of the emperor's own diary for 1917, with the editor's expansions of his abbreviations in square brackets. The weakness is real and is stated rather than hidden: the site does not say which printed edition it transcribes, so the wording used in this pack was confirmed against a second, independent transcription (doc20vek.ru) before being quoted. Cited for what Nicholas wrote on the day, which is what a diary is evidence of."
   }
 ]

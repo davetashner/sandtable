@@ -1,0 +1,157 @@
+[
+  {
+    "id": "1917-russian-revolution:historiography-october-coup-or-revolution",
+    "title": "October: a revolution, or a coup?",
+    "question": "On the night of 25–26 October (O.S.) 1917 a few thousand men, acting on the orders of a committee of the Petrograd Soviet, took the bridges, the exchanges, the banks and finally the Winter Palace, mostly without firing. Two people died on the government side. Fourteen weeks earlier the party behind the committee had been a discredited minority whose leader was a fugitive.\n\nWas that a revolution — the political expression of something already decided in the factories, the barracks and the villages — or was it a coup d'état by a disciplined minority which then had to conquer the country it claimed to represent? Four bodies of writing answer this differently, and they are not four versions of one story. They disagree about what the object of study even is.",
+    "positions": [
+      {
+        "label": "A mass insurrection, organised",
+        "who": "Leon Trotsky, who chaired the Petrograd Soviet and the Military Revolutionary Committee, in his History of the Russian Revolution (1932–33)",
+        "summary": "Trotsky's whole argument is that the opposition between insurrection and conspiracy is a false one, and that the art of revolution lies in subordinating the second to the first. \"But a mass insurrection can be foreseen and prepared. It can be organised in advance. In this case the conspiracy is subordinate to the insurrection, serves it, smoothes its path, hastens its victory. The higher the political level of a revolutionary movement and the more serious its leadership, the greater will be the place occupied by conspiracy in a popular insurrection.\"[^trotsky-1932] The party is not a substitute for the class but its instrument: \"the revolutionary party represents the brain of the class. The problem of conquering the power can be solved only by a definite combination of party with soviets\".[^trotsky-1932]\n\nAgainst the charge itself he is flat. Quoting Masaryk's judgement that October was anything but a popular mass movement, he replies: \"As a matter of fact it was the most popular mass-insurrection in all history.\"[^trotsky-1932]\n\nThis is a participant defending his own work, and the pack files his book as a memoir for that reason. It is also the only position on this card whose text can be read in full from here, which is why it is the only one quoted."
+      },
+      {
+        "label": "A coup by a minority",
+        "who": "Richard Pipes, The Russian Revolution (1990), and the tradition of scholarship that treats the Bolshevik seizure of power as the founding act of a totalitarian state rather than as the outcome of a social process",
+        "summary": "On this reading February was a revolution and October was not. What happened in October was the capture of a state by a radical intelligentsia that had no popular mandate, could not have won a free election, and knew it — which is why the Constituent Assembly, when it finally met in January 1918, was dispersed after a day. The violence and the coercion that follow are not a response to civil war; they are present in the project from the beginning, and the civil war is in part their consequence.\n\n**This position is stated from the central argument of the work and is not quoted from it.** Pipes's volume is not readable at page level from this project's environment, and the pack will not put words in quotation marks that it has not read on the page. See *What has not been read*, below."
+      },
+      {
+        "label": "Neither: an open party that followed its own supporters",
+        "who": "Alexander Rabinowitch, The Bolsheviks Come to Power (1976), and the social historians of Petrograd who followed him",
+        "summary": "Rabinowitch's Bolshevik party of 1917 is nothing like the monolith of either the Soviet account or the coup thesis. It is open, chaotic and publicly divided: its Central Committee argues with its Petersburg Committee, which argues with its Military Organisation; Lenin loses votes; the July Days happen partly *against* the leadership's wishes. What made it win was not discipline but responsiveness — it was the one party saying what the city's workers and soldiers had already concluded about the war, the land and the government.\n\nOn this account October is neither a conspiracy nor a spontaneous rising, and asking which it was is asking the wrong question: the seizure of power in the capital was the last move in a long argument that the Bolsheviks had already won in the factory committees and the barracks.\n\n**Stated from the work's central argument, not quoted from it.** The volume is borrow-only from here."
+      },
+      {
+        "label": "The wrong unit of analysis",
+        "who": "Sheila Fitzpatrick, The Russian Revolution (1982, 4th ed. 2017), and S. A. Smith, Russia in Revolution (2017)",
+        "summary": "This position does not answer the question so much as decline it. To ask whether one night in one city was a revolution or a coup is to accept that the object of study is the transfer of power in Petrograd. The revisionist and post-revisionist social historians locate the revolution elsewhere and over a longer span: in the peasants taking the land through the summer of 1917 without waiting for anybody's decree, in the workers' factory committees, in the nationalities of an empire in dissolution, and in a social transformation whose shape is only visible if the frame runs from the 1890s to the end of the 1920s.\n\nOn that frame October is a political event of the first importance and not the revolution itself, and its legitimacy is not the interesting question about it.\n\n**Stated from the central arguments of the two works, not quoted from them.** Neither is readable at page level from here."
+      }
+    ],
+    "settled": "The facts of the night are not seriously in dispute and have not been for decades: the sequence of buildings taken, the absence of fighting almost everywhere, the two deaths on the government side, and the fact that the storming of the Winter Palace as it is pictured was staged for the cinema in 1927. Nor is it in dispute that the Second Congress of Soviets, sitting the same night, had a Bolshevik plurality and ratified what had been done, nor that the Constituent Assembly elected the following month did not and was dispersed. What is argued is what those facts amount to.",
+    "unread": "This card is honest about a serious limitation and should be read with it in view.\n\n**Only one of the four positions is quoted from its own text.** Trotsky's History is available in full at the Marxists Internet Archive, so his position is in his words, with the chapters named. The other three works — Pipes, Rabinowitch, Fitzpatrick and Smith — are borrow-only from this project's environment, and their positions are stated from each work's central published argument rather than from a page. Nothing on this card that is not inside quotation marks should be read as the historian's own wording.\n\nWhat would raise it: the volumes themselves, at page level. Also unread here are the Soviet official accounts against which all four of these positions were written, and the post-1991 Russian archival literature on the October days, which is largely untranslated. The pack would rather say so than manufacture the appearance of a reading it has not done.",
+    "links": {
+      "events": [
+        "1917-russian-revolution:event-october-insurrection",
+        "1917-russian-revolution:event-central-committee-votes"
+      ],
+      "battles": ["1917-russian-revolution:october-petrograd"],
+      "people": ["person:trotsky-leon", "person:lenin-vladimir"]
+    },
+    "sources": [
+      {
+        "source": "source:trotsky-1932",
+        "pages": "vol. III, chs. 43–44",
+        "note": "Quoted from the Marxists Internet Archive text of the Eastman translation, which prints chapter titles rather than the Gollancz pagination: ch. 43 'The Art of Insurrection' for the relation of conspiracy to insurrection and for the party as 'the brain of the class'; ch. 44 'The Conquest of the Capital' for the reply to Masaryk, 'As a matter of fact it was the most popular mass-insurrection in all history.'"
+      },
+      {
+        "source": "source:pipes-1990",
+        "note": "The coup position, stated from the work's central argument. Not read at page level: no pages are given, and nothing is quoted."
+      },
+      {
+        "source": "source:rabinowitch-1976",
+        "note": "The open-party position, stated from the work's central argument. Not read at page level."
+      },
+      {
+        "source": "source:fitzpatrick-2017",
+        "note": "The long-frame revisionist position, stated from the work's central argument. Not read at page level."
+      },
+      {
+        "source": "source:smith-2017",
+        "note": "The post-revisionist frame, 1890–1928, stated from the work's central argument. Not read at page level."
+      }
+    ]
+  },
+  {
+    "id": "1917-russian-revolution:historiography-february-who-led-it",
+    "title": "February: did anybody lead it?",
+    "question": "Between 23 February and 27 February (O.S.) 1917 a bread strike in one district became a general strike, and a general strike became a mutiny of the capital's garrison, and the monarchy fell. No party had called for it, no party expected it, and the leaders who would run Russia for the next eight months spent the first days of it trying to find out what was happening.\n\nSo who led it? The question is not idle. What one answers determines whether February was a revolution that the socialist parties inherited, or a revolution that they made and then failed to keep.",
+    "positions": [
+      {
+        "label": "Nobody: it happened of itself",
+        "who": "The memoirists and liberal writers of the 1920s, in the formula Trotsky quotes in order to attack it",
+        "summary": "The oldest answer, and for a long time the commonest: a hungry city in a hard winter under an exhausted government, and the thing simply went up. Trotsky reports the position in one sentence — the problems of the February days \"were solved most simply by the universal formula: Nobody led the revolution, it happened of itself.\"[^trotsky-1932]\n\nIt is included here as a position because it was genuinely held and because it is still the shape of most popular accounts, not because anybody now defends it in that bare form. Note that the pack reaches it through Trotsky, who is hostile to it: no writer is quoted here in their own words."
+      },
+      {
+        "label": "Workers educated by the party",
+        "who": "Leon Trotsky, History of the Russian Revolution, vol. I ch. 8, 'Who Led the February Insurrection?'",
+        "summary": "Trotsky's answer accepts that no party committee gave the order and then denies that this settles anything, because leadership in his account is exercised by people rather than by organisations. \"To the question, Who led the February revolution? we can then answer definitely enough: Conscious and tempered workers educated for the most part by the party of Lenin. But we must here immediately add: This leadership proved sufficient to guarantee the victory of the insurrection, but it was not adequate to transfer immediately into the hands of the proletarian vanguard the leadership of the revolution.\"[^trotsky-1932]\n\nThe second half of that sentence is the part usually left out, and it is doing a great deal of work: it explains, on Trotsky's terms, why the party that led February did not govern in March. It is also a claim written in 1932 by a man arguing about who was entitled to the revolution's inheritance."
+      },
+      {
+        "label": "An autonomous insurrection from below",
+        "who": "Tsuyoshi Hasegawa, The February Revolution: Petrograd, 1917 (1981)",
+        "summary": "The fullest reconstruction of the nine days argues that the insurrection was made by workers and then by soldiers acting on their own account, that the party organisations in the city — Bolshevik ones included — were consistently behind events rather than in front of them, and that the liberal politicians who ended up with the government had spent the week trying to prevent exactly what happened. Dual power on this account is not a settlement between two revolutionary forces but an improvisation by men containing something they did not control.\n\n**Stated from the work's central argument, not quoted from it.** The volume is borrow-only from here."
+      }
+    ],
+    "settled": "That the strike began among women textile workers on the Vyborg side on 23 February (O.S.); that no party had called a general strike, and that the Bolshevik organisation in the city initially opposed one; that the decisive act was the refusal of the garrison's reserve battalions to fire on 27 February, taken by soldiers about themselves; and that the Duma politicians who formed the Provisional Committee did so after the Duma had been prorogued and after the garrison had already gone.",
+    "unread": "Hasegawa's monograph — the standard work, and the one that would settle most of what is argued here — is not readable at page level from this project's environment, and neither is its expanded 2017 edition. The first position is reached only through a hostile summary in Trotsky, which is the weakest form of attribution on any card in this pack; the writers who actually held it are not opened here and are not named individually for that reason. The Okhrana reports and the factory-level material on which Hasegawa's reconstruction rests are also unread.",
+    "links": {
+      "events": [
+        "1917-russian-revolution:event-womens-day",
+        "1917-russian-revolution:event-garrison-mutiny"
+      ],
+      "battles": ["1917-russian-revolution:february-petrograd"]
+    },
+    "sources": [
+      {
+        "source": "source:trotsky-1932",
+        "pages": "vol. I, ch. 8",
+        "note": "'Who Led the February Insurrection?' — quoted from the Marxists Internet Archive text of the Eastman translation, which prints chapter titles rather than the Gollancz pagination. Both quotations on this card are from that chapter: the 'universal formula' he attacks, and his own closing answer."
+      },
+      {
+        "source": "source:hasegawa-1981",
+        "note": "The autonomous-insurrection position, stated from the work's central argument. Not read at page level; nothing is quoted."
+      },
+      { "source": "source:figes-1996", "note": "the narrative of the nine days" }
+    ]
+  },
+  {
+    "id": "1917-russian-revolution:historiography-german-gold",
+    "title": "German money: what do the archives actually show?",
+    "question": "On 4 July 1917 (O.S.), in the middle of the July Days, the Provisional Government released material accusing Lenin of acting as a German agent. The accusation broke the Bolsheviks for six weeks, and it has never gone away.\n\nThree different questions get folded into one here, and separating them is most of the work. Did the German government spend money to promote defeatism in Russia? Did money reach the Bolsheviks? And was the evidence produced in July 1917 evidence of either?",
+    "positions": [
+      {
+        "label": "The charge, as it was made in July 1917",
+        "who": "The Provisional Government's Ministry of Justice and the counter-intelligence officers who assembled the case, and the newspapers that printed it on 5 July",
+        "summary": "The case rested on two things: the testimony of a captured ensign, and a group of telegrams passing between Stockholm and Petrograd. Lyandres, who examined the file, describes the first plainly: \"The first accusation— that Lenin was working for the Germans— rested on the rather shaky testimony of Ensign Dmitrii S. Ermolenko, who alleged that he had been told about it by German intelligence officers while a prisoner of war in a German camp.\"[^lyandres-1995]\n\nThe charge was never tested. Lenin went into hiding rather than stand trial — a decision his opponents read as an admission and his supporters as prudence — and in October the government that had brought it ceased to exist. Note that this position is stated through the historian who re-examined it; the July file itself is not read here."
+      },
+      {
+        "label": "A forgery of the counter-revolution",
+        "who": "Lenin and the Bolshevik press in July 1917, and Soviet historiography for the seventy years after",
+        "summary": "The official Soviet answer was that the accusation was a slander manufactured by a government looking for a way to destroy its most dangerous opposition in the middle of a crisis, and that it belongs with the Sisson documents — the papers purchased by an American official in 1918 purporting to show Bolshevik leaders taking German orders, and demonstrated to be forgeries.\n\nThe position is included because it was the official truth of a state for seven decades and is part of what any account of this dispute has to explain. Its holders are not quoted here: no Soviet historiographical text is readable from this project's environment."
+      },
+      {
+        "label": "The German government's own record",
+        "who": "Z. A. B. Zeman, who published the German Foreign Ministry's file in 1958, and the historians who have read it since",
+        "summary": "What the German documents show is not in doubt, because they are the German government talking to itself. In a telegram of 3 December 1917 the State Secretary, Richard von Kühlmann, wrote to the Foreign Ministry's liaison officer at General Headquarters:\n\n> \"It was not until the Bolsheviks had received from us a steady flow of funds through various channels and under different labels that they were in a position to be able to build up their main organ, Pravda, to conduct energetic propaganda and appreciably to extend the originally narrow basis of their party.\"[^zeman-1958]\n\nTwo cautions. This is a minister claiming credit to his own government for an outcome that had already happened, six weeks after the event, which is a genre with a known bias. And a statement that money was given is not a statement of how much, through whom, or with what effect — which is precisely what the third position is about."
+      },
+      {
+        "label": "The 1917 evidence proves nothing; the German subsidy is a separate fact",
+        "who": "Semion Lyandres, in an archival inquiry published in 1995",
+        "summary": "Lyandres went back to the documents the July charge was built on — sixty-six telegrams — and took them apart. \"The present work provides an analysis of each individual telegram as well as of the entire group of 66, and finds no support in them for the July accusations.\"[^lyandres-1995] More precisely: \"In fact, the telegrams contain no evidence that there were any funds transferred from Stockholm to Petrograd, let alone funds that wound up in Bolshevik coffers.\"[^lyandres-1995] The Provisional Government's own investigation, he notes, \"concluded that there was no evidence of the 'German connection.'\"[^lyandres-1995]\n\nAnd then, in the same study, the sentence that stops this from being an acquittal: \"Of course, this is not to say that the Bolsheviks did not receive financial assistance from the German government. The documents of the German Foreign Ministry indicate that substantial funds were allocated to support Bolshevik anti-war activities in 1917.\"[^lyandres-1995] What he can document is one instance — money used through the Bolsheviks' Foreign Bureau to finance the Third Zimmerwald Conference at Stockholm in September 1917 — of which he writes: \"Thus far, this is the only documented proof that the Bolsheviks received German funds before coming to power.\"[^lyandres-1995]\n\nThe conclusion is narrower and harder than either of the popular versions: the case made in July 1917 does not stand, and the question of German money is nonetheless real and largely unresolved."
+      }
+    ],
+    "settled": "That the German government wanted Russia out of the war and spent money towards that end, in Russia and elsewhere, as a matter of declared policy. That it arranged and paid for Lenin's passage across Germany in April 1917. That the July 1917 charge was never tested in a court. And that the Sisson documents of 1918, a separate and later body of material, are forgeries.",
+    "unread": "The Ministry of Justice's own July 1917 investigation file, which is the object of Lyandres's study and is quoted here only through him. The German Foreign Ministry archive beyond what Zeman printed in 1958 — Zeman's is a selection of 137 pages from a very large body of paper, and the choice of what to print is itself an argument. The Russian archives opened after 1991, apart from what Lyandres used. And the Soviet historiography of the second position, which is named on this card and is not opened.\n\nThe Zeman volume is read here from a third-party scan on the Internet Archive whose text layer carries no printed page numbers for the item, so the Kühlmann telegram is cited by document number rather than by page. That is a weaker locator than the pack would like and it is marked rather than smoothed over.",
+    "links": {
+      "events": [
+        "1917-russian-revolution:event-july-days",
+        "1917-russian-revolution:event-lenin-finland-station"
+      ],
+      "people": ["person:lenin-vladimir"]
+    },
+    "sources": [
+      {
+        "source": "source:lyandres-1995",
+        "pages": "1, 94, 95, 103, 104",
+        "note": "Read in full from the open-access Carl Beck Paper. p. 1, the Ermolenko testimony; p. 94, the finding on the sixty-six telegrams and on transfers from Stockholm; p. 95, the 1917 investigation's own conclusion; p. 103, that this is not a claim that no German money reached the Bolsheviks; p. 104, the Zimmerwald conference funds as the one documented instance."
+      },
+      {
+        "source": "source:zeman-1958",
+        "pages": "document 94",
+        "note": "Kühlmann to the Foreign Ministry liaison officer at General Headquarters, telegram no. 1925, Berlin, 3 December 1917. Cited by document number, not by page: the Internet Archive scan's text layer carries no printed page number for this item. Document 95, of 4 December 1917, is the liaison officer at the Imperial Court replying to telegram no. 1925 and reporting the Kaiser's agreement, which is why this telegram is often described as a memorandum to the Kaiser."
+      },
+      {
+        "source": "source:figes-1996",
+        "note": "the July Days and the political effect of the accusation; not read at page level"
+      }
+    ]
+  }
+]
