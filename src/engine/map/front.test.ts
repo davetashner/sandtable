@@ -9,10 +9,12 @@ import {
   fetchFront,
   frontLayers,
   frontUrl,
+  mountFront,
   only,
   snapshotAt,
   type FrontFeature,
   type FrontGeoJSON,
+  unmountFront,
 } from './front.js';
 
 const at = (date: string) => Date.parse(`${date}T00:00:00Z`);
@@ -130,5 +132,84 @@ describe('frontLayers', () => {
     expect(frontLayers('light').find((l) => l.id === 'front-line')!.paint!['line-color']).not.toBe(
       frontLayers('dark').find((l) => l.id === 'front-line')!.paint!['line-color'],
     );
+  });
+});
+
+describe('mountFront / unmountFront (sand-pmz.26)', () => {
+  /** The narrow map this module actually needs, recorded. */
+  const host = () => {
+    const sources = new Map<string, { data?: unknown; setData: (d: unknown) => void }>();
+    const layers: { id: string; before?: string | undefined }[] = [];
+    return {
+      sources,
+      layers,
+      getSource: (id: string) => sources.get(id),
+      addSource(id: string, spec: unknown) {
+        const s = spec as { data: unknown };
+        sources.set(id, {
+          data: s.data,
+          setData(d: unknown) {
+            s.data = d;
+            this.data = d;
+          },
+        });
+      },
+      removeSource: (id: string) => void sources.delete(id),
+      getLayer: (id: string) => layers.find((l) => l.id === id),
+      addLayer(layer: { id: string }, before?: string) {
+        layers.push({ id: layer.id, before });
+      },
+      removeLayer(id: string) {
+        const i = layers.findIndex((l) => l.id === id);
+        if (i >= 0) layers.splice(i, 1);
+      },
+      getStyle: () => ({
+        layers: [
+          { id: 'water', type: 'fill' },
+          { id: 'places', type: 'symbol' },
+        ],
+      }),
+    };
+  };
+
+  it('mounts the source and every layer, under the first label layer', () => {
+    const m = host();
+    mountFront(m, geo, at('1917-01-01'), 'dark');
+    expect(m.sources.has(FRONT_SOURCE)).toBe(true);
+    expect(m.layers.map((l) => l.id)).toEqual([...FRONT_LAYER_IDS]);
+    // place names stay readable
+    for (const l of m.layers) expect(l.before).toBe('places');
+  });
+
+  it('holds the snapshot in force, and updates in place rather than remounting', () => {
+    const m = host();
+    mountFront(m, geo, at('1917-01-01'), 'dark');
+    const first = m.sources.get(FRONT_SOURCE)!.data as { features: { id: string }[] };
+    expect(first.features.map((f) => f.id)).toEqual(['front:1916-07-11']);
+
+    mountFront(m, geo, at('1918-11-11'), 'dark');
+    const second = m.sources.get(FRONT_SOURCE)!.data as { features: { id: string }[] };
+    expect(second.features.map((f) => f.id)).toEqual(['front:1918-11-11']);
+    // still one set of layers — the style was not torn down and rebuilt
+    expect(m.layers.map((l) => l.id)).toEqual([...FRONT_LAYER_IDS]);
+  });
+
+  it('mounts an empty source before the front was continuous, and does not thrash', () => {
+    const m = host();
+    mountFront(m, geo, at('1914-08-02'), 'light');
+    const data = m.sources.get(FRONT_SOURCE)!.data as { features: unknown[] };
+    expect(data.features).toEqual([]);
+    // The layers are there, waiting, so scrubbing across the first snapshot
+    // updates data instead of rebuilding the style.
+    expect(m.layers).toHaveLength(FRONT_LAYER_IDS.length);
+  });
+
+  it('unmounts everything it mounted, and is safe when nothing is mounted', () => {
+    const m = host();
+    expect(() => unmountFront(m)).not.toThrow();
+    mountFront(m, geo, at('1917-01-01'), 'dark');
+    unmountFront(m);
+    expect(m.sources.has(FRONT_SOURCE)).toBe(false);
+    expect(m.layers).toEqual([]);
   });
 });

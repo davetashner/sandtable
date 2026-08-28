@@ -156,6 +156,54 @@ export function frontLayers(theme: MapTheme): LineLayerSpecification[] {
   ];
 }
 
+/**
+ * The slice of MapLibre's map this module touches. Narrow on purpose: mounting
+ * and unmounting a source with its layers is ordinary logic that had no
+ * business living inside a React effect, where it reached four levels of
+ * nesting and could only be exercised by rendering a component
+ * (sand-pmz.26). Against this interface it is two functions and a unit test.
+ */
+export interface FrontHost {
+  getSource(id: string): unknown;
+  addSource(id: string, spec: unknown): void;
+  removeSource(id: string): void;
+  getLayer(id: string): unknown;
+  addLayer(layer: LineLayerSpecification, before?: string): void;
+  removeLayer(id: string): void;
+  getStyle(): { layers: { id: string; type: string }[] };
+}
+
+/** Take the front line off the map, if it is on it. Safe to call either way. */
+export function unmountFront(map: FrontHost): void {
+  if (!map.getSource(FRONT_SOURCE)) return;
+  for (const id of FRONT_LAYER_IDS) if (map.getLayer(id)) map.removeLayer(id);
+  map.removeSource(FRONT_SOURCE);
+}
+
+/**
+ * Put the snapshot in force at `at` on the map: update the data if the source
+ * is already there, mount source and layers if it is not. Drawing nothing —
+ * before the front was continuous — is a real answer and leaves an empty
+ * source rather than tearing the layers down, so scrubbing back and forth
+ * across 25 November 1914 does not thrash the style.
+ */
+export function mountFront(map: FrontHost, geo: FrontGeoJSON, at: number, theme: MapTheme): void {
+  const wanted = only(snapshotAt(geo, at));
+  const source = map.getSource(FRONT_SOURCE) as { setData: (d: unknown) => void } | undefined;
+  if (source) {
+    source.setData(wanted);
+    return;
+  }
+  map.addSource(FRONT_SOURCE, {
+    type: 'geojson',
+    data: wanted,
+    attribution: geo.attribution ?? '',
+  });
+  // Above the borders, below the labels, so place names stay readable.
+  const firstSymbol = map.getStyle().layers.find((l) => l.type === 'symbol')?.id;
+  for (const l of frontLayers(theme)) map.addLayer(l, firstSymbol);
+}
+
 /** Every layer id this module mounts, for teardown on a theme change. */
 export const FRONT_LAYER_IDS = [
   'front-halo',

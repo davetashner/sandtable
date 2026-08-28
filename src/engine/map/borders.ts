@@ -101,6 +101,42 @@ export function bordersLayers(
 }
 
 /**
+ * The slice of MapLibre's map this module touches — the same narrow interface
+ * the front line uses, for the same reason (sand-pmz.26): mounting a source
+ * with its layers is ordinary logic, and inside a React effect it could only
+ * be exercised by rendering a component.
+ */
+export interface BordersHost {
+  getSource(id: string): unknown;
+  addSource(id: string, spec: unknown): void;
+  removeSource(id: string): void;
+  getLayer(id: string): unknown;
+  addLayer(layer: { id: string; type: string }, before?: string): void;
+  removeLayer(id: string): void;
+  getStyle(): { layers: { id: string; type: string }[] };
+}
+
+/**
+ * Put the year's borders on the map, replacing them if they are already there
+ * — which is what a theme change needs, since the layer paint is baked in.
+ */
+export function mountBorders(map: BordersHost, geo: BordersGeoJSON, theme: MapTheme): void {
+  const layers = bordersLayers(theme);
+  if (map.getSource(BORDERS_SOURCE)) {
+    for (const l of layers) if (map.getLayer(l.id)) map.removeLayer(l.id);
+    map.removeSource(BORDERS_SOURCE);
+  }
+  map.addSource(BORDERS_SOURCE, {
+    type: 'geojson',
+    data: decorateBorders(geo),
+    attribution: geo.attribution ?? '',
+  });
+  // Sit below the first label layer so place names stay readable.
+  const firstSymbol = map.getStyle().layers.find((l) => l.type === 'symbol')?.id;
+  for (const l of layers) map.addLayer(l, l.type === 'symbol' ? undefined : firstSymbol);
+}
+
+/**
  * Pre-compute the per-power hue on each feature so the fill expression stays
  * cheap. Mutates and returns the collection.
  */
