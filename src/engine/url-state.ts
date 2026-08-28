@@ -45,42 +45,107 @@ export interface ViewState {
   extra?: [string, string][];
 }
 
-/** The known slots; everything else in the query string is `extra`. */
-const KNOWN = ['t', 'branch', 'focus', 'card', 'pick', 'tour', 'step', 'layers'];
-
 /** `commanders`, `-meanwhile.physics`, `-meanwhile.biology-medicine`. */
 const LAYER_TOKEN = /^-?[a-z0-9]+(?:[.-][a-z0-9]+)*$/;
+
+/** Everything the contract names; `extra` is what is left over, not a slot. */
+type SlotKey = Exclude<keyof ViewState, 'extra'>;
+
+/**
+ * One named slot of the contract: what it is called in the query string, how a
+ * value read from there becomes state, and how state becomes a value again.
+ */
+interface Slot {
+  key: SlotKey;
+  /** Fold a query value into `state`; leave the slot unset if it is unusable. */
+  read(value: string, state: ViewState): void;
+  /** `key=value` for a state that fills this slot, or '' for one that does not. */
+  write(state: ViewState): string;
+}
+
+/**
+ * Era-qualified ids keep their colons: `:` is legal in a query string and
+ * `%3A` is not readable in a footnote (ADR 0009, rule 1).
+ */
+const readableColons = (value: string) => encodeURIComponent(value).replace(/%3A/gi, ':');
+
+/** A slot holding a single id, in the URL only while it has one. */
+function idSlot(
+  key: 'branch' | 'focus' | 'card' | 'pick' | 'tour' | 'step',
+  encode: (value: string) => string,
+): Slot {
+  return {
+    key,
+    read: (value, state) => {
+      if (value) state[key] = value;
+    },
+    write: (state) => {
+      const value = state[key];
+      return value ? `${key}=${encode(value)}` : '';
+    },
+  };
+}
+
+/**
+ * The slots, in the order they are written. This table is ADR 0009's rule 1
+ * stated once instead of three times: the order of the parameters, the
+ * encoding each one uses, and the list of names that are *not* `extra` all
+ * come from here, so they cannot drift apart. Adding a slot is adding a row.
+ */
+const SLOTS: Slot[] = [
+  {
+    // The clock's now, ISO-8601 UTC to the second. A date that will not parse
+    // is dropped rather than argued with: the rest of the link still opens.
+    key: 't',
+    read: (value, state) => {
+      const ms = Date.parse(value);
+      if (!Number.isNaN(ms)) state.t = ms;
+    },
+    write: (state) => (state.t === undefined ? '' : `t=${toIsoNoMs(state.t)}`),
+  },
+  // `branch`, `focus`, `card` and `tour` name era-qualified ids, whose colons
+  // stay readable; `pick` and `step` name something inside one pack and so
+  // never carry one.
+  idSlot('branch', readableColons),
+  idSlot('focus', readableColons),
+  idSlot('card', readableColons),
+  idSlot('pick', encodeURIComponent),
+  idSlot('tour', readableColons),
+  idSlot('step', encodeURIComponent),
+  {
+    key: 'layers',
+    read: (value, state) => {
+      const layers = parseLayers(value);
+      if (layers.length) state.layers = layers;
+    },
+    // Layer names are already URL-safe by their grammar, and commas are legal
+    // in a query string: `layers=commanders,-meanwhile.physics` stays readable.
+    write: (state) => (state.layers?.length ? `layers=${state.layers.join(',')}` : ''),
+  },
+];
+
+/**
+ * The known slots; everything else in the query string is `extra`. `pack` is
+ * absent on purpose — it selects which era's document is loaded rather than a
+ * state inside one, so it round-trips as an extra (ADR 0009's amendment).
+ */
+const KNOWN = new Set<string>(SLOTS.map((slot) => slot.key));
 
 export function parseViewState(search: string): ViewState {
   const q = new URLSearchParams(search.startsWith('?') ? search.slice(1) : search);
   const out: ViewState = {};
-  const t = q.get('t');
-  if (t) {
-    const ms = Date.parse(t);
-    if (!Number.isNaN(ms)) out.t = ms;
+  for (const slot of SLOTS) {
+    const value = q.get(slot.key);
+    if (value !== null) slot.read(value, out);
   }
-  const branch = q.get('branch');
-  if (branch) out.branch = branch;
-  const focus = q.get('focus');
-  if (focus) out.focus = focus;
-  const card = q.get('card');
-  if (card) out.card = card;
-  const pick = q.get('pick');
-  if (pick) out.pick = pick;
-  const tour = q.get('tour');
-  if (tour) out.tour = tour;
-  const step = q.get('step');
-  if (step) out.step = step;
-  const layers = parseLayers(q.get('layers'));
-  if (layers.length) out.layers = layers;
   const extra: [string, string][] = [];
-  for (const [k, v] of q) if (!KNOWN.includes(k)) extra.push([k, v]);
+  for (const [k, v] of q) if (!KNOWN.has(k)) extra.push([k, v]);
   if (extra.length) out.extra = extra;
   return out;
 }
 
 /** Split `layers=`, drop malformed tokens, keep the first mention of a name. */
-function parseLayers(value: string | null): string[] {
+function parseLayers(value: string): string[] {
   if (!value) return [];
   const out: string[] = [];
   const seen = new Set<string>();
@@ -127,31 +192,19 @@ export function withLayer(
 /** Serialise to a query string (leading `?`, or '' when empty). Colons stay readable. */
 export function formatViewState(state: ViewState): string {
   const parts: string[] = [];
-  if (state.t !== undefined) parts.push(`t=${toIsoNoMs(state.t)}`);
-  if (state.branch) parts.push(`branch=${encodeURIComponent(state.branch).replace(/%3A/gi, ':')}`);
-  if (state.focus) parts.push(`focus=${encodeURIComponent(state.focus).replace(/%3A/gi, ':')}`);
-  if (state.card) parts.push(`card=${encodeURIComponent(state.card).replace(/%3A/gi, ':')}`);
-  if (state.pick) parts.push(`pick=${encodeURIComponent(state.pick)}`);
-  if (state.tour) parts.push(`tour=${encodeURIComponent(state.tour).replace(/%3A/gi, ':')}`);
-  if (state.step) parts.push(`step=${encodeURIComponent(state.step)}`);
-  // Layer names are already URL-safe by their grammar, and commas are legal in
-  // a query string: `layers=commanders,-meanwhile.physics` stays readable.
-  if (state.layers?.length) parts.push(`layers=${state.layers.join(',')}`);
+  for (const slot of SLOTS) {
+    const part = slot.write(state);
+    if (part) parts.push(part);
+  }
+  // Whatever this build did not recognise goes back out after the known slots,
+  // in the order it arrived (ADR 0009, rule 4).
   for (const [k, v] of state.extra ?? [])
     parts.push(`${encodeURIComponent(k)}=${encodeURIComponent(v)}`);
   return parts.length ? `?${parts.join('&')}` : '';
 }
 
-export interface Slots {
-  branch?: string;
-  focus?: string;
-  card?: string;
-  pick?: string;
-  tour?: string;
-  step?: string;
-  layers?: string[];
-  extra?: [string, string][];
-}
+/** The view state minus the clock: the slots the binding below owns. */
+export type Slots = Omit<ViewState, 't'>;
 
 export interface UrlBinding {
   /** Current non-clock slots. */
@@ -180,21 +233,31 @@ export interface BindOptions {
 }
 
 /**
+ * The host the binding reads and writes: the browser, unless a test hands it
+ * a fake history, a fake clock of its own and a search string it controls.
+ */
+function hostFor(opts: BindOptions) {
+  return {
+    history: opts.history ?? window.history,
+    location: opts.location ?? (() => window.location.search),
+    throttle: opts.throttleMs ?? 400,
+    setT: opts.setTimeout ?? ((fn: () => void, ms: number) => window.setTimeout(fn, ms)),
+    clearT: opts.clearTimeout ?? ((id: number) => window.clearTimeout(id)),
+    addPop:
+      opts.addPopState ??
+      ((fn: () => void) => {
+        window.addEventListener('popstate', fn);
+        return () => window.removeEventListener('popstate', fn);
+      }),
+  };
+}
+
+/**
  * Two-way binding: URL → clock on load and popstate; clock/branch/focus → URL
  * (replaceState, throttled while playing).
  */
 export function bindUrlState(clock: Clock, opts: BindOptions = {}): UrlBinding {
-  const history = opts.history ?? window.history;
-  const location = opts.location ?? (() => window.location.search);
-  const throttle = opts.throttleMs ?? 400;
-  const setT = opts.setTimeout ?? ((fn, ms) => window.setTimeout(fn, ms));
-  const clearT = opts.clearTimeout ?? ((id) => window.clearTimeout(id));
-  const addPop =
-    opts.addPopState ??
-    ((fn) => {
-      window.addEventListener('popstate', fn);
-      return () => window.removeEventListener('popstate', fn);
-    });
+  const { history, location, throttle, setT, clearT, addPop } = hostFor(opts);
 
   let slots: Slots = {};
   const listeners = new Set<() => void>();
@@ -219,33 +282,38 @@ export function bindUrlState(clock: Clock, opts: BindOptions = {}): UrlBinding {
   };
 
   const applyUrl = () => {
-    const s = parseViewState(location());
-    slots = {};
-    if (s.branch) slots.branch = s.branch;
-    if (s.focus) slots.focus = s.focus;
-    if (s.card) slots.card = s.card;
-    if (s.pick) slots.pick = s.pick;
-    if (s.tour) slots.tour = s.tour;
-    if (s.step) slots.step = s.step;
-    if (s.layers) slots.layers = s.layers;
-    if (s.extra) slots.extra = s.extra;
-    if (s.t !== undefined) clock.seek(s.t);
+    // The clock owns `t` and the binding owns everything else, which is the
+    // one split that matters here — no slot needs naming twice to make it.
+    const { t, ...fromUrl } = parseViewState(location());
+    slots = fromUrl;
+    if (t !== undefined) clock.seek(t);
     lastWritten = formatViewState({ t: clock.get().now, ...slots });
     for (const l of listeners) l();
   };
   applyUrl();
 
-  const setSlot = (
-    key: 'branch' | 'focus' | 'card' | 'pick' | 'tour' | 'step',
-    value: string | undefined,
-  ) => {
+  /**
+   * Every setter is the same move — change the slots, tell the listeners,
+   * write the URL at once — around a different change. A reader's own action
+   * is never throttled: only a playing clock is.
+   */
+  const update = (change: (next: Slots) => void) => {
     const next: Slots = { ...slots };
-    if (value) next[key] = value;
-    else delete next[key];
+    change(next);
     slots = next;
     for (const l of listeners) l();
     scheduleWrite(true);
   };
+
+  /** A slot that is in the URL while it has a value and gone when it does not. */
+  const setSlot = (
+    key: 'branch' | 'focus' | 'card' | 'pick' | 'tour' | 'step',
+    value: string | undefined,
+  ) =>
+    update((next) => {
+      if (value) next[key] = value;
+      else delete next[key];
+    });
 
   let wasPlaying = clock.get().playing;
   const unsubClock = clock.subscribe((st) => {
@@ -265,36 +333,31 @@ export function bindUrlState(clock: Clock, opts: BindOptions = {}): UrlBinding {
       setSlot('focus', focus);
     },
     setCard(card) {
-      // a new card forgets the previous decision's pick
-      const next: Slots = { ...slots };
-      if (card) next.card = card;
-      else delete next.card;
-      if (card !== slots.card) delete next.pick;
-      slots = next;
-      for (const l of listeners) l();
-      scheduleWrite(true);
+      update((next) => {
+        if (card) next.card = card;
+        else delete next.card;
+        // a new card forgets the previous decision's pick
+        if (card !== slots.card) delete next.pick;
+      });
     },
     setPick(pick) {
       setSlot('pick', pick);
     },
     setTour(tour, step) {
-      const next: Slots = { ...slots };
-      if (tour) next.tour = tour;
-      else delete next.tour;
-      if (tour && step) next.step = step;
-      else delete next.step;
-      slots = next;
-      for (const l of listeners) l();
-      scheduleWrite(true);
+      update((next) => {
+        if (tour) next.tour = tour;
+        else delete next.tour;
+        // no tour, no step: leaving one cannot leave the other behind
+        if (tour && step) next.step = step;
+        else delete next.step;
+      });
     },
     setLayer(name, on, byDefault = false) {
-      const next: Slots = { ...slots };
-      const layers = withLayer(slots.layers, name, on, byDefault);
-      if (layers.length) next.layers = layers;
-      else delete next.layers;
-      slots = next;
-      for (const l of listeners) l();
-      scheduleWrite(true);
+      update((next) => {
+        const layers = withLayer(slots.layers, name, on, byDefault);
+        if (layers.length) next.layers = layers;
+        else delete next.layers;
+      });
     },
     subscribe(l) {
       listeners.add(l);
