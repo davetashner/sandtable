@@ -108,6 +108,13 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
 - **Branches/worktrees:** new work happens on a feature branch in a worktree
   under `.claude/worktrees/`, never on `main`. Sign off commits (`git commit -s`)
   and reference the bead ID in the message.
+- **Working practice:** `docs/agent-workflow.md` — how to make a worktree cheap
+  (symlink `node_modules`), the gate order that fails fastest, why you neither
+  close your own bead nor merge your own PR, the **sourcing-integrity rules**
+  (never a quotation you have not read, never a page number you have not seen,
+  verify delegated research, open the item), and the known local friction
+  (`visual:check`'s fixed port, `bundle:budget` reading a stale `dist/`, the
+  shared registries colliding under parallel authoring).
 - **Multi-era layout:** `content/eras/<yyyy>-<slug>/` (one self-contained pack
   per campaign), `content/shared/` (people, places, sources, borders, links,
   media referenced by era-qualified IDs like `1870:sedan`), `content/threads/`
