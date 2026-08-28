@@ -1,6 +1,7 @@
 # 0006 — Information architecture: one map, one dossier, one timeline
 
-- **Status:** accepted
+- **Status:** accepted; **amended 2026-08-27** (`sand-neh.26`) — see
+  "Amendment: what the map may host"
 - **Date:** 2026-08-22
 - **Bead:** `sand-neh.5`
 
@@ -23,11 +24,11 @@ on it.
 timeline or the map) that opens a **card** inside the dossier, or a **mode**
 of one of the three surfaces.
 
-| Surface                                               | Owns                                                                                                                                                                            | Never hosts                                               |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
-| **Map**                                               | geography, borders, places, the armies and their routes, battle regions, markers that open cards                                                                                | text longer than a label; controls other than camera/zoom |
-| **Dossier** (right on desktop, bottom sheet on phone) | the narrative beat for now × branch × focus; every card (person, formation, battle, document, tech, science, decision point, causal link, source); the branch panel; the legend | a second scrolling panel; navigation between eras         |
-| **Timeline** (bottom)                                 | the clock and its controls, phase bands, event and card glyphs, the branch's divergence mark, the focus sub-range                                                               | prose; lists                                              |
+| Surface                                               | Owns                                                                                                                                                                | Never hosts                                            |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| **Map**                                               | geography, borders, places, the armies and their routes, battle regions, markers that open cards; the key to the sides; the tour's lower third (amended, below)     | a fourth surface; prose the reader must scroll to read |
+| **Dossier** (right on desktop, bottom sheet on phone) | the narrative beat for now × branch × focus; every card (person, formation, battle, document, tech, science, decision point, causal link, source); the branch panel | a second scrolling panel; navigation between eras      |
+| **Timeline** (bottom)                                 | the clock and its controls, phase bands, event and card glyphs, the branch's divergence mark, the focus sub-range                                                   | prose; lists                                           |
 
 Shell chrome — title, branch toggle, focus breadcrumb — sits in a single thin
 header row above the three surfaces. That is the whole inventory.
@@ -56,7 +57,7 @@ field) are a dossier control, not a new bar.
 - The **causal explorer** is a dossier _mode_ (a chain view that replaces the
   beat until closed), not a panel. The **about-this-branch** panel is already
   a dossier mode; **tours** (`sand-1l0.14`) are a timeline mode that drives
-  the clock and camera and narrates in the dossier.
+  the clock and camera and narrates **on the map** (amended, below).
 - **Sources** render as footnotes under the beat and as a bibliography card.
   **Search** (`sand-shn.6`) is a dossier mode. The **atlas of eras**
   (`sand-shn.1`) is the only other screen in the app, and it is a landing
@@ -143,6 +144,43 @@ Phone (< 700 px):
   the clock and the map visible.
 - **A separate page per battle.** Loses the campaign clock; the zoom-in keeps
   time and returns you to where you were.
+
+## Amendment: what the map may host (2026-08-27, `sand-neh.26`)
+
+Two sentences in the table above were wrong, and the measurements say so.
+
+The dossier's grid is `auto … auto` around a `1fr` reading pane, so the two
+rows that never change — the cast strip and the legend — were satisfied before
+the prose got anything. Measured on the shipped app: the beat computed to
+494 px against 1766 px of content on desktop, **58 px with a tour running**,
+and **exactly 0 px on a phone**, where the legend took 67 of the 71 available
+pixels and `overflow: hidden` meant the reader could not even scroll to the
+narrative. The tour's own narration showed 178 px of 506 px behind a scrollbar
+macOS does not draw at rest. The panel the whole app is for was the panel with
+nothing in it.
+
+The original rule was **"no fourth surface"**, and that rule stands. What it
+does not require is that everything which is not geography must be stacked in
+the reading rail. So:
+
+- **The map may host the key to the sides.** It is a key to the map's own
+  colours, it has not changed since the page loaded, and in the rail it was a
+  fixed row above the prose. It is a closed disclosure on the map, top-left.
+- **The map may host the tour's lower third.** A sand table has a narrator
+  standing at the table pointing at it, not a second document on the shelf.
+  Sized to its own content, it also ends the tour's own clipping. On a phone,
+  whose map is too short to give a corner away, the tour stays stacked above
+  the beat in the sheet.
+
+Both are laid **over** the map, owned by it, and pointer-transparent except
+where there is something to press. Neither is a new surface: the inventory is
+still map, dossier, timeline, and the reading pane now carries a
+`minmax(280px, 1fr)` floor so it can never be starved to nothing again.
+
+What is still forbidden, and is the part of the original rule that was doing
+the real work: **a fourth panel**, and **prose on the map that the reader must
+scroll to read**. The lower third narrates the step the reader is on; it is
+not a second dossier.
 
 ## Consequences
 

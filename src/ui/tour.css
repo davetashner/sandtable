@@ -1,5 +1,8 @@
-/* Guided tour (sand-1l0.14): the tour's band at the top of the dossier, and
-   the launcher in the header. Tokens only. */
+/* Guided tour (sand-1l0.14): the narrator's panel and the launcher in the
+   header. Two variants (sand-neh.26) — `stacked`, the band above the beat on a
+   phone, which is the shape it has always had; and `lower-third`, the corner of
+   the map on every other width, sized to its own content instead of sharing a
+   55vh slot with the prose. Tokens only. */
 
 .tour {
   /* A column so the narration can scroll while the eyebrow, the step title and
@@ -13,6 +16,22 @@
   border: 1px solid var(--brass-dim);
   border-radius: var(--radius-sm);
   background: color-mix(in srgb, var(--panel-2) 70%, transparent);
+}
+
+/* The lower third: a narrator standing at the table rather than a second
+   document on the shelf. Opaque enough to read against terrain, and with the
+   brass edge the dossier uses for a thing that is speaking to you. */
+.tour[data-variant='lower-third'] {
+  max-height: min(60vh, 460px);
+  margin: 0;
+  width: 360px;
+  max-width: 100%;
+  padding: var(--space-3) var(--space-4) var(--space-3);
+  border-color: var(--brass-dim);
+  border-left: 3px solid var(--brass);
+  background: color-mix(in srgb, var(--panel) 94%, transparent);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow);
 }
 
 .tour__eyebrow {
@@ -72,6 +91,13 @@
   font-size: var(--fs-md);
   line-height: var(--lh-body);
   color: var(--ink);
+  /* The narration is longer than the panel and the scrollbar is invisible at
+     rest, so a citation cut mid-word read as broken rather than as more below
+     (sand-neh.26). The fade is the affordance; a mask carries no colour, so it
+     works in both themes without a token. */
+  -webkit-mask-image: linear-gradient(180deg, #000 calc(100% - 22px), transparent);
+  mask-image: linear-gradient(180deg, #000 calc(100% - 22px), transparent);
+  scrollbar-gutter: stable;
 }
 
 .tour__narration p {

@@ -2,7 +2,8 @@
  * The dossier — the right-hand narrative panel. Picks the beat that matches
  * now × branch × focus, renders its Markdown with footnote citations resolved
  * from the Source registry, shows the phase title and date, a hypothetical
- * badge for counterfactual branches, the pull quote, and a legend of sides.
+ * badge for counterfactual branches and the pull quote. The key to the map's
+ * colours used to be a footer here; it is on the map now (sand-neh.26).
  * Transitions between beats fade (and respect reduced motion). Era-agnostic.
  *
  * The information-architecture decision (sand-neh.5) makes this the single
@@ -11,11 +12,9 @@
  */
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { useClock } from '../engine/ClockContext.js';
-import { APPROX_MARK } from '../engine/confidence.js';
-import { sideToken } from '../engine/layers/colors.js';
 import { selectBeat, withFootnotes } from '../engine/beats.js';
 import { BIBLIOGRAPHY_CARD } from '../engine/bibliography.js';
-import type { Branch, NarrativeBeat, Side, Source, Vignette } from '../packs/schema/index.js';
+import type { Branch, NarrativeBeat, Source, Vignette } from '../packs/schema/index.js';
 import { VignetteView } from './VignetteView.js';
 import './card.css';
 import { DiagramFigure } from './DiagramFigure.js';
@@ -28,15 +27,21 @@ import './bibliography.css';
 export interface DossierProps {
   beats: NarrativeBeat[];
   sources: Source[];
-  sides: Side[];
   branch: Branch;
   /** Battle id when inside a zoom-in (sand-a55.14); beats with that focus win. */
   focus?: string | undefined;
   packTitle?: string;
   /** A card to show instead of the beat (ADR 0006); rendered by the caller. */
   card?: ReactNode;
-  /** The cast strip (sand-9ts), rendered under the header in every mode. */
+  /**
+   * The cast strip (sand-9ts), under the header in every mode — inside a
+   * disclosure, closed, since sand-neh.26: twenty-one portraits were the first
+   * thing in the panel and identical on every beat, and the prose underneath
+   * was the row that paid for them.
+   */
   cast?: ReactNode;
+  /** Summary line for the collapsed cast, e.g. "Liège · 21 in the cast". */
+  castLabel?: string;
   /** Resolves a beat's hero `media` id to an index entry (sand-y0u.10). */
   resolveMedia?: ((id: string) => MediaIndexEntry | undefined) | undefined;
   /** Resolves a beat's `diagram.file` stem to SVG source (sand-1l0.33). */
@@ -49,14 +54,6 @@ export interface DossierProps {
   label?: ((id: string) => string | undefined) | undefined;
   /** Portrait for a person id (vignette voices). */
   resolvePortrait?: ((personId: string) => MediaIndexEntry | undefined) | undefined;
-  /**
-   * What a side in the legend opens, where the pack gives one answer
-   * (sand-y0u.29). The legend names sides and a formation card is one army's,
-   * so a side that put a single army in the field becomes a control and a
-   * side that put nine stays a swatch and a name. The engine decides which
-   * (`sideFormation` in `src/engine/formations.ts`); the legend only asks.
-   */
-  openSide?: ((sideId: string) => { label: string; onClick: () => void } | undefined) | undefined;
 }
 
 export interface CardChipLike {
@@ -69,19 +66,18 @@ export interface CardChipLike {
 export function Dossier({
   beats,
   sources,
-  sides,
   branch,
   focus,
   packTitle,
   card,
   cast,
+  castLabel,
   resolveMedia,
   resolveDiagram,
   related = [],
   vignettes = [],
   label,
   resolvePortrait,
-  openSide,
 }: DossierProps) {
   const { now, range } = useClock();
   const beat = useMemo(
@@ -167,7 +163,6 @@ export function Dossier({
             </div>
           </details>
         )}
-        {cast}
       </header>
 
       {card ? (
@@ -241,50 +236,12 @@ export function Dossier({
         </div>
       )}
 
-      <footer className="dossier__legend" aria-label="Legend">
-        {sides.map((s) => {
-          const name = s.short ?? s.name;
-          const swatch = (
-            <span
-              className="dossier__swatch"
-              style={{ background: `var(${sideToken(s, sides)})` }}
-              aria-hidden="true"
-            />
-          );
-          const open = openSide?.(s.id);
-          // The visible text stays the side's name and the accessible name
-          // starts with it, so what a reader says is what the control is
-          // called (WCAG 2.5.3) — and what it opens is said out loud, because
-          // "Britain" alone does not tell anyone a card is on the other end.
-          return open ? (
-            <button
-              key={s.id}
-              type="button"
-              className="dossier__side dossier__side--open"
-              aria-label={`${name} — open ${open.label}`}
-              onClick={open.onClick}
-            >
-              {swatch}
-              {name}
-            </button>
-          ) : (
-            <span key={s.id} className="dossier__side">
-              {swatch}
-              {name}
-            </span>
-          );
-        })}
-        {/*
-          The key to the approximate treatment (sand-23b.4). A dashed, hollow
-          swatch, because that is what the map draws; the words, because a
-          shape on its own is not a footnote. Where the position came from is
-          on the card the token opens.
-        */}
-        <span className="dossier__side dossier__approx">
-          <span className="dossier__swatch dossier__swatch--approx" aria-hidden="true" />
-          {APPROX_MARK} approximate — derived, not recorded
-        </span>
-      </footer>
+      {cast && (
+        <details className="dossier__cast">
+          <summary>{castLabel ?? 'The cast'}</summary>
+          {cast}
+        </details>
+      )}
     </aside>
   );
 }

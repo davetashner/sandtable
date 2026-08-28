@@ -230,6 +230,45 @@ h1 {
   padding: 0;
   min-height: 480px;
   display: grid;
+  /* The map now carries two things that are not the map — the tour's lower
+     third and the key to the sides (sand-neh.26, amending ADR 0006) — so it
+     is the containing block for them. */
+  position: relative;
+}
+
+/* Laid over the terrain, and transparent to the pointer except where there is
+   actually something to press: the map underneath keeps its whole drag area. */
+.map-overlay {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  display: flex;
+}
+
+.map-overlay > * {
+  pointer-events: auto;
+}
+
+/* Bottom-left, clear of MapLibre's scale bar, which is also bottom-left. */
+.map-overlay--narrator {
+  left: var(--space-4);
+  bottom: calc(var(--space-4) + 26px);
+  max-width: min(420px, 44%);
+}
+
+/* Top-left is the one corner MapLibre leaves empty: navigation is top-right
+   and the attribution is bottom-right. */
+.map-overlay--key {
+  left: var(--space-4);
+  top: var(--space-4);
+}
+
+/* A zoom-in collapses the map's information density but not its footprint, so
+   the reading rail takes the difference back while one is open (sand-neh.27). */
+@media (min-width: 1100px) {
+  .app__main[data-focus] {
+    grid-template-columns: 1fr 420px;
+  }
 }
 
 .surface__label {
