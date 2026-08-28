@@ -3,8 +3,8 @@
   "licence": "GPL-3.0 (upstream); these files are derived works and carry the same licence",
   "attribution": "Historical borders © aourednik/historical-basemaps contributors, GPL-3.0, simplified by Sandtable",
   "upstreamCommit": "62d8f1a03a71f2d3ff17f2d166f7553f256bce68",
-  "generatedAt": "2026-08-22",
-  "simplification": "mapshaper: snap, simplify 12% keep-shapes (planar), clean, precision 0.001, fields NAME/SUBJECTO/PARTOF/BORDERPRECISION",
+  "generatedAt": "2026-08-28",
+  "simplification": "mapshaper: snap, simplify 12% keep-shapes (planar) — 50% for the years marked so, see each entry's simplify — clean, precision 0.001, fields NAME/SUBJECTO/PARTOF/BORDERPRECISION",
   "fields": ["NAME", "SUBJECTO", "PARTOF", "BORDERPRECISION"],
   "entries": [
     {
@@ -53,6 +53,16 @@
       "bytes": 139914
     },
     {
+      "year": 1931,
+      "source": 1930,
+      "simplify": "50%",
+      "caveat": "East Asia only (sand-lry.1). Upstream 1930 is right for the eve of the Mukden Incident: Manchuria is a polity of its own (Zhang Xueliang), not yet Manchukuo, and Korea and Formosa are inside the Empire of Japan. It is badly wrong for Russia — Moscow, Minsk, Kyiv and Stalingrad fall inside a polygon named \"White Russia\" and Vladivostok inside the \"Far Eastern SSR\", both Civil-War entities gone by 1922, and there is no USSR west of the Urals. China is one \"Chinese Warlords\" polygon four years after the Northern Expedition. Never use this year for a Russian or Near-Eastern map.",
+      "file": "1931.geojson",
+      "sourceUrl": "https://github.com/aourednik/historical-basemaps/blob/62d8f1a03a71f2d3ff17f2d166f7553f256bce68/geojson/world_1930.geojson",
+      "features": 190,
+      "bytes": 341619
+    },
+    {
       "year": 1939,
       "source": 1938,
       "caveat": "Upstream 1938 — confirm whether Austria (March 1938) and the Sudetenland (October 1938) are included before using for September 1939; Czechoslovakia, Memel and Albania changed in 1939.",
@@ -60,6 +70,16 @@
       "sourceUrl": "https://github.com/aourednik/historical-basemaps/blob/62d8f1a03a71f2d3ff17f2d166f7553f256bce68/geojson/world_1938.geojson",
       "features": 240,
       "bytes": 146957
+    },
+    {
+      "year": 1941,
+      "source": 1938,
+      "simplify": "50%",
+      "caveat": "Pacific only (sand-lry.1). Upstream has nothing between 1930 and 1945, so 1938 is the only candidate, and it is right about the colonial frame the Pacific war was fought over: the Philippines under the United States, the Netherlands East Indies under the Netherlands, Malaya and the Gilberts under the United Kingdom, Guam under the United States, Saipan and the mandate under Japan, French Indochina under France with Cochin China and Cambodia already marked subject to Japan. Three things are wrong. Manchukuo is not drawn — Mukden, Harbin and Port Arthur fall inside \"Empire of Japan\", so a puppet state reads as annexation. There is no Republic of China, only \"Chinese warlords\". And Europe is the 1938 map: none of the German conquests of 1939–41 are there. Also: the mandate and the atolls barely exist as geometry — Truk, Palau, Kwajalein, Tarawa, Wake, Midway and Rabaul have no polygon at all, and neither Singapore nor Batavia falls inside one. Borders are context at basin scale here; the islands come from the tiles.",
+      "file": "1941.geojson",
+      "sourceUrl": "https://github.com/aourednik/historical-basemaps/blob/62d8f1a03a71f2d3ff17f2d166f7553f256bce68/geojson/world_1938.geojson",
+      "features": 241,
+      "bytes": 401277
     },
     {
       "year": 1945,
