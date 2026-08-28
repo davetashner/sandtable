@@ -1509,5 +1509,251 @@
     "country": "Russian Empire",
     "notes": "A railway town behind the Northern Front, in the area where the 3rd Cavalry Corps lay in August 1917 before it was ordered towards Petrograd.",
     "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:pearl-harbor",
+    "name": "Pearl Harbor",
+    "names": [
+      { "name": "Puʻuloa", "language": "haw", "period": "the Hawaiian name for the lochs" }
+    ],
+    "kind": "other",
+    "lngLat": [-157.9771, 21.3679],
+    "country": "Territory of Hawaii, United States",
+    "notes": "The fleet base on the south coast of Oahu: three lochs behind a single dredged entrance channel, which is why eight battleships could be found in one place and why a ship sunk in the channel could have closed the base.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:ford-island",
+    "name": "Ford Island",
+    "names": [{ "name": "Mokuʻumeʻume", "language": "haw" }],
+    "kind": "other",
+    "lngLat": [-157.9603, 21.3639],
+    "country": "Territory of Hawaii, United States",
+    "notes": "The island in the middle of Pearl Harbor, with a naval air station on it and the battleship moorings along its south-east shore.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:battleship-row",
+    "name": "Battleship Row",
+    "kind": "other",
+    "lngLat": [-157.95, 21.3649],
+    "country": "Territory of Hawaii, United States",
+    "notes": "The quays along the south-east side of Ford Island where the battle line lay moored on the morning of 7 December 1941. The position given is the F-6/F-7 moorings, where Arizona lay; it is anchored on the memorial that spans the wreck, because the row itself has no gazetteer entry.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates, via the memorial over the wreck at berth F-7"
+      }
+    ]
+  },
+  {
+    "id": "place:hickam-field",
+    "name": "Hickam Field",
+    "kind": "other",
+    "lngLat": [-157.9529, 21.3276],
+    "country": "Territory of Hawaii, United States",
+    "notes": "The Army's bomber base on Oahu, adjoining the naval base, and one of the first places hit on 7 December.",
+    "sources": [
+      {
+        "source": "source:openstreetmap",
+        "note": "coordinates, from the aerodrome node; no encyclopaedia coordinate box exists for this field"
+      }
+    ]
+  },
+  {
+    "id": "place:wheeler-field",
+    "name": "Wheeler Field",
+    "kind": "other",
+    "lngLat": [-158.037, 21.4802],
+    "country": "Territory of Hawaii, United States",
+    "notes": "The Army's principal fighter base, in the middle of Oahu on the Leilehua plain.",
+    "sources": [{ "source": "source:openstreetmap", "note": "coordinates, from the airfield node" }]
+  },
+  {
+    "id": "place:kaneohe-bay",
+    "name": "Kaneohe Bay Naval Air Station",
+    "kind": "other",
+    "lngLat": [-157.7697, 21.4458],
+    "country": "Territory of Hawaii, United States",
+    "notes": "The Navy's flying-boat base on the windward side of Oahu, attacked on the morning of 7 December 1941.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:opana-point",
+    "name": "Opana Point",
+    "kind": "other",
+    "lngLat": [-158.01, 21.6856],
+    "country": "Territory of Hawaii, United States",
+    "notes": "The Army's northernmost mobile radar set on Oahu, on the ridge above Kahuku, and the one that saw the first wave coming in.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:honolulu",
+    "name": "Honolulu",
+    "kind": "city",
+    "lngLat": [-157.85, 21.3],
+    "country": "Territory of Hawaii, United States",
+    "notes": "The territorial capital, ten kilometres east of the fleet base. The coordinate is the city centroid at the one-decimal precision the source gives, which is enough to place a label and not enough to anchor anything.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:hitokappu-bay",
+    "name": "Hitokappu Bay",
+    "names": [
+      { "name": "単冠湾", "language": "ja" },
+      {
+        "name": "Kasatka Bay",
+        "language": "ru",
+        "kind": "modern",
+        "period": "the Russian name for the bay on Iturup, after 1945"
+      },
+      { "name": "Tankan Bay", "language": "en", "kind": "transliteration" }
+    ],
+    "kind": "other",
+    "lngLat": [147.672, 44.965],
+    "country": "Etorofu, Kuril Islands, Empire of Japan",
+    "notes": "A wide, empty anchorage in the southern Kurils, a long way from anywhere with people in it — which is why the striking force was assembled there and why nobody saw it go. The English and Japanese encyclopaedia coordinates differ by about a kilometre and a half; this is the English one.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:tokyo",
+    "name": "Tokyo",
+    "names": [{ "name": "東京", "language": "ja" }],
+    "kind": "city",
+    "lngLat": [139.6922, 35.6897],
+    "country": "Empire of Japan",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:washington-dc",
+    "name": "Washington",
+    "kind": "city",
+    "lngLat": [-77.0164, 38.9047],
+    "country": "United States",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:kota-bharu",
+    "name": "Kota Bharu",
+    "kind": "town",
+    "lngLat": [102.25, 6.1333],
+    "country": "Kelantan, British Malaya",
+    "notes": "The north-eastern corner of British Malaya, with an airfield behind the beach. The first Japanese landing of the Pacific war was made here.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:singora",
+    "name": "Singora",
+    "names": [{ "name": "Songkhla", "language": "th", "kind": "modern" }],
+    "kind": "town",
+    "lngLat": [100.5967, 7.2061],
+    "country": "Thailand",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:patani",
+    "name": "Patani",
+    "names": [{ "name": "Pattani", "language": "th", "kind": "modern" }],
+    "kind": "town",
+    "lngLat": [101.2508, 6.8664],
+    "country": "Thailand",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:hong-kong",
+    "name": "Hong Kong",
+    "names": [{ "name": "香港", "language": "zh" }],
+    "kind": "city",
+    "lngLat": [114.1744, 22.2783],
+    "country": "British Crown Colony of Hong Kong",
+    "notes": "The coordinate is Victoria, the colony's capital on the island; the airfield bombed on the morning of 8 December was at Kai Tak in Kowloon, on the mainland across the harbour.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:agana",
+    "name": "Agana",
+    "names": [
+      {
+        "name": "Hagåtña",
+        "language": "ch",
+        "kind": "modern",
+        "period": "Chamorro name, official since 1998"
+      }
+    ],
+    "kind": "town",
+    "lngLat": [144.75, 13.4792],
+    "country": "Territory of Guam, United States",
+    "notes": "The capital of Guam, an American island lying inside the ring of the Japanese South Seas mandate.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:wake-island",
+    "name": "Wake Island",
+    "kind": "other",
+    "lngLat": [166.6311, 19.2953],
+    "country": "United States (unincorporated territory)",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:clark-field",
+    "name": "Clark Field",
+    "kind": "other",
+    "lngLat": [120.5597, 15.1858],
+    "country": "Commonwealth of the Philippines",
+    "notes": "The bomber base on the Luzon plain north of Manila, and the place where the Far East Air Force's B-17s were caught on the ground nine hours after the news of Pearl Harbor reached them.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates, from the present air base on the site"
+      }
+    ]
+  },
+  {
+    "id": "place:iba-field",
+    "name": "Iba Field",
+    "kind": "other",
+    "lngLat": [119.9685, 15.326],
+    "country": "Commonwealth of the Philippines",
+    "notes": "The fighter base on the Zambales coast, attacked at the same time as Clark, and the site of one of the two radar sets in the Philippines.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates, from the present airport on the site"
+      }
+    ]
+  },
+  {
+    "id": "place:manila",
+    "name": "Manila",
+    "kind": "city",
+    "lngLat": [120.9772, 14.5958],
+    "country": "Commonwealth of the Philippines",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:singapore",
+    "name": "Singapore",
+    "kind": "city",
+    "lngLat": [103.8333, 1.2833],
+    "country": "Straits Settlements, British Malaya",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:midway",
+    "name": "Midway",
+    "kind": "other",
+    "lngLat": [-177.35, 28.2075],
+    "country": "United States (unincorporated territory)",
+    "notes": "An atoll two thousand kilometres north-west of Oahu, on the striking force's own flank on the way in — the operation order set aside a destroyer division to bombard it on the way out — and the place where the six months Yamamoto had asked for ran out.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:kuantan",
+    "name": "Kuantan",
+    "kind": "town",
+    "lngLat": [103.3219, 3.7974],
+    "country": "Pahang, British Malaya",
+    "notes": "A port halfway down the east coast of Malaya. Force Z went north to look for a reported landing here on 10 December 1941 and was found by land-based aircraft on the way back; the sinking was some way out to sea, and this pack places the event at the town rather than write a position it could not source.",
+    "sources": [{ "source": "source:openstreetmap", "note": "coordinates" }]
   }
 ]

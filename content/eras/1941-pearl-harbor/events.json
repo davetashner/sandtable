@@ -1,0 +1,337 @@
+[
+  {
+    "id": "1941-pearl-harbor:event-striking-force-sails",
+    "title": "The striking force leaves Hitokappu Bay",
+    "at": "1941-11-25T21:00:00Z",
+    "kind": "movement",
+    "significance": "major",
+    "place": "place:hitokappu-bay",
+    "summary": "**26 November, Japan time.** Six carriers, two battleships, cruisers, destroyers, three submarines and a train of oilers leave an empty anchorage in the southern Kurils, in radio silence, at twelve to fourteen knots, for a point some three thousand nautical miles away that the order calls point Z. The instant here is 0600 on 26 November in Tokyo, which is still 25 November in Washington — so the force was at sea before the American proposal that Tokyo would call an ultimatum had even been handed over.",
+    "links": {
+      "formations": ["1941-pearl-harbor:kido-butai", "1941-pearl-harbor:supply-force"],
+      "people": ["person:nagumo-chuichi"],
+      "places": ["place:hitokappu-bay"]
+    },
+    "sources": [
+      {
+        "source": "source:japanese-monograph-97",
+        "pages": "7, 21",
+        "note": "the departure “with utmost secrecy from Hitokappu Bay on 26 November”, “at a speed of 12-14 knots”. The hour is 0600, Tokyo time"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:event-hull-note",
+    "title": "The American outline is handed to Nomura",
+    "at": "1941-11-26T21:00:00Z",
+    "kind": "diplomatic",
+    "significance": "major",
+    "place": "place:washington-dc",
+    "summary": "**26 November, Washington.** The Secretary of State hands the Japanese ambassador an “Outline of Proposed Basis for Agreement Between the United States and Japan”: four principles, ten steps, and at number three the withdrawal of all Japanese military, naval, air and police forces from China and from Indochina. It was a statement of terms rather than a demand with a deadline, and it was read in Tokyo as the end of the negotiation. The document itself carries the date and no hour; the instant shown here is the afternoon and is nominal.",
+    "links": {
+      "people": ["person:hull-cordell", "person:nomura-kichisaburo"],
+      "places": ["place:washington-dc"],
+      "documents": ["1941-pearl-harbor:document-american-outline"]
+    },
+    "sources": [
+      {
+        "source": "source:peace-and-war-1943",
+        "note": "doc. 257, file 711.94/2504 — the full text, dated Washington, November 26, 1941"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:event-roosevelt-to-the-emperor",
+    "title": "Roosevelt appeals to the Emperor",
+    "at": "1941-12-06T17:00:00Z",
+    "kind": "diplomatic",
+    "significance": "minor",
+    "place": "place:washington-dc",
+    "summary": "**6 December, Washington.** The President writes directly to the Emperor of Japan. By then the striking force had been eleven days at sea and was a day and a half from its launching point. Only the date is documented here; the hour shown is nominal.",
+    "links": {
+      "people": ["person:roosevelt-franklin"],
+      "places": ["place:washington-dc", "place:tokyo"]
+    },
+    "sources": [
+      {
+        "source": "source:peace-and-war-1943",
+        "note": "doc. 264, President Roosevelt to Emperor Hirohito of Japan, December 6, 1941"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:event-opana-radar",
+    "title": "Opana plots a large flight at a hundred and thirty miles",
+    "at": "1941-12-07T17:32:00Z",
+    "kind": "other",
+    "significance": "minor",
+    "place": "place:opana-point",
+    "summary": "**0702, Honolulu.** The Army's northernmost radar set on Oahu plots a group of aircraft at about 130 miles, bearing almost due north — which is the direction the striking force was in. The plot was telephoned to the information centre about a quarter of an hour later. The officer on duty there, present “solely for training and observation”, knew that a flight of B-17s was due in from the mainland and that naval aircraft were searching, and did not think any action was called for.",
+    "links": {
+      "places": ["place:opana-point"],
+      "formations": ["1941-pearl-harbor:hawaiian-department", "1941-pearl-harbor:strike-first-wave"]
+    },
+    "sources": [
+      {
+        "source": "source:craven-cate-aaf-1",
+        "note": "ch. 6 — “At 0702 the station plotted a group of airplanes at approximately 130 miles, bearing 0° to 3° east of north. This fact was reported by telephone to the information center about fifteen minutes later.” The officer's reasons are quoted from the same passage. No page is written; see the pack README"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:event-first-wave-attacks",
+    "title": "The first wave over Oahu",
+    "at": "1941-12-07T18:25:00Z",
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:pearl-harbor",
+    "summary": "**0755, Honolulu — 1325 in Washington.** Single-engine aircraft are seen south-east of the Hickam Field hangar line heading for Pearl Harbor, and the naval base and the airfield come under attack almost at the same moment. The battle line is in the harbour; the three American carriers are at sea.",
+    "links": {
+      "places": ["place:pearl-harbor", "place:battleship-row", "place:hickam-field"],
+      "formations": [
+        "1941-pearl-harbor:strike-first-wave",
+        "1941-pearl-harbor:pacific-fleet",
+        "1941-pearl-harbor:hawaiian-department"
+      ],
+      "people": ["person:fuchida-mitsuo"],
+      "battles": ["1941-pearl-harbor:oahu"]
+    },
+    "sources": [
+      {
+        "source": "source:craven-cate-aaf-1",
+        "note": "ch. 6 — “At 0755 single-engine planes were observed southeast of the Hickam Field hangar line heading for Pearl Harbor. Almost simultaneously the naval base and Hickam Field came under attack.”"
+      },
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI — the first wave “reached Oahu, ‘still asleep in the morning mist,’ at 0750”, and the first bombs fell five minutes later. The two accounts differ by five minutes and the pack takes the later one"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:event-second-wave-attacks",
+    "title": "The second wave",
+    "at": "1941-12-07T19:10:00Z",
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:pearl-harbor",
+    "summary": "**0840, Honolulu.** Level and dive bombers renew the attack, against a defence that is now awake and firing.",
+    "links": {
+      "places": ["place:pearl-harbor"],
+      "formations": ["1941-pearl-harbor:strike-second-wave"],
+      "battles": ["1941-pearl-harbor:oahu"]
+    },
+    "sources": [
+      {
+        "source": "source:craven-cate-aaf-1",
+        "note": "ch. 6 — “At 0840 horizontal and dive bombers renewed the attack.”"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:event-memorandum-delivered",
+    "title": "The Japanese memorandum is handed over, an hour after the first bomb",
+    "at": "1941-12-07T19:20:00Z",
+    "kind": "diplomatic",
+    "significance": "major",
+    "place": "place:washington-dc",
+    "summary": "**1420, Washington — 0850 in Honolulu.** The Japanese ambassador had asked for an appointment at one o'clock, put it back to a quarter to two, arrived at five past two and was received at twenty past. He said he had been instructed to deliver the document at one and that decoding had delayed him; asked why one o'clock, he said he did not know, that was his instruction. One o'clock in Washington was half past seven in Honolulu, twenty-five minutes before the first bomb. He handed it over at twenty past two, eighty minutes after the hour he had been given and fifty-five minutes after the first bomb fell.",
+    "links": {
+      "people": ["person:hull-cordell", "person:nomura-kichisaburo"],
+      "places": ["place:washington-dc"],
+      "documents": ["1941-pearl-harbor:document-japanese-memorandum"]
+    },
+    "sources": [
+      {
+        "source": "source:peace-and-war-1943",
+        "note": "doc. 265 — the memorandum of the conversation, which records each of these times, the ambassador's explanation, and the memorandum itself, headed as handed to the Secretary of State at 2:20 p.m. on December 7, 1941"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:event-raid-over",
+    "title": "The raid is over",
+    "at": "1941-12-07T20:30:00Z",
+    "kind": "battle",
+    "significance": "minor",
+    "place": "place:pearl-harbor",
+    "summary": "**1000, Honolulu.** The last aircraft turn north towards the carriers. In under two hours eight battleships, three light cruisers and three destroyers have been sunk or put out of action; 92 naval aircraft destroyed and 31 damaged, and 96 Army aircraft lost including those burnt in the depots; 2,403 dead and 1,178 wounded, most of them naval. The Japanese lost about fifty aircraft and five midget submarines.",
+    "links": {
+      "places": ["place:pearl-harbor"],
+      "formations": [
+        "1941-pearl-harbor:pacific-fleet",
+        "1941-pearl-harbor:hawaiian-department",
+        "1941-pearl-harbor:us-carriers"
+      ],
+      "battles": ["1941-pearl-harbor:oahu"]
+    },
+    "sources": [
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI — “By 1000 the raid was over and the Japanese planes were heading north toward the carriers”; the ships, the aircraft, “American casualties for the day were 2,403 men killed and 1,178 wounded, most of them naval personnel”, and the Japanese loss of “only about fifty planes and five midget submarines”. No pages are written; see the pack README"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:event-nagumo-turns-away",
+    "title": "Nagumo turns away",
+    "at": "1941-12-07T22:45:00Z",
+    "kind": "decision",
+    "significance": "major",
+    "lngLat": [-157.99, 25.9],
+    "summary": "**Early afternoon, Honolulu time.** With the aircraft back aboard, the striking force turns north and leaves. That is what the operation order said it would do: after the second wave was launched, withdraw at about twenty-four knots. Whether it should have stayed and gone back a third time — against the fuel tanks, the repair shops and the submarine base, none of which had been touched — is the most argued-over question of the day, and the argument is a postwar one. See the historiography card.",
+    "links": {
+      "formations": ["1941-pearl-harbor:kido-butai"],
+      "people": ["person:nagumo-chuichi"],
+      "historiography": ["1941-pearl-harbor:historiography-the-third-wave"]
+    },
+    "sources": [
+      {
+        "source": "source:japanese-monograph-97",
+        "pages": "13",
+        "note": "“After the launching of the second attack units is completed, the task force will withdraw northward at a speed of about 24 knots.” The order provides for repeated attacks only if the destruction of enemy air strength progresses favourably; there is no third wave in it"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:event-kota-bharu",
+    "title": "The first landing: Kota Bharu",
+    "timeRange": { "start": "1941-12-07T16:30:00Z", "end": "1941-12-08T04:30:00Z" },
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:kota-bharu",
+    "summary": "**The morning of 8 December, Malaya.** Advance units of the 25th Army, which had left Hainan on 4 December, land at Singora and Patani in southern Thailand and at Kota Bharu just across the Malayan border. The Thai landings are unopposed and are helped by the local authorities; the Kota Bharu force is met by British aircraft and beach guns and pulls back with heavy losses, then comes in again later in the day under stronger air cover and gets ashore.\n\nThe span shown is the morning of 8 December in Malaya, not a claim about the hour: no source this pack could open gives one.",
+    "links": {
+      "places": ["place:kota-bharu", "place:singora", "place:patani"]
+    },
+    "sources": [
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI — the departure from Hainan on 4 December and the three landings on the morning of the 8th, and the repulse and second attempt at Kota Bharu"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:event-guam-learns",
+    "title": "Guam is told",
+    "at": "1941-12-07T19:45:00Z",
+    "kind": "other",
+    "significance": "minor",
+    "place": "place:agana",
+    "summary": "**0545, 8 December, Guam.** The island's naval governor is informed of the attack on Hawaii by the Commander in Chief of the Asiatic Fleet. Bombers from Saipan were over the island in less than three hours.",
+    "links": { "places": ["place:agana"] },
+    "sources": [
+      {
+        "source": "source:hough-ludwig-shaw-1958",
+        "note": "ch. II — “The word came at 0545 on 8 December (7 December, Pearl Harbor time). Captain McMillin was informed of the enemy attack by the Commander in Chief of the Asiatic Fleet. In less than three hours Saipan-based Japanese bombers were over the island.”"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:event-hong-kong",
+    "title": "Kowloon is bombed",
+    "timeRange": { "start": "1941-12-07T22:00:00Z", "end": "1941-12-08T04:00:00Z" },
+    "kind": "battle",
+    "significance": "minor",
+    "place": "place:hong-kong",
+    "summary": "**The morning of 8 December, Hong Kong.** Japanese aircraft from Canton bomb the airfield at Kai Tak, on the mainland across the harbour from the island. The colony held out until Christmas Day. The span shown is the morning of 8 December in Hong Kong; no hour is given by anything this pack could open.",
+    "links": { "places": ["place:hong-kong"] },
+    "sources": [
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI — “On the morning of 8 December Japanese planes from Canton bombed the Kowloon airfield on the mainland just across the strait from Hong Kong”, and “On Christmas Day the garrison surrendered.”"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:event-wake-attacked",
+    "title": "Wake is bombed",
+    "at": "1941-12-07T23:50:00Z",
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:wake-island",
+    "summary": "**1150, 8 December, Wake — which is the same day as 7 December east of the date line.** A battery commander at Peacock Point sees the aircraft coming and telephones a warning; by 1210 the strike is over. The atoll's radio had picked up the uncoded transmission from Oahu at 0650 that morning, and Morning Colors had been sounded on Wake at 0800 while Arizona was burning.",
+    "links": { "places": ["place:wake-island"] },
+    "sources": [
+      {
+        "source": "source:hough-ludwig-shaw-1958",
+        "note": "ch. III — the uncoded transmission at 0650, Morning Colors at 0800, First Lieutenant Lewis seeing the aircraft “at 1150”, and “By 1210 the strike was over”; and the volume's own footnote that Wake's 8 December “was the same as Sunday, 7 December east of the date line”"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:event-clark-field",
+    "title": "Clark Field",
+    "at": "1941-12-08T04:15:00Z",
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:clark-field",
+    "summary": "**1215, 8 December, Manila time.** Nine hours after a commercial radio station in the Philippines picked up the news of Pearl Harbor, the Far East Air Force's B-17s are on the ground at Clark refuelling when the first formation of Japanese bombers appears overhead. Iba, the fighter base on the Zambales coast, is struck at the same time, its own fighters circling to land and low on fuel. By the end of the day 18 of 35 B-17s and more than fifty P-40s were gone.",
+    "links": {
+      "places": ["place:clark-field", "place:iba-field", "place:manila"]
+    },
+    "sources": [
+      {
+        "source": "source:morton-1953",
+        "note": "ch. 5 — “At 1215 the 20th Pursuit Squadron at Clark, whose planes had just completed refueling, made ready to take off. At that moment the first formation of Japanese bombers appeared over Clark Field”; the simultaneous attack on Iba; and the day's losses, “only 17 of the original 35 B-17s remained. Fifty-three P-40s and 3 P-35s had been destroyed”"
+      },
+      {
+        "source": "source:craven-cate-aaf-1",
+        "note": "ch. 6 — the news reaching Luzon “shortly after 0300 (0830 in Hawaii)”, the message log entry timed 13:00 reporting that Clark was bombed at 12:35, and the air force's own count of about fifty-five P-40s lost. The two histories differ by twenty minutes on when the bombs fell and by two aircraft on the P-40s"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:event-united-states-declares-war",
+    "title": "The United States declares war on Japan",
+    "timeRange": { "start": "1941-12-08T05:00:00Z", "end": "1941-12-09T05:00:00Z" },
+    "kind": "political",
+    "significance": "major",
+    "place": "place:washington-dc",
+    "summary": "**8 December, Washington.** The President addresses Congress and a joint resolution declares that a state of war exists between the United States and the Empire of Japan. The span shown is the calendar day in Washington; the documents carry the date and not the hour.",
+    "links": {
+      "people": ["person:roosevelt-franklin"],
+      "places": ["place:washington-dc"]
+    },
+    "sources": [
+      {
+        "source": "source:peace-and-war-1943",
+        "note": "docs. 267 and 268 — the address delivered to the Congress on December 8, 1941, and the joint resolution of the same date"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:event-guam-surrenders",
+    "title": "Guam surrenders",
+    "at": "1941-12-09T20:00:00Z",
+    "kind": "siege",
+    "significance": "minor",
+    "place": "place:agana",
+    "summary": "**Shortly after 0600, 10 December, Guam.** Some four hundred Japanese sailors came ashore at Dungcas Beach north of Agana at about 0400, behind flares. The island had no coast defence guns and no aircraft. The governor surrendered it two hours later. The island was held by Japan until the summer of 1944.",
+    "links": { "places": ["place:agana"] },
+    "sources": [
+      {
+        "source": "source:hough-ludwig-shaw-1958",
+        "note": "ch. II — the flares over Dungcas Beach “at about 0400 on 10 December”, “some 400 Japanese sailors of the 5th Defense Force from Saipan came ashore”, and the surrender “shortly after 0600”"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:event-force-z-sunk",
+    "title": "Prince of Wales and Repulse",
+    "timeRange": { "start": "1941-12-09T16:30:00Z", "end": "1941-12-10T16:30:00Z" },
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:kuantan",
+    "summary": "**10 December, off the east coast of Malaya.** Two British capital ships, sent out from Singapore without air cover to break up the landings, are sunk by land-based naval aircraft. Two capital ships under way at sea, with room to manoeuvre and no aircraft over them, destroyed by aircraft flying from land. The span shown is the calendar day in Malaya, and the place is the nearest town on the coast — no source this pack could open gives either the hour or the position.",
+    "links": {
+      "formations": ["1941-pearl-harbor:force-z"],
+      "places": ["place:kuantan", "place:singapore"]
+    },
+    "sources": [
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI — “On the evening of the 9th, the main body of the 25th Army began to arrive, and next day Japanese land-based naval aircraft removed the last danger to the beachhead by sinking the Prince of Wales and Repulse, which had ventured forth from Singapore without air cover.”"
+      }
+    ]
+  }
+]

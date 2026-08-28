@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1941-pearl-harbor:document-american-outline",
+    "title": "Outline of Proposed Basis for Agreement Between the United States and Japan",
+    "date": "1941-11-26",
+    "author": "person:hull-cordell",
+    "kind": "memorandum",
+    "language": "en",
+    "excerpt": "OUTLINE OF PROPOSED BASIS FOR AGREEMENT BETWEEN THE UNITED STATES AND JAPAN\n\nSECTION II\n\n*Steps To Be Taken by the Government of the United States and by the Government of Japan*\n\nThe Government of the United States and the Government of Japan propose to take steps as follows:\n\n1. The Government of the United States and the Government of Japan will endeavor to conclude a multilateral non-aggression pact among the British Empire, China, Japan, the Netherlands, the Soviet Union, Thailand and the United States.\n\n2. Both Governments will endeavor to conclude among the American, British, Chinese, Japanese, the Netherland and Thai Governments an agreement whereunder each of the Governments would pledge itself to respect the territorial integrity of French Indochina …\n\n3. The Government of Japan will withdraw all military, naval, air and police forces from China and from Indochina.\n\n4. The Government of the United States and the Government of Japan will not support—militarily, politically, economically—any government or regime in China other than the National Government of the Republic of China with capital temporarily at Chungking. …\n\n7. The Government of the United States and the Government of Japan will, respectively, remove the freezing restrictions on Japanese funds in the United States and on American funds in Japan.",
+    "archive": "Department of State file 711.94/2504; printed in *Peace and War: United States Foreign Policy, 1931–1941* (GPO, 1943), doc. 257",
+    "links": {
+      "people": ["person:hull-cordell", "person:nomura-kichisaburo"],
+      "events": ["1941-pearl-harbor:event-hull-note"],
+      "places": ["place:washington-dc"]
+    },
+    "sources": [
+      {
+        "source": "source:peace-and-war-1943",
+        "note": "doc. 257. The excerpt is Section II, verbatim, with points 5, 6, 8, 9 and 10 elided and the elisions marked; Section I, the draft mutual declaration of policy and its nine principles, is not reproduced here"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:document-japanese-memorandum",
+    "title": "Memorandum handed by the Japanese Ambassador to the Secretary of State at 2:20 p.m. on December 7, 1941",
+    "date": "1941-12-07",
+    "author": "Government of Japan; handed over by Ambassador Nomura Kichisaburō",
+    "kind": "memorandum",
+    "language": "en",
+    "excerpt": "The Government of Japan, prompted by a genuine desire to come to an amicable understanding with the Government of the United States …\n\nThe Japanese Government regrets to have to notify hereby the American Government that in view of the attitude of the American Government it cannot but consider that it is impossible to reach an agreement through further negotiations.",
+    "translation": "The document was handed over in English; this is the text as the Department of State printed it. Note what the last paragraph does not say: it breaks off the negotiations and it does not declare war, and it arrived fifty-five minutes after the first bomb.",
+    "archive": "Printed in *Peace and War: United States Foreign Policy, 1931–1941* (GPO, 1943), doc. 265, inside the Secretary of State's memorandum of the conversation",
+    "links": {
+      "people": ["person:hull-cordell", "person:nomura-kichisaburo"],
+      "events": ["1941-pearl-harbor:event-memorandum-delivered"],
+      "places": ["place:washington-dc"]
+    },
+    "sources": [
+      {
+        "source": "source:peace-and-war-1943",
+        "note": "doc. 265. The memorandum runs to some seven numbered sections and about two thousand eight hundred words; only its opening clause and its closing paragraph are reproduced here, and both are verbatim. The same document records the Secretary of State's reply: that in fifty years of public service he had never seen a paper “more crowded with infamous falsehoods and distortions”"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:document-operation-order",
+    "title": "Hawaii operation: the outline of the orders and plans",
+    "date": "1941-11",
+    "author": "Combined Fleet / First Air Fleet, as reconstructed in Japanese Monograph No. 97",
+    "kind": "order",
+    "language": "en",
+    "excerpt": "… the entire force (except the Midway Bombardment Unit) in accordance with special orders will depart as a group from Hitokappu Bay at a speed of 12-14 knots.\n\n… depart with utmost secrecy from Hitokappu Bay on 26 November … advance to the standby point (42 N, 170 W) …\n\nAround 0700 hours, X-1 Day the Task Force will turn southward at high speed (approximately 24 knots) … advance on a course of 180 degrees from 0700 hours X-1 Day at an increased speed of 24 knots.\n\n… 230 nautical miles due north of Z point at 0130 hours X Day … 200 nautical miles due north of Z point at 0245 hours …\n\nAfter the launching of the second attack units is completed, the task force will withdraw northward at a speed of about 24 knots.",
+    "translation": "The order is in English because that is the language it survives in: the original was destroyed and this text is a postwar reconstruction, made in English by the officers who had held the appointments. It is quoted here for four things and no more — the departure and its speed, the two named points, the two launch positions and hours, and the withdrawal. Everything the pack says about what the operation was supposed to do rests on these lines, and everything it says about what happened rests on other sources.",
+    "archive": "Japanese Monograph No. 97, prepared by the Japanese Research Division, Military History Section, Headquarters, Army Forces Far East; HyperWar transcription at ibiblio.org",
+    "links": {
+      "formations": ["1941-pearl-harbor:kido-butai"],
+      "people": ["person:nagumo-chuichi", "person:yamamoto-isoroku"],
+      "events": [
+        "1941-pearl-harbor:event-striking-force-sails",
+        "1941-pearl-harbor:event-nagumo-turns-away"
+      ],
+      "places": ["place:hitokappu-bay"]
+    },
+    "sources": [
+      {
+        "source": "source:japanese-monograph-97",
+        "pages": "7, 11, 13, 21",
+        "note": "the lines quoted, in order. **This is not the text of an order.** The series' own introduction says most originals were lost or destroyed and that orders and plans “have been reconstructed from memory and therefore are not textually identical with the originals”. It is cited the way a memoir is cited — for what a commander said the plan was — and the pack says so wherever it leans on it. The document also contradicts itself about the standby point, giving 165°W on p. 7 and 170°W on p. 21"
+      }
+    ]
+  }
+]

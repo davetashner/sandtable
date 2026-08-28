@@ -1,0 +1,152 @@
+[
+  {
+    "id": "1941-pearl-harbor:cast-yamamoto-isoroku",
+    "person": "person:yamamoto-isoroku",
+    "side": "jp",
+    "role": "Commander-in-Chief, Combined Fleet",
+    "bio": "The operation was his, and so was the argument against the war it opened. He had studied at Harvard and served as naval attaché in Washington, had opposed the Tripartite Pact until the ultranationalist right threatened his life, and told his own prime minister that he could run wild for six months or a year and had no confidence at all in the second and third.[^agawa-1979]\n\nThe Hawaii plan follows from that estimate rather than contradicting it. If the war has to be fought and cannot be won by attrition, the only thing worth trying is a single blow at the outset that buys enough time to take what is needed and then negotiate. He forced the operation through a naval staff that did not want it, against a war plan that had spent thirty years assuming the American fleet would come west and be met in a decisive battle near home.\n\nWhat the plan bought was almost exactly what he said it would. Six months later, at Midway, it ran out.[^morton-1962]",
+    "sources": [
+      {
+        "source": "source:agawa-1979",
+        "note": "the six-months estimate and Yamamoto's position on the war, from the standard Japanese life of him in translation. Not read at page level from this environment; nothing is quoted from it"
+      },
+      { "source": "source:morton-1962", "note": "ch. VI and after — the first six months" }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:cast-nagumo-chuichi",
+    "person": "person:nagumo-chuichi",
+    "side": "jp",
+    "role": "Commander, First Air Fleet — the striking force",
+    "bio": "A torpedo and destroyer officer with no background in aviation, commanding the most concentrated carrier force anyone had ever assembled, on an operation he had argued against. He took it three thousand miles by the northern route in radio silence, launched on the minute the order gave, recovered the aircraft, and turned away.[^japanese-monograph-97]\n\nThe withdrawal is what he is remembered for, and the case against him is that he should have stayed and struck a third time at the fuel and the repair yard. His orders told him to leave once the second wave was away; his aircrew had been briefed for warships; and three American carriers were at sea and unlocated. Whether he was cautious or correct has been argued since the war and is set out on the historiography card, where the pack also says which of the four positions it could and could not read.\n\nHe commanded the same force at Midway six months later and lost four carriers of it in a morning.[^parshall-tully-2005]",
+    "sources": [
+      {
+        "source": "source:japanese-monograph-97",
+        "pages": "7, 13",
+        "note": "the passage and the order to withdraw"
+      },
+      {
+        "source": "source:parshall-tully-2005",
+        "note": "Nagumo and the Kidō Butai at Midway, from the Japanese records"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:cast-fuchida-mitsuo",
+    "person": "person:fuchida-mitsuo",
+    "side": "jp",
+    "role": "Strike leader, first attack wave",
+    "bio": "He led the first wave in and sent the signal saying surprise had been achieved. He is also, and more importantly for this pack, the principal reason the English-language account of the day looks the way it does — and a witness who has to be handled carefully.\n\nInterrogated in Tokyo in October 1945, he gave the US Strategic Bombing Survey round figures for the two waves that do not match the operation order, described himself as an air observer, and said nothing about urging a further attack.[^ussbs-interrogations] From 1948 he was interviewed repeatedly by Gordon Prange, and it is out of those interviews that the story of a third strike urged on *Akagi*'s bridge and refused reaches the literature. Jonathan Parshall has shown that the story moved: in 1948 Fuchida put fuel tanks last in his list of targets for a further strike, and by 1963 he had them near the top.[^parshall-2010]\n\nHe is cited in this pack as a subject and not as an authority, and that is a decision with a history: *Shattered Sword* took apart his account of Midway — the packed flight decks, the five fateful minutes — from the Japanese operational records, and found that a version the whole Western literature had absorbed was substantially his invention.[^parshall-tully-2005]",
+    "sources": [
+      {
+        "source": "source:ussbs-interrogations",
+        "note": "Nav. No. 6, USSBS No. 40, Tokyo, 18 October 1945"
+      },
+      {
+        "source": "source:parshall-2010",
+        "note": "the 1948 and 1963 interviews and how the story changed; read through source:combinedfleet, whose wording is quoted on the historiography card"
+      },
+      { "source": "source:parshall-tully-2005", "note": "Fuchida's Midway account, dismantled" }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:cast-sakamaki-kazuo",
+    "person": "person:sakamaki-kazuo",
+    "side": "jp",
+    "role": "Commander, midget submarine HA-19",
+    "bio": "Five midget submarines were launched off Oahu before dawn and none of them came back. Sakamaki's gyrocompass failed, he grounded twice, could fire neither torpedo, and was washed ashore unconscious at Waimanalo the next morning.\n\nHe was the first Japanese prisoner of war taken by the United States, in a navy that had been taught that capture was not survivable as a matter of honour. That fact — one man, numbered first on a list that would eventually be very long — is the reason he is in this cast: the war the operation opened would be fought on both sides by people who had been told there was no such thing as surrender, and the counting starts here.[^morton-1962]",
+    "sources": [
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI — the five midget submarines, all lost. The details of Sakamaki's own boat are from the shared Person entry rather than from a work this pack has opened, and the pack gives no times or positions for it"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:cast-kimmel-husband",
+    "person": "person:kimmel-husband",
+    "side": "us",
+    "role": "Commander in Chief, United States Pacific Fleet",
+    "bio": "His fleet was in port on a Sunday morning because that was where fleets were on Sunday mornings, and because the war everybody expected was going to start somewhere else — in the Philippines, in Malaya, in the Dutch islands with the oil in them. Every plan on his desk was about a Japanese move southward.\n\nHe commanded one half of an arrangement with nothing above it in Hawaii. The ships were his; the island, its aircraft, its guns and its radar were the Army's. The radar plot that saw the first wave an hour out went to an Army information centre.[^craven-cate-aaf-1] Nothing about that division was his invention and nothing about it worked.\n\nHe was relieved ten days later, reduced to rear admiral, and spent the rest of his life arguing that Washington had known more than it told him. The inquiries into 7 December have run, on and off, for eighty years, and the question of what he should have been told has not been closed by any of them.[^morton-1962]",
+    "sources": [
+      {
+        "source": "source:craven-cate-aaf-1",
+        "note": "ch. 6 — the Opana plot and the information centre"
+      },
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI — the fleet in port and the expectation of a move southward"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:cast-short-walter",
+    "person": "person:short-walter",
+    "side": "us",
+    "role": "Commanding General, Hawaiian Department",
+    "bio": "The other half of the divided command. The Army's aircraft, anti-aircraft guns and aircraft warning service on Oahu were his, and the mobile radar sets on the island were being run, on the morning of 7 December, largely as a training exercise: the plot that came in from Opana at 0702 was handled by an officer who was there “solely for training and observation” and who knew a flight of B-17s was due in from the mainland.[^craven-cate-aaf-1]\n\nNinety-six Army aircraft were lost that day, a great many of them on the ground.[^morton-1962] He was relieved with Kimmel, and shares with him both the blame of the first inquiry and the long argument about whether the two of them were failures or the men chosen to carry a failure that ran a good deal further up.",
+    "sources": [
+      {
+        "source": "source:craven-cate-aaf-1",
+        "note": "ch. 6 — the radar plot at 0702 and the duty officer's reasons, quoted"
+      },
+      { "source": "source:morton-1962", "note": "ch. VI — the Army's aircraft losses" }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:cast-miller-doris",
+    "person": "person:miller-doris",
+    "side": "us",
+    "role": "Mess Attendant, USS West Virginia",
+    "bio": "A mess attendant on one of the battleships that sank at its moorings — the rating the Navy reserved for Black sailors, who were not permitted to hold a gunnery rate and were not trained on the guns. On the morning of 7 December he carried wounded men clear, helped move his mortally wounded captain, and then fired an anti-aircraft gun he had never been trained on until the ammunition ran out.\n\nHe is in this cast because the day is usually counted in ships, and one of the eight battleships in the count is the one he was standing on. Nimitz pinned the Navy Cross on him aboard *Enterprise* in May 1942, the first to a Black sailor. He was still a cook when the escort carrier he had been transferred to was torpedoed off Makin in November 1943, and he went down with her.[^morton-1962]",
+    "sources": [
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI — the battleships sunk at their moorings. The account of Miller's own morning is from the shared Person entry, which rests on source:toll-2012; this pack could not open that volume and gives no page"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:cast-hull-cordell",
+    "person": "person:hull-cordell",
+    "side": "us",
+    "role": "United States Secretary of State",
+    "bio": "The Washington clock in this pack is very largely his diary. He had been talking to the Japanese ambassador since March; on 26 November he handed him an outline of terms whose third numbered step was the withdrawal of all Japanese forces from China and Indochina.[^peace-and-war-1943] It was a statement of a position rather than an ultimatum, and it was read in Tokyo as the end of the road — although the striking force had sailed the day before, Washington time, so it cannot have been what set the operation going.\n\nOn 7 December the ambassador asked to see him at one o'clock, put it back, and arrived at five past two. Hull read the document, asked whether it was presented on instructions, was told that it was, and then said that in fifty years of public service he had never seen a paper “more crowded with infamous falsehoods and distortions”. The two envoys left without saying anything.[^peace-and-war-1943]",
+    "sources": [
+      {
+        "source": "source:peace-and-war-1943",
+        "note": "docs. 257 and 265, both read in full; the quoted words are verbatim from doc. 265"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:cast-nomura-kichisaburo",
+    "person": "person:nomura-kichisaburo",
+    "side": "jp",
+    "role": "Ambassador of Japan to the United States",
+    "bio": "A retired admiral rather than a diplomat, sent to Washington in February 1941 because he knew the President and might be believed. He negotiated for nine months and was not told what his own government had decided.\n\nOn 7 December he was instructed to hand over a memorandum breaking off the talks at one o'clock in the afternoon. His embassy could not decode and type it by then. He asked for one o'clock, put the appointment back to a quarter to two, arrived at five past two and was received at twenty past — and when the Secretary of State asked why one o'clock in particular, said that he did not know, that was his instruction.[^peace-and-war-1943]\n\nBy then the first wave had been over Oahu for fifty-five minutes.",
+    "sources": [
+      {
+        "source": "source:peace-and-war-1943",
+        "note": "doc. 265 — every one of those times, and the ambassador's own explanation, as the Secretary's memorandum of the conversation records them"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:cast-nimitz-chester",
+    "person": "person:nimitz-chester",
+    "side": "us",
+    "role": "Commander in Chief, Pacific Fleet, from 31 December 1941",
+    "bio": "He is in this cast for what comes after it. He took the Pacific Fleet at the end of December, three weeks after its battle line had been sunk at its moorings, and had to fight with what the attack had not touched: three carriers that had been at sea on the morning of the 7th, a submarine force, and a base at Pearl Harbor whose fuel, dry docks and repair shops were undamaged.[^morton-1962]\n\nThat last item is the whole of the third-wave argument in one sentence, and Nimitz is usually quoted on the other side of it — the remark that destroying the oil would have prolonged the war by two years comes down through Layton, who was his fleet intelligence officer. This pack could not open Layton and does not put the remark in quotation marks.",
+    "sources": [
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI — the carriers that survived, “available for limited missions”"
+      },
+      {
+        "source": "source:layton-1985",
+        "note": "the usual source of the Nimitz remark. **Not read**; nothing is quoted from it and no page is given"
+      }
+    ]
+  }
+]

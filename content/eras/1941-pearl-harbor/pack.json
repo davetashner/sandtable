@@ -1,0 +1,156 @@
+{
+  "id": "1941-pearl-harbor:pack",
+  "idPrefix": "1941-pearl-harbor",
+  "title": "1941: Pearl Harbor",
+  "subtitle": "Two clocks, ten and a half hours apart",
+  "summary": "Sixteen days in which a fleet crossed three thousand miles of empty ocean in radio silence while two governments went on talking. The pack is built around the gap between those two things. In Washington the clock runs through a set of documents — the American outline of 26 November, the Japanese memorandum that answered it, and the hour Tokyo ordered that memorandum delivered. In the North Pacific the clock runs through an operation order that named the speed, the course and the two points the striking force would launch from, and that the force kept to almost exactly. The first clock was supposed to stop the second. It did not even manage to arrive first.\n\nHawaii kept a standard time ten and a half hours behind Greenwich in 1941, which is why one o'clock in Washington is half past seven in Honolulu and why the arithmetic of that morning is worth doing carefully. Every instant stored in this pack is UTC; every time a reader is shown is named with the place whose clock it is.\n\nIt is also deliberately not only about Hawaii. Malaya, the Philippines, Hong Kong, Guam and Wake were all attacked inside the same day, most of them while the raid on Oahu was still going on, and a pack that shows only the harbour teaches the American memory of 7 December rather than the day itself.",
+  "timeRange": { "start": "1941-11-25T12:00:00Z", "end": "1941-12-10T20:00:00Z" },
+  "region": [-180, -12, 180, 52],
+  "borderYear": 1941,
+  "camera": { "center": [-175.0, 30.0], "zoom": 2.6 },
+  "sides": [
+    {
+      "id": "jp",
+      "name": "Empire of Japan",
+      "short": "Japan",
+      "alliance": "The Axis"
+    },
+    {
+      "id": "us",
+      "name": "United States of America",
+      "short": "USA",
+      "alliance": "The Allies"
+    },
+    {
+      "id": "gb",
+      "name": "British Empire and Commonwealth",
+      "short": "Britain",
+      "alliance": "The Allies"
+    }
+  ],
+  "branches": [
+    {
+      "id": "1941-pearl-harbor:historical",
+      "title": "What happened",
+      "kind": "historical",
+      "summary": "The striking force sailed on 26 November, crossed by the northern route in radio silence, launched two waves at dawn on 7 December, recovered them, and turned away. Nagumo did not attack again.",
+      "sources": [{ "source": "source:japanese-monograph-97" }, { "source": "source:morton-1962" }]
+    },
+    {
+      "id": "1941-pearl-harbor:third-wave",
+      "title": "A third strike, against the tanks and the yard",
+      "kind": "counterfactual",
+      "divergesAt": "1941-12-07T22:45:00Z",
+      "summary": "**Hypothetical.** The striking force does not turn away. It holds its position north of Oahu through the afternoon of 7 December, rearms, and flies a third strike against the fuel tank farms, the submarine base and the repair shops — the parts of the base that were not touched on the day and without which the harbour is a lagoon rather than a fleet base.\n\nThis is the most famous counterfactual of the Pacific war and it is an argument, not a fact. Nothing in the operation order provides for it, and the account of a conference on Akagi's bridge at which it was urged and refused comes from a witness whose postwar testimony has been substantially discredited. The card at 1941-pearl-harbor:historiography-the-third-wave carries who argues it, who argues against it, and what this project could and could not read.",
+      "historiography": "The case for it is usually traced to Gordon Prange, who interviewed Fuchida repeatedly from 1948, and to Edwin Layton, who published Nimitz's remark that destroying the oil would have prolonged the war by two years. The case against it is Alan Zimm's — that the third wave was never planned, that fuel tanks are not the soft target they are described as, and that the aircrew were trained and armed for ships — and Jonathan Parshall's, who shows that in Fuchida's own 1948 account the fuel tanks came last in his list of targets and had moved up it by 1963. See the historiography card; both sides of this were read at one remove and the card says so.",
+      "feasibility": [
+        {
+          "condition": "The operation order provided for further strikes after the second wave",
+          "met": false,
+          "note": "It did not provide for a third wave as such. What it allows is repeated attacks if the destruction of enemy air strength 'progresses favorably' — a contingency about air superiority, not a plan to attack the base's installations.",
+          "sources": [{ "source": "source:japanese-monograph-97", "pages": "13–14" }]
+        },
+        {
+          "condition": "The striking force still had the daylight for it",
+          "met": true,
+          "note": "The raid was over by 1000 Hawaii time and the aircraft were back aboard around midday. A third strike launched in the early afternoon would have attacked in daylight and recovered near dusk.",
+          "sources": [{ "source": "source:morton-1962" }]
+        },
+        {
+          "condition": "The fuel installations were undamaged and worth attacking",
+          "met": true,
+          "note": "The tank farms were not attacked and were not damaged. Whether destroying them was within the reach of the weapons carried is exactly what is disputed, and this pack could not open either of the works that argue it out.",
+          "sources": [{ "source": "source:building-bases-1947" }]
+        },
+        {
+          "condition": "Nagumo knew where the American carriers were",
+          "met": false,
+          "note": "He did not. Three carriers and their escorts were at sea and unaccounted for, which is the reason usually given for his withdrawal and the one that does not depend on Fuchida.",
+          "sources": [{ "source": "source:morton-1962" }]
+        }
+      ],
+      "sources": [
+        { "source": "source:japanese-monograph-97" },
+        { "source": "source:parshall-2010" },
+        { "source": "source:zimm-2011" },
+        { "source": "source:prange-1981" },
+        { "source": "source:layton-1985" }
+      ]
+    }
+  ],
+  "defaultBranch": "1941-pearl-harbor:historical",
+  "status": "seed",
+  "pace": {
+    "sea": {
+      "sustained": 26,
+      "limit": 46,
+      "note": "The two speeds the Hawaii operation order names for the striking force itself, and no others. It was to leave Hitokappu Bay “at a speed of 12-14 knots”, and from 0700 on X-1 Day to run in — and, after launching the second wave, to withdraw — “at a speed of about 24 knots”. 14 knots is 25.9 km/h, so the sustained bar is 26. 24 knots is 44.4 km/h, and because the order says *about*, the limit is set a knot above it at 46. These are not a claim about what a carrier of 1941 could do at full power, which this pack holds no source it has read for; they are what this one force was ordered to do, and the whole of the sea movement in the pack is this one force. The consequence is visible and intended: the two legs of 6–7 December where the force really did run at its ordered high speed come out at about 41 and 44 km/h of straight-line displacement, above the sustained bar and inside the limit, and the check reports them as warnings — which is correct, because those legs were run above the speed the force could hold day after day. See the pack README.",
+      "sources": [
+        {
+          "source": "source:japanese-monograph-97",
+          "pages": "7, 13",
+          "note": "p. 7 for the 12-14 knots of the passage, p. 13 for the 24 knots of the run-in and the withdrawal; pages as marked in the HyperWar transcription"
+        }
+      ]
+    },
+    "air": {
+      "sustained": 270,
+      "limit": 350,
+      "note": "Derived from the pack's own two documented flights rather than from an aircraft specification, because no work giving the performance of a Nakajima B5N or a Mitsubishi A6M could be opened from this environment and this project does not write numbers it has not read. The first wave was launched 230 nautical miles due north of Oahu and was over the island one hour and fifty-five minutes later — 426 km, so 222 km/h of straight-line displacement for a formation of loaded torpedo and level bombers holding together. The second wave, launched 200 nautical miles out an hour and a quarter behind it, was over the island in an hour and twenty-five minutes: 370 km, so 262 km/h. The sustained bar is set just above the faster of the two. The limit of 350 is a bar above the cruising speed of everything that flies in this pack and below the maximum level speed of the fastest of them; it is deliberately not an assertion about what a 1941 carrier aircraft could reach at full throttle, and the pack README says so.",
+      "sources": [
+        {
+          "source": "source:japanese-monograph-97",
+          "pages": "13",
+          "note": "the launch positions — 230 nautical miles due north of point Z for the first wave, 200 for the second — and the launch hours in Tokyo time"
+        },
+        {
+          "source": "source:craven-cate-aaf-1",
+          "note": "ch. 6, for the take-off at 0600 and the first aircraft observed over Oahu at 0755, Hawaii time; no page is given, see the pack README"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "source": "source:japanese-monograph-97",
+      "note": "the operation order: task organisation, speeds, named points, launch hours"
+    },
+    {
+      "source": "source:peace-and-war-1943",
+      "note": "the documents of the Washington clock, printed in full"
+    },
+    { "source": "source:morton-1962", "note": "the theatre, and the first weeks of the war" },
+    { "source": "source:craven-cate-aaf-1", "note": "Pearl Harbor and Clark Field as one subject" },
+    { "source": "source:morton-1953", "note": "the Philippines, hour by hour" },
+    { "source": "source:hough-ludwig-shaw-1958", "note": "Wake and Guam" },
+    {
+      "source": "source:parshall-2010",
+      "note": "why Fuchida is a subject here and not an authority"
+    }
+  ],
+  "opening": {
+    "eyebrow": "Two clocks",
+    "headline": [
+      "Sunday, 7 December 1941.",
+      "In Washington it is one o'clock.",
+      "In Honolulu it is half past seven."
+    ],
+    "lede": "Tokyo had ordered its embassy to break off the negotiations at one o'clock, Washington time. The embassy was late, and the first bomb fell twenty-five minutes after the hour it had been given.[^peace-and-war-1943]",
+    "camera": { "center": [-157.96, 21.4], "zoom": 9.0 },
+    "claim": {
+      "label": "Where do those two clocks come from?",
+      "card": "1941-pearl-harbor:clock-the-washington-clock"
+    },
+    "chain": {
+      "label": "How did it get here?",
+      "hint": "the force was at sea before the note was written",
+      "card": "1941-pearl-harbor:link-the-outline-and-the-sortie"
+    },
+    "sources": [
+      {
+        "source": "source:peace-and-war-1943",
+        "note": "doc. 265 — the appointment asked for at 1 p.m. and the ambassador's own account of why he was late"
+      }
+    ]
+  }
+}
