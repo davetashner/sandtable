@@ -1772,3 +1772,122 @@ describe('validateContent', () => {
     });
   });
 });
+
+/**
+ * ADR 0021. The gate is one field wide, so these tests are mostly about the
+ * receipt itself — and about the two rules the incidents of 27–28 August 2026
+ * paid for: a context that does not contain the quotation is not evidence, and
+ * a retrieval that would not repeat itself buys no page number.
+ */
+describe('quotation receipts', () => {
+  const CONTEXT =
+    'Order to: Carrier Striking Task Force. The Carrier Striking Task Force will immediately ' +
+    'complete taking on supplies and depart with utmost secrecy from Hitokappu Bay on ' +
+    '26 November and advance to the standby point (42 N, 170 W) by the evening of 3 December.';
+  const EXCERPT = '… depart with utmost secrecy from Hitokappu Bay on 26 November …';
+
+  /** A pack with one document, and whatever receipts the test wants. */
+  function withDocument(receipts: unknown[], backlog?: string, excerpt = EXCERPT): RawContent {
+    const raw = fixture();
+    raw.packs[0]!.collections['documents.json'] = {
+      path: 'eras/1914-test/documents.json',
+      data: [
+        {
+          id: '1914:document-order',
+          title: 'Operations Order No. 5',
+          date: '1914-08-20',
+          author: 'Yamamoto, Isoroku',
+          kind: 'order',
+          excerpt,
+          sources: [{ source: 'source:herwig-2009' }],
+        },
+      ],
+    };
+    if (receipts.length) raw.receipts = [{ path: 'receipts/1914-test.json', data: receipts }];
+    if (backlog !== undefined) raw.receiptBacklog = { path: 'receipts/backlog.txt', data: backlog };
+    return raw;
+  }
+
+  const receipt = (over: Record<string, unknown> = {}) => ({
+    id: 'receipt:order-secrecy',
+    quote: EXCERPT,
+    source: 'source:herwig-2009',
+    usedIn: ['1914:document-order'],
+    how: 'fetch',
+    url: 'https://example.test/monograph.html',
+    checkedAt: '2026-08-28',
+    checkedBy: 'A reviewer',
+    context: CONTEXT,
+    repeat: 'agreed',
+    ...over,
+  });
+
+  it('demands a receipt for every document excerpt, and takes one', () => {
+    expect(messages(validateContent(withDocument([])))).toContainEqual(
+      expect.stringMatching(/the excerpt is a quotation and needs a verification receipt/),
+    );
+    expect(messages(validateContent(withDocument([receipt()])))).toEqual([]);
+  });
+
+  it('refuses a receipt whose retrieved text does not contain the quotation', () => {
+    const raw = withDocument([receipt({ quote: 'depart at once for the Marshall Islands' })]);
+    expect(messages(validateContent(raw))).toContainEqual(
+      expect.stringMatching(/context does not contain the quotation/),
+    );
+  });
+
+  it('refuses a page number taken from a retrieval that would not repeat itself', () => {
+    const raw = withDocument([
+      receipt({
+        repeat: 'differed',
+        note: 'the page marker moved 196/197 → 195/196',
+        pages: '196',
+      }),
+    ]);
+    expect(messages(validateContent(raw))).toContainEqual(
+      expect.stringMatching(/repeat: "differed" and a page number cannot both be true/),
+    );
+  });
+
+  it('makes a read receipt name the copy nothing else can open', () => {
+    const raw = withDocument([receipt({ how: 'read', url: undefined })]);
+    expect(messages(validateContent(raw))).toContainEqual(
+      expect.stringMatching(/how: "read" needs `copy`/),
+    );
+  });
+
+  it('notices when the content drifts away from the receipt', () => {
+    // The receipt still shows the passage in the source; the document no longer
+    // carries it. That is the case a re-fetch would never catch.
+    const raw = withDocument([receipt()], undefined, '… sail for the Marshall Islands …');
+    expect(messages(validateContent(raw))).toContainEqual(
+      expect.stringMatching(/no longer carries this quotation/),
+    );
+  });
+
+  it('takes several receipts for passages pages apart, in the order of the operation', () => {
+    const raw = withDocument(
+      [
+        receipt({ id: 'receipt:a', quote: 'advance to the standby point (42 N, 170 W)' }),
+        receipt({ id: 'receipt:b', quote: 'depart with utmost secrecy from Hitokappu Bay' }),
+      ],
+      undefined,
+      'advance to the standby point (42 N, 170 W) … depart with utmost secrecy from Hitokappu Bay',
+    );
+    expect(messages(validateContent(raw))).toEqual([]);
+  });
+
+  it('lets the backlog stand in for a receipt, and refuses to let it outlive one', () => {
+    expect(messages(validateContent(withDocument([], '1914:document-order\n')))).toEqual([]);
+
+    const both = withDocument([receipt()], '1914:document-order\n');
+    expect(messages(validateContent(both))).toContainEqual(
+      expect.stringMatching(/now has a receipt — delete its line/),
+    );
+
+    const rot = withDocument([receipt()], '1914:document-gone\n');
+    expect(messages(validateContent(rot))).toContainEqual(
+      expect.stringMatching(/is not a document in any pack — delete the line/),
+    );
+  });
+});

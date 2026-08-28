@@ -30,6 +30,7 @@ is merged.
 | [0018](0018-fetching-the-pack.md)        | The pack is fetched, not bundled, and content gets a budget of its own                    | `sand-shn.1.1`  | accepted                         |
 | [0019](0019-second-world-war-arc.md)     | The Second World War arc: the Pacific first, and a pack name that survives a crowded year | `sand-lry.16`   | accepted                         |
 | [0020](0020-pace-bands.md)               | The pack declares how fast its century moved, and cannot declare its way past physics     | `sand-lry.2`    | accepted                         |
+| [0021](0021-quotation-receipts.md)       | A quotation carries a receipt, and an unreadable source is not quoted                     | `sand-23b.57`   | accepted                         |
 
 ## Template
 

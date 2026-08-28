@@ -37,4 +37,15 @@ export interface RawContent {
   packs: RawPack[];
   shared: RawShared;
   threads: RawFile[];
+  /**
+   * `content/receipts/*.json` — the verification receipts (ADR 0021). Apparatus
+   * rather than content: the pack build does not read this directory, so a
+   * receipt costs a reader nothing.
+   */
+  receipts?: RawFile[];
+  /**
+   * `content/receipts/backlog.txt` as text — the ids allowed to carry a
+   * quotation without a receipt while `sand-23b.57.1` runs.
+   */
+  receiptBacklog?: RawFile;
 }

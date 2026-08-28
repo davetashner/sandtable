@@ -53,6 +53,8 @@ content/
     media/**/media.json        Media (one manifest per image; binaries live in S3)
     geo/borders/<year>.geojson world borders per era year (npm run borders; manifest.json has provenance)
   threads/<slug>/thread.json   Thread — a learning path across packs
+  receipts/<era-dir>.json      Receipt[] — verification receipts (ADR 0021);
+  receipts/backlog.txt           apparatus, never bundled into a pack
 ```
 
 Only `pack.json` is required. Every other file is optional and, when
@@ -264,7 +266,11 @@ generated JSON Schema; this is the intent of each.
   render at once, in a grid, with no paging — four armies' kit, one army's
   four weapons. Never on a beat: a beat has one picture (ADR 0012).
 - **Document** — the real text: title, date, author, kind, `excerpt` (original
-  language), `translation`, archive, links, required sources.
+  language), `translation`, archive, links, required sources. The `excerpt` is
+  the one field in this model whose definition is a quotation, so it is the one
+  field that must carry a **verification receipt** — retrieved text with the
+  passage inside it, in `content/receipts/<era>.json`, checked by the validator
+  ([ADR 0021](decisions/0021-quotation-receipts.md)).
 - **Historiography** (`historiography.json`) — a contested point carried as
   the argument it is (ADR 0017): the `question`, **at least two `positions`**
   each with a `label`, the `who` that holds it and a footnoted summary, what

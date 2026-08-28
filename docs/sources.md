@@ -51,7 +51,9 @@ bibliography UI is `sand-shn.5`.
 7. **Primary sources are quoted, not paraphrased**, as `Document` entities
    with the original language and a translation, each cited to the archive
    or the edition that prints them (AFGG annexes, Reichsarchiv, the British
-   Official History appendices).
+   Official History appendices). **Every `Document.excerpt` carries a
+   verification receipt** — see "Quoting, and the receipt that goes with it"
+   below ([ADR 0021](decisions/0021-quotation-receipts.md)).
 8. **Wikipedia** (`source:wikipedia-en`) is **reference data only**: a
    person's dates and dates of office in `people.json`, a place's coordinates
    in `places.json`. Never an operational claim — a strength, a position, a
@@ -90,6 +92,66 @@ and `reference` below it, which is never evidence for an operational claim.
 
 When two works disagree on a number or a time, cite both and pick the more
 specific with a `note`; when they disagree on meaning, write historiography.
+
+## Quoting, and the receipt that goes with it ([ADR 0021](decisions/0021-quotation-receipts.md))
+
+Everything above is a rule a reviewer with the book open can test. A quotation
+is not: it is not a claim _about_ a source, it is the source reproduced, and
+there is nothing else to hold it against. A fabricated quotation carrying a
+well-formed citation passes every gate here, and passes them looking more
+checked than the paragraph around it. An agent working on the 1917 pack
+invented quotations attributed to a named memoirist and the text of a decree,
+and nothing in CI would have caught it.
+
+So the rule that follows from §3's "never write a page you did not read" is:
+
+**Never write a quotation you have not seen, and be able to show that you saw
+it.** Not a reconstruction, not a paraphrase in quotation marks, not a line you
+are confident is roughly right. If you delegate the reading, verify what comes
+back before you write it down — an agent's summary of a source is not a source.
+
+A **receipt** is how showing it works: an entry in `content/receipts/<era>.json`
+holding the quoted passage, the url that was fetched or the copy that was
+opened, the day, who did it, whether a repeat fetch agreed, and — the part that
+matters — the **retrieved text with the quotation sitting inside it**. The
+validator checks that containment, so a receipt cannot be a bare assertion, and
+`npm run receipts -- --fetch` re-runs it against the live source later.
+
+```bash
+npm run receipts -- --capture <url> --find "a phrase from the passage"
+```
+
+prints the surrounding text, ready to paste into the receipt's `context`. Use
+it, or another retrieval that returns the page's own bytes. **Do not build a
+receipt from a tool that summarises a page for you**: what comes back is that
+tool's rendering of the text, and a receipt made of it is a paraphrase wearing
+the costume of a retrieval. `--capture` also decodes the page in the character
+set it was served in, which is not a nicety: the Moscow State University decree
+library serves Windows-1251 with no charset in its header, and read as UTF-8
+every Russian document on it reads as absent.
+
+Two consequences worth stating plainly.
+
+**A retrieval that will not repeat itself buys no page number.** The Pearl
+Harbor pack found the extraction layer returning different page markers for the
+same sentence on repeated fetches — 196/197 then 195/196 — and wrote no pages
+for five transcriptions, giving the chapter and quoting the sentence instead.
+That is now the rule: `repeat: "differed"` and `pages` cannot both be true.
+
+**The answer to a source you cannot open is to stop quoting it, not to stop
+citing it.** Gallica answers this environment with a security check; three US
+military history hosts answer 403; Morison, Prange, Layton, Figes and nearly
+every Russian monograph are borrow-only. Those works stay in the registry and
+stay cited — without pages, without quotation marks, and with the pack saying
+so. That is what the paragraphs above already do for the Reichsarchiv and
+Gallica, what the 1917 and 1941 pack READMEs do at length, and it is the
+expected outcome for most of this shelf rather than a grudging exception.
+
+Only `Document.excerpt` is _required_ to have a receipt — the one field whose
+definition is "the real text". A quotation inside a beat, a card or a
+`sources[].note` is governed by this page and by review; you may still write it
+a receipt, and the validator will then tell you if the content drifts away from
+it (`sand-23b.58`).
 
 ## What a reader sees (`sand-shn.5`)
 

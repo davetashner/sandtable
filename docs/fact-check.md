@@ -11,6 +11,9 @@ This is the fact reviewer's checklist and the author's pre-flight. Story:
 ## Author pre-flight (before opening the PR)
 
 - `npm run validate:content` is clean; `npm test -- --run` passes.
+- Every new `Document` has a verification receipt in `content/receipts/`, and
+  `npm run receipts -- --fetch` agrees for the ones it can reach
+  ([ADR 0021](decisions/0021-quotation-receipts.md)).
 - The PR description says which lesson question each beat/card serves
   (`docs/lesson-1914.md`) — or why it exists if none.
 - Every new source is in the registry with a `tier` and with `notes` (use and
@@ -35,6 +38,14 @@ Tick each in the PR; a failed item blocks the merge.
 - [ ] Quotations are **verbatim**, in the original language where we have it,
       with a translation, cited to the edition/annex that prints them; nothing
       is paraphrased and presented as a quotation.
+- [ ] Every quotation was **seen in the source by whoever wrote it down**, and
+      every `Document.excerpt` shows it: a receipt in `content/receipts/`
+      whose `context` is retrieved text with the passage inside it, not a
+      summary of the page. Read the context — that is the check the validator
+      cannot do for you. A work that could not be opened is cited without pages
+      and **without quotation marks** (`docs/sources.md`).
+- [ ] No receipt carries both `repeat: "differed"` and a page number, and no
+      page number anywhere came off a retrieval that would not repeat itself.
 
 ### Contested points
 
