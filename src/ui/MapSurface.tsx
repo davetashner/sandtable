@@ -22,7 +22,12 @@ import {
   commandersAt,
 } from '../engine/layers/commanders.js';
 import { createPortraitIcons, type PortraitSource } from '../engine/layers/portrait-icons.js';
-import { MapView, type CameraTarget, type MapHandle } from '../engine/map/MapView.js';
+import {
+  MapView,
+  type CameraTarget,
+  type MapHandle,
+  type MapInset,
+} from '../engine/map/MapView.js';
 import { labelNow } from '../engine/ticks.js';
 import { haversineKm } from '../engine/geo.js';
 import { MapObjects, type MapObject } from './MapObjects.js';
@@ -41,6 +46,8 @@ export interface MapSurfaceProps {
   borderYear: number;
   /** Shared front-line series to draw under the clock (`pack.frontLine`). */
   frontSeries?: string | undefined;
+  /** Edges an overlay covers, kept clear by every camera move (sand-neh.29). */
+  inset?: MapInset | undefined;
   branch: Branch;
   movement: MovementSource;
   /** Campaign extent, fitted when leaving a zoom-in. */
@@ -73,10 +80,15 @@ export interface MapSurfaceProps {
   onSelectTally?: ((tallyId: string) => void) | undefined;
 }
 
+/** A stable identity for the inset, so an inline literal cannot refit forever. */
+const insetKeyOf = (i?: MapInset) =>
+  i ? `${i.top ?? 0}:${i.right ?? 0}:${i.bottom ?? 0}:${i.left ?? 0}` : '';
+
 export function MapSurface({
   camera,
   borderYear,
   frontSeries,
+  inset,
   branch,
   movement,
   region,
@@ -93,6 +105,7 @@ export function MapSurface({
   onSelectTally,
   cameraTarget,
 }: MapSurfaceProps) {
+  const insetKey = insetKeyOf(inset);
   const { now, range } = useClock();
   const label = labelNow(now, range);
   const handle = useRef<MapHandle | null>(null);
@@ -329,7 +342,10 @@ export function MapSurface({
     if (!h) return;
     if (focusRegion) h.fitRegion(focusRegion, { padding: 48, maxZoom: 11 });
     else h.fitRegion(region, { padding: 24, maxZoom: 8 });
-  }, [focusRegion, region]);
+    // `inset` is a dependency because the framing has to answer the panel:
+    // when the tour's lower third appears or goes, the same region wants a
+    // different camera (sand-neh.29).
+  }, [focusRegion, region, insetKey]);
 
   // A tour's camera wins over the region fit for as long as the step lasts.
   const lastCameraKey = useRef<string | null>(null);
@@ -351,6 +367,7 @@ export function MapSurface({
       ref={handle}
       camera={camera}
       borderYear={borderYear}
+      inset={inset}
       frontSeries={frontSeries}
       frontAt={now}
       label={`Map — ${label.date}`}

@@ -896,13 +896,23 @@ function MapSection() {
   const movement = useMemo(() => movementSourceFor(focus, MOVEMENT_SOURCE), [focus]);
   const commanders = useContext(CommandersCtx);
   const phone = usePhone();
+  const tour = useTour();
+  /**
+   * The lower third is mounted, so it is covering the map's bottom-left corner
+   * (sand-neh.29). The camera is told, and frames the step's geography into
+   * what is left — up and to the right — instead of putting it under the panel.
+   * The numbers are the panel's own: 360px wide at 16px from the edge, and
+   * enough below to clear the shortest useful height of it.
+   */
+  const narrating = !phone && Boolean(tour.pos);
+  const inset = useMemo(() => (narrating ? { left: 392, bottom: 96 } : undefined), [narrating]);
   return (
     <section className="surface surface--map" data-hypothetical={hypothetical || undefined}>
       {hypothetical && <p className="hypothetical-ribbon">Hypothetical · {branch.title}</p>}
       {/* The two things the map owns that are not the map: the narrator and
           the key. Both are laid over the terrain rather than stacked in the
           reading rail, which is what ADR 0006 used to say (sand-neh.26). */}
-      {!phone && (
+      {narrating && (
         <div className="map-overlay map-overlay--narrator">
           <TourNarrator variant="lower-third" />
         </div>
@@ -918,6 +928,7 @@ function MapSection() {
           branch={branch}
           movement={movement}
           region={seed.pack.region}
+          inset={inset}
           focusRegion={focus?.region}
           places={seed.places}
           tallies={focus ? [] : seed.tallies}
