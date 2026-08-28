@@ -76,6 +76,18 @@ defined in that pack — including battle-level sub-entities — must start with
 it. Ids are unique across all of `content/`, so a `CausalLink` or a `Thread`
 can point at anything anywhere.
 
+**A new pack's `idPrefix` is its directory name** — `1942-midway`,
+`1944-peleliu` — so that a year may hold as many packs as it needs to
+(ADR 0019). The bare year worked while a year held one pack; 1944 holds four in
+the Pacific alone. `Slug` permits hyphens, so this needs nothing from the
+schema.
+
+**`1914` and `1915` keep the bare year**, and are not renamed. Ids are a
+durable public contract: the URL is citable (ADR 0009) and every `CausalLink`,
+`Thread` step and media `used_by` entry is an id pointing at an id, so
+renaming a pack silently breaks every deep link ever shared for it. Two
+documented exceptions cost less than that.
+
 ## Time and space
 
 - Instants are ISO-8601 date-times with an offset (`1914-08-04T08:00:00Z`).
