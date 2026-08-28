@@ -11,7 +11,7 @@
  *     fades out and stays out, and the control says so.
  *   - nothing is signalled by audio alone: the control names the cue in text.
  */
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } from 'react';
 import { useClock, useViewState } from '../engine/ClockContext.js';
 import { bedFor, cueFor } from '../engine/score.js';
 import { cueById, sourcesFor } from '../packs/audio-index.js';
@@ -74,36 +74,38 @@ function play(el: HTMLAudioElement) {
   }
 }
 
-export interface ScorePlayerProps {
-  score: ScoreEntry[];
-  /** True while the opening sequence is on screen. */
-  opening?: boolean;
-  /** True while a first-person vignette is on screen; brings the bed in. */
-  vignette?: boolean;
+/**
+ * The on/off choice, remembered. It is false on the first render whatever the
+ * reader chose last time — the ADR's "never autoplay" rule is that the first
+ * sound follows a click — and the remembered value arrives on mount.
+ */
+function useRemembered(): [boolean, () => void] {
+  const [enabled, setEnabled] = useState(false);
+  useEffect(() => setEnabled(remembered()), []);
+  const toggle = useCallback(() => {
+    setEnabled((on) => {
+      remember(!on);
+      return !on;
+    });
+  }, []);
+  return [enabled, toggle];
 }
 
-export function ScorePlayer({ score, opening, vignette }: ScorePlayerProps) {
-  const { now } = useClock();
-  const { focus, branch } = useViewState();
-  const [enabled, setEnabled] = useState(false);
+/**
+ * The cue, on two elements so one can come up while the other goes down. It
+ * returns the two refs to mount and the id of whatever is up, which is what
+ * the control names in text. `bed` is here only because turning the score off
+ * silences the bed along with the cue; what the bed plays is `useBed`'s.
+ */
+function useCue(
+  enabled: boolean,
+  wanted: string | undefined,
+  silent: boolean,
+  bed: RefObject<HTMLAudioElement | null>,
+) {
   const [playing, setPlaying] = useState<string | undefined>(undefined);
-
-  useEffect(() => setEnabled(remembered()), []);
-
-  const state = useMemo(
-    () => ({ t: now, focus, branch, opening, vignette }),
-    [now, focus, branch, opening, vignette],
-  );
-  const verdict = useMemo(() => cueFor(score, state), [score, state]);
-  const wanted = verdict.cue;
-  const wantedBed = useMemo(() => bedFor(score, state), [score, state]);
-
-  // Two elements so one can come up while the other goes down.
   const a = useRef<HTMLAudioElement | null>(null);
   const b = useRef<HTMLAudioElement | null>(null);
-  // A bed joins the cue rather than replacing it, so it gets its own element.
-  const bed = useRef<HTMLAudioElement | null>(null);
-  const bedFades = useRef<(() => void)[]>([]);
   const active = useRef<'a' | 'b'>('a');
   const cancels = useRef<(() => void)[]>([]);
 
@@ -132,7 +134,7 @@ export function ScorePlayer({ score, opening, vignette }: ScorePlayerProps) {
         if (current && !current.paused) {
           stopFades();
           cancels.current.push(
-            fade(current, 0, verdict.silent ? SILENCE_FADE_MS : FADE_MS, () => current.pause()),
+            fade(current, 0, silent ? SILENCE_FADE_MS : FADE_MS, () => current.pause()),
           );
         }
         setPlaying(undefined);
@@ -162,51 +164,86 @@ export function ScorePlayer({ score, opening, vignette }: ScorePlayerProps) {
     }, SETTLE_MS);
 
     return () => window.clearTimeout(timer);
-  }, [enabled, wanted, verdict.silent, stopFades]);
+  }, [enabled, wanted, silent, stopFades, bed]);
 
-  // The bed rides on top of whatever the cue is doing, and answers only to
-  // whether a vignette is on screen.
+  useEffect(() => () => stopFades(), [stopFades]);
+
+  return { a, b, playing };
+}
+
+/**
+ * The bed rides on top of whatever the cue is doing, and answers only to
+ * whether a vignette is on screen.
+ */
+function useBed(
+  enabled: boolean,
+  wantedBed: string | undefined,
+  el: RefObject<HTMLAudioElement | null>,
+) {
+  const fades = useRef<(() => void)[]>([]);
+
   useEffect(() => {
-    const el = bed.current;
-    if (!el) return;
-    for (const c of bedFades.current) c();
-    bedFades.current = [];
+    const bed = el.current;
+    if (!bed) return;
+    for (const c of fades.current) c();
+    fades.current = [];
 
     if (!enabled || !wantedBed) {
-      if (!el.paused) bedFades.current.push(fade(el, 0, FADE_MS, () => el.pause()));
+      if (!bed.paused) fades.current.push(fade(bed, 0, FADE_MS, () => bed.pause()));
       return;
     }
     const entry = cueById(wantedBed);
     if (!entry) return;
-    el.loop = entry.loop;
+    bed.loop = entry.loop;
     const srcs = sourcesFor(entry);
-    if (el.getAttribute('src') !== srcs[0]?.src) {
-      el.setAttribute('src', srcs[0]?.src ?? '');
-      el.volume = 0;
+    if (bed.getAttribute('src') !== srcs[0]?.src) {
+      bed.setAttribute('src', srcs[0]?.src ?? '');
+      bed.volume = 0;
     }
-    if (el.paused) {
-      el.volume = 0;
-      play(el);
+    if (bed.paused) {
+      bed.volume = 0;
+      play(bed);
     }
     // The -9 dB trim is baked in at encode time, so the element plays at full.
-    bedFades.current.push(fade(el, VOLUME, FADE_MS));
+    fades.current.push(fade(bed, VOLUME, FADE_MS));
     return;
-  }, [enabled, wantedBed]);
+  }, [enabled, wantedBed, el]);
 
   useEffect(
     () => () => {
-      stopFades();
-      for (const c of bedFades.current) c();
+      for (const c of fades.current) c();
     },
-    [stopFades],
+    [],
   );
+}
 
-  const toggle = useCallback(() => {
-    setEnabled((on) => {
-      remember(!on);
-      return !on;
-    });
-  }, []);
+export interface ScorePlayerProps {
+  score: ScoreEntry[];
+  /** True while the opening sequence is on screen. */
+  opening?: boolean;
+  /** True while a first-person vignette is on screen; brings the bed in. */
+  vignette?: boolean;
+}
+
+export function ScorePlayer({ score, opening, vignette }: ScorePlayerProps) {
+  const { now } = useClock();
+  const { focus, branch } = useViewState();
+  const [enabled, toggle] = useRemembered();
+
+  const state = useMemo(
+    () => ({ t: now, focus, branch, opening, vignette }),
+    [now, focus, branch, opening, vignette],
+  );
+  const verdict = useMemo(() => cueFor(score, state), [score, state]);
+  const wanted = verdict.cue;
+  const wantedBed = useMemo(() => bedFor(score, state), [score, state]);
+
+  // A bed joins the cue rather than replacing it, so it gets its own element —
+  // and it is declared here because both hooks reach for it: the bed follows
+  // the vignette, and turning the score off silences cue and bed together.
+  const bed = useRef<HTMLAudioElement | null>(null);
+  const { a, b, playing } = useCue(enabled, wanted, verdict.silent, bed);
+  useBed(enabled, wantedBed, bed);
 
   const nowPlaying = playing ? cueById(playing) : undefined;
   const label = !enabled
