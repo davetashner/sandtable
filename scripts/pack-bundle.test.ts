@@ -8,8 +8,11 @@
  * every build and the immutable cache header is a lie.
  */
 import { describe, expect, it } from 'vitest';
-import { readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import type { ContentBundle } from '../src/packs/content-bundle.js';
+import { validateContent } from '../src/packs/validate/validate.js';
+import { readContent } from './lib/read-content.js';
 import {
   SEED_PACK_ID,
   buildContentBundle,
@@ -46,6 +49,113 @@ describe('buildContentBundle', () => {
     expect(bundle.shared.sources).toBeInstanceOf(Array);
     expect(bundle.shared.media).toHaveProperty('entries');
     expect(bundle.shared.audio).toHaveProperty('entries');
+  });
+});
+
+// ------------------------------------------------ shared registries, per era
+
+/**
+ * The registries are the union of every era; a bundle carries the part its own
+ * era reaches (`sand-shn.15`, ADR 0018's second amendment). The size win is
+ * the reason and is measured by `npm run bundle:budget`; what is worth a test
+ * is the failure it could cause instead — an entity that resolves in the
+ * validator and is missing in the browser, which no gate would otherwise see.
+ */
+const REGISTRY = join(CONTENT, 'shared');
+const registryIds = (): Map<string, string> => {
+  const of = (file: string, pick: (d: unknown) => { id: string }[]) => {
+    const path = join(REGISTRY, file);
+    return existsSync(path) ? pick(JSON.parse(readFileSync(path, 'utf8'))) : [];
+  };
+  const list = (d: unknown) => d as { id: string }[];
+  const index = (d: unknown) => (d as { entries: { id: string }[] }).entries;
+  const out = new Map<string, string>();
+  for (const [file, pick, kind] of [
+    ['people/people.json', list, 'people'],
+    ['places/places.json', list, 'places'],
+    ['sources/sources.json', list, 'sources'],
+    ['media/index.json', index, 'media'],
+    ['audio/index.json', index, 'audio'],
+  ] as const)
+    for (const e of of(file, pick)) out.set(e.id, kind);
+  return out;
+};
+
+/** Every shared entity a bundle carries, whichever registry it came from. */
+function carried(bundle: ContentBundle): Set<string> {
+  const of = (v: unknown) => (v as { id: string }[]).map((e) => e.id);
+  const entries = (v: unknown) => (v as { entries: { id: string }[] }).entries.map((e) => e.id);
+  return new Set([
+    ...of(bundle.shared.people),
+    ...of(bundle.shared.places),
+    ...of(bundle.shared.sources),
+    ...entries(bundle.shared.media),
+    ...entries(bundle.shared.audio),
+  ]);
+}
+
+describe('the shared registries a bundle carries (sand-shn.15)', () => {
+  const all = registryIds();
+  const ids = listPackIds('content');
+
+  it('is a subset of the registry, not the whole of it', () => {
+    // 1915 is a seed pack that names three works and nobody; if it is carrying
+    // the 1914 cast, the narrowing has stopped working.
+    const trimmed = ids.filter((id) => carried(buildContentBundle(CONTENT, id)).size < all.size);
+    expect(trimmed).toEqual(ids);
+  });
+
+  it('leaves nothing dangling: every shared id in a bundle is in that bundle', () => {
+    // Deliberately not the emitter's own walk — this re-reads the finished
+    // bytes and asks the question the browser will ask.
+    const ID = /(?<![a-z0-9._/-])[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*/g;
+    for (const id of ids) {
+      const json = contentBundleJson(CONTENT, id);
+      const has = carried(buildContentBundle(CONTENT, id));
+      const missing = [...new Set(json.match(ID) ?? [])]
+        .filter((token) => all.has(token) && !has.has(token))
+        .sort();
+      expect({ pack: id, missing }).toEqual({ pack: id, missing: [] });
+    }
+  });
+
+  it('carries everything the validator resolved for that pack', () => {
+    // The validator is the other answer to "what does this era reference".
+    // Two answers that disagree is how a dangling reference reaches production
+    // without CI noticing, so they are held against each other here.
+    const { content } = readContent('content');
+    const { sharedRefs } = validateContent(content);
+    for (const id of ids) {
+      const has = carried(buildContentBundle(CONTENT, id));
+      // Only what the registries actually hold: the validator reads the
+      // `media.json` manifests, while the bundle carries the generated
+      // `media/index.json`, and the index lags the manifests until someone
+      // runs `npm run media` (sand-shn.16). An id the registry never had is
+      // not something this build step dropped.
+      const missing = (sharedRefs[id] ?? []).filter((ref) => all.has(ref) && !has.has(ref));
+      expect({ pack: id, missing }).toEqual({ pack: id, missing: [] });
+    }
+    // …and the validator must have had something to say about the seed pack,
+    // or this test would pass by resolving nothing at all.
+    expect((sharedRefs[SEED_PACK_ID] ?? []).length).toBeGreaterThan(20);
+  });
+
+  it('carries the portrait of everyone it carries', () => {
+    // `portraitFor` (src/packs/media-index.ts) looks a picture up by its
+    // sitter, so a portrait's own id need appear nowhere in the era. This is
+    // the one reference the byte scan cannot see.
+    const media = JSON.parse(readFileSync(join(REGISTRY, 'media', 'index.json'), 'utf8')) as {
+      entries: { id: string; person?: string }[];
+    };
+    for (const id of ids) {
+      const bundle = buildContentBundle(CONTENT, id);
+      const has = carried(bundle);
+      const people = new Set((bundle.shared.people as { id: string }[]).map((p) => p.id));
+      const missing = media.entries
+        .filter((e) => e.person !== undefined && people.has(e.person) && !has.has(e.id))
+        .map((e) => e.id);
+      expect({ pack: id, missing }).toEqual({ pack: id, missing: [] });
+    }
   });
 });
 

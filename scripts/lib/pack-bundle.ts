@@ -1,11 +1,18 @@
 /**
  * Assemble the content bundle the app fetches (ADR 0018, `sand-shn.1.1`).
  *
- * Node-only. It reads one era directory plus the shared registries and writes
- * them into a single JSON document whose shape is `ContentBundle`
- * (`src/packs/content-bundle.ts`). Nothing here validates: the browser parses
- * the whole thing with the schema on arrival (`src/packs/seed.ts`), so this is
- * a file-concatenator and the schema stays the only contract.
+ * Node-only. It reads one era directory plus the part of the shared registries
+ * that era reaches, and writes them into a single JSON document whose shape is
+ * `ContentBundle` (`src/packs/content-bundle.ts`). Nothing here validates: the
+ * browser parses the whole thing with the schema on arrival
+ * (`src/packs/seed.ts`), so this is a file-concatenator and the schema stays
+ * the only contract.
+ *
+ * "The part that era reaches" is `scripts/lib/shared-refs.ts`, and is the one
+ * thing here that is not a straight copy of a file. It has to exist: the
+ * registries are the union of every era, and copying them whole put every
+ * other campaign's cast, places and bibliography in front of a reader who
+ * asked for one (`sand-shn.15`, ADR 0018's second amendment).
  *
  * The output is deterministic — files read in sorted order, no timestamp — so
  * an unchanged `content/` produces an unchanged bundle and therefore an
@@ -16,6 +23,7 @@ import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { PACK_BUNDLE_DIR, type ContentBundle } from '../../src/packs/content-bundle.js';
 import { BEATS_DIR, DIAGRAMS_DIR, PACK_FILE } from '../../src/packs/schema/files.js';
+import { sharedFor, type SharedRegistries } from './shared-refs.js';
 
 /** The pack the shell boots into when the URL names none (`sand-shn.1`). */
 export const SEED_PACK_ID = '1914-schlieffen-marne';
@@ -126,30 +134,28 @@ export function buildContentBundle(root: string, id = SEED_PACK_ID): ContentBund
     diagrams[name.replace(/\.svg$/, '')] = readFileSync(join(diagramsDir, name), 'utf8');
   }
 
-  return {
-    id,
-    pack: readJson(join(dir, PACK_FILE)),
-    collections,
-    beats,
-    diagrams,
-    shared: {
-      people: optionalJson(join(shared, 'people', 'people.json')) ?? [],
-      places: optionalJson(join(shared, 'places', 'places.json')) ?? [],
-      sources: optionalJson(join(shared, 'sources', 'sources.json')) ?? [],
-      // Written by `npm run media` / `npm run audio`; absent on a fresh clone
-      // that has not run them, and an empty manifest is the honest stand-in.
-      media: optionalJson(join(shared, 'media', 'index.json')) ?? {
-        generatedAt: '',
-        base: '/assets/media/',
-        entries: [],
-      },
-      audio: optionalJson(join(shared, 'audio', 'index.json')) ?? {
-        generatedAt: '',
-        base: '/assets/audio/',
-        entries: [],
-      },
+  const registries: SharedRegistries = {
+    people: optionalJson(join(shared, 'people', 'people.json')) ?? [],
+    places: optionalJson(join(shared, 'places', 'places.json')) ?? [],
+    sources: optionalJson(join(shared, 'sources', 'sources.json')) ?? [],
+    // Written by `npm run media` / `npm run audio`; absent on a fresh clone
+    // that has not run them, and an empty manifest is the honest stand-in.
+    media: optionalJson(join(shared, 'media', 'index.json')) ?? {
+      generatedAt: '',
+      base: '/assets/media/',
+      entries: [],
+    },
+    audio: optionalJson(join(shared, 'audio', 'index.json')) ?? {
+      generatedAt: '',
+      base: '/assets/audio/',
+      entries: [],
     },
   };
+
+  // The era half first, then the registries narrowed against it: what is
+  // scanned for references is exactly what the bundle ships.
+  const era = { id, pack: readJson(join(dir, PACK_FILE)), collections, beats, diagrams };
+  return { ...era, shared: sharedFor(registries, era) };
 }
 
 /**

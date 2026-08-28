@@ -281,3 +281,116 @@ It costs 6.2 kB of `index.html`, which the `eager` budget counts raw (1.9 kB of
 it on the wire, gzipped). That is the price of an error state that needs no
 request to render, and it is written here so the next person to look at the
 number knows what it bought.
+
+## Amendment: the shared registries are emitted per era (`sand-shn.15`)
+
+"A page load is one era and fetches one era" was true of `content/eras/` and
+not true of `content/shared/`. The registries — people, places, sources, and
+the generated media and audio indexes — are the union of _every_ era, and the
+bundler copied them whole into _every_ bundle. A reader who opened 1914
+downloaded the cast, the gazetteer and the bibliography of every other campaign
+in the project, and would have gone on doing so as the project grew.
+
+It was found by measurement, not by reading. Adding the Pacific cast to the
+people registry (43 entries, `sand-lry.3`) moved the heaviest era from 281.6 to
+297.7 kB gzip — and moved the 1915 pack by the same **+16.1 kB**, which
+references none of those people. One content pass took the `pack` ceiling's
+headroom from 58.4 kB to 42.3 kB, on both packs at once.
+
+That is a different problem from the one the ceiling was sized for, and it does
+not have the recorded answer. When `pack` goes red the record above says the
+era has become too heavy for one fetch and should be split by chapter
+(`sand-shn.1.3`). That cannot help here, because the weight is not that era's:
+it belongs to eras the reader did not open. With twenty packs projected
+(ADR 0019) the registries alone would exceed the ceiling long before any single
+era's own content did, and splitting every era by chapter would not move a byte
+of it.
+
+**A bundle carries the shared entities its era reaches, and nothing else.** The
+narrowing is `scripts/lib/shared-refs.ts`, and it is the only step in
+`pack-bundle.ts` that is not a straight copy of a file.
+
+### The set is found from the bytes, not from the schema
+
+The obvious implementation walks the schema: for each entity kind, visit the
+fields that hold shared ids. It is rejected, because the failure modes are not
+symmetric. Emitting an entity nothing needs costs bytes. _Not_ emitting one
+something needs is an entity that resolves in the validator, passes CI, and is
+missing in the browser — a worse bug than the one being fixed, and one the
+gates would not see. A hand-written walker is exactly the thing that goes stale
+when the schema grows a reference field, and it would be the second answer in
+the tree to "what does this era reference".
+
+So the set is found syntactically: every id-shaped token in the era's own bytes
+— its pack, its collections, its beats, its schematics — matched exactly
+against the registries, then closed under reference until nothing new appears.
+Every reference in `content/` is the entity's literal id; nothing in the app or
+the content builds one out of parts. The scan is therefore a **superset** of
+what any schema walker would find, it costs bytes rather than correctness when
+it over-approximates, and it cannot drift when a new field starts holding ids.
+
+One reference is not a literal id and is stated explicitly: `portraitFor` in
+`src/packs/media-index.ts` finds a picture by looking up its _sitter_, so a
+media entry whose subject is kept is kept too, even though its own id appears
+nowhere in the era.
+
+### The guard is worth more than the bytes
+
+Three properties are held by `scripts/pack-bundle.test.ts`, on the real tree:
+
+- **Nothing dangles.** Every id in a finished bundle that names a shared entity
+  is in that bundle. Re-read off the emitted bytes rather than off the
+  emitter's own walk, so it asks the question the browser will ask.
+- **The two answers agree.** `validateContent` now records which shared
+  entities each pack resolved (`Report.sharedRefs`), and every one of them must
+  be in that pack's bundle. Two resolvers that disagree is how a dangling
+  reference reaches production without CI noticing; here they are held against
+  each other. (Intersected with what the registries actually hold: the
+  validator reads the `media.json` manifests while the bundle carries the
+  generated `media/index.json`, and the index lags the manifests —
+  `sand-shn.16`.)
+- **Portraits survive.** Every person a bundle carries brings their portrait
+  with them.
+
+Nothing about validation changed: `npm run validate:content --warnings` is
+byte-identical over the current tree.
+
+### Measured
+
+| what                             | before   | after    |
+| -------------------------------- | -------- | -------- |
+| `1914-schlieffen-marne`          | 307.2 kB | 303.1 kB |
+| `1915-attrition`                 | 58.6 kB  | 3.0 kB   |
+| `pack` budget (heaviest + index) | 308.1 kB | 304.0 kB |
+| every era together (the deploy)  | 366.7 kB | 307.0 kB |
+
+1914 barely moves, and that is the point rather than a disappointment: it is
+the era the registries were written for, so it genuinely reaches almost all of
+them. The cost was always somebody else's, which is why it was invisible until
+there was a second pack. 1915 falls by 94%.
+
+The case the record exists for, measured on the two Pacific content branches
+that were finished and held while this landed — the Pacific cast of #146 (43
+people) and the Pacific bibliography of #149 (47 sources), neither of which
+1914 or 1915 mentions:
+
+| with #146 and #149 applied | 1914     | 1915    | headroom |
+| -------------------------- | -------- | ------- | -------- |
+| before                     | 334.7 kB | 86.1 kB | 4.4 kB   |
+| after                      | 302.5 kB | 3.0 kB  | 36.6 kB  |
+
+Ninety entries about a different ocean took the 1914 reader's download **up by
+27.5 kB and the ceiling's headroom down to 4.4 kB** — two content passes from
+red, for bytes no 1914 reader has any use for. Emitted per era they take it
+_down_ by 0.6 kB, because the only part of those branches 1914 touches is the
+handful of existing entries they tidied on the way past. That is the property
+worth having, and unlike a raised ceiling it does not decay as the atlas fills
+up.
+
+One visible consequence, recorded because it is a change to what is on screen
+and not only to what is on the wire: `MapSurface` draws the places it is given,
+so the 1914 map now draws the 81 places 1914 refers to rather than all 86 in
+the registry. Luxembourg, Sedan, Saint-Dié, Zeebrugge and Allenstein are named
+by no 1914 beat, event, route or waypoint, and are no longer labelled. If any
+of them belongs on the map it belongs there because some beat says so, which is
+the rule everything else on the map already follows.

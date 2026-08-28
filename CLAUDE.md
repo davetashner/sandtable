@@ -143,7 +143,10 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
   the visual gate stubs). `src/packs/pack-loader.ts` is the only module that
   knows that, and it has a **top-level `await`** on purpose: every module that
   reads the pack at module scope stays unchanged. The pack is still re-validated
-  with the schema on arrival. When the fetch fails, the module graph never
+  with the schema on arrival. The shared registries are **narrowed to what the
+  era reaches** before they go in the bundle (`scripts/lib/shared-refs.ts`,
+  ADR 0018's second amendment, `sand-shn.15`) — they are the union of every era
+  and would otherwise put the Pacific cast in front of a 1914 reader. When the fetch fails, the module graph never
   evaluates, so the failure state cannot be a component: it is static markup in
   `index.html` revealed by the boot hook (`src/packs/boot-script.ts`, ADR 0018's
   amendment) — three faces, atlas or retry.

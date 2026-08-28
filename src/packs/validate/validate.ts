@@ -120,6 +120,14 @@ export interface Report {
   /** Parsed content — complete only when there are no schema errors. */
   content: ParsedContent;
   counts: Record<string, number>;
+  /**
+   * Which shared-registry ids each pack resolves, keyed by pack directory and
+   * sorted (`sand-shn.15`). The build emits only the shared entities an era
+   * reaches, so this is what `scripts/pack-bundle.test.ts` holds that emission
+   * against: everything the validator resolved here must be in that era's
+   * bundle, or the pack would validate in CI and dangle in the browser.
+   */
+  sharedRefs: Record<string, string[]>;
 }
 
 // ------------------------------------------------------------------- index
@@ -154,6 +162,9 @@ type Kind =
   | 'score'
   | 'thread';
 
+/** The kinds that live in `content/shared/` rather than in one era. */
+const SHARED_KINDS: Kind[] = ['person', 'place', 'source', 'media', 'cue'];
+
 interface IndexEntry {
   kind: Kind;
   path: string;
@@ -169,6 +180,24 @@ class Ctx {
   readonly index = new Map<string, IndexEntry>();
   /** Every source id anything cites, so the registry can be checked for rot. */
   readonly cited = new Set<string>();
+  /** Shared entities reached from each pack directory (`sand-shn.15`). */
+  readonly sharedRefs = new Map<string, Set<string>>();
+
+  /**
+   * Note that a pack file reached a shared entity, so the build can be checked
+   * against what the validator actually resolved. The pack comes from the
+   * path, which is `eras/<dir>/…` for everything a pack owns, beats included;
+   * a reference from `shared/` or `threads/` belongs to no era and is skipped.
+   */
+  noteShared(path: string, id: string) {
+    const entry = this.index.get(id);
+    if (!entry || entry.pack || !SHARED_KINDS.includes(entry.kind)) return;
+    const dir = /^eras\/([^/]+)\//.exec(path)?.[1];
+    if (!dir) return;
+    const seen = this.sharedRefs.get(dir) ?? new Set<string>();
+    seen.add(id);
+    this.sharedRefs.set(dir, seen);
+  }
 
   error(path: string, message: string, id?: string) {
     this.errors.push(
@@ -209,6 +238,7 @@ class Ctx {
       this.error(path, `${what} ${id} is a ${entry.kind}, expected ${kinds.join('|')}`, owner);
       return undefined;
     }
+    this.noteShared(path, id);
     return entry;
   }
 }
@@ -1031,6 +1061,7 @@ function checkProseLinks(
   if (!text) return;
   for (const target of entityLinksIn(text)) {
     if (!ctx.index.has(target)) ctx.error(path, `${what} link ${target} does not exist`, id);
+    else ctx.noteShared(path, target);
   }
 }
 
@@ -1685,5 +1716,6 @@ export function validateContent(raw: RawContent): Report {
     warnings: ctx.warnings,
     content,
     counts,
+    sharedRefs: Object.fromEntries([...ctx.sharedRefs].map(([dir, ids]) => [dir, [...ids].sort()])),
   };
 }
