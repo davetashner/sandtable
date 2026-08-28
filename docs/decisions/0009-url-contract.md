@@ -82,6 +82,31 @@ can be read aloud, printed in a footnote, or diffed by eye.
   clock would write hundreds of entries; Back must leave the app, not step
   through a scrub.
 
+## Amendment: `pack` is not a slot (2026-08-28, `sand-shn.1`)
+
+The atlas of eras made one era per page load real, and the era is named in the
+URL as `?pack=<id>`. It is deliberately **not** added to `KNOWN`, and that is
+the decision rather than an omission.
+
+`pack` selects **which document is loaded**, not a state inside one. It is read
+before React exists — by the four-line boot script in `<head>`, which has to
+resolve it to start the fetch, and again by `pack-loader.ts`, which resolves it
+the same way so the request the browser started and the one the loader awaits
+cannot disagree. Making it a known slot would put it in `formatViewState`, and
+then every state write would carry it, and rule 3 above — the ordinary view has
+no parameters at all — would be false for every reader of the seed era.
+
+As an unknown parameter it round-trips as an `extra` and is re-emitted after
+the known slots, which is exactly the behaviour needed: scrubbing the clock
+inside the 1915 pack keeps the reader in the 1915 pack. That is the migration
+path this record already described, used as the destination rather than as a
+waypoint. `src/engine/url-state.test.ts` holds it.
+
+Two things follow. An id the build never emitted falls back to the seed era
+rather than to an empty screen, so a stale or mistyped link still opens
+something. And the default era is addressed as `/`, not `/?pack=…`, so every
+link written before the atlas existed still means what it meant.
+
 ## Consequences
 
 - Every new on/off switch registers a **layer name and a default** and goes

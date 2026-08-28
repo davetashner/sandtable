@@ -43,3 +43,27 @@ export interface ContentBundle {
 
 /** The dev-server path for an era's bundle; the build serves a hashed sibling. */
 export const devBundlePath = (id: string): string => `/${PACK_BUNDLE_DIR}/${id}.json`;
+
+/** The atlas's index of eras, served beside the bundles (`sand-shn.1`). */
+export const PACK_INDEX_PATH = `/${PACK_BUNDLE_DIR}/index.json`;
+
+/**
+ * The URL slot that names which era to open (`sand-shn.1`, extending ADR 0009).
+ * Absent means the seed pack, so every link written before the atlas existed
+ * still resolves to the campaign it was written for.
+ */
+export const PACK_SLOT = 'pack';
+
+/**
+ * Which pack a location asks for, given what the build emitted. Shared by the
+ * boot script in `<head>` and by `pack-loader.ts`, so the request the browser
+ * starts and the one the loader awaits can never disagree.
+ */
+export function resolvePackUrl(
+  search: string,
+  urls: Record<string, string>,
+  fallback: string,
+): string {
+  const want = new URLSearchParams(search).get(PACK_SLOT);
+  return (want && urls[want]) || urls[fallback] || '';
+}

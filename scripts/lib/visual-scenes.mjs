@@ -56,6 +56,7 @@ export const SCENES = [
   ['tour-step', `?tour=1914:tour-the-campaign`],
   ['layers-off-default', `?t=${T20}&layers=-commanders,-meanwhile.physics`],
   ['gallery', 'gallery.html'],
+  ['atlas', 'atlas.html'],
 ];
 
 export const VIEWPORTS = [

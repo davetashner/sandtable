@@ -18,8 +18,14 @@
  */
 import { join } from 'node:path';
 import type { Plugin } from 'vite';
-import { devBundlePath } from '../../src/packs/content-bundle.js';
-import { SEED_PACK_ID, bundleFileName, contentBundleJson } from './pack-bundle.js';
+import { PACK_INDEX_PATH, devBundlePath } from '../../src/packs/content-bundle.js';
+import {
+  SEED_PACK_ID,
+  bundleFileName,
+  contentBundleJson,
+  listPackIds,
+  packSummary,
+} from './pack-bundle.js';
 
 const VIRTUAL = 'virtual:sandtable-pack';
 const RESOLVED = '\0' + VIRTUAL;
@@ -31,8 +37,11 @@ const RESOLVED = '\0' + VIRTUAL;
  * script have no such rule — the promise the loader awaits is the request the
  * browser has already started.
  */
-const bootScript = (url: string) =>
-  `var p=fetch(${JSON.stringify(url)}).then(function(r){` +
+const bootScript = (urls: Record<string, string>, fallback: string) =>
+  `var U=${JSON.stringify(urls)},D=${JSON.stringify(fallback)};` +
+  `var w=new URLSearchParams(location.search).get("pack");` +
+  `var u=(w&&U[w])||U[D];window.__sandtablePackUrl=u;` +
+  `var p=fetch(u).then(function(r){` +
   `if(!r.ok)throw new Error("pack "+r.status+" "+r.statusText);return r.json()});` +
   `p.catch(function(){});window.__sandtablePack=p;`;
 
@@ -40,10 +49,17 @@ export function packBundlePlugin(id = SEED_PACK_ID): Plugin {
   let contentRoot = join(process.cwd(), 'content');
   let isBuild = false;
   let inline = false;
-  let url = devBundlePath(id);
+  /** Every era's bundle URL, keyed by era id — one entry before sand-shn.1. */
+  let urls: Record<string, string> = { [id]: devBundlePath(id) };
   let emitted = false;
 
-  const json = () => contentBundleJson(contentRoot, id);
+  const ids = () => {
+    const found = listPackIds(contentRoot);
+    return found.length ? found : [id];
+  };
+  const json = (packId = id) => contentBundleJson(contentRoot, packId);
+  const indexJson = () =>
+    JSON.stringify({ default: id, packs: ids().map((p) => packSummary(contentRoot, p)) });
 
   return {
     name: 'sandtable:pack-bundle',
@@ -53,15 +69,25 @@ export function packBundlePlugin(id = SEED_PACK_ID): Plugin {
       // Vitest drives Vite in `serve` mode with no HTTP server the page can
       // reach, so the bundle rides along in the virtual module instead.
       inline = Boolean(process.env.VITEST);
-      url = devBundlePath(id);
+      urls = Object.fromEntries(ids().map((p) => [p, devBundlePath(p)]));
     },
     buildStart() {
-      if (!isBuild) return;
-      const source = json();
-      const fileName = bundleFileName(source, id);
-      url = '/' + fileName;
-      if (emitted) return;
-      this.emitFile({ type: 'asset', fileName, source });
+      if (!isBuild || emitted) return;
+      const next: Record<string, string> = {};
+      for (const packId of ids()) {
+        const source = json(packId);
+        const fileName = bundleFileName(source, packId);
+        next[packId] = '/' + fileName;
+        this.emitFile({ type: 'asset', fileName, source });
+      }
+      urls = next;
+      // The atlas reads this instead of every bundle: a few hundred bytes an
+      // era rather than a few hundred kilobytes.
+      this.emitFile({
+        type: 'asset',
+        fileName: PACK_INDEX_PATH.replace(/^\//, ''),
+        source: indexJson(),
+      });
       emitted = true;
     },
     resolveId(source) {
@@ -70,21 +96,28 @@ export function packBundlePlugin(id = SEED_PACK_ID): Plugin {
     load(moduleId) {
       if (moduleId !== RESOLVED) return undefined;
       return (
-        `export const PACK_URL = ${JSON.stringify(url)};\n` +
+        `export const PACK_URLS = ${JSON.stringify(urls)};\n` +
+        `export const PACK_DEFAULT = ${JSON.stringify(id)};\n` +
+        `export const PACK_INDEX = ${JSON.stringify(PACK_INDEX_PATH)};\n` +
         `export const PACK_INLINE = ${inline ? json() : 'null'};\n`
       );
     },
     configureServer(server) {
-      const path = devBundlePath(id);
       server.middlewares.use((req, res, next) => {
-        if ((req.url ?? '').split('?')[0] !== path) return next();
-        res.setHeader('content-type', 'application/json; charset=utf-8');
-        res.setHeader('cache-control', 'no-cache');
-        res.end(json());
+        const path = (req.url ?? '').split('?')[0] ?? '';
+        const send = (body: string) => {
+          res.setHeader('content-type', 'application/json; charset=utf-8');
+          res.setHeader('cache-control', 'no-cache');
+          res.end(body);
+        };
+        if (path === PACK_INDEX_PATH) return send(indexJson());
+        const match = ids().find((p) => path === devBundlePath(p));
+        if (!match) return next();
+        send(json(match));
       });
     },
     transformIndexHtml() {
-      return [{ tag: 'script', children: bootScript(url), injectTo: 'head' as const }];
+      return [{ tag: 'script', children: bootScript(urls, id), injectTo: 'head' as const }];
     },
   };
 }

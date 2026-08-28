@@ -322,3 +322,29 @@ h1 {
 .surface--timeline {
   padding: 14px 17px 10px;
 }
+
+/* The link into the atlas of eras (sand-shn.1). Quiet: the campaign in front
+   of the reader is the thing, and this is the door out of it. */
+.app__atlas-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: var(--target-min);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+  text-decoration: underline;
+  text-decoration-color: var(--brass-dim);
+  text-underline-offset: 3px;
+}
+
+.app__atlas-link::after {
+  content: '→';
+  text-decoration: none;
+}
+
+.app__atlas-link:hover {
+  text-decoration-color: var(--brass);
+}

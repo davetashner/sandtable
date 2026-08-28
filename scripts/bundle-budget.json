@@ -17,9 +17,10 @@
     },
     "pack": {
       "maxGzipKb": 340,
-      "measuredKb": 279.4,
-      "measuredOn": "2026-08-25",
-      "why": "dist/pack/ — the content bundle the app fetches: one era's pack.json, its collections, its beats and schematics, the shared people/places/sources registries, and the generated media and audio manifests (ADR 0018). It is downloaded on every cold load, so it is gated; it is gated separately because content and code grow for different reasons, and the whole point of fetching it was that a content pull request should stop being a performance pull request. 340 is about 22% above today's 279.4 kB — roughly the next dozen content passes at the rate of sand-23b.28 and sand-23b.31. When it does go red the answer is not a bigger number: it is that one era is now too heavy for one fetch, and the bundle should be split by chapter or by era the way sand-shn.1's atlas landing page will want anyway."
+      "measuredKb": 281.6,
+      "measuredOn": "2026-08-28",
+      "why": "The heaviest era in dist/pack/ plus the atlas index — what one cold load actually fetches, because a page load is one era (ADR 0018, ADR 0009's amendment, sand-shn.1). It used to be the sum of the directory, which was the same number while there was one pack and became the wrong one the moment there were two: summing eras would have turned this ceiling red on the second, for bytes no reader ever downloads. Every era together is printed under the chunk list, reported and not gated, because that is the deploy's weight rather than a reader's. It is gated separately from code because content and code grow for different reasons, and the whole point of fetching it was that a content pull request should stop being a performance pull request. 340 is about 21% above today's 281.6 kB — roughly the next dozen content passes on the heaviest era. When it does go red the answer is not a bigger number: it is that one era is now too heavy for one fetch, and that era's bundle should be split by chapter (sand-shn.1.3).",
+      "$note": "history: 1100 including the pack (1082.2 kB) → 890 code-only (805.6 kB), sand-shn.1.1 → measurement changed from the sum of dist/pack/ to the heaviest era, sand-shn.1."
     }
   }
 }

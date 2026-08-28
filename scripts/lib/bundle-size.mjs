@@ -53,13 +53,23 @@ export function bundleReport(dist = DIST) {
   ].sort((a, b) => b.gzip - a.gzip);
   const htmlBytes = statSync(join(dist, 'index.html')).size;
   const sum = (p) => files.filter(p).reduce((a, b) => a + b.gzip, 0);
+  // One era per page load (sand-shn.1), so what a cold load costs is the
+  // largest single bundle plus the atlas index — not the sum of every era.
+  // Summing them would turn the ceiling red the moment a second era existed,
+  // for bytes no reader ever downloads.
+  const eras = files.filter((f) => f.group === 'pack' && f.file !== 'pack/index.json');
+  const indexGzip = sum((f) => f.file === 'pack/index.json');
   return {
     files,
     htmlBytes,
     eagerGzip: sum((f) => f.eager) + htmlBytes,
     lazyGzip: sum((f) => f.group === 'app' && !f.eager),
     codeGzip: sum((f) => f.group === 'app') + htmlBytes,
-    packGzip: sum((f) => f.group === 'pack'),
+    /** The heaviest era, which is what the slowest cold load actually fetches. */
+    packGzip: eras.reduce((a, f) => Math.max(a, f.gzip), 0) + indexGzip,
+    /** Every era together — the deploy's weight, reported and not gated. */
+    packAllGzip: sum((f) => f.group === 'pack'),
+    eraCount: eras.length,
     totalGzip: sum(() => true) + htmlBytes,
   };
 }
