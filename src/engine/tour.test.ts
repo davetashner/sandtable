@@ -2,14 +2,18 @@ import { describe, expect, it } from 'vitest';
 import type { DecisionPoint, NarrativeBeat, Tour, TourStep } from '../packs/schema/index.js';
 import {
   TOUR_SPEED,
+  atStop,
   diverged,
+  dwellForStop,
   dwellMs,
   holdMs,
   resolvePosition,
   stopsForStep,
+  tourCommandFor,
   tourMinutes,
   viewForStep,
 } from './tour.js';
+import { OWNS_KEYS } from './shortcuts.js';
 
 const T = (s: string) => Date.parse(s);
 
@@ -171,5 +175,68 @@ describe('tourMinutes', () => {
     const minutes = tourMinutes(tour);
     // three still steps + a 5-day window: 120 s of playback, plus four dwells
     expect(minutes).toBe(Math.round((120 + 4 * 6) / 60));
+  });
+});
+
+describe('atStop (sand-1l0.28)', () => {
+  const still = viewForStep(tour.steps[0]!, '1914:historical');
+  const playing = viewForStep(tour.steps[2]!, '1914:historical'); // 25 → 30 Aug
+
+  it('is true the moment a still step opens — there is nothing to play through', () => {
+    expect(atStop(still, still.t, still.t)).toBe(true);
+    expect(atStop(undefined, 0, 0)).toBe(true);
+  });
+
+  it('is false while a playing step still has clock to cover, true once it arrives', () => {
+    const end = playing.playTo!;
+    expect(atStop(playing, end, playing.t)).toBe(false);
+    expect(atStop(playing, end, T('1914-08-27T00:00:00Z'))).toBe(false);
+    expect(atStop(playing, end, end)).toBe(true);
+    expect(atStop(playing, end, end + 1)).toBe(true);
+  });
+});
+
+describe('dwellForStop (sand-1l0.28)', () => {
+  const s = step({ id: 'a', hold: 9, narration: 'Two words.' });
+
+  it('gives the end of a step the author’s hold', () => {
+    expect(dwellForStop(s, { at: 0, kind: 'step-end', text: s.narration })).toBe(9000);
+  });
+
+  it('gives every other break a dwell scaled to what it put in front of the reader', () => {
+    const body = Array.from({ length: 100 }, () => 'word').join(' ');
+    expect(dwellForStop(s, { at: 0, kind: 'beat', text: body })).toBe(dwellMs(body));
+    expect(dwellForStop(s, { at: 0, kind: 'card' })).toBe(dwellMs(undefined));
+    expect(dwellForStop(s, undefined)).toBe(dwellMs(undefined));
+  });
+});
+
+describe('tourCommandFor (sand-1l0.28, sand-pmz.4)', () => {
+  const el = (html: string) => {
+    const host = document.createElement('div');
+    host.innerHTML = html;
+    return host.firstElementChild!;
+  };
+
+  it('maps the tour’s four keys and nothing else', () => {
+    const body = document.body;
+    expect(tourCommandFor('Escape', body)).toBe('exit');
+    expect(tourCommandFor(' ', body)).toBe('toggle');
+    expect(tourCommandFor('ArrowRight', body)).toBe('forward');
+    expect(tourCommandFor('ArrowLeft', body)).toBe('back');
+    expect(tourCommandFor('Home', body)).toBeUndefined();
+    expect(tourCommandFor('k', body)).toBeUndefined();
+  });
+
+  it('keeps out of the way of a focused control', () => {
+    for (const tag of ['button', 'input', 'textarea', 'select']) {
+      expect(tourCommandFor(' ', el(`<${tag}></${tag}>`))).toBeUndefined();
+    }
+  });
+
+  it('keeps out of the way of a surface that drives itself from the keyboard', () => {
+    const owner = el(`<div ${OWNS_KEYS}><span>inside</span></div>`);
+    expect(tourCommandFor('ArrowRight', owner)).toBeUndefined();
+    expect(tourCommandFor('ArrowRight', owner.firstElementChild)).toBeUndefined();
   });
 });

@@ -11,12 +11,14 @@ import {
   Suspense,
   createContext,
   lazy,
+  type Dispatch,
   type ReactElement,
   type ReactNode,
   useCallback,
   useContext,
   useEffect,
   useMemo,
+  useReducer,
   useRef,
   useState,
 } from 'react';
@@ -42,15 +44,17 @@ import {
 import { seed } from './packs/seed.js';
 import {
   TOUR_SPEED,
+  atStop,
   diverged,
-  dwellMs,
-  holdMs,
+  dwellForStop,
   resolvePosition,
   stopsForStep,
+  tourCommandFor,
   tourMinutes,
   viewForStep,
   type TourPosition,
   type TourStop,
+  type TourView,
 } from './engine/tour.js';
 import { TourLauncher, TourPanel } from './ui/TourPanel.js';
 import { OpeningSequence } from './ui/OpeningSequence.js';
@@ -88,7 +92,6 @@ import { Timeline, type TimelineMarker, type TimelinePhase } from './ui/Timeline
 import { BibliographyView, SourceCardView } from './ui/Bibliography.js';
 import { BIBLIOGRAPHY_CARD, countCitations, type SourceUse } from './engine/bibliography.js';
 import { layerOn, parseViewState } from './engine/url-state.js';
-import { ownsKeys } from './engine/shortcuts.js';
 import type { Battle, Camera, Links, ScienceField } from './packs/schema/index.js';
 import type { ClockRange } from './engine/clock.js';
 
@@ -348,106 +351,110 @@ function useTour(): TourValue {
 }
 
 /**
- * The guided tour (sand-1l0.14). The URL holds where the tour is (`tour`,
- * `step`), so it is resumable and deep-linkable; this provider applies each
- * step's view — slots first, then the clock once the range has caught up with
- * a zoom-in — advances when the step is done, and stops the moment the viewer
- * touches anything the tour did not set. Nothing here knows about 1914.
+ * Where the tour has got to, as one value.
+ *
+ * The rules below share this state, and while it was six loose pieces their
+ * interlocking was invisible: the Resume button was dead whenever a card was
+ * open (sand-pmz.25) because two of them disagreed about what `running` meant
+ * inside a single tick. Every transition is now written out once, named, in
+ * `tourReducer` — which is the only place that disagreement could hide.
  */
-function TourProvider({ children }: { children: ReactNode }) {
-  const { tour: tourSlot, step: stepSlot, focus, branch, card } = useViewState();
-  const controls = useViewStateControls();
-  const clock = useClockControls();
-  const { now, range } = useClock();
+interface TourState {
+  /** The step whose slots — branch, zoom-in, card — are on screen. */
+  applied: string | null;
+  /** The step whose clock has been applied; the advance timers wait for it. */
+  armed: string | null;
+  /** True while the tour is advancing itself. */
+  running: boolean;
+  /** Stopped at a break in the narrative, waiting to be let on (sand-1l0.28). */
+  waiting: boolean;
+  /** Which of the step's breaks we are stopped at, or heading for. */
+  stopIndex: number;
+  /** A resume out of a taken-over view plays once the step is armed again. */
+  playWhenArmed: boolean;
+}
+
+type TourAction =
+  /** No tour in the URL: forget which step was applied. */
+  | { type: 'idle' }
+  /** The step's slots are on screen; its clock is not, yet. */
+  | { type: 'applied'; key: string }
+  /** The clock is on the step — which may open already stopped on a card. */
+  | { type: 'armed'; key: string; waiting: boolean }
+  | { type: 'run' }
+  | { type: 'pause' }
+  /** Resume out of a view the reader took over: build the step again, then play. */
+  | { type: 'rebuild' }
+  /** Playback reached the break it was heading for. */
+  | { type: 'wait' }
+  /** The reader let it on from that break. */
+  | { type: 'nextStop' }
+  | { type: 'exit' };
+
+const TOUR_IDLE: TourState = {
+  applied: null,
+  armed: null,
+  running: false,
+  waiting: false,
+  stopIndex: 0,
+  playWhenArmed: false,
+};
+
+function tourReducer(state: TourState, action: TourAction): TourState {
+  switch (action.type) {
+    case 'idle':
+      return state.applied === null ? state : { ...state, applied: null };
+    case 'applied':
+      // A step opens unarmed at its first break, whatever the last one left.
+      return { ...state, applied: action.key, armed: null, waiting: false, stopIndex: 0 };
+    case 'armed':
+      // …and this is the moment a resume that had to rebuild the view was waiting for.
+      return {
+        ...state,
+        armed: action.key,
+        waiting: action.waiting,
+        running: state.running || state.playWhenArmed,
+        playWhenArmed: false,
+      };
+    case 'run':
+      return { ...state, running: true };
+    case 'pause':
+      return { ...state, running: false };
+    case 'rebuild':
+      return { ...state, applied: null, playWhenArmed: true };
+    case 'wait':
+      return { ...state, waiting: true };
+    case 'nextStop':
+      return { ...state, waiting: false, stopIndex: state.stopIndex + 1 };
+    case 'exit':
+      return TOUR_IDLE;
+  }
+}
+
+/** Everything the tour's rules read: where it is, what it wants, how it is going. */
+interface TourMachine {
+  pos: TourPosition | undefined;
+  /** The view the step asks for — an absent slot means the default, never "as before". */
+  expected: TourView | undefined;
+  /** Every break this step passes through, in order (sand-1l0.28). */
+  stops: TourStop[];
+  state: TourState;
+  dispatch: Dispatch<TourAction>;
+}
+
+/**
+ * Where the tour is and what that asks of the view. The URL holds the position
+ * (`tour`, `step`), so a tour is resumable and deep-linkable; the rest is
+ * derived from it, so nothing has to be kept in step by hand.
+ */
+function useTourMachine(): TourMachine {
+  const { tour: tourSlot, step: stepSlot } = useViewState();
+  const [state, dispatch] = useReducer(tourReducer, TOUR_IDLE);
   const pos = useMemo(() => resolvePosition(seed.tours, tourSlot, stepSlot), [tourSlot, stepSlot]);
   const expected = useMemo(
     () => (pos ? viewForStep(pos.step, seed.pack.defaultBranch) : undefined),
     [pos],
   );
-  const [running, setRunning] = useState(false);
-  // Lean back by default; readers who want the wheel turn it off (sand-1l0.28).
-  const [autoAdvance, setAutoAdvance] = useState(true);
-  // The step whose clock has been applied; state (not a ref) so the advance
-  // timers arm only once the view has actually settled on the step.
-  const [armed, setArmed] = useState<string | null>(null);
-  const slotsFor = useRef<string | null>(null);
-  /** Bumped to ask effect 1 to apply a step's view again (sand-pmz.25). */
-  const [reapply, setReapply] = useState(0);
-  /** Set by a resume out of a diverged view: play once the step is armed again. */
-  const runWhenArmed = useRef(false);
-  const speedBefore = useRef<number | null>(null);
-
-  const exit = useCallback(() => {
-    setRunning(false);
-    setArmed(null);
-    setWaiting(false);
-    setStopIndex(0);
-    slotsFor.current = null;
-    runWhenArmed.current = false;
-    clock.pause();
-    if (speedBefore.current) clock.setSpeed(speedBefore.current);
-    speedBefore.current = null;
-    controls?.setTour(undefined);
-  }, [clock, controls]);
-
-  const goto = useCallback(
-    (index: number) => {
-      if (!pos) return;
-      const step = pos.tour.steps[index];
-      if (!step) {
-        // Past the last step: hold the final view and hand back control.
-        setRunning(false);
-        clock.pause();
-        return;
-      }
-      controls?.setTour(pos.tour.id, step.id);
-    },
-    [pos, controls, clock],
-  );
-
-  const start = useCallback(() => {
-    const tour = seed.tours[0];
-    if (!tour || !controls) return;
-    speedBefore.current = clock.get().speed;
-    setRunning(true);
-    controls.setTour(tour.id, tour.steps[0]!.id);
-  }, [controls, clock]);
-
-  /**
-   * Pause, or resume — and resuming means "put me back where the tour was".
-   *
-   * Effect 6 pauses whenever the view diverges from the step, which is right:
-   * the reader opened a card, switched branch or left the zoom-in, and has
-   * taken over. Turning `running` straight back on could never work, because
-   * effect 6 has `running` in its dependencies: it re-ran, found the same
-   * divergence, and switched it off again in the same tick. The button did
-   * nothing, however often it was pressed, and nothing said why (sand-pmz.25).
-   *
-   * So a resume out of a diverged view does not set `running` at all. It drops
-   * effect 1's one-application-per-step latch and asks it to run again, which
-   * restores the step's focus, branch and card; effect 2 re-seeks the clock and
-   * arms the step; and only then — with the view actually back on the step —
-   * does the tour start playing. Setting `running` any earlier would just hand
-   * effect 6 a diverged view again, which is the bug.
-   *
-   * A plain pause and resume, with nothing taken over, keeps carrying on from
-   * where it stopped rather than jumping back to the top of the step.
-   */
-  const toggle = useCallback(() => {
-    if (running) {
-      setRunning(false);
-      return;
-    }
-    if (expected && diverged(expected, { focus, branch, card }, now)) {
-      slotsFor.current = null;
-      runWhenArmed.current = true;
-      setReapply((n) => n + 1);
-      return;
-    }
-    setRunning(true);
-  }, [running, expected, focus, branch, card, now]);
-
-  // Where this step stops so the reader can catch up, and which one we are at.
   const stops = useMemo(
     () =>
       pos && expected
@@ -459,139 +466,315 @@ function TourProvider({ children }: { children: ReactNode }) {
         : [],
     [pos, expected],
   );
-  const [stopIndex, setStopIndex] = useState(0);
-  const [waiting, setWaiting] = useState(false);
-  const stop = waiting ? stops[stopIndex] : undefined;
+  return { pos, expected, stops, state, dispatch };
+}
 
-  /** Let the tour on from the break it is stopped at — the next stop, or the next step. */
+/** The five things a reader can ask of a tour. */
+interface TourActions {
+  start: () => void;
+  exit: () => void;
+  goto: (index: number) => void;
+  toggle: () => void;
+  advance: () => void;
+}
+
+/**
+ * Those five, written once. `start` and `exit` are also the only places the
+ * reader's own pace is saved and put back: a tour plays at its own speed, and
+ * leaving one should not leave them with it.
+ */
+function useTourActions(m: TourMachine): TourActions {
+  const { pos, expected, stops, state, dispatch } = m;
+  const controls = useViewStateControls();
+  const clock = useClockControls();
+  const { focus, branch, card } = useViewState();
+  const { now } = useClock();
+  const speedBefore = useRef<number | null>(null);
+
+  const exit = useCallback(() => {
+    dispatch({ type: 'exit' });
+    clock.pause();
+    if (speedBefore.current) clock.setSpeed(speedBefore.current);
+    speedBefore.current = null;
+    controls?.setTour(undefined);
+  }, [clock, controls, dispatch]);
+
+  const goto = useCallback(
+    (index: number) => {
+      if (!pos) return;
+      const step = pos.tour.steps[index];
+      if (!step) {
+        // Past the last step: hold the final view and hand back control.
+        dispatch({ type: 'pause' });
+        clock.pause();
+        return;
+      }
+      controls?.setTour(pos.tour.id, step.id);
+    },
+    [pos, controls, clock, dispatch],
+  );
+
+  const start = useCallback(() => {
+    const tour = seed.tours[0];
+    if (!tour || !controls) return;
+    speedBefore.current = clock.get().speed;
+    dispatch({ type: 'run' });
+    controls.setTour(tour.id, tour.steps[0]!.id);
+  }, [controls, clock, dispatch]);
+
+  /**
+   * Pause, or resume — and resuming means "put me back where the tour was".
+   *
+   * `useDivergenceWatch` pauses whenever the view diverges from the step, which
+   * is right: the reader opened a card, switched branch or left the zoom-in,
+   * and has taken over. Turning `running` straight back on could never work,
+   * because that watch has `running` in its dependencies: it re-ran, found the
+   * same divergence, and switched it off again in the same tick. The button did
+   * nothing, however often it was pressed, and nothing said why (sand-pmz.25).
+   *
+   * So a resume out of a diverged view does not set `running` at all. It drops
+   * `useStepView`'s one-application-per-step latch, which restores the step's
+   * focus, branch and card; the clock is re-seeked and the step armed; and only
+   * then — with the view actually back on the step — does the tour start
+   * playing, which is what `playWhenArmed` carries across those two moves.
+   * Setting `running` any earlier would just hand the watch a diverged view
+   * again, which is the bug.
+   *
+   * A plain pause and resume, with nothing taken over, keeps carrying on from
+   * where it stopped rather than jumping back to the top of the step.
+   */
+  const toggle = useCallback(() => {
+    if (state.running) {
+      dispatch({ type: 'pause' });
+      return;
+    }
+    if (expected && diverged(expected, { focus, branch, card }, now)) {
+      dispatch({ type: 'rebuild' });
+      return;
+    }
+    dispatch({ type: 'run' });
+  }, [state.running, expected, focus, branch, card, now, dispatch]);
+
+  /** Let the tour on from the break it is stopped at — the next break, or the next step. */
   const advance = useCallback(() => {
     if (!pos) return;
-    setRunning(true);
-    if (!waiting) return;
-    if (stopIndex < stops.length - 1) {
-      setStopIndex(stopIndex + 1);
-      setWaiting(false);
+    dispatch({ type: 'run' });
+    if (!state.waiting) return;
+    if (state.stopIndex < stops.length - 1) {
+      dispatch({ type: 'nextStop' });
       return;
     }
     goto(pos.index + 1);
-  }, [pos, waiting, stopIndex, stops.length, goto]);
+  }, [pos, state.waiting, state.stopIndex, stops.length, goto, dispatch]);
 
-  // 1. the step's slots — branch, zoom-in, card — applied once per step.
+  return useMemo(
+    () => ({ start, exit, goto, toggle, advance }),
+    [start, exit, goto, toggle, advance],
+  );
+}
+
+/**
+ * Puts the step on screen, in two moves that have to happen in this order.
+ *
+ * The slots first — branch, zoom-in, card — once per step, because they are
+ * what the URL carries and re-applying them would fight the reader. Then the
+ * clock, but only once the focus swap has given us the range the step lives in:
+ * a step inside a zoom-in names an instant the campaign's range does not
+ * contain, and seeking before `FocusController` has swapped the range would be
+ * clamped to an edge.
+ */
+function useStepView(m: TourMachine): void {
+  const { pos, expected, stops, state, dispatch } = m;
+  const controls = useViewStateControls();
+  const clock = useClockControls();
+  const { focus } = useViewState();
+  const { range } = useClock();
+
   useEffect(() => {
     if (!pos || !expected || !controls) {
-      slotsFor.current = null;
+      dispatch({ type: 'idle' });
       return;
     }
-    if (slotsFor.current === pos.key) return;
-    slotsFor.current = pos.key;
-    setArmed(null);
-    setStopIndex(0);
-    setWaiting(false);
+    if (state.applied === pos.key) return;
+    dispatch({ type: 'applied', key: pos.key });
     controls.setFocus(expected.focus);
     controls.setBranch(expected.branch);
     controls.setCard(expected.card);
-  }, [pos, expected, controls, reapply]);
+  }, [pos, expected, controls, state.applied, dispatch]);
 
-  // 2. the clock, once the focus swap has given us the range the step lives in.
   useEffect(() => {
-    if (!pos || !expected || armed === pos.key || slotsFor.current !== pos.key) return;
+    if (!pos || !expected || state.armed === pos.key || state.applied !== pos.key) return;
     if ((focus ?? undefined) !== expected.focus) return;
     if (expected.t < range.start || expected.t > range.end) return;
     clock.seek(expected.t);
     clock.setSpeed(pos.step.speed ?? TOUR_SPEED);
-    setArmed(pos.key);
-    // A step that reveals a card stops on the reveal before it plays.
-    setWaiting(stops.length > 0 && stops[0]!.at <= expected.t);
-    // A resume that had to rebuild the view waited for this moment to play.
-    if (runWhenArmed.current) {
-      runWhenArmed.current = false;
-      setRunning(true);
-    }
-  }, [pos, expected, armed, focus, range.start, range.end, clock, stops]);
+    dispatch({
+      type: 'armed',
+      key: pos.key,
+      // A step that reveals a card stops on the reveal before it plays.
+      waiting: stops.length > 0 && stops[0]!.at <= expected.t,
+    });
+  }, [
+    pos,
+    expected,
+    state.armed,
+    state.applied,
+    focus,
+    range.start,
+    range.end,
+    clock,
+    stops,
+    dispatch,
+  ]);
+}
 
-  // 3. play up to the next stop, or hold still there.
+/**
+ * Plays the step up to its next break and stops it there.
+ *
+ * The two halves are one rule read from opposite ends — run the clock while the
+ * break is still ahead, declare the tour stopped once it is not — so they share
+ * `atStop` rather than each spelling the condition out. When they disagreed the
+ * tour either overran the break or never left it.
+ */
+function useStopPlayback(m: TourMachine): void {
+  const { pos, expected, stops, state, dispatch } = m;
+  const clock = useClockControls();
+  const { now } = useClock();
+  const target = stops[state.stopIndex]?.at;
+
   useEffect(() => {
-    if (!pos || !expected || armed !== pos.key) return;
-    const target = stops[stopIndex]?.at;
+    if (!pos || !expected || state.armed !== pos.key) return;
     const playing = clock.get().playing;
     const wants =
-      running && !waiting && expected.playTo !== undefined && target !== undefined && now < target;
+      state.running && !state.waiting && target !== undefined && !atStop(expected, target, now);
     if (wants && !playing) clock.play();
     if (!wants && playing) clock.pause();
-  }, [pos, expected, armed, running, waiting, now, clock, stops, stopIndex]);
+  }, [pos, expected, state.armed, state.running, state.waiting, now, clock, target]);
 
-  // 4. reaching a stop is a pause in the narrative, not the end of the tour.
+  // Reaching a break is a pause in the narrative, not the end of the tour.
   useEffect(() => {
-    if (!pos || !running || waiting || armed !== pos.key) return;
-    const target = stops[stopIndex]?.at;
+    if (!pos || !state.running || state.waiting || state.armed !== pos.key) return;
     if (target === undefined) return;
-    if (expected?.playTo === undefined || now >= target) {
+    if (atStop(expected, target, now)) {
       clock.pause();
-      setWaiting(true);
+      dispatch({ type: 'wait' });
     }
-  }, [pos, expected, running, waiting, armed, now, clock, stops, stopIndex]);
+  }, [pos, expected, state.running, state.waiting, state.armed, now, clock, target, dispatch]);
+}
 
-  // 5. leaving a stop: on a dwell scaled to the reading, or on a click.
+/**
+ * Leaving a break on a dwell scaled to the reading rather than on a click —
+ * the lean-back half of the choice in `autoAdvance` (sand-1l0.28). A reader who
+ * has taken the wheel turns it off and nothing here ever arms.
+ */
+function useDwellTimer(m: TourMachine, autoAdvance: boolean, advance: () => void): void {
+  const { pos, stops, state } = m;
   useEffect(() => {
-    if (!waiting || !running || !autoAdvance || !pos || armed !== pos.key) return;
-    const here = stops[stopIndex];
-    const ms = here?.kind === 'step-end' ? holdMs(pos.step) : dwellMs(here?.text);
-    const id = window.setTimeout(advance, ms);
+    if (!state.waiting || !state.running || !autoAdvance || !pos || state.armed !== pos.key) return;
+    const id = window.setTimeout(advance, dwellForStop(pos.step, stops[state.stopIndex]));
     return () => window.clearTimeout(id);
-  }, [waiting, running, autoAdvance, pos, armed, stops, stopIndex, advance]);
+  }, [
+    state.waiting,
+    state.running,
+    autoAdvance,
+    pos,
+    state.armed,
+    stops,
+    state.stopIndex,
+    advance,
+  ]);
+}
 
-  // 6. the viewer takes over: anything the tour did not do stops the autoplay.
+/**
+ * The viewer takes over: anything the tour did not do stops the autoplay. Note
+ * that getting going again is not simply turning this back on — see `toggle`.
+ */
+function useDivergenceWatch(m: TourMachine): void {
+  const { pos, expected, state, dispatch } = m;
+  const { focus, branch, card } = useViewState();
+  const { now } = useClock();
   useEffect(() => {
-    if (!pos || !expected || !running || armed !== pos.key) return;
-    if (diverged(expected, { focus, branch, card }, now)) setRunning(false);
-  }, [pos, expected, running, armed, focus, branch, card, now]);
+    if (!pos || !expected || !state.running || state.armed !== pos.key) return;
+    if (diverged(expected, { focus, branch, card }, now)) dispatch({ type: 'pause' });
+  }, [pos, expected, state.running, state.armed, focus, branch, card, now, dispatch]);
+}
 
-  // 7. the keyboard drives the whole tour — no pointer required (sand-1l0.28).
+/**
+ * The keyboard drives the whole tour — no pointer required (sand-1l0.28).
+ * Which press is ours to hear, and what each one means, is `tourCommandFor`;
+ * what it does about the break in front of the reader is here.
+ */
+function useTourKeys(m: TourMachine, actions: TourActions): void {
+  const { pos, state } = m;
+  const { exit, advance, goto, toggle } = actions;
   useEffect(() => {
     if (!pos) return;
     const onKey = (e: KeyboardEvent) => {
-      const el = e.target as HTMLElement | null;
-      if (el && /^(BUTTON|INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return;
-      // …and any surface that drives itself from the keyboard (sand-pmz.4).
-      if (ownsKeys(e.target)) return;
-      if (e.key === 'Escape') {
-        exit();
-      } else if (e.key === ' ') {
-        // Space is the master switch: let a pause go, or pause the playback.
-        e.preventDefault();
-        if (waiting) advance();
-        else toggle();
-      } else if (e.key === 'ArrowRight') {
-        // → is always forward: past this break, or on to the next step.
-        e.preventDefault();
-        if (waiting) advance();
-        else goto(pos.index + 1);
-      } else if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        goto(pos.index - 1);
+      const command = tourCommandFor(e.key, e.target);
+      if (!command) return;
+      // Escape is every overlay's way out and not the tour's to swallow; the
+      // other three are the tour's own for as long as it is on screen.
+      if (command !== 'exit') e.preventDefault();
+      switch (command) {
+        case 'exit':
+          exit();
+          break;
+        case 'toggle':
+          // Space is the master switch: let a break go, or pause the playback.
+          if (state.waiting) advance();
+          else toggle();
+          break;
+        case 'forward':
+          // → is always forward: past this break, or on to the next step.
+          if (state.waiting) advance();
+          else goto(pos.index + 1);
+          break;
+        case 'back':
+          goto(pos.index - 1);
+          break;
       }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [pos, exit, advance, goto, waiting, toggle]);
+  }, [pos, exit, advance, goto, state.waiting, toggle]);
+}
 
+/**
+ * The guided tour (sand-1l0.14). The URL holds where the tour is (`tour`,
+ * `step`), so it is resumable and deep-linkable; the tour applies each step's
+ * view — slots first, then the clock once the range has caught up with a
+ * zoom-in — advances when the step is done, and stops the moment the viewer
+ * touches anything it did not set. Nothing here knows about 1914.
+ *
+ * Each of those rules is a hook of its own above, named for what it owns; what
+ * is left in the provider is the machine they share and the value the panel
+ * reads off it.
+ */
+function TourProvider({ children }: { children: ReactNode }) {
+  const machine = useTourMachine();
+  const actions = useTourActions(machine);
+  // Lean back by default; readers who want the wheel turn it off (sand-1l0.28).
+  const [autoAdvance, setAutoAdvance] = useState(true);
+  useStepView(machine);
+  useStopPlayback(machine);
+  useDwellTimer(machine, autoAdvance, actions.advance);
+  useDivergenceWatch(machine);
+  useTourKeys(machine, actions);
+
+  const { pos, stops, state } = machine;
   const minutes = useMemo(() => (seed.tours[0] ? tourMinutes(seed.tours[0]) : 0), []);
   const value = useMemo<TourValue>(
     () => ({
       pos,
-      running,
-      waiting,
-      stop,
+      running: state.running,
+      waiting: state.waiting,
+      stop: state.waiting ? stops[state.stopIndex] : undefined,
       autoAdvance,
       minutes,
-      start,
-      exit,
-      goto,
-      toggle,
-      advance,
+      ...actions,
       setAutoAdvance,
     }),
-    [pos, running, waiting, stop, autoAdvance, minutes, start, exit, goto, toggle, advance],
+    [pos, stops, state.running, state.waiting, state.stopIndex, autoAdvance, minutes, actions],
   );
   return <TourCtx.Provider value={value}>{children}</TourCtx.Provider>;
 }

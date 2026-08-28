@@ -7,6 +7,9 @@
  *
  *   where am I            resolvePosition(tours, tourId, stepId)
  *   what should the view be  viewForStep(step, defaultBranch)
+ *   where does it stop       stopsForStep(step, view, ctx)
+ *   is it at a stop yet      atStop(view, target, now)
+ *   what did that key ask    tourCommandFor(key, target)
  *   has the viewer taken over  diverged(expected, actual, now)
  *
  * Nothing is era- or 1914-specific; the controller in App.tsx applies the
@@ -14,6 +17,7 @@
  */
 import type { DecisionPoint, NarrativeBeat, Tour, TourStep } from '../packs/schema/index.js';
 import { DEFAULT_SPEED } from './clock.js';
+import { ownsKeys } from './shortcuts.js';
 
 /**
  * Simulated milliseconds per real second a tour plays at unless a step says
@@ -168,6 +172,62 @@ export function stopsForStep(step: TourStep, view: TourView, ctx: StopContext): 
   stops.push({ at: end ?? start, kind: 'step-end', text: step.narration });
   // One stop per instant: a decision on a beat boundary is one pause, not two.
   return stops.filter((s, i) => i === 0 || s.at !== stops[i - 1]!.at || s.kind === 'step-end');
+}
+
+/**
+ * Has playback arrived at the break it is heading for?
+ *
+ * A still step is at its stop the moment it opens — there is nothing to play
+ * through — and a step with a `playUntil` when the clock reaches the stop.
+ * One predicate, because the two effects that use it have to agree: one plays
+ * up to the break, the other declares the tour stopped there, and if they read
+ * the instant differently the tour either overruns the stop or never leaves it.
+ */
+export function atStop(view: TourView | undefined, target: number, now: number): boolean {
+  return view?.playTo === undefined || now >= target;
+}
+
+/**
+ * How long a break lasts for a reader who has left auto-advance on: the
+ * author's `hold` at the end of a step (`holdMs`), and at every other break a
+ * dwell scaled to whatever text that break put in front of them.
+ */
+export function dwellForStop(step: TourStep, stop: TourStop | undefined): number {
+  return stop?.kind === 'step-end' ? holdMs(step) : dwellMs(stop?.text);
+}
+
+// ---------------------------------------------------------------- keyboard
+
+/** What a key press asks the tour to do. */
+export type TourCommand = 'exit' | 'toggle' | 'forward' | 'back';
+
+/**
+ * The tour's four keys (docs/accessibility.md). Space is the master switch —
+ * let a break go, or stop the playback; → is always forward, past this break
+ * or on to the next step; ← is always back a step; Escape always leaves. The
+ * whole tour is drivable without a pointer (sand-1l0.28).
+ */
+const TOUR_KEYS: Record<string, TourCommand> = {
+  Escape: 'exit',
+  ' ': 'toggle',
+  ArrowRight: 'forward',
+  ArrowLeft: 'back',
+};
+
+/**
+ * What this press asks of the tour, or nothing at all.
+ *
+ * Driving a tour from the keyboard means listening on the window, so the first
+ * question is whether the press was ours to hear. A focused control has its
+ * own meaning for Space and the arrows, and so does any surface that declares
+ * it drives itself from the keyboard (sand-pmz.4); the tour keeps out of the
+ * way of both.
+ */
+export function tourCommandFor(key: string, target: EventTarget | null): TourCommand | undefined {
+  if (target instanceof Element && /^(BUTTON|INPUT|TEXTAREA|SELECT)$/.test(target.tagName))
+    return undefined;
+  if (ownsKeys(target)) return undefined;
+  return TOUR_KEYS[key];
 }
 
 /**
