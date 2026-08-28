@@ -114,6 +114,37 @@ describe('the whole contract round-trips', () => {
     expect(parseViewState(formatViewState(state))).toEqual(state);
   });
 
+  /**
+   * The contract is only as strong as its weakest slot, so this walks every
+   * combination of them rather than the ten a reader happened to think of:
+   * one representative value per slot, 2^9 states, each one written out and
+   * read back. It also asserts the other direction — writing what was just
+   * read changes nothing — because a citation that rewrites itself on the
+   * first click is not a citation.
+   */
+  it('every combination of slots survives a round trip, both ways', () => {
+    const values: ViewState[] = [
+      { t: Date.UTC(1914, 8, 9, 12, 30) },
+      { branch: '1914:schlieffen-concept' },
+      { focus: '1914:marne' },
+      { card: '1914:decision-hentsch' },
+      { pick: 'withdraw' },
+      { tour: '1914:tour-the-campaign' },
+      { step: 'the-marne' },
+      { layers: ['commanders', '-meanwhile.physics'] },
+      { extra: [['pack', '1915-attrition']] },
+    ];
+    for (let mask = 0; mask < 1 << values.length; mask += 1) {
+      const state = values.reduce<ViewState>(
+        (acc, value, i) => (mask & (1 << i) ? { ...acc, ...value } : acc),
+        {},
+      );
+      const q = formatViewState(state);
+      expect(parseViewState(q)).toEqual(state);
+      expect(formatViewState(parseViewState(q))).toBe(q);
+    }
+  });
+
   it('stays short enough to cite', () => {
     // the deepest state above, on the production origin
     const url = `https://sandtable.davetashner.com/${formatViewState(states.at(-1)!)}`;
