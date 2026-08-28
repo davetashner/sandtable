@@ -35,7 +35,11 @@ class FakeMap {
     return this.sources.get(id);
   }
   addSource(id: string, src: unknown) {
-    this.sources.set(id, src);
+    const stored = src as { data?: unknown; setData?: (d: unknown) => void };
+    stored.setData = (d: unknown) => {
+      stored.data = d;
+    };
+    this.sources.set(id, stored);
   }
   removeSource(id: string) {
     this.sources.delete(id);
@@ -48,6 +52,10 @@ class FakeMap {
   }
   removeLayer(id: string) {
     this.layers = this.layers.filter((l) => l.id !== id);
+  }
+  styleLoaded = true;
+  isStyleLoaded() {
+    return this.styleLoaded;
   }
   getStyle() {
     return {
@@ -241,5 +249,186 @@ describe('<MapView>', () => {
       await Promise.resolve();
     });
     expect(onReady).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('<MapView> front line (sand-g80.1)', () => {
+  const at = (d: string) => Date.parse(`${d}T00:00:00Z`);
+  const snapshot = (date: string) => ({
+    type: 'Feature',
+    id: `front:${date}`,
+    properties: { date, at: at(date), label: date, precision: 'medium', sources: [], through: [] },
+    geometry: {
+      type: 'LineString',
+      coordinates: [
+        [2.75, 51.13],
+        [7.15, 47.5],
+      ],
+    },
+  });
+  const SERIES = {
+    type: 'FeatureCollection',
+    attribution: 'front test',
+    features: ['1914-11-25', '1917-04-05', '1918-11-11'].map(snapshot),
+  };
+
+  /** Answers the front-line URL with the series and everything else with borders. */
+  const stubFetch = () => {
+    const fetchMock = vi.fn(async (url: string) => ({
+      ok: true,
+      json: async () =>
+        url.includes('/front/')
+          ? SERIES
+          : { type: 'FeatureCollection', features: [{ type: 'Feature', properties: {} }] },
+    }));
+    vi.stubGlobal('fetch', fetchMock);
+    return fetchMock;
+  };
+
+  const mount = async (props: { frontSeries?: string; frontAt?: number }) => {
+    const view = render(
+      <MapView
+        camera={{ center: [4, 50], zoom: 6 }}
+        styleFor={() => ({ version: 8, sources: {}, layers: [] })}
+        {...props}
+      />,
+    );
+    const map = maps.at(-1)!;
+    await act(async () => {
+      map.fire('load');
+      map.fire('styledata');
+    });
+    return { view, map };
+  };
+
+  beforeEach(() => {
+    maps.length = 0;
+    stubFetch();
+  });
+
+  it('draws nothing at all when the pack names no series', async () => {
+    const { map } = await mount({ frontAt: at('1917-01-01') });
+    expect(vi.mocked(fetch).mock.calls.flat()).not.toContain(
+      '/assets/geo/front/western-front.geojson',
+    );
+    expect(map.layers.filter((l) => l.id.startsWith('front'))).toEqual([]);
+  });
+
+  it('fetches the named series and mounts its layers once the style is ready', async () => {
+    const { map } = await mount({ frontSeries: 'western-front', frontAt: at('1917-06-01') });
+    await vi.waitFor(() => expect(map.getSource('front')).toBeDefined());
+    expect(fetch).toHaveBeenCalledWith('/assets/geo/front/western-front.geojson');
+    expect(map.layers.filter((l) => l.id.startsWith('front')).map((l) => l.id)).toEqual([
+      'front-halo',
+      'front-wash-central',
+      'front-wash-entente',
+      'front-line',
+      'front-line-approx',
+    ]);
+  });
+
+  it('holds the snapshot in force at the clock, not the first or the last', async () => {
+    const { map } = await mount({ frontSeries: 'western-front', frontAt: at('1917-06-01') });
+    await vi.waitFor(() => expect(map.getSource('front')).toBeDefined());
+    const source = map.getSource('front') as { data: { features: { id: string }[] } };
+    expect(source.data.features.map((f) => f.id)).toEqual(['front:1917-04-05']);
+  });
+
+  it('draws no line before the front was continuous', async () => {
+    const { map } = await mount({ frontSeries: 'western-front', frontAt: at('1914-09-06') });
+    await vi.waitFor(() => expect(map.getSource('front')).toBeDefined());
+    const source = map.getSource('front') as { data: { features: unknown[] } };
+    expect(source.data.features).toEqual([]);
+  });
+
+  it('moving the clock swaps the snapshot without refetching the series', async () => {
+    const { view, map } = await mount({ frontSeries: 'western-front', frontAt: at('1915-01-01') });
+    await vi.waitFor(() => expect(map.getSource('front')).toBeDefined());
+    const fetches = vi.mocked(fetch).mock.calls.length;
+
+    await act(async () => {
+      view.rerender(
+        <MapView
+          camera={{ center: [4, 50], zoom: 6 }}
+          styleFor={() => ({ version: 8, sources: {}, layers: [] })}
+          frontSeries="western-front"
+          frontAt={at('1918-11-11')}
+        />,
+      );
+    });
+    const source = map.getSource('front') as { data: { features: { id: string }[] } };
+    expect(source.data.features.map((f) => f.id)).toEqual(['front:1918-11-11']);
+    expect(vi.mocked(fetch).mock.calls.length).toBe(fetches);
+  });
+});
+
+describe('<MapView> front line waits for the style (sand-g80.1)', () => {
+  const at = (d: string) => Date.parse(`${d}T00:00:00Z`);
+  const SERIES = {
+    type: 'FeatureCollection',
+    features: [
+      {
+        type: 'Feature',
+        id: 'front:1914-11-25',
+        properties: { date: '1914-11-25', at: at('1914-11-25'), precision: 'medium' },
+        geometry: {
+          type: 'LineString',
+          coordinates: [
+            [2.75, 51.13],
+            [7.15, 47.5],
+          ],
+        },
+      },
+    ],
+  };
+
+  beforeEach(() => {
+    maps.length = 0;
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => ({ ok: true, json: async () => SERIES })),
+    );
+  });
+
+  /**
+   * `styledata` fires long before the style is done, and `addLayer` throws until
+   * it is — 46 visual-gate scenes died of exactly this. The layers must wait.
+   */
+  it('does not touch the map until the style is loaded, then mounts on idle', async () => {
+    render(
+      <MapView
+        camera={{ center: [4, 50], zoom: 6 }}
+        styleFor={() => ({ version: 8, sources: {}, layers: [] })}
+        frontSeries="western-front"
+        frontAt={at('1917-01-01')}
+      />,
+    );
+    const map = maps.at(-1)!;
+    map.styleLoaded = false;
+    map.addLayer = vi.fn(() => {
+      throw new Error('Style is not done loading');
+    });
+
+    await act(async () => {
+      map.fire('styledata');
+    });
+    await vi.waitFor(() => expect(fetch).toHaveBeenCalled());
+    expect(map.addLayer).not.toHaveBeenCalled();
+    expect(map.getSource('front')).toBeUndefined();
+
+    // The style finishes; `idle` is where the work was parked.
+    map.styleLoaded = true;
+    const added: { id: string }[] = [];
+    map.addLayer = vi.fn((l: { id: string }) => added.push(l));
+    await act(async () => {
+      map.fire('idle');
+    });
+    expect(added.map((l) => l.id)).toEqual([
+      'front-halo',
+      'front-wash-central',
+      'front-wash-entente',
+      'front-line',
+      'front-line-approx',
+    ]);
   });
 });

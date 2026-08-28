@@ -39,6 +39,8 @@ import type {
 export interface MapSurfaceProps {
   camera: Camera;
   borderYear: number;
+  /** Shared front-line series to draw under the clock (`pack.frontLine`). */
+  frontSeries?: string | undefined;
   branch: Branch;
   movement: MovementSource;
   /** Campaign extent, fitted when leaving a zoom-in. */
@@ -74,6 +76,7 @@ export interface MapSurfaceProps {
 export function MapSurface({
   camera,
   borderYear,
+  frontSeries,
   branch,
   movement,
   region,
@@ -348,6 +351,8 @@ export function MapSurface({
       ref={handle}
       camera={camera}
       borderYear={borderYear}
+      frontSeries={frontSeries}
+      frontAt={now}
       label={`Map — ${label.date}`}
       styleFor={styleFor}
       deckLayers={layers}
