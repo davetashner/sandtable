@@ -9,8 +9,10 @@
  *   **dev**    — answer `/pack/<id>.json` from the filesystem on every request,
  *                so editing a beat needs a reload and not a restart.
  *   **both**   — expose the URL to the app through `virtual:sandtable-pack`,
- *                and put a four-line script in `<head>` that starts the fetch
- *                while the browser is still downloading the module graph.
+ *                and put the boot hook in `<head>` — the script that starts
+ *                the fetch while the browser is still downloading the module
+ *                graph, and that gives the reader a face when it fails
+ *                (`src/packs/boot-script.ts`, which is where the reasoning is).
  *
  * Under Vitest there is no server to fetch from, so the same virtual module
  * carries the bundle inline; `src/packs/pack-loader.ts` prefers it when it is
@@ -18,6 +20,7 @@
  */
 import { join } from 'node:path';
 import type { Plugin } from 'vite';
+import { bootScript } from '../../src/packs/boot-script.js';
 import { PACK_INDEX_PATH, devBundlePath } from '../../src/packs/content-bundle.js';
 import {
   SEED_PACK_ID,
@@ -29,21 +32,6 @@ import {
 
 const VIRTUAL = 'virtual:sandtable-pack';
 const RESOLVED = '\0' + VIRTUAL;
-
-/**
- * The boot hook. It is inline on purpose: a `<link rel="preload">` for
- * `as="fetch"` has to match the eventual request's CORS and credentials mode
- * to be reused, and a mismatch downloads the bundle twice. Four lines of
- * script have no such rule — the promise the loader awaits is the request the
- * browser has already started.
- */
-const bootScript = (urls: Record<string, string>, fallback: string) =>
-  `var U=${JSON.stringify(urls)},D=${JSON.stringify(fallback)};` +
-  `var w=new URLSearchParams(location.search).get("pack");` +
-  `var u=(w&&U[w])||U[D];window.__sandtablePackUrl=u;` +
-  `var p=fetch(u).then(function(r){` +
-  `if(!r.ok)throw new Error("pack "+r.status+" "+r.statusText);return r.json()});` +
-  `p.catch(function(){});window.__sandtablePack=p;`;
 
 export function packBundlePlugin(id = SEED_PACK_ID): Plugin {
   let contentRoot = join(process.cwd(), 'content');

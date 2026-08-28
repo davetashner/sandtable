@@ -13,10 +13,14 @@
  * `scripts/visual-check.mjs` (ADR 0011), which gates tap-target size on every
  * pull request. `docs/accessibility.md` is where the three are set out.
  *
- * Two surfaces cover the library: the app shell on the real pack — at rest and
- * in the states a click reaches — and the gallery, which is every component in
- * `src/ui` in both themes, including the ones the app only shows on a phone.
+ * Three surfaces cover the library: the app shell on the real pack — at rest
+ * and in the states a click reaches — the gallery, which is every component in
+ * `src/ui` in both themes, including the ones the app only shows on a phone,
+ * and the pack-failure state, which is markup in `index.html` rather than a
+ * component and would otherwise be the one screen nothing here can see
+ * (`sand-shn.1.2`).
  */
+import { readFileSync } from 'node:fs';
 import axe, { type Result, type RunOptions } from 'axe-core';
 import { describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
@@ -130,6 +134,35 @@ describe('accessibility (axe-core)', () => {
     await screen.findByRole('heading', { level: 3, name: 'The charge' });
     expect(report(await violationsOf(container))).toBe('');
   }, 30000);
+
+  /**
+   * The one screen in the app that React never renders (`sand-shn.1.2`): when
+   * the pack fetch fails, the module graph never evaluates, and what the
+   * reader gets is the static markup in `index.html`. axe would never reach it
+   * through a component, so it is read off disk and checked as it ships — one
+   * pass per case, because only one of the three is ever on screen.
+   */
+  it('finds nothing in the pack-failure state, in any of its three cases', async () => {
+    const root = new DOMParser()
+      .parseFromString(readFileSync('index.html', 'utf8'), 'text/html')
+      .getElementById('root');
+    const host = document.createElement('div');
+    host.innerHTML = root?.innerHTML ?? '';
+    document.body.appendChild(host);
+
+    const box = host.querySelector<HTMLElement>('#boot-failure');
+    expect(box, 'index.html no longer carries a failure state').not.toBeNull();
+    host.querySelector<HTMLElement>('#boot-frame')!.hidden = true;
+    box!.hidden = false;
+
+    for (const kind of ['missing', 'offline', 'invalid']) {
+      for (const c of box!.querySelectorAll<HTMLElement>('[data-failure]')) {
+        c.hidden = c.dataset['failure'] !== kind;
+      }
+      expect(report(await violationsOf(box!)), kind).toBe('');
+    }
+    host.remove();
+  });
 
   it('finds nothing in the component gallery — every component, both themes', async () => {
     const { container } = render(<Gallery />);

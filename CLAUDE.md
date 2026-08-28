@@ -143,7 +143,10 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
   the visual gate stubs). `src/packs/pack-loader.ts` is the only module that
   knows that, and it has a **top-level `await`** on purpose: every module that
   reads the pack at module scope stays unchanged. The pack is still re-validated
-  with the schema on arrival.
+  with the schema on arrival. When the fetch fails, the module graph never
+  evaluates, so the failure state cannot be a component: it is static markup in
+  `index.html` revealed by the boot hook (`src/packs/boot-script.ts`, ADR 0018's
+  amendment) — three faces, atlas or retry.
 - **One era per page load:** `?pack=<id>` names the era, resolved identically by
   the boot script in `<head>` and by the loader, so the request the browser
   starts and the one the loader awaits cannot disagree. Switching eras is a

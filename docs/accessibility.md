@@ -386,10 +386,22 @@ is a single character, and the audit only counts text of more than one.)
 
 ## What axe covers, and what it deliberately does not
 
-`src/a11y.test.tsx` runs axe-core over three surfaces: the app shell at rest,
+`src/a11y.test.tsx` runs axe-core over four surfaces: the app shell at rest,
 the app in the states a click reaches (index open, inside a zoom-in, a card
-open), and the component gallery — every component in `src/ui`, in both themes,
-including the ones the app only shows on a phone.
+open), the component gallery — every component in `src/ui`, in both themes,
+including the ones the app only shows on a phone — and the pack-failure state,
+which is the one screen React never renders.
+
+That last one is read off `index.html` rather than off a component, because
+that is where it lives (`sand-shn.1.2`, ADR 0018's amendment): when the content
+bundle does not arrive, the module graph never evaluates, so the app is markup
+and nothing else. It is a `role="alert"` that takes focus when it is revealed —
+`tabindex="-1"` on the container, focus moved by the boot script — so a reader
+who is not looking at the screen is told the campaign did not load rather than
+left listening to silence. Its two controls are a link to the atlas and a retry
+button, both above `--target-min`, both with the standard brass focus ring.
+axe checks all three of its cases, one at a time, because only one is ever on
+screen.
 
 Rules switched off, each for a stated reason:
 
