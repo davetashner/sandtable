@@ -4,14 +4,14 @@
 # Every `Document.excerpt` in this repository is a quotation and now needs a
 # verification receipt: retrieved text with the quoted passage sitting inside
 # it, so that a reviewer — or `npm run receipts -- --fetch` — can see the words
-# in place instead of taking an author's word for them. Twenty-two documents
-# were written before that rule existed. Two of them were verified in the PR
-# that added the rule (the Hawaii operation order against the HyperWar
-# transcription of Japanese Monograph 97, and the Schlieffen memorandum against
-# the BSB transcription); these twenty were not, and without this file the new
-# gate would fail on `main` and block every PR for a debt no PR introduced.
-# That is the same bargain, and the same shape of file, as
-# scripts/media-index-backlog.txt.
+# in place instead of taking an author's word for them. Twenty-six documents
+# were written before that rule existed. Four have receipts: the Hawaii
+# operation order (HyperWar's Japanese Monograph 97), the Schlieffen memorandum
+# (the BSB transcription), and the Petropavlovsk resolution and the Red Terror
+# decree (the Marxists Internet Archive and Seventeen Moments). These
+# twenty-two do not, and without this file the gate would fail on `main` and
+# block every PR for a debt no PR introduced. That is the same bargain, and the
+# same shape of file, as scripts/media-index-backlog.txt.
 #
 # A line here is NOT a claim that the quotation is wrong. It is a claim that
 # nobody has shown it is right, which is the honest state of a citation that
@@ -30,6 +30,23 @@
 # stop quoting the work and keep citing it, which is what docs/sources.md has
 # always said and what the 1917 pack already does. Removing the excerpt removes
 # the line.
+#
+# The two 1918 lines are a different case and the only ones here whose source
+# WAS opened. Both fetch cleanly and both are verbatim in substance; each fails
+# the check on one editorial detail, recorded so that whoever fixes it does not
+# have to find it again:
+#
+#   calendar-decree — hist.msu.ru prints the title and the date on separate
+#     lines; the excerpt joins them and adds a full stop after "календаря",
+#     which the source does not have. Everything below the heading matches, and
+#     the page marker {404} in the transcription confirms the cited pp. 404-405.
+#   brest-litovsk — the Avalon text heads its articles "ARTICLE 1", "ARTICLE 2";
+#     the excerpt renumbers them "**Article I.**", "**Article II.**". Every word
+#     of the five articles themselves matches.
+#
+# Neither is a fabrication and neither changes what the document says. Both are
+# one character's worth of re-transcription away from a receipt, and that edit
+# belongs to whoever owns the 1918 pack, not to the PR that added the gate.
 1914:document-german-ultimatum-to-belgium-1914-08-02
 1914:document-belgian-reply-1914-08-03
 1914:document-afgg-instruction-generale-2-1914-08-25
@@ -50,3 +67,5 @@
 1917-russian-revolution:document-to-the-citizens-of-russia
 1941-pearl-harbor:document-american-outline
 1941-pearl-harbor:document-japanese-memorandum
+1918-russian-civil-war:document-calendar-decree
+1918-russian-civil-war:document-brest-litovsk

@@ -125,7 +125,10 @@ prints the surrounding text, ready to paste into the receipt's `context`. Use
 it, or another retrieval that returns the page's own bytes. **Do not build a
 receipt from a tool that summarises a page for you**: what comes back is that
 tool's rendering of the text, and a receipt made of it is a paraphrase wearing
-the costume of a retrieval.
+the costume of a retrieval. `--capture` also decodes the page in the character
+set it was served in, which is not a nicety: the Moscow State University decree
+library serves Windows-1251 with no charset in its header, and read as UTF-8
+every Russian document on it reads as absent.
 
 Two consequences worth stating plainly.
 

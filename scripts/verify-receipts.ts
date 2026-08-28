@@ -65,19 +65,55 @@ const ENTITIES: Record<string, string> = {
 };
 
 export function htmlToText(html: string): string {
-  return html
-    .replace(/<(script|style|head)\b[^>]*>[\s\S]*?<\/\1>/gi, ' ')
-    .replace(/<br\s*\/?>|<\/(p|div|tr|li|h[1-6])>/gi, '\n')
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/&#(\d+);/g, (_, d: string) => String.fromCodePoint(Number(d)))
-    .replace(/&#x([0-9a-f]+);/gi, (_, h: string) => String.fromCodePoint(parseInt(h, 16)))
-    .replace(/&([a-z]+);/gi, (m, name: string) => ENTITIES[name.toLowerCase()] ?? m)
-    .replace(/[ \t]+/g, ' ')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim();
+  return (
+    html
+      .replace(/<(script|style|head)\b[^>]*>[\s\S]*?<\/\1>/gi, ' ')
+      .replace(/<br\s*\/?>|<\/(p|div|tr|li|h[1-6])>/gi, '\n')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/&#(\d+);/g, (_, d: string) => String.fromCodePoint(Number(d)))
+      .replace(/&#x([0-9a-f]+);/gi, (_, h: string) => String.fromCodePoint(parseInt(h, 16)))
+      .replace(/&([a-z]+);/gi, (m, name: string) => ENTITIES[name.toLowerCase()] ?? m)
+      .replace(/[ \t]+/g, ' ')
+      // trim each line: an opening <p> left a space where a line now starts, and
+      // `--capture` output is meant to be pasted into a receipt as it stands
+      .replace(/[ \t]*\n[ \t]*/g, '\n')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim()
+  );
 }
 
-async function fetchText(url: string): Promise<{ text: string } | { failure: string }> {
+/**
+ * Decode a response body in the encoding it was actually served in.
+ *
+ * `Response.text()` assumes UTF-8, and several of the transcription sites this
+ * project depends on are older than that assumption: the Moscow State
+ * University decree library serves Windows-1251 with no charset in the header,
+ * and read as UTF-8 every Cyrillic character comes back as mojibake — which
+ * looks exactly like "the passage is not on this page". Getting this wrong
+ * would push the Russian sources, the ones the fabrication incident was about,
+ * into the "unverifiable" bucket for a reason that is ours and not theirs.
+ */
+export function decodeBody(buf: ArrayBuffer, contentType: string): string {
+  const declared = /charset=\s*"?([\w-]+)/i.exec(contentType)?.[1];
+  const sniff = () => {
+    const head = new TextDecoder('latin1').decode(buf.slice(0, 4096));
+    return (
+      /<meta[^>]+charset=["']?([\w-]+)/i.exec(head)?.[1] ??
+      /<\?xml[^>]+encoding=["']([\w-]+)/i.exec(head)?.[1]
+    );
+  };
+  for (const charset of [declared, sniff(), 'utf-8']) {
+    if (!charset) continue;
+    try {
+      return new TextDecoder(charset, { fatal: false }).decode(buf);
+    } catch {
+      /* an encoding label Node does not know; try the next */
+    }
+  }
+  return new TextDecoder().decode(buf);
+}
+
+export async function fetchText(url: string): Promise<{ text: string } | { failure: string }> {
   try {
     const res = await fetch(url, {
       headers: { 'user-agent': 'sandtable-receipts/1.0 (+https://sandtable.davetashner.com)' },
@@ -85,10 +121,10 @@ async function fetchText(url: string): Promise<{ text: string } | { failure: str
     });
     if (!res.ok) return { failure: `HTTP ${res.status}` };
     const type = res.headers.get('content-type') ?? '';
-    const body = await res.text();
     if (/pdf|octet-stream|image\//i.test(type))
       return { failure: `${type.split(';')[0]} — not text this script can read` };
-    return { text: /html|xml/i.test(type) ? htmlToText(body) : body };
+    const body = decodeBody(await res.arrayBuffer(), type);
+    return { text: /html|xml/i.test(type) || /^\s*</.test(body) ? htmlToText(body) : body };
   } catch (e) {
     return { failure: (e as Error).message };
   }

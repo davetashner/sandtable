@@ -58,10 +58,18 @@ export function normaliseQuoted(text: string): string {
  *
  * An ellipsis says "and then, later in the same passage"; a bracketed
  * insertion — `[the enemy]`, `[sic]`, a translator's gloss — says "these words
- * are mine, not the author's". Both are honest editorial marks and neither
- * appears in the text that was retrieved, so both split the quotation into
- * fragments that must each be found, in order, rather than one string that
- * never will be.
+ * are mine, not the author's"; a blank line says "a new passage starts here".
+ * All three are honest editorial marks and none of them appears in the text
+ * that was retrieved, so all three split the quotation into fragments that must
+ * each be found, in order, rather than one string that never will be.
+ *
+ * The blank line earns its place the hard way. The Petropavlovsk resolution as
+ * the Marxists Internet Archive prints it carries the transcriber's own
+ * explanatory notes *between* the numbered clauses, so a quotation of clauses 4
+ * and 5 is two passages in the source with somebody else's words in between —
+ * and holding it to one continuous run would fail a document whose every clause
+ * is verbatim. Paragraphs are how an excerpt says where its passages end, and
+ * that is a claim about the source, not about the layout.
  *
  * Fragments of a word or two are dropped: "of", "and the" occur in any
  * paragraph and finding them proves nothing.
@@ -69,10 +77,40 @@ export function normaliseQuoted(text: string): string {
 const MIN_FRAGMENT_CHARS = 8;
 
 export function quoteFragments(quote: string): string[] {
-  return normaliseQuoted(quote)
-    .split(/\s*(?:\.\.\.|…|\[[^\]]*\])\s*/)
+  // Paragraphs are split before normalising, because normalising collapses the
+  // blank line that says where one passage ends and the next begins.
+  return quote
+    .split(/\n\s*\n/)
+    .flatMap((block) => normaliseQuoted(block).split(/\s*(?:\.\.\.|…|\[[^\]]*\])\s*/))
     .map((f) => f.replace(/^[\s,.;:!?'"-]+|[\s,.;:!?'"-]+$/g, '').trim())
     .filter((f) => f.length >= MIN_FRAGMENT_CHARS);
+}
+
+/**
+ * The same normalisation, plus the two marks a *transcription* adds that a
+ * quotation of it may honestly drop.
+ *
+ * Square brackets in retrieved text are the transcriber speaking, not the
+ * source: the Marxists Internet Archive's Petropavlovsk resolution reads "they
+ * [are] to be appointed", where the bracketed word is the transcriber
+ * repairing the 1921 pamphlet. An author quoting that clause may keep the
+ * brackets or drop them and both are honest, so the delimiters come off the
+ * haystack while every word inside them stays — nothing fabricated can slip
+ * through a rule that only deletes punctuation. Braces around a bare number
+ * are page markers — Moscow State University's decree library prints `{404}`
+ * mid-sentence at a page break — and those come out whole, so that a passage
+ * spanning two printed pages still reads as one passage.
+ *
+ * Only the retrieved side gets this. On the quotation side a bracket is the
+ * *author's* insertion and must not be looked for in the source at all, which
+ * is what `quoteFragments` does with it instead.
+ */
+export function normaliseRetrieved(text: string): string {
+  return normaliseQuoted(text)
+    .replace(/\{\s*\d+\s*\}/g, ' ')
+    .replace(/[[\]]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 /**
@@ -85,7 +123,7 @@ export function quoteFragments(quote: string): string[] {
  * re-transcription.
  */
 export function missingFragment(quote: string, context: string): string | undefined {
-  const haystack = normaliseQuoted(context);
+  const haystack = normaliseRetrieved(context);
   const fragments = quoteFragments(quote);
   if (fragments.length === 0) return normaliseQuoted(quote) || quote;
   let from = 0;
@@ -110,7 +148,7 @@ export function missingFragment(quote: string, context: string): string | undefi
  * where the claim "this is one passage" is actually made.
  */
 export function missingFromAny(quote: string, contexts: string[]): string | undefined {
-  const haystacks = contexts.map(normaliseQuoted);
+  const haystacks = contexts.map(normaliseRetrieved);
   for (const fragment of quoteFragments(quote))
     if (!haystacks.some((h) => h.includes(fragment))) return fragment;
   return undefined;

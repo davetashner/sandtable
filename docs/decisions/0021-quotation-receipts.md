@@ -44,11 +44,11 @@ decision, written down before the decision existed.
 ### What the corpus actually looks like
 
 Any rule here is friction on every content PR for the rest of the project, so
-it was worth counting first. Across 104 beats, 152 JSON files and four eras:
+it was worth counting first. Across 104 beats, 152 JSON files and the four eras that existed when it was written (a fifth, 1918, merged while it was in review):
 
 | Where                                                        | Count                                                                   |
 | ------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| `Document` entities (`excerpt` is by definition a quotation) | **22**                                                                  |
+| `Document` entities (`excerpt` is by definition a quotation) | **26**                                                                  |
 | Quoted spans of ≥4 words in beat prose                       | **3** (of ten spans total; the other seven are terms of art and titles) |
 | Quoted spans of ≥4 words in content JSON                     | **~700**                                                                |
 
@@ -168,18 +168,65 @@ the text; a receipt built from one is a paraphrase wearing the costume of a
 retrieval, which is the exact failure this mechanism exists to prevent.
 Nothing in the script summarises anything.
 
-### 6. Twenty documents get a bead-referenced allowance
+### 6. Twenty-two documents get a bead-referenced allowance
 
-All 22 existing documents predate the rule. Two were verified in this PR
-against live transcriptions — the Hawaii operation order against HyperWar's
-Japanese Monograph 97 (whose page markers, unlike that pack's other sources,
-proved stable across two fetches and matched the citation's `7, 11, 13, 21`
-exactly), and the Schlieffen memorandum against the BSB transcription. The
-other twenty are named in `content/receipts/backlog.txt` with the reason, the
-recipe for removing a line, and `sand-23b.57.1`. The validator refuses a
-backlog line for a document that already has a receipt, so the allowance
-cannot quietly outlive the debt — the same bargain, and the same shape of
-file, as `scripts/media-index-backlog.txt` (PR #151).
+All 26 existing documents predate the rule. **Four were verified in this PR
+against live transcriptions**, and what those four cost is the best evidence
+this ADR has:
+
+- **The Hawaii operation order** (HyperWar's Japanese Monograph 97). All five
+  passages verbatim; the page markers came back `7, 11, 13, 21` on two
+  independent fetches and matched the citation exactly — in the one pack whose
+  author had found page markers _not_ repeating elsewhere.
+- **The Schlieffen memorandum** (the BSB transcription). Four passages
+  verbatim; no page written, because that transcription has no pagination.
+- **The Petropavlovsk resolution** and **the Red Terror decree**, from the 1918
+  pack, whose author never saw this rule — which makes them the honest test.
+  Both verbatim, all fifteen clauses of the one and the whole of the other.
+
+The other twenty-two are named in `content/receipts/backlog.txt` with the
+reason, the recipe for removing a line, and `sand-23b.57.1`. The validator
+refuses a backlog line for a document that already has a receipt, so the
+allowance cannot quietly outlive the debt — the same bargain, and the same
+shape of file, as `scripts/media-index-backlog.txt` (PR #151).
+
+### 7. What the first real use of the gate found
+
+The 1918 pack merged before this one, so its four documents met the gate
+without their author having heard of it. That is the trial this design wanted,
+and it is worth recording what came back, because none of it was fabrication
+and all of it was worth knowing.
+
+Two passed outright. The other two failed on **one editorial character each**:
+`hist.msu.ru` prints the calendar decree's title and date on separate lines and
+the excerpt joins them with an added full stop; Avalon heads the Brest-Litovsk
+articles `ARTICLE 1` and the excerpt renumbers them `**Article I.**`. Every
+word of both documents matches. They are on the backlog with the finding
+written beside them rather than edited here, because a gate's own PR is the
+wrong place to rewrite somebody else's freshly merged pack.
+
+Three things in the checker exist **because** of that trial, and each was a
+real false negative before it was a rule:
+
+- **Character encoding.** `hist.msu.ru` serves Windows-1251 with no charset in
+  the header. Read as UTF-8, every Cyrillic character is mojibake and the
+  decree reads as absent — which would have pushed the Russian sources, the
+  ones the fabrication incident was actually about, into "unverifiable" for a
+  reason that was ours and not theirs.
+- **Brackets in retrieved text.** The Marxists Internet Archive prints "they
+  [are] to be appointed", repairing the 1921 pamphlet. Quoting that clause with
+  or without the brackets is honest, so the delimiters come off the haystack
+  and every word inside them stays.
+- **Blank lines in an excerpt.** The same transcription carries the
+  transcriber's notes _between_ the numbered clauses, so a quotation of clauses
+  4 and 5 is two passages with somebody else's words in between. A paragraph
+  break is where an excerpt says a passage ends, and the checker now reads it
+  that way instead of demanding one continuous run.
+
+The general lesson is the one worth carrying. **The failure mode of a check
+like this is not that it lets a lie through; it is that it cries wolf about
+typography.** Each rule above narrows the crying-wolf surface without letting a
+single word through unseen.
 
 ## Alternatives considered
 
@@ -219,13 +266,14 @@ file, as `scripts/media-index-backlog.txt` (PR #151).
   opened, and the PR loses the excerpt and keeps the citation — a thinner and
   more honest pack, which `docs/sources.md` has always said is the right
   trade.
-- **`main` stays green.** The gate finds 22 documents today; 2 carry receipts
-  and 20 are on the backlog. The validator reports 62 warnings, unchanged.
-- **A pack in flight will collide with this.** PR #156 (the 1918 Russian Civil
-  War pack) adds `documents.json`. Whichever of the two merges second must
-  either write receipts for the other's documents or add their ids to the
-  backlog; there is no way to introduce a gate without that cost falling on
-  someone, and naming it is cheaper than discovering it in CI.
+- **`main` stays green.** The gate finds 26 documents today; 4 carry receipts
+  and 22 are on the backlog. The validator reports 62 warnings, unchanged.
+- **A pack in flight collided with this, and the collision was useful.** PR
+  #156 merged first, so the 1918 pack's four documents had to be handled here:
+  two got real receipts, two went on the backlog with the exact discrepancy
+  recorded. Section 7 is what that cost and what it bought. There is no way to
+  introduce a gate without that cost falling on someone; the next collision is
+  cheaper, because the checker learned three things from this one.
 - **`checkedBy` puts a name on an unverifiable claim.** A `read` receipt is
   worth exactly what the person who signed it is worth, and the schema says so
   rather than pretending otherwise. That is the honest floor for a corpus this

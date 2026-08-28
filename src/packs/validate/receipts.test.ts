@@ -3,6 +3,7 @@ import {
   missingFragment,
   missingFromAny,
   normaliseQuoted,
+  normaliseRetrieved,
   parseReceiptBacklog,
   quoteFragments,
 } from './receipts.js';
@@ -47,9 +48,42 @@ describe('quoteFragments', () => {
     ]);
   });
 
+  it('splits on a blank line, because that is where a passage ends', () => {
+    // The Petropavlovsk resolution as marxists.org prints it carries the
+    // transcriber's notes between the numbered clauses, so clauses 4 and 5 are
+    // two passages in the source with somebody else's words in between.
+    expect(
+      quoteFragments('4. To liberate all political prisoners;\n\n5. To equalize the rations;'),
+    ).toEqual(['4. to liberate all political prisoners', '5. to equalize the rations']);
+  });
+
   it('drops fragments too short to prove anything', () => {
     expect(quoteFragments('the … and … a considerable body of cavalry')).toEqual([
       'a considerable body of cavalry',
+    ]);
+  });
+});
+
+describe('normaliseRetrieved', () => {
+  it('drops the brackets a transcriber repairs a text with, and keeps the words', () => {
+    // marxists.org: "they [are] to be appointed". Quoting it with or without
+    // the brackets is honest; inventing the word is not, and only the
+    // delimiters come off.
+    expect(normaliseRetrieved('they [are] to be appointed')).toBe('they are to be appointed');
+    expect(normaliseRetrieved('they [are] to be appointed')).not.toContain('were');
+  });
+
+  it('drops a page marker so a passage can span a page break', () => {
+    // hist.msu.ru prints {404} mid-sentence where the printed page turns.
+    expect(normaliseRetrieved('исчисления времени {404} Совет Народных')).toBe(
+      normaliseRetrieved('исчисления времени Совет Народных'),
+    );
+  });
+
+  it('leaves the quotation side alone — a bracket there is the author speaking', () => {
+    expect(quoteFragments('the commander said [the enemy] would not come before evening')).toEqual([
+      'the commander said',
+      'would not come before evening',
     ]);
   });
 });
