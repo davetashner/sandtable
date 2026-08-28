@@ -140,6 +140,11 @@ place that matters. The files near the years these arcs need are **1900, 1914,
 
 ### The extracts
 
+ADR 0019 hands the scale jump to this plan rather than to the schema — "a pack
+that contains both a 2,100 km ocean crossing and a 3.2 km island is asking the
+camera and the tile extracts for three orders of magnitude" — so here is what
+that costs in archives.
+
 Two scales, because the Pacific has two. An ocean crossing is measured in
 thousands of kilometres (Pearl Harbor to Midway is 2,100 km); an assault is
 measured in hundreds of metres (Betio is 3.2 km long, and the pier the first
