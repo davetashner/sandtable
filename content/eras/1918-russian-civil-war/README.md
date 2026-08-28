@@ -267,9 +267,11 @@ The absences that are decisions rather than backlog:
 - **No `CasualtyRecord`.** The figures for this war are contested by more than
   an order of magnitude and the disputes are political; a record built from a
   round number in a survey would be worse than none. The one figure the pack
-  states — approximately 150,000 killed in the pogroms of 1918–22 — is given by
-  two independent read sources and lives in prose and on the terror card, where
-  the qualification travels with it.
+  states — Werth's approximately 150,000 Jewish deaths in the pogroms of
+  1918–22 — lives in prose and on the terror card, and the qualification travels
+  with it: Sumpf's apparently matching 150,000 is a count of _victims_ including
+  extortion and assault, over three years rather than five, which is a reason to
+  hold the number loosely rather than a corroboration of it.
 - **No counterfactual branch**, although this war has the best ones in the
   project (the Whites concede the land; Kolchak and Denikin join hands on the
   Volga; the Vistula goes the other way and the Red Army is in Germany in 1920).

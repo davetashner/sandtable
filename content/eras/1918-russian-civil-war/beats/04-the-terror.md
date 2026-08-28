@@ -19,6 +19,8 @@ sources:
   - source: source:werth-2008
   - source: source:holquist-2003
     pages: 628–629
+  - source: source:sumpf-2014
+    note: the pogrom figure, and what it counts
 ---
 
 On 5 September 1918, six days after Lenin was shot and the head of the Petrograd
@@ -62,11 +64,19 @@ targeted specific groups: Socialist militants, suspected Bolshevik sympathizers,
 Jews (assimilated to Bolsheviks), in legacy with Old Czarist regime
 discriminatory repressions."[^werth-2008] Unsystematic is not the same as
 undirected, and the second half of that sentence is the half a shorter quotation
-loses. And the largest single category of
-killing in the whole war belongs to neither Red nor White: approximately a
-hundred and fifty thousand Jewish men, women and children murdered in the
-pogroms of 1918–22, a hundred and twenty-five thousand of them in
-Ukraine.[^werth-2008]
+loses. And the largest single category in the
+whole war belongs to neither Red nor White: "approximately 150,000 Jewish
+victims (125,000 in the Ukraine, 25,000 in Belarus) died between 1918 and
+1922".[^werth-2008]
+
+Hold that number loosely, though, and the reason is instructive. Sumpf gives what
+looks like the same figure — "About 150,000 men, women and children were victims
+of serial pogroms in 1918-1920, i.e. murders or extortion preceded by physical
+and sexual assault"[^sumpf-2014] — and is counting something else: victims rather
+than deaths, over three years rather than five, in a category that explicitly
+includes extortion and assault. Two independent post-archival works reaching the
+same round number for different quantities is a reason for caution, not a
+corroboration.
 
 What cannot be said is a total, because the works that do the counting could not
 be opened from here and their published figures differ by more than an order of
