@@ -45,23 +45,33 @@ Requires Node 22 (`.nvmrc`).
 ```bash
 npm ci
 npm run dev              # Vite dev server; tiles and borders come from production
+npm run verify           # every gate CI's `web` job runs, in fail-fast order (ADR 0023)
+```
+
+`verify` is the whole list and the only definition of it, so CI and a
+contributor cannot disagree about what green means:
+
+```bash
 npm run lint             # ESLint
 npm run typecheck        # tsc -b
 npm test -- --run        # Vitest, single pass
 npm run validate:content # packs, registries and media manifests
+npm run warning:budget   # the warning ceiling, one per kind (ADR 0023)
 npm run build            # tsc -b && vite build → dist/
+npm run bundle:budget    # the size ceilings CI holds (ADR 0016)
 ```
 
-Two more gates catch things the others cannot, and are the ones a change is
-most likely to trip over:
+One gate is deliberately outside it, and is the one a change is most likely to
+trip over:
 
 ```bash
 npm run visual:check     # every scene, two themes, two viewports (ADR 0011)
-npm run build && npm run bundle:budget   # the size ceilings CI holds (ADR 0016)
 ```
 
+It needs a browser and two and a half minutes, and has a CI job of its own.
 `bundle:budget` measures whatever is already in `dist/`, so build first or the
-number is a lie. `CLAUDE.md` lists the rest — the content and asset pipelines
+number is a lie — inside `verify` the build immediately precedes it.
+`CLAUDE.md` lists the rest — the content and asset pipelines
 (`borders`, `front`, `tokens`, `media`, `audio`), the schema generator, the
 design review and `perf`.
 

@@ -22,8 +22,14 @@ The schema is written once, in **Zod** (`src/packs/schema/*.ts`):
 npm run validate:content              # check-content.sh + the pack validator; errors exit 1
 npx tsx scripts/validate-content.ts --warnings   # also list warnings
 npx tsx scripts/validate-content.ts --json       # machine-readable report
+npm run warning:budget                # warnings exit 1 too, per kind, against a ceiling
 npm run schema                        # regenerate schema/*.schema.json
 ```
+
+Errors fail; warnings are reported here and **held to a ceiling per kind** by
+`npm run warning:budget`, against `scripts/warning-budget.json` — a stored
+count with the reason for the number written next to it, and a hard failure for
+a warning of any kind the file does not list (ADR 0023).
 
 ## Layout
 

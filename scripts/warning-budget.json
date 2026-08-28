@@ -1,0 +1,27 @@
+{
+  "$comment": "The content warning ceiling CI holds (ADR 0023, sand-pmz.33), the analogue of scripts/bundle-budget.json for the other number that moves without anyone deciding it. `npm run validate:content` prints warnings and does not fail on them; this file says how many of each kind there may be, and `npm run warning:budget` fails the web job when a kind goes over. One ceiling per kind rather than one total, because 57 of today's 62 are the designed state of a registry landing ahead of its packs, and a total would hide a new category under a drop in that one. A warning matching no kind here is itself a failure: a rule that has never fired before, or a message that was reworded, is exactly the change that should be read by a person rather than absorbed by a number. Raise a ceiling only with a sentence saying why the new number is right — the number and the reason are reviewed together in the diff. `--update` rewrites `measured`, never `max`.",
+  "kinds": {
+    "uncited-source": {
+      "match": "^nothing cites this source\\b",
+      "max": 70,
+      "measured": 57,
+      "measuredOn": "2026-08-28",
+      "why": "A work in the registry that no beat, event, route or document cites, so it appears in no bibliography and no reader will ever see it (sand-shn.5). 57 of today's 62 warnings, and the designed state rather than a defect: a bibliography legitimately lands a pull request or two ahead of the pack that will cite it, and most of these are the Pacific and 1915–18 works waiting on content that is already beaded. So this kind has to grow without a ceiling edit on every content pass — 70 is thirteen works of headroom, about one campaign's bibliography. It is bounded anyway, because unbounded is where the failure this file exists for would hide: 215 sources are in the registry, and a break in how citations are collected would flip every one of them to uncited at once and go red on the first push. When it does go red the answer is usually that a wave of works was added and then not used — cite them or drop them — not a bigger number.",
+      "$note": "history: 57 at the ceiling's introduction (sand-pmz.33)."
+    },
+    "concentration-region": {
+      "match": "^concentration\\.position \\[.*\\] is outside the battle region$",
+      "max": 3,
+      "measured": 3,
+      "measuredOn": "2026-08-28",
+      "why": "A battle whose `concentration.position` sits outside its own `region`, so the marker draws where the reader is not being taken. Three, all at Liège — 1914:liege-army-of-the-meuse, 1914:liege-42cm, 1914:liege-30cm — where either the position or the rectangle is wrong; sand-23b.60 settles which. No headroom on purpose: unlike an uncited source this is a defect and not a state anything is waiting on, so the ceiling is the count, and a fourth one fails."
+    },
+    "pace-sustained": {
+      "match": "^waypoints\\[\\d+\\] covers .* — faster than \\w+ sustained at ",
+      "max": 2,
+      "measured": 2,
+      "measuredOn": "2026-08-28",
+      "why": "A leg of a route or a commander's track that moves faster than its mode kept up day after day (ADR 0020). The bar above this one, `limit`, is already a hard error; this is the ordinary day being beaten, which is usually a date or a mode rather than a lie. Two, both on the Kidō Butai's approach to Oahu, at roughly twice the pack's own declared sea band (sand-23b.61). No headroom, for the same reason as the region warnings: a third leg that outruns its mode is a new claim about how fast something moved, and it should be read by a person before it lands."
+    }
+  }
+}

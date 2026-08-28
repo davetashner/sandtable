@@ -266,7 +266,18 @@ something. These are targets, not gates:
 
 - `npm run bundle:budget` is a required step of the `web` job, which is a
   required check. **A pull request that puts a heavy import in the shell's
-  reach now fails**, with the chunk list and the reason printed.
+  reach now fails**, with the chunk list and the reason printed. It reaches
+  that job through `npm run verify` as of ADR 0023, which made the gate list
+  one list; the order there is not arbitrary — this step follows `build`, for
+  the reason in the next bullet.
+- **The shape of this record has been reused.** ADR 0023 gives the content
+  validator's warning count the same treatment — a stored expectation, a
+  measured value, a delta and a reason next to the number
+  (`scripts/warning-budget.json`, `npm run warning:budget`) — after a count
+  that nothing gated went from 62 to 316 without failing anything. The one
+  thing it adds is a ceiling per _kind_ rather than a total, because warnings,
+  unlike bytes, are not all the same substance: 92% of them are one designed
+  state, and a total would let a new category grow under a fall in that one.
 - It reads `dist/` and **refuses when `dist/` is older than `src/`, `content/`
   or the build config** (`sand-pmz.31`). In CI `build` runs immediately before
   it and the reading is always fresh, which is exactly why the trap was
