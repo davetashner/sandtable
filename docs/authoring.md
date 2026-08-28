@@ -371,7 +371,11 @@ optional forward `connections`.
 
 - **Document** (`documents.json`): the real text — `excerpt` in the original
   language, `translation`, `date`, `author` (a person id or text), `kind`,
-  archive, sources.
+  archive, sources. An excerpt **must** carry a verification receipt
+  ([ADR 0021](decisions/0021-quotation-receipts.md)); see "The receipt for a
+  quotation" below. If you
+  cannot open the work, do not write an excerpt — cite the work without pages
+  and without quotation marks, which is what most of this shelf gets.
 - **DecisionPoint** (`decisions.json`): `at`, `actor`, `question`, `options`
   (each may name a branch), `historical` option, `reasoning` available at the
   time, `verdict`, sources.
@@ -394,6 +398,73 @@ optional forward `connections`.
   `relation`, the `claim`, `confidence`, `historiography`, ≥1 `evidence`
   citation. Cross-pack links (`1870:sedan` → `1914:…`) are how the eras
   connect; the validator resolves them across all of `content/`.
+
+### The receipt for a quotation
+
+A quotation is the one claim the validator cannot check by resolving anything,
+so it comes with evidence: a **receipt** in `content/receipts/<era-dir>.json`
+holding the retrieved text with the quotation inside it. Required for every
+`Document.excerpt`; allowed, and useful, anywhere else you quote.
+
+Get the context from the source itself:
+
+```bash
+npm run receipts -- --capture https://www.ibiblio.org/pha/myths/jm-097.html \
+  --find "depart with utmost secrecy from Hitokappu Bay"
+```
+
+That fetches the page's own bytes, extracts the text and prints the passage
+around your phrase. **Do not use a tool that summarises the page for you** —
+what comes back is the tool's rendering, not the source, and a receipt built
+from one is exactly the thing receipts exist to stop. If the phrase is not
+found, that is a finding: it is on another page of the transcription, or it is
+not in the source. Do not write it down until it is.
+
+Then paste it:
+
+```json
+{
+  "id": "receipt:1941-operation-order-hitokappu-secrecy",
+  "quote": "… depart with utmost secrecy from Hitokappu Bay on 26 November …",
+  "source": "source:japanese-monograph-97",
+  "pages": "21",
+  "usedIn": ["1941-pearl-harbor:document-operation-order"],
+  "how": "fetch",
+  "url": "https://www.ibiblio.org/pha/myths/jm-097.html",
+  "checkedAt": "2026-08-28",
+  "checkedBy": "Your Name",
+  "context": "… the retrieved text, verbatim, with the quotation inside it …",
+  "repeat": "agreed"
+}
+```
+
+- `quote` is the passage **exactly as your content carries it**. Write elisions
+  as `…` or `[…]`; each surviving fragment is checked against `context` in
+  order, so an ellipsis costs you nothing.
+- One receipt per passage. A document quoting four passages pages apart gets
+  four receipts — that is cheaper than pasting a whole transcription, and it
+  lets each one carry its own page.
+- `how: "fetch"` needs `url` and can be re-run. `how: "read"` needs `copy`,
+  naming the copy closely enough that somebody else could find it, and nothing
+  can ever re-run it — it is your word, and `checkedBy` is why your name is on
+  it.
+- `repeat` says whether asking twice agreed. If it did not, say what differed
+  in `note` and **write no page**: `repeat: "differed"` with `pages` is an
+  error, because a locator from a retrieval that will not repeat itself is not
+  a locator.
+- `pages` only if you saw the printed page marker. Rule 3 of
+  [`docs/sources.md`](sources.md) applies here exactly as everywhere else.
+
+Check your work, and everyone's:
+
+```bash
+npm run receipts              # coverage, offline
+npm run receipts -- --fetch   # re-fetch every receipt and report drift
+```
+
+The twenty documents in `content/receipts/backlog.txt` predate this and are
+allowed to go without one until `sand-23b.57.1` closes. Adding a receipt for
+one of them means deleting its line — the validator will not let you keep both.
 
 ### Decision points
 
@@ -902,6 +973,7 @@ instruction.
 npm run validate:content        # errors must be zero
 npm test -- --run               # content tests run in the suite too
 npm run lint && npm run typecheck
+npm run receipts -- --fetch     # if you added or edited a quotation
 ```
 
 Then the PR checklist: every date, number and position cites a Source;

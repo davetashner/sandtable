@@ -1,0 +1,51 @@
+[
+  {
+    "id": "receipt:1914-schlieffen-memorandum-frontal-attack",
+    "quote": "Ein Frontalangriff auf die Stellung Belfort-Verdun bietet daher wenig Aussicht auf Erfolg.",
+    "source": "source:bsb-1000dokumente-schlieffen-1905",
+    "usedIn": ["1914:document-schlieffen-memorandum-1905-12"],
+    "how": "fetch",
+    "url": "https://www.1000dokumente.de/index.html?c=dokument_de&dokument=0097_spl&object=translation&l=de",
+    "checkedAt": "2026-08-28",
+    "checkedBy": "Claude Opus 5 (agent), for sand-23b.57",
+    "context": "usfall aus einer Festung, der dem Belagerer wie dem Verteidiger ungefähr dieselben Verluste bereitet, die Lage beider aber ziemlich unverändert läßt. Ein Frontalangriff auf die Stellung Belfort-Verdun bietet daher wenig Aussicht auf Erfolg. Einer Umfassung südlich müßte ein siegreicher Feldzug gegen die Schweiz und eine Bezwingung der Juraforts vorausgehen, zeitraubende Unternehmungen,",
+    "repeat": "agreed",
+    "note": "No pages: the BSB page is a transcription of the Boetticher copy and carries no printed pagination, so under docs/sources.md §3 none is written. Ritter (1958) pp. 134-148 prints the English and is cited beside it."
+  },
+  {
+    "id": "receipt:1914-schlieffen-memorandum-north-west",
+    "quote": "Mehr versprechend als der Frontalangriff mit Umfassung des linken Flügels scheint ein von Nordwesten gegen die Flanken bei Mézières, Rethel, La Fère und über die Oise gegen den Rücken der Stellung gerichteter Angriff zu sein. Um zu diesem zu gelangen, muß die belgisch-französische Grenze auf dem linken Maasufer mit den befestigten Plätzen Mézières, Hirson, Maubeuge, 3 kleinen Sperrforts, Lille und Dünkirchen bewältigt und, um so weit zu kommen, die Neutralität von Luxemburg, Belgien und den Niederlanden verletzt werden.",
+    "source": "source:bsb-1000dokumente-schlieffen-1905",
+    "usedIn": ["1914:document-schlieffen-memorandum-1905-12"],
+    "how": "fetch",
+    "url": "https://www.1000dokumente.de/index.html?c=dokument_de&dokument=0097_spl&object=translation&l=de",
+    "checkedAt": "2026-08-28",
+    "checkedBy": "Claude Opus 5 (agent), for sand-23b.57",
+    "context": "Die Stellung an der Aisne. 4.) Die Stellung Reims-La Fère. Wenig vertrauensvoll wird man an einen Angriff auf diese vielen starken Stellungen gehen . Mehr versprechend als der Frontalangriff mit Umfassung des linken Flügels scheint ein von Nordwesten gegen die Flanken bei Mézières, Rethel, La Fère und über die Oise gegen den Rücken der Stellung gerichteter Angriff zu sein. Um zu diesem zu gelangen, muß die belgisch-französische Grenze auf dem linken Maasufer mit den befestigten Plätzen Mézières, Hirson, Maubeuge, 3 kleinen Sperrforts, Lille und Dünkirchen bewältigt und, um so weit zu kommen, die Neutralität von Luxemburg, Belgien und den Niederlanden verletzt werden. Die Verletzung der Neutralität von Luxemburg wird abgesehen von Protesten keine Folge von Bedeutung haben. Die Niederlande erblicken in dem mit Fran",
+    "repeat": "agreed"
+  },
+  {
+    "id": "receipt:1914-schlieffen-memorandum-right-wing-speed",
+    "quote": "Es kommt also darauf an, den Vormarsch des rechten deutschen Flügels nach Möglichkeit zu beschleunigen.",
+    "source": "source:bsb-1000dokumente-schlieffen-1905",
+    "usedIn": ["1914:document-schlieffen-memorandum-1905-12"],
+    "how": "fetch",
+    "url": "https://www.1000dokumente.de/index.html?c=dokument_de&dokument=0097_spl&object=translation&l=de",
+    "checkedAt": "2026-08-28",
+    "checkedBy": "Claude Opus 5 (agent), for sand-23b.57",
+    "context": "d Namur vor einem Zusammenstoß mit dem Feinde durchschritten wird, damit jenseits die Entwicklung der 9 Armeekorps ohne Störung sich vollziehen kann. Es kommt also darauf an, den Vormarsch des rechten deutschen Flügels nach Möglichkeit zu beschleunigen. Der Vormarsch der übrigen Heeresteile wird sich, da eine Linksschwenkung erfolgen muß, nach links immer mehr verlangsamen. Die auf dem rechten Maasu",
+    "repeat": "agreed"
+  },
+  {
+    "id": "receipt:1914-schlieffen-memorandum-too-weak",
+    "quote": "Diese Vorbereitungen mögen getroffen werden, wie sie wollen, so werden wir uns überzeugen, daß wir für eine Fortsetzung der Operationen in dieser Richtung zu schwach sind. Wir werden die Erfahrung aller früheren Eroberer bestätigt finden, daß der Angriffskrieg sehr viele Kräfte erfordert und sehr viele verbraucht, daß diese ebenso beständig abnehmen, wie diejenigen des Verteidigers zunehmen, und alles dies ganz besonders in einem Lande, das von Festungen starrt.",
+    "source": "source:bsb-1000dokumente-schlieffen-1905",
+    "usedIn": ["1914:document-schlieffen-memorandum-1905-12"],
+    "how": "fetch",
+    "url": "https://www.1000dokumente.de/index.html?c=dokument_de&dokument=0097_spl&object=translation&l=de",
+    "checkedAt": "2026-08-28",
+    "checkedBy": "Claude Opus 5 (agent), for sand-23b.57",
+    "context": "en auf einen Übergang über die Seine unterhalb der Oisemündung und auf eine Einschließung von Paris zunächst auf der West- und Südfront einzurichten. Diese Vorbereitungen mögen getroffen werden, wie sie wollen, so werden wir uns überzeugen, daß wir für eine Fortsetzung der Operationen in dieser Richtung zu schwach sind. Wir werden die Erfahrung aller früheren Eroberer bestätigt finden, daß der Angriffskrieg sehr viele Kräfte erfordert und sehr viele verbraucht, daß diese ebenso beständig abnehmen, wie diejenigen des Verteidigers zunehmen, und alles dies ganz besonders in einem Lande, das von Festungen starrt. Die aktiven Korps müssen für die Schlacht unberührt erhalten bleiben und dürfen nicht für den Etappendienst, die Belagerung und Einschließung der Fe",
+    "repeat": "agreed"
+  }
+]

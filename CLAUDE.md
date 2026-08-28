@@ -71,6 +71,8 @@ npm run lint             # ESLint (flat config)
 npm run typecheck        # tsc -b
 npm test -- --run        # Vitest, single pass
 npm run validate:content # scripts/check-content.sh + the pack validator (docs/content-model.md)
+npm run receipts         # quotation receipts: coverage; -- --fetch re-verifies against the live sources,
+                         # -- --capture <url> --find "<phrase>" prints context to paste (ADR 0021). Never in CI
 npm run schema           # regenerate schema/*.schema.json from src/packs/schema (tests fail if stale)
 npm run borders          # rebuild content/shared/geo/borders/<year>.geojson from historical-basemaps (pinned commit)
 npm run front            # rebuild content/shared/geo/front/western-front.geojson from the authored snapshots; -- --check fails on a stale commit
@@ -131,6 +133,17 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
   checklist is `docs/fact-check.md`, the contested points are
   `docs/historiography-1914.md`, the 1914 lesson spine every beat must serve is
   `docs/lesson-1914.md`.
+- **Quotations carry receipts:** ADR 0021 — a citation that _resolves_ is not a
+  citation that was _read_, and a fabricated quotation with a well-formed
+  citation is worse than none. Every `Document.excerpt` needs a `Receipt` in
+  `content/receipts/<era>.json` whose `context` is **retrieved text with the
+  quotation inside it**; the validator checks the containment, `npm run
+receipts -- --fetch` re-runs it against the source. Receipts live outside
+  `content/eras/`, so the pack build never sees them and the budget never
+  moves. Never build one from a tool that summarises a page. Only the excerpt
+  is gated — the ~700 quoted spans in `sources[].note` are review's job
+  (`sand-23b.58`) — and the right answer to a source that cannot be opened is
+  to stop quoting it and keep citing it.
 - **Design:** tokens and the war-room identity come from the design-system epic
   (`sand-neh`): `src/styles/tokens.ts` → `npm run tokens` → `tokens.css`, reference
   in `docs/design.md`; don't introduce ad-hoc colours or typefaces.

@@ -10,6 +10,8 @@ import {
   CUE_MANIFEST,
   MEDIA_MANIFEST,
   PACK_FILE,
+  RECEIPT_BACKLOG,
+  RECEIPTS_DIR,
   THREAD_FILE,
 } from '../../src/packs/schema/files.js';
 import type { RawContent, RawFile, RawPack } from '../../src/packs/validate/tree.js';
@@ -115,5 +117,20 @@ export function readContent(root = 'content'): ReadResult {
   shared.audio = readJsonAll(walk(join(sharedDir, 'audio'), (n) => n === CUE_MANIFEST));
   const threads = readJsonAll(walk(join(root, 'threads'), (n) => n === THREAD_FILE));
 
-  return { content: { packs, shared, threads }, problems };
+  // Receipts (ADR 0021) sit beside the eras rather than inside them: they are
+  // authoring apparatus, the pack build never looks here, and one file per era
+  // keeps two agents authoring two eras out of each other's diff.
+  const receiptsDir = join(root, RECEIPTS_DIR);
+  const receipts = readJsonAll(
+    walk(receiptsDir, (n) => n.endsWith('.json')).sort((a, b) => a.localeCompare(b)),
+  );
+  const backlogPath = join(receiptsDir, RECEIPT_BACKLOG);
+  const receiptBacklog: RawFile | undefined = exists(backlogPath)
+    ? { path: rel(backlogPath), data: readFileSync(backlogPath, 'utf8') }
+    : undefined;
+
+  return {
+    content: { packs, shared, threads, receipts, ...(receiptBacklog ? { receiptBacklog } : {}) },
+    problems,
+  };
 }

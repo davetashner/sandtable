@@ -1264,9 +1264,103 @@ export const Tour = z
   })
   .strict();
 
+// ------------------------------------------------------------------ Receipt
+
+/**
+ * How a quotation was seen (ADR 0021).
+ *
+ * `fetch` is a retrieval a machine can repeat: a url that answered, and the
+ * text it answered with. `read` is a person or an agent saying they opened a
+ * copy nothing here can link — a lending copy, a library shelf, a scan whose
+ * standing is not clear. The distinction is the whole point of the field:
+ * `verify-receipts --fetch` can re-run the first kind and cannot re-run the
+ * second, so a `read` receipt is an attestation and is worth exactly what the
+ * person who signed it is worth.
+ */
+export const RetrievalMethod = z.enum(['fetch', 'read']);
+
+/**
+ * Whether asking twice gave the same answer.
+ *
+ * This field exists because of a specific failure: the Pearl Harbor pack found
+ * the text-extraction layer returning different page markers for the same
+ * sentence on repeated fetches — 196/197 then 195/196, 131 then 132 — and
+ * wrote no page numbers for five transcriptions as a result. `differed` is how
+ * a receipt records that, and the validator turns it into the rule that
+ * behaviour deserved: a locator taken from a retrieval that would not repeat
+ * itself is not a locator.
+ */
+export const RepeatCheck = z.enum(['agreed', 'differed', 'not-attempted']);
+
+/**
+ * A verification receipt for one quoted passage (ADR 0021).
+ *
+ * Every other entity in this model records what happened; this one records
+ * what *we did* to find out. It exists because a quotation is the one claim
+ * nothing else in the repository can check: the validator confirms a citation
+ * resolves — that the source id exists — never that the source says what we
+ * claim, and a fabricated quotation carrying a well-formed citation is worse
+ * than no quotation, because the citation makes it look checked.
+ *
+ * The load-bearing field is `context`, not `quote`. Anyone can assert they
+ * read something; a receipt has to paste back the retrieved text with the
+ * quotation sitting inside it, and the validator checks the containment. That
+ * turns an unfalsifiable claim ("I read this") into a falsifiable one ("this
+ * url returned this text"), which is the only kind a script can re-run.
+ *
+ * Receipts live outside the packs, in `content/receipts/<era>.json`, because
+ * they are apparatus and not content: a reader never sees one, and shipping
+ * paragraphs of retrieved context inside a pack bundle would spend the
+ * content budget (ADR 0018) on something nothing renders.
+ */
+export const Receipt = z
+  .object({
+    id: Id.describe('receipt:<slug> — unique across content/'),
+    quote: z
+      .string()
+      .min(1)
+      .describe(
+        'The quoted words exactly as the content carries them. Elisions are written … or […] ' +
+          'and the validator checks each surviving fragment against `context` in order.',
+      ),
+    source: Id.describe('The Source the quotation is attributed to'),
+    pages: z.string().optional().describe('The locator, if one was actually seen'),
+    usedIn: z
+      .array(Id)
+      .min(1)
+      .describe('Entity ids whose text carries this quotation — a document, a beat, a card'),
+    how: RetrievalMethod,
+    url: z.url().optional().describe('What was fetched — required when `how` is "fetch"'),
+    copy: z
+      .string()
+      .optional()
+      .describe(
+        'Which copy was opened — required when `how` is "read". Name it precisely enough that ' +
+          'somebody else could find the same one: an edition and a library, an archive shelfmark.',
+      ),
+    checkedAt: IsoDate.describe('The day the retrieval happened'),
+    checkedBy: z.string().min(1).describe('Who or what did it — a person, or an agent and model'),
+    context: z
+      .string()
+      .min(1)
+      .describe(
+        'The retrieved text around the quotation, verbatim and long enough that a reviewer can ' +
+          'see the quotation in place. This is the receipt; the rest is metadata about it.',
+      ),
+    repeat: RepeatCheck,
+    note: z
+      .string()
+      .optional()
+      .describe('Required when `repeat` is "differed": say what differed between the two fetches'),
+  })
+  .strict();
+
 // -------------------------------------------------------------------- types
 
 export type Links = z.infer<typeof Links>;
+export type RetrievalMethod = z.infer<typeof RetrievalMethod>;
+export type RepeatCheck = z.infer<typeof RepeatCheck>;
+export type Receipt = z.infer<typeof Receipt>;
 export type Source = z.infer<typeof Source>;
 export type Person = z.infer<typeof Person>;
 export type CastEntry = z.infer<typeof CastEntry>;

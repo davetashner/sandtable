@@ -37,6 +37,8 @@ import {
   type Person,
   type Place,
   type PlateSet,
+  Receipt,
+  type Receipt as ReceiptT,
   type Route,
   type ScienceCard,
   SHARED_COLLECTIONS,
@@ -58,6 +60,7 @@ import {
 } from '../schema/index.js';
 import { footnoteLabels, splitFrontMatter } from './frontmatter.js';
 import { PACE_CEILING, paceBandMessages, paceFindings, paceMessage } from './pace.js';
+import { missingFragment, missingFromAny, parseReceiptBacklog } from './receipts.js';
 import type { RawContent, RawFile, RawPack } from './tree.js';
 
 // ------------------------------------------------------------------ report
@@ -111,6 +114,8 @@ export interface ParsedContent {
     audio: CueT[];
   };
   threads: ThreadT[];
+  /** Verification receipts (ADR 0021) — apparatus, not pack content. */
+  receipts: ReceiptT[];
 }
 
 export interface Report {
@@ -160,7 +165,8 @@ type Kind =
   | 'media'
   | 'cue'
   | 'score'
-  | 'thread';
+  | 'thread'
+  | 'receipt';
 
 /** The kinds that live in `content/shared/` rather than in one era. */
 const SHARED_KINDS: Kind[] = ['person', 'place', 'source', 'media', 'cue'];
@@ -1637,6 +1643,205 @@ function checkThread(ctx: Ctx, path: string, th: ThreadT) {
   checkCitations(ctx, path, th.id, th.sources, false);
 }
 
+// -------------------------------------------------------------- quotations
+
+/**
+ * Every string an entity carries, joined — the haystack a receipt's quotation
+ * is looked for in.
+ *
+ * Deliberately indiscriminate. A quotation can sit in a document's `excerpt`,
+ * a card's `body`, a vignette's `text`, a historiography position's `summary`
+ * or — as the 1941 pack does throughout, because its page markers would not
+ * repeat — inside a citation's `note`. Enumerating those fields per family
+ * would be twenty branches of plumbing that goes stale the next time the
+ * content model grows a prose field, and the check this feeds only asks
+ * whether the receipt still points at content that carries its words.
+ */
+function stringLeaves(value: unknown, out: string[] = []): string[] {
+  if (typeof value === 'string') out.push(value);
+  else if (Array.isArray(value)) for (const v of value) stringLeaves(v, out);
+  else if (value && typeof value === 'object')
+    for (const v of Object.values(value)) stringLeaves(v, out);
+  return out;
+}
+
+/**
+ * The text of every entity a receipt could name, keyed by id: the raw JSON
+ * object for anything in a collection file, and the whole Markdown file for a
+ * beat. Built from `raw` rather than from the parsed entities so that it
+ * covers every family without naming any of them.
+ */
+function quotableText(raw: RawContent, packs: PackState[]): Map<string, string> {
+  const text = new Map<string, string>();
+  const add = (value: unknown) => {
+    if (!value || typeof value !== 'object') return;
+    const id = (value as { id?: unknown }).id;
+    if (typeof id === 'string') text.set(id, stringLeaves(value).join('\n'));
+  };
+  const addFile = (f: RawFile | undefined) => {
+    if (!f) return;
+    if (Array.isArray(f.data)) for (const item of f.data) add(item);
+    else add(f.data);
+  };
+  for (const p of raw.packs) {
+    addFile(p.pack);
+    for (const f of Object.values(p.collections)) addFile(f);
+  }
+  for (const f of Object.values(raw.shared.collections)) addFile(f);
+  for (const f of [...raw.shared.media, ...raw.shared.audio, ...raw.threads]) addFile(f);
+  for (const s of packs) for (const b of s.beats) text.set(b.id, `${b.title}\n${b.body}`);
+  return text;
+}
+
+/**
+ * One receipt's internal rules (ADR 0021).
+ *
+ * The containment check is the whole mechanism: a receipt that cannot show its
+ * quotation inside the text it says it retrieved is an assertion, and an
+ * assertion is what this exists to replace. Everything else here is the two
+ * incidents of 2026-08-27 written as rules — name the copy you opened, and do
+ * not carry a page off a retrieval that would not repeat itself.
+ */
+function checkReceipt(ctx: Ctx, path: string, r: ReceiptT, text: Map<string, string>) {
+  ctx.ref(path, r.id, r.source, ['source'], 'source');
+
+  if (r.how === 'fetch' && !r.url)
+    ctx.error(path, 'how: "fetch" needs the url that was fetched', r.id);
+  if (r.how === 'read' && !r.copy)
+    ctx.error(
+      path,
+      'how: "read" needs `copy` — which copy was opened, named closely enough that somebody ' +
+        'else could find the same one. A read receipt is an attestation and nothing can re-run it',
+      r.id,
+    );
+
+  const missing = missingFragment(r.quote, r.context);
+  if (missing !== undefined)
+    ctx.error(
+      path,
+      `context does not contain the quotation — "${missing}" is not in the retrieved text. ` +
+        'The context is the receipt: paste back what the source actually returned, with the ' +
+        'quotation inside it (ADR 0021)',
+      r.id,
+    );
+
+  if (r.repeat === 'differed') {
+    if (!r.note)
+      ctx.error(path, 'repeat: "differed" needs a note saying what differed between fetches', r.id);
+    if (r.pages)
+      ctx.error(
+        path,
+        'repeat: "differed" and a page number cannot both be true. A locator taken from a ' +
+          'retrieval that would not repeat itself is not a locator — quote the sentence and ' +
+          'give the chapter instead, the way the 1941 pack does (docs/sources.md §3)',
+        r.id,
+      );
+  }
+
+  for (const id of r.usedIn) {
+    const entry = ctx.index.get(id);
+    if (!entry) {
+      ctx.error(path, `usedIn ${id} does not exist`, r.id);
+      continue;
+    }
+    const body = text.get(id);
+    if (body === undefined) continue;
+    const gone = missingFragment(r.quote, body);
+    if (gone !== undefined)
+      ctx.error(
+        path,
+        `usedIn ${id} no longer carries this quotation — "${gone}" is not in it. Either the ` +
+          'content was edited away from the receipt, or the receipt names the wrong entity',
+        r.id,
+      );
+  }
+}
+
+/**
+ * The gate, and it is deliberately one field wide (ADR 0021).
+ *
+ * `Document.excerpt` is the only place in the content model whose *definition*
+ * is a quotation — "the real text, in the original language where we have it".
+ * Everywhere else, telling a quotation from a term of art is a judgement no
+ * regular expression makes: the corpus holds some seven hundred quoted spans
+ * of four words or more, most of them genuine quotations inside `sources[]
+ * .note`, and among them "race to the sea", "Public domain" and the titles of
+ * nine music cues. A gate that fired on all of them would be noise, and noise
+ * is how a gate stops being read.
+ *
+ * A translation is not gated. Where the pack made the translation itself —
+ * 1917 does, and says so in the field — there is no source text to retrieve;
+ * where it is quoted from a published edition, write it a second receipt.
+ */
+function checkDocumentReceipts(
+  ctx: Ctx,
+  packs: PackState[],
+  byUsedIn: Map<string, ReceiptT[]>,
+  backlog: Set<string>,
+) {
+  for (const s of packs) {
+    const path = s.files['documents.json'] ?? `eras/${s.dir}/documents.json`;
+    for (const d of s.documents) {
+      const covering = byUsedIn.get(d.id) ?? [];
+      if (covering.length === 0) {
+        if (backlog.has(d.id)) continue;
+        ctx.error(
+          path,
+          'the excerpt is a quotation and needs a verification receipt: add one to ' +
+            'content/receipts/ naming this id in `usedIn` (ADR 0021, docs/authoring.md §8). ' +
+            'If the work cannot be opened from here, cite it without quoting it — the answer ' +
+            'to an unreadable source is to stop quoting it, not to stop citing it',
+          d.id,
+        );
+        continue;
+      }
+      const missing = missingFromAny(
+        d.excerpt,
+        covering.map((r) => r.context),
+      );
+      if (missing === undefined) continue;
+      ctx.error(
+        path,
+        `the receipts do not show the whole excerpt — "${missing}" is in none of the retrieved ` +
+          'text they carry. Every passage the excerpt prints has to have been seen, not just ' +
+          'the first one',
+        d.id,
+      );
+    }
+  }
+}
+
+/**
+ * The backlog is an allowance, and an allowance has to be able to end
+ * (`sand-23b.57.1`). Same two rules as `scripts/media-index-backlog.txt`: a
+ * line for an id nothing defines is rot, and a line for an id that now has a
+ * receipt is a line somebody forgot to delete — which is how a one-time
+ * allowance quietly becomes the policy.
+ */
+function checkReceiptBacklog(
+  ctx: Ctx,
+  file: RawFile,
+  ids: string[],
+  byUsedIn: Map<string, ReceiptT[]>,
+) {
+  const seen = new Set<string>();
+  for (const id of ids) {
+    if (seen.has(id)) ctx.error(file.path, `${id} is listed twice`);
+    seen.add(id);
+    const entry = ctx.index.get(id);
+    if (!entry || entry.kind !== 'document') {
+      ctx.error(file.path, `${id} is not a document in any pack — delete the line`);
+      continue;
+    }
+    if ((byUsedIn.get(id) ?? []).length > 0)
+      ctx.error(
+        file.path,
+        `${id} now has a receipt — delete its line. The allowance is for documents that do ` +
+          'not have one yet, and it cannot be allowed to outlive them',
+      );
+  }
+}
+
 // ------------------------------------------------------------------- entry
 
 export function validateContent(raw: RawContent): Report {
@@ -1655,6 +1860,17 @@ export function validateContent(raw: RawContent): Report {
     ctx.register(th.id, { kind: 'thread', path: f.path });
     threads.push(th);
     threadFiles.push(f);
+  }
+  const receipts: ReceiptT[] = [];
+  const receiptFiles = new Map<string, string>(); // receipt id → file it came from
+  for (const f of raw.receipts ?? []) {
+    const items = parseWith(ctx, Receipt.array(), f, 'receipts');
+    if (!items) continue;
+    for (const r of items) {
+      ctx.register(r.id, { kind: 'receipt', path: f.path });
+      receiptFiles.set(r.id, f.path);
+      receipts.push(r);
+    }
   }
 
   // pass 2 — rules
@@ -1702,6 +1918,19 @@ export function validateContent(raw: RawContent): Report {
   checkShared(ctx, shared, raw);
   threads.forEach((th, i) => checkThread(ctx, threadFiles[i]!.path, th));
 
+  // Quotations (ADR 0021). Last, because a receipt points at entities every
+  // other pass has already indexed, and because the text it is held against is
+  // the raw content rather than anything the passes above produce.
+  const byUsedIn = new Map<string, ReceiptT[]>();
+  for (const r of receipts)
+    for (const id of r.usedIn) byUsedIn.set(id, [...(byUsedIn.get(id) ?? []), r]);
+  const quotable = quotableText(raw, packs);
+  for (const r of receipts) checkReceipt(ctx, receiptFiles.get(r.id)!, r, quotable);
+  const backlog = raw.receiptBacklog;
+  const backlogIds = backlog ? parseReceiptBacklog(String(backlog.data)) : [];
+  if (backlog) checkReceiptBacklog(ctx, backlog, backlogIds, byUsedIn);
+  checkDocumentReceipts(ctx, packs, byUsedIn, new Set(backlogIds));
+
   const counts: Record<string, number> = {};
   for (const { kind } of ctx.index.values()) counts[kind] = (counts[kind] ?? 0) + 1;
 
@@ -1709,6 +1938,7 @@ export function validateContent(raw: RawContent): Report {
     packs: packs.map(({ files: _f, branchById: _b, historical: _h, ...rest }) => rest),
     shared,
     threads,
+    receipts,
   };
   return {
     ok: ctx.errors.length === 0,

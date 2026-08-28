@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sandtable.davetashner.com/schema/receipts.schema.json",
+  "title": "Sandtable receipts",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "receipt:<slug> — unique across content/"
+      },
+      "quote": {
+        "type": "string",
+        "minLength": 1,
+        "description": "The quoted words exactly as the content carries them. Elisions are written … or […] and the validator checks each surviving fragment against `context` in order."
+      },
+      "source": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+        "description": "The Source the quotation is attributed to"
+      },
+      "pages": {
+        "description": "The locator, if one was actually seen",
+        "type": "string"
+      },
+      "usedIn": {
+        "minItems": 1,
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*:[a-z0-9][a-z0-9._/-]*$",
+          "description": "Qualified entity id, e.g. 1914:marne or person:joffre-joseph"
+        },
+        "description": "Entity ids whose text carries this quotation — a document, a beat, a card"
+      },
+      "how": {
+        "type": "string",
+        "enum": [
+          "fetch",
+          "read"
+        ]
+      },
+      "url": {
+        "description": "What was fetched — required when `how` is \"fetch\"",
+        "type": "string",
+        "format": "uri"
+      },
+      "copy": {
+        "description": "Which copy was opened — required when `how` is \"read\". Name it precisely enough that somebody else could find the same one: an edition and a library, an archive shelfmark.",
+        "type": "string"
+      },
+      "checkedAt": {
+        "type": "string",
+        "format": "date",
+        "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+        "description": "The day the retrieval happened"
+      },
+      "checkedBy": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Who or what did it — a person, or an agent and model"
+      },
+      "context": {
+        "type": "string",
+        "minLength": 1,
+        "description": "The retrieved text around the quotation, verbatim and long enough that a reviewer can see the quotation in place. This is the receipt; the rest is metadata about it."
+      },
+      "repeat": {
+        "type": "string",
+        "enum": [
+          "agreed",
+          "differed",
+          "not-attempted"
+        ]
+      },
+      "note": {
+        "description": "Required when `repeat` is \"differed\": say what differed between the two fetches",
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "quote",
+      "source",
+      "usedIn",
+      "how",
+      "checkedAt",
+      "checkedBy",
+      "context",
+      "repeat"
+    ],
+    "additionalProperties": false
+  }
+}

@@ -26,6 +26,9 @@
  *     media/** /media.json  Media             (one manifest per image)
  *     audio/** /cue.json    Cue               (one manifest per score cue)
  *   content/threads/<slug>/thread.json  Thread
+ *   content/receipts/
+ *     <era-dir>.json     Receipt[]         (verification receipts, ADR 0021)
+ *     backlog.txt        ids allowed to go without one while sand-23b.57.1 runs
  *
  * Only pack.json is mandatory; every other file is optional and, when
  * present, must be an array of the entity (possibly empty).
@@ -45,6 +48,7 @@ import {
   Pack,
   Person,
   Place,
+  Receipt,
   Route,
   ScienceCard,
   ScoreEntry,
@@ -103,6 +107,20 @@ export const DIAGRAMS_DIR = 'diagrams';
 export const MEDIA_MANIFEST = 'media.json';
 export const CUE_MANIFEST = 'cue.json';
 export const THREAD_FILE = 'thread.json';
+/**
+ * Verification receipts (ADR 0021). One file per era, named for the era's
+ * directory, plus `shared.json` for quotations in the shared registries — per
+ * file, because several agents author several eras at once and a single
+ * register would be a merge conflict on every content PR.
+ */
+export const RECEIPTS_DIR = 'receipts';
+/**
+ * The one-time allowance that keeps the receipt gate off `main`'s back
+ * (sand-23b.57.1). Same shape and same self-removing rule as
+ * `scripts/media-index-backlog.txt`: one id per line, `#` comments, and the
+ * validator refuses a line for an id that now has a receipt.
+ */
+export const RECEIPT_BACKLOG = 'backlog.txt';
 
 /** Every JSON Schema we publish under schema/, keyed by output file stem. */
 export const JSON_SCHEMAS = {
@@ -133,4 +151,5 @@ export const JSON_SCHEMAS = {
   media: Media,
   cue: Cue,
   thread: Thread,
+  receipts: z.array(Receipt),
 } as const;

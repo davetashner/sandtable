@@ -1,0 +1,68 @@
+[
+  {
+    "id": "receipt:1941-operation-order-departure-speed",
+    "quote": "… the entire force (except the Midway Bombardment Unit) in accordance with special orders will depart as a group from Hitokappu Bay at a speed of 12-14 knots.",
+    "source": "source:japanese-monograph-97",
+    "pages": "7",
+    "usedIn": ["1941-pearl-harbor:document-operation-order"],
+    "how": "fetch",
+    "url": "https://www.ibiblio.org/pha/myths/jm-097.html",
+    "checkedAt": "2026-08-28",
+    "checkedBy": "Claude Opus 5 (agent), for sand-23b.57",
+    "context": "Each Force. a. General While exercising strict antiaircraft and antisubmarine measures and making every effort to conceal its position and movements, the entire force (except the Midway Bombardment Unit) in accordance with special orders will depart as a group from Hitokappu Bay at a speed of 12-14 knots. The force refueling en route whenever possible will arrive at the standby point (42 N, 165 W). In the event bad weather prevents refueling en route",
+    "repeat": "agreed"
+  },
+  {
+    "id": "receipt:1941-operation-order-hitokappu-secrecy",
+    "quote": "… depart with utmost secrecy from Hitokappu Bay on 26 November … advance to the standby point (42 N, 170 W) …",
+    "source": "source:japanese-monograph-97",
+    "pages": "21",
+    "usedIn": ["1941-pearl-harbor:document-operation-order"],
+    "how": "fetch",
+    "url": "https://www.ibiblio.org/pha/myths/jm-097.html",
+    "checkedAt": "2026-08-28",
+    "checkedBy": "Claude Opus 5 (agent), for sand-23b.57",
+    "context": "eral Outline) 25 November 1941 Order to: Carrier Striking Task Force The Carrier Striking Task Force will immediately complete taking on supplies and depart with utmost secrecy from Hitokappu Bay on 26 November and advance to the standby point (42 N, 170 W) by the evening of 3 December. Commander-in-Chief, Combined Fleet Yamamoto, Isoroku [Page 22] Navy Order No. 9 1 December 1941 Order to: Yamamoto, C i",
+    "repeat": "agreed",
+    "note": "This passage is Combined Fleet Operations Order No. 5 of 25 November, printed on page 21, after the passages the pack quotes from pages 7, 11 and 13: the excerpt runs in the order of the operation, not in the order of the monograph."
+  },
+  {
+    "id": "receipt:1941-operation-order-turn-south",
+    "quote": "Around 0700 hours, X-1 Day the Task Force will turn southward at high speed (approximately 24 knots) … advance on a course of 180 degrees from 0700 hours X-1 Day at an increased speed of 24 knots.",
+    "source": "source:japanese-monograph-97",
+    "pages": "11",
+    "usedIn": ["1941-pearl-harbor:document-operation-order"],
+    "how": "fetch",
+    "url": "https://www.ibiblio.org/pha/myths/jm-097.html",
+    "checkedAt": "2026-08-28",
+    "checkedBy": "Claude Opus 5 (agent), for sand-23b.57",
+    "context": "nce of the order designating X Day (the day of the outbreak of hostilities), the force will proceed to the approaching point (32 N, 157 W). [Page 11] Around 0700 hours, X-1 Day the Task Force will turn southward at high speed (approximately 24 knots) from the vicinity of the approaching point. It will arrive at the take-off point (200 nautical miles north of the enemy fleet anchorage) at 0100 hours X Day (0530 Honolulu time) and commit the entire air strength to attack the enemy fleet and important airfields on Oahu. Upon completion of the air attacks, the Task Force will assemble the aircraft, skirt 800 nautical miles north of Midway, return about X + 15 Day to the western part of the Inland Sea via the assembly point (30 N, 165 E) and prepare for Second Period Operations. In the event of a fuel shortage the Task Force will proceed to Truk via the assembly point. The force may skirt near Midway in the event that consideration of an enemy counter-attack is unnecessary due to successful air attacks or if such action is necessitated by fuel shortage. In this event, the 5th Carrier Division with the support of the Kirishima from the 3rd Battleship Division will leave the Task Force on the night of X Day or the early morning of X + 1 Day and carry out air attacks on Midway in the early morning of X + 2 Day. If a powerful enemy force intercepts our return route, the Task Force will break through the Hawaiian Islands area southward and proceed to the Marshall Islands. b. Patrol unit The patrol unit will accompany the main force. In the event the screening unit is returned to the home base, the patrol unit [Page 12] will screen the advance of the main force and the launching and the landing of aircraft. After the air attacks, the patrol unit will station itself between the flank of the main force and the enemy. In the event of an enemy fleet sortie, the patrol unit will shadow the enemy and in a favorable situation attack him. c. The Midway Bombardment Unit The Midway Bombardment Unit will depart from Tokyo Bay around X-6 Day and, after refueling, secretly approach Midway. It will arrive on the night of X Day and shell the air base. The unit will then withdraw and, after refueling, return to the western part of the Inland Sea. The oiler Shiriya will accompany the bombardment unit on this mission and will be responsible for the refueling operation. d. Supply Force The supply force will accompany the main force to the approaching point, carrying out refuelings, separate from the main force, skirt 800 nautical miles north of Midway, return to the assembly point by 0800 hours, X +6 Day, and stand by. 4. The Task Force may suspend operations en route to the Hawaiian area and return to Hitokappu Bay, Hokkaido or Mutsu Bay, depending upon the situation. Commander Carrier Striking Task Force Nagumo, Chuichi [Page 13] Carrier Striking Task Force Operations Order No. 3 [7] 23 November 1941 To: Carrier Striking Task Force The Hawaiian operations air attack plan has been decided as follows: 1. The Operation of the Air Attack Forces The force will be 700 nautical miles due north of point Z (set at the western extremity of the Island of Lanai) at 0600 hours X-1 Day and advance on a course of 180 degrees from 0700 hours X-1 Day at an increased speed of 24 knots. Air attacks will be carried out by launching the first attack units 230 nautical miles due north of Z point at 0130 hours X Day, and the second atta",
+    "repeat": "agreed"
+  },
+  {
+    "id": "receipt:1941-operation-order-launch-points",
+    "quote": "… 230 nautical miles due north of Z point at 0130 hours X Day … 200 nautical miles due north of Z point at 0245 hours …",
+    "source": "source:japanese-monograph-97",
+    "pages": "13",
+    "usedIn": ["1941-pearl-harbor:document-operation-order"],
+    "how": "fetch",
+    "url": "https://www.ibiblio.org/pha/myths/jm-097.html",
+    "checkedAt": "2026-08-28",
+    "checkedBy": "Claude Opus 5 (agent), for sand-23b.57",
+    "context": "course of 180 degrees from 0700 hours X-1 Day at an increased speed of 24 knots. Air attacks will be carried out by launching the first attack units 230 nautical miles due north of Z point at 0130 hours X Day, and the second attack unit at 200 nautical miles due north of Z point at 0245 hours. After the launching of the second attack units is completed, the task force will withdraw northward at a speed of about 24 knots. The first attack u",
+    "repeat": "agreed"
+  },
+  {
+    "id": "receipt:1941-operation-order-withdrawal",
+    "quote": "After the launching of the second attack units is completed, the task force will withdraw northward at a speed of about 24 knots.",
+    "source": "source:japanese-monograph-97",
+    "pages": "13",
+    "usedIn": ["1941-pearl-harbor:document-operation-order"],
+    "how": "fetch",
+    "url": "https://www.ibiblio.org/pha/myths/jm-097.html",
+    "checkedAt": "2026-08-28",
+    "checkedBy": "Claude Opus 5 (agent), for sand-23b.57",
+    "context": "its 230 nautical miles due north of Z point at 0130 hours X Day, and the second attack unit at 200 nautical miles due north of Z point at 0245 hours. After the launching of the second attack units is completed, the task force will withdraw northward at a speed of about 24 knots. The first attack units are scheduled to return between 0530 and 0600 hours and the second attack units are scheduled to return between 0645 and 0715",
+    "repeat": "agreed"
+  }
+]
