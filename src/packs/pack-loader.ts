@@ -28,6 +28,13 @@ declare global {
     __sandtablePack?: Promise<unknown>;
     /** Which era that fetch was for, so the loader can agree with it. */
     __sandtablePackUrl?: string;
+    /**
+     * The boot script's failure state, exposed so it can be summoned by hand:
+     * `__sandtablePackFailure('missing')` in the console is the only way to
+     * look at that screen without breaking the network first
+     * (`src/packs/boot-script.ts`, `sand-shn.1.2`).
+     */
+    __sandtablePackFailure?: (kind: 'missing' | 'offline' | 'invalid') => void;
   }
 }
 

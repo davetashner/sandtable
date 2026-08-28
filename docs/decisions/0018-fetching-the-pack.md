@@ -224,5 +224,60 @@ or by era, which is what `sand-shn.1`'s atlas landing page will want anyway.
   surface, and a blank moment there costs nobody anything.
 - **Nothing here makes the app work offline or without JavaScript.** The pack is
   a network dependency now, where before it was part of the code; a failed fetch
-  is a page that says so rather than a page that half-works. The message is the
-  loader's `Error`, and giving it a face is follow-up work.
+  is a page that says so rather than a page that half-works. The message was the
+  loader's `Error`, and giving it a face was follow-up work — done in the
+  amendment below.
+
+## Amendment: the failure has a face, and it is not a component (`sand-shn.1.2`)
+
+The consequence above was optimistic. A failed fetch was not "a page that says
+so": the loader threw, the module graph never evaluated, and the boot frame in
+`index.html` sat there saying **Laying out the campaign…** for as long as the
+reader was willing to wait. The record had created a class of failure the app
+did not have when the pack was compiled in, and left the first reader on a bad
+connection to meet it with no message and no way out.
+
+**The failure state is static markup in `index.html`, revealed by the boot
+script, and that follows from the top-level `await` rather than working around
+it.** A rejected top-level `await` fails the whole graph: `main.tsx` never
+evaluates, React never mounts, and an error boundary — or anything that imports
+the pack, or anything that imports _those_ — is exactly the code that is not
+running. The only code that can be relied on is code outside the graph. The
+boot hook is already outside it and already knows the request went wrong, so it
+gets the job (`src/packs/boot-script.ts`); the markup and its styles are inline
+beside the boot frame's, for the reason the boot frame's are, and because a
+reader whose first request failed is the last reader to spend another one on a
+chunk. Nothing in `src/` had to change, which is the test of whether the shape
+was right.
+
+Three faces, because there are three ways this goes wrong and they want
+different things from the reader:
+
+| what happened                                | what it says                      | the way out               |
+| -------------------------------------------- | --------------------------------- | ------------------------- |
+| the server answered and said no (4xx)        | that era is not on the table      | **the atlas**, then retry |
+| no answer at all, or the server failed (5xx) | the campaign could not be reached | **retry**, then the atlas |
+| something arrived the app could not read     | the content arrived damaged       | **retry**, then the atlas |
+
+The third is the schema's, and it is the reason the browser-side Zod parse was
+kept above: a bundle that arrives and is refused by `seed.ts` throws at module
+scope, which reaches the boot script as an unhandled rejection rather than
+through the fetch chain. Both are watched, and both are ignored once React has
+committed — the markup is gone by then, so a rejection from the map an hour into
+a session cannot put an error page over a working campaign.
+
+**Retry is a reload**, not an in-place refetch, and that is the same decision as
+"switching eras is a navigation": one page load is one era, and the top-level
+`await` is what makes that true. There is nothing to retry into.
+
+An unknown `?pack=` id is deliberately **not** one of the three. ADR 0009's
+amendment settles that case — an id the build never emitted opens the seed era,
+so a stale or mistyped link still opens something — and it therefore never
+reaches a failure at all. `missing` is what a reader sees when the document the
+page actually asked for is not on the server, and the atlas is the way out of
+that one.
+
+It costs 6.2 kB of `index.html`, which the `eager` budget counts raw (1.9 kB of
+it on the wire, gzipped). That is the price of an error state that needs no
+request to render, and it is written here so the next person to look at the
+number knows what it bought.
