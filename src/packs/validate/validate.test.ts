@@ -310,6 +310,80 @@ describe('validateContent', () => {
     expect(report.ok).toBe(true);
   });
 
+  it('lets a pack declare the pace its own technology made (ADR 0020)', () => {
+    const raw = fixture();
+    const routes = raw.packs[0]!.collections['routes.json']!.data as Record<string, unknown>[];
+    // an ocean crossing of 1,000 km in a day: past the 1914 sea limit, well
+    // inside a 1942 task force's
+    routes[2]!['mode'] = 'sea';
+    routes[2]!['waypoints'] = [
+      [2.3, 49.89, '1914-08-26T00:00:00Z'],
+      [16.26, 49.89, '1914-08-27T00:00:00Z'],
+    ];
+    expect(messages(validateContent(raw))).toContainEqual(
+      expect.stringMatching(/beyond sea at the default 1914 pace.*declare pack\.json#pace\.sea/s),
+    );
+
+    const pack = raw.packs[0]!.pack.data as Record<string, unknown>;
+    pack['pace'] = {
+      sea: {
+        sustained: 46,
+        limit: 61,
+        note: 'Fast carrier task force, 25–33 knots.',
+        sources: [{ source: 'source:herwig-2009' }],
+      },
+    };
+    const report = validateContent(raw);
+    expect(messages(report)).toEqual([]);
+    expect(report.ok).toBe(true);
+  });
+
+  it('holds a declared band to its citations, its own order and the ceiling (ADR 0020)', () => {
+    const raw = fixture();
+    const pack = raw.packs[0]!.pack.data as Record<string, unknown>;
+    pack['pace'] = {
+      sea: {
+        sustained: 46,
+        limit: 61,
+        note: 'Fast carrier task force.',
+        sources: [{ source: 'source:missing' }],
+      },
+      march: {
+        sustained: 40,
+        limit: 80,
+        note: 'Makes the teleporting army validate.',
+        sources: [{ source: 'source:herwig-2009' }],
+      },
+      rail: {
+        sustained: 60,
+        limit: 30,
+        note: 'The bars the wrong way round.',
+        sources: [{ source: 'source:herwig-2009' }],
+      },
+    };
+    const report = validateContent(raw);
+    const errs = report.errors.map((e) => e.message);
+    expect(errs).toContainEqual(
+      expect.stringMatching(/pace\.sea\.sources: citation source:missing does not exist/),
+    );
+    // the declaration is not an off switch for the check it belongs to
+    expect(errs).toContainEqual(
+      expect.stringMatching(/pace\.march\.sustained of 40 km\/h is beyond what march has ever/),
+    );
+    expect(errs).toContainEqual(
+      expect.stringMatching(/pace\.march\.limit of 80 km\/h is beyond what march has ever/),
+    );
+    expect(errs).toContainEqual(
+      expect.stringMatching(/pace\.rail: sustained must not exceed limit/),
+    );
+    // nothing in this pack goes to sea, so the band judges nothing
+    expect(report.warnings.map((w) => w.message)).toContainEqual(
+      expect.stringMatching(
+        /pace\.sea is declared but no route or track in this pack moves by sea/,
+      ),
+    );
+  });
+
   it('checks a formation concentration: asOf inside the pack range (error), position inside the region (warning), sources resolve', () => {
     const raw = fixture();
     const c = raw.packs[0]!.collections;
