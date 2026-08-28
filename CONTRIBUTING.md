@@ -6,6 +6,10 @@ kinds: **engine** (TypeScript/React under `src/`), **content** (JSON +
 Markdown packs under `content/`), and **infrastructure/docs**. All three go
 through the same workflow.
 
+This page is the workflow. [`docs/agent-workflow.md`](docs/agent-workflow.md)
+is the practice around it — making a worktree cheap, the order to run the gates
+in, the sourcing rules, and the local friction worth knowing about in advance.
+
 ## Workflow
 
 1. **Find or create the bead.** The backlog lives in beads (`bd`), not in
@@ -24,10 +28,12 @@ through the same workflow.
 
    ```bash
    npm ci
-   npm run lint && npm run typecheck && npm test -- --run
+   npm run lint && npm run format:check && npm run typecheck && npm test -- --run
    npm run validate:content   # every pack, registry and media manifest
-   npm run build
+   npm run build && npm run bundle:budget
    ```
+
+   `npm run visual:check` as well if you changed anything visible.
 
    Infrastructure changes: `cd infra && npm ci && npm run typecheck && npm test && npx cdk synth`.
 
@@ -36,9 +42,13 @@ through the same workflow.
 5. **Open a PR** with the template: one `Closes sand-…` line per bead. CI
    (`lint`, `security`, `web`, CodeQL) must be green and the branch up to date
    with `main`; every same-repo PR gets a preview at
-   `https://pr-<n>.sandtable.davetashner.com`. Merges are squash or rebase.
-6. **After merge:** `bd close <id> --reason "Completed in PR #N"`, delete the
-   branch and worktree (`git worktree remove …`, `git fetch --prune`).
+   `https://pr-<n>.sandtable.davetashner.com`. Merges are squash or rebase, and
+   somebody other than the author does the merging. Expect to rebase onto
+   `main` at least once — the `web` check is strict, so a branch behind `main`
+   cannot merge however green it is.
+6. **After merge:** `bd close <id> --reason "Completed in PR #N"` — closing is
+   a post-merge act, not something the author does on the way past — then
+   delete the branch and worktree (`git worktree remove …`, `git fetch --prune`).
 
 ## Content contributions
 
@@ -49,6 +59,11 @@ reference) first. Then:
   causal link needs at least one `Source`; dates, numbers and positions are
   claims. Contested points are written as historiography ("Zuber argues …;
   Mombauer replies …"), not as fact.
+- **Never write a quotation you have not read, or a page number you have not
+  seen.** The validator checks that a citation resolves, not that the work says
+  what you claim — nothing here can catch an invented quotation, and one has
+  already been caught by hand. The rules and the incidents behind them are in
+  [`docs/agent-workflow.md`](docs/agent-workflow.md).
 - **Label hypotheticals.** Counterfactual branches and anything in them say
   so — in the branch, in the beat's `dateLabel`, and in the prose.
 - **Positions carry confidence.** Routes say how they were derived and how
