@@ -2,11 +2,13 @@
 
 What `npm audit` reports, what was remediated, and — for what is left — why it
 stays. Written because a standing count of eleven advisories is either a
-decision or a shrug, and only one of those survives review. Story:
-`sand-pmz.26`.
+decision or a shrug, and only one of those survives review. Stories:
+`sand-pmz.26`, `sand-pmz.27`.
 
 Re-check with `npm audit`, and re-check the bundle claim below with
-`npm run build` and a grep of `dist/app/`, before trusting any of this.
+`npm run build` and a grep of `dist/app/`, before trusting any of this. Last
+re-checked 2026-08-28: eleven, unchanged, and the two `image-size` ones are
+still the only alerts GitHub raises on a push.
 
 ## The one fact that governs the rest
 
@@ -44,26 +46,56 @@ the advisory: `sharp` still encodes WebP, and `mapshaper` still runs a
 
 ### `image-size` — and the seven packages above it in the chain
 
-`@deck.gl/geo-layers` → `@luma.gl/gltf` → `@loaders.gl/textures` →
-`texture-compressor` → `image-size@0.7.5`.
-
 Two DoS advisories (GHSA-w3rx-r6r6-pgpr, GHSA-5p2g-fcmc-qvqq): infinite loops
-in the ICNS and JXL/HEIF parsers.
+in the ICNS and JXL/HEIF parsers. These are the two Dependabot alerts (#3, #4)
+the remote prints on every push.
 
-**There is no patched version.** The advisories cover `<=2.0.2` and 2.0.2 is
-the latest release. `npm audit` offers `@deck.gl/geo-layers@8.9.36`, which is a
-_downgrade_ to the 8.x line while the rest of deck.gl is 9.3 — the deck.gl
-packages are version-locked to each other, so taking it would break the map
-outright.
+`npm ls image-size` finds two copies, and only the first is what the alerts are
+about:
+
+- `@deck.gl/geo-layers` → `@luma.gl/gltf` → `@loaders.gl/textures` →
+  `texture-compressor` → `image-size@0.7.5` — production, and the one
+  Dependabot scopes as `runtime`.
+- `mapshaper` → `@ngageoint/geopackage` → `image-size@0.8.3` — dev, alongside
+  the `file-type` entry below.
+
+Note what is _not_ in either list: the media pipeline. `scripts/media-pipeline.ts`
+imports `sharp` and nothing else that decodes an image, so "it's only the media
+pipeline, and we control the inputs" is a comforting story about the wrong
+package. The real answer is the bundle claim above.
+
+**There is no patched version, and GitHub agrees.** The advisories cover
+`<=2.0.2`, 2.0.2 is the latest release (April 2025), and both Dependabot alerts
+report `first_patched_version: null` — there is nothing to bump to, so no
+`overrides` entry can help either. `npm audit fix --force` offers
+`@deck.gl/geo-layers@8.9.36`, which is a _downgrade_ to the 8.x line while the
+rest of deck.gl is 9.3 — the deck.gl packages are version-locked to each other,
+so taking it would break the map outright.
 
 Accepted because it cannot be fixed, it does not ship (above), and nothing in
 the build feeds it an ICNS or JXL file — the media pipeline is `sharp`, and it
 reads PNG and JPEG masters we fetched ourselves.
 
-**Revisit when** `image-size` ships a fix, or when deck.gl drops the
-`texture-compressor` dependency. Cheapest permanent escape: if `TripsLayer` is
-ever replaced with a hand-rolled trail layer, `@deck.gl/geo-layers` leaves the
-tree and takes all eight with it.
+**Revisit when** `image-size` ships a fix, or when deck.gl moves to loaders.gl
+v5 — `@loaders.gl/textures@5.0.0-alpha.2` has already dropped
+`texture-compressor` from its dependencies, so the chain dies of its own accord
+on that upgrade. That is now the likeliest exit and it costs us nothing to wait
+for it. Cheapest escape we control: if `TripsLayer` is ever replaced with a
+hand-rolled trail layer, `@deck.gl/geo-layers` leaves the tree and takes all
+eight with it.
+
+Because there is no fix to schedule, the push warning is permanent until one of
+those lands. Silencing it is a repo-settings decision rather than a code one, so
+it is left to the owner:
+
+```bash
+gh api --method PATCH repos/:owner/:repo/dependabot/alerts/3 \
+  -f state=dismissed -f dismissed_reason=tolerable_risk \
+  -f dismissed_comment='No patched version; not in the bundle. docs/dependency-advisories.md'
+```
+
+Dismissal is reversible and Dependabot re-opens the alert if the dependency
+changes, so it loses nothing except the reminder.
 
 ### `file-type` — do not override this one
 
