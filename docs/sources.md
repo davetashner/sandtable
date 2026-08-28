@@ -1,8 +1,9 @@
-# Sources — citation standard and the WWI bibliography
+# Sources — citation standard and the bibliographies
 
-How Sandtable cites, what it cites, and the core works for the First World
-War packs. Story: `sand-23b.1`; the fact-check workflow that applies it is
-`sand-23b.2`; the bibliography UI is `sand-shn.5`.
+How Sandtable cites, what it cites, and the core works for the packs: the
+First World War first, and from `sand-lry.14` the Pacific War as well. Story:
+`sand-23b.1`; the fact-check workflow that applies it is `sand-23b.2`; the
+bibliography UI is `sand-shn.5`.
 
 ## The standard
 
@@ -282,6 +283,187 @@ the same year is Edmonds alone.
 | `source:edmonds-1947`                | 1918, IV (Edmonds, HMSO 1947)                 | **Amiens, 8 August** to 26 September                             |
 | `source:edmonds-maxwell-hyslop-1947` | 1918, V (Edmonds & Maxwell-Hyslop, HMSO 1947) | 26 September – 11 November: the Hindenburg Line to the armistice |
 
+## Core bibliography — the Pacific War, 1931–1945 (in the registry)
+
+Forty-seven works added by `sand-lry.14`, before any Pacific pack cites
+anything, exactly as the 1914 bibliography landed before the 1914 pack. The
+arc they serve is [ADR 0019](decisions/0019-second-world-war-arc.md): ten packs
+from Mukden on 18 September 1931 to Okinawa in 1945, authored before Europe.
+
+Two things shaped the list, and both are worth stating before the tables.
+
+**Nothing in any pack cites any of them yet.** The validator warns once per
+uncited source, so this addition raises the warning count by forty-seven and
+that is the expected state of a registry that lands ahead of its content —
+`sand-23b.36` did the same thing with ten volumes of the British official
+history. No page number may be written from any of these works until somebody
+has read the page (§3). Where a page is quoted below it was read in the scan
+named in the entry; where none is quoted, none has been.
+
+**A Pacific arc sourced only from Morison and Toll is an American arc.** That
+is the substantive risk in this bead and it is why a quarter of the list is
+Japanese-side material, why the Green Books' Papua volume is here beside
+Guadalcanal, and why the Marine Corps histories are here beside the Army's for
+the same islands. Where the only access to a Japanese source is an
+English-language author quoting it, the rule is the one already in §7 for
+documents: **cite the chain, not the original**. `source:parshall-tully-2005`
+is the case where the chain is worth following, because they worked from the
+Japanese records and say which.
+
+### What could not be verified, and what follows from it
+
+Rule 3 says a page number is a promise that somebody checked. The same applies
+to a link, a year and an ISBN, so this is what was and was not checked.
+
+- **Twenty-three of the forty-seven carry a url, and every one was opened and
+  returned the work it claims to.** The other twenty-four carry none: the nine
+  Morison volumes for the reason below, and fifteen modern monographs still in
+  copyright, for which no honest link exists.
+- **Twenty-nine of the forty-seven were checked against the work itself** — a
+  title page, a copyright page, or the printed text — and the other eighteen
+  against catalogue or publisher records only, which each entry says. That
+  precaution is not theoretical: `source:morison-vol-5` is dated 1948 here
+  because its copyright page says "Published September 1948" while every
+  catalogue consulted says 1949, and the conflict is written into the entry
+  rather than resolved by picking the tidier answer.
+- **`history.army.mil`, `usmcu.edu` and `marines.mil` refuse this repository's requests**
+  with HTTP 403, the way Gallica does for `source:afgg-1-2-annexes-1`. The
+  Green Books and the Marine Corps volumes are therefore linked to the HyperWar
+  hypertext at ibiblio.org, which is a **transcription and not a page scan**:
+  it marks the printed page numbers, and a page taken from it is checked
+  against the book before it is written.
+- **Morison is in copyright and in print**, and the Internet Archive's own
+  scans of the series are lending copies. Open user uploads of the Little,
+  Brown printings exist and were read to verify these nine entries; they are
+  not linked, because their standing is not clear. Reading a copy to check a
+  date is not the same act as putting it in a reader-facing bibliography.
+- **No ISBN is recorded for any of the modern monographs.** Publisher pages
+  refuse this environment and the numbers in the aggregators could not be
+  checked against an item, so under the bead's rule the field is omitted and
+  the entry says so. The 1914 entries that carry ISBNs keep them.
+- **One year is not from the item**: `source:crowl-1960`, where the facsimile's
+  "First Printed" line is illegible in the scan. It is taken from the Library of
+  Congress card number printed beside it and from the CMH catalogue, and the
+  entry says which.
+
+### Morison — the American naval record, and how much weight it takes
+
+Nine of the fifteen volumes of _History of United States Naval Operations in
+World War II_ are Pacific; volumes I–II and IX–XI are the Atlantic, the
+Mediterranean and north-west Europe and are not in this registry, and volume XV
+is the index. Morison wrote as a serving officer with a commission from
+Roosevelt and access no outside historian had, was at sea for much of what he
+describes, and produced coverage nothing since has matched.
+
+The same closeness is the limit. He wrote about men he knew, often while they
+were alive, and his judgements have aged less well than his narrative: later
+work corrects him on Savo Island, where his distribution of the blame is now a
+minority position, and takes apart his Midway, which rests on
+`source:fuchida-okumiya-1955` for everything happening aboard the Japanese
+carriers. Cite him for what American ships did and when; put a later work
+beside him for why. Each entry below carries that caveat; the full note is on
+volume III.
+
+| id                      | Volume                                                         | Covers                                                             |
+| ----------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `source:morison-vol-3`  | III, _The Rising Sun in the Pacific, 1931 – April 1942_ (1948) | Mukden to Java Sea; Pearl Harbor; the series note lives here       |
+| `source:morison-vol-4`  | IV, _Coral Sea, Midway and Submarine Actions_ (1949)           | Coral Sea, Midway — the volume Shattered Sword was written against |
+| `source:morison-vol-5`  | V, _The Struggle for Guadalcanal_ (**1948**, see the entry)    | the seven naval actions; Savo Island, argued with since            |
+| `source:morison-vol-6`  | VI, _Breaking the Bismarcks Barrier_ (1950)                    | central Solomons, New Guinea coast, Rabaul bypassed                |
+| `source:morison-vol-7`  | VII, _Aleutians, Gilberts and Marshalls_ (1951)                | Attu and Kiska; Tarawa and Makin; Kwajalein and Eniwetok           |
+| `source:morison-vol-8`  | VIII, _New Guinea and the Marianas_ (1953)                     | Hollandia, the Marianas, the Philippine Sea; Spruance, contested   |
+| `source:morison-vol-12` | XII, _Leyte, June 1944 – January 1945_ (1958)                  | Leyte Gulf, all four engagements; Halsey's run north, contested    |
+| `source:morison-vol-13` | XIII, _The Liberation of the Philippines_ (1959)               | Lingayen and after; the first sustained kamikaze attacks           |
+| `source:morison-vol-14` | XIV, _Victory in the Pacific, 1945_ (1960)                     | Iwo Jima, Okinawa, the radar pickets, the surrender                |
+
+### The Green Books — the US Army's _War in the Pacific_
+
+Eleven volumes of _United States Army in World War II_. They are US government
+works, in the public domain, and — unlike Morison — freely readable in full.
+
+| id                       | Volume                                                | Covers                                                       |
+| ------------------------ | ----------------------------------------------------- | ------------------------------------------------------------ |
+| `source:morton-1962`     | Morton, _Strategy and Command: The First Two Years_   | ORANGE and RAINBOW 5; Japanese policy from 1931; the theatre |
+| `source:morton-1953`     | Morton, _The Fall of the Philippines_                 | Clark Field to Corregidor; unusually frank on failure        |
+| `source:miller-1949`     | Miller, _Guadalcanal: The First Offensive_            | the Army's Guadalcanal, beside the Marine Corps' own         |
+| `source:milner-1957`     | Milner, _Victory in Papua_                            | Milne Bay, Buna, Gona — the other first offensive            |
+| `source:miller-1959`     | Miller, _CARTWHEEL: The Reduction of Rabaul_          | New Georgia to Cape Gloucester; the airfield argument        |
+| `source:crowl-love-1955` | Crowl & Love, _Seizure of the Gilberts and Marshalls_ | Makin, Tarawa, Kwajalein, Eniwetok; the amphibious lessons   |
+| `source:crowl-1960`      | Crowl, _Campaign in the Marianas_                     | Saipan, Tinian, Guam; the Smith-versus-Smith quarrel         |
+| `source:smith-1953`      | Smith, _The Approach to the Philippines_              | Hollandia, Biak, Morotai — the leaps along New Guinea        |
+| `source:cannon-1954`     | Cannon, _Leyte: The Return to the Philippines_        | the ground campaign, which outlasted the naval battle        |
+| `source:smith-1963`      | Smith, _Triumph in the Philippines_                   | Luzon; the destruction of Manila, February 1945              |
+| `source:appleman-1948`   | Appleman, Burns, Gugeler & Stevens, _Okinawa_         | ICEBERG entire; unusually full on the Thirty-Second Army     |
+
+### The Marine Corps' five volumes
+
+_History of U.S. Marine Corps Operations in World War II_, from the Historical
+Branch, G-3 Division, HQ USMC. Registered beside the Green Books rather than
+instead of them: each service wrote the campaign it fought, and on Guadalcanal,
+Tarawa and Okinawa the two accounts are cited together.
+
+| id                                 | Volume                                  | Covers                                                            |
+| ---------------------------------- | --------------------------------------- | ----------------------------------------------------------------- |
+| `source:hough-ludwig-shaw-1958`    | I, _Pearl Harbor to Guadalcanal_ (1958) | interwar amphibious doctrine and landing craft; Wake; Guadalcanal |
+| `source:shaw-kane-1963`            | II, _Isolation of Rabaul_ (1963)        | New Georgia, Bougainville, New Britain                            |
+| `source:shaw-nalty-turnbladh-1966` | III, _Central Pacific Drive_ (1966)     | Betio hour by hour; the Marshalls; Saipan, Tinian, Guam           |
+| `source:garand-strobridge-1971`    | IV, _Western Pacific Operations_ (1971) | Peleliu and the Umurbrogol; Iwo Jima                              |
+| `source:frank-shaw-1968`           | V, _Victory and Occupation_ (1968)      | Okinawa from the Marine side; the occupation                      |
+
+### The Japanese side, and what is not reachable
+
+This section is the Pacific's equivalent of what this page already says about
+the Reichsarchiv, and the situation is worse. Japan's official history, the
+_Senshi Sōsho_, runs to 102 volumes and is **essentially unavailable in
+English**: three volumes have been translated, none of them covering Midway,
+Guadalcanal as a campaign, the Marianas, Leyte, Iwo Jima or Okinawa.
+Digitisation at NIDS is partial and the images are Japanese only. The series
+was compiled by the War History Office from the records of an army and navy
+that burned their classified files before the surrender, it does not discuss
+the use of chemical and biological weapons in China, and its casualty figures
+differ from those of Japan's own Ministry of Health and Welfare.
+
+What _is_ reachable is a second-best that should be named as such: two
+American-directed compilations written after the surrender by the Japanese
+officers who had fought the campaigns, working largely from memory because the
+records were gone. Both say so themselves, and both statements are quoted in
+their entries — the Japanese Monographs' introduction admits that orders and
+plans "have been reconstructed from memory and therefore are not textually
+identical with the originals", and the Department of the Army, publishing the
+_Reports of General MacArthur_, "must therefore disclaim any responsibility for
+their accuracy". Cite them the way a memoir is cited: for what a commander said
+he intended, never for the wording of an order.
+
+| id                             | Work                                                                       | Use it for                                                                       |
+| ------------------------------ | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `source:senshi-sosho`          | _Senshi Sōsho_, 102 vols (1966–1980)                                       | the honest statement of what stands behind a Japanese claim — and the chain rule |
+| `source:bullard-2007`          | Bullard (tr.), _Japanese Army Operations in the South Pacific Area_ (2007) | Papua, Kokoda, Milne Bay, New Britain from the Japanese side                     |
+| `source:remmelink-2021`        | Remmelink (ed.), _The Invasion of the South_ (2021)                        | the only openly readable volume of the Senshi Sōsho in English                   |
+| `source:japanese-monographs`   | _Japanese Monographs_, c. 187 studies (1946–1960)                          | operations records in English; Mono 93 Midway, Mono 135 Okinawa                  |
+| `source:macarthur-reports-2-1` | _Reports of General MacArthur_, II/1 (1950; facsimile 1994)                | Japanese operations in the SWPA; read with its own disclaimer                    |
+| `source:macarthur-reports-2-2` | _Reports of General MacArthur_, II/2 (1950; facsimile 1994)                | the later campaigns; the Japanese navy order of battle and losses                |
+| `source:lytton-report-1932`    | League of Nations, _Report of the Commission of Enquiry_ (1932)            | Mukden as the League found it — quoted as a Document, not paraphrased            |
+
+### Studies, memoirs and surveys
+
+| id                            | Work                                                | Use it for                                                            |
+| ----------------------------- | --------------------------------------------------- | --------------------------------------------------------------------- |
+| `source:parshall-tully-2005`  | Parshall & Tully, _Shattered Sword_ (2005)          | Midway from the Japanese records; the model for citing the chain      |
+| `source:frank-1990`           | Frank, _Guadalcanal_ (1990)                         | the campaign as one problem; the corrective on Savo Island            |
+| `source:toll-2011`            | Toll, _Pacific Crucible_ (2011)                     | Pearl Harbor to Midway; the connective narrative, not the numbers     |
+| `source:toll-2015`            | Toll, _The Conquering Tide_ (2015)                  | Guadalcanal to the Philippine Sea — the middle six packs              |
+| `source:toll-2020`            | Toll, _Twilight of the Gods_ (2020)                 | Leyte to the surrender; the 1945 decisions as historiography          |
+| `source:spector-1985`         | Spector, _Eagle Against the Sun_ (1985)             | the scholarly one-volume frame: strategy, intelligence, logistics     |
+| `source:dower-1986`           | Dower, _War Without Mercy_ (1986)                   | the race question, on both sides; why prisoners were rarely taken     |
+| `source:ienaga-1978`          | Ienaga, _The Pacific War_ (1978)                    | a Japanese historian's argument, and the 1931 periodisation           |
+| `source:evans-peattie-1997`   | Evans & Peattie, _Kaigun_ (1997)                    | IJN doctrine, night fighting, the long lance — why, not what          |
+| `source:peattie-2001`         | Peattie, _Sunburst_ (2001)                          | Japanese naval air power, and the aircrew that were never replaced    |
+| `source:drea-2009`            | Drea, _Japan's Imperial Army_ (2009)                | an army that could act against its own government — Mukden            |
+| `source:hotta-2013`           | Hotta, _Japan 1941_ (2013)                          | the decision for war, from the liaison conferences                    |
+| `source:cook-cook-1992`       | Cook & Cook, _Japan at War: An Oral History_ (1992) | Japanese voices for sourced vignettes — testimony, not fact           |
+| `source:fuchida-okumiya-1955` | Fuchida & Okumiya, _Midway_ (1955)                  | the received account and where it came from — cited against, not from |
+| `source:hastings-2008`        | Hastings, _Retribution_ (2008; UK _Nemesis_, 2007)  | 1944–45 at human scale; colour, not numbers (rule 9)                  |
+
 ## To add as the content lands (not yet in the registry)
 
 An authoring backlog. It is deliberately not shown to readers — see "What a
@@ -341,6 +523,38 @@ reader sees" above.
   _Mein Bericht zur Marneschlacht_ (1919); the German texts of the OHL
   directives of 27 August and 4 September (Reichsarchiv Bd. 3–4, to replace
   the English of Kluck's translation in the Document cards).
+
+For the Pacific arc (`sand-lry`), the same list, kept apart because the packs
+that would cite it do not exist yet:
+
+- **The rest of the _Senshi Sōsho_ in English, which is to say almost all of
+  it.** The two Corts Foundation volumes not in the registry —
+  _The Invasion of the Dutch East Indies_ (2015) and _The Operations of the
+  Navy in the Dutch East Indies and the Bay of Bengal_ (2018) — are the only
+  further translations that exist, and both are peripheral to these ten packs.
+  For Midway, Guadalcanal, the Marianas, Leyte, Iwo Jima and Okinawa there is
+  nothing to add: the gap is not a backlog item, it is the state of the field,
+  and the packs will have to say so where it bites.
+- _Reports of General MacArthur_, Volume I (_The Campaigns of MacArthur in the
+  Pacific_) and its supplement — the Allied side of the same set, overlapping
+  the Green Books. Volume II, the Japanese side, is what `sand-lry.14` needed.
+- Prange, _At Dawn We Slept_ (1981) and _Miracle at Midway_ (1982); Willmott,
+  _Empires in the Balance_ (1982) and _The Barrier and the Javelin_ (1983) —
+  the previous generation of operational studies, wanted where a pack needs a
+  position `source:toll-2011` gives only in outline.
+- Goldstein & Dillon (eds), _The Pearl Harbor Papers_ (1993) — Japanese
+  planning documents in translation, and the nearest thing to a primary Document
+  set for the pack that opens with the attack.
+- The United States Strategic Bombing Survey's Pacific reports (1946) — the
+  blockade, the bombing and the Japanese economy, for the last pack's argument
+  about why the war ended when it did. Contemporary, official, and written by
+  an organisation with a case to make about air power.
+- Sledge, _With the Old Breed_ (1981) — Peleliu and Okinawa from inside a
+  rifle company, and the obvious counterpart on the American side to
+  `source:cook-cook-1992`. A memoir, cited as one.
+- The China-Burma-India Green Books (Stilwell's three volumes) and Bix,
+  _Hirohito and the Making of Modern Japan_ (2000) — outside the ten packs as
+  ADR 0019 scopes them, and here so that the omission is deliberate.
 
 Each addition is a registry entry with `notes` on use and bias, added in the
 PR that first cites it (see `docs/authoring.md` §1).
