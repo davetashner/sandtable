@@ -41,7 +41,8 @@ is the narrative overview; the issue IDs below point into it.
 | 3     | `sand-g80` WWI Western Front 1915–18                | Trench-line layer; Verdun, Somme, 1917, 1918 zoom-ins.                                               |
 | 3     | `sand-aie` Other fronts & the war at sea            | Gallipoli, Italy, Middle East, Jutland, U-boats.                                                     |
 | 4     | `sand-ekc` Interwar & the causal chain              | Causal-chain explorer; Versailles → 1939.                                                            |
-| 5     | `sand-kq6` / `sand-c6p` WWII West / East            | Opens with 1940 as the echo of 1914 (route overlay).                                                 |
+| 5     | `sand-lry` WWII Pacific                             | Mukden 1931 → Okinawa 1945; authored first, because it is the harder engine test (ADR 0019).         |
+| 5     | `sand-kq6` / `sand-c6p` WWII West / East            | Opens with 1940 as the echo of 1914 (route overlay); Easy Company as a thread across the packs.      |
 | 6     | `sand-shn` Learning companion & platform            | Multi-era packs, tours, sources, search, authoring tools.                                            |
 | pre   | `sand-mny` Franco-Prussian War 1870–71              | The template for 1914: Sedan, Alsace-Lorraine, the fortress line; "Road to 1914" thread.             |
 | pre   | `sand-6dh` Russo-Japanese War 1904–05               | Port Arthur, Mukden, Tsushima; why the memorandum was written in Dec 1905; "Korea 1905–1953" thread. |
@@ -51,8 +52,23 @@ is the narrative overview; the issue IDs below point into it.
 | —     | `sand-pmz` Engineering quality                      | CI, visual regression, performance, accessibility.                                                   |
 
 Phase 0 blocks Phase 1; Phase 1 blocks 2, 3, 6 and the other fronts; Phase 3
-blocks 4; Phase 4 blocks both halves of 5. The cross-cutting epics run
+blocks 4; Phase 4 blocks all three parts of 5. The cross-cutting epics run
 alongside from the start.
+
+Phase 5 is sequenced Pacific → West → East, decided in
+[ADR 0019](decisions/0019-second-world-war-arc.md). The Pacific goes first
+because it is the theatre that breaks the engine's land assumptions — an ocean
+rather than a front, a scale that jumps three orders of magnitude between the
+crossing and the beach — and those breaks are cheaper to find before ten
+European packs have been written against the current shape. The audit ran
+before any content did and turned up a real defect: the movement pace bands in
+`src/packs/validate/pace.ts` are 1914 numbers that would reject every carrier
+and every strike aircraft in the arc (`sand-lry.2`).
+
+The WWII arc also settles how packs are named once a year holds more than one
+of them: a new pack's `idPrefix` is its directory name (`1942-midway`), while
+`1914` and `1915` keep the bare year rather than break their published
+deep links.
 
 ## Phase 0 in detail (where work starts)
 
