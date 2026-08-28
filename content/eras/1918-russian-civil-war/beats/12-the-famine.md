@@ -36,11 +36,14 @@ having in full:
 
 The Soviet government appealed abroad in July 1921. An agreement with Herbert
 Hoover's American Relief Administration was signed at Riga on 20 August; the
-first kitchen opened in Petrograd on 7 September; and at the high-water mark, in
-August 1922, the ARA was feeding **10,491,297 people a
-day**.[^fisher-1927] Litvinov, negotiating at Riga, kept saying that food was a
-weapon, and the head of the American delegation kept saying it was
-not.[^fisher-1927]
+first kitchen opened in Petrograd on 7 September; and the number being fed
+climbed to a high-water mark of **10,491,297** in August 1922.[^fisher-1927]
+
+Fisher records what the negotiation at Riga had been like. "In the discussions
+the words, 'food is a weapon' were constantly on Litvinov's lips" — and Brown,
+for the Americans, "very deliberately indicated that as far as the A.R.A. was
+concerned the Riga Agreement had no political significance
+whatever".[^fisher-1927]
 
 ## What this beat does not say
 
