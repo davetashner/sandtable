@@ -1,0 +1,864 @@
+[
+  {
+    "id": "1918-russian-civil-war:event-calendar-abolished",
+    "title": "The thirteen days are abolished",
+    "at": "1918-02-14T00:00:00Z",
+    "kind": "political",
+    "significance": "major",
+    "place": "place:petrograd",
+    "summary": "**31 January 1918 (O.S.) is followed by 14 February 1918 (N.S.).** The decree, agreed by the Council of People's Commissars on 24 January (6 February) and signed by Lenin on the 26th, orders that the first day after 31 January shall be counted not as 1 February but as 14 February - and then works patiently through what that does to wages, pensions, loan interest and the maturity of contracts, because thirteen days had to be taken out of everybody's book-keeping as well as out of the calendar.[^dekrety-1]\n\nIts tenth clause is the one this pack cares about: until 1 July 1918, every date was to be written in the new calendar with the old one in brackets after it. The Soviet state's own answer to the problem of dual dating was to do both for five months and then stop, which is close to what this pack does - see the pack README.[^dekrety-1]\n\nAfter this date there is one calendar, and every date in this pack is written plainly. Before it, dates carry the Russian date first and the Western one after, as in the 1917 pack.",
+    "links": {
+      "documents": ["1918-russian-civil-war:document-calendar-decree"]
+    },
+    "sources": [
+      {
+        "source": "source:dekrety-1",
+        "note": "the text of the decree, pp. 404-405 of the 1957 edition"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-brest-litovsk-signed",
+    "title": "The peace of Brest-Litovsk",
+    "at": "1918-03-03T12:00:00Z",
+    "kind": "diplomatic",
+    "significance": "major",
+    "place": "place:brest-litovsk",
+    "summary": "Russia leaves the World War by giving away Poland, Lithuania, Courland, Estonia, Livonia, Finland and Ukraine - about a third of the population of European Russia and rather more than a third of its industry and its grain. Article I says the state of war has ceased; Article III says the territories west of a line drawn on a map attached to the treaty 'will no longer be under her sovereignty'; Article V says Russia will demobilise 'without delay', including the units 'newly formed by her present government'.[^avalon-brest-litovsk-1918]\n\nLenin had to threaten resignation to get it signed. The Left Socialist Revolutionaries left the government over it in March and shot the German ambassador over it in July. And the argument that produced it - that the revolution had to survive somewhere before it could spread anywhere - is the argument that produced everything else in this pack.[^chamberlin-1935-2]",
+    "links": {
+      "documents": ["1918-russian-civil-war:document-brest-litovsk"],
+      "battles": ["1918-russian-civil-war:brest-litovsk"]
+    },
+    "sources": [
+      {
+        "source": "source:avalon-brest-litovsk-1918",
+        "note": "the treaty text"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "529",
+        "note": "the chronological table: signature 3 March, ratification 15 March"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-government-moves-to-moscow",
+    "title": "The government leaves Petrograd for Moscow",
+    "at": "1918-03-12T12:00:00Z",
+    "kind": "political",
+    "significance": "minor",
+    "place": "place:moscow",
+    "summary": "Twelve days after signing away the western provinces, the Soviet government moves out of the capital the revolution was made in - Petrograd is a hundred and sixty kilometres from the new frontier, and the German army is on the other side of it. Moscow has been the capital ever since. The move is also the pack's geography in miniature: what matters from now on is not where the government is but which railways run out of it, and eleven trunk lines run out of Moscow.[^chamberlin-1935-2]",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "529",
+        "note": "the chronological table"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-czech-clash-chelyabinsk",
+    "title": "A brawl at Chelyabinsk station",
+    "at": "1918-05-14T12:00:00Z",
+    "kind": "other",
+    "significance": "major",
+    "place": "place:chelyabinsk",
+    "summary": "A group of Hungarian prisoners of war meets a trainload of Czech soldiers at the Ural junction of Chelyabinsk. Somebody throws a piece of iron, a Czech is hit, and the Hungarian who threw it is killed. The local Soviet arrests several Czechs on 17 May; their comrades march into the town with their rifles, free them, occupy the station and disarm the Red Guards.\n\nChamberlin: 'This obscure brawl between representatives of the unfriendly races of the Austro-Hungarian Empire in an Ural railroad junction was the spark that ignited a blaze of civil war over a vast expanse of Russian territory.'[^chamberlin-1935-2]",
+    "links": {
+      "formations": ["1918-russian-civil-war:formation-czechoslovak-legion"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "6-7",
+        "note": "the incident and its consequences; the day is given, not the hour"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-trotsky-order-czechs",
+    "title": "Shot on the spot: the order that starts the war",
+    "at": "1918-05-25T12:00:00Z",
+    "kind": "order",
+    "significance": "major",
+    "place": "place:chelyabinsk",
+    "summary": "Trotsky wires every Soviet along the line: 'All Soviets on the railroad line are instructed, under heavy responsibility, to disarm the Czecho-Slovaks. Every Czech who is found armed on the railroad is to be shot on the spot.' Railway workers are told not to let a single Czech train move east, and 'any delay is equivalent to treason'.[^chamberlin-1935-2]\n\nIt was an order the local Soviets had no means whatever of carrying out, and it converted a corps that wanted to go home into an army that took the Trans-Siberian. The first clashes are the same day at Marianovka near Omsk and at Marinsk; Novo-Nikolaevsk and Chelyabinsk fall on the 26th, Penza on the 28th, Omsk on 7 June, Samara on the 8th.[^chamberlin-1935-2]",
+    "links": {
+      "people": ["person:trotsky-leon"],
+      "formations": ["1918-russian-civil-war:formation-czechoslovak-legion"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "7-8",
+        "note": "the text of the order and the towns taken, day by day"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-komuch-samara",
+    "title": "A government of the Constituent Assembly at Samara",
+    "at": "1918-06-08T12:00:00Z",
+    "kind": "political",
+    "significance": "major",
+    "place": "place:samara",
+    "summary": "The Czechoslovaks take Samara and the Socialist Revolutionary members of the Constituent Assembly that the Bolsheviks dissolved in January come out of hiding and constitute themselves a government - the Komuch. An anti-Bolshevik government is set up at Omsk the same day.\n\nThis is the 'democratic counter-revolution', and it lasts five months. Chamberlin's judgement on it, and on the Ufa Directory that succeeded it, is that the relatively democratic bodies of the civil war 'were pitifully weak and were brushed aside by Reds and Whites with little difficulty'.[^chamberlin-1935-2]",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "8",
+        "note": "Samara taken 8 June"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "456",
+        "note": "the assessment of the democratic bodies"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-military-specialists",
+    "title": "Trotsky tells the commissars they will be using the Tsar's officers",
+    "at": "1918-06-07T12:00:00Z",
+    "kind": "order",
+    "significance": "major",
+    "place": "place:moscow",
+    "summary": "At the First All-Russia Congress of Military Commissars, nine days after conscription was introduced, the War Commissar makes the case that will define the institution: \"There is not one of you, I am sure, who will say that our army can manage without specialist commanders.\" He divides a commander's duties into \"the purely technical and the moral-political\", which is the whole design of the commissar system in one sentence - the professional does the first, and the party watches him do it.[^trotsky-military-1]\n\nOn volunteering, which was already failing: \"Voluntary recruitment is only a temporary compromise to which we have had to resort in a critical period of complete collapse of the old army,\" and \"everyone knows that the army which we are now building on voluntary principles is regarded by the Soviet Government as merely provisional.\"[^trotsky-military-1]\n\nThe Red Army was therefore built, from its first months, on tens of thousands of officers nobody in the party trusted, under a supervision designed on the assumption that they might betray it. That assumption never left the institution, and it is the longest fuse in this pack.",
+    "links": {
+      "people": ["person:trotsky-leon"],
+      "events": ["1918-russian-civil-war:epilogue-event-military-purge"]
+    },
+    "sources": [
+      {
+        "source": "source:trotsky-military-1",
+        "note": "'Speech at the First All-Russia Congress of Military Commissars', 7 June 1918; read in full on the Marxists Internet Archive, which carries no pagination"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "25-41",
+        "note": "the chapter 'The Revolution Arms Itself' on the military specialists and the opposition to them"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-committees-of-the-poor",
+    "title": "The Committees of the Poor, and the war for grain",
+    "at": "1918-06-11T12:00:00Z",
+    "kind": "political",
+    "significance": "major",
+    "place": "place:moscow",
+    "summary": "The state that cannot buy grain - because the money is worthless and there is nothing to sell the peasant - starts taking it, through committees of the village poor and armed detachments sent out from the towns. This is the beginning of the policy the peasants would answer at Tambov and the sailors at Kronstadt, and it is the reason the Russian countryside spent three years at war with its own government as well as with everybody else.[^chamberlin-1935-2]",
+    "links": {
+      "historiography": ["1918-russian-civil-war:historiography-why-the-whites-lost"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "530",
+        "note": "the chronological table: 11 June 1918"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "96-97",
+        "note": "the War Communism chapter on nationalisation and the abolition of trade"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-romanovs-shot",
+    "title": "The imperial family are shot at Ekaterinburg",
+    "at": "1918-07-16T22:00:00Z",
+    "kind": "political",
+    "significance": "major",
+    "place": "place:yekaterinburg",
+    "summary": "In the cellar of a merchant's house in Ekaterinburg, with the Czechoslovaks and the Whites eight days from the town, the former Tsar, his wife, his five children and four servants are shot by the local Ural Soviet. Whether Moscow ordered it or merely approved it afterwards was argued for seventy years and answered only when the archives opened.[^chamberlin-1935-2]",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "530",
+        "note": "the chronological table; the day, not the hour"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "84-95",
+        "note": "the chapter on the end of the tsarist family"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-kazan-falls",
+    "title": "Kazan falls, and the gold with it",
+    "at": "1918-08-06T12:00:00Z",
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:kazan",
+    "summary": "The Czechoslovaks and the Volga anti-Bolsheviks take Kazan - and with it a large part of the imperial gold reserve, which had been moved east for safety and which now funded Kolchak. It is the high point of the eastern advance and the moment at which the Soviet government could plausibly have been driven off the Volga.[^chamberlin-1935-2]",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "530",
+        "note": "the chronological table"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-trotsky-train-leaves",
+    "title": "The train leaves Moscow",
+    "at": "1918-08-07T22:00:00Z",
+    "kind": "movement",
+    "significance": "major",
+    "place": "place:moscow",
+    "summary": "Trotsky's train is put together in Moscow on the night of 7-8 August 1918 and leaves for the Volga. It carried a secretariat, a printing press, a telegraph and radio station, a power plant, a library, a garage and a bath-house, was too heavy for one locomotive, and had its own machine-gunners because the country it ran through was not safe.[^trotsky-1930]\n\nOver the next two and a half years it made thirty-six journeys and, on Trotsky's own count, covered more than 105,000 kilometres - which is his figure, in his memoir, about himself.[^trotsky-1930] It is the single most useful object in this pack: in a war with no front, the way you command is to go there.[^chamberlin-1935-2]",
+    "links": {
+      "people": ["person:trotsky-leon"]
+    },
+    "sources": [
+      {
+        "source": "source:trotsky-1930",
+        "note": "ch. 34, 'The Train'; his own account and his own figures"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "38",
+        "note": "the train described from outside"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-archangel-landing",
+    "title": "The Allies land at Archangel",
+    "at": "1918-08-02T12:00:00Z",
+    "kind": "movement",
+    "significance": "major",
+    "place": "place:arkhangelsk",
+    "summary": "An Allied force occupies Archangel and an anti-Bolshevik North Russian government is organised behind it. A small mixed force under British command had already been at Murmansk since early in the year, guarding the Allied military stores that had accumulated there, and Chamberlin is careful about what that was: \"so long as this force was defensive in character the Soviet Government had no objection to its presence\". It turned aggressive at the end of June, concluding a separate agreement with the Murmansk Soviet, \"which was not loyal to Moscow\", and extending its occupation south to Kem.[^chamberlin-1935-2]\n\nMawdsley's summary of the whole thing is worth setting against the phrase \"fourteen foreign armies\": direct action by British, French, American and Japanese forces in 1918 \"was confined to occupation of remote ports in the northern parts of European Russia and of Vladivostok on the Pacific\".[^mawdsley-2014]",
+    "links": {
+      "historiography": ["1918-russian-civil-war:historiography-why-the-whites-lost"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "530",
+        "note": "the chronological table"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "62-63",
+        "note": "the British force at Murmansk and the agreement with the Murmansk Soviet"
+      },
+      {
+        "source": "source:mawdsley-2014",
+        "note": "section 'The Intervention of the Central Powers'"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-baku-dunsterforce",
+    "title": "A British column reaches Baku",
+    "at": "1918-08-14T12:00:00Z",
+    "kind": "movement",
+    "significance": "minor",
+    "place": "place:baku",
+    "summary": "A small British force under General Dunsterville, driven up from Persia, occupies Baku after the Bolshevik commune there has been thrown out by the population. It leaves in September; Ottoman troops enter on the 14th and a massacre of Armenians follows. Twenty-six of the commune's commissars are carried across the Caspian and shot in the desert between Krasnovodsk and Askhabad on 20 September, by order of the Transcaspian authorities.[^chamberlin-1935-2]",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "530",
+        "note": "the chronological table for all four dates"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-baku-commissars",
+    "title": "The twenty-six commissars",
+    "at": "1918-09-20T12:00:00Z",
+    "kind": "other",
+    "significance": "minor",
+    "place": "place:krasnovodsk",
+    "summary": "Twenty-six commissars of the Baku commune are taken into the desert between Krasnovodsk and Askhabad and shot. It became one of the founding martyrologies of Soviet Azerbaijan, and one of the standing accusations against the British, whose part in it is argued about. This pack records the killing, which is not in dispute, and does not adjudicate the responsibility, which is.[^chamberlin-1935-2]",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "530",
+        "note": "the chronological table"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-lenin-shot",
+    "title": "Fanya Kaplan shoots Lenin",
+    "at": "1918-08-30T12:00:00Z",
+    "kind": "political",
+    "significance": "major",
+    "place": "place:moscow",
+    "summary": "Lenin is shot and wounded leaving a factory meeting in Moscow; Uritsky, the head of the Petrograd Cheka, is killed the same day. Four days earlier the commissar for the interior, Petrovsky, had published an appeal for 'mass terror'. Six days later the terror is a decree.[^chamberlin-1935-2]",
+    "links": {
+      "events": ["1918-russian-civil-war:event-red-terror-decree"],
+      "historiography": ["1918-russian-civil-war:historiography-the-terror"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "530",
+        "note": "the chronological table"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "66-67",
+        "note": "Petrovsky's telegram and what followed"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-red-terror-decree",
+    "title": "The terror becomes a decree",
+    "at": "1918-09-05T12:00:00Z",
+    "kind": "order",
+    "significance": "major",
+    "place": "place:moscow",
+    "summary": "The Council of People's Commissars resolves 'that in the present situation the safeguarding of the rear by means of terror is necessary'; that the Soviet Republic must be safeguarded 'from class enemies by isolating them in concentration camps'; that 'all persons associated with White Guard organizations, plots and rebellions are liable to be shot'; and that the names of those shot and the reasons must be published.[^soviethistory-msu]\n\nWhat is new is not the killing - Chamberlin dates centralised mass terror from the risings of July - but that it is now an announced policy of the state, with an institution to run it. The scale is disputed, and the dispute is political; it has a card.[^chamberlin-1935-2]",
+    "links": {
+      "documents": ["1918-russian-civil-war:document-red-terror"],
+      "people": ["person:dzerzhinsky-felix"],
+      "historiography": ["1918-russian-civil-war:historiography-the-terror"]
+    },
+    "sources": [
+      {
+        "source": "source:soviethistory-msu",
+        "note": "the resolution in Chamberlin's translation; the site's page reference is to the New York edition and is not carried here"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "66-67",
+        "note": "the terror before the decree"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-kazan-retaken",
+    "title": "Kazan retaken: the turn on the Volga",
+    "at": "1918-09-10T12:00:00Z",
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:kazan",
+    "summary": "The Red Army takes Kazan back after a month of skirmishing around Sviyazhsk with, on Chamberlin's figures, three or four thousand men against a little over two thousand - 'one of the most decisive battles of the civil war, if not the most decisive of all', fought by negligibly small forces with almost no equipment. The Whites had one aeroplane, the Reds five or six.[^chamberlin-1935-2]",
+    "links": {
+      "people": ["person:trotsky-leon"],
+      "places": ["place:sviyazhsk"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "117-119",
+        "note": "the Sviyazhsk chapter, with the numbers engaged"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-kolchak-coup",
+    "title": "A coup at Omsk makes an admiral dictator",
+    "at": "1918-11-18T09:00:00Z",
+    "kind": "political",
+    "significance": "major",
+    "place": "place:omsk",
+    "summary": "The Socialist Revolutionary members of the Directory are arrested in the night; the cabinet meets in the morning, agrees that 'a personal dictatorship offered the only solution', and elects Admiral Kolchak, who accepts with the title of Supreme Ruler and the office of commander-in-chief of all the land and naval forces of Russia. One minister dissented.[^chamberlin-1935-2]\n\nThis is the moment the democratic counter-revolution ends and the White movement becomes what its enemies said it was.",
+    "links": {
+      "people": ["person:kolchak-alexander"],
+      "historiography": ["1918-russian-civil-war:historiography-why-the-whites-lost"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "178",
+        "note": "the cabinet meeting and the vote; the day, and the morning, are given"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-brest-annulled",
+    "title": "Brest-Litovsk is annulled",
+    "at": "1918-11-13T12:00:00Z",
+    "kind": "diplomatic",
+    "significance": "major",
+    "place": "place:moscow",
+    "summary": "Four days after the revolution in Germany, the Soviet government annuls the treaty that had cost it a third of the country. The German army goes home over the winter and the Red Army follows it west into the vacuum - Minsk in December, Riga and Kharkov in January, Kiev in February. Everything Brest-Litovsk had given away was now simply there to be fought over, by everyone.[^chamberlin-1935-2]",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "530-531",
+        "note": "the chronological table"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-kolchak-offensive",
+    "title": "Kolchak drives for the Volga",
+    "timeRange": {
+      "start": "1919-03-13T12:00:00Z",
+      "end": "1919-04-26T12:00:00Z"
+    },
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:ufa",
+    "summary": "Kolchak's armies take Ufa on 13 March and come on westward towards the Volga, at the moment when Denikin is beginning to move in the south. It is the one period in which the two main White commands might have joined, and they were still eight hundred kilometres apart when it stopped: the offensive was halted before it reached the river, by defeats around Buzuluk and Buguruslan, on 26 April.[^chamberlin-1935-2]",
+    "links": {
+      "people": ["person:kolchak-alexander"],
+      "formations": ["1918-russian-civil-war:formation-kolchak-army"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "531",
+        "note": "the chronological table"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-denikin-takes-kharkov",
+    "title": "Denikin takes Kharkov and the south opens",
+    "at": "1919-06-25T12:00:00Z",
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:kharkov",
+    "summary": "Denikin's cavalry broke the Red front near Yuzovka on 19 May; by the end of June the Armed Forces of South Russia hold Kharkov, Tsaritsyn and Ekaterinoslav. In July he issues the Moscow directive - an order to advance on the capital along three axes at once, over a front from the Volga to the Romanian frontier, with no reserves behind it.[^chamberlin-1935-2]",
+    "links": {
+      "people": ["person:denikin-anton"],
+      "formations": ["1918-russian-civil-war:formation-afsr"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "531-532",
+        "note": "the chronological table"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "248",
+        "note": "the thinness of the front behind the advance"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-mamontov-raid",
+    "title": "Mamontov rides through the Red rear",
+    "timeRange": {
+      "start": "1919-08-10T12:00:00Z",
+      "end": "1919-09-19T12:00:00Z"
+    },
+    "kind": "movement",
+    "significance": "major",
+    "place": "place:tambov",
+    "summary": "A Don Cossack general with seven or eight thousand picked cavalry goes through the Southern Front near Novokhopersk on 10 August - 'the lightly held and shifting fronts of the Russian civil war were rather easy to break through', Chamberlin notes in passing, which is the whole geography of this pack in one clause. He holds Tambov from the 18th to the 21st, takes Kozlov, Yelets and Ranenburg, wrecks railway and telegraph as he goes, fights the Voronezh garrison, and rejoins the White lines on 19 September after forty days and about five hundred miles.[^chamberlin-1935-2]\n\nIt achieved nothing that lasted. His Cossacks would not stop looting, which disorganised the corps faster than the riding did and made it impossible to raise the countryside; and Tambov province, which would rise against the Communists in its own name a year later, would not rise for a White general.[^chamberlin-1935-2]",
+    "links": {
+      "people": ["person:mamontov-konstantin"],
+      "formations": ["1918-russian-civil-war:formation-mamontov-corps"],
+      "places": ["place:novokhopersk", "place:kozlov", "place:yelets"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "246-248",
+        "note": "the raid, its dates and its assessment"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-orel-taken",
+    "title": "Orel: two hundred and fifty miles from Moscow",
+    "at": "1919-10-13T12:00:00Z",
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:orel",
+    "summary": "The Volunteer Army takes Orel, and there is one large town - Tula, where the rifles are made - between it and Moscow. It is the high-water mark of the White movement in the whole war.\n\nChamberlin dates it in his narrative to 13 October, the day after Chernigov; his own chronological table gives 14 October. This pack stores the narrative date and records the disagreement rather than tidying it away. Orel was retaken on the 20th.[^chamberlin-1935-2]",
+    "links": {
+      "people": ["person:denikin-anton"],
+      "places": ["place:tula"],
+      "historiography": ["1918-russian-civil-war:historiography-why-the-whites-lost"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "248",
+        "note": "'on the following day took Orel' - the narrative date"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "532",
+        "note": "the chronological table, which gives 14 October"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-yudenich-at-pulkovo",
+    "title": "Yudenich reaches the Pulkovo heights",
+    "timeRange": {
+      "start": "1919-10-11T12:00:00Z",
+      "end": "1919-10-22T12:00:00Z"
+    },
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:pulkovo",
+    "summary": "The North-Western Army, twenty thousand men out of Estonia, starts for Petrograd on 11 October and gets to the Pulkovo heights - sixteen kilometres from the middle of the city, close enough to see it. On 22 October it is pushed back out of the suburbs, and by November it is over the Estonian border, where the Estonian government, negotiating its own peace with Moscow, disarms and interns it.[^chamberlin-1935-2]",
+    "links": {
+      "people": ["person:yudenich-nikolai"],
+      "formations": ["1918-russian-civil-war:formation-yudenich-army"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "532",
+        "note": "the chronological table"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-makhno-takes-ekaterinoslav",
+    "title": "Makhno takes Ekaterinoslav out of Denikin's back",
+    "at": "1919-11-09T12:00:00Z",
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:ekaterinoslav",
+    "summary": "While the White front is at Orel, the insurgent army of a Ukrainian peasant anarchist is taking one town after another in southern Ukraine behind it, and Denikin's own headquarters at Taganrog is threatened. Troops that were needed at Tula went to deal with Makhno instead.\n\nChamberlin's formulation of what this means is the one the historiography card is built on: the three most redoubtable enemies of Soviet power in south Russia were Denikin, Wrangel and Makhno, and Makhno fought the first two harder than he fought the Communists. 'Between the conservative Generals and the peasant anarchist there could be no basis of cooperation.'[^chamberlin-1935-2]",
+    "links": {
+      "people": ["person:makhno-nestor"],
+      "formations": ["1918-russian-civil-war:formation-makhno-army"],
+      "historiography": ["1918-russian-civil-war:historiography-why-the-whites-lost"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "532",
+        "note": "the chronological table"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "248",
+        "note": "the diversion of White troops from the drive on Moscow"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "454-455",
+        "note": "'no basis of cooperation'"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-omsk-falls",
+    "title": "Omsk falls and the Siberian retreat begins",
+    "at": "1919-11-14T12:00:00Z",
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:omsk",
+    "summary": "The Red Army takes Kolchak's capital. What follows is the longest retreat of the war: the remains of the Siberian White armies, their government, and a civilian exodus move east along the Trans-Siberian through the winter, and are 'rapidly thinned by disease, hunger and cold'.[^chamberlin-1935-2]",
+    "links": {
+      "people": ["person:kolchak-alexander"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "532",
+        "note": "the chronological table"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "203",
+        "note": "what happened to those who went east"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-kolchak-shot",
+    "title": "Kolchak is shot at Irkutsk",
+    "at": "1920-02-07T06:00:00Z",
+    "kind": "political",
+    "significance": "major",
+    "place": "place:irkutsk",
+    "summary": "The Czechoslovak Legion, buying its own passage east, hands the Supreme Ruler over to the Political Centre at Irkutsk on 15 January; a revolutionary committee takes over three days later and is authorised to execute him at its discretion. He is shot on a hill outside the town on the morning of 7 February and put through a hole in the ice of the Angara. By general testimony, Chamberlin says, he bore himself with courage and dignity throughout.[^chamberlin-1935-2]",
+    "links": {
+      "people": ["person:kolchak-alexander"],
+      "formations": ["1918-russian-civil-war:formation-czechoslovak-legion"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "203",
+        "note": "the execution"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-novorossiysk-evacuation",
+    "title": "Novorossiysk: what could not be lifted",
+    "at": "1920-03-27T12:00:00Z",
+    "kind": "movement",
+    "significance": "major",
+    "place": "place:novorossiysk",
+    "summary": "The Red Army takes Novorossiysk and the Armed Forces of South Russia end as an army. What could be got aboard ship went to the Crimea; what could not was left on the quays. Denikin resigns on 4 April, nominating Wrangel, and leaves Russia on a British warship.[^chamberlin-1935-2]",
+    "links": {
+      "people": ["person:denikin-anton", "person:wrangel-pyotr"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "533",
+        "note": "the chronological table"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-poles-enter-kiev",
+    "title": "The Poles enter Kiev",
+    "at": "1920-05-06T12:00:00Z",
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:kiev",
+    "summary": "A Polish offensive in alliance with Petliura's Ukrainian nationalists takes Kiev. It lasts five weeks: Budyonny's cavalry gets into the Polish rear on 8 June and the Red Army is back in the city on the 12th. From there the front runs west without stopping for two months.[^chamberlin-1935-2]",
+    "links": {
+      "people": ["person:pilsudski-jozef", "person:budyonny-semyon"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "533",
+        "note": "the chronological table"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-red-army-to-the-vistula",
+    "title": "The Red Army marches on Warsaw",
+    "timeRange": {
+      "start": "1920-07-04T12:00:00Z",
+      "end": "1920-08-14T12:00:00Z"
+    },
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:warsaw",
+    "summary": "Minsk on 11 July, Vilna on the 14th, Brest-Litovsk on 1 August, and a Polish Revolutionary Committee of Polish Communists set up at Bialystok on 31 July to be the government of the Soviet Poland that was about to exist. Tukhachevsky's Western Front covered some seven hundred kilometres in six weeks, which on this map is not fast, and arrived at the Vistula with its supply and its communications a long way behind it.[^chamberlin-1935-2]\n\nThis is the moment the Russian revolution tried to become the European one, and the only time in the whole war that a Red army was advancing towards western Europe rather than defending the centre against something coming in.",
+    "links": {
+      "people": ["person:tukhachevsky-mikhail"],
+      "formations": ["1918-russian-civil-war:formation-red-western-front"],
+      "places": ["place:minsk", "place:vilna", "place:brest-litovsk"],
+      "battles": ["1918-russian-civil-war:warsaw-1920"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "533",
+        "note": "the chronological table"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-miracle-of-the-vistula",
+    "title": "The counter-stroke from the Wieprz",
+    "timeRange": {
+      "start": "1920-08-15T12:00:00Z",
+      "end": "1920-08-21T12:00:00Z"
+    },
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:warsaw",
+    "summary": "Polish forces south of Warsaw attack north into the flank of a Red Army group that has gone past the city, and the whole Soviet offensive comes apart: Brest-Litovsk is back in Polish hands on 21 August and the Red Army is in general retreat from the Vistula. Peace talks open at Riga on 21 September, a preliminary treaty is signed on 12 October, and the final treaty on 18 March 1921.\n\nA date to be careful with. Chamberlin's chronological table gives 15 August for the launch of the counter-offensive; the date usually given for the blow from the Wieprz is the 16th. This pack stores the date its read source gives and says so here rather than importing a date it has not checked.[^chamberlin-1935-2]",
+    "links": {
+      "people": ["person:pilsudski-jozef", "person:tukhachevsky-mikhail"],
+      "battles": ["1918-russian-civil-war:warsaw-1920"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "533-534",
+        "note": "the chronological table; the day, and the disagreement about it, are discussed in the summary"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-perekop-stormed",
+    "title": "Perekop is stormed",
+    "at": "1920-11-11T12:00:00Z",
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:perekop",
+    "summary": "The Red Army goes through the seven-kilometre isthmus that is the only land way into the Crimea. Wrangel's army had come out into Northern Tavria in June and been driven back on 2 November; there is nowhere behind Perekop to retreat to except the sea.[^chamberlin-1935-2]",
+    "links": {
+      "people": ["person:wrangel-pyotr"],
+      "formations": ["1918-russian-civil-war:formation-wrangel-army"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "534",
+        "note": "the chronological table"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-crimea-evacuation",
+    "title": "The last White army leaves Russia",
+    "timeRange": {
+      "start": "1920-11-14T00:00:00Z",
+      "end": "1920-11-17T12:00:00Z"
+    },
+    "kind": "movement",
+    "significance": "major",
+    "place": "place:sevastopol",
+    "summary": "Wrangel evacuates the Crimea. Something like a hundred and forty-five thousand soldiers and civilians go out of Sevastopol, Yalta, Feodosia and Kerch in a hundred and twenty-six ships and are landed at Constantinople. It is the one White operation of the war that was planned, ordered and carried out as intended, and it is a withdrawal.\n\nThe number is the one usually given and comes from Wrangel's own staff; this pack has not been able to check it against a source it could read, and marks it as a claim rather than a count.[^chamberlin-1935-2]",
+    "links": {
+      "people": ["person:wrangel-pyotr"],
+      "places": ["place:constantinople"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "534",
+        "note": "the chronological table gives the evacuation of 14 November; the number of ships and people is not from this source and is flagged as unverified in the summary"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-tambov-rising",
+    "title": "Tambov rises",
+    "timeRange": {
+      "start": "1920-08-01T12:00:00Z",
+      "end": "1921-07-31T12:00:00Z"
+    },
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:tambov",
+    "summary": "The province that had been the stormiest in the agrarian revolution of 1917 rises against the requisitioning, under a former Socialist Revolutionary and district police chief named Antonov. At its height in the early months of 1921 there were, on the estimate of a Chekist who fought them, some twenty thousand insurgents under arms - and all such estimates are uncertain, Chamberlin adds, because a man was a bandit one day and a peaceful farmer the next.[^chamberlin-1935-2]\n\nThe peasants were with them: 'The peasants met the bandits like good guests, bringing them cups of milk on the street and even voluntarily gave them their horses, while they hid what they could from us and looked forward to our coming as to the plague' - one of the men sent to suppress them, quoted by Chamberlin.[^chamberlin-1935-2]\n\nThe suppression was given to Tukhachevsky in 1921 and used hostage-taking, deportation and camps: by the end of July 1921 those camps held about fifty thousand people, most of them women, the old and children, with a mortality in the autumn of fifteen to twenty per cent a month.[^werth-2008]",
+    "links": {
+      "people": ["person:antonov-alexander", "person:tukhachevsky-mikhail"],
+      "historiography": ["1918-russian-civil-war:historiography-the-terror"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "436-438",
+        "note": "the rising, the numbers and the songs; Chamberlin gives 'August, 1920' as the month, not a day"
+      },
+      {
+        "source": "source:werth-2008",
+        "note": "section on the mass executions and the camps; the camp figures"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-kronstadt",
+    "title": "Kronstadt",
+    "timeRange": {
+      "start": "1921-03-01T12:00:00Z",
+      "end": "1921-03-18T06:00:00Z"
+    },
+    "kind": "battle",
+    "significance": "major",
+    "place": "place:kronstadt",
+    "summary": "The garrison of the naval fortress that had been the reddest place in Russia in 1917 turns on the government it made. Fifteen thousand sailors and workers on Anchor Square on 1 March pass a resolution demanding new soviet elections by secret ballot, freedom of speech and press for workers, peasants, anarchists and left socialist parties, the release of socialist political prisoners, the abolition of the requisitioning detachments that searched passengers on trains for food, equal rations, and the peasant's right to his own land and cattle so long as he hires no labour.[^avrich-1973]\n\nThe fortress is taken across the ice on the night of 16-17 March by picked units in white robes, after two failed assaults; three hundred delegates were sent from the Party congress sitting in Moscow to stiffen the attackers. 'The Cheka did not emulate the humanity of the Kronstadt insurgents, who spared all their Communist prisoners.'[^chamberlin-1935-2]\n\nLenin announced the New Economic Policy on 8 March, while the guns were firing.",
+    "links": {
+      "documents": ["1918-russian-civil-war:document-petropavlovsk"],
+      "battles": ["1918-russian-civil-war:kronstadt-1921"],
+      "historiography": ["1918-russian-civil-war:historiography-the-terror"]
+    },
+    "sources": [
+      {
+        "source": "source:avrich-1973",
+        "note": "the Petropavlovsk resolution, read in the Marxists Internet Archive's reproduction; no pages"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "440-444",
+        "note": "the rising and its suppression, day by day"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-nep",
+    "title": "The requisitioning stops",
+    "at": "1921-03-16T12:00:00Z",
+    "kind": "political",
+    "significance": "major",
+    "place": "place:moscow",
+    "summary": "On 8 March, with Kronstadt under bombardment, Lenin announces the New Economic Policy to the Tenth Party Congress; on 16 March a decree replaces the requisitioning of the peasants' produce with a fixed tax in kind. Everything above the tax is the peasant's to sell.\n\nIt is a concession made to peasants with rifles in their hands - in Tambov, in western Siberia, in Ukraine - and it worked: the risings subsided within months. What it did not do was give back the argument, and the men who conceded it in 1921 were mostly the men who took it back in 1929.[^chamberlin-1935-2]",
+    "links": {
+      "historiography": ["1918-russian-civil-war:historiography-why-the-whites-lost"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "534",
+        "note": "the chronological table for both dates"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "430-450",
+        "note": "the chapter on the crisis of War Communism"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-famine",
+    "title": "The famine on the Volga",
+    "timeRange": {
+      "start": "1921-06-01T12:00:00Z",
+      "end": "1922-09-30T12:00:00Z"
+    },
+    "kind": "other",
+    "significance": "major",
+    "place": "place:samara",
+    "summary": "Requisitioning had taken the surplus; then it took the seed. Sowing collapsed, the transport system had already collapsed, and in the summer of 1921 the drought arrived on a countryside with nothing put by. The famine ran along the Volga and into Ukraine and Kazakhstan.\n\nThe Soviet government appealed abroad in July. An agreement with Herbert Hoover's American Relief Administration was signed at Riga on 20 August 1921, the first kitchen opened in Petrograd on 7 September, and the number the ARA was feeding climbed to a high-water mark of 10,491,297 in August 1922.[^fisher-1927]\n\n**This pack gives no death toll, on purpose.** The figure usually quoted is five million; the works that establish it are the post-1991 archival demography, and this project could not open any of them. A number that large, printed without a source that was read, would be exactly the kind of borrowed authority the rest of this pack is built to avoid.",
+    "links": {
+      "places": ["place:tsaritsyn", "place:kharkov"]
+    },
+    "sources": [
+      {
+        "source": "source:fisher-1927",
+        "pages": "292",
+        "note": "the peak feeding figure of August 1922"
+      },
+      {
+        "source": "source:fisher-1927",
+        "pages": "62-63",
+        "note": "the Riga agreement of 20 August 1921"
+      },
+      {
+        "source": "source:fisher-1927",
+        "pages": "469",
+        "note": "ch. XXI, 'The Causes of the Famine' - the chapter title and its sections are what this summary follows"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-riga-treaty",
+    "title": "The peace of Riga",
+    "at": "1921-03-18T12:00:00Z",
+    "kind": "diplomatic",
+    "significance": "major",
+    "place": "place:riga",
+    "summary": "Poland and Soviet Russia settle their frontier a long way east of where either had wanted it, and the Ukrainian and Belorussian lands are divided between them. Petliura's Ukrainian nationalists, Poland's allies of 1920, are on the wrong side of the line and are abandoned. The frontier lasts until September 1939.[^chamberlin-1935-2]",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "534",
+        "note": "the chronological table for the negotiations and the preliminary treaty"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:event-ussr-formed",
+    "title": "The Union of Soviet Socialist Republics",
+    "at": "1922-12-30T12:00:00Z",
+    "kind": "political",
+    "significance": "major",
+    "place": "place:moscow",
+    "summary": "Four republics - the Russian Federation, Ukraine, Belorussia and the Transcaucasian Federation - are constituted as a union. This is the state the civil war made, and it is not the state anyone had set out to make in 1917: centralised because the war had centralised it, run by a party that had spent five years learning to govern through commissars and tribunals, defended by a five-million-strong army built out of conscripted peasants and ex-tsarist officers, and holding a countryside it had just been forced to make peace with.\n\nThe pack ends here rather than at Kronstadt because this is the object the causal links point at.[^smith-2017]",
+    "sources": [
+      {
+        "source": "source:smith-2017",
+        "note": "the formation of the union and what the civil war left; no pages - see the pack README on what could be read"
+      },
+      {
+        "source": "source:sumpf-2014"
+      }
+    ]
+  }
+]

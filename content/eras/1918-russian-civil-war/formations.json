@@ -1,0 +1,449 @@
+[
+  {
+    "id": "1918-russian-civil-war:formation-czechoslovak-legion",
+    "name": "The Czechoslovak Legion",
+    "short": "Czech Legion",
+    "side": "national",
+    "kind": "other",
+    "strength": {
+      "men": 35000,
+      "asOf": "1918-05",
+      "sources": [
+        {
+          "source": "source:chamberlin-1935-2",
+          "pages": "8",
+          "note": "'a little less than 35,000, of whom only about 20,000 were in a position to go into immediate action'"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "Six separate groups strung along the Trans-Siberian railway, from Penza in the west to Vladivostok in the east - more than five thousand miles between the two ends",
+      "asOf": "1918-05-25",
+      "sources": [
+        {
+          "source": "source:chamberlin-1935-2",
+          "pages": "8"
+        }
+      ]
+    },
+    "summary": "Former prisoners of war and deserters from the Austro-Hungarian army, citizens of a state that in May 1918 existed only in the imagination of its nationalist leaders, trying to get home to the Western Front by going the long way round the world.\n\n**It has no route, and that is the finding rather than the omission.** When the fighting started the Legion was in six groups with five thousand miles between the westernmost at Penza and the easternmost at Vladivostok: about 14,000 around Vladivostok, 8,000 at Penza, a slightly larger detachment at Chelyabinsk, and three small parties of 2,000, 1,000 and 800 across central Siberia. It did not advance and it did not retreat; it was **already everywhere along the line** and simply stopped letting the Soviets past. A token sliding from Penza to Vladivostok would be a false statement about the one thing that made this force decisive - which was its length.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "1-8",
+        "note": "the corps, its dispositions and the towns it took"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:formation-makhno-army",
+    "name": "The Revolutionary Insurgent Army of Ukraine",
+    "short": "Makhnovshchina",
+    "side": "green",
+    "kind": "other",
+    "commander": "person:makhno-nestor",
+    "concentration": {
+      "area": "The villages around Gulyai-Polye, in the steppe between the Dnieper and the Sea of Azov",
+      "position": [36.266, 47.663],
+      "asOf": "1918",
+      "sources": [
+        {
+          "source": "source:chamberlin-1935-2",
+          "pages": "221-241"
+        }
+      ]
+    },
+    "summary": "The peasants of one district of eastern Ukraine, in arms against the Austro-German occupation, the Hetman, Petliura, Denikin, Wrangel and the Bolsheviks, in that order and sometimes at once. Twice allied to the Red Army and twice destroyed by it.\n\n**No route, for a different reason from the Legion's.** This army did not manoeuvre; it condensed and dissolved. Men rode out of their villages when there was something to fight and went back to them when there was not, which is why nobody could ever say how large it was and why nobody could ever finish it off. A moving token would turn a way of living into a column of march.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "221-241",
+        "note": "peasant anarchism in Ukraine"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "454-455",
+        "note": "why he and the Whites could never combine"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:formation-allied-north-russia",
+    "name": "The Allied forces in North Russia",
+    "short": "N. Russia",
+    "side": "allied",
+    "kind": "other",
+    "concentration": {
+      "area": "Murmansk from early 1918 and Archangel from 2 August 1918; a shallow perimeter up the Dvina and the Murmansk railway and nothing beyond it",
+      "position": [40.517, 64.539],
+      "asOf": "1918-08-02",
+      "sources": [
+        {
+          "source": "source:chamberlin-1935-2",
+          "pages": "525-534",
+          "note": "the chronological table of events, which is where the dates on this path come from"
+        }
+      ]
+    },
+    "dissolved": "1919-10",
+    "summary": "British, French, American, Canadian, Italian and Serbian troops in two Arctic ports, plus a locally raised North Russian force and a government behind it. The Murmansk force began as a guard on Allied military stores that the Soviet government did not object to while it stayed defensive, and turned into an occupation at the end of June 1918.\n\n**No route: they held ports.** Mawdsley, who wrote the standard history of the war, puts the whole of 1918 like this - direct action by British, French, American and Japanese forces \"was confined to occupation of remote ports in the northern parts of European Russia and of Vladivostok on the Pacific\". The phrase \"fourteen foreign armies\" is a Soviet formula that counts flags rather than divisions, and drawing arrows for it would be the map telling the same lie.",
+    "sources": [
+      {
+        "source": "source:mawdsley-2014",
+        "note": "section 'The Intervention of the Central Powers'"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "62-63",
+        "note": "the Murmansk force and what it was doing"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:formation-central-ukraine",
+    "name": "The German and Austro-Hungarian occupation of Ukraine",
+    "short": "Ober Ost",
+    "side": "central",
+    "kind": "army-group",
+    "concentration": {
+      "area": "Ukraine and the Don country east to Rostov, under the peace of Brest-Litovsk",
+      "position": [30.524, 50.45],
+      "asOf": "1918-03-02",
+      "sources": [
+        {
+          "source": "source:chamberlin-1935-2",
+          "pages": "525-534",
+          "note": "the chronological table of events, which is where the dates on this path come from"
+        }
+      ]
+    },
+    "dissolved": "1918-12",
+    "summary": "What Brest-Litovsk actually meant on the ground: a German army in Kiev from 2 March 1918, a puppet Hetman installed on 29 April when the Ukrainian Rada proved insufficiently cooperative, and a grain requisition that made the German occupation as unpopular with the Ukrainian peasantry as the Bolshevik one. It went home after the revolution in Germany in November, and everything it had been holding became something to fight over.\n\nNo route: an occupation is a shaded area, not a line of march, and this pack's border layer is doing that work.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table of events, which is where the dates on this path come from"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:formation-kolchak-army",
+    "name": "The Russian Army of the Supreme Ruler",
+    "short": "Kolchak",
+    "side": "white",
+    "kind": "army-group",
+    "commander": "person:kolchak-alexander",
+    "concentration": {
+      "area": "Western Siberia and the Urals, with the seat of government at Omsk",
+      "position": [73.368, 54.99],
+      "asOf": "1918-11-18",
+      "sources": [
+        {
+          "source": "source:chamberlin-1935-2",
+          "pages": "178"
+        }
+      ]
+    },
+    "dissolved": "1920-02",
+    "summary": "The eastern White command: what the Czechoslovak Legion's revolt had made possible, gathered under a dictatorship at Omsk in November 1918. It drove west towards the Volga in the spring of 1919, was stopped short of it in April, and then retreated for eight months down its own railway to Irkutsk, where its Supreme Ruler was shot.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "173-205",
+        "note": "the rise and fall of Kolchak"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:formation-afsr",
+    "name": "The Armed Forces of South Russia",
+    "short": "AFSR",
+    "side": "white",
+    "kind": "army-group",
+    "commander": "person:denikin-anton",
+    "concentration": {
+      "area": "The Kuban and the Don, from Ekaterinodar and Rostov",
+      "position": [38.976, 45.035],
+      "asOf": "1918-08-15",
+      "sources": [
+        {
+          "source": "source:chamberlin-1935-2",
+          "pages": "525-534",
+          "note": "the chronological table of events, which is where the dates on this path come from"
+        }
+      ]
+    },
+    "dissolved": "1920-04-04",
+    "summary": "The southern White command, grown out of the Volunteer Army that Alekseev and Kornilov raised on the Don in the winter of 1917-18 and united with the Don Cossacks under Denikin in February 1919. It came closer to winning the war than anything else did, and the front it did it on ran from the Volga to the Romanian frontier and was, in Chamberlin's word, thinly held - the final victories were won by moving units from one part of it to another, because there were no reserves at all.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "242-266"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "248",
+        "note": "the thinness of the front at the moment of the greatest advance"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:formation-mamontov-corps",
+    "name": "4th Don Cavalry Corps",
+    "short": "IV Don Cav",
+    "side": "white",
+    "kind": "corps",
+    "commander": "person:mamontov-konstantin",
+    "parent": "1918-russian-civil-war:formation-afsr",
+    "strength": {
+      "men": 7500,
+      "asOf": "1919-08-10",
+      "sources": [
+        {
+          "source": "source:chamberlin-1935-2",
+          "pages": "246",
+          "note": "'a picked force of seven or eight thousand cavalry'"
+        }
+      ]
+    },
+    "concentration": {
+      "area": "The Don front near Novokhopersk",
+      "position": [41.617, 51.1],
+      "asOf": "1919-08-10",
+      "sources": [
+        {
+          "source": "source:chamberlin-1935-2",
+          "pages": "246"
+        }
+      ]
+    },
+    "summary": "Seven or eight thousand Don Cossack horsemen, recruited in part from the stanitsas that had suffered most from the Reds, who went through the Southern Front on 10 August 1919 and spent forty days behind it. This is the pack's demonstration piece: a war in which a cavalry corps can ride five hundred miles through the enemy's rear is a war with no front.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "246-248"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:formation-wrangel-army",
+    "name": "The Russian Army in the Crimea",
+    "short": "Wrangel",
+    "side": "white",
+    "kind": "army",
+    "commander": "person:wrangel-pyotr",
+    "concentration": {
+      "area": "The Crimea, behind the Perekop isthmus",
+      "position": [33.52, 44.617],
+      "asOf": "1920-04-04",
+      "sources": [
+        {
+          "source": "source:chamberlin-1935-2",
+          "pages": "525-534",
+          "note": "the chronological table of events, which is where the dates on this path come from"
+        }
+      ]
+    },
+    "dissolved": "1920-11-17",
+    "summary": "What Denikin left behind, reorganised and renamed. Wrangel held the peninsula for seven months, came out into Northern Tavria in June, was driven back on 2 November and lost Perekop on the 11th. His land law - which gave the peasants the land they had already taken - is the one White political programme that answered the question the peasants were asking, and by the time it existed there was almost nowhere left to apply it.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "318-334",
+        "note": "the last stand of the Whites"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table of events, which is where the dates on this path come from"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:formation-yudenich-army",
+    "name": "The North-Western Army",
+    "short": "NW Army",
+    "side": "white",
+    "kind": "army",
+    "commander": "person:yudenich-nikolai",
+    "concentration": {
+      "area": "Estonia, around Narva",
+      "position": [28.19, 59.377],
+      "asOf": "1919-10-11",
+      "sources": [
+        {
+          "source": "source:chamberlin-1935-2",
+          "pages": "525-534",
+          "note": "the chronological table of events, which is where the dates on this path come from"
+        }
+      ]
+    },
+    "dissolved": "1919-12",
+    "summary": "About twenty thousand men, raised in Estonia with British naval support, who got to within sight of Petrograd in October 1919 and were thrown out again inside a fortnight. Estonia, which was negotiating its own peace with Moscow at the time, disarmed and interned what came back - which is the borderlands' answer to the White slogan of a Russia one and indivisible, delivered in the most practical possible form.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "273-290"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table of events, which is where the dates on this path come from"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:formation-red-eastern-front",
+    "name": "The Red Eastern Front",
+    "short": "East Front",
+    "side": "red",
+    "kind": "army-group",
+    "concentration": {
+      "area": "Sviyazhsk and the middle Volga, after the fall of Kazan",
+      "position": [48.653, 55.77],
+      "asOf": "1918-08-10",
+      "sources": [
+        {
+          "source": "source:chamberlin-1935-2",
+          "pages": "117-119"
+        }
+      ]
+    },
+    "summary": "The front that was created out of a rout. In August 1918 the Red forces on the Volga were, on the account of a political enemy of Trotsky's who was there, marked by 'lack of confidence in their own strength, absence of initiative, passivity in all work and absence of discipline from top to bottom'. A month later they took Kazan back; eighteen months after that they were at Irkutsk.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "117-119"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "173-205"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:formation-red-southern-front",
+    "name": "The Red Southern Front",
+    "short": "South Front",
+    "side": "red",
+    "kind": "army-group",
+    "concentration": {
+      "area": "Around Kozlov and Orel, where the headquarters stood in the autumn of 1919",
+      "position": [40.483, 52.883],
+      "asOf": "1919-10-01",
+      "sources": [
+        {
+          "source": "source:chamberlin-1935-2",
+          "pages": "245-248"
+        }
+      ]
+    },
+    "summary": "The front that lost Orel in October 1919 and was at Novorossiysk by March 1920. Its August 1919 offensive was thwarted by a strategic plan built on an obsolete fear - that Denikin might join hands with Kolchak, who had already been driven beyond the Urals - and by Mamontov's raid through its rear; Trotsky's verdict on it was 'a pitiful standstill on the eastern half of the Southern Front and a serious retreat, destruction of units, break-up of organization in the western half'.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "245-248",
+        "note": "the August plan, Trotsky's verdict and the raid"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:formation-red-cavalry-army",
+    "name": "1st Cavalry Army",
+    "short": "1st Cav Army",
+    "side": "red",
+    "kind": "army",
+    "commander": "person:budyonny-semyon",
+    "concentration": {
+      "area": "The Voronezh sector of the Southern Front",
+      "position": [39.21, 51.672],
+      "asOf": "1919-11-01",
+      "sources": [
+        {
+          "source": "source:chamberlin-1935-2",
+          "pages": "525-534",
+          "note": "the chronological table of events, which is where the dates on this path come from"
+        }
+      ]
+    },
+    "summary": "The Red Army's answer to the one arm the Whites started the war with. Formed out of Budyonny's Don horsemen in November 1919, it broke Denikin's cavalry in the winter, rode into Ukraine in the spring of 1920 and was in the Polish rear at Berdichev and Zhitomir on 8 June. Its refusal - or Stalin's refusal on its behalf - to turn north to Warsaw in August 1920 is one of the oldest arguments in Soviet military history, and one of the ones that got people shot in 1937.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table of events, which is where the dates on this path come from"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "291-317",
+        "note": "the war with Poland"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:formation-red-western-front",
+    "name": "The Red Western Front",
+    "short": "West Front",
+    "side": "red",
+    "kind": "army-group",
+    "commander": "person:tukhachevsky-mikhail",
+    "concentration": {
+      "area": "The Berezina and the upper Dnieper, with front headquarters at Smolensk",
+      "position": [30.0, 54.5],
+      "asOf": "1920-07-04",
+      "sources": [
+        {
+          "source": "source:chamberlin-1935-2",
+          "pages": "525-534",
+          "note": "the chronological table of events, which is where the dates on this path come from"
+        }
+      ]
+    },
+    "summary": "Tukhachevsky was twenty-seven. His front went from the Berezina to the outskirts of Warsaw in six weeks and came back rather faster, and the Soviet government had a Polish revolutionary committee ready at Bialystok to govern the country it did not take.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table of events, which is where the dates on this path come from"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "291-317"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:formation-polish-army",
+    "name": "The Polish Army",
+    "short": "Polish Army",
+    "side": "national",
+    "kind": "army-group",
+    "commander": "person:pilsudski-jozef",
+    "concentration": {
+      "area": "South-east of Warsaw, on the Wieprz, where the strike group assembled",
+      "position": [21.85, 51.55],
+      "asOf": "1920-08-15",
+      "sources": [
+        {
+          "source": "source:chamberlin-1935-2",
+          "pages": "525-534",
+          "note": "the chronological table of events, which is where the dates on this path come from"
+        }
+      ]
+    },
+    "summary": "A two-year-old state's army, which had taken Kiev in May, lost everything it had gained by July, and then hit the flank of a Red army group that had gone past its capital. The counter-stroke of the middle of August 1920 stopped the Russian revolution at the Vistula, which is not a small claim and is one that Polish and Soviet historiography spent seventy years describing in incompatible language.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table of events, which is where the dates on this path come from"
+      }
+    ]
+  }
+]

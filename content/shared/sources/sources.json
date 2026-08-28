@@ -2138,5 +2138,157 @@
     "title": "OpenStreetMap",
     "url": "https://www.openstreetmap.org/",
     "notes": "Reference data only, under the same rule as source:wikipedia-en (docs/sources.md §8): a coordinate for a place in content/shared/places/places.json, and nothing else. Never an operational claim and never a footnote a reader sees. It is in the registry because several Pacific airfields have no coordinate box in any encyclopaedia and OpenStreetMap's aerodrome node is the only check available. Licence ODbL; attribution © OpenStreetMap contributors."
+  },
+  {
+    "id": "source:chamberlin-1935-2",
+    "kind": "book",
+    "tier": "study",
+    "author": "Chamberlin, William Henry",
+    "title": "The Russian Revolution, 1917-1921, Volume Two: 1918-1921, From the Civil War to the Consolidation of Power",
+    "year": 1935,
+    "publisher": "Macmillan and Co., London",
+    "url": "https://archive.org/details/in.ernet.dli.2015.178167",
+    "notes": "The narrative backbone of the 1918-1922 pack and the only full account of the civil war this project has been able to read end to end: the Internet Archive scan of the **London** edition is out of copyright and downloadable, and every page number cited here was read in it. Chamberlin was the Christian Science Monitor's Moscow correspondent from 1922 to 1934 and wrote from the Soviet published record of the 1920s, from White emigre memoirs and from his own travel; the chronological table (pp. 525-534) and the appendix of translated documents (pp. 465-507) are what a reader will use most. Two warnings. It is a **pre-archival** work: it could not know what opened after 1991, and where it gives a number for the terror or for casualties it is repeating a published claim, not counting. And its pagination is not the New York edition's - a page cited from an American copy will not land in the same place here."
+  },
+  {
+    "id": "source:holquist-2003",
+    "kind": "article",
+    "tier": "study",
+    "author": "Holquist, Peter",
+    "title": "Violent Russia, Deadly Marxism? Russia in the Epoch of Violence, 1905-21",
+    "year": 2003,
+    "publisher": "Kritika: Explorations in Russian and Eurasian History 4:3, 627-652",
+    "url": "https://www.history.upenn.edu/sites/default/files/Holquist.2003.Violent_Russia.pdf",
+    "notes": "The post-archival re-framing of the argument about revolutionary violence, posted open-access with the journal's permission and read in full here at page level. Holquist maps the field into a school of \"circumstances\" (Buldakov, Figes: a Russian Sonderweg) and a school of \"ideology\" (the Black Book, Malia, Pipes: Marxism or the revolutionary tradition as the font), argues that both de-historicise, and proposes the 1905-21 conjuncture inside the European crisis of 1914-24 instead. Also the safest available route to what Buldakov and Figes say, because he quotes them; a position reached only through him is labelled as such wherever this project uses one."
+  },
+  {
+    "id": "source:werth-2008",
+    "kind": "web",
+    "tier": "study",
+    "author": "Werth, Nicolas",
+    "title": "Crimes and Mass Violence of the Russian Civil Wars (1918-1921)",
+    "year": 2008,
+    "publisher": "Mass Violence and Resistance, Sciences Po, Paris",
+    "url": "https://www.sciencespo.fr/mass-violence-war-massacre-resistance/en/document/crimes-and-mass-violence-russian-civil-wars-1918-1921.html",
+    "notes": "An open-access encyclopedia entry by the historian who wrote the Soviet chapter of The Black Book of Communism, published in 2008 and drawing on the post-1991 archives. Read in full; it has no pagination, so it is cited by its section headings. It is the pack's source for the periodised figures it does give - the executions of September-October 1918, the Tambov camps, the pogrom total - and for the two framing claims it makes: that no side had a monopoly of violence, and that the Bolsheviks nonetheless theorised it as mass terror to a far greater degree than anyone else. Werth is one voice in a contested count and is cited as one."
+  },
+  {
+    "id": "source:sumpf-2014",
+    "kind": "article",
+    "tier": "general",
+    "author": "Sumpf, Alexandre",
+    "title": "Russian Civil War",
+    "year": 2014,
+    "publisher": "1914-1918-online. International Encyclopedia of the First World War, Freie Universitat Berlin",
+    "url": "https://encyclopedia.1914-1918-online.net/article/russian-civil-war/",
+    "notes": "A peer-reviewed, open-access handbook article (version 1.0, 8 October 2014; DOI 10.15463/ie1418.10171), read in full. Used here for a compact post-archival statement of what the Whites lacked and for the pogrom figure, both of which it states in its own words rather than reporting. Being a handbook article it gives no pages and no apparatus for individual numbers; it is context and framing, not the place a figure is checked."
+  },
+  {
+    "id": "source:mawdsley-2014",
+    "kind": "article",
+    "tier": "general",
+    "author": "Mawdsley, Evan",
+    "title": "International Responses to the Russian Civil War (Russian Empire)",
+    "year": 2014,
+    "publisher": "1914-1918-online. International Encyclopedia of the First World War, Freie Universitat Berlin",
+    "url": "https://encyclopedia.1914-1918-online.net/article/international-responses-to-the-russian-civil-war-russian-empire/",
+    "notes": "The author of the standard operational history of the civil war (The Russian Civil War, 1987 - borrow-only from this environment and therefore not cited here) writing an open-access handbook article on the intervention, version 1.0, 8 October 2014, DOI 10.15463/ie1418.10489. Read in full. Cited for the shape and limits of foreign involvement in his own words, which is the thing the phrase \"fourteen foreign armies\" most needs held against it."
+  },
+  {
+    "id": "source:fisher-1927",
+    "kind": "book",
+    "tier": "study",
+    "author": "Fisher, Harold H.",
+    "title": "The Famine in Soviet Russia, 1919-1923: The Operations of the American Relief Administration",
+    "year": 1927,
+    "publisher": "The Macmillan Company, New York",
+    "url": "https://archive.org/details/famineinsovietru00haro",
+    "notes": "Out of copyright and readable in full. Written by the chief of the American Relief Administration's own historical department from the ARA's records, which is both why it is detailed and why it is partial: it is the institutional history of one relief operation, and the famine reaches it through the eyes of the people feeding it. Cited here for the relief operation and for its opening account of what the blockade and the fighting had done, not for a death toll - the toll is in the literature this project could not open."
+  },
+  {
+    "id": "source:trotsky-military-1",
+    "kind": "book",
+    "tier": "primary",
+    "author": "Trotsky, Leon",
+    "title": "How the Revolution Armed: The Military Writings and Speeches of Leon Trotsky, Volume I: 1918",
+    "year": 1979,
+    "publisher": "New Park Publications, London (trans. Brian Pearce)",
+    "url": "https://www.marxists.org/archive/trotsky/1918/military/index.htm",
+    "notes": "Trotsky's own orders, decrees, speeches and reports as Commissar for Military and Naval Affairs, first published in Russian by the Soviet state in 1923 and translated by Brian Pearce. Read in full on the Marxists Internet Archive, whose text carries no printed pagination - citations therefore name the piece and its date rather than a page. A primary source and a partisan one twice over: it is the record of what the man in charge said at the time, published later by a state he was arguing with."
+  },
+  {
+    "id": "source:trotsky-1930",
+    "kind": "book",
+    "tier": "memoir",
+    "author": "Trotsky, Leon",
+    "title": "My Life: An Attempt at an Autobiography",
+    "year": 1930,
+    "publisher": "Charles Scribner's Sons, New York",
+    "url": "https://www.marxists.org/archive/trotsky/1930/mylife/index.htm",
+    "notes": "Written in exile on Prinkipo in 1929 and read here in full on the Marxists Internet Archive, which gives chapters but no printed pages; citations name the chapter. Chapter 34, 'The Train', is the only sustained first-person account of the object this pack is built around. It is a memoir written by a man who had lost, defending a record against the men who had taken it from him, and every figure in it - the thirty-six journeys, the hundred and five thousand kilometres - is his own."
+  },
+  {
+    "id": "source:avalon-brest-litovsk-1918",
+    "kind": "web",
+    "tier": "primary",
+    "author": "United States Department of State",
+    "title": "The Peace Treaty of Brest-Litovsk, 3 March 1918 (Papers Relating to the Foreign Relations of the United States, 1918, Russia)",
+    "year": 1918,
+    "publisher": "The Avalon Project, Lillian Goldman Law Library, Yale Law School",
+    "url": "https://avalon.law.yale.edu/20th_century/bl34.asp",
+    "notes": "The English text of the treaty as printed in the United States diplomatic papers and reproduced by the Avalon Project, read in full. It is a translation made for a foreign ministry, not a scholarly edition of the German or Russian originals, and its article numbering is the one this pack quotes. The map that Article III makes 'an essential part of this treaty of peace' is not reproduced there, which is why this pack draws no line for the frontier the treaty created."
+  },
+  {
+    "id": "source:avrich-1973",
+    "kind": "book",
+    "tier": "primary",
+    "author": "Avrich, Paul (ed.)",
+    "title": "The Anarchists in the Russian Revolution",
+    "year": 1973,
+    "publisher": "Cornell University Press, Ithaca",
+    "notes": "A documentary collection in the Documents of Revolution series. This pack cites it for one text, the Petropavlovsk resolution of 28 February 1921, which was read in the Marxists Internet Archive's reproduction of Avrich's translation; that reproduction carries no page numbers, so the citation gives none. The volume itself could not be opened from this environment."
+  },
+  {
+    "id": "source:soviethistory-msu",
+    "kind": "web",
+    "tier": "primary",
+    "author": "von Geldern, James; Siegelbaum, Lewis (eds)",
+    "title": "Seventeen Moments in Soviet History",
+    "publisher": "Michigan State University",
+    "url": "https://soviethistory.msu.edu/",
+    "notes": "A teaching archive of translated Soviet documents, images and music, edited by two historians of the period. Cited here for the text of the Sovnarkom resolution on the Red Terror of 5 September 1918, which it prints in W. H. Chamberlin's translation and attributes to Chamberlin's Volume II, pp. 475-476 - pages of the **New York** edition, which do not correspond to the London edition this project read, so no page is carried across. The Russian original is given there as Sobranie uzakonenii i rasporiazhenii rabochego i krest'ianskogo pravitel'stva, 1918, p. 789."
+  },
+  {
+    "id": "source:dekrety-1",
+    "kind": "web",
+    "tier": "primary",
+    "author": "Institute of Marxism-Leninism (ed.)",
+    "title": "Декреты Советской власти, том I: 25 октября 1917 г. - 16 марта 1918 г. (Decrees of Soviet power, vol. I)",
+    "year": 1957,
+    "publisher": "Государственное издательство политической литературы, Moscow; transcribed by the electronic library of the Faculty of History, Moscow State University",
+    "url": "http://www.hist.msu.ru/ER/Etext/DEKRET/index.html",
+    "notes": "The Soviet scholarly edition of the decrees of the first months, transcribed page by page (the printed pagination is kept in braces) by the history faculty at Moscow State University and read here in full for the calendar decree of 24 January (6 February) 1918. It is an edition made by the state whose acts it prints, which matters for what is included and how it is introduced; for the wording of a decree it is the standard text."
+  },
+  {
+    "id": "source:whitewood-2015",
+    "kind": "article",
+    "tier": "study",
+    "author": "Whitewood, Peter",
+    "title": "Subversion in the Red Army and the Military Purge of 1937-1938",
+    "year": 2015,
+    "publisher": "Europe-Asia Studies 67:1, 102-122",
+    "url": "https://ray.yorksj.ac.uk/id/eprint/1585/",
+    "notes": "The archival case that the purge of the Soviet officer corps grew out of a long-standing perception that the Red Army was vulnerable to subversion, rather than out of a sudden decision in 1937. **Only the author's abstract could be read from here**, in the York St John repository record; the accepted-manuscript PDF is open access but its embedded subset fonts defeat text extraction, so the article itself was not read. Whitewood is quoted on this pack's forward causal link from his own abstract and from nothing else, and the link says so."
+  },
+  {
+    "id": "source:glantz-2001",
+    "kind": "article",
+    "tier": "study",
+    "author": "Glantz, David M.",
+    "title": "The Soviet-German War 1941-1945: Myths and Realities - A Survey Essay",
+    "year": 2001,
+    "publisher": "Strom Thurmond Institute of Government and Public Affairs, Clemson University, South Carolina",
+    "url": "https://open.clemson.edu/sti_pubs/217/",
+    "notes": "The 20th Anniversary Distinguished Lecture at Clemson, 11 October 2001, by the leading Western specialist on the Soviet-German war, and freely available. Read here for the opening of the war only - the essay's own pagination is used. It is a survey of what the Soviet archives had by then changed about the Western picture of the Eastern Front, and it is cited in this pack for one thing: the date and scale of 22 June 1941, so that the causal chain out of the civil war has something real to end at."
   }
 ]

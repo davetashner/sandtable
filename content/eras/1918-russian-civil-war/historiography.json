@@ -1,0 +1,124 @@
+[
+  {
+    "id": "1918-russian-civil-war:historiography-why-the-whites-lost",
+    "title": "Did the Reds win, or did the Whites lose?",
+    "question": "Five years, six fronts, foreign money and foreign troops, and at the end of it the side that had held Moscow in 1918 held everything. Was that a victory the Bolsheviks won, or a defeat the anti-Bolsheviks inflicted on themselves - and if the second, what exactly did they lose it on?",
+    "positions": [
+      {
+        "label": "The centre, the railways, and a year's head start",
+        "who": "William Henry Chamberlin (1935)",
+        "summary": "A geographical and administrative answer. The Bolsheviks held the centre and their enemies were on the circumference: 'Kolchak in the East, Denikin in the South, Yudenitch in the West, Miller in the North, were separated from each other by wide stretches of land and sea and were unable to coordinate their military efforts, to send reinforcements to one another. The Reds, on the other hand, operating on interior lines, could strengthen the front that seemed most critical at any given moment at the expense of the others.'[^chamberlin-1935-2]\n\nTwo further advantages come with the centre. 'By far the larger part of the munitions and other war material which had been accumulated for use in the World War was in Bolshevik territory; this was a very great advantage and more than offset the aid in munitions and supplies which the Whites received from abroad.' And time: Soviet power dated from November 1917, Kolchak from a year later, 'and still more time elapsed before Denikin emerged from his original position as a local figure in the North Caucasus'.[^chamberlin-1935-2]"
+      },
+      {
+        "label": "They had no politics to win with",
+        "who": "Alexandre Sumpf (2014)",
+        "summary": "A political answer, and the one the post-archival surveys reach for: 'That is surely what the Whites were lacking to win: the unity provided by an ideology, an uncontested leader and a clearly defined project for a multiethnic nation in revolution.'[^sumpf-2014]\n\nOn this reading the White defeat is written into the slogan - Russia one, great and indivisible - which told the Finns, the Poles, the Balts, the Ukrainians, the Cossack governments and the Caucasus that a White victory meant their own extinction, and told the peasant nothing at all about the land. Chamberlin, thirty years before the archives, put the same thing in the vocabulary of the 1930s: the White movement 'produced no Mussolini, no Hitler', because it brought forward officers 'accustomed to commanding and not to persuading or agitating'.[^chamberlin-1935-2]"
+      },
+      {
+        "label": "It was decided in the villages, and the Reds were the lesser evil",
+        "who": "Orlando Figes (1996) - stated from his work, not quoted",
+        "summary": "The social answer, and the one that makes the peasantry the actor rather than the terrain: the war was settled by tens of millions of people who wanted neither side, and who concluded that a Red victory meant requisitioning while a White victory meant the landlord coming back with a whip. They deserted from both armies in enormous numbers and rose against both, and the difference that mattered was one of degree and of timing.\n\n**This position is stated from the central argument of Figes's A People's Tragedy and is not quoted, because that book could not be opened at page level from this environment.** It is put on the card because leaving it off would make the argument look like one between generals. Chamberlin, who can be quoted, reaches the same place from the other direction: 'what was important in determining the course of the civil war was not the fact of peasant discontent, but the degree of it. And the Soviets passed this test more successfully than the Whites.'[^chamberlin-1935-2]"
+      },
+      {
+        "label": "The intervention was never on a scale that could decide anything",
+        "who": "Evan Mawdsley (2014)",
+        "summary": "Against the formula of fourteen foreign armies, which was Soviet historiography's answer to the question and is still the popular one. Mawdsley, who wrote the standard history of the war, describes the whole of 1918 like this: direct action by British, French, American and Japanese forces 'was confined to occupation of remote ports in the northern parts of European Russia and of Vladivostok on the Pacific'.[^mawdsley-2014] And on why it did not grow after November 1918, when the reason for it had been the Eastern Front: 'Victory eliminated the main incentive and military potential for large-scale involvement in Russia.'[^mawdsley-2014]\n\nWhat the intervention did supply was material, recognition and a great deal of usable propaganda for the other side - a Red Army raised on the claim that it was fighting the world. Whether that traded favourably for the Whites is a question this card leaves open."
+      }
+    ],
+    "settled": "Not in dispute: that the anti-Bolshevik commands never had a unified command, a common political programme or a means of coordinating operations across four thousand kilometres; that Orel on 13 October 1919 was the closest any of them came; that the peasantry was hostile both to grain requisitioning and to the restoration of the landlords; and that the Bolsheviks held Moscow, Petrograd, the central industrial region and the arsenals of the World War from first to last.",
+    "unread": "The four works that hold the modern versions of these positions could not be opened from this environment, and the card says so rather than pretending otherwise. Evan Mawdsley's The Russian Civil War (1987) is borrow-only on the Internet Archive, which is why he is quoted here from an open-access encyclopedia article instead of from his own book. Peter Kenez's two volumes on south Russia - the standard statement of the political-failure case, and the reason it is usually attributed to him rather than to Sumpf - are borrow-only. Jonathan Smele's The 'Russian' Civil Wars, 1916-1926 (2015), which argues that the singular in the question is itself the mistake and that there was no one war and no one 'Whites', is not readable here at all; that position is therefore named nowhere on this card, which is a real gap. And Figes could not be read at page level, which is why his position is marked as stated. Raising this card to the full bar of ADR 0017 needs those four books in hand.",
+    "links": {
+      "events": [
+        "1918-russian-civil-war:event-orel-taken",
+        "1918-russian-civil-war:event-kolchak-coup",
+        "1918-russian-civil-war:event-makhno-takes-ekaterinoslav",
+        "1918-russian-civil-war:event-committees-of-the-poor",
+        "1918-russian-civil-war:event-archangel-landing"
+      ],
+      "formations": [
+        "1918-russian-civil-war:formation-afsr",
+        "1918-russian-civil-war:formation-allied-north-russia",
+        "1918-russian-civil-war:formation-makhno-army"
+      ],
+      "people": ["person:denikin-anton", "person:kolchak-alexander", "person:makhno-nestor"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "454-457",
+        "note": "the chapter 'The Revolution in Retrospect': interior lines, munitions, time, the absence of a White politics, and the degree of peasant discontent"
+      },
+      {
+        "source": "source:sumpf-2014",
+        "note": "the concluding assessment"
+      },
+      {
+        "source": "source:mawdsley-2014",
+        "note": "sections 'The Intervention of the Central Powers' and 'The Allies and Kolchak'"
+      },
+      {
+        "source": "source:figes-1996",
+        "note": "the peasant argument, stated from the work rather than quoted - no page-level access, see unread"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:historiography-the-terror",
+    "title": "The terror: how much, by whom, and why",
+    "question": "The Cheka was told by decree to shoot and to publish the names. The Whites and the Greens killed too, and the pogroms in Ukraine killed on a scale neither. How large was any of it, and is the argument about the numbers actually an argument about numbers?",
+    "positions": [
+      {
+        "label": "Terror was theorised on one side and improvised on the others",
+        "who": "Nicolas Werth (2008)",
+        "summary": "Werth's framing is deliberately two-handed and both hands matter. 'No single side had a monopoly over violence. It is nevertheless undeniable that the Bolsheviks theorized violence to a far greater extent as \"mass terror\".'[^werth-2008]\n\nOn the Red side he gives what can be given: in the weeks after the decree of 5 September 1918 the Cheka 'carried out two to three times as many executions as the Czarist regime had pronounced death sentences over a 92-year period from 1825 to 1917', with an estimate of ten to fifteen thousand for September and October 1918 alone. On the White side, and specifically of Kolchak's territory: 'Compared to the Red Terror, White Terror was never established as a system. Mostly uncontrolled and perpetrated by \"warlords\" such as the Cossack Atamans Semenov or Annenkov, White Terror nevertheless targeted specific groups: Socialist militants, suspected Bolshevik sympathizers, Jews (assimilated to Bolsheviks), in legacy with Old Czarist regime discriminatory repressions.' **Unsystematic is not the same as undirected**, and the second half of that sentence is the half a shorter quotation loses. And the largest single category in the war is neither Red nor White: on Werth's figure, 'approximately 150,000 Jewish victims (125,000 in the Ukraine, 25,000 in Belarus) died between 1918 and 1922'.[^werth-2008]\n\n**A caution about that number, because it is the one this pack states.** Sumpf gives what looks like the same figure and is not counting the same thing: 'About 150,000 men, women and children were victims of serial pogroms in 1918-1920, i.e. murders or extortion preceded by physical and sexual assault.'[^sumpf-2014] Werth counts deaths over five years; Sumpf counts victims over three, and says explicitly that his category includes extortion and assault as well as murder. Two independent works arriving at the same round number for different quantities is a reason to hold it loosely, not a corroboration."
+      },
+      {
+        "label": "Ideology was the font",
+        "who": "Richard Pipes, Martin Malia and the authors of The Black Book of Communism - characterised here through Holquist, not read directly",
+        "summary": "The school that explains the violence by what the Bolsheviks believed. Holquist describes it: its proponents 'point either to the culture of the Russian revolutionary movement in general or Marxism as ideology in particular as the font for the violence in the revolutionary period', and on this view Russia's history after 1917 'represented not a Russian Sonderweg, but a revolutionary or Marxist one'.[^holquist-2003]\n\n**The attribution is second-hand and is labelled as such.** Holquist's footnote names Courtois and the Black Book, and Malia's The Soviet Tragedy, for the Marxist version, and Pipes and Anna Geifman for the version that emphasises the Russian revolutionary tradition rather than Marxism as such - a distinction Pipes's summarisers usually collapse and this card does not. None of those works could be opened from here, so none of these historians is quoted in his own words, and the card is weaker for it in exactly the way ADR 0017 says to admit."
+      },
+      {
+        "label": "Circumstances: the weight of the Russian past",
+        "who": "Vladimir Buldakov and Orlando Figes - quoted through Holquist",
+        "summary": "The opposing school, which explains the violence by Russia rather than by Bolshevism. Buldakov's Krasnaia smuta finds the source in a specifically Russian imperial and patriarchal social psychology; Figes, in Holquist's paraphrase, finds the 'revolutionary tragedy in the legacies of [the people's] own cultural backwardness rather than the evil of some \"alien\" Bolsheviks', and it was 'the legacy of Russian history, of centuries of serfdom and autocratic rule' that trapped the Russian people 'by the tyranny of their own history'.[^holquist-2003]\n\nThose words are Figes's, quoted by Holquist from p. 808 of the 1998 Penguin edition of A People's Tragedy - an edition this project has not seen, which is why the page is given as Holquist's citation and not as this pack's."
+      },
+      {
+        "label": "Both schools de-historicise, and the numbers argument is downstream of that",
+        "who": "Peter Holquist (2003)",
+        "summary": "Holquist's own position, and the one written from the post-1991 archives: 'Due to the polemical nature of the debate, both schools remove the violence of the revolutionary period from its context: the violence is either timelessly Russian, or the product of an ideology that immediately and inexorably unfolds into violence and terror.'[^holquist-2003]\n\nWhat he puts in their place is a conjuncture rather than an essence - Russia's post-1905 crisis intersecting with a European war that had taught every state on the continent new techniques of population management. His conclusion: 'Violence, then, was not either timelessly Russian or the spontaneous product of ideology. It resulted from the intersection of preexisting \"persistent factors\" with a chain of historical conjunctures.' And the distinguishing fact about the Bolsheviks is not that they invented the methods: 'The Bolshevik regime was less remarkable for the measures it took during the extended period of war, revolution, and civil wars, than for the fact that it continued these measures after that period had wound to an end.'[^holquist-2003]\n\nHe adds, and it is worth quoting because it is the sentence that keeps this from being an apology: 'The purpose of my overview of the \"epoch of violence\" has not been to normalize the Bolsheviks.'[^holquist-2003]"
+      }
+    ],
+    "settled": "Not in dispute: that the Cheka existed, that a decree of 5 September 1918 ordered class enemies into concentration camps and White Guard associates shot, and that the decree required the names to be published; that the Tambov rising was put down with hostage-taking and camps holding some fifty thousand people, most of them women, the old and children, with a mortality in the autumn of 1921 of fifteen to twenty per cent a month; that killing by White commands and by the Greens was extensive and largely unsystematic; and that the pogroms in Ukraine and Belorussia killed Jews in the order of a hundred thousand and more - the two post-archival works read here both reach about 150,000, though for different quantities and over different spans, which is set out in the first position.",
+    "unread": "**This card deliberately gives no total for the terror, because no source this project could read gives one it could stand behind.** The literature that does the counting is exactly the literature that could not be opened: George Leggett's The Cheka (1981), the Soviet chapter of The Black Book of Communism, James Ryan's Lenin's Terror (2012), Buldakov's Krasnaia smuta, and the post-Soviet Russian archival counts (Volkov, Erlikhman, Zayats) whose figures differ from each other by more than an order of magnitude. Two of the four positions above are stated or quoted through Holquist rather than from their own authors, and both are labelled.\n\nThe reason the range is so wide is itself part of the argument and worth naming: the counts differ on who is being counted (executions by the Cheka only; those plus deaths in camps; those plus deaths in the suppression of risings; those plus the famine), on what is a political killing in a country where the state was requisitioning food at gunpoint, and on whether the White and Green killing belongs in the same ledger. A single number printed here would conceal every one of those choices while looking like a fact.",
+    "links": {
+      "events": [
+        "1918-russian-civil-war:event-red-terror-decree",
+        "1918-russian-civil-war:event-lenin-shot",
+        "1918-russian-civil-war:event-tambov-rising",
+        "1918-russian-civil-war:event-kronstadt"
+      ],
+      "documents": ["1918-russian-civil-war:document-red-terror"],
+      "people": ["person:dzerzhinsky-felix", "person:antonov-alexander"]
+    },
+    "sources": [
+      {
+        "source": "source:werth-2008",
+        "note": "the sections on the Red Terror, the White Terror, the pogroms and the Tambov camps; no pagination, cited by section"
+      },
+      {
+        "source": "source:holquist-2003",
+        "pages": "628-629, 651-652",
+        "note": "the two schools, the works he assigns to each, the Figes quotation, and his own conclusion"
+      },
+      {
+        "source": "source:sumpf-2014",
+        "note": "the pogrom figure, given independently"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "66-67",
+        "note": "the terror before the decree, and Petrovsky's appeal for mass terror"
+      }
+    ]
+  }
+]
