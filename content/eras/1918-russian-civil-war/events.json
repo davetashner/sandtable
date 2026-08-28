@@ -208,7 +208,7 @@
     "kind": "movement",
     "significance": "major",
     "place": "place:arkhangelsk",
-    "summary": "An Allied force occupies Archangel and an anti-Bolshevik North Russian government is organised behind it. The first landing of all had been at Murmansk in March, with the acquiescence of the local Soviet, which is one reason the word 'intervention' does more work than it can carry.\n\nMawdsley's summary of the whole thing is worth setting against the phrase 'fourteen foreign armies': direct action by British, French, American and Japanese forces in 1918 'was confined to occupation of remote ports in the northern parts of European Russia and of Vladivostok on the Pacific'.[^mawdsley-2014]",
+    "summary": "An Allied force occupies Archangel and an anti-Bolshevik North Russian government is organised behind it. A small mixed force under British command had already been at Murmansk since early in the year, guarding the Allied military stores that had accumulated there, and Chamberlin is careful about what that was: \"so long as this force was defensive in character the Soviet Government had no objection to its presence\". It turned aggressive at the end of June, concluding a separate agreement with the Murmansk Soviet, \"which was not loyal to Moscow\", and extending its occupation south to Kem.[^chamberlin-1935-2]\n\nMawdsley's summary of the whole thing is worth setting against the phrase \"fourteen foreign armies\": direct action by British, French, American and Japanese forces in 1918 \"was confined to occupation of remote ports in the northern parts of European Russia and of Vladivostok on the Pacific\".[^mawdsley-2014]",
     "links": {
       "historiography": ["1918-russian-civil-war:historiography-why-the-whites-lost"]
     },
@@ -217,6 +217,11 @@
         "source": "source:chamberlin-1935-2",
         "pages": "530",
         "note": "the chronological table"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "62-63",
+        "note": "the British force at Murmansk and the agreement with the Murmansk Soviet"
       },
       {
         "source": "source:mawdsley-2014",

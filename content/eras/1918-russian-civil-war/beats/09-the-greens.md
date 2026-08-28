@@ -21,8 +21,8 @@ sources:
 
 The Greens are not a third army. They are most of the country, declining.
 
-There were something like a hundred million peasants in the territory this war
-was fought over, and what they had got out of 1917 was the land — taken from the
+The overwhelming majority of the people in the territory this war was fought
+over were peasants, and what they had got out of 1917 was the land — taken from the
 landlords, parish by parish, in the autumn of that year. What they wanted after
 that was to be left alone to farm it. Both of the sides with capital letters
 wanted something else: the Reds wanted the grain, and took it with armed

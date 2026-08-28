@@ -74,7 +74,7 @@
     "side": "allied",
     "kind": "other",
     "concentration": {
-      "area": "Murmansk from March 1918 and Archangel from 2 August 1918; a shallow perimeter up the Dvina and the Murmansk railway and nothing beyond it",
+      "area": "Murmansk from early 1918 and Archangel from 2 August 1918; a shallow perimeter up the Dvina and the Murmansk railway and nothing beyond it",
       "position": [40.517, 64.539],
       "asOf": "1918-08-02",
       "sources": [
@@ -86,7 +86,7 @@
       ]
     },
     "dissolved": "1919-10",
-    "summary": "British, French, American, Canadian, Italian and Serbian troops in two Arctic ports, plus a locally raised North Russian force and a government behind it.\n\n**No route: they held ports.** Mawdsley, who wrote the standard history of the war, puts the whole of 1918 like this - direct action by British, French, American and Japanese forces 'was confined to occupation of remote ports in the northern parts of European Russia and of Vladivostok on the Pacific'. The phrase 'fourteen foreign armies' is a Soviet formula that counts flags rather than divisions, and drawing arrows for it would be the map telling the same lie.",
+    "summary": "British, French, American, Canadian, Italian and Serbian troops in two Arctic ports, plus a locally raised North Russian force and a government behind it. The Murmansk force began as a guard on Allied military stores that the Soviet government did not object to while it stayed defensive, and turned into an occupation at the end of June 1918.\n\n**No route: they held ports.** Mawdsley, who wrote the standard history of the war, puts the whole of 1918 like this - direct action by British, French, American and Japanese forces \"was confined to occupation of remote ports in the northern parts of European Russia and of Vladivostok on the Pacific\". The phrase \"fourteen foreign armies\" is a Soviet formula that counts flags rather than divisions, and drawing arrows for it would be the map telling the same lie.",
     "sources": [
       {
         "source": "source:mawdsley-2014",
@@ -94,8 +94,13 @@
       },
       {
         "source": "source:chamberlin-1935-2",
+        "pages": "62-63",
+        "note": "the Murmansk force and what it was doing"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
         "pages": "525-534",
-        "note": "the chronological table of events, which is where the dates on this path come from"
+        "note": "the chronological table"
       }
     ]
   },

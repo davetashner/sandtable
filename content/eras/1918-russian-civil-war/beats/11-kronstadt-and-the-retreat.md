@@ -25,13 +25,13 @@ fell.
 The winter of 1920–21 was the worst of the whole period: industry had
 effectively stopped, the towns were being abandoned by their own populations,
 and the requisitioning went on because the alternative was that the towns
-starved. Western Siberia rose in December and cut the Trans-Siberian. Tambov had
+starved. Western Siberia rose that winter and cut the Trans-Siberian for a
+time.[^chamberlin-1935-2] Tambov had
 been in arms since August. In February the Petrograd factories struck, and the
 government put the city under martial law and sent in the officer cadets.
 
 Then the sailors of [Kronstadt](place:kronstadt) — the garrison that had been
-the hardest core of October, the one Trotsky had once called the pride and glory
-of the revolution — held a mass meeting of fifteen thousand on Anchor Square on
+the hardest core of October — held a mass meeting of fifteen thousand on Anchor Square on
 1 March and passed a resolution.
 
 Read the [fifteen

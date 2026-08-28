@@ -80,10 +80,16 @@ armed detachments out from the towns to take grain, because its money was
 worthless and it had nothing to sell.[^chamberlin-1935-2] Every Green rising in
 this pack starts there.
 
-Meanwhile the Allies, who had landed at Murmansk in March with the local
-Soviet's acquiescence and would occupy Archangel on 2 August, were doing rather
-less than the phrase "fourteen foreign armies" suggests. Mawdsley, who wrote the
-standard history of the intervention, sums the whole of 1918 up in a sentence:
+Meanwhile the Allies were doing rather less than the phrase "fourteen foreign
+armies" suggests. A small mixed force under British command had been sitting at
+[Murmansk](place:murmansk) since early in the year, guarding the Allied military
+stores that had piled up there, and Chamberlin is careful about what that was:
+"so long as this force was defensive in character the Soviet Government had no
+objection to its presence". It only turned aggressive at the end of June, when it
+concluded a separate agreement with the Murmansk Soviet, "which was not loyal to
+Moscow", and pushed its occupation south to Kem.[^chamberlin-1935-2] Archangel
+was occupied on 2 August. Mawdsley, who wrote the standard history of the
+intervention, sums the whole of 1918 up in a sentence:
 direct action by British, French, American and Japanese forces "was confined to
 occupation of remote ports in the northern parts of European Russia and of
 Vladivostok on the Pacific".[^mawdsley-2014]

@@ -1362,12 +1362,21 @@
     "died": "1934-08-02",
     "nationality": "DE",
     "roles": [
-      { "title": "Commander, German Eighth Army", "from": "1914-08-22", "to": "1914-11-01" }
+      {
+        "title": "Commander, German Eighth Army",
+        "from": "1914-08-22",
+        "to": "1914-11-01"
+      }
     ],
     "summary": "Recalled from retirement on 22 August 1914 to command the Eighth Army in East Prussia, with Ludendorff as his chief of staff. Tannenberg made him the most famous soldier in Germany and, in time, the man who ran the war and then the republic that followed it.",
     "sources": [
-      { "source": "source:showalter-2004" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:showalter-2004"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -1378,13 +1387,24 @@
     "died": "1917-03-29",
     "nationality": "DE",
     "roles": [
-      { "title": "Commander, German Eighth Army", "from": "1914-08-02", "to": "1914-08-23" }
+      {
+        "title": "Commander, German Eighth Army",
+        "from": "1914-08-02",
+        "to": "1914-08-23"
+      }
     ],
     "summary": "Commanded the single army left to hold East Prussia. After Gumbinnen on 20 August he telephoned Moltke proposing to fall back behind the Vistula and abandon the province; he was relieved within two days, and the alarm he raised was still travelling when Moltke took two corps off the right wing to send east.",
     "sources": [
-      { "source": "source:showalter-2004" },
-      { "source": "source:mombauer-2001" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:showalter-2004"
+      },
+      {
+        "source": "source:mombauer-2001"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -1403,9 +1423,16 @@
     ],
     "summary": "The staff officer who had the Eighth Army's plan of concentration against Samsonov ready before Hindenburg and Ludendorff arrived, and who spent the rest of his life saying so. Who deserves Tannenberg - Hoffmann, Ludendorff or the reputation Hindenburg took from it - is one of the war's longest-running arguments.",
     "sources": [
-      { "source": "source:showalter-2004" },
-      { "source": "source:stone-1975" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:showalter-2004"
+      },
+      {
+        "source": "source:stone-1975"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -1416,11 +1443,17 @@
     "died": "1914-08-30",
     "nationality": "RU",
     "roles": [
-      { "title": "Commander, Russian Second Army", "from": "1914-08-01", "to": "1914-08-30" }
+      {
+        "title": "Commander, Russian Second Army",
+        "from": "1914-08-01",
+        "to": "1914-08-30"
+      }
     ],
     "summary": "Led the Second Army north-west into East Prussia, out of supply and out of touch with Rennenkampf on his right. When the encirclement closed he walked into the forest near Willenberg in the early hours of 30 August and shot himself.",
     "sources": [
-      { "source": "source:showalter-2004" },
+      {
+        "source": "source:showalter-2004"
+      },
       {
         "source": "source:wikipedia-en",
         "note": "dates; the article gives Old Style dates alongside"
@@ -1463,12 +1496,21 @@
     "died": "1918-04-01",
     "nationality": "RU",
     "roles": [
-      { "title": "Commander, Russian First Army", "from": "1914-08-01", "to": "1914-11-01" }
+      {
+        "title": "Commander, Russian First Army",
+        "from": "1914-08-01",
+        "to": "1914-11-01"
+      }
     ],
     "summary": "Commanded the First Army, which entered East Prussia from the east and checked the Germans at Gumbinnen on 20 August - the victory that emptied the province of German nerve and then, when he did not pursue, left Samsonov to be destroyed alone.",
     "sources": [
-      { "source": "source:showalter-2004" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:showalter-2004"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -1477,13 +1519,27 @@
     "sortName": "Rawlinson, Henry",
     "nationality": "GB",
     "roles": [
-      { "title": "Commanding, IV Corps (Antwerp and Ypres)", "from": "1914-10", "to": "1914-11" },
-      { "title": "Commanding, British Fourth Army", "from": "1916-02", "to": "1919" }
+      {
+        "title": "Commanding, IV Corps (Antwerp and Ypres)",
+        "from": "1914-10",
+        "to": "1914-11"
+      },
+      {
+        "title": "Commanding, British Fourth Army",
+        "from": "1916-02",
+        "to": "1919"
+      }
     ],
     "summary": "British general sent to Belgium in October 1914 with an improvised corps - the 7th Division and the 3rd Cavalry Division - to relieve Antwerp, arriving too late for the city and occupying Ypres instead. His corps headquarters was withdrawn on 27 October and his divisions passed to Haig. He commanded the Fourth Army on the Somme in 1916 and in the advance of 1918.",
     "sources": [
-      { "source": "source:edmonds-1925", "note": "the IV Corps in Flanders, October 1914" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:edmonds-1925",
+        "note": "the IV Corps in Flanders, October 1914"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -1504,7 +1560,10 @@
         "source": "source:edmonds-1925",
         "note": "the order to the 2nd Worcesters on 31 October, and his death on the night of 11/12 November"
       },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -1513,8 +1572,16 @@
     "sortName": "Fabeck, Max von",
     "nationality": "DE",
     "roles": [
-      { "title": "Commanding, XIII (Royal Wurttemberg) Corps", "from": "1913", "to": "1914-10" },
-      { "title": "Commanding, Armeegruppe Fabeck at Ypres", "from": "1914-10", "to": "1914-11" }
+      {
+        "title": "Commanding, XIII (Royal Wurttemberg) Corps",
+        "from": "1913",
+        "to": "1914-10"
+      },
+      {
+        "title": "Commanding, Armeegruppe Fabeck at Ypres",
+        "from": "1914-10",
+        "to": "1914-11"
+      }
     ],
     "summary": "German general given command, on 27 October 1914, of the force assembled between the Fourth and Sixth Armies for one more attempt on the Menin road - six divisions and the heaviest weight of artillery yet put behind an attack on that front. Its attack of 29-31 October broke the British line at Gheluvelt and could not get through the hole it made.",
     "sources": [
@@ -1522,7 +1589,10 @@
         "source": "source:edmonds-1925",
         "note": "the composition and the attack of Armeegruppe Fabeck, 29-31 October 1914"
       },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -2924,7 +2994,11 @@
         "kind": "period",
         "period": "the name he was born with"
       },
-      { "name": "Vladimir Ilyich Ulyanov (Lenin)", "language": "ru", "kind": "period" }
+      {
+        "name": "Vladimir Ilyich Ulyanov (Lenin)",
+        "language": "ru",
+        "kind": "period"
+      }
     ],
     "born": "1870-04-22",
     "died": "1924-01-21",
@@ -2942,9 +3016,16 @@
     ],
     "summary": "A lawyer's son from Simbirsk who spent most of his adult life in exile arguing about organisation, and who arrived at the argument that a disciplined party of professional revolutionaries was the necessary instrument of a revolution rather than its expression. He was in Zurich when the Tsar fell and reached Petrograd only in April 1917, having crossed Germany in a sealed carriage the German government was glad to provide. From that April his position - no support for the Provisional Government, no continuation of the war, all power to the Soviets - was for six months a minority view even inside his own party, and by October it was the majority view in the capital. He headed the government that resulted until his health broke in 1922.",
     "sources": [
-      { "source": "source:figes-1996" },
-      { "source": "source:merridale-2016" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:figes-1996"
+      },
+      {
+        "source": "source:merridale-2016"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -2963,16 +3044,39 @@
     "died": "1940-08-21",
     "nationality": "RU",
     "roles": [
-      { "title": "Chairman of the St Petersburg Soviet", "from": "1905", "to": "1905" },
-      { "title": "Chairman of the Petrograd Soviet", "from": "1917-10-08", "to": "1918" },
-      { "title": "People's Commissar for Foreign Affairs", "from": "1917-11", "to": "1918-03" },
-      { "title": "People's Commissar for Military Affairs", "from": "1918-03", "to": "1925" }
+      {
+        "title": "Chairman of the St Petersburg Soviet",
+        "from": "1905",
+        "to": "1905"
+      },
+      {
+        "title": "Chairman of the Petrograd Soviet",
+        "from": "1917-10-08",
+        "to": "1918"
+      },
+      {
+        "title": "People's Commissar for Foreign Affairs",
+        "from": "1917-11",
+        "to": "1918-03"
+      },
+      {
+        "title": "People's Commissar for Military Affairs",
+        "from": "1918-03",
+        "to": "1925"
+      }
     ],
     "summary": "A Ukrainian farmer's son who had chaired the St Petersburg Soviet in 1905 at twenty-six, spent the years between in exile writing about permanent revolution, and stood outside both wings of Russian social democracy until the summer of 1917, when he joined the Bolsheviks. Elected chairman of the Petrograd Soviet in September, he chaired the Military Revolutionary Committee that took the capital in October, negotiated at Brest-Litovsk, and built the Red Army. He lost the succession to Stalin, was expelled and deported, wrote the fullest participant's history of the revolution, and was murdered in Mexico in 1940.",
     "sources": [
-      { "source": "source:figes-1996" },
-      { "source": "source:rabinowitch-1976" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:figes-1996"
+      },
+      {
+        "source": "source:rabinowitch-1976"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -2983,13 +3087,21 @@
     "died": "1970-06-11",
     "nationality": "RU",
     "roles": [
-      { "title": "Deputy for Saratov, Fourth State Duma", "from": "1912", "to": "1917" },
+      {
+        "title": "Deputy for Saratov, Fourth State Duma",
+        "from": "1912",
+        "to": "1917"
+      },
       {
         "title": "Minister of Justice, Provisional Government",
         "from": "1917-03-15",
         "to": "1917-05"
       },
-      { "title": "Minister of War and the Navy", "from": "1917-05", "to": "1917-09" },
+      {
+        "title": "Minister of War and the Navy",
+        "from": "1917-05",
+        "to": "1917-09"
+      },
       {
         "title": "Minister-President of the Provisional Government",
         "from": "1917-07-21",
@@ -2998,9 +3110,16 @@
     ],
     "summary": "A defence lawyer who had made his name in political trials, the only man to sit in both the Duma Committee and the Petrograd Soviet in the first days of the revolution, and the figure through whom the two halves of dual power were briefly joined. He rose in eight months from Minister of Justice to head of government and Supreme Commander, staked the government on a summer offensive that failed, quarrelled fatally with his own Supreme Commander in August, and left Petrograd by car on the morning of 25 October (O.S.) to find troops that did not come. He lived another fifty-three years, most of them in the United States, arguing his case.",
     "sources": [
-      { "source": "source:figes-1996" },
-      { "source": "source:wade-2017" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:figes-1996"
+      },
+      {
+        "source": "source:wade-2017"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -3011,15 +3130,34 @@
     "died": "1918-04-13",
     "nationality": "RU",
     "roles": [
-      { "title": "Commander, Petrograd Military District", "from": "1917-03", "to": "1917-04" },
-      { "title": "Commander-in-Chief, South-Western Front", "from": "1917-07", "to": "1917-08" },
-      { "title": "Supreme Commander of the Russian Army", "from": "1917-08-01", "to": "1917-09-09" }
+      {
+        "title": "Commander, Petrograd Military District",
+        "from": "1917-03",
+        "to": "1917-04"
+      },
+      {
+        "title": "Commander-in-Chief, South-Western Front",
+        "from": "1917-07",
+        "to": "1917-08"
+      },
+      {
+        "title": "Supreme Commander of the Russian Army",
+        "from": "1917-08-01",
+        "to": "1917-09-09"
+      }
     ],
     "summary": "A Siberian Cossack officer, an explorer of Turkestan and a military attache in Peking before the war, who escaped from Austrian captivity in 1916 and came out of it a public figure. Appointed Supreme Commander in the summer of 1917 to restore discipline, he sent a cavalry corps towards Petrograd in late August in circumstances that have been argued about ever since, was declared a rebel by the head of the government who had wanted the troops, and was arrested. He escaped to the Don, helped found the Volunteer Army, and was killed by a shell at Ekaterinodar in April 1918.",
     "sources": [
-      { "source": "source:katkov-1980" },
-      { "source": "source:figes-1996" },
-      { "source": "source:wikipedia-en", "note": "dates" }
+      {
+        "source": "source:katkov-1980"
+      },
+      {
+        "source": "source:figes-1996"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
     ]
   },
   {
@@ -3037,7 +3175,12 @@
       }
     ],
     "summary": "Took the Pacific Fleet in February 1941 and was relieved of it ten days after it was attacked at its moorings. His command was one half of an arrangement with no single commander over it: the fleet was his, and the island it lay at, its aircraft, its anti-aircraft guns and its radar were the Army's under the Hawaiian Department. He was reduced to his permanent rank of rear admiral and spent the rest of his life arguing that Washington had kept from its own commanders in Hawaii what it knew of Japanese intentions. Every inquiry since has reopened that question and none has closed it.",
-    "sources": [{ "source": "source:wikipedia-en", "note": "dates and dates of office" }]
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates and dates of office"
+      }
+    ]
   },
   {
     "id": "person:short-walter",
@@ -3054,7 +3197,12 @@
       }
     ],
     "summary": "The Army half of the divided command in Hawaii. The defence of the islands was his — the anti-aircraft artillery, the aircraft warning service and the Army's aircraft on Oahu — and the fleet in the harbour was not. Relieved with Kimmel in December 1941 and reduced to his permanent rank, he was, with Kimmel, the officer the first inquiry into the attack held responsible, and the argument about whether the two of them were failures or scapegoats has run ever since.",
-    "sources": [{ "source": "source:wikipedia-en", "note": "dates and dates of office" }]
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates and dates of office"
+      }
+    ]
   },
   {
     "id": "person:hull-cordell",
@@ -3076,7 +3224,10 @@
         "source": "source:peace-and-war-1943",
         "note": "docs. 257 and 265 — the outline of 26 November and the conversation of 7 December, with the times and Hull's own words as the memorandum records them"
       },
-      { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates and dates of office"
+      }
     ]
   },
   {
@@ -3084,7 +3235,10 @@
     "name": "Nomura Kichisaburō",
     "sortName": "Nomura Kichisaburō",
     "names": [
-      { "name": "野村 吉三郎", "language": "ja" },
+      {
+        "name": "野村 吉三郎",
+        "language": "ja"
+      },
       {
         "name": "Kichisaburo Nomura",
         "language": "en",
@@ -3096,7 +3250,11 @@
     "died": "1964-05-08",
     "nationality": "JP",
     "roles": [
-      { "title": "Minister for Foreign Affairs", "from": "1939-09", "to": "1940-01" },
+      {
+        "title": "Minister for Foreign Affairs",
+        "from": "1939-09",
+        "to": "1940-01"
+      },
       {
         "title": "Ambassador of Japan to the United States",
         "from": "1941-02",
@@ -3109,7 +3267,10 @@
         "source": "source:peace-and-war-1943",
         "note": "doc. 265 — the conversation of 7 December: the appointment requested for 1 p.m., the arrival at 2.05, the reception at 2.20, and Nomura's own explanation that decoding had delayed him"
       },
-      { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates and dates of office"
+      }
     ]
   },
   {
@@ -3137,7 +3298,10 @@
         "source": "source:peace-and-war-1943",
         "note": "docs. 264, 267, 268 and 271–273 — the message to the Emperor, the address to Congress, and the joint resolutions"
       },
-      { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates and dates of office"
+      }
     ]
   },
   {
@@ -3197,7 +3361,7 @@
         "to": "1920-01-04"
       }
     ],
-    "summary": "A naval officer and Arctic explorer - there is an island in the Kara Sea named after him - who commanded the Black Sea Fleet in 1916 and threw his sword into the sea rather than surrender it to a sailors' committee in 1917. Made War Minister of the anti-Bolshevik Directory at Omsk, he was raised to a personal dictatorship as Supreme Ruler by a coup on 18 November 1918 and held the title for thirteen months, through an offensive that reached towards the Volga in the spring of 1919 and a retreat that did not stop until Irkutsk. He was handed over by the Czechoslovak Legion that had been guarding him and shot on 7 February 1920; his body went under the ice of the Angara.",
+    "summary": "A naval officer and Arctic explorer who commanded the Black Sea Fleet in 1916. Made War Minister of the anti-Bolshevik Directory at Omsk, he was raised to a personal dictatorship as Supreme Ruler by a coup on 18 November 1918 and held the title for thirteen months, through an offensive that reached towards the Volga in the spring of 1919 and a retreat that did not stop until Irkutsk. He was handed over by the Czechoslovak Legion that had been guarding him and shot on 7 February 1920; his body went under the ice of the Angara.",
     "sources": [
       {
         "source": "source:chamberlin-1935-2"
@@ -3227,7 +3391,7 @@
         "to": "1920-04-04"
       }
     ],
-    "summary": "The son of a serf conscripted into the army who rose to be an officer, which made him an outsider among the Guards aristocrats he ended up commanding. He took over the Volunteer Army when Kornilov was killed at Ekaterinodar in April 1918 and led the White south to within two hundred and fifty miles of Moscow in October 1919 before the front came apart behind him. His slogan - Russia one, great and indivisible - cost him the Ukrainians, the Cossack governments and the Caucasus, and is the standing exhibit for the argument that the Whites lost politically. He resigned in favour of Wrangel in April 1920 and spent the rest of his life writing, refusing in the Second World War to have anything to do with the Germans.",
+    "summary": "A professional officer of modest origins, which made him something of an outsider among the men he ended up commanding. He took over the Volunteer Army when Kornilov was killed at Ekaterinodar in April 1918 and led the White south to within two hundred and fifty miles of Moscow in October 1919 before the front came apart behind him. His slogan - Russia one, great and indivisible - cost him the Ukrainians, the Cossack governments and the Caucasus, and is the standing exhibit for the argument that the Whites lost politically. He resigned in favour of Wrangel in April 1920 and spent the rest of his life writing, refusing in the Second World War to have anything to do with the Germans.",
     "sources": [
       {
         "source": "source:chamberlin-1935-2"
@@ -3257,7 +3421,7 @@
         "to": "1920-11"
       }
     ],
-    "summary": "A Baltic German baron and a cavalryman, the last White commander-in-chief and the only one who tried to govern rather than merely to win: in the Crimea in 1920 he issued a land law that gave the peasants the land they had taken, and by then there was no longer anywhere for it to be applied. He held the peninsula for seven months, came out into Northern Tavria and was driven back, and organised the one White defeat that was not a rout - the evacuation of some hundred and forty-five thousand soldiers and civilians from the Crimean ports in November 1920.",
+    "summary": "A Baltic German baron and a cavalryman, the last White commander-in-chief and the only one who tried to govern rather than merely to win: in the Crimea in 1920 he issued a land law that gave the peasants the land they had taken, and by then there was almost nowhere left for it to be applied. He held the peninsula for seven months, came out into Northern Tavria and was driven back, and organised the one White operation of the war that went as planned - the evacuation of the army and a great many civilians from the Crimean ports in November 1920.",
     "sources": [
       {
         "source": "source:chamberlin-1935-2"
@@ -3287,7 +3451,7 @@
         "to": "1919-11"
       }
     ],
-    "summary": "The most successful Russian field commander of the First World War - Erzurum in 1916 was a genuine victory in a war that gave Russia few - and the least successful of the White generals. His North-Western Army, raised in Estonia and never more than about twenty thousand strong, made a dash for Petrograd in October 1919, reached the Pulkovo heights within sight of the city and was thrown back inside three weeks. Estonia, negotiating its own peace with Moscow, then disarmed and interned what was left of him.",
+    "summary": "The most successful Russian field commander of the First World War - Erzurum in 1916 was a genuine victory in a war that gave Russia few - and the least successful of the White generals. His North-Western Army, raised in Estonia, made a dash for Petrograd in October 1919, reached the Pulkovo heights within sight of the city and was thrown back inside a fortnight. Estonia, negotiating its own peace with Moscow, then disarmed and interned what was left of him.",
     "sources": [
       {
         "source": "source:chamberlin-1935-2"
@@ -3312,7 +3476,7 @@
         "to": "1921"
       }
     ],
-    "summary": "A peasant from Huliaipole in eastern Ukraine, sentenced to death at twenty-two for anarchist terrorism and reprieved to hard labour, freed by the February Revolution and back home within the month. From 1918 he led an insurgent army of his own villages against the Austro-German occupation, against the Hetman, against Denikin and against the Bolsheviks - twice in formal alliance with the Reds and twice betrayed by them. His birth is given here as 7 November 1888 (26 October, Old Style), the date his own movement used; some accounts give 1889. He died in Paris, working in a Renault factory.",
+    "summary": "A peasant from Huliaipole in eastern Ukraine, an anarchist imprisoned under the old regime and freed by the February Revolution. From 1918 he led an insurgent army of his own villages against the Austro-German occupation, against the Hetman, against Denikin and against the Bolsheviks - twice in formal alliance with the Reds and twice destroyed by them. His birth is given here as 7 November 1888 (26 October, Old Style); some accounts give 1889. He died in Paris.",
     "sources": [
       {
         "source": "source:chamberlin-1935-2"
@@ -3347,7 +3511,7 @@
         "to": "1937-05"
       }
     ],
-    "summary": "A guards lieutenant of impeccable gentry background who escaped from Ingolstadt as a prisoner of war, joined the Bolsheviks in 1918, and at twenty-seven commanded the army group that ran from Smolensk to the outskirts of Warsaw and back. He put down Kronstadt in March 1921 and the Tambov peasants that summer, became the Red Army's leading theorist of mechanised war, and was shot in June 1937 as the first and most senior victim of the purge of the officer corps he had built.",
+    "summary": "A guards lieutenant of the old army, taken prisoner in 1915, who joined the Bolsheviks in 1918 and at twenty-seven commanded the army group that ran from the Berezina to the outskirts of Warsaw and back. He put down Kronstadt in March 1921 and the Tambov peasants that summer, became the Red Army's leading theorist of mechanised war, and was shot in June 1937 as the first and most senior victim of the purge of the officer corps he had built.",
     "sources": [
       {
         "source": "source:chamberlin-1935-2"
@@ -3377,7 +3541,7 @@
         "to": "1973"
       }
     ],
-    "summary": "A non-commissioned cavalryman of the old army from the Don country, who raised a squadron of red horsemen in 1918 and ended up commanding the formation that gave the Red Army the one arm the Whites had started with. The 1st Cavalry Army fought Denikin's cavalry to a standstill in the winter of 1919, rode into Poland in 1920 and was blamed, along with Stalin, for the failure to turn north to Warsaw. He survived every purge and his moustache outlived his usefulness.",
+    "summary": "A cavalryman of the old army from the Don country, who raised a squadron of red horsemen in 1918 and ended up commanding the formation that gave the Red Army the one arm the Whites had started with. The 1st Cavalry Army fought Denikin's cavalry to a standstill in the winter of 1919, rode into Ukraine and Poland in 1920, and was blamed - along with Stalin - for the failure to turn north to Warsaw in August. He survived every purge.",
     "sources": [
       {
         "source": "source:chamberlin-1935-2"
@@ -3407,7 +3571,7 @@
         "to": "1926-07"
       }
     ],
-    "summary": "A Polish nobleman's son who spent eleven of the twenty years before 1917 in tsarist prisons and exile, and who from 20 December 1917 ran the All-Russian Extraordinary Commission - the Cheka - which is the institution the civil war left behind it. Ascetic, incorruptible and entirely without doubt, he is the reason the argument about the terror is an argument about a state organ rather than about a mob.",
+    "summary": "A Polish nobleman's son who spent much of the two decades before 1917 in tsarist prisons and exile, and who from 20 December 1917 ran the All-Russian Extraordinary Commission - the Cheka - which is the institution the civil war left behind it. Ascetic, incorruptible and entirely without doubt, he is the reason the argument about the terror is an argument about a state organ rather than about a mob.",
     "sources": [
       {
         "source": "source:chamberlin-1935-2"

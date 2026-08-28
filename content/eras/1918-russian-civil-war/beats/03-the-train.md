@@ -65,10 +65,10 @@ June; "everyone knows that the army which we are now building on voluntary
 principles is regarded by the Soviet Government as merely
 provisional."[^trotsky-military-1]
 
-The second was to hire the enemy's officers. Tens of thousands of former
-imperial officers were taken into the Red Army as "military specialists", each
-with a political commissar beside him and, frequently, with his family
-effectively hostage. Trotsky's case for it was flat: "There is not one of you, I
+The second was to hire the enemy's officers. Former imperial officers were taken
+into the Red Army in large numbers as "military specialists", each with a
+political commissar beside him because nobody trusted him. Trotsky's case for it
+was flat: "There is not one of you, I
 am sure, who will say that our army can manage without specialist
 commanders."[^trotsky-military-1] The party men who thought otherwise — a group
 around Stalin at Tsaritsyn among them — lost the argument in 1918 and remembered

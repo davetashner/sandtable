@@ -33,9 +33,7 @@ White war that was planned, ordered and carried out exactly as intended. On
 14 November the evacuation began from Sevastopol, Yalta, Feodosia and Kerch;
 something like a hundred and forty-five thousand soldiers and civilians went out
 in a hundred and twenty-six ships and were landed at
-[Constantinople](place:constantinople). The emigration that produced the taxi
-drivers of Paris and the officers who would spend the next twenty years
-quarrelling in Belgrade starts on those quays.
+[Constantinople](place:constantinople). The White emigration starts on those quays.
 
 _(The figures for the ships and the people are the ones usually given and come
 from Wrangel's own staff. This pack could not check them against a source it was
