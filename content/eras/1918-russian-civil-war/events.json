@@ -118,6 +118,30 @@
     ]
   },
   {
+    "id": "1918-russian-civil-war:event-military-specialists",
+    "title": "Trotsky tells the commissars they will be using the Tsar's officers",
+    "at": "1918-06-07T12:00:00Z",
+    "kind": "order",
+    "significance": "major",
+    "place": "place:moscow",
+    "summary": "At the First All-Russia Congress of Military Commissars, nine days after conscription was introduced, the War Commissar makes the case that will define the institution: \"There is not one of you, I am sure, who will say that our army can manage without specialist commanders.\" He divides a commander's duties into \"the purely technical and the moral-political\", which is the whole design of the commissar system in one sentence - the professional does the first, and the party watches him do it.[^trotsky-military-1]\n\nOn volunteering, which was already failing: \"Voluntary recruitment is only a temporary compromise to which we have had to resort in a critical period of complete collapse of the old army,\" and \"everyone knows that the army which we are now building on voluntary principles is regarded by the Soviet Government as merely provisional.\"[^trotsky-military-1]\n\nThe Red Army was therefore built, from its first months, on tens of thousands of officers nobody in the party trusted, under a supervision designed on the assumption that they might betray it. That assumption never left the institution, and it is the longest fuse in this pack.",
+    "links": {
+      "people": ["person:trotsky-leon"],
+      "events": ["1918-russian-civil-war:epilogue-event-military-purge"]
+    },
+    "sources": [
+      {
+        "source": "source:trotsky-military-1",
+        "note": "'Speech at the First All-Russia Congress of Military Commissars', 7 June 1918; read in full on the Marxists Internet Archive, which carries no pagination"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "25-41",
+        "note": "the chapter 'The Revolution Arms Itself' on the military specialists and the opposition to them"
+      }
+    ]
+  },
+  {
     "id": "1918-russian-civil-war:event-committees-of-the-poor",
     "title": "The Committees of the Poor, and the war for grain",
     "at": "1918-06-11T12:00:00Z",

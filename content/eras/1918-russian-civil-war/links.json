@@ -83,7 +83,7 @@
   },
   {
     "id": "1918-russian-civil-war:link-tsaritsyn-to-stalin",
-    "from": "1918-russian-civil-war:event-brest-litovsk-signed",
+    "from": "1918-russian-civil-war:event-committees-of-the-poor",
     "to": "person:stalin-joseph",
     "relation": "shaped",
     "claim": "Stalin's political education is the civil war, and it happened at Tsaritsyn. Sent south in the summer of 1918 to supervise the collection of grain, he took over the military command of the sector instead, shot officers he suspected, and fought a running quarrel with Trotsky over the employment of former imperial officers under commissars. Chamberlin, writing in 1935 when the point was already being manufactured into a legend, records the plain fact: 'Stalin, sent to the Southeast to supervise the collection of grain, was a prominent figure in the defense of Tsaritsin (which was subsequently renamed Stalingrad).'\n\nThree of the habits that defined him afterwards were formed there and are visible in this pack: taking grain from the countryside by force as a normal instrument of government, treating professional expertise as presumptive disloyalty, and building a personal following inside an institution - the Tsaritsyn group, Voroshilov and Budyonny among them, who were still around in 1937 when the officers were shot.",
@@ -132,9 +132,9 @@
   },
   {
     "id": "1918-russian-civil-war:link-military-specialists-to-the-purge",
-    "from": "1918-russian-civil-war:epilogue-event-military-purge",
-    "to": "person:tukhachevsky-mikhail",
-    "relation": "caused",
+    "from": "1918-russian-civil-war:event-military-specialists",
+    "to": "1918-russian-civil-war:epilogue-event-military-purge",
+    "relation": "shaped",
     "claim": "The Red Army was built in 1918 out of former imperial officers - Trotsky insisted on them against loud opposition inside his own party, and put a political commissar beside each one because nobody trusted them. The institution therefore carried, from its first year, a structural assumption that its own professionals were potential traitors. Whitewood's archival account of 1937 turns on exactly that inheritance: 'a long history of the Red Army being perceived as vulnerable to subversion is central to understanding this military purge'. Tukhachevsky, shot in June 1937, was himself a guards lieutenant of the old army who had joined in 1918 - which is to say he was one of the specialists, and had been from the beginning.",
     "confidence": "contested",
     "historiography": "This link is marked contested because of what could not be read, not because the claim is exotic. **Only Whitewood's abstract was readable from here**, and an abstract states a thesis without showing the evidence for it; whether he traces the perception of vulnerability specifically to the military specialists of 1918, or to the 1920s, or to the foreign-intelligence panics of the 1930s, this pack cannot say, and does not. The competing explanations of the purge - a fabricated German provocation, a factional settling of accounts, Stalin's personal fear of a Bonaparte - are all in circulation and none of them could be read here either. What the link asserts, and what the sources it did read support, is the inheritance: that an army founded on officers it did not trust is an army with a place in it for that suspicion to live.",

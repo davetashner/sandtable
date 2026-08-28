@@ -10,7 +10,7 @@ pack's contested points is
 [`docs/historiography-1918.md`](../../../docs/historiography-1918.md).
 
 Status: **seed** (`pack.json#status`). Twelve campaign beats, four chapters,
-thirty-eight events, two historiography cards, four documents, three vignettes,
+thirty-nine events, two historiography cards, four documents, three vignettes,
 one commander track and — deliberately — only ten routes. What is not here, and
 why, is at the bottom.
 
@@ -95,7 +95,7 @@ and in the Caucasus; the route is a statement about reach, not about location.
 
 **The bulk of the pack is carried by events, beats, chapters and causal links**,
 which is the honest distribution for a war whose shape is chronological rather
-than geographical. Thirty-eight events across six fronts do more work here than
+than geographical. Thirty-nine events across six fronts do more work here than
 any number of paths would.
 
 Two routes earn their keep as arguments rather than as illustrations. Mamontov's
