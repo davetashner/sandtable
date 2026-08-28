@@ -685,13 +685,18 @@ interface OpeningValue {
  * Whether the commander portraits are on the map (sand-1l0.27). The switch is
  * in the header and the layer is in the map section, which are siblings, so
  * the state is a context rather than a prop threaded through both. It is held
- * in the URL as `layers=commanders` — off by default, so an ordinary link says
- * nothing about it (sand-shn.3).
+ * in the URL as `-commanders` when it is switched off — **on by default**
+ * (sand-neh.30), so an ordinary link says nothing about it and a reader who
+ * never touches the switch still sees who was where. The portraits were off
+ * for as long as it took to be sure they could be read on a busy map; they
+ * can, so the default catches up with them (sand-shn.3).
  */
 const COMMANDERS_LAYER = 'commanders';
 
+const COMMANDERS_DEFAULT = true;
+
 const CommandersCtx = createContext<{ on: boolean; toggle: () => void }>({
-  on: false,
+  on: COMMANDERS_DEFAULT,
   toggle: () => {},
 });
 
@@ -717,8 +722,13 @@ function CommanderSwitch() {
 function CommandersProvider({ children }: { children: ReactNode }) {
   const { layers } = useViewState();
   const controls = useViewStateControls();
-  const on = layerOn(layers, COMMANDERS_LAYER);
-  const toggle = useCallback(() => controls?.setLayer(COMMANDERS_LAYER, !on), [controls, on]);
+  const on = layerOn(layers, COMMANDERS_LAYER, COMMANDERS_DEFAULT);
+  const toggle = useCallback(
+    // The default goes to `setLayer` too, or switching back to it would write
+    // a redundant token instead of leaving the URL clean.
+    () => controls?.setLayer(COMMANDERS_LAYER, !on, COMMANDERS_DEFAULT),
+    [controls, on],
+  );
   const value = useMemo(() => ({ on, toggle }), [on, toggle]);
   return <CommandersCtx.Provider value={value}>{children}</CommandersCtx.Provider>;
 }

@@ -62,7 +62,7 @@ export interface MapSurfaceProps {
   tracks?: PersonTrack[];
   /** Sides, for the ring colour on a commander token. */
   sides?: Side[];
-  /** Off by default: the portraits are a second population on a busy map. */
+  /** On by default since sand-neh.30; the switch in the header turns them off. */
   showCommanders?: boolean;
   /** person id → display name, for the commander labels. */
   labelPerson?: ((personId: string) => string | undefined) | undefined;
