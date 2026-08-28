@@ -1146,5 +1146,137 @@
     "year": 2001,
     "publisher": "Headline, London",
     "notes": "The \"learning curve\" case: that the BEF became an effective all-arms army and won the war in 1918. Used for the Hundred Days; it is one side of the argument about British command and is cited as such."
+  },
+  {
+    "id": "source:joffre-1932",
+    "kind": "book",
+    "tier": "memoir",
+    "author": "Joffre, Joseph",
+    "title": "Mémoires du maréchal Joffre (1910–1917)",
+    "year": 1932,
+    "publisher": "Plon, Paris",
+    "url": "https://gallica.bnf.fr/ark:/12148/bpt6k208185j",
+    "notes": "The French commander-in-chief's own account, in two volumes, published in 1932, the year after his death. Tome 1 — the scan at the URL above — runs from his arrival on the Conseil supérieur de la guerre in 1910 through Plan XVII, the frontier battles, the retreat and the Marne; Tome 2 (gallica.bnf.fr/ark:/12148/bpt6k208186x) carries 1915 to his removal in 1917. It is here because it is the missing side of two arguments this pack already carries as historiography, and in both of them the only voices in the registry were the men arguing against him: 1914:historiography-lanrezac-removal, where Lanrezac's own book of 1920 supplies every word attributed to Joffre at Sézanne, and 1914:historiography-marne-initiative, where Gallieni's Mémoires of 1920 make the claim against GQG. Both quarrels are about Joffre's record and this is the book written to defend it — cite it for what Joffre said he decided and why, never as fact, and never without the other side beside it. Nothing in the pack rests on it yet, and no page may be written from it until a copy is in hand: like source:afgg-1-2-annexes-1 it is on Gallica, which cannot be opened from CI or from an agent's network. A partial French transcription is at fr.wikisource.org ('Mémoires du maréchal Joffre (1910-1917)', about half formatted, and no substitute for the printed pagination). The English translation is The Personal Memoirs of Joffre, Field Marshal of the French Army, tr. Colonel T. Bentley Mott (Harper & Brothers, New York, 1932); the archive.org copies of it are lending-only, and its pages are its own — they do not carry to Plon."
+  },
+  {
+    "id": "source:belgian-army-report-1915",
+    "kind": "official-history",
+    "tier": "official-history",
+    "author": "Armée belge, Commandement de l'armée",
+    "title": "The War of 1914: Military Operations of Belgium in Defence of the Country and to Uphold her Neutrality (L'action de l'armée belge pour la défense du pays et le respect de sa neutralité)",
+    "year": 1915,
+    "publisher": "W. H. & L. Collingridge, London",
+    "edition": "English translation of the report of the Belgian army command for the period 31 July – 31 December 1914, published in French as La guerre de 1914: L'action de l'armée belge pour la défense du pays et le respect de sa neutralité — Rapport du commandement de l'armée (Chapelot, Paris, 1915)",
+    "url": "https://archive.org/details/warof1914militar01belg",
+    "notes": "The Belgian army command's own narrative of the 1914 campaign, and the volume that covers the months source:edmonds-1925 does not. Edmonds's second volume opens on 19 September 1914, so it carries neither the field army's withdrawal into the fortified position of Antwerp on 18–20 August nor the sorties of 25–26 August and 9–13 September, which several events and twenty-one route citations in this pack were pointing at it for (sand-23b.22, sand-23b.6.2). This report does: Chapter III, 'Operations in Combination with the Armies of the Guaranteeing Powers, 6th to 20th August', ends with the army inside the entrenched camp of Antwerp on the 20th; Chapter V, the same title for 20 August to 27 September, carries both sorties; Chapter VI is the defence and fall of Antwerp; Chapter VIII is the Yser. Read for what it is. It is short — nine chapters and a set of plates, not an operational history — it was written and published in 1915 while the war was being fought and while Belgium's case against the invasion was being made, and it defends the army's conduct in every line; it gives days and rarely hours, so a time of day taken from it is nominal and must say so. No page number has been written from it yet: the citations that were left empty when Edmonds II was found not to cover them are still empty, and re-pointing them at this volume, page by page, is separate work."
+  },
+  {
+    "id": "source:edmonds-1932",
+    "kind": "official-history",
+    "tier": "official-history",
+    "author": "Edmonds, J. E.",
+    "title": "Military Operations: France and Belgium, 1916, Volume I: Sir Douglas Haig's Command to the 1st July: Battle of the Somme",
+    "year": 1932,
+    "publisher": "Macmillan, London (History of the Great War based on Official Documents)",
+    "url": "https://archive.org/details/in.ernet.dli.2015.210679",
+    "notes": "British official history, the first of the two Somme volumes: Haig's assumption of command on 19 December 1915, the winter's preparations, the plan of the offensive, and 1 July 1916 division by division. First of the ten volumes for 1916–18 brought into the registry together (sand-23b.36) so that the Western Front after 1914 can rest on rung 1 of the hierarchy rather than on the studies the front-line layer currently uses — here, source:prior-wilson-2005, which is an argument about Haig as well as an account of the battle. Its appendix volume is a separate book with its own pagination and is not in this registry. Nothing cites this volume yet and no page may be written from it until it is read; the scan above is the Digital Library of India copy, which this repository can open."
+  },
+  {
+    "id": "source:miles-1938",
+    "kind": "official-history",
+    "tier": "official-history",
+    "author": "Miles, Wilfrid",
+    "title": "Military Operations: France and Belgium, 1916, Volume II: 2nd July 1916 to the End of the Battles of the Somme",
+    "year": 1938,
+    "publisher": "Macmillan, London (History of the Great War based on Official Documents)",
+    "url": "https://archive.org/details/in.ernet.dli.2015.210680",
+    "notes": "The Somme from 2 July to 18 November 1916, compiled by Captain Wilfrid Miles rather than by Edmonds, who edited the series. This is the official account of Flers-Courcelette on 15 September 1916, the first action in which tanks were used — which the tech rail presently takes from source:fuller-1920, the Tank Corps' own senior staff officer writing a brief for the weapon, and from source:1914-1918-online-tanks, a survey. An official history is rung 1 and a unit history rung 3; this volume is what should be carrying that count. Nothing cites it yet. Note that the tank numbers for 15 September are disputed between the sources already in the registry, so when this volume is read the count it gives goes beside them rather than over them."
+  },
+  {
+    "id": "source:falls-1940",
+    "kind": "official-history",
+    "tier": "official-history",
+    "author": "Falls, Cyril",
+    "title": "Military Operations: France and Belgium, 1917, Volume I: The German Retreat to the Hindenburg Line and the Battles of Arras",
+    "year": 1940,
+    "publisher": "Macmillan, London (History of the Great War based on Official Documents)",
+    "url": "https://archive.org/details/in.ernet.dli.2015.210683",
+    "notes": "The German withdrawal to the Hindenburg Line in February–March 1917 and the battles of Arras and Vimy that followed, compiled by Captain Cyril Falls. The volume that matters for the shape of the front in 1917: the withdrawal is the largest single change to the line between 1915 and 1918 and the front-line layer draws it from secondary works. The series' 1917 appendix volume is digitised separately (archive.org, in.ernet.dli.2015.210681) and is separately paginated. Nothing cites this volume yet."
+  },
+  {
+    "id": "source:edmonds-1948",
+    "kind": "official-history",
+    "tier": "official-history",
+    "author": "Edmonds, J. E.",
+    "title": "Military Operations: France and Belgium, 1917, Volume II: 7th June – 10th November: Messines and Third Ypres (Passchendaele)",
+    "year": 1948,
+    "publisher": "HMSO, London (History of the Great War based on Official Documents)",
+    "notes": "Messines and Third Ypres. The one volume of the 1916–18 series with no url in this entry: no openly readable digitisation of it was found, and docs/sources.md forbids writing a link that has not been checked. Until one is in hand the pack keeps source:prior-wilson-1996 for Third Ypres, which is a study and says so. It is also the volume of the series historians argue with rather than simply use — Edmonds compiled it himself, thirty years after the campaign, and its handling of the casualties and of the ground is contested; when it is read, it is read the way rung 1 of the hierarchy says to read an official history, knowing whose army it defends."
+  },
+  {
+    "id": "source:miles-1948",
+    "kind": "official-history",
+    "tier": "official-history",
+    "author": "Miles, Wilfrid",
+    "title": "Military Operations: France and Belgium, 1917, Volume III: The Battle of Cambrai",
+    "year": 1948,
+    "publisher": "HMSO, London (History of the Great War based on Official Documents)",
+    "url": "https://archive.org/details/mil-op-fb-1917-v3",
+    "notes": "Cambrai, 20 November – 7 December 1917, compiled by Captain Wilfrid Miles: the massed tank attack of the first morning, the fight for Bourlon Wood, and the German counter-attack of 30 November that took most of the ground back. The pack tells that battle from source:hammond-2008 and, for the German side, source:lupfer-1981, with source:fuller-1920 — written by the officer who drafted the plan — for the Tank Corps' own account. This volume is the official record of all three. Nothing cites it yet."
+  },
+  {
+    "id": "source:edmonds-1935",
+    "kind": "official-history",
+    "tier": "official-history",
+    "author": "Edmonds, J. E.",
+    "title": "Military Operations: France and Belgium, 1918, Volume I: The German March Offensive and its Preliminaries",
+    "year": 1935,
+    "publisher": "Macmillan, London (History of the Great War based on Official Documents)",
+    "url": "https://archive.org/details/in.ernet.dli.2015.210686",
+    "notes": "The winter of 1917–18, the extension of the British front southward to take over from the French, and Operation Michael from 21 March 1918 — the deepest German advance since 1914 and the largest single movement of the line the front-line layer has to draw. Presently carried by source:zabecki-2006, a study of the offensives as operations. Nothing cites this volume yet."
+  },
+  {
+    "id": "source:edmonds-1937",
+    "kind": "official-history",
+    "tier": "official-history",
+    "author": "Edmonds, J. E.",
+    "title": "Military Operations: France and Belgium, 1918, Volume II: March–April: Continuation of the German Offensives",
+    "year": 1937,
+    "publisher": "Macmillan, London (History of the Great War based on Official Documents)",
+    "url": "https://archive.org/details/in.ernet.dli.2015.210684",
+    "notes": "The end of Michael in front of Amiens and Georgette on the Lys, March and April 1918. The second of the five 1918 volumes; nothing cites it yet."
+  },
+  {
+    "id": "source:edmonds-1939",
+    "kind": "official-history",
+    "tier": "official-history",
+    "author": "Edmonds, J. E.",
+    "title": "Military Operations: France and Belgium, 1918, Volume III: May–July: The German Diversion Offensives and the First Allied Counter-Offensive",
+    "year": 1939,
+    "publisher": "Macmillan, London (History of the Great War based on Official Documents)",
+    "url": "https://archive.org/details/in.ernet.dli.2015.210685",
+    "notes": "Blücher on the Chemin des Dames, the Matz, the second battle of the Marne, and the counter-stroke of 18 July 1918 — the turn of the year's fighting, and the point at which the front-line layer's line starts moving east again. Nothing cites this volume yet."
+  },
+  {
+    "id": "source:edmonds-1947",
+    "kind": "official-history",
+    "tier": "official-history",
+    "author": "Edmonds, J. E.",
+    "title": "Military Operations: France and Belgium, 1918, Volume IV: 8th August – 26th September: The Franco-British Offensive",
+    "year": 1947,
+    "publisher": "HMSO, London (History of the Great War based on Official Documents)",
+    "url": "https://archive.org/details/mil-ops-fr-belg-1918-v-4",
+    "notes": "Amiens on 8 August 1918 and the advance to the Hindenburg Line. The official account of the day the tech rail describes from source:haig-despatches-1919 — the commander's own despatches, advocacy from end to end — and from source:1914-1918-online-hundred-days, which is where the 'up to eight miles' comes from. Both are the wrong rung for a frontage and a depth. Nothing cites this volume yet."
+  },
+  {
+    "id": "source:edmonds-maxwell-hyslop-1947",
+    "kind": "official-history",
+    "tier": "official-history",
+    "author": "Edmonds, J. E.; Maxwell-Hyslop, R.",
+    "title": "Military Operations: France and Belgium, 1918, Volume V: 26th September – 11th November: The Advance to Victory",
+    "year": 1947,
+    "publisher": "HMSO, London (History of the Great War based on Official Documents)",
+    "url": "https://archive.org/details/mil-op-fb-1918-v5",
+    "notes": "The breaking of the Hindenburg Line to the armistice. The last volume of the series for France and Belgium, and the one that closes the front-line layer's last snapshot. Its id carries both compilers because Volume IV of the same year is Edmonds alone and the two would otherwise collide. Nothing cites it yet."
   }
 ]

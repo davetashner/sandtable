@@ -193,6 +193,8 @@ actually cites.
 | `source:1914-1918-online-hundred-days`     | Lloyd, 'Hundred Days Offensive', _1914-1918-online_                               | Amiens 'up to eight miles'; the tank fourth of five causes of the 1918 victories                                                                                                                                                                  |
 | `source:lupfer-1981`                       | Lupfer, _The Dynamics of Doctrine_ (Leavenworth Papers 4, 1981)                   | the German side of Cambrai: the counter-attack of 30 November and anti-tank defence as doctrine                                                                                                                                                   |
 | `source:faulde-1925`                       | Faulde, _Historische Untersuchungen zur Marneschlacht 1914_ (Breslau diss., 1925) | the Hentsch mission as its own subject: the versions of Moltke's verbal order and how they converged, the 1917 inquiry, Kuhl and Müller-Loebnitz quoted by page                                                                                   |
+| `source:joffre-1932`                       | Joffre, _Mémoires du maréchal Joffre (1910–1917)_ (1932)                          | the other side of the Lanrezac removal and of the 4 September directive; memoir, one side. On Gallica, which this environment cannot open — no pages yet                                                                                          |
+| `source:belgian-army-report-1915`          | Belgian army command, _L'action de l'armée belge_ (1915; English 1915)            | the Belgian field army in 1914 where Edmonds II does not reach: into Antwerp 18–20 Aug, the sorties of 25–26 Aug and 9–13 Sep, the siege, the Yser. **Days, not hours**                                                                           |
 
 ## History of science, 1905–1919 — the "Meanwhile" layer (in the registry)
 
@@ -234,8 +236,7 @@ Added with the front-line evolution layer (`sand-g80.1`), which is the first
 content to reach past November 1914. Every one of them is cited **without page
 numbers**: they were used for what happened and where the line ran, at the
 resolution each work gives, and `docs/sources.md` §3 forbids writing a page
-nobody read. Replacing them with the official histories for 1915–18 is
-`sand-23b.36`.
+nobody read.
 
 | id                         | Work                                                   | Use it for                                                         |
 | -------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------ |
@@ -247,6 +248,39 @@ nobody read. Replacing them with the official histories for 1915–18 is
 | `source:hammond-2008`      | Hammond, _Cambrai 1917_ (2008)                         | Cambrai from the war diaries; the counter-attack of 30 November    |
 | `source:zabecki-2006`      | Zabecki, _The German 1918 Offensives_ (2006)           | Michael, Georgette and Blücher as operations                       |
 | `source:sheffield-2001`    | Sheffield, _Forgotten Victory_ (2001)                  | the Hundred Days and the "learning curve" case — one side          |
+
+### The British Official History, 1916–1918 (`sand-23b.36`)
+
+The ten volumes of _Military Operations: France and Belgium_ that carry the
+years after 1915, added together so that the front-line layer and the tech
+rail can stand on rung 1 instead of on the studies above and on two
+participants — `source:fuller-1920`, written by the Tank Corps' own senior
+staff officer while he argued for an armoured army, and
+`source:haig-despatches-1919`, a commander's despatches. The 1914 volumes have
+been in the registry since Phase 1 (`source:edmonds-1922`, `edmonds-1925`,
+`edmonds-1933`); these are the rest of the series for the same front.
+
+Two things to know before citing any of them. **Nothing in the packs cites them
+yet** — they are in the registry ahead of the content that will use them, which
+is why the validator warns about each, and no page may be written from one
+until it has been read (§3). And **every one is a different physical book with
+its own pagination**, including the separately published appendix volumes for
+1916 and 1917, which are not in this registry; ids are `surname-year` as
+elsewhere, with Volume V of 1918 carrying both compilers because Volume IV of
+the same year is Edmonds alone.
+
+| id                                   | Volume                                        | Covers                                                           |
+| ------------------------------------ | --------------------------------------------- | ---------------------------------------------------------------- |
+| `source:edmonds-1932`                | 1916, I (Edmonds, Macmillan 1932)             | Haig's command from 19 Dec 1915; the plan; 1 July 1916           |
+| `source:miles-1938`                  | 1916, II (Miles, Macmillan 1938)              | 2 July – 18 Nov 1916; **Flers-Courcelette, 15 September**        |
+| `source:falls-1940`                  | 1917, I (Falls, Macmillan 1940)               | the retreat to the Hindenburg Line; Arras and Vimy               |
+| `source:edmonds-1948`                | 1917, II (Edmonds, HMSO 1948)                 | Messines and Third Ypres — **no open scan found; no url**        |
+| `source:miles-1948`                  | 1917, III (Miles, HMSO 1948)                  | Cambrai, 20 Nov – 7 Dec 1917, and the counter-attack of the 30th |
+| `source:edmonds-1935`                | 1918, I (Edmonds, Macmillan 1935)             | the winter, the front taken over from the French, Michael        |
+| `source:edmonds-1937`                | 1918, II (Edmonds, Macmillan 1937)            | March–April 1918: the end of Michael, and Georgette              |
+| `source:edmonds-1939`                | 1918, III (Edmonds, Macmillan 1939)           | May–July 1918: Blücher, the Matz, the Marne, 18 July             |
+| `source:edmonds-1947`                | 1918, IV (Edmonds, HMSO 1947)                 | **Amiens, 8 August** to 26 September                             |
+| `source:edmonds-maxwell-hyslop-1947` | 1918, V (Edmonds & Maxwell-Hyslop, HMSO 1947) | 26 September – 11 November: the Hindenburg Line to the armistice |
 
 ## To add as the content lands (not yet in the registry)
 
@@ -265,14 +299,20 @@ reader sees" above.
   headquarters day by day (Dubail, Castelnau, Ruffey/Sarrail, Langle,
   Maunoury, Foch) are waiting on a copy that can actually be opened; until
   then they are not on the map (`sand-23b.9`).
-- The Belgian army in August and early September 1914 — the withdrawal into
-  Antwerp of 18–20 August and the sorties of 25–26 August and 9–13 September.
-  Several events cite `source:edmonds-1925` for these; that volume's narrative
-  begins on **19 September** and does not carry them, so they have no pages.
-  The same applies to twenty-one route citations (`sand-23b.6.2`).
-  The Belgian official narrative (_L'action de l'armée belge pour la défense
-  du pays et le respect de sa neutralité_, 1914–1918) is the work to bring in,
-  with Van Pul beside it.
+- The Belgian official narrative is no longer on this list — it is in the
+  registry as `source:belgian-army-report-1915` (`sand-23b.22`). What is still
+  outstanding is the re-citation it was wanted for: several events and
+  twenty-one route citations still point at `source:edmonds-1925` for the
+  withdrawal into Antwerp of 18–20 August and the sorties of 25–26 August and
+  9–13 September, and that volume's narrative begins on **19 September**, so
+  they keep no pages (`sand-23b.6.2`). Re-pointing them, page by page, is its
+  own pass; read the report with Van Pul beside it.
+- The two 1915 volumes of _Military Operations: France and Belgium_ — the one
+  gap left in the British official history of this front now that 1914 and
+  1916–18 are all in the registry. Both are digitised (archive.org,
+  `in.ernet.dli.2015.210675` and `in.ernet.dli.2015.210676`); they were left
+  out only because `sand-23b.36` named 1916, 1917 and 1918, and the front-line
+  layer takes 1915 from `source:stevenson-2004` meanwhile.
 - The later rounds of the Zuber exchange in _War in History_ (2002–2014),
   beyond Holmes's opening reply, which is now in the registry.
 - Terraine, _Mons: The Retreat to Victory_ (1960) and the Bavarian and French
