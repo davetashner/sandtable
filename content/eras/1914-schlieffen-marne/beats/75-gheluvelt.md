@@ -8,6 +8,7 @@ branch: 1914:historical
 media: media:person/falkenhayn-erich/portrait-colorized
 links:
   events: ['1914:event-gheluvelt', '1914:event-nonne-bosschen', '1914:event-first-ypres']
+  battles: ['1914:ypres']
   formations: ['1914:bef', '1914:army-de-4', '1914:corps-de-xxvii-res']
   people: ['person:falkenhayn-erich', 'person:haig-douglas', 'person:french-john']
   places: ['place:gheluvelt', 'place:ypres']

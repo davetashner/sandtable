@@ -10,6 +10,7 @@ pullQuote:
   attribution: German Supreme Command communiqué, 11 November 1914
 links:
   events: ['1914:event-yser-inundation', '1914:event-battle-of-the-yser', '1914:event-first-ypres']
+  battles: ['1914:ypres']
   formations: ['1914:belgian-field-army', '1914:corps-de-xxvi-res', '1914:corps-de-xxvii-res']
   people: ['person:cogge-karel', 'person:geeraert-hendrik', 'person:albert-i-of-belgium']
   places: ['place:nieuwpoort', 'place:langemarck', 'place:dixmude']

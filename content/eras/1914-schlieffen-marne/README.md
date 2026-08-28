@@ -62,4 +62,42 @@ on it.
 
 Zoom-ins, which do carry routes and a sub-timeline: `1914:liege`,
 `1914:lorraine`, `1914:frontiers-north`, `1914:guise`, `1914:belgium-antwerp`,
-`1914:marne`.
+`1914:marne`, `1914:ypres`.
+
+## First Ypres, and why its sub-timeline runs at a day
+
+`1914:ypres` (`sand-23b.49`) is the last zoom-in in the pack and the shape it
+had to be built for is the opposite of the Marne's. The Marne is a hundred and
+sixty kilometres of front over seven days, and its routes are written in
+hours because in a week Kluck's corps crossed two rivers. First Ypres is
+thirty-five days — 19 October to 22 November — on a salient twelve kilometres
+across, and in those thirty-five days most of the line moved less than three
+kilometres. An hourly path over that ground would be invention with a
+timestamp on it, so **the sub-timeline is a day**: one waypoint per formation
+per day, at noon, with the derivation on every route saying that the position
+is a sector centre and not a headquarters.
+
+There are exactly two exceptions, and they are the reason the rule is worth
+stating. `1914:ypres-route-worcesters` and `1914:ypres-route-de-guard` are
+written in hours, because the 2nd Worcesters' counter-attack on 31 October and
+the Guard's attack on 11 November each lasted a morning and the official
+history gives both by the hour. A day-resolution path would draw the two
+moments the battle turned on as no movement at all. Where the ground is
+documented and the hour is not — the London Scottish going onto the Messines
+ridge on the night of 31 October — the waypoints carry `low` individually
+rather than letting the route's own confidence quietly cover it.
+
+The window is the ordinary kind (ADR 0015): no `window` field, because
+19 October – 22 November 1914 is when the battle happened _and_ it sits inside
+`pack.timeRange`. It is the only level in the pack that needed neither
+`placed` nor `outside`, and the one where the two are most obviously wrong —
+the battle's own dates are the point of it.
+
+Two things the level deliberately carries as argument rather than as fact.
+`1914:historiography-langemarck-myth` is the _Kindermord bei Ypern_: the
+communiqué of 11 November, what Unruh's work on the four reserve corps found,
+and what the legend was for — three positions, none of them resolved for the
+reader (`docs/sources.md` rule 6). And the Yser inundation is written as the
+thing that actually anchored the northern end of the line: the Ganzepoot at
+Nieuwpoort has a token on the map, and the men who worked its gates were a
+water bailiff and a bargeman rather than a formation.
