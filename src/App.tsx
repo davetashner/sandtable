@@ -1388,6 +1388,12 @@ function AppShell() {
             </a>
           </h1>
           <p className="lede">{seed.pack.subtitle ?? seed.pack.title}</p>
+          {/* The way out of one era and into the others (sand-shn.1). A link,
+              not a control: it is a different page, and the app is one era per
+              page load on purpose (ADR 0018). */}
+          <a className="app__atlas-link" href="/atlas.html">
+            All eras
+          </a>
         </div>
         <div className="app__header-controls">
           <ScorePlayer score={seed.score} opening={showing} vignette={vignetteMoment} />

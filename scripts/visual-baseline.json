@@ -1,20 +1,10 @@
 {
-  "$comment": "Structural defects the DOM audit sees and we have decided to live with \u2014 the \"Known and deliberate\" list of docs/design-review.md, machine-readable. Regenerate with `npm run visual:check -- --update`, then write the \"why\" for every new row before committing it: a row with a TODO why is a row nobody has justified. `el` may be \"*\" to allow a kind anywhere. See ADR 0011.",
+  "$comment": "Structural defects the DOM audit sees and we have decided to live with — the \"Known and deliberate\" list of docs/design-review.md, machine-readable. Regenerate with `npm run visual:check -- --update`, then write the \"why\" for every new row before committing it: a row with a TODO why is a row nobody has justified. `el` may be \"*\" to allow a kind anywhere. See ADR 0011.",
   "allow": [
-    {
-      "kind": "clipped-x",
-      "el": "span.timeline__band-label",
-      "why": "A timeline band narrower than its own title ellipsizes. Inherent to a band whose width is its duration; band labels are already hidden below 640px (docs/design-review.md, \"Known and deliberate\")."
-    },
-    {
-      "kind": "clipped-x",
-      "el": "div.timeline__band",
-      "why": "The band itself, when the campaign leaves it a pixel or two wide. Same cause as its label."
-    },
     {
       "kind": "clipped-y",
       "el": "section.sheet",
-      "why": "The phone's bottom sheet clips its own peek when collapsed \u2014 that is what a collapsed sheet is. Also the sheet specimen in the gallery, which is the same component in a contained frame."
+      "why": "The phone's bottom sheet clips its own peek when collapsed — that is what a collapsed sheet is. Also the sheet specimen in the gallery, which is the same component in a contained frame."
     },
     {
       "kind": "clipped-y",
@@ -54,7 +44,7 @@
     {
       "kind": "small-target",
       "el": "a.entity-link",
-      "why": "A person's or place's name inside a sentence of the narrative, and the title of a work inside a citation \u2014 WCAG 2.5.8's own \"in a sentence\" exception, because a 24px box around either is 24px of leading in the middle of a paragraph. Every name is also a Related chip under the beat, and every work is also an entry in the bibliography card, both at full size (docs/accessibility.md)."
+      "why": "A person's or place's name inside a sentence of the narrative, and the title of a work inside a citation — WCAG 2.5.8's own \"in a sentence\" exception, because a 24px box around either is 24px of leading in the middle of a paragraph. Every name is also a Related chip under the beat, and every work is also an entry in the bibliography card, both at full size (docs/accessibility.md)."
     },
     {
       "kind": "small-target",

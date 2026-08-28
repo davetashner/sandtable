@@ -1,0 +1,34 @@
+{
+  "id": "1915:pack",
+  "idPrefix": "1915",
+  "title": "1915: the year of failed breakthroughs",
+  "subtitle": "Gas at Ypres, and a line that would not move",
+  "summary": "The war of movement ended in November 1914 with seven hundred kilometres of trench and no open flank. 1915 is the year both sides spent finding out what that meant: Neuve-Chapelle, chlorine at Ypres, Artois, Loos, Champagne — a quarter of a million casualties for ground the front-line layer can barely draw. The lesson of the year is the shape of the line at the end of it.",
+  "timeRange": { "start": "1915-01-01T00:00:00Z", "end": "1915-12-31T00:00:00Z" },
+  "region": [1.5, 47.0, 8.5, 51.6],
+  "borderYear": 1914,
+  "frontLine": "western-front",
+  "camera": { "center": [3.4, 50.2], "zoom": 6.6 },
+  "sides": [
+    { "id": "de", "name": "German Empire", "short": "Germany", "alliance": "Central Powers" },
+    { "id": "fr", "name": "French Republic", "short": "France", "alliance": "Entente" },
+    { "id": "gb", "name": "British Empire", "short": "Britain", "alliance": "Entente" },
+    { "id": "be", "name": "Kingdom of Belgium", "short": "Belgium", "alliance": "Entente" }
+  ],
+  "branches": [
+    {
+      "id": "1915:historical",
+      "title": "What happened",
+      "kind": "historical",
+      "summary": "The year as it was fought: four offensives, the first gas cloud, and a front line that ends December within a few kilometres of where it started.",
+      "sources": [{ "source": "source:stevenson-2004" }, { "source": "source:doughty-2005" }]
+    }
+  ],
+  "defaultBranch": "1915:historical",
+  "status": "seed",
+  "sources": [
+    { "source": "source:stevenson-2004", "note": "the year in the round" },
+    { "source": "source:doughty-2005", "note": "the French offensives in Artois and Champagne" },
+    { "source": "source:1914-1918-online-ypres", "note": "Second Ypres and the gas" }
+  ]
+}

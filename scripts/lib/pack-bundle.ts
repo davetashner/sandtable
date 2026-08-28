@@ -12,13 +12,69 @@
  * unchanged content hash in the emitted file name.
  */
 import { createHash } from 'node:crypto';
-import { readdirSync, readFileSync, statSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { PACK_BUNDLE_DIR, type ContentBundle } from '../../src/packs/content-bundle.js';
 import { BEATS_DIR, DIAGRAMS_DIR, PACK_FILE } from '../../src/packs/schema/files.js';
 
-/** The pack the shell boots into until the atlas landing page lands (`sand-shn.1`). */
+/** The pack the shell boots into when the URL names none (`sand-shn.1`). */
 export const SEED_PACK_ID = '1914-schlieffen-marne';
+
+/**
+ * Every era directory under `content/eras`, sorted, so the build emits a
+ * bundle per pack and the atlas has something to list (`sand-shn.1`). Sorted
+ * by name, which is `<yyyy>-<slug>` and therefore chronological — the order
+ * the atlas wants anyway.
+ */
+export function listPackIds(root: string): string[] {
+  const dir = join(root, 'eras');
+  try {
+    if (!statSync(dir).isDirectory()) return [];
+  } catch {
+    return [];
+  }
+  return readdirSync(dir)
+    .filter((name) => {
+      try {
+        return statSync(join(dir, name)).isDirectory() && existsSync(join(dir, name, PACK_FILE));
+      } catch {
+        return false;
+      }
+    })
+    .sort();
+}
+
+/**
+ * What the atlas needs to draw an era without fetching its whole bundle: the
+ * pack's own header, and nothing else. A few hundred bytes each, so the
+ * landing page costs one small request rather than one bundle per era.
+ */
+export interface PackSummary {
+  id: string;
+  title: string;
+  subtitle?: string;
+  summary: string;
+  timeRange: { start: string; end: string };
+  region: [number, number, number, number];
+  status: string;
+  /** Bytes of the era's own bundle, so the atlas can be honest about the cost. */
+  bytes: number;
+}
+
+export function packSummary(root: string, id: string): PackSummary {
+  const pack = readJson(join(root, 'eras', id, PACK_FILE)) as Record<string, unknown>;
+  const json = contentBundleJson(root, id);
+  return {
+    id,
+    title: String(pack['title'] ?? id),
+    ...(pack['subtitle'] ? { subtitle: String(pack['subtitle']) } : {}),
+    summary: String(pack['summary'] ?? ''),
+    timeRange: pack['timeRange'] as { start: string; end: string },
+    region: pack['region'] as [number, number, number, number],
+    status: String(pack['status'] ?? 'seed'),
+    bytes: Buffer.byteLength(json),
+  };
+}
 
 const readJson = (path: string): unknown => JSON.parse(readFileSync(path, 'utf8'));
 

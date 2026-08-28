@@ -15,6 +15,8 @@ import {
   buildContentBundle,
   bundleFileName,
   contentBundleJson,
+  listPackIds,
+  packSummary,
 } from './lib/pack-bundle.js';
 
 const CONTENT = join(process.cwd(), 'content');
@@ -58,5 +60,32 @@ describe('the emitted file name', () => {
 
   it('changes when the content does', () => {
     expect(bundleFileName('{"id":"a"}')).not.toBe(bundleFileName('{"id":"b"}'));
+  });
+});
+
+describe('many packs (sand-shn.1)', () => {
+  it('lists every era directory that has a pack.json, chronologically', () => {
+    const ids = listPackIds('content');
+    expect(ids).toContain(SEED_PACK_ID);
+    expect(ids.length).toBeGreaterThan(1);
+    // `<yyyy>-<slug>` sorts chronologically, which is the order the atlas wants.
+    expect([...ids].sort()).toEqual(ids);
+  });
+
+  it('summarises a pack from its own header, without its bundle', () => {
+    const s = packSummary('content', SEED_PACK_ID);
+    expect(s.id).toBe(SEED_PACK_ID);
+    expect(s.title).toMatch(/Schlieffen/);
+    expect(s.timeRange.start).toMatch(/^1914-/);
+    expect(s.region).toHaveLength(4);
+    // The atlas is honest about what opening an era costs.
+    expect(s.bytes).toBeGreaterThan(1000);
+  });
+
+  it('gives every pack its own content-addressed file name', () => {
+    const ids = listPackIds('content');
+    const names = ids.map((id) => bundleFileName(contentBundleJson('content', id), id));
+    expect(new Set(names).size).toBe(names.length);
+    for (const [i, name] of names.entries()) expect(name).toContain(ids[i]!);
   });
 });

@@ -173,17 +173,20 @@ Eight defects, all confirmed against production before being fixed.
   rests closed as one control and opens as one list, the same shape on every
   screen, with every entry named for what it is — a chapter or a zoom-in. The
   phone rail went with it.
-- **A band narrower than its own title shows an ellipsis.** Inherent; band
-  labels are already hidden below 640px.
+- ~~**A band narrower than its own title shows an ellipsis.**~~ Resolved by
+  `sand-neh.28`: the bands carry no labels at all now. Only two of sixteen ever
+  fitted, band width is a chapter's _duration_ rather than the length of its
+  name, and the transport row above the strip already prints the active
+  chapter's title in full. The two baseline allowances went with them.
 
 ## The clean run
 
 68 cells, no page errors, no console errors, and no `page-h-overflow` at
 either viewport. Three things still report and all three are the audit reading
-a deliberate design as a defect: the timeline band label's ellipsis, the
-chapter chips sitting past the viewport inside their own scroll rail (that
-rail is gone as of ADR 0013), and the collapsed bottom sheet clipping its
-peek. Everything else is `tiny-text` and `small-target`, both listed above.
+a deliberate design as a defect: the timeline band label's ellipsis (gone as
+of `sand-neh.28`), the chapter chips sitting past the viewport inside their own
+scroll rail (that rail is gone as of ADR 0013), and the collapsed bottom sheet
+clipping its peek. Everything else is `tiny-text` and `small-target`, both listed above.
 
 What is left of that list, plus the gallery's specimens sitting past the edge
 inside their own scroll rail, is `scripts/visual-baseline.json`. The gate

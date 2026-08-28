@@ -229,3 +229,19 @@ describe('the guided-tour slots (sand-1l0.14)', () => {
     expect(formatViewState(st)).toBe('?tour=1914:tour-the-campaign&step=the-marne');
   });
 });
+
+describe('the pack slot (sand-shn.1)', () => {
+  it('survives a state write, so scrubbing the clock does not leave the era', () => {
+    const state = parseViewState('?pack=1915-attrition&t=1915-04-22T17:00:00Z');
+    // `pack` is deliberately not a known slot: it selects which era's document
+    // is loaded, not a state inside one, and it is read before React by the
+    // boot script. As an extra it round-trips, which is all it needs to do.
+    expect(state.extra).toEqual([['pack', '1915-attrition']]);
+    const written = formatViewState({ ...state, t: Date.UTC(1915, 4, 1) });
+    expect(written).toBe('?t=1915-05-01T00:00:00Z&pack=1915-attrition');
+  });
+
+  it('leaves the ordinary view bare, because the seed era names itself nowhere', () => {
+    expect(formatViewState(parseViewState(''))).toBe('');
+  });
+});

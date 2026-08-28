@@ -78,7 +78,7 @@ npm run tokens           # regenerate src/styles/tokens.css from src/styles/toke
 npm run media            # WebP derivatives + content/shared/media/index.json from media.json manifests; -- --upload syncs to the assets bucket
 npm run audio            # loudness-matched Opus/AAC + content/shared/audio/index.json from cue.json manifests; -- --upload syncs (needs ffmpeg)
 npm run build            # tsc -b && vite build → dist/ (bundles under dist/app/)
-npm run visual:check     # the visual gate: 24 scenes x 2 themes x 2 viewports off one load each, assets stubbed, ~2.5 min (ADR 0011); -- --update rewrites the baseline, -- --timings prints the phase table
+npm run visual:check     # the visual gate: 25 scenes x 2 themes x 2 viewports off one load each, assets stubbed, ~2.5 min (ADR 0011); -- --update rewrites the baseline, -- --timings prints the phase table
 npm run visual:review    # the on-demand design review against real assets (docs/design-review.md); needs a build + `npm run preview`
 npm run bundle:budget    # the performance gate: eager, code and pack gzip against scripts/bundle-budget.json (ADR 0016, ADR 0018)
 npm run perf             # measure bundle, first map paint, frame rate, PMTiles cost; -- --live for the real bucket, -- --headed for a real GPU
@@ -129,19 +129,29 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
 - **Performance:** ADR 0016 — bundle size is the one number CI holds
   (`scripts/bundle-budget.json`, three ceilings with the reason for each written
   next to them: `eager` code before first paint, `code` every chunk, `pack` the
-  fetched content bundle); first map paint, frame rate and PMTiles cost are
+  **heaviest** era plus the atlas index — what one cold load fetches, since a
+  page load is one era, with every era together reported and not gated); first map paint, frame rate and PMTiles cost are
   measured by `npm run perf` and reported, because a runner rasterising through
   SwiftShader runs the campaign six times slower than a laptop. Don't import
   deck.gl or MapLibre from anything the shell can reach —
   `src/ui/MapSurface.tsx` is the lazy boundary and the budget is what notices
   when it leaks.
-- **Content is fetched, not bundled:** ADR 0018 — `content/` is assembled into
-  one `dist/pack/<id>-<hash>.json` by `scripts/lib/vite-plugin-pack.ts` and
-  fetched from the app's own origin (never `/assets/`, which the visual gate
-  stubs). `src/packs/pack-loader.ts` is the only module that knows that, and it
-  has a **top-level `await`** on purpose: every module that reads the pack at
-  module scope stays unchanged. The pack is still re-validated with the schema
-  on arrival.
+- **Content is fetched, not bundled:** ADR 0018 — every era under
+  `content/eras/` is assembled into its own `dist/pack/<id>-<hash>.json` by
+  `scripts/lib/vite-plugin-pack.ts`, alongside a `dist/pack/index.json` the
+  atlas reads, and fetched from the app's own origin (never `/assets/`, which
+  the visual gate stubs). `src/packs/pack-loader.ts` is the only module that
+  knows that, and it has a **top-level `await`** on purpose: every module that
+  reads the pack at module scope stays unchanged. The pack is still re-validated
+  with the schema on arrival.
+- **One era per page load:** `?pack=<id>` names the era, resolved identically by
+  the boot script in `<head>` and by the loader, so the request the browser
+  starts and the one the loader awaits cannot disagree. Switching eras is a
+  navigation, not a runtime swap — which is what keeps that top-level `await`
+  working. `pack` is deliberately **not** a URL slot (ADR 0009's amendment): it
+  round-trips as an extra, so the ordinary view still has no parameters and the
+  seed era is addressed as `/`. `/atlas.html` lists what there is
+  (`src/atlas/`), a third Vite entry beside `gallery.html`.
 - **Accessibility:** `docs/accessibility.md` — the keyboard run-through, the
   24×24px target floor and its two inline exemptions, the focus-ring rule, and
   what `src/a11y.test.tsx` (axe-core over jsdom) checks on every push. Write

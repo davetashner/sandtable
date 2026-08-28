@@ -15,7 +15,9 @@
  *          downloads before anything is on screen
  *   code   every emitted chunk, so the eager ceiling cannot be met forever by
  *          moving bytes behind a dynamic import
- *   pack   dist/pack/ — the content bundle the app fetches (ADR 0018)
+ *   pack   the heaviest era in dist/pack/ plus the atlas index — what one
+ *          cold load fetches, since a page load is one era (ADR 0018,
+ *          sand-shn.1). Every era together is reported, not gated.
  *
  * Three rather than two because code weight and content weight move for
  * different reasons and neither should be able to break the other's gate
@@ -79,7 +81,14 @@ for (const f of report.files) {
   );
 }
 console.log('    ▶ = named by index.html, downloaded before first paint');
-console.log('    ◆ = the content bundle, fetched alongside it (ADR 0018)\n');
+console.log('    ◆ = an era bundle; a page load fetches exactly one (ADR 0018)');
+if (report.eraCount > 1) {
+  console.log(
+    `\n  ${report.eraCount} eras, ${kb(report.packAllGzip).toFixed(1)} kB gzip together — ` +
+      `the deploy's weight, not a reader's. The ceiling holds the heaviest one.`,
+  );
+}
+console.log('');
 
 if (update) {
   const today = new Date().toISOString().slice(0, 10);

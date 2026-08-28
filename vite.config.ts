@@ -35,11 +35,14 @@ export default defineConfig({
     target: 'es2022',
     sourcemap: true,
     assetsDir: 'app',
-    // Two entries: the app, and the component gallery (sand-neh.3). The
-    // gallery is a page of its own so none of it can reach the app bundle,
-    // and so every deployment — production and PR previews — has one at
-    // /gallery.html for design review.
-    rollupOptions: { input: { main: 'index.html', gallery: 'gallery.html' } },
+    // Three entries: the app, the component gallery (sand-neh.3), and the
+    // atlas of eras (sand-shn.1). Each of the latter two is a page of its own
+    // so none of it can reach the app bundle, and so every deployment —
+    // production and PR previews — has a gallery at /gallery.html for design
+    // review and an atlas at /atlas.html to pick a campaign from.
+    rollupOptions: {
+      input: { main: 'index.html', gallery: 'gallery.html', atlas: 'atlas.html' },
+    },
     // The map chunk (maplibre-gl + deck.gl, lazy-loaded by App) is large by
     // nature and this only silences the generic warning about it. The number
     // that is actually held is in `scripts/bundle-budget.json`, checked by
