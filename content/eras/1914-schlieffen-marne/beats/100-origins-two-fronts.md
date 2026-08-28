@@ -7,12 +7,7 @@ to: 1914-08-02T05:00:00Z
 focus: 1914:origins
 media: media:person/bismarck-otto-von/portrait-1890-colorized
 links:
-  people:
-    [
-      'person:bismarck-otto-von',
-      'person:moltke-helmuth-von-elder',
-      'person:wilhelm-ii',
-    ]
+  people: ['person:bismarck-otto-von', 'person:moltke-helmuth-von-elder', 'person:wilhelm-ii']
   battles: ['1914:origins']
 sources:
   - source: source:zuber-2002

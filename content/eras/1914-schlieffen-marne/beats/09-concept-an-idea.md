@@ -6,8 +6,7 @@ from: 1914-09-07T00:00:00Z
 to: 1914-09-16T00:00:00Z
 branch: 1914:schlieffen-concept
 links:
-  people:
-    ['person:schlieffen-alfred-von', 'person:moltke-helmuth-von-younger']
+  people: ['person:schlieffen-alfred-von', 'person:moltke-helmuth-von-younger']
   places: ['place:paris']
 sources:
   - source: source:herwig-2009

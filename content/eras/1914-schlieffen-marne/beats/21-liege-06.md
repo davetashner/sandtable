@@ -9,8 +9,7 @@ focus: 1914:liege
 media: media:scene/1914-liege-herstal/belgian-infantry-herstal-colorized
 links:
   battles: ['1914:liege']
-  people:
-    ['person:ludendorff-erich', 'person:leman-gerard']
+  people: ['person:ludendorff-erich', 'person:leman-gerard']
   places: ['place:liege']
   events: ['1914:liege-event-night-assault', '1914:liege-event-3rd-division-withdraws']
 sources:

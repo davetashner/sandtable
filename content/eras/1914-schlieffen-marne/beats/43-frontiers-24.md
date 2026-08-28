@@ -9,7 +9,12 @@ focus: 1914:frontiers-north
 links:
   battles: ['1914:frontiers-north']
   people:
-    ['person:french-john', 'person:haig-douglas', 'person:smith-dorrien-horace', 'person:kluck-alexander-von']
+    [
+      'person:french-john',
+      'person:haig-douglas',
+      'person:smith-dorrien-horace',
+      'person:kluck-alexander-von',
+    ]
   places: ['place:maubeuge', 'place:landrecies', 'place:namur', 'place:bavay']
   events: ['1914:frontiers-event-namur-falls', '1914:frontiers-event-landrecies']
 sources:

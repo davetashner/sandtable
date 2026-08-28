@@ -8,8 +8,7 @@ branch: 1914:historical
 focus: 1914:frontiers-north
 links:
   battles: ['1914:frontiers-north']
-  people:
-    ['person:lanrezac-charles', 'person:bulow-karl-von', 'person:franchet-desperey-louis']
+  people: ['person:lanrezac-charles', 'person:bulow-karl-von', 'person:franchet-desperey-louis']
   places: ['place:charleroi', 'place:dinant', 'place:mons']
   events: ['1914:frontiers-event-charleroi', '1914:frontiers-event-casteau']
 sources:

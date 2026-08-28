@@ -9,13 +9,9 @@ focus: 1914:marne
 media: media:scene/1914-marne-german-infantry/german-infantry-marne-colorized
 links:
   documents:
-    [
-      '1914:document-ohl-wireless-1914-09-04',
-      '1914:document-gallieni-ordre-general-5-1914-09-04',
-    ]
+    ['1914:document-ohl-wireless-1914-09-04', '1914:document-gallieni-ordre-general-5-1914-09-04']
   battles: ['1914:marne']
-  people:
-    ['person:maunoury-michel-joseph', 'person:kluck-alexander-von', 'person:gallieni-joseph']
+  people: ['person:maunoury-michel-joseph', 'person:kluck-alexander-von', 'person:gallieni-joseph']
   places: ['place:meaux', 'place:nanteuil-le-haudouin']
   events: ['1914:marne-event-monthyon', '1914:marne-event-kluck-recalls-ii-corps']
   tech: ['1914:tech-aerial-reconnaissance']

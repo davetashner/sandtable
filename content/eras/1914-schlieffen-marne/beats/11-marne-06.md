@@ -9,7 +9,12 @@ focus: 1914:marne
 links:
   battles: ['1914:marne']
   people:
-    ['person:joffre-joseph', 'person:french-john', 'person:franchet-desperey-louis', 'person:kluck-alexander-von']
+    [
+      'person:joffre-joseph',
+      'person:french-john',
+      'person:franchet-desperey-louis',
+      'person:kluck-alexander-von',
+    ]
   places: ['place:coulommiers', 'place:sezanne']
   events: ['1914:marne-event-order-of-the-day', '1914:marne-event-bef-turns']
   documents: ['1914:document-joffre-order-of-the-day-1914-09-06']

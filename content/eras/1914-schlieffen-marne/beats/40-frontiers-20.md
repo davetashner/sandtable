@@ -9,7 +9,12 @@ focus: 1914:frontiers-north
 links:
   battles: ['1914:frontiers-north']
   people:
-    ['person:lanrezac-charles', 'person:bulow-karl-von', 'person:hausen-max-von', 'person:french-john']
+    [
+      'person:lanrezac-charles',
+      'person:bulow-karl-von',
+      'person:hausen-max-von',
+      'person:french-john',
+    ]
   places: ['place:charleroi', 'place:namur', 'place:dinant']
   events: ['1914:frontiers-event-sambre', '1914:frontiers-event-namur-bombardment']
 sources:

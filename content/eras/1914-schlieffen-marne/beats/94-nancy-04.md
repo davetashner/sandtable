@@ -9,7 +9,12 @@ focus: 1914:grand-couronne
 links:
   battles: ['1914:grand-couronne']
   events: ['1914:grand-couronne-event-offensive', '1914:grand-couronne-event-amance']
-  people: ['person:rupprecht-of-bavaria', 'person:castelnau-edouard-de', 'person:moltke-helmuth-von-younger']
+  people:
+    [
+      'person:rupprecht-of-bavaria',
+      'person:castelnau-edouard-de',
+      'person:moltke-helmuth-von-younger',
+    ]
   places: ['place:champenoux', 'place:amance', 'place:nancy']
 sources:
   - source: source:afgg-1-1

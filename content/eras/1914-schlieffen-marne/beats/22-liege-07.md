@@ -9,8 +9,7 @@ focus: 1914:liege
 media: media:scene/1914-liege-german-car/german-soldiers-liege-colorized
 links:
   battles: ['1914:liege']
-  people:
-    ['person:ludendorff-erich', 'person:leman-gerard']
+  people: ['person:ludendorff-erich', 'person:leman-gerard']
   places: ['place:liege']
   events: ['1914:liege-event-citadel', '1914:liege-event-barchon']
 sources:

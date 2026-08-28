@@ -283,6 +283,56 @@ describe('App shell', () => {
     expect(screen.getByText(/continue when you are ready/)).toBeInTheDocument();
   });
 
+  it('resumes after the reader takes over, putting the tour back on its own step (sand-pmz.25)', async () => {
+    // A step that reveals no card of its own, so the only divergence is the
+    // one the reader causes.
+    window.history.replaceState(null, '', '/?tour=1914:tour-the-campaign&step=the-other-story');
+    render(<App />);
+    await screen.findByRole('region', { name: /Guided tour/ });
+
+    // A deep link arrives paused; set it running so there is something to lose.
+    fireEvent.click(await screen.findByRole('button', { name: 'Resume the tour' }));
+    await screen.findByRole('button', { name: 'Pause the tour' });
+
+    // The reader takes over: opening a card is not something this step did.
+    const face = await screen.findByRole('button', { name: /Joseph Joffre — / }, { timeout: 8000 });
+    fireEvent.click(face);
+    await screen.findByRole('heading', { level: 2, name: 'Joseph Joffre' }, { timeout: 8000 });
+    // Which is why the tour stops — that part was always right.
+    const resume = await screen.findByRole('button', { name: 'Resume the tour' });
+
+    // …and this is what was broken: the flag went true and the divergence check
+    // put it straight back in the same tick, so the button did nothing however
+    // often it was pressed. Resuming now restores the step's own view.
+    fireEvent.click(resume);
+    await waitFor(() => {
+      expect(screen.getByRole('button', { name: 'Pause the tour' })).toBeInTheDocument();
+    });
+    await waitFor(() => {
+      expect(
+        screen.queryByRole('heading', { level: 2, name: 'Joseph Joffre' }),
+      ).not.toBeInTheDocument();
+    });
+    expect(window.location.search).toContain('step=the-other-story');
+  });
+
+  it('space resumes a taken-over tour too, not only the button (sand-pmz.25)', async () => {
+    window.history.replaceState(null, '', '/?tour=1914:tour-the-campaign&step=the-other-story');
+    render(<App />);
+    await screen.findByRole('region', { name: /Guided tour/ });
+    fireEvent.click(await screen.findByRole('button', { name: 'Resume the tour' }));
+    await screen.findByRole('button', { name: 'Pause the tour' });
+    const face = await screen.findByRole('button', { name: /Joseph Joffre — / }, { timeout: 8000 });
+    fireEvent.click(face);
+    await screen.findByRole('button', { name: 'Resume the tour' });
+    // The keyboard has to take the same route the button does, or Space is dead
+    // in exactly the same way.
+    fireEvent.keyDown(document.body, { key: ' ' });
+    await waitFor(() => {
+      expect(screen.getByRole('button', { name: 'Pause the tour' })).toBeInTheDocument();
+    });
+  });
+
   it('drives the tour from the keyboard alone (sand-1l0.28)', async () => {
     window.history.replaceState(null, '', '/?tour=1914:tour-the-campaign&step=two-corps-east');
     render(<App />);
