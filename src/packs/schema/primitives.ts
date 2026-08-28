@@ -57,7 +57,14 @@ export const LngLat = z
   .tuple([z.number().min(-180).max(180), z.number().min(-90).max(90)])
   .describe('[lng, lat] in WGS 84');
 
-/** [west, south, east, north] bounding box. */
+/**
+ * [west, south, east, north] bounding box.
+ *
+ * `west > east` is legal and means the box crosses the antimeridian the short
+ * way: the central Pacific theatre from Hitokappu Bay to Oahu is
+ * `[147.7, -12, -158, 52]`, 54° wide (`sand-lry.22`). Every edge stays in
+ * [-180, 180]; nothing is written as 202. `south < north` always.
+ */
 export const BBox = z
   .tuple([
     z.number().min(-180).max(180),
@@ -65,7 +72,9 @@ export const BBox = z
     z.number().min(-180).max(180),
     z.number().min(-90).max(90),
   ])
-  .describe('[west, south, east, north]');
+  .describe(
+    '[west, south, east, north]; west > east crosses the antimeridian (e.g. [147.7, -12, -158, 52])',
+  );
 
 /** Map camera. */
 export const Camera = z

@@ -11,6 +11,7 @@
  */
 import type { ZodType } from 'zod';
 import { entityLinksIn } from '../../engine/entity-links.js';
+import { boxContains } from '../../engine/geo.js';
 import {
   type Battle,
   type Branch,
@@ -716,15 +717,14 @@ function checkFormation(
         `concentration.asOf (${c.asOf}) is outside the ${scope ? 'battle' : 'pack'} timeRange`,
         f.id,
       );
-    const [w, so, e, n] = scope?.region ?? s.pack.region;
-    if (c.position) {
+    const region = scope?.region ?? s.pack.region;
+    if (c.position && !boxContains(region, c.position)) {
       const [x, y] = c.position;
-      if (x < w || x > e || y < so || y > n)
-        ctx.warn(
-          path,
-          `concentration.position [${x}, ${y}] is outside the ${scope ? 'battle' : 'pack'} region`,
-          f.id,
-        );
+      ctx.warn(
+        path,
+        `concentration.position [${x}, ${y}] is outside the ${scope ? 'battle' : 'pack'} region`,
+        f.id,
+      );
     }
   }
 }
@@ -861,11 +861,17 @@ function checkBattle(ctx: Ctx, s: PackState, path: string, b: Battle, sideIds: S
       b.id,
     );
   }
+  // `west > east` is not an error: it is how a box says it crosses the
+  // antimeridian, which an assault zoom-in in the central Pacific has to be
+  // able to say (`sand-lry.22`). What is left to check is that the box has a
+  // width and a height at all — `west === east` is nothing, and it is also the
+  // one reading the wrap convention cannot disambiguate.
   const [w, so, e, n] = b.region;
-  if (!(w < e && so < n))
+  if (w === e || !(so < n))
     ctx.error(
       path,
-      'region must be [west, south, east, north] with west < east and south < north',
+      'region must be [west, south, east, north] with west ≠ east and south < north ' +
+        '(west > east is legal: the box crosses the antimeridian)',
       b.id,
     );
   if (b.place) ctx.ref(path, b.id, b.place, ['place'], 'place');
@@ -1211,12 +1217,8 @@ function checkOpening(ctx: Ctx, path: string, pack: PackT) {
   }
   checkCitations(ctx, path, pack.id, o.sources, false, 'opening.sources');
   checkFootnotes(ctx, path, pack.id, o.lede, o.sources ?? [], 'opening.lede');
-  if (o.camera) {
-    const [w, so, e, n] = pack.region;
-    const [lng, lat] = o.camera.center;
-    if (lng < w || lng > e || lat < so || lat > n)
-      ctx.warn(path, 'opening.camera.center is outside the pack region', pack.id);
-  }
+  if (o.camera && !boxContains(pack.region, o.camera.center))
+    ctx.warn(path, 'opening.camera.center is outside the pack region', pack.id);
 }
 
 /**

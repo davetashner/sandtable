@@ -15,6 +15,7 @@ import type { Layer } from '@deck.gl/core';
 import { IconLayer, ScatterplotLayer, TextLayer } from '@deck.gl/layers';
 import type { PersonTrack, Side } from '../../packs/schema/index.js';
 import { APPROX_MARK, confidenceAt, isApproximate, waypointConfidence } from '../confidence.js';
+import { unwrapLngs } from '../geo.js';
 import { APPROX_HALO_ICON, haloSize } from './approx-halo.js';
 import { sideColor, tokenColor, type RGBA } from './colors.js';
 import { positionAt } from './movement.js';
@@ -70,8 +71,12 @@ export interface CommanderLayerOptions {
 export function commandersAt(o: CommanderLayerOptions): CommanderDatum[] {
   const out: CommanderDatum[] = [];
   for (const tk of o.tracks) {
+    // Continuous longitudes, so a man who crosses the antimeridian is
+    // interpolated the short way rather than back across the world
+    // (`sand-lry.22`); a track that never crosses is untouched.
+    const lngs = unwrapLngs(tk.waypoints.map((w) => w[0]));
     const points = tk.waypoints.map(
-      (w) => [w[0], w[1], Date.parse(w[2])] as [number, number, number],
+      (w, i) => [lngs[i]!, w[1], Date.parse(w[2])] as [number, number, number],
     );
     const first = points[0]![2];
     const last = points[points.length - 1]![2];

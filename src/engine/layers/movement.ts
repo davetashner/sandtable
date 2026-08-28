@@ -26,6 +26,7 @@ import type {
   Waypoint,
 } from '../../packs/schema/index.js';
 import { waypointConfidence } from '../confidence.js';
+import { unwrapLngs } from '../geo.js';
 
 /** One stretch of a route covered by one means (sand-23b.8). */
 export interface ComposedLeg {
@@ -86,6 +87,29 @@ function legsOf(routes: Route[], cut: number): ComposedLeg[] {
 }
 
 /**
+ * The legs of one path, with their longitudes made continuous end to end
+ * (`sand-lry.22`).
+ *
+ * Every consumer of these points — the deck.gl path layers, the trail, the
+ * interpolation in `positionAt`, the bearing along a segment — treats the list
+ * as a polyline and works on the numbers between neighbours. Across the
+ * antimeridian those numbers lie: Hitokappu Bay at 147.672 followed by the
+ * standby point at -170 reads as 317° westward, and the Kido Butai's track
+ * draws back over Asia and Europe instead of 42° east across the Pacific. The
+ * unwrap runs over the whole path rather than each leg, so a formation that
+ * crosses 180° in the middle of a rail leg stays continuous into the march
+ * that follows it.
+ */
+function unwrapLegs(legs: ComposedLeg[]): ComposedLeg[] {
+  const lngs = unwrapLngs(legs.flatMap((leg) => leg.points.map((p) => p[0])));
+  let i = 0;
+  return legs.map((leg) => ({
+    ...leg,
+    points: leg.points.map((p): [number, number, number] => [lngs[i++]!, p[1], p[2]]),
+  }));
+}
+
+/**
  * For each formation: its default route's legs before the branch's
  * divergence, then the branch route's legs (if the branch has one).
  * Formations without a default route in this branch are omitted.
@@ -108,7 +132,10 @@ export function composeRoutes(
     const side = sideById.get(f.side);
     if (!side) continue;
     const divergesAt = branch.divergesAt ? Date.parse(branch.divergesAt) : Infinity;
-    const legs = [...legsOf(base, tail.length ? divergesAt : Infinity), ...legsOf(tail, Infinity)];
+    const legs = unwrapLegs([
+      ...legsOf(base, tail.length ? divergesAt : Infinity),
+      ...legsOf(tail, Infinity),
+    ]);
     // the legs meet at a shared waypoint; the joined path keeps it once
     const points: [number, number, number][] = [];
     const confidences: Confidence[] = [];

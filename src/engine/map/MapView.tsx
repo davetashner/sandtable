@@ -28,6 +28,7 @@ import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&ur
 import { Protocol } from 'pmtiles';
 import { useEffect, useImperativeHandle, useRef, useState, type ReactNode, type Ref } from 'react';
 import type { BBox, Camera } from '../../packs/schema/index.js';
+import { unwrapEast } from '../geo.js';
 import { OWNS_KEYS } from '../shortcuts.js';
 import { fetchBorders, mountBorders } from './borders.js';
 import { fetchFront, mountFront, unmountFront, type FrontGeoJSON } from './front.js';
@@ -217,9 +218,17 @@ export function MapView({
     fitRegion(region, o = {}) {
       const map = mapRef.current;
       if (!map) return;
+      // A region may cross the antimeridian, and then its west edge is the
+      // larger number (`sand-lry.22`). Unwrapping the east edge past +180
+      // makes the box an ordinary interval, which is the form that fits the
+      // theatre rather than the other 306° of the world. MapLibre's
+      // `cameraForBounds` would do the same thing itself — it calls
+      // `LngLatBounds.adjustAntiMeridian()` first — but the wrap is a property
+      // of our content, so it is stated here where it can be tested and where
+      // a reader of `fitRegion` can see that a Pacific box is expected.
       const bounds: LngLatBoundsLike = [
         [region[0], region[1]],
-        [region[2], region[3]],
+        [unwrapEast(region), region[3]],
       ];
       map.fitBounds(bounds, {
         padding: cameraPadding(o.padding ?? 40),

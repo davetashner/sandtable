@@ -181,6 +181,51 @@ describe('<MapView>', () => {
     );
   });
 
+  // sand-lry.22: a Pacific theatre runs east from a bigger number to a smaller
+  // one. Handed over as written, the four corners have their minimum at -155
+  // and their maximum at 99, and the camera frames the other 254° of the
+  // world; unwrapped, the box is an ordinary 106°-wide interval.
+  it('unwraps a region that crosses the antimeridian before fitting it', () => {
+    const ref = createRef<Handle>();
+    render(
+      <MapView
+        ref={ref}
+        camera={{ center: [-175, 30], zoom: 2.6 }}
+        styleFor={() => ({ version: 8, sources: {}, layers: [] })}
+      />,
+    );
+    const map = maps.at(-1)!;
+
+    ref.current!.fitRegion([99, -12, -155, 52]);
+    expect(map.fitBounds).toHaveBeenCalledWith(
+      [
+        [99, -12],
+        [205, 52],
+      ],
+      expect.anything(),
+    );
+
+    // An assault box a fifth of a degree wide that happens to straddle 180°.
+    ref.current!.fitRegion([179.95, 28.1, -179.95, 28.3], { maxZoom: 11 });
+    expect(map.fitBounds).toHaveBeenLastCalledWith(
+      [
+        [179.95, 28.1],
+        [180.05, 28.3],
+      ],
+      expect.objectContaining({ maxZoom: 11 }),
+    );
+
+    // A full longitude band does not cross, and is passed straight through.
+    ref.current!.fitRegion([-180, -12, 180, 52]);
+    expect(map.fitBounds).toHaveBeenLastCalledWith(
+      [
+        [-180, -12],
+        [180, 52],
+      ],
+      expect.anything(),
+    );
+  });
+
   it('keeps the covered corner clear when an overlay sits on the map (sand-neh.29)', () => {
     const ref = createRef<Handle>();
     render(
