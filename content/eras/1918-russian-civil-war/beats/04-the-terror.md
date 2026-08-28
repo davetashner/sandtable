@@ -55,8 +55,14 @@ October 1918 alone, and observes that in a matter of weeks the Cheka "carried
 out two to three times as many executions as the Czarist regime had pronounced
 death sentences over a 92-year period from 1825 to 1917".[^werth-2008] He is
 equally clear that the killing was not one-sided and that the shapes were
-different: "White Terror was never established as a system. Mostly uncontrolled
-and perpetrated by 'warlords'."[^werth-2008] And the largest single category of
+different. Of Kolchak's territory: "Compared to the Red Terror, White Terror was
+never established as a system. Mostly uncontrolled and perpetrated by 'warlords'
+such as the Cossack Atamans Semenov or Annenkov, White Terror nevertheless
+targeted specific groups: Socialist militants, suspected Bolshevik sympathizers,
+Jews (assimilated to Bolsheviks), in legacy with Old Czarist regime
+discriminatory repressions."[^werth-2008] Unsystematic is not the same as
+undirected, and the second half of that sentence is the half a shorter quotation
+loses. And the largest single category of
 killing in the whole war belongs to neither Red nor White: approximately a
 hundred and fifty thousand Jewish men, women and children murdered in the
 pogroms of 1918–22, a hundred and twenty-five thousand of them in
