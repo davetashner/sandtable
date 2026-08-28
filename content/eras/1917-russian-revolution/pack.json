@@ -1,0 +1,88 @@
+{
+  "id": "1917-russian-revolution:pack",
+  "idPrefix": "1917-russian-revolution",
+  "title": "1917: the Russian Revolution",
+  "subtitle": "February to October, in a calendar thirteen days behind",
+  "summary": "Eight months in which a three-hundred-year monarchy, the government that replaced it, and the war all came apart in the same city. It begins with a bread queue on the Vyborg side and ends with a committee in a girls' school taking the telephone exchange. The map works at two scales that are three orders of magnitude apart: the Russian Empire, where an army of eleven million was dissolving, and about six kilometres of Petrograd, where everything that is remembered actually happened.\n\nRussia kept the Julian calendar until February 1918, thirteen days behind the West. That is why the February Revolution happened in March and the October Revolution in November, and it is the instrument this pack is built around: every instant stored here is Gregorian, and every date a reader sees carries the Russian date beside it.",
+  "timeRange": { "start": "1917-03-07T00:00:00Z", "end": "1917-11-09T12:00:00Z" },
+  "region": [7.0, 46.0, 42.0, 67.0],
+  "borderYear": 1914,
+  "camera": { "center": [26.0, 58.0], "zoom": 4.2 },
+  "sides": [
+    {
+      "id": "crown",
+      "name": "The Crown and the imperial government",
+      "short": "The Crown",
+      "alliance": "Autocracy"
+    },
+    {
+      "id": "provisional",
+      "name": "The Provisional Government",
+      "short": "Provisional",
+      "alliance": "Dual power"
+    },
+    {
+      "id": "soviet",
+      "name": "The Petrograd Soviet of Workers' and Soldiers' Deputies",
+      "short": "The Soviet",
+      "alliance": "Dual power"
+    },
+    {
+      "id": "bolshevik",
+      "name": "The Bolsheviks",
+      "short": "Bolsheviks",
+      "alliance": "Soviet power"
+    }
+  ],
+  "branches": [
+    {
+      "id": "1917-russian-revolution:historical",
+      "title": "What happened",
+      "kind": "historical",
+      "summary": "The eight months as they ran: the bread queues, the garrison changing sides, the abdication, dual power, Lenin's return, the July Days, Kornilov, and the night of 25 October (O.S.).",
+      "sources": [{ "source": "source:figes-1996" }, { "source": "source:smith-2017" }]
+    }
+  ],
+  "defaultBranch": "1917-russian-revolution:historical",
+  "status": "seed",
+  "pace": {
+    "rail": {
+      "sustained": 30,
+      "limit": 50,
+      "note": "This pack's rail is the scheduled passenger express carrying individuals - Lenin's carriage from Zurich to the Finland Station, the imperial train from Mogilev to Pskov - and not an army entraining, which is what the 1914 default (15/30 km/h) is calibrated on. Merridale reconstructs the April journey stage by stage from the German, Swedish and Russian records: the party covered 500-800 km between the stops the record names, which is 15-27 km/h of straight-line displacement including border halts and a night in Stockholm. 30 is that sustained figure rounded; 50 is what a through express of 1917 could make over a leg without stopping, which nothing in this pack reaches.",
+      "sources": [
+        {
+          "source": "source:merridale-2016",
+          "note": "the stage-by-stage timetable of the April 1917 journey; no pages - read as a whole rather than at page level, see the pack README"
+        }
+      ]
+    }
+  },
+  "sources": [
+    { "source": "source:figes-1996", "note": "the narrative backbone, 1891-1924" },
+    { "source": "source:smith-2017", "note": "the empire-wide social and economic frame" },
+    { "source": "source:fitzpatrick-2017", "note": "the short interpretive survey" },
+    { "source": "source:rabinowitch-1976", "note": "Petrograd from July to October, day by day" },
+    { "source": "source:hasegawa-1981", "note": "the February days, hour by hour" }
+  ],
+  "opening": {
+    "eyebrow": "Two revolutions, one year, two calendars",
+    "headline": [
+      "1917.",
+      "The February Revolution happened in March.",
+      "The October Revolution happened in November."
+    ],
+    "lede": "Russia still kept the Julian calendar, thirteen days behind the West, and both revolutions are named for the month they happened in at home. Every instant in this pack is the Gregorian one; every date you read carries the Russian one beside it.[^figes-1996]",
+    "camera": { "center": [30.32, 59.94], "zoom": 9.5 },
+    "claim": {
+      "label": "Why thirteen days?",
+      "card": "1917-russian-revolution:science-the-thirteen-days"
+    },
+    "chain": {
+      "label": "How did it start?",
+      "hint": "with bread, and thirty-two months of war",
+      "card": "1917-russian-revolution:link-war-to-the-bread-queues"
+    },
+    "sources": [{ "source": "source:figes-1996" }]
+  }
+}

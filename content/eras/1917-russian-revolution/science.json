@@ -1,0 +1,31 @@
+[
+  {
+    "id": "1917-russian-revolution:science-the-thirteen-days",
+    "title": "The thirteen days: why February happened in March",
+    "field": "ideas-culture",
+    "at": "1918-02-14",
+    "summary": "Russia kept the Julian calendar until February 1918. In 1917 it ran thirteen days behind the Gregorian calendar the rest of Europe used, so the same afternoon carried two different dates and both were correct. That is the whole of why the February Revolution happened in March and the October Revolution in November.",
+    "body": "### Where thirteen days come from\n\nThe Julian year is 365.25 days. The actual tropical year is about eleven minutes shorter, and eleven minutes a year is three days every four centuries. By the 1580s the Julian calendar had drifted ten days out of step with the sun, and the Gregorian reform of 1582 removed them and changed the leap-year rule: century years are leap years only when divisible by 400. So 1700, 1800 and 1900 were leap years in Russia and were not in the West, and the gap that was ten days in 1582 was eleven after 1700, twelve after 1800 and **thirteen after 1900**. It is still thirteen today, which is why the Orthodox churches that kept the old calendar keep Christmas on 7 January.\n\nRussia did not adopt the reform in 1582 because it was a Catholic one, and did not adopt it later because the church would not have it.\n\n### How this pack writes dates\n\nEvery instant stored in this pack is **Gregorian (New Style)**, because the engine stores absolute instants and an absolute instant cannot be ambiguous. Every date a reader sees is written **Old Style first, then New Style** — *23 February (O.S.) / 8 March (N.S.)* — because the Russian date is the one the people in the story used and the one the events are named after, and the Gregorian date is the one the clock underneath is keeping.\n\nThe convention costs something and it is worth knowing what. The February Revolution is 23 February – 3 March by the calendar Petrograd was using, and 8–16 March on the timeline you are looking at. The October Revolution is the night of 25–26 October, and 7–8 November on the timeline. Nothing has been shifted; the two calendars simply disagree, and this pack refuses to hide which one it is using.\n\n### The abolition\n\nThe Council of People's Commissars adopted the decree on 24 January (6 February) 1918 and Lenin signed it on 26 January (8 February); the day after Wednesday 31 January 1918 was Thursday 14 February 1918. Thirteen days were deleted from the middle of a month; nobody was born, married or died on any of them. It is the last act of the story this pack tells, and it is why every date before it has two forms and every date after it has one.",
+    "connections": [
+      {
+        "to": "The naming of the revolutions",
+        "note": "Both revolutions are named for the month they happened in under a calendar the government they created abolished within three months. The names outlived the calendar."
+      },
+      {
+        "to": "International Women's Day",
+        "note": "The strike that began the February Revolution fell on 23 February (O.S.), which was 8 March (N.S.) — which is why the day is now marked on 8 March everywhere, including in Russia."
+      }
+    ],
+    "links": {
+      "battles": ["1917-russian-revolution:epilogue-the-thirteen-days"],
+      "events": ["1917-russian-revolution:event-womens-day"]
+    },
+    "sources": [
+      {
+        "source": "source:figes-1996",
+        "note": "the calendar change and the dual-dating convention this pack follows"
+      },
+      { "source": "source:smith-2017" }
+    ]
+  }
+]

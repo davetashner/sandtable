@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1917-russian-revolution:corps-cavalry-3",
+    "name": "3rd Cavalry Corps",
+    "short": "III Cav",
+    "side": "provisional",
+    "kind": "corps",
+    "concentration": {
+      "area": "The rear of the Northern Front, around Velikiye Luki and Nevel",
+      "position": [30.5167, 56.35],
+      "asOf": "1917-09-06",
+      "sources": [{ "source": "source:katkov-1980" }]
+    },
+    "summary": "The corps that was sent towards Petrograd at the end of August 1917, with the Caucasian Native Cavalry Division - the \"Savage Division\" - attached to it. It is filed on the government's side because that is whose army it was: the Provisional Government's own Supreme Commander ordered it, and the Provisional Government's own head of government had asked for troops to be made available to the capital. Whether it was moving *for* that government or *against* it is the question the Kornilov affair turns on, and colouring the token is not the place to answer it.\n\nIt is the only formation in this pack. That is not an omission. The bodies that decided 1917 - the Petrograd garrison, the factory workforces, the Red Guards, the soldiers' committees - changed sides rather than moved, and a token with a fixed colour sliding across a map would misrepresent every one of them.",
+    "sources": [{ "source": "source:katkov-1980" }, { "source": "source:rabinowitch-1976" }]
+  }
+]

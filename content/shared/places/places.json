@@ -1332,5 +1332,182 @@
     "country": "German Empire (East Prussia)",
     "notes": "The lake belt that split the two Russian armies' advance, and gave its name to the battle of 7-14 September 1914 - the battle the two corps from the West actually fought in.",
     "sources": [{ "source": "source:showalter-2004" }, { "source": "source:stone-1975" }]
+  },
+  {
+    "id": "place:petrograd",
+    "name": "Petrograd",
+    "names": [
+      { "name": "Sankt-Peterburg", "language": "ru", "kind": "period" },
+      { "name": "Saint Petersburg", "language": "en", "kind": "modern" },
+      { "name": "Leningrad", "language": "ru", "kind": "modern" }
+    ],
+    "kind": "city",
+    "lngLat": [30.3086, 59.9375],
+    "country": "Russian Empire",
+    "notes": "Capital of the Russian Empire. Renamed from the German-sounding Sankt-Peterburg to the Slavic Petrograd in August 1914, and Leningrad in 1924. Both revolutions of 1917 happened within about six kilometres of this point.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:winter-palace",
+    "name": "The Winter Palace",
+    "kind": "other",
+    "lngLat": [30.3146, 59.941],
+    "country": "Russian Empire",
+    "notes": "The imperial residence on the Neva embankment; from March 1917 the seat of the Provisional Government, and the building the Military Revolutionary Committee took in the small hours of 26 October (O.S.).",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:tauride-palace",
+    "name": "The Tauride Palace",
+    "kind": "other",
+    "lngLat": [30.3757, 59.9481],
+    "country": "Russian Empire",
+    "notes": "Seat of the State Duma, and from 27 February (O.S.) 1917 the building that held both halves of dual power: the Duma Committee in one wing and the Petrograd Soviet in another.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:smolny-institute",
+    "name": "The Smolny Institute",
+    "kind": "other",
+    "lngLat": [30.3961, 59.9469],
+    "country": "Russian Empire",
+    "notes": "A girls' boarding school on the eastern edge of the city; from August 1917 the seat of the Petrograd Soviet, and in October of its Military Revolutionary Committee.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:peter-and-paul-fortress",
+    "name": "The Peter and Paul Fortress",
+    "kind": "fortress",
+    "lngLat": [30.3167, 59.95],
+    "country": "Russian Empire",
+    "notes": "The fortress on Zayachy Island, across the Neva from the Winter Palace: arsenal, garrison and political prison, and on 25 October (O.S.) the place the signal for the assault was to come from.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:finland-station",
+    "name": "The Finland Station",
+    "names": [{ "name": "Finlyandsky vokzal", "language": "ru", "kind": "period" }],
+    "kind": "other",
+    "lngLat": [30.3561, 59.9556],
+    "country": "Russian Empire",
+    "notes": "Terminus of the Finnish railway on the Vyborg side, where Lenin arrived from Zurich late on the night of 3 April (O.S.) 1917.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:znamenskaya-square",
+    "name": "Znamenskaya Square",
+    "names": [{ "name": "Ploshchad Vosstaniya", "language": "ru", "kind": "modern" }],
+    "kind": "other",
+    "lngLat": [30.3606, 59.9311],
+    "country": "Russian Empire",
+    "notes": "The square where the Nevsky Prospekt meets the Nikolaevsky station, and where the crowds and the troops met on 25-26 February (O.S.). Renamed Uprising Square afterwards.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:putilov-works",
+    "name": "The Putilov Works",
+    "names": [
+      { "name": "Putilovsky zavod", "language": "ru", "kind": "period" },
+      { "name": "Kirov Plant", "language": "en", "kind": "modern" }
+    ],
+    "kind": "other",
+    "lngLat": [30.2622, 59.8811],
+    "country": "Russian Empire",
+    "notes": "The largest metalworking and armaments plant in Petrograd, in the Narva district in the south-west of the city.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:mariinsky-palace",
+    "name": "The Mariinsky Palace",
+    "kind": "other",
+    "lngLat": [30.3086, 59.9317],
+    "country": "Russian Empire",
+    "notes": "Seat of the State Council before 1917, and in October 1917 of the Provisional Council of the Republic - the Pre-Parliament.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:kronstadt",
+    "name": "Kronstadt",
+    "kind": "fortress",
+    "lngLat": [29.7667, 59.9833],
+    "country": "Russian Empire",
+    "notes": "The naval fortress and base on Kotlin Island, some thirty kilometres west of Petrograd in the Gulf of Finland; the most radical garrison in Russia in 1917.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:tsarskoe-selo",
+    "name": "Tsarskoe Selo",
+    "names": [{ "name": "Pushkin", "language": "ru", "kind": "modern" }],
+    "kind": "town",
+    "lngLat": [30.4, 59.7167],
+    "country": "Russian Empire",
+    "notes": "The imperial residence twenty-five kilometres south of Petrograd, where the Empress and the children were when the capital rose, and where the family was held under guard after the abdication.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:moscow",
+    "name": "Moscow",
+    "names": [{ "name": "Moskva", "language": "ru", "kind": "period" }],
+    "kind": "city",
+    "lngLat": [37.6175, 55.752],
+    "country": "Russian Empire",
+    "notes": "The old capital and the second city; capital again from March 1918. Its own October fighting ran a week longer than Petrograd's and cost far more.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:pskov",
+    "name": "Pskov",
+    "kind": "city",
+    "lngLat": [28.332, 57.8194],
+    "country": "Russian Empire",
+    "notes": "Headquarters of the Northern Front, about 250 kilometres south-west of Petrograd. The imperial train was diverted here on 1 March (O.S.) 1917 and Nicholas II abdicated in it the following night.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:mogilev",
+    "name": "Mogilev",
+    "names": [{ "name": "Mahilyow", "language": "be", "kind": "modern" }],
+    "kind": "city",
+    "lngLat": [30.33, 53.9],
+    "country": "Russian Empire",
+    "notes": "Seat of Stavka, the Russian Supreme Headquarters, from August 1915; where Nicholas II was, as his own Supreme Commander, when Petrograd rose.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:zurich",
+    "name": "Zurich",
+    "names": [{ "name": "Zürich", "language": "de", "kind": "period" }],
+    "kind": "city",
+    "lngLat": [8.5417, 47.3769],
+    "country": "Switzerland",
+    "notes": "Where Lenin spent the last of his exile, and where he boarded the train home on 9 April 1917 (N.S.).",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:luga",
+    "name": "Luga",
+    "kind": "town",
+    "lngLat": [29.845, 58.737],
+    "country": "Russian Empire",
+    "notes": "A junction on the Pskov-Petrograd railway, some 135 kilometres south of the capital, and the point the leading trains of Kornilov's cavalry did not get past.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:vyritsa",
+    "name": "Vyritsa",
+    "kind": "village",
+    "lngLat": [30.35, 59.408],
+    "country": "Russian Empire",
+    "notes": "A station on the line into Petrograd from the south, about sixty kilometres out, where the trains of the Native Division came to a stand.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+  },
+  {
+    "id": "place:velikiye-luki",
+    "name": "Velikiye Luki",
+    "kind": "town",
+    "lngLat": [30.5167, 56.35],
+    "country": "Russian Empire",
+    "notes": "A railway town behind the Northern Front, in the area where the 3rd Cavalry Corps lay in August 1917 before it was ordered towards Petrograd.",
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   }
 ]

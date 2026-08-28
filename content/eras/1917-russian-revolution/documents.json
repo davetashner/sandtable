@@ -1,0 +1,105 @@
+[
+  {
+    "id": "1917-russian-revolution:document-order-no-1",
+    "title": "Order No. 1 of the Petrograd Soviet",
+    "date": "1917-03-14",
+    "author": "The Petrograd Soviet of Workers' and Soldiers' Deputies",
+    "kind": "order",
+    "language": "ru",
+    "excerpt": "По гарнизону Петроградского округа всем солдатам гвардии, армии, артиллерии и флота для немедленного и точного исполнения, а рабочим Петрограда для сведения.\n\n[…]\n\n3) Во всех своих политических выступлениях воинская часть подчиняется Совету рабочих и солдатских депутатов и своим комитетам.\n\n4) Приказы военной комиссии Государственной думы следует исполнять, за исключением тех случаев, когда они противоречат приказам и постановлениям Совета рабочих и солдатских депутатов.",
+    "translation": "To the garrison of the Petrograd district, to all soldiers of the Guards, the army, the artillery and the fleet, for immediate and exact execution, and to the workers of Petrograd for their information.\n\n[…]\n\n3) In all its political actions a military unit is subordinate to the Soviet of Workers' and Soldiers' Deputies and to its own committees.\n\n4) The orders of the Military Commission of the State Duma are to be carried out, except in those cases where they contradict the orders and decisions of the Soviet of Workers' and Soldiers' Deputies.\n\n*This English is the pack's own translation of the Russian above, and is marked as such because no scholarly English edition of the order was available from here. The order has seven numbered points; these two are quoted because their Russian wording could be confirmed against two independent transcriptions. The others provided for the election of committees in every unit, put the unit's weapons under the committees' control and expressly out of the officers' hands, abolished obligatory saluting off duty, and ended the old forms of address.*",
+    "archive": "Published in Izvestiya, 2 March 1917 (O.S.)",
+    "links": {
+      "events": ["1917-russian-revolution:event-order-no-1"],
+      "places": ["place:tauride-palace"]
+    },
+    "sources": [
+      {
+        "source": "source:wikisource-ru",
+        "note": "Russian text of points 3 and 4 and of the address line, confirmed word for word against a second, independent transcription before being quoted. A volunteer transcription rather than a scholarly edition: the scholarly English translation of the full order is in Boyd, 'The Origins of Order Number 1', which this pack has not read."
+      },
+      {
+        "source": "source:wade-2017",
+        "note": "the order's context and effect; not read at page level"
+      }
+    ]
+  },
+  {
+    "id": "1917-russian-revolution:document-act-of-abdication",
+    "title": "The act of abdication of Nicholas II",
+    "date": "1917-03-15",
+    "author": "person:nicholas-ii",
+    "kind": "proclamation",
+    "language": "ru",
+    "excerpt": "…почли МЫ долгом совести облегчить народу НАШЕМУ тесное единение и сплочение всех сил народных для скорейшего достижения победы и, в согласии с Государственною Думою, признали МЫ за благо отречься от Престола Государства Российского и сложить с СЕБЯ Верховную власть. Не желая расстаться с любимым сыном НАШИМ, МЫ передаем наследие НАШЕ Брату НАШЕМУ Великому Князю МИХАИЛУ АЛЕКСАНДРОВИЧУ и благословляем Его на вступление на Престол Государства Российского.\n\n[…]\n\nг. Псков.\n2 марта, 15 час. 5 мин. 1917 г.",
+    "translation": "…WE have held it a duty of conscience to make easier for OUR people the close union and rallying of all the forces of the nation for the swiftest attainment of victory, and, in agreement with the State Duma, WE have judged it right to renounce the Throne of the Russian State and to lay down the Supreme power. Not wishing to be parted from OUR beloved son, WE hand on OUR inheritance to OUR Brother the Grand Duke MICHAEL ALEXANDROVICH and bless Him on His accession to the Throne of the Russian State.\n\n[…]\n\nPskov.\n2 March, 15 hours 5 minutes, 1917.\n\n*The English is the pack's own translation. No translation from a scholarly documentary edition was available from here; the two English versions in circulation are a 1917 newspaper rendering and a private transcription, and they differ materially. The capitals are the convention of the Russian transcriptions and are not necessarily the manuscript's.*",
+    "archive": "ГАРФ (State Archive of the Russian Federation), f. 601, op. 1, d. 2470",
+    "links": {
+      "events": ["1917-russian-revolution:event-abdication"],
+      "people": ["person:nicholas-ii"],
+      "places": ["place:pskov"]
+    },
+    "sources": [
+      {
+        "source": "source:bsb-1000dokumente-russia-1917",
+        "note": "Russian text with the archival reference. Two things about this document are worth a reader's attention. Its own title is Акт — an act, not a manifesto: it was never promulgated as one, and the familiar name is a later convention. And the time it carries, 15.05, is not when it was signed: the final text was drawn up and signed at about 11.40 that night before Guchkov and Shulgin, and dated back to the hour of the decision."
+      },
+      {
+        "source": "source:wikisource-ru",
+        "note": "the second, independent transcription the wording was confirmed against"
+      }
+    ]
+  },
+  {
+    "id": "1917-russian-revolution:document-april-theses",
+    "title": "The April Theses: 'The Tasks of the Proletariat in the Present Revolution'",
+    "date": "1917-04-17",
+    "author": "person:lenin-vladimir",
+    "kind": "memorandum",
+    "language": "ru",
+    "excerpt": "2) Своеобразие текущего момента в России состоит в переходе от первого этапа революции, давшего власть буржуазии в силу недостаточной сознательности и организованности пролетариата, — ко второму ее этапу, который должен дать власть в руки пролетариата и беднейших слоев крестьянства.\n\n3) Никакой поддержки Временному правительству, разъяснение полной лживости всех его обещаний, особенно относительно отказа от аннексий.\n\n5) Не парламентарная республика, — возвращение к ней от С.Р.Д. было бы шагом назад, — а республика Советов рабочих, батрацких и крестьянских депутатов по всей стране, снизу доверху.",
+    "translation": "2) The specific feature of the present situation in Russia is that the country is *passing* from the first stage of the revolution—which, owing to the insufficient class-consciousness and organisation of the proletariat, placed power in the hands of the bourgeoisie—to its *second stage*, which must place power in the hands of the proletariat and the poorest sections of the peasants.\n\n3) No support for the Provisional Government; the utter falsity of all its promises should be made clear, particularly of those relating to the renunciation of annexations. Exposure in place of the impermissible, illusion-breeding \"demand\" that *this* government, a government of capitalists, should *cease* to be an imperialist government.\n\n5) Not a parliamentary republic—to return to a parliamentary republic from the Soviets of Workers' Deputies would be a retrograde step—but a republic of Soviets of Workers', Agricultural Labourers' and Peasants' Deputies throughout the country, from top to bottom.\n\nAbolition of the police, the army and the bureaucracy.\n\nThe salaries of all officials, all of whom are elective and displaceable at any time, not to exceed the average wage of a competent worker.",
+    "archive": "First published in Pravda no. 26, 7 April 1917 (O.S.), over Lenin's signature alone",
+    "links": {
+      "events": ["1917-russian-revolution:event-april-theses"],
+      "people": ["person:lenin-vladimir"]
+    },
+    "sources": [
+      {
+        "source": "source:lenin-cw",
+        "pages": "vol. 24, pp. 19–26",
+        "note": "The English is the Progress Publishers translation by Bernard Isaacs, printed according to the Pravda text; the italics are the source's. Ten theses in all; three are quoted here."
+      },
+      {
+        "source": "source:wikisource-ru",
+        "note": "the Russian text, О задачах пролетариата в данной революции"
+      }
+    ]
+  },
+  {
+    "id": "1917-russian-revolution:document-to-the-citizens-of-russia",
+    "title": "'To the Citizens of Russia!'",
+    "date": "1917-11-07",
+    "author": "The Military Revolutionary Committee of the Petrograd Soviet",
+    "kind": "proclamation",
+    "language": "ru",
+    "excerpt": "К гражданам России!\n\nВременное правительство низложено. Государственная власть перешла в руки органа Петроградского Совета рабочих и солдатских депутатов, Военно-революционного комитета, стоящего во главе петроградского пролетариата и гарнизона.\n\nДело, за которое боролся народ: немедленное предложение демократического мира, отмена помещичьей собственности на землю, рабочий контроль над производством, создание Советского правительства – это дело обеспечено.\n\nДа здравствует революция рабочих, солдат и крестьян!\n\nВоенно-революционный комитет при Петроградском Совете рабочих и солдатских депутатов\n\n25 октября 1917 г. 10 ч. утра",
+    "translation": "The Provisional Government has been deposed. State power has passed into the hands of the organ of the Petrograd Soviet of Workers' and Soldiers' Deputies—the Revolutionary Military Committee, which heads the Petrograd proletariat and the garrison.\n\nThe cause for which the people have fought, namely, the immediate offer of a democratic peace, the abolition of landed proprietorship, workers' control over production, and the establishment of Soviet power—this cause has been secured.\n\nLong live the revolution of workers, soldiers and peasants!\n\nRevolutionary Military Committee of the Petrograd Soviet of Workers' and Soldiers' Deputies, 10 a.m., October 25, 1917",
+    "archive": "First published in Rabochy i Soldat no. 8, 25 October 1917 (O.S.)",
+    "links": {
+      "events": ["1917-russian-revolution:event-october-insurrection"],
+      "places": ["place:petrograd"]
+    },
+    "sources": [
+      {
+        "source": "source:bsb-1000dokumente-russia-1917",
+        "note": "the Russian text, confirmed word for word against a second, independent transcription"
+      },
+      {
+        "source": "source:lenin-cw",
+        "pages": "vol. 26, p. 236",
+        "note": "the English, translated by Yuri Sdobnikov and George Hanna. The Collected Works print it among Lenin's writings; the leaflet itself is signed by the Military Revolutionary Committee, and his authorship is an attribution of the edition rather than a statement on the document. Note the hour it carries: ten in the morning of 25 October, when the Winter Palace had not yet been taken and the Provisional Government was still sitting in it."
+      }
+    ]
+  }
+]

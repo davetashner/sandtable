@@ -1,0 +1,40 @@
+[
+  {
+    "id": "1917-russian-revolution:vignette-nicholas-diary",
+    "title": "The last line of the day",
+    "at": "1917-03-16T01:00:00Z",
+    "place": "place:pskov",
+    "voice": "Nicholas II, in his diary for 2 March",
+    "kind": "witness",
+    "text": "He writes it up the way he wrote up every day of his life, in the same flat register he used for the weather and the walks. Ruzsky came in the morning and read out his long conversation with Rodzianko. The replies from the commanders-in-chief came in by half past two. \"Суть та, что во имя спасения России и удержания армии на фронте в спокойствии нужно решиться на этот шаг. Я согласился.\" — the substance of it is that to save Russia and keep the army quiet at the front, this step must be decided on. I agreed.[^nicholas-diary-1917]\n\nIn the evening Guchkov and Shulgin arrived from Petrograd. He handed them the signed and altered text. At one in the morning he left Pskov \"с тяжелым чувством пережитого\", with a heavy feeling of what he had lived through.\n\nThen the last line, which is the only sentence in the entry with any heat in it at all: **\"Кругом измена и трусость и обман!\"** — all around, treason and cowardice and deceit.[^nicholas-diary-1917]",
+    "people": ["person:nicholas-ii"],
+    "links": { "events": ["1917-russian-revolution:event-abdication"] },
+    "sources": [
+      {
+        "source": "source:nicholas-diary-1917",
+        "note": "The entry for 2 March 1917 (O.S.). The famous last line is often printed with commas — 'Кругом измена, и трусость, и обман' — and both of the transcriptions checked for this pack give it without them and with an exclamation mark, which is the form used here. The English renderings are the pack's own; the two unattributed translations in circulation differ from each other, and one of them silently adds a pronoun the Russian does not have."
+      }
+    ]
+  },
+  {
+    "id": "1917-russian-revolution:vignette-lenin-letter",
+    "title": "A letter written on the evening of the 24th",
+    "at": "1917-11-06T20:00:00Z",
+    "place": "place:petrograd",
+    "voice": "Lenin, in hiding on the Vyborg side, to the Central Committee",
+    "kind": "witness",
+    "text": "He is a few kilometres from Smolny and cannot go there. The Military Revolutionary Committee has spent four days taking the garrison unit by unit and intends to present the Congress of Soviets with an accomplished fact the day after tomorrow. Lenin does not trust the timetable. He writes:\n\n> \"I am writing these lines on the evening of the 24th. The situation is critical in the extreme. In fact it is now absolutely clear that to delay the uprising would be fatal. […] The government is tottering. It must be given the deathblow at all costs. To delay action is fatal.\"[^lenin-cw]\n\nThe letter is a piece of evidence in the argument about what October was. The man whose party is credited with a meticulously executed coup is writing, on the night it begins, to tell his own Central Committee that they are about to lose everything by hesitating.",
+    "people": ["person:lenin-vladimir"],
+    "links": {
+      "events": ["1917-russian-revolution:event-october-insurrection"],
+      "historiography": ["1917-russian-revolution:historiography-october-coup-or-revolution"]
+    },
+    "sources": [
+      {
+        "source": "source:lenin-cw",
+        "pages": "vol. 26, pp. 234–235",
+        "note": "'Letter to Central Committee Members', written 24 October (6 November) 1917 and first published in 1924, in the Progress Publishers translation. The Russian has two similar sentences, 'промедление в восстании смерти подобно' near the opening and 'промедление в выступлении смерти подобно' at the close; the Progress edition renders them 'to delay the uprising would be fatal' and 'To delay action is fatal', and this pack quotes that edition rather than translating around it."
+      }
+    ]
+  }
+]

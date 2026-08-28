@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1917-russian-revolution:route-corps-cavalry-3",
+    "formation": "1917-russian-revolution:corps-cavalry-3",
+    "mode": "rail",
+    "waypoints": [
+      [30.5167, 56.35, "1917-09-08T12:00:00Z"],
+      [28.332, 57.8194, "1917-09-10T12:00:00Z"],
+      [29.845, 58.737, "1917-09-11T12:00:00Z"],
+      [30.35, 59.408, "1917-09-12T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "The railway the corps was routed over - Velikiye Luki to Pskov, then the Pskov-Luga-Gatchina line towards Petrograd - at the stations the accounts name and at day resolution. It is a line, not a position: the corps moved as a couple of dozen separate trains strung out over that line for days, which is precisely why the soldiers' committees and the railwaymen were able to take it apart train by train, and why no single point on this path is where the corps was.",
+    "notes": "Drawn low deliberately. The pack knows which line the trains were on and roughly which day they were stopped; it does not know where any given echelon stood at any given hour, and the sources it can reach do not either.",
+    "sources": [{ "source": "source:katkov-1980" }, { "source": "source:rabinowitch-1976" }]
+  }
+]

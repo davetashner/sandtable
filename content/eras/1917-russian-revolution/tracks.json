@@ -1,0 +1,67 @@
+[
+  {
+    "id": "1917-russian-revolution:track-nicholas-to-pskov",
+    "person": "person:nicholas-ii",
+    "kind": "journey",
+    "side": "crown",
+    "mode": "rail",
+    "waypoints": [
+      [30.33, 53.9, "1917-03-13T05:00:00Z"],
+      [32.222, 58.845, "1917-03-14T02:00:00Z"],
+      [34.053, 57.883, "1917-03-14T09:00:00Z"],
+      [29.968, 57.826, "1917-03-14T17:00:00Z"],
+      [28.332, 57.8194, "1917-03-14T20:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "The stations the accounts name, at day and part-of-day resolution: Mogilev on the morning of 28 February (O.S.), Malaya Vishera in the small hours of 1 March where the train was turned back because the line ahead was in revolutionary hands, then back through Bologoye and round by Dno to Pskov, reached that evening. The hours between those points are nominal and the doubling-back is the shape of the path, not a set of timed positions. Times are written as local clock time on a Z label - see the pack README.",
+    "notes": "This is the journey the dynasty ended on: a train that could not reach the capital, diverted to the headquarters of the Northern Front, where the front commanders' telegrams were waiting.",
+    "sources": [{ "source": "source:figes-1996" }, { "source": "source:wade-2017" }]
+  },
+  {
+    "id": "1917-russian-revolution:track-lenin-through-germany",
+    "person": "person:lenin-vladimir",
+    "kind": "journey",
+    "side": "bolshevik",
+    "mode": "rail",
+    "waypoints": [
+      [8.5417, 47.3769, "1917-04-09T15:10:00Z"],
+      [8.7667, 47.7333, "1917-04-09T21:00:00Z"],
+      [13.6431, 54.5147, "1917-04-12T06:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Three points on a journey the German records date to the day: Zurich in the afternoon of 9 April (N.S.), the frontier at Gottmadingen that evening where the party changed into the German carriage, and Sassnitz on the Baltic on the 12th. The route between is the German main line through Singen, Frankfurt and Berlin; the straight segments drawn here are not the track. The departure time from Zurich is the one the accounts give; the rest of the hours are nominal.",
+    "notes": "The carriage was not literally sealed. Three of its four doors were locked and a chalk line on the floor marked the extraterritorial part off from the two German officers travelling in it, which is the arrangement the phrase describes.",
+    "sources": [{ "source": "source:merridale-2016" }]
+  },
+  {
+    "id": "1917-russian-revolution:track-lenin-across-the-baltic",
+    "person": "person:lenin-vladimir",
+    "kind": "journey",
+    "side": "bolshevik",
+    "mode": "sea",
+    "waypoints": [
+      [13.6431, 54.5147, "1917-04-12T07:00:00Z"],
+      [13.1569, 55.3753, "1917-04-12T14:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "The Sassnitz-Trelleborg train ferry, on 12 April (N.S.). The crossing is dated to the day; the hours here are nominal, morning to afternoon, and are marked low for that reason. The leg is written separately from the rail legs on either side of it because what carried him changed, and a ferry drawn as a railway is a false claim about the ground.",
+    "sources": [{ "source": "source:merridale-2016" }]
+  },
+  {
+    "id": "1917-russian-revolution:track-lenin-home",
+    "person": "person:lenin-vladimir",
+    "kind": "journey",
+    "side": "bolshevik",
+    "mode": "rail",
+    "waypoints": [
+      [13.1569, 55.3753, "1917-04-12T15:00:00Z"],
+      [18.0686, 59.3293, "1917-04-13T10:00:00Z"],
+      [24.1114, 65.835, "1917-04-15T12:00:00Z"],
+      [30.3561, 59.9556, "1917-04-16T23:10:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Trelleborg to Stockholm overnight on 12-13 April (N.S.), north through Sweden to Haparanda on the 15th, across the frontier at Tornio and down through Finland to the Finland Station late on the 16th. The four points are the stages the accounts name; the days are theirs, the hours are nominal except the arrival, which the eyewitnesses put at about ten past eleven at night. The last leg is drawn straight and was not: it ran through Helsinki.",
+    "notes": "16 April (N.S.) is 3 April (O.S.), which is the date every Russian account gives. This is the pack's clearest case of the thirteen days: the same evening has two dates and both are correct.",
+    "sources": [{ "source": "source:merridale-2016" }, { "source": "source:figes-1996" }]
+  }
+]

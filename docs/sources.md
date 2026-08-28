@@ -464,6 +464,49 @@ he intended, never for the wording of an order.
 | `source:fuchida-okumiya-1955` | Fuchida & Okumiya, _Midway_ (1955)                  | the received account and where it came from — cited against, not from |
 | `source:hastings-2008`        | Hastings, _Retribution_ (2008; UK _Nemesis_, 2007)  | 1944–45 at human scale; colour, not numbers (rule 9)                  |
 
+## Core bibliography — Russia 1917 (in the registry)
+
+Added with the first Russian pack (`sand-ekc.7`), and the honest summary is
+this: **of the eleven secondary works below, none could be opened at page level
+from this project's environment.** Every copy on the Internet Archive is
+borrow-only. They are therefore cited without pages, for what each work is
+about and for the position it holds, and nothing in the pack is put inside
+quotation marks from any of them. §3's rule — never write a page you did not
+read — is why the citations look thinner here than in the 1914 pack, and the
+thinness is the truthful thing rather than a defect to be papered over.
+
+The four sources that **can** be read in full are marked. They are what the
+pack quotes: the two open-access or open-transcription scholarly items, and the
+document editions.
+
+| id                                     | Work                                                                  | Use it for                                                       |
+| -------------------------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `source:figes-1996`                    | Figes, _A People's Tragedy_ (1996)                                    | the narrative backbone, 1891–1924; the revolution from below     |
+| `source:smith-2017`                    | Smith, _Russia in Revolution_ (2017)                                  | the empire-wide social and economic frame, 1890–1928             |
+| `source:fitzpatrick-2017`              | Fitzpatrick, _The Russian Revolution_ (4th ed. 2017)                  | the long-frame revisionist reading — 1917 as an opening          |
+| `source:rabinowitch-1976`              | Rabinowitch, _The Bolsheviks Come to Power_ (1976)                    | Petrograd July–October; the party as it actually was             |
+| `source:hasegawa-1981`                 | Hasegawa, _The February Revolution_ (1981)                            | the nine days of February; the insurrection from below           |
+| `source:pipes-1990`                    | Pipes, _The Russian Revolution_ (1990)                                | the coup thesis — cited as a position, not as a neutral account  |
+| `source:wade-2017`                     | Wade, _The Russian Revolution, 1917_ (3rd ed. 2017)                   | the sequence of political events; uncontested matters of record  |
+| `source:merridale-2016`                | Merridale, _Lenin on the Train_ (2016)                                | the April journey stage by stage; this pack's rail pace band     |
+| `source:katkov-1980`                   | Katkov, _Russia 1917: The Kornilov Affair_ (1980)                     | one reading of late August — partisan, and cited as such         |
+| `source:trotsky-1932`                  | Trotsky, _History of the Russian Revolution_ — **full text**          | a participant's argument about February and October              |
+| `source:stone-1975`                    | Stone, _The Eastern Front 1914–1917_ (already in the registry)        | the war economy: distribution and inflation, not shortage        |
+| `source:lyandres-1995`                 | Lyandres, _The Bolsheviks' "German Gold" Revisited_ — **open access** | the July 1917 accusations, document by document                  |
+| `source:zeman-1958`                    | Zeman (ed.), _Germany and the Revolution in Russia_ — **scan**        | what Berlin said it was doing, in its own files                  |
+| `source:lenin-cw`                      | Lenin, _Collected Works_ (Progress) — **full text**                   | the April Theses; the MRC proclamation; the letter of 24 October |
+| `source:bsb-1000dokumente-russia-1917` | BSB, _100(0) Schlüsseldokumente_ — **full text, with archive refs**   | the Russian texts of the abdication act and the proclamation     |
+| `source:wikisource-ru`                 | Russian Wikisource — a volunteer transcription library                | Russian text only where a second transcription confirms it       |
+| `source:nicholas-diary-1917`           | Nicholas II, diary for 1917 (militera.lib.ru transcription)           | what the Emperor wrote on 2 March (O.S.)                         |
+
+Two conventions specific to this pack, both recorded in
+[`content/eras/1917-russian-revolution/README.md`](../content/eras/1917-russian-revolution/README.md).
+Where no scholarly English translation of a Russian document could be found,
+the pack translates it itself and **says so in the document**. And where a
+transcription site is the only witness to a Russian text, the wording was
+confirmed against a second, independent transcription before being quoted, or
+it was not quoted.
+
 ## To add as the content lands (not yet in the registry)
 
 An authoring backlog. It is deliberately not shown to readers — see "What a
