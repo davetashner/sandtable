@@ -110,6 +110,21 @@ documented exceptions cost less than that.
 - Everything in a pack must fall inside `pack.timeRange`; everything inside a
   battle must fall inside the battle's `timeRange`.
 - Positions are `[lng, lat]` (WGS 84); regions are `[west, south, east, north]`.
+- **A region may cross the antimeridian, and says so by being written
+  `west > east`** (`sand-lry.22`). The 1941 Pacific theatre is
+  `[99, -12, -155, 52]`: 106° wide, running east from Malaya over the date line
+  to Hawaii — not the 254° its corners read as if you take their minimum and
+  maximum. Every edge still lies in [-180, 180]; nothing is written as 205. The
+  convention is GeoJSON's (RFC 7946 §5.2) and MapLibre's, and it is why the
+  battle-region check asks for `west ≠ east` rather than `west < east`. A
+  region needs a width, so `west === east` is an error: it is the one reading
+  the convention cannot tell apart from a box round the whole world. Anything
+  that measures or contains a region goes through `src/engine/geo.ts`
+  (`lngSpan`, `boxContains`, `unwrapEast`) rather than comparing the numbers.
+- Route waypoints are written the same way — each one in [-180, 180], with no
+  `-170` turned into `190` to keep a path monotonic. The engine makes the
+  longitudes continuous when it draws (`unwrapLngs`), so a leg that crosses
+  180° goes the short way; a path that never crosses comes back unchanged.
 - Route waypoints are `[lng, lat, time]` — or `[lng, lat, time, confidence]`
   — strictly increasing in time. A route carries a `confidence`
   (`high | medium | low | contested`) and a `derivation` note, and that

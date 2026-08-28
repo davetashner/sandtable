@@ -89,6 +89,67 @@ describe('composeRoutes', () => {
     const fr6 = out.find((r) => r.formation.id === '1914:army-fr-6')!;
     expect(fr6.hypothetical).toBe(false);
   });
+
+  // sand-lry.22: the Kidō Butai left the Kurils at 147.672°E and made its
+  // standby point at 170°W. Read as written that is a step of 317° westward,
+  // and the track draws back over Asia and Europe instead of across the
+  // Pacific. The path is made continuous instead, so 170°W becomes 190°.
+  describe('a path that crosses the antimeridian', () => {
+    const kidoButai: Route[] = [
+      {
+        id: '1914:route-de-1',
+        formation: '1914:army-de-1',
+        mode: 'sea',
+        waypoints: [
+          [147.672, 44.965, t('13')],
+          [-170, 42, t('20')],
+          [-157, 32, t('26')],
+        ],
+        confidence: 'medium',
+        sources: [{ source: 'source:x' }],
+      },
+      {
+        id: '1914:route-de-1-b',
+        formation: '1914:army-de-1',
+        mode: 'sea',
+        waypoints: [
+          [-157, 32, t('26')],
+          [-168, 31, t('28')],
+        ],
+        confidence: 'medium',
+        sources: [{ source: 'source:x' }],
+      },
+    ];
+
+    it('makes the longitudes continuous, across legs as well as within one', () => {
+      const out = composeRoutes(kidoButai, formations, sides, historical);
+      const track = out.find((r) => r.formation.id === '1914:army-de-1')!;
+      expect(track.points.map((p) => p[0])).toEqual([147.672, 190, 203, 192]);
+      // The legs carry the same numbers the joined path does, or the drawn
+      // path and the trail would disagree about which side of 180° a leg is.
+      expect(track.legs.map((leg) => leg.points.map((p) => p[0]))).toEqual([
+        [147.672, 190, 203],
+        [203, 192],
+      ]);
+    });
+
+    it('interpolates the short way between the two sides of the date line', () => {
+      const out = composeRoutes(kidoButai, formations, sides, historical);
+      const track = out.find((r) => r.formation.id === '1914:army-de-1')!;
+      const half = (Date.parse(t('13')) + Date.parse(t('20'))) / 2;
+      const at = positionAt(track.points, half);
+      expect(at.lngLat[0]).toBeCloseTo(168.836, 3);
+      // Eastward, not west: a min/max reading gives a bearing near 270.
+      expect(Math.round(at.bearing)).toBeGreaterThan(90);
+      expect(Math.round(at.bearing)).toBeLessThan(135);
+    });
+
+    it('leaves a path that never crosses exactly as it was written', () => {
+      const out = composeRoutes(routes, formations, sides, historical);
+      const de1 = out.find((r) => r.formation.id === '1914:army-de-1')!;
+      expect(de1.points.map((p) => p[0])).toEqual([6, 4, 3]);
+    });
+  });
 });
 
 describe('positionAt', () => {

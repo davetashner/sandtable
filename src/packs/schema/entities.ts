@@ -655,7 +655,9 @@ export const Pack = z
     subtitle: z.string().optional(),
     summary: Markdown,
     timeRange: TimeRange.describe('The campaign clock: the timeline spans this range'),
-    region: BBox.describe('Geographic extent of the pack'),
+    region: BBox.describe(
+      'Geographic extent of the pack; west > east crosses the antimeridian (a Pacific theatre)',
+    ),
     borderYear: z.number().int().describe('Which shared/geo/borders/<year>.geojson to draw'),
     tiles: TileArchive.optional().describe(
       'Basemap archive this campaign is drawn on, by name — "central-pacific-z10", never a URL ' +

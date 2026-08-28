@@ -277,6 +277,76 @@ describe('validateContent', () => {
     );
   });
 
+  // sand-lry.22: `[west, south, east, north]` with west > east is how a box
+  // says it crosses the antimeridian. The check that used to enforce
+  // `west < east` made every Pacific zoom-in unwritable.
+  describe('a region that crosses the antimeridian', () => {
+    /** The fixture moved into the central Pacific, pack and zoom-in together. */
+    const inThePacific = (battleRegion: unknown) => {
+      const raw = fixture();
+      const pack = raw.packs[0]!.pack.data as Record<string, unknown>;
+      pack['region'] = [99, -12, -155, 52];
+      pack['camera'] = { center: [-175, 30], zoom: 2.6 };
+      pack['opening'] = {
+        headline: ['Sunday, 7 December 1941.'],
+        lede: 'Two clocks.',
+        camera: { center: [-157.96, 21.4], zoom: 7 },
+      };
+      const battles = raw.packs[0]!.collections['battles.json']!.data as Record<string, unknown>[];
+      battles[0]!['region'] = battleRegion;
+      battles[0]!['camera'] = { center: [180, 28.2], zoom: 11 };
+      const formations = raw.packs[0]!.collections['formations.json']!.data as Record<
+        string,
+        unknown
+      >[];
+      formations[0]!['concentration'] = {
+        area: 'Hitokappu Bay',
+        position: [147.672, 44.965],
+        asOf: '1914-08-02T00:00:00Z',
+        sources: [{ source: 'source:herwig-2009' }],
+      };
+      return raw;
+    };
+
+    it('accepts a zoom-in a fifth of a degree wide that straddles 180°', () => {
+      const report = validateContent(inThePacific([179.95, 28.1, -179.95, 28.3]));
+      expect(messages(report)).toEqual([]);
+      expect(report.ok).toBe(true);
+    });
+
+    it('still rejects a region with no width or no height', () => {
+      expect(
+        validateContent(inThePacific([180, 28.1, 180, 28.3])).errors.map((e) => e.message),
+      ).toContainEqual(expect.stringMatching(/region must be \[west, south, east, north\]/));
+      expect(
+        validateContent(inThePacific([179.95, 28.3, -179.95, 28.1])).errors.map((e) => e.message),
+      ).toContainEqual(expect.stringMatching(/region must be \[west, south, east, north\]/));
+    });
+
+    it('reads a position on either side of the date line as inside the region', () => {
+      const report = validateContent(inThePacific([179.95, 28.1, -179.95, 28.3]));
+      expect(report.warnings.map((w) => w.message)).not.toContainEqual(
+        expect.stringMatching(/is outside the pack region/),
+      );
+    });
+
+    it('still notices a position that really is outside a crossing region', () => {
+      const raw = inThePacific([179.95, 28.1, -179.95, 28.3]);
+      const formations = raw.packs[0]!.collections['formations.json']!.data as Record<
+        string,
+        unknown
+      >[];
+      // Berlin: on the far side of the world, and inside the box only if you
+      // read [99, -155] as a minimum and a maximum.
+      (formations[0]!['concentration'] as Record<string, unknown>)['position'] = [13.4, 52.5];
+      expect(validateContent(raw).warnings.map((w) => w.message)).toContainEqual(
+        expect.stringMatching(
+          /concentration\.position \[13\.4, 52\.5\] is outside the pack region/,
+        ),
+      );
+    });
+  });
+
   it('checks the backstory: chain.focus must be a battle, chain.card must resolve', () => {
     const raw = fixture();
     const pack = raw.packs[0]!.pack.data as Record<string, unknown>;

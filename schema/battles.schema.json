@@ -70,7 +70,7 @@
             "maximum": 90
           }
         ],
-        "description": "[west, south, east, north]"
+        "description": "[west, south, east, north]; west > east crosses the antimeridian (e.g. [147.7, -12, -158, 52])"
       },
       "camera": {
         "type": "object",

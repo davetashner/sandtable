@@ -73,7 +73,7 @@
           "maximum": 90
         }
       ],
-      "description": "Geographic extent of the pack"
+      "description": "Geographic extent of the pack; west > east crosses the antimeridian (a Pacific theatre)"
     },
     "borderYear": {
       "type": "integer",

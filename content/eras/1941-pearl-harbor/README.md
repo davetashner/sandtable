@@ -162,15 +162,16 @@ it has not done.
 
 ## Known engine limits this pack ran into
 
-1. **The map cannot frame a theatre that crosses the antimeridian.**
-   `pack.region` is `[west, south, east, north]` and `fitRegion` passes it
-   straight to `fitBounds`, which takes the minimum and maximum of the four
-   corners in world coordinates — so a box running from 147°E east to 158°W
-   fits the _complement_ of the Pacific. The region here is therefore written
-   as a full longitude band (`[-180, -12, 180, 52]`), which is honest about the
-   theatre and coarse about the framing; the `camera` and the chapters do the
-   real work. The Kidō Butai's route crosses the date line with true
-   coordinates and the pace check, which uses haversine, is unaffected.
+1. ~~**The map cannot frame a theatre that crosses the antimeridian.**~~
+   Fixed in `sand-lry.22`. A region written `west > east` now means "the short
+   way across 180°", so this pack's region is the theatre it is actually about
+   — `[99, -12, -155, 52]`, Malaya east over the date line to Hawaii, 106° wide
+   — rather than the full longitude band (`[-180, -12, 180, 52]`) it was
+   written as while `fitBounds` read those corners as a minimum and a maximum
+   and framed the other 254° of the world. The Kidō Butai's route is unchanged:
+   its waypoints were always true coordinates, and the engine now makes them
+   continuous when it draws, so the track goes east across the Pacific instead
+   of back over Asia. The pace check uses haversine and never had the problem.
 2. **A `Timetable` counts whole days**, so the eighty-minute slip on the
    Washington clock — the point of that card — is carried in the milestone
    notes rather than in the gauge.
