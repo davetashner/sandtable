@@ -24,6 +24,6 @@ sources:
   - source: source:tuchman-1962
 ---
 
-At dawn on 20 August the Bavarian corps and the 7th Army's XV and XXI Corps come forward along the whole front from Morhange to Sarrebourg, behind heavy artillery the French 75s cannot reach. The XV Corps — the Marseille corps the Paris press will blame — breaks under it; the XX Corps under [Foch](person:foch-ferdinand) holds on the heights while the army to either side gives way; the 1st Army is thrown out of Sarrebourg.[^afgg-1-1] [^herwig-2009]
+At dawn on 20 August the Bavarian corps and the XXI Corps, with the 7th Army's XV Corps beside them, come forward along the whole front from Morhange to Sarrebourg, behind heavy artillery the French 75s cannot reach. The XV Corps — the Marseille corps the Paris press will blame — breaks under it; the XX Corps under [Foch](person:foch-ferdinand) holds on the heights while the army to either side gives way; the 1st Army is thrown out of Sarrebourg.[^afgg-1-1] [^herwig-2009]
 
 By evening [Castelnau](person:castelnau-edouard-de) has ordered the 2nd Army back to the Meurthe and Nancy, and [Dubail](person:dubail-auguste) must conform. Plan XVII's main offensive has lasted six days and cost the French army some of the worst losses of the war — infantry attacking in the open against guns it could not see.[^herwig-2009] [^tuchman-1962]

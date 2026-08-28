@@ -2815,23 +2815,23 @@
         "id": "1914:lorraine-route-de-i-bav",
         "formation": "1914:corps-de-i-bav",
         "waypoints": [
-          [6.65, 48.95, "1914-08-14T06:00:00Z"],
-          [6.66, 48.93, "1914-08-19T18:00:00Z"],
-          [6.62, 48.9, "1914-08-20T06:00:00Z"],
-          [6.55, 48.84, "1914-08-20T18:00:00Z"],
-          [6.51, 48.8, "1914-08-21T12:00:00Z"],
-          [6.5, 48.7, "1914-08-22T12:00:00Z"],
-          [6.5, 48.6, "1914-08-23T12:00:00Z"],
-          [6.4, 48.48, "1914-08-24T12:00:00Z"],
-          [6.42, 48.5, "1914-08-25T18:00:00Z"]
+          [6.89, 48.57, "1914-08-14T06:00:00Z"],
+          [6.99, 48.7, "1914-08-19T18:00:00Z"],
+          [7.02, 48.72, "1914-08-20T06:00:00Z"],
+          [7.05, 48.73, "1914-08-20T18:00:00Z"],
+          [6.95, 48.68, "1914-08-21T12:00:00Z"],
+          [6.86, 48.61, "1914-08-22T12:00:00Z"],
+          [6.79, 48.51, "1914-08-23T12:00:00Z"],
+          [6.71, 48.46, "1914-08-24T12:00:00Z"],
+          [6.7, 48.43, "1914-08-25T18:00:00Z"]
         ],
         "confidence": "medium",
-        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "derivation": "Corps centre at the hours named, read off the Reichsarchiv's day-by-day, corps-by-corps narrative in Bd. 1, which fixes each corps by the villages it names; ±5–8 km. Re-drawn in full for sand-23b.38: the path this replaces had the I. and III. Bavarian Corps at each other's ends of the army, and the XXI. Corps and the I. Bavarian Reserve Corps 30–40 km from where the volume puts them.",
         "sources": [
           {
             "source": "source:reichsarchiv-weltkrieg-1",
-            "pages": "70, 189–213, 263–302, 568–603",
-            "note": "The volume disagrees with this path, and the disagreement is not small. On 20 August Bd. 1 has the 6th Army attacking with the III. Bavarian Corps on the right against Delme, taking the \"Telegraph\" height north-west of Château-Salins by midnight (pp. 265, 267, 281); the II. Bavarian Corps next to it at Mörchingen (pp. 267, 269); the XXI. Corps on Dieuze (p. 269); the I. Bavarian Reserve Corps at the canal by Bisping and St. Johann-von-Bassel (p. 271); and the I. Bavarian Corps taking Saarburg itself, its 1st Bavarian Division clearing the town house by house and beating off a counter-stroke by 10 p.m. (p. 273). This pack puts the I. Bavarian Corps at Morhange and the III. Bavarian at Sarrebourg — the two ends of the army the other way round. The pages are given so the next reader can check it; nothing has been moved on the strength of one official history against a source that cannot be opened from here. On 23–24 August Bd. 1 has this corps fighting for Montigny and the Blette brook and halting on the heights between Vaxainville and Ste. Pôle, with its right wing at Azerailles six kilometres north-west of Baccarat (p. 573). Bd. 1 covers the whole of this path: pp. 189–213 the movements to 19 August, with Skizze 2 (p. 195) giving the 6th and 7th Armies’ positions on the morning of the 14th; pp. 263–302 the battle in Lorraine of 20–22 August, corps by corps; pp. 568–603 the pursuit of 23–24 August and the French counter-attack of 25–27 August."
+            "pages": "194–204, 263–302, 567–582, 583–603",
+            "note": "The 6th Army's left-hand corps, and the one that took Sarrebourg — not Morhange, 40 km away at the other end of the army, where this path used to begin. p. 196: after its thrust on Badonviller it had gone back by the 14th to just south of Blâmont–Cirey; p. 200: on the 15th Xylander drew his divisions behind the Rhine–Marne canal into the line north of Gondrexange–heights south of Saarburg, and p. 204 leaves it behind the Saar with security detachments on the line Stock pond–Hessen (5 km south of Saarburg). For the attack of 20 August the corps stood on the right wing of the 7th Army, whose orders it took that day (p. 264): it was to advance on the line Zittersdorf–Saarburg inclusive. pp. 272–273: fire was opened at 5.20 a.m. on the positions along the wood edges west of the Saar and the railway embankment north-east of Saarburg, the attack brought forward to 10.15 a.m.; the 1st Bavarian Division took Hof and the Neuberg at 5 p.m., cleared the town itself house by house and street by street, broke a heavy counter-stroke from the south only towards 10 p.m., and bivouacked west and south of Saarburg. p. 297: on the 22nd its western column was at Foulcrey in the morning and had Blâmont and Repaix by midday. pp. 570, 573: on the 23rd it marched from Blâmont south-west on Hablainville, fought till evening for Montigny and the Blette brook, and had to be content with the heights south of the Blette between Vaxainville and Ste. Pôle, its right wing directed on Azerailles 6 km north-west of Baccarat. p. 579: on the 24th it went with the 1st Bavarian Reserve Division on Glonville–Baccarat. p. 589: on the 25th the mass of the corps stayed in quarters north-west of Baccarat, its attack coming to a stand at the Belville brook by Nossoncourt and at Ménil. Bd. 1 carries the whole of this path: pp. 194–200 the positions on the morning of 14 August and the withdrawal behind the Saar to the 19th, with Skizze 2 (p. 195) for the 6th and 7th Armies that morning; pp. 263–302 the battle of 20–22 August, corps by corps; pp. 567–582 the pursuit of 23–24 August; pp. 583–603 the French counter-attack of 25–27 August."
           },
           {
             "source": "source:herwig-2009"
@@ -2843,23 +2843,23 @@
         "id": "1914:lorraine-route-de-ii-bav",
         "formation": "1914:corps-de-ii-bav",
         "waypoints": [
-          [6.78, 48.95, "1914-08-14T06:00:00Z"],
-          [6.78, 48.9, "1914-08-19T18:00:00Z"],
-          [6.75, 48.88, "1914-08-20T06:00:00Z"],
-          [6.72, 48.8, "1914-08-20T18:00:00Z"],
-          [6.72, 48.78, "1914-08-21T12:00:00Z"],
-          [6.65, 48.68, "1914-08-22T12:00:00Z"],
-          [6.6, 48.62, "1914-08-23T12:00:00Z"],
-          [6.52, 48.52, "1914-08-24T12:00:00Z"],
-          [6.55, 48.52, "1914-08-25T18:00:00Z"]
+          [6.62, 48.91, "1914-08-14T06:00:00Z"],
+          [6.6, 48.9, "1914-08-19T18:00:00Z"],
+          [6.58, 48.9, "1914-08-20T06:00:00Z"],
+          [6.55, 48.87, "1914-08-20T18:00:00Z"],
+          [6.48, 48.8, "1914-08-21T12:00:00Z"],
+          [6.4, 48.65, "1914-08-22T12:00:00Z"],
+          [6.44, 48.6, "1914-08-23T12:00:00Z"],
+          [6.43, 48.51, "1914-08-24T12:00:00Z"],
+          [6.4, 48.48, "1914-08-25T18:00:00Z"]
         ],
         "confidence": "medium",
-        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "derivation": "Corps centre at the hours named, read off the Reichsarchiv's day-by-day, corps-by-corps narrative in Bd. 1, which fixes each corps by the villages it names; ±5–8 km. Re-drawn in full for sand-23b.38: the path this replaces had the I. and III. Bavarian Corps at each other's ends of the army, and the XXI. Corps and the I. Bavarian Reserve Corps 30–40 km from where the volume puts them.",
         "sources": [
           {
             "source": "source:reichsarchiv-weltkrieg-1",
-            "pages": "70, 189–213, 263–302, 568–603",
-            "note": "The one German corps in this battle whose track the volume bears out: pp. 267 and 269 have the II. Bavarian Corps at Mörchingen on 20 August, its 4th Division crossing the Rotte at 5 a.m. towards Château-Bréhain, and the corps going to rest behind the line Vaxy–Dürkastel with the 4th Ersatz Division north-west of Mörchingen. Bd. 1 covers the whole of this path: pp. 189–213 the movements to 19 August, with Skizze 2 (p. 195) giving the 6th and 7th Armies’ positions on the morning of the 14th; pp. 263–302 the battle in Lorraine of 20–22 August, corps by corps; pp. 568–603 the pursuit of 23–24 August and the French counter-attack of 25–27 August."
+            "pages": "194–200, 263–302, 567–582, 583–603",
+            "note": "The corps between the III. Bavarian on the army's right and the XXI. on its left. p. 194: on the morning of the 14th the II. and III. Bavarian Corps stood forward of the Metz–Saarburg railway in the sector Sanry–Mörchingen; p. 203: by midday on the 16th their rearguards had gone back to the French Nied, the Rotte and the country about Mörchingen. p. 264: on the 20th the corps, with the parts of the 4th Ersatz Division that had reached Falkenberg, was to attack the line Coutures (west of Château-Salins)–Moyenvic; pp. 267–269: its right-hand division crossed the Rotte at 5 a.m. towards Château-Bréhain and had the heights there by 11.15 a.m., and the corps went to rest behind the line Vaxy–Dürkastel with the 4th Ersatz Division near and north-west of Mörchingen. pp. 281–282: on the 21st it took Château-Salins and the Morville plateau unopposed and pushed to the line Delme–Jallaucourt–Chambrey–Arracourt. pp. 292–294: on the 22nd it marched from Vic on Réméréville and Anthelupt, one division halted at Réméréville to face Nancy and the other fighting at Flainval–Deuxville. p. 572: it took Flainval–Anthelupt at 10.20 a.m. on the 23rd and pushed advanced troops into the wood of Vitrimont. pp. 577–578: on the 24th it crossed the Meurthe at Mont and Blainville, one division spending the night about Remenoville and the other between Blainville and east of Méhoncourt. p. 585: on the 25th one division went on south of the Rambervillers–Grandvillers line while the other was kept as flank guard opposite the French position north-east of Bayon. The path this replaces ran 15–20 km east of these places, on the lane the volume gives to the XXI. Corps. Bd. 1 carries the whole of this path: pp. 194–200 the positions on the morning of 14 August and the withdrawal behind the Saar to the 19th, with Skizze 2 (p. 195) for the 6th and 7th Armies that morning; pp. 263–302 the battle of 20–22 August, corps by corps; pp. 567–582 the pursuit of 23–24 August; pp. 583–603 the French counter-attack of 25–27 August."
           },
           {
             "source": "source:herwig-2009"
@@ -2870,23 +2870,23 @@
         "id": "1914:lorraine-route-de-iii-bav",
         "formation": "1914:corps-de-iii-bav",
         "waypoints": [
-          [7.05, 48.85, "1914-08-14T06:00:00Z"],
-          [7.05, 48.8, "1914-08-19T18:00:00Z"],
-          [7.05, 48.75, "1914-08-20T06:00:00Z"],
-          [7, 48.7, "1914-08-20T18:00:00Z"],
-          [6.92, 48.64, "1914-08-21T12:00:00Z"],
-          [6.85, 48.6, "1914-08-22T12:00:00Z"],
-          [6.78, 48.55, "1914-08-23T12:00:00Z"],
-          [6.65, 48.5, "1914-08-24T12:00:00Z"],
-          [6.65, 48.52, "1914-08-25T18:00:00Z"]
+          [6.31, 48.99, "1914-08-14T06:00:00Z"],
+          [6.36, 48.94, "1914-08-19T18:00:00Z"],
+          [6.41, 48.92, "1914-08-20T06:00:00Z"],
+          [6.44, 48.87, "1914-08-20T18:00:00Z"],
+          [6.43, 48.82, "1914-08-21T12:00:00Z"],
+          [6.34, 48.82, "1914-08-22T12:00:00Z"],
+          [6.36, 48.78, "1914-08-23T12:00:00Z"],
+          [6.47, 48.67, "1914-08-24T12:00:00Z"],
+          [6.48, 48.66, "1914-08-25T18:00:00Z"]
         ],
         "confidence": "medium",
-        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "derivation": "Corps centre at the hours named, read off the Reichsarchiv's day-by-day, corps-by-corps narrative in Bd. 1, which fixes each corps by the villages it names; ±5–8 km. Re-drawn in full for sand-23b.38: the path this replaces had the I. and III. Bavarian Corps at each other's ends of the army, and the XXI. Corps and the I. Bavarian Reserve Corps 30–40 km from where the volume puts them.",
         "sources": [
           {
             "source": "source:reichsarchiv-weltkrieg-1",
-            "pages": "70, 189–213, 263–302, 568–603",
-            "note": "The volume disagrees with this path, and the disagreement is not small. On 20 August Bd. 1 has the 6th Army attacking with the III. Bavarian Corps on the right against Delme, taking the \"Telegraph\" height north-west of Château-Salins by midnight (pp. 265, 267, 281); the II. Bavarian Corps next to it at Mörchingen (pp. 267, 269); the XXI. Corps on Dieuze (p. 269); the I. Bavarian Reserve Corps at the canal by Bisping and St. Johann-von-Bassel (p. 271); and the I. Bavarian Corps taking Saarburg itself, its 1st Bavarian Division clearing the town house by house and beating off a counter-stroke by 10 p.m. (p. 273). This pack puts the I. Bavarian Corps at Morhange and the III. Bavarian at Sarrebourg — the two ends of the army the other way round. The pages are given so the next reader can check it; nothing has been moved on the strength of one official history against a source that cannot be opened from here. Bd. 1 has the III. Bavarian Corps on the army’s right throughout: attacking Delme on 20 August with the 8th Cavalry Division supporting its right wing (p. 265), and on the 21st holding the heights north-west of Château-Salins (p. 281). Bd. 1 covers the whole of this path: pp. 189–213 the movements to 19 August, with Skizze 2 (p. 195) giving the 6th and 7th Armies’ positions on the morning of the 14th; pp. 263–302 the battle in Lorraine of 20–22 August, corps by corps; pp. 568–603 the pursuit of 23–24 August and the French counter-attack of 25–27 August."
+            "pages": "194–200, 254, 263–302, 567–582, 583–603",
+            "note": "The 6th Army's right-hand corps, which is where Bd. 1 has it throughout — not at Sarrebourg, 60 km away on the other flank, where this path used to run. p. 194: on the morning of 14 August the III. and II. Bavarian Corps stood forward of the Metz–Saarburg railway in the sector Sanry (12 km south-east of Metz)–Mörchingen; p. 254 has French reconnaissance placing this corps with one division at Solgne–Pontoy and the other north-east of it about Bazoncourt. p. 200: the front before the II. and III. Bavarian Corps stayed quiet to 19 August. p. 264, the army's attack order for the 20th: the corps was to go \"in südlicher Richtung gegen die Linie Delme–Fresnes-en-Saulnois\". pp. 265–267: it crossed the line Morville–Lucy about 8 a.m., its right-hand division reached Delme and its left took the \"Telegraph\" height north-west of Château-Salins towards midnight, so that the corps' forward line ran that night \"von Delme bis nordwestlich Château-Salins\". p. 281: on the 21st one division gained the height south-west of Château-Salins and the other covered the flank at Jallaucourt; p. 282 sends the III. and II. Bavarian on to the line Delme–Jallaucourt–Chambrey–Arracourt. p. 293: on the 22nd it stood on the eastern Seille bank between Fossieux and Bioncourt. pp. 571–572: on the 23rd it was left in place to cover against Nancy, its left extended to Erbéviller. pp. 576–577: on the 24th the 10th and 4th Ersatz Divisions relieved it between Delme and Erbéviller and Gebsattel marched it on Lunéville, reaching the line Serres–Einville late in the night. p. 585: on the 25th his army group north of Lunéville kept the security task. Bd. 1 carries the whole of this path: pp. 194–200 the positions on the morning of 14 August and the withdrawal behind the Saar to the 19th, with Skizze 2 (p. 195) for the 6th and 7th Armies that morning; pp. 263–302 the battle of 20–22 August, corps by corps; pp. 567–582 the pursuit of 23–24 August; pp. 583–603 the French counter-attack of 25–27 August."
           },
           {
             "source": "source:herwig-2009"
@@ -2898,21 +2898,22 @@
         "id": "1914:lorraine-route-de-xxi",
         "formation": "1914:corps-de-xxi",
         "waypoints": [
-          [7.2, 48.8, "1914-08-14T06:00:00Z"],
-          [7.15, 48.75, "1914-08-19T18:00:00Z"],
-          [7.12, 48.72, "1914-08-20T12:00:00Z"],
-          [7.05, 48.62, "1914-08-21T12:00:00Z"],
-          [6.95, 48.56, "1914-08-22T12:00:00Z"],
-          [6.85, 48.5, "1914-08-24T12:00:00Z"],
-          [6.85, 48.5, "1914-08-25T18:00:00Z"]
+          [6.67, 48.79, "1914-08-14T06:00:00Z"],
+          [6.66, 48.76, "1914-08-19T18:00:00Z"],
+          [6.73, 48.8, "1914-08-20T12:00:00Z"],
+          [6.67, 48.71, "1914-08-21T12:00:00Z"],
+          [6.58, 48.66, "1914-08-22T12:00:00Z"],
+          [6.52, 48.59, "1914-08-23T12:00:00Z"],
+          [6.53, 48.49, "1914-08-24T12:00:00Z"],
+          [6.56, 48.45, "1914-08-25T18:00:00Z"]
         ],
         "confidence": "medium",
-        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "derivation": "Corps centre at the hours named, read off the Reichsarchiv's day-by-day, corps-by-corps narrative in Bd. 1, which fixes each corps by the villages it names; ±5–8 km. Re-drawn in full for sand-23b.38: the path this replaces had the I. and III. Bavarian Corps at each other's ends of the army, and the XXI. Corps and the I. Bavarian Reserve Corps 30–40 km from where the volume puts them.",
         "sources": [
           {
             "source": "source:reichsarchiv-weltkrieg-1",
-            "pages": "70, 189–213, 263–302, 568–603",
-            "note": "p. 269 gives the corps’ orders for 20 August — the 31st Division on Dieuze, the 42nd echeloned left on Oberlinder — and p. 281 records that on the 21st it \"nicht ganz so weit gekommen war, wie angenommen\". Dieuze is some 30 km north-west of where this path puts the corps on the 20th; the pages are given so that the divergence can be checked. Bd. 1 covers the whole of this path: pp. 189–213 the movements to 19 August, with Skizze 2 (p. 195) giving the 6th and 7th Armies’ positions on the morning of the 14th; pp. 263–302 the battle in Lorraine of 20–22 August, corps by corps; pp. 568–603 the pursuit of 23–24 August and the French counter-attack of 25–27 August."
+            "pages": "194–200, 263–302, 567–582, 583–603",
+            "note": "p. 194: after the action of its 42nd Division at Lagarde the corps stood on the morning of the 14th in the country of Marsal and south of Dieuze, with its security detachments pushed over the Salines and Rhine–Marne canals; p. 200: its left wing had been bent back in the night to the line Donnelay–south tip of the Lindre pond. p. 269 gives the orders for the 20th — the 31st Division with its left on Dieuze, the 42nd strongly echeloned left on Oberlinder (Lindre-Haute) — and the fighting that followed as far as Guermange, taken at 3.45 p.m.; the corps' security line that evening ran St-Médard–Mulcey–Essesdorf (p. 270). p. 281 records that on the 21st it \"nicht ganz so weit gekommen war, wie angenommen\"; p. 282 has it taking the line Geistkirch–Donnelay without a fight, its outposts that evening on the frontier at Xanrey–Lagarde. p. 293: on the 22nd it marched from the country at and south of Marsal by Réchicourt and Parroy onto the heights north of Lunéville and Croismare, and by evening no enemy stood before it on the northern bank of the Meurthe (p. 296). p. 572: on the 23rd it entrenched the heights north of Lunéville, its 42nd Division entering the town in the afternoon with outposts to Rehainviller–Moncel–Croismare. p. 578: on the 24th it fought on the Mortagne at Gerbéviller and Moyen, the 31st Division pushing on to Mattexey. pp. 585, 588–589: on the 25th it advanced south west of the Rambervillers–Grandvillers line, bivouacking north of Fontenoy-la-Joute. Dieuze is some 30 km north-west of where this path used to put the corps on the 20th. Bd. 1 carries the whole of this path: pp. 194–200 the positions on the morning of 14 August and the withdrawal behind the Saar to the 19th, with Skizze 2 (p. 195) for the 6th and 7th Armies that morning; pp. 263–302 the battle of 20–22 August, corps by corps; pp. 567–582 the pursuit of 23–24 August; pp. 583–603 the French counter-attack of 25–27 August."
           },
           {
             "source": "source:herwig-2009"
@@ -2923,20 +2924,23 @@
         "id": "1914:lorraine-route-de-i-bav-res",
         "formation": "1914:corps-de-i-bav-res",
         "waypoints": [
-          [6.2, 49.1, "1914-08-14T06:00:00Z"],
-          [6.4, 49, "1914-08-19T18:00:00Z"],
-          [6.42, 48.95, "1914-08-20T12:00:00Z"],
-          [6.4, 48.9, "1914-08-21T12:00:00Z"],
-          [6.38, 48.85, "1914-08-23T12:00:00Z"],
-          [6.38, 48.85, "1914-08-25T18:00:00Z"]
+          [6.98, 49.03, "1914-08-14T06:00:00Z"],
+          [6.99, 48.88, "1914-08-19T18:00:00Z"],
+          [6.91, 48.85, "1914-08-20T12:00:00Z"],
+          [6.87, 48.79, "1914-08-20T18:00:00Z"],
+          [6.88, 48.75, "1914-08-21T12:00:00Z"],
+          [6.8, 48.65, "1914-08-22T12:00:00Z"],
+          [6.8, 48.68, "1914-08-23T12:00:00Z"],
+          [6.68, 48.63, "1914-08-24T12:00:00Z"],
+          [6.58, 48.62, "1914-08-25T18:00:00Z"]
         ],
         "confidence": "low",
-        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "derivation": "Corps centre at the hours named, read off the Reichsarchiv's day-by-day, corps-by-corps narrative in Bd. 1, which fixes each corps by the villages it names; ±5–8 km. Re-drawn in full for sand-23b.38: the path this replaces had the I. and III. Bavarian Corps at each other's ends of the army, and the XXI. Corps and the I. Bavarian Reserve Corps 30–40 km from where the volume puts them.",
         "sources": [
           {
             "source": "source:reichsarchiv-weltkrieg-1",
-            "pages": "70, 189–213, 263–302, 568–603",
-            "note": "p. 271 has the corps forcing the canal crossing east of Bisping and fighting at St. Johann-von-Bassel on 20 August, and p. 281 has it at the Stock-Weiher by Rodt on the 21st — east of where this path puts it, not west. Bd. 1 covers the whole of this path: pp. 189–213 the movements to 19 August, with Skizze 2 (p. 195) giving the 6th and 7th Armies’ positions on the morning of the 14th; pp. 263–302 the battle in Lorraine of 20–22 August, corps by corps; pp. 568–603 the pursuit of 23–24 August and the French counter-attack of 25–27 August."
+            "pages": "194–204, 263–302, 567–582, 583–603",
+            "note": "The corps stood on the army's left, between the XXI. Corps and the I. Bavarian Corps — east of everything, not west of it, which is where this path used to run. p. 196: detrained about Saargemünd, it was assembling on the 14th in the area Püttlingen–Saaralben; p. 204: on the 16th its 1st Reserve Division took over the Saar sector at Finstingen and its 5th Reserve Division stayed at Harskirchen, west of Saarunion, as army reserve. p. 264: for the 20th it was to secure the XXI. Corps' flank further east and prevent a breakthrough through the woods on both sides of Mittersheim; pp. 270–271: the 5th Reserve Division fought all day in the wood edges south and east of Lauterfingen and had its leading parts on the line Guermange–Bisping by nightfall, while the 1st Reserve Division forced the canal crossing east of Bisping, fought at St. Johann-von-Bassel, and spent the night on the west bank of the Saar coal canal in the area Freiburg–Rodt–Bisping. p. 281: on the 21st it had already reached the Stock pond by Rodt. pp. 296–297: on the 22nd it moved from Avricourt by Igney on Blâmont, was halted when the road was given to the I. Bavarian Corps, and quartered about Avricourt–Moussey with the 5th Reserve Division behind it at Bourdonnaye–Maizières. p. 572: on the 23rd the Landwehr and 5th Reserve Divisions stayed north of Avricourt and the 1st Reserve Division passed to the 7th Army. p. 579: by the 24th the corps was scattered — the 5th Reserve Division drawn from Lagarde to Lunéville, the Landwehr Division to Ley, one brigade investing Fort Manonviller and the rest of the 1st Reserve Division at Flin under the I. Bavarian Corps — which is why the confidence on this path is low and not medium: from the 24th there is no single place that is the corps. p. 585 leaves the staff and the 5th Reserve Division at Lunéville on the 25th, the Landwehr Division coming up by Parroy. Bd. 1 carries the whole of this path: pp. 194–200 the positions on the morning of 14 August and the withdrawal behind the Saar to the 19th, with Skizze 2 (p. 195) for the 6th and 7th Armies that morning; pp. 263–302 the battle of 20–22 August, corps by corps; pp. 567–582 the pursuit of 23–24 August; pp. 583–603 the French counter-attack of 25–27 August."
           },
           {
             "source": "source:herwig-2009"
@@ -2948,19 +2952,21 @@
         "id": "1914:lorraine-route-hkk-3",
         "formation": "1914:hkk-3",
         "waypoints": [
-          [6.72, 48.85, "1914-08-14T06:00:00Z"],
-          [6.8, 48.92, "1914-08-19T18:00:00Z"],
-          [6.6, 48.7, "1914-08-21T12:00:00Z"],
-          [6.55, 48.55, "1914-08-23T12:00:00Z"],
-          [6.55, 48.5, "1914-08-25T18:00:00Z"]
+          [6.81, 48.66, "1914-08-14T06:00:00Z"],
+          [6.55, 48.9, "1914-08-19T18:00:00Z"],
+          [6.36, 48.92, "1914-08-20T18:00:00Z"],
+          [6.39, 48.89, "1914-08-21T12:00:00Z"],
+          [6.35, 48.78, "1914-08-22T12:00:00Z"],
+          [6.55, 48.63, "1914-08-24T12:00:00Z"],
+          [6.52, 48.58, "1914-08-25T18:00:00Z"]
         ],
         "confidence": "low",
-        "derivation": "Corps centre at the hours named from the Reichsarchiv and Herwig; ±5–8 km.",
+        "derivation": "Corps centre at the hours named, read off the Reichsarchiv's day-by-day, corps-by-corps narrative in Bd. 1, which fixes each corps by the villages it names; ±5–8 km. Re-drawn in full for sand-23b.38: the path this replaces had the I. and III. Bavarian Corps at each other's ends of the army, and the XXI. Corps and the I. Bavarian Reserve Corps 30–40 km from where the volume puts them.",
         "sources": [
           {
             "source": "source:reichsarchiv-weltkrieg-1",
-            "pages": "70, 189–213, 263–302, 568–603",
-            "note": "p. 265: on 20 August Frommel’s 8th Cavalry Division reached the Delmer Rücken at 9 a.m. and supported the III. Bavarian Corps’ attack on Delme, the Bavarian Cavalry Division coming up behind the II. and III. Bavarian Corps only in the afternoon; the two divisions went to rest around Solgne and north of Delme. p. 281 has them resting early on the 21st near Delme, their horses worn out. Bd. 1 covers the whole of this path: pp. 189–213 the movements to 19 August, with Skizze 2 (p. 195) giving the 6th and 7th Armies’ positions on the morning of the 14th; pp. 263–302 the battle in Lorraine of 20–22 August, corps by corps; pp. 568–603 the pursuit of 23–24 August and the French counter-attack of 25–27 August."
+            "pages": "194–204, 263–302, 567–582, 583–603",
+            "note": "A cavalry corps whose three divisions were rarely in one place, so this path is the mass of them and no more. p. 196: on the 14th the Bavarian and 7th Cavalry Divisions filled the gap that had opened at Avricourt between the XXI. and the I. Bavarian Corps, while the 8th (Saxon) Cavalry Division stood under the army's own hand south-west of Falkenberg; p. 203: on the 16th the Bavarian and 8th were ordered to the army's right wing, into the country between the Nied and Saarlouis, and p. 204 takes them back through the XXI. Corps' area to north of Bensdorf. p. 265: on the 20th the 8th Cavalry Division reached the Delmer Rücken at 9 a.m., took touch with the Metz main reserve and supported the III. Bavarian Corps' attack on Delme, the Bavarian Cavalry Division coming up only in the afternoon behind the II. and III. Bavarian Corps; the two went to rest about Solgne and north of Delme. p. 281: early on the 21st they rested near Delme, their horses worn out, and did not intervene at Château-Salins. p. 293: on the 22nd the 8th Cavalry Division reconnoitred from Moncel towards Nancy and Lunéville and filled the gap between the III. and II. Bavarian Corps. p. 576: on the 24th the Bavarian Cavalry Division was shifted to south of Arracourt and the 8th ordered to reconnoitre towards the Moselle and be at Lunéville with its main body by midday. p. 585: on the 25th the 8th passed to the XXI. Corps and the 7th to the 7th Army. Bd. 1 carries the whole of this path: pp. 194–200 the positions on the morning of 14 August and the withdrawal behind the Saar to the 19th, with Skizze 2 (p. 195) for the 6th and 7th Armies that morning; pp. 263–302 the battle of 20–22 August, corps by corps; pp. 567–582 the pursuit of 23–24 August; pp. 583–603 the French counter-attack of 25–27 August."
           },
           {
             "source": "source:herwig-2009"
@@ -3095,7 +3101,7 @@
         "kind": "battle",
         "significance": "major",
         "place": "place:morhange",
-        "summary": "At dawn the 6th Army's Bavarian corps and the 7th Army's XV and XXI Corps counter-attack the whole French front from Morhange to Sarrebourg, under artillery the French cannot answer. The XV Corps breaks; the XX Corps (Foch) holds on the Morhange heights while the army around it gives way; the 1st Army is thrown out of Sarrebourg.",
+        "summary": "At dawn the 6th Army's Bavarian corps and XXI Corps and the 7th Army's XV Corps counter-attack the whole French front from Morhange to Sarrebourg, under artillery the French cannot answer. The XV Corps breaks; the XX Corps (Foch) holds on the Morhange heights while the army around it gives way; the 1st Army is thrown out of Sarrebourg.",
         "links": {
           "formations": [
             "1914:corps-de-i-bav",
