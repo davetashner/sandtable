@@ -1277,105 +1277,52 @@
   {
     "id": "place:tannenberg",
     "name": "Tannenberg",
-    "names": [
-      {
-        "name": "Stebark",
-        "language": "pl",
-        "kind": "modern"
-      }
-    ],
+    "names": [{ "name": "Stebark", "language": "pl", "kind": "modern" }],
     "kind": "village",
     "lngLat": [20.135, 53.497],
     "country": "German Empire (East Prussia)",
     "notes": "The village the battle of 26-30 August 1914 was named for, at Hindenburg's request, to answer the defeat of the Teutonic Knights on the same ground in 1410.",
-    "sources": [
-      {
-        "source": "source:showalter-2004"
-      }
-    ]
+    "sources": [{ "source": "source:showalter-2004" }]
   },
   {
     "id": "place:allenstein",
     "name": "Allenstein",
-    "names": [
-      {
-        "name": "Olsztyn",
-        "language": "pl",
-        "kind": "modern"
-      }
-    ],
+    "names": [{ "name": "Olsztyn", "language": "pl", "kind": "modern" }],
     "kind": "city",
     "lngLat": [20.48, 53.778],
     "country": "German Empire (East Prussia)",
     "notes": "Objective of the Russian Second Army's centre as it advanced north-west into East Prussia.",
-    "sources": [
-      {
-        "source": "source:showalter-2004"
-      }
-    ]
+    "sources": [{ "source": "source:showalter-2004" }]
   },
   {
     "id": "place:gumbinnen",
     "name": "Gumbinnen",
-    "names": [
-      {
-        "name": "Gusev",
-        "language": "ru",
-        "kind": "modern"
-      }
-    ],
+    "names": [{ "name": "Gusev", "language": "ru", "kind": "modern" }],
     "kind": "town",
     "lngLat": [22.2, 54.593],
     "country": "German Empire (East Prussia)",
     "notes": "Where Rennenkampf's First Army checked the German Eighth Army on 20 August 1914 - the shock that produced Prittwitz's collapse and, at one remove, the two corps sent east from the right wing.",
-    "sources": [
-      {
-        "source": "source:showalter-2004"
-      },
-      {
-        "source": "source:strachan-2001"
-      }
-    ]
+    "sources": [{ "source": "source:showalter-2004" }, { "source": "source:strachan-2001" }]
   },
   {
     "id": "place:konigsberg",
     "name": "Königsberg",
-    "names": [
-      {
-        "name": "Kaliningrad",
-        "language": "ru",
-        "kind": "modern"
-      }
-    ],
+    "names": [{ "name": "Kaliningrad", "language": "ru", "kind": "modern" }],
     "kind": "fortress",
     "lngLat": [20.51, 54.71],
     "country": "German Empire (East Prussia)",
     "notes": "The province's fortress and capital; holding it, or abandoning it behind the Vistula, was the question Prittwitz put to Moltke on 20 August.",
-    "sources": [
-      {
-        "source": "source:showalter-2004"
-      }
-    ]
+    "sources": [{ "source": "source:showalter-2004" }]
   },
   {
     "id": "place:marienburg",
     "name": "Marienburg",
-    "names": [
-      {
-        "name": "Malbork",
-        "language": "pl",
-        "kind": "modern"
-      }
-    ],
+    "names": [{ "name": "Malbork", "language": "pl", "kind": "modern" }],
     "kind": "town",
     "lngLat": [19.03, 54.036],
     "country": "German Empire (West Prussia)",
     "notes": "Eighth Army headquarters; Hindenburg and Ludendorff arrived here on the afternoon of 23 August 1914.",
-    "sources": [
-      {
-        "source": "source:showalter-2004"
-      }
-    ]
+    "sources": [{ "source": "source:showalter-2004" }]
   },
   {
     "id": "place:masurian-lakes",
@@ -1384,45 +1331,21 @@
     "lngLat": [21.65, 53.92],
     "country": "German Empire (East Prussia)",
     "notes": "The lake belt that split the two Russian armies' advance, and gave its name to the battle of 7-14 September 1914 - the battle the two corps from the West actually fought in.",
-    "sources": [
-      {
-        "source": "source:showalter-2004"
-      },
-      {
-        "source": "source:stone-1975"
-      }
-    ]
+    "sources": [{ "source": "source:showalter-2004" }, { "source": "source:stone-1975" }]
   },
   {
     "id": "place:petrograd",
     "name": "Petrograd",
     "names": [
-      {
-        "name": "Sankt-Peterburg",
-        "language": "ru",
-        "kind": "period"
-      },
-      {
-        "name": "Saint Petersburg",
-        "language": "en",
-        "kind": "modern"
-      },
-      {
-        "name": "Leningrad",
-        "language": "ru",
-        "kind": "modern"
-      }
+      { "name": "Sankt-Peterburg", "language": "ru", "kind": "period" },
+      { "name": "Saint Petersburg", "language": "en", "kind": "modern" },
+      { "name": "Leningrad", "language": "ru", "kind": "modern" }
     ],
     "kind": "city",
     "lngLat": [30.3086, 59.9375],
     "country": "Russian Empire",
     "notes": "Capital of the Russian Empire. Renamed from the German-sounding Sankt-Peterburg to the Slavic Petrograd in August 1914, and Leningrad in 1924. Both revolutions of 1917 happened within about six kilometres of this point.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:winter-palace",
@@ -1431,12 +1354,7 @@
     "lngLat": [30.3146, 59.941],
     "country": "Russian Empire",
     "notes": "The imperial residence on the Neva embankment; from March 1917 the seat of the Provisional Government, and the building the Military Revolutionary Committee took in the small hours of 26 October (O.S.).",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:tauride-palace",
@@ -1445,12 +1363,7 @@
     "lngLat": [30.3757, 59.9481],
     "country": "Russian Empire",
     "notes": "Seat of the State Duma, and from 27 February (O.S.) 1917 the building that held both halves of dual power: the Duma Committee in one wing and the Petrograd Soviet in another.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:smolny-institute",
@@ -1459,12 +1372,7 @@
     "lngLat": [30.3961, 59.9469],
     "country": "Russian Empire",
     "notes": "A girls' boarding school on the eastern edge of the city; from August 1917 the seat of the Petrograd Soviet, and in October of its Military Revolutionary Committee.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:peter-and-paul-fortress",
@@ -1473,80 +1381,40 @@
     "lngLat": [30.3167, 59.95],
     "country": "Russian Empire",
     "notes": "The fortress on Zayachy Island, across the Neva from the Winter Palace: arsenal, garrison and political prison, and on 25 October (O.S.) the place the signal for the assault was to come from.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:finland-station",
     "name": "The Finland Station",
-    "names": [
-      {
-        "name": "Finlyandsky vokzal",
-        "language": "ru",
-        "kind": "period"
-      }
-    ],
+    "names": [{ "name": "Finlyandsky vokzal", "language": "ru", "kind": "period" }],
     "kind": "other",
     "lngLat": [30.3561, 59.9556],
     "country": "Russian Empire",
     "notes": "Terminus of the Finnish railway on the Vyborg side, where Lenin arrived from Zurich late on the night of 3 April (O.S.) 1917.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:znamenskaya-square",
     "name": "Znamenskaya Square",
-    "names": [
-      {
-        "name": "Ploshchad Vosstaniya",
-        "language": "ru",
-        "kind": "modern"
-      }
-    ],
+    "names": [{ "name": "Ploshchad Vosstaniya", "language": "ru", "kind": "modern" }],
     "kind": "other",
     "lngLat": [30.3606, 59.9311],
     "country": "Russian Empire",
     "notes": "The square where the Nevsky Prospekt meets the Nikolaevsky station, and where the crowds and the troops met on 25-26 February (O.S.). Renamed Uprising Square afterwards.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:putilov-works",
     "name": "The Putilov Works",
     "names": [
-      {
-        "name": "Putilovsky zavod",
-        "language": "ru",
-        "kind": "period"
-      },
-      {
-        "name": "Kirov Plant",
-        "language": "en",
-        "kind": "modern"
-      }
+      { "name": "Putilovsky zavod", "language": "ru", "kind": "period" },
+      { "name": "Kirov Plant", "language": "en", "kind": "modern" }
     ],
     "kind": "other",
     "lngLat": [30.2622, 59.8811],
     "country": "Russian Empire",
     "notes": "The largest metalworking and armaments plant in Petrograd, in the Narva district in the south-west of the city.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:mariinsky-palace",
@@ -1555,12 +1423,7 @@
     "lngLat": [30.3086, 59.9317],
     "country": "Russian Empire",
     "notes": "Seat of the State Council before 1917, and in October 1917 of the Provisional Council of the Republic - the Pre-Parliament.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:kronstadt",
@@ -1569,54 +1432,27 @@
     "lngLat": [29.7667, 59.9833],
     "country": "Russian Empire",
     "notes": "The naval fortress and base on Kotlin Island, some thirty kilometres west of Petrograd in the Gulf of Finland; the most radical garrison in Russia in 1917.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:tsarskoe-selo",
     "name": "Tsarskoe Selo",
-    "names": [
-      {
-        "name": "Pushkin",
-        "language": "ru",
-        "kind": "modern"
-      }
-    ],
+    "names": [{ "name": "Pushkin", "language": "ru", "kind": "modern" }],
     "kind": "town",
     "lngLat": [30.4, 59.7167],
     "country": "Russian Empire",
     "notes": "The imperial residence twenty-five kilometres south of Petrograd, where the Empress and the children were when the capital rose, and where the family was held under guard after the abdication.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:moscow",
     "name": "Moscow",
-    "names": [
-      {
-        "name": "Moskva",
-        "language": "ru",
-        "kind": "period"
-      }
-    ],
+    "names": [{ "name": "Moskva", "language": "ru", "kind": "period" }],
     "kind": "city",
     "lngLat": [37.6175, 55.752],
     "country": "Russian Empire",
     "notes": "The old capital and the second city; capital again from March 1918. Its own October fighting ran a week longer than Petrograd's and cost far more.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:pskov",
@@ -1625,54 +1461,27 @@
     "lngLat": [28.332, 57.8194],
     "country": "Russian Empire",
     "notes": "Headquarters of the Northern Front, about 250 kilometres south-west of Petrograd. The imperial train was diverted here on 1 March (O.S.) 1917 and Nicholas II abdicated in it the following night.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:mogilev",
     "name": "Mogilev",
-    "names": [
-      {
-        "name": "Mahilyow",
-        "language": "be",
-        "kind": "modern"
-      }
-    ],
+    "names": [{ "name": "Mahilyow", "language": "be", "kind": "modern" }],
     "kind": "city",
     "lngLat": [30.33, 53.9],
     "country": "Russian Empire",
     "notes": "Seat of Stavka, the Russian Supreme Headquarters, from August 1915; where Nicholas II was, as his own Supreme Commander, when Petrograd rose.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:zurich",
     "name": "Zurich",
-    "names": [
-      {
-        "name": "Zürich",
-        "language": "de",
-        "kind": "period"
-      }
-    ],
+    "names": [{ "name": "Zürich", "language": "de", "kind": "period" }],
     "kind": "city",
     "lngLat": [8.5417, 47.3769],
     "country": "Switzerland",
     "notes": "Where Lenin spent the last of his exile, and where he boarded the train home on 9 April 1917 (N.S.).",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:luga",
@@ -1681,12 +1490,7 @@
     "lngLat": [29.845, 58.737],
     "country": "Russian Empire",
     "notes": "A junction on the Pskov-Petrograd railway, some 135 kilometres south of the capital, and the point the leading trains of Kornilov's cavalry did not get past.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:vyritsa",
@@ -1695,12 +1499,7 @@
     "lngLat": [30.35, 59.408],
     "country": "Russian Empire",
     "notes": "A station on the line into Petrograd from the south, about sixty kilometres out, where the trains of the Native Division came to a stand.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:velikiye-luki",
@@ -1709,53 +1508,29 @@
     "lngLat": [30.5167, 56.35],
     "country": "Russian Empire",
     "notes": "A railway town behind the Northern Front, in the area where the 3rd Cavalry Corps lay in August 1917 before it was ordered towards Petrograd.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:pearl-harbor",
     "name": "Pearl Harbor",
     "names": [
-      {
-        "name": "Puʻuloa",
-        "language": "haw",
-        "period": "the Hawaiian name for the lochs"
-      }
+      { "name": "Puʻuloa", "language": "haw", "period": "the Hawaiian name for the lochs" }
     ],
     "kind": "other",
     "lngLat": [-157.9771, 21.3679],
     "country": "Territory of Hawaii, United States",
     "notes": "The fleet base on the south coast of Oahu: three lochs behind a single dredged entrance channel, which is why eight battleships could be found in one place and why a ship sunk in the channel could have closed the base.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:ford-island",
     "name": "Ford Island",
-    "names": [
-      {
-        "name": "Mokuʻumeʻume",
-        "language": "haw"
-      }
-    ],
+    "names": [{ "name": "Mokuʻumeʻume", "language": "haw" }],
     "kind": "other",
     "lngLat": [-157.9603, 21.3639],
     "country": "Territory of Hawaii, United States",
     "notes": "The island in the middle of Pearl Harbor, with a naval air station on it and the battleship moorings along its south-east shore.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:battleship-row",
@@ -1792,12 +1567,7 @@
     "lngLat": [-158.037, 21.4802],
     "country": "Territory of Hawaii, United States",
     "notes": "The Army's principal fighter base, in the middle of Oahu on the Leilehua plain.",
-    "sources": [
-      {
-        "source": "source:openstreetmap",
-        "note": "coordinates, from the airfield node"
-      }
-    ]
+    "sources": [{ "source": "source:openstreetmap", "note": "coordinates, from the airfield node" }]
   },
   {
     "id": "place:kaneohe-bay",
@@ -1806,12 +1576,7 @@
     "lngLat": [-157.7697, 21.4458],
     "country": "Territory of Hawaii, United States",
     "notes": "The Navy's flying-boat base on the windward side of Oahu, attacked on the morning of 7 December 1941.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:opana-point",
@@ -1820,12 +1585,7 @@
     "lngLat": [-158.01, 21.6856],
     "country": "Territory of Hawaii, United States",
     "notes": "The Army's northernmost mobile radar set on Oahu, on the ridge above Kahuku, and the one that saw the first wave coming in.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:honolulu",
@@ -1834,62 +1594,35 @@
     "lngLat": [-157.85, 21.3],
     "country": "Territory of Hawaii, United States",
     "notes": "The territorial capital, ten kilometres east of the fleet base. The coordinate is the city centroid at the one-decimal precision the source gives, which is enough to place a label and not enough to anchor anything.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:hitokappu-bay",
     "name": "Hitokappu Bay",
     "names": [
-      {
-        "name": "単冠湾",
-        "language": "ja"
-      },
+      { "name": "単冠湾", "language": "ja" },
       {
         "name": "Kasatka Bay",
         "language": "ru",
         "kind": "modern",
         "period": "the Russian name for the bay on Iturup, after 1945"
       },
-      {
-        "name": "Tankan Bay",
-        "language": "en",
-        "kind": "transliteration"
-      }
+      { "name": "Tankan Bay", "language": "en", "kind": "transliteration" }
     ],
     "kind": "other",
     "lngLat": [147.672, 44.965],
     "country": "Etorofu, Kuril Islands, Empire of Japan",
     "notes": "A wide, empty anchorage in the southern Kurils, a long way from anywhere with people in it — which is why the striking force was assembled there and why nobody saw it go. The English and Japanese encyclopaedia coordinates differ by about a kilometre and a half; this is the English one.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:tokyo",
     "name": "Tokyo",
-    "names": [
-      {
-        "name": "東京",
-        "language": "ja"
-      }
-    ],
+    "names": [{ "name": "東京", "language": "ja" }],
     "kind": "city",
     "lngLat": [139.6922, 35.6897],
     "country": "Empire of Japan",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:washington-dc",
@@ -1897,12 +1630,7 @@
     "kind": "city",
     "lngLat": [-77.0164, 38.9047],
     "country": "United States",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:kota-bharu",
@@ -1911,72 +1639,35 @@
     "lngLat": [102.25, 6.1333],
     "country": "Kelantan, British Malaya",
     "notes": "The north-eastern corner of British Malaya, with an airfield behind the beach. The first Japanese landing of the Pacific war was made here.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:singora",
     "name": "Singora",
-    "names": [
-      {
-        "name": "Songkhla",
-        "language": "th",
-        "kind": "modern"
-      }
-    ],
+    "names": [{ "name": "Songkhla", "language": "th", "kind": "modern" }],
     "kind": "town",
     "lngLat": [100.5967, 7.2061],
     "country": "Thailand",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:patani",
     "name": "Patani",
-    "names": [
-      {
-        "name": "Pattani",
-        "language": "th",
-        "kind": "modern"
-      }
-    ],
+    "names": [{ "name": "Pattani", "language": "th", "kind": "modern" }],
     "kind": "town",
     "lngLat": [101.2508, 6.8664],
     "country": "Thailand",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:hong-kong",
     "name": "Hong Kong",
-    "names": [
-      {
-        "name": "香港",
-        "language": "zh"
-      }
-    ],
+    "names": [{ "name": "香港", "language": "zh" }],
     "kind": "city",
     "lngLat": [114.1744, 22.2783],
     "country": "British Crown Colony of Hong Kong",
     "notes": "The coordinate is Victoria, the colony's capital on the island; the airfield bombed on the morning of 8 December was at Kai Tak in Kowloon, on the mainland across the harbour.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:agana",
@@ -1993,12 +1684,7 @@
     "lngLat": [144.75, 13.4792],
     "country": "Territory of Guam, United States",
     "notes": "The capital of Guam, an American island lying inside the ring of the Japanese South Seas mandate.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:wake-island",
@@ -2006,12 +1692,7 @@
     "kind": "other",
     "lngLat": [166.6311, 19.2953],
     "country": "United States (unincorporated territory)",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:clark-field",
@@ -2047,12 +1728,7 @@
     "kind": "city",
     "lngLat": [120.9772, 14.5958],
     "country": "Commonwealth of the Philippines",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:singapore",
@@ -2060,12 +1736,7 @@
     "kind": "city",
     "lngLat": [103.8333, 1.2833],
     "country": "Straits Settlements, British Malaya",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:midway",
@@ -2074,12 +1745,7 @@
     "lngLat": [-177.35, 28.2075],
     "country": "United States (unincorporated territory)",
     "notes": "An atoll two thousand kilometres north-west of Oahu, on the striking force's own flank on the way in — the operation order set aside a destroyer division to bombard it on the way out — and the place where the six months Yamamoto had asked for ran out.",
-    "sources": [
-      {
-        "source": "source:wikipedia-en",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
   },
   {
     "id": "place:kuantan",
@@ -2088,12 +1754,7 @@
     "lngLat": [103.3219, 3.7974],
     "country": "Pahang, British Malaya",
     "notes": "A port halfway down the east coast of Malaya. Force Z went north to look for a reported landing here on 10 December 1941 and was found by land-based aircraft on the way back; the sinking was some way out to sea, and this pack places the event at the town rather than write a position it could not source.",
-    "sources": [
-      {
-        "source": "source:openstreetmap",
-        "note": "coordinates"
-      }
-    ]
+    "sources": [{ "source": "source:openstreetmap", "note": "coordinates" }]
   },
   {
     "id": "place:brest-litovsk",
