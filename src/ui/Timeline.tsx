@@ -254,9 +254,7 @@ export function Timeline({
               data-hypothetical={p.hypothetical || undefined}
               style={{ left: pct(p.from), width: `calc(${pct(p.to)} - ${pct(p.from)})` }}
               title={p.title}
-            >
-              <span className="timeline__band-label">{p.title}</span>
-            </div>
+            />
           ))}
         </div>
         <div className="timeline__ticks" aria-hidden="true">

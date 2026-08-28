@@ -30,6 +30,18 @@ function mount() {
 }
 
 describe('<Timeline>', () => {
+  it('names the chapter once, in full, and leaves the bands unlabelled (sand-neh.28)', () => {
+    mount();
+    // The band is a chapter's span on the clock; its width comes from the
+    // duration, so a name in it is ellipsed to nothing for short chapters.
+    expect(document.querySelectorAll('.timeline__band-label')).toHaveLength(0);
+    expect(document.querySelectorAll('.timeline__band').length).toBeGreaterThan(0);
+    // The full title is printed once, where it fits, and it is real text.
+    expect(screen.getByText('Mobilization', { selector: '.timeline__phase' })).toBeInTheDocument();
+    // The hover survives for the mouse, and nothing depends on it.
+    expect(document.querySelector('.timeline__band')).toHaveAttribute('title');
+  });
+
   it('shows now, the active phase and the scrubber', () => {
     mount();
     expect(screen.getByText('Day 0')).toBeInTheDocument();

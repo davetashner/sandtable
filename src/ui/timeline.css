@@ -37,8 +37,10 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* The chapter the clock is in, named in full — the only place the app names
+   it on the timeline now (sand-neh.28), so it reads at body size. */
 .timeline__phase {
-  font-size: 13px;
+  font-size: var(--fs-md);
   color: var(--ink);
   padding: 2px 8px;
   border: 1px solid var(--line);
@@ -120,14 +122,21 @@
   height: 22px;
 }
 
+/* A band is a chapter's span on the clock, and nothing else (sand-neh.28). It
+   carried its title until the measurements said what that cost: width here is
+   proportional to a chapter's *duration*, and duration has nothing to do with
+   the length of its name, so 14 of 16 labels ellipsed away — one of them to
+   11px of space for 156px of text, which reads as a rendering fault rather
+   than as a name. The full title of the chapter the clock is in is printed
+   two rows above, in `.timeline__phase`, and has been all along; the whole
+   list is the chapter index (ADR 0013). `title` stays for the incidental
+   hover, and nothing depends on it. */
 .timeline__band {
   position: absolute;
   top: 0;
   height: 22px;
   border-left: 1px solid var(--line);
   background: color-mix(in srgb, var(--brass) 10%, transparent);
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 .timeline__band[data-active] {
@@ -140,22 +149,6 @@
     color-mix(in srgb, var(--brass) 14%, transparent) 0 6px,
     transparent 6px 12px
   );
-}
-
-.timeline__band-label {
-  /* Block, not inline-block, so the label is bounded by the band and can
-     ellipsize: as an inline-block it was cut mid-glyph at the band's edge.
-     `line-height` matches the band's 22px because the label with 3px of
-     padding measured 26px in a 22px box and lost its ascenders and
-     descenders to `overflow: hidden` (sand-1l0.15). */
-  display: block;
-  padding: 0 4px;
-  font-size: var(--fs-xs);
-  line-height: 22px;
-  color: var(--ink);
-  opacity: 0.85;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .timeline__ticks {
@@ -324,9 +317,6 @@
   .timeline__counter {
     font-size: 18px;
   }
-  .timeline__band-label {
-    display: none;
-  }
 }
 
 /* card glyphs (ADR 0006): tech ⚙, science ✦, document ▢, decision ◇, battle ◆ */
@@ -372,10 +362,9 @@
     font-size: var(--fs-xs);
   }
 
-  /* Below 640px the band already shows no label, so the phase row can be a
-     stripe rather than a bar — which is where the markers' 24px comes from
-     (sand-pmz.4). Rows: phases 0–12 · markers 16–40 · scrubber 42–70, rail at
-     54 · ticks from 58. */
+  /* A narrower stripe on a phone, where the vertical budget is tightest and
+     the markers need their 24px (sand-pmz.4). Rows: phases 0–12 · markers
+     16–40 · scrubber 42–70, rail at 54 · ticks from 58. */
   .timeline__phases,
   .timeline__band {
     height: 12px;
