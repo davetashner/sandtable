@@ -174,7 +174,9 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
   adding it is a settings change, made deliberately (ADR 0011).
 - CI (`.github/workflows/ci.yml`): `lint` = actionlint + markdownlint +
   `scripts/check-content.sh` (JSON validity, media-manifest policy, no tracked
-  image binaries); `security` = gitleaks + dependency review; `web` =
+  image binaries, and the generated `media`/`audio` `index.json` still covering
+  every manifest — `scripts/media-index-backlog.txt` names the images that do
+  not yet, `sand-shn.16`); `security` = gitleaks + dependency review; `web` =
   npm lint/format:check/typecheck/test/validate:content/build/bundle:budget,
   self-activating once `package.json` exists; `visual` = `npm run visual:check` against a
   production-shaped build with the assets bucket stubbed, screenshots uploaded

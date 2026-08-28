@@ -131,7 +131,11 @@ describe('the shared registries a bundle carries (sand-shn.15)', () => {
       // `media.json` manifests, while the bundle carries the generated
       // `media/index.json`, and the index lags the manifests until someone
       // runs `npm run media` (sand-shn.16). An id the registry never had is
-      // not something this build step dropped.
+      // not something this build step dropped — and it is not unwatched
+      // either: section 6 of `scripts/check-content.sh` holds the index
+      // against the manifests, and `scripts/media-index-backlog.txt` is the
+      // named list of what still lags. When that file goes, `all.has(ref)`
+      // becomes a no-op and can go with it.
       const missing = (sharedRefs[id] ?? []).filter((ref) => all.has(ref) && !has.has(ref));
       expect({ pack: id, missing }).toEqual({ pack: id, missing: [] });
     }
