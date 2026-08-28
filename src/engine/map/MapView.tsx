@@ -101,9 +101,28 @@ export interface MapHandle {
   setDeckLayers(layers: DeckLayer[]): void;
 }
 
+/**
+ * How much of the map is covered by something laid over it, per edge, in CSS
+ * pixels (`sand-neh.29`). The camera treats what is left as the whole map, so
+ * the action a step is about lands where the reader can actually see it —
+ * with the tour's lower third bottom-left, that is up and to the right.
+ */
+export interface MapInset {
+  top?: number;
+  right?: number;
+  bottom?: number;
+  left?: number;
+}
+
 export interface MapViewProps {
   /** Opening camera. */
   camera: Camera;
+  /**
+   * Edges the camera should keep clear because an overlay sits there. Applied
+   * to every camera move — the opening fit, a zoom-in, and a tour's own
+   * `flyTo` — so the framing does not change character when a panel appears.
+   */
+  inset?: MapInset | undefined;
   /** Which content/shared/geo/borders/<year>.geojson to draw; omit for none. */
   borderYear?: number;
   /**
@@ -142,6 +161,7 @@ export interface MapViewProps {
 
 export function MapView({
   camera,
+  inset,
   borderYear,
   frontSeries,
   frontAt,
@@ -161,6 +181,20 @@ export function MapView({
   const [ready, setReady] = useState(false);
   const activeTheme = theme ?? systemTheme;
 
+  /**
+   * The inset as MapLibre's `padding`, with a floor on every edge so a fit is
+   * never flush to the frame. MapLibre applies `padding` to the *camera*, not
+   * to the canvas: it shrinks the box the target has to land inside, which is
+   * exactly what is wanted — the geography moves away from the covered corner
+   * instead of the panel being drawn over whatever happened to be there.
+   */
+  const cameraPadding = (base: number) => ({
+    top: base + (inset?.top ?? 0),
+    right: base + (inset?.right ?? 0),
+    bottom: base + (inset?.bottom ?? 0),
+    left: base + (inset?.left ?? 0),
+  });
+
   const handle: MapHandle = {
     flyTo(t) {
       const map = mapRef.current;
@@ -170,6 +204,7 @@ export function MapView({
         ...(t.zoom !== undefined ? { zoom: t.zoom } : {}),
         ...(t.bearing !== undefined ? { bearing: t.bearing } : {}),
         ...(t.pitch !== undefined ? { pitch: t.pitch } : {}),
+        padding: cameraPadding(0),
         essential: true,
       };
       if (t.duration === 0 || reducedMotion()) map.jumpTo(opts);
@@ -183,7 +218,7 @@ export function MapView({
         [region[2], region[3]],
       ];
       map.fitBounds(bounds, {
-        padding: o.padding ?? 40,
+        padding: cameraPadding(o.padding ?? 40),
         duration: reducedMotion() ? 0 : (o.duration ?? 1400),
         maxZoom: o.maxZoom ?? 12,
         essential: true,

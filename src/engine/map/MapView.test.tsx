@@ -170,7 +170,37 @@ describe('<MapView>', () => {
         [0, 47],
         [9, 52],
       ],
-      expect.objectContaining({ padding: 40 }),
+      // Padding is per-edge now, because an overlay covers one corner and not
+      // the whole frame (sand-neh.29). With no inset every edge is the same.
+      expect.objectContaining({ padding: { top: 40, right: 40, bottom: 40, left: 40 } }),
+    );
+  });
+
+  it('keeps the covered corner clear when an overlay sits on the map (sand-neh.29)', () => {
+    const ref = createRef<Handle>();
+    render(
+      <MapView
+        ref={ref}
+        camera={{ center: [4, 50], zoom: 6 }}
+        inset={{ left: 392, bottom: 96 }}
+        styleFor={() => ({ version: 8, sources: {}, layers: [] })}
+      />,
+    );
+    const map = maps.at(-1)!;
+
+    // A fit adds the inset to its own padding, so the region lands in what is
+    // left of the map — with the lower third bottom-left, up and to the right.
+    ref.current!.fitRegion([0, 47, 9, 52], { padding: 48 });
+    expect(map.fitBounds).toHaveBeenCalledWith(
+      expect.anything(),
+      expect.objectContaining({ padding: { top: 48, right: 48, bottom: 144, left: 440 } }),
+    );
+
+    // A tour's own camera answers the panel too, or the framing would change
+    // character every time a step set one.
+    ref.current!.flyTo({ center: [2.35, 48.86], zoom: 9 });
+    expect(map.flyTo).toHaveBeenCalledWith(
+      expect.objectContaining({ padding: { top: 0, right: 0, bottom: 96, left: 392 } }),
     );
   });
 
