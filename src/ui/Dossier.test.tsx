@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { ClockProvider } from '../engine/ClockContext.js';
 import { DAY } from '../engine/clock.js';
-import type { Branch, NarrativeBeat, Side, Source } from '../packs/schema/index.js';
+import type { Branch, NarrativeBeat, Source } from '../packs/schema/index.js';
 import { formatCitation, selectBeat, withFootnotes } from '../engine/beats.js';
 import { Dossier } from './Dossier.js';
 
@@ -28,10 +28,6 @@ const sources: Source[] = [
     title: 'The Guns of August',
     year: 1962,
   },
-];
-const sides: Side[] = [
-  { id: 'de', name: 'German Empire', short: 'Germany', alliance: 'Central Powers' },
-  { id: 'fr', name: 'France', alliance: 'Entente' },
 ];
 const historical: Branch = {
   id: '1914:historical',
@@ -85,13 +81,7 @@ const beats: NarrativeBeat[] = [
 function mount(branch: Branch, now: number) {
   return render(
     <ClockProvider range={{ start: START, end: END }} initialNow={now} syncUrl={false}>
-      <Dossier
-        beats={beats}
-        sources={sources}
-        sides={sides}
-        branch={branch}
-        packTitle="Test pack"
-      />
+      <Dossier beats={beats} sources={sources} branch={branch} packTitle="Test pack" />
     </ClockProvider>,
   );
 }
@@ -119,7 +109,7 @@ describe('selectBeat / citations', () => {
 });
 
 describe('<Dossier>', () => {
-  it('renders the active beat with markdown, pull quote, footnotes and legend', () => {
+  it('renders the active beat with markdown, pull quote and footnotes', () => {
     mount(historical, START + 3 * DAY);
     expect(screen.getByRole('complementary', { name: 'Dossier' })).toBeInTheDocument();
     expect(
@@ -130,40 +120,9 @@ describe('<Dossier>', () => {
     expect(screen.getByText('The lamps are going out.')).toBeInTheDocument();
     expect(screen.getByText(/Herwig, Holger H\./)).toBeInTheDocument();
     expect(screen.getByText(/Tuchman, Barbara W\./)).toBeInTheDocument();
-    expect(screen.getByLabelText('Legend')).toHaveTextContent('Germany');
-    // the key to the map's approximate positions (sand-23b.4)
-    expect(screen.getByLabelText('Legend')).toHaveTextContent(
-      '≈ approximate — derived, not recorded',
-    );
+    // The key to the sides is on the map now, not in the rail (sand-neh.26).
+    expect(screen.queryByLabelText('Legend')).not.toBeInTheDocument();
     expect(screen.queryByText(/^Hypothetical —/)).not.toBeInTheDocument();
-  });
-
-  it('opens a side in the legend where the pack gives one answer, and leaves the rest alone', () => {
-    const opened: string[] = [];
-    render(
-      <ClockProvider
-        range={{ start: START, end: END }}
-        initialNow={START + 3 * DAY}
-        syncUrl={false}
-      >
-        <Dossier
-          beats={beats}
-          sources={sources}
-          sides={sides}
-          branch={historical}
-          openSide={(id) =>
-            id === 'fr' ? { label: 'French 5th Army', onClick: () => opened.push(id) } : undefined
-          }
-        />
-      </ClockProvider>,
-    );
-    // A legend of sides can only open a card where the side is one army; the
-    // accessible name still starts with the visible text (WCAG 2.5.3).
-    const button = screen.getByRole('button', { name: 'France — open French 5th Army' });
-    fireEvent.click(button);
-    expect(opened).toEqual(['fr']);
-    expect(screen.getByLabelText('Legend')).toHaveTextContent('Germany');
-    expect(screen.queryByRole('button', { name: /^Germany/ })).not.toBeInTheDocument();
   });
 
   it('labels counterfactual beats as hypothetical and shows the next beat when none is active', () => {
@@ -206,7 +165,6 @@ describe('<Dossier>', () => {
         <Dossier
           beats={[heroBeat]}
           sources={sources}
-          sides={sides}
           branch={historical}
           resolveMedia={(id) => (id === entry.id ? entry : undefined)}
         />

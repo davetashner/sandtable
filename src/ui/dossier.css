@@ -2,7 +2,13 @@
 
 .dossier {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  /* The reading pane gets a floor (sand-neh.26). It used to be the `1fr`
+     residual between two `auto` rows — the cast strip and the key — and auto
+     rows are satisfied first, so the two things that never change outranked
+     the one thing that does. Measured before the fix: 494px of a 1766px beat
+     on desktop, 58px with a tour running, and exactly 0px on a phone. A
+     minimum means it can never be starved to nothing again. */
+  grid-template-rows: auto minmax(280px, 1fr) auto;
   gap: 12px;
   min-height: 0;
   height: 100%;
@@ -49,6 +55,12 @@
   min-height: 0;
   overflow: auto;
   padding-right: 4px;
+  /* The bar does not appear until you scroll on macOS, so a clipped edge read
+     as "broken" rather than "more below". The fade is the affordance, and it
+     is a mask so it carries no colour and works in both themes. */
+  -webkit-mask-image: linear-gradient(180deg, #000 calc(100% - 24px), transparent);
+  mask-image: linear-gradient(180deg, #000 calc(100% - 24px), transparent);
+  scrollbar-gutter: stable;
 }
 
 .dossier[data-entering] .dossier__beat {
@@ -301,4 +313,41 @@
   background: transparent;
   border: 1px dashed var(--muted);
   box-shadow: none;
+}
+
+/* The cast, collapsed (sand-neh.26). Twenty-one identical portraits were the
+   first thing in the panel and byte-identical on every beat; the faces are
+   what the reader came to the *map* for, not the rail. Closed, it is one line
+   — and closed it also takes those twenty-one buttons out of the tab order,
+   which is most of what sand-pmz.20 is about. */
+.dossier__cast {
+  border-top: 1px solid var(--line);
+  padding-top: var(--space-2);
+}
+
+.dossier__cast > summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: var(--target-min);
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.dossier__cast > summary::-webkit-details-marker {
+  display: none;
+}
+
+.dossier__cast > summary::after {
+  content: '▸';
+  color: var(--brass-dim);
+}
+
+.dossier__cast[open] > summary::after {
+  content: '▾';
 }

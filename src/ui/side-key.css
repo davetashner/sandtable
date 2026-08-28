@@ -1,0 +1,106 @@
+/* The key to the map's colours, on the map it explains (sand-neh.26).
+   Tokens only. Positioning is the map surface's job (map-surface.css); this
+   file owns the disclosure and the rows inside it. */
+
+.side-key {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  /* Enough of the panel to read against terrain, enough transparency to still
+     read as something laid on the map rather than a hole cut in it. */
+  background: color-mix(in srgb, var(--panel) 88%, transparent);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow);
+  max-width: min(320px, calc(100% - 16px));
+}
+
+/* Open, it stops being a pill and becomes a small panel. */
+.side-key[open] {
+  border-radius: var(--radius-sm);
+}
+
+.side-key__summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  /* The floor every control is held to (docs/accessibility.md). */
+  min-height: var(--target-min);
+  padding: 0 var(--space-3);
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.side-key__summary::-webkit-details-marker {
+  display: none;
+}
+
+.side-key__summary::after {
+  content: '▸';
+  color: var(--brass-dim);
+}
+
+.side-key[open] .side-key__summary::after {
+  content: '▾';
+}
+
+.side-key__body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  padding: 0 var(--space-3) var(--space-2);
+  border-top: 1px solid var(--line);
+  margin-top: 2px;
+  padding-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.side-key__side {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  /* One height for both shapes, so a key of buttons and swatches still reads
+     as one row — and this is the tap-target floor the visual gate holds every
+     control to (docs/accessibility.md). */
+  min-height: var(--target-min);
+}
+
+/* A side the pack answers for: the entry opens that army's card (sand-y0u.29).
+   It is a button and looks like the text beside it, plus the underline that
+   says it goes somewhere; the focus ring is global.css's one brass set. */
+.side-key__side--open {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.side-key__side--open:hover {
+  color: var(--ink);
+  text-decoration-color: var(--brass);
+}
+
+.side-key__swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--panel);
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.side-key__swatch--approx {
+  background: transparent;
+  border: 1px dashed var(--muted);
+  box-shadow: none;
+}

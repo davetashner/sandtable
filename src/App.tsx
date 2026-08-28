@@ -61,6 +61,7 @@ import { CommanderToggle } from './ui/CommanderToggle.js';
 import { CopyLink } from './ui/CopyLink.js';
 import { Breadcrumb } from './ui/Breadcrumb.js';
 import { Dossier, type CardChipLike } from './ui/Dossier.js';
+import { SideKey } from './ui/SideKey.js';
 import { CastStrip, type CastMember } from './ui/CastStrip.js';
 import { DecisionCardView } from './ui/DecisionCardView.js';
 import { ClockGauges } from './ui/ClockGauges.js';
@@ -806,6 +807,57 @@ function OpeningProvider({ children }: { children: ReactNode }) {
   );
 }
 
+/**
+ * The tour's voice, wired to the tour context so either surface can mount it
+ * (sand-neh.26). On the map it is a lower third — a narrator standing at the
+ * table, pointing at it — and on a phone, whose map is too short to give a
+ * corner away, it stays stacked above the beat in the sheet.
+ */
+function TourNarrator({ variant }: { variant: 'lower-third' | 'stacked' }) {
+  const tour = useTour();
+  if (!tour.pos) return null;
+  const { pos } = tour;
+  return (
+    <TourPanel
+      variant={variant}
+      tour={pos.tour}
+      step={pos.step}
+      index={pos.index}
+      running={tour.running}
+      waiting={tour.waiting}
+      stop={tour.stop}
+      autoAdvance={tour.autoAdvance}
+      onContinue={tour.advance}
+      onSetAutoAdvance={tour.setAutoAdvance}
+      sources={seed.sources}
+      onPrev={pos.index > 0 ? () => tour.goto(pos.index - 1) : undefined}
+      onNext={pos.index < pos.tour.steps.length - 1 ? () => tour.goto(pos.index + 1) : undefined}
+      onToggleRunning={tour.toggle}
+      onExit={tour.exit}
+    />
+  );
+}
+
+/**
+ * Which side is which, and what a dashed ring means — on the map, because it
+ * is a key to the map's colours (sand-neh.26, amending ADR 0006).
+ */
+function MapKey() {
+  const controls = useViewStateControls();
+  // The key names sides; a formation card is one army's. Where a side put a
+  // single army in the field the entry opens it — the BEF, the Belgian Field
+  // Army — and where it put nine there is no card called "France", so the
+  // entry stays a swatch and a name (sand-y0u.29).
+  const openSide = useCallback(
+    (sideId: string) => {
+      const f = sideFormation(FORMATIONS, sideId);
+      return f ? { label: f.name, onClick: () => controls?.setCard(f.id) } : undefined;
+    },
+    [controls],
+  );
+  return <SideKey sides={seed.pack.sides} openSide={openSide} />;
+}
+
 function MapSection() {
   const branch = useBranch();
   const focus = useFocus();
@@ -843,9 +895,21 @@ function MapSection() {
   // Inside a zoom-in with its own routes the map animates those (sand-1l0.10).
   const movement = useMemo(() => movementSourceFor(focus, MOVEMENT_SOURCE), [focus]);
   const commanders = useContext(CommandersCtx);
+  const phone = usePhone();
   return (
     <section className="surface surface--map" data-hypothetical={hypothetical || undefined}>
       {hypothetical && <p className="hypothetical-ribbon">Hypothetical · {branch.title}</p>}
+      {/* The two things the map owns that are not the map: the narrator and
+          the key. Both are laid over the terrain rather than stacked in the
+          reading rail, which is what ADR 0006 used to say (sand-neh.26). */}
+      {!phone && (
+        <div className="map-overlay map-overlay--narrator">
+          <TourNarrator variant="lower-third" />
+        </div>
+      )}
+      <div className="map-overlay map-overlay--key">
+        <MapKey />
+      </div>
       <Suspense fallback={<p className="surface__hint surface__hint--loading">Loading the map…</p>}>
         <MapSurface
           camera={seed.pack.camera}
@@ -858,7 +922,6 @@ function MapSection() {
           places={seed.places}
           tallies={focus ? [] : seed.tallies}
           tracks={seed.tracks}
-          sides={seed.pack.sides}
           showCommanders={commanders.on}
           labelPerson={(id) => shortPersonName(id)}
           portrait={(id) => {
@@ -916,17 +979,6 @@ function DossierSurface() {
   const meanwhile = useMeanwhileContext();
   const controls = useViewStateControls();
   const labeller = useLabeller();
-  // The legend names sides; a formation card is one army's. Where a side put
-  // a single army in the field the entry opens it — the BEF, the Belgian
-  // Field Army — and where it put nine there is no card called "France", so
-  // the entry stays a swatch and a name (sand-y0u.29).
-  const openSide = useCallback(
-    (sideId: string) => {
-      const f = sideFormation(FORMATIONS, sideId);
-      return f ? { label: f.name, onClick: () => controls?.setCard(f.id) } : undefined;
-    },
-    [controls],
-  );
   const { now, range } = useClock();
   const beat = useMemo(
     () => selectBeat(seed.beats, now, branch.id, focus?.id, range.end),
@@ -973,35 +1025,15 @@ function DossierSurface() {
     [beat, now, branch.id],
   );
   const phone = usePhone();
-  const tour = useTour();
   const dossier = (
     <>
-      {tour.pos && (
-        <TourPanel
-          tour={tour.pos.tour}
-          step={tour.pos.step}
-          index={tour.pos.index}
-          running={tour.running}
-          waiting={tour.waiting}
-          stop={tour.stop}
-          autoAdvance={tour.autoAdvance}
-          onContinue={tour.advance}
-          onSetAutoAdvance={tour.setAutoAdvance}
-          sources={seed.sources}
-          onPrev={tour.pos.index > 0 ? () => tour.goto(tour.pos!.index - 1) : undefined}
-          onNext={
-            tour.pos.index < tour.pos.tour.steps.length - 1
-              ? () => tour.goto(tour.pos!.index + 1)
-              : undefined
-          }
-          onToggleRunning={tour.toggle}
-          onExit={tour.exit}
-        />
-      )}
+      {/* On a phone the map is too short to give a corner to the narrator, so
+          the tour stays here, above the beat (sand-neh.26). Everywhere else it
+          is a lower third on the map. */}
+      {phone && <TourNarrator variant="stacked" />}
       <Dossier
         beats={seed.beats}
         sources={seed.sources}
-        sides={seed.pack.sides}
         branch={branch}
         focus={focus?.id}
         packTitle={focus ? focus.title : seed.pack.title}
@@ -1011,7 +1043,7 @@ function DossierSurface() {
         resolvePortrait={portraitFor}
         resolveMedia={mediaById}
         resolveDiagram={(file) => seed.diagrams[file]}
-        openSide={openSide}
+        castLabel={`${CAST_MEMBERS.length} in the cast`}
         cast={
           <CastStrip
             members={CAST_MEMBERS}
@@ -1298,6 +1330,9 @@ function AppShell() {
   const { now } = useClock();
   const { branch: branchId } = useViewState();
   const vignetteMoment = vignetteNear(seed.vignettes, now, branchId ?? seed.pack.defaultBranch);
+  // A zoom-in widens the reading rail (sand-neh.27); the shell is where both
+  // columns are, so it is the element that carries the state.
+  const zoomedIn = useFocus();
   return (
     <div className="app" inert={showing || undefined}>
       <header className="app__header">
@@ -1345,7 +1380,7 @@ function AppShell() {
       <FocusController />
       <FocusBar />
 
-      <main className="app__main">
+      <main className="app__main" data-focus={zoomedIn ? '' : undefined}>
         <MapSection />
         <DossierSurface />
         <DecisionPauser />

@@ -25,6 +25,7 @@ import { BottomSheet } from '../ui/BottomSheet.js';
 import { BranchToggle } from '../ui/BranchToggle.js';
 import { Breadcrumb } from '../ui/Breadcrumb.js';
 import { Card } from '../ui/Card.js';
+import { SideKey } from '../ui/SideKey.js';
 import { CastStrip, type CastMember } from '../ui/CastStrip.js';
 import { ChapterIndex } from '../ui/ChapterIndex.js';
 import { CasualtyCardView } from '../ui/CasualtyCardView.js';
@@ -606,7 +607,7 @@ export const SECTIONS: GallerySection[] = [
         contained: true,
         render: () => (
           <BottomSheet initial="peek" label="Dossier">
-            <Dossier beats={seed.beats} sources={sources} sides={sides} branch={branch} />
+            <Dossier beats={seed.beats} sources={sources} branch={branch} />
           </BottomSheet>
         ),
       },
@@ -628,7 +629,6 @@ export const SECTIONS: GallerySection[] = [
             <Dossier
               beats={seed.beats}
               sources={sources}
-              sides={sides}
               branch={branch}
               packTitle={pack.title}
               resolveMedia={mediaById}
@@ -649,11 +649,28 @@ export const SECTIONS: GallerySection[] = [
             <Dossier
               beats={seed.beats}
               sources={sources}
-              sides={sides}
               branch={hypothetical ?? branch}
               packTitle={pack.title}
             />
           </DossierSurface>
+        ),
+      },
+      {
+        id: 'side-key',
+        title: 'Key to the sides',
+        note: 'The key to the map\u2019s colours, which lives on the map (sand-neh.26). Closed it is a pill; open it names every side, the approximate treatment, and turns a side the pack answers for into a control. Shown open so both rows are visible.',
+        covers: ['SideKey'],
+        render: () => (
+          <div className="gallery__row">
+            <SideKey sides={sides} defaultOpen />
+            <SideKey
+              sides={sides}
+              defaultOpen
+              openSide={(id) =>
+                id === sides[1]?.id ? { label: 'the BEF', onClick: () => {} } : undefined
+              }
+            />
+          </div>
         ),
       },
       {

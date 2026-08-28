@@ -33,6 +33,13 @@ function citedBy(narration: string, sources: Citation[]): Citation[] {
 }
 
 export interface TourPanelProps {
+  /**
+   * Where the panel is mounted (sand-neh.26). `lower-third` is the map's
+   * corner — sized to its content, so the narration is no longer squeezed
+   * into a 55vh slot it shared with the beat. `stacked` is the phone's sheet,
+   * above the beat, which is the shape it has always had.
+   */
+  variant?: 'lower-third' | 'stacked';
   tour: Tour;
   step: TourStep;
   /** 0-based position of `step` within the tour. */
@@ -56,6 +63,7 @@ export interface TourPanelProps {
 }
 
 export function TourPanel({
+  variant = 'stacked',
   tour,
   step,
   index,
@@ -81,7 +89,7 @@ export function TourPanel({
     [step.narration, tour.sources, sources],
   );
   return (
-    <section className="tour" aria-label={`Guided tour — ${tour.title}`}>
+    <section className="tour" data-variant={variant} aria-label={`Guided tour — ${tour.title}`}>
       <p className="tour__eyebrow">
         <span>Guided tour</span>
         <span className="tour__count">
