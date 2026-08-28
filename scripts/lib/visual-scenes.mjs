@@ -54,7 +54,7 @@ export const SCENES = [
   ['card-bibliography', `?t=${T20}&card=bibliography`],
   ['card-source', `?t=${T20}&card=source:edmonds-1933`],
   ['tour-step', `?tour=1914:tour-the-campaign`],
-  ['layers-off-default', `?t=${T20}&layers=commanders,-meanwhile.physics`],
+  ['layers-off-default', `?t=${T20}&layers=-commanders,-meanwhile.physics`],
   ['gallery', 'gallery.html'],
 ];
 

@@ -491,10 +491,12 @@ describe('App shell', () => {
     it('writes a switch into the URL, and takes it out again at its default', () => {
       window.history.replaceState(null, '', '/?t=1914-09-06T06:00:00Z');
       render(<App />);
+      // Commanders are on by default (sand-neh.30), so it is switching them
+      // *off* that the URL has to carry.
       fireEvent.click(screen.getByRole('button', { name: 'Commanders on the map' }));
-      expect(window.location.search).toContain('layers=commanders');
+      expect(window.location.search).toContain('layers=-commanders');
       fireEvent.click(screen.getByRole('button', { name: 'Physics' }));
-      expect(window.location.search).toContain('layers=commanders,-meanwhile.physics');
+      expect(window.location.search).toContain('layers=-commanders,-meanwhile.physics');
       expect(
         screen.queryByRole('button', { name: /Open The eclipse that did not test relativity/ }),
       ).not.toBeInTheDocument();
@@ -520,7 +522,7 @@ describe('App shell', () => {
       // and what was copied restores the same view
       expect(parseViewState(new URL(copied).search)).toEqual({
         t: Date.UTC(1914, 8, 6, 6),
-        layers: ['commanders'],
+        layers: ['-commanders'],
       });
     });
   });
