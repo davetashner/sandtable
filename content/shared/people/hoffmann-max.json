@@ -1,0 +1,21 @@
+{
+  "id": "person:hoffmann-max",
+  "name": "Max Hoffmann",
+  "sortName": "Hoffmann, Max",
+  "born": "1869-01-25",
+  "died": "1927-07-08",
+  "nationality": "DE",
+  "roles": [
+    {
+      "title": "First General Staff Officer, German Eighth Army",
+      "from": "1914-08-02",
+      "to": "1914-11-01"
+    }
+  ],
+  "summary": "The staff officer who had the Eighth Army's plan of concentration against Samsonov ready before Hindenburg and Ludendorff arrived, and who spent the rest of his life saying so. Who deserves Tannenberg - Hoffmann, Ludendorff or the reputation Hindenburg took from it - is one of the war's longest-running arguments.",
+  "sources": [
+    { "source": "source:showalter-2004" },
+    { "source": "source:stone-1975" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

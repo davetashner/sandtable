@@ -1,0 +1,15 @@
+{
+  "id": "person:kluck-alexander-von",
+  "name": "Alexander von Kluck",
+  "sortName": "Kluck, Alexander von",
+  "born": "1846-05-20",
+  "died": "1934-10-19",
+  "nationality": "DE",
+  "roles": [{ "title": "Commander, German 1st Army", "from": "1914-08-02", "to": "1915-03" }],
+  "summary": "Commander of the German 1st Army on the outer edge of the right wing — the army that marched furthest and fastest, fought Mons and Le Cateau, wheeled inside Paris at the end of August and was struck on the Ourcq by Maunoury's 6th Army in September.",
+  "media": ["media:person/kluck-alexander-von/portrait-c1914-colorized"],
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

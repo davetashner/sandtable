@@ -41,8 +41,10 @@ import {
   type Receipt as ReceiptT,
   type Route,
   type ScienceCard,
-  SHARED_COLLECTIONS,
-  type SharedCollectionFile,
+  registryFileName,
+  SHARED_REGISTRIES,
+  SHARED_REGISTRY_DIRS,
+  type SharedRegistryDir,
   type Source,
   type TechCard,
   Thread,
@@ -285,7 +287,8 @@ function checkRange(ctx: Ctx, path: string, id: string, range: TimeRange, what =
  * sand-23b.5, after the sand-1l0.16 pass.
  */
 const REFERENCE_ONLY_SOURCE = 'source:wikipedia-en';
-const REFERENCE_REGISTRIES = /(?:^|\/)(?:people|places)\.json$/;
+/** Anything under `shared/people/` or `shared/places/` — one file per entity, ADR 0022. */
+const REFERENCE_REGISTRIES = /(?:^|\/)shared\/(?:people|places)\//;
 
 function checkCitations(
   ctx: Ctx,
@@ -352,6 +355,13 @@ interface PackState extends ParsedPack {
   historical?: Branch | undefined;
 }
 
+/** Which entity kind each shared registry directory holds. */
+const SHARED_REGISTRY_KINDS: Record<SharedRegistryDir, Kind> = {
+  people: 'person',
+  places: 'place',
+  sources: 'source',
+};
+
 function parseShared(ctx: Ctx, raw: RawContent): ParsedContent['shared'] {
   const shared: ParsedContent['shared'] = {
     people: [],
@@ -360,23 +370,23 @@ function parseShared(ctx: Ctx, raw: RawContent): ParsedContent['shared'] {
     media: [],
     audio: [],
   };
-  for (const [file, schema] of Object.entries(SHARED_COLLECTIONS) as [
-    SharedCollectionFile,
-    ZodType,
-  ][]) {
-    const f = raw.shared.collections[file];
-    if (!f) continue;
-    const items = parseWith(ctx, schema.array(), f, file) as unknown[] | undefined;
-    if (!items) continue;
-    const kind: Kind = file.startsWith('people')
-      ? 'person'
-      : file.startsWith('places')
-        ? 'place'
-        : 'source';
-    for (const item of items as { id: string }[]) ctx.register(item.id, { kind, path: f.path });
-    if (kind === 'person') shared.people = items as Person[];
-    else if (kind === 'place') shared.places = items as Place[];
-    else shared.sources = items as Source[];
+  for (const [dir, schema] of Object.entries(SHARED_REGISTRIES) as [SharedRegistryDir, ZodType][]) {
+    const kind = SHARED_REGISTRY_KINDS[dir];
+    for (const f of raw.shared.registries[dir] ?? []) {
+      const item = parseWith(ctx, schema, f, kind) as { id: string } | undefined;
+      if (!item) continue;
+      // The file name is the id (ADR 0022), which is what lets a reader who
+      // knows one know the other. A file that disagrees is a rename half done,
+      // and would leave a registry whose directory listing is not its index.
+      const want = registryFileName(item.id);
+      const have = f.path.split('/').pop();
+      if (want !== undefined && want !== have)
+        ctx.error(f.path, `${item.id} belongs in shared/${dir}/${want}`, item.id);
+      ctx.register(item.id, { kind, path: f.path });
+      if (kind === 'person') shared.people.push(item as Person);
+      else if (kind === 'place') shared.places.push(item as Place);
+      else shared.sources.push(item as Source);
+    }
   }
   for (const f of raw.shared.media) {
     const m = parseWith(ctx, Media, f, 'media.json');
@@ -1527,21 +1537,26 @@ function checkOnePicturePerBeat(ctx: Ctx, media: MediaT[]) {
 }
 
 function checkShared(ctx: Ctx, shared: ParsedContent['shared'], raw: RawContent) {
-  const p = (file: string) => raw.shared.collections[file]?.path ?? `shared/${file}`;
+  // Each entity has a file of its own (ADR 0022), and the index already knows
+  // which — so a problem names the file an author would open to fix it rather
+  // than the registry it belongs to.
+  const p = (id: string, dir: SharedRegistryDir) =>
+    ctx.index.get(id)?.path ?? `shared/${dir}/${registryFileName(id) ?? id}`;
   for (const person of shared.people) {
-    checkIds(ctx, p('people/people.json'), person.media, person.id, ['media'], 'media');
-    checkCitations(ctx, p('people/people.json'), person.id, person.sources, false);
+    const path = p(person.id, 'people');
+    checkIds(ctx, path, person.media, person.id, ['media'], 'media');
+    checkCitations(ctx, path, person.id, person.sources, false);
     if (person.born && person.died && t(person.born) > t(person.died))
-      ctx.error(p('people/people.json'), 'born is after died', person.id);
+      ctx.error(path, 'born is after died', person.id);
   }
   for (const place of shared.places)
-    checkCitations(ctx, p('places/places.json'), place.id, place.sources, false);
+    checkCitations(ctx, p(place.id, 'places'), place.id, place.sources, false);
   raw.shared.media.forEach((f, i) => {
     const m = shared.media[i];
     if (m) checkMedia(ctx, m, f.path);
   });
   checkOnePicturePerBeat(ctx, shared.media);
-  checkRegistryIsUsed(ctx, shared.sources, p('sources/sources.json'));
+  checkRegistryIsUsed(ctx, shared.sources, (s) => p(s.id, 'sources'));
   (raw.shared.audio ?? []).forEach((f, i) => {
     const c = shared.audio[i];
     if (c) checkCue(ctx, c, f.path);
@@ -1558,11 +1573,11 @@ function checkShared(ctx: Ctx, shared: ParsedContent['shared'], raw: RawContent)
  * lands one PR ahead of the content that cites it; a warning that stays is a
  * work that was added and then not used.
  */
-function checkRegistryIsUsed(ctx: Ctx, sources: Source[], path: string) {
+function checkRegistryIsUsed(ctx: Ctx, sources: Source[], path: (s: Source) => string) {
   for (const s of sources) {
     if (ctx.cited.has(s.id)) continue;
     ctx.warn(
-      path,
+      path(s),
       'nothing cites this source, so it appears in no bibliography — cite it or drop it (docs/sources.md)',
       s.id,
     );
@@ -1687,7 +1702,7 @@ function quotableText(raw: RawContent, packs: PackState[]): Map<string, string> 
     addFile(p.pack);
     for (const f of Object.values(p.collections)) addFile(f);
   }
-  for (const f of Object.values(raw.shared.collections)) addFile(f);
+  for (const dir of SHARED_REGISTRY_DIRS) for (const f of raw.shared.registries[dir]) addFile(f);
   for (const f of [...raw.shared.media, ...raw.shared.audio, ...raw.threads]) addFile(f);
   for (const s of packs) for (const b of s.beats) text.set(b.id, `${b.title}\n${b.body}`);
   return text;

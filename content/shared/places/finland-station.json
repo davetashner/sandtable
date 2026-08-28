@@ -1,0 +1,10 @@
+{
+  "id": "place:finland-station",
+  "name": "The Finland Station",
+  "names": [{ "name": "Finlyandsky vokzal", "language": "ru", "kind": "period" }],
+  "kind": "other",
+  "lngLat": [30.3561, 59.9556],
+  "country": "Russian Empire",
+  "notes": "Terminus of the Finnish railway on the Vyborg side, where Lenin arrived from Zurich late on the night of 3 April (O.S.) 1917.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

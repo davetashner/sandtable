@@ -116,12 +116,15 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
   close your own bead nor merge your own PR, the **sourcing-integrity rules**
   (never a quotation you have not read, never a page number you have not seen,
   verify delegated research, open the item), and the known local friction
-  (`visual:check`'s fixed port, `bundle:budget` reading a stale `dist/`, the
-  shared registries colliding under parallel authoring).
+  (`visual:check`'s fixed port, `bundle:budget` reading a stale `dist/`, and how
+  the shared registries used to collide under parallel authoring).
 - **Multi-era layout:** `content/eras/<yyyy>-<slug>/` (one self-contained pack
   per campaign), `content/shared/` (people, places, sources, borders, links,
   media referenced by era-qualified IDs like `1870:sedan`), `content/threads/`
   (learning paths across packs). Never a by-war hierarchy. See `docs/ROADMAP.md`.
+  The three shared registries are **one file per entity**, named for the
+  entity's id (`content/shared/sources/tyng-1935.json`, ADR 0022) — add a
+  person, place or work by writing a new file, never by appending to a list.
 - **Imagery:** open-licence archive photos only, credited; colorized images are
   labelled with the original available; no gore (`sand-y0u.1`).
 - **Content:** every date, number and position cites a `Source`; contested

@@ -1,0 +1,10 @@
+{
+  "id": "place:kharkov",
+  "name": "Kharkov",
+  "kind": "city",
+  "lngLat": [36.232, 49.988],
+  "country": "Russian Empire / Ukraine",
+  "notes": "The largest city of eastern Ukraine and one of the most fought-over places in the war: Red in January 1919, White on 25 June, Red again on 12 December.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }],
+  "names": [{ "name": "Kharkiv", "kind": "modern" }]
+}

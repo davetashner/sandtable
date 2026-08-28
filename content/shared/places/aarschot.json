@@ -1,0 +1,13 @@
+{
+  "id": "place:aarschot",
+  "name": "Aarschot",
+  "names": [{ "name": "Aerschot", "language": "fr", "kind": "translation" }],
+  "kind": "town",
+  "lngLat": [4.836, 50.985],
+  "country": "Belgium",
+  "notes": "On the Demer north-east of Louvain; taken on 19 August, the scene of the first large reprisal, retaken in the Belgian sortie of 9 September.",
+  "sources": [
+    { "source": "source:horne-kramer-2001" },
+    { "source": "source:wikipedia-en", "note": "coordinates" }
+  ]
+}

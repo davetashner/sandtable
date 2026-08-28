@@ -1,0 +1,9 @@
+{
+  "id": "place:sviyazhsk",
+  "name": "Sviyazhsk",
+  "kind": "town",
+  "lngLat": [48.653, 55.77],
+  "country": "Russian Empire",
+  "notes": "A small town on an island at the confluence of the Volga and the Sviyaga, twenty-five kilometres from Kazan, where the beaten Red forces fell back in August 1918 and where Trotsky's train stood for a month. Chamberlin calls it the Valmy of the Russian Revolution.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

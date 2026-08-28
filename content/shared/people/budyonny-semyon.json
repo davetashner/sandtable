@@ -1,0 +1,17 @@
+{
+  "id": "person:budyonny-semyon",
+  "name": "Semyon Budyonny",
+  "sortName": "Budyonny, Semyon Mikhailovich",
+  "born": "1883-04-25",
+  "died": "1973-10-26",
+  "nationality": "RU",
+  "roles": [
+    { "title": "Commander, 1st Cavalry Army", "from": "1919-11", "to": "1923" },
+    { "title": "Marshal of the Soviet Union", "from": "1935-11", "to": "1973" }
+  ],
+  "summary": "A cavalryman of the old army from the Don country, who raised a squadron of red horsemen in 1918 and ended up commanding the formation that gave the Red Army the one arm the Whites had started with. The 1st Cavalry Army fought Denikin's cavalry to a standstill in the winter of 1919, rode into Ukraine and Poland in 1920, and was blamed - along with Stalin - for the failure to turn north to Warsaw in August. He survived every purge.",
+  "sources": [
+    { "source": "source:chamberlin-1935-2" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

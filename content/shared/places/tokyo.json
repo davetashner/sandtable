@@ -1,0 +1,9 @@
+{
+  "id": "place:tokyo",
+  "name": "Tokyo",
+  "names": [{ "name": "東京", "language": "ja" }],
+  "kind": "city",
+  "lngLat": [139.6922, 35.6897],
+  "country": "Empire of Japan",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "person:rawlinson-henry",
+  "name": "Sir Henry Rawlinson",
+  "sortName": "Rawlinson, Henry",
+  "nationality": "GB",
+  "roles": [
+    { "title": "Commanding, IV Corps (Antwerp and Ypres)", "from": "1914-10", "to": "1914-11" },
+    { "title": "Commanding, British Fourth Army", "from": "1916-02", "to": "1919" }
+  ],
+  "summary": "British general sent to Belgium in October 1914 with an improvised corps - the 7th Division and the 3rd Cavalry Division - to relieve Antwerp, arriving too late for the city and occupying Ypres instead. His corps headquarters was withdrawn on 27 October and his divisions passed to Haig. He commanded the Fourth Army on the Somme in 1916 and in the advance of 1918.",
+  "sources": [
+    { "source": "source:edmonds-1925", "note": "the IV Corps in Flanders, October 1914" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

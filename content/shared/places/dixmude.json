@@ -1,0 +1,14 @@
+{
+  "id": "place:dixmude",
+  "name": "Dixmude",
+  "names": [{ "name": "Diksmuide", "language": "nl", "kind": "modern" }],
+  "kind": "town",
+  "lngLat": [2.865, 51.033],
+  "country": "Belgium",
+  "notes": "Town on the Yser held by Ronarc'h's fusiliers marins and Belgian troops through the battle of the Yser, October–November 1914.",
+  "sources": [
+    { "source": "source:van-pul-2006" },
+    { "source": "source:edmonds-1925" },
+    { "source": "source:wikipedia-en", "note": "coordinates" }
+  ]
+}

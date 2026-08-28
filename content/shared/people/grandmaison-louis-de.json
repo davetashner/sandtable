@@ -1,0 +1,21 @@
+{
+  "id": "person:grandmaison-louis-de",
+  "name": "Louis de Grandmaison",
+  "sortName": "Grandmaison, Louis Loyzeau de",
+  "born": "1861-02-15",
+  "died": "1915-02-18",
+  "nationality": "FR",
+  "roles": [
+    {
+      "title": "Head of the Troisieme Bureau (operations), French General Staff",
+      "from": "1908",
+      "to": "1911"
+    }
+  ],
+  "summary": "Staff officer whose lectures of February 1911 gave the French doctrine of the offensive its slogan and its reputation. He argued that in an encounter battle the side that attacks first with everything imposes its will, and that caution costs more lives than audacity - the offensive a outrance written into the 1913 regulations and into the way French corps fought in August 1914. He was killed commanding a brigade in February 1915. Whether his lectures made the doctrine or merely named it is argued.",
+  "sources": [
+    { "source": "source:doughty-2005" },
+    { "source": "source:greenhalgh-2014" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

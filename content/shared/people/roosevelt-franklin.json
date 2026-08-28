@@ -1,0 +1,20 @@
+{
+  "id": "person:roosevelt-franklin",
+  "name": "Franklin D. Roosevelt",
+  "sortName": "Roosevelt, Franklin Delano",
+  "born": "1882-01-30",
+  "died": "1945-04-12",
+  "nationality": "US",
+  "roles": [
+    { "title": "President of the United States", "from": "1933-03-04", "to": "1945-04-12" },
+    { "title": "Assistant Secretary of the Navy", "from": "1913-03-17", "to": "1920-08-26" }
+  ],
+  "summary": "President for twelve years, through the Depression and most of the war. Across 1940 and 1941 he moved the United States from neutrality towards belligerency by every means short of war, while telling the country he was keeping it out of one. He appealed directly to the Emperor of Japan on 6 December 1941, asked Congress for a declaration of war on the 8th, and signed it the same day; Germany and Italy declared war on the United States three days after that. He died of a cerebral haemorrhage four months before the Pacific war ended.",
+  "sources": [
+    {
+      "source": "source:peace-and-war-1943",
+      "note": "docs. 264, 267, 268 and 271–273 — the message to the Emperor, the address to Congress, and the joint resolutions"
+    },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

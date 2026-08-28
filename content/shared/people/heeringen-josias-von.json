@@ -1,0 +1,18 @@
+{
+  "id": "person:heeringen-josias-von",
+  "name": "Josias von Heeringen",
+  "sortName": "Heeringen, Josias von",
+  "born": "1850-03-09",
+  "died": "1926-10-09",
+  "nationality": "DE",
+  "roles": [
+    { "title": "Prussian Minister of War", "from": "1909", "to": "1913-06" },
+    { "title": "Commander, German 7th Army", "from": "1914-08-02", "to": "1916-08" }
+  ],
+  "summary": "Prussian War Minister until 1913, then commander of the 7th Army in Alsace in 1914: Mulhouse, the Vosges and the Aisne after the army was moved north in September.",
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:strachan-2001" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

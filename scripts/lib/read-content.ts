@@ -12,10 +12,12 @@ import {
   PACK_FILE,
   RECEIPT_BACKLOG,
   RECEIPTS_DIR,
+  SHARED_REGISTRY_DIRS,
   THREAD_FILE,
 } from '../../src/packs/schema/files.js';
 import type { RawContent, RawFile, RawPack } from '../../src/packs/validate/tree.js';
 import type { Problem } from '../../src/packs/validate/validate.js';
+import { listRegistryFiles } from './registry.js';
 
 const isDir = (p: string) => {
   try {
@@ -106,13 +108,15 @@ export function readContent(root = 'content'): ReadResult {
   }
 
   const sharedDir = join(root, 'shared');
-  const shared: RawContent['shared'] = { collections: {}, media: [], audio: [] };
-  for (const file of ['people/people.json', 'places/places.json', 'sources/sources.json']) {
-    const p = join(sharedDir, file);
-    if (!exists(p)) continue;
-    const f = readJson(p);
-    if (f) shared.collections[file] = f;
-  }
+  const shared: RawContent['shared'] = {
+    registries: { people: [], places: [], sources: [] },
+    media: [],
+    audio: [],
+  };
+  // One file per entity (ADR 0022), read in name order so the tree — and every
+  // message that quotes a position in it — is the same on every machine.
+  for (const dir of SHARED_REGISTRY_DIRS)
+    shared.registries[dir] = readJsonAll(listRegistryFiles(root, dir).map((f) => f.path));
   shared.media = readJsonAll(walk(join(sharedDir, 'media'), (n) => n === MEDIA_MANIFEST));
   shared.audio = readJsonAll(walk(join(sharedDir, 'audio'), (n) => n === CUE_MANIFEST));
   const threads = readJsonAll(walk(join(root, 'threads'), (n) => n === THREAD_FILE));

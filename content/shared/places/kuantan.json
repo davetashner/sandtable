@@ -1,0 +1,9 @@
+{
+  "id": "place:kuantan",
+  "name": "Kuantan",
+  "kind": "town",
+  "lngLat": [103.3219, 3.7974],
+  "country": "Pahang, British Malaya",
+  "notes": "A port halfway down the east coast of Malaya. Force Z went north to look for a reported landing here on 10 December 1941 and was found by land-based aircraft on the way back; the sinking was some way out to sea, and this pack places the event at the town rather than write a position it could not source.",
+  "sources": [{ "source": "source:openstreetmap", "note": "coordinates" }]
+}

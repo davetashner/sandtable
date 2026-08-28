@@ -1,0 +1,8 @@
+{
+  "id": "place:singapore",
+  "name": "Singapore",
+  "kind": "city",
+  "lngLat": [103.8333, 1.2833],
+  "country": "Straits Settlements, British Malaya",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

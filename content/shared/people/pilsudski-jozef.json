@@ -1,0 +1,18 @@
+{
+  "id": "person:pilsudski-jozef",
+  "name": "Jozef Pilsudski",
+  "sortName": "Pilsudski, Jozef Klemens",
+  "names": [{ "name": "Józef Piłsudski", "language": "pl", "kind": "modern" }],
+  "born": "1867-12-05",
+  "died": "1935-05-12",
+  "nationality": "PL",
+  "roles": [
+    { "title": "Commander-in-Chief of the Polish Army", "from": "1918-11-11", "to": "1922-12" },
+    { "title": "Chief of State of Poland", "from": "1918-11-22", "to": "1922-12-14" }
+  ],
+  "summary": "A socialist conspirator against the Russian Empire who became the founder and effectively the dictator of the Polish state that replaced it. In 1920 he was both head of state and commander-in-chief, and the counter-stroke launched from the Wieprz on 16 August, which broke a Red Army group already on the outskirts of Warsaw, is the decision the rest of his reputation rests on - his own and, in a different form, that of every Polish government since.",
+  "sources": [
+    { "source": "source:chamberlin-1935-2" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

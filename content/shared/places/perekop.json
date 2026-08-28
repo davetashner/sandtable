@@ -1,0 +1,9 @@
+{
+  "id": "place:perekop",
+  "name": "Perekop",
+  "kind": "fortress",
+  "lngLat": [33.693, 46.162],
+  "country": "Russian Empire",
+  "notes": "The seven-kilometre isthmus that is the only land approach to the Crimea, stormed by the Red Army on 11 November 1920.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

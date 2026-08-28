@@ -1,0 +1,8 @@
+{
+  "id": "place:la-ferte-sous-jouarre",
+  "name": "La Ferté-sous-Jouarre",
+  "kind": "town",
+  "lngLat": [3.128, 48.951],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

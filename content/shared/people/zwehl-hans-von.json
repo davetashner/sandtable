@@ -1,0 +1,17 @@
+{
+  "id": "person:zwehl-hans-von",
+  "name": "Hans von Zwehl",
+  "sortName": "Zwehl, Hans von",
+  "born": "1851-04-27",
+  "died": "1926-05-18",
+  "nationality": "DE",
+  "roles": [
+    { "title": "Commanding General, VII Reserve Corps", "from": "1914-08-02", "to": "1916-08" }
+  ],
+  "summary": "Commander of the VII Reserve Corps: besieged Maubeuge from 25 August to 7 September 1914, then force-marched the corps to the Chemin des Dames in time to close the gap between the 1st and 2nd Armies on 13 September — a day after the Marne was lost.",
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:edmonds-1922" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

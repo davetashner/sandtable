@@ -1,0 +1,19 @@
+{
+  "id": "person:sullivan-george",
+  "name": "George T. Sullivan",
+  "sortName": "Sullivan, George T.",
+  "died": "1942-11-13",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Gunner's Mate Second Class, USS *Juneau* (CL-52)",
+      "from": "1942-02",
+      "to": "1942-11-13"
+    }
+  ],
+  "summary": "The eldest of the five Sullivan brothers of Waterloo, Iowa, who enlisted together after a friend was lost at Pearl Harbor on the condition that they serve on the same ship, and were assigned to the light cruiser *Juneau*. She was torpedoed off Guadalcanal on 13 November 1942 and blew up; four brothers died at once and George, the last, survived several days in the water. Their mother was told by a letter that arrived with no notification of which sons. The Navy's later sole-survivor policy, and its reluctance ever again to berth brothers together, dates from them.",
+  "sources": [
+    { "source": "source:frank-1990" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

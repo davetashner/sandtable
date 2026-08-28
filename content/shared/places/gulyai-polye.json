@@ -1,0 +1,10 @@
+{
+  "id": "place:gulyai-polye",
+  "name": "Gulyai-Polye",
+  "kind": "town",
+  "lngLat": [36.266, 47.663],
+  "country": "Russian Empire / Ukraine",
+  "notes": "Makhno's home village and the capital of the territory his insurgent army held in eastern Ukraine, where the peasant congresses met.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }],
+  "names": [{ "name": "Huliaipole", "kind": "modern" }]
+}

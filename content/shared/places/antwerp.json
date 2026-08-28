@@ -1,0 +1,13 @@
+{
+  "id": "place:antwerp",
+  "name": "Antwerp",
+  "names": [
+    { "name": "Antwerpen", "language": "nl", "kind": "translation" },
+    { "name": "Anvers", "language": "fr", "kind": "translation" }
+  ],
+  "kind": "fortress",
+  "lngLat": [4.402, 51.219],
+  "country": "Belgium",
+  "notes": "National redoubt; the Belgian field army withdrew into it on 20 August and held until 10 October 1914.",
+  "sources": [{ "source": "source:hastings-2013" }]
+}

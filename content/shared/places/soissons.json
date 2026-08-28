@@ -1,0 +1,9 @@
+{
+  "id": "place:soissons",
+  "name": "Soissons",
+  "kind": "town",
+  "lngLat": [3.323, 49.382],
+  "country": "France",
+  "notes": "On the Aisne; the German right wing dug in north of it from 13 September 1914.",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

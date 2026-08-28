@@ -1,0 +1,8 @@
+{
+  "id": "place:saint-die",
+  "name": "Saint-Dié",
+  "kind": "town",
+  "lngLat": [6.949, 48.284],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

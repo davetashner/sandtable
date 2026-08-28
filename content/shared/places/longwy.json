@@ -1,0 +1,9 @@
+{
+  "id": "place:longwy",
+  "name": "Longwy",
+  "kind": "fortress",
+  "lngLat": [5.762, 49.521],
+  "country": "France",
+  "notes": "Small French fortress on the 3rd Army's right; besieged from 3 August and surrendered on 26 August 1914.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

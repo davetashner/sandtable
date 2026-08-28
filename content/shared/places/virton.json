@@ -1,0 +1,8 @@
+{
+  "id": "place:virton",
+  "name": "Virton",
+  "kind": "town",
+  "lngLat": [5.532, 49.568],
+  "country": "Belgium",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "person:castelnau-edouard-de",
+  "name": "Édouard de Castelnau",
+  "sortName": "Castelnau, Édouard de",
+  "born": "1851-12-24",
+  "died": "1944-03-19",
+  "nationality": "FR",
+  "roles": [{ "title": "Commander, French 2nd Army", "from": "1914-08-02", "to": "1915-06" }],
+  "summary": "Commander of the French 2nd Army in Lorraine: beaten at Morhange on 20 August, then held the Grand Couronné de Nancy through early September — the hinge that kept the German left from closing the other jaw.",
+  "media": ["media:person/castelnau-edouard-de/portrait-colorized"],
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

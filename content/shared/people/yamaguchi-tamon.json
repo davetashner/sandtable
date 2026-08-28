@@ -1,0 +1,23 @@
+{
+  "id": "person:yamaguchi-tamon",
+  "name": "Yamaguchi Tamon",
+  "sortName": "Yamaguchi Tamon",
+  "names": [
+    { "name": "山口 多聞", "language": "ja" },
+    {
+      "name": "Tamon Yamaguchi",
+      "language": "en",
+      "kind": "transliteration",
+      "period": "given-name-first order, as English-language catalogues index him"
+    }
+  ],
+  "born": "1892-08-17",
+  "died": "1942-06-05",
+  "nationality": "JP",
+  "roles": [{ "title": "Commander, Second Carrier Division", "from": "1940-11", "to": "1942-06" }],
+  "summary": "Commanded the Second Carrier Division — *Hiryū* and *Sōryū* — and was widely expected to command the Combined Fleet one day. At Midway, with the other three carriers burning, he launched what he had left in two small strikes that found *Yorktown* and put her out of the battle; *Hiryū* was then found and hit in turn. He refused to leave her, telling the crew to abandon ship and staying aboard as she was scuttled before dawn on 5 June 1942. The Imperial Navy lost four carriers at Midway and could replace them; it could not replace the aircrew or him.",
+  "sources": [
+    { "source": "source:parshall-tully-2005" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

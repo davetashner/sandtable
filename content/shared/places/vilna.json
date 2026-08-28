@@ -1,0 +1,19 @@
+{
+  "id": "place:vilna",
+  "name": "Vilna",
+  "kind": "city",
+  "lngLat": [25.28, 54.687],
+  "country": "Russian Empire / Lithuania / Poland",
+  "notes": "Occupied by Soviet troops on 14 July 1920 during the advance on Warsaw. Its ownership was contested between Poland and Lithuania for the next two decades - one of several places where the Polish-Soviet war and the making of the new states were the same event.",
+  "sources": [
+    { "source": "source:wikipedia-en", "note": "coordinates" },
+    {
+      "source": "source:chamberlin-1935-2",
+      "note": "the dates in this note; the chronological table and narrative"
+    }
+  ],
+  "names": [
+    { "name": "Vilnius", "kind": "modern" },
+    { "name": "Wilno", "language": "pl" }
+  ]
+}

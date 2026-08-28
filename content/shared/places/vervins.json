@@ -1,0 +1,8 @@
+{
+  "id": "place:vervins",
+  "name": "Vervins",
+  "kind": "town",
+  "lngLat": [3.909, 49.835],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

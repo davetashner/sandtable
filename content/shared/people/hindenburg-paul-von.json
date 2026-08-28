@@ -1,0 +1,14 @@
+{
+  "id": "person:hindenburg-paul-von",
+  "name": "Paul von Hindenburg",
+  "sortName": "Hindenburg, Paul von",
+  "born": "1847-10-02",
+  "died": "1934-08-02",
+  "nationality": "DE",
+  "roles": [{ "title": "Commander, German Eighth Army", "from": "1914-08-22", "to": "1914-11-01" }],
+  "summary": "Recalled from retirement on 22 August 1914 to command the Eighth Army in East Prussia, with Ludendorff as his chief of staff. Tannenberg made him the most famous soldier in Germany and, in time, the man who ran the war and then the republic that followed it.",
+  "sources": [
+    { "source": "source:showalter-2004" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

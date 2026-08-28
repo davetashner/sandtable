@@ -1,0 +1,9 @@
+{
+  "id": "place:wheeler-field",
+  "name": "Wheeler Field",
+  "kind": "other",
+  "lngLat": [-158.037, 21.4802],
+  "country": "Territory of Hawaii, United States",
+  "notes": "The Army's principal fighter base, in the middle of Oahu on the Leilehua plain.",
+  "sources": [{ "source": "source:openstreetmap", "note": "coordinates, from the airfield node" }]
+}

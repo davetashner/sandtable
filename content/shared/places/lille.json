@@ -1,0 +1,13 @@
+{
+  "id": "place:lille",
+  "name": "Lille",
+  "names": [{ "name": "Rijsel", "language": "nl", "kind": "translation" }],
+  "kind": "city",
+  "lngLat": [3.058, 50.629],
+  "country": "France",
+  "notes": "The largest French city near the northern front; abandoned by the French and occupied by the German Sixth Army on 12 October 1914, and held until October 1918.",
+  "sources": [
+    { "source": "source:edmonds-1925" },
+    { "source": "source:wikipedia-en", "note": "coordinates" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "place:putilov-works",
+  "name": "The Putilov Works",
+  "names": [
+    { "name": "Putilovsky zavod", "language": "ru", "kind": "period" },
+    { "name": "Kirov Plant", "language": "en", "kind": "modern" }
+  ],
+  "kind": "other",
+  "lngLat": [30.2622, 59.8811],
+  "country": "Russian Empire",
+  "notes": "The largest metalworking and armaments plant in Petrograd, in the Narva district in the south-west of the city.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

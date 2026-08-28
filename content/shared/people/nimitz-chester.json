@@ -1,0 +1,22 @@
+{
+  "id": "person:nimitz-chester",
+  "name": "Chester W. Nimitz",
+  "sortName": "Nimitz, Chester W.",
+  "born": "1885-02-24",
+  "died": "1966-02-20",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Commander in Chief, United States Pacific Fleet and Pacific Ocean Areas",
+      "from": "1941-12-31",
+      "to": "1945-11"
+    },
+    { "title": "Chief of Naval Operations", "from": "1945-12-15", "to": "1947-12-15" }
+  ],
+  "summary": "Took the Pacific Fleet ten days after its battle line was sunk at its moorings and fought the war the carriers and the submarines made possible rather than the one the pre-war plans described. Backed Rochefort's cryptanalysts against Washington's own estimate and put three carriers north-east of Midway on the strength of it; then ran the Central Pacific drive island by island towards bomber range of Japan, alternating Halsey's and Spruance's staffs over the same ships so that the fleet never had to stop to think. Signed the Japanese surrender for the United States aboard *Missouri* on 2 September 1945.",
+  "sources": [
+    { "source": "source:toll-2012" },
+    { "source": "source:toll-2015" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

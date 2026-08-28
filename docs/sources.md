@@ -11,8 +11,10 @@ bibliography UI is `sand-shn.5`.
    strengths, quotations, attributions of motive. The validator requires at
    least one citation on routes, events, battles, decision points, tech and
    science cards, documents, beats and causal links (`docs/content-model.md`).
-2. **Sources are entities** in `content/shared/sources/sources.json`
-   (pack-local `sources.json` only for works used by one pack). Fields: `id`
+2. **Sources are entities** in `content/shared/sources/`, one work per file
+   named for its id — `source:tyng-1935` is `sources/tyng-1935.json`
+   ([ADR 0022](decisions/0022-per-entity-registries.md)); a pack-local
+   `sources.json` is for works used by one pack only. Fields: `id`
    (`source:<surname>-<year>`, or a short slug for official histories),
    `kind`, `tier`, `author` ("Surname, Given; Surname, Given"), `title`,
    `year`, `publisher` ("Publisher, City"), `edition`, `url`, `isbn`, and
@@ -55,8 +57,8 @@ bibliography UI is `sand-shn.5`.
    verification receipt** — see "Quoting, and the receipt that goes with it"
    below ([ADR 0021](decisions/0021-quotation-receipts.md)).
 8. **Wikipedia** (`source:wikipedia-en`) is **reference data only**: a
-   person's dates and dates of office in `people.json`, a place's coordinates
-   in `places.json`. Never an operational claim — a strength, a position, a
+   person's dates and dates of office in `content/shared/people/`, a place's
+   coordinates in `content/shared/places/`. Never an operational claim — a strength, a position, a
    time of day, a casualty figure, an order — and never a footnote a reader
    sees in the dossier. Remove it from any entity that gains a proper source.
    The validator warns on every citation to it outside the two shared

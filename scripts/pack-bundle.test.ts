@@ -11,6 +11,8 @@ import { describe, expect, it } from 'vitest';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import type { ContentBundle } from '../src/packs/content-bundle.js';
+import { SHARED_REGISTRY_DIRS } from '../src/packs/schema/files.js';
+import { readRegistry } from './lib/registry.js';
 import { validateContent } from '../src/packs/validate/validate.js';
 import { readContent } from './lib/read-content.js';
 import {
@@ -63,21 +65,17 @@ describe('buildContentBundle', () => {
  */
 const REGISTRY = join(CONTENT, 'shared');
 const registryIds = (): Map<string, string> => {
-  const of = (file: string, pick: (d: unknown) => { id: string }[]) => {
-    const path = join(REGISTRY, file);
-    return existsSync(path) ? pick(JSON.parse(readFileSync(path, 'utf8'))) : [];
-  };
-  const list = (d: unknown) => d as { id: string }[];
-  const index = (d: unknown) => (d as { entries: { id: string }[] }).entries;
   const out = new Map<string, string>();
-  for (const [file, pick, kind] of [
-    ['people/people.json', list, 'people'],
-    ['places/places.json', list, 'places'],
-    ['sources/sources.json', list, 'sources'],
-    ['media/index.json', index, 'media'],
-    ['audio/index.json', index, 'audio'],
-  ] as const)
-    for (const e of of(file, pick)) out.set(e.id, kind);
+  // The three registries are a directory of one file per entity (ADR 0022);
+  // the two generated indexes are still one file with an `entries` array.
+  for (const dir of SHARED_REGISTRY_DIRS)
+    for (const e of readRegistry<{ id: string }>(CONTENT, dir)) out.set(e.id, dir);
+  for (const kind of ['media', 'audio'] as const) {
+    const path = join(REGISTRY, kind, 'index.json');
+    if (!existsSync(path)) continue;
+    const { entries } = JSON.parse(readFileSync(path, 'utf8')) as { entries: { id: string }[] };
+    for (const e of entries) out.set(e.id, kind);
+  }
   return out;
 };
 

@@ -1,0 +1,8 @@
+{
+  "id": "place:epinal",
+  "name": "Épinal",
+  "kind": "fortress",
+  "lngLat": [6.45, 48.172],
+  "country": "France",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

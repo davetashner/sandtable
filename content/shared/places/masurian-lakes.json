@@ -1,0 +1,9 @@
+{
+  "id": "place:masurian-lakes",
+  "name": "The Masurian Lakes",
+  "kind": "region",
+  "lngLat": [21.65, 53.92],
+  "country": "German Empire (East Prussia)",
+  "notes": "The lake belt that split the two Russian armies' advance, and gave its name to the battle of 7-14 September 1914 - the battle the two corps from the West actually fought in.",
+  "sources": [{ "source": "source:showalter-2004" }, { "source": "source:stone-1975" }]
+}

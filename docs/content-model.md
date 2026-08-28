@@ -46,10 +46,10 @@ content/
     vignettes.json             Vignette[]
     tours.json                 Tour[]
     beats/*.md                 NarrativeBeat — YAML front matter + Markdown
-  shared/                      cross-era registries
-    people/people.json         Person[]
-    places/places.json         Place[]
-    sources/sources.json       Source[]
+  shared/                      cross-era registries — one file per entity (ADR 0022)
+    people/<slug>.json         Person   (person:kluck-alexander-von → kluck-alexander-von.json)
+    places/<slug>.json         Place    (place:ypres → ypres.json)
+    sources/<slug>.json        Source   (source:tyng-1935 → tyng-1935.json)
     media/**/media.json        Media (one manifest per image; binaries live in S3)
     geo/borders/<year>.geojson world borders per era year (npm run borders; manifest.json has provenance)
   threads/<slug>/thread.json   Thread — a learning path across packs
@@ -57,8 +57,16 @@ content/
   receipts/backlog.txt           apparatus, never bundled into a pack
 ```
 
-Only `pack.json` is required. Every other file is optional and, when
+Only `pack.json` is required. Every other file in a pack is optional and, when
 present, is an array of that entity (empty arrays are fine).
+
+The three shared registries are directories rather than files: one JSON object
+per entity, in a file named for the entity's id with its kind prefix removed.
+Two authors adding two different people therefore write two different files and
+never collide, which is the whole of ADR 0022; the validator errors on a file
+whose entity disagrees with its name, so the directory listing and the id index
+cannot drift apart. `scripts/split-registries.ts --check` asserts the same rule
+on its own.
 
 ## Identifiers
 

@@ -1,0 +1,9 @@
+{
+  "id": "place:amance",
+  "name": "Amance",
+  "kind": "village",
+  "lngLat": [6.283, 48.768],
+  "country": "France",
+  "notes": "Village and hill on the Grand Couronné north-east of Nancy; the observation point of the whole position and the target of the heaviest German bombardment on 6 September 1914.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

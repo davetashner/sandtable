@@ -28,7 +28,9 @@ completion (`pack`, `formations`, `routes`, `events`, `battles`, `tech`,
 ## 1. Add a citation (always first)
 
 Every claim cites a `Source`. If the work you are citing is not yet in
-`content/shared/sources/sources.json`, add it:
+`content/shared/sources/`, add it — **one work per file**, named for its id
+without the `source:` prefix, so `source:tyng-1935` goes in
+`content/shared/sources/tyng-1935.json` (ADR 0022):
 
 ```json
 {
@@ -44,7 +46,8 @@ Every claim cites a `Source`. If the work you are citing is not yet in
 ```
 
 - `id` is `source:<surname>-<year>` (or a short slug for official histories,
-  e.g. `source:afgg-1-1`).
+  e.g. `source:afgg-1-1`), and it is also the file name: `afgg-1-1.json`. The
+  validator errors if the two disagree.
 - `tier` is where the work stands in the hierarchy of evidence — `primary`,
   `official-history`, `study`, `unit-history`, `memoir`, `general` or
   `reference` — and it is what the reader-facing bibliography groups by, so
@@ -88,14 +91,24 @@ file, the id and the field.
 
 ## 3. Add a place or a person
 
-Shared registries serve every pack:
+Shared registries serve every pack. Each is a directory of one file per entity,
+named for the id without its prefix — write a new file, never append to an
+existing one (ADR 0022):
 
-- `content/shared/places/places.json` — `place:<slug>`, the name used in the
-  narrative (period name), alternate names with language/period, `kind`
-  (`city`, `town`, `fortress`, `river`, …), `lngLat`, country in the era.
-- `content/shared/people/people.json` — `person:<slug>` (surname-first slug),
-  name, dates, nationality, roles with dates, a one-paragraph summary, portrait
-  media ids, sources.
+- `content/shared/places/<slug>.json` — one `Place`, id `place:<slug>`: the name
+  used in the narrative (period name), alternate names with language/period,
+  `kind` (`city`, `town`, `fortress`, `river`, …), `lngLat`, country in the era.
+  `place:ypres` → `content/shared/places/ypres.json`.
+- `content/shared/people/<slug>.json` — one `Person`, id `person:<slug>`
+  (surname-first slug): name, dates, nationality, roles with dates, a
+  one-paragraph summary, portrait media ids, sources.
+  `person:joffre-joseph` → `content/shared/people/joffre-joseph.json`.
+
+Because each entity has a file of its own, adding one is a new file and two
+authors working in parallel never touch the same bytes. Copy a neighbour when
+you want the house style: `npx prettier --write` the file when you are done, and
+`npx tsx scripts/split-registries.ts --check` will tell you if a file and its
+entity have got out of step.
 
 Coordinates: WGS 84 `[lng, lat]`, three or four decimals. Read them off
 OpenStreetMap (right-click → "Show address" shows lat, lon — swap the order),

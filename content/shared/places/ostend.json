@@ -1,0 +1,13 @@
+{
+  "id": "place:ostend",
+  "name": "Ostend",
+  "names": [{ "name": "Oostende", "language": "nl", "kind": "translation" }],
+  "kind": "town",
+  "lngLat": [2.917, 51.23],
+  "country": "Belgium",
+  "notes": "Channel port; where the Belgian 4th Division came ashore from Le Havre on 27 August on its way back to Antwerp.",
+  "sources": [
+    { "source": "source:tyng-1935" },
+    { "source": "source:wikipedia-en", "note": "coordinates" }
+  ]
+}

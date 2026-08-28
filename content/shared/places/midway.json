@@ -1,0 +1,9 @@
+{
+  "id": "place:midway",
+  "name": "Midway",
+  "kind": "other",
+  "lngLat": [-177.35, 28.2075],
+  "country": "United States (unincorporated territory)",
+  "notes": "An atoll two thousand kilometres north-west of Oahu, on the striking force's own flank on the way in — the operation order set aside a destroyer division to bombard it on the way out — and the place where the six months Yamamoto had asked for ran out.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

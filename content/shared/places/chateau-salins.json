@@ -1,0 +1,8 @@
+{
+  "id": "place:chateau-salins",
+  "name": "Château-Salins",
+  "kind": "town",
+  "lngLat": [6.514, 48.819],
+  "country": "Germany (annexed Lorraine)",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

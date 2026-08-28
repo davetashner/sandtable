@@ -1,0 +1,14 @@
+{
+  "id": "place:hickam-field",
+  "name": "Hickam Field",
+  "kind": "other",
+  "lngLat": [-157.9529, 21.3276],
+  "country": "Territory of Hawaii, United States",
+  "notes": "The Army's bomber base on Oahu, adjoining the naval base, and one of the first places hit on 7 December.",
+  "sources": [
+    {
+      "source": "source:openstreetmap",
+      "note": "coordinates, from the aerodrome node; no encyclopaedia coordinate box exists for this field"
+    }
+  ]
+}

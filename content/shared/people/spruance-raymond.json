@@ -1,0 +1,24 @@
+{
+  "id": "person:spruance-raymond",
+  "name": "Raymond A. Spruance",
+  "sortName": "Spruance, Raymond A.",
+  "born": "1886-07-03",
+  "died": "1969-12-13",
+  "nationality": "US",
+  "roles": [
+    { "title": "Commander, Cruiser Division 5", "from": "1941", "to": "1942-05" },
+    { "title": "Commander, Task Force 16", "from": "1942-05-28", "to": "1942-06" },
+    {
+      "title": "Chief of Staff to Commander in Chief, Pacific Fleet",
+      "from": "1942-06",
+      "to": "1943-08"
+    },
+    { "title": "Commander, Fifth Fleet", "from": "1943-08", "to": "1945-11" }
+  ],
+  "summary": "A cruiser admiral with no aviation background who was handed Halsey's carriers three days before Midway and won the battle with them, launching at extreme range on an incomplete contact and then declining to chase Yamamoto's battleships into the night. The same refusal to be drawn made him the most criticised American admiral of June 1944, when he held Task Force 58 tied to the Saipan beachhead through the Philippine Sea instead of steaming west after Ozawa — the mirror image of the choice Halsey made four months later, and the reason the two decisions are always argued together.",
+  "sources": [
+    { "source": "source:parshall-tully-2005" },
+    { "source": "source:toll-2015" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

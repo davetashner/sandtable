@@ -18,13 +18,10 @@ import {
   type FrontSource,
   type Snapshot,
 } from './build-front.js';
+import { readRegistry } from './lib/registry.js';
 
 const doc = readSource();
-const registry = new Set(
-  (JSON.parse(readFileSync('content/shared/sources/sources.json', 'utf8')) as { id: string }[]).map(
-    (s) => s.id,
-  ),
-);
+const registry = new Set(readRegistry<{ id: string }>('content', 'sources').map((s) => s.id));
 
 /** A deep copy, so a test can break one snapshot without breaking the others. */
 const clone = (): FrontSource => JSON.parse(JSON.stringify(doc)) as FrontSource;

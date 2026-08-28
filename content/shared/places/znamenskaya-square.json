@@ -1,0 +1,10 @@
+{
+  "id": "place:znamenskaya-square",
+  "name": "Znamenskaya Square",
+  "names": [{ "name": "Ploshchad Vosstaniya", "language": "ru", "kind": "modern" }],
+  "kind": "other",
+  "lngLat": [30.3606, 59.9311],
+  "country": "Russian Empire",
+  "notes": "The square where the Nevsky Prospekt meets the Nikolaevsky station, and where the crowds and the troops met on 25-26 February (O.S.). Renamed Uprising Square afterwards.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

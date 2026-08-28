@@ -1,0 +1,31 @@
+{
+  "id": "person:macarthur-douglas",
+  "name": "Douglas MacArthur",
+  "sortName": "MacArthur, Douglas",
+  "born": "1880-01-26",
+  "died": "1964-04-05",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Commanding General, United States Army Forces in the Far East",
+      "from": "1941-07-26",
+      "to": "1942-03"
+    },
+    {
+      "title": "Supreme Commander, Allied Forces in the South West Pacific Area",
+      "from": "1942-04-18",
+      "to": "1945-09"
+    },
+    {
+      "title": "Supreme Commander for the Allied Powers, Japan",
+      "from": "1945-08-14",
+      "to": "1951-04-11"
+    }
+  ],
+  "summary": "Lost the Philippines in 1942 having had nine hours' warning of Pearl Harbor and his air force caught on the ground at Clark Field regardless, was ordered out to Australia by Roosevelt, and spent the next two and a half years returning — up the New Guinea coast by a series of landings that went round Japanese garrisons rather than through them, and back to Leyte in October 1944. The Pacific had two commanders and no single one because neither the Navy nor MacArthur would serve under the other; the theatre was divided rather than the question settled, and the two axes of advance that resulted are the shape of the whole American campaign.",
+  "sources": [
+    { "source": "source:toll-2015" },
+    { "source": "source:toll-2020" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

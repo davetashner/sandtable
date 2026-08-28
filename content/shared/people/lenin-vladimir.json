@@ -1,0 +1,34 @@
+{
+  "id": "person:lenin-vladimir",
+  "name": "Vladimir Lenin",
+  "sortName": "Lenin, Vladimir Ilyich (Ulyanov)",
+  "names": [
+    {
+      "name": "Vladimir Ilyich Ulyanov",
+      "language": "en",
+      "kind": "period",
+      "period": "the name he was born with"
+    },
+    { "name": "Vladimir Ilyich Ulyanov (Lenin)", "language": "ru", "kind": "period" }
+  ],
+  "born": "1870-04-22",
+  "died": "1924-01-21",
+  "nationality": "RU",
+  "roles": [
+    {
+      "title": "Leader of the Bolshevik faction, Russian Social Democratic Labour Party",
+      "from": "1903"
+    },
+    {
+      "title": "Chairman of the Council of People's Commissars",
+      "from": "1917-11-08",
+      "to": "1924-01-21"
+    }
+  ],
+  "summary": "A lawyer's son from Simbirsk who spent most of his adult life in exile arguing about organisation, and who arrived at the argument that a disciplined party of professional revolutionaries was the necessary instrument of a revolution rather than its expression. He was in Zurich when the Tsar fell and reached Petrograd only in April 1917, having crossed Germany in a sealed carriage the German government was glad to provide. From that April his position - no support for the Provisional Government, no continuation of the war, all power to the Soviets - was for six months a minority view even inside his own party, and by October it was the majority view in the capital. He headed the government that resulted until his health broke in 1922.",
+  "sources": [
+    { "source": "source:figes-1996" },
+    { "source": "source:merridale-2016" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

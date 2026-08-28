@@ -1,0 +1,15 @@
+{
+  "id": "person:sarrail-maurice",
+  "name": "Maurice Sarrail",
+  "sortName": "Sarrail, Maurice",
+  "born": "1856-04-06",
+  "died": "1929-03-23",
+  "nationality": "FR",
+  "roles": [{ "title": "Commander, French 3rd Army", "from": "1914-08-30", "to": "1915-07" }],
+  "summary": "Took over the French 3rd Army from Ruffey on 30 August and held the line from Verdun to Revigny at the Marne, keeping the fortress as the hinge of the French right; the politically connected 'republican general' later commanded at Salonika.",
+  "sources": [
+    { "source": "source:afgg-1-1" },
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

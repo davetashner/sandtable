@@ -1,0 +1,8 @@
+{
+  "id": "place:nanteuil-le-haudouin",
+  "name": "Nanteuil-le-Haudouin",
+  "kind": "town",
+  "lngLat": [2.812, 49.14],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

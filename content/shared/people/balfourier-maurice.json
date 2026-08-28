@@ -1,0 +1,11 @@
+{
+  "id": "person:balfourier-maurice",
+  "name": "Maurice Balfourier",
+  "sortName": "Balfourier, Maurice",
+  "born": "1852-04-27",
+  "died": "1933-06-24",
+  "nationality": "FR",
+  "roles": [{ "title": "Commander, French XX Corps", "from": "1914-08-29", "to": "1916-09-17" }],
+  "summary": "Took the French XX Corps — the Nancy corps, and the army's best — from Foch on 29 August 1914 and held the Grand Couronné with it through the September attacks; later commanded it at Verdun and on the Somme.",
+  "sources": [{ "source": "source:afgg-1-1" }, { "source": "source:wikipedia-en", "note": "dates" }]
+}

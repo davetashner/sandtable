@@ -1,0 +1,14 @@
+{
+  "id": "person:rennenkampf-paul-von",
+  "name": "Paul von Rennenkampf",
+  "sortName": "Rennenkampf, Paul von",
+  "born": "1854-04-29",
+  "died": "1918-04-01",
+  "nationality": "RU",
+  "roles": [{ "title": "Commander, Russian First Army", "from": "1914-08-01", "to": "1914-11-01" }],
+  "summary": "Commanded the First Army, which entered East Prussia from the east and checked the Germans at Gumbinnen on 20 August - the victory that emptied the province of German nerve and then, when he did not pursue, left Samsonov to be destroyed alone.",
+  "sources": [
+    { "source": "source:showalter-2004" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

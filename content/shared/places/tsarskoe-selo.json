@@ -1,0 +1,10 @@
+{
+  "id": "place:tsarskoe-selo",
+  "name": "Tsarskoe Selo",
+  "names": [{ "name": "Pushkin", "language": "ru", "kind": "modern" }],
+  "kind": "town",
+  "lngLat": [30.4, 59.7167],
+  "country": "Russian Empire",
+  "notes": "The imperial residence twenty-five kilometres south of Petrograd, where the Empress and the children were when the capital rose, and where the family was held under guard after the abdication.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

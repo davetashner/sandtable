@@ -1,0 +1,13 @@
+{
+  "id": "place:liege",
+  "name": "Liège",
+  "names": [
+    { "name": "Lüttich", "language": "de", "kind": "translation" },
+    { "name": "Luik", "language": "nl", "kind": "translation" }
+  ],
+  "kind": "fortress",
+  "lngLat": [5.573, 50.633],
+  "country": "Belgium",
+  "notes": "Ring of twelve Brialmont forts around the Meuse crossings; the gateway of the German right wing.",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

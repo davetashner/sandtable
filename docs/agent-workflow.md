@@ -156,9 +156,14 @@ is fixed yet, so the workaround is the current answer.
   run it by hand. On 2026-08-28 a stale `dist/` reported 281.6 kB against the
   340 kB ceiling where a rebuild gave 308.1 kB — a full content pull request out
   of date, and enough to support the wrong merge decision. Build first.
-- **The shared registries collide on every parallel authoring wave**
-  (`sand-shn.19`). Two authors appending entries to the tail of
+- **The shared registries used to collide on every parallel authoring wave**
+  (`sand-shn.19`, now fixed). Two authors appending to the tail of
   `content/shared/people/people.json`, `sources/sources.json` or
-  `places/places.json` produce the same rebase conflict every time — three in
-  one night. Resolve by merging on `id` and dropping duplicates; do not take one
-  side of the hunk.
+  `places/places.json` produced the same rebase conflict every time — three in
+  one night. Those files are gone: each registry is a directory of one file per
+  entity, named for the entity's id (ADR 0022). Add a person, place or work by
+  **writing a new file**, never by editing a list. If you are rebasing a branch
+  written before 2026-08-28, its registry hunks land as deletes-plus-adds
+  against files that no longer exist; take the new entities across as new files
+  rather than resurrecting the arrays, and
+  `npx tsx scripts/split-registries.ts --check` will confirm the result.

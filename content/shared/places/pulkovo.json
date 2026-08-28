@@ -1,0 +1,15 @@
+{
+  "id": "place:pulkovo",
+  "name": "The Pulkovo Heights",
+  "kind": "other",
+  "lngLat": [30.326, 59.771],
+  "country": "Russian Empire",
+  "notes": "The low ridge with the observatory on it, sixteen kilometres from the centre of Petrograd, which is as far as Yudenich's advance got; he was pushed back from the suburbs on 22 October 1919.",
+  "sources": [
+    { "source": "source:wikipedia-en", "note": "coordinates" },
+    {
+      "source": "source:chamberlin-1935-2",
+      "note": "the dates in this note; the chronological table and narrative"
+    }
+  ]
+}

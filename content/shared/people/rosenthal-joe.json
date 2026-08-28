@@ -1,0 +1,16 @@
+{
+  "id": "person:rosenthal-joe",
+  "name": "Joe Rosenthal",
+  "sortName": "Rosenthal, Joe",
+  "born": "1911-10-09",
+  "died": "2006-08-20",
+  "nationality": "US",
+  "roles": [
+    { "title": "Photographer, Associated Press, Pacific theatre", "from": "1944-02", "to": "1945" }
+  ],
+  "summary": "Associated Press photographer who had been rejected by the Army for his eyesight and photographed the Pacific instead. On the morning of 23 February 1945 he climbed Suribachi behind the patrol carrying the second, larger flag, framed six men raising it in about a fifteenth of a second, and did not know what he had until the picture reached New York. Asked days later whether the photograph had been posed, he answered yes about a different picture — a group shot he had taken afterwards — and the confusion followed him for sixty years. He also photographed the first flag's raisers coming down, which is part of why the identifications took so long to settle.",
+  "sources": [
+    { "source": "source:robertson-2019" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

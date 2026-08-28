@@ -1,0 +1,8 @@
+{
+  "id": "place:chateau-thierry",
+  "name": "Château-Thierry",
+  "kind": "town",
+  "lngLat": [3.403, 49.046],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

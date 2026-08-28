@@ -1,0 +1,20 @@
+{
+  "id": "place:nieuwpoort",
+  "name": "Nieuwpoort",
+  "names": [
+    {
+      "name": "Nieuport",
+      "language": "fr",
+      "kind": "period",
+      "period": "the French and British name in 1914"
+    }
+  ],
+  "kind": "town",
+  "lngLat": [2.752, 51.13],
+  "country": "Belgium",
+  "notes": "Where the Yser meets the sea, and where the locks of the Ganzepoot let the tide into the polders on the nights of 21–30 October 1914.",
+  "sources": [
+    { "source": "source:van-pul-2006" },
+    { "source": "source:wikipedia-en", "note": "coordinates" }
+  ]
+}

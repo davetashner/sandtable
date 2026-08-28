@@ -1,0 +1,15 @@
+{
+  "id": "person:rupprecht-of-bavaria",
+  "name": "Crown Prince Rupprecht of Bavaria",
+  "sortName": "Rupprecht, Crown Prince of Bavaria",
+  "born": "1869-05-18",
+  "died": "1955-08-02",
+  "nationality": "DE",
+  "roles": [{ "title": "Commander, German 6th Army", "from": "1914-08-02", "to": "1916-08" }],
+  "summary": "Commander of the German 6th Army in Lorraine — the left wing that absorbed the French Plan XVII offensive at Morhange–Sarrebourg and then counterattacked toward the Trouée de Charmes and Nancy.",
+  "media": ["media:person/rupprecht-of-bavaria/portrait-colorized"],
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

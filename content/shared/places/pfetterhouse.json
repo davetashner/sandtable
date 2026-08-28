@@ -1,0 +1,12 @@
+{
+  "id": "place:pfetterhouse",
+  "name": "Pfetterhouse",
+  "kind": "village",
+  "lngLat": [7.147, 47.503],
+  "country": "Germany",
+  "notes": "Alsatian village at the Swiss frontier; the southern end of the continuous Western Front from late 1914 until 1918.",
+  "sources": [
+    { "source": "source:strachan-2001" },
+    { "source": "source:wikipedia-en", "note": "coordinates" }
+  ]
+}

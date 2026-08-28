@@ -1,0 +1,9 @@
+{
+  "id": "place:novokhopersk",
+  "name": "Novokhopersk",
+  "kind": "town",
+  "lngLat": [41.617, 51.1],
+  "country": "Russian Empire",
+  "notes": "Where Mamontov's cavalry corps went through the Red Southern Front on 10 August 1919 - a front that, in Chamberlin's phrase, was rather easy to break through.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

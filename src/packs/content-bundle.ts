@@ -28,11 +28,11 @@ export interface ContentBundle {
   diagrams: Record<string, string>;
   /** The registries and manifests under `content/shared/`. */
   shared: {
-    /** `people/people.json`. */
+    /** Every `people/<slug>.json` the era reaches, as one array (ADR 0022). */
     people: unknown;
-    /** `places/places.json`. */
+    /** Every `places/<slug>.json` the era reaches, as one array. */
     places: unknown;
-    /** `sources/sources.json`. */
+    /** Every `sources/<slug>.json` the era reaches, as one array. */
     sources: unknown;
     /** `media/index.json`, written by `npm run media`. */
     media: unknown;

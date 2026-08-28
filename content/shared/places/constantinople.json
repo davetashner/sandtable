@@ -1,0 +1,16 @@
+{
+  "id": "place:constantinople",
+  "name": "Constantinople",
+  "kind": "city",
+  "lngLat": [28.979, 41.008],
+  "country": "Ottoman Empire (under Allied occupation)",
+  "notes": "Where the people taken off the Crimea in November 1920 were landed, and where the White emigration began.",
+  "sources": [
+    { "source": "source:wikipedia-en", "note": "coordinates" },
+    {
+      "source": "source:chamberlin-1935-2",
+      "note": "the dates in this note; the chronological table and narrative"
+    }
+  ],
+  "names": [{ "name": "Istanbul", "kind": "modern" }]
+}

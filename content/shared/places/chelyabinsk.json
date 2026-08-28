@@ -1,0 +1,10 @@
+{
+  "id": "place:chelyabinsk",
+  "name": "Chelyabinsk",
+  "kind": "town",
+  "lngLat": [61.403, 55.16],
+  "country": "Russian Empire / Urals",
+  "notes": "The Ural railway junction where a brawl between Czech soldiers and Hungarian prisoners of war on 14 May 1918 turned into a civil war along five thousand miles of railway.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }],
+  "names": [{ "name": "Cheliabinsk", "kind": "transliteration", "period": "1918" }]
+}

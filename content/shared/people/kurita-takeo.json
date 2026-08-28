@@ -1,0 +1,29 @@
+{
+  "id": "person:kurita-takeo",
+  "name": "Kurita Takeo",
+  "sortName": "Kurita Takeo",
+  "names": [
+    { "name": "栗田 健男", "language": "ja" },
+    {
+      "name": "Takeo Kurita",
+      "language": "en",
+      "kind": "transliteration",
+      "period": "given-name-first order, as English-language catalogues index him"
+    }
+  ],
+  "born": "1889-04-28",
+  "died": "1977-12-19",
+  "nationality": "JP",
+  "roles": [
+    {
+      "title": "Commander, Second Fleet (Centre Force at Leyte Gulf)",
+      "from": "1943-08",
+      "to": "1944-12"
+    }
+  ],
+  "summary": "Took the Centre Force — five battleships including *Yamato* and *Musashi* — through the Sibuyan Sea under air attack, lost *Musashi*, came through San Bernardino Strait in the dark, and at dawn on 25 October 1944 found himself off Samar with nothing between him and the Leyte landings but six escort carriers and their destroyers. He fought them for two and a half hours, took the destroyers' suicidal torpedo attacks for a fleet action, and turned north and away. Why he turned is the unanswered question of Leyte Gulf: exhaustion after three days of being bombed, a false report of a carrier force to the north, or a decision that the ships were worth more than the beachhead.",
+  "sources": [
+    { "source": "source:toll-2020" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

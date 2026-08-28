@@ -1,0 +1,10 @@
+{
+  "id": "source:soviethistory-msu",
+  "kind": "web",
+  "tier": "primary",
+  "author": "von Geldern, James; Siegelbaum, Lewis (eds)",
+  "title": "Seventeen Moments in Soviet History",
+  "publisher": "Michigan State University",
+  "url": "https://soviethistory.msu.edu/",
+  "notes": "A teaching archive of translated Soviet documents, images and music, edited by two historians of the period. Cited here for the text of the Sovnarkom resolution on the Red Terror of 5 September 1918, which it prints in W. H. Chamberlin's translation and attributes to Chamberlin's Volume II, pp. 475-476 - pages of the **New York** edition, which do not correspond to the London edition this project read, so no page is carried across. The Russian original is given there as Sobranie uzakonenii i rasporiazhenii rabochego i krest'ianskogo pravitel'stva, 1918, p. 789."
+}

@@ -1,0 +1,30 @@
+{
+  "id": "person:fuchida-mitsuo",
+  "name": "Fuchida Mitsuo",
+  "sortName": "Fuchida Mitsuo",
+  "names": [
+    { "name": "淵田 美津雄", "language": "ja" },
+    {
+      "name": "Mitsuo Fuchida",
+      "language": "en",
+      "kind": "transliteration",
+      "period": "given-name-first order, as English-language catalogues index him"
+    }
+  ],
+  "born": "1902-12-03",
+  "died": "1976-05-30",
+  "nationality": "JP",
+  "roles": [
+    {
+      "title": "Commander, air group, First Air Fleet; strike leader at Pearl Harbor",
+      "from": "1941-08",
+      "to": "1942-06"
+    }
+  ],
+  "summary": "Led the air attack on Pearl Harbor and sent the signal *tora tora tora* to say surprise had been achieved. Appendicitis kept him out of the cockpit at Midway and he watched the four carriers burn from *Akagi*'s deck. After the war he became the principal English-language witness to the Japanese side of both battles — and one of the least reliable: the packed flight decks, the five fateful minutes, his own account of being about to launch when the dive bombers arrived, are all contradicted by the Japanese operational records, and *Shattered Sword* traced how completely his version had been absorbed into the Western literature. He became a Christian evangelist in 1950 and toured the United States preaching.",
+  "sources": [
+    { "source": "source:parshall-tully-2005" },
+    { "source": "source:toll-2012" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

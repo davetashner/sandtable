@@ -1,0 +1,14 @@
+{
+  "id": "place:battleship-row",
+  "name": "Battleship Row",
+  "kind": "other",
+  "lngLat": [-157.95, 21.3649],
+  "country": "Territory of Hawaii, United States",
+  "notes": "The quays along the south-east side of Ford Island where the battle line lay moored on the morning of 7 December 1941. The position given is the F-6/F-7 moorings, where Arizona lay; it is anchored on the memorial that spans the wreck, because the row itself has no gazetteer entry.",
+  "sources": [
+    {
+      "source": "source:wikipedia-en",
+      "note": "coordinates, via the memorial over the wreck at berth F-7"
+    }
+  ]
+}

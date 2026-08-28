@@ -1,0 +1,10 @@
+{
+  "id": "place:gumbinnen",
+  "name": "Gumbinnen",
+  "names": [{ "name": "Gusev", "language": "ru", "kind": "modern" }],
+  "kind": "town",
+  "lngLat": [22.2, 54.593],
+  "country": "German Empire (East Prussia)",
+  "notes": "Where Rennenkampf's First Army checked the German Eighth Army on 20 August 1914 - the shock that produced Prittwitz's collapse and, at one remove, the two corps sent east from the right wing.",
+  "sources": [{ "source": "source:showalter-2004" }, { "source": "source:strachan-2001" }]
+}

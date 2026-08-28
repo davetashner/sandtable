@@ -1,0 +1,18 @@
+{
+  "id": "person:fabeck-max-von",
+  "name": "Max von Fabeck",
+  "sortName": "Fabeck, Max von",
+  "nationality": "DE",
+  "roles": [
+    { "title": "Commanding, XIII (Royal Wurttemberg) Corps", "from": "1913", "to": "1914-10" },
+    { "title": "Commanding, Armeegruppe Fabeck at Ypres", "from": "1914-10", "to": "1914-11" }
+  ],
+  "summary": "German general given command, on 27 October 1914, of the force assembled between the Fourth and Sixth Armies for one more attempt on the Menin road - six divisions and the heaviest weight of artillery yet put behind an attack on that front. Its attack of 29-31 October broke the British line at Gheluvelt and could not get through the hole it made.",
+  "sources": [
+    {
+      "source": "source:edmonds-1925",
+      "note": "the composition and the attack of Armeegruppe Fabeck, 29-31 October 1914"
+    },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

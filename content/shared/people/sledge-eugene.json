@@ -1,0 +1,20 @@
+{
+  "id": "person:sledge-eugene",
+  "name": "Eugene B. Sledge",
+  "sortName": "Sledge, Eugene B.",
+  "born": "1923-11-04",
+  "died": "2001-03-03",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Private First Class, Company K, 3rd Battalion, 5th Marines, 1st Marine Division",
+      "from": "1944-06",
+      "to": "1945-09"
+    }
+  ],
+  "summary": "Dropped out of officer training to make sure he saw the war, and served as a 60 mm mortarman in K Company, 3rd Battalion, 5th Marines through Peleliu and Okinawa — the two longest and least explicable battles the 1st Marine Division fought. He kept notes in the margins of a pocket Bible because keeping a diary was forbidden, and turned them thirty-five years later into *With the Old Breed*, the account historians reach for when they want to say what the ground was actually like. He became a biology professor and did not talk about it for decades.",
+  "sources": [
+    { "source": "source:sledge-1981" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "place:charmes",
+  "name": "Charmes",
+  "kind": "town",
+  "lngLat": [6.292, 48.373],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

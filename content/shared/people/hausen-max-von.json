@@ -1,0 +1,15 @@
+{
+  "id": "person:hausen-max-von",
+  "name": "Max von Hausen",
+  "sortName": "Hausen, Max von",
+  "born": "1846-12-17",
+  "died": "1922-03-19",
+  "nationality": "DE",
+  "roles": [{ "title": "Commander, German 3rd Army", "from": "1914-08-02", "to": "1914-09-12" }],
+  "summary": "Saxon commander of the German 3rd Army, the hinge between the right wing and the centre; forced the Meuse at Dinant and fought Foch's 9th Army in the marshes of Saint-Gond at the Marne before falling ill and being relieved.",
+  "media": ["media:person/hausen-max-von/portrait-colorized"],
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

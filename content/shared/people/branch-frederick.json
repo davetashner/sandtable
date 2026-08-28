@@ -1,0 +1,22 @@
+{
+  "id": "person:branch-frederick",
+  "name": "Frederick C. Branch",
+  "sortName": "Branch, Frederick C.",
+  "born": "1922-05-31",
+  "died": "2005-04-10",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Private, later Sergeant, 51st Defense Battalion, USMC",
+      "from": "1943-05",
+      "to": "1945"
+    },
+    {
+      "title": "Second Lieutenant, United States Marine Corps Reserve",
+      "from": "1945-11-10",
+      "to": "1955"
+    }
+  ],
+  "summary": "One of the roughly twenty thousand Black Marines trained at Montford Point, the segregated camp outside Camp Lejeune where the Corps sent them after 1942 rather than to Parris Island. Served in the Pacific with the 51st Defense Battalion, and on 10 November 1945 — the Corps' birthday — was commissioned second lieutenant, the first African American officer in the history of the Marine Corps. Montford Point Marines carried ammunition and fought at Saipan, Peleliu and Iwo Jima in units the Corps had insisted would never see combat.",
+  "sources": [{ "source": "source:wikipedia-en" }]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "place:belgrade",
+  "name": "Belgrade",
+  "names": [{ "name": "Beograd", "language": "sr", "kind": "translation" }],
+  "kind": "city",
+  "lngLat": [20.457, 44.787],
+  "country": "Kingdom of Serbia",
+  "notes": "Serbian capital, on the Danube-Sava confluence within sight of Austro-Hungarian territory; shelled by Austro-Hungarian monitors from 29 July 1914.",
+  "sources": [{ "source": "source:clark-2012" }]
+}

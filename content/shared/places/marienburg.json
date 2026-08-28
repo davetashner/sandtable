@@ -1,0 +1,10 @@
+{
+  "id": "place:marienburg",
+  "name": "Marienburg",
+  "names": [{ "name": "Malbork", "language": "pl", "kind": "modern" }],
+  "kind": "town",
+  "lngLat": [19.03, 54.036],
+  "country": "German Empire (West Prussia)",
+  "notes": "Eighth Army headquarters; Hindenburg and Ludendorff arrived here on the afternoon of 23 August 1914.",
+  "sources": [{ "source": "source:showalter-2004" }]
+}

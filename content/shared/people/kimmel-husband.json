@@ -1,0 +1,17 @@
+{
+  "id": "person:kimmel-husband",
+  "name": "Husband E. Kimmel",
+  "sortName": "Kimmel, Husband E.",
+  "born": "1882-02-26",
+  "died": "1968-05-14",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Commander in Chief, United States Fleet and United States Pacific Fleet",
+      "from": "1941-02-01",
+      "to": "1941-12-17"
+    }
+  ],
+  "summary": "Took the Pacific Fleet in February 1941 and was relieved of it ten days after it was attacked at its moorings. His command was one half of an arrangement with no single commander over it: the fleet was his, and the island it lay at, its aircraft, its anti-aircraft guns and its radar were the Army's under the Hawaiian Department. He was reduced to his permanent rank of rear admiral and spent the rest of his life arguing that Washington had kept from its own commanders in Hawaii what it knew of Japanese intentions. Every inquiry since has reopened that question and none has closed it.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "dates and dates of office" }]
+}

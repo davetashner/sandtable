@@ -1,0 +1,8 @@
+{
+  "id": "place:luneville",
+  "name": "Lunéville",
+  "kind": "town",
+  "lngLat": [6.497, 48.589],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

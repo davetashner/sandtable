@@ -1,0 +1,20 @@
+{
+  "id": "person:pyle-ernie",
+  "name": "Ernie Pyle",
+  "sortName": "Pyle, Ernie",
+  "born": "1900-08-03",
+  "died": "1945-04-18",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "War correspondent, Scripps-Howard newspapers",
+      "from": "1940-11",
+      "to": "1945-04-18"
+    }
+  ],
+  "summary": "The correspondent who wrote the war from the level of the private soldier — names, home towns, what the food was like, who had been killed — in a syndicated column that ran in hundreds of American papers and won the Pulitzer in 1944. He covered North Africa, Sicily, Italy and Normandy, came to the Pacific reluctantly in 1945 saying he was afraid he had used himself up, and was killed by a machine-gun burst on Ie Shima off Okinawa on 18 April 1945. The men of the 77th Division buried him there under a board that read: at this spot the 77th Infantry Division lost a buddy.",
+  "sources": [
+    { "source": "source:toll-2020" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

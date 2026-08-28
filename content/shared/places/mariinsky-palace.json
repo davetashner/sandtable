@@ -1,0 +1,9 @@
+{
+  "id": "place:mariinsky-palace",
+  "name": "The Mariinsky Palace",
+  "kind": "other",
+  "lngLat": [30.3086, 59.9317],
+  "country": "Russian Empire",
+  "notes": "Seat of the State Council before 1917, and in October 1917 of the Provisional Council of the Republic - the Pre-Parliament.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

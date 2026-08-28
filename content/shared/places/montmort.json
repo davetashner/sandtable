@@ -1,0 +1,8 @@
+{
+  "id": "place:montmort",
+  "name": "Montmort-Lucy",
+  "kind": "village",
+  "lngLat": [3.815, 48.921],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

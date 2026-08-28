@@ -1,0 +1,17 @@
+{
+  "id": "person:moltke-helmuth-von-younger",
+  "name": "Helmuth von Moltke the Younger",
+  "sortName": "Moltke, Helmuth von (the Younger)",
+  "born": "1848-05-25",
+  "died": "1916-06-18",
+  "nationality": "DE",
+  "roles": [
+    { "title": "Chief of the German General Staff", "from": "1906-01-01", "to": "1914-09-14" }
+  ],
+  "summary": "Schlieffen's successor, nephew of the victor of 1870. He modified the deployment — strengthening the left wing in Lorraine and, once war began, detaching corps to East Prussia and Antwerp — and directed the 1914 campaign from Koblenz and then Luxembourg. Relieved after the Marne.",
+  "media": ["media:person/moltke-helmuth-von-younger/portrait-1906-colorized"],
+  "sources": [
+    { "source": "source:mombauer-2001" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "place:nancy",
+  "name": "Nancy",
+  "kind": "city",
+  "lngLat": [6.184, 48.692],
+  "country": "France",
+  "notes": "The Grand Couronné heights held by Castelnau, 24 August – 12 September.",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

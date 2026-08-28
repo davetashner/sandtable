@@ -1,0 +1,22 @@
+{
+  "id": "person:ludendorff-erich",
+  "name": "Erich Ludendorff",
+  "sortName": "Ludendorff, Erich",
+  "born": "1865-04-09",
+  "died": "1937-12-20",
+  "nationality": "DE",
+  "roles": [
+    {
+      "title": "Deputy chief of staff, German 2nd Army (Liège)",
+      "from": "1914-08-02",
+      "to": "1914-08-22"
+    },
+    { "title": "Chief of staff, German 8th Army (East Prussia)", "from": "1914-08-22" }
+  ],
+  "summary": "Staff officer who took Liège's citadel by bluff on 7 August 1914, then was sent east with Hindenburg to command at Tannenberg — the detour that links the western campaign to the eastern.",
+  "media": ["media:person/ludendorff-erich/portrait-1915-colorized"],
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

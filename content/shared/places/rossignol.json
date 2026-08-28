@@ -1,0 +1,9 @@
+{
+  "id": "place:rossignol",
+  "name": "Rossignol",
+  "kind": "village",
+  "lngLat": [5.516, 49.703],
+  "country": "Belgium",
+  "notes": "Village on the Semois north of Tintigny where the French 3rd Colonial Division was destroyed on 22 August 1914.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

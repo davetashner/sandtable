@@ -1,0 +1,8 @@
+{
+  "id": "place:mareuil-sur-ourcq",
+  "name": "Mareuil-sur-Ourcq",
+  "kind": "village",
+  "lngLat": [3.08, 49.137],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

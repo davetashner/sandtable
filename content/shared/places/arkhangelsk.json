@@ -1,0 +1,10 @@
+{
+  "id": "place:arkhangelsk",
+  "name": "Archangel",
+  "kind": "city",
+  "lngLat": [40.517, 64.539],
+  "country": "Russian Empire",
+  "notes": "The White Sea port occupied by Allied forces on 2 August 1918, around which a North Russian government was organised. The Allies left in the autumn of 1919 and the government fell on 19 February 1920.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }],
+  "names": [{ "name": "Arkhangelsk", "kind": "modern" }]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "person:samsonov-alexander",
+  "name": "Alexander Samsonov",
+  "sortName": "Samsonov, Alexander",
+  "born": "1859-11-14",
+  "died": "1914-08-30",
+  "nationality": "RU",
+  "roles": [
+    { "title": "Commander, Russian Second Army", "from": "1914-08-01", "to": "1914-08-30" }
+  ],
+  "summary": "Led the Second Army north-west into East Prussia, out of supply and out of touch with Rennenkampf on his right. When the encirclement closed he walked into the forest near Willenberg in the early hours of 30 August and shot himself.",
+  "sources": [
+    { "source": "source:showalter-2004" },
+    {
+      "source": "source:wikipedia-en",
+      "note": "dates; the article gives Old Style dates alongside"
+    }
+  ]
+}

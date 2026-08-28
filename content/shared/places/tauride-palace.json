@@ -1,0 +1,9 @@
+{
+  "id": "place:tauride-palace",
+  "name": "The Tauride Palace",
+  "kind": "other",
+  "lngLat": [30.3757, 59.9481],
+  "country": "Russian Empire",
+  "notes": "Seat of the State Duma, and from 27 February (O.S.) 1917 the building that held both halves of dual power: the Duma Committee in one wing and the Petrograd Soviet in another.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

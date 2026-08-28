@@ -1,0 +1,10 @@
+{
+  "id": "place:mogilev",
+  "name": "Mogilev",
+  "names": [{ "name": "Mahilyow", "language": "be", "kind": "modern" }],
+  "kind": "city",
+  "lngLat": [30.33, 53.9],
+  "country": "Russian Empire",
+  "notes": "Seat of Stavka, the Russian Supreme Headquarters, from August 1915; where Nicholas II was, as his own Supreme Commander, when Petrograd rose.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

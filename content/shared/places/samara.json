@@ -1,0 +1,9 @@
+{
+  "id": "place:samara",
+  "name": "Samara",
+  "kind": "city",
+  "lngLat": [50.101, 53.195],
+  "country": "Russian Empire",
+  "notes": "Occupied by the Czechoslovaks on 8 June 1918, which made possible the Komuch - the government of members of the dissolved Constituent Assembly, and the high point of the democratic counter-revolution.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

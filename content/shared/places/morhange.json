@@ -1,0 +1,8 @@
+{
+  "id": "place:morhange",
+  "name": "Morhange",
+  "kind": "town",
+  "lngLat": [6.64, 48.922],
+  "country": "Germany (annexed Lorraine)",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

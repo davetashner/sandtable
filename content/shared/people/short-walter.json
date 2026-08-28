@@ -1,0 +1,17 @@
+{
+  "id": "person:short-walter",
+  "name": "Walter C. Short",
+  "sortName": "Short, Walter C.",
+  "born": "1880-03-30",
+  "died": "1949-09-03",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Commanding General, Hawaiian Department, United States Army",
+      "from": "1941-02-07",
+      "to": "1941-12-17"
+    }
+  ],
+  "summary": "The Army half of the divided command in Hawaii. The defence of the islands was his — the anti-aircraft artillery, the aircraft warning service and the Army's aircraft on Oahu — and the fleet in the harbour was not. Relieved with Kimmel in December 1941 and reduced to his permanent rank, he was, with Kimmel, the officer the first inquiry into the attack held responsible, and the argument about whether the two of them were failures or scapegoats has run ever since.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "dates and dates of office" }]
+}

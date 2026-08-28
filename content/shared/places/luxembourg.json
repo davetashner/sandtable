@@ -1,0 +1,9 @@
+{
+  "id": "place:luxembourg",
+  "name": "Luxembourg",
+  "kind": "city",
+  "lngLat": [6.13, 49.611],
+  "country": "Luxembourg",
+  "notes": "Occupied 2 August 1914; Moltke's headquarters from 30 August.",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

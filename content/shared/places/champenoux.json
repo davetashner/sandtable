@@ -1,0 +1,9 @@
+{
+  "id": "place:champenoux",
+  "name": "Champenoux",
+  "kind": "village",
+  "lngLat": [6.354, 48.727],
+  "country": "France",
+  "notes": "Village and forest east of Nancy, fought over throughout the German attacks of 4–10 September 1914.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

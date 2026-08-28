@@ -1,0 +1,14 @@
+{
+  "id": "place:petrograd",
+  "name": "Petrograd",
+  "names": [
+    { "name": "Sankt-Peterburg", "language": "ru", "kind": "period" },
+    { "name": "Saint Petersburg", "language": "en", "kind": "modern" },
+    { "name": "Leningrad", "language": "ru", "kind": "modern" }
+  ],
+  "kind": "city",
+  "lngLat": [30.3086, 59.9375],
+  "country": "Russian Empire",
+  "notes": "Capital of the Russian Empire. Renamed from the German-sounding Sankt-Peterburg to the Slavic Petrograd in August 1914, and Leningrad in 1924. Both revolutions of 1917 happened within about six kilometres of this point.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

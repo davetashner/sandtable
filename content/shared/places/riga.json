@@ -1,0 +1,15 @@
+{
+  "id": "place:riga",
+  "name": "Riga",
+  "kind": "city",
+  "lngLat": [24.105, 56.949],
+  "country": "Russian Empire / Latvia",
+  "notes": "Taken by the Red Army on 3 January 1919 during the advance west into the former German occupation zone. Also the place where the Soviet-Polish peace was negotiated from September 1920 and signed on 18 March 1921, and where the American Relief Administration's famine agreement was signed on 20 August 1921.",
+  "sources": [
+    { "source": "source:wikipedia-en", "note": "coordinates" },
+    {
+      "source": "source:chamberlin-1935-2",
+      "note": "the dates in this note; the chronological table and narrative"
+    }
+  ]
+}

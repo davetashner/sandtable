@@ -52,6 +52,7 @@ import { createInterface } from 'node:readline/promises';
 import { format, resolveConfig } from 'prettier';
 import { Pack, TILE_ARCHIVES, DEFAULT_TILE_ARCHIVE } from '../src/packs/schema/index.js';
 import { PACE_CEILING } from '../src/packs/validate/pace.js';
+import { readRegistry } from './lib/registry.js';
 import type { TileArchive } from '../src/packs/schema/index.js';
 
 // ------------------------------------------------------------------- facts
@@ -81,7 +82,7 @@ const readJson = <T>(path: string): T | undefined =>
 export function readFacts(root = 'content'): Facts {
   const borders = readJson<BorderManifest>(join(root, 'shared/geo/borders/manifest.json'));
   const tiles = readJson<TileManifest>(join(root, 'shared/geo/tiles/manifest.json'));
-  const sources = readJson<{ id: string }[]>(join(root, 'shared/sources/sources.json'));
+  const sources = readRegistry<{ id: string }>(root, 'sources');
   const eras = join(root, 'eras');
   const usedPrefixes = new Set<string>();
   if (existsSync(eras)) {
@@ -99,7 +100,7 @@ export function readFacts(root = 'content'): Facts {
       ]),
     ),
     usedPrefixes,
-    sourceIds: new Set((sources ?? []).map((s) => s.id)),
+    sourceIds: new Set(sources.map((s) => s.id)),
   };
 }
 
@@ -212,7 +213,7 @@ export function parsePace(
         const [source, pages, cnote] = c.split('|').map((s) => s.trim());
         if (known.size && !known.has(source))
           fail(
-            `--pace-source ${mode}=${c}: ${source} is not in content/shared/sources/sources.json.\n` +
+            `--pace-source ${mode}=${c}: ${source} is not in content/shared/sources/.\n` +
               'Add the source first (docs/authoring.md §1) — a citation that resolves to\n' +
               'nothing is worse than none, because it looks checked.',
           );

@@ -1,0 +1,8 @@
+{
+  "id": "place:dieuze",
+  "name": "Dieuze",
+  "kind": "town",
+  "lngLat": [6.718, 48.812],
+  "country": "Germany (annexed Lorraine)",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

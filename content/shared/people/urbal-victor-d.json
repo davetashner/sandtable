@@ -1,0 +1,18 @@
+{
+  "id": "person:urbal-victor-d",
+  "name": "Victor d'Urbal",
+  "sortName": "Urbal, Victor d'",
+  "nationality": "FR",
+  "roles": [
+    {
+      "title": "Commanding, the French detachment in Belgium (Détachement d'armée de Belgique), which became the Eighth Army",
+      "from": "1914-10",
+      "to": "1915-04"
+    }
+  ],
+  "summary": "French cavalry general who commanded the French forces sent into Flanders in October 1914 — the divisions and territorials that fought beside the Belgians on the Yser and the British at Ypres. His command was regularised as the Eighth Army in November.",
+  "sources": [
+    { "source": "source:edmonds-1925" },
+    { "source": "source:wikipedia-en", "note": "career dates" }
+  ]
+}

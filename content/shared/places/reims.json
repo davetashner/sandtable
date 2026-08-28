@@ -1,0 +1,8 @@
+{
+  "id": "place:reims",
+  "name": "Reims",
+  "kind": "city",
+  "lngLat": [4.032, 49.258],
+  "country": "France",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

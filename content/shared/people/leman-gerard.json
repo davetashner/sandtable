@@ -1,0 +1,21 @@
+{
+  "id": "person:leman-gerard",
+  "name": "Gérard Leman",
+  "sortName": "Leman, Gérard",
+  "born": "1851-01-08",
+  "died": "1920-10-17",
+  "nationality": "BE",
+  "roles": [
+    {
+      "title": "Governor of the fortified position of Liège",
+      "from": "1914-08-04",
+      "to": "1914-08-15"
+    }
+  ],
+  "summary": "Commander of the Liège fortress ring. Held the forts against the German coup de main and the siege until the 42 cm howitzers broke them; carried unconscious from the ruins of Fort Loncin on 15 August.",
+  "media": ["media:person/leman-gerard/portrait-1918-colorized"],
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

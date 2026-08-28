@@ -1,0 +1,15 @@
+{
+  "id": "person:smith-dorrien-horace",
+  "name": "Sir Horace Smith-Dorrien",
+  "sortName": "Smith-Dorrien, Horace",
+  "born": "1858-05-26",
+  "died": "1930-08-12",
+  "nationality": "GB",
+  "roles": [{ "title": "Commander, II Corps, BEF", "from": "1914-08-21", "to": "1914-12-26" }],
+  "summary": "Given II Corps on 21 August after Grierson died on the train to the front, he fought Mons on 23 August and, against Sir John French's wishes, stood and fought at Le Cateau on 26 August; commanded the Second Army from December 1914 until French removed him in May 1915.",
+  "sources": [
+    { "source": "source:edmonds-1922" },
+    { "source": "source:hastings-2013" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

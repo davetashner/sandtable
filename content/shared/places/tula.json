@@ -1,0 +1,9 @@
+{
+  "id": "place:tula",
+  "name": "Tula",
+  "kind": "city",
+  "lngLat": [37.618, 54.193],
+  "country": "Russian Empire",
+  "notes": "The arsenal town between Orel and Moscow - the last large place on the road, and the one that made the rifles.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "place:sarajevo",
+  "name": "Sarajevo",
+  "kind": "city",
+  "lngLat": [18.413, 43.856],
+  "country": "Austria-Hungary (Bosnia and Herzegovina)",
+  "notes": "Provincial capital of Bosnia, annexed by Austria-Hungary in 1908. The Archduke Franz Ferdinand and his wife were shot here on 28 June 1914.",
+  "sources": [{ "source": "source:clark-2012" }]
+}

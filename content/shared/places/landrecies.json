@@ -1,0 +1,8 @@
+{
+  "id": "place:landrecies",
+  "name": "Landrecies",
+  "kind": "town",
+  "lngLat": [3.689, 50.124],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

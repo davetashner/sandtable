@@ -1,0 +1,26 @@
+{
+  "id": "person:oba-sakae",
+  "name": "Ōba Sakae",
+  "sortName": "Ōba Sakae",
+  "names": [
+    { "name": "大場 栄", "language": "ja" },
+    {
+      "name": "Sakae Ōba",
+      "language": "en",
+      "kind": "transliteration",
+      "period": "given-name-first order, as English-language catalogues index him"
+    }
+  ],
+  "born": "1914-03-21",
+  "died": "1992-06-08",
+  "nationality": "JP",
+  "roles": [
+    {
+      "title": "Captain, 18th Infantry Regiment, Imperial Japanese Army, Saipan",
+      "from": "1944-06",
+      "to": "1945-12-01"
+    }
+  ],
+  "summary": "A schoolteacher conscripted in 1934 and a captain by 1944, when he came ashore on Saipan as a survivor of a sunk transport. After the banzai attack of 7 July and the fall of the island he took to the interior of Mount Tapochau with about forty-six soldiers and some two hundred civilians, and stayed there. He kept them alive by raiding American supply dumps, evaded the sweeps sent after him, and finally marched his men down and surrendered in formation on 1 December 1945 — three months after the war ended, and only when a former superior officer was brought to Saipan to give him the order in person. The Americans called him the Fox of Saipan.",
+  "sources": [{ "source": "source:wikipedia-en" }]
+}

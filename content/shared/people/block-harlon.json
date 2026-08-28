@@ -1,0 +1,20 @@
+{
+  "id": "person:block-harlon",
+  "name": "Harlon Block",
+  "sortName": "Block, Harlon",
+  "born": "1924-11-06",
+  "died": "1945-03-01",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Corporal, Company E, 2nd Battalion, 28th Marines, 5th Marine Division",
+      "from": "1944-01",
+      "to": "1945-03-01"
+    }
+  ],
+  "summary": "A Texan who enlisted with his whole high-school football team, and the man at the base of the flagstaff in Rosenthal's photograph. The Marine Corps identified that figure as Sergeant Henry Hansen and said so for two years. Ira Hayes, who had been there, said it was Block, was told to be quiet, and in 1946 hitchhiked and walked the last miles to the Block farm in Weslaco to tell his mother she had been right; the Corps re-examined the picture and corrected the record in January 1947. Block had been killed on 1 March 1945, the same day as Strank, and did not know he was in the photograph at all.",
+  "sources": [
+    { "source": "source:robertson-2019" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

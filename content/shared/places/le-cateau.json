@@ -1,0 +1,9 @@
+{
+  "id": "place:le-cateau",
+  "name": "Le Cateau",
+  "names": [{ "name": "Le Cateau-Cambrésis", "kind": "modern" }],
+  "kind": "town",
+  "lngLat": [3.543, 50.104],
+  "country": "France",
+  "sources": [{ "source": "source:edmonds-1922" }]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "place:warsaw",
+  "name": "Warsaw",
+  "kind": "city",
+  "lngLat": [21.012, 52.23],
+  "country": "Poland",
+  "notes": "The Red Army's Western Front reached its outskirts in the middle of August 1920, and the counter-offensive launched by Polish forces south of the city broke it. Chamberlin's chronology dates that counter-offensive to 15 August; most later accounts date the blow from the Wieprz to the 16th.",
+  "sources": [
+    { "source": "source:wikipedia-en", "note": "coordinates" },
+    {
+      "source": "source:chamberlin-1935-2",
+      "note": "the dates in this note; the chronological table and narrative"
+    }
+  ],
+  "names": [{ "name": "Warszawa", "language": "pl" }]
+}

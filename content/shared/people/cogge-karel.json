@@ -1,0 +1,12 @@
+{
+  "id": "person:cogge-karel",
+  "name": "Karel Cogge",
+  "sortName": "Cogge, Karel",
+  "nationality": "BE",
+  "roles": [{ "title": "Water bailiff, Noordwatering of Veurne", "from": "1890", "to": "1920" }],
+  "summary": "Belgian water bailiff of the Veurne polders, who knew which of the locks at Nieuwpoort would let the sea into the plain of the Yser and how far it would spread. In October 1914 he took that knowledge to the Belgian army; the inundation he helped open stopped the German advance at the last twenty kilometres of unoccupied Belgium.",
+  "sources": [
+    { "source": "source:van-pul-2006" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

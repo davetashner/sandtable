@@ -1,0 +1,22 @@
+{
+  "id": "person:bradley-ruby",
+  "name": "Ruby G. Bradley",
+  "sortName": "Bradley, Ruby G.",
+  "born": "1907-12-19",
+  "died": "2002-05-28",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Lieutenant, Army Nurse Corps, Camp John Hay, Philippines",
+      "from": "1941-09",
+      "to": "1941-12-28"
+    },
+    {
+      "title": "Interned civilian and prisoner, Camp Holmes and Santo Tomas Internment Camp",
+      "from": "1941-12-28",
+      "to": "1945-02-03"
+    }
+  ],
+  "summary": "Army nurse captured at Camp John Hay in northern Luzon three weeks into the war and interned for thirty-seven months, most of them at Santo Tomas in Manila, where she assisted at hundreds of operations and delivered babies in a camp that was starving by 1944 — the internees called the nurses who kept working the Angels of Bataan, though most of them, like her, had never been on Bataan. She smuggled food to children in the pockets of her uniform and weighed under six stone when the 1st Cavalry Division reached the camp in February 1945. Stayed in the Army, ran the nursing in Korea, and retired the most decorated woman in American military history.",
+  "sources": [{ "source": "source:wikipedia-en" }]
+}

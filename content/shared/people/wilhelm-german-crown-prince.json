@@ -1,0 +1,15 @@
+{
+  "id": "person:wilhelm-german-crown-prince",
+  "name": "Wilhelm, German Crown Prince",
+  "sortName": "Wilhelm, Crown Prince of Germany",
+  "born": "1882-05-06",
+  "died": "1951-07-20",
+  "nationality": "DE",
+  "roles": [{ "title": "Commander, German 5th Army", "from": "1914-08-02", "to": "1916-11" }],
+  "summary": "The Kaiser's eldest son commanded the 5th Army in 1914 — the Ardennes, Longwy and the Verdun sector — and in 1916 the army that attacked Verdun; from November 1916 he led Army Group Crown Prince. His chief of staff, Schmidt von Knobelsdorf, did much of the work.",
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:strachan-2001" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

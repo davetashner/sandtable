@@ -1,0 +1,16 @@
+{
+  "id": "person:nicholas-ii",
+  "name": "Nicholas II",
+  "sortName": "Nicholas II, Emperor of Russia",
+  "born": "1868-05-18",
+  "died": "1918-07-17",
+  "nationality": "RU",
+  "roles": [{ "title": "Emperor of Russia", "from": "1894-11-01", "to": "1917-03-15" }],
+  "summary": "The last Russian emperor. On 29 July 1914 he ordered general mobilization, cancelled it within hours after a telegram from the Kaiser, and on 30 July let his ministers and the General Staff persuade him to order it again - the decision that, given the German deployment plan, made a European war all but certain. Overthrown in March 1917; murdered with his family at Ekaterinburg in July 1918.",
+  "media": ["media:scene/1905-wilhelm-nicholas-uniform-exchange/wilhelm-nicholas-1905-colorized"],
+  "sources": [
+    { "source": "source:clark-2012" },
+    { "source": "source:albertini-1952" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

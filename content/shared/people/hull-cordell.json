@@ -1,0 +1,19 @@
+{
+  "id": "person:hull-cordell",
+  "name": "Cordell Hull",
+  "sortName": "Hull, Cordell",
+  "born": "1871-10-02",
+  "died": "1955-07-23",
+  "nationality": "US",
+  "roles": [
+    { "title": "United States Secretary of State", "from": "1933-03-04", "to": "1944-11-30" }
+  ],
+  "summary": "The longest-serving American Secretary of State, a Tennessee free-trader who believed that open commerce between nations was itself a peace policy, and the man on the American side of the nine months of conversations with Japan that ended on 7 December 1941. The document he handed the Japanese ambassador on 26 November — an outline of principles that would have required Japan to withdraw from China and Indochina — was read in Tokyo as an ultimatum and is argued about on that ground still. He received the Japanese memorandum breaking off the negotiations at twenty past two on the afternoon of 7 December, and told the two envoys to their faces that in fifty years of public service he had never seen a document so crowded with falsehoods. He was given the Nobel Peace Prize in 1945 for his part in founding the United Nations.",
+  "sources": [
+    {
+      "source": "source:peace-and-war-1943",
+      "note": "docs. 257 and 265 — the outline of 26 November and the conversation of 7 December, with the times and Hull's own words as the memorandum records them"
+    },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

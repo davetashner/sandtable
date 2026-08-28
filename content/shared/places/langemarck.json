@@ -1,0 +1,14 @@
+{
+  "id": "place:langemarck",
+  "name": "Langemarck",
+  "names": [{ "name": "Langemark", "language": "nl", "kind": "modern" }],
+  "kind": "village",
+  "lngLat": [2.917, 50.917],
+  "country": "Belgium",
+  "notes": "Village north-east of Ypres attacked by the new German reserve corps in late October 1914, and the name later attached to the 'Kindermord' legend.",
+  "sources": [
+    { "source": "source:unruh-1986" },
+    { "source": "source:1914-1918-online-langemarck" },
+    { "source": "source:wikipedia-en", "note": "coordinates" }
+  ]
+}

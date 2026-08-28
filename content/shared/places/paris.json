@@ -1,0 +1,9 @@
+{
+  "id": "place:paris",
+  "name": "Paris",
+  "kind": "city",
+  "lngLat": [2.352, 48.857],
+  "country": "France",
+  "notes": "Fortified camp of Paris; the pivot the plan turned around — or, in the concept, outside.",
+  "sources": [{ "source": "source:herwig-2009" }]
+}

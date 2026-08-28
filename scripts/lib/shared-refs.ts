@@ -70,13 +70,13 @@ function walk(value: unknown, seen: (id: string) => void): void {
     }
 }
 
-/** The registries as they sit on disk: three arrays and two generated indexes. */
+/** The registries as the bundler holds them: three arrays and two generated indexes. */
 export interface SharedRegistries {
-  /** `people/people.json` — `Person[]`. */
+  /** Every `people/<slug>.json`, gathered into a `Person[]` (ADR 0022). */
   people: unknown;
-  /** `places/places.json` — `Place[]`. */
+  /** Every `places/<slug>.json`, gathered into a `Place[]`. */
   places: unknown;
-  /** `sources/sources.json` — `Source[]`. */
+  /** Every `sources/<slug>.json`, gathered into a `Source[]`. */
   sources: unknown;
   /** `media/index.json` — `{ entries: … }`, written by `npm run media`. */
   media: unknown;

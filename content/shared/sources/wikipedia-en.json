@@ -1,0 +1,9 @@
+{
+  "id": "source:wikipedia-en",
+  "kind": "web",
+  "tier": "reference",
+  "author": "Wikipedia contributors",
+  "title": "Wikipedia, the free encyclopedia (English)",
+  "url": "https://en.wikipedia.org/",
+  "notes": "Used only for uncontested biographical dates (birth, death) pending the citation standard in sand-23b.1. Never cite for operational claims."
+}

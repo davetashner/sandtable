@@ -1,0 +1,10 @@
+{
+  "id": "place:novonikolaevsk",
+  "name": "Novo-Nikolaevsk",
+  "kind": "city",
+  "lngLat": [82.921, 55.03],
+  "country": "Russian Empire / Siberia",
+  "notes": "A Trans-Siberian town in central Siberia, one of the first the Czechoslovak Legion took on 26 May 1918.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }],
+  "names": [{ "name": "Novosibirsk", "kind": "modern" }]
+}

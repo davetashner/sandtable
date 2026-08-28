@@ -1,0 +1,10 @@
+{
+  "id": "place:ekaterinoslav",
+  "name": "Ekaterinoslav",
+  "kind": "city",
+  "lngLat": [35.046, 48.465],
+  "country": "Russian Empire / Ukraine",
+  "notes": "The Dnieper industrial city that Makhno took from Denikin's rear on 9 November 1919, at the moment the White front was at Orel.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }],
+  "names": [{ "name": "Dnipro", "kind": "modern" }]
+}

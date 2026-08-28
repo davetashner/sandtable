@@ -1,0 +1,10 @@
+{
+  "id": "place:ekaterinodar",
+  "name": "Ekaterinodar",
+  "kind": "city",
+  "lngLat": [38.976, 45.035],
+  "country": "Russian Empire",
+  "notes": "The Kuban Cossack capital, where Kornilov was killed by a shell on 13 April 1918 during the Volunteer Army's first attempt on it, and which Denikin took on 15 August 1918.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }],
+  "names": [{ "name": "Krasnodar", "kind": "modern" }]
+}

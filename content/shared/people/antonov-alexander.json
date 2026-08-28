@@ -1,0 +1,13 @@
+{
+  "id": "person:antonov-alexander",
+  "name": "Alexander Antonov",
+  "sortName": "Antonov, Alexander Stepanovich",
+  "died": "1922-06-24",
+  "nationality": "RU",
+  "roles": [
+    { "title": "Chief of police, Kirsanov, Tambov Province", "from": "1917", "to": "1918" },
+    { "title": "Leader of the Tambov insurgency", "from": "1920-08", "to": "1922-06" }
+  ],
+  "summary": "A Socialist Revolutionary who had done years of exile for a killing in 1905, was let out by the February Revolution and served the new order as a district police chief before turning on it. From August 1920 his name was attached to the largest peasant rising against Soviet power, in the province that had been the stormiest in the agrarian revolution of 1917; at its height his bands numbered somewhere between twenty and fifty thousand, and how many is one of the things nobody has settled. He was killed in a shoot-out in June 1922. His birth date is not recorded here because this project could not confirm one.",
+  "sources": [{ "source": "source:chamberlin-1935-2" }, { "source": "source:werth-2008" }]
+}

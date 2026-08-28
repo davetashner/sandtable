@@ -1,0 +1,15 @@
+{
+  "id": "place:smolensk",
+  "name": "Smolensk",
+  "kind": "city",
+  "lngLat": [32.045, 54.782],
+  "country": "Russian Empire",
+  "notes": "A city on the road between Moscow and the western borderlands, behind the Red Western Front in 1920.",
+  "sources": [
+    { "source": "source:wikipedia-en", "note": "coordinates" },
+    {
+      "source": "source:chamberlin-1935-2",
+      "note": "the dates in this note; the chronological table and narrative"
+    }
+  ]
+}

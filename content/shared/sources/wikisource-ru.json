@@ -1,0 +1,9 @@
+{
+  "id": "source:wikisource-ru",
+  "kind": "web",
+  "tier": "primary",
+  "author": "Russian Wikisource contributors",
+  "title": "Русский Викитека (Russian Wikisource)",
+  "url": "https://ru.wikisource.org/",
+  "notes": "A volunteer transcription library, not a scholarly edition, and cited here only for the Russian text of documents whose wording could be confirmed against a second, independent transcription elsewhere — Order No. 1 and the act of abdication. Where it is the only witness to a text, this pack does not quote it. A scholarly edition would be better and is named in the relevant document's notes where one is known."
+}

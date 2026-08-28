@@ -1,0 +1,9 @@
+{
+  "id": "place:neufchateau",
+  "name": "Neufchâteau",
+  "kind": "town",
+  "lngLat": [5.437, 49.841],
+  "country": "Belgium",
+  "notes": "The Belgian Ardennes town the French 4th Army was ordered on; not the Neufchâteau in the Vosges.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

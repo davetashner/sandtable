@@ -1,0 +1,20 @@
+{
+  "id": "person:sousley-franklin",
+  "name": "Franklin Sousley",
+  "sortName": "Sousley, Franklin",
+  "born": "1925-09-19",
+  "died": "1945-03-21",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Private First Class, Company E, 2nd Battalion, 28th Marines, 5th Marine Division",
+      "from": "1944-01",
+      "to": "1945-03-21"
+    }
+  ],
+  "summary": "A Kentucky farm boy of nineteen, in the photograph between Hayes and Strank. He was killed by a sniper near Kitano Point on 21 March 1945, nine days before the island was declared secure; the telegram reached his mother at the general store in Hilltop and the neighbours heard her from the road. His identification in the picture was among those the Marine Corps re-examined in 2019, and it stood.",
+  "sources": [
+    { "source": "source:robertson-2019" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "place:honolulu",
+  "name": "Honolulu",
+  "kind": "city",
+  "lngLat": [-157.85, 21.3],
+  "country": "Territory of Hawaii, United States",
+  "notes": "The territorial capital, ten kilometres east of the fleet base. The coordinate is the city centroid at the one-decimal precision the source gives, which is enough to place a label and not enough to anchor anything.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

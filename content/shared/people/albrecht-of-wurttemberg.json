@@ -1,0 +1,15 @@
+{
+  "id": "person:albrecht-of-wurttemberg",
+  "name": "Albrecht, Duke of Württemberg",
+  "sortName": "Albrecht, Duke of Württemberg",
+  "born": "1865-12-23",
+  "died": "1939-10-29",
+  "nationality": "DE",
+  "roles": [{ "title": "Commander, German 4th Army", "from": "1914-08-02", "to": "1917-02" }],
+  "summary": "Heir to the throne of Württemberg and a career soldier, he commanded the German 4th Army through the Ardennes battles, the Marne and First Ypres, and from 1917 Army Group Albrecht on the southern end of the Western Front.",
+  "sources": [
+    { "source": "source:herwig-2009" },
+    { "source": "source:strachan-2001" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

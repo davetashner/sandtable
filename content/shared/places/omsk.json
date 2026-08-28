@@ -1,0 +1,9 @@
+{
+  "id": "place:omsk",
+  "name": "Omsk",
+  "kind": "city",
+  "lngLat": [73.368, 54.99],
+  "country": "Russian Empire / Siberia",
+  "notes": "The Trans-Siberian junction that was Kolchak's capital from November 1918 until the Red Army took it on 14 November 1919. Chamberlin calls it the largest town in Western Siberia; the Czechoslovaks occupied it on 7 June 1918.",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

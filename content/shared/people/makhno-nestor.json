@@ -1,0 +1,16 @@
+{
+  "id": "person:makhno-nestor",
+  "name": "Nestor Makhno",
+  "sortName": "Makhno, Nestor Ivanovych",
+  "born": "1888-11-07",
+  "died": "1934-07-25",
+  "nationality": "RU",
+  "roles": [
+    { "title": "Commander, Revolutionary Insurgent Army of Ukraine", "from": "1918", "to": "1921" }
+  ],
+  "summary": "A peasant from Huliaipole in eastern Ukraine, an anarchist imprisoned under the old regime and freed by the February Revolution. From 1918 he led an insurgent army of his own villages against the Austro-German occupation, against the Hetman, against Denikin and against the Bolsheviks - twice in formal alliance with the Reds and twice destroyed by them. His birth is given here as 7 November 1888 (26 October, Old Style); some accounts give 1889. He died in Paris.",
+  "sources": [
+    { "source": "source:chamberlin-1935-2" },
+    { "source": "source:wikipedia-en", "note": "dates" }
+  ]
+}

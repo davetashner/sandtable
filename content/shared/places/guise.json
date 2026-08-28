@@ -1,0 +1,8 @@
+{
+  "id": "place:guise",
+  "name": "Guise",
+  "kind": "town",
+  "lngLat": [3.627, 49.899],
+  "country": "France",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

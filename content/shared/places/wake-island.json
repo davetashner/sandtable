@@ -1,0 +1,8 @@
+{
+  "id": "place:wake-island",
+  "name": "Wake Island",
+  "kind": "other",
+  "lngLat": [166.6311, 19.2953],
+  "country": "United States (unincorporated territory)",
+  "sources": [{ "source": "source:wikipedia-en", "note": "coordinates" }]
+}

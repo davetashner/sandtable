@@ -1,0 +1,18 @@
+{
+  "id": "person:fletcher-frank-jack",
+  "name": "Frank Jack Fletcher",
+  "sortName": "Fletcher, Frank Jack",
+  "born": "1885-04-29",
+  "died": "1973-04-25",
+  "nationality": "US",
+  "roles": [
+    { "title": "Commander, Task Force 17", "from": "1942-01", "to": "1942-11" },
+    { "title": "Commander, North Pacific Force", "from": "1943-11", "to": "1945-09" }
+  ],
+  "summary": "Commanded the American carriers in the first three carrier battles ever fought — Coral Sea, Midway and the Eastern Solomons — and lost *Lexington*, *Yorktown* and the argument about his own reputation. On 9 August 1942 he took his carriers away from the Guadalcanal beachhead citing fuel and fighter losses, leaving the transports uncovered on the night Savo Island was fought; Morison's verdict on that withdrawal hardened into the standard account and has been steadily revised since the 1990s, when historians began reading his fuel states rather than his critics. The reappraisal is one of the clearest cases in the theatre of an official history setting a man's record for fifty years.",
+  "sources": [
+    { "source": "source:frank-1990" },
+    { "source": "source:parshall-tully-2005" },
+    { "source": "source:wikipedia-en", "note": "dates and dates of office" }
+  ]
+}
