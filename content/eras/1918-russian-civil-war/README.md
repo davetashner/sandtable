@@ -120,8 +120,8 @@ that resolution everything in it is slow:
 | Movement                                      | Straight line | Elapsed  | km/h | 1914 band         |
 | --------------------------------------------- | ------------- | -------- | ---- | ----------------- |
 | Mamontov, Novokhopersk to Tambov              | ~180 km       | 8 days   | 0.94 | `march` 1.7 / 2.7 |
-| Tukhachevsky, Berezina to the Vistula         | ~700 km       | 41 days  | 0.71 | `march` 1.7 / 2.7 |
-| Kolchak's army, Omsk to Irkutsk (the retreat) | ~2,000 km     | 85 days  | 0.98 | `march` 1.7 / 2.7 |
+| Tukhachevsky, Berezina to the Vistula         | ~630 km       | 41 days  | 0.64 | `march` 1.7 / 2.7 |
+| Kolchak's army, Omsk to Irkutsk (the retreat) | ~2,060 km     | 85 days  | 1.01 | `march` 1.7 / 2.7 |
 | Red Eastern Front, Omsk to Irkutsk            | ~2,060 km     | 65 days  | 1.32 | `rail` 15 / 30    |
 | Trotsky's train, Moscow to Sviyazhsk          | ~690 km       | 62 hours | 11.1 | `rail` 15 / 30    |
 | Wrangel, Sevastopol to Constantinople         | ~545 km       | 72 hours | 7.6  | `sea` 15 / 40     |
