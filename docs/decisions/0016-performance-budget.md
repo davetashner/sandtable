@@ -267,6 +267,14 @@ something. These are targets, not gates:
 - `npm run bundle:budget` is a required step of the `web` job, which is a
   required check. **A pull request that puts a heavy import in the shell's
   reach now fails**, with the chunk list and the reason printed.
+- It reads `dist/` and **refuses when `dist/` is older than `src/`, `content/`
+  or the build config** (`sand-pmz.31`). In CI `build` runs immediately before
+  it and the reading is always fresh, which is exactly why the trap was
+  invisible: it only springs for a human running it by hand, which is the case
+  where the answer is being used to decide something. Refusing rather than
+  rebuilding is deliberate — a thirty-second build nobody asked for is its own
+  confusion. The check is skipped when `CI` is set, where it has nothing to
+  catch and a checkout's uniform mtimes could only make it wrong.
 - `npm run perf` is the harness: `--live` for the real bucket, `--headed` for a
   real GPU, `--runs N`, `--json` for a machine-readable dump. It needs a build
   and Chromium (`npx playwright install chromium`), the same browser the visual

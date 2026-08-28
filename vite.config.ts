@@ -61,7 +61,10 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
-    include: ['src/**/*.test.{ts,tsx}', 'scripts/**/*.test.ts'],
+    // `.mjs` as well as `.ts`: the build-measurement scripts are plain ESM
+    // (they run without tsx, in CI, before anything is compiled) and a test
+    // for one of them is written in the same language it is.
+    include: ['src/**/*.test.{ts,tsx}', 'scripts/**/*.test.{ts,mjs}'],
     css: false,
   },
 });

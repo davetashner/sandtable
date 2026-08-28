@@ -75,12 +75,13 @@ npm run schema           # regenerate schema/*.schema.json from src/packs/schema
 npm run borders          # rebuild content/shared/geo/borders/<year>.geojson from historical-basemaps (pinned commit)
 npm run front            # rebuild content/shared/geo/front/western-front.geojson from the authored snapshots; -- --check fails on a stale commit
 npm run tokens           # regenerate src/styles/tokens.css from src/styles/tokens.ts (docs/design.md; AA contrast tested)
+npm run new-pack         # scaffold content/eras/<yyyy>-<slug>/ — flags or prompts, refuses the six ways a pack skeleton goes wrong (docs/authoring.md §10)
 npm run media            # WebP derivatives + content/shared/media/index.json from media.json manifests; -- --upload syncs to the assets bucket
 npm run audio            # loudness-matched Opus/AAC + content/shared/audio/index.json from cue.json manifests; -- --upload syncs (needs ffmpeg)
 npm run build            # tsc -b && vite build → dist/ (bundles under dist/app/)
 npm run visual:check     # the visual gate: 25 scenes x 2 themes x 2 viewports off one load each, assets stubbed, ~2.5 min (ADR 0011); -- --update rewrites the baseline, -- --timings prints the phase table
 npm run visual:review    # the on-demand design review against real assets (docs/design-review.md); needs a build + `npm run preview`
-npm run bundle:budget    # the performance gate: eager, code and pack gzip against scripts/bundle-budget.json (ADR 0016, ADR 0018)
+npm run bundle:budget    # the performance gate: eager, code and pack gzip against scripts/bundle-budget.json (ADR 0016, ADR 0018); reads dist/, so it refuses when dist/ is older than src/ or content/ — build first
 npm run perf             # measure bundle, first map paint, frame rate, PMTiles cost; -- --live for the real bucket, -- --headed for a real GPU
 npm run format           # Prettier (beat front matter is deliberately excluded — see .prettierignore)
 npm run format:check     # the same as a check; runs in CI's `web` job

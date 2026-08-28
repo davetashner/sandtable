@@ -804,15 +804,53 @@ that someone recreates later, and two pictures then collide on one hero slot.
 
 ## 10. Add a new scenario pack
 
+Don't assemble the skeleton by hand — `npm run new-pack` writes it, and more
+usefully refuses the half-dozen ways it can be written wrongly:
+
+```bash
+npm run new-pack -- --dir 1942-midway --title "1942: Midway" \
+  --start 1942-06-03 --end 1942-06-07 --region 170,20,-160,35 \
+  --border-year 1941 --tiles central-pacific-z10 \
+  --side 'us=United States|USA|The Allies' \
+  --side 'jp=Empire of Japan|Japan|The Axis'
+```
+
 ```text
 content/eras/<yyyy>-<slug>/
-  pack.json    id "<era>:<slug>", idPrefix "<era>" (unique across packs),
+  pack.json    id "<era>:pack", idPrefix "<yyyy>-<slug>" — the directory name
+               (ADR 0019; `1914` and `1915` are grandfathered counter-examples),
                timeRange, region, borderYear (one of content/shared/geo/borders),
                tiles (one of content/shared/geo/tiles/manifest.json — omit only
                if the pack is inside central Europe), camera, sides,
                branches (exactly one historical), defaultBranch, status "seed"
   README.md    what the pack covers and its sourcing status
 ```
+
+Everything a flag has not answered is prompted for when you are at a terminal;
+with `--no-input`, or from an agent's shell, a missing answer is an error naming
+the flag rather than a process hanging on a prompt nobody will see. `--dry-run`
+prints without writing. `--help` lists the rest.
+
+`idPrefix` and `status` have no flags at all, because they have no choices: the
+first **is** the directory name and the second is `seed` on a first pass. What
+the tool does with the others is the point of it —
+
+- **`--border-year`** prints that year's caveat from the manifest, in full, and
+  puts it in the README. Several are traps: 1931 is badly wrong for Russia,
+  1941 has no Manchukuo and no Republic of China, 1945 is the post-surrender
+  map. Better to read it now than to discover it in fact-check.
+- **`--tiles`** is checked against the closed enum and reported with the
+  manifest's `status`, so you know whether the archive is uploaded yet. Leave it
+  out with a region outside the `central-europe-z10` box and the tool refuses,
+  naming the archives whose bbox does contain your region.
+- **`--pace`** needs `--pace-note` and `--pace-source` with it, the source must
+  resolve, the band must sit under `PACE_CEILING`, and `march` is refused
+  outright (ADR 0020). Most packs need no bands at all and should pass none.
+
+The output validates as it stands and is Prettier-clean, so it is committable
+as generated. It is not _finished_: the closing report lists every placeholder,
+and the README is a set of questions, above all about what you read in full and
+what you only saw a catalogue record for.
 
 ### Say which map you are on
 
@@ -852,7 +890,11 @@ follow for an author. Writing a beat no longer changes a byte of the JavaScript
 bundle, so a content pull request is no longer also a performance pull request.
 And content has a ceiling of its own — `pack` in `scripts/bundle-budget.json`,
 checked by `npm run bundle:budget` — which is the one number a content change
-can still move.
+can still move. **Build before you read it**: it measures `dist/`, so without a
+build it answers about the previous one, and a stale answer here is a whole
+content pull request out of date. It refuses rather than let you read one
+(`sand-pmz.31`), so `npm run build && npm run bundle:budget` is the whole
+instruction.
 
 ## 11. Before you open the PR
 

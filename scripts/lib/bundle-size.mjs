@@ -11,6 +11,106 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const DIST = fileURLToPath(new URL('../../dist', import.meta.url));
+export const ROOT = fileURLToPath(new URL('../..', import.meta.url));
+
+/**
+ * Everything a build reads, so that `dist/` can be asked whether it still
+ * describes the working tree (`sand-pmz.31`).
+ *
+ * `src/` and `content/` are the two that move daily; the rest are the files
+ * that change what Vite emits from them. `node_modules` is deliberately not
+ * here — reinstalling dependencies touches sixty thousand files and would
+ * make every reading stale for a reason nobody cares about; `package-lock.json`
+ * is the same question asked once.
+ */
+const BUILD_INPUTS = [
+  'src',
+  'content',
+  // The pack plugin and the assembler live here, and they decide what lands in
+  // dist/pack/ — the group the `pack` ceiling holds.
+  'scripts/lib',
+  'index.html',
+  'atlas.html',
+  'gallery.html',
+  'vite.config.ts',
+  'tsconfig.json',
+  'tsconfig.app.json',
+  'tsconfig.node.json',
+  'package.json',
+  'package-lock.json',
+];
+
+/** Nothing under here reaches the bundle, so nothing here can make it stale. */
+const NOT_BUILT = (name) => name.startsWith('.') || /\.test\.(ts|tsx|mjs)$/.test(name);
+
+function newestInput(root) {
+  let newest = null;
+  const visit = (abs, rel) => {
+    let st;
+    try {
+      st = statSync(abs);
+    } catch {
+      return; // an optional input that this checkout does not have
+    }
+    if (st.isDirectory()) {
+      for (const name of readdirSync(abs)) {
+        if (!NOT_BUILT(name)) visit(join(abs, name), rel + '/' + name);
+      }
+      return;
+    }
+    if (!newest || st.mtimeMs > newest.mtimeMs) newest = { path: rel, mtimeMs: st.mtimeMs };
+  };
+  for (const input of BUILD_INPUTS) visit(join(root, input), input);
+  return newest;
+}
+
+/**
+ * Whether `dist/` is older than the sources it was built from.
+ *
+ * The trap this closes is quiet and was sprung for real: run by hand,
+ * `npm run bundle:budget` happily measures whatever build is lying around and
+ * prints a number with no date on it. On 2026-08-28 that number was a whole
+ * content pull request out of date — 281.6 kB against a real 308.1 — and it
+ * was being used to decide whether two finished packs could merge. In CI the
+ * question never arises because `build` runs immediately before, which is
+ * exactly why nobody had met it: the reading is only ever stale when a human
+ * is reading it, which is when it matters most.
+ *
+ * The oldest file in `dist/` is the one compared, not the newest: a build
+ * writes them all within a second of each other, and taking the oldest fails
+ * towards refusing rather than towards a stale answer.
+ */
+export function distFreshness(dist = DIST, root = ROOT) {
+  const built = [
+    join(dist, 'index.html'),
+    ...['app', 'pack'].flatMap((d) => {
+      const dir = join(dist, d);
+      return existsSync(dir) ? readdirSync(dir).map((f) => join(dir, f)) : [];
+    }),
+  ].reduce((oldest, f) => {
+    try {
+      const { mtimeMs } = statSync(f);
+      return oldest === null || mtimeMs < oldest ? mtimeMs : oldest;
+    } catch {
+      return oldest;
+    }
+  }, null);
+  const newest = newestInput(root);
+  return {
+    /** When the build ran, as ms since the epoch; null if there is no dist/. */
+    builtAt: built,
+    /** The source file that moved last, and when. */
+    newest,
+    stale: built !== null && newest !== null && newest.mtimeMs > built,
+  };
+}
+
+/** `2026-08-28 21:14:03`, local time — the only form these two dates are read in. */
+export const stamp = (ms) =>
+  new Date(ms - new Date(ms).getTimezoneOffset() * 60_000)
+    .toISOString()
+    .slice(0, 19)
+    .replace('T', ' ');
 
 /**
  * Every emitted asset, in three groups.
