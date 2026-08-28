@@ -507,6 +507,71 @@ transcription site is the only witness to a Russian text, the wording was
 confirmed against a second, independent transcription before being quoted, or
 it was not quoted.
 
+## Core bibliography — the Russian Civil War, 1918–1922 (in the registry)
+
+Added with the second Russian pack (`sand-ekc.8`). The constraint is the 1917
+pack's, with one large exception and four small ones, and the shape of the
+bibliography follows directly from that.
+
+**The exception is Chamberlin.** _The Russian Revolution, 1917–1921_, volume II
+(Macmillan, **London**, 1935) is out of copyright, downloadable from the
+Internet Archive, and was read end to end — narrative, appendix of translated
+documents (pp. 465–507) and chronological table (pp. 525–534). It is the only
+full account of this war the project has been able to read at page level, and
+almost every date in the pack comes from it. Two warnings travel with it. It is
+a **pre-archival** work: a Moscow correspondent writing in 1935 from the Soviet
+published record of the 1920s, from émigré memoirs and from his own reporting,
+so where it gives a number for the terror it is repeating a published claim
+rather than counting. And **its pagination is not the New York edition's** — the
+Seventeen Moments transcription of the Red Terror resolution cites Chamberlin
+vol. II, pp. 475–476, and those pages hold something else in the London copy,
+which is why the pack's document for that decree carries no page at all (§3).
+
+The four small exceptions are open-access short-form scholarship, all post-1991
+and archive-informed, all read in full and quoted in their authors' own words:
+Holquist, Werth, Sumpf and Mawdsley. They are why the historiography cards for
+this pack can quote three or four positions each where the 1917 cards could
+quote one.
+
+**Every modern monograph on this war is still borrow-only from here** —
+Mawdsley's own book, Kenez, Smele, Leggett, Ryan, Buldakov, the Black Book,
+Pipes's second volume — and the cost of that is stated on the cards and in
+[`historiography-1918.md`](historiography-1918.md) rather than hidden.
+
+| id                                                            | Work                                                                               | Use it for                                                                 |
+| ------------------------------------------------------------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `source:chamberlin-1935-2`                                    | Chamberlin, _The Russian Revolution 1917–1921_, II (London, 1935) — **full text**  | the narrative backbone; the chronological table; the appendix of documents |
+| `source:holquist-2003`                                        | Holquist, "Violent Russia, Deadly Marxism?", _Kritika_ 4:3 — **open access**       | the two schools on revolutionary violence, and his own third answer        |
+| `source:werth-2008`                                           | Werth, "Crimes and Mass Violence of the Russian Civil Wars" — **open access**      | the periodised figures that can be given; the pogroms; the Tambov camps    |
+| `source:sumpf-2014`                                           | Sumpf, "Russian Civil War", 1914-1918-online — **open access**                     | a compact post-archival statement of what the Whites lacked                |
+| `source:mawdsley-2014`                                        | Mawdsley, "International Responses to the Russian Civil War" — **open access**     | the scale and limits of the intervention, by its standard historian        |
+| `source:fisher-1927`                                          | Fisher, _The Famine in Soviet Russia, 1919–1923_ (1927) — **full text**            | the relief operation and its figures; the ARA's own institutional history  |
+| `source:whitewood-2015`                                       | Whitewood, "Subversion in the Red Army and the Military Purge" — **abstract only** | the 1937 purge's inheritance — cited from the abstract and nowhere else    |
+| `source:glantz-2001`                                          | Glantz, _The Soviet-German War 1941–1945_ (Clemson, 2001) — **full text**          | 22 June 1941, so the causal chain ends somewhere real                      |
+| `source:trotsky-military-1`                                   | Trotsky, _How the Revolution Armed_, I — **full text**                             | the building of the Red Army in his own orders and speeches                |
+| `source:trotsky-1930`                                         | Trotsky, _My Life_ — **full text**                                                 | ch. 34, "The Train": the only first-person account of the object           |
+| `source:avalon-brest-litovsk-1918`                            | The Brest-Litovsk treaty (FRUS 1918, via Avalon) — **full text**                   | the treaty's own articles; the US State Department's English               |
+| `source:soviethistory-msu`                                    | von Geldern & Siegelbaum, _Seventeen Moments in Soviet History_                    | the Red Terror resolution in Chamberlin's translation                      |
+| `source:avrich-1973`                                          | Avrich (ed.), _The Anarchists in the Russian Revolution_ (1973)                    | the Petropavlovsk resolution — read in the MIA reproduction, no pages      |
+| `source:dekrety-1`                                            | _Декреты Советской власти_, I (1957), via MSU — **full text, paginated**           | the calendar decree of 24 January (6 February) 1918                        |
+| `source:figes-1996`, `source:smith-2017`, `source:pipes-1990` | already in the registry from 1917                                                  | cited without pages, for what each work argues                             |
+
+Three conventions specific to this pack, all recorded in
+[`content/eras/1918-russian-civil-war/README.md`](../content/eras/1918-russian-civil-war/README.md).
+**Dual dating stops on 14 February 1918**, the day Russia's calendars merged;
+before it, dates are Old Style then New Style as in 1917, and after it they are
+written plainly. **Where a total exists only in works that could not be opened —
+the terror, the famine death toll — the pack prints nothing and says why.** And
+**every route is `confidence: "low"` and is an axis rather than a position**,
+because this war has no front for a route to be measured against.
+
+One trap worth recording for the next author, because it is exactly the kind of
+thing a catalogue record produces: **Denikin's _The Russian Turmoil_
+(Hutchinson, 1922) is public domain, fully readable, and covers nothing in this
+pack.** It is a slightly abridged translation of volume 1 of _Ocherki russkoi
+smuty_ and its narrative ends with his arrest in August 1917. It is not in the
+registry.
+
 ## To add as the content lands (not yet in the registry)
 
 An authoring backlog. It is deliberately not shown to readers — see "What a

@@ -1,0 +1,134 @@
+{
+  "id": "1918-russian-civil-war:pack",
+  "idPrefix": "1918-russian-civil-war",
+  "title": "1918-1922: the Russian Civil War",
+  "subtitle": "Six fronts, no line, and a railway map instead of a front",
+  "summary": "Five years, six fronts and no continuous line anywhere. This is the first pack in the project where the Western Front's whole mental model stops working: there is no trench system, no flank to turn, no front to break, and for most of the war no two armies in contact along any measurable length of ground. What there is instead is a railway network. The unit of control is the junction; the unit of movement is the armoured train and the cavalry raid; and the space between the railways is a country of villages that mostly wanted both armies to go away.\n\nIt begins with a peace that gave away a third of European Russia and ends with the state that peace made possible. In between: a Czechoslovak corps strung out over five thousand miles of the Trans-Siberian; an admiral made dictator at Omsk; a general who came within two hundred and fifty miles of Moscow and had nothing behind him; a Baltic baron holding the Crimea with a land law nobody was left to apply; a war commissar who ran the whole thing from a train; peasants who fought everybody; and a famine at the end of it that the fighting had made certain.\n\nThe honest framing is that the Whites lost more than the Reds won, and that is a contested claim, which is why it is a card and not a sentence.",
+  "timeRange": {
+    "start": "1918-01-01T00:00:00Z",
+    "end": "1922-12-30T18:00:00Z"
+  },
+  "region": [20.0, 38.0, 133.0, 70.5],
+  "borderYear": 1918,
+  "camera": {
+    "center": [55.0, 55.0],
+    "zoom": 2.6
+  },
+  "sides": [
+    {
+      "id": "red",
+      "name": "Soviet Russia and the Red Army",
+      "short": "Red",
+      "alliance": "Soviet power"
+    },
+    {
+      "id": "white",
+      "name": "The White movements",
+      "short": "White",
+      "alliance": "Anti-Bolshevik Russia (never one command)"
+    },
+    {
+      "id": "green",
+      "name": "The peasant insurgencies",
+      "short": "Green",
+      "alliance": "Neither, and against both"
+    },
+    {
+      "id": "allied",
+      "name": "The Allied and associated expeditions",
+      "short": "Allied",
+      "alliance": "Intervention"
+    },
+    {
+      "id": "central",
+      "name": "The Central Powers in the east",
+      "short": "Central",
+      "alliance": "Central Powers"
+    },
+    {
+      "id": "national",
+      "name": "The national states and movements of the borderlands",
+      "short": "National",
+      "alliance": "The new states"
+    }
+  ],
+  "branches": [
+    {
+      "id": "1918-russian-civil-war:historical",
+      "title": "What happened",
+      "kind": "historical",
+      "summary": "The five years as they ran: Brest-Litovsk, the Czechoslovak Legion, Kolchak in Siberia, Denikin and then Wrangel in the south, Yudenich at Pulkovo, War Communism and the requisitioning, Makhno and the Greens, the Allied landings, the Vistula, Kronstadt and Tambov, and the famine.",
+      "sources": [
+        {
+          "source": "source:chamberlin-1935-2"
+        },
+        {
+          "source": "source:smith-2017"
+        },
+        {
+          "source": "source:figes-1996"
+        }
+      ]
+    }
+  ],
+  "defaultBranch": "1918-russian-civil-war:historical",
+  "status": "seed",
+  "sources": [
+    {
+      "source": "source:chamberlin-1935-2",
+      "note": "the narrative backbone and the only account of the whole war this pack could read at page level"
+    },
+    {
+      "source": "source:figes-1996",
+      "note": "the war seen from the village"
+    },
+    {
+      "source": "source:smith-2017",
+      "note": "the empire-wide social and economic frame, 1890-1928"
+    },
+    {
+      "source": "source:holquist-2003",
+      "note": "the post-archival argument about the violence"
+    },
+    {
+      "source": "source:werth-2008",
+      "note": "the crimes, counted where they can be counted"
+    },
+    {
+      "source": "source:sumpf-2014",
+      "note": "the short post-archival survey"
+    },
+    {
+      "source": "source:mawdsley-2014",
+      "note": "the intervention, by the author of its standard history"
+    }
+  ],
+  "opening": {
+    "eyebrow": "Six fronts, and not one line",
+    "headline": [
+      "March 1918. The war with Germany ends.",
+      "The front does not move west. It dissolves.",
+      "What is left to fight over is a railway map."
+    ],
+    "lede": "For four years everyone in Europe had known where the war was: a line you could put a finger on. In Russia after Brest-Litovsk there is no line anywhere - only junctions, and armoured trains, and eight hundred miles of nothing between one army and the next.[^chamberlin-1935-2]",
+    "camera": {
+      "center": [55.0, 55.0],
+      "zoom": 2.6
+    },
+    "claim": {
+      "label": "Eight hundred miles of nothing?",
+      "card": "1918-russian-civil-war:link-trotsky-order-to-the-civil-war"
+    },
+    "chain": {
+      "label": "How did it start?",
+      "hint": "with a peace that gave a third of the empire away",
+      "focus": "1918-russian-civil-war:brest-litovsk",
+      "card": "1918-russian-civil-war:link-october-to-brest-litovsk"
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2"
+      }
+    ]
+  }
+}

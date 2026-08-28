@@ -1,0 +1,177 @@
+[
+  {
+    "id": "1918-russian-civil-war:link-october-to-brest-litovsk",
+    "from": "1917-russian-revolution:event-second-congress-decrees",
+    "to": "1918-russian-civil-war:event-brest-litovsk-signed",
+    "relation": "caused",
+    "claim": "The decree on peace of 26 October 1917 (O.S.) promised an immediate peace without annexations or indemnities, and the only people willing to negotiate one were the Germans, who wanted annexations and got them. A government that had taken power on the promise of peace could not refuse the peace it was offered, and the price was Poland, the Baltic provinces, Finland and Ukraine - about a third of the population of European Russia. Everything in the 1918-1922 pack begins here: the Volunteer Army formed on the Don because officers would not accept it, the Left Socialist Revolutionaries left the government over it, the Czechoslovak Legion started east because the Eastern Front no longer existed, and the Allies landed at Murmansk and Archangel because Russia had left the war.",
+    "confidence": "high",
+    "evidence": [
+      {
+        "source": "source:avalon-brest-litovsk-1918",
+        "note": "the terms"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "528-529",
+        "note": "the chronology from the armistice to the ratification"
+      },
+      {
+        "source": "source:figes-1996"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:link-trotsky-order-to-the-civil-war",
+    "from": "1918-russian-civil-war:event-trotsky-order-czechs",
+    "to": "1918-russian-civil-war:event-komuch-samara",
+    "relation": "caused",
+    "claim": "An order that could not be carried out turned a corps that wanted to go home into the army that opened the civil war. The local Soviets along five thousand miles of railway had nothing with which to disarm 35,000 armed men; what the order did was tell those men that their choice was to fight or be shot. Within a fortnight they held the Trans-Siberian from Penza to Vladivostok, and behind their bayonets the Socialist Revolutionary members of the dissolved Constituent Assembly formed a government at Samara. Chamberlin puts the corps at the centre of the whole thing: a small force of former prisoners, citizens of a state that did not yet exist, who 'made possible the temporary overthrow of the Soviets in vast, although sparsely populated, Siberia, and also in the Middle Volga and in part of the Ural Regions'.",
+    "confidence": "high",
+    "historiography": "What is argued is not the sequence but the intention. Chamberlin notes that some Czech officers were already in touch with underground Socialist Revolutionary and officers' organisations in Siberia before the clash and 'perhaps already foresaw the role which the Czechs might play', which leaves open how far the revolt was provoked and how far it was waiting to happen. The Soviet account made it an Allied conspiracy from the start; the Legion's own made it self-defence. The brawl at Chelyabinsk was certainly an accident; what it lit was not.",
+    "evidence": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "1-8",
+        "note": "the corps, the clash, the order and the towns taken"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:link-requisitioning-to-the-greens",
+    "from": "1918-russian-civil-war:event-committees-of-the-poor",
+    "to": "1918-russian-civil-war:event-tambov-rising",
+    "relation": "caused",
+    "claim": "A state with worthless money and nothing to sell took grain by armed detachment instead of buying it, and the villages fought back - in Ukraine behind Makhno from 1918, in western Siberia in the winter of 1920-21, and in Tambov behind Antonov from August 1920. The Greens are not a third party in a two-sided war; they are the majority of the population declining to be either side. Chamberlin's summary of what the countryside made of it stands for all of them: 'From 1918 until 1921 the chronicles of Soviet Russia are full of sanguinary peasant outbreaks against the Soviet rules, mostly caused by the food requisitioning policy of the Soviet Government.'",
+    "confidence": "high",
+    "evidence": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "436-439",
+        "note": "the Tambov rising, its causes and its scale"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "455",
+        "note": "peasant outbreaks from 1918 to 1921"
+      },
+      {
+        "source": "source:werth-2008",
+        "note": "the suppression and the camps"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:link-kronstadt-to-nep",
+    "from": "1918-russian-civil-war:event-kronstadt",
+    "to": "1918-russian-civil-war:event-nep",
+    "relation": "accelerated",
+    "claim": "Lenin announced the New Economic Policy to the Tenth Party Congress on 8 March 1921, with the fortress under bombardment and three hundred delegates of that congress on their way to storm it; the decree replacing requisitioning with a tax in kind followed on 16 March, two days before the fortress fell. The concession is the sailors' eleventh demand - the peasant's right to work his land with his own means - granted in the middle of the operation to destroy the men who made it.",
+    "confidence": "contested",
+    "historiography": "Whether Kronstadt caused the retreat or merely dated it is the argument. Against causation: the crisis of War Communism was general by the winter of 1920-21 - the Petrograd strikes came first, western Siberia was in revolt, Tambov had been in arms for six months, and the change of course had been under discussion in the leadership before March. For causation: the timing is not a coincidence anyone has explained away, and the sailors' demand and Lenin's concession are the same proposal. This pack files it as accelerated rather than caused, and marks the confidence contested, because the honest reading is that Kronstadt was the last of a series of arguments the peasantry had been making with rifles since 1918 and the one the party could not pretend not to have heard.",
+    "evidence": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "430-450",
+        "note": "the chapter on the crisis of War Communism"
+      },
+      {
+        "source": "source:avrich-1973",
+        "note": "the eleventh demand"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:link-tsaritsyn-to-stalin",
+    "from": "1918-russian-civil-war:event-brest-litovsk-signed",
+    "to": "person:stalin-joseph",
+    "relation": "shaped",
+    "claim": "Stalin's political education is the civil war, and it happened at Tsaritsyn. Sent south in the summer of 1918 to supervise the collection of grain, he took over the military command of the sector instead, shot officers he suspected, and fought a running quarrel with Trotsky over the employment of former imperial officers under commissars. Chamberlin, writing in 1935 when the point was already being manufactured into a legend, records the plain fact: 'Stalin, sent to the Southeast to supervise the collection of grain, was a prominent figure in the defense of Tsaritsin (which was subsequently renamed Stalingrad).'\n\nThree of the habits that defined him afterwards were formed there and are visible in this pack: taking grain from the countryside by force as a normal instrument of government, treating professional expertise as presumptive disloyalty, and building a personal following inside an institution - the Tsaritsyn group, Voroshilov and Budyonny among them, who were still around in 1937 when the officers were shot.",
+    "confidence": "medium",
+    "historiography": "The Soviet historiography of the 1930s made Tsaritsyn into a decisive campaign directed by Stalin, which it was not; the anti-Stalinist historiography that followed sometimes reduced him to a bungler with a grudge, which is also a caricature. What is not in dispute is that he was there, that the quarrel with Trotsky over the military specialists was real, and that both men remembered it.",
+    "evidence": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "131",
+        "note": "Stalin at Tsaritsyn"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "25-41",
+        "note": "the argument about the military specialists"
+      },
+      {
+        "source": "source:figes-1996"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:link-war-communism-to-collectivisation",
+    "from": "1918-russian-civil-war:event-committees-of-the-poor",
+    "to": "1918-russian-civil-war:epilogue-event-collectivisation",
+    "relation": "enabled",
+    "claim": "Collectivisation was not a new idea in 1929; it was the idea of 1918 attempted with the means the state now had. The Bolsheviks spent three years taking grain from villages by armed detachment, learned that they could, learned also that the countryside would fight and that they could win that fight, and then retreated in 1921 because industry was ruined and the army had to be demobilised. Chamberlin, writing from Moscow in 1935 with collectivisation going on around him, states the continuity as a matter of course: with a ruined industry and an exhausted country, 'the Soviet leaders could not in 1921 inaugurate the policy which they launched in 1929'. The New Economic Policy is described there as a retreat before the small peasant proprietor, and a retreat is a thing you come back from.",
+    "confidence": "medium",
+    "historiography": "How direct the line is remains argued. Against directness: the New Economic Policy ran for eight years and had genuine defenders inside the leadership; the decision of 1929 came out of a grain-procurement crisis and a factional victory, not out of a plan laid down in 1921; and the scale and the technology were different. For directness: the personnel, the vocabulary, the legal categories (the kulak as an enemy class) and above all the assumption that the countryside is a rear area to be requisitioned rather than a market to be bought from were all in place by 1919. Holquist's formulation covers the general case: the Bolshevik regime was distinctive less for the measures it took during the wars than 'for the fact that it continued these measures after that period had wound to an end'.",
+    "evidence": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "115",
+        "note": "'the policy which they launched in 1929'"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "96-117",
+        "note": "the War Communism chapters"
+      },
+      {
+        "source": "source:holquist-2003",
+        "pages": "651-652"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:link-military-specialists-to-the-purge",
+    "from": "1918-russian-civil-war:epilogue-event-military-purge",
+    "to": "person:tukhachevsky-mikhail",
+    "relation": "caused",
+    "claim": "The Red Army was built in 1918 out of former imperial officers - Trotsky insisted on them against loud opposition inside his own party, and put a political commissar beside each one because nobody trusted them. The institution therefore carried, from its first year, a structural assumption that its own professionals were potential traitors. Whitewood's archival account of 1937 turns on exactly that inheritance: 'a long history of the Red Army being perceived as vulnerable to subversion is central to understanding this military purge'. Tukhachevsky, shot in June 1937, was himself a guards lieutenant of the old army who had joined in 1918 - which is to say he was one of the specialists, and had been from the beginning.",
+    "confidence": "contested",
+    "historiography": "This link is marked contested because of what could not be read, not because the claim is exotic. **Only Whitewood's abstract was readable from here**, and an abstract states a thesis without showing the evidence for it; whether he traces the perception of vulnerability specifically to the military specialists of 1918, or to the 1920s, or to the foreign-intelligence panics of the 1930s, this pack cannot say, and does not. The competing explanations of the purge - a fabricated German provocation, a factional settling of accounts, Stalin's personal fear of a Bonaparte - are all in circulation and none of them could be read here either. What the link asserts, and what the sources it did read support, is the inheritance: that an army founded on officers it did not trust is an army with a place in it for that suspicion to live.",
+    "evidence": [
+      {
+        "source": "source:whitewood-2015",
+        "note": "the author's own abstract; the article could not be read"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "25-41",
+        "note": "the employment of the military specialists in 1918 and the opposition to it"
+      },
+      {
+        "source": "source:trotsky-military-1",
+        "note": "Trotsky's own case for the specialists, in his speech to the First All-Russia Congress of Military Commissars, 7 June 1918: 'There is not one of you, I am sure, who will say that our army can manage without specialist commanders'"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:link-purge-to-1941",
+    "from": "1918-russian-civil-war:epilogue-event-military-purge",
+    "to": "1918-russian-civil-war:epilogue-event-barbarossa",
+    "relation": "shaped",
+    "claim": "Four years separate the shooting of the Soviet Union's most senior soldier from the morning three million men crossed its border, and the army that met them was commanded in its upper ranks by men who had been promoted into dead men's places in between. This pack asserts the sequence and the fact of the replacement; it does **not** assert a proportion of the catastrophe of 1941 owed to the purge, because it could not read a source that measures one.",
+    "confidence": "low",
+    "historiography": "The strongest version of this claim - that the purge is why the Red Army collapsed in 1941 - was made by Soviet officers after 1956 with an obvious interest in making it, and has been substantially qualified since the archives opened: the army of 1941 was also in the middle of a doubling in size, a re-equipment programme and a redeployment into newly annexed territory, any of which would have disorganised it, and its doctrine and its dispositions were at least as much to blame as its command. The link is filed at low confidence for that reason. It is here at all because the chain from Sviyazhsk to the Bug runs through this man and this institution without a break, and a project about causal chains should say so and then say how much weight the join will bear.",
+    "evidence": [
+      {
+        "source": "source:glantz-2001",
+        "pages": "1",
+        "note": "the opening of the German attack"
+      },
+      {
+        "source": "source:whitewood-2015",
+        "note": "the abstract, for the purge's own logic"
+      }
+    ]
+  }
+]

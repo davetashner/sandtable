@@ -1,0 +1,88 @@
+[
+  {
+    "id": "1918-russian-civil-war:document-calendar-decree",
+    "title": "Decree on the introduction of the West European calendar",
+    "date": "1918-02-06",
+    "author": "The Council of People's Commissars of the Russian Republic",
+    "kind": "order",
+    "language": "ru",
+    "excerpt": "**Декрет о введении западноевропейского календаря.** 24 января (6 февраля) 1918 г.\n\nВ целях установления в России одинакового почти со всеми культурными народами исчисления времени Совет Народных Комиссаров постановляет ввести, по истечении января месяца сего года, в гражданский обиход новый календарь. В силу этого:\n\n1) Первый день после 31 января сего года считать не 1 февраля, а 14 февраля, второй день - считать 15 и т.д.\n\n2) Сроки всех обязательств, как по договору, так и по закону, которые наступили бы, по до сих пор действовавшему календарю, между 1 и 14 февраля, считать наступившими между 14 и 27 февраля, путем прибавления к каждому соответствующему сроку 13 дней.\n\n[...]\n\n10) До 1 июля с.г. писать, после числа каждого дня по новому календарю, в скобках число по до сих действовавшему календарю.\n\nПредседатель Совета Народных Комиссаров В. Ульянов (Ленин). Помощник народного комиссара по иностранным делам Чичерин. Народные комиссары: А. Шляпников. Г. Петровский. В. Алгасов. В. Оболенский. Секретарь Совета Народных Комиссаров Горбунов.",
+    "translation": "**Decree on the introduction of the West European calendar.** 24 January (6 February) 1918.\n\nWith a view to establishing in Russia a reckoning of time almost the same as that of all civilised peoples, the Council of People's Commissars resolves to introduce into civil use, at the expiry of the month of January of this year, a new calendar. In consequence:\n\n1) The first day after 31 January of this year is to be counted not as 1 February but as 14 February; the second day as the 15th, and so on.\n\n2) The falling due of all obligations, whether by contract or by law, which under the calendar in force until now would have fallen between 1 and 14 February, is to be counted as falling between 14 and 27 February, by the addition of 13 days to each corresponding term.\n\n[Clauses 3 to 9 do the same arithmetic for loan interest, for salaries paid at the end of the month, on the 15th and 30th, and on the 20th, and for pensions.]\n\n10) Until 1 July of this year, after the number of each day by the new calendar, write in brackets the number by the calendar in force until now.\n\nChairman of the Council of People's Commissars, V. Ulyanov (Lenin). Assistant People's Commissar for Foreign Affairs, Chicherin. People's Commissars: A. Shlyapnikov, G. Petrovsky, V. Algasov, V. Obolensky. Secretary of the Council of People's Commissars, Gorbunov.\n\n*Translated for this pack; no scholarly English translation was available from here. Clauses 3-9 are summarised rather than translated and are marked as such - they are eight variations on the same piece of arithmetic.*",
+    "archive": "Декреты Советской власти, том I (Moscow, 1957), pp. 404-405; transcribed by the electronic library of the Faculty of History, Moscow State University. The decree was agreed by the Council on 24 January (6 February) and signed on 26 January (8 February) 1918.",
+    "links": {
+      "events": ["1918-russian-civil-war:event-calendar-abolished"],
+      "people": ["person:lenin-vladimir"]
+    },
+    "sources": [
+      {
+        "source": "source:dekrety-1",
+        "pages": "404-405",
+        "note": "the Russian text, read in full"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:document-brest-litovsk",
+    "title": "The Peace Treaty of Brest-Litovsk, Articles I to V",
+    "date": "1918-03-03",
+    "author": "Germany, Austria-Hungary, Bulgaria and Turkey on the one part, and Russia on the other",
+    "kind": "treaty",
+    "language": "en",
+    "excerpt": "**Article I.** Germany, Austria-Hungary, Bulgaria and Turkey on the one hand and Russia on the other declare that the condition of war between them has ceased.\n\n**Article II.** The contracting parties will refrain from all agitation or propaganda against the governments or all state and military institutions of the other side.\n\n**Article III.** The territories lying to the west of the line determined by the contracting powers and which formerly belonged to Russia will no longer be under her sovereignty.\n\n**Article IV.** Germany is ready, as soon as general peace is established and Russian demobilization will have completely taken place, to vacate the territories lying east of the line mentioned in part 1 of Article 3.\n\n**Article V.** Russia will, without delay, proceed to demobilize her army, including those army units newly formed by her present government.",
+    "archive": "Papers Relating to the Foreign Relations of the United States, 1918, Russia, vol. I, reproduced by the Avalon Project, Yale Law School. **This is the United States State Department's English text, not the German or Russian original**, and its article numbering is the one quoted here. The map that the treaty makes an essential part of itself, and which is what Article III actually means, is not reproduced with it - which is why this pack draws no line for the frontier the treaty created.",
+    "links": {
+      "events": ["1918-russian-civil-war:event-brest-litovsk-signed"],
+      "battles": ["1918-russian-civil-war:brest-litovsk"],
+      "places": ["place:brest-litovsk"]
+    },
+    "sources": [
+      {
+        "source": "source:avalon-brest-litovsk-1918",
+        "note": "read in full; articles quoted verbatim"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:document-red-terror",
+    "title": "Resolution of the Council of People's Commissars on the Red Terror",
+    "date": "1918-09-05",
+    "author": "The Council of People's Commissars",
+    "kind": "order",
+    "language": "en",
+    "excerpt": "The Council of People's Commissars, having heard the report of the Chairman of the All-Russian Extraordinary Commission for Combating Counter-revolution, Speculation and Crime about the activities of this Commission, finds: that in the present situation the safeguarding of the rear by means of terror is necessary; that it is necessary to send a greater number of responsible party comrades to the All-Russian Extraordinary Commission for Combating Counter-revolution, Speculation and Crime in order to strengthen its work and to introduce into it a more systematic character; that it is necessary to safeguard the Soviet Republic from class enemies by isolating them in concentration camps; that all persons associated with White Guard organizations, plots and rebellions are liable to be shot; that it is necessary to publish the names of all those shot and the reasons for shooting them.",
+    "archive": "Sobranie uzakonenii i rasporiazhenii rabochego i krest'ianskogo pravitel'stva, 1918, p. 789. **The English is W. H. Chamberlin's translation**, reproduced in Seventeen Moments in Soviet History, which cites it to Chamberlin's Volume II at pp. 475-476 of the New York edition - pages that do not correspond to the London edition this project read, so no page is carried across here. The signature given is that of the People's Commissar of Justice, Kursky.",
+    "links": {
+      "events": ["1918-russian-civil-war:event-red-terror-decree"],
+      "people": ["person:dzerzhinsky-felix"],
+      "historiography": ["1918-russian-civil-war:historiography-the-terror"]
+    },
+    "sources": [
+      {
+        "source": "source:soviethistory-msu",
+        "note": "the translated text, read in full"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:document-petropavlovsk",
+    "title": "The Petropavlovsk resolution",
+    "date": "1921-02-28",
+    "author": "The general meeting of the crews of the battleships Petropavlovsk and Sevastopol, Kronstadt",
+    "kind": "proclamation",
+    "language": "en",
+    "excerpt": "Having heard the report of the representatives sent by the general meeting of ships' crews to Petrograd to investigate the situation there, we resolve:\n\n1. In view of the fact that the present soviets do not express the will of the workers and peasants, immediately to hold new elections by secret ballot, with freedom to carry on agitation beforehand for all workers and peasants;\n\n2. To give freedom of speech and press to workers and peasants, to anarchist and left socialist parties;\n\n3. To secure freedom of assembly for trade unions and peasant organizations;\n\n4. To call a non-party conference of the workers, Red Army soldiers and sailors of Petrograd, [Kronstadt], and Petrograd province, no later than 10 March 1921;\n\n5. To liberate all political prisoners of socialist parties, as well as all workers, peasants, soldiers, and sailors imprisoned in connection with the labor and peasant movements;\n\n6. To elect a commission to review the cases of those being held in prisons and concentration camps;\n\n7. To abolish all political departments, since no party should be given special privileges in the propagation of its ideas or receive the financial support of the state for such purposes. Instead cultural and educational commissions should be established, locally elected and financed by the state;\n\n8. To remove all road block detachments immediately;\n\n9. To equalize the rations of all working people, with the exception of those employed in trades detrimental to health;\n\n10. To abolish the Communist fighting detachments in all branches of the army, as well as Communist guards kept on duty in factories and mills. Should such guards or detachments be found necessary, they are to be appointed in the army from the ranks and in the factories and mills at the discretion of the workers;\n\n11. To give peasants full freedom of action in regard to the land, and also the right to keep cattle, on condition that the peasants manage with their own means, that is, without employing hired labor;\n\n12. To request all branches of the army, as well as our comrades the military cadets, to endorse our resolution;\n\n13. To demand that the press give all our resolutions wide publicity;\n\n14. To appoint an itinerant bureau of control;\n\n15. To permit free handicrafts production by one's own labor.\n\n*Petrichenko, Chairman of the Squadron Meeting. Perepelkin, Secretary.*",
+    "archive": "First published in Pravda o Kronshtadte (Prague, 1921); English translation from Paul Avrich (ed.), The Anarchists in the Russian Revolution (Cornell University Press, 1973), read in the Marxists Internet Archive's reproduction, which carries no pagination. **One editorial mark:** the transcription reads 'Petrograd, Constant, and Petrograd province' in clause 4; 'Constant' is plainly a corruption of Kronstadt and is corrected here in square brackets. Nothing else is altered.",
+    "links": {
+      "events": ["1918-russian-civil-war:event-kronstadt"],
+      "battles": ["1918-russian-civil-war:kronstadt-1921"],
+      "places": ["place:kronstadt"],
+      "historiography": ["1918-russian-civil-war:historiography-the-terror"]
+    },
+    "sources": [
+      {
+        "source": "source:avrich-1973",
+        "note": "the fifteen demands, read in full in the Marxists Internet Archive reproduction; no pages"
+      }
+    ]
+  }
+]

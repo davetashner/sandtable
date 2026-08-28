@@ -1755,5 +1755,705 @@
     "country": "Pahang, British Malaya",
     "notes": "A port halfway down the east coast of Malaya. Force Z went north to look for a reported landing here on 10 December 1941 and was found by land-based aircraft on the way back; the sinking was some way out to sea, and this pack places the event at the town rather than write a position it could not source.",
     "sources": [{ "source": "source:openstreetmap", "note": "coordinates" }]
+  },
+  {
+    "id": "place:brest-litovsk",
+    "name": "Brest-Litovsk",
+    "kind": "fortress",
+    "lngLat": [23.734, 52.098],
+    "country": "Russian Empire (German-occupied from August 1915)",
+    "notes": "The fortress town on the Bug where the German high command in the east had its headquarters and where the peace of 3 March 1918 was negotiated and signed. The Red Army took it on 1 August 1920 on the way to Warsaw and lost it again on 21 August.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ],
+    "names": [
+      {
+        "name": "Brest",
+        "kind": "modern"
+      },
+      {
+        "name": "Brzesc nad Bugiem",
+        "language": "pl",
+        "period": "1919-1939"
+      }
+    ]
+  },
+  {
+    "id": "place:omsk",
+    "name": "Omsk",
+    "kind": "city",
+    "lngLat": [73.368, 54.99],
+    "country": "Russian Empire / Siberia",
+    "notes": "The Trans-Siberian junction that was Kolchak's capital from November 1918 until the Red Army took it on 14 November 1919. Chamberlin calls it the largest town in Western Siberia; the Czechoslovaks occupied it on 7 June 1918.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:irkutsk",
+    "name": "Irkutsk",
+    "kind": "city",
+    "lngLat": [104.281, 52.287],
+    "country": "Russian Empire / Siberia",
+    "notes": "Where the retreat down the Trans-Siberian ended for Kolchak: handed over by the Czechoslovak Legion on 15 January 1920, shot on 7 February by order of the local revolutionary committee, and put through a hole in the ice of the Angara.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:vladivostok",
+    "name": "Vladivostok",
+    "kind": "city",
+    "lngLat": [131.885, 43.115],
+    "country": "Russian Empire / Far East",
+    "notes": "The Pacific terminus of the Trans-Siberian, nine thousand kilometres from Petrograd, where the largest single group of the Czechoslovak Legion sat in May 1918 and where the Japanese, British, American and French landings of 1918 were made. The Japanese did not leave until 1922.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:chelyabinsk",
+    "name": "Chelyabinsk",
+    "kind": "town",
+    "lngLat": [61.403, 55.16],
+    "country": "Russian Empire / Urals",
+    "notes": "The Ural railway junction where a brawl between Czech soldiers and Hungarian prisoners of war on 14 May 1918 turned into a civil war along five thousand miles of railway.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ],
+    "names": [
+      {
+        "name": "Cheliabinsk",
+        "kind": "transliteration",
+        "period": "1918"
+      }
+    ]
+  },
+  {
+    "id": "place:kazan",
+    "name": "Kazan",
+    "kind": "city",
+    "lngLat": [49.107, 55.796],
+    "country": "Russian Empire",
+    "notes": "Taken by the Czechoslovaks and the Volga anti-Bolsheviks on 6 August 1918 - with the Imperial gold reserve in it - and retaken by the Red Army on 10 September. Chamberlin calls the fight for it one of the most decisive of the war, and possibly the most decisive.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:sviyazhsk",
+    "name": "Sviyazhsk",
+    "kind": "town",
+    "lngLat": [48.653, 55.77],
+    "country": "Russian Empire",
+    "notes": "A small town on an island at the confluence of the Volga and the Sviyaga, twenty-five kilometres from Kazan, where the beaten Red forces fell back in August 1918 and where Trotsky's train stood for a month. Chamberlin calls it the Valmy of the Russian Revolution.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:samara",
+    "name": "Samara",
+    "kind": "city",
+    "lngLat": [50.101, 53.195],
+    "country": "Russian Empire",
+    "notes": "Occupied by the Czechoslovaks on 8 June 1918, which made possible the Komuch - the government of members of the dissolved Constituent Assembly, and the high point of the democratic counter-revolution.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:ufa",
+    "name": "Ufa",
+    "kind": "city",
+    "lngLat": [55.968, 54.735],
+    "country": "Russian Empire",
+    "notes": "Where the anti-Bolshevik governments of Siberia and the eastern Volga met in September 1918 and agreed on the Directory that Kolchak's coup would displace two months later. Taken by Kolchak on 13 March 1919, retaken by the Reds on 9 June.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:perm",
+    "name": "Perm",
+    "kind": "city",
+    "lngLat": [56.23, 58.01],
+    "country": "Russian Empire",
+    "notes": "The northern shoulder of Kolchak's front, taken by his army at the end of December 1918 and retaken by the Red Army on 1 July 1919.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:arkhangelsk",
+    "name": "Archangel",
+    "kind": "city",
+    "lngLat": [40.517, 64.539],
+    "country": "Russian Empire",
+    "notes": "The White Sea port occupied by Allied forces on 2 August 1918, around which a North Russian government was organised. The Allies left in the autumn of 1919 and the government fell on 19 February 1920.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ],
+    "names": [
+      {
+        "name": "Arkhangelsk",
+        "kind": "modern"
+      }
+    ]
+  },
+  {
+    "id": "place:murmansk",
+    "name": "Murmansk",
+    "kind": "city",
+    "lngLat": [33.075, 68.97],
+    "country": "Russian Empire",
+    "notes": "The ice-free Arctic port where the first Allied landing of all was made in March 1918 - with the acquiescence of the local Soviet, which is the fact that makes the word intervention harder to use than it looks.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:baku",
+    "name": "Baku",
+    "kind": "city",
+    "lngLat": [49.867, 40.409],
+    "country": "Russian Empire / Azerbaijan",
+    "notes": "The oil city on the Caspian: a Bolshevik commune until July 1918, a small British force under Dunsterville from 14 August, Ottoman troops and a massacre of Armenians from 14 September, and the place where twenty-six commissars left from to be shot in the desert. The Red Army took it on 27 April 1920.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:tsaritsyn",
+    "name": "Tsaritsyn",
+    "kind": "city",
+    "lngLat": [44.513, 48.708],
+    "country": "Russian Empire",
+    "notes": "The Volga city that Stalin was sent to in 1918 to move grain and stayed to command, and that changed hands three times. Renamed Stalingrad in 1925 for what happened there in the civil war, and known now for what happened there in the next one.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ],
+    "names": [
+      {
+        "name": "Stalingrad",
+        "kind": "period",
+        "period": "1925-1961"
+      },
+      {
+        "name": "Volgograd",
+        "kind": "modern"
+      }
+    ]
+  },
+  {
+    "id": "place:rostov-on-don",
+    "name": "Rostov-on-Don",
+    "kind": "city",
+    "lngLat": [39.72, 47.222],
+    "country": "Russian Empire",
+    "notes": "The seat of Denikin's government and the gateway between the Don country and the Caucasus, taken by the Red Army on 8 January 1920.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:novorossiysk",
+    "name": "Novorossiysk",
+    "kind": "city",
+    "lngLat": [37.768, 44.723],
+    "country": "Russian Empire",
+    "notes": "The Black Sea port where Denikin's army came apart in March 1920: what could be lifted went to the Crimea, and what could not was left on the quays.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:ekaterinodar",
+    "name": "Ekaterinodar",
+    "kind": "city",
+    "lngLat": [38.976, 45.035],
+    "country": "Russian Empire",
+    "notes": "The Kuban Cossack capital, where Kornilov was killed by a shell on 13 April 1918 during the Volunteer Army's first attempt on it, and which Denikin took on 15 August 1918.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ],
+    "names": [
+      {
+        "name": "Krasnodar",
+        "kind": "modern"
+      }
+    ]
+  },
+  {
+    "id": "place:kharkov",
+    "name": "Kharkov",
+    "kind": "city",
+    "lngLat": [36.232, 49.988],
+    "country": "Russian Empire / Ukraine",
+    "notes": "The largest city of eastern Ukraine and one of the most fought-over places in the war: Red in January 1919, White on 25 June, Red again on 12 December.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ],
+    "names": [
+      {
+        "name": "Kharkiv",
+        "kind": "modern"
+      }
+    ]
+  },
+  {
+    "id": "place:kiev",
+    "name": "Kiev",
+    "kind": "city",
+    "lngLat": [30.524, 50.45],
+    "country": "Russian Empire / Ukraine",
+    "notes": "The city that changed hands more often than any other in Europe in these years - the Rada, the Germans, the Hetman, Petliura, the Bolsheviks, Denikin, the Poles, the Bolsheviks again.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ],
+    "names": [
+      {
+        "name": "Kyiv",
+        "kind": "modern"
+      }
+    ]
+  },
+  {
+    "id": "place:orel",
+    "name": "Orel",
+    "kind": "town",
+    "lngLat": [36.062, 52.97],
+    "country": "Russian Empire",
+    "notes": "The high-water mark of the White movement. Denikin's Volunteer Army took it on 13 October 1919, two hundred and fifty miles from Moscow, and lost it on 20 October.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:tula",
+    "name": "Tula",
+    "kind": "city",
+    "lngLat": [37.618, 54.193],
+    "country": "Russian Empire",
+    "notes": "The arsenal town between Orel and Moscow - the last large place on the road, and the one that made the rifles.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:voronezh",
+    "name": "Voronezh",
+    "kind": "city",
+    "lngLat": [39.21, 51.672],
+    "country": "Russian Empire",
+    "notes": "Fought over repeatedly in 1919: Mamontov's raiders battled its garrison in September, the Whites took it on 6 October, and Budyonny's cavalry took it back a fortnight later.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:tambov",
+    "name": "Tambov",
+    "kind": "city",
+    "lngLat": [41.452, 52.721],
+    "country": "Russian Empire",
+    "notes": "The provincial capital that Mamontov's cavalry held for three days in August 1919, and the centre of the province that rose against grain requisitioning in August 1920 - the largest peasant insurrection against Soviet power.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:kozlov",
+    "name": "Kozlov",
+    "kind": "town",
+    "lngLat": [40.483, 52.883],
+    "country": "Russian Empire",
+    "notes": "A railway town in Tambov province taken by Mamontov's raiders in August 1919; the headquarters of the Red Southern Front was there.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ],
+    "names": [
+      {
+        "name": "Michurinsk",
+        "kind": "modern",
+        "period": "from 1932"
+      }
+    ]
+  },
+  {
+    "id": "place:yelets",
+    "name": "Yelets",
+    "kind": "town",
+    "lngLat": [38.501, 52.623],
+    "country": "Russian Empire",
+    "notes": "The western limit of Mamontov's raid, some two hundred kilometres behind the Red front line.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:novokhopersk",
+    "name": "Novokhopersk",
+    "kind": "town",
+    "lngLat": [41.617, 51.1],
+    "country": "Russian Empire",
+    "notes": "Where Mamontov's cavalry corps went through the Red Southern Front on 10 August 1919 - a front that, in Chamberlin's phrase, was rather easy to break through.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:gulyai-polye",
+    "name": "Gulyai-Polye",
+    "kind": "town",
+    "lngLat": [36.266, 47.663],
+    "country": "Russian Empire / Ukraine",
+    "notes": "Makhno's home village and the capital of the territory his insurgent army held in eastern Ukraine, where the peasant congresses met.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ],
+    "names": [
+      {
+        "name": "Huliaipole",
+        "kind": "modern"
+      }
+    ]
+  },
+  {
+    "id": "place:ekaterinoslav",
+    "name": "Ekaterinoslav",
+    "kind": "city",
+    "lngLat": [35.046, 48.465],
+    "country": "Russian Empire / Ukraine",
+    "notes": "The Dnieper industrial city that Makhno took from Denikin's rear on 9 November 1919, at the moment the White front was at Orel.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ],
+    "names": [
+      {
+        "name": "Dnipro",
+        "kind": "modern"
+      }
+    ]
+  },
+  {
+    "id": "place:perekop",
+    "name": "Perekop",
+    "kind": "fortress",
+    "lngLat": [33.693, 46.162],
+    "country": "Russian Empire",
+    "notes": "The seven-kilometre isthmus that is the only land approach to the Crimea, stormed by the Red Army on 11 November 1920.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:sevastopol",
+    "name": "Sevastopol",
+    "kind": "city",
+    "lngLat": [33.52, 44.617],
+    "country": "Russian Empire",
+    "notes": "The Black Sea naval base from which Wrangel's fleet took the last White army out of Russia on 14 November 1920.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:narva",
+    "name": "Narva",
+    "kind": "town",
+    "lngLat": [28.19, 59.377],
+    "country": "Estonia",
+    "notes": "The Estonian border town Yudenich's North-Western Army came out of in October 1919 and was driven back behind in November, to be disarmed and interned by the state that had sheltered it.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:pulkovo",
+    "name": "The Pulkovo Heights",
+    "kind": "other",
+    "lngLat": [30.326, 59.771],
+    "country": "Russian Empire",
+    "notes": "The low ridge with the observatory on it, sixteen kilometres from the centre of Petrograd, where Yudenich's advance stopped on 21 October 1919.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:warsaw",
+    "name": "Warsaw",
+    "kind": "city",
+    "lngLat": [21.012, 52.23],
+    "country": "Poland",
+    "notes": "The Red Army's Western Front reached its outskirts in the middle of August 1920; the counter-stroke launched on 16 August from the Wieprz, south-east of the city, broke it.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ],
+    "names": [
+      {
+        "name": "Warszawa",
+        "language": "pl"
+      }
+    ]
+  },
+  {
+    "id": "place:minsk",
+    "name": "Minsk",
+    "kind": "city",
+    "lngLat": [27.567, 53.9],
+    "country": "Russian Empire / Belarus",
+    "notes": "Taken by the Red Army in December 1918, by the Poles in 1919, retaken on 11 July 1920 as the offensive towards Warsaw opened.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:vilna",
+    "name": "Vilna",
+    "kind": "city",
+    "lngLat": [25.28, 54.687],
+    "country": "Russian Empire / Lithuania / Poland",
+    "notes": "Occupied by Soviet troops on 14 July 1920 and handed to Lithuania, then seized by a Polish force in October - one of several places where the Polish-Soviet war and the making of the new states were the same event.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ],
+    "names": [
+      {
+        "name": "Vilnius",
+        "kind": "modern"
+      },
+      {
+        "name": "Wilno",
+        "language": "pl"
+      }
+    ]
+  },
+  {
+    "id": "place:riga",
+    "name": "Riga",
+    "kind": "city",
+    "lngLat": [24.105, 56.949],
+    "country": "Russian Empire / Latvia",
+    "notes": "Taken by the Red Army on 3 January 1919 and lost again that spring; the place where the Soviet-Polish peace was negotiated from September 1920 and signed on 18 March 1921.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:novonikolaevsk",
+    "name": "Novo-Nikolaevsk",
+    "kind": "city",
+    "lngLat": [82.921, 55.03],
+    "country": "Russian Empire / Siberia",
+    "notes": "A Trans-Siberian town in central Siberia, one of the first the Czechoslovak Legion took on 26 May 1918.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ],
+    "names": [
+      {
+        "name": "Novosibirsk",
+        "kind": "modern"
+      }
+    ]
+  },
+  {
+    "id": "place:penza",
+    "name": "Penza",
+    "kind": "city",
+    "lngLat": [45.0, 53.195],
+    "country": "Russian Empire",
+    "notes": "The westernmost of the six groups the Czechoslovak Legion was strung out in when the fighting began - five thousand miles from the easternmost.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:krasnovodsk",
+    "name": "Krasnovodsk",
+    "kind": "town",
+    "lngLat": [52.958, 40.021],
+    "country": "Russian Empire / Transcaspia",
+    "notes": "The Caspian port the twenty-six Baku commissars were taken to in September 1918, and from which they were carried into the desert and shot.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ],
+    "names": [
+      {
+        "name": "Turkmenbashi",
+        "kind": "modern"
+      }
+    ]
+  },
+  {
+    "id": "place:smolensk",
+    "name": "Smolensk",
+    "kind": "city",
+    "lngLat": [32.045, 54.782],
+    "country": "Russian Empire",
+    "notes": "The headquarters of the Red Western Front, from which Tukhachevsky's offensive of July 1920 was launched.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ]
+  },
+  {
+    "id": "place:yekaterinburg",
+    "name": "Ekaterinburg",
+    "kind": "city",
+    "lngLat": [60.612, 56.838],
+    "country": "Russian Empire / Urals",
+    "notes": "Where the imperial family were shot in the cellar of the Ipatiev house on the night of 16-17 July 1918, eight days before the town fell to the Czechoslovaks and the Whites.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ],
+    "names": [
+      {
+        "name": "Yekaterinburg",
+        "kind": "modern"
+      }
+    ]
+  },
+  {
+    "id": "place:constantinople",
+    "name": "Constantinople",
+    "kind": "city",
+    "lngLat": [28.979, 41.008],
+    "country": "Ottoman Empire (under Allied occupation)",
+    "notes": "Where the hundred and forty-odd thousand people taken off the Crimea in November 1920 were landed, and where the White emigration began.",
+    "sources": [
+      {
+        "source": "source:wikipedia-en",
+        "note": "coordinates"
+      }
+    ],
+    "names": [
+      {
+        "name": "Istanbul",
+        "kind": "modern"
+      }
+    ]
   }
 ]

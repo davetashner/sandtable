@@ -1,0 +1,218 @@
+[
+  {
+    "id": "1918-russian-civil-war:brest-litovsk",
+    "title": "Brest-Litovsk: the peace that made the war",
+    "timeRange": {
+      "start": "1918-01-01T00:00:00Z",
+      "end": "1918-03-16T12:00:00Z"
+    },
+    "region": [21.5, 50.8, 26.0, 53.4],
+    "camera": {
+      "center": [23.734, 52.098],
+      "zoom": 8.0
+    },
+    "place": "place:brest-litovsk",
+    "summary": "A chapter, not a zoom-in, and deliberately: **there are no routes here because nothing manoeuvred.** Two delegations sat in a fortress on the Bug from December 1917, one of them stalling for a European revolution that did not come and the other running out of patience. When Trotsky tried the formula of neither war nor peace and walked out on 10 February, the German army simply started walking east again on the 18th - against no opposition at all, which is what finally settled the argument inside the Bolshevik party.\n\nThe terms were signed on 3 March and ratified on the 15th. Russia gave up Poland, Lithuania, Courland, Estonia, Livonia, Finland and Ukraine: about a third of the population of European Russia, most of its coal and iron, and a great deal of its best grain land. Lenin had to threaten to resign to carry it, the Left Socialist Revolutionaries left the government over it, and everything else in this pack follows from the decision to trade space for survival.\n\nThe frontier the treaty created is not drawn on this map. Article III defines it by reference to a line traced on a map 'submitted as an essential part of this treaty of peace', and that map is not reproduced with the text this project read - so the pack shows the place where the line was agreed and not the line.",
+    "outcome": "Russia is out of the World War, has lost a third of European Russia, and has bought eight months. The treaty is annulled on 13 November 1918, four days after the revolution in Germany - by which time the territory it gave away is a war of its own.",
+    "links": {
+      "documents": ["1918-russian-civil-war:document-brest-litovsk"],
+      "events": [
+        "1918-russian-civil-war:event-brest-litovsk-signed",
+        "1918-russian-civil-war:event-calendar-abolished",
+        "1918-russian-civil-war:event-government-moves-to-moscow"
+      ],
+      "people": ["person:lenin-vladimir", "person:trotsky-leon"]
+    },
+    "sources": [
+      {
+        "source": "source:avalon-brest-litovsk-1918",
+        "note": "the treaty text"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table of events"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "528-529",
+        "note": "the chronology of the negotiations, the German advance and the ratification"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:warsaw-1920",
+    "title": "The Vistula, August 1920",
+    "timeRange": {
+      "start": "1920-08-01T00:00:00Z",
+      "end": "1920-08-25T12:00:00Z"
+    },
+    "region": [20.0, 51.0, 24.5, 53.2],
+    "camera": {
+      "center": [21.5, 52.1],
+      "zoom": 7.6
+    },
+    "place": "place:warsaw",
+    "summary": "The one moment in the pack where two armies were close enough together for the word 'battle' to mean what it means on a Western Front map - and it still has **no routes at this level**, because the pack could not reach a source that puts formations on the ground at the resolution a zoom-in would need. What it has instead is the shape: a Red army group that had come seven hundred kilometres in six weeks, arriving at a great river with its supply, its cavalry and its right-hand neighbour a long way behind it, and a Polish strike group assembling south-east of the city on the Wieprz to hit its flank.\n\nThe counter-stroke went in on 15 or 16 August - the source read here says the 15th, most later accounts say the 16th, and the pack stores what it read. Brest-Litovsk was back in Polish hands on the 21st and the Red Army was in general retreat from the Vistula.\n\nWhat was at stake was not Poland. A Polish Revolutionary Committee of Polish Communists had been installed at Bialystok on 31 July to be the government of a Soviet Poland, and behind Poland was Germany. This is the week in which the Russian revolution stopped being a European project.",
+    "outcome": "The Soviet offensive collapses. Peace talks open at Riga on 21 September, a preliminary treaty follows on 12 October and the final treaty on 18 March 1921, fixing a frontier a long way east of the ethnographic line and leaving Poland's Ukrainian allies on the wrong side of it. It lasts until September 1939.",
+    "links": {
+      "events": [
+        "1918-russian-civil-war:event-red-army-to-the-vistula",
+        "1918-russian-civil-war:event-miracle-of-the-vistula",
+        "1918-russian-civil-war:event-riga-treaty"
+      ],
+      "people": ["person:pilsudski-jozef", "person:tukhachevsky-mikhail", "person:budyonny-semyon"],
+      "formations": [
+        "1918-russian-civil-war:formation-red-western-front",
+        "1918-russian-civil-war:formation-polish-army"
+      ]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table of events"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "291-317",
+        "note": "the chapter on mass labour conscription and the war with Poland"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:kronstadt-1921",
+    "title": "Kronstadt: the third revolution",
+    "timeRange": {
+      "start": "1921-02-24T00:00:00Z",
+      "end": "1921-03-18T12:00:00Z"
+    },
+    "region": [29.4, 59.75, 30.7, 60.15],
+    "camera": {
+      "center": [29.9, 59.95],
+      "zoom": 10.2
+    },
+    "place": "place:kronstadt",
+    "summary": "A chapter about ten square kilometres of ice. **No routes**: the fighting was two frontal assaults across the frozen Gulf of Finland against a fortress, and drawing arrows for it would add nothing the text does not say better.\n\nThe garrison that had been the hardest core of the October revolution turned on the government it had made, and its resolution of 28 February is the clearest statement in the whole war of what the other side of War Communism looked like from below: new soviet elections by secret ballot, freedom of the press for workers and peasants and for anarchist and left socialist parties, release of socialist political prisoners, the abolition of the detachments that searched passengers on trains for food, equal rations, and the peasant's right to his own land and his own cattle so long as he hired no labour.\n\nThe first assault on 8 March failed; so did those of the 10th and 12th. On the night of the 16th the attackers went over the ice in white robes and were almost at the outer defences before they were seen. The fighting lasted through the 17th; by the morning of the 18th it was over. Three hundred delegates had been sent from the Tenth Party Congress, which was sitting in Moscow - and at which, on 8 March, Lenin announced the New Economic Policy that conceded the sailors' central demand while the guns were firing on them.",
+    "outcome": "The fortress is taken and the leaders who could get away go over the ice to Finland. The Cheka, in Chamberlin's phrase, 'did not emulate the humanity of the Kronstadt insurgents, who spared all their Communist prisoners'. Requisitioning is abolished eight days later.",
+    "links": {
+      "documents": ["1918-russian-civil-war:document-petropavlovsk"],
+      "events": ["1918-russian-civil-war:event-kronstadt", "1918-russian-civil-war:event-nep"],
+      "historiography": ["1918-russian-civil-war:historiography-the-terror"],
+      "people": ["person:tukhachevsky-mikhail", "person:trotsky-leon"]
+    },
+    "sources": [
+      {
+        "source": "source:avrich-1973",
+        "note": "the Petropavlovsk resolution"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "439-445",
+        "note": "the strikes, the meeting on Anchor Square, the assaults and the storm over the ice"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:epilogue-what-the-war-made",
+    "title": "Epilogue: what the war made",
+    "timeRange": {
+      "start": "1929-01-01T00:00:00Z",
+      "end": "1941-12-31T12:00:00Z"
+    },
+    "window": "outside",
+    "region": [20.0, 43.0, 65.0, 63.0],
+    "camera": {
+      "center": [40.0, 54.0],
+      "zoom": 3.4
+    },
+    "place": "place:moscow",
+    "summary": "An epilogue chapter with its own clock, running from 1929 to 1941 - outside the campaign, which is what `window: \"outside\"` means. It exists so that the pack's forward causal links have somewhere real to point.\n\nThe argument it carries is Holquist's: what distinguished the Bolshevik regime 'was less remarkable for the measures it took during the extended period of war, revolution, and civil wars, than for the fact that it continued these measures after that period had wound to an end'. Grain taken from villages by armed detachments; a countryside treated as a hostile rear; hostages, deportations and camps as instruments of administration; a party that had learned to govern by commissar and tribunal; and a permanent suspicion of the officers it had had to borrow. All four of those were improvisations of 1918-1921, and all four came back.",
+    "events": [
+      {
+        "id": "1918-russian-civil-war:epilogue-event-collectivisation",
+        "title": "Collectivisation",
+        "timeRange": {
+          "start": "1929-11-01T12:00:00Z",
+          "end": "1933-12-31T12:00:00Z"
+        },
+        "kind": "political",
+        "significance": "major",
+        "place": "place:moscow",
+        "summary": "The state goes back into the villages for the grain, this time to stay. Chamberlin, writing in 1935 and looking back at 1921 from inside it, makes the connection explicit: with a ruined industry and an exhausted country, 'the Soviet leaders could not in 1921 inaugurate the policy which they launched in 1929: forcible collectivization of the peasant households on a basis of tractors and other large farm machines. There was nothing to do but to retreat before the small peasant proprietor.'[^chamberlin-1935-2]\n\nRead the sentence twice. The New Economic Policy is described there not as a change of mind but as a postponement.",
+        "sources": [
+          {
+            "source": "source:chamberlin-1935-2",
+            "pages": "115",
+            "note": "'the policy which they launched in 1929'"
+          }
+        ]
+      },
+      {
+        "id": "1918-russian-civil-war:epilogue-event-military-purge",
+        "title": "The purge of the Red Army officer corps",
+        "timeRange": {
+          "start": "1937-06-11T12:00:00Z",
+          "end": "1938-12-31T12:00:00Z"
+        },
+        "kind": "political",
+        "significance": "major",
+        "place": "place:moscow",
+        "summary": "Tukhachevsky - the man who commanded the Western Front at twenty-seven, took Kronstadt and broke Tambov - is tried and shot in June 1937, the first and most senior of an officer corps that is then taken apart.\n\nWhitewood's abstract states his case: 'a long history of the Red Army being perceived as vulnerable to subversion is central to understanding this military purge. When faced with perceived plots in the military Stalin tended to lean towards restraint, but by 1937 he felt he could no longer hesitate, and finally cracked down on what he saw as a compromised army.'[^whitewood-2015]\n\nThat long history starts in this pack. The Red Army was built in 1918 on tens of thousands of former imperial officers, employed under political commissars precisely because nobody trusted them, and the argument about them was between Trotsky, who insisted on them, and the party men at Tsaritsyn who did not - one of whom was Stalin.[^chamberlin-1935-2]",
+        "links": {
+          "people": ["person:tukhachevsky-mikhail", "person:stalin-joseph"]
+        },
+        "sources": [
+          {
+            "source": "source:whitewood-2015",
+            "note": "quoted from the author's own abstract; the article itself could not be read from here"
+          },
+          {
+            "source": "source:chamberlin-1935-2",
+            "pages": "25-41",
+            "note": "the chapter 'The Revolution Arms Itself' on the employment of military specialists and the resistance to it"
+          }
+        ]
+      },
+      {
+        "id": "1918-russian-civil-war:epilogue-event-barbarossa",
+        "title": "22 June 1941",
+        "at": "1941-06-22T03:15:00Z",
+        "kind": "battle",
+        "significance": "major",
+        "lngLat": [24.0, 53.0],
+        "summary": "'Suddenly and without warning, early on the morning of 22 June 1941, over three million Axis forces lunged across the Soviet state border and commenced Hitler's infamous Operation Barbarossa.'[^glantz-2001]\n\nThe border they crossed was the one the peace of Riga had drawn in 1921 and the Molotov-Ribbentrop pact had moved west in 1939. The army that met them was commanded, in its upper ranks, by men promoted in the previous four years to fill the places of the men shot in them. This pack does not assert how much of what happened in the summer of 1941 is owed to that; it records that the chain runs from Sviyazhsk to here without a break.",
+        "sources": [
+          {
+            "source": "source:glantz-2001",
+            "pages": "1",
+            "note": "the opening of the essay; the time of day is the conventional one and is not from this source"
+          }
+        ]
+      }
+    ],
+    "links": {
+      "people": ["person:stalin-joseph", "person:tukhachevsky-mikhail"],
+      "historiography": ["1918-russian-civil-war:historiography-the-terror"]
+    },
+    "sources": [
+      {
+        "source": "source:holquist-2003",
+        "pages": "651-652",
+        "note": "the continuation of wartime measures after the war"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "115"
+      },
+      {
+        "source": "source:whitewood-2015",
+        "note": "the abstract only"
+      },
+      {
+        "source": "source:glantz-2001",
+        "pages": "1"
+      }
+    ]
+  }
+]

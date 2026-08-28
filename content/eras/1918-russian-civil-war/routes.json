@@ -1,0 +1,226 @@
+[
+  {
+    "id": "1918-russian-civil-war:route-kolchak-army",
+    "formation": "1918-russian-civil-war:formation-kolchak-army",
+    "waypoints": [
+      [73.368, 54.99, "1918-11-18T12:00:00Z"],
+      [55.968, 54.735, "1919-03-13T12:00:00Z"],
+      [52.43, 53.65, "1919-04-26T12:00:00Z"],
+      [55.968, 54.735, "1919-06-09T12:00:00Z"],
+      [61.403, 55.16, "1919-07-25T12:00:00Z"],
+      [73.368, 54.99, "1919-11-14T12:00:00Z"],
+      [82.921, 55.03, "1919-12-14T12:00:00Z", "contested"],
+      [104.281, 52.287, "1920-02-07T06:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Omsk at the coup, Ufa at its capture, the Buzuluk-Buguruslan area where the offensive was stopped, and then the stations on the Trans-Siberian at the dates the chronological table gives for their fall. Every route in this pack is an axis, not a position. The waypoints are the towns a source names and the dates it gives them; the straight line between two of them is not a claim that anything was ever at any point on it. This one is 1,500 miles long and covers fifteen months; what it draws is the shape of a campaign, at the resolution of a chronology.",
+    "notes": "The 1919-12-14 waypoint is marked contested: the retreat past Novo-Nikolaevsk is in every account, the date is this pack's interpolation between Omsk on 14 November and Irkutsk in January, and no source read here dates it. It is on the path so that the line bends where the railway bends.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table of events, which is where the dates on this path come from"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "173-205"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:route-afsr",
+    "formation": "1918-russian-civil-war:formation-afsr",
+    "waypoints": [
+      [38.976, 45.035, "1918-08-15T12:00:00Z"],
+      [36.232, 49.988, "1919-06-25T12:00:00Z"],
+      [36.062, 52.97, "1919-10-13T12:00:00Z"],
+      [36.232, 49.988, "1919-12-12T12:00:00Z"],
+      [39.72, 47.222, "1920-01-08T12:00:00Z"],
+      [37.768, 44.723, "1920-03-27T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Ekaterinodar, Kharkov, Orel, Kharkov again, Rostov and Novorossiysk, at the dates those towns changed hands. Every route in this pack is an axis, not a position. The waypoints are the towns a source names and the dates it gives them; the straight line between two of them is not a claim that anything was ever at any point on it.",
+    "notes": "The Armed Forces of South Russia were never at any of these points as a body: at the moment the line touches Orel the same army was also at Kiev, at Tsaritsyn and in the Caucasus. Read the northward reach, not the position.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table of events, which is where the dates on this path come from"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "242-266"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:route-mamontov-raid",
+    "formation": "1918-russian-civil-war:formation-mamontov-corps",
+    "waypoints": [
+      [41.617, 51.1, "1919-08-10T12:00:00Z"],
+      [41.452, 52.721, "1919-08-18T12:00:00Z"],
+      [40.483, 52.883, "1919-08-23T12:00:00Z", "contested"],
+      [38.501, 52.623, "1919-08-31T12:00:00Z", "contested"],
+      [39.21, 51.672, "1919-09-11T12:00:00Z", "contested"],
+      [39.5, 50.5, "1919-09-19T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "The break-in at Novokhopersk on 10 August and the junction with Shkuro's Kuban cavalry on 19 September are dated; Tambov is dated to the three days he held it. Kozlov, Yelets and Voronezh are named in order but not dated by the source read here, and their waypoints are marked contested for that reason. Every route in this pack is an axis, not a position. The waypoints are the towns a source names and the dates it gives them; the straight line between two of them is not a claim that anything was ever at any point on it.",
+    "notes": "This is the one route in the pack where the straight line is closest to being a lie, and the arithmetic says why it does not matter: Chamberlin gives about five hundred miles covered in forty days, and this path is barely four hundred. The difference is the riding that has no record.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "246-248",
+        "note": "the raid: the break-in, Tambov, the towns in order, and the junction with Shkuro"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:route-yudenich",
+    "formation": "1918-russian-civil-war:formation-yudenich-army",
+    "waypoints": [
+      [28.19, 59.377, "1919-10-11T12:00:00Z"],
+      [30.128, 59.565, "1919-10-16T12:00:00Z", "contested"],
+      [30.326, 59.771, "1919-10-21T12:00:00Z"],
+      [28.19, 59.377, "1919-11-14T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Out of Narva on 11 October, back from the suburbs on 22 October, over the Estonian frontier in November. The intermediate waypoint at Gatchina is undated in the source read here and is marked contested. Every route in this pack is an axis, not a position. The waypoints are the towns a source names and the dates it gives them; the straight line between two of them is not a claim that anything was ever at any point on it.",
+    "notes": "The shortest route in the pack and the only one at anything like a campaign scale: a hundred and twenty kilometres out and a hundred and twenty back, in five weeks.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table of events, which is where the dates on this path come from"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:route-wrangel-evacuation",
+    "formation": "1918-russian-civil-war:formation-wrangel-army",
+    "mode": "sea",
+    "waypoints": [
+      [33.52, 44.617, "1920-11-14T12:00:00Z"],
+      [28.979, 41.008, "1920-11-17T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Sevastopol to Constantinople, at the dates of the evacuation and the arrival. The crossing is about 550 km in three days, or under 8 km/h, which is a convoy of everything that would float moving at the speed of its slowest ship.",
+    "notes": "Drawn as one line from one port, and there were four ports. It is the end of the White movement rather than a naval movement, and it is here because the pack should show it leaving.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table of events, which is where the dates on this path come from"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:route-red-eastern-front",
+    "formation": "1918-russian-civil-war:formation-red-eastern-front",
+    "mode": "rail",
+    "waypoints": [
+      [48.653, 55.77, "1918-08-10T12:00:00Z"],
+      [49.107, 55.796, "1918-09-10T12:00:00Z"],
+      [55.968, 54.735, "1919-06-09T12:00:00Z"],
+      [61.403, 55.16, "1919-07-25T12:00:00Z"],
+      [73.368, 54.99, "1919-11-14T12:00:00Z"],
+      [104.281, 52.287, "1920-01-18T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Sviyazhsk, Kazan, Ufa, Chelyabinsk, Omsk and Irkutsk at the dates the chronological table gives. Marked rail because the pursuit across Siberia was a pursuit along one railway - which is also why it was possible at all. Every route in this pack is an axis, not a position. The waypoints are the towns a source names and the dates it gives them; the straight line between two of them is not a claim that anything was ever at any point on it.",
+    "notes": "Five thousand kilometres in seventeen months. On any 1914 map this would be an absurdity; here it is the ordinary scale of the war.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table of events, which is where the dates on this path come from"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:route-red-southern-front",
+    "formation": "1918-russian-civil-war:formation-red-southern-front",
+    "waypoints": [
+      [36.062, 52.97, "1919-10-20T12:00:00Z"],
+      [36.232, 49.988, "1919-12-12T12:00:00Z"],
+      [39.72, 47.222, "1920-01-08T12:00:00Z"],
+      [37.768, 44.723, "1920-03-27T12:00:00Z"]
+    ],
+    "confidence": "low",
+    "derivation": "Orel retaken on 20 October, and then the towns of the pursuit at the dates they fell. Every route in this pack is an axis, not a position. The waypoints are the towns a source names and the dates it gives them; the straight line between two of them is not a claim that anything was ever at any point on it.",
+    "notes": "The mirror of the Armed Forces of South Russia's route, five months later and going the other way. The two paths lying on top of each other is the most useful thing this pack's map does with routes.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table of events, which is where the dates on this path come from"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:route-red-cavalry-army",
+    "formation": "1918-russian-civil-war:formation-red-cavalry-army",
+    "waypoints": [
+      [39.21, 51.672, "1919-11-01T12:00:00Z", "contested"],
+      [39.72, 47.222, "1920-01-08T12:00:00Z"],
+      [30.2, 48.75, "1920-05-25T12:00:00Z", "contested"],
+      [28.66, 50.25, "1920-06-08T12:00:00Z"],
+      [24.5, 49.9, "1920-08-15T12:00:00Z", "contested"],
+      [27.5, 52.0, "1920-10-12T12:00:00Z", "contested"]
+    ],
+    "confidence": "low",
+    "derivation": "Two dated points - Rostov on 8 January 1920 and Zhitomir on 8 June - with the Voronezh sector, the ride west across Ukraine, the approaches to Lvov in August and the position at the armistice interpolated between them and marked contested. Every route in this pack is an axis, not a position. The waypoints are the towns a source names and the dates it gives them; the straight line between two of them is not a claim that anything was ever at any point on it.",
+    "notes": "The most speculative path in the pack, and the reason it is here anyway is that the argument about whether this army should have turned north to Warsaw in August 1920 is unintelligible without seeing how far south of Warsaw it was.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table of events, which is where the dates on this path come from"
+      },
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "291-317"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:route-red-western-front",
+    "formation": "1918-russian-civil-war:formation-red-western-front",
+    "waypoints": [
+      [30.0, 54.5, "1920-07-04T12:00:00Z"],
+      [27.567, 53.9, "1920-07-11T12:00:00Z"],
+      [23.734, 52.098, "1920-08-01T12:00:00Z"],
+      [21.3, 52.3, "1920-08-14T12:00:00Z", "contested"],
+      [27.567, 53.9, "1920-10-01T12:00:00Z", "contested"]
+    ],
+    "confidence": "low",
+    "derivation": "The start line on the Berezina, then Minsk on 11 July and Brest-Litovsk on 1 August at the dates given, then the outskirts of Warsaw and the position after the retreat, both interpolated and marked contested. Every route in this pack is an axis, not a position. The waypoints are the towns a source names and the dates it gives them; the straight line between two of them is not a claim that anything was ever at any point on it.",
+    "notes": "Seven hundred kilometres out in six weeks, which is a little under half a kilometre an hour of straight-line displacement - and was, in this war, an astonishing pace.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table of events, which is where the dates on this path come from"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:route-polish-army",
+    "formation": "1918-russian-civil-war:formation-polish-army",
+    "waypoints": [
+      [21.85, 51.55, "1920-08-15T12:00:00Z"],
+      [23.734, 52.098, "1920-08-21T12:00:00Z"],
+      [26.5, 53.5, "1920-10-12T12:00:00Z", "contested"]
+    ],
+    "confidence": "low",
+    "derivation": "The assembly area of the strike group on the Wieprz on the day the source read here dates the counter-offensive, Brest-Litovsk on its recapture, and the line at the preliminary peace, interpolated and marked contested. Every route in this pack is an axis, not a position. The waypoints are the towns a source names and the dates it gives them; the straight line between two of them is not a claim that anything was ever at any point on it.",
+    "notes": "The date of the first waypoint is Chamberlin's chronology: 15 August. Most later accounts date the blow from the Wieprz to the 16th. The pack stores the date it has read.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "525-534",
+        "note": "the chronological table of events, which is where the dates on this path come from"
+      }
+    ]
+  }
+]

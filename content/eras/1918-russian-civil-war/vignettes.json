@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1918-russian-civil-war:vignette-sviyazhsk",
+    "title": "The situation seemed hopeless",
+    "at": "1918-08-12T12:00:00Z",
+    "place": "place:sviyazhsk",
+    "voice": "Leon Trotsky, People's Commissar for Military and Naval Affairs",
+    "kind": "memoir",
+    "text": "\"Every detachment led its own life. The one common desire was for retreat. . . . The earth itself was seized by panic. Fresh Red detachments, which arrived in good sentiment, were immediately caught up by the mood of retreat. . . . Everything was breaking in pieces; there was no longer any firm point. The situation seemed hopeless.\"[^chamberlin-1935-2]\n\nOut of that, in a month, came the Fifth Army - by indefatigable propaganda, by tireless organisation, and by having the commander and commissar of a regiment that ran away shot along with every tenth soldier.[^chamberlin-1935-2]",
+    "people": ["person:trotsky-leon"],
+    "links": {
+      "events": [
+        "1918-russian-civil-war:event-kazan-retaken",
+        "1918-russian-civil-war:event-trotsky-train-leaves"
+      ]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "117-118",
+        "note": "Trotsky's words as Chamberlin prints them, ellipses included, together with what followed; reached through Chamberlin and not from Trotsky's own text"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:vignette-tambov-milk",
+    "title": "Like good guests",
+    "at": "1921-03-01T12:00:00Z",
+    "place": "place:tambov",
+    "voice": "A Communist sent to suppress the Tambov rising",
+    "kind": "witness",
+    "text": "\"The peasants met the bandits like good guests, bringing them cups of milk on the street and even voluntarily gave them their horses, while they hid what they could from us and looked forward to our coming as to the plague.\"[^chamberlin-1935-2]\n\nHe is describing his own side's reception. The word 'bandits' is what the government called peasants who resisted requisitioning, and Chamberlin notes that the label moved with the man rather than describing him: many of Antonov's followers were bandits one day and peaceful farmers the next.[^chamberlin-1935-2]",
+    "links": {
+      "events": ["1918-russian-civil-war:event-tambov-rising"],
+      "people": ["person:antonov-alexander"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "437-438",
+        "note": "a participant in the suppression, quoted by Chamberlin; the man is not named there and is not named here"
+      }
+    ]
+  },
+  {
+    "id": "1918-russian-civil-war:vignette-kronstadt-womens-day",
+    "title": "A greeting from insurgent Red Kronstadt",
+    "at": "1921-03-08T12:00:00Z",
+    "place": "place:kronstadt",
+    "voice": "The insurgent garrison of Kronstadt, broadcasting",
+    "kind": "witness",
+    "text": "\"We Kronstadters, amid the thunder of cannon, amid the bursting of shells, hurled against us by the enemies of the working people, the Communists, send our brotherly greeting to you, working women of the world. . . . Long live the free revolutionary working women. Long live the World Social Revolution.\"[^chamberlin-1935-2]\n\nIt is International Women's Day - the anniversary, by the calendar the sailors were now keeping, of the bread demonstrations that began the revolution four years earlier. The first assault on the fortress had been beaten off that morning; two more failed on the 10th and the 12th; the fortress fell on the 18th.[^chamberlin-1935-2]",
+    "links": {
+      "events": ["1918-russian-civil-war:event-kronstadt"],
+      "battles": ["1918-russian-civil-war:kronstadt-1921"]
+    },
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2",
+        "pages": "443-444",
+        "note": "the broadcast of 8 March 1921 as Chamberlin prints it, ellipsis included, and the sequence of assaults"
+      }
+    ]
+  }
+]

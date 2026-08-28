@@ -3139,5 +3139,370 @@
       },
       { "source": "source:wikipedia-en", "note": "dates and dates of office" }
     ]
+  },
+  {
+    "id": "person:stalin-joseph",
+    "name": "Joseph Stalin",
+    "sortName": "Stalin, Joseph (Iosif Vissarionovich Dzhugashvili)",
+    "born": "1878-12-18",
+    "died": "1953-03-05",
+    "nationality": "RU",
+    "roles": [
+      {
+        "title": "People's Commissar for Nationalities",
+        "from": "1917-11",
+        "to": "1923"
+      },
+      {
+        "title": "Extraordinary Plenipotentiary for food supply in South Russia, at Tsaritsyn",
+        "from": "1918-06",
+        "to": "1918-10"
+      },
+      {
+        "title": "General Secretary of the Communist Party",
+        "from": "1922-04",
+        "to": "1952"
+      }
+    ],
+    "summary": "A Georgian seminarian turned bank-robber turned party organiser, one of the few Bolshevik leaders who had neither emigrated nor been an intellectual. The civil war is where he learned to govern: sent to Tsaritsyn in the summer of 1918 to get grain moving, he took over the military command there instead, shot officers he suspected, and quarrelled with Trotsky over the employment of former tsarist officers - a quarrel that ran on until one of them had the other killed. The party's General Secretaryship, created in 1922 as an administrative post, was the instrument he used to inherit the state the civil war had made.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2"
+      },
+      {
+        "source": "source:figes-1996"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:kolchak-alexander",
+    "name": "Alexander Kolchak",
+    "sortName": "Kolchak, Alexander Vasilyevich",
+    "born": "1874-11-16",
+    "died": "1920-02-07",
+    "nationality": "RU",
+    "roles": [
+      {
+        "title": "Commander, Black Sea Fleet",
+        "from": "1916-08",
+        "to": "1917-06"
+      },
+      {
+        "title": "Supreme Ruler of Russia",
+        "from": "1918-11-18",
+        "to": "1920-01-04"
+      }
+    ],
+    "summary": "A naval officer and Arctic explorer - there is an island in the Kara Sea named after him - who commanded the Black Sea Fleet in 1916 and threw his sword into the sea rather than surrender it to a sailors' committee in 1917. Made War Minister of the anti-Bolshevik Directory at Omsk, he was raised to a personal dictatorship as Supreme Ruler by a coup on 18 November 1918 and held the title for thirteen months, through an offensive that reached towards the Volga in the spring of 1919 and a retreat that did not stop until Irkutsk. He was handed over by the Czechoslovak Legion that had been guarding him and shot on 7 February 1920; his body went under the ice of the Angara.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:denikin-anton",
+    "name": "Anton Denikin",
+    "sortName": "Denikin, Anton Ivanovich",
+    "born": "1872-12-16",
+    "died": "1947-08-07",
+    "nationality": "RU",
+    "roles": [
+      {
+        "title": "Commander, Volunteer Army",
+        "from": "1918-04-13",
+        "to": "1919-01"
+      },
+      {
+        "title": "Commander-in-Chief, Armed Forces of South Russia",
+        "from": "1919-01",
+        "to": "1920-04-04"
+      }
+    ],
+    "summary": "The son of a serf conscripted into the army who rose to be an officer, which made him an outsider among the Guards aristocrats he ended up commanding. He took over the Volunteer Army when Kornilov was killed at Ekaterinodar in April 1918 and led the White south to within two hundred and fifty miles of Moscow in October 1919 before the front came apart behind him. His slogan - Russia one, great and indivisible - cost him the Ukrainians, the Cossack governments and the Caucasus, and is the standing exhibit for the argument that the Whites lost politically. He resigned in favour of Wrangel in April 1920 and spent the rest of his life writing, refusing in the Second World War to have anything to do with the Germans.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:wrangel-pyotr",
+    "name": "Pyotr Wrangel",
+    "sortName": "Wrangel, Pyotr Nikolayevich",
+    "born": "1878-08-27",
+    "died": "1928-04-25",
+    "nationality": "RU",
+    "roles": [
+      {
+        "title": "Commander, Caucasian Army (Armed Forces of South Russia)",
+        "from": "1919-05",
+        "to": "1919-12"
+      },
+      {
+        "title": "Commander-in-Chief, the Russian Army in the Crimea",
+        "from": "1920-04-04",
+        "to": "1920-11"
+      }
+    ],
+    "summary": "A Baltic German baron and a cavalryman, the last White commander-in-chief and the only one who tried to govern rather than merely to win: in the Crimea in 1920 he issued a land law that gave the peasants the land they had taken, and by then there was no longer anywhere for it to be applied. He held the peninsula for seven months, came out into Northern Tavria and was driven back, and organised the one White defeat that was not a rout - the evacuation of some hundred and forty-five thousand soldiers and civilians from the Crimean ports in November 1920.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:yudenich-nikolai",
+    "name": "Nikolai Yudenich",
+    "sortName": "Yudenich, Nikolai Nikolayevich",
+    "born": "1862-07-30",
+    "died": "1933-10-05",
+    "nationality": "RU",
+    "roles": [
+      {
+        "title": "Commander, Caucasus Army",
+        "from": "1915",
+        "to": "1917"
+      },
+      {
+        "title": "Commander, North-Western Army",
+        "from": "1919-01",
+        "to": "1919-11"
+      }
+    ],
+    "summary": "The most successful Russian field commander of the First World War - Erzurum in 1916 was a genuine victory in a war that gave Russia few - and the least successful of the White generals. His North-Western Army, raised in Estonia and never more than about twenty thousand strong, made a dash for Petrograd in October 1919, reached the Pulkovo heights within sight of the city and was thrown back inside three weeks. Estonia, negotiating its own peace with Moscow, then disarmed and interned what was left of him.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:makhno-nestor",
+    "name": "Nestor Makhno",
+    "sortName": "Makhno, Nestor Ivanovych",
+    "born": "1888-11-07",
+    "died": "1934-07-25",
+    "nationality": "RU",
+    "roles": [
+      {
+        "title": "Commander, Revolutionary Insurgent Army of Ukraine",
+        "from": "1918",
+        "to": "1921"
+      }
+    ],
+    "summary": "A peasant from Huliaipole in eastern Ukraine, sentenced to death at twenty-two for anarchist terrorism and reprieved to hard labour, freed by the February Revolution and back home within the month. From 1918 he led an insurgent army of his own villages against the Austro-German occupation, against the Hetman, against Denikin and against the Bolsheviks - twice in formal alliance with the Reds and twice betrayed by them. His birth is given here as 7 November 1888 (26 October, Old Style), the date his own movement used; some accounts give 1889. He died in Paris, working in a Renault factory.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:tukhachevsky-mikhail",
+    "name": "Mikhail Tukhachevsky",
+    "sortName": "Tukhachevsky, Mikhail Nikolayevich",
+    "born": "1893-02-16",
+    "died": "1937-06-12",
+    "nationality": "RU",
+    "roles": [
+      {
+        "title": "Commander, Red 5th Army (Eastern Front)",
+        "from": "1918-06",
+        "to": "1919-12"
+      },
+      {
+        "title": "Commander, Western Front",
+        "from": "1920-04",
+        "to": "1921"
+      },
+      {
+        "title": "Marshal of the Soviet Union",
+        "from": "1935-11",
+        "to": "1937-05"
+      }
+    ],
+    "summary": "A guards lieutenant of impeccable gentry background who escaped from Ingolstadt as a prisoner of war, joined the Bolsheviks in 1918, and at twenty-seven commanded the army group that ran from Smolensk to the outskirts of Warsaw and back. He put down Kronstadt in March 1921 and the Tambov peasants that summer, became the Red Army's leading theorist of mechanised war, and was shot in June 1937 as the first and most senior victim of the purge of the officer corps he had built.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:budyonny-semyon",
+    "name": "Semyon Budyonny",
+    "sortName": "Budyonny, Semyon Mikhailovich",
+    "born": "1883-04-25",
+    "died": "1973-10-26",
+    "nationality": "RU",
+    "roles": [
+      {
+        "title": "Commander, 1st Cavalry Army",
+        "from": "1919-11",
+        "to": "1923"
+      },
+      {
+        "title": "Marshal of the Soviet Union",
+        "from": "1935-11",
+        "to": "1973"
+      }
+    ],
+    "summary": "A non-commissioned cavalryman of the old army from the Don country, who raised a squadron of red horsemen in 1918 and ended up commanding the formation that gave the Red Army the one arm the Whites had started with. The 1st Cavalry Army fought Denikin's cavalry to a standstill in the winter of 1919, rode into Poland in 1920 and was blamed, along with Stalin, for the failure to turn north to Warsaw. He survived every purge and his moustache outlived his usefulness.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:dzerzhinsky-felix",
+    "name": "Felix Dzerzhinsky",
+    "sortName": "Dzerzhinsky, Felix Edmundovich",
+    "born": "1877-09-11",
+    "died": "1926-07-20",
+    "nationality": "RU",
+    "roles": [
+      {
+        "title": "Chairman of the Cheka",
+        "from": "1917-12-20",
+        "to": "1922-02"
+      },
+      {
+        "title": "Chairman of the GPU / OGPU",
+        "from": "1922-02",
+        "to": "1926-07"
+      }
+    ],
+    "summary": "A Polish nobleman's son who spent eleven of the twenty years before 1917 in tsarist prisons and exile, and who from 20 December 1917 ran the All-Russian Extraordinary Commission - the Cheka - which is the institution the civil war left behind it. Ascetic, incorruptible and entirely without doubt, he is the reason the argument about the terror is an argument about a state organ rather than about a mob.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2"
+      },
+      {
+        "source": "source:werth-2008"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:pilsudski-jozef",
+    "name": "Jozef Pilsudski",
+    "sortName": "Pilsudski, Jozef Klemens",
+    "names": [
+      {
+        "name": "Józef Piłsudski",
+        "language": "pl",
+        "kind": "modern"
+      }
+    ],
+    "born": "1867-12-05",
+    "died": "1935-05-12",
+    "nationality": "PL",
+    "roles": [
+      {
+        "title": "Commander-in-Chief of the Polish Army",
+        "from": "1918-11-11",
+        "to": "1922-12"
+      },
+      {
+        "title": "Chief of State of Poland",
+        "from": "1918-11-22",
+        "to": "1922-12-14"
+      }
+    ],
+    "summary": "A socialist conspirator against the Russian Empire who became the founder and effectively the dictator of the Polish state that replaced it. In 1920 he was both head of state and commander-in-chief, and the counter-stroke launched from the Wieprz on 16 August, which broke a Red Army group already on the outskirts of Warsaw, is the decision the rest of his reputation rests on - his own and, in a different form, that of every Polish government since.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2"
+      },
+      {
+        "source": "source:wikipedia-en",
+        "note": "dates"
+      }
+    ]
+  },
+  {
+    "id": "person:antonov-alexander",
+    "name": "Alexander Antonov",
+    "sortName": "Antonov, Alexander Stepanovich",
+    "died": "1922-06-24",
+    "nationality": "RU",
+    "roles": [
+      {
+        "title": "Chief of police, Kirsanov, Tambov Province",
+        "from": "1917",
+        "to": "1918"
+      },
+      {
+        "title": "Leader of the Tambov insurgency",
+        "from": "1920-08",
+        "to": "1922-06"
+      }
+    ],
+    "summary": "A Socialist Revolutionary who had done years of exile for a killing in 1905, was let out by the February Revolution and served the new order as a district police chief before turning on it. From August 1920 his name was attached to the largest peasant rising against Soviet power, in the province that had been the stormiest in the agrarian revolution of 1917; at its height his bands numbered somewhere between twenty and fifty thousand, and how many is one of the things nobody has settled. He was killed in a shoot-out in June 1922. His birth date is not recorded here because this project could not confirm one.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2"
+      },
+      {
+        "source": "source:werth-2008"
+      }
+    ]
+  },
+  {
+    "id": "person:mamontov-konstantin",
+    "name": "Konstantin Mamontov",
+    "sortName": "Mamontov, Konstantin Konstantinovich",
+    "nationality": "RU",
+    "roles": [
+      {
+        "title": "Commander, 4th Don Cavalry Corps (Armed Forces of South Russia)",
+        "from": "1919",
+        "to": "1920"
+      }
+    ],
+    "summary": "A Don Cossack cavalry general whose forty-day raid through the rear of the Red Southern Front in August and September 1919 is the single most famous act of movement in the war and the clearest demonstration of what the war's geography allowed: seven or eight thousand horsemen went through a front nobody could hold, rode some five hundred miles, took Tambov, Kozlov and Yelets, wrecked the railways behind an offensive, and achieved nothing that lasted, partly because his Cossacks would not stop looting and drifted home with what they had taken. His dates are not given here because this project could not confirm them.",
+    "sources": [
+      {
+        "source": "source:chamberlin-1935-2"
+      }
+    ]
   }
 ]
