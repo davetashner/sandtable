@@ -24,7 +24,9 @@ import {
   type SourceUse,
 } from '../engine/bibliography.js';
 import type { Source } from '../packs/schema/index.js';
+import type { ViewCitation } from '../engine/cite.js';
 import { Card } from './Card.js';
+import { CopyLink } from './CopyLink.js';
 import { EntityLink } from './Prose.js';
 import './bibliography.css';
 
@@ -36,6 +38,12 @@ import './bibliography.css';
  */
 const LEDE =
   'Every date, number and position in this pack cites a work; anything contestable — a strength, a time of day, a position, a quotation — cites the page it is printed on. The works are grouped by how much weight each kind carries when two of them disagree, strongest first, and only the works this pack actually cites are here.';
+
+const CITE_RUBRIC =
+  'The address bar is the whole view (ADR 0009): the date, the branch and the ' +
+  'open card are all in it, so a reader who follows this link arrives where ' +
+  'you were. The second date is the ordinary one — the packs are revised, and ' +
+  'a citation says when it was read.';
 
 const FURTHER_READING =
   'There is no separate list. Every entry above carries the registry’s own note on what the work is good for and where it is partisan, and that note is the recommendation — the only one this pack is entitled to make, because it is the only one it has read. Works wanted but not yet opened are tracked in the repository, not printed here: a reading list of books nobody read would look exactly like a bibliography and mean the opposite.';
@@ -93,10 +101,16 @@ export interface BibliographyViewProps {
   sources: Source[];
   /** Citation counts for the loaded pack (`countCitations`). */
   use: Map<string, SourceUse>;
+  /**
+   * A citation for the view the reader is on (`sand-shn.5.1`). Passed in
+   * rather than built here: it needs the clock, the pack and the address bar,
+   * and this card is otherwise a pure function of its props.
+   */
+  cite?: ViewCitation | undefined;
   onBack?: () => void;
 }
 
-export function BibliographyView({ sources, use, onBack }: BibliographyViewProps) {
+export function BibliographyView({ sources, use, cite, onBack }: BibliographyViewProps) {
   const bib = bibliography(sources, use);
   return (
     <Card
@@ -131,7 +145,31 @@ export function BibliographyView({ sources, use, onBack }: BibliographyViewProps
         <h3 className="bib__heading">Further reading</h3>
         <p className="bib__rubric">{FURTHER_READING}</p>
       </div>
+      {cite ? <CiteThisView cite={cite} /> : null}
     </Card>
+  );
+}
+
+/**
+ * The citation for the reader's own view (`sand-shn.5.1`). It sits last
+ * because it is apparatus about this page rather than a work the pack cites,
+ * and it is in the bibliography rather than beside the copy-link glyph
+ * because it is the scholarly form of that act.
+ */
+function CiteThisView({ cite }: { cite: ViewCitation }) {
+  return (
+    <div className="bib__group">
+      <h3 className="bib__heading">Cite this view</h3>
+      <p className="bib__rubric">{CITE_RUBRIC}</p>
+      {/* The visible citation italicises the title the way every other
+          reference on this card does; the copy button hands over the plain
+          string, because an asterisk pasted into a footnote is not emphasis. */}
+      <p className="bib__cite">
+        {cite.work}, <em>{cite.title}</em>, the view at {cite.when} (accessed {cite.accessed}).{' '}
+        <span className="bib__cite-url">{cite.url}</span>
+      </p>
+      <CopyLink href={() => cite.text} what="citation" />
+    </div>
   );
 }
 

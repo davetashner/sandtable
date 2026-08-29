@@ -91,7 +91,9 @@ import { TechCardView, type EntityLabeller } from './ui/TechCardView.js';
 import { Timeline, type TimelineMarker, type TimelinePhase } from './ui/Timeline.js';
 import { BibliographyView, SourceCardView } from './ui/Bibliography.js';
 import { BIBLIOGRAPHY_CARD, countCitations, type SourceUse } from './engine/bibliography.js';
-import { layerOn, parseViewState } from './engine/url-state.js';
+import { formatViewState, layerOn, parseViewState } from './engine/url-state.js';
+import { citeView } from './engine/cite.js';
+import { labelNow } from './engine/ticks.js';
 import type { Battle, Camera, Links, ScienceField } from './packs/schema/index.js';
 import type { ClockRange } from './engine/clock.js';
 
@@ -1188,15 +1190,46 @@ function DecisionPauser() {
  * is exhaustive by construction — a new family cannot be added to the union
  * without the compiler asking for its arm here.
  */
+/**
+ * The citation for the view as it stands (`sand-shn.5.1`).
+ *
+ * Rebuilt on every tick on purpose: the citation names the instant the view is
+ * showing, so a reader who scrubs the timeline with the bibliography open must
+ * not be handed the date they started at. The URL is assembled the way
+ * `bindUrlState` assembles the address bar — the clock owns `t`, the binding
+ * owns the rest — rather than read back out of `window.location`, so the
+ * citation cannot lag a navigation that has not been written yet.
+ */
+function useViewCitation() {
+  const { now, range } = useClock();
+  const slots = useViewState();
+  const path = typeof window === 'undefined' ? '/' : window.location.pathname;
+  const origin = typeof window === 'undefined' ? '' : window.location.origin;
+  return citeView({
+    title: seed.pack.title,
+    when: labelNow(now, range).date,
+    accessed: new Date(),
+    url: `${origin}${path}${formatViewState({ t: now, ...slots })}`,
+  });
+}
+
 function DossierCard({ card }: { card: OpenCard }): ReactElement {
   const { pick } = useViewState();
   const controls = useViewStateControls();
+  const citation = useViewCitation();
   const labeller = useLabeller();
   // Every card carries the same door back to the beat it was opened from.
   const onBack = () => controls?.setCard(undefined);
   switch (card.kind) {
     case 'bibliography':
-      return <BibliographyView sources={seed.sources} use={sourceUse()} onBack={onBack} />;
+      return (
+        <BibliographyView
+          sources={seed.sources}
+          use={sourceUse()}
+          cite={citation}
+          onBack={onBack}
+        />
+      );
     case 'source':
       return (
         <SourceCardView source={card.card} use={sourceUse().get(card.card.id)} onBack={onBack} />

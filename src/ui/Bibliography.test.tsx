@@ -3,6 +3,7 @@ import { render, screen, within } from '@testing-library/react';
 import type { Source } from '../packs/schema/index.js';
 import type { SourceUse } from '../engine/bibliography.js';
 import { BibliographyView, SourceCardView } from './Bibliography.js';
+import { citeView } from '../engine/cite.js';
 import { Card } from './Card.js';
 
 const sources: Source[] = [
@@ -41,6 +42,42 @@ const use = new Map<string, SourceUse>([
   ['source:edmonds-1933', { citations: 46, withPages: 12 }],
   ['source:kluck-1920', { citations: 1, withPages: 0 }],
 ]);
+
+const citation = citeView({
+  title: 'The Schlieffen Plan and the march to the Marne',
+  when: '24 August 1914, 12:00',
+  accessed: new Date('2026-08-29T04:31:00Z'),
+  url: 'https://sandtable.davetashner.com/?pack=1914-schlieffen-marne&t=1914-08-24T12:00:00Z',
+});
+
+describe('<BibliographyView> cite this view', () => {
+  it('offers a citation naming the view’s own date and the date it was read', () => {
+    render(<BibliographyView sources={sources} use={use} cite={citation} onBack={() => {}} />);
+    const heading = screen.getByRole('heading', { level: 3, name: 'Cite this view' });
+    const group = heading.closest('.bib__group') as HTMLElement;
+    expect(within(group).getByText(/the view at 24 August 1914, 12:00/)).toBeInTheDocument();
+    expect(within(group).getByText(/accessed 29 August 2026/)).toBeInTheDocument();
+    // The title is italicised in the DOM the way every other reference is.
+    expect(within(group).getByText('The Schlieffen Plan and the march to the Marne').tagName).toBe(
+      'EM',
+    );
+  });
+
+  it('gives the citation its own copy control, named for what it copies', () => {
+    render(<BibliographyView sources={sources} use={use} cite={citation} onBack={() => {}} />);
+    // Named for the citation rather than the link, so a screen reader reading
+    // the card does not meet two controls both called "Copy a link to this
+    // view". What it actually writes is CopyLink's test.
+    expect(
+      screen.getByRole('button', { name: 'Copy a citation for this view' }),
+    ).toBeInTheDocument();
+  });
+
+  it('is absent when no citation is given, so the card stays a pure function of its props', () => {
+    render(<BibliographyView sources={sources} use={use} onBack={() => {}} />);
+    expect(screen.queryByRole('heading', { level: 3, name: 'Cite this view' })).toBeNull();
+  });
+});
 
 describe('<BibliographyView>', () => {
   it('groups the works by the hierarchy of evidence and totals what is behind them', () => {
