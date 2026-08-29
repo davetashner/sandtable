@@ -215,8 +215,9 @@ receipts -- --fetch` re-runs it against the source. Receipts live outside
 - CI (`.github/workflows/ci.yml`): `lint` = actionlint + markdownlint +
   `scripts/check-content.sh` (JSON validity, media-manifest policy, no tracked
   image binaries, and the generated `media`/`audio` `index.json` still covering
-  every manifest — `scripts/media-index-backlog.txt` names the images that do
-  not yet, `sand-shn.16`); `security` = gitleaks + dependency review; `web` =
+  every manifest — all 90 media manifests are in the index as of `sand-shn.16`,
+  and the one-time allowance that named the 49 that were not is gone);
+  `security` = gitleaks + dependency review; `web` =
   one step, `npm run verify`, which is
   lint/format:check/typecheck/test/validate:content/warning:budget/build/bundle:budget
   — the list lives in `package.json` and nowhere else, so CI, the workflow doc

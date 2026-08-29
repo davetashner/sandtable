@@ -144,8 +144,9 @@ export const RECEIPTS_DIR = 'receipts';
 /**
  * The one-time allowance that keeps the receipt gate off `main`'s back
  * (sand-23b.57.1). Same shape and same self-removing rule as
- * `scripts/media-index-backlog.txt`: one id per line, `#` comments, and the
- * validator refuses a line for an id that now has a receipt.
+ * `scripts/media-index-backlog.txt` had before that rule removed it: one id
+ * per line, `#` comments, and the validator refuses a line for an id that now
+ * has a receipt.
  */
 export const RECEIPT_BACKLOG = 'backlog.txt';
 

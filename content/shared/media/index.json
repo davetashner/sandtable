@@ -1,7 +1,589 @@
 {
-  "generatedAt": "2026-08-24",
+  "generatedAt": "2026-08-29",
   "base": "/assets/media/",
   "entries": [
+    {
+      "id": "media:kit/1914-fantassin-francais-meaux/fantassin-francais-1914",
+      "dir": "kit/1914-fantassin-francais-meaux",
+      "original": {
+        "src": "kit/1914-fantassin-francais-meaux/fantassin-francais-1914.jpg",
+        "width": 1200,
+        "height": 2463,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "kit/1914-fantassin-francais-meaux/.derived/fantassin-francais-1914.w320.webp",
+          "width": 320,
+          "height": 657,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/1914-fantassin-francais-meaux/.derived/fantassin-francais-1914.w640.webp",
+          "width": 640,
+          "height": 1314,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/1914-fantassin-francais-meaux/.derived/fantassin-francais-1914.w1024.webp",
+          "width": 1024,
+          "height": 2102,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1200,
+      "height": 2463,
+      "caption": "The French infantryman of 1914, in the collection of the Musée de la Grande Guerre du pays de Meaux: dark blue capote, red képi, madder-red trousers. No photograph in this pack shows those trousers in the field — the capote covers them, and by 1915 they were gone.",
+      "credit": "Photograph: Aubry Gérard, 2014, of an object in the Musée de la Grande Guerre du pays de Meaux; via Wikimedia Commons; CC BY-SA 4.0.",
+      "licence": "CC BY-SA 4.0 (Commons record: LicenseShortName \"CC BY-SA 4.0\"; UsageTerms \"Creative Commons Attribution-Share Alike 4.0\"; AttributionRequired true). Share-alike: any derivative, a colorization included, would itself have to ship CC BY-SA 4.0.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Fantassin_fran%C3%A7ais,_1914.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.55
+      }
+    },
+    {
+      "id": "media:kit/1914-pickelhaube-feldueberzug/pickelhaube-with-cover",
+      "dir": "kit/1914-pickelhaube-feldueberzug",
+      "original": {
+        "src": "kit/1914-pickelhaube-feldueberzug/pickelhaube-with-cover.jpg",
+        "width": 2756,
+        "height": 3866,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "kit/1914-pickelhaube-feldueberzug/.derived/pickelhaube-with-cover.w320.webp",
+          "width": 320,
+          "height": 449,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/1914-pickelhaube-feldueberzug/.derived/pickelhaube-with-cover.w640.webp",
+          "width": 640,
+          "height": 898,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/1914-pickelhaube-feldueberzug/.derived/pickelhaube-with-cover.w1024.webp",
+          "width": 1024,
+          "height": 1436,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2756,
+      "height": 3866,
+      "caption": "A Pickelhaube under its field cover, Braunschweigisches Landesmuseum, dated 1914–1916. Germany had gone over to field-grey in 1910 and then covered the helmet as well: the one thing the army did not intend to be seen was itself.",
+      "credit": "Photograph: Daderot, 2014, of an object in the Braunschweigisches Landesmuseum; via Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"; AttributionRequired false — the photographer released the photograph and the object is out of copyright).",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Pickelhaube_with_covering,_Germany,_1914-1916_AD_-_Braunschweigisches_Landesmuseum_-_DSC04663.JPG",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:kit/1915-british-soldiers-kit/british-soldiers-kit",
+      "dir": "kit/1915-british-soldiers-kit",
+      "original": {
+        "src": "kit/1915-british-soldiers-kit/british-soldiers-kit.jpg",
+        "width": 3478,
+        "height": 2479,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "kit/1915-british-soldiers-kit/.derived/british-soldiers-kit.w320.webp",
+          "width": 320,
+          "height": 228,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/1915-british-soldiers-kit/.derived/british-soldiers-kit.w640.webp",
+          "width": 640,
+          "height": 456,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/1915-british-soldiers-kit/.derived/british-soldiers-kit.w1024.webp",
+          "width": 1024,
+          "height": 730,
+          "type": "image/webp"
+        }
+      ],
+      "width": 3478,
+      "height": 2479,
+      "caption": "A British soldier's kit laid out and counted, photographed for the press in 1915 — the marching load itemised: pack, haversack, entrenching tool, mess tin, water bottle, ammunition pouches, greatcoat.",
+      "credit": "Original photograph: photographer not established, 1915; Spaarnestad Photo / Nationaal Archief, SFA022801761, via Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"; AttributionRequired false).",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Leger_uitrusting_van_een_Engelse_soldaat_in_de_Eerste_Wereldoorlog,_SFA022801761.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:kit/canon-de-75-mle-1897-kansas-city/canon-de-75-mle-1897",
+      "dir": "kit/canon-de-75-mle-1897-kansas-city",
+      "original": {
+        "src": "kit/canon-de-75-mle-1897-kansas-city/canon-de-75-mle-1897.jpg",
+        "width": 4320,
+        "height": 3240,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "kit/canon-de-75-mle-1897-kansas-city/.derived/canon-de-75-mle-1897.w320.webp",
+          "width": 320,
+          "height": 240,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/canon-de-75-mle-1897-kansas-city/.derived/canon-de-75-mle-1897.w640.webp",
+          "width": 640,
+          "height": 480,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/canon-de-75-mle-1897-kansas-city/.derived/canon-de-75-mle-1897.w1024.webp",
+          "width": 1024,
+          "height": 768,
+          "type": "image/webp"
+        }
+      ],
+      "width": 4320,
+      "height": 3240,
+      "caption": "The Canon de 75 mm modèle 1897, the gun the French field artillery took to war and the best-known field gun in Europe in 1914, in the National World War I Museum, Kansas City.",
+      "credit": "Photograph: Daderot, 2011, of an object in the National World War I Museum and Memorial, Kansas City; via Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"; AttributionRequired false — the photographer released the photograph into the public domain worldwide, and the object is out of copyright).",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:France_75_mm_field_gun,_Model_1897_-_National_World_War_I_Museum_-_Kansas_City,_MO_-_DSC07528.JPG",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:kit/canon-de-75-tr-1905-brasschaat/canon-de-75-tr-1905",
+      "dir": "kit/canon-de-75-tr-1905-brasschaat",
+      "original": {
+        "src": "kit/canon-de-75-tr-1905-brasschaat/canon-de-75-tr-1905.jpg",
+        "width": 2440,
+        "height": 1371,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "kit/canon-de-75-tr-1905-brasschaat/.derived/canon-de-75-tr-1905.w320.webp",
+          "width": 320,
+          "height": 179,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/canon-de-75-tr-1905-brasschaat/.derived/canon-de-75-tr-1905.w640.webp",
+          "width": 640,
+          "height": 359,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/canon-de-75-tr-1905-brasschaat/.derived/canon-de-75-tr-1905.w1024.webp",
+          "width": 1024,
+          "height": 575,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2440,
+      "height": 1371,
+      "caption": "The Belgian 75 mm mle 1905 à tir rapide, a Krupp quick-firer built under licence, in the Gunfire Artilleriemuseum at Brasschaat. Belgium had it in the field batteries in 1914 and nothing modern behind them.",
+      "credit": "Photograph: Paul Hermans, 2021, of an object in the Gunfire Artilleriemuseum, Brasschaat; via Wikimedia Commons; CC BY-SA 4.0.",
+      "licence": "CC BY-SA 4.0 (Commons record: LicenseShortName \"CC BY-SA 4.0\"; UsageTerms \"Creative Commons Attribution-Share Alike 4.0\"; AttributionRequired true). Attribution to Paul Hermans is mandatory and the share-alike condition applies to derivatives.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Canon_de_75_mle_TR_(tir_rapide_Krupp)_Gunfire_Museum_Brasschaat_13-03-2021_10-58-44.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:kit/fk-96-na-awm/fk-96-na",
+      "dir": "kit/fk-96-na-awm",
+      "original": {
+        "src": "kit/fk-96-na-awm/fk-96-na.jpg",
+        "width": 2513,
+        "height": 1532,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "kit/fk-96-na-awm/.derived/fk-96-na.w320.webp",
+          "width": 320,
+          "height": 195,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/fk-96-na-awm/.derived/fk-96-na.w640.webp",
+          "width": 640,
+          "height": 390,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/fk-96-na-awm/.derived/fk-96-na.w1024.webp",
+          "width": 1024,
+          "height": 624,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2513,
+      "height": 1532,
+      "caption": "The 7.7 cm Feldkanone 96 n.A., the German field gun of 1914, in the Australian War Memorial, Canberra — one of the pieces captured on the Western Front.",
+      "credit": "Photograph: Bukvoed, 2007, of an object in the Australian War Memorial, Canberra; via Wikimedia Commons; CC BY 2.5.",
+      "licence": "CC BY 2.5 (Commons record: LicenseShortName \"CC BY 2.5\"; UsageTerms \"Creative Commons Attribution 2.5\"; AttributionRequired true; the record also offers GFDL and a migrated CC BY-SA 3.0). Attribution to the photographer is mandatory; the CC BY 2.5 term chosen here carries no share-alike condition.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:AWM-7,7-cm-Feldkanone-96-nA-3.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:kit/gewehr-98-armemuseum/gewehr-98",
+      "dir": "kit/gewehr-98-armemuseum",
+      "original": {
+        "src": "kit/gewehr-98-armemuseum/gewehr-98.jpg",
+        "width": 1132,
+        "height": 441,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "kit/gewehr-98-armemuseum/.derived/gewehr-98.w320.webp",
+          "width": 320,
+          "height": 124,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/gewehr-98-armemuseum/.derived/gewehr-98.w640.webp",
+          "width": 640,
+          "height": 249,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/gewehr-98-armemuseum/.derived/gewehr-98.w1024.webp",
+          "width": 1024,
+          "height": 399,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1132,
+      "height": 441,
+      "caption": "The Mauser Gewehr 98, the rifle the German infantry carried into Belgium: 7.9 mm, five rounds in an internal box magazine, loaded from a charger. Armémuseum, Stockholm.",
+      "credit": "Photograph: Armémuseum (The Swedish Army Museum), Stockholm, object 011024391425 on DigitaltMuseum, via Wikimedia Commons; CC BY 4.0.",
+      "licence": "CC BY 4.0 (Commons record: LicenseShortName \"CC BY 4.0\"; UsageTerms \"Creative Commons Attribution 4.0\"; AttributionRequired true). Attribution to Armémuseum is mandatory; there is no share-alike condition on this one.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Gewehr_98.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:kit/hotchkiss-mle-1914-verdun/hotchkiss-mle-1914",
+      "dir": "kit/hotchkiss-mle-1914-verdun",
+      "original": {
+        "src": "kit/hotchkiss-mle-1914-verdun/hotchkiss-mle-1914.jpg",
+        "width": 2048,
+        "height": 1536,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "kit/hotchkiss-mle-1914-verdun/.derived/hotchkiss-mle-1914.w320.webp",
+          "width": 320,
+          "height": 240,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/hotchkiss-mle-1914-verdun/.derived/hotchkiss-mle-1914.w640.webp",
+          "width": 640,
+          "height": 480,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/hotchkiss-mle-1914-verdun/.derived/hotchkiss-mle-1914.w1024.webp",
+          "width": 1024,
+          "height": 768,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2048,
+      "height": 1536,
+      "caption": "The Hotchkiss mle 1914, the French heavy machine gun — gas-operated and air-cooled where the German and British guns were water-cooled Maxims. Collection of the Mémorial de Verdun.",
+      "credit": "Photograph: Jean-Frédéric (historicair), 2006, of an object in the collection of the Mémorial de Verdun; via Wikimedia Commons; CC BY-SA 3.0.",
+      "licence": "CC BY-SA 3.0 (Commons record: LicenseShortName \"CC BY-SA 3.0\"; UsageTerms \"Creative Commons Attribution-Share Alike 3.0\"; AttributionRequired true; the record also offers GFDL and CC BY-SA 2.5/2.0/1.0). Attribution to the photographer is mandatory and the share-alike condition applies to derivatives.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:French_machine-gun_Hotchkiss_model_1914.JPG",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:kit/lebel-mle-1886-armemuseum/lebel-mle-1886",
+      "dir": "kit/lebel-mle-1886-armemuseum",
+      "original": {
+        "src": "kit/lebel-mle-1886-armemuseum/lebel-mle-1886.jpg",
+        "width": 1188,
+        "height": 421,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "kit/lebel-mle-1886-armemuseum/.derived/lebel-mle-1886.w320.webp",
+          "width": 320,
+          "height": 113,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/lebel-mle-1886-armemuseum/.derived/lebel-mle-1886.w640.webp",
+          "width": 640,
+          "height": 227,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/lebel-mle-1886-armemuseum/.derived/lebel-mle-1886.w1024.webp",
+          "width": 1024,
+          "height": 363,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1188,
+      "height": 421,
+      "caption": "The Lebel mle 1886: the first smokeless-powder military rifle in the world, and by 1914 the oldest magazine system in the field — eight rounds in a tube under the barrel, fed one at a time. Armémuseum, Stockholm.",
+      "credit": "Photograph: Armémuseum (The Swedish Army Museum), Stockholm, object 011024389339 on DigitaltMuseum, via Wikimedia Commons; CC BY-SA 3.0.",
+      "licence": "CC BY-SA 3.0 (Commons record: LicenseShortName \"CC BY-SA 3.0\"; UsageTerms \"Creative Commons Attribution-Share Alike 3.0\"; AttributionRequired true). Share-alike: a derivative of this photograph would itself be CC BY-SA 3.0.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Lebel_Mle._1886.JPG",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:kit/lee-enfield-smle-mk-iii-armemuseum/lee-enfield-smle-mk-iii",
+      "dir": "kit/lee-enfield-smle-mk-iii-armemuseum",
+      "original": {
+        "src": "kit/lee-enfield-smle-mk-iii-armemuseum/lee-enfield-smle-mk-iii.jpg",
+        "width": 2100,
+        "height": 1000,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "kit/lee-enfield-smle-mk-iii-armemuseum/.derived/lee-enfield-smle-mk-iii.w320.webp",
+          "width": 320,
+          "height": 152,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/lee-enfield-smle-mk-iii-armemuseum/.derived/lee-enfield-smle-mk-iii.w640.webp",
+          "width": 640,
+          "height": 305,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/lee-enfield-smle-mk-iii-armemuseum/.derived/lee-enfield-smle-mk-iii.w1024.webp",
+          "width": 1024,
+          "height": 488,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2100,
+      "height": 1000,
+      "caption": "The Short Magazine Lee-Enfield Mk III: ten rounds, two chargers, a bolt worked without taking the hand off the grip. The rifle behind the fire the German infantry at Mons took for machine guns. Armémuseum, Stockholm.",
+      "credit": "Photograph: Armémuseum (The Swedish Army Museum), Stockholm, AM.032056, via DigitaltMuseum and Wikimedia Commons; released into the public domain by the museum.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"; AttributionRequired false. The record's permission note is that the photograph was released into the public domain by its copyright owner, Armémuseum, Stockholm). Credited here anyway, because the museum asks to be named on DigitaltMuseum.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Lee-Enfield_Mk_III_(No_1_Mk_3)_-_AM.032056.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:kit/mauser-m1889-armemuseum/mauser-m1889",
+      "dir": "kit/mauser-m1889-armemuseum",
+      "original": {
+        "src": "kit/mauser-m1889-armemuseum/mauser-m1889.png",
+        "width": 1300,
+        "height": 520,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "kit/mauser-m1889-armemuseum/.derived/mauser-m1889.w320.webp",
+          "width": 320,
+          "height": 128,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/mauser-m1889-armemuseum/.derived/mauser-m1889.w640.webp",
+          "width": 640,
+          "height": 256,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/mauser-m1889-armemuseum/.derived/mauser-m1889.w1024.webp",
+          "width": 1024,
+          "height": 410,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1300,
+      "height": 520,
+      "caption": "The Mauser m/1889, Belgium's rifle, made at Herstal outside Liège by the company founded to build it. Five rounds on a charger, 7.65 mm. Armémuseum, Stockholm; background removed by the uploader.",
+      "credit": "Photograph: Armémuseum (The Swedish Army Museum), Stockholm, object 011024388109 on DigitaltMuseum; background removed by the Wikimedia Commons uploader; CC BY-SA 3.0.",
+      "licence": "CC BY-SA 3.0 (Commons record: LicenseShortName \"CC BY-SA 3.0\"; UsageTerms \"Creative Commons Attribution-Share Alike 3.0\"; AttributionRequired true). Share-alike: a derivative of this photograph would itself be CC BY-SA 3.0.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Gewehr_m1889_Mauser_Belgien_noBG.png",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:kit/mg-08-braunschweig/mg-08",
+      "dir": "kit/mg-08-braunschweig",
+      "original": {
+        "src": "kit/mg-08-braunschweig/mg-08.jpg",
+        "width": 3648,
+        "height": 4459,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "kit/mg-08-braunschweig/.derived/mg-08.w320.webp",
+          "width": 320,
+          "height": 391,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/mg-08-braunschweig/.derived/mg-08.w640.webp",
+          "width": 640,
+          "height": 782,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/mg-08-braunschweig/.derived/mg-08.w1024.webp",
+          "width": 1024,
+          "height": 1251,
+          "type": "image/webp"
+        }
+      ],
+      "width": 3648,
+      "height": 4459,
+      "caption": "The Maschinengewehr 08 on its sled mount, the German heavy machine gun of 1914, in the Braunschweigisches Landesmuseum — a Maxim built under licence at Spandau.",
+      "credit": "Photograph: Daderot, 2014, of an object in the Braunschweigisches Landesmuseum; via Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"; AttributionRequired false — the photographer released the photograph, and the object is out of copyright).",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Maschinengewehr_08_(MG_08)_on_sled_mount_-_Braunschweigisches_Landesmuseum_-_DSC04729.JPG",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:kit/qf-18-pounder-iwm/qf-18-pounder",
+      "dir": "kit/qf-18-pounder-iwm",
+      "original": {
+        "src": "kit/qf-18-pounder-iwm/qf-18-pounder.jpg",
+        "width": 800,
+        "height": 600,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "kit/qf-18-pounder-iwm/.derived/qf-18-pounder.w320.webp",
+          "width": 320,
+          "height": 240,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/qf-18-pounder-iwm/.derived/qf-18-pounder.w640.webp",
+          "width": 640,
+          "height": 480,
+          "type": "image/webp"
+        }
+      ],
+      "width": 800,
+      "height": 600,
+      "caption": "The Ordnance QF 18-pounder, the field gun of the British Expeditionary Force, in the Imperial War Museum, London. This gun fired 16,513 rounds on the Western Front before its barrel had to be relined.",
+      "credit": "Photograph: Emőke Dénes, 2012, of an object in the Imperial War Museum, London; via Wikimedia Commons; CC BY-SA 4.0.",
+      "licence": "CC BY-SA (Commons record: LicenseShortName \"CC BY-SA 4.0\"; UsageTerms \"Creative Commons Attribution-Share Alike 4.0\"; AttributionRequired true; the page also carries the older cc-by-sa-2.5 tag and a confirmed VRTS permission from the photographer). Attribution to Emőke Dénes is mandatory and the share-alike condition applies to derivatives. This is the photographer's own licence, not the Imperial War Museum's: IWM's Non-Commercial Licence covers the museum's own collection images and is not an open licence under ADR 0007. Nothing here is taken from an IWM-supplied file.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:British_18-pounder_mark_II_field_gun_-_Imperial_War_Museum_1.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:kit/vickers-york-castle-museum/vickers-mk-i",
+      "dir": "kit/vickers-york-castle-museum",
+      "original": {
+        "src": "kit/vickers-york-castle-museum/vickers-mk-i.jpg",
+        "width": 5184,
+        "height": 3456,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "kit/vickers-york-castle-museum/.derived/vickers-mk-i.w320.webp",
+          "width": 320,
+          "height": 213,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/vickers-york-castle-museum/.derived/vickers-mk-i.w640.webp",
+          "width": 640,
+          "height": 427,
+          "type": "image/webp"
+        },
+        {
+          "src": "kit/vickers-york-castle-museum/.derived/vickers-mk-i.w1024.webp",
+          "width": 1024,
+          "height": 683,
+          "type": "image/webp"
+        }
+      ],
+      "width": 5184,
+      "height": 3456,
+      "caption": "The .303-inch Vickers, the British heavy machine gun of 1914, with its tripod, belt and condenser can. York Castle Museum, YORCM : CA78.a-c.",
+      "credit": "Photograph: York Museums Trust (York Castle Museum), object YORCM : CA78.a-c; via Wikimedia Commons; CC BY-SA 4.0.",
+      "licence": "CC BY-SA 4.0 (Commons record: LicenseShortName \"CC BY-SA 4.0\"; UsageTerms \"Creative Commons Attribution-Share Alike 4.0\"; AttributionRequired true; credit line on the record: \"Courtesy of York Museums Trust\"). Attribution to York Museums Trust is mandatory and the share-alike condition applies to derivatives.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Vickers_Machine_Gun_YORCM_CA78ac.JPG",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
     {
       "id": "media:person/albert-i-of-belgium/portrait-colorized",
       "dir": "people/albert-i-of-belgium",
@@ -44,6 +626,72 @@
         "y": 0.3
       },
       "person": "person:albert-i-of-belgium"
+    },
+    {
+      "id": "media:person/albrecht-of-wurttemberg/portrait-c1910",
+      "dir": "people/albrecht-of-wurttemberg",
+      "original": {
+        "src": "people/albrecht-of-wurttemberg/portrait-c1910.jpg",
+        "width": 2046,
+        "height": 2783,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "people/albrecht-of-wurttemberg/.derived/portrait-c1910.w320.webp",
+          "width": 320,
+          "height": 435,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/albrecht-of-wurttemberg/.derived/portrait-c1910.w640.webp",
+          "width": 640,
+          "height": 870,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/albrecht-of-wurttemberg/.derived/portrait-c1910.w1024.webp",
+          "width": 1024,
+          "height": 1393,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2046,
+      "height": 2783,
+      "caption": "Albrecht, Duke of Württemberg, commander of the German Fourth Army in the Ardennes in August 1914.",
+      "credit": "Original photograph: Alfred Hirrlinger, c. 1910; published in \"Daheim\", 16 January 1915; via Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"). Hirrlinger died in 1938, so the work is out of copyright on life + 70.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Albrecht-von-wuerttemberg-in-1915-01-16-daheim-jg51-nr16-s09-foto-hirrlinger.jpg",
+      "person": "person:albrecht-of-wurttemberg"
+    },
+    {
+      "id": "media:person/berchtold-leopold/portrait-1922",
+      "dir": "people/berchtold-leopold",
+      "original": {
+        "src": "people/berchtold-leopold/portrait-1922.jpg",
+        "width": 495,
+        "height": 676,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "people/berchtold-leopold/.derived/portrait-1922.w320.webp",
+          "width": 320,
+          "height": 437,
+          "type": "image/webp"
+        }
+      ],
+      "width": 495,
+      "height": 676,
+      "caption": "Leopold Graf Berchtold, Austro-Hungarian foreign minister in July 1914, who drafted the note to Serbia. Photographed in 1922.",
+      "credit": "Bundesarchiv, Bild 183-2004-1110-500 / CC-BY-SA 3.0",
+      "licence": "CC BY-SA 3.0 DE (Commons record: LicenseShortName \"CC BY-SA 3.0 de\"). Share-alike: derivatives, colorization included, are CC BY-SA 3.0 DE, and the Bundesarchiv credit string is mandatory.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-2004-1110-500,_Leopold_Graf_Berchtold_(cropped).jpg",
+      "person": "person:berchtold-leopold"
     },
     {
       "id": "media:person/bismarck-otto-von/portrait-1890-colorized",
@@ -216,6 +864,33 @@
         "y": 0.3
       },
       "person": "person:churchill-winston"
+    },
+    {
+      "id": "media:person/dubail-auguste/portrait-bain",
+      "dir": "people/dubail-auguste",
+      "original": {
+        "src": "people/dubail-auguste/portrait-bain.jpg",
+        "width": 523,
+        "height": 684,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "people/dubail-auguste/.derived/portrait-bain.w320.webp",
+          "width": 320,
+          "height": 419,
+          "type": "image/webp"
+        }
+      ],
+      "width": 523,
+      "height": 684,
+      "caption": "General Auguste Dubail, commander of the French First Army in Lorraine in August 1914 — the right-hand army of Plan XVII’s offensive.",
+      "credit": "Original photograph: Bain News Service; Library of Congress, Prints and Photographs Division, ggbain.17063; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"). The Bain collection at the Library of Congress carries no known restrictions.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Augustin_Dubail.jpg",
+      "person": "person:dubail-auguste"
     },
     {
       "id": "media:person/falkenhayn-erich/portrait-colorized",
@@ -513,6 +1188,33 @@
       "person": "person:hausen-max-von"
     },
     {
+      "id": "media:person/heeringen-josias-von/portrait-1914",
+      "dir": "people/heeringen-josias-von",
+      "original": {
+        "src": "people/heeringen-josias-von/portrait-1914.jpg",
+        "width": 443,
+        "height": 599,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "people/heeringen-josias-von/.derived/portrait-1914.w320.webp",
+          "width": 320,
+          "height": 433,
+          "type": "image/webp"
+        }
+      ],
+      "width": 443,
+      "height": 599,
+      "caption": "Josias von Heeringen, Prussian Minister of War until 1913 and commander of the German Seventh Army in Lorraine in 1914.",
+      "credit": "Original photograph: Nicola Perscheid, 1914; via Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"). Perscheid died in 1930, so the work is out of copyright on life + 70.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Josias_von_Heeringen_c1914_(cropped).jpg",
+      "person": "person:heeringen-josias-von"
+    },
+    {
       "id": "media:person/hentsch-richard/portrait-colorized",
       "dir": "people/hentsch-richard",
       "original": {
@@ -554,6 +1256,72 @@
         "y": 0.2
       },
       "person": "person:hentsch-richard"
+    },
+    {
+      "id": "media:person/hindenburg-paul-von/portrait-1920s",
+      "dir": "people/hindenburg-paul-von",
+      "original": {
+        "src": "people/hindenburg-paul-von/portrait-1920s.jpg",
+        "width": 573,
+        "height": 768,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "people/hindenburg-paul-von/.derived/portrait-1920s.w320.webp",
+          "width": 320,
+          "height": 429,
+          "type": "image/webp"
+        }
+      ],
+      "width": 573,
+      "height": 768,
+      "caption": "Paul von Hindenburg, recalled from retirement on 22 August 1914 to command the German Eighth Army in East Prussia, with Ludendorff as his chief of staff. Photographed after the war.",
+      "credit": "Bundesarchiv, Bild 183-C06886 / CC-BY-SA 3.0",
+      "licence": "CC BY-SA 3.0 DE (Commons record: LicenseShortName \"CC BY-SA 3.0 de\"; UsageTerms \"Creative Commons Attribution-Share Alike 3.0 de\"). Share-alike: any derivative, colorization included, is itself CC BY-SA 3.0 DE, and the Bundesarchiv credit string is mandatory.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-C06886,_Paul_v._Hindenburg_(cropped)(2).jpg",
+      "person": "person:hindenburg-paul-von"
+    },
+    {
+      "id": "media:person/hoffmann-max/portrait-1913",
+      "dir": "people/hoffmann-max",
+      "original": {
+        "src": "people/hoffmann-max/portrait-1913.jpg",
+        "width": 1183,
+        "height": 1828,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "people/hoffmann-max/.derived/portrait-1913.w320.webp",
+          "width": 320,
+          "height": 495,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/hoffmann-max/.derived/portrait-1913.w640.webp",
+          "width": 640,
+          "height": 989,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/hoffmann-max/.derived/portrait-1913.w1024.webp",
+          "width": 1024,
+          "height": 1582,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1183,
+      "height": 1828,
+      "caption": "Max Hoffmann, the Eighth Army staff officer whose plan for the concentration against Samsonov became the battle of Tannenberg.",
+      "credit": "Original photograph: photographer not established, 1913; reproduced in E. O. Volkmann, \"Der große Krieg 1914–1918\" (Berlin, 1938); via Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\")",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:GeneralMaxHoffmann.jpg",
+      "person": "person:hoffmann-max"
     },
     {
       "id": "media:person/joffre-joseph/portrait-colorized",
@@ -765,6 +1533,39 @@
       "person": "person:ludendorff-erich"
     },
     {
+      "id": "media:person/maud-huy-louis-de/portrait-1916",
+      "dir": "people/maud-huy-louis-de",
+      "original": {
+        "src": "people/maud-huy-louis-de/portrait-1916.jpg",
+        "width": 745,
+        "height": 1024,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "people/maud-huy-louis-de/.derived/portrait-1916.w320.webp",
+          "width": 320,
+          "height": 440,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/maud-huy-louis-de/.derived/portrait-1916.w640.webp",
+          "width": 640,
+          "height": 880,
+          "type": "image/webp"
+        }
+      ],
+      "width": 745,
+      "height": 1024,
+      "caption": "General Louis de Maud’huy, whose Tenth Army fought at Arras in the race northward in October 1914. Photographed in 1916.",
+      "credit": "Original photograph: Bain News Service, 1916; Library of Congress; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"). The Bain collection at the Library of Congress carries no known restrictions.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Louis_de_Maud'huy_in_1916.jpg",
+      "person": "person:maud-huy-louis-de"
+    },
+    {
       "id": "media:person/maunoury-michel-joseph/portrait-colorized",
       "dir": "people/maunoury-michel-joseph",
       "original": {
@@ -937,6 +1738,105 @@
       "person": "person:moltke-helmuth-von-younger"
     },
     {
+      "id": "media:person/pau-paul/portrait-autochrome-1920",
+      "dir": "people/pau-paul",
+      "original": {
+        "src": "people/pau-paul/portrait-autochrome-1920.jpg",
+        "width": 1254,
+        "height": 1671,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "people/pau-paul/.derived/portrait-autochrome-1920.w320.webp",
+          "width": 320,
+          "height": 426,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/pau-paul/.derived/portrait-autochrome-1920.w640.webp",
+          "width": 640,
+          "height": 853,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/pau-paul/.derived/portrait-autochrome-1920.w1024.webp",
+          "width": 1024,
+          "height": 1365,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1254,
+      "height": 1671,
+      "caption": "General Paul Pau, who commanded the improvised Army of Alsace in August 1914. An autochrome of 1920 — a colour photograph of the period, not a colorization.",
+      "credit": "Original photograph: Auguste Léon, Boulogne, 20 May 1920; Musée Albert-Kahn, Archives de la Planète; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\")",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:1920_General_Paul_Pau.jpg",
+      "person": "person:pau-paul"
+    },
+    {
+      "id": "media:person/prittwitz-maximilian-von/portrait-1915",
+      "dir": "people/prittwitz-maximilian-von",
+      "original": {
+        "src": "people/prittwitz-maximilian-von/portrait-1915.jpg",
+        "width": 476,
+        "height": 635,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "people/prittwitz-maximilian-von/.derived/portrait-1915.w320.webp",
+          "width": 320,
+          "height": 427,
+          "type": "image/webp"
+        }
+      ],
+      "width": 476,
+      "height": 635,
+      "caption": "Maximilian von Prittwitz und Gaffron, commander of the German Eighth Army in East Prussia until Moltke relieved him on 22 August 1914 for proposing to fall back behind the Vistula.",
+      "credit": "Original photograph: Nicola Perscheid, 1915; via Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"). Perscheid died in 1930, so the work is out of copyright on life + 70.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Maximilian-vp-1.jpg",
+      "person": "person:prittwitz-maximilian-von"
+    },
+    {
+      "id": "media:person/rennenkampf-paul-von/portrait-c1910",
+      "dir": "people/rennenkampf-paul-von",
+      "original": {
+        "src": "people/rennenkampf-paul-von/portrait-c1910.jpg",
+        "width": 852,
+        "height": 1091,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "people/rennenkampf-paul-von/.derived/portrait-c1910.w320.webp",
+          "width": 320,
+          "height": 410,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/rennenkampf-paul-von/.derived/portrait-c1910.w640.webp",
+          "width": 640,
+          "height": 820,
+          "type": "image/webp"
+        }
+      ],
+      "width": 852,
+      "height": 1091,
+      "caption": "Paul von Rennenkampf, commander of the Russian First Army in East Prussia in August 1914 — the army that did not come to Samsonov’s help at Tannenberg.",
+      "credit": "Original photograph: photographer not identified, c. 1910; via Wikimedia Commons (record cites Gallica / Bibliothèque nationale de France); public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\")",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Paul_Rennenkampff_(cropped).jpg",
+      "person": "person:rennenkampf-paul-von"
+    },
+    {
       "id": "media:person/rupprecht-of-bavaria/portrait-colorized",
       "dir": "people/rupprecht-of-bavaria",
       "original": {
@@ -980,6 +1880,45 @@
       "person": "person:rupprecht-of-bavaria"
     },
     {
+      "id": "media:person/sarrail-maurice/portrait-bain",
+      "dir": "people/sarrail-maurice",
+      "original": {
+        "src": "people/sarrail-maurice/portrait-bain.jpg",
+        "width": 3782,
+        "height": 5215,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "people/sarrail-maurice/.derived/portrait-bain.w320.webp",
+          "width": 320,
+          "height": 441,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/sarrail-maurice/.derived/portrait-bain.w640.webp",
+          "width": 640,
+          "height": 882,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/sarrail-maurice/.derived/portrait-bain.w1024.webp",
+          "width": 1024,
+          "height": 1412,
+          "type": "image/webp"
+        }
+      ],
+      "width": 3782,
+      "height": 5215,
+      "caption": "General Maurice Sarrail, who took over the French Third Army from Ruffey on 30 August 1914 and held its right on Verdun through the Marne.",
+      "credit": "Original photograph: Bain News Service; Library of Congress, Prints and Photographs Division; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; Permission \"PD-US\"). The Bain collection at the Library of Congress carries no known restrictions.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Maurice_Sarrail.jpg",
+      "person": "person:sarrail-maurice"
+    },
+    {
       "id": "media:person/schlieffen-alfred-von/portrait-c1906-colorized",
       "dir": "people/schlieffen-alfred-von",
       "original": {
@@ -1021,6 +1960,72 @@
         "y": 0.28
       },
       "person": "person:schlieffen-alfred-von"
+    },
+    {
+      "id": "media:person/smith-dorrien-horace/portrait-c1915",
+      "dir": "people/smith-dorrien-horace",
+      "original": {
+        "src": "people/smith-dorrien-horace/portrait-c1915.jpg",
+        "width": 3898,
+        "height": 5501,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "people/smith-dorrien-horace/.derived/portrait-c1915.w320.webp",
+          "width": 320,
+          "height": 451,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/smith-dorrien-horace/.derived/portrait-c1915.w640.webp",
+          "width": 640,
+          "height": 903,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/smith-dorrien-horace/.derived/portrait-c1915.w1024.webp",
+          "width": 1024,
+          "height": 1445,
+          "type": "image/webp"
+        }
+      ],
+      "width": 3898,
+      "height": 5501,
+      "caption": "General Sir Horace Smith-Dorrien, who took command of II Corps of the BEF four days before Mons and turned to fight at Le Cateau on 26 August 1914 against Sir John French’s wishes.",
+      "credit": "Original photograph: Harris & Ewing, between 1913 and 1917; Library of Congress, Prints and Photographs Division; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; Permission \"PD-US\"). Harris & Ewing photographs at the Library of Congress carry no known restrictions.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Horace_Smith-Dorrien.jpg",
+      "person": "person:smith-dorrien-horace"
+    },
+    {
+      "id": "media:person/wilhelm-german-crown-prince/portrait-c1912",
+      "dir": "people/wilhelm-german-crown-prince",
+      "original": {
+        "src": "people/wilhelm-german-crown-prince/portrait-c1912.jpg",
+        "width": 506,
+        "height": 704,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "people/wilhelm-german-crown-prince/.derived/portrait-c1912.w320.webp",
+          "width": 320,
+          "height": 445,
+          "type": "image/webp"
+        }
+      ],
+      "width": 506,
+      "height": 704,
+      "caption": "Wilhelm, German Crown Prince, who commanded the Fifth Army in the Ardennes and before Verdun in 1914. Photographed before the war in the uniform of the 1st Life Hussars.",
+      "credit": "Original photograph: E. Bieber, 1912/13; via Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; the record qualifies the non-US status separately)",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Kronprinz_Wilhelm_1._Leib-Husarenregiment.jpg",
+      "person": "person:wilhelm-german-crown-prince"
     },
     {
       "id": "media:person/wilhelm-ii/portrait-1905-colorized",
@@ -1146,6 +2151,48 @@
       ]
     },
     {
+      "id": "media:scene/1914-antwerp-scheldt-crossing/transport-over-de-schelde",
+      "dir": "scenes/1914-antwerp-scheldt-crossing",
+      "original": {
+        "src": "scenes/1914-antwerp-scheldt-crossing/transport-over-de-schelde.jpg",
+        "width": 2885,
+        "height": 1880,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-antwerp-scheldt-crossing/.derived/transport-over-de-schelde.w320.webp",
+          "width": 320,
+          "height": 209,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-antwerp-scheldt-crossing/.derived/transport-over-de-schelde.w640.webp",
+          "width": 640,
+          "height": 417,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-antwerp-scheldt-crossing/.derived/transport-over-de-schelde.w1024.webp",
+          "width": 1024,
+          "height": 667,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2885,
+      "height": 1880,
+      "caption": "German troops crossing the Scheldt at Antwerp. The card is captioned in German and French for both audiences of an occupied city; the archive dates it only to the war years.",
+      "credit": "Original photograph: photographer not identified; Nationaal Archief, Bestanddeelnr 158-1355; CC0 / public domain.",
+      "licence": "CC0 1.0 (Commons record: LicenseShortName \"CC0\"; UsageTerms \"Creative Commons Zero, Public Domain Dedication\").",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Transport_deutscher_Truppen_%C3%BCber_die_Schelde_in_Antwerpen._Anvers_-_Transport_d%E2%80%A6,_Bestanddeelnr_158-1355.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
       "id": "media:scene/1914-ausflug-nach-paris/railway-wagon-august-1914-colorized",
       "dir": "scenes/1914-ausflug-nach-paris",
       "original": {
@@ -1230,6 +2277,90 @@
       }
     },
     {
+      "id": "media:scene/1914-brindejonc-des-moulinais/avant-la-reconnaissance-1914-10",
+      "dir": "scenes/1914-brindejonc-des-moulinais",
+      "original": {
+        "src": "scenes/1914-brindejonc-des-moulinais/avant-la-reconnaissance-1914-10.jpg",
+        "width": 2752,
+        "height": 2000,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-brindejonc-des-moulinais/.derived/avant-la-reconnaissance-1914-10.w320.webp",
+          "width": 320,
+          "height": 233,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-brindejonc-des-moulinais/.derived/avant-la-reconnaissance-1914-10.w640.webp",
+          "width": 640,
+          "height": 465,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-brindejonc-des-moulinais/.derived/avant-la-reconnaissance-1914-10.w1024.webp",
+          "width": 1024,
+          "height": 744,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2752,
+      "height": 2000,
+      "caption": "The airman Marcel Brindejonc des Moulinais before a reconnaissance flight, October 1914, with the five bombs he would drop by hand at his feet. He was a pre-war record-breaker; he was killed in 1916.",
+      "credit": "Original photograph: Agence Rol, October 1914; Bibliothèque nationale de France, Rol 42922, via Gallica and Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"). Credit line on the record: Bibliothèque nationale de France.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Brindejonc_des_Moulinais_s'appr%C3%AAte_%C3%A0_partir_en_reconnaissance,_%C3%A0_ses_pieds_les_cinq_bombes_qu'il_va_lancer_-_btv1b69323418.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:scene/1914-chasseur-d-afrique-marne/autochrome-gervais-courtellemont",
+      "dir": "scenes/1914-chasseur-d-afrique-marne",
+      "original": {
+        "src": "scenes/1914-chasseur-d-afrique-marne/autochrome-gervais-courtellemont.jpg",
+        "width": 3848,
+        "height": 2696,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-chasseur-d-afrique-marne/.derived/autochrome-gervais-courtellemont.w320.webp",
+          "width": 320,
+          "height": 224,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-chasseur-d-afrique-marne/.derived/autochrome-gervais-courtellemont.w640.webp",
+          "width": 640,
+          "height": 448,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-chasseur-d-afrique-marne/.derived/autochrome-gervais-courtellemont.w1024.webp",
+          "width": 1024,
+          "height": 717,
+          "type": "image/webp"
+        }
+      ],
+      "width": 3848,
+      "height": 2696,
+      "caption": "A brigadier of the 1st Chasseurs d’Afrique on the Marne, 1914. An autochrome by Jules Gervais-Courtellemont: real colour, exposed at the time, not added afterwards.",
+      "credit": "Original photograph: Jules Gervais-Courtellemont, 1914; Bibliothèque nationale de France, via Gallica and Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"). Credit line on the record: Gallica Digital Library.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Chasseur_d'Afrique,_bataille_de_la_Marne_1914.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
       "id": "media:scene/1914-east-prussia-trench/german-trench-east-prussia-colorized",
       "dir": "scenes/1914-east-prussia-trench",
       "original": {
@@ -1268,6 +2399,84 @@
       "originalUrl": "https://commons.wikimedia.org/wiki/Category:Pickelhaube_of_World_War_I",
       "focalPoint": {
         "x": 0.45,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:scene/1914-fort-lier-cupola/pantserkoepel-42cm-1914-09-30",
+      "dir": "scenes/1914-fort-lier-cupola",
+      "original": {
+        "src": "scenes/1914-fort-lier-cupola/pantserkoepel-42cm-1914-09-30.jpg",
+        "width": 2878,
+        "height": 1860,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-fort-lier-cupola/.derived/pantserkoepel-42cm-1914-09-30.w320.webp",
+          "width": 320,
+          "height": 207,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-fort-lier-cupola/.derived/pantserkoepel-42cm-1914-09-30.w640.webp",
+          "width": 640,
+          "height": 414,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-fort-lier-cupola/.derived/pantserkoepel-42cm-1914-09-30.w1024.webp",
+          "width": 1024,
+          "height": 662,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2878,
+      "height": 1860,
+      "caption": "What a 42 cm shell did to an armoured cupola: Fort Lier, in the Antwerp ring, 30 September 1914, with German soldiers standing on the wreckage. The forts were designed against 21 cm guns.",
+      "credit": "Original photograph: photographer not identified, 30 September 1914; Nationaal Archief, Bestanddeelnr 158-0536; CC0 / public domain.",
+      "licence": "CC0 1.0 (Commons record: LicenseShortName \"CC0\"; UsageTerms \"Creative Commons Zero, Public Domain Dedication\").",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Fort_Lierre._Wirkung_eines_42_cm_M%C3%B6rsers_auf_einem_Pantzerturm._Fort_de_Lierre%E2%80%A6,_Bestanddeelnr_158-0536.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:scene/1914-fort-loncin-destroyed/panzerfort-loncin-1914",
+      "dir": "scenes/1914-fort-loncin-destroyed",
+      "original": {
+        "src": "scenes/1914-fort-loncin-destroyed/panzerfort-loncin-1914.jpg",
+        "width": 1000,
+        "height": 616,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-fort-loncin-destroyed/.derived/panzerfort-loncin-1914.w320.webp",
+          "width": 320,
+          "height": 197,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-fort-loncin-destroyed/.derived/panzerfort-loncin-1914.w640.webp",
+          "width": 640,
+          "height": 394,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1000,
+      "height": 616,
+      "caption": "Fort Loncin after 15 August 1914, when a 42 cm shell reached the magazine. Leman was pulled unconscious from the wreckage; most of the garrison was never recovered.",
+      "credit": "Original photograph: Bild Pressestelle Berlin; published in \"Der Völkerkrieg\", Verlag Julius Hoffmann, Stuttgart, 1914; via Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\")",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Panzerfort_Loncin.jpg",
+      "focalPoint": {
+        "x": 0.5,
         "y": 0.5
       }
     },
@@ -1314,6 +2523,219 @@
       }
     },
     {
+      "id": "media:scene/1914-german-column-belgian-town/colonne-en-formation-1914",
+      "dir": "scenes/1914-german-column-belgian-town",
+      "original": {
+        "src": "scenes/1914-german-column-belgian-town/colonne-en-formation-1914.tif",
+        "width": 2875,
+        "height": 2215,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-german-column-belgian-town/.derived/colonne-en-formation-1914.w320.webp",
+          "width": 320,
+          "height": 247,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-german-column-belgian-town/.derived/colonne-en-formation-1914.w640.webp",
+          "width": 640,
+          "height": 493,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-german-column-belgian-town/.derived/colonne-en-formation-1914.w1024.webp",
+          "width": 1024,
+          "height": 789,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2875,
+      "height": 2215,
+      "caption": "A German column marching through a town in 1914. The catalogue places it in Belgium with a question mark, and so does this caption: what is certain is the formation, the field-grey and the year.",
+      "credit": "Original photograph: photographer not identified, 1914; Nationaal Archief, Bestanddeelnr 22005 026; CC0 / public domain.",
+      "licence": "CC0 1.0 (Commons record: LicenseShortName \"CC0\"; UsageTerms \"Creative Commons Zero, Public Domain Dedication\"). Nationaal Archief releases this collection into the public domain.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Geen_bijschrift_Duitse_troepen_lopen_in_formatie_langs_een_plantsoen_in_een_stad_(Belgi%C3%AB),_Bestanddeelnr_22005_026.tif",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:scene/1914-joffre-ordre-du-jour/socle-statue-joffre",
+      "dir": "scenes/1914-joffre-ordre-du-jour",
+      "original": {
+        "src": "scenes/1914-joffre-ordre-du-jour/socle-statue-joffre.jpg",
+        "width": 3202,
+        "height": 2754,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-joffre-ordre-du-jour/.derived/socle-statue-joffre.w320.webp",
+          "width": 320,
+          "height": 275,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-joffre-ordre-du-jour/.derived/socle-statue-joffre.w640.webp",
+          "width": 640,
+          "height": 550,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-joffre-ordre-du-jour/.derived/socle-statue-joffre.w1024.webp",
+          "width": 1024,
+          "height": 881,
+          "type": "image/webp"
+        }
+      ],
+      "width": 3202,
+      "height": 2754,
+      "caption": "Joffre’s order of the day of 6 September 1914 — \"se faire tuer sur place plutôt que de reculer\" — cut into the plinth of his statue outside the École Militaire in Paris. A monument’s version of the order, not the signed original.",
+      "credit": "Photograph: Jebulon, Paris, 2011; Wikimedia Commons; CC0 / public domain.",
+      "licence": "CC0 1.0 (Commons record: LicenseShortName \"CC0\"; UsageTerms \"Creative Commons Zero, Public Domain Dedication\"), released by the photographer.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Ordre_du_Jour_%C2%A7_septembre_1914_Bataille_de_la_Marne_socle_statue_Joffre_Ecole_Militaire.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:scene/1914-langle-de-cary-reconnaissance/capitaine-leclerc-1914-10",
+      "dir": "scenes/1914-langle-de-cary-reconnaissance",
+      "original": {
+        "src": "scenes/1914-langle-de-cary-reconnaissance/capitaine-leclerc-1914-10.jpg",
+        "width": 2752,
+        "height": 2000,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-langle-de-cary-reconnaissance/.derived/capitaine-leclerc-1914-10.w320.webp",
+          "width": 320,
+          "height": 233,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-langle-de-cary-reconnaissance/.derived/capitaine-leclerc-1914-10.w640.webp",
+          "width": 640,
+          "height": 465,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-langle-de-cary-reconnaissance/.derived/capitaine-leclerc-1914-10.w1024.webp",
+          "width": 1024,
+          "height": 744,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2752,
+      "height": 2000,
+      "caption": "October 1914: an aviator brings a reconnaissance report to General de Langle de Cary, who receives it on horseback, with the aeroplane that carried it standing behind. The two ways an army learned where the enemy was, in one photograph.",
+      "credit": "Original photograph: Agence Rol, October 1914; Bibliothèque nationale de France, Rol 42920, via Gallica and Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"). Credit line on the record: Bibliothèque nationale de France.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Tourn%C3%A9e_d'inspection,_le_capitaine_Leclerc_apportant_des_renseignements_au_g%C3%A9n%C3%A9ral_Langle_de_Cary_(%C3%A0_cheval),_en_arri%C3%A8re-plan_un_avion_Dorand_-_btv1b69323396.jpg",
+      "focalPoint": {
+        "x": 0.45,
+        "y": 0.5
+      },
+      "people": [
+        "person:langle-de-cary-fernand-de"
+      ]
+    },
+    {
+      "id": "media:scene/1914-liege-belgian-roadblock/belgian-troops-block-a-road-1914",
+      "dir": "scenes/1914-liege-belgian-roadblock",
+      "original": {
+        "src": "scenes/1914-liege-belgian-roadblock/belgian-troops-block-a-road-1914.jpg",
+        "width": 2136,
+        "height": 1456,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-liege-belgian-roadblock/.derived/belgian-troops-block-a-road-1914.w320.webp",
+          "width": 320,
+          "height": 218,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-liege-belgian-roadblock/.derived/belgian-troops-block-a-road-1914.w640.webp",
+          "width": 640,
+          "height": 436,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-liege-belgian-roadblock/.derived/belgian-troops-block-a-road-1914.w1024.webp",
+          "width": 1024,
+          "height": 698,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2136,
+      "height": 1456,
+      "caption": "Belgian troops blocking a road at Liège, 1914 — as a German illustrated history printed it after the war.",
+      "credit": "Original photograph: photographer not attributed; published in \"Der Krieg 1914-19 in Wort und Bild\", Deutsches Verlagshaus Bong & Co., Berlin, 1919; via Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\")",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Belgian_troops_block_a_road_in_Li%C3%A8ge_-_L%C3%BCttich_against_the_German_advance_1914.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:scene/1914-liege-defences-destroyed/destruction-of-defences-1914",
+      "dir": "scenes/1914-liege-defences-destroyed",
+      "original": {
+        "src": "scenes/1914-liege-defences-destroyed/destruction-of-defences-1914.jpg",
+        "width": 2152,
+        "height": 1512,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-liege-defences-destroyed/.derived/destruction-of-defences-1914.w320.webp",
+          "width": 320,
+          "height": 225,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-liege-defences-destroyed/.derived/destruction-of-defences-1914.w640.webp",
+          "width": 640,
+          "height": 450,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-liege-defences-destroyed/.derived/destruction-of-defences-1914.w1024.webp",
+          "width": 1024,
+          "height": 719,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2152,
+      "height": 1512,
+      "caption": "Destroyed defences at Liège, 1914, as a German illustrated history showed them to German readers after the war.",
+      "credit": "Original photograph: Presse-Centrale, Berlin; published in \"Der Krieg 1914-19 in Wort und Bild\", Deutsches Verlagshaus Bong & Co., Berlin, 1919; via Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\")",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Destruction_of_defences_at_Li%C3%A8ge_-_L%C3%BCttich_1914.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
       "id": "media:scene/1914-liege-german-car/german-soldiers-liege-colorized",
       "dir": "scenes/1914-liege-german-car",
       "original": {
@@ -1353,6 +2775,48 @@
       "focalPoint": {
         "x": 0.4,
         "y": 0.45
+      }
+    },
+    {
+      "id": "media:scene/1914-liege-german-troops-meal/lunchtime-after-the-fall-1914-08",
+      "dir": "scenes/1914-liege-german-troops-meal",
+      "original": {
+        "src": "scenes/1914-liege-german-troops-meal/lunchtime-after-the-fall-1914-08.jpg",
+        "width": 1112,
+        "height": 1536,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-liege-german-troops-meal/.derived/lunchtime-after-the-fall-1914-08.w320.webp",
+          "width": 320,
+          "height": 442,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-liege-german-troops-meal/.derived/lunchtime-after-the-fall-1914-08.w640.webp",
+          "width": 640,
+          "height": 884,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-liege-german-troops-meal/.derived/lunchtime-after-the-fall-1914-08.w1024.webp",
+          "width": 1024,
+          "height": 1414,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1112,
+      "height": 1536,
+      "caption": "German troops at a meal after the fall of Liège, August 1914. Twelve days were spent here that the plan had not allowed for.",
+      "credit": "Original photograph: Robert Sennecke; published in \"Der Krieg 1914-19 in Wort und Bild\", Deutsches Verlagshaus Bong & Co., Berlin, 1919; via Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\")",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Lunchtime_for_German_troops_after_the_fall_of_Li%C3%A8ge,_August_1914.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
       }
     },
     {
@@ -1482,6 +2946,342 @@
       }
     },
     {
+      "id": "media:scene/1914-paris-affiches-mobilisation/foule-lisant-les-affiches-1914-08-02",
+      "dir": "scenes/1914-paris-affiches-mobilisation",
+      "original": {
+        "src": "scenes/1914-paris-affiches-mobilisation/foule-lisant-les-affiches-1914-08-02.jpg",
+        "width": 2760,
+        "height": 2000,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-paris-affiches-mobilisation/.derived/foule-lisant-les-affiches-1914-08-02.w320.webp",
+          "width": 320,
+          "height": 232,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-paris-affiches-mobilisation/.derived/foule-lisant-les-affiches-1914-08-02.w640.webp",
+          "width": 640,
+          "height": 464,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-paris-affiches-mobilisation/.derived/foule-lisant-les-affiches-1914-08-02.w1024.webp",
+          "width": 1024,
+          "height": 742,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2760,
+      "height": 2000,
+      "caption": "Paris, 2 August 1914: the crowd reading the mobilization posters. The order went up at four in the afternoon; the first day of mobilization was the 2nd, and the timetable took over from there.",
+      "credit": "Original photograph: Agence Rol, Paris, 2 August 1914; Bibliothèque nationale de France, Rol 41638, via Gallica and Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"; the record’s permission note is publication before 1 January 1931). Credit line on the record: Bibliothèque nationale de France.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:2-8-14,_mobilisation,_la_foule_lisant_les_affiches_-_btv1b69310853.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "media:scene/1914-paris-depart-artillerie/depart-de-l-artillerie-1914-08-09",
+      "dir": "scenes/1914-paris-depart-artillerie",
+      "original": {
+        "src": "scenes/1914-paris-depart-artillerie/depart-de-l-artillerie-1914-08-09.jpg",
+        "width": 2757,
+        "height": 2000,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-paris-depart-artillerie/.derived/depart-de-l-artillerie-1914-08-09.w320.webp",
+          "width": 320,
+          "height": 232,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-paris-depart-artillerie/.derived/depart-de-l-artillerie-1914-08-09.w640.webp",
+          "width": 640,
+          "height": 464,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-paris-depart-artillerie/.derived/depart-de-l-artillerie-1914-08-09.w1024.webp",
+          "width": 1024,
+          "height": 743,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2757,
+      "height": 2000,
+      "caption": "French field artillery leaving Paris, 9 August 1914. The 75 was the best field gun in Europe and the reason the French army thought it did not need heavy artillery.",
+      "credit": "Original photograph: Agence Rol, Paris, 9 August 1914; Bibliothèque nationale de France, Rol 41721, via Gallica and Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"). Credit line on the record: Bibliothèque nationale de France.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:9-8-14,_la_mobilisation,_d%C3%A9part_de_l'artillerie_-_btv1b6931160m.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:scene/1914-paris-gare-de-l-est/premier-depart-1914-08-02",
+      "dir": "scenes/1914-paris-gare-de-l-est",
+      "original": {
+        "src": "scenes/1914-paris-gare-de-l-est/premier-depart-1914-08-02.jpg",
+        "width": 2743,
+        "height": 2000,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-paris-gare-de-l-est/.derived/premier-depart-1914-08-02.w320.webp",
+          "width": 320,
+          "height": 234,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-paris-gare-de-l-est/.derived/premier-depart-1914-08-02.w640.webp",
+          "width": 640,
+          "height": 467,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-paris-gare-de-l-est/.derived/premier-depart-1914-08-02.w1024.webp",
+          "width": 1024,
+          "height": 747,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2743,
+      "height": 2000,
+      "caption": "The first departure from the Gare de l’Est, Paris, 2 August 1914. Everything after this ran to a timetable written years in advance.",
+      "credit": "Original photograph: Agence Rol, Paris, 2 August 1914; Bibliothèque nationale de France, Rol 41629, via Gallica and Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; the record’s permission note is publication before 1 January 1931). Credit line on the record: Bibliothèque nationale de France.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:2-8-14,_mobilisation,_le_premier_d%C3%A9part,_gare_de_l'Est_-_btv1b69310801.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:scene/1914-paris-gare-de-l-est-foule/la-foule-1914-08-03",
+      "dir": "scenes/1914-paris-gare-de-l-est-foule",
+      "original": {
+        "src": "scenes/1914-paris-gare-de-l-est-foule/la-foule-1914-08-03.jpg",
+        "width": 2756,
+        "height": 2000,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-paris-gare-de-l-est-foule/.derived/la-foule-1914-08-03.w320.webp",
+          "width": 320,
+          "height": 232,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-paris-gare-de-l-est-foule/.derived/la-foule-1914-08-03.w640.webp",
+          "width": 640,
+          "height": 464,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-paris-gare-de-l-est-foule/.derived/la-foule-1914-08-03.w1024.webp",
+          "width": 1024,
+          "height": 743,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2756,
+      "height": 2000,
+      "caption": "The crowd at the Gare de l’Est on 3 August 1914, the day Germany declared war on France.",
+      "credit": "Original photograph: Agence Rol, Paris, 3 August 1914; Bibliothèque nationale de France, Rol 41647, via Gallica and Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"). Credit line on the record: Bibliothèque nationale de France.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:3-8-14,_la_mobilisation,_la_foule_%C3%A0_la_gare_de_l'Est_-_btv1b6931095g.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:scene/1914-paris-ordre-de-mobilisation/affiche-gouvernement-militaire-1914-08",
+      "dir": "scenes/1914-paris-ordre-de-mobilisation",
+      "original": {
+        "src": "scenes/1914-paris-ordre-de-mobilisation/affiche-gouvernement-militaire-1914-08.jpg",
+        "width": 2000,
+        "height": 2755,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-paris-ordre-de-mobilisation/.derived/affiche-gouvernement-militaire-1914-08.w320.webp",
+          "width": 320,
+          "height": 440,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-paris-ordre-de-mobilisation/.derived/affiche-gouvernement-militaire-1914-08.w640.webp",
+          "width": 640,
+          "height": 881,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-paris-ordre-de-mobilisation/.derived/affiche-gouvernement-militaire-1914-08.w1024.webp",
+          "width": 1024,
+          "height": 1411,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2000,
+      "height": 2755,
+      "caption": "The mobilization order of the military government of Paris, August 1914 — the piece of paper the crowd in the street outside was reading.",
+      "credit": "Original photograph: Agence Rol, Paris, August 1914; Bibliothèque nationale de France, Rol 41830, via Gallica and Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"). Credit line on the record: Bibliothèque nationale de France.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Ordre_de_mobilisation_%C3%A9manant_du_gouvernement_militaire_de_Paris_-_btv1b6931266f.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.4
+      }
+    },
+    {
+      "id": "media:scene/1914-paris-requisition-autos/requisition-des-autos-1914-08-05",
+      "dir": "scenes/1914-paris-requisition-autos",
+      "original": {
+        "src": "scenes/1914-paris-requisition-autos/requisition-des-autos-1914-08-05.jpg",
+        "width": 2762,
+        "height": 2000,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-paris-requisition-autos/.derived/requisition-des-autos-1914-08-05.w320.webp",
+          "width": 320,
+          "height": 232,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-paris-requisition-autos/.derived/requisition-des-autos-1914-08-05.w640.webp",
+          "width": 640,
+          "height": 463,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-paris-requisition-autos/.derived/requisition-des-autos-1914-08-05.w1024.webp",
+          "width": 1024,
+          "height": 741,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2762,
+      "height": 2000,
+      "caption": "Motor cars requisitioned on the Esplanade des Invalides, Paris, 5 August 1914 — a month before six hundred of the city’s taxis carried part of the 7th Division to the Ourcq.",
+      "credit": "Original photograph: Agence Rol, Paris, 5 August 1914; Bibliothèque nationale de France, via Gallica and Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"). Credit line on the record: Gallica Digital Library.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:R%C3%A9quisition_des_autos_1914.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:scene/1914-paris-requisition-camions/requisition-des-camions-1914-08-05",
+      "dir": "scenes/1914-paris-requisition-camions",
+      "original": {
+        "src": "scenes/1914-paris-requisition-camions/requisition-des-camions-1914-08-05.jpg",
+        "width": 2764,
+        "height": 2000,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-paris-requisition-camions/.derived/requisition-des-camions-1914-08-05.w320.webp",
+          "width": 320,
+          "height": 232,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-paris-requisition-camions/.derived/requisition-des-camions-1914-08-05.w640.webp",
+          "width": 640,
+          "height": 463,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-paris-requisition-camions/.derived/requisition-des-camions-1914-08-05.w1024.webp",
+          "width": 1024,
+          "height": 741,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2764,
+      "height": 2000,
+      "caption": "Lorries requisitioned on the Esplanade des Invalides, Paris, 5 August 1914. Motor transport in 1914 was something an army borrowed from a city, not something it owned.",
+      "credit": "Original photograph: Agence Rol, Paris, 5 August 1914; Bibliothèque nationale de France, via Gallica and Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; UsageTerms \"Public domain\"). Credit line on the record: Gallica Digital Library.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:R%C3%A9quisition_camions_1914.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:scene/1914-paris-requisition-chevaux/requisition-des-chevaux-1914-08-02",
+      "dir": "scenes/1914-paris-requisition-chevaux",
+      "original": {
+        "src": "scenes/1914-paris-requisition-chevaux/requisition-des-chevaux-1914-08-02.jpg",
+        "width": 2756,
+        "height": 2000,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-paris-requisition-chevaux/.derived/requisition-des-chevaux-1914-08-02.w320.webp",
+          "width": 320,
+          "height": 232,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-paris-requisition-chevaux/.derived/requisition-des-chevaux-1914-08-02.w640.webp",
+          "width": 640,
+          "height": 464,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-paris-requisition-chevaux/.derived/requisition-des-chevaux-1914-08-02.w1024.webp",
+          "width": 1024,
+          "height": 743,
+          "type": "image/webp"
+        }
+      ],
+      "width": 2756,
+      "height": 2000,
+      "caption": "The requisition of horses in Paris, 2 August 1914. The army that fought the Marne moved on hooves and rails; the lorries and taxis were the exception that got remembered.",
+      "credit": "Original photograph: Agence Rol, Paris, 2 August 1914; Bibliothèque nationale de France, Rol 41640, via Gallica and Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; the record’s permission note is publication before 1 January 1931). Credit line on the record: Bibliothèque nationale de France.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:2-8-14,_mobilisation,_la_r%C3%A9quisition_des_chevaux_%C3%A0_Paris_-_btv1b6931088b.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
       "id": "media:scene/1914-sarajevo-motorcade-detail/sarajevo-motorcade-detail-colorized",
       "dir": "scenes/1914-sarajevo-motorcade-detail",
       "original": {
@@ -1572,6 +3372,48 @@
         "person:franz-ferdinand-of-austria",
         "person:sophie-chotek"
       ]
+    },
+    {
+      "id": "media:scene/1914-skoda-siege-gun-belgium/austrian-siege-gun-bain-1914",
+      "dir": "scenes/1914-skoda-siege-gun-belgium",
+      "original": {
+        "src": "scenes/1914-skoda-siege-gun-belgium/austrian-siege-gun-bain-1914.jpg",
+        "width": 5817,
+        "height": 4260,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1914-skoda-siege-gun-belgium/.derived/austrian-siege-gun-bain-1914.w320.webp",
+          "width": 320,
+          "height": 234,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-skoda-siege-gun-belgium/.derived/austrian-siege-gun-bain-1914.w640.webp",
+          "width": 640,
+          "height": 468,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1914-skoda-siege-gun-belgium/.derived/austrian-siege-gun-bain-1914.w1024.webp",
+          "width": 1024,
+          "height": 750,
+          "type": "image/webp"
+        }
+      ],
+      "width": 5817,
+      "height": 4260,
+      "caption": "An Austro-Hungarian siege gun in Belgium, 1914. Austria-Hungary lent Germany the Škoda 30.5 cm mortars that worked alongside Krupp’s 42 cm howitzers against the Belgian forts — the alliance’s most useful contribution in the west.",
+      "credit": "Original photograph: Bain News Service, 1914; Library of Congress, Prints and Photographs Division, LCCN 2014698051; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; Permission \"Image from Library of Congress Prints and Photographs division\"). The Bain collection carries no known restrictions; the record links the catalogue entry at https://lccn.loc.gov/2014698051.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Austrian_siege_gun_in_Belg._(i.e.,_Belgium)_LCCN2014698051.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
     },
     {
       "id": "media:scene/1916-douaumont-officers/haupt-oven-brandis-1916-colorized",
@@ -1744,6 +3586,90 @@
       "focalPoint": {
         "x": 0.5,
         "y": 0.6
+      }
+    },
+    {
+      "id": "media:scene/1918-fort-loncin-panorama/loc-panoramic-1918-11",
+      "dir": "scenes/1918-fort-loncin-panorama",
+      "original": {
+        "src": "scenes/1918-fort-loncin-panorama/loc-panoramic-1918-11.tif",
+        "width": 4096,
+        "height": 2711,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1918-fort-loncin-panorama/.derived/loc-panoramic-1918-11.w320.webp",
+          "width": 320,
+          "height": 212,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1918-fort-loncin-panorama/.derived/loc-panoramic-1918-11.w640.webp",
+          "width": 640,
+          "height": 424,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1918-fort-loncin-panorama/.derived/loc-panoramic-1918-11.w1024.webp",
+          "width": 1024,
+          "height": 678,
+          "type": "image/webp"
+        }
+      ],
+      "width": 4096,
+      "height": 2711,
+      "caption": "Fort de Loncin four years later, November 1918. The fort was never rebuilt and was never cleared; it is a war grave.",
+      "credit": "Original photograph: photographer not identified, November 1918; Library of Congress, Panoramic Photograph Collection, item 2007663088; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; Permission \"Public domain in the United States\"; the record cites https://www.loc.gov/pictures/item/2007663088)",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Fort_de_Loncin,_Liege,_Belgium,_Nov.,_1918_LCCN2007663088.tif",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "media:scene/1922-taxi-de-la-marne-invalides/taxi-et-chauffeurs-1922-12-21",
+      "dir": "scenes/1922-taxi-de-la-marne-invalides",
+      "original": {
+        "src": "scenes/1922-taxi-de-la-marne-invalides/taxi-et-chauffeurs-1922-12-21.jpg",
+        "width": 8623,
+        "height": 6256,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1922-taxi-de-la-marne-invalides/.derived/taxi-et-chauffeurs-1922-12-21.w320.webp",
+          "width": 320,
+          "height": 232,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1922-taxi-de-la-marne-invalides/.derived/taxi-et-chauffeurs-1922-12-21.w640.webp",
+          "width": 640,
+          "height": 465,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1922-taxi-de-la-marne-invalides/.derived/taxi-et-chauffeurs-1922-12-21.w1024.webp",
+          "width": 1024,
+          "height": 743,
+          "type": "image/webp"
+        }
+      ],
+      "width": 8623,
+      "height": 6256,
+      "caption": "A taxi de la Marne at the Invalides on 21 December 1922 with two of the drivers who drove that night, Étienne Germain and Louis Gouault, and General Malleterre. The photograph is of the commemoration, eight years after the run to the Ourcq.",
+      "credit": "Original photograph: Agence Rol, Paris, 21 December 1922; Bibliothèque nationale de France, via Gallica and Wikimedia Commons; public domain.",
+      "licence": "public domain (Commons record: LicenseShortName \"Public domain\"; the record’s permission note is publication before 1931). Credit line on the record: Bibliothèque nationale de France.",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://commons.wikimedia.org/wiki/File:Le_taxi_de_la_Marne_aux_Invalides_(pr%C3%A8s_du_taxi,_de_g._%C3%A0_d._le_chauffeur_Etienne)_Germain_(le_chauffeur_Louis)_Gouault_(le)_g%C3%A9n%C3%A9ral_Maleterre_(i.e._Malleterrre,_le_21_d%C3%A9cembre_1922)_-_btv1b53095000q.jpg",
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
       }
     }
   ]

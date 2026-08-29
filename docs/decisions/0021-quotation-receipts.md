@@ -188,7 +188,9 @@ The other twenty-two are named in `content/receipts/backlog.txt` with the
 reason, the recipe for removing a line, and `sand-23b.57.1`. The validator
 refuses a backlog line for a document that already has a receipt, so the
 allowance cannot quietly outlive the debt — the same bargain, and the same
-shape of file, as `scripts/media-index-backlog.txt` (PR #151).
+shape of file, as `scripts/media-index-backlog.txt` (PR #151). That file has
+since been deleted: its 49 images were fetched and indexed under `sand-shn.16`,
+and the self-removing rule is what forced it out.
 
 ### 7. What the first real use of the gate found
 

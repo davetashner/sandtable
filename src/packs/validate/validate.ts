@@ -1830,7 +1830,7 @@ function checkDocumentReceipts(
 
 /**
  * The backlog is an allowance, and an allowance has to be able to end
- * (`sand-23b.57.1`). Same two rules as `scripts/media-index-backlog.txt`: a
+ * (`sand-23b.57.1`). Same two rules `scripts/media-index-backlog.txt` had: a
  * line for an id nothing defines is rot, and a line for an id that now has a
  * receipt is a line somebody forgot to delete — which is how a one-time
  * allowance quietly becomes the policy.

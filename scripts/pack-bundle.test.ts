@@ -125,16 +125,13 @@ describe('the shared registries a bundle carries (sand-shn.15)', () => {
     const { sharedRefs } = validateContent(content);
     for (const id of ids) {
       const has = carried(buildContentBundle(CONTENT, id));
-      // Only what the registries actually hold: the validator reads the
-      // `media.json` manifests, while the bundle carries the generated
-      // `media/index.json`, and the index lags the manifests until someone
-      // runs `npm run media` (sand-shn.16). An id the registry never had is
-      // not something this build step dropped — and it is not unwatched
-      // either: section 6 of `scripts/check-content.sh` holds the index
-      // against the manifests, and `scripts/media-index-backlog.txt` is the
-      // named list of what still lags. When that file goes, `all.has(ref)`
-      // becomes a no-op and can go with it.
-      const missing = (sharedRefs[id] ?? []).filter((ref) => all.has(ref) && !has.has(ref));
+      // The index no longer lags the manifests: `npm run media` was run over
+      // all 90 of them (sand-shn.16), `scripts/media-index-backlog.txt` is
+      // gone, and section 6 of `scripts/check-content.sh` fails the build if
+      // the two ever drift again. So the `all.has(ref)` guard this filter used
+      // to carry — which excused an id the registry never held — is a no-op,
+      // and every reference the validator resolved must now be carried.
+      const missing = (sharedRefs[id] ?? []).filter((ref) => !has.has(ref));
       expect({ pack: id, missing }).toEqual({ pack: id, missing: [] });
     }
     // …and the validator must have had something to say about the seed pack,
