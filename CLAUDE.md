@@ -229,7 +229,11 @@ receipts -- --fetch` re-runs it against the source. Receipts live outside
   — the list lives in `package.json` and nowhere else, so CI, the workflow doc
   and a contributor cannot mean different things by green (ADR 0023);
   self-activating once `package.json` exists; `visual` = `npm run visual:check` against a
-  production-shaped build with the assets bucket stubbed, screenshots uploaded
+  production-shaped build with the assets bucket and the Protomaps sprite
+  sheet stubbed; Google Fonts is a **declared dependency** and the gate exits 3
+  if the webfonts did not arrive or if anything else leaves the origin, because
+  stubbing the fonts made the gate disagree between macOS and CI
+  (`sand-pmz.2.7`) — screenshots uploaded
   as an artifact (ADR 0011), red only on its **blocking** tier — a dead scene,
   an error the app raised, or a structural defect off the baseline; `tiny-text`
   is reported and never fatal (`sand-pmz.9`). CodeQL is added with the app
