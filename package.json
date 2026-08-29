@@ -1,7 +1,7 @@
 {
   "name": "sandtable",
   "version": "0.1.0",
-  "description": "Interactive history simulation \u2014 the Schlieffen Plan and beyond",
+  "description": "Interactive history simulation — the Schlieffen Plan and beyond",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -57,6 +57,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@maplibre/maplibre-gl-style-spec": "^26.2.1",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.2",
