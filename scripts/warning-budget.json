@@ -9,13 +9,6 @@
       "why": "A work in the registry that no beat, event, route or document cites, so it appears in no bibliography and no reader will ever see it (sand-shn.5). 57 of today's 62 warnings, and the designed state rather than a defect: a bibliography legitimately lands a pull request or two ahead of the pack that will cite it, and most of these are the Pacific and 1915–18 works waiting on content that is already beaded. So this kind has to grow without a ceiling edit on every content pass — 70 is thirteen works of headroom, about one campaign's bibliography. It is bounded anyway, because unbounded is where the failure this file exists for would hide: 215 sources are in the registry, and a break in how citations are collected would flip every one of them to uncited at once and go red on the first push. When it does go red the answer is usually that a wave of works was added and then not used — cite them or drop them — not a bigger number.",
       "$note": "history: 57 at the ceiling's introduction (sand-pmz.33); 56 when source:toll-2012 was merged into source:toll-2011, the two registry entries having been the same book (sand-lry.23). The 'today's 62' in the reason above is the count on the day the ceiling was set, not a running total."
     },
-    "concentration-region": {
-      "match": "^concentration\\.position \\[.*\\] is outside the battle region$",
-      "max": 3,
-      "measured": 3,
-      "measuredOn": "2026-08-29",
-      "why": "A battle whose `concentration.position` sits outside its own `region`, so the marker draws where the reader is not being taken. Three, all at Liège — 1914:liege-army-of-the-meuse, 1914:liege-42cm, 1914:liege-30cm — where either the position or the rectangle is wrong; sand-23b.60 settles which. No headroom on purpose: unlike an uncited source this is a defect and not a state anything is waiting on, so the ceiling is the count, and a fourth one fails."
-    },
     "pace-sustained": {
       "match": "^waypoints\\[\\d+\\] covers .* — faster than \\w+ sustained at ",
       "max": 2,
