@@ -11,7 +11,9 @@
 # decree (the Marxists Internet Archive and Seventeen Moments). These
 # twenty-two do not, and without this file the gate would fail on `main` and
 # block every PR for a debt no PR introduced. That is the same bargain, and the
-# same shape of file, as scripts/media-index-backlog.txt.
+# same shape of file, as scripts/media-index-backlog.txt was — that one has
+# since been deleted, its 49 images fetched and indexed, which is what a
+# working allowance is supposed to end up doing.
 #
 # A line here is NOT a claim that the quotation is wrong. It is a claim that
 # nobody has shown it is right, which is the honest state of a citation that

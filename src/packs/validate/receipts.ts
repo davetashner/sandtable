@@ -156,7 +156,8 @@ export function missingFromAny(quote: string, contexts: string[]): string | unde
 
 /**
  * The one-time allowance, in the shape `scripts/media-index-backlog.txt`
- * already uses (PR #151): one id per line, `#` for comments and the reason,
+ * used (PR #151; removed once its debt was paid): one id per line, `#` for
+ * comments and the reason,
  * blank lines ignored. Kept as a text file rather than JSON because its
  * header is most of its value — a list of ids with no explanation is how an
  * allowance becomes permanent.

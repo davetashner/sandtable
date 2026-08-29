@@ -120,7 +120,7 @@ check_index() {
 }
 
 check_index media content/shared/media media.json \
-  content/shared/media/index.json 'npm run media' scripts/media-index-backlog.txt
+  content/shared/media/index.json 'npm run media'
 check_index audio content/shared/audio cue.json \
   content/shared/audio/index.json 'npm run audio'
 
