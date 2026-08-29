@@ -1,0 +1,11 @@
+{
+  "id": "source:selfridge-action-report-1942",
+  "kind": "archive",
+  "tier": "primary",
+  "author": "Craig, W. (Commanding Officer, U.S.S. Selfridge)",
+  "title": "Action in Pearl Harbor, T.H., 7 December 1941, report of (DL357/A16-3(5), Serial #055)",
+  "year": 1942,
+  "publisher": "U.S.S. Selfridge (DD-357), at sea/Pearl Harbor",
+  "url": "https://www.ibiblio.org/hyperwar/USN/ships/logs/DD/dd357-Pearl.html",
+  "notes": "The ship's own after-action report to the Commander in Chief, United States Fleet, dated 15 January 1942 — a one-page memorandum written five and a half weeks after the raid by an officer who was there. Cited here for the berth, the sequence of the first minutes, the guns, the rounds expended, and the sentence this pack most needs: \"Nine officers and ninety-nine percent of the crew were on board.\"\n\nRead in the HyperWar transcription at ibiblio.org, which is what this environment can open: the Naval History and Heritage Command's own copy at history.navy.mil fails TLS certificate verification from here, the same way Gallica and three US military history hosts refuse this project (docs/sources.md). The transcription runs to about 3,150 characters and was fetched twice with identical text; the receipt is in content/receipts/1941-pearl-harbor.json. It carries no pagination, so no page is given.\n\nTwo differences between transcriptions are worth recording rather than smoothing. The HyperWar text drops the numbered-paragraph markers (2, 4, 5, 6, 8, 9) that the NHHC copy carries, so this pack quotes the paragraphs without their numbers. And it prints \"it is believed that these guns were the first to fire in this area\" with a lower-case opening where the NHHC copy capitalises it. Neither changes a word. The report's own provenance, per NHHC, is NARA: Enclosure (E) to the CINCPAC action report, Serial 0479 of 15 February 1942.\n\nAs evidence it is what a warship reported about itself six weeks afterwards, to a superior, in a service whose reports of that morning were about to be litigated for eighty years. Paragraph 9 — \"the conduct, cooperation, coolness and morale of the crew as a fighting unit was superb\" — is a commanding officer writing about his own ship's company, and it reads like one."
+}

@@ -78,5 +78,41 @@
     "checkedBy": "Claude Opus 5 (agent), for sand-23b.57",
     "context": "its 230 nautical miles due north of Z point at 0130 hours X Day, and the second attack unit at 200 nautical miles due north of Z point at 0245 hours. After the launching of the second attack units is completed, the task force will withdraw northward at a speed of about 24 knots. The first attack units are scheduled to return between 0530 and 0600 hours and the second attack units are scheduled to return between 0645 and 0715",
     "repeat": "agreed"
+  },
+  {
+    "source": "source:selfridge-action-report-1942",
+    "usedIn": ["1941-pearl-harbor:document-selfridge-action-report"],
+    "how": "fetch",
+    "url": "https://www.ibiblio.org/hyperwar/USN/ships/logs/DD/dd357-Pearl.html",
+    "checkedAt": "2026-08-28",
+    "checkedBy": "Claude Opus 5 (agent), for sand-lry.5.1",
+    "repeat": "agreed",
+    "id": "receipt:1941-selfridge-heading-and-crew-aboard",
+    "quote": "DL357/A16-3(5)\nSerial #055\n\nU.S.S. SELFRIDGE\nJanuary 15, 1942\n\nFrom: Commanding Officer.\nTo: Commander in Chief, United States Fleet.\nSubject: Action in Pearl Harbor, T.H., 7 December 1941, report of.\n\nThis vessel participated in the defense of Pearl Harbor and the ships based therein during the air raid of 7 December 1941.\n\nBerth occupied was X-0 on heading approximately north-east, outboard and starboard side to U.S.S. Case, Reid, Tucker, Cummings and Whitney.\n\nNine officers and ninety-nine percent of the crew were on board.",
+    "context": "DL357/A16-3(5)\nSerial #055\n\nNY3\n\nU.S.S. SELFRIDGE\nJanuary 15, 1942\n\nFrom:\nCommanding Officer.\n\nTo:\nCommander in Chief, United States Fleet.\n\nSubject:\nAction in Pearl Harbor, T.H., 7 December 1941, report of.\n\nReference:\n(a) USNR Arts., 712, 762 874(6) and 2029.\n\nThis vessel participated in the defense of Pearl Harbor and the ships based therein during the air raid of 7 December 1941.\n\nBerth occupied was X-0 on heading approximately north-east, outboard and starboard side to U.S.S. Case, Reid, Tucker, Cummings and Whitney.\n\nService .50 caliber and 1.1\" caliber ammunition was clipped and in ready boxes at all machine guns prior to the action. Guns were ready for instant use except for being manned and loaded.\n\nNine officers and ninety-nine percent of the crew were on board.\n\nApproximately four minutes before morning colors the Officer of the Deck witnessed the launching of a torpedo against the U.S.S. Raleigh by a Japanese plane. Almost simultaneously came a report from the "
+  },
+  {
+    "source": "source:selfridge-action-report-1942",
+    "usedIn": ["1941-pearl-harbor:document-selfridge-action-report"],
+    "how": "fetch",
+    "url": "https://www.ibiblio.org/hyperwar/USN/ships/logs/DD/dd357-Pearl.html",
+    "checkedAt": "2026-08-28",
+    "checkedBy": "Claude Opus 5 (agent), for sand-lry.5.1",
+    "repeat": "agreed",
+    "id": "receipt:1941-selfridge-first-minutes",
+    "quote": "Approximately four minutes before morning colors the Officer of the Deck witnessed the launching of a torpedo against the U.S.S. Raleigh by a Japanese plane. Almost simultaneously came a report from the signal bridge that the Naval Air Station was on fire. The Officer of the Deck sounded the alarm for general quarters, set condition afirm and directed the engineering department to light off boilers and make preparations to get underway.\n\nAt about 0758 Selfridge .50 caliber machine guns were firing on Japanese planes, shortly followed by the 1.1\" machine guns.",
+    "context": "d of 7 December 1941.\n\nBerth occupied was X-0 on heading approximately north-east, outboard and starboard side to U.S.S. Case, Reid, Tucker, Cummings and Whitney.\n\nService .50 caliber and 1.1\" caliber ammunition was clipped and in ready boxes at all machine guns prior to the action. Guns were ready for instant use except for being manned and loaded.\n\nNine officers and ninety-nine percent of the crew were on board.\n\nApproximately four minutes before morning colors the Officer of the Deck witnessed the launching of a torpedo against the U.S.S. Raleigh by a Japanese plane. Almost simultaneously came a report from the signal bridge that the Naval Air Station was on fire. The Officer of the Deck sounded the alarm for general quarters, set condition afirm and directed the engineering department to light off boilers and make preparations to get underway.\n\nAt about 0758 Selfridge .50 caliber machine guns were firing on Japanese planes, shortly followed by the 1.1\" machine guns. it is believed that these guns were the first to fire in this area.\n\nTwo enemy planes fired upon were seen to crash. One was hit by the after 1.1\" while diving on the Curtiss. The wing was sheared off causing the plane to crash near the beach at Beckoning Point. Another plane flying low on a southerly course to westward of the Selfridge released a bomb in the North Channel opposite the U.S.S. Raleigh and crashed in flames in the vicinity of the U.S."
+  },
+  {
+    "source": "source:selfridge-action-report-1942",
+    "usedIn": ["1941-pearl-harbor:document-selfridge-action-report"],
+    "how": "fetch",
+    "url": "https://www.ibiblio.org/hyperwar/USN/ships/logs/DD/dd357-Pearl.html",
+    "checkedAt": "2026-08-28",
+    "checkedBy": "Claude Opus 5 (agent), for sand-lry.5.1",
+    "repeat": "agreed",
+    "id": "receipt:1941-selfridge-rounds-and-conduct",
+    "quote": "850 rounds of 1.1\" and 2340 rounds of .50 caliber were expended during the action. There were no personnel casualties.\n\nThe performance of the ship's equipment was excellent, as was that of the crew. At no time during the raid was there a lull in firing caused by an interruption of ammunition supply. Men not engaged at the guns broke out and clipped ammunition in a most efficient and expeditious manner. The conduct of no one officer or man can be considered outstanding because the conduct, cooperation, coolness and morale of the crew as a fighting unit was superb.\n\n[signed] W. CRAIG.",
+    "context": " the Selfridge released a bomb in the North Channel opposite the U.S.S. Raleigh and crashed in flames in the vicinity of the U.S.S. Curtiss while being fired on by the forward 1.1\" machine gun. A third plane, under fire by the forward 1.1\", was seen to disappear behind a hedge half way up a hill at a location bearing about 045 True from the Selfridge. A fourth plane, hit in the underpart of the fuselage by the port .50 caliber machine gun, started smoking and when last seen was headed toward a cane field to the northward of the Selfridge. It is now known definitely however that this plane crashed.\n\n850 rounds of 1.1\" and 2340 rounds of .50 caliber were expended during the action. There were no personnel casualties. The only evidence of material casualty is a small conical shaped dent in the starboard side of the director which appears to have been made by a small caliber machine gun bullet.\n\nThe performance of the ship's equipment was excellent, as was that of the crew. At no time during the raid was there a lull in firing caused by an interruption of ammunition supply. Men not engaged at the guns broke out and clipped ammunition in a most efficient and expeditious manner. The conduct of no one officer or man can be considered outstanding because the conduct, cooperation, coolness and morale of the crew as a fighting unit was superb.\n\n[signed]\n\nW. CRAIG.\n\nCopy to:\n\nCombatfor\n\nComdesbatfor\n\nComdesron "
   }
 ]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1941-pearl-harbor:vignette-tashner-barracks",
+    "title": "“Go shoot the planes”",
+    "at": "1941-12-07T18:25:00Z",
+    "place": "place:pearl-harbor",
+    "voice": "John Charles Tashner Jr., twenty years old, as his sons tell it",
+    "kind": "memoir",
+    "text": "He was shaving in his skivvies when the planes came over. He ran downstairs, and at the door somebody handed him a rifle and told him to go shoot at them.[^tashner-family-2026]\n\nHis eldest son heard it differently, and only once. His father said it was utter confusion: mustered out of the barracks several times, handed a rifle with no ammunition — the ammunition was locked up in another building, for safety — and then finally given bullets, with the rumour going round that the landings would come next.[^tashner-john-2026]\n\nThen the part both sons were told. He spent that day and several more on the water, recovering the dead out of the oil. He was twenty. The son who wrote that down, eighty-five years later, could get no closer to it than this: *you do what you must when necessity calls for it*. He was the quiet type, typical of his generation.[^tashner-family-2026] He spoke to his eldest son about that morning exactly once.[^tashner-john-2026]",
+    "people": ["person:tashner-john-charles-jr"],
+    "links": {
+      "battles": ["1941-pearl-harbor:oahu"],
+      "events": ["1941-pearl-harbor:event-first-wave-attacks", "1941-pearl-harbor:event-raid-over"]
+    },
+    "sources": [
+      {
+        "source": "source:tashner-family-2026",
+        "note": "the shaving, the rifle at the door and the words as this son remembers them, and the sentence about necessity, which is his own. Two things in his account are recorded as told rather than corrected. He gives the hour as seven; the first wave was over Oahu at about 0755, and the pack places this vignette at the attack rather than at the hour the account names. And he calls the weapon “a single shot M-1 rifle”, which is not a description of any one weapon — the M1 Garand was semi-automatic, and a rifle pushed at a man in that confusion was as likely the bolt-action M1903. Neither is a reason to doubt him. They are what an eighty-five-year-old memory looks like after passing through two people, which is what the testimony rung in docs/sources.md exists to say out loud"
+      },
+      {
+        "source": "source:tashner-john-2026",
+        "note": "the confusion, the musters, the rifle without ammunition and the ammunition locked elsewhere, the rumoured landing, and the days pulling bodies out of the oily water. This is the fuller of the two accounts and its author says his father spoke to him about the attack exactly once"
+      }
+    ]
+  }
+]

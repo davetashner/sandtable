@@ -10,7 +10,10 @@
         "source": "source:agawa-1979",
         "note": "the six-months estimate and Yamamoto's position on the war, from the standard Japanese life of him in translation. Not read at page level from this environment; nothing is quoted from it"
       },
-      { "source": "source:morton-1962", "note": "ch. VI and after — the first six months" }
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI and after — the first six months"
+      }
     ]
   },
   {
@@ -46,7 +49,10 @@
         "source": "source:parshall-2010",
         "note": "the 1948 and 1963 interviews and how the story changed; read through source:combinedfleet, whose wording is quoted on the historiography card"
       },
-      { "source": "source:parshall-tully-2005", "note": "Fuchida's Midway account, dismantled" }
+      {
+        "source": "source:parshall-tully-2005",
+        "note": "Fuchida's Midway account, dismantled"
+      }
     ]
   },
   {
@@ -90,7 +96,10 @@
         "source": "source:craven-cate-aaf-1",
         "note": "ch. 6 — the radar plot at 0702 and the duty officer's reasons, quoted"
       },
-      { "source": "source:morton-1962", "note": "ch. VI — the Army's aircraft losses" }
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI — the Army's aircraft losses"
+      }
     ]
   },
   {
@@ -146,6 +155,31 @@
       {
         "source": "source:layton-1985",
         "note": "the usual source of the Nimitz remark. **Not read**; nothing is quoted from it and no page is given"
+      }
+    ]
+  },
+  {
+    "id": "1941-pearl-harbor:cast-tashner-john-charles-jr",
+    "person": "person:tashner-john-charles-jr",
+    "side": "us",
+    "role": "Enlisted sailor at Pearl Harbor, aged twenty",
+    "bio": "He was twenty years old and ashore. Both his sons place him in a barracks that morning, mustered out and handed a rifle, and neither of them puts him on a ship.[^tashner-family-2026][^tashner-john-2026] He is in this cast because he is the only participant voice this pack holds. It shipped with none: the obvious first-person account of 7 December is Fuchida's, and this pack treats Fuchida as a subject rather than an authority. A vignette invented to fill that gap would have been the worst thing in the pack. This one was given to the project by his grandson.\n\n**The ship and the barracks do not quite agree, and the disagreement is left standing.** The family names USS *Selfridge* (DD-357), which was moored in Pearl Harbor that morning and reported on it: nested outboard of *Case*, *Reid*, *Tucker*, *Cummings* and *Whitney* at berth X-0, firing her machine guns from about 0758, 3,190 rounds away and no casualties. The same report says “Nine officers and ninety-nine percent of the crew were on board.”[^selfridge-action-report-1942] That leaves very few men ashore, and both accounts of Jay Tashner put him among them. Both can be true — he may have been one of the handful, or he may have been attached to *Selfridge* at some other date in a career that ran twenty-one years. This pack does not assert that he was aboard *Selfridge* on 7 December 1941, and does not assert that he was not. Nothing it has read names him at all.\n\nWhat he did afterwards is better evidenced than what he did that morning, and it settles a second disagreement about halfway. His eldest son describes a career in naval aviation — fighter squadrons early, anti-submarine work later, an electronics technician through the arrival of radio and radar in aircraft, and so at sea in carriers.[^tashner-john-2026] His brother remembers carriers *and* destroyers.[^tashner-family-2026] Duty entries transcribed from his service papers come down on the aviation side and from a documentary direction: from October 1943 he “Serviced PBY and Army B24 Aircraft — emergency repair” and was “In charge of maintenance crew detachment on Island of Betio”, and from May 1944 he was “Chief radioman in charge of electronics division fleet plane pool”, readying aircraft for the fleet.[^tashner-service-record] That is aviation ground support and electronics, not deck service. It does not make the destroyers wrong; a twenty-one-year career holds both, and the entries cover nineteen months of it.\n\nBetio is the island of the battle of Tarawa, 20–23 November 1943, and his duty there is given as a range — October 1943 to May 1944 — rather than a date. Servicing PBYs and Army B-24s from a maintenance detachment describes work on the airfield, and the airfield was what the assault was for. **This pack does not say he landed with the assault.** It says the record puts him on Betio inside that window and does not say when he arrived.[^tashner-service-record] The second entry reads “at Majuro, G.I.”, transcribed as “Majuro, Gilbert Islands”; Majuro is in the Marshalls, not the Gilberts, and by May 1944 it was the fleet's forward anchorage in the Central Pacific. Whether the abbreviation is a clerk's, the expansion the family's, or both an echo of the campaign's own name — the Gilbert and Marshall Islands campaign — is not something this pack knows, and it does not edit a service record to find out.\n\nTwo more things are recorded here as unresolved because the sources leave them so. **Midway is not a fact in this pack.** One account has him there later in the war; the other, the better-informed one, says “I need to check but I think he was at the battle of Midway as well”.[^tashner-family-2026][^tashner-john-2026] A witness marking the limit of his own knowledge is the most useful sentence in either account, and promoting it to a fact by transcription is exactly the failure this project exists to avoid. And he refused a commission for reasons his two sons remember differently: one says it would have meant destroyers, which were being sunk, and he had a wife at home;[^tashner-family-2026] the other gives two reasons in his father's own words — that newly commissioned men were filling the slots in direct contact with the Japanese, and that after the last war the officers had been dismissed at the armistice while the enlisted technical men were kept — and adds, as his own suspicion and not his father's word, that he may have been resisting his wife's ambition for him.[^tashner-john-2026] Both are carried. He retired in 1958, a chief petty officer, with four children to raise.",
+    "sources": [
+      {
+        "source": "source:tashner-family-2026",
+        "note": "the barracks and the rifle, the carriers and destroyers, Midway as a flat statement, and the first of the two reasons for refusing a commission"
+      },
+      {
+        "source": "source:tashner-john-2026",
+        "note": "the aviation squadrons, the radio and radar work, the chief's rate, the explicit hedge on Midway, and the second and third reasons for refusing a commission"
+      },
+      {
+        "source": "source:tashner-service-record",
+        "note": "the two duty entries, quoted as supplied. Family-transcribed text; no scan and no archive reference, and the source entry says what is and is not known about it"
+      },
+      {
+        "source": "source:selfridge-action-report-1942",
+        "note": "the berth and the nesting, the guns from about 0758, the 850 and 2,340 rounds, the absence of casualties, and “Nine officers and ninety-nine percent of the crew were on board.” Verified by fetch; see content/receipts/1941-pearl-harbor.json"
       }
     ]
   }

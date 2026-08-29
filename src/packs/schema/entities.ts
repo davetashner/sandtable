@@ -117,23 +117,41 @@ export const PlateSet = z
  * A work is filed by its **form**, not by the use one pack makes of it: an
  * edition that prints a document is `primary` even when its editor also
  * argues a case, and a monograph is a `study` even when it prints a document
- * in an appendix. `notes` carries the rest. The five middle values are the
- * five rungs of the hierarchy in `docs/sources.md`, in its order; `primary`
+ * in an appendix. `notes` carries the rest. The six middle values are the
+ * six rungs of the hierarchy in `docs/sources.md`, in its order; `primary`
  * sits above them (rule 7 — the record itself) and `reference` below them
  * (rule 8 — never an operational claim).
+ *
+ * `testimony` was added when the first veteran's account reached the project
+ * (`sand-lry.5.1`). It is not the same thing as `memoir`, and the line between
+ * them is **who fixed the words**: a memoir is the participant's own account,
+ * set down by the participant; testimony is an account of what a participant
+ * said, relayed by somebody else and usually written down long afterwards.
+ * That extra pair of hands is the whole of the difference and it is worth a
+ * rung of its own, because a project that will carry many such accounts should
+ * not have to decide each time whether a family recollection is a memoir.
  */
 export const EvidenceTier = z
   .enum(
-    ['primary', 'official-history', 'study', 'unit-history', 'memoir', 'general', 'reference'],
+    [
+      'primary',
+      'official-history',
+      'study',
+      'unit-history',
+      'memoir',
+      'testimony',
+      'general',
+      'reference',
+    ],
     {
       // The message is the whole point of overriding it. A source is added by
       // whoever is writing content, in the PR that first cites it, and the
-      // default enum error names seven slugs with no way to choose between
+      // default enum error names eight slugs with no way to choose between
       // them. This one asks the question `docs/sources.md` asks and says where
       // the answer is written down.
       error:
         'a source must say where it stands in the hierarchy of evidence — one of ' +
-        'primary, official-history, study, unit-history, memoir, general, reference. ' +
+        'primary, official-history, study, unit-history, memoir, testimony, general, reference. ' +
         'File the work by its form, not by the use one pack makes of it (docs/sources.md).',
     },
   )

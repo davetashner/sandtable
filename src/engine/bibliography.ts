@@ -36,6 +36,7 @@ export const EVIDENCE_ORDER: readonly EvidenceTier[] = [
   'study',
   'unit-history',
   'memoir',
+  'testimony',
   'general',
   'reference',
 ] as const;
@@ -46,6 +47,7 @@ export const EVIDENCE_LABEL: Record<EvidenceTier, string> = {
   study: 'Archive-based modern studies',
   'unit-history': 'Regimental and divisional histories',
   memoir: 'Memoirs and participants’ accounts',
+  testimony: 'Oral history and testimony relayed by others',
   general: 'General histories, surveys and handbooks',
   reference: 'Institutional and reference records',
 };
@@ -57,6 +59,7 @@ export const EVIDENCE_SHORT: Record<EvidenceTier, string> = {
   study: 'Modern study',
   'unit-history': 'Unit history',
   memoir: 'Memoir',
+  testimony: 'Testimony',
   general: 'General history',
   reference: 'Reference record',
 };
@@ -77,6 +80,8 @@ export const EVIDENCE_RUBRIC: Record<EvidenceTier, string> = {
   'unit-history': 'Regimental and divisional histories, for the hourly detail of a battle.',
   memoir:
     'What a participant believed, remembered or wanted remembered — cited as that, never as fact.',
+  testimony:
+    'The same recollection at one more remove: what a participant told somebody else, written down later. The weakest rung for a date, a number or a position, and often the only witness there is to what an hour was actually like.',
   general:
     'Context, colour and matters of record no specialist disputes. Numbers and positions come from the rungs above.',
   reference:
