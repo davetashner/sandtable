@@ -10,7 +10,7 @@
 
 This is the Pacific equivalent of [`imagery-phase-1.md`](imagery-phase-1.md) and
 [`imagery-kit.md`](imagery-kit.md), and it works to the same rule. It names, for
-each of the forty-three people added to `content/shared/people/people.json` in
+each of the forty-three people added to `content/shared/people/` in
 this pass, the specific archive photograph a colorization should start from:
 archive, identifier, date, photographer where the record names one, licence, and
 the URL.
@@ -410,8 +410,9 @@ be the first thing `sand-lry.14` puts there.
 Worth recording here because it was measured rather than guessed, and because it
 is a problem for the arc rather than for this pass.
 
-`scripts/lib/pack-bundle.ts` reads `content/shared/people/people.json` **whole**
-into every era bundle. Adding this cast took the heaviest era's pack from
+At the time of this pass, `scripts/lib/pack-bundle.ts` read the shared people
+registry — then a single `content/shared/people/people.json` — **whole** into
+every era bundle. Adding this cast took the heaviest era's pack from
 281.6 kB to **297.7 kB** gzip — and the same 16.1 kB landed on the 1915 pack,
 which references none of these people. Headroom against the 340 kB `pack`
 ceiling fell from 58.4 kB to 42.3 kB in a single content pass.
@@ -424,6 +425,14 @@ all. Filed as `sand-shn.15`, with the likely fix — emit only the shared entiti
 an era actually references, which the validator's own reference index already
 knows — and it is much cheaper to make that change before the ten packs are
 written than after.
+
+**Since (2026-08-29, `sand-shn.24`):** both halves of that paragraph have moved
+on, so read it as a record of what was measured and not as a description of the
+build. `sand-shn.15` landed the fix (ADR 0018's second amendment): the bundler
+emits only the shared entities an era reaches, and the 1915 pack fell from
+58.6 kB to 3.0 kB. [ADR 0022](decisions/0022-per-entity-registries.md) then
+split the three registries into one file per entity, so there is no
+`people.json` to read whole.
 
 ## No manifests, no binaries
 
