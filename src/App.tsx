@@ -1641,7 +1641,7 @@ function AppShell() {
               <span className="visually-hidden">Sandtable</span>
               <img
                 className="brand__wordmark brand__wordmark--light"
-                src="/brand/wordmark-light.png"
+                src="/brand/wordmark-light.webp"
                 alt=""
                 aria-hidden="true"
                 width="872"
@@ -1650,7 +1650,7 @@ function AppShell() {
               />
               <img
                 className="brand__wordmark brand__wordmark--dark"
-                src="/brand/wordmark-dark.png"
+                src="/brand/wordmark-dark.webp"
                 alt=""
                 aria-hidden="true"
                 width="859"

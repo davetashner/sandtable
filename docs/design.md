@@ -192,11 +192,16 @@ not an error, and must not read as one.
 The mark is a sand table seen from above — a tray of contoured sand with three
 side-coloured tokens and one marching route — with SANDTABLE set in the display
 serif, small caps, tracked out. Assets live in `public/brand/` (copied to the
-site root on deploy): `wordmark-light.png` / `wordmark-dark.png` (the header
+site root on deploy): `wordmark-light.webp` / `wordmark-dark.webp` (the header
 lockups, switched by theme), `sandtable-mark.png` (the tray mark on charcoal,
 also the social image), `icon-16/32/192/512.png` and `apple-touch-icon.png`
 (the square icon on charcoal, which reads on both light and dark browser
-chrome). The wordmark is the `h1`; its light image carries the accessible name.
+chrome). The wordmark is the `h1`; its light image carries the accessible name. Both
+lockups are **lossless WebP** (`sand-pmz.42`): as PNG they were 150 kB and
+122 kB, 13% of a campaign cold load, for a mark drawn at 42px tall. Both are
+still fetched — `display: none` does not stop a fetch, and the two-element
+structure is deliberate because the accessible name lives on the light one
+(`docs/accessibility.md`) — so the format was changed and the markup was not.
 Era-agnostic by design: no period iconography in the mark.
 
 ## Rules of use
