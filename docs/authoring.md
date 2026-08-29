@@ -551,6 +551,26 @@ only `plannedDay` reads "never"; one with only `actualAt` is a reality-only
 mark. The gauges under the timeline read the slip on the milestone furthest
 along; clicking one opens the card (`?card=<id>`).
 
+Where the plan named an hour rather than a day, write `plannedAt` — an
+instant, in place of `plannedDay`, never both — or a fractional `plannedDay`:
+
+```json
+{
+  "id": "one-oclock",
+  "label": "The hour Tokyo ordered: 1 p.m. in Washington",
+  "plannedAt": "1941-12-07T18:00:00Z",
+  "actualAt": "1941-12-07T19:20:00Z"
+}
+```
+
+That milestone is read on the clock: the slip picks its unit from its own
+size — minutes under two hours, hours under two days, days beyond — so the
+eighty minutes between the hour Tokyo ordered and the hour the memorandum was
+handed over is drawn as `80 min behind` rather than rounded to nothing
+(`sand-lry.24`). Both the plan and the actual then carry the hour (UTC, marked
+`Z`) in the card. A whole-day `plannedDay` reads in days exactly as before, so
+mixing the two in one timetable is fine.
+
 ### Strength ledgers
 
 `tallies.json` — a running count that changes as dated entries bite (the

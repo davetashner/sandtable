@@ -342,6 +342,11 @@ export const Branch = z
  * origin and milestones the plan expected on given days, each recording when
  * (if ever) it was actually reached. Generic — the Schlieffen timetable, the
  * Russian-mobilization assumption, any later era's plan vs. actual.
+ *
+ * A milestone's plan is a whole day (`plannedDay: 12`), a fraction of one, or
+ * an instant (`plannedAt`) where the plan turns on the clock rather than the
+ * calendar — Tokyo's one o'clock in Washington, not M+12 (sand-lry.24). The
+ * gauge reads the slip in whichever unit the plan was written in.
  */
 export const Timetable = z
   .object({
@@ -357,7 +362,15 @@ export const Timetable = z
           .object({
             id: Slug,
             label: z.string().min(1),
-            plannedDay: z.number().optional().describe('Day the plan expected it; absent for reality-only marks'),
+            plannedDay: z
+              .number()
+              .optional()
+              .describe(
+                'Day the plan expected it; absent for reality-only marks. Fractional for a plan that names an hour',
+              ),
+            plannedAt: IsoTime.optional().describe(
+              'The instant the plan expected it, for a plan that turns on the clock rather than the calendar; an alternative to plannedDay, never both',
+            ),
             actualAt: IsoTime.optional().describe('When it actually happened; absent if never'),
             place: Id.optional(),
             note: Markdown.optional(),

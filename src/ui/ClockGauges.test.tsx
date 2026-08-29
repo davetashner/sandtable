@@ -33,3 +33,41 @@ describe('<ClockGauges>', () => {
     expect(onSelect).toHaveBeenCalledWith('1914:clock-x');
   });
 });
+
+const washington: Timetable = {
+  id: '1941:clock-washington',
+  title: 'The Washington clock',
+  origin: '1941-11-26T00:00:00Z',
+  dayLabel: 'D+',
+  assumption: 'a',
+  milestones: [
+    {
+      id: 'one-oclock',
+      label: 'One o’clock in Washington',
+      plannedAt: '1941-12-07T18:00:00Z',
+      actualAt: '1941-12-07T19:20:00Z',
+    },
+  ],
+  sources: [{ source: 'source:x' }],
+};
+
+describe('<ClockGauges> on a plan that names an hour (sand-lry.24)', () => {
+  it('reads the slip in minutes and leans behind', () => {
+    render(
+      <ClockProvider
+        range={{ start: Date.UTC(1941, 10, 26), end: Date.UTC(1941, 11, 8) }}
+        initialNow={Date.UTC(1941, 11, 7, 20)}
+      >
+        <ClockGauges clocks={[washington]} />
+      </ClockProvider>,
+    );
+    const gauge = screen.getByRole('button', {
+      name: /The Washington clock: D\+11, 80 min behind on One o’clock in Washington/,
+    });
+    expect(gauge).toHaveAttribute('data-tone', 'behind');
+    expect(document.querySelector('.clocks__tick--plan')).toHaveAttribute(
+      'title',
+      'D+11 18:00Z: One o’clock in Washington',
+    );
+  });
+});

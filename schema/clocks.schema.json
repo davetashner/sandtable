@@ -48,8 +48,14 @@
               "minLength": 1
             },
             "plannedDay": {
-              "description": "Day the plan expected it; absent for reality-only marks",
+              "description": "Day the plan expected it; absent for reality-only marks. Fractional for a plan that names an hour",
               "type": "number"
+            },
+            "plannedAt": {
+              "description": "The instant the plan expected it, for a plan that turns on the clock rather than the calendar; an alternative to plannedDay, never both",
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
             },
             "actualAt": {
               "description": "When it actually happened; absent if never",
