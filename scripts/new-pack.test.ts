@@ -22,6 +22,7 @@ import {
   type PackOptions,
 } from './new-pack.js';
 import { validateContent } from '../src/packs/validate/validate.js';
+import type { TileArchive } from '../src/packs/schema/tiles.js';
 import { readContent } from './lib/read-content.js';
 
 /** The real manifests: the caveats and the archive statuses are the point. */
@@ -90,9 +91,28 @@ describe('the generated pack', () => {
   });
 
   it("names the tile archive's status, so uploaded-or-not is not a surprise", () => {
+    // Read the status out of the manifest rather than writing it here. An
+    // archive's status changes the day someone runs the extract (`sand-lry.17`
+    // uploaded six of them), and a literal in this test fails on the upload —
+    // which is the good news — instead of on a regression.
+    const statusOf = (name: TileArchive) => REAL.tiles.get(name)?.status;
     const built = scaffold(PACIFIC, facts());
-    expect(built.notes.join('\n')).toMatch(/tiles central-pacific-z10 — status "planned"/);
-    expect(built.files['README.md']).toMatch(/status `planned`/);
+    expect(built.notes.join('\n')).toContain(
+      `tiles central-pacific-z10 — status "${statusOf('central-pacific-z10')}"`,
+    );
+    expect(built.files['README.md']).toContain(`status \`${statusOf('central-pacific-z10')}\``);
+
+    // The half an author needs most: an archive nobody has run yet says so, and
+    // says what the map does until someone does. Assault scale is where those
+    // live now, and betio-z14 waits for the pack that needs it.
+    expect(statusOf('betio-z14')).toBe('planned');
+    const planned = scaffold(
+      { ...PACIFIC, region: [172.88, 1.3, 173.08, 1.65], tiles: 'betio-z14' },
+      facts(),
+    );
+    expect(planned.notes.join('\n')).toContain('tiles betio-z14 — status "planned"');
+    expect(planned.notes.join('\n')).toMatch(/not on the table/);
+    expect(planned.files['README.md']).toMatch(/not yet in the bucket/);
   });
 
   it('lists every placeholder it filled in', () => {

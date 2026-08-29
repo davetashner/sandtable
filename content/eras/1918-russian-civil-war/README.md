@@ -178,8 +178,23 @@ The pack `region` runs from Warsaw to Vladivostok and from Murmansk to Baku —
 latitude. The opening camera sits at zoom 2.6, which is a world view. That is
 not a failure of framing; it is the subject.
 
-**Tiles:** the extracts for this region are not authored. The map will render on
-the borders layer alone until they are (`sand-lry.17`, a manual step).
+**Tiles: `world-z6`, and the low zoom is deliberate.** No regional archive holds
+this pack. `eastern-europe-z10` — the obvious candidate, and the one the 1917
+pack is drawn on — stops at 46°E, which is short of Omsk, of the whole Siberian
+intervention, and of the Trans-Siberian the Czechoslovak Legion was strung along
+for four thousand miles. That railway is the pack's spine, so an archive that
+cuts it in half is not a partial answer, it is the wrong map.
+
+The price is paid at the other end, and it should be said plainly. `world-z6`
+stops at zoom 6; three of this pack's four zoom-ins are city scale
+(Brest-Litovsk z8, Warsaw z7.6, Kronstadt z10.2) and all three would have been
+crisp on `eastern-europe-z10`. MapLibre overzooms rather than blanking, so they
+render — coastline, water and the major roads, stretched, with no street
+detail. That is the trade: a coarse Kronstadt against a blank Siberia, and for a
+pack whose subject is distance it is the right way round. If the Kronstadt
+chapter turns out to be unreadable, the fix is `tiles` on that one battle
+(`Battle.tiles` exists for exactly this), not a different archive for the pack.
+See [ADR 0002](../../../docs/decisions/0002-geography.md)'s 2026-08-29 note.
 
 ## What was read, and what was not
 

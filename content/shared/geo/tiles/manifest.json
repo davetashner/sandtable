@@ -6,10 +6,10 @@
   "attribution": "Protomaps © OpenStreetMap contributors",
   "servedFrom": "/assets/tiles/<name>.pmtiles",
   "builtBy": "scripts/tiles-extract.sh <name> <west,south,east,north> <maxzoom> [build-date]",
-  "updatedAt": "2026-08-28",
+  "updatedAt": "2026-08-29",
   "statuses": {
     "uploaded": "in the assets bucket; a pack that names it gets a basemap",
-    "planned": "the extract is decided and not yet run — naming it is correct and draws no basemap until sand-lry.17 uploads it",
+    "planned": "the extract is decided and not yet run — naming it is correct and draws no basemap until someone runs it. What is left is assault scale: one archive per battle, built when that battle's pack is authored (sand-lry.17).",
     "retired": "still in the bucket, no longer offered to packs"
   },
   "entries": [
@@ -20,48 +20,60 @@
       "status": "uploaded",
       "build": "20260821",
       "sizeMb": 541,
-      "serves": "the default: 1914, 1915, and every western-front pack. Stops at 24°E/56°N — short of Lemberg, Riga and Petrograd."
+      "serves": "the default, and named outright by 1914 and 1915 rather than fallen into (sand-lry.21). Stops at 24°E/56°N — short of Lemberg, Riga and Petrograd."
     },
     {
       "name": "world-z6",
       "bbox": [-180, -85, 180, 85],
       "maxzoom": 6,
-      "status": "planned",
-      "serves": "the atlas landing view; every Pacific crossing; the Russian Civil War's continental sweep. The one archive that survives the antimeridian."
+      "status": "uploaded",
+      "build": "20260828",
+      "sizeMb": 43,
+      "serves": "the atlas landing view; every Pacific crossing; the Russian Civil War's continental sweep. The one archive that survives the antimeridian, and the one 1918 and 1941 name. z6 is coarse under a city zoom-in and it is still the only archive that holds either pack's region."
     },
     {
       "name": "eastern-europe-z10",
       "bbox": [13, 40, 46, 61],
       "maxzoom": 10,
-      "status": "planned",
-      "serves": "the Eastern Front 1914-17, the Russian Revolution and Civil War, and the Eastern Front 1941-45. Cuts off Baku and Arkhangelsk; world-z6 covers those."
+      "status": "uploaded",
+      "build": "20260828",
+      "sizeMb": 613,
+      "serves": "the Eastern Front 1914-17, the Russian Revolution (which names it) and the Eastern Front 1941-45. Cuts off Baku, Arkhangelsk and everything past 46°E; the Civil War needed world-z6 instead."
     },
     {
       "name": "east-asia-z10",
       "bbox": [112, 20, 146, 47],
       "maxzoom": 10,
-      "status": "planned",
+      "status": "uploaded",
+      "build": "20260828",
+      "sizeMb": 159,
       "serves": "Mukden 1931, the Home Islands, Formosa, Korea and Okinawa at theatre scale, and the Russo-Japanese War."
     },
     {
       "name": "central-pacific-z10",
       "bbox": [130, -2, 178, 30],
       "maxzoom": 10,
-      "status": "planned",
+      "status": "uploaded",
+      "build": "20260828",
+      "sizeMb": 3,
       "serves": "the Gilberts, Marshalls, Carolines, Palaus, Marianas, Bonins and the Philippine Sea."
     },
     {
       "name": "sw-pacific-z10",
       "bbox": [140, -18, 168, 2],
       "maxzoom": 10,
-      "status": "planned",
+      "status": "uploaded",
+      "build": "20260828",
+      "sizeMb": 9,
       "serves": "Guadalcanal, the Slot, Rabaul, Bougainville, New Guinea and the Coral Sea."
     },
     {
       "name": "philippines-z10",
       "bbox": [116, 4, 128, 20],
       "maxzoom": 10,
-      "status": "planned",
+      "status": "uploaded",
+      "build": "20260828",
+      "sizeMb": 14,
       "serves": "Leyte Gulf, Surigao Strait, Cape Engaño, Luzon, Lingayen and Corregidor."
     },
     {

@@ -951,8 +951,9 @@ map with a mistake in it, it is a mistake that looks like a map.
 An **archive name**, not a URL: the engine resolves it to the assets bucket, and
 the list is closed, so your editor and the validator will both refuse a typo.
 `content/shared/geo/tiles/manifest.json` says what each archive covers and
-whether it is uploaded yet — most are not (`sand-lry.17`), and naming one that
-is not is still the right thing to write. You will see the map say _the basemap
+whether it is uploaded yet — every theatre-scale one is, and the assault-scale
+ones are run when their pack is authored (`sand-lry.17`). Naming one that has
+not been run yet is still the right thing to write. You will see the map say _the basemap
 for this map is not on the table yet_ over the borders and the movement until
 the extract is run; that is the honest state, and the pack is finished the day
 it is.

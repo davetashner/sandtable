@@ -71,9 +71,17 @@ must show the political geography of the period (Alsace-Lorraine German in
     original extract, retained in the bucket and no longer referenced. Styled by
     `protomaps-themes-base` v4 with the muted palette in `src/engine/map/style.ts`
     (replaced by the design-system map style, `sand-neh.2`).
-  - The Eastern-Front and Pacific extracts are listed in the 2026-08-27 note
-    below, with their bboxes and the command that builds each; none of them is
-    uploaded yet (`sand-lry.17`).
+  - The six theatre-scale extracts of the 2026-08-27 note below were run and
+    uploaded on 2026-08-28 from build `20260828` (`sand-lry.17`); their bboxes
+    and what each serves are in that note's table, and their real sizes are
+    `eastern-europe-z10` 613 MB, `east-asia-z10` 159 MB, `world-z6` 43 MB,
+    `philippines-z10` 14 MB, `sw-pacific-z10` 9 MB, `central-pacific-z10`
+    3 MB. The spread is the point: a European extract is expensive because
+    Europe is dense and the archive keeps every zoom below `maxzoom`, while an
+    archive that is nine tenths ocean costs almost nothing — the whole Central
+    Pacific is 0.5% of Central Europe, and the whole world at z≤6 is 8% of it.
+  - The eight assault-scale extracts are still unrun; each waits for the pack
+    that needs it (`sand-lry.17`).
 - Borders: `npm run borders` builds one world file per era year from
   aourednik/historical-basemaps (GPL-3.0); `content/shared/geo/borders/README.md`
   lists years, caveats and attribution. Drawn by `src/engine/map/borders.ts`.
@@ -83,10 +91,12 @@ must show the political geography of the period (Alsace-Lorraine German in
 
 ## Implementation note (2026-08-27, `sand-en0.1` / `sand-lry.1`)
 
-Extending the geography east and then across the Pacific. Nothing here has been
-uploaded — every `pmtiles extract` below needs the `pmtiles` CLI and the
-`sandtable-deployer` profile, so they are collected as a manual run at the end
-of this note (`sand-lry.17`).
+Extending the geography east and then across the Pacific. Every `pmtiles
+extract` below needs the `pmtiles` CLI and the `sandtable-deployer` profile, so
+they are collected as a manual run at the end of this note (`sand-lry.17`).
+Nothing here had been uploaded when this note was written; the theatre-scale
+half was run on 2026-08-28, and the assault-scale half still waits for the
+packs that need it.
 
 ### What the pinned borders dataset actually has
 
@@ -249,9 +259,9 @@ failure page.
 
 Backwards compatibility is the reason `tiles` is optional: a pack that names
 none is drawn on `central-europe-z10`, which is what it was drawn on before,
-so 1914 and 1915 do not move. The eras already merged still declare nothing —
-1917 waits for `eastern-europe-z10` to reach the bucket rather than trading a
-partial basemap for a notice (`sand-lry.21`).
+so 1914 and 1915 do not move. Until the archives were in the bucket the eras
+already merged declared nothing, because naming one would have traded a partial
+basemap for a notice; they declare now (`sand-lry.21`, the note below).
 
 ### The manual run
 
@@ -259,6 +269,13 @@ Every command below needs the `pmtiles` CLI (`brew install pmtiles`) and the
 `sandtable-deployer` AWS profile. `scripts/tiles-extract.sh` extracts and
 uploads in one step; sizes are unknown until it runs, and the `Extracts` list
 above should be amended with each archive's real size afterwards.
+
+**The theatre-scale block was run on 2026-08-28** against Protomaps build
+`20260828` (`planetiler:osm:osmosisreplicationtime 2026-08-28T04:00:00Z`, which
+is what `pmtiles show` on any of the six reports and the only build stamp the
+archives carry). All six answer a range request through CloudFront as
+`application/vnd.pmtiles`, and each one's bounds and `max zoom` read back
+exactly the bbox and zoom in the table above. Sizes are in the `Extracts` list.
 
 ```bash
 # Theatre scale — run these first; the waiting beads need them.
@@ -298,6 +315,68 @@ its own. Assessed and not fixed here: `--sea` and `--land` are design tokens
 that every scene in the visual baseline is drawn against, so changing them is a
 design decision under `sand-neh`, not a side effect of a geography bead. Filed
 as `sand-neh.31`.
+
+## Implementation note (2026-08-29, `sand-lry.21`)
+
+The six theatre archives are in the bucket, so every merged era now names the
+map it is drawn on. The choice was made against each pack's `region` rather
+than its title, because an era naming an archive that does not contain its
+region renders blank in the corners and reports nothing: the notice in
+`MapView` fires on a **failed request**, and a request that succeeds and
+returns no tiles for that corner is indistinguishable from ocean.
+
+| Era                       | `region`            | `tiles`              |
+| ------------------------- | ------------------- | -------------------- |
+| `1914-schlieffen-marne`   | `0,47 → 9,52`       | `central-europe-z10` |
+| `1915-attrition`          | `1.5,47 → 8.5,51.6` | `central-europe-z10` |
+| `1917-russian-revolution` | `7,46 → 42,67`      | `eastern-europe-z10` |
+| `1918-russian-civil-war`  | `20,38 → 133,70.5`  | `world-z6`           |
+| `1941-pearl-harbor`       | `99,−12 → −155,52`  | `world-z6`           |
+
+**1914 and 1915 declare the default.** Both regions sit inside `−1.5,42 →
+24,56` with room to spare, and so does every place either pack reaches — 1914's
+widest are Amiens at 2.3°E and Gumbinnen at 22.2°E, Sarajevo at 43.9°N and
+Königsberg at 54.7°N. Nothing moves; the point of writing it down is that the
+map they are drawn on becomes a stated choice rather than a fallback, which is
+what makes changing the default a decision someone has to make on purpose.
+
+**1917 declares `eastern-europe-z10`, and its region is wider than that
+archive.** This is the one place the rule above is knowingly bent, so it is
+worth being exact about what is off the map. The pack's region reaches to 7°E
+and 67°N for Lenin's April journey — Zürich to Haparanda to the Finland
+Station — and the archive starts at 13°E and stops at 61°N. But the journey is
+narrated, not plotted: `place:zurich` appears in one beat's prose and nowhere
+in a position, and there is no Haparanda or Tornio in the pack at all. Every
+coordinate the pack actually draws — sixteen places, one rail route, three
+battle zoom-ins — lies between 28.3°E and 30.5°E and between 53.9°N and 60.0°N,
+which is the middle of the archive. The alternative was `world-z6`, and it is
+not a real alternative: this pack's zoom-ins are Petrograd at z11.2 and z12.2,
+about six kilometres of city, and z6 tiles overzoomed six levels have no
+streets in them to stretch. The default is worse still — `central-europe-z10`
+stops at 24°E, which excludes _every_ position in the pack.
+
+**1918 declares `world-z6`, and the low zoom is the honest answer.** The Civil
+War runs Warsaw (21.0°E) to Vladivostok (131.9°E) and Krasnovodsk (40.0°N) to
+Murmansk (69.0°N) — 111° of longitude. No regional box holds it and none was
+ever going to: `eastern-europe-z10` stops at 46°E, short of Omsk, Kazan's
+eastern approaches, the whole Siberian intervention and the Trans-Siberian the
+Czechoslovak Legion was strung along, which is the pack's spine. The cost is
+paid at the other end. Three of its four zoom-ins are city-scale —
+Brest-Litovsk at z8, Warsaw at z7.6, Kronstadt at z10.2 — and all three fall
+inside `eastern-europe-z10`, so on that archive they would have been crisp and
+the rest of the war would have been an empty field. Choosing `world-z6` is
+choosing a coarse Kronstadt over a blank Siberia, which is the right way round
+for a pack whose subject is distance. If the Kronstadt zoom-in becomes
+unreadable, the fix is `Battle.tiles` on that one battle, not a different
+archive for the pack.
+
+**1941 declares `world-z6` because nothing else exists.** Its region crosses
+the antimeridian (`99,−12 → −155,52`, 106° wide going east over the date line),
+and a `west,south,east,north` box cannot hold it — that is the case this ADR
+built `world-z6` for. Singapore at 103.8°E and Midway at −177.4°E are in the
+same pack. The Oahu zoom-in at z10 is four levels of overzoom and will want
+`oahu-z13` on `Battle.tiles`; that extract is assault scale and unrun, so it
+waits for `sand-lry.5`.
 
 ## Consequences
 

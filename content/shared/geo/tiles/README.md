@@ -48,7 +48,9 @@ past it, so z14 on Betio is crisp to about 1:15 000 and stretched below that.
 
 ## Before they are uploaded
 
-Most entries here are `planned` (`sand-lry.17`). Naming one is still correct:
+The theatre-scale entries are `uploaded`; what is left `planned` is assault
+scale, one archive per battle, run when that battle’s pack is authored
+(`sand-lry.17`). Naming a planned one is still correct:
 the request 404s, and the map says so — a line over the terrain reading that the
 basemap for this campaign is not on the table, with the borders, places and
 movement drawn without it. That is the intended degradation, and it is why a
