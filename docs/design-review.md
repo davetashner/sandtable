@@ -13,16 +13,20 @@ reads, and as a gate CI runs. Both import the same scene list and the same DOM
 audit from `scripts/lib/visual-scenes.mjs`, so a scene added for one is a
 scene the other walks.
 
-|          | `scripts/visual-review.mjs`               | `scripts/visual-check.mjs`                                          |
-| -------- | ----------------------------------------- | ------------------------------------------------------------------- |
-| For      | a person, on demand                       | CI, every pull request                                              |
-| Assets   | the real bucket, over the network         | stubbed inside the browser                                          |
-| Settles  | long — the map is the subject             | short — the map is not                                              |
-| Output   | a screenshot of every cell, `report.json` | pass or fail, screenshots as an artifact                            |
-| Fails on | nothing; it reports                       | a dead scene, a console error, a structural defect off the baseline |
+|          | `scripts/visual-review.mjs`               | `scripts/visual-check.mjs`                                                                                                                     |
+| -------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| For      | a person, on demand                       | CI, every pull request                                                                                                                         |
+| Assets   | the real bucket, over the network         | stubbed inside the browser                                                                                                                     |
+| Settles  | long — the map is the subject             | short — the map is not                                                                                                                         |
+| Output   | a screenshot of every cell, `report.json` | pass or fail, screenshots as an artifact                                                                                                       |
+| Fails on | nothing; it reports                       | its **blocking** tier: a dead scene, an error the app raised, or a structural defect off the baseline. `tiny-text` is reported and never fatal |
 
 The gate and the reasoning behind it are ADR 0011. It does not diff pixels,
-and the record says plainly what that does and does not catch.
+and the record says plainly what that does and does not catch — including,
+under "What a green run does not prove", that it is blind to everything inside
+the map canvas and walks only the seed era. A green `visual` says the app came
+up and the boxes are where they should be. It says nothing about whether what
+the map drew is right.
 
 ### The review
 

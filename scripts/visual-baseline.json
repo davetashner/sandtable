@@ -1,5 +1,5 @@
 {
-  "$comment": "Structural defects the DOM audit sees and we have decided to live with — the \"Known and deliberate\" list of docs/design-review.md, machine-readable. Regenerate with `npm run visual:check -- --update`, then write the \"why\" for every new row before committing it: a row with a TODO why is a row nobody has justified. `el` may be \"*\" to allow a kind anywhere. See ADR 0011.",
+  "$comment": "Structural defects the DOM audit sees and we have decided to live with — the \"Known and deliberate\" list of docs/design-review.md, machine-readable. It holds the blocking tier only: a reported finding is printed on every run and needs no allowance. Regenerate with `npm run visual:check -- --update`, then write the \"why\" for every new row before committing it: a row with a TODO why is a row nobody has justified. `el` may be \"*\" to allow a kind anywhere. See ADR 0011.",
   "allow": [
     {
       "kind": "clipped-y",

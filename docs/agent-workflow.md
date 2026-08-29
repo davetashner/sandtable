@@ -185,14 +185,15 @@ what you took from a catalogue record, and what you could not open at all.
 
 ## Known local friction
 
-Three things that have cost people time more than once. Each has a bead; none
-is fixed yet, so the workaround is the current answer.
+Three things that have cost people time more than once. Each has a bead, and
+each entry says whether the bead is closed or the workaround is still the
+answer.
 
-- **`visual:check` hard-codes port 4179** with `strictPort`, so two concurrent
-  runs collide and the second dies with "Port 4179 is already in use"
-  (`sand-pmz.29`). Stand up your own preview on another port and point the
-  script at it with `BASE=<url>`, which the script supports and which keeps the
-  asset stub in force.
+- **`visual:check` used to hard-code port 4179** with `strictPort`, so two
+  concurrent runs collided and the second died with "Port 4179 is already in
+  use" (`sand-pmz.29`, now fixed). It steps up from a busy port instead;
+  `PORT=` moves it, and `BASE=<url>` still points it at a preview you stood up
+  yourself, with the asset stub in force either way.
 - **`bundle:budget` reads whatever is in `dist/`** and does not rebuild
   (`sand-pmz.31`). In CI the number is always fresh because `build` runs
   immediately before it, which is exactly why the trap is invisible until you

@@ -1,6 +1,7 @@
 # 0011 — The visual gate: structure is checked, pixels are evidence
 
-- **Status:** accepted
+- **Status:** accepted (amended 2026-08-25 `sand-pmz.2.6`; amended 2026-08-28
+  `sand-pmz.9` — see the two sections at the end)
 - **Date:** 2026-08-24
 - **Bead:** `sand-pmz.2`
 
@@ -218,3 +219,172 @@ what the reviewer looks at.
   green `visual` for "the design is unchanged". The screenshots are attached
   to the run; the design review (`docs/design-review.md`) is how they get
   read.
+
+## Amendment — 2026-08-28: two tiers, and the limits written down (`sand-pmz.9`)
+
+`sand-pmz.9` asked whether `visual` should join `lint`, `security` and `web` as
+a required check on `main`. The answer is **yes, after narrowing it**. The
+narrowing is this amendment. Adding the check is a repository-settings change,
+made separately and on purpose — which is what the record above insisted on,
+and it still does.
+
+A check that can block a merge should be red only for things everybody has
+already agreed are reasons. This gate reported four kinds of finding at one
+severity, and they are not equally serious. They are now sorted into **two
+outcomes over three severities**, and the table lives in
+`scripts/visual-check.mjs` as `SEVERITY`:
+
+| Severity       | What it is                                                                                                          | Costs                             |
+| -------------- | ------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
+| **breakage**   | a scene that did not render at all, including a navigation timeout; a console or page error the app raised          | blocks                            |
+| **structural** | `page-h-overflow`, `clipped-x`, `clipped-y`, `overflows-right`, `small-target` — off `scripts/visual-baseline.json` | blocks                            |
+| **reported**   | `tiny-text`                                                                                                         | printed on every run, never fatal |
+
+The tiers are legible in the report — three labelled sections, each saying
+"none" out loud when it is empty rather than being absent — and in the exit
+code:
+
+```text
+0  nothing blocking. Reported findings may still have been printed.
+1  BLOCKING · breakage    a dead scene, or an error the app raised
+2  BLOCKING · structural  a layout defect off the baseline
+3  the gate could not run, or is not configured
+```
+
+CI needs none of that resolution; any non-zero fails the job, so phase 2 is a
+settings change and nothing more. The resolution is for the human reading the
+log, who can tell "the app is broken" from "the layout drifted" without
+parsing prose, and for anyone who later wraps this.
+
+One thing for whoever flips the switch, which was not true when
+`sand-pmz.9` was filed: a merge queue is coming (`sand-pmz.35`, groundwork
+landed in PR #164), and a required check runs again for every queue entry. So
+requiring `visual` moves its four minutes from once per push to once per merge
+as well. That is the right trade for a check that only goes red on breakage and
+structural defects — it is the reason for narrowing it first — but it is a cost
+to enable with open eyes rather than discover.
+
+**A defect kind with no severity stops the run** (exit 3), rather than
+defaulting to either column. This is ADR 0023's argument about a warning kind
+with no ceiling, and it holds for the same reason: defaulting to blocking
+enforces a rule nobody wrote, and defaulting to reported lets a new class of
+defect land silently on the day it is invented. Classifying one is a line in
+`SEVERITY` and a sentence saying why.
+
+Three things deliberately did **not** move.
+
+- **`small-target` stays blocking.** It became fatal under `sand-pmz.4`, and
+  only because that bead wrote the rule down first — 24×24px, with the two
+  inline cases WCAG 2.5.8 names by name carried on the baseline in writing
+  (`docs/accessibility.md`). A rule with a written record is a rule a gate may
+  hold. It was correctly advisory until it had one.
+- **`tiny-text` stays reported.** ADR 0010 put the floor there and the audit
+  cannot see the floor's own exemptions: one of the marks still under it is a
+  label inside an authored SVG rather than type on a page. It is now printed
+  per element rather than as a bare count, because the reported tier is only
+  worth having if someone can read it.
+- **The baseline did not change.** `scripts/visual-baseline.json` is
+  byte-identical across this amendment; no re-baseline was needed and none was
+  taken. It now holds the blocking tier only, which is what it always held —
+  `--update` has always filtered to the gated kinds — and its `$comment` now
+  says so.
+
+## What a green run does not prove
+
+The record above says the gate does not diff pixels, and therefore cannot see
+colour, spacing, type or map style. That is true and it is not the whole
+truth. A required check is trusted further than an unrequired one, so the rest
+of it belongs here, before the requirement lands rather than after.
+
+**Everything the map draws lives inside one `<canvas>`, and this audit reads
+the boxes of DOM elements.** The map is half the product; the gate can see the
+size of the box it sits in and nothing whatever inside it.
+
+The worked example is PR #161, merged the same night this was written.
+`region` is `[west, south, east, north]`, and deck.gl reads a path as a list of
+numbers, so the Kidō Butai leaving the Kurils at 147.672°E for a standby point
+at 170°W was a step of 317° **westward**: every route crossing the antimeridian
+was drawn the long way round the planet, off both edges of the map and back
+across Asia. It is not a subtle defect. You can see it from across the room.
+
+The gate was green, on every count, and each of them was working as designed:
+
+1. **Every scene rendered.** A wrongly-drawn path is a path.
+2. **Nothing on the console.** deck.gl draws a 317° step without complaint. The
+   geometry is valid; it is just not the geometry anybody meant.
+3. **No structural defect.** The path is pixels inside the canvas, and the
+   canvas's box was exactly the size it should have been.
+4. **No pixel comparison** — by design, for reasons that have not changed.
+
+And a fifth, which is worse than the other four because it is cheap to fix:
+**the gate never walks that pack.** Every scene in `SCENES` is the seed era or
+a chrome page (`gallery.html`, `atlas.html`). Since ADR 0018 a page load is one
+era and there are five of them; four have never been walked by this gate at
+all, in either theme, at either width. The screenshot artifact a reviewer opens
+does not contain the Pacific.
+
+So, plainly, what a green `visual` does **not** prove:
+
+- that colour, type, spacing or map style are unchanged (the original deal);
+- that anything drawn on the map is in the right place, the right shape, or
+  there at all;
+- that any era but the seed one renders;
+- that the camera framed the theatre the pack asked for;
+- that a human looked at a single screenshot.
+
+### The cheap check that would have caught it
+
+Three candidates, in increasing cost.
+
+**Walk more than one era.** One line per scene: `?pack=1941-pearl-harbor` is a
+URL like any other, and the scene list is nothing but URLs. It would not have
+gone red on #161 — the track renders "successfully" — but it would have put the
+track in the artifact, where the defect is visible at a glance. The gate's cost
+is loads, at roughly five seconds of software-GL shader compilation each, so a
+representative scene per era is about twenty seconds on the job's four minutes.
+Filed as `sand-pmz.9.1`.
+
+**Assert the drawn extent against the declared region.** The one that would
+actually have gone red. After the settle, ask the page for the bounding box of
+the geometry the engine handed to the map, and compare its longitude span with
+the span of the pack's own `region`. #161 drew about 318° against a declared
+106° — off by a factor of three, with no pixel's worth of ambiguity in it. It
+has the property this record demands of anything it gates on: it is one number
+computed from data already in memory, with no dependence on fonts, rasteriser,
+network or timing. Two neighbours come free once it exists — a **token count**
+per scene, because a layer that silently draws nothing is the other whole
+family of bugs that renders successfully, and a **camera bound**, because
+`map.getBounds()` containing the declared region is the framing half of #161.
+
+The price is real and it is not the code. The engine has to publish a handle
+for the harness to read, and a debug global is a product surface: it wants to
+be conditional on something the gate passes and a reader never does, and it
+wants a test of its own, or the assertion is checking a mirror. That is the
+argument to have on `sand-pmz.9.2`, where this is filed, and it is why this
+amendment describes the check rather than shipping it.
+
+**A pixel diff of the canvas.** Still no, for every reason in the record above.
+
+The honest ranking, though, is that **the cheapest check that would have caught
+PR #161 is not in this gate at all.** It is a unit test over the projection
+arithmetic, and that is where it now lives: `src/engine/geo.test.ts`, fifteen
+cases over `unwrapLngs` and its neighbours, written with the fix. A pure
+function turning a list of longitudes into a continuous one is testable in
+milliseconds without a browser, and a browser gate that re-checks it pays five
+seconds of shader compilation for a weaker answer.
+
+What belongs in the gate is the broader, weaker invariant no unit test can
+state: **what the map actually drew is inside what the pack said it would
+draw.** That one assertion covers a family — a route the long way round, a
+token at a wrapped longitude, a camera framing the complement of its theatre, a
+layer that drew nothing — whose members share the only property that matters
+here: they all render successfully.
+
+Which is the general rule this amendment would like to leave behind, now that
+the check is about to become required. **This gate answers "did it render?"
+It does not answer "is it right?"** For "is it right" the instruments are the
+unit tests over the engine's arithmetic, the validator over the content, and a
+person looking at the screenshots. Making `visual` required makes the first
+question non-negotiable, which is worth doing. It does not begin to answer the
+second, and the day it is mistaken for doing so is the day it starts doing
+harm.

@@ -18,15 +18,17 @@ The split is deliberate. axe runs against jsdom, which has no layout, so it is
 strong exactly where the DOM is the whole story and blind where pixels are.
 Contrast is not sampled from a screenshot but computed from the tokens, which
 is stricter. Everything left over — how big a thing is on screen — is measured
-in a browser by `sand-pmz.2`'s harness (ADR 0011), which walks twenty-two scenes
-× two themes × desktop and phone.
+in a browser by `sand-pmz.2`'s harness (ADR 0011), which walks every scene in
+`scripts/lib/visual-scenes.mjs` × two themes × desktop and phone.
 
 That harness reported `small-target` and never failed on it, and said why: the
 tap targets belonged to this bead, and a gate red on a rule nobody had agreed
 to is a gate people learn to ignore. The rule is agreed now — it is the section
 below — so **`small-target` is fatal as of this pass**, with the two inline
 cases WCAG exempts by name written into `scripts/visual-baseline.json` rather
-than left to anyone's memory.
+than left to anyone's memory. It sits in that gate's **blocking** tier, which
+is the tier a required check goes red on (ADR 0011's 2026-08-28 amendment);
+`tiny-text` sits in the reported one, for the reason ADR 0010 gives.
 
 ## The keyboard run-through
 

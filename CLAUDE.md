@@ -83,7 +83,9 @@ npm run new-pack         # scaffold content/eras/<yyyy>-<slug>/ — flags or pro
 npm run media            # WebP derivatives + content/shared/media/index.json from media.json manifests; -- --upload syncs to the assets bucket
 npm run audio            # loudness-matched Opus/AAC + content/shared/audio/index.json from cue.json manifests; -- --upload syncs (needs ffmpeg)
 npm run build            # tsc -b && vite build → dist/ (bundles under dist/app/)
-npm run visual:check     # the visual gate: 25 scenes x 2 themes x 2 viewports off one load each, assets stubbed, ~2.5 min (ADR 0011); -- --update rewrites the baseline, -- --timings prints the phase table
+npm run visual:check     # the visual gate: every scene in scripts/lib/visual-scenes.mjs x 2 themes x 2 viewports off one load each, assets stubbed, ~2.5 min (ADR 0011).
+                         # Two tiers: breakage (exit 1) and structural (exit 2) block, tiny-text is reported and never fatal; exit 3 means the gate could not run.
+                         # -- --update rewrites the baseline, -- --timings prints the phase table, PORT= moves its preview server
 npm run visual:review    # the on-demand design review against real assets (docs/design-review.md); needs a build + `npm run preview`
 npm run bundle:budget    # the performance gate: eager, code and pack gzip against scripts/bundle-budget.json (ADR 0016, ADR 0018); reads dist/, so it refuses when dist/ is older than src/ or content/ — build first
 npm run perf             # measure bundle, first map paint, frame rate, PMTiles cost; -- --live for the real bucket, -- --headed for a real GPU
@@ -120,8 +122,8 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
   close your own bead nor merge your own PR, the **sourcing-integrity rules**
   (never a quotation you have not read, never a page number you have not seen,
   verify delegated research, open the item), and the known local friction
-  (`visual:check`'s fixed port, `bundle:budget` reading a stale `dist/`, and how
-  the shared registries used to collide under parallel authoring).
+  (`bundle:budget` reading a stale `dist/`, and how the shared registries used
+  to collide under parallel authoring).
 - **Multi-era layout:** `content/eras/<yyyy>-<slug>/` (one self-contained pack
   per campaign), `content/shared/` (people, places, sources, borders, links,
   media referenced by era-qualified IDs like `1870:sedan`), `content/threads/`
@@ -211,7 +213,10 @@ receipts -- --fetch` re-runs it against the source. Receipts live outside
   and a contributor cannot mean different things by green (ADR 0023);
   self-activating once `package.json` exists; `visual` = `npm run visual:check` against a
   production-shaped build with the assets bucket stubbed, screenshots uploaded
-  as an artifact (ADR 0011). CodeQL is added with the app scaffold.
+  as an artifact (ADR 0011), red only on its **blocking** tier — a dead scene,
+  an error the app raised, or a structural defect off the baseline; `tiny-text`
+  is reported and never fatal (`sand-pmz.9`). CodeQL is added with the app
+  scaffold.
 - Merged branches are deleted automatically (`delete_branch_on_merge`); keep
   locals clean with `git fetch --prune` and `git worktree prune`.
 - PRs use `.github/pull_request_template.md` — one `Closes sand-…` line per

@@ -108,13 +108,15 @@ jobs:
         run: npm run verify --if-present
 
   visual:
-    # The visual gate (ADR 0011): twenty-four scenes × two themes × desktop
-    # and phone, every cell off one load per scene, walked against a
-    # production-shaped build with the assets bucket stubbed inside the
-    # browser, asserting that every scene renders, that
-    # nothing shouts on the console, and that no structural layout defect
-    # appears outside scripts/visual-baseline.json. It does not diff pixels —
-    # the screenshots are an artifact for a human, not a comparison.
+    # The visual gate (ADR 0011): every scene in scripts/lib/visual-scenes.mjs
+    # × two themes × desktop and phone, every cell off one load per scene,
+    # walked against a production-shaped build with the assets bucket stubbed
+    # inside the browser. It goes red on its blocking tier only — a scene that
+    # did not render, an error the app raised, or a structural layout defect
+    # outside scripts/visual-baseline.json; tiny-text is reported and never
+    # fatal (sand-pmz.9). It does not diff pixels — the screenshots are an
+    # artifact for a human, not a comparison — and ADR 0011's "What a green run
+    # does not prove" says what that leaves uncovered.
     name: visual
     runs-on: ubuntu-latest
     timeout-minutes: 20
