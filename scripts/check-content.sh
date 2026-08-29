@@ -124,6 +124,14 @@ check_index media content/shared/media media.json \
 check_index audio content/shared/audio cue.json \
   content/shared/audio/index.json 'npm run audio'
 
+echo "7) documented facts match the code they describe"
+# A fact that lives in code gets restated in prose; the code moves, the prose
+# does not (`sand-pmz.37`). Four of those in one week. The derivations and the
+# reason each idiom is safe to match are in the script; it lives here because
+# this is the check the `lint` job runs, and AGENTS.md — where two of the four
+# drifted — is markdownlint-ignored, so nothing else in CI reads it at all.
+if ! bash scripts/check-doc-facts.sh; then fail=1; fi
+
 if [ "$fail" -ne 0 ]; then
   echo "content checks FAILED"; exit 1
 fi

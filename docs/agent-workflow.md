@@ -145,6 +145,53 @@ a stored number against a measured one:
 If you changed the Zod schema under `src/packs/schema/`, run `npm run schema`;
 tests fail on a stale `schema/*.schema.json`.
 
+## Facts you restate are facts that go stale
+
+`validate:content` also runs `scripts/check-doc-facts.sh`, which derives four
+facts from the code and fails on any prose that states them wrongly
+(`sand-pmz.37`):
+
+| fact                           | derived from                    |
+| ------------------------------ | ------------------------------- |
+| how many eras are in the app   | `content/eras/*/pack.json`      |
+| how many scenes the gate walks | `scripts/lib/visual-scenes.mjs` |
+| the gate list, in order        | `package.json`'s `verify`       |
+| what CI jobs there are         | `.github/workflows/` job names  |
+
+It exists because those four drifted in a single week: `AGENTS.md` named three
+required checks where the ruleset had five and spelled the gate list three
+gates short, both agent files said "the first pack is the Schlieffen Plan" with
+five eras merged, and the scene count was quoted four ways at once. The gate
+lives in the `lint` job as well as in `verify` because `AGENTS.md` is
+markdownlint-ignored — nothing in CI read it at all.
+
+The last row is the weakest derivation and the bluntest rule, for a reason
+worth knowing: **which** checks the ruleset requires is a GitHub setting and
+cannot be read from a build, so what the repository can derive is only what
+jobs exist. The rule is therefore that a paragraph naming two of them names
+them all. Half a list is what rots; naming five is a short sentence. Writing
+`npm run lint` is not naming the `lint` job, and the ruleset itself stays a
+fact only `CLAUDE.md` states.
+
+When it fires it names the file, the line, the value you wrote and the value
+the code holds. Two answers are right and one is usually better: state the
+derived value, or **state no value**. "Every scene in
+`scripts/lib/visual-scenes.mjs`" is how the scene count was fixed, and prose
+that carries no number carries nothing that can rot.
+
+It is deliberately narrow. `docs/decisions/` is out of scope — an ADR is a
+dated record and is right to say "the four eras that existed when it was
+written" — and so are `content/`, `poc/` and the vendored `.agents/` skills. A
+code block that also runs `npm run dev` is a menu of scripts, not the gate
+list, and is left alone. And **text inside quotation marks is exempt**: a
+retrospective that says a file once said "the first pack is the Schlieffen
+Plan" is a true sentence about a false one, and the paragraph above this one
+tripped the gate until that was true of it.
+
+If you find it firing on prose that is right, that is a bug in the gate and not
+a reason to reword the sentence. `scripts/doc-facts.test.ts` is where the
+counter-example goes.
+
 ## Etiquette that keeps parallel work honest
 
 - **Do not close your own bead.** Closing is a post-merge act:

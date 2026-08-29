@@ -99,7 +99,7 @@ npm run format:check     # the same as a check; runs in CI's `web` job
 
 The visual scripts and `npm run perf` need a browser once: `npx playwright install chromium`.
 
-CI runs the same commands in the `web` job; `lint` and `security` jobs cover docs, content manifests, secrets and dependencies; `visual` runs `visual:check` and uploads its screenshots. Open `poc/schlieffen-plan.html` directly for the original proof of concept.
+CI runs the same commands in the `web` job; `lint` and `security` jobs cover docs, content manifests, secrets and dependencies; `visual` runs `visual:check` and uploads its screenshots; `analyze (javascript-typescript)` is CodeQL. Open `poc/schlieffen-plan.html` directly for the original proof of concept.
 
 ## Architecture Overview
 
@@ -228,8 +228,9 @@ receipts -- --fetch` re-runs it against the source. Receipts live outside
 - CI (`.github/workflows/ci.yml`): `lint` = actionlint + markdownlint +
   `scripts/check-content.sh` (JSON validity, media-manifest policy, no tracked
   image binaries, and the generated `media`/`audio` `index.json` still covering
-  every manifest — all 90 media manifests are in the index as of `sand-shn.16`,
-  and the one-time allowance that named the 49 that were not is gone);
+  every manifest — every one of them is, as of `sand-shn.16`, and the one-time
+  allowance that named the 49 that were not is gone), and the documented facts
+  a gate can derive (`scripts/check-doc-facts.sh`, `sand-pmz.37`);
   `security` = gitleaks + dependency review; `web` =
   one step, `npm run verify`, which is
   lint/format:check/typecheck/test/validate:content/warning:budget/build/bundle:budget
