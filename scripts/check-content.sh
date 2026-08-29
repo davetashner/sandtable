@@ -55,8 +55,11 @@ while IFS= read -r m; do
     v=$(jq -r "$key // empty" "$m")
     if [ -z "$v" ]; then bad "$m: missing $key"; fi
   done
-  # A cue that says it loops but carries no duration cannot be scheduled.
-  if [ "$(jq -r '.loop // empty' "$m")" = "" ]; then bad "$m: missing .loop"; fi
+  # Presence, not truth. `.loop // empty` treats `false` as absent, so the
+  # first cue authored with "loop": false would be rejected for missing the
+  # field it just declared (`sand-pmz.30`). Every cue today is `loop: true`,
+  # which is why nothing caught it.
+  if ! jq -e 'has("loop")' "$m" >/dev/null; then bad "$m: missing .loop"; fi
   # Same bar as the imagery policy: no placeholders in a shipped manifest.
   if jq -e '[.provenance.licence, .provenance.tool, ."$comment"] | map(tostring) | join(" ") | test("BLOCKED|UNVERIFIED|UNKNOWN|HOLD|TODO|TBD"; "i")' "$m" >/dev/null; then
     bad "$m: cue is flagged BLOCKED/UNVERIFIED/UNKNOWN/HOLD/TODO — resolve before merging"
