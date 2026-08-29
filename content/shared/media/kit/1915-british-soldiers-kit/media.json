@@ -19,10 +19,15 @@
   "colorization": {
     "status": "not colorized. Recommendation: leave as it is — the point of the picture is the inventory, and colour adds nothing an AI would not be guessing at."
   },
-  "content_policy": "ok — clothing and equipment laid out for the camera; no casualties",
-  "caption": "A British soldier's kit laid out and counted, photographed for the press in 1915 — the marching load itemised: pack, haversack, entrenching tool, mess tin, water bottle, ammunition pouches, greatcoat.",
+  "content_policy": "ok, and now checked against the frame: garments laid out on a sheet against a wooden wall, nothing else in shot, no casualties. FRAME CONFIRMED 2026-08-29 (sand-y0u.7.1).",
+  "caption": "An English soldier's clothing laid out and labelled for Dutch readers in 1915: greatcoat, jacket, trousers, cap, shirt, undershirt, vest, drawers, socks, puttees, boots, braces, belt, scarf and identity disc.",
   "credit": "Original photograph: photographer not established, 1915; Spaarnestad Photo / Nationaal Archief, SFA022801761, via Wikimedia Commons; public domain.",
-  "used_by": ["1914:tech-infantry-kit-1914"],
-  "focal_point": { "x": 0.5, "y": 0.5 },
-  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. Dated 1915 by the archive, not 1914: the caption says the year and the card treats it as the pattern of load rather than as a photograph of the BEF in August 1914. CAUTION for the image review (sand-y0u.7): the individual items were not identified from the image, which was not viewed — either confirm the list in the caption against the frame or shorten it."
+  "used_by": [
+    "1914:tech-infantry-kit-1914"
+  ],
+  "focal_point": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. Dated 1915 by the archive, not 1914: the caption says the year and the card treats it as the pattern of load rather than as a photograph of the BEF in August 1914.\n\nCAPTION CORRECTED 2026-08-29 (sand-y0u.7.1), which is why the caution was there. The old caption said the plate itemised “the marching load — pack, haversack, entrenching tool, mess tin, water bottle, ammunition pouches, greatcoat”. Six of those seven are NOT in the picture. The frame is clothing only, and the plate's own Dutch labels say so: BRETELS, LIJFGORDEL, SOKKEN, PET, OVERJAS, SCHOENEN, BEENWIKKELS, OVERHEMD, VEST, BORSTROK, ONDERBROEK, BORSTLAP, JAS, BROEK, SJAWL, and the identity disc. The Spaarnestad record agrees — “a survey of the clothing”. Only the greatcoat was right.\n\nThe Dutch labels are not a misattribution: this is a Dutch archive's plate annotating an ENGLISH soldier's kit for Dutch readers, which is what the record says it is."
 }
