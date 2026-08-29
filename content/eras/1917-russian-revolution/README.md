@@ -144,9 +144,20 @@ The pack `region` runs from Zurich to Haparanda because Lenin's journey home is
 in it. That is a very large box for a story that happens in one city, and the
 two chapters are how the pack gets back down to street scale.
 
-**Tiles:** the extracts for this region are authored but not yet uploaded
-(`sand-lry.17`, a manual step). The map will be missing basemap tiles locally
-and will render on the borders layer alone until they are.
+**Tiles: `eastern-europe-z10`**, uploaded 2026-08-28 (`sand-lry.17`). The
+archive covers `13,40 → 46,61`, which is narrower than this pack's `region` at
+both ends — Zurich is at 8.5°E and Haparanda at 65.8°N — so the box the region
+draws is not all on the map. That is deliberate, because the journey is
+narrated rather than plotted: `place:zurich` appears in one beat's prose and in
+no position, and Haparanda and Tornio are not in the pack at all. Every
+coordinate this pack actually draws sits between 28.3°E and 30.5°E and between
+53.9°N and 60.0°N, in the middle of the archive.
+
+The alternative was `world-z6`, which does contain the region and is useless
+here: both chapters work at Petrograd street scale (z11.2 and z12.2, about six
+kilometres of city), and z6 tiles overzoomed six levels have no streets in them
+to stretch. The default, `central-europe-z10`, stops at 24°E and would exclude
+every position in the pack.
 
 ## What has not been read
 

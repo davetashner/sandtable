@@ -8,6 +8,7 @@
   "timeRange": { "start": "1941-11-25T12:00:00Z", "end": "1941-12-10T20:00:00Z" },
   "region": [99, -12, -155, 52],
   "borderYear": 1941,
+  "tiles": "world-z6",
   "camera": { "center": [-175.0, 30.0], "zoom": 2.6 },
   "sides": [
     {

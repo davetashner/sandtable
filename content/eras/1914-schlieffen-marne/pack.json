@@ -11,6 +11,7 @@
   },
   "region": [0.0, 47.0, 9.0, 52.0],
   "borderYear": 1914,
+  "tiles": "central-europe-z10",
   "frontLine": "western-front",
   "camera": {
     "center": [4.2, 49.7],

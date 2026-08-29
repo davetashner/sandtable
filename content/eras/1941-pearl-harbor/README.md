@@ -253,10 +253,15 @@ photographs, and no detail the testimony does not give.
 2. **A `Timetable` counts whole days**, so the eighty-minute slip on the
    Washington clock — the point of that card — is carried in the milestone
    notes rather than in the gauge.
-3. **`tiles` is not yet a pack field** (`sand-lry.18`), so this pack resolves
-   to the central-Europe archive and renders on borders alone. The Pacific
-   extracts are authored but not uploaded (`sand-lry.17`). Both known, neither
-   this pack's to fix.
+3. **`tiles: "world-z6"`**, because nothing else can hold this pack. The region
+   crosses the antimeridian and is 106° wide; a `west,south,east,north` box
+   cannot contain Singapore at 103.8°E and Midway at −177.4°E at once, and the
+   whole-world low-zoom archive is the case ADR 0002 built for exactly that.
+   The cost is the Oahu zoom-in: it opens at z10 against a z6 archive, four
+   levels of overzoom, so the harbour has a shape but no detail. `oahu-z13` is
+   authored, unrun, and assault scale — it waits for `sand-lry.5`, and when it
+   lands it goes on `Battle.tiles` for that one zoom-in rather than on the
+   pack.
 4. **`borderYear: 1941`** is derived from `world_1938` and, per the borders
    manifest, has **no Manchukuo and no Republic of China**, and no polygons at
    all for Wake, Midway, Truk, Palau or Kwajalein. It is right about the

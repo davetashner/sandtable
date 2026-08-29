@@ -11,6 +11,7 @@
   },
   "region": [20.0, 38.0, 133.0, 70.5],
   "borderYear": 1918,
+  "tiles": "world-z6",
   "camera": {
     "center": [55.0, 55.0],
     "zoom": 2.6

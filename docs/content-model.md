@@ -190,7 +190,8 @@ Two things follow for an author:
   omitting it keeps the campaign's.
 
 Naming an archive that has not been uploaded yet is a legitimate state, not an
-error: most of them are extracted by hand (`sand-lry.17`). The map says so — a
+error: they are extracted by hand, and the assault-scale ones wait for the pack
+that needs them (`sand-lry.17`). The map says so — a
 line reading _the basemap for this map is not on the table yet_ — and draws the
 borders, places and movement over the empty ground meanwhile.
 

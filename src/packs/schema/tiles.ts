@@ -17,8 +17,8 @@
  * instead of resolving to a URL nobody will ever serve.
  *
  * Whether an archive is *uploaded* is a different question, and deliberately
- * not one the schema answers: the Pacific extracts are authored and not yet in
- * the bucket (`sand-lry.17`). Naming one is correct and gets a 404, which the
+ * not one the schema answers: the assault-scale extracts are authored and not
+ * yet in the bucket (`sand-lry.17`). Naming one is correct and gets a 404, which the
  * map reports as a missing basemap rather than a blank canvas
  * (`src/engine/map/MapView.tsx`). The provenance of each archive — its bbox,
  * its maximum zoom, whether it has been uploaded, and what it serves — lives
