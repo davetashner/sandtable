@@ -41,9 +41,9 @@ in, the sourcing rules, and the local friction worth knowing about in advance.
 
 4. **Commit signed-off, referencing the bead:**
    `git commit -s -m "feat(packs): … [sand-xxx]"`.
-5. **Open a PR** with the template: one `Closes sand-…` line per bead. CI
-   (`lint`, `security`, `web`, CodeQL) must be green and the branch up to date
-   with `main`; every same-repo PR gets a preview at
+5. **Open a PR** with the template: one `Closes sand-…` line per bead. Every
+   check must be green — `lint`, `security`, `web`, `visual` and `analyze
+(javascript-typescript)` — and the branch up to date with `main`; every same-repo PR gets a preview at
    `https://pr-<n>.sandtable.davetashner.com`. Merges are squash or rebase, and
    somebody other than the author does the merging. Expect to rebase onto
    `main` at least once — the `web` check is strict, so a branch behind `main`

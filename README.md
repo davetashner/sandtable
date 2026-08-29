@@ -7,14 +7,15 @@ same moment. The engine knows nothing about any particular war: an era is
 **data** — a scenario pack of JSON and Markdown under `content/` — so a new
 campaign is authored, not programmed.
 
-Four eras are in the app today:
+Five eras are in the app today:
 
-| Era                       | What it covers                                          |
-| ------------------------- | ------------------------------------------------------- |
-| `1914-schlieffen-marne`   | The Schlieffen Plan and the march to the Marne          |
-| `1915-attrition`          | The year of failed breakthroughs; gas at Ypres          |
-| `1917-russian-revolution` | February to October, in a calendar thirteen days behind |
-| `1941-pearl-harbor`       | Two clocks, ten and a half hours apart                  |
+| Era                       | What it covers                                           |
+| ------------------------- | -------------------------------------------------------- |
+| `1914-schlieffen-marne`   | The Schlieffen Plan and the march to the Marne           |
+| `1915-attrition`          | The year of failed breakthroughs; gas at Ypres           |
+| `1917-russian-revolution` | February to October, in a calendar thirteen days behind  |
+| `1918-russian-civil-war`  | Six fronts and no continuous line; Brest-Litovsk to 1922 |
+| `1941-pearl-harbor`       | Two clocks, ten and a half hours apart                   |
 
 More are on the way: [ADR 0019](docs/decisions/0019-second-world-war-arc.md)
 commits the Second World War arc to ten Pacific packs opening at Mukden in
@@ -57,6 +58,7 @@ contributor cannot disagree about what green means:
 
 ```bash
 npm run lint             # ESLint
+npm run format:check     # Prettier — `npm run format` fixes it
 npm run typecheck        # tsc -b
 npm test -- --run        # Vitest, single pass
 npm run validate:content # packs, registries and media manifests
@@ -99,8 +101,8 @@ poc/          the original single-file proof of concept
 ## Contributing
 
 Work happens on feature branches in worktrees, lands by pull request with
-squash or rebase merges, and `main` requires green `lint`, `security` and
-`web` checks. Every PR names the beads it completes. Content cites sources;
+squash or rebase merges, and `main` requires every check green and the branch
+up to date with it. Every PR names the beads it completes. Content cites sources;
 quotations are read before they are written down; images are open-licence,
 credited, and never gory (ADR 0007). See `CONTRIBUTING.md` for the workflow,
 `docs/agent-workflow.md` for the sourcing rules and the local friction, and
