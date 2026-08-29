@@ -19,7 +19,7 @@
   "colorization": {
     "status": "not colorized. Recommendation: leave as it is — a halftone plate from a 1919 book; colour would be invention on top of a screen."
   },
-  "content_policy": "ok on the record — wrecked works, no casualties described. Confirm the frame at image review (sand-y0u.7).",
+  "content_policy": "ok, and now checked against the frame. A displaced armoured cupola in its crater, rubble, one figure standing at a distance. NO HUMAN REMAINS ARE VISIBLE. FRAME CONFIRMED 2026-08-29 (sand-y0u.7.1): the image was opened and looked at, not read about.",
   "caption": "Destroyed defences at Liège, 1914, as a German illustrated history showed them to German readers after the war.",
   "credit": "Original photograph: Presse-Centrale, Berlin; published in \"Der Krieg 1914-19 in Wort und Bild\", Deutsches Verlagshaus Bong & Co., Berlin, 1919; via Wikimedia Commons; public domain.",
   "used_by": [
@@ -29,5 +29,5 @@
     "x": 0.5,
     "y": 0.5
   },
-  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. CAUTION for the image review (sand-y0u.7): a plate in a victors’-eye illustrated history is a publication with a point of view, and neither the exact fort nor the exact date is on the record. The caption is written to say what the source is rather than to assert a place."
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. CAUTION for the image review (sand-y0u.7): a plate in a victors’-eye illustrated history is a publication with a point of view, and neither the exact fort nor the exact date is on the record. The caption is written to say what the source is rather than to assert a place. The plate carries its own printed German caption, “Wirkung der 42-Zentimeter-Geschütze auf die Forts von Lüttich”, and a Presse-Centrale, Berlin credit — which is the framing the caption already gives it."
 }
