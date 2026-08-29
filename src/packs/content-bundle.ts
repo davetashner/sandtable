@@ -55,6 +55,42 @@ export const PACK_INDEX_PATH = `/${PACK_BUNDLE_DIR}/index.json`;
 export const PACK_SLOT = 'pack';
 
 /**
+ * Every named slot of the URL contract, in the order they are written
+ * (ADR 0009 rule 1, `pack` promoted to a slot by ADR 0024).
+ *
+ * It lives here, in the one module both a Node build step and the browser can
+ * read, because three things have to agree about it and only one of them is in
+ * the app bundle: `src/engine/url-state.ts` (which owns how each slot is read
+ * and written, and whose table is held against this list by its own test), the
+ * boot script inlined into `<head>`, and `namesAView` below.
+ */
+export const VIEW_SLOTS = [
+  PACK_SLOT,
+  't',
+  'branch',
+  'focus',
+  'card',
+  'pick',
+  'tour',
+  'step',
+  'layers',
+] as const;
+
+/**
+ * Does this query string name a view, or does it name nothing (ADR 0024)?
+ *
+ * This is what `/` branches on. A URL that fills any slot of the contract is a
+ * campaign view and opens the campaign; a URL that fills none of them — a bare
+ * `/`, or `/?utm_source=…`, which names a link to the project rather than a
+ * view inside it — is the atlas. An empty value (`?t=`) fills nothing, the same
+ * reading `resolvePackUrl` already gives `?pack=`.
+ */
+export function namesAView(search: string): boolean {
+  const q = new URLSearchParams(search.startsWith('?') ? search.slice(1) : search);
+  return VIEW_SLOTS.some((slot) => (q.get(slot) ?? '') !== '');
+}
+
+/**
  * Which pack a location asks for, given what the build emitted. Shared by the
  * boot script in `<head>` and by `pack-loader.ts`, so the request the browser
  * starts and the one the loader awaits can never disagree.

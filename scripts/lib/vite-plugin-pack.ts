@@ -33,6 +33,11 @@ import {
 const VIRTUAL = 'virtual:sandtable-pack';
 const RESOLVED = '\0' + VIRTUAL;
 
+/** The entry served at `/`: the campaign, and the atlas when no view is named. */
+const CAMPAIGN_HTML = 'index.html';
+/** The atlas's own address, kept because the failure states link to it. */
+const ATLAS_HTML = 'atlas.html';
+
 export function packBundlePlugin(id = SEED_PACK_ID): Plugin {
   let contentRoot = join(process.cwd(), 'content');
   let isBuild = false;
@@ -104,8 +109,26 @@ export function packBundlePlugin(id = SEED_PACK_ID): Plugin {
         send(json(match));
       });
     },
-    transformIndexHtml() {
-      return [{ tag: 'script', children: bootScript(urls, id), injectTo: 'head' as const }];
+    /**
+     * The hook goes only into the pages that read an era (`sand-shn.1.4`).
+     *
+     * This runs for every HTML entry, and until ADR 0024 it inlined the fetch
+     * into all three — so `/atlas.html`, the one page that exists precisely
+     * because the reader has not chosen an era, downloaded the seed era's
+     * bundle and threw it away. The gallery does read the pack
+     * (`src/gallery/specimens.tsx` builds all 57 specimens from it), so it
+     * keeps the hook; the atlas entry gets nothing.
+     *
+     * Only the campaign entry branches on the URL: it is the one served at
+     * `/`, where a URL that names no view means the atlas (ADR 0024).
+     */
+    transformIndexHtml(_html, ctx) {
+      const page = ctx.path.replace(/^\//, '') || 'index.html';
+      if (page === ATLAS_HTML) return [];
+      const branching = page === CAMPAIGN_HTML;
+      return [
+        { tag: 'script', children: bootScript(urls, id, branching), injectTo: 'head' as const },
+      ];
     },
   };
 }

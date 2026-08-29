@@ -10,8 +10,8 @@
  */
 import { readFileSync } from 'node:fs';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { bootScript } from './boot-script.js';
-import { resolvePackUrl } from './content-bundle.js';
+import { BOOT_NOTE_ATLAS, bootScript } from './boot-script.js';
+import { namesAView, resolvePackUrl } from './content-bundle.js';
 
 const SEED = '1914-schlieffen-marne';
 const URLS = {
@@ -19,12 +19,20 @@ const URLS = {
   '1870-sedan': '/pack/1870-sedan-def456.json',
 };
 
-/** The boot markup as it actually ships — read from `index.html`, not retyped. */
+/**
+ * The boot markup as it actually ships — read from `index.html`, not retyped.
+ *
+ * The address starts as one that names a view, because that is the page this
+ * markup is for: since ADR 0024 the same document answers `/` with the atlas,
+ * which fetches no era and therefore has no failure to wear. Tests that want a
+ * different address set one after calling this.
+ */
 function mountBootMarkup(): void {
   const html = readFileSync('index.html', 'utf8');
   const root = new DOMParser().parseFromString(html, 'text/html').getElementById('root');
   if (!root) throw new Error('index.html no longer has a #root to boot into');
   document.body.innerHTML = root.outerHTML;
+  window.history.replaceState(null, '', '/?t=1914-08-04T06:00:00Z');
 }
 
 /**
@@ -35,7 +43,7 @@ function mountBootMarkup(): void {
  */
 const installed: [string, EventListener][] = [];
 
-function runBootScript(): void {
+function runBootScript(branching = true): void {
   const realAdd = window.addEventListener.bind(window);
   const spy = vi
     .spyOn(window, 'addEventListener')
@@ -43,7 +51,7 @@ function runBootScript(): void {
       installed.push([type, handler as EventListener]);
       realAdd(type, handler as EventListener);
     });
-  new Function(bootScript(URLS, SEED))();
+  new Function(bootScript(URLS, SEED, branching))();
   spy.mockRestore();
 }
 
@@ -73,7 +81,7 @@ afterEach(() => {
 
 describe('the boot hook resolves the era', () => {
   it('agrees with the loader, so the request the page starts is the one it awaits', () => {
-    for (const search of ['', '?pack=1870-sedan', '?pack=nope', '?t=1914-09-01T00:00:00Z']) {
+    for (const search of ['?pack=1870-sedan', '?pack=nope', '?t=1914-09-01T00:00:00Z']) {
       mountBootMarkup();
       window.history.replaceState(null, '', `/${search}`);
       const fetchSpy = answer({ ok: true, status: 200, statusText: 'OK' });
@@ -84,6 +92,51 @@ describe('the boot hook resolves the era', () => {
       expect(fetchSpy, search).toHaveBeenCalledTimes(1);
       expect(fetchSpy, search).toHaveBeenCalledWith(window.__sandtablePackUrl);
     }
+  });
+
+  /**
+   * ADR 0024: `/` is the atlas, and the atlas has no era. The script and
+   * `src/main.tsx` ask `namesAView` the same question of the same list, so the
+   * fetch the <head> starts and the app the module graph mounts cannot
+   * disagree — which is what this walks, both answers on both sides.
+   */
+  it('fetches an era exactly when the URL names a view (ADR 0024)', () => {
+    for (const search of [
+      '',
+      '?utm_source=a-footnote',
+      '?t=',
+      '?pack=1870-sedan',
+      '?t=1914-09-01T00:00:00Z',
+      '?layers=commanders',
+    ]) {
+      mountBootMarkup();
+      window.history.replaceState(null, '', `/${search}`);
+      const fetchSpy = answer({ ok: true, status: 200, statusText: 'OK' });
+      vi.stubGlobal('fetch', fetchSpy);
+      runBootScript();
+
+      const wanted = namesAView(search);
+      expect(fetchSpy.mock.calls.length > 0, search).toBe(wanted);
+      // Nothing is on its way, so the boot frame stops promising a campaign.
+      expect(document.getElementById('boot-note')?.textContent, search).toBe(
+        wanted ? 'Laying out the campaign…' : BOOT_NOTE_ATLAS,
+      );
+    }
+  });
+
+  /**
+   * The gallery reads the pack too (`src/gallery/specimens.tsx` builds all 57
+   * specimens from it) and has no atlas to fall back to, so its copy of the
+   * hook does not branch: one page, one era, always fetched.
+   */
+  it('does not branch on the pages that always want their era', () => {
+    mountBootMarkup();
+    window.history.replaceState(null, '', '/');
+    const fetchSpy = answer({ ok: true, status: 200, statusText: 'OK' });
+    vi.stubGlobal('fetch', fetchSpy);
+    runBootScript(false);
+
+    expect(fetchSpy).toHaveBeenCalledWith(URLS[SEED]);
   });
 
   it('opens the seed era when the id is one the build never emitted (ADR 0009)', async () => {

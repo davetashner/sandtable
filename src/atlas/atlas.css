@@ -47,6 +47,31 @@
   color: var(--ink);
 }
 
+/* One arc: a run of campaigns that make an argument together (ADR 0024).
+   The heading is the spine of the page a reader scans before any era. */
+.atlas__arc {
+  margin-top: var(--space-6);
+}
+
+.atlas__arc-title {
+  margin: 0 0 var(--space-1);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  text-wrap: balance;
+}
+
+.atlas__arc-argument {
+  margin: 0 0 var(--space-4);
+  max-width: 60ch;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  color: var(--muted);
+}
+
 .atlas__list {
   list-style: none;
   margin: 0;

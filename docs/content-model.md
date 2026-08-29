@@ -227,7 +227,9 @@ generated JSON Schema; this is the intent of each.
   **Time and space**), opening `camera`,
   `sides` (short ids such as `de`, `fr`, `gb`, `be`, with an alliance that
   drives the colour family), `branches`, `defaultBranch`, `status`
-  (`seed | draft | review | published`), a general bibliography, and an
+  (`seed | draft | review | published`), `arc` (which run of campaigns the home
+  page files it under — `western-front`, `pacific`; the arcs and their order
+  are `src/atlas/arcs.ts`, ADR 0024), a general bibliography, and an
   optional `pace` table saying how fast this era's technology moved where it
   differs from 1914 (ADR 0020).
 - **Formation** — an army, corps, division, fleet…: name, `short` token

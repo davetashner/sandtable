@@ -503,7 +503,10 @@ describe('App shell', () => {
       fireEvent.click(screen.getByRole('button', { name: 'Commanders on the map' }));
       fireEvent.click(screen.getByRole('button', { name: 'Physics' }));
       expect(window.location.search).not.toContain('layers=');
-      expect(window.location.search).toBe('?t=1914-09-06T06:00:00Z');
+      // The era is in every campaign address now, and a link that arrived
+      // without one gains it (ADR 0024): `/` is the atlas, so a campaign URL
+      // that named no campaign would mean whichever era happened to be seeded.
+      expect(window.location.search).toBe('?pack=1914-schlieffen-marne&t=1914-09-06T06:00:00Z');
     });
 
     it('copies the address of the view as the reader sees it', async () => {
@@ -521,6 +524,7 @@ describe('App shell', () => {
       expect(copied).toBe(window.location.href);
       // and what was copied restores the same view
       expect(parseViewState(new URL(copied).search)).toEqual({
+        pack: '1914-schlieffen-marne',
         t: Date.UTC(1914, 8, 6, 6),
         layers: ['-commanders'],
       });

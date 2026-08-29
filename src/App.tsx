@@ -1629,8 +1629,10 @@ function AppShell() {
           <p className="lede">{seed.pack.subtitle ?? seed.pack.title}</p>
           {/* The way out of one era and into the others (sand-shn.1). A link,
               not a control: it is a different page, and the app is one era per
-              page load on purpose (ADR 0018). */}
-          <a className="app__atlas-link" href="/atlas.html">
+              page load on purpose (ADR 0018). It goes home, because home is
+              the atlas as of ADR 0024 — dropping the query string is what
+              turns this address into that page. */}
+          <a className="app__atlas-link" href="/">
             All eras
           </a>
         </div>
@@ -1659,7 +1661,7 @@ function AppShell() {
 
 export function App() {
   return (
-    <ClockProvider range={RANGE}>
+    <ClockProvider range={RANGE} pack={seed.id}>
       <TourProvider>
         <MeanwhileProvider>
           <CommandersProvider>

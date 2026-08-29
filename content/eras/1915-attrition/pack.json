@@ -4,6 +4,7 @@
   "title": "1915: the year of failed breakthroughs",
   "subtitle": "Gas at Ypres, and a line that would not move",
   "summary": "The war of movement ended in November 1914 with seven hundred kilometres of trench and no open flank. 1915 is the year both sides spent finding out what that meant: Neuve-Chapelle, chlorine at Ypres, Artois, Loos, Champagne — a quarter of a million casualties for ground the front-line layer can barely draw. The lesson of the year is the shape of the line at the end of it.",
+  "arc": "western-front",
   "timeRange": { "start": "1915-01-01T00:00:00Z", "end": "1915-12-31T00:00:00Z" },
   "region": [1.5, 47.0, 8.5, 51.6],
   "borderYear": 1914,

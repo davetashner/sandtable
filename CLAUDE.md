@@ -87,7 +87,7 @@ npm run visual:check     # the visual gate: every scene in scripts/lib/visual-sc
                          # Two tiers: breakage (exit 1) and structural (exit 2) block, tiny-text is reported and never fatal; exit 3 means the gate could not run.
                          # -- --update rewrites the baseline, -- --timings prints the phase table, PORT= moves its preview server
 npm run visual:review    # the on-demand design review against real assets (docs/design-review.md); needs a build + `npm run preview`
-npm run bundle:budget    # the performance gate: eager, code and pack gzip against scripts/bundle-budget.json (ADR 0016, ADR 0018); reads dist/, so it refuses when dist/ is older than src/ or content/ — build first
+npm run bundle:budget    # the performance gate: eager, home, code and pack gzip against scripts/bundle-budget.json (ADR 0016, ADR 0018, ADR 0024); reads dist/, so it refuses when dist/ is older than src/ or content/ — build first
 npm run perf             # measure bundle, first map paint, frame rate, PMTiles cost; -- --live for the real bucket, -- --headed for a real GPU
 npm run format           # Prettier (beat front matter is deliberately excluded — see .prettierignore)
 npm run format:check     # the same as a check; runs in CI's `web` job
@@ -157,10 +157,13 @@ receipts -- --fetch` re-runs it against the source. Receipts live outside
   (`sand-neh`): `src/styles/tokens.ts` → `npm run tokens` → `tokens.css`, reference
   in `docs/design.md`; don't introduce ad-hoc colours or typefaces.
 - **Performance:** ADR 0016 — bundle size is the one number CI holds
-  (`scripts/bundle-budget.json`, three ceilings with the reason for each written
-  next to them: `eager` code before first paint, `code` every chunk, `pack` the
+  (`scripts/bundle-budget.json`, four ceilings with the reason for each written
+  next to them: `eager` the campaign cold load, `home` the atlas one — the two
+  pages `/` answers with — `code` every chunk, `pack` the
   **heaviest** era plus the atlas index — what one cold load fetches, since a
-  page load is one era, with every era together reported and not gated); first map paint, frame rate and PMTiles cost are
+  page load is one era, with every era together reported and not gated). The two
+  cold loads are walked from Vite's build manifest, not read off `index.html`,
+  because both pages are behind a dynamic import (ADR 0024). First map paint, frame rate and PMTiles cost are
   measured by `npm run perf` and reported, because a runner rasterising through
   SwiftShader runs the campaign six times slower than a laptop. Don't import
   deck.gl or MapLibre from anything the shell can reach —
@@ -180,14 +183,21 @@ receipts -- --fetch` re-runs it against the source. Receipts live outside
   evaluates, so the failure state cannot be a component: it is static markup in
   `index.html` revealed by the boot hook (`src/packs/boot-script.ts`, ADR 0018's
   amendment) — three faces, atlas or retry.
-- **One era per page load:** `?pack=<id>` names the era, resolved identically by
-  the boot script in `<head>` and by the loader, so the request the browser
-  starts and the one the loader awaits cannot disagree. Switching eras is a
-  navigation, not a runtime swap — which is what keeps that top-level `await`
-  working. `pack` is deliberately **not** a URL slot (ADR 0009's amendment): it
-  round-trips as an extra, so the ordinary view still has no parameters and the
-  seed era is addressed as `/`. `/atlas.html` lists what there is
-  (`src/atlas/`), a third Vite entry beside `gallery.html`.
+- **One era per page load, and the home page is the atlas:** `?pack=<id>` names
+  the era, resolved identically by the boot script in `<head>` and by the
+  loader, so the request the browser starts and the one the loader awaits cannot
+  disagree. Switching eras is a navigation, not a runtime swap — which is what
+  keeps that top-level `await` working. `/` answers with **two pages**
+  (ADR 0024): a URL that fills any slot of ADR 0009's contract is that view of
+  that campaign; one that fills none is the atlas. `pack` is a named slot as of
+  that record — written first into every campaign URL, because a campaign link
+  that names no campaign would mean whichever era happened to be seeded — and
+  `src/main.tsx` is the router that asks `namesAView` the same question the boot
+  script does, from the same list in `src/packs/content-bundle.ts`. The campaign
+  is behind a dynamic import because the loader's top-level `await` would
+  otherwise suspend the atlas on a fetch it never wanted. `/atlas.html` still
+  serves the atlas (`src/atlas/`), a Vite entry beside `gallery.html`, and is
+  what the boot failure states link to.
 - **Accessibility:** `docs/accessibility.md` — the keyboard run-through, the
   24×24px target floor and its two inline exemptions, the focus-ring rule, and
   what `src/a11y.test.tsx` (axe-core over jsdom) checks on every push. Write

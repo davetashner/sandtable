@@ -26,6 +26,11 @@
       "minLength": 1,
       "description": "Markdown"
     },
+    "arc": {
+      "description": "Which arc this era belongs to on the atlas — \"western-front\", \"pacific\" (src/atlas/arcs.ts holds the arcs and their order, ADR 0024)",
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
     "timeRange": {
       "type": "object",
       "properties": {

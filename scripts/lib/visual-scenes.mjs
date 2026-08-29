@@ -32,7 +32,11 @@ const T35 = '1914-09-08T12:00:00Z';
  * scene that renders the commander portraits and hides a "Meanwhile" field.
  */
 export const SCENES = [
-  ['opening', ''],
+  // The campaign's opening view names its era, because `/` is the atlas now
+  // (ADR 0024). The scenes below it deliberately do not: a URL with view state
+  // and no `pack` is the shape of every link written before that record, and
+  // walking them is how the gate keeps that path alive.
+  ['opening', '?pack=1914-schlieffen-marne'],
   ['campaign-day0', `?t=${T0}`],
   ['campaign-day20', `?t=${T20}`],
   ['campaign-day35', `?t=${T35}`],
@@ -56,7 +60,10 @@ export const SCENES = [
   ['tour-step', `?tour=1914:tour-the-campaign`],
   ['layers-off-default', `?t=${T20}&layers=-commanders,-meanwhile.physics`],
   ['gallery', 'gallery.html'],
-  ['atlas', 'atlas.html'],
+  // The home page, which is the atlas (ADR 0024). `/atlas.html` still serves
+  // the same page and is what the boot failure states link to; this walks the
+  // address a reader actually arrives at.
+  ['atlas', ''],
 ];
 
 export const VIEWPORTS = [

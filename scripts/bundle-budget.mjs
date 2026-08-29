@@ -11,8 +11,11 @@
  * Three ceilings, all in `scripts/bundle-budget.json` with the reason for each
  * written next to it:
  *
- *   eager  index.html plus everything it names — the code the reader
- *          downloads before anything is on screen
+ *   eager  the campaign cold load: index.html, the router it names, and the
+ *          campaign branch behind it — the code between a reader and the
+ *          first frame of a campaign
+ *   home   the same measurement for the other page `/` answers with, the
+ *          atlas, which fetches no era at all (ADR 0024)
  *   code   every emitted chunk, so the eager ceiling cannot be met forever by
  *          moving bytes behind a dynamic import
  *   pack   the heaviest era in dist/pack/ plus the atlas index — what one
@@ -79,6 +82,7 @@ if (freshness.stale && !process.argv.includes('--allow-stale')) {
 const doc = JSON.parse(readFileSync(BUDGET, 'utf8'));
 const measured = {
   eager: kb(report.eagerGzip),
+  home: kb(report.homeGzip),
   code: kb(report.codeGzip),
   pack: kb(report.packGzip),
 };
@@ -109,7 +113,7 @@ for (const f of report.files) {
       ` ${kb(f.gzip).toFixed(1).padStart(8)} kB gzip`,
   );
 }
-console.log('    ▶ = named by index.html, downloaded before first paint');
+console.log('    ▶ = the campaign cold load, downloaded before the first frame');
 console.log('    ◆ = an era bundle; a page load fetches exactly one (ADR 0018)');
 if (report.eraCount > 1) {
   console.log(

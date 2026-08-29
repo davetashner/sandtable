@@ -4,6 +4,7 @@
   "title": "1917: the Russian Revolution",
   "subtitle": "February to October, in a calendar thirteen days behind",
   "summary": "Eight months in which a three-hundred-year monarchy, the government that replaced it, and the war all came apart in the same city. It begins with a bread queue on the Vyborg side and ends with a committee in a girls' school taking the telephone exchange. The map works at two scales that are three orders of magnitude apart: the Russian Empire, where an army of eleven million was dissolving, and about six kilometres of Petrograd, where everything that is remembered actually happened.\n\nRussia kept the Julian calendar until February 1918, thirteen days behind the West. That is why the February Revolution happened in March and the October Revolution in November, and it is the instrument this pack is built around: every instant stored here is Gregorian, and every date a reader sees carries the Russian date beside it.",
+  "arc": "russia",
   "timeRange": { "start": "1917-03-07T00:00:00Z", "end": "1917-11-09T12:00:00Z" },
   "region": [7.0, 46.0, 42.0, 67.0],
   "borderYear": 1914,
