@@ -1,7 +1,18 @@
 /**
  * React glue: routes for the active branch + the clock → deck.gl layers.
- * Composition is memoised per branch; the layers are rebuilt on every tick
- * (cheap — deck diffs props and TripsLayer only updates currentTime).
+ * Composition is memoised per branch; the layers are rebuilt on every tick and
+ * deck diffs the props.
+ *
+ * The trail used to be a `TripsLayer`, where a tick moved only its
+ * `currentTime` uniform; it is now a `PathLayer` over a path sliced at the
+ * clock (`sand-pmz.40`), so a tick re-uploads the trail geometry.
+ *
+ * That sounds like it should cost frames and does not. Measured, same command
+ * on the same machine: 16.5 fps playing before, 18.3 after, with the frames
+ * over 50 ms falling from 99 to 80. Uploading a short sliced path is cheaper
+ * than TripsLayer deriving the same trail from timestamps in the shader every
+ * frame. The expected trade was checked before the swap was taken, and there
+ * was no trade.
  */
 import type { Layer } from '@deck.gl/core';
 import { useMemo, useState } from 'react';

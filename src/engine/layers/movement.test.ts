@@ -8,7 +8,7 @@ import type {
   Side,
 } from '../../packs/schema/index.js';
 import { composeRoutes, modeAt, positionAt } from './movement.js';
-import { buildMovementLayers, buildMovementScene } from './movement-layers.js';
+import { buildMovementLayers, buildMovementScene, travelledPath } from './movement-layers.js';
 
 /** A one-leg composed route: the same points as the whole path and as its only leg. */
 const oneLeg = (
@@ -170,6 +170,47 @@ describe('positionAt', () => {
   });
 });
 
+describe('travelledPath (sand-pmz.40)', () => {
+  const path: [number, number][] = [
+    [0, 0],
+    [10, 0],
+    [20, 0],
+  ];
+  const ts = [0, 100, 200];
+
+  it('draws nothing before the leg starts', () => {
+    expect(travelledPath(path, ts, -1)).toEqual([]);
+  });
+
+  it('cuts the segment where the clock is, rather than at the last waypoint', () => {
+    // Half way along the second segment: the trail must end under the token,
+    // not lag behind it by up to a whole leg. That interpolation is the only
+    // reason a PathLayer can stand in for the TripsLayer this replaced.
+    expect(travelledPath(path, ts, 150)).toEqual([
+      [0, 0],
+      [10, 0],
+      [15, 0],
+    ]);
+  });
+
+  it('is the whole path once the leg is over, and stays there', () => {
+    expect(travelledPath(path, ts, 200)).toEqual(path);
+    expect(travelledPath(path, ts, 10_000)).toEqual(path);
+  });
+
+  it('returns a single point at the very start, which draws nothing', () => {
+    // One point is not a line; the caller filters these out.
+    expect(travelledPath(path, ts, 0)).toHaveLength(1);
+  });
+
+  it('does not divide by zero on two waypoints sharing an instant', () => {
+    expect(travelledPath(path, [0, 0, 100], 0)).toEqual([
+      [0, 0],
+      [10, 0],
+    ]);
+  });
+});
+
 describe('buildMovementLayers', () => {
   it('builds ghost, trail, tokens and labels with per-side colours', () => {
     const composed = composeRoutes(routes, formations, sides, historical);
@@ -187,12 +228,21 @@ describe('buildMovementLayers', () => {
       'movement-tokens',
       'movement-labels',
     ]);
+    // The trail is a PathLayer over a path sliced at the clock, not a
+    // TripsLayer with a `currentTime` uniform (`sand-pmz.40`). So the thing to
+    // assert is the shape it draws: it starts where the leg started, and it
+    // ends where the token is now rather than at the last waypoint passed.
     const trail = layers[1]!.props as unknown as {
-      currentTime: number;
-      data: { timestamps: number[] }[];
+      data: { id: string; path: [number, number][]; timestamps: number[] }[];
     };
-    expect(trail.currentTime).toBe((Date.parse(t('22')) - start) / 1000);
-    expect(trail.data[0]!.timestamps[0]).toBe((Date.parse(t('13')) - start) / 1000);
+    const drawn = trail.data[0]!;
+    expect(drawn.timestamps[0]).toBe((Date.parse(t('13')) - start) / 1000);
+    expect(drawn.path.length).toBeGreaterThan(1);
+    const tokenNow = (
+      layers[3]!.props as unknown as { data: { id: string; position: [number, number] }[] }
+    ).data.find((d) => d.id === drawn.id)!.position;
+    expect(drawn.path.at(-1)![0]).toBeCloseTo(tokenNow[0], 6);
+    expect(drawn.path.at(-1)![1]).toBeCloseTo(tokenNow[1], 6);
     const tokens = layers[3]!.props as unknown as {
       data: { id: string; position: [number, number]; phase: string }[];
     };

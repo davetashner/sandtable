@@ -39,7 +39,7 @@ scenario pack it is given.
   fortress rings from the shared registry), `movement.ts`
   (composeRoutes per branch — a formation's route legs joined into one path,
   each keeping its own mode and the confidence of each of its waypoints —
-  positionAt, ghost + TripsLayer trail + tokens + labels), `approx-halo.ts`
+  positionAt, ghost + sliced-path trail + tokens + labels), `approx-halo.ts`
   (the dashed ring a `low` or `contested` position wears, as a mask icon so
   its colour still comes from the tokens), `colors.ts` (design tokens → RGBA
   per side), `useMovementLayers`.
