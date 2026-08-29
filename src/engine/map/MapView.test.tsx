@@ -161,7 +161,14 @@ describe('<MapView>', () => {
     expect(onReady).toHaveBeenCalledTimes(1);
     expect(fetch).toHaveBeenCalledWith('/assets/geo/borders/1914.geojson');
     await vi.waitFor(() => expect(map.getSource('borders')).toBeDefined());
-    expect(map.layers.map((l) => l.id)).toEqual(['borders-fill', 'borders-line', 'borders-label']);
+    expect(map.layers.map((l) => l.id)).toEqual([
+      'borders-fill',
+      'borders-line',
+      'borders-label',
+      // The island rings draw and fade on their own schedule (`sand-neh.34`).
+      'borders-island-fill',
+      'borders-island-line',
+    ]);
 
     ref.current!.flyTo({ center: [2.35, 48.86], zoom: 9 });
     expect(map.flyTo).toHaveBeenCalledWith(

@@ -6,6 +6,7 @@
  */
 import type {
   FillLayerSpecification,
+  FilterSpecification,
   LineLayerSpecification,
   SymbolLayerSpecification,
 } from 'maplibre-gl';
@@ -50,6 +51,42 @@ export const BORDERS_MIN_SPAN_DEG = 3;
 export function bordersMeaningful(focusSpanDeg: number | undefined): boolean {
   return focusSpanDeg === undefined || focusSpanDeg >= BORDERS_MIN_SPAN_DEG;
 }
+/**
+ * A ring this small is an island or an enclave, not a frontier (`sand-neh.34`).
+ *
+ * `sand-neh.32` gated the layer on the DECLARED region and fixed the zoom-in
+ * path. It left the hand-zoom backstop at z9.5, and on the campaign view —
+ * where there is no declared region and `bordersMeaningful` is true by design —
+ * a reader who zooms to Oahu lands at about z8.9 and gets the whole defect
+ * back: a seven-vertex hexagon whose east edge stops at -157.84 against a real
+ * coast near -157.65, with Honolulu on its corner.
+ *
+ * The rule has to be geometric rather than per-pack. Keying it to the arc or
+ * the border year would tune it to the one Pacific pack that exists today and
+ * misfire on Mukden, whose subject IS a frontier — the restate-and-drift shape
+ * `sand-pmz.37` exists to stop. What actually separates the two cases is the
+ * ring:
+ *
+ *   - A small ring traces a COAST, and the basemap draws that same coast from
+ *     tile data at full precision right beside it. The disagreement is visible
+ *     because the truth is on screen next to the approximation.
+ *   - A large ring is a land frontier. Nothing else on the map draws it, so
+ *     there is nothing for it to disagree with, and it stays evidence.
+ *
+ * Measured on the real data: Oahu's rings span 0.42-0.81 deg, every 1914
+ * European power spans well past 2, and the 1914 rings under 2 deg are the
+ * small islands and enclaves with exactly the same defect. So the threshold
+ * does not need to know which war it is looking at.
+ */
+export const BORDERS_ISLAND_MAX_SPAN_DEG = 2;
+
+/**
+ * Where the island rings fade. Well below the z8.9 that provoked this, and
+ * well above the basin-scale campaign views (1941 opens at z2.6) where a
+ * territory shaded across the Pacific is the whole point.
+ */
+export const BORDERS_ISLAND_FADE = [6.5, 7.5] as const;
+
 export const BORDERS_BASE_URL = '/assets/geo/borders';
 
 export const bordersUrl = (year: number, base = BORDERS_BASE_URL) => `${base}/${year}.geojson`;
@@ -78,8 +115,24 @@ export function powerHue(name: string): number {
 
 export function bordersLayers(
   theme: MapTheme,
-): [FillLayerSpecification, LineLayerSpecification, SymbolLayerSpecification] {
+): [
+  FillLayerSpecification,
+  LineLayerSpecification,
+  SymbolLayerSpecification,
+  FillLayerSpecification,
+  LineLayerSpecification,
+] {
   const dark = theme === 'dark';
+  const isFrontier: FilterSpecification = [
+    '>=',
+    ['to-number', ['coalesce', ['get', 'spanDeg'], 0]],
+    BORDERS_ISLAND_MAX_SPAN_DEG,
+  ];
+  const isIsland: FilterSpecification = [
+    '<',
+    ['to-number', ['coalesce', ['get', 'spanDeg'], 0]],
+    BORDERS_ISLAND_MAX_SPAN_DEG,
+  ];
   const fill: FillLayerSpecification = {
     id: 'borders-fill',
     type: 'fill',
@@ -100,6 +153,7 @@ export function bordersLayers(
       // at 9.5 cannot touch one.
       'fill-opacity': ['interpolate', ['linear'], ['zoom'], 9.5, dark ? 0.45 : 0.38, 10.5, 0],
     },
+    filter: isFrontier,
     maxzoom: 10.5,
   };
   const line: LineLayerSpecification = {
@@ -127,12 +181,14 @@ export function bordersLayers(
       ],
       'line-dasharray': [2, 1.5],
     },
+    filter: isFrontier,
     maxzoom: 10.5,
   };
   const label: SymbolLayerSpecification = {
     id: 'borders-label',
     type: 'symbol',
     source: BORDERS_SOURCE,
+    filter: ['==', ['get', 'labelRing'], true],
     minzoom: 3,
     maxzoom: 8,
     layout: {
@@ -150,7 +206,39 @@ export function bordersLayers(
       'text-opacity': 0.8,
     },
   };
-  return [fill, line, label];
+  const [fadeIn, fadeOut] = BORDERS_ISLAND_FADE;
+  const islandFill: FillLayerSpecification = {
+    ...fill,
+    id: 'borders-island-fill',
+    paint: {
+      ...fill.paint,
+      'fill-opacity': ['interpolate', ['linear'], ['zoom'], fadeIn, dark ? 0.45 : 0.38, fadeOut, 0],
+    },
+    filter: isIsland,
+    maxzoom: fadeOut,
+  };
+  const islandLine: LineLayerSpecification = {
+    ...line,
+    id: 'borders-island-line',
+    paint: {
+      ...line.paint,
+      // Same shape as the frontier fade and for the same reason: `zoom` is
+      // legal only as the direct input of a top-level `step` or `interpolate`
+      // (`sand-neh.33`), so the precision case stays inside the stops.
+      'line-opacity': [
+        'interpolate',
+        ['linear'],
+        ['zoom'],
+        fadeIn,
+        ['case', ['==', ['to-number', ['coalesce', ['get', 'BORDERPRECISION'], 2]], 1], 0.45, 0.85],
+        fadeOut,
+        0,
+      ],
+    },
+    filter: isIsland,
+    maxzoom: fadeOut,
+  };
+  return [fill, line, label, islandFill, islandLine];
 }
 
 /**
@@ -197,20 +285,96 @@ export function mountBorders(map: BordersHost, geo: BordersGeoJSON, theme: MapTh
  */
 export function showBorders(map: BordersHost, visible: boolean): void {
   if (!map.setLayoutProperty) return;
-  for (const id of ['borders-fill', 'borders-line', 'borders-label']) {
+  // Asked of the layer builder rather than restated here. This list grew from
+  // three to five with the island rings (`sand-neh.34`), and a hardcoded copy
+  // that missed them would leave the hexagon on screen inside a zoom-in — the
+  // exact bug, one layer down. Ids do not depend on the theme.
+  for (const id of bordersLayers('dark').map((l) => l.id)) {
     if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', visible ? 'visible' : 'none');
   }
 }
 
+interface RingFeature {
+  type: 'Feature';
+  properties: Record<string, unknown>;
+  geometry: { type: 'Polygon'; coordinates: number[][][] };
+}
+
+/** The longer side of a ring's bounding box, in degrees, corrected for latitude. */
+export function ringSpanDeg(ring: number[][]): number {
+  let minX = Infinity,
+    maxX = -Infinity,
+    minY = Infinity,
+    maxY = -Infinity;
+  for (const [x, y] of ring as [number, number][]) {
+    if (x < minX) minX = x;
+    if (x > maxX) maxX = x;
+    if (y < minY) minY = y;
+    if (y > maxY) maxY = y;
+  }
+  if (!Number.isFinite(minX)) return 0;
+  const midLat = ((minY + maxY) / 2) * (Math.PI / 180);
+  return Math.max((maxX - minX) * Math.cos(midLat), maxY - minY);
+}
+
 /**
- * Pre-compute the per-power hue on each feature so the fill expression stays
- * cheap. Mutates and returns the collection.
+ * Pre-compute the per-power hue, and split every MultiPolygon into one feature
+ * per polygon carrying its own `spanDeg` (`sand-neh.34`).
+ *
+ * The split is what makes the island rule expressible at all. MapLibre styles a
+ * FEATURE, and in this dataset the United States is a single MultiPolygon
+ * holding the continental land mass, Alaska and every Pacific island at once —
+ * so no feature-level filter can reach Oahu without also reaching Montana.
+ * One feature per polygon can be filtered on its own size.
+ *
+ * `labelRing` marks the largest polygon of each original feature, so exploding
+ * the geometry does not multiply the labels: the United States is named once,
+ * on the continental ring, exactly as before.
  */
 export function decorateBorders(geo: BordersGeoJSON): BordersGeoJSON {
-  for (const f of geo.features as { properties?: Record<string, unknown> }[]) {
+  const out: RingFeature[] = [];
+  for (const f of geo.features as {
+    properties?: Record<string, unknown>;
+    geometry?: { type?: string; coordinates?: unknown };
+  }[]) {
     const props = (f.properties ??= {});
     const power = String(props['SUBJECTO'] ?? props['NAME'] ?? '');
     props['hue'] = power ? powerHue(power) : 0;
+    const g = f.geometry;
+    const polys: number[][][][] =
+      g?.type === 'MultiPolygon'
+        ? (g.coordinates as number[][][][])
+        : g?.type === 'Polygon'
+          ? [g.coordinates as number[][][]]
+          : [];
+    if (polys.length === 0) {
+      // Nothing to split and nothing to draw, but decorating must not lose a
+      // feature: pass it through with a span that classifies it as an island,
+      // which is the side that stops drawing first.
+      out.push({
+        type: 'Feature',
+        properties: { ...props, spanDeg: 0, labelRing: true },
+        geometry: { type: 'Polygon', coordinates: [] },
+      });
+      continue;
+    }
+    let biggest = out.length;
+    let biggestSpan = -1;
+    for (const poly of polys) {
+      const span = ringSpanDeg(poly[0] ?? []);
+      if (span > biggestSpan) {
+        biggestSpan = span;
+        biggest = out.length;
+      }
+      out.push({
+        type: 'Feature',
+        properties: { ...props, spanDeg: span, labelRing: false },
+        geometry: { type: 'Polygon', coordinates: poly },
+      });
+    }
+    const winner = out[biggest];
+    if (winner) winner.properties['labelRing'] = true;
   }
+  geo.features = out;
   return geo;
 }
