@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
+import { validateStyleMin } from '@maplibre/maplibre-gl-style-spec';
 import {
   BORDERS_MIN_SPAN_DEG,
   bordersLayers,
@@ -119,6 +120,42 @@ describe('borders', () => {
       expect(fill.maxzoom).toBe(10.5);
       expect(line.maxzoom).toBe(10.5);
       expect(JSON.stringify(fill.paint?.['fill-opacity'])).toContain('9.5');
+    });
+  });
+
+  describe('the layers are valid MapLibre (sand-neh.33)', () => {
+    /** The layers as MapLibre actually receives them: inside a whole style. */
+    const styleWith = (theme: 'light' | 'dark') => ({
+      version: 8 as const,
+      sources: {
+        borders: {
+          type: 'geojson' as const,
+          data: { type: 'FeatureCollection' as const, features: [] },
+        },
+      },
+      layers: bordersLayers(theme),
+    });
+
+    it.each(['light', 'dark'] as const)('validates against the style spec in %s', (theme) => {
+      // MapLibre does not throw on an invalid layer, it DROPS it and logs one
+      // warning. So a layer can stop drawing everywhere and every gate stays
+      // green: the scene still renders, nothing is on the console at `error`
+      // level, and the map is not something the DOM audit can see. That is
+      // exactly what happened to `borders-line` — a `zoom` fade nested inside
+      // a `*` — and it is why this asserts rather than a screenshot.
+      expect(validateStyleMin(styleWith(theme))).toEqual([]);
+    });
+
+    it('rejects the shape that broke it, so this test is not a tautology', () => {
+      const broken = styleWith('dark');
+      (broken.layers[1] as { paint: Record<string, unknown> }).paint['line-opacity'] = [
+        '*',
+        ['case', ['==', 1, 1], 0.45, 0.85],
+        ['interpolate', ['linear'], ['zoom'], 9.5, 1, 10.5, 0],
+      ];
+      const errors = validateStyleMin(broken);
+      expect(errors).toHaveLength(1);
+      expect(errors[0]?.message).toContain('top-level');
     });
   });
 });

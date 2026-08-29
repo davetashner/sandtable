@@ -110,10 +110,20 @@ export function bordersLayers(
     paint: {
       'line-color': dark ? '#c9a24b' : '#8c6d28', // --brass
       'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.6, 7, 1.4, 10, 2.2],
+      // The zoom fade has to BE the top-level expression, with the precision
+      // case in its stops. MapLibre allows `zoom` only as the direct input of
+      // a top-level `step` or `interpolate`, so wrapping the fade in a `*`
+      // alongside the case — which is how this was first written — makes the
+      // whole layer invalid and MapLibre drops it. The stroke then draws at no
+      // zoom at all: a total failure of the layer, reported as one warning.
       'line-opacity': [
-        '*',
+        'interpolate',
+        ['linear'],
+        ['zoom'],
+        9.5,
         ['case', ['==', ['to-number', ['coalesce', ['get', 'BORDERPRECISION'], 2]], 1], 0.45, 0.85],
-        ['interpolate', ['linear'], ['zoom'], 9.5, 1, 10.5, 0],
+        10.5,
+        0,
       ],
       'line-dasharray': [2, 1.5],
     },
