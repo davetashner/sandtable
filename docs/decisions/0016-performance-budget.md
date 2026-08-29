@@ -347,6 +347,35 @@ viewport needs fewer tiles than a 1440-px one, and a slower link finishes fewer
 of them before the measurement ends. It is worth writing down because the
 number looks like an improvement and is not one.
 
+### And what the page spends blocked (`sand-pmz.23`)
+
+`npm run perf` measured frames _after_ boot and never boot itself, so the
+largest single cost in a cold load did not appear in this record at all. It
+does now, as two columns: `blocked`, the total main-thread time in tasks over
+50 ms — during which the page answers nothing, no scroll, no tap, no frame —
+and `worst`, the longest single one.
+
+| profile           | scene          | blocked | worst |
+| ----------------- | -------------- | ------: | ----: |
+| unthrottled       | campaign-day20 |    6229 |  6000 |
+| unthrottled       | battle-marne   |    5447 |  4839 |
+| Lighthouse mobile | campaign-day20 |    7104 |  6124 |
+| unthrottled       | cold-open      |       0 |     0 |
+
+`cold-open` is the atlas and has no map: **zero**. That is the control, and it
+is the same one PR #127 drew when it read 1 ms on `gallery.html`. The cost is
+the map, and within the map it is MapLibre's and deck.gl's shader programs
+compiling — once per WebGL context, once per load.
+
+**The window this is measured in is the whole difficulty, and the first
+version of it was wrong.** `sandtable:map-ready` means the style is live and
+the overlay can project, which is _before_ either library has compiled a
+shader; the expensive turn lands on the first actual draw. Reading the observer
+at the mark closed the window before the task and reported **58 ms** against
+PR #127's 5,173 ms — a number that looks like good news and is a measurement
+artifact. The harness now keeps watching for `--settle-ms` (default 6 s) past
+the mark, and reproduces the original finding.
+
 **What this is not.** It is an emulation: no radio wake-up, no thermal
 throttling, no phone GPU, and SwiftShader rather than a mobile one. Read it as
 a floor on the misery rather than a measurement of a handset. The alternative

@@ -125,6 +125,8 @@ async function throttlePage(ctx, page) {
 }
 const RUNS = Number(opt('runs', 3));
 const FRAME_MS = Number(opt('frame-ms', 6000));
+/** How long to keep watching for long tasks after the map reports ready. */
+const SETTLE_MS = Number(opt('settle-ms', 6000));
 const JSON_OUT = opt('json');
 
 const kb = (n) => (n / 1024).toFixed(1);
@@ -166,6 +168,30 @@ const BOOT_SCENES = [
 ];
 
 /** Read the boot marks out of a page that has finished loading. */
+/**
+ * Collects long tasks from the first byte, so boot's own blocking is
+ * measurable (`sand-pmz.23`). Installed with `addInitScript`, before the
+ * document exists, because the task this exists to catch is the one the map
+ * runs on its first render and a probe registered after load has missed it.
+ *
+ * A "long task" is the platform's own definition — a main-thread turn over
+ * 50 ms, during which the page answers nothing: no scroll, no tap, no frame.
+ * PR #127 measured one of 5,173 ms on the campaign and 1 ms on `gallery.html`,
+ * which has no map, and named the cause: MapLibre's and deck.gl's shader
+ * programs compiling, once per WebGL context, once per load.
+ */
+const LONGTASK_INIT = () => {
+  window.__sandtableLongTasks = [];
+  try {
+    new PerformanceObserver((list) => {
+      for (const e of list.getEntries())
+        window.__sandtableLongTasks.push({ start: e.startTime, dur: e.duration });
+    }).observe({ type: 'longtask', buffered: true });
+  } catch {
+    /* a browser without the entry type reports nothing rather than failing */
+  }
+};
+
 const READ_MARKS = () => {
   const nav = performance.getEntriesByType('navigation')[0];
   const at = (n) => performance.getEntriesByName(n)[0]?.startTime ?? null;
@@ -181,6 +207,7 @@ const READ_MARKS = () => {
     mapReady: at('sandtable:map-ready'),
     transferBytes: res.reduce((a, r) => a + (r.transferSize || 0), 0),
     requests: res.length,
+    longTasks: window.__sandtableLongTasks ?? [],
   };
 };
 
@@ -190,6 +217,7 @@ async function bootOnce(browser, base, qs, { stub }) {
     ...(PHONE ? { isMobile: true, hasTouch: true, deviceScaleFactor: 3 } : {}),
   });
   if (stub) await stubAssets(ctx);
+  await ctx.addInitScript(LONGTASK_INIT);
   const page = await ctx.newPage();
   // Before the navigation, or the first bytes arrive at full speed.
   await throttlePage(ctx, page);
@@ -204,7 +232,20 @@ async function bootOnce(browser, base, qs, { stub }) {
     })
     .then(() => true)
     .catch(() => false);
+  // Keep watching past the mark. `sandtable:map-ready` means MapLibre's style
+  // is live and the deck overlay can project, which is BEFORE either of them
+  // has compiled a shader — the cost `sand-pmz.23` is about lands on the first
+  // actual draw. Reading the observer at the mark measured a window that
+  // closes before the expensive turn and reported 58 ms against PR #127's
+  // 5,173 ms; the difference was entirely when the question was asked.
+  if (sawMark) await page.waitForTimeout(SETTLE_MS);
   const marks = await page.evaluate(READ_MARKS);
+  const tasks = marks.longTasks ?? [];
+  // The worst single turn, and the total the page spent unable to answer.
+  marks.blockingMs = tasks.reduce((a, t) => a + t.dur, 0);
+  marks.worstTaskMs = tasks.reduce((a, t) => Math.max(a, t.dur), 0);
+  marks.longTaskCount = tasks.length;
+  delete marks.longTasks;
   marks.sawMark = sawMark;
   marks.wallMs = Date.now() - t0;
   await ctx.close();
@@ -230,6 +271,9 @@ async function measureBoot(browser, base, stub) {
       wallMs: median(runs.map((r) => r.wallMs)),
       transferKb: median(runs.map((r) => r.transferBytes)) / 1024,
       requests: median(runs.map((r) => r.requests)),
+      blockingMs: median(runs.map((r) => r.blockingMs)),
+      worstTaskMs: median(runs.map((r) => r.worstTaskMs)),
+      longTaskCount: median(runs.map((r) => r.longTaskCount)),
     };
   }
   return out;
@@ -244,18 +288,25 @@ function printBoot(boot, stub, renderer) {
       `${THROTTLED ? THROTTLED.label : 'unthrottled — a fast link, which is not the case the budget exists for'}\n`,
   );
   console.log(
-    '  scene              FCP    pack   map-ready   wall   transfer  reqs\n' +
+    '  scene              FCP    pack   map-ready   wall   transfer  reqs   blocked  worst\n' +
       '  ' +
-      '-'.repeat(66),
+      '-'.repeat(84),
   );
   for (const [name, r] of Object.entries(boot)) {
     console.log(
       `  ${name.padEnd(16)} ${ms(r.fcp).padStart(5)}  ${ms(r.packMs).padStart(5)}  ` +
         `${ms(r.mapReady).padStart(9)}  ${ms(r.wallMs).padStart(5)}  ` +
-        `${kb(r.transferKb * 1024).padStart(7)} kB  ${String(r.requests).padStart(4)}`,
+        `${kb(r.transferKb * 1024).padStart(7)} kB  ${String(r.requests).padStart(4)}  ` +
+        `${ms(r.blockingMs).padStart(7)}  ${ms(r.worstTaskMs).padStart(5)}`,
     );
   }
   console.log('  all times ms from navigation start.');
+  console.log(
+    '  blocked: total main-thread time in tasks over 50 ms, during which the page\n' +
+      '  answers nothing — no scroll, no tap, no frame. worst: the longest single\n' +
+      '  one. `sand-pmz.23`: on the campaign this is shader compilation, and on\n' +
+      '  gallery.html, which has no map, the same probe reads about 1 ms.',
+  );
   if (Object.values(boot).some((r) => r.mapReady === null)) {
     console.log(
       '  a blank map-ready means the build under test has no `sandtable:map-ready`\n' +
