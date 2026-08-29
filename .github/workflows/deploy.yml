@@ -85,7 +85,7 @@ jobs:
         run: bash scripts/deploy-static.sh dist "s3://${{ steps.stack.outputs.bucket }}"
 
       - name: sync shared geo data to the assets bucket
-        run: aws s3 sync content/shared/geo "s3://${{ steps.stack.outputs.assets }}/geo" --no-progress --cache-control "public, max-age=3600"
+        run: bash scripts/deploy-geo.sh "${{ steps.stack.outputs.assets }}"
 
       - name: invalidate CloudFront
         run: |

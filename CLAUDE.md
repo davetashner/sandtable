@@ -254,7 +254,11 @@ receipts -- --fetch` re-runs it against the source. Receipts live outside
   (`AWS_REGION` = us-east-1); see `docs/decisions/0004-hosting.md`.
 - Deploy workflows (`deploy.yml`, `preview.yml`, `infra.yml`): `main` deploys
   to <https://sandtable.davetashner.com> (CDK stack `SandtableHosting` in
-  `infra/`, then build → `scripts/deploy-static.sh` → invalidate); every
+  `infra/`, then build → `scripts/deploy-static.sh` → invalidate; the shared
+  geo data goes up through `scripts/deploy-geo.sh`, which both `deploy.yml` and
+  `preview.yml` call because they write to the **same** assets bucket, and
+  which uploads `.geojson` as `application/json` so CloudFront will compress it
+  — `application/geo+json` is not on its compressible list, `sand-pmz.43`); every
   same-repo PR gets `https://pr-<n>.sandtable.davetashner.com` via a sticky
   comment; infra PRs get a `cdk diff` in the job summary. `/assets/*` is the
   assets bucket (tiles, borders, media) on every deployment — Vite bundles
