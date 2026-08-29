@@ -139,6 +139,81 @@ partly by its opponents. The card says so in as many words and the pack would
 rather carry the weakness visibly than manufacture the appearance of a reading
 it has not done.
 
+## A participant voice, and what it cost to use it honestly (`sand-lry.5.1`)
+
+The gap above is filled. John Charles Tashner Jr. — "Jay" — was a twenty-year-old
+sailor at Pearl Harbor on the morning of 7 December 1941, and his grandson gave
+the family's account of him to this project. He is in `cast.json`, in
+`content/shared/people/`, and in `vignettes.json`, which until now did not
+exist here.
+
+He is a real participant voice and not a substitute for one, which is the whole
+of why he is admissible where an invented vignette was not. He is also, for a
+project whose rule is that every date and number cites a source, the hardest
+kind of material there is, because the evidence comes in three grades that must
+not be flattened into one:
+
+- **The _Selfridge_ action report** (`source:selfridge-action-report-1942`) —
+  the ship's own report to CINCUS of 15 January 1942, `primary`. Fetched from
+  the HyperWar transcription at ibiblio.org, twice, with identical text, and
+  carried as `document-selfridge-action-report` with three receipts (ADR 0021).
+  NHHC's own copy at history.navy.mil fails TLS verification from this
+  environment, which is why the transcription is what was read and why the
+  registry entry records the two places the two copies differ.
+- **Duty entries from his service papers** (`source:tashner-service-record`) —
+  `primary` by form, and thin on provenance: supplied as text by the family,
+  with no scan and no archive reference. The entry says so at length. Filing
+  by form with the doubts in `notes` is `docs/sources.md` rule 2; filing by
+  confidence is what that rule forbids.
+- **Two family accounts** (`source:tashner-family-2026`,
+  `source:tashner-john-2026`) — two of Jay's sons, writing in 2026 about what
+  their father told them. **This is what the new `testimony` rung is for**, and
+  it was added to the hierarchy of evidence in the same change; the argument
+  for it, and the line between it and `memoir`, are in `docs/sources.md`.
+
+**Four disagreements are preserved rather than resolved**, and they are the most
+historically interesting thing in the addition:
+
+1. **Barracks or ship.** Both sons put him ashore in a barracks. The
+   _Selfridge_'s own report says "Nine officers and ninety-nine percent of the
+   crew were on board." Both can be true. The pack asserts neither that he was
+   aboard on the day nor that he was not, and notes that nothing it has read
+   names him at all.
+2. **Destroyers or aviation.** One son remembers carriers and destroyers; the
+   other describes a career in naval aviation and electronics. The duty entries
+   come down on the aviation side from a documentary direction — PBYs and B-24s
+   on Betio, the electronics division of a fleet plane pool at Majuro — without
+   making the destroyers wrong. A twenty-one-year career holds both.
+3. **Midway is not a fact here.** One account states it; the other, the
+   better-informed one, says "I need to check but I think he was at the battle
+   of Midway as well". It is recorded as a family recollection the family itself
+   flags as unconfirmed, which is the discipline this project exists to model.
+4. **Why he refused a commission.** Two sons, different reasons. Both are given.
+
+Three smaller things handled the same way. His son's "a single shot M-1 rifle"
+is recorded as told and not corrected in the bio; the remark that the M1 Garand
+was semi-automatic, and that a rifle handed out in that confusion was as likely
+a bolt-action M1903, sits in a citation note as an observation about how oral
+history behaves rather than as a red pen through a man's recollection. The same
+account gives the hour as seven where the first wave was over Oahu at 0755, and
+the vignette is placed at the attack with the difference noted rather than
+argued. And the service entry reads "at Majuro, G.I.", transcribed as "Majuro,
+Gilbert Islands" — Majuro is in the Marshalls — which is quoted as given, with
+the geography noted and no explanation asserted.
+
+**Betio, and a thread left for `sand-lry.8`.** The duty entries put him on Betio
+— the island of Tarawa — from October 1943, in charge of a maintenance crew
+detachment servicing aircraft. That is airfield work, and on Betio the airfield
+was the objective; the period given is a range, not a date. **Nothing here says
+he landed with the assault.** The Tarawa pack, when it is written, has a named
+man to pick up and a range to narrow.
+
+ADR 0007 is under pressure in the vignette and is not evaded. Both accounts say
+he spent 7 December and several days after it recovering the dead from the oily
+water, and that is central to what the morning did to a twenty-year-old, so it
+is in. It is written in the register the sources use and no further — no
+photographs, and no detail the testimony does not give.
+
 ## What is deliberately absent
 
 - **No casualty records.** `casualties.json` is not here. The day's figures —
@@ -146,10 +221,13 @@ it has not done.
   quoted from Morton, but a `CasualtyRecord` wants figures per side and
   category each with its own confidence and sources, and this pack holds one
   aggregate from one work. Filed as follow-up.
-- **No vignettes.** The obvious first-person voice for 7 December is Fuchida's,
-  and it is exactly the voice this pack has decided to treat as a subject rather
-  than an authority. Nothing else could be opened. A vignette invented to fill
-  the slot would be the worst thing in the pack.
+- ~~**No vignettes.**~~ The pack shipped with none, for a reason worth keeping
+  on the page: the obvious first-person voice for 7 December is Fuchida's, and
+  it is exactly the voice this pack has decided to treat as a subject rather
+  than an authority. Nothing else could be opened, and a vignette invented to
+  fill the slot would have been the worst thing in the pack. **There is now
+  one**, and it is not invented — see "A participant voice, and what it cost to
+  use it honestly" below.
 - **No fuel figure.** The four and a half or six million barrels that make the
   third-wave counterfactual sound decisive could not be verified for December 1941. The Navy's own construction history lists two above-ground tank farms
   and gives no capacity, and the six-million-barrel figure it does give belongs

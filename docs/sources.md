@@ -71,7 +71,7 @@ bibliography UI is `sand-shn.5`.
 
 ## Hierarchy of evidence (for when sources disagree)
 
-The five rungs, strongest first, and the `tier` value each one is written as.
+The six rungs, strongest first, and the `tier` value each one is written as.
 Two more values sit outside the ranking because rules 7 and 8 above govern
 them instead: `primary` above it — the record itself, cited for what it says —
 and `reference` below it, which is never evidence for an operational claim.
@@ -89,11 +89,72 @@ and `reference` below it, which is never evidence for an operational claim.
    army. The regimental works wanted are in "to add as the content lands" below.
 4. `memoir` — memoirs (Kluck, Bülow, Joffre, French, Gallieni, Ludendorff,
    Hoffmann) for what commanders believed — cited as such, never as fact.
-5. `general` — general histories, surveys and handbooks for context, colour
+5. `testimony` — oral history, and an account of a participant relayed by
+   somebody else: an interview, a family recollection, what a veteran told his
+   children. Cited for what a person remembers and how they remember it, never
+   for a date, a number or a position the record can settle. See below.
+6. `general` — general histories, surveys and handbooks for context, colour
    and uncontested matters of record.
 
 When two works disagree on a number or a time, cite both and pick the more
 specific with a `note`; when they disagree on meaning, write historiography.
+
+### Why `testimony` is its own rung, and where it sits (`sand-lry.5.1`)
+
+The rung was added when the first veteran's account reached the project: two of
+J. C. Tashner Jr.'s sons writing down, eighty-five years afterwards, what their
+father had told them about the morning of 7 December 1941. Nothing in the
+hierarchy fitted it, and the way it did not fit is worth stating, because this
+will not be the last one. ADR 0019 projects twenty packs across a war still
+inside living memory at the point the project began, and the sourced vignette
+is the instrument that arc has already nominated for carrying what the no-gore
+rule keeps off the screen.
+
+**The line between `memoir` and `testimony` is who fixed the words.** A memoir
+is the participant's own account, set down by the participant: Kluck wrote
+Kluck's book, and what is wrong with it is Kluck's. Testimony is an account of
+what a participant said, relayed by someone else — a son, an interviewer, a
+grandchild with a notebook — and usually written down decades later. That
+second pair of hands is not a detail. It is a second memory, a second set of
+interests, and a second opportunity for a story to become tidier than the event
+was. Filing both at `memoir` would say the two are the same kind of claim, and
+they are not.
+
+The distinction is a real one and not a slight, which is why it does not move
+anything already in the registry. `source:cook-cook-1992` — sixty-odd Japanese
+participants interviewed in the late 1980s — stays at `memoir`, and its entry
+already argues the case: the book prints the participants' own words. Where a
+published oral history hands the reader the speaker's speech, the speaker fixed
+the words and `memoir` is right. `testimony` is for the case where they did
+not.
+
+**It sits below `memoir` and above `general`, and the placement follows from a
+choice this list already made.** The existing order puts a participant's
+recollection above a general survey — rung 4 above rung 5 — which is a
+statement that a witness outranks a synthesis on the question of what a witness
+saw. A relayed recollection is the same kind of evidence one remove further
+out, so it belongs beside memoir rather than beneath the surveys. What that
+placement is emphatically **not** is a claim that family recollection beats a
+general history on a fact. Rungs 1–3 and rung 6 all settle a date, a strength
+or a position against rung 5, and the rubric a reader sees in the bibliography
+says so in as many words. The rung is high because of what it is uniquely good
+for, and the caveat travels with it.
+
+Three rules follow, all of them the practice the 1941 pack now demonstrates:
+
+- **Attribute, never merge.** Two relatives remembering the same man are two
+  sources, and where they differ the difference is content, not noise to be
+  averaged away. Both accounts of why Jay Tashner refused a commission are in
+  the pack, because both were given.
+- **Carry the hedge.** Where a witness says "I need to check but I think", that
+  is a statement about the evidence and it is the most valuable sentence in the
+  account. It is written down as what it is, and the claim behind it stays
+  unconfirmed rather than being promoted by transcription.
+- **A service paper is not testimony.** Duty entries transcribed out of a
+  service record are `primary` by form even when a family supplies the text,
+  and the provenance gap — no scan, no archive reference — goes in `notes`
+  rather than into the tier. Filing by confidence instead of by form is exactly
+  what rule 2 forbids, and the fix for a shaky provenance is to describe it.
 
 ## Quoting, and the receipt that goes with it ([ADR 0021](decisions/0021-quotation-receipts.md))
 

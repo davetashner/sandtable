@@ -1,0 +1,51 @@
+{
+  "id": "person:tashner-john-charles-jr",
+  "name": "John Charles Tashner Jr.",
+  "sortName": "Tashner, John Charles, Jr.",
+  "names": [
+    {
+      "name": "Jay",
+      "kind": "nickname"
+    }
+  ],
+  "born": "1920-12-18",
+  "nationality": "US",
+  "roles": [
+    {
+      "title": "Enlisted sailor, United States Navy, Oahu"
+    },
+    {
+      "title": "In charge of a maintenance crew detachment, Betio, Tarawa Atoll",
+      "from": "1943-10",
+      "to": "1944-05"
+    },
+    {
+      "title": "Chief radioman, electronics division, fleet plane pool at Majuro",
+      "from": "1944-05",
+      "to": "1945-04"
+    }
+  ],
+  "summary": "An enlisted sailor, twenty years old, at Pearl Harbor on the morning of 7 December 1941, and the first participant voice this project holds for that day. Born in Jersey City on 18 December 1920 and raised in Lynchburg, Virginia, by a mother who had left his father when he was three; he enlisted in the Navy out of high school at seventeen, and the family's own account of when contains a tension it does not resolve — enlistment on leaving school points at about 1938, retirement in 1958 after twenty-one years points at about 1937. Both his sons place him ashore in a barracks that Sunday morning, shaving, mustered out and handed a rifle; both say he spent the following days recovering bodies from the harbour. What came after is better evidenced than what he did that morning: duty entries transcribed from his service papers put him on Betio in Tarawa Atoll from October 1943 servicing PBY flying boats and Army B-24s, and at Majuro from May 1944 as a chief radioman running the electronics division of the fleet plane pool — aviation ground support and electronics, not deck service, which is how his eldest son describes the whole of his career. He married in 1943, refused a commission during the war for reasons his two sons remember differently, and retired in 1958 as a chief petty officer with four children to raise. The family names USS Selfridge (DD-357), a Porter-class destroyer commissioned in 1936 that was moored in Pearl Harbor that morning, and places him on the maiden voyage of the carrier USS Oriskany (CV-34), commissioned in September 1950; this project has verified that both ships existed and where they were, and not that he was aboard either.",
+  "sources": [
+    {
+      "source": "source:tashner-family-2026",
+      "note": "the birth date, Jersey City and Lynchburg, the enlistment at seventeen, the barracks and the rifle, the days in the harbour, the retirement in 1958 after twenty-one years as a chief petty officer, and the refused commission"
+    },
+    {
+      "source": "source:tashner-john-2026",
+      "note": "the morning as his father described it, the aviation squadrons and the electronics work, the chief's rate, the marriage in 1943 and the four children, and the Oriskany"
+    },
+    {
+      "source": "source:tashner-service-record",
+      "note": "Betio from October 1943 and Majuro from May 1944; the PBYs and B-24s, the maintenance crew detachment and the chief radioman's billet. Supplied as text by the family; no scan and no archive reference — see the source entry"
+    },
+    {
+      "source": "source:selfridge-action-report-1942",
+      "note": "that Selfridge was in Pearl Harbor on 7 December 1941 and where she lay. The report says nothing about this man"
+    },
+    {
+      "source": "source:wikipedia-en",
+      "note": "reference data only, per docs/sources.md §8: Selfridge as a Porter-class destroyer commissioned 25 November 1936; Oriskany commissioned 25 September 1950; Betio as an island of Tarawa Atoll in the Gilberts and Majuro as an atoll of the Marshalls"
+    }
+  ]
+}

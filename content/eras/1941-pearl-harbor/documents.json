@@ -68,5 +68,25 @@
         "note": "the lines quoted, in order. **This is not the text of an order.** The series' own introduction says most originals were lost or destroyed and that orders and plans “have been reconstructed from memory and therefore are not textually identical with the originals”. It is cited the way a memoir is cited — for what a commander said the plan was — and the pack says so wherever it leans on it. The document also contradicts itself about the standby point, giving 165°W on p. 7 and 170°W on p. 21"
       }
     ]
+  },
+  {
+    "id": "1941-pearl-harbor:document-selfridge-action-report",
+    "title": "U.S.S. Selfridge: “Action in Pearl Harbor, T.H., 7 December 1941, report of”",
+    "date": "1942-01-15",
+    "author": "W. Craig, Commanding Officer, U.S.S. Selfridge",
+    "kind": "report",
+    "language": "en",
+    "excerpt": "DL357/A16-3(5)\nSerial #055\n\nU.S.S. SELFRIDGE\nJanuary 15, 1942\n\nFrom: Commanding Officer.\nTo: Commander in Chief, United States Fleet.\nSubject: Action in Pearl Harbor, T.H., 7 December 1941, report of.\n\nThis vessel participated in the defense of Pearl Harbor and the ships based therein during the air raid of 7 December 1941.\n\nBerth occupied was X-0 on heading approximately north-east, outboard and starboard side to U.S.S. Case, Reid, Tucker, Cummings and Whitney.\n\nNine officers and ninety-nine percent of the crew were on board.\n\nApproximately four minutes before morning colors the Officer of the Deck witnessed the launching of a torpedo against the U.S.S. Raleigh by a Japanese plane. Almost simultaneously came a report from the signal bridge that the Naval Air Station was on fire. The Officer of the Deck sounded the alarm for general quarters, set condition afirm and directed the engineering department to light off boilers and make preparations to get underway.\n\nAt about 0758 Selfridge .50 caliber machine guns were firing on Japanese planes, shortly followed by the 1.1\" machine guns.\n\n850 rounds of 1.1\" and 2340 rounds of .50 caliber were expended during the action. There were no personnel casualties.\n\nThe performance of the ship's equipment was excellent, as was that of the crew. At no time during the raid was there a lull in firing caused by an interruption of ammunition supply. Men not engaged at the guns broke out and clipped ammunition in a most efficient and expeditious manner. The conduct of no one officer or man can be considered outstanding because the conduct, cooperation, coolness and morale of the crew as a fighting unit was superb.\n\n[signed] W. CRAIG.",
+    "archive": "NARA, as Enclosure (E) to the CINCPAC action report, Serial 0479 of 15 February 1942 (per the Naval History and Heritage Command). Read here in the HyperWar transcription at ibiblio.org; history.navy.mil's own copy fails TLS verification from this environment.",
+    "links": {
+      "battles": ["1941-pearl-harbor:oahu"],
+      "events": ["1941-pearl-harbor:event-first-wave-attacks"]
+    },
+    "sources": [
+      {
+        "source": "source:selfridge-action-report-1942",
+        "note": "the whole of the report; the excerpt is a selection and the paragraphs it does not print are marked by the breaks between those it does. The transcription drops the numbered-paragraph markers the NHHC copy carries, so none are shown. Verified by fetch on 2026-08-28 — see content/receipts/1941-pearl-harbor.json"
+      }
+    ]
   }
 ]
