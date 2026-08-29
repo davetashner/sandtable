@@ -117,6 +117,24 @@ describe('the pace bands are era-aware (ADR 0020, sand-lry.2)', () => {
     expect(paceMessage(atDeclared, 'sea')).toContain('pack.json#pace.sea');
   });
 
+  it('states the leg and its band in the same unit (sand-23b.61)', () => {
+    // the leg's rate and the band's rate are both km/day, so the two numbers
+    // in the sentence can honestly be compared; the allowed distance stays,
+    // labelled, because it is what the check compared and it carries the
+    // position tolerance. Kidō Butai's second launch leg is the real case:
+    // 56 km in 1.25 h against a 26 km/h band, which is 624 km/day, not 48.
+    const kido = paceFindings(run(55.6, 1.25), 'sea', 'medium', {
+      sea: band(26, 46, 'the Hawaii operation order’s two speeds'),
+    })[0]!;
+    expect(kido.level).toBe('warning');
+    expect(kido.bar).toBe(26);
+    const message = paceMessage(kido, 'sea');
+    expect(message).toContain('624 km/day, so 48 km over these hours');
+    // and the rate the leg is being judged against is never printed alone as a
+    // bare distance the reader could mistake for a daily rate
+    expect(message).not.toMatch(/pace \(48 km\)/);
+  });
+
   it('holds every default band under the ceiling no declaration may pass', () => {
     for (const mode of Object.keys(MOVEMENT_PACE) as MovementMode[]) {
       expect(MOVEMENT_PACE[mode].sustained).toBeLessThanOrEqual(PACE_CEILING[mode].sustained);
