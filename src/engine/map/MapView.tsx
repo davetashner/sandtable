@@ -30,7 +30,7 @@ import { useEffect, useImperativeHandle, useRef, useState, type ReactNode, type 
 import type { BBox, Camera } from '../../packs/schema/index.js';
 import { unwrapEast } from '../geo.js';
 import { OWNS_KEYS } from '../shortcuts.js';
-import { fetchBorders, mountBorders } from './borders.js';
+import { bordersMeaningful, fetchBorders, mountBorders, showBorders } from './borders.js';
 import { fetchFront, mountFront, unmountFront, type FrontGeoJSON } from './front.js';
 import { BASEMAP_SOURCE, buildStyle, detectTheme, type MapTheme } from './style.js';
 import './map.css';
@@ -119,6 +119,12 @@ export interface MapViewProps {
   /** Which content/shared/geo/borders/<year>.geojson to draw; omit for none. */
   borderYear?: number;
   /**
+   * How wide the focused region is, in degrees of longitude, or undefined at
+   * campaign scale. Decides whether the historical borders are evidence for
+   * what is on screen (`sand-neh.32`, `bordersMeaningful`).
+   */
+  focusSpanDeg?: number | undefined;
+  /**
    * Which shared front-line series to draw (`pack.frontLine`, e.g.
    * `western-front`); omit for none.
    */
@@ -159,6 +165,7 @@ export function MapView({
   camera,
   inset,
   borderYear,
+  focusSpanDeg,
   frontSeries,
   frontAt,
   theme,
@@ -367,12 +374,23 @@ export function MapView({
       .then((geo) => {
         if (cancelled || !mapRef.current) return;
         mountBorders(mapRef.current, geo, activeTheme);
+        showBorders(mapRef.current, bordersMeaningful(focusSpanDeg));
       })
       .catch((e: unknown) => console.warn('[map] borders', e));
     return () => {
       cancelled = true;
     };
+    // `focusSpanDeg` is deliberately not a dependency: re-fetching the world
+    // because the reader opened a zoom-in would be absurd. The effect below
+    // toggles what is already mounted.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ready, borderYear, activeTheme]);
+
+  // Borders on or off for the scale on screen, without a re-fetch.
+  useEffect(() => {
+    if (!mapRef.current || !ready) return;
+    showBorders(mapRef.current, bordersMeaningful(focusSpanDeg));
+  }, [ready, focusSpanDeg, borderYear, activeTheme]);
 
   // The front-line series: fetched once, then the clock picks a snapshot out of
   // it. Two effects, because the fetch must not repeat every time `frontAt`

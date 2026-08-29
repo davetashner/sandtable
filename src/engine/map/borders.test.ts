@@ -1,11 +1,16 @@
 import { describe, expect, it } from 'vitest';
+import { readFileSync } from 'node:fs';
 import {
+  BORDERS_MIN_SPAN_DEG,
   bordersLayers,
+  bordersMeaningful,
   bordersUrl,
   decorateBorders,
   powerHue,
+  showBorders,
   type BordersGeoJSON,
 } from './borders.js';
+import { lngSpan, type Box } from '../geo.js';
 
 describe('borders', () => {
   it('builds the URL for a year', () => {
@@ -36,5 +41,84 @@ describe('borders', () => {
       expect(label.type).toBe('symbol');
       expect([fill.source, line.source, label.source]).toEqual(['borders', 'borders', 'borders']);
     }
+  });
+
+  describe('the scale they are evidence for (sand-neh.32)', () => {
+    it('draws at campaign scale, where there is no focused region', () => {
+      expect(bordersMeaningful(undefined)).toBe(true);
+    });
+
+    it('does not draw for a zoom-in narrower than the data can speak to', () => {
+      expect(bordersMeaningful(0.8)).toBe(false); // Oahu
+      expect(bordersMeaningful(2.4)).toBe(false); // the Marne
+      expect(bordersMeaningful(BORDERS_MIN_SPAN_DEG)).toBe(true);
+    });
+
+    it('keeps them for the chapters whose subject they are', () => {
+      // The July Crisis is a map of empires; hiding the borders there would
+      // remove the point of the chapter.
+      expect(bordersMeaningful(4.0)).toBe(true);
+    });
+
+    it('splits every declared region in the packs on the right side', () => {
+      // The threshold is only worth what the content says. Read the real
+      // regions rather than restating them, so a new pack that lands between
+      // the two groups fails here rather than in someone's screenshot.
+      const eras = [
+        '1914-schlieffen-marne',
+        '1941-pearl-harbor',
+        '1917-russian-revolution',
+        '1918-russian-civil-war',
+      ];
+      const zoomIns: string[] = [];
+      const chapters: string[] = [];
+      for (const era of eras) {
+        const battles = JSON.parse(readFileSync(`content/eras/${era}/battles.json`, 'utf8')) as {
+          id: string;
+          region?: Box;
+        }[];
+        for (const b of battles) {
+          if (!b.region) continue;
+          (bordersMeaningful(lngSpan(b.region)) ? chapters : zoomIns).push(b.id);
+        }
+      }
+      // Every assault-scale level is off; nothing wider than the July Crisis is.
+      expect(zoomIns).toContain('1941-pearl-harbor:oahu');
+      expect(zoomIns).toContain('1914:liege');
+      expect(zoomIns).toContain('1914:marne');
+      expect(zoomIns).toContain('1917-russian-revolution:october-petrograd');
+      expect(chapters).toContain('1914:july-crisis');
+      expect(chapters).toContain('1914:origins');
+      expect(chapters).toContain('1918-russian-civil-war:brest-litovsk');
+      expect(chapters).toContain('1941-pearl-harbor:the-other-openings');
+    });
+
+    it('toggles what is mounted rather than remounting the world', () => {
+      const calls: [string, unknown][] = [];
+      const host = {
+        getSource: () => ({}),
+        addSource: () => {},
+        removeSource: () => {},
+        getLayer: () => ({}),
+        addLayer: () => {},
+        removeLayer: () => {},
+        getStyle: () => ({ layers: [] }),
+        setLayoutProperty: (id: string, _n: string, v: unknown) => calls.push([id, v]),
+      };
+      showBorders(host, false);
+      expect(calls).toEqual([
+        ['borders-fill', 'none'],
+        ['borders-line', 'none'],
+        ['borders-label', 'none'],
+      ]);
+    });
+
+    it('fades out for a reader who zooms in by hand, above every declared view', () => {
+      // The deepest declared chapter measured at z8.0; the fade starts at 9.5.
+      const [fill, line] = bordersLayers('dark');
+      expect(fill.maxzoom).toBe(10.5);
+      expect(line.maxzoom).toBe(10.5);
+      expect(JSON.stringify(fill.paint?.['fill-opacity'])).toContain('9.5');
+    });
   });
 });

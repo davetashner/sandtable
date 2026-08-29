@@ -46,6 +46,7 @@ import {
 } from '../engine/map/MapView.js';
 import { labelNow } from '../engine/ticks.js';
 import { publishMapProbe } from '../engine/map-probe.js';
+import { lngSpan } from '../engine/geo.js';
 import { MapObjects } from './MapObjects.js';
 import { buildMapRoster } from './map-roster.js';
 import type { TokenDatum } from '../engine/layers/movement-layers.js';
@@ -220,6 +221,10 @@ export function MapSurface({
       ref={handle}
       camera={camera}
       borderYear={borderYear}
+      // The historical borders are world-scale data; a zoom-in's own region is
+      // what decides whether they are evidence for what is on screen
+      // (`sand-neh.32`).
+      focusSpanDeg={focusRegion ? lngSpan(focusRegion) : undefined}
       inset={inset}
       tilesUrl={tilesUrl}
       frontSeries={frontSeries}
