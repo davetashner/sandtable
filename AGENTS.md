@@ -137,30 +137,61 @@ bd prime                # Refresh Beads context
 See `docs/ROADMAP.md` for the phased plan. Static, client-only web app (Vite +
 TypeScript + React; MapLibre GL + deck.gl) rendering data-driven scenario packs
 (JSON + Markdown under `content/`) on real geography with a timeline, narrative
-dossier, counterfactual branches, battle zoom-ins, and tech/science rails. The
-first pack is the Schlieffen Plan / 1914 campaign; `poc/schlieffen-plan.html`
-is the single-file proof of concept.
+dossier, counterfactual branches, battle zoom-ins, and tech/science rails.
+`poc/schlieffen-plan.html` is the single-file proof of concept.
+
+Five eras are merged — 1914 Schlieffen/Marne, 1915 attrition, the 1917 Russian
+Revolution, the 1918–22 Russian Civil War and 1941 Pearl Harbor — and the home
+page is the atlas that lists them (ADR 0024). A WWII Pacific arc of ten packs
+follows (ADR 0019).
+
+## Before you write anything
+
+**Read [`docs/agent-workflow.md`](docs/agent-workflow.md).** It is the working
+guide for this repo and it is short: one worktree per branch and how to make one
+cheap, the gates in the order that fails fastest, the etiquette that keeps
+parallel work honest, and the **sourcing-integrity rules**.
+
+Those last exist because a research subagent once fabricated quotations and the
+text of a decree, and nothing in CI could have caught it — the validator checks
+that a citation _resolves_, not that the work says what you claim. Never write a
+quotation you have not read or a page number you have not seen; verify what a
+delegated researcher hands back; open the item rather than trusting a catalogue
+record.
 
 ## Conventions
 
-- Work from `bd ready`; the five `decision` beads under `sand-a55`
-  come first and each produces `docs/decisions/NNNN-*.md`.
+- Work from `bd ready`; a `decision` bead produces `docs/decisions/NNNN-*.md`.
 - Feature branches in worktrees under `.claude/worktrees/`, never `main`;
-  `git commit -s` with the bead ID in the message.
+  `git commit -s` with the bead ID in the message. **Copy `node_modules` into a
+  worktree — never symlink it.** `git worktree remove --force` follows the link
+  and empties the main checkout.
+- `npm run verify` is the whole gate list and is exactly what CI's `web` job
+  runs. Run it before opening a pull request.
+- `npm run new-pack` scaffolds a new era; it encodes the rules (ADR 0019
+  naming, border-year caveats, the tile archive, pace bands) so they are asked
+  rather than remembered. Do not hand-assemble a pack directory.
+- `npm run receipts` re-verifies quoted `Document.excerpt` passages against the
+  sources they came from (ADR 0021). A quotation without a receipt fails the
+  validator.
 - Content cites sources; contested points are historiography; hypothetical
   branches are labelled.
 
 ## CI & branch rules
 
-- `main` is protected by a ruleset: PR-only, **squash or rebase merges** (no
-  merge commits), **linear history required**, force-push and deletion
-  blocked, required checks `lint`, `security`, `web` (strict — branch must be
-  up to date with `main`).
-- CI (`.github/workflows/ci.yml`): `lint` = actionlint + markdownlint +
-  `scripts/check-content.sh` (JSON validity, media-manifest policy, no tracked
-  image binaries); `security` = gitleaks + dependency review; `web` =
-  npm lint/typecheck/test/validate:content/build, self-activating once
-  `package.json` exists. CodeQL is added with the app scaffold.
+`CLAUDE.md` carries the full description of the CI jobs and the branch
+ruleset, and `docs/agent-workflow.md` carries the gate order. Restating them
+here is what let this section go stale, so the essentials only:
+
+- `main` is protected: PR-only, **squash or rebase merges**, linear history,
+  force-push and deletion blocked. Required checks are `lint`, `security`,
+  `web`, `analyze (javascript-typescript)` and `visual`, strict — so a branch
+  must be up to date with `main`, and there is no merge queue (GitHub offers
+  none for a public repo under a personal account, `sand-pmz.35`). Keep one
+  pull request in flight at a time.
+- CI's `web` job is **one step: `npm run verify`**. The list lives in
+  `package.json` and nowhere else, so CI, the docs and a contributor cannot
+  mean different things by green (ADR 0023).
 - Merged branches are deleted automatically (`delete_branch_on_merge`); keep
   locals clean with `git fetch --prune` and `git worktree prune`.
 - PRs use `.github/pull_request_template.md` — one `Closes sand-…` line per

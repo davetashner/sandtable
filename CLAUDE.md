@@ -108,14 +108,17 @@ static, client-only web app (Vite + TypeScript + React; MapLibre GL + deck.gl)
 that renders data-driven **scenario packs** (JSON + Markdown under `content/`)
 on real geography with a timeline, narrative dossier, counterfactual branches,
 battle zoom-ins, and timeline-synced technology and science "rails". The engine
-is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
+is era-agnostic. Five eras are merged — 1914 Schlieffen/Marne, 1915 attrition,
+the 1917 Russian Revolution, the 1918-22 Russian Civil War and 1941 Pearl
+Harbor — and `/` is the atlas that lists them (ADR 0024). A WWII Pacific arc of
+ten packs follows, then Europe (ADR 0019).
 
 ## Conventions & Patterns
 
 - **Backlog:** beads is the source of truth. `bd ready` → `bd update <id> --claim`
-  → work → `bd close <id> --reason "..."`. Phase epics chain by dependency; the
-  five `decision` beads under `sand-a55` are the first things to settle,
-  each producing `docs/decisions/NNNN-*.md`.
+  → work → `bd close <id> --reason "..."`. Phase epics chain by dependency; a
+  `decision` bead produces `docs/decisions/NNNN-*.md` and is closed when that
+  record merges.
 - **Branches/worktrees:** new work happens on a feature branch in a worktree
   under `.claude/worktrees/`, never on `main`. Sign off commits (`git commit -s`)
   and reference the bead ID in the message.
