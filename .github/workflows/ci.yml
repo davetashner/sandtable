@@ -4,6 +4,11 @@ on:
   pull_request:
   push:
     branches: [main]
+  # The merge queue re-tests each PR on the exact commit it would create before
+  # merging it. Without this trigger the required checks never run for a queued
+  # entry and the queue waits for them forever, so this must land before the
+  # queue is enabled — not alongside it.
+  merge_group:
 
 permissions:
   contents: read
