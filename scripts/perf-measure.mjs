@@ -32,12 +32,24 @@
  *   npm run perf                                   # hermetic, local preview
  *   npm run perf -- --live                         # local build, real bucket
  *   npm run perf -- --live --base https://sandtable.davetashner.com
+ *   npm run perf -- --throttle mobile --live --base https://…   # sand-pmz.17
+ *   npm run perf -- --throttle slow-3g --live --base https://…
+ *   npm run perf -- --phone                        # phone viewport, fast link
  *   npm run perf -- --runs 5 --json perf.json
  *   npm run perf -- --headed          # a real GPU instead of SwiftShader
  *
  * Everything a headless runner produces here is software GL. A laptop with a
  * GPU is two to four times faster on the same build; the point of the number
  * is the delta between two builds, not the absolute.
+ *
+ * **`--throttle` is the one that answers ADR 0016's own blind spot**
+ * (`sand-pmz.17`). Every timing that record and ADR 0018 published was taken
+ * on loopback or a CI runner, where the bytes the budget governs arrive in
+ * single-digit milliseconds — so the local number cannot say whether moving
+ * 277 kB off the cold path bought a reader anything. `--throttle` applies a
+ * DevTools network profile and a CPU multiplier over CDP and moves the
+ * viewport to a phone. It is an emulation and not a handset: no radio wake-up,
+ * no thermal throttling, no phone GPU, so read it as a floor on the misery.
  */
 import { chromium } from 'playwright';
 import { writeFileSync } from 'node:fs';
@@ -53,6 +65,64 @@ const opt = (n, d) => {
 };
 
 const LIVE = flag('live');
+
+/**
+ * Network and CPU profiles for `--throttle` (`sand-pmz.17`).
+ *
+ * ADR 0016 gated a bundle size and measured first paint on a developer machine
+ * and a CI runner, both on a fast link. That is precisely the case the budget
+ * does not exist for: 155 kB arrives from loopback in single-digit
+ * milliseconds, so the local number is blind to whether moving it mattered.
+ * ADR 0018 then moved 277.4 kB off the cold-load path and halved FCP on
+ * loopback, and nobody could say what that bought a reader on a phone.
+ *
+ * The numbers are Chrome DevTools' own presets, and `mobile` is Lighthouse's
+ * default mobile profile — the closest thing to a published standard, so the
+ * figure can be compared with a Lighthouse run rather than only with itself.
+ *
+ * This is an emulation, not a handset. It throttles the transport and the CPU
+ * and it does not reproduce a phone's radio wake-up, its thermal behaviour or
+ * its GPU, so it is a *floor* on the misery rather than a measurement of it.
+ * It is still the difference between a number taken on a fast link and one
+ * that is not.
+ */
+const THROTTLE = {
+  'slow-3g': { down: 400e3 / 8, up: 400e3 / 8, rtt: 2000, cpu: 4, label: 'Slow 3G, 4× CPU' },
+  mobile: {
+    down: 1638.4e3 / 8,
+    up: 675e3 / 8,
+    rtt: 150,
+    cpu: 4,
+    label: 'Lighthouse mobile (1.6 Mbps, 150 ms, 4× CPU)',
+  },
+  '4g': { down: 9e6 / 8, up: 9e6 / 8, rtt: 60, cpu: 2, label: '4G, 2× CPU' },
+};
+
+const THROTTLE_NAME = opt('throttle');
+if (THROTTLE_NAME && !(THROTTLE_NAME in THROTTLE)) {
+  console.error(
+    `unknown --throttle "${THROTTLE_NAME}". One of: ${Object.keys(THROTTLE).join(', ')}`,
+  );
+  process.exit(3);
+}
+const THROTTLED = THROTTLE_NAME ? THROTTLE[THROTTLE_NAME] : null;
+/** A throttled run is a phone run: the viewport moves with the link. */
+const PHONE = flag('phone') || Boolean(THROTTLED);
+const VIEWPORT = PHONE ? { width: 390, height: 844 } : { width: 1440, height: 900 };
+
+/** Applies the profile to one page, before anything is navigated. */
+async function throttlePage(ctx, page) {
+  if (!THROTTLED) return;
+  const cdp = await ctx.newCDPSession(page);
+  await cdp.send('Network.enable');
+  await cdp.send('Network.emulateNetworkConditions', {
+    offline: false,
+    downloadThroughput: THROTTLED.down,
+    uploadThroughput: THROTTLED.up,
+    latency: THROTTLED.rtt,
+  });
+  await cdp.send('Emulation.setCPUThrottlingRate', { rate: THROTTLED.cpu });
+}
 const RUNS = Number(opt('runs', 3));
 const FRAME_MS = Number(opt('frame-ms', 6000));
 const JSON_OUT = opt('json');
@@ -115,9 +185,14 @@ const READ_MARKS = () => {
 };
 
 async function bootOnce(browser, base, qs, { stub }) {
-  const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  const ctx = await browser.newContext({
+    viewport: VIEWPORT,
+    ...(PHONE ? { isMobile: true, hasTouch: true, deviceScaleFactor: 3 } : {}),
+  });
   if (stub) await stubAssets(ctx);
   const page = await ctx.newPage();
+  // Before the navigation, or the first bytes arrive at full speed.
+  await throttlePage(ctx, page);
   const t0 = Date.now();
   await page.goto(`${base}/${qs}`, { waitUntil: 'load', timeout: 60000 });
   // The map mark lands after load: the surface is a lazy import and MapLibre
@@ -164,7 +239,9 @@ function printBoot(boot, stub, renderer) {
   console.log('── boot ' + '─'.repeat(62));
   console.log(
     `  median of ${RUNS} run(s), ${stub ? 'assets stubbed (hermetic)' : 'live deployment'}\n` +
-      `  ${renderer}\n`,
+      `  ${renderer}\n` +
+      `  ${VIEWPORT.width}×${VIEWPORT.height}${PHONE ? ' (mobile emulation)' : ''}, ` +
+      `${THROTTLED ? THROTTLED.label : 'unthrottled — a fast link, which is not the case the budget exists for'}\n`,
   );
   console.log(
     '  scene              FCP    pack   map-ready   wall   transfer  reqs\n' +
