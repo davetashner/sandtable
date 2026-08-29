@@ -322,6 +322,22 @@ describe('the states this repository was actually in', () => {
   });
 });
 
+describe('a derivation that comes back empty', () => {
+  it('fails loudly rather than passing every document', () => {
+    // The worst outcome available to a gate like this is to assert nothing and
+    // report green.
+    const root = mkdtempSync(join(tmpdir(), 'doc-facts-'));
+    trees.push(root);
+    mkdirSync(join(root, 'scripts/lib'), { recursive: true });
+    writeFileSync(join(root, 'package.json'), '{"scripts":{}}');
+    writeFileSync(join(root, 'scripts/lib/visual-scenes.mjs'), '');
+    writeFileSync(join(root, 'README.md'), 'Four eras are in the app today.\n');
+    const { ok, out } = run(root);
+    expect(ok).toBe(false);
+    expect(out).toContain('nothing to derive the era count from');
+  });
+});
+
 describe('the real checkout', () => {
   // The only case that walks the whole repository rather than a fixture tree,
   // so it is the only one that costs seconds — and it runs alongside fifteen

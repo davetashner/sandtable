@@ -64,7 +64,7 @@ while IFS= read -r d; do DOCS+=("$d"); done < <(
 # ---------------------------------------------------------------- the truths
 
 # How many eras the app has: one directory with a pack in it, per era.
-ERAS=$(find content/eras -mindepth 2 -maxdepth 2 -name 'pack.json' | wc -l | tr -d ' ')
+ERAS=$({ find content/eras -mindepth 2 -maxdepth 2 -name 'pack.json' 2>/dev/null || true; } | wc -l | tr -d ' ')
 
 # How many scenes the visual gate walks: the SCENES array and nothing else in
 # that file (VIEWPORTS is an array of arrays too).
@@ -76,8 +76,8 @@ SCENES=$(
 )
 
 # The gate list, in order: `verify` is its only definition (ADR 0023).
-GATES=$(jq -r '.scripts.verify' package.json |
-  grep -oE 'npm (run [A-Za-z0-9:._-]+|test)' |
+GATES=$({ jq -r '.scripts.verify // empty' package.json |
+  grep -oE 'npm (run [A-Za-z0-9:._-]+|test)' || true; } |
   sed -e 's/^npm run //' -e 's/^npm test$/test/')
 
 # Every job the two gate workflows define. The ruleset that makes a job a
@@ -85,7 +85,7 @@ GATES=$(jq -r '.scripts.verify' package.json |
 # this is not the ruleset — it is the set of jobs a paragraph about required
 # checks has to account for, which is what caught nothing when `visual` and
 # `analyze` were added to the ruleset and the docs still said three.
-JOBS=$(grep -hE '^    name: ' .github/workflows/ci.yml .github/workflows/codeql.yml |
+JOBS=$({ grep -hE '^    name: ' .github/workflows/ci.yml .github/workflows/codeql.yml || true; } |
   sed 's/^    name: //' | sort)
 
 # A derivation that silently comes back empty is the worst outcome available to
