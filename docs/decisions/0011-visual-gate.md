@@ -3,8 +3,9 @@
 - **Status:** accepted (amended 2026-08-25 `sand-pmz.2.6`; amended 2026-08-28
   `sand-pmz.9`, phase 1 the two tiers and phase 2 the settings change that made
   `visual` required; amended 2026-08-29 `sand-pmz.9.2`, the map assertion —
-  which is **not** the check the 2026-08-28 amendment proposed, and that
-  section says why. See the four sections at the end)
+  which is **not** the check the 2026-08-28 amendment proposed; amended
+  2026-08-29 `sand-pmz.2.7`, the walk made actually hermetic — and that
+  section says why. See the five sections at the end)
 - **Date:** 2026-08-24
 - **Bead:** `sand-pmz.2`
 
@@ -84,6 +85,14 @@ ignore an exception it caused itself cannot also assert "no console errors".
 With a well-formed empty archive the map builds its style, reports ready, lays
 out its labels and draws no basemap. Nothing on the console is the harness's
 own voice. No S3, no CloudFront, no proxy, no flake.
+
+_(This paragraph overstated the case. `/assets/*` was the only pattern stubbed,
+while every scene also fetched Google Fonts and the map scenes fetched the
+Protomaps sprite sheet — `sand-pmz.2.7`, and the amendment at the end of this
+record. The sprite sheet is stubbed as of 2026-08-29; the fonts are a
+**declared dependency** rather than a leak, because stubbing them was tried and
+made the gate disagree with itself across platforms. What the walk reaches is
+now counted on every run rather than asserted here.)_
 
 **The viewport is reached by resizing** — amended 2026-08-25, `sand-pmz.2.6`;
 it used to get a fresh load. The theme never needed one: `emulateMedia`
@@ -505,3 +514,72 @@ assertion is not checking a mirror; it carries both the #161 case and the 361°
 false positive as data. The gate reports the probe's own liveness on every run
 and **exits 3 if no cell published one**, because an assertion that has
 silently stopped checking looks exactly like an assertion that passes.
+
+## Amendment — 2026-08-29: what the walk actually depends on (`sand-pmz.2.7`)
+
+"The walk is hermetic … no S3, no CloudFront, no proxy, no flake" was written
+above as a property of the design. It was a property of one `ctx.route`
+pattern, `**/assets/**`, and three origins were never in it. Measured with the
+gate's own stub applied, over six scenes:
+
+| origin                 | requests | scenes                                           |
+| ---------------------- | -------: | ------------------------------------------------ |
+| `fonts.gstatic.com`    |       26 | every scene, including the atlas and the gallery |
+| `protomaps.github.io`  |        7 | the map scenes (sprite sheet)                    |
+| `fonts.googleapis.com` |        6 | every scene (the stylesheet)                     |
+
+`sand-pmz.2.7` named the first two and proposed stubbing both. The sprite sheet
+is now stubbed. **The fonts are not, and the bead's reasoning about them was
+wrong** — which was found by trying it.
+
+### Stubbing the fonts was tried, and CI proved it worse
+
+The argument for stubbing was that answering the stylesheet with nothing makes
+every runner render the same fallback stack, so the audit stops depending on
+egress. The flaw is in "the same": the fallback stack is _the machine's_, and
+macOS and `ubuntu-latest` do not have the same fonts.
+
+Measured, on the branch that stubbed them: the gate was **green on a laptop**
+and **red in CI**, reporting two `overflows-right` on the casualty table at
+1445px against a 1440px viewport, because the Linux fallback face is wider than
+the macOS one. That is the same class of defect the stub was meant to remove,
+and strictly worse: reaching Google Fonts is a latent risk on a runner that has
+egress, while disagreeing about fallback fonts is a certainty between any two
+platforms.
+
+So the webfonts stay. Every runner that can reach them measures the same
+typeface — which is what a baseline needs — and it is also the typography the
+reader gets, so the gate and `npm run visual:review` are looking at the same
+page.
+
+### The risk the bead was actually worried about is answered directly
+
+A runner that _cannot_ reach `gstatic` would silently measure its own fallback
+and disagree with the baseline. The gate now refuses to audit in that case
+rather than reporting the disagreement as a finding about the app: it counts
+the outcomes of requests to the two font origins and **exits 3 unless at least
+one succeeded and none failed**.
+
+`document.fonts.check` was tried first and is the wrong instrument. Google
+Fonts ships `font-display: swap` with `unicode-range`, so a face is fetched
+only on a page that uses it — Fraunces is a display face and is legitimately
+absent from 104 of 116 cells. "Every family loaded in every cell" is a question
+whose honest answer is no.
+
+### And the rest of the network is now checked rather than asserted
+
+`FONT_ORIGINS` is two origins with a written reason and a check of its own.
+Everything else that leaves the origin is a hole in the stub, and the gate
+**exits 3 on any of it** — a leak is a misconfigured gate, not a finding about
+the app. This paragraph was wrong for a year because nothing was watching it.
+
+The count is of requests that reached a server. `requestfinished` fires for a
+request the stub fulfilled just as it does for one the network answered, so
+counting URLs reports every stub as a leak — the first version of this did
+exactly that, reporting 214 phantom leaks against its own stubs. The
+discriminator is `Response.serverAddr()`, which is null when nothing was
+contacted.
+
+Verified both ways: with the sprite stub in place the walk reports "nothing but
+Google Fonts", and with it disabled it reports 204 requests to
+`protomaps.github.io` and exits 3.

@@ -242,6 +242,125 @@ export async function stubAssets(ctx) {
     }
     return route.fulfill({ status: 404, contentType: 'text/plain', body: 'stubbed' });
   });
+
+  // MapLibre's sprite sheet, which ADR 0011 never stubbed (`sand-pmz.2.7`).
+  // An empty sheet is a valid one: the JSON is an object keyed by icon name,
+  // so `{}` says "no icons" rather than "broken", which matters because a
+  // style error would be a console error and console errors are the gate's
+  // breakage tier. Sprites are map icons and no text is measured against them,
+  // so unlike the fonts below they cost the audit nothing.
+  await ctx.route('https://protomaps.github.io/**', (route) => {
+    const url = route.request().url().split('?')[0];
+    if (/\.json$/i.test(url))
+      return route.fulfill({ status: 200, contentType: 'application/json', body: '{}' });
+    return route.fulfill({ status: 200, contentType: 'image/png', body: PIXEL });
+  });
+}
+
+/**
+ * The two origins the walk is allowed to reach, and the reason it must.
+ *
+ * Google Fonts is a **declared dependency** rather than an oversight, and
+ * stubbing it was tried first and was worse. `sand-pmz.2.7` reasoned that
+ * answering the stylesheet with nothing would make every runner render the
+ * same fallback stack. It does not: the fallback stack is *the machine's*, and
+ * macOS and `ubuntu-latest` do not have the same fonts. Measured — with the
+ * fonts stubbed the gate was green on a laptop and reported two
+ * `overflows-right` on the casualty table in CI, at 1445px against a 1440px
+ * viewport, because the Linux fallback face is wider than the macOS one.
+ *
+ * So the walk keeps the real webfonts, which every runner gets identically,
+ * and the risk the bead was actually worried about — a runner that cannot
+ * reach `gstatic` silently auditing differently sized boxes — is answered by
+ * refusing to audit at all in that case. See `assertFontsLoaded`.
+ */
+export const FONT_ORIGINS = ['https://fonts.googleapis.com', 'https://fonts.gstatic.com'];
+
+/**
+ * Whether the font origins actually served anything, tracked as request
+ * outcomes rather than as loaded faces.
+ *
+ * `document.fonts.check` was tried first and is the wrong instrument: Google
+ * Fonts ships `font-display: swap` with `unicode-range`, so a face is fetched
+ * only on a page that uses it. Fraunces is a display face and legitimately
+ * absent from 104 of 116 cells, so "every family loaded in every cell" is a
+ * question whose honest answer is no.
+ *
+ * What the gate actually needs to know is whether the runner could reach the
+ * fonts at all: on a machine with egress the stylesheet is served and the
+ * faces that are needed arrive, and on one without, those requests fail. So
+ * the check is one success and no failures, counted across the whole walk.
+ */
+export function watchFontHealth(page, health) {
+  const origin = (url) => {
+    try {
+      return new URL(url).origin;
+    } catch {
+      return null;
+    }
+  };
+  page.on('requestfinished', async (req) => {
+    const o = origin(req.url());
+    if (!FONT_ORIGINS.includes(o)) return;
+    try {
+      const res = await req.response();
+      const ok = res && res.status() >= 200 && res.status() < 400;
+      health.set(ok ? 'ok' : 'bad', (health.get(ok ? 'ok' : 'bad') ?? 0) + 1);
+    } catch {
+      /* unreadable is not a failure */
+    }
+  });
+  page.on('requestfailed', (req) => {
+    if (FONT_ORIGINS.includes(origin(req.url()))) health.set('bad', (health.get('bad') ?? 0) + 1);
+  });
+}
+
+/**
+ * Records every request that left the origin, so the hermeticity claim is
+ * checked on every run rather than asserted in a document (`sand-pmz.2.7`).
+ *
+ * This is the same argument as the map probe's liveness line: a stub that has
+ * silently stopped matching looks exactly like a page that asked for nothing.
+ */
+export function watchForLeaks(page, origin, into) {
+  const foreign = (url) => {
+    if (!url || url.startsWith(origin) || url.startsWith('data:') || url.startsWith('blob:'))
+      return null;
+    let o;
+    try {
+      o = new URL(url).origin;
+    } catch {
+      return null;
+    }
+    // A declared dependency is not a leak. `FONT_ORIGINS` is two origins with
+    // a written reason and a check of its own; everything else is a hole.
+    return FONT_ORIGINS.includes(o) ? null : o;
+  };
+  const count = (key) => into.set(key, (into.get(key) ?? 0) + 1);
+
+  page.on('requestfinished', async (req) => {
+    const key = foreign(req.url());
+    if (!key) return;
+    // `requestfinished` fires for a request the stub fulfilled just as it does
+    // for one the network answered, so the URL alone cannot tell them apart —
+    // counting URLs reports every stub as a leak. `serverAddr()` is null when
+    // nothing was contacted, which is exactly the question being asked. (It is
+    // also null for a cached response; a fresh context has no disk cache, and
+    // the fetch that filled the memory cache was itself counted.)
+    try {
+      const res = await req.response();
+      if (res && (await res.serverAddr())) count(key);
+    } catch {
+      /* a response that cannot be read is not evidence of a network hop */
+    }
+  });
+  // A failed request reached for the network and did not get there, which is
+  // the same defect wearing a different hat: on a runner with no egress this
+  // is how the leak shows up.
+  page.on('requestfailed', (req) => {
+    const key = foreign(req.url());
+    if (key) count(key);
+  });
 }
 
 /**
@@ -289,11 +408,13 @@ const PROBE_INIT = () => {
 export const PROBE = () => window.__sandtableMap ?? null;
 
 /** A context with the console wired up and, optionally, the bucket stubbed. */
-async function newContext(browser, viewport, scheme, stub) {
+async function newContext(browser, viewport, scheme, stub, base, leaks, fontHealth) {
   const ctx = await browser.newContext({ viewport, colorScheme: scheme, deviceScaleFactor: 1 });
   await ctx.addInitScript(PROBE_INIT);
   if (stub) await stubAssets(ctx);
   const page = await ctx.newPage();
+  if (leaks) watchForLeaks(page, new URL(base).origin, leaks);
+  if (fontHealth) watchFontHealth(page, fontHealth);
   const errs = [];
   page.on('console', (m) => m.type() === 'error' && errs.push(m.text().slice(0, 200)));
   page.on('pageerror', (e) => errs.push('PAGEERROR ' + String(e).slice(0, 200)));
@@ -315,9 +436,17 @@ function record(errs, problems, stub, probe) {
  * scene, long settles, a screenshot of each. What a human reviews.
  */
 async function walkFaithful(browser, vpName, viewport, scheme, opts) {
-  const { base, scenes, settleMs, shots, stub } = opts;
+  const { base, scenes, settleMs, shots, stub, leaks, fontHealth } = opts;
   const out = {};
-  const { ctx, page, errs } = await newContext(browser, viewport, scheme, stub);
+  const { ctx, page, errs } = await newContext(
+    browser,
+    viewport,
+    scheme,
+    stub,
+    base,
+    leaks,
+    fontHealth,
+  );
   for (const [name, qs] of scenes) {
     const key = `${name}__${vpName}__${scheme}`;
     errs.length = 0;
@@ -425,11 +554,19 @@ async function settleResize(page) {
  * and it names one more cell than it strictly should while doing it.
  */
 async function walkMatrix(browser, scenes, unordered, opts) {
-  const { base, schemes, settleMs, shots, stub, timings } = opts;
+  const { base, schemes, settleMs, shots, stub, timings, leaks, fontHealth } = opts;
   const out = {};
   const viewports = [...unordered].sort((a, b) => a[1].width - b[1].width);
   const [[, firstViewport]] = viewports;
-  const { ctx, page, errs } = await newContext(browser, firstViewport, schemes[0], stub);
+  const { ctx, page, errs } = await newContext(
+    browser,
+    firstViewport,
+    schemes[0],
+    stub,
+    base,
+    leaks,
+    fontHealth,
+  );
   for (const [name, qs] of scenes) {
     errs.length = 0;
     try {
@@ -519,7 +656,21 @@ export async function walk(browser, opts = {}) {
     timings = null,
   } = opts;
   if (shots) mkdirSync(shots, { recursive: true });
-  const shared = { base, scenes, viewports, schemes, settleMs, shots, stub, timings };
+  // One map for the whole walk: origin -> how many requests left for it.
+  const leaks = opts.leaks ?? null;
+  const fontHealth = opts.fontHealth ?? null;
+  const shared = {
+    base,
+    scenes,
+    viewports,
+    schemes,
+    settleMs,
+    shots,
+    stub,
+    timings,
+    leaks,
+    fontHealth,
+  };
 
   // The matrix walk shards by scene and covers every viewport off one load;
   // the faithful walk takes a context per viewport × scheme.

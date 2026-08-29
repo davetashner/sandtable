@@ -173,10 +173,16 @@ if (!base) {
 const started = Date.now();
 const timings = flag('timings') ? newTimings() : null;
 const browser = await chromium.launch({ args: LAUNCH_ARGS });
+/** origin -> requests that left ours, the font origins aside (`sand-pmz.2.7`). */
+const leaks = new Map();
+/** 'ok'/'bad' counts for the declared font origins (`sand-pmz.2.7`). */
+const fontHealth = new Map();
 const report = await walk(browser, {
   base,
   stub: true,
   reuse: true,
+  leaks,
+  fontHealth,
   concurrency: CONCURRENCY,
   settleMs: () => SETTLE,
   shots: SHOTS,
@@ -360,6 +366,33 @@ console.log('\n    structural  a layout defect off scripts/visual-baseline.json'
 if (structural.length === 0) console.log('      ✓ none off the baseline');
 for (const row of structural) line(row);
 
+// ADR 0011 claimed the walk needed no network; it was wrong for a year
+// (`sand-pmz.2.7`), so both halves of the claim are now checked. One: nothing
+// but the declared font origins may be reached. Two: the fonts the audit
+// measures against must actually have arrived.
+console.log('\n    isolated   what the walk reached, and whether the type arrived');
+if (leaks.size === 0) {
+  console.log('      \u2713 nothing but Google Fonts, which is declared and checked below');
+} else {
+  for (const [origin, n] of [...leaks.entries()].sort((a, b) => b[1] - a[1]))
+    console.log(`      \u2717 ${origin}  \u00d7${n}`);
+  console.log('        An undeclared origin means the gate\u2019s answer depends on the');
+  console.log('        runner\u2019s egress. Stub it in stubAssets, or declare it in');
+  console.log('        FONT_ORIGINS with the reason (scripts/lib/visual-scenes.mjs).');
+}
+const fontsOk = fontHealth.get('ok') ?? 0;
+const fontsBad = fontHealth.get('bad') ?? 0;
+if (fontsOk > 0 && fontsBad === 0) {
+  console.log(`      \u2713 the webfonts arrived: ${fontsOk} request(s), none failed`);
+} else {
+  console.log(`      \u2717 the webfonts did not arrive: ${fontsOk} ok, ${fontsBad} failed`);
+  console.log('        The audit measures boxes and the face sizes them, so a runner that');
+  console.log('        cannot reach Google Fonts measures its own fallback stack and');
+  console.log('        disagrees with a baseline recorded elsewhere. Stubbing them was');
+  console.log('        tried and is worse: the fallback is the machine\u2019s, so macOS and');
+  console.log('        ubuntu-latest disagree with each other. Not a finding about the app.');
+}
+
 // The probe reports on every run, clean or not: a probe that has silently
 // stopped publishing looks exactly like a map with nothing wrong with it.
 console.log('\n    map         what the map drew, not how it looks (sand-pmz.9.2)');
@@ -416,7 +449,7 @@ if (unclassified.length) {
 // checking nothing does not make the tier below it trustworthy.
 const code = breakage.length
   ? EXIT.breakage
-  : unclassified.length || probeMissing
+  : unclassified.length || probeMissing || leaks.size || fontsOk === 0 || fontsBad > 0
     ? EXIT.misconfigured
     : structural.length
       ? EXIT.structural
