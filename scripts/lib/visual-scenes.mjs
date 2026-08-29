@@ -275,9 +275,23 @@ export const LAUNCH_ARGS = [
   '--disable-renderer-backgrounding',
 ];
 
+/**
+ * Asks the app to publish what the map drew (`src/engine/map-probe.ts`,
+ * `sand-pmz.9.2`). This runs before the document exists, which is the point:
+ * it is a switch the harness can reach and a reader cannot, so the probe costs
+ * a real page load nothing and the URL contract is left alone.
+ */
+const PROBE_INIT = () => {
+  window.__sandtableProbe = true;
+};
+
+/** Reads what the app published, or null on a page with no map. */
+export const PROBE = () => window.__sandtableMap ?? null;
+
 /** A context with the console wired up and, optionally, the bucket stubbed. */
 async function newContext(browser, viewport, scheme, stub) {
   const ctx = await browser.newContext({ viewport, colorScheme: scheme, deviceScaleFactor: 1 });
+  await ctx.addInitScript(PROBE_INIT);
   if (stub) await stubAssets(ctx);
   const page = await ctx.newPage();
   const errs = [];
@@ -286,12 +300,13 @@ async function newContext(browser, viewport, scheme, stub) {
   return { ctx, page, errs };
 }
 
-function record(errs, problems, stub) {
+function record(errs, problems, stub, probe) {
   const seen = [...new Set(errs)];
   return {
     problems,
     consoleErrs: stub ? seen.filter((e) => !STUB_NOISE.test(e)) : seen,
     ...(stub ? { stubbedErrs: seen.filter((e) => STUB_NOISE.test(e)).length } : {}),
+    ...(probe ? { probe } : {}),
   };
 }
 
@@ -311,8 +326,9 @@ async function walkFaithful(browser, vpName, viewport, scheme, opts) {
       // The map settles on its own schedule; the label layout runs after it.
       await page.waitForTimeout(settleMs(name));
       const problems = await page.evaluate(AUDIT);
+      const probe = await page.evaluate(PROBE);
       if (shots) await page.screenshot({ path: `${shots}/${key}.png` });
-      out[key] = record(errs, problems, stub);
+      out[key] = record(errs, problems, stub, probe);
     } catch (e) {
       out[key] = { error: String(e).slice(0, 300) };
     }
@@ -435,9 +451,12 @@ async function walkMatrix(browser, scenes, unordered, opts) {
           const problems = await time(timings, 'audit', () => page.evaluate(AUDIT));
           if (timings) timings.audits += 1;
           if (timings) timings.auditInPageMs += await auditSelfTime(page);
+          // Re-read per cell: the resize changes what the map drew, so a probe
+          // taken once per scene would describe the wrong viewport.
+          const probe = await page.evaluate(PROBE);
           if (shots)
             await time(timings, 'shot', () => page.screenshot({ path: `${shots}/${key}.png` }));
-          out[key] = record(errs, problems, stub);
+          out[key] = record(errs, problems, stub, probe);
         }
       }
     } catch (e) {
