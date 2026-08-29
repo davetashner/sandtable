@@ -19,7 +19,7 @@
   "colorization": {
     "status": "not colorized, and should not be. This is a photograph of a grave; colour would make it a landscape."
   },
-  "content_policy": "ok on the catalogue description — ruined earth and masonry. As with the 1914 view, the image review (sand-y0u.7) must confirm the frame before publication.",
+  "content_policy": "ok, and now checked against the frame. Broken ground, rubble and the ditch wall, with one or two distant standing figures. NO HUMAN REMAINS ARE VISIBLE. FRAME CONFIRMED 2026-08-29 (sand-y0u.7.1): the image was opened and looked at, not read about.",
   "caption": "Fort de Loncin four years later, November 1918. The fort was never rebuilt and was never cleared; it is a war grave.",
   "credit": "Original photograph: photographer not identified, November 1918; Library of Congress, Panoramic Photograph Collection, item 2007663088; public domain.",
   "used_by": [
@@ -29,5 +29,5 @@
     "x": 0.5,
     "y": 0.5
   },
-  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. Dated 1918 and captioned as such — it is the epilogue to the Liège beats, not an illustration of August 1914. TIFF master: the pipeline derives WebP from it, so the size is not a problem, but the download is large."
+  "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. Dated 1918 and captioned as such — it is the epilogue to the Liège beats, not an illustration of August 1914. TIFF master: the pipeline derives WebP from it, so the size is not a problem, but the download is large. CROP NEEDED (sand-y0u.7.1): the archive scan is a photograph OF the mounted print, so the panorama is a thin strip in a large black field — roughly the middle third of the height. Publish a crop of the print, not the scan."
 }

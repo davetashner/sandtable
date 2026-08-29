@@ -20,10 +20,15 @@
   "colorization": {
     "status": "not colorized, and must not be — a modern colour photograph of the object. Note that the background has already been removed by a third party; the project adds nothing further."
   },
-  "content_policy": "ok — a museum object photographed on its own; no casualties",
+  "content_policy": "ok, and now checked against the frame: two cut-out views of the rifle, left and right, on white. Nothing else in shot. FRAME CONFIRMED 2026-08-29 (sand-y0u.7.1): the image was opened and looked at, not read about.",
   "caption": "The Mauser m/1889, Belgium's rifle, made at Herstal outside Liège by the company founded to build it. Five rounds on a charger, 7.65 mm. Armémuseum, Stockholm; background removed by the uploader.",
   "credit": "Photograph: Armémuseum (The Swedish Army Museum), Stockholm, object 011024388109 on DigitaltMuseum; background removed by the Wikimedia Commons uploader; CC BY-SA 3.0.",
-  "used_by": ["1914:tech-infantry-kit-1914"],
-  "focal_point": { "x": 0.5, "y": 0.5 },
+  "used_by": [
+    "1914:tech-infantry-kit-1914"
+  ],
+  "focal_point": {
+    "x": 0.5,
+    "y": 0.5
+  },
   "notes": "Verified 2026-08-24 against the Commons file record via the MediaWiki API. CAUTION for the image review (sand-y0u.7): this is the one plate in the rifle set that is NOT an unaltered photograph — the uploader removed the background — and it will not sit visually beside the other three, which keep the museum's grey ground. It is here because it is the only Commons record of a Belgian Mauser m/1889 as a museum object; the alternatives were a three-plate set without Belgium, or a private collector's scan with no holding institution, which ADR 0007 puts out. Replace it with an unaltered photograph if one is found — the DigitaltMuseum record has one."
 }
