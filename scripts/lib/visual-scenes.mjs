@@ -23,7 +23,8 @@ const T35 = '1914-09-08T12:00:00Z';
  * of its own (ADR 0015), one of every card — including the bibliography, which
  * is the longest card in the app and therefore the one most likely to overflow
  * a phone, and the contested point, which is the densest structure in one —
- * the layer switches off their defaults, and the component gallery.
+ * the layer switches off their defaults, one campaign view of every era, and
+ * the component gallery.
  *
  * Every scene is a URL and nothing else. The URL is the whole view (ADR
  * 0009), so a scene is reproduced by opening it, never by clicking into it —
@@ -59,6 +60,24 @@ export const SCENES = [
   ['card-source', `?t=${T20}&card=source:edmonds-1933`],
   ['tour-step', `?tour=1914:tour-the-campaign`],
   ['layers-off-default', `?t=${T20}&layers=-commanders,-meanwhile.physics`],
+  // First Ypres, the level that ends the campaign (`sand-23b.55`). The hour is
+  // the Worcesters' counter-attack at Gheluvelt — the one moment in the level
+  // written in hours rather than days, so it is the one worth pinning.
+  ['battle-ypres', '?t=1914-10-31T14:00:00Z&focus=1914:ypres'],
+  // One scene per era (`sand-pmz.9.1`). A page load is one era (ADR 0018), and
+  // until this list grew, four of the five had never been walked in either
+  // theme at either width — so no gate had confirmed they render at all, and
+  // the screenshot artifact a reviewer opens did not contain the Pacific.
+  // That is how PR #161's antimeridian routes shipped through a green run.
+  // Each is a campaign view at a date inside the pack's own `timeRange`.
+  ['era-1915', '?pack=1915-attrition&t=1915-05-09T12:00:00Z'],
+  ['era-1917', '?pack=1917-russian-revolution&t=1917-03-12T12:00:00Z'],
+  ['era-1918', '?pack=1918-russian-civil-war&t=1920-08-16T12:00:00Z'],
+  ['era-1941', '?pack=1941-pearl-harbor&t=1941-12-07T18:00:00Z'],
+  // The one zoom-in outside 1914 worth a scene of its own: the Oahu level is
+  // the assault scale ADR 0002 cut a dedicated z13 archive for, and it is the
+  // view the antimeridian defect was next door to.
+  ['battle-oahu', '?pack=1941-pearl-harbor&t=1941-12-07T18:00:00Z&focus=1941-pearl-harbor:oahu'],
   ['gallery', 'gallery.html'],
   // The home page, which is the atlas (ADR 0024). `/atlas.html` still serves
   // the same page and is what the boot failure states link to; this walks the
