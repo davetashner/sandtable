@@ -146,3 +146,29 @@
   color: var(--muted);
   font-style: italic;
 }
+
+/* The citation for the reader's own view (`sand-shn.5.1`). It reads as a
+   reference rather than as prose, so it takes the hanging indent the works
+   above it use. */
+.bib__cite {
+  margin: 0 0 8px;
+  padding-left: 16px;
+  text-indent: -16px;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+}
+
+/* A view URL carries the pack, the instant and whatever card is open, so it is
+   long and has no spaces in it. `formatCitation` dropped URLs from footnotes
+   for exactly this reason; here the URL is the thing being cited, so it stays
+   and is told to break instead — without this it is the widest box on the card
+   and the phone layout scrolls sideways. */
+.bib__cite-url {
+  font-family: var(--font-mono);
+  /* Not `--fs-xs`: that is the 10.5px token already under ADR 0010's floor and
+     already reported by the visual gate, and a URL a reader is meant to check
+     is the last thing to shrink. */
+  font-size: var(--fs-sm);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}

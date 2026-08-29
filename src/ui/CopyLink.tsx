@@ -18,16 +18,48 @@ import './copy-link.css';
 /** Long enough to be read, short enough not to linger over the next click. */
 const CONFIRM_MS = 2400;
 
+/**
+ * What is being copied, in the words the controls use. Two of them, because
+ * the clipboard dance below — permission refused, insecure origin, no API at
+ * all, fall back to a selected field — is the same either way and is not worth
+ * writing twice (`sand-shn.5.1`).
+ */
+const WORDS = {
+  link: {
+    action: 'Copy a link to this view',
+    title: 'Copy a link to this view — the time, branch, focus, card and layers you are looking at',
+    idle: 'Copy link',
+    done: 'Link copied',
+    status: 'Link to this view copied to the clipboard',
+    manual: 'Copying is unavailable in this browser — the link is selected below, copy it by hand',
+    field: 'Link to this view',
+  },
+  citation: {
+    action: 'Copy a citation for this view',
+    title:
+      'Copy a citation for this view — the work, the date it shows, the date read, and the link',
+    idle: 'Copy citation',
+    done: 'Citation copied',
+    status: 'Citation for this view copied to the clipboard',
+    manual:
+      'Copying is unavailable in this browser — the citation is selected below, copy it by hand',
+    field: 'Citation for this view',
+  },
+} as const;
+
 export interface CopyLinkProps {
   /** Defaults to the address bar; injected in tests. */
   href?: () => string;
   /** Defaults to `navigator.clipboard.writeText`. */
   write?: (text: string) => Promise<void>;
+  /** Which vocabulary the controls speak. Defaults to the link. */
+  what?: keyof typeof WORDS;
 }
 
 type State = 'idle' | 'copied' | 'manual';
 
-export function CopyLink({ href, write }: CopyLinkProps) {
+export function CopyLink({ href, write, what = 'link' }: CopyLinkProps) {
+  const words = WORDS[what];
   const [state, setState] = useState<State>('idle');
   const [url, setUrl] = useState('');
   const field = useRef<HTMLInputElement>(null);
@@ -73,24 +105,20 @@ export function CopyLink({ href, write }: CopyLinkProps) {
         // The name says what the control does; the outcome goes to the live
         // region below, so the button is not renamed under a screen reader
         // between one press and the next (the same reasoning as the score).
-        aria-label="Copy a link to this view"
-        title="Copy a link to this view — the time, branch, focus, card and layers you are looking at"
+        aria-label={words.action}
+        title={words.title}
         onClick={() => void copy()}
       >
         <span aria-hidden="true" className="copy-link__glyph">
           ⧉
         </span>
         <span aria-hidden="true" className="copy-link__label">
-          {state === 'copied' ? 'Link copied' : 'Copy link'}
+          {state === 'copied' ? words.done : words.idle}
         </span>
       </button>
       <p className="copy-link__status" role="status">
         <span className="copy-link__status-text">
-          {state === 'copied'
-            ? 'Link to this view copied to the clipboard'
-            : state === 'manual'
-              ? 'Copying is unavailable in this browser — the link is selected below, copy it by hand'
-              : ''}
+          {state === 'copied' ? words.status : state === 'manual' ? words.manual : ''}
         </span>
       </p>
       {state === 'manual' && (
@@ -100,7 +128,7 @@ export function CopyLink({ href, write }: CopyLinkProps) {
           type="text"
           readOnly
           value={url}
-          aria-label="Link to this view"
+          aria-label={words.field}
           onFocus={(e) => e.currentTarget.select()}
         />
       )}
