@@ -249,6 +249,16 @@
 .dossier__about summary {
   cursor: pointer;
   list-style: none;
+  /* The same shape as `.causal__debate summary`, which PR #123 measured at
+     25.25px and gave a floor. This one was never measured, because the visual
+     gate's small-target audit looked at buttons, anchors, inputs and selects
+     and a `summary` is none of those (`sand-pmz.21`).
+     Note the gate still cannot see THIS one, and not because of the selector:
+     `.dossier__about` renders only for a counterfactual branch, and no scene
+     walks one (`sand-pmz.44`). So this floor is held by review, not by CI. */
+  display: flex;
+  align-items: center;
+  min-height: var(--target-min);
 }
 
 .dossier__about summary::-webkit-details-marker {

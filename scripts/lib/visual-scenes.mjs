@@ -131,7 +131,14 @@ export const AUDIT = () => {
       (n) => n.nodeType === 3 && n.textContent.trim().length > 1,
     );
     if (hasText && fs < 11) add('tiny-text', id, `${fs}px "${el.textContent.trim().slice(0, 40)}"`);
-    if (['button', 'a', 'input', 'select'].includes(tag) && (r.height < 24 || r.width < 24)) {
+    // `summary` is a control and was not in this list, so every details/summary
+    // in the app was invisible to the floor (`sand-pmz.21`): PR #123 caught
+    // `.causal__debate summary` at 25.25px only by reading the CSS, and
+    // `.dossier__about summary` had the same shape and was never measured.
+    if (
+      ['button', 'a', 'input', 'select', 'summary'].includes(tag) &&
+      (r.height < 24 || r.width < 24)
+    ) {
       add(
         'small-target',
         id,
