@@ -5,8 +5,9 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
-  # `analyze` is a required check, so it has to run for merge-queue entries too
-  # or the queue stalls waiting for it (see ci.yml).
+  # `analyze` is a required check, so it would have to run for merge-queue
+  # entries too. No queue is enabled and none can be here; the trigger is kept
+  # for the same reason ci.yml keeps its own (see there).
   merge_group:
   schedule:
     - cron: '27 6 * * 1' # weekly, Monday 06:27 UTC

@@ -209,9 +209,15 @@ receipts -- --fetch` re-runs it against the source. Receipts live outside
 
 - `main` is protected by a ruleset: PR-only, **squash or rebase merges** (no
   merge commits), **linear history required**, force-push and deletion
-  blocked, required checks `lint`, `security`, `web` (strict — branch must be
-  up to date with `main`). `visual` runs on every PR but is **not** required;
-  adding it is a settings change, made deliberately (ADR 0011).
+  blocked, required checks `lint`, `security`, `web`, `analyze
+(javascript-typescript)` and `visual` (strict — branch must be up to date
+  with `main`). `visual` became required on 2026-08-28, after ADR 0011's
+  amendment narrowed it to two blocking tiers so that only breakage and
+  structural defects can stop a merge; `tiny-text` is reported and never
+  fatal. There is **no merge queue**: GitHub does not offer one for a public
+  repository under a personal account (`sand-pmz.35`), so strict checks mean
+  each merge invalidates every other open PR, and the mitigation is to keep
+  one PR in flight at a time rather than to queue them.
 - CI (`.github/workflows/ci.yml`): `lint` = actionlint + markdownlint +
   `scripts/check-content.sh` (JSON validity, media-manifest policy, no tracked
   image binaries, and the generated `media`/`audio` `index.json` still covering

@@ -1,7 +1,8 @@
 # 0011 — The visual gate: structure is checked, pixels are evidence
 
 - **Status:** accepted (amended 2026-08-25 `sand-pmz.2.6`; amended 2026-08-28
-  `sand-pmz.9` — see the two sections at the end)
+  `sand-pmz.9`, phase 1 the two tiers and phase 2 the settings change that made
+  `visual` required — see the three sections at the end)
 - **Date:** 2026-08-24
 - **Bead:** `sand-pmz.2`
 
@@ -211,6 +212,8 @@ what the reviewer looks at.
 - **`visual` is a new check, and it is not a required one.** The `main`
   ruleset requires `lint`, `security` and `web`; adding a fourth is a
   repository-settings change, made deliberately and not by this record.
+  _(Superseded 2026-08-28 — it is required now; see the phase 2 amendment at
+  the end of this record.)_
 - Adding a scene is one line in `SCENES` and both the gate and the review walk
   it. Adding a structural defect means fixing it or writing a sentence in
   `scripts/visual-baseline.json` saying why it is allowed.
@@ -388,3 +391,39 @@ person looking at the screenshots. Making `visual` required makes the first
 question non-negotiable, which is worth doing. It does not begin to answer the
 second, and the day it is mistaken for doing so is the day it starts doing
 harm.
+
+## Amendment — 2026-08-28: phase 2, the switch is flipped (`sand-pmz.9`)
+
+`visual` is now a **required check** on the `main` ruleset. The required
+contexts are `lint`, `security`, `web`, `analyze (javascript-typescript)` and
+`visual`, and `strict_required_status_checks_policy` stays `true`.
+
+That is the whole of phase 2. The amendment above did the work that made it
+safe — two blocking tiers, `tiny-text` demoted to reported, an exit code for a
+defect kind nobody classified — and this record exists so that the settings
+change is written down somewhere other than the repository's settings page,
+which has no history a reader can follow.
+
+### One correction to the amendment above
+
+That amendment told whoever flipped the switch to expect a merge queue, and to
+count `visual`'s four minutes twice: once per push, once per queue entry. **The
+merge queue is not coming.** GitHub does not offer merge queues for a public
+repository owned by a personal account, which is what this repository is
+(`sand-pmz.35`; the `merge_group` groundwork in PR #164 is harmless and stays,
+since it costs nothing and would be needed if the repository ever moves to an
+organisation).
+
+So the cost of requiring `visual` is the simpler one after all — four minutes
+per push, not per merge. But the problem the queue was going to solve is still
+here, and is now unsolved: required checks are strict, so **every merge
+invalidates every other open PR**, and each one has to rebase and re-run the
+full set before it can land. With one PR in flight that is free. With three it
+is most of the wall-clock cost of shipping, which is what motivated
+`sand-pmz.35` in the first place.
+
+The mitigation is procedural rather than mechanical: **keep one PR in flight at
+a time.** That is a real constraint on parallel work, and it is worth stating
+plainly here, because the obvious way to go faster — several agents opening
+several PRs at once — makes the total slower rather than quicker under a strict
+ruleset with no queue.
