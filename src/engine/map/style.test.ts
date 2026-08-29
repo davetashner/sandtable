@@ -1,3 +1,4 @@
+import { validateStyleMin } from '@maplibre/maplibre-gl-style-spec';
 import { describe, expect, it } from 'vitest';
 import {
   DEFAULT_SUPPRESS_RADIUS_M,
@@ -128,5 +129,38 @@ describe('buildStyle', () => {
     expect(label.minzoom).toBe(7);
     expect(style.layers.find((l) => l.id === 'buildings')!.minzoom).toBe(13);
     expect(style.layers.find((l) => l.id === 'places_locality')).toBeDefined();
+  });
+});
+
+describe('the coastline (sand-neh.31)', () => {
+  it.each(['light', 'dark'] as const)('is valid MapLibre inside the whole style in %s', (theme) => {
+    // Not paranoia. `sand-neh.33` was a layer MapLibre dropped in silence for
+    // an illegal expression — it does not throw, it drops and logs a warning,
+    // so an invisible layer and a correct one look identical from outside.
+    expect(validateStyleMin(buildStyle({ theme }))).toEqual([]);
+  });
+
+  it('strokes the land polygons, immediately above the fill it belongs to', () => {
+    const layers = buildStyle({ theme: 'light' }).layers;
+    const earth = layers.findIndex((l) => l.id === 'earth');
+    const coast = layers.findIndex((l) => l.id === 'earth-coastline');
+    expect(earth).toBeGreaterThanOrEqual(0);
+    expect(coast).toBe(earth + 1);
+    // `LayerSpecification` is a union and `background` carries no source, so
+    // both ends are read through the same narrow shape.
+    const sourced = (i: number) =>
+      layers[i] as { type: string; source?: string; 'source-layer'?: string };
+    expect(sourced(coast).type).toBe('line');
+    // Same source layer as the fill: the basemap has no coastline of its own.
+    expect(sourced(coast)['source-layer']).toBe('earth');
+    expect(sourced(coast).source).toBe(sourced(earth).source);
+  });
+
+  it('is drawn in both themes, because the sea and the land differ in both', () => {
+    const colour = (theme: 'light' | 'dark') => {
+      const l = buildStyle({ theme }).layers.find((x) => x.id === 'earth-coastline');
+      return (l as { paint: Record<string, unknown> }).paint['line-color'];
+    };
+    expect(colour('light')).not.toBe(colour('dark'));
   });
 });

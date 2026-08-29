@@ -316,6 +316,23 @@ that every scene in the visual baseline is drawn against, so changing them is a
 design decision under `sand-neh`, not a side effect of a geography bead. Filed
 as `sand-neh.31`.
 
+**Fixed 2026-08-29 (`sand-neh.31`), and neither token moved.** The answer is a
+**coastline**: a stroke on the basemap's `earth` polygons, in `coastline()`
+(`src/engine/map/style.ts`), drawn straight after the fill it belongs to. A
+line costs nothing on a land map — the Marne view is inland and has no coast in
+it at all — and it gives a 3 km island an edge without asking the sea and the
+land to differ more than they should on the Rhine.
+
+Two things were checked rather than assumed. The basemap carries no coastline
+layer, so the stroke comes off the land polygons and in principle draws the
+**tile clip** too; measured at z3.7, z8.6 and z9 no seam appears, because a
+seam falls between two tiles that both carry land and the stroke lands on top
+of itself. And the layer is validated against the MapLibre style spec, which is
+not paranoia: `sand-neh.33` had just been a layer MapLibre dropped in silence
+for an illegal expression, and this one was believed dead for an afternoon on
+the strength of a screenshot before a live paint read showed it had been
+drawing all along.
+
 ## Implementation note (2026-08-29, `sand-lry.21`)
 
 The six theatre archives are in the bucket, so every merged era now names the

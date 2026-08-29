@@ -316,8 +316,50 @@ export function refineLayers(layers: LayerSpecification[], theme: MapTheme): Lay
         break;
     }
     out.push(l);
+    // A line where the land ends, drawn straight after the fill it belongs to
+    // (`sand-neh.31`).
+    if (l.id === 'earth') out.push(coastline(theme));
   }
   return out;
+}
+
+/**
+ * The coastline: a stroke on the `earth` polygons, which is where the land
+ * ends (`sand-neh.31`).
+ *
+ * `--sea` and `--land` sit 1.20:1 apart in light and 1.24:1 in dark. On the
+ * Marne that is right — the coast is the edge of a shape a reader is already
+ * getting from rivers, roads and towns, and a loud coastline would be noise.
+ * On a map that is nine tenths water it leaves the one thing that matters
+ * indistinguishable from the background, and Protomaps carries no bathymetry,
+ * so the sea has no structure of its own to fall back on either.
+ *
+ * A line rather than a change to either token, which is what ADR 0002 asked
+ * for when it declined to fix this in a geography bead: the tokens are what
+ * every scene in the visual baseline is drawn against, and a stroke costs
+ * nothing on a land map while giving a 3 km island an edge.
+ *
+ * Drawn from the `earth` polygons because the basemap has no coastline layer
+ * of its own. That draws the tile clip too, in principle — a polygon cut at a
+ * tile edge has an edge there — and measured at z3.7, z8.6 and z9 it does not
+ * show: the seams fall on the boundary between two tiles that both carry land,
+ * where the stroke lands on top of itself.
+ */
+export function coastline(theme: MapTheme): LayerSpecification {
+  const dark = theme === 'dark';
+  return {
+    id: 'earth-coastline',
+    type: 'line',
+    source: BASEMAP_SOURCE,
+    'source-layer': 'earth',
+    paint: {
+      // Darker than both land and sea in light, lighter than both in dark, so
+      // the line reads as an edge rather than as either surface.
+      'line-color': dark ? '#6d8a9e' : '#8b7c55',
+      'line-width': ['interpolate', ['linear'], ['zoom'], 2, 0.6, 6, 1, 10, 1.6],
+      'line-opacity': ['interpolate', ['linear'], ['zoom'], 2, 0.7, 6, 0.85, 10, 0.95],
+    },
+  } as LayerSpecification;
 }
 
 /** A complete MapLibre style: the PMTiles source + themed basemap layers. */
