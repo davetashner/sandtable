@@ -1,10 +1,11 @@
 /**
- * The atlas of eras (`sand-shn.1`): every campaign the app can open, in the
- * order they happened, each a link into the campaign shell.
+ * The atlas of eras (`sand-shn.1`), which is the home page (ADR 0024): every
+ * campaign the app can open, grouped by arc, each a link into the campaign
+ * shell.
  *
  * It reads `/pack/index.json` — a summary per era, a few hundred bytes each —
- * rather than the bundles themselves, so listing twelve eras costs one small
- * request and not twelve large ones. The manifest is written at build time by
+ * rather than the bundles themselves, so listing twenty eras costs one small
+ * request and not twenty large ones. The manifest is written at build time by
  * `scripts/lib/vite-plugin-pack.ts` from each `pack.json`, which means the
  * atlas cannot drift from what the build actually emitted: an era is on this
  * page if and only if there is a bundle behind it.
@@ -12,10 +13,13 @@
  * Opening an era is a navigation to `/?pack=<id>`, not a runtime swap. That is
  * deliberate and it is what keeps ADR 0018's top-level `await` working: one
  * page load is one era, so every module in the campaign app goes on reading its
- * pack at module scope.
+ * pack at module scope. **Every era is addressed with its `pack`, the seed one
+ * included** — `/` is this page now, so a campaign link that named no campaign
+ * would be a link that depended on which era happened to be the seed.
  */
 import { useEffect, useState } from 'react';
-import { PACK_INDEX } from 'virtual:sandtable-pack';
+import { PACK_DEFAULT, PACK_INDEX } from 'virtual:sandtable-pack';
+import { groupByArc } from './arcs.js';
 import './atlas.css';
 
 interface PackSummary {
@@ -23,6 +27,7 @@ interface PackSummary {
   title: string;
   subtitle?: string;
   summary: string;
+  arc?: string;
   timeRange: { start: string; end: string };
   region: [number, number, number, number];
   status: string;
@@ -46,6 +51,14 @@ function span(range: { start: string; end: string }): string {
 /** The year an era opens in — the eyebrow that makes the list scannable. */
 const startYear = (range: { start: string; end: string }) =>
   String(new Date(range.start).getUTCFullYear());
+
+/**
+ * The first paragraph of the pack's summary, which is the one written to be
+ * read first. The rest is the era's opening prose and belongs in the era: a
+ * front door that printed all of Pearl Harbor's three paragraphs would bury
+ * the two campaigns underneath it.
+ */
+const opener = (summary: string) => summary.split(/\n\s*\n/)[0]?.trim() ?? '';
 
 type State = { kind: 'loading' } | { kind: 'ready'; index: PackIndex } | { kind: 'failed' };
 
@@ -74,11 +87,12 @@ export function Atlas() {
   return (
     <div className="atlas">
       <header className="atlas__head">
-        <p className="atlas__eyebrow">Sandtable · an atlas of eras</p>
-        <h1 className="atlas__title">Pick a campaign</h1>
+        <p className="atlas__eyebrow">Sandtable</p>
+        <h1 className="atlas__title">An atlas of campaigns you can open</h1>
         <p className="atlas__lede">
-          Each era is a self-contained scenario pack — its own clock, its own ground, its own
-          argument. They are listed in the order they happened.
+          Each era is a self-contained scenario pack drawn on real ground — its own clock, its own
+          armies, its own argument — with the decisions the commanders actually faced and the roads
+          they did not take. Every date, number and position cites a source.
         </p>
       </header>
 
@@ -90,41 +104,47 @@ export function Atlas() {
 
       {state.kind === 'failed' && (
         <p className="atlas__note atlas__note--failed" role="alert">
-          The atlas index could not be read, so there is nothing to list. The campaign itself is
-          still there — <a href="/">open the 1914 campaign</a> and try this page again.
+          The atlas index could not be read, so there is nothing to list. The campaigns themselves
+          are still there —{' '}
+          <a href={`/?pack=${encodeURIComponent(PACK_DEFAULT)}`}>open the seed campaign</a> and try
+          this page again.
         </p>
       )}
 
-      {state.kind === 'ready' && (
-        <ol className="atlas__list">
-          {state.index.packs.map((p) => (
-            <li key={p.id}>
-              <a
-                className="atlas__era"
-                href={p.id === state.index.default ? '/' : `/?pack=${encodeURIComponent(p.id)}`}
-              >
-                <span className="atlas__year">{startYear(p.timeRange)}</span>
-                <span className="atlas__body">
-                  <span className="atlas__era-title">{p.title}</span>
-                  {p.subtitle && <span className="atlas__subtitle">{p.subtitle}</span>}
-                  <span className="atlas__summary">{p.summary}</span>
-                  <span className="atlas__meta">
-                    <span>{span(p.timeRange)}</span>
-                    {/* A pack that is still being written says so, rather than
-                        letting a reader mistake scaffolding for a finished
-                        argument (`Pack.status`, docs/content-model.md). */}
-                    {p.status !== 'published' && (
-                      <span className="atlas__status" data-status={p.status}>
-                        {p.status}
+      {state.kind === 'ready' &&
+        groupByArc(state.index.packs).map(({ arc, packs }) => (
+          <section className="atlas__arc" key={arc?.id ?? 'rest'}>
+            <h2 className="atlas__arc-title">{arc ? arc.title : 'Elsewhere'}</h2>
+            <p className="atlas__arc-argument">
+              {arc ? arc.argument : 'Eras this build has no arc for.'}
+            </p>
+            <ol className="atlas__list">
+              {packs.map((p) => (
+                <li key={p.id}>
+                  <a className="atlas__era" href={`/?pack=${encodeURIComponent(p.id)}`}>
+                    <span className="atlas__year">{startYear(p.timeRange)}</span>
+                    <span className="atlas__body">
+                      <span className="atlas__era-title">{p.title}</span>
+                      {p.subtitle && <span className="atlas__subtitle">{p.subtitle}</span>}
+                      <span className="atlas__summary">{opener(p.summary)}</span>
+                      <span className="atlas__meta">
+                        <span>{span(p.timeRange)}</span>
+                        {/* A pack that is still being written says so, rather than
+                            letting a reader mistake scaffolding for a finished
+                            argument (`Pack.status`, docs/content-model.md). */}
+                        {p.status !== 'published' && (
+                          <span className="atlas__status" data-status={p.status}>
+                            {p.status}
+                          </span>
+                        )}
                       </span>
-                    )}
-                  </span>
-                </span>
-              </a>
-            </li>
-          ))}
-        </ol>
-      )}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ))}
     </div>
   );
 }

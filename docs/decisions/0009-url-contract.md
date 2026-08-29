@@ -107,6 +107,29 @@ rather than to an empty screen, so a stale or mistyped link still opens
 something. And the default era is addressed as `/`, not `/?pack=…`, so every
 link written before the atlas existed still means what it meant.
 
+## Amendment: `pack` is a slot after all, because `/` is the atlas (2026-08-28, ADR 0024)
+
+The amendment above is superseded on its central point, and only that point.
+`/` no longer opens the seed era: a URL that fills no slot of this contract
+opens the atlas of eras. That makes the last paragraph above false in both its
+halves. The default era is **not** addressed as `/`, and a campaign link that
+names no era no longer means "the seed era" — it means "whichever era is seeded
+when you click it", which is a link that breaks silently and in the worst way
+the first time the seed changes.
+
+So `pack` is a named slot, written first, and written into every campaign URL.
+The reasoning above about `formatViewState` was right and its conclusion has
+inverted: it _is_ now in every state write, deliberately. Rule 3 is the price —
+the ordinary view of a campaign is `/?pack=1914-schlieffen-marne` rather than
+`/`, and the 300-character bound still holds with room to spare.
+
+Nothing else moves. Unknown parameters are still `extra` and still round-trip;
+an id the build never emitted still falls back to the seed era rather than to
+an empty screen, and the address is then corrected to name the era actually
+served. A link written before the atlas existed still opens the view it meant,
+and gains its era on the first state write. ADR 0024 has the full table of what
+each published link shape does.
+
 ## Consequences
 
 - Every new on/off switch registers a **layer name and a default** and goes

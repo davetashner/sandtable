@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light dark" />
     <meta
       name="description"
-      content="Sandtable — an interactive history simulation, beginning with the Schlieffen Plan and the march to the Marne, 1914."
+      content="Sandtable — an interactive history simulation. An atlas of campaigns on real geography, with a clock, the commanders' decisions, and the roads not taken."
     />
     <title>Sandtable</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/brand/icon-32.png" />
@@ -135,11 +135,16 @@
     <!-- The app cannot render before the pack it renders arrives, and the pack
          is fetched rather than bundled (ADR 0018). This is what a reader looks
          at in the meantime; React replaces the whole of #root on its first
-         commit, so nothing here survives into the app's DOM. -->
+         commit, so nothing here survives into the app's DOM.
+
+         The line is the campaign's, because that is the load worth a boot
+         frame. When this same document is serving the atlas — a URL that names
+         no view, ADR 0024 — the boot script rewrites it, since a reader who has
+         not picked an era is not waiting for one. -->
     <div id="root">
       <div class="boot" id="boot-frame" role="status">
         <p class="boot__mark">Sandtable</p>
-        <p class="boot__note">Laying out the campaign…</p>
+        <p class="boot__note" id="boot-note">Laying out the campaign…</p>
       </div>
 
       <!-- What the reader gets when the pack does not arrive (sand-shn.1.2).

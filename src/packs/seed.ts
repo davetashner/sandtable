@@ -68,6 +68,13 @@ import { mark } from '../engine/perf.js';
 const collection = (file: string): unknown => contentBundle.collections[file] ?? [];
 
 export interface SeedPack {
+  /**
+   * The era directory this pack came from (`1914-schlieffen-marne`), which is
+   * what `?pack=` names — not `pack.idPrefix`, which is `1914` for the two
+   * grandfathered packs (ADR 0019). It is here because the URL binding writes
+   * it into every address the app produces (ADR 0024).
+   */
+  id: string;
   pack: PackT;
   events: EventT[];
   battles: BattleT[];
@@ -171,6 +178,7 @@ function loadSeed(): SeedPack {
     score,
     tracks,
     diagrams: contentBundle.diagrams,
+    id: contentBundle.id,
   };
 }
 

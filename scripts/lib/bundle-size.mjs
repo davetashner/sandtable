@@ -113,25 +113,64 @@ export const stamp = (ms) =>
     .replace('T', ' ');
 
 /**
+ * The chunks one page load actually downloads before it can paint, walked from
+ * Vite's manifest rather than read off `index.html` (ADR 0024).
+ *
+ * `index.html` used to be the answer on its own: it named the entry and every
+ * modulepreload beside it. Since `/` became two pages behind one entry — a URL
+ * that names a view gets the campaign, one that names none gets the atlas —
+ * what it names is the router and nothing else, and both pages are reached
+ * through a dynamic `import()`. Reading the HTML would therefore report about
+ * ten kilobytes for a page that downloads two hundred, which is a budget met
+ * by hiding from it: exactly what ADR 0018 refused when it turned down an
+ * async bootstrap for the same reason.
+ *
+ * So a cold load is the HTML entry's chunk plus the branch's chunk, each
+ * closed under its **static** imports and stylesheets. Dynamic imports are
+ * left out on purpose — `MapSurface` is behind one, and not needing it before
+ * first paint is the whole point of ADR 0016's lazy boundary.
+ */
+function coldLoad(manifest, ...keys) {
+  const files = new Set();
+  const visit = (key) => {
+    const entry = manifest[key];
+    if (!entry) throw new Error(`manifest has no entry for ${key}`);
+    if (files.has(entry.file)) return;
+    files.add(entry.file);
+    for (const css of entry.css ?? []) files.add(css);
+    for (const next of entry.imports ?? []) visit(next);
+  };
+  for (const key of keys) visit(key);
+  // Manifest paths are `app/x.js`; the report keys chunks by bare file name.
+  return new Set([...files].map((f) => f.replace(/^app\//, '')));
+}
+
+/** The two pages `index.html` answers with (ADR 0024), as the manifest keys them. */
+const CAMPAIGN_ENTRY = 'src/campaign-main.tsx';
+const ATLAS_ENTRY = 'src/atlas/mount.tsx';
+
+/**
  * Every emitted asset, in three groups.
  *
- * **eager** is what `index.html` names — the entry script, its modulepreloads,
- * its stylesheets. It is the code between the reader and first paint.
- * **lazy** is the rest of `dist/app/`: reached by a dynamic `import()` or by
- * the map worker. **pack** is `dist/pack/` — the content bundle the app
- * fetches (ADR 0018). The bundle is downloaded on every cold load and is
- * counted, but on its own line: it is content, it moves with every content
- * pull request, and holding it against the code ceiling is what made every
- * content change a performance change.
+ * **eager** is the campaign cold load: `index.html`, the router it names, and
+ * the campaign branch behind the router's dynamic import. It is the code
+ * between a reader and the first frame of a campaign — the expensive of the
+ * two pages at `/`, and the one the ceiling is for. **home** is the same
+ * measurement for the other page, the atlas (ADR 0024). **lazy** is the rest
+ * of `dist/app/`: reached by a dynamic `import()` or by the map worker.
+ * **pack** is `dist/pack/` — the content bundle the app fetches (ADR 0018).
+ * The bundle is downloaded on every cold load and is counted, but on its own
+ * line: it is content, it moves with every content pull request, and holding
+ * it against the code ceiling is what made every content change a performance
+ * change.
  *
  * Sourcemaps are excluded: they are emitted, and no browser fetches them
  * unless devtools is open.
  */
 export function bundleReport(dist = DIST) {
-  const html = readFileSync(join(dist, 'index.html'), 'utf8');
-  const eager = new Set(
-    [...html.matchAll(/(?:src|href)="\/app\/([^"]+)"/g)].map((m) => m[1]).filter(Boolean),
-  );
+  const manifest = JSON.parse(readFileSync(join(dist, '.vite', 'manifest.json'), 'utf8'));
+  const eager = coldLoad(manifest, 'index.html', CAMPAIGN_ENTRY);
+  const home = coldLoad(manifest, 'index.html', ATLAS_ENTRY);
   const read = (dir, prefix, isEager) => {
     if (!existsSync(join(dist, dir))) return [];
     return readdirSync(join(dist, dir))
@@ -151,6 +190,9 @@ export function bundleReport(dist = DIST) {
     ...read('app', '', (f) => eager.has(f)),
     ...read('pack', 'pack/', () => false),
   ].sort((a, b) => b.gzip - a.gzip);
+  const homeGzip = files
+    .filter((f) => f.group === 'app' && home.has(f.file))
+    .reduce((a, b) => a + b.gzip, 0);
   const htmlBytes = statSync(join(dist, 'index.html')).size;
   const sum = (p) => files.filter(p).reduce((a, b) => a + b.gzip, 0);
   // One era per page load (sand-shn.1), so what a cold load costs is the
@@ -163,6 +205,8 @@ export function bundleReport(dist = DIST) {
     files,
     htmlBytes,
     eagerGzip: sum((f) => f.eager) + htmlBytes,
+    /** The other page at `/`: the atlas, which fetches no era (ADR 0024). */
+    homeGzip: homeGzip + htmlBytes,
     lazyGzip: sum((f) => f.group === 'app' && !f.eager),
     codeGzip: sum((f) => f.group === 'app') + htmlBytes,
     /** The heaviest era, which is what the slowest cold load actually fetches. */

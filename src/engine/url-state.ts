@@ -28,6 +28,12 @@ import type { Clock } from './clock.js';
 import { toIsoNoMs } from './ticks.js';
 
 export interface ViewState {
+  /**
+   * Which era this view is of (`1915-attrition`). A slot as of ADR 0024,
+   * because `/` is the atlas: a campaign URL that does not name its campaign
+   * would depend on which era happens to be the seed.
+   */
+  pack?: string;
   /** Epoch ms, when present and valid. */
   t?: number;
   branch?: string;
@@ -94,6 +100,18 @@ function idSlot(
  */
 const SLOTS: Slot[] = [
   {
+    // Which era. First, because it names the document the rest of the slots
+    // are read against, and because a reader scanning a link should see the
+    // campaign before the coordinates inside it (ADR 0024). Era ids are
+    // hyphenated slugs and need no encoding, but they go through the same
+    // encoder as everything else rather than trusting that.
+    key: 'pack',
+    read: (value, state) => {
+      if (value) state.pack = value;
+    },
+    write: (state) => (state.pack ? `pack=${encodeURIComponent(state.pack)}` : ''),
+  },
+  {
     // The clock's now, ISO-8601 UTC to the second. A date that will not parse
     // is dropped rather than argued with: the rest of the link still opens.
     key: 't',
@@ -125,11 +143,17 @@ const SLOTS: Slot[] = [
 ];
 
 /**
- * The known slots; everything else in the query string is `extra`. `pack` is
- * absent on purpose — it selects which era's document is loaded rather than a
- * state inside one, so it round-trips as an extra (ADR 0009's amendment).
+ * The known slots; everything else in the query string is `extra`.
+ *
+ * `pack` was deliberately not one of them until ADR 0024: it selects which
+ * era's document is loaded rather than a state inside one, and while `/` meant
+ * the seed era, leaving it out was what kept the ordinary view free of
+ * parameters. Now `/` means the atlas, so a campaign URL has to say which
+ * campaign, and the slot is the contract saying so. `VIEW_SLOTS` in
+ * `src/packs/content-bundle.ts` is the same list where the boot script can
+ * reach it; `url-state.test.ts` holds the two together.
  */
-const KNOWN = new Set<string>(SLOTS.map((slot) => slot.key));
+export const KNOWN = new Set<string>(SLOTS.map((slot) => slot.key));
 
 export function parseViewState(search: string): ViewState {
   const q = new URLSearchParams(search.startsWith('?') ? search.slice(1) : search);
@@ -222,6 +246,12 @@ export interface UrlBinding {
 }
 
 export interface BindOptions {
+  /**
+   * The era this page loaded, written into every URL this binding produces
+   * (ADR 0024). Left out, the binding writes no `pack` — which is right for a
+   * page that has no era, and wrong for the campaign, so `App` passes it.
+   */
+  pack?: string;
   /** Defaults to window.history / window.location. */
   history?: Pick<History, 'replaceState'>;
   location?: () => string;
@@ -285,7 +315,13 @@ export function bindUrlState(clock: Clock, opts: BindOptions = {}): UrlBinding {
     // The clock owns `t` and the binding owns everything else, which is the
     // one split that matters here — no slot needs naming twice to make it.
     const { t, ...fromUrl } = parseViewState(location());
-    slots = fromUrl;
+    // The era is the one slot the page knows better than the URL does. It is
+    // never set by a reader, and `pack-loader.ts` has already resolved what
+    // the address asked for — so an address that named no era (a link written
+    // before `/` was the atlas) or one the build never emitted (ADR 0009's
+    // fallback) is corrected here to the era actually loaded, rather than
+    // being copied back out as a link that only works by falling back.
+    slots = opts.pack ? { ...fromUrl, pack: opts.pack } : fromUrl;
     if (t !== undefined) clock.seek(t);
     lastWritten = formatViewState({ t: clock.get().now, ...slots });
     for (const l of listeners) l();

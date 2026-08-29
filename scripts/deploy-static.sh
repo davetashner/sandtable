@@ -26,6 +26,9 @@ echo "→ $dest/pack/ (immutable)"
 aws s3 sync "$dist/pack/" "$dest/pack/" --delete --no-progress \
   --cache-control "public, max-age=31536000, immutable"
 
+# `.vite/manifest.json` is a build artefact the bundle budget reads (ADR 0024);
+# nothing serves it, so it does not go up.
 echo "→ $dest/ (revalidate)"
-aws s3 sync "$dist/" "$dest/" --delete --no-progress --exclude "app/*" --exclude "pack/*" \
+aws s3 sync "$dist/" "$dest/" --delete --no-progress \
+  --exclude "app/*" --exclude "pack/*" --exclude ".vite/*" \
   --cache-control "public, max-age=0, must-revalidate"

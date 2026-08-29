@@ -34,6 +34,8 @@ export interface ClockProviderProps {
   initialSpeed?: number;
   /** Bind to the URL (default true; off in tests). */
   syncUrl?: boolean;
+  /** The era this page loaded, written into every URL it produces (ADR 0024). */
+  pack?: string;
   children: ReactNode;
 }
 
@@ -42,6 +44,7 @@ export function ClockProvider({
   initialNow,
   initialSpeed,
   syncUrl = true,
+  pack,
   children,
 }: ClockProviderProps) {
   const value = useMemo(() => {
@@ -50,7 +53,10 @@ export function ClockProvider({
       ...(initialNow !== undefined ? { now: initialNow } : {}),
       ...(initialSpeed !== undefined ? { speed: initialSpeed } : {}),
     });
-    const url = syncUrl && typeof window !== 'undefined' ? bindUrlState(clock) : null;
+    const url =
+      syncUrl && typeof window !== 'undefined'
+        ? bindUrlState(clock, pack === undefined ? {} : { pack })
+        : null;
     return { clock, url };
     // A provider owns one clock for its lifetime; range changes go through setRange.
     // eslint-disable-next-line react-hooks/exhaustive-deps

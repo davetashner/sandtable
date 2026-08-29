@@ -394,3 +394,27 @@ the registry. Luxembourg, Sedan, Saint-Dié, Zeebrugge and Allenstein are named
 by no 1914 beat, event, route or waypoint, and are no longer labelled. If any
 of them belongs on the map it belongs there because some beat says so, which is
 the rule everything else on the map already follows.
+
+## Amendment: the hook goes only where an era is read, and `/` may name none (ADR 0024)
+
+Two things this record left behind, found when the atlas became the home page.
+
+`transformIndexHtml` runs for **every** HTML entry, so the four-line hook — and
+its fetch — was inlined into `gallery.html` and `atlas.html` as well as
+`index.html` (`sand-shn.1.4`). The gallery reads the pack and is correct. The
+atlas does not: it reads `/pack/index.json`, a few hundred bytes, and links out.
+Every visit to it therefore downloaded the seed era's bundle and threw it away,
+on the one page that exists because a reader has not chosen an era. The hook is
+now injected only into the entries that read one.
+
+And `/` is now two pages (ADR 0024): a URL that fills no slot of ADR 0009's
+contract is the atlas, which fetches no era at all. The campaign entry's copy of
+the hook asks that question first and returns without fetching when the answer
+is no. It is the same question `src/main.tsx` asks to decide which app to mount,
+from the same list in `content-bundle.ts`, so the request the `<head>` starts
+and the app the module graph brings up cannot disagree — which is the property
+this record already depends on for `?pack=`.
+
+The top-level `await` is untouched and is why the campaign branch has to be a
+dynamic import: a module that statically imported the campaign would suspend the
+atlas on an era fetch it never wanted.

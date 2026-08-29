@@ -3,22 +3,29 @@
   "budgets": {
     "eager": {
       "maxGzipKb": 230,
-      "measuredKb": 206.1,
-      "measuredOn": "2026-08-25",
-      "why": "Everything index.html names — the entry, its modulepreloads, its stylesheet — plus index.html itself. This is the code that stands between a reader and first paint on a cold load. It was 483.5 kB against a 490 kB ceiling that had itself been raised from 470 to let two content beads through (sand-pmz.18) — 6.5 kB of headroom, and the last content pull request had eaten 8.5 kB of it on its own. 277.4 kB of the 483.5 was the 1914 pack's JSON, which sand-shn.1.1 now fetches instead of bundling (ADR 0018). The measurement is worth recording because the estimate it replaces was wrong: ADR 0016 put the pack at ~135 kB gzip by its share of source characters, and it was in fact 57% of the eager bundle — prose gzips worse than minified JavaScript. What is left and why: react-dom, zod (the pack is re-validated in the browser on arrival, 34 ms), yaml (beat front matter), the react-markdown stack (the dossier's prose, on screen immediately), and the app's own code. 230 is about 12% above where the fetch left it — room for ordinary growth of the shell, and the number no longer moves when a beat is written.",
-      "$note": "history: 470 (deck.gl split, 432.5 kB) → 490 (sand-23b.28 + sand-23b.31, 475.0 kB) → 230 (sand-shn.1.1, 206.1 kB)."
+      "measuredKb": 218.8,
+      "measuredOn": "2026-08-29",
+      "why": "The campaign cold load: index.html, the router it names, and the campaign branch behind the router's dynamic import — the code that stands between a reader and the first frame of a campaign. It was \"index.html plus everything it names\" until ADR 0024 made `/` two pages: index.html now names a two-kilobyte router, so reading the HTML would report ten kilobytes for a page that downloads two hundred, and the number is walked from Vite's build manifest instead (scripts/lib/bundle-size.mjs). The branch cost 1.7 kB — the router, the preload helper and one more chunk boundary — against 217.1 kB on 04f1469. It was 483.5 kB against a 490 kB ceiling that had itself been raised from 470 to let two content beads through (sand-pmz.18) — 6.5 kB of headroom, and the last content pull request had eaten 8.5 kB of it on its own. 277.4 kB of the 483.5 was the 1914 pack's JSON, which sand-shn.1.1 now fetches instead of bundling (ADR 0018). The measurement is worth recording because the estimate it replaces was wrong: ADR 0016 put the pack at ~135 kB gzip by its share of source characters, and it was in fact 57% of the eager bundle — prose gzips worse than minified JavaScript. What is left and why: react-dom, zod (the pack is re-validated in the browser on arrival, 34 ms), yaml (beat front matter), the react-markdown stack (the dossier's prose, on screen immediately), and the app's own code. 230 is about 5% above where the branch left it — room for ordinary growth of the shell, and the number no longer moves when a beat is written.",
+      "$note": "history: 470 (deck.gl split, 432.5 kB) → 490 (sand-23b.28 + sand-23b.31, 475.0 kB) → 230 (sand-shn.1.1, 206.1 kB) → redefined from \"what index.html names\" to the campaign cold load, sand-shn.25 (ADR 0024), 217.1 → 218.8 kB."
+    },
+    "home": {
+      "maxGzipKb": 110,
+      "measuredKb": 75.2,
+      "measuredOn": "2026-08-29",
+      "why": "The other page `/` answers with: the atlas, which a URL naming no view gets (ADR 0024). Same measurement as `eager` — index.html, the router it names, and the branch behind the router's dynamic import — for the branch that is a list of eras rather than a campaign. It exists because the atlas is the front door now, and until this record nothing measured it at all: it was a second entry nobody weighed, and it was fetching a 300 kB era bundle it never read (sand-shn.1.4). Most of what is left is React and react-dom, which is what a React page costs before it says anything; the atlas's own code and stylesheet are 2.6 kB of it. 110 is about 60% above today's number, which is deliberate slack: sand-shn.14 will put threads and arc prose on this page, and a front door that cannot grow by half is a front door nobody will improve.",
+      "$note": "history: new in sand-shn.22 (ADR 0024), the first measurement of the atlas."
     },
     "code": {
       "maxGzipKb": 890,
-      "measuredKb": 805.6,
-      "measuredOn": "2026-08-25",
+      "measuredKb": 822.6,
+      "measuredOn": "2026-08-29",
       "why": "Every emitted chunk under dist/app/, eager and on demand, plus index.html. A second ceiling because the first one alone can be met by moving bytes behind a dynamic import forever, and a reader who opens the map pays for those too. Loose on purpose: MapLibre and deck.gl are 590 kB gzip of it and neither is going anywhere (ADR 0001). This was called `total` and included the pack JSON; it is code-only as of ADR 0018, because a ceiling a content pull request can turn red is the toll that record removes.",
       "$note": "history: 1100 including the pack (1082.2 kB) → 890 code-only (805.6 kB), sand-shn.1.1."
     },
     "pack": {
       "maxGzipKb": 340,
-      "measuredKb": 304.0,
-      "measuredOn": "2026-08-28",
+      "measuredKb": 306.1,
+      "measuredOn": "2026-08-29",
       "why": "The heaviest era in dist/pack/ plus the atlas index — what one cold load actually fetches, because a page load is one era (ADR 0018, ADR 0009's amendment, sand-shn.1). It used to be the sum of the directory, which was the same number while there was one pack and became the wrong one the moment there were two: summing eras would have turned this ceiling red on the second, for bytes no reader ever downloads. Every era together is printed under the chunk list, reported and not gated, because that is the deploy's weight rather than a reader's. It is gated separately from code because content and code grow for different reasons, and the whole point of fetching it was that a content pull request should stop being a performance pull request. 340 is about 12% above today's 304.0 kB — roughly the next dozen content passes on the heaviest era. When it does go red the answer is not a bigger number: it is that one era is now too heavy for one fetch, and that era's bundle should be split by chapter (sand-shn.1.3) — which only works because the weight is now the era's own: the shared registries are emitted per era as of sand-shn.15 (ADR 0018's second amendment), so a cast added for one campaign no longer lands on every other one's bundle.",
       "$note": "history: 1100 including the pack (1082.2 kB) → 890 code-only (805.6 kB), sand-shn.1.1 → measurement changed from the sum of dist/pack/ to the heaviest era, sand-shn.1 → shared registries narrowed to what each era references, sand-shn.15 (308.1 → 304.0 kB; 1915 fell 58.6 → 3.0 kB)."
     }

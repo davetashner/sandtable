@@ -35,6 +35,14 @@ export default defineConfig({
     target: 'es2022',
     sourcemap: true,
     assetsDir: 'app',
+    // `/` is two pages behind one entry (ADR 0024): a URL that names a view
+    // gets the campaign, one that names none gets the atlas, and each is
+    // reached by a dynamic import from `src/main.tsx`. That makes `index.html`
+    // no longer a description of what either reader downloads, so the budget
+    // reads the manifest instead and walks each cold load from its own entry
+    // (`scripts/lib/bundle-size.mjs`, ADR 0016). It is not deployed —
+    // `scripts/deploy-static.sh` excludes it.
+    manifest: true,
     // Three entries: the app, the component gallery (sand-neh.3), and the
     // atlas of eras (sand-shn.1). Each of the latter two is a page of its own
     // so none of it can reach the app bundle, and so every deployment —

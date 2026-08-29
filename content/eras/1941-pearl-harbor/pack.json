@@ -4,6 +4,7 @@
   "title": "1941: Pearl Harbor",
   "subtitle": "Two clocks, ten and a half hours apart",
   "summary": "Sixteen days in which a fleet crossed three thousand miles of empty ocean in radio silence while two governments went on talking. The pack is built around the gap between those two things. In Washington the clock runs through a set of documents — the American outline of 26 November, the Japanese memorandum that answered it, and the hour Tokyo ordered that memorandum delivered. In the North Pacific the clock runs through an operation order that named the speed, the course and the two points the striking force would launch from, and that the force kept to almost exactly. The first clock was supposed to stop the second. It did not even manage to arrive first.\n\nHawaii kept a standard time ten and a half hours behind Greenwich in 1941, which is why one o'clock in Washington is half past seven in Honolulu and why the arithmetic of that morning is worth doing carefully. Every instant stored in this pack is UTC; every time a reader is shown is named with the place whose clock it is.\n\nIt is also deliberately not only about Hawaii. Malaya, the Philippines, Hong Kong, Guam and Wake were all attacked inside the same day, most of them while the raid on Oahu was still going on, and a pack that shows only the harbour teaches the American memory of 7 December rather than the day itself.",
+  "arc": "pacific",
   "timeRange": { "start": "1941-11-25T12:00:00Z", "end": "1941-12-10T20:00:00Z" },
   "region": [99, -12, -155, 52],
   "borderYear": 1941,

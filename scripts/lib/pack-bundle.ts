@@ -63,6 +63,8 @@ export interface PackSummary {
   title: string;
   subtitle?: string;
   summary: string;
+  /** Which arc the atlas files it under (`pack.json#arc`, ADR 0024). */
+  arc?: string;
   timeRange: { start: string; end: string };
   region: [number, number, number, number];
   status: string;
@@ -78,6 +80,7 @@ export function packSummary(root: string, id: string): PackSummary {
     title: String(pack['title'] ?? id),
     ...(pack['subtitle'] ? { subtitle: String(pack['subtitle']) } : {}),
     summary: String(pack['summary'] ?? ''),
+    ...(pack['arc'] ? { arc: String(pack['arc']) } : {}),
     timeRange: pack['timeRange'] as { start: string; end: string },
     region: pack['region'] as [number, number, number, number],
     status: String(pack['status'] ?? 'seed'),

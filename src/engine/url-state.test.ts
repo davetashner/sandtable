@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { createClock, DAY } from './clock.js';
+import { VIEW_SLOTS, namesAView } from '../packs/content-bundle.js';
 import {
+  KNOWN,
   bindUrlState,
   formatViewState,
   layerOn,
@@ -132,7 +134,8 @@ describe('the whole contract round-trips', () => {
       { tour: '1914:tour-the-campaign' },
       { step: 'the-marne' },
       { layers: ['commanders', '-meanwhile.physics'] },
-      { extra: [['pack', '1915-attrition']] },
+      { pack: '1915-attrition' },
+      { extra: [['utm_source', 'a-footnote']] },
     ];
     for (let mask = 0; mask < 1 << values.length; mask += 1) {
       const state = values.reduce<ViewState>(
@@ -153,7 +156,7 @@ describe('the whole contract round-trips', () => {
 });
 
 describe('bindUrlState', () => {
-  function harness(initialSearch: string) {
+  function harness(initialSearch: string, pack?: string) {
     const writes: string[] = [];
     let search = initialSearch;
     const timers: (() => void)[] = [];
@@ -164,6 +167,7 @@ describe('bindUrlState', () => {
       wall: () => 0,
     });
     const binding = bindUrlState(clock, {
+      ...(pack ? { pack } : {}),
       history: {
         replaceState: (_s: unknown, _t: string, url?: string | URL | null) => {
           const u = String(url ?? '');
@@ -189,6 +193,19 @@ describe('bindUrlState', () => {
     expect(h.binding.get()).toEqual({ branch: '1914:schlieffen-concept' });
     h.clock.seek(START + DAY);
     expect(h.writes.at(-1)).toMatch(/\?t=1914-08-03T00:00:00Z&branch=1914:schlieffen-concept$/);
+  });
+
+  /**
+   * The migration ADR 0024 leaves behind: a link written before `/` was the
+   * atlas names no era, resolves to the seed one, and gets that era written
+   * into its address on the first state change — so the link the reader copies
+   * back out says which campaign it is of.
+   */
+  it('writes the era this page loaded into every address it produces', () => {
+    const h = harness('?t=1914-08-24T00:00:00Z', '1914-schlieffen-marne');
+    expect(h.binding.get()).toEqual({ pack: '1914-schlieffen-marne' });
+    h.clock.seek(START + DAY);
+    expect(h.writes.at(-1)).toBe('/?pack=1914-schlieffen-marne&t=1914-08-03T00:00:00Z');
   });
 
   it('updates branch and focus slots immediately', () => {
@@ -261,18 +278,34 @@ describe('the guided-tour slots (sand-1l0.14)', () => {
   });
 });
 
-describe('the pack slot (sand-shn.1)', () => {
+describe('the pack slot (sand-shn.1, promoted by ADR 0024)', () => {
   it('survives a state write, so scrubbing the clock does not leave the era', () => {
     const state = parseViewState('?pack=1915-attrition&t=1915-04-22T17:00:00Z');
-    // `pack` is deliberately not a known slot: it selects which era's document
-    // is loaded, not a state inside one, and it is read before React by the
-    // boot script. As an extra it round-trips, which is all it needs to do.
-    expect(state.extra).toEqual([['pack', '1915-attrition']]);
+    expect(state.pack).toBe('1915-attrition');
     const written = formatViewState({ ...state, t: Date.UTC(1915, 4, 1) });
-    expect(written).toBe('?t=1915-05-01T00:00:00Z&pack=1915-attrition');
+    // First, because it names the document the other slots are read against.
+    expect(written).toBe('?pack=1915-attrition&t=1915-05-01T00:00:00Z');
   });
 
-  it('leaves the ordinary view bare, because the seed era names itself nowhere', () => {
+  it('is the same list the boot script branches on, so `/` cannot mean two things', () => {
+    // `url-state.ts` owns how each slot is read and written; `content-bundle.ts`
+    // owns the names, because the boot script in <head> cannot import this
+    // module. If they drift, a URL could name a view the campaign app would
+    // render and the boot script would answer with the atlas.
+    expect([...KNOWN].sort()).toEqual([...VIEW_SLOTS].sort());
+  });
+
+  it('a bare view is the atlas, and anything that fills a slot is not (ADR 0024)', () => {
+    expect(namesAView('')).toBe(false);
+    expect(namesAView('?utm_source=a-footnote')).toBe(false);
+    // An empty value fills nothing — the same reading `resolvePackUrl` gives.
+    expect(namesAView('?t=')).toBe(false);
+    expect(namesAView('?pack=1915-attrition')).toBe(true);
+    expect(namesAView('?t=1914-08-20T00:00:00Z&focus=1914:marne')).toBe(true);
+    expect(namesAView('?layers=commanders')).toBe(true);
+  });
+
+  it('writes nothing when the page has no era, so a bare state stays bare', () => {
     expect(formatViewState(parseViewState(''))).toBe('');
   });
 });

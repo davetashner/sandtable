@@ -4,6 +4,7 @@
   "title": "1918-1922: the Russian Civil War",
   "subtitle": "Six fronts, no line, and a railway map instead of a front",
   "summary": "Five years, six fronts and no continuous line anywhere. This is the first pack in the project where the Western Front's whole mental model stops working: there is no trench system, no flank to turn, no front to break, and for most of the war no two armies in contact along any measurable length of ground. What there is instead is a railway network. The unit of control is the junction; the unit of movement is the armoured train and the cavalry raid; and the space between the railways is a country of villages that mostly wanted both armies to go away.\n\nIt begins with a peace that gave away a third of European Russia and ends with the state that peace made possible. In between: a Czechoslovak corps strung out over five thousand miles of the Trans-Siberian; an admiral made dictator at Omsk; a general who came within two hundred and fifty miles of Moscow and had nothing behind him; a Baltic baron holding the Crimea with a land law nobody was left to apply; a war commissar who ran the whole thing from a train; peasants who fought everybody; and a famine at the end of it that the fighting had made certain.\n\nThe honest framing is that the Whites lost more than the Reds won, and that is a contested claim, which is why it is a card and not a sentence.",
+  "arc": "russia",
   "timeRange": {
     "start": "1918-01-01T00:00:00Z",
     "end": "1922-12-30T18:00:00Z"

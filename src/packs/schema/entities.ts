@@ -654,6 +654,10 @@ export const Pack = z
     title: z.string().min(1),
     subtitle: z.string().optional(),
     summary: Markdown,
+    arc: Slug.optional().describe(
+      'Which arc this era belongs to on the atlas — "western-front", "pacific" ' +
+        '(src/atlas/arcs.ts holds the arcs and their order, ADR 0024)',
+    ),
     timeRange: TimeRange.describe('The campaign clock: the timeline spans this range'),
     region: BBox.describe(
       'Geographic extent of the pack; west > east crosses the antimeridian (a Pacific theatre)',

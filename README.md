@@ -20,9 +20,13 @@ More are on the way: [ADR 0019](docs/decisions/0019-second-world-war-arc.md)
 commits the Second World War arc to ten Pacific packs opening at Mukden in
 1931, with the European theatres after them.
 
-**The atlas (`/atlas.html`) is the index of eras.** It reads a small build-time
-manifest rather than the packs themselves, so listing twenty campaigns costs
-one request. Opening one is a navigation to `/?pack=<id>`, not a runtime swap:
+**The atlas is the home page.** `/` lists every campaign, grouped by arc; a URL
+that names a view — `/?pack=1915-attrition&t=…`, or any of ADR 0009's slots —
+opens that view of that campaign instead
+([ADR 0024](docs/decisions/0024-the-home-page-is-the-atlas.md)). It reads a
+small build-time manifest rather than the packs themselves, so listing twenty
+campaigns costs one request. Opening one is a navigation to `/?pack=<id>`, not
+a runtime swap:
 **one page load is one era**, and the pack is fetched from the app's own origin
 rather than bundled with it
 ([ADR 0018](docs/decisions/0018-fetching-the-pack.md)). That is what keeps a
@@ -81,7 +85,7 @@ design review and `perf`.
 src/engine    era-agnostic runtime (timeline, map, branches, focus)
 src/ui        React components for the three surfaces
 src/packs     scenario-pack types, schema, loader
-src/atlas     /atlas.html — the index of eras
+src/atlas     the index of eras — `/`, and `/atlas.html` beside it
 src/gallery   /gallery.html — every component, both themes, real content
 src/styles    design tokens (tokens.ts → tokens.css)
 content/      scenario packs, shared registries, threads (data, not code)

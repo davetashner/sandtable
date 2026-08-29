@@ -21,10 +21,11 @@
  * and a reader whose pack fetch just failed is exactly the reader whose next
  * request will fail too.
  *
- * **This file imports nothing** — it is compiled by both `tsconfig.app.json`
- * and `tsconfig.node.json`, like `content-bundle.ts`, and the script it emits
- * runs before any bundle does.
+ * **This file imports only `content-bundle.ts`, which imports nothing** — both
+ * are compiled by `tsconfig.app.json` and `tsconfig.node.json`, and the script
+ * this one emits runs before any bundle does.
  */
+import { VIEW_SLOTS } from './content-bundle.js';
 
 /**
  * The three faces, which are the three ways this can go wrong.
@@ -44,11 +45,22 @@ export type PackFailure = 'missing' | 'offline' | 'invalid';
 /** The ids the markup in `index.html` carries, named once so both sides agree. */
 export const BOOT_FRAME_ID = 'boot-frame';
 export const BOOT_FAILURE_ID = 'boot-failure';
+export const BOOT_NOTE_ID = 'boot-note';
+
+/** What the boot frame says while the atlas — which fetches no era — comes up. */
+export const BOOT_NOTE_ATLAS = 'Opening the atlas…';
 
 /**
  * The inline `<head>` script.
  *
- * The first three lines are ADR 0018's original hook: resolve the era, start
+ * On the campaign entry (`branching`) it first asks the question ADR 0024 puts
+ * at `/`: does this URL name a view? If it does not, the page is the atlas —
+ * there is no era to fetch, so the script does nothing but correct the boot
+ * frame's line and get out of the way. `src/main.tsx` asks the same question of
+ * the same list (`VIEW_SLOTS`) to decide which app to mount, so the fetch the
+ * `<head>` starts and the app the module graph brings up cannot disagree.
+ *
+ * The rest is ADR 0018's original hook: resolve the era, start
  * the fetch, park the promise on `window.__sandtablePack` so the loader awaits
  * the request the browser has already made rather than issuing a second one.
  * The resolution has to agree with `resolvePackUrl` in `content-bundle.ts` —
@@ -69,10 +81,29 @@ export const BOOT_FAILURE_ID = 'boot-failure';
  * event; either one, while the boot frame is still on screen, means the app
  * never got up, and `invalid` is the honest name for that.
  */
-export const bootScript = (urls: Record<string, string>, fallback: string): string =>
+export const bootScript = (
+  urls: Record<string, string>,
+  fallback: string,
+  branching = false,
+): string =>
   [
+    `(function(){`,
     `var U=${JSON.stringify(urls)},D=${JSON.stringify(fallback)};`,
-    `var w=new URLSearchParams(location.search).get("pack");`,
+    `var q=new URLSearchParams(location.search);`,
+    // The homepage branch (ADR 0024). A URL that fills no slot of the contract
+    // names no view, so this page is the atlas: there is no era to fetch, and
+    // saying "laying out the campaign" at a reader who has not chosen one is a
+    // small lie the boot frame does not need to tell. Only the campaign entry
+    // branches — the gallery is one page with one era and always wants it.
+    ...(branching
+      ? [
+          `var S=${JSON.stringify([...VIEW_SLOTS])},v=0,j;`,
+          `for(j=0;j<S.length;j++)if(q.get(S[j]))v=1;`,
+          `if(!v){var n=document.getElementById(${JSON.stringify(BOOT_NOTE_ID)});`,
+          `if(n)n.textContent=${JSON.stringify(BOOT_NOTE_ATLAS)};return}`,
+        ]
+      : []),
+    `var w=q.get("pack");`,
     `var u=(w&&U[w])||U[D]||"";window.__sandtablePackUrl=u;`,
     `var s=0;function f(k){`,
     `if(s)return;var b=document.getElementById(${JSON.stringify(BOOT_FAILURE_ID)});if(!b)return;s=1;`,
@@ -91,4 +122,5 @@ export const bootScript = (urls: Record<string, string>, fallback: string): stri
     `p.catch(function(e){f((e&&e.face)||"offline")});window.__sandtablePack=p;`,
     `addEventListener("unhandledrejection",function(){f("invalid")});`,
     `addEventListener("error",function(){f("invalid")});`,
+    `})()`,
   ].join('');
