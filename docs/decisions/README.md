@@ -20,7 +20,7 @@ is merged.
 | [0008](0008-audio.md)                    | Background score: generated audio, provenance and playback                                | `sand-1l0.34.1` | accepted                         |
 | [0009](0009-url-contract.md)             | The URL is the view: a citable deep-link contract                                         | `sand-shn.3`    | accepted                         |
 | [0010](0010-type-floor.md)               | The type floor: nothing below 11px, and one mark that is not type                         | `sand-neh.3`    | accepted                         |
-| [0011](0011-visual-gate.md)              | The visual gate: structure is checked, pixels are evidence                                | `sand-pmz.2`    | accepted                         |
+| [0011](0011-visual-gate.md)              | The visual gate: structure is checked, pixels are evidence                                | `sand-pmz.2`    | accepted (amended `sand-pmz.9`)  |
 | [0012](0012-photographs.md)              | Photographs in the war room: toned at rest, one picture per beat                          | `sand-y0u.4`    | accepted                         |
 | [0013](0013-chapter-index.md)            | The chapter index: a table of contents, not a chip row                                    | `sand-neh.7`    | accepted (amended `sand-neh.23`) |
 | [0014](0014-plate-sets.md)               | The plate set: four pictures on one axis, and why that is not a gallery                   | `sand-neh.16`   | accepted                         |
