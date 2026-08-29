@@ -390,7 +390,7 @@ Ten, and this is **not** the Pacific bibliography — `sand-lry.14` still owes
 that, and this is only the subset the forty-three bios needed in order to cite
 anything at all:
 
-`source:toll-2012`, `source:toll-2015`, `source:toll-2020` (the Pacific War
+`source:toll-2011`, `source:toll-2015`, `source:toll-2020` (the Pacific War
 trilogy); `source:morison-usnowii` (the semi-official American naval history,
 with a note about its verdicts on Fletcher and Halsey); `source:parshall-tully-2005`
 (_Shattered Sword_, and the reason Fuchida is cited against rather than from);
