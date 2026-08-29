@@ -978,8 +978,16 @@ function checkClock(ctx: Ctx, path: string, c: Timetable) {
   for (const m of c.milestones) {
     if (ids.has(m.id)) ctx.error(path, `duplicate milestone id ${m.id}`, c.id);
     ids.add(m.id);
-    if (m.plannedDay === undefined && !m.actualAt)
-      ctx.error(path, `milestone ${m.id} needs a plannedDay or an actualAt`, c.id);
+    if (m.plannedDay === undefined && m.plannedAt === undefined && !m.actualAt)
+      ctx.error(path, `milestone ${m.id} needs a plannedDay, a plannedAt or an actualAt`, c.id);
+    if (m.plannedDay !== undefined && m.plannedAt !== undefined)
+      ctx.error(
+        path,
+        `milestone ${m.id} has both plannedDay and plannedAt; give one — plannedAt is the day, measured from the origin`,
+        c.id,
+      );
+    if (m.plannedAt && t(m.plannedAt) < t(c.origin))
+      ctx.error(path, `milestone ${m.id}: plannedAt is before the timetable origin`, c.id);
     if (m.actualAt && t(m.actualAt) < t(c.origin))
       ctx.error(path, `milestone ${m.id}: actualAt is before the timetable origin`, c.id);
     if (m.place) ctx.ref(path, c.id, m.place, ['place'], `milestone ${m.id} place`);

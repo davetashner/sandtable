@@ -839,7 +839,7 @@ describe('validateContent', () => {
     };
     const msgs = messages(validateContent(raw));
     expect(msgs).toContainEqual(
-      expect.stringMatching(/milestone a needs a plannedDay or an actualAt/),
+      expect.stringMatching(/milestone a needs a plannedDay, a plannedAt or an actualAt/),
     );
     expect(msgs).toContainEqual(expect.stringMatching(/duplicate milestone id a/));
     expect(msgs).toContainEqual(
@@ -851,6 +851,27 @@ describe('validateContent', () => {
     expect(msgs).toContainEqual(
       expect.stringMatching(/assumption footnote \[\^nope\] is not one of the timetable's sources/),
     );
+    // sand-lry.24: a plan may name an instant instead of a day, but not both
+    c['clocks.json'] = {
+      path: 'eras/1914-test/clocks.json',
+      data: [
+        clock({
+          milestones: [
+            { id: 'ok', label: 'An hour', plannedAt: '1914-08-14T13:00:00Z' },
+            { id: 'both', label: 'Both', plannedDay: 12, plannedAt: '1914-08-14T13:00:00Z' },
+            { id: 'early', label: 'Early', plannedAt: '1914-07-30T00:00:00Z' },
+          ],
+        }),
+      ],
+    };
+    const later = messages(validateContent(raw));
+    expect(later).toContainEqual(
+      expect.stringMatching(/milestone both has both plannedDay and plannedAt/),
+    );
+    expect(later).toContainEqual(
+      expect.stringMatching(/milestone early: plannedAt is before the timetable origin/),
+    );
+    expect(later.filter((m) => /milestone ok/.test(m))).toEqual([]);
   });
 
   it('checks cast entries: person and side must exist, citations required, bio footnotes must name a source, one entry per person', () => {

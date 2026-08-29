@@ -5,7 +5,14 @@
  * or as ?card=<id>.
  */
 import { withFootnotes } from '../engine/beats.js';
-import { dayOf, slipLabel } from '../engine/timetable.js';
+import {
+  clockLabel,
+  dayOf,
+  plannedDayOf,
+  plannedLabel,
+  scaleOf,
+  slipLabel,
+} from '../engine/timetable.js';
 import type { Source, Timetable } from '../packs/schema/index.js';
 import { Card } from './Card.js';
 import { whenLabel } from './ScienceCardView.js';
@@ -44,12 +51,14 @@ export function ClockCardView({ clock, sources, onBack }: ClockCardViewProps) {
         <tbody>
           {clock.milestones.map((m) => {
             const actualDay = m.actualAt ? dayOf(clock, Date.parse(m.actualAt)) : undefined;
+            const plannedDay = plannedDayOf(clock, m);
+            const scale = scaleOf(m);
             const slip =
-              m.plannedDay !== undefined && actualDay !== undefined
-                ? actualDay - m.plannedDay
+              plannedDay !== undefined && actualDay !== undefined
+                ? actualDay - plannedDay
                 : undefined;
             return (
-              <tr key={m.id} data-never={(m.plannedDay !== undefined && !m.actualAt) || undefined}>
+              <tr key={m.id} data-never={(plannedDay !== undefined && !m.actualAt) || undefined}>
                 <th scope="row">
                   {m.label}
                   {m.note && (
@@ -58,18 +67,20 @@ export function ClockCardView({ clock, sources, onBack }: ClockCardViewProps) {
                     </span>
                   )}
                 </th>
-                <td>{m.plannedDay !== undefined ? `${dayLabel}${m.plannedDay}` : '—'}</td>
+                <td>{plannedLabel(clock, m, dayLabel) ?? '—'}</td>
                 <td>
                   {m.actualAt
-                    ? `${whenLabel(m.actualAt.slice(0, 10))} (${dayLabel}${Math.floor(actualDay!)})`
-                    : m.plannedDay !== undefined
+                    ? `${whenLabel(m.actualAt.slice(0, 10))} (${dayLabel}${Math.floor(actualDay!)}${
+                        scale === 'clock' ? ` ${clockLabel(Date.parse(m.actualAt))}` : ''
+                      })`
+                    : plannedDay !== undefined
                       ? 'never'
                       : '—'}
                 </td>
                 <td>
                   {slip !== undefined
-                    ? slipLabel(slip)
-                    : m.plannedDay !== undefined && !m.actualAt
+                    ? slipLabel(slip, scale)
+                    : plannedDay !== undefined && !m.actualAt
                       ? 'not reached'
                       : '—'}
                 </td>

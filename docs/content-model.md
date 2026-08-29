@@ -328,9 +328,14 @@ generated JSON Schema; this is the intent of each.
 - **Timetable** (`clocks.json`) — a plan measured against what happened: a
   day-0 `origin`, the plan's `assumption` (footnoted), and `milestones` each
   with the `plannedDay` the plan expected and the `actualAt` it was really
-  reached (absent if never; reality-only marks have only `actualAt`). Rendered
-  as the plan-vs-reality gauges under the timeline and a card (`sand-1l0.18`);
-  any later era's plan vs. actual fits. Required sources.
+  reached (absent if never; reality-only marks have only `actualAt`). A plan
+  that turns on the clock rather than the calendar writes `plannedAt`, an
+  instant, instead of `plannedDay` — never both — or a fractional
+  `plannedDay`; the gauge then reads the slip in minutes or hours rather than
+  days, because Tokyo's memorandum was eighty minutes late and a day count
+  rounds that to nothing (`sand-lry.24`). Whole-day milestones are unaffected.
+  Rendered as the plan-vs-reality gauges under the timeline and a card
+  (`sand-1l0.18`); any later era's plan vs. actual fits. Required sources.
 - **Tally** (`tallies.json`) — a running strength ledger: a `start` value in
   some `unit`, dated `entries` with a `delta` (negative when strength leaves),
   the formations and place involved and a map position, and optional named
