@@ -172,3 +172,12 @@
   overflow-wrap: anywhere;
   word-break: break-word;
 }
+
+/* `copy-link.css` hides this label below 640px, which is right in the header:
+   the glyph sits in a tight row of switches and the space is real. The
+   citation's copy control is not in that row — it stands alone at the end of a
+   paragraph of prose, where a bare ⧉ with no word beside it is a guess
+   (`sand-shn.5.2`). */
+.bib__group .copy-link__label {
+  display: inline;
+}
