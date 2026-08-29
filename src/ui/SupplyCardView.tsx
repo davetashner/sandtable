@@ -5,7 +5,7 @@
  */
 import { withFootnotes } from '../engine/beats.js';
 import { useClock } from '../engine/ClockContext.js';
-import { routePoints, supplyStatus } from '../engine/logistics.js';
+import { routeLegs, routePoints, supplyStatus } from '../engine/logistics.js';
 import type { Route, Source, SupplyLine } from '../packs/schema/index.js';
 import { Card } from './Card.js';
 import type { EntityLabeller } from './TechCardView.js';
@@ -23,7 +23,7 @@ export function SupplyCardView({ line, routes, sources, labeller, onBack }: Supp
   const { now } = useClock();
   const st = supplyStatus(
     line,
-    routePoints(routes, line.army),
+    routeLegs(routes, line.army),
     routePoints(routes, line.railhead),
     now,
   );
