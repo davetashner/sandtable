@@ -134,6 +134,8 @@ export interface PaceFinding {
   hours: number;
   /** km allowed over these hours at the bar that was broken. */
   allowed: number;
+  /** km/h of the bar that was broken — the band itself, before the hours. */
+  bar: number;
   level: 'error' | 'warning';
   /** Whether the bar came from the pack's own table or from the 1914 default. */
   declared: boolean;
@@ -186,6 +188,7 @@ export function paceFindings(
         km,
         hours,
         allowed: allowedKm(pace.limit, hours, tolerance),
+        bar: pace.limit,
         level: 'error',
         declared: pace.declared,
       });
@@ -195,6 +198,7 @@ export function paceFindings(
         km,
         hours,
         allowed: allowedKm(pace.sustained, hours, tolerance),
+        bar: pace.sustained,
         level: 'warning',
         declared: pace.declared,
       });
@@ -216,18 +220,28 @@ const round = (n: number, places = 0) => {
  * was being told to name a mode that does not exist, when what they needed was
  * `pack.json#pace`. Under the pack's own table that advice would be circular —
  * the number is already theirs — so it points at the number instead.
+ *
+ * The two rates are printed in the **same unit** (`sand-23b.61`). The message
+ * used to put the leg's km/day next to the allowed km over those hours — "989
+ * km/day … (496 km)" — and the two numbers invite a comparison they do not
+ * support: 496 is a distance including the position tolerance, not a daily
+ * rate, so the leg reads as twice its band when it is about 1.6 times it. That
+ * misreading is what filed `sand-23b.61` against a route whose data was right.
+ * So the band goes next to the leg as km/day, and the allowed distance stays,
+ * labelled as what it is — the number the check actually compared.
  */
 export function paceMessage(f: PaceFinding, mode: MovementMode): string {
   const leg = `waypoints[${f.index}] covers ${round(f.km)} km in ${round(f.hours, 1)} h (${round(
     (f.km / f.hours) * 24,
   )} km/day)`;
   const band = f.declared ? 'this pack’s declared pace' : 'the default 1914 pace';
+  const bar = `${round(f.bar * 24)} km/day, so ${round(f.allowed)} km over these hours`;
   if (f.level === 'warning')
-    return `${leg} — faster than ${mode} sustained at ${band} (${round(f.allowed)} km); check the dates and the mode`;
+    return `${leg} — faster than ${mode} sustained at ${band} (${bar}); check the dates and the mode`;
   const fix = f.declared
     ? `Check the dates and the positions, or the number in pack.json#pace.${mode}`
     : `Name the mode that carried it (motor, rail, sea, air), split the transfer into a route of its own, or — if this era’s ${mode} outran 1914’s — declare pack.json#pace.${mode} with the sources for the number`;
-  return `${leg} — beyond ${mode} at ${band}, which could not make more than ${round(f.allowed)} km in that time. ${fix}`;
+  return `${leg} — beyond ${mode} at ${band} (${round(f.bar * 24)} km/day), which could not make more than ${round(f.allowed)} km in that time. ${fix}`;
 }
 
 /** The sentences the validator prints for a pack's own pace table. */
