@@ -110,3 +110,35 @@ together or not at all. That is a real experiment and nobody has run it.
   boot path. Anyone proposing to move the map cost around should reproduce the
   harness first — the numbers here were all produced with it, and the one
   conclusion that mattered was the opposite of the one that looked obvious.
+
+## Amendment — 2026-08-29: the first lever, taken (`sand-pmz.40`)
+
+The per-type audit this record asked for was run the same day, one build with
+a `?dropDeck=` filter and seven probes. No single type dominates — removing any
+one saves roughly 0.9 s of a 4342 ms task, except `IconLayer` at 335 ms — so
+"find the expensive layer" is dead as a strategy, which is worth knowing.
+
+`TripsLayer` was the exception worth taking, not because it was the most
+expensive but because it was **free to remove**: it ran with `fadeTrail: false`
+and an unbounded `trailLength`, so every property distinguishing it from a path
+was switched off. It is now a `PathLayer` over a path sliced at the clock.
+
+|        | worst task                |
+| ------ | ------------------------- |
+| before | 4342 ms                   |
+| after  | 3412 / 3394 ms (two runs) |
+
+The frame-rate cost that swap looked certain to have does not exist: 16.5 fps
+playing before, 18.3 after, frames over 50 ms falling from 99 to 80. Uploading
+a short sliced path is cheaper than deriving the same trail from timestamps in
+the shader every frame.
+
+The consequence nobody was aiming at is the larger one. `@deck.gl/geo-layers`
+was in the tree for that one symbol, and it carried the `@luma.gl/gltf` →
+`@loaders.gl/textures` → `texture-compressor` → `image-size` chain that
+`docs/dependency-advisories.md` had accepted as unfixable. Removing the layer
+removed the package: **`npm audit --omit=dev` goes from eight high-severity
+production advisories to none**, and the permanent Dependabot push warning is
+gone. That document had already named this exact escape as "cheapest we
+control"; it was taken for performance reasons and collected the advisories on
+the way past.

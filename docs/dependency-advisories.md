@@ -6,9 +6,16 @@ decision or a shrug, and only one of those survives review. Stories:
 `sand-pmz.26`, `sand-pmz.27`.
 
 Re-check with `npm audit`, and re-check the bundle claim below with
-`npm run build` and a grep of `dist/app/`, before trusting any of this. Last
-re-checked 2026-08-28: eleven, unchanged, and the two `image-size` ones are
-still the only alerts GitHub raises on a push.
+`npm run build` and a grep of `dist/app/`, before trusting any of this.
+
+**Last re-checked 2026-08-29: four, and `--omit=dev` reports none.** The count
+was eleven, with eight of them counted as production. The escape this document
+named as "cheapest we control" was taken — `TripsLayer` is gone
+(`sand-pmz.40`), `@deck.gl/geo-layers` left the tree, and the whole
+`@luma.gl/gltf` → `@loaders.gl/textures` → `texture-compressor` →
+`image-size` chain went with it. The two `image-size` alerts GitHub raised on
+every push are gone with it, so the permanent push warning this file used to
+end by explaining how to silence is no longer there to silence.
 
 ## The one fact that governs the rest
 
@@ -19,11 +26,14 @@ Verified on the built output rather than reasoned from the dependency graph:
 - No chunk under `dist/app/` contains `image-size`'s parsers, or
   `texture-compressor`. The only symbol matching `imageSize` is React DOM's
   `imageSizes`/`imageSrcSet` attribute table.
-- `@deck.gl/geo-layers` is a production dependency, but the only thing the app
-  imports from it is `TripsLayer` (`src/engine/layers/movement-layers.ts`), and
-  the only geo-layers symbol in the map chunk is `TripsLayer`. The
-  `@luma.gl/gltf` → `@loaders.gl/textures` → `texture-compressor` →
-  `image-size` chain is tree-shaken away.
+- `@deck.gl/geo-layers` **is no longer a dependency at all** (`sand-pmz.40`).
+  It was here for one symbol, `TripsLayer`, in
+  `src/engine/layers/movement-layers.ts`. That layer ran with `fadeTrail:
+false` and an unbounded `trailLength` — every property distinguishing it from
+  a path was switched off — so it was replaced by a `PathLayer` over a path
+  sliced at the clock, and the package left the tree. Kept in this list because
+  the reasoning below is still the right reasoning about a bundled dependency;
+  only this one stopped being one.
 
 So `npm audit --omit=dev` counting eight of these as "production" is a
 statement about the dependency _tree_, not about the _bundle_. Both matter —
@@ -76,26 +86,25 @@ Accepted because it cannot be fixed, it does not ship (above), and nothing in
 the build feeds it an ICNS or JXL file — the media pipeline is `sharp`, and it
 reads PNG and JPEG masters we fetched ourselves.
 
-**Revisit when** `image-size` ships a fix, or when deck.gl moves to loaders.gl
-v5 — `@loaders.gl/textures@5.0.0-alpha.2` has already dropped
-`texture-compressor` from its dependencies, so the chain dies of its own accord
-on that upgrade. That is now the likeliest exit and it costs us nothing to wait
-for it. Cheapest escape we control: if `TripsLayer` is ever replaced with a
-hand-rolled trail layer, `@deck.gl/geo-layers` leaves the tree and takes all
-eight with it.
+**Resolved 2026-08-29, by the escape this section named** (`sand-pmz.40`).
 
-Because there is no fix to schedule, the push warning is permanent until one of
-those lands. Silencing it is a repo-settings decision rather than a code one, so
-it is left to the owner:
+The paragraph that stood here said: "Cheapest escape we control: if
+`TripsLayer` is ever replaced with a hand-rolled trail layer,
+`@deck.gl/geo-layers` leaves the tree and takes all eight with it." That is
+what happened, and it was not undertaken for the advisories — it came out of a
+boot-performance audit that measured `TripsLayer` costing about 917 ms of
+shader compilation on a phone for a layer whose distinguishing features were
+all switched off.
 
-```bash
-gh api --method PATCH repos/:owner/:repo/dependabot/alerts/3 \
-  -f state=dismissed -f dismissed_reason=tolerable_risk \
-  -f dismissed_comment='No patched version; not in the bundle. docs/dependency-advisories.md'
-```
+`npm audit --omit=dev` now reports none, and `npm audit` four rather than
+eleven. The two `image-size` alerts were the only ones GitHub raised on a push,
+so there is no longer a permanent push warning, and the `gh api` snippet that
+used to sit here for silencing it has gone with the reason for it.
 
-Dismissal is reversible and Dependabot re-opens the alert if the dependency
-changes, so it loses nothing except the reminder.
+The rest of the reasoning is kept above rather than deleted, because it is
+still how to think about a bundled advisory the next time one lands — and
+because "it does not reach a reader" was true and is still the fact that
+governs the rest.
 
 ### `file-type` — do not override this one
 

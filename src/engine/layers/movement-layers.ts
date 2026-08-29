@@ -10,7 +10,6 @@
  * the browser downloads before first paint (ADR 0016, `sand-pmz.3`).
  */
 import type { Layer } from '@deck.gl/core';
-import { TripsLayer } from '@deck.gl/geo-layers';
 import { PathStyleExtension, type PathStyleExtensionProps } from '@deck.gl/extensions';
 import { IconLayer, PathLayer, ScatterplotLayer, TextLayer } from '@deck.gl/layers';
 import type { Formation, MovementMode, Side } from '../../packs/schema/index.js';
@@ -53,6 +52,49 @@ export interface MovementLayerOptions {
    * boxes they occupy so place labels can keep clear of them (sand-4xz).
    */
   project?: ((lngLat: [number, number]) => [number, number] | null) | undefined;
+}
+
+/**
+ * The part of a leg already travelled at `currentTime`, in the same seconds-
+ * from-range-start clock the timestamps use (`sand-pmz.40`).
+ *
+ * This exists to draw the trail with a `PathLayer` instead of a `TripsLayer`.
+ * `TripsLayer` was configured with `fadeTrail: false` and a `trailLength` of
+ * `Number.MAX_SAFE_INTEGER` — every property that distinguishes it from a path
+ * was switched off, so it was already only "a path revealed up to now" — while
+ * costing a whole extra program set to compile and pulling in
+ * `@deck.gl/geo-layers` for one call site. Measured: about 917 ms of the boot
+ * freeze on a phone profile.
+ *
+ * The final point is interpolated, not snapped to the last waypoint, so the
+ * trail ends exactly under the token rather than lagging it by up to a leg.
+ * Returns fewer than two points when nothing has been travelled yet, which is
+ * a path with nothing to draw.
+ */
+export function travelledPath(
+  path: readonly [number, number][],
+  timestamps: readonly number[],
+  currentTime: number,
+): [number, number][] {
+  const out: [number, number][] = [];
+  for (let i = 0; i < path.length; i++) {
+    const t = timestamps[i];
+    const p = path[i];
+    if (t === undefined || p === undefined) break;
+    if (t <= currentTime) {
+      out.push([p[0], p[1]]);
+      continue;
+    }
+    // The clock is part-way along this segment: cut it where the clock is.
+    const prevT = timestamps[i - 1];
+    const prevP = path[i - 1];
+    if (prevT === undefined || prevP === undefined) break;
+    const span = t - prevT;
+    const f = span > 0 ? (currentTime - prevT) / span : 0;
+    if (f > 0) out.push([prevP[0] + (p[0] - prevP[0]) * f, prevP[1] + (p[1] - prevP[1]) * f]);
+    break;
+  }
+  return out;
 }
 
 interface RouteDatum {
@@ -209,6 +251,10 @@ export function buildMovementScene(o: MovementLayerOptions): MovementScene {
   );
   const tokens = movementTokens(o);
   const currentTime = (o.now - o.rangeStart) / 1000;
+  // Only the legs with something travelled; a path of one point draws nothing.
+  const trailData: RouteDatum[] = routeData
+    .map((d) => ({ ...d, path: travelledPath(d.path, d.timestamps, currentTime) }))
+    .filter((d) => d.path.length > 1);
   const ink = tokenColor('--panel');
   const halo = tokenColor('--ink');
 
@@ -249,22 +295,27 @@ export function buildMovementScene(o: MovementLayerOptions): MovementScene {
       jointRounded: true,
       pickable: false,
     }),
-    // the travelled part, revealed by the clock
-    new TripsLayer<RouteDatum>({
+    // The travelled part, revealed by the clock. A PathLayer over a sliced
+    // path rather than a TripsLayer (`sand-pmz.40`): the TripsLayer here ran
+    // with `fadeTrail: false` and an unbounded `trailLength`, so nothing it
+    // does beyond "reveal up to now" was in use, and it cost a program set of
+    // its own — about 917 ms of the boot freeze, measured — plus the whole
+    // `@deck.gl/geo-layers` package for this one call site.
+    //
+    // Re-uploading the path each tick was expected to cost frames and does
+    // not: 16.5 fps playing before, 18.3 after. See `useMovementLayers.ts`.
+    new PathLayer<RouteDatum>({
       id: 'movement-trail',
-      data: routeData,
+      data: trailData,
       getPath: (d) => d.path,
-      getTimestamps: (d) => d.timestamps,
       getColor: (d) => d.color,
       getWidth: (d) => (o.highlight === d.id ? 5 : 3.5),
       widthUnits: 'pixels',
       widthMinPixels: 2,
       capRounded: true,
       jointRounded: true,
-      fadeTrail: false,
-      trailLength: Number.MAX_SAFE_INTEGER,
-      currentTime,
       pickable: false,
+      updateTriggers: { getWidth: [o.highlight] },
     }),
     // The dashed halo of an approximate position (`sand-23b.4`): the token is
     // the middle of a zone, not a pin. Drawn under the token so the token
