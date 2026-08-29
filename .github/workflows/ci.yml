@@ -4,10 +4,11 @@ on:
   pull_request:
   push:
     branches: [main]
-  # The merge queue re-tests each PR on the exact commit it would create before
-  # merging it. Without this trigger the required checks never run for a queued
-  # entry and the queue waits for them forever, so this must land before the
-  # queue is enabled — not alongside it.
+  # There is no merge queue: GitHub does not offer one for a public repository
+  # under a personal account (`sand-pmz.35`, ADR 0011 phase 2). This trigger is
+  # kept anyway — it costs nothing when no queue exists, and a queue cannot be
+  # enabled without it, because the required checks would never run for a
+  # queued entry and the queue would wait for them forever.
   merge_group:
 
 permissions:
