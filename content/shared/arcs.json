@@ -1,0 +1,35 @@
+{
+  "$comment": "The arcs the atlas groups its eras into, in the order they are shown (ADR 0024, sand-shn.14). A pack declares its arc in pack.json#arc; an arc's title and argument are editorial statements about the project — what these campaigns are together — so they live in content, not in the app. An arc with no packs is not shown, which is why this list can name the shape of the whole thing before the content for it exists.",
+  "arcs": [
+    {
+      "id": "prequels",
+      "title": "Before the wars",
+      "argument": "The campaigns the twentieth century was still arguing with in 1914."
+    },
+    {
+      "id": "western-front",
+      "title": "The Western Front, 1914–1918",
+      "argument": "A war of movement that ended in a line, and four years of trying to break it."
+    },
+    {
+      "id": "eastern-front",
+      "title": "The Eastern Front, 1914–1917",
+      "argument": "The theatre with the room to manoeuvre, and the empire that could not afford it."
+    },
+    {
+      "id": "russia",
+      "title": "Revolution and civil war in Russia, 1917–1922",
+      "argument": "An empire that left one war by starting another, and did not stop for five years."
+    },
+    {
+      "id": "pacific",
+      "title": "The Pacific War, 1931–1945",
+      "argument": "An ocean crossed one airfield at a time — beginning ten years early, in Manchuria."
+    },
+    {
+      "id": "europe-1939",
+      "title": "The Second World War in Europe",
+      "argument": "The continent that was told what was coming and watched it arrive anyway."
+    }
+  ]
+}

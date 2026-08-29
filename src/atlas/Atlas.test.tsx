@@ -8,11 +8,20 @@ import { join } from 'node:path';
 import { describe, expect, it, vi, afterEach } from 'vitest';
 import { render, screen, waitFor, within } from '@testing-library/react';
 import { resolvePackUrl, namesAView, PACK_SLOT } from '../packs/content-bundle.js';
-import { ARCS, groupByArc } from './arcs.js';
+import { groupByArc, type Arc } from './arcs.js';
+
+/**
+ * The arc table as an author wrote it. Read rather than restated, so this
+ * suite tests the file the atlas actually ships (`sand-shn.14`).
+ */
+const AUTHORED: Arc[] = (
+  JSON.parse(readFileSync(join('content', 'shared', 'arcs.json'), 'utf8')) as { arcs: Arc[] }
+).arcs;
 import { Atlas } from './Atlas.js';
 
 const INDEX = {
   default: '1914-schlieffen-marne',
+  arcs: AUTHORED,
   packs: [
     {
       id: '1914-schlieffen-marne',
@@ -148,26 +157,47 @@ describe('arcs (ADR 0024)', () => {
       .filter((e) => e.isDirectory())
       .map((e) => e.name);
     expect(ids.length).toBeGreaterThan(0);
-    const known = new Set(ARCS.map((a) => a.id));
+    const known = new Set(AUTHORED.map((a) => a.id));
     for (const id of ids) {
       const pack = JSON.parse(readFileSync(join(eras, id, 'pack.json'), 'utf8')) as {
         arc?: string;
       };
       expect(
         known.has(pack.arc ?? ''),
-        `${id}/pack.json declares arc "${pack.arc ?? '(none)'}", which src/atlas/arcs.ts ` +
-          `does not know. Set pack.json#arc to one of: ${ARCS.map((a) => a.id).join(', ')} ` +
-          `— or add an arc to that table.`,
+        `${id}/pack.json declares arc "${pack.arc ?? '(none)'}", which ` +
+          `content/shared/arcs.json does not name. Set pack.json#arc to one of: ` +
+          `${AUTHORED.map((a) => a.id).join(', ')} — or add an arc to that file.`,
       ).toBe(true);
     }
   });
 
+  it('reads the table from content, so adding an arc is authoring', () => {
+    // The whole point of the second half of `sand-shn.14`: an arc the app has
+    // never heard of groups correctly, because the app no longer holds a list.
+    const invented: Arc[] = [
+      { id: 'invented', title: 'An arc added by an author', argument: 'One line about it.' },
+    ];
+    const groups = groupByArc([{ id: 'x', arc: 'invented' }], invented);
+    expect(groups).toHaveLength(1);
+    expect(groups[0]!.arc?.title).toBe('An arc added by an author');
+    expect(groups[0]!.packs.map((p) => p.id)).toEqual(['x']);
+  });
+
+  it('lists every era when the index carries no arc table at all', async () => {
+    // An index emitted before the field existed, or a malformed arcs.json that
+    // `readArcs` declined. A front door must not lose a campaign either way.
+    stub({ ...INDEX, arcs: undefined });
+    render(<Atlas />);
+    const heads = await screen.findAllByRole('heading', { level: 2 });
+    expect(heads.map((h) => h.textContent)).toEqual(['Elsewhere']);
+    expect(within(heads[0]!.closest('section')!).getAllByRole('link')).toHaveLength(3);
+  });
+
   it('shows only the arcs that have eras, and never drops one it does not know', () => {
-    const groups = groupByArc([
-      { id: 'a', arc: 'pacific' },
-      { id: 'b', arc: 'not-an-arc' },
-      { id: 'c' },
-    ]);
+    const groups = groupByArc(
+      [{ id: 'a', arc: 'pacific' }, { id: 'b', arc: 'not-an-arc' }, { id: 'c' }],
+      AUTHORED,
+    );
     expect(groups.map((g) => g.arc?.id ?? null)).toEqual(['pacific', null]);
     expect(groups[1]!.packs.map((p) => p.id)).toEqual(['b', 'c']);
   });

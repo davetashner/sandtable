@@ -72,6 +72,42 @@ export interface PackSummary {
   bytes: number;
 }
 
+/** An arc as `content/shared/arcs.json` declares it (ADR 0024, `sand-shn.14`). */
+export interface ArcSummary {
+  id: string;
+  title: string;
+  argument: string;
+}
+
+/**
+ * The arc table, read from content so that adding an arc is authoring rather
+ * than a code change. A missing or malformed file yields an empty table: the
+ * atlas then files every era under its "Elsewhere" group and still lists all
+ * of them, which is the same failure mode as an unknown slug and is far better
+ * than a front door that throws. `validate:content` is what refuses the
+ * malformed file loudly, at the point where an author can act on it.
+ */
+export function readArcs(root: string): ArcSummary[] {
+  let raw: unknown;
+  try {
+    raw = readJson(join(root, 'shared', 'arcs.json'));
+  } catch {
+    return [];
+  }
+  const arcs = (raw as { arcs?: unknown })?.arcs;
+  if (!Array.isArray(arcs)) return [];
+  return arcs
+    .filter((a): a is ArcSummary => {
+      const o = a as Record<string, unknown>;
+      return (
+        typeof o?.['id'] === 'string' &&
+        typeof o?.['title'] === 'string' &&
+        typeof o?.['argument'] === 'string'
+      );
+    })
+    .map((a) => ({ id: a.id, title: a.title, argument: a.argument }));
+}
+
 export function packSummary(root: string, id: string): PackSummary {
   const pack = readJson(join(root, 'eras', id, PACK_FILE)) as Record<string, unknown>;
   const json = contentBundleJson(root, id);
