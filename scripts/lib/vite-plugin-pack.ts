@@ -28,6 +28,7 @@ import {
   contentBundleJson,
   listPackIds,
   packSummary,
+  readArcs,
 } from './pack-bundle.js';
 
 const VIRTUAL = 'virtual:sandtable-pack';
@@ -52,7 +53,13 @@ export function packBundlePlugin(id = SEED_PACK_ID): Plugin {
   };
   const json = (packId = id) => contentBundleJson(contentRoot, packId);
   const indexJson = () =>
-    JSON.stringify({ default: id, packs: ids().map((p) => packSummary(contentRoot, p)) });
+    JSON.stringify({
+      default: id,
+      // The arc table rides along on the index the atlas already fetches, so
+      // grouping the front door costs no extra request (`sand-shn.14`).
+      arcs: readArcs(contentRoot),
+      packs: ids().map((p) => packSummary(contentRoot, p)),
+    });
 
   return {
     name: 'sandtable:pack-bundle',

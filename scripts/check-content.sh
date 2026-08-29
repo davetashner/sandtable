@@ -124,7 +124,48 @@ check_index media content/shared/media media.json \
 check_index audio content/shared/audio cue.json \
   content/shared/audio/index.json 'npm run audio'
 
-echo "7) documented facts match the code they describe"
+echo "7) the atlas arc table"
+# `content/shared/arcs.json` groups the front door (`sand-shn.14`). The build
+# reads it with `readArcs`, which returns an empty table rather than throwing —
+# a front door that loses a campaign is worse than an untidy one — so nothing
+# downstream would ever report a typo. This is where an author finds out.
+# The cross-reference (every pack.json#arc is named here) is asserted by
+# src/atlas/Atlas.test.tsx and is deliberately not repeated.
+arcs_file=content/shared/arcs.json
+if [ ! -f "$arcs_file" ]; then
+  echo "  ✗ $arcs_file is missing — the atlas would file every era under Elsewhere"
+  fail=1
+elif ! jq -e . "$arcs_file" >/dev/null 2>&1; then
+  echo "  ✗ $arcs_file is not valid JSON"
+  fail=1
+else
+  # Always prints a string: the problem, or empty for none. `jq -e` cannot be
+  # used to mean "no problems" here — with no output it exits non-zero, which
+  # reads identically to a parse failure.
+  problems=$(jq -r '
+    if (.arcs | type) != "array" then "arcs must be an array"
+    elif (.arcs | length) == 0 then "arcs is empty"
+    else
+      ([.arcs[] | select(
+          (.id | type) != "string" or (.id | length) == 0
+          or (.title | type) != "string" or (.title | length) == 0
+          or (.argument | type) != "string" or (.argument | length) == 0
+        ) | (.id // "(no id)")]) as $bad
+      | ([.arcs[].id]) as $ids
+      | if ($bad | length) > 0
+        then "each arc needs a non-empty id, title and argument; bad: " + ($bad | join(", "))
+        elif ($ids | length) != ($ids | unique | length) then "duplicate arc ids"
+        else "" end
+    end' "$arcs_file")
+  if [ -n "$problems" ]; then
+    echo "  ✗ $arcs_file: $problems"
+    fail=1
+  else
+    echo "  ✓ $(jq -r '.arcs | length' "$arcs_file") arc(s), each with an argument"
+  fi
+fi
+
+echo "8) documented facts match the code they describe"
 # A fact that lives in code gets restated in prose; the code moves, the prose
 # does not (`sand-pmz.37`). Four of those in one week. The derivations and the
 # reason each idiom is safe to match are in the script; it lives here because

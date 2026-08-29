@@ -19,7 +19,7 @@
  */
 import { useEffect, useState } from 'react';
 import { PACK_DEFAULT, PACK_INDEX } from 'virtual:sandtable-pack';
-import { groupByArc } from './arcs.js';
+import { groupByArc, type Arc } from './arcs.js';
 import './atlas.css';
 
 interface PackSummary {
@@ -36,6 +36,13 @@ interface PackSummary {
 
 interface PackIndex {
   default: string;
+  /**
+   * The arc table, authored in `content/shared/arcs.json` and carried on this
+   * index so the atlas costs one request (`sand-shn.14`). Optional because an
+   * index emitted before that field existed must still render: an absent table
+   * groups every era under "Elsewhere", which lists all of them.
+   */
+  arcs?: Arc[];
   packs: PackSummary[];
 }
 
@@ -112,7 +119,7 @@ export function Atlas() {
       )}
 
       {state.kind === 'ready' &&
-        groupByArc(state.index.packs).map(({ arc, packs }) => (
+        groupByArc(state.index.packs, state.index.arcs ?? []).map(({ arc, packs }) => (
           <section className="atlas__arc" key={arc?.id ?? 'rest'}>
             <h2 className="atlas__arc-title">{arc ? arc.title : 'Elsewhere'}</h2>
             <p className="atlas__arc-argument">
