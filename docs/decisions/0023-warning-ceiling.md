@@ -219,3 +219,38 @@ run when you touched something the eye can see.
   `REFERENCE_REGISTRIES` to a path that no longer exists and the gate reports
   254 unbudgeted warnings under `shared/people/` and `shared/places/`. That was
   run before the ceiling was committed, and it is the test the file is for.
+
+## Amendment — 2026-08-29: `concentration-region` is fixed, and the kind is gone (`sand-23b.60`)
+
+The first of the two defects with no headroom is settled, and the answer was
+the rectangle rather than the three positions.
+
+`1914:liege` declared `region: [5.35, 50.5, 5.88, 50.8]` — a box around the
+Brialmont fort ring and nothing else. The three warned positions are all east
+of its edge and all correct: `1914:liege-42cm` and `1914:liege-30cm` sit at
+`[6.08, 50.78]`, which is Aachen, where their `concentration.area` says they
+were ("Essen → Aachen by rail, then by road"; "Aachen"); `1914:liege-army-of-
+the-meuse` sits at `[6, 50.68]`, between Aachen and Eupen on the Belgian
+frontier, which is what its `area` says too. A concentration is by definition
+where a formation assembled **before** it entered the battle area, so a battle
+whose story starts with an approach march will always have some outside a box
+drawn around the fighting.
+
+The rectangle was independently too tight, which is what settles it. The
+battle's own opening event, `1914:liege-event-frontier` — "German troops cross
+the Belgian frontier at Gemmenich", 4 August — is at `[6.02, 50.75]`, also
+outside the old east edge. Nothing warned about that, because the rule only
+looks at concentrations, and `focusRegion` is what the camera fits on a
+zoom-in: the reader who opened Liège was being shown a frame that excluded the
+moment the invasion began. Widening the east edge to **6.15** brings the
+frontier crossing, the assembly area and both siege batteries inside, and moves
+nothing else — the battle's `camera` is declared separately and is unchanged,
+and the visual gate is green on the new framing.
+
+With the last of them fixed the kind is **removed from
+`scripts/warning-budget.json`** rather than dropped to `max: 0`, because
+`warning-budget.test.ts` holds every pattern to matching something in
+`content/`: a pattern that matches nothing counts zero and passes, which is the
+failure this record is named for. A future misplaced concentration therefore
+lands as **unbudgeted** and fails the gate by that route — one entry with a
+sentence, the same price any new kind pays. `main` is green at 56/2.
