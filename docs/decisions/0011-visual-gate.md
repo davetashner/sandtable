@@ -2,7 +2,9 @@
 
 - **Status:** accepted (amended 2026-08-25 `sand-pmz.2.6`; amended 2026-08-28
   `sand-pmz.9`, phase 1 the two tiers and phase 2 the settings change that made
-  `visual` required — see the three sections at the end)
+  `visual` required; amended 2026-08-29 `sand-pmz.9.2`, the map assertion —
+  which is **not** the check the 2026-08-28 amendment proposed, and that
+  section says why. See the four sections at the end)
 - **Date:** 2026-08-24
 - **Bead:** `sand-pmz.2`
 
@@ -431,3 +433,75 @@ a time.** That is a real constraint on parallel work, and it is worth stating
 plainly here, because the obvious way to go faster — several agents opening
 several PRs at once — makes the total slower rather than quicker under a strict
 ruleset with no queue.
+
+## Amendment — 2026-08-29: the map assertion, and why it is not the one proposed (`sand-pmz.9.2`)
+
+The check proposed above is shipped, and building it found that **as specified
+it does not work**. The specification was: take the bounding box of the
+geometry handed to the map and compare its longitude span with the pack's
+`region`. Measured against the real packs, that comparison is wrong twice.
+
+**It fires on healthy content.** A pack's `region` frames the camera; it does
+not clip anything. Every 1914 scene draws 19.9° of longitude against a declared
+9°, and correctly so — the pack has a Tannenberg battle and the places registry
+reaches 22.2°E. A gate on "drawn inside declared" would have been red on the
+seed era from the day it was written.
+
+**And it fires on a correct antimeridian render.** `unwrapLngs` makes a _path_
+continuous by moving its points whole turns, and it deliberately leaves each
+path's first point where the author put it. So two routes in one layer can
+describe the same meridian a full turn apart: the Pacific pack draws one trail
+ending at 203° and another sitting at −157.99°. A bounding box over both
+measures **361°** against a declared 106° — on a pack that renders perfectly.
+Had this been built as specified, its first act would have been to fail the
+1941 era for a defect that is not there.
+
+Worse, the proposed measure cannot detect the defect it was designed for.
+Unwrapping moves points by whole turns, which leaves the extent of a _set_
+unchanged; #161's vertices and the fixed vertices are the same set. A bounding
+box cannot separate them even in principle.
+
+### What is asserted instead
+
+**The span of a single path**, on the coordinates the renderer was handed.
+This is the invariant `unwrapLngs` exists to establish — no step between
+neighbours exceeds 180° — so an unwrapped theatre route is narrow and the same
+route left wrapped is most of the planet. It is the same one-number, no-fonts,
+no-network, no-timing property the record demands, and unlike a bounding box it
+distinguishes the two cases by construction.
+
+The limit is **180°**, and it is a bright line rather than a tuned one: at or
+above half the planet, the unwrap did not happen. Measured across every scene
+on a healthy tree the widest single path is **55.6°** (`movement-ghost`, the
+1918 pack), so the limit sits more than three times clear of the worst honest
+case, while #161 measures **317.7°** — which is the 318° this record already
+quoted, arrived at independently.
+
+The two neighbours came free as predicted, but only one of them is worth
+gating:
+
+- **A scene that drew nothing** is `map-drew-nothing`, and it is **reported,
+  not blocking**. `era-1915` is a two-beat pack with no collections and
+  legitimately has no geometry today; a gate red on that enforces a rule nobody
+  wrote.
+- **The point scatter** (`arc`, the narrowest arc containing every placed
+  point) is published and not gated at all. Its honest maximum is 182.4° for
+  the Pacific, which is indistinguishable from a defect by size alone.
+
+### The product surface
+
+The handle is `window.__sandtableProbe`, set by Playwright with
+`addInitScript` before the document exists, and read by
+`src/engine/map-probe.ts`. Nothing is computed or published unless it is set.
+
+The obvious flag — `?probe=1` — was rejected, and the URL contract is why:
+`parseViewState` collects unknown parameters into `extra` and `formatViewState`
+re-emits them (ADR 0009 rule 4), so a probe parameter would be **sticky**,
+following a reader into every URL the app writes and every link they copied. A
+global has none of that, and a reader cannot set one by visiting a URL at all.
+
+`src/engine/map-probe.test.ts` is the test the record asked for, so the
+assertion is not checking a mirror; it carries both the #161 case and the 361°
+false positive as data. The gate reports the probe's own liveness on every run
+and **exits 3 if no cell published one**, because an assertion that has
+silently stopped checking looks exactly like an assertion that passes.

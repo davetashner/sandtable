@@ -45,6 +45,7 @@ import {
   type MapInset,
 } from '../engine/map/MapView.js';
 import { labelNow } from '../engine/ticks.js';
+import { publishMapProbe } from '../engine/map-probe.js';
 import { MapObjects } from './MapObjects.js';
 import { buildMapRoster } from './map-roster.js';
 import type { TokenDatum } from '../engine/layers/movement-layers.js';
@@ -193,6 +194,13 @@ export function MapSurface({
     () => [...placeLayers, ...tallyLayers, ...movementLayers, ...commanderLayers],
     [placeLayers, tallyLayers, movementLayers, commanderLayers],
   );
+
+  // What the map drew, for the visual gate to read (`sand-pmz.9.2`). A no-op
+  // unless the harness set `window.__sandtableProbe` before the document
+  // existed, which no page load a reader can perform will have done.
+  useEffect(() => {
+    publishMapProbe({ layers, region, focusRegion });
+  }, [layers, region, focusRegion]);
 
   const { tilesUrl, styleFor } = useBasemapStyle({ places, tiles, focusTiles, focusRegion });
   const objects = useMapRoster({

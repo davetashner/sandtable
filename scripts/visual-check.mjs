@@ -115,7 +115,26 @@ const SEVERITY = {
   // an authored SVG rather than type on a page, and a gate red on that is
   // enforcing a rule nobody agreed to.
   'tiny-text': 'reported',
+  // One path spanning half the planet (`sand-pmz.9.2`). Structural because the
+  // rule was written before the gate held it: `unwrapLngs` guarantees no step
+  // between neighbours exceeds 180°, so a path at or over that is a path the
+  // unwrap did not reach — PR #161's 317.7°. Measured across every scene on a
+  // healthy tree the widest is 55.6°, so the limit is a bright line rather
+  // than a tuned one, and it is three times clear of the worst honest case.
+  'map-path-span': 'structural',
+  // A scene whose layers were all handed nothing. Reported, not blocking:
+  // `era-1915` is a two-beat pack with no collections, so it legitimately
+  // draws no geometry today, and a gate red on that enforces a rule nobody
+  // wrote. It is worth printing because "a layer that silently draws nothing"
+  // is the other family of bugs that renders successfully.
+  'map-drew-nothing': 'reported',
 };
+
+/**
+ * Half the planet, in degrees of longitude. See `map-path-span` above: this is
+ * the invariant `unwrapLngs` establishes, not a number chosen to fit.
+ */
+const MAX_PATH_SPAN = 180;
 
 const blocking = (kind) => SEVERITY[kind] === 'structural';
 
@@ -165,6 +184,44 @@ const report = await walk(browser, {
 });
 await browser.close();
 await server?.close();
+
+/**
+ * What the map drew, folded into the same `problems` the DOM audit produces so
+ * that it inherits the tiers, the baseline and the exit codes rather than
+ * growing a second set of them (`sand-pmz.9.2`, `src/engine/map-probe.ts`).
+ */
+let probed = 0;
+let widestSeen = { span: 0, layer: '—', cell: '—' };
+for (const [cell, v] of Object.entries(report)) {
+  const p = v.probe;
+  if (!p) continue;
+  probed += 1;
+  if (p.widestPath && p.widestPath.span > widestSeen.span) {
+    widestSeen = { span: p.widestPath.span, layer: p.widestPath.layer, cell };
+  }
+  if (p.widestPath && p.widestPath.span >= MAX_PATH_SPAN) {
+    (v.problems ??= []).push({
+      kind: 'map-path-span',
+      el: p.widestPath.layer,
+      detail: `${p.widestPath.span.toFixed(1)}° of longitude in one path, limit ${MAX_PATH_SPAN}°`,
+    });
+  }
+  if (p.points === 0) {
+    (v.problems ??= []).push({
+      kind: 'map-drew-nothing',
+      el: `${p.layers.length} layers`,
+      detail: 'every layer was handed an empty list',
+    });
+  }
+}
+
+/**
+ * A probe that published nothing everywhere is indistinguishable from a clean
+ * one, so its absence is a misconfigured gate rather than a pass. The chrome
+ * pages have no map and are expected to return null; if *no* cell published,
+ * the app stopped publishing and the assertion above is checking nothing.
+ */
+const probeMissing = probed === 0;
 
 const rolled = rollUp(report);
 
@@ -303,15 +360,32 @@ console.log('\n    structural  a layout defect off scripts/visual-baseline.json'
 if (structural.length === 0) console.log('      ✓ none off the baseline');
 for (const row of structural) line(row);
 
+// The probe reports on every run, clean or not: a probe that has silently
+// stopped publishing looks exactly like a map with nothing wrong with it.
+console.log('\n    map         what the map drew, not how it looks (sand-pmz.9.2)');
+if (probeMissing) {
+  console.log('      ✗ no cell published a probe — the app is not publishing, or');
+  console.log('        window.__sandtableProbe is no longer read. The map assertion');
+  console.log('        above is checking nothing. See src/engine/map-probe.ts.');
+} else {
+  console.log(
+    `      ✓ ${probed} cell(s) probed; widest single path ${widestSeen.span.toFixed(1)}° ` +
+      `of ${MAX_PATH_SPAN}° allowed`,
+  );
+  console.log(`        (${widestSeen.layer} in ${widestSeen.cell})`);
+}
+
 console.log('\n  REPORTED — printed every run, never fatal\n');
 if (advisory.length === 0) {
   console.log('    ✓ none');
 } else {
   const total = advisory.reduce((n, e) => n + e.n, 0);
+  const kinds = [...new Set(advisory.map((e) => e.kind))];
   console.log(
-    `    tiny-text   ${total} finding(s) across ${advisory.length} element(s). ADR 0010's` +
-      '\n                type floor has exemptions this audit cannot see' +
-      '\n                (docs/accessibility.md, docs/design-review.md).',
+    `    ${total} finding(s) across ${advisory.length} element(s), of ${kinds.length} kind(s):` +
+      `\n      ${kinds.join(', ')}` +
+      "\n    Each has exemptions the gate cannot see — ADR 0010's type floor" +
+      '\n    (docs/accessibility.md), and a pack that has no geometry yet.',
   );
   for (const e of advisory)
     console.log(`      · ${e.kind.padEnd(16)} ${e.el}  ×${e.n}  | ${e.detail}`);
@@ -337,10 +411,12 @@ if (unclassified.length) {
 // Worst first, and breakage outranks a misconfigured gate: a dead scene is a
 // dead scene whatever the severity table says, and it is the more actionable
 // of the two. An unclassified kind outranks a structural finding, because
-// until it is classified the structural tier is not known to be complete.
+// until it is classified the structural tier is not known to be complete —
+// and a silent probe joins it there for the same reason: an assertion that is
+// checking nothing does not make the tier below it trustworthy.
 const code = breakage.length
   ? EXIT.breakage
-  : unclassified.length
+  : unclassified.length || probeMissing
     ? EXIT.misconfigured
     : structural.length
       ? EXIT.structural
