@@ -190,9 +190,11 @@ what the reviewer looks at.
 - `playwright` is a devDependency, pinned. CI downloads Chromium once per
   lockfile and caches it under `~/.cache/ms-playwright`.
 - The `visual` job runs in parallel with `lint`, `security` and `web`, and
-  takes about two to four minutes: build, then ninety-six cells off
-  twenty-four loads — about two and a half minutes on a laptop running two
-  pages, against four before `sand-pmz.2.6` halved the loads. `CONCURRENCY`
+  takes about two to four minutes: build, then four cells — two themes × two
+  viewports — off **one load per scene**, which is the whole of what
+  `sand-pmz.2.6` bought. The number of scenes is `SCENES.length` in
+  `scripts/lib/visual-scenes.mjs` and is deliberately not quoted here; it had
+  been quoted in three places that disagreed (`sand-23b.55`). `CONCURRENCY`
   and `SETTLE` tune it; concurrency above two buys little, because software GL
   saturates first.
 - **The walk costs what the app's first map render costs, and nothing else is
@@ -345,7 +347,9 @@ gone red on #161 — the track renders "successfully" — but it would have put 
 track in the artifact, where the defect is visible at a glance. The gate's cost
 is loads, at roughly five seconds of software-GL shader compilation each, so a
 representative scene per era is about twenty seconds on the job's four minutes.
-Filed as `sand-pmz.9.1`.
+Filed as `sand-pmz.9.1`. **Done** — the list now carries `era-1915`,
+`era-1917`, `era-1918`, `era-1941` and the `battle-oahu` zoom-in, so every era
+is walked in both themes at both widths and the Pacific is in the artifact.
 
 **Assert the drawn extent against the declared region.** The one that would
 actually have gone red. After the settle, ask the page for the bounding box of

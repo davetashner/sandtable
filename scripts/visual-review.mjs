@@ -1,8 +1,11 @@
 /**
  * The Phase 1 design-review checklist, executable (sand-1l0.15).
  *
- * Walks the built app across twenty-four scenes × two themes × desktop and
- * phone, screenshots each, and audits the DOM for the defects a reading of
+ * Walks the built app across every scene in `scripts/lib/visual-scenes.mjs`
+ * × two themes × desktop and phone — the count is that list's length and is
+ * deliberately not repeated here, because three copies of it had already
+ * drifted apart (`sand-23b.55`) — screenshots each, and audits the DOM for
+ * the defects a reading of
  * the CSS does not catch: a page that scrolls sideways, text clipped by its
  * own container, type below the floor, tap targets below the floor.
  *
