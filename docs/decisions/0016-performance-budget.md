@@ -1,6 +1,7 @@
 # 0016 — The performance budget: bytes are gated, frames are evidence
 
-- **Status:** accepted
+- **Status:** accepted (amended 2026-08-29 `sand-pmz.17` — the throttled
+  measurement this record admitted it was missing; see the section at the end)
 - **Date:** 2026-08-25
 - **Bead:** `sand-pmz.3`
 
@@ -304,3 +305,49 @@ something. These are targets, not gates:
   camera jump rather than fly (`docs/accessibility.md`), and the frame
   measurement deliberately samples the animated case, which is the expensive
   one.
+
+## Amendment — 2026-08-29: the number taken on a slow link (`sand-pmz.17`)
+
+Every timing in this record, and in ADR 0018's, was taken on a developer
+machine or a CI runner on a fast link. That is the case the budget does _not_
+exist for: the bytes it governs arrive from loopback in single-digit
+milliseconds, so the local figure cannot say whether moving them mattered to a
+reader. `npm run perf -- --throttle` closes that, applying a DevTools network
+profile and a CPU multiplier over CDP and moving the viewport to a phone.
+
+Measured against the live deployment, the `campaign-day20` scene, medians:
+
+| profile                                       |  FCP | pack | map-ready |  wall | transfer | reqs |
+| --------------------------------------------- | ---: | ---: | --------: | ----: | -------: | ---: |
+| unthrottled, 1440×900                         |  248 |   38 |       836 |   949 |  2427 kB |   32 |
+| Lighthouse mobile, 390×844 (1.6 Mbps, 4× CPU) |  496 |  142 |  **8864** |  9042 |  1390 kB |   21 |
+| Slow 3G, 390×844 (400 kbps, 2 s RTT, 4× CPU)  | 4464 |  142 |     **—** | 33452 |   677 kB |   18 |
+
+All times are milliseconds from navigation start. A dash means the
+`sandtable:map-ready` mark did not arrive inside the harness's twenty-second
+window.
+
+**The split did what it was for, and it does not reach far enough.** First
+contentful paint holds up: 248 ms → 496 ms is a doubling on a profile that
+throttles the CPU fourfold and the link by an order of magnitude, which is the
+cold-load budget working. What it does not touch is time to a live map —
+836 ms → **8.9 seconds**, a 10.6× degradation, and on Slow 3G the map does not
+become live at all within twenty seconds. A reader on a phone gets the shell
+promptly and then waits nine seconds for the thing they came for.
+
+That is not a bundle-size problem and the budget will not catch it. It is
+MapLibre and deck.gl parsing and compiling on a quartered CPU, plus PMTiles
+range requests at 150 ms of latency each — the cost `sand-pmz.23` is about
+(the first map render as a single multi-second main-thread task), now with a
+number attached from the reader's side rather than the runner's.
+
+**Transfer falls as the link gets worse**, from 2427 kB to 1390 kB to 677 kB,
+and the request count with it. That is not the app being clever: a 390-px
+viewport needs fewer tiles than a 1440-px one, and a slower link finishes fewer
+of them before the measurement ends. It is worth writing down because the
+number looks like an improvement and is not one.
+
+**What this is not.** It is an emulation: no radio wake-up, no thermal
+throttling, no phone GPU, and SwiftShader rather than a mobile one. Read it as
+a floor on the misery rather than a measurement of a handset. The alternative
+was to keep publishing numbers from a fast link and call them performance.

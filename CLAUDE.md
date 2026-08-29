@@ -89,6 +89,8 @@ npm run visual:check     # the visual gate: every scene in scripts/lib/visual-sc
 npm run visual:review    # the on-demand design review against real assets (docs/design-review.md); needs a build + `npm run preview`
 npm run bundle:budget    # the performance gate: eager, home, code and pack gzip against scripts/bundle-budget.json (ADR 0016, ADR 0018, ADR 0024); reads dist/, so it refuses when dist/ is older than src/ or content/ — build first
 npm run perf             # measure bundle, first map paint, frame rate, PMTiles cost; -- --live for the real bucket, -- --headed for a real GPU
+                         # -- --throttle mobile|slow-3g|4g emulates a phone on a slow link (ADR 0016's amendment, sand-pmz.17):
+                         # FCP survives the split (248 -> 496 ms), time-to-map does not (836 ms -> 8.9 s)
 npm run format           # Prettier (beat front matter is deliberately excluded — see .prettierignore)
 npm run format:check     # the same as a check; runs in CI's `web` job
 ```
