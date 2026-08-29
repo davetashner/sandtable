@@ -6,7 +6,7 @@
  */
 import type { Route, SupplyLine } from '../packs/schema/index.js';
 import { useClock } from '../engine/ClockContext.js';
-import { routePoints, supplyStatus } from '../engine/logistics.js';
+import { routeLegs, routePoints, supplyStatus } from '../engine/logistics.js';
 import './clock-gauges.css';
 
 export interface SupplyGaugesProps {
@@ -24,12 +24,7 @@ export function SupplyGauges({ lines, routes, label, onSelect, selected }: Suppl
   return (
     <ul className="clocks clocks--tallies" aria-label="Rail against feet">
       {lines.map((l) => {
-        const st = supplyStatus(
-          l,
-          routePoints(routes, l.army),
-          routePoints(routes, l.railhead),
-          now,
-        );
+        const st = supplyStatus(l, routeLegs(routes, l.army), routePoints(routes, l.railhead), now);
         const marched = Math.round(st.marchedKm);
         const gap = st.gapKm === undefined ? undefined : Math.round(st.gapKm);
         const pct = Math.min(100, (st.marchedKm / 600) * 100);
