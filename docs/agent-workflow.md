@@ -79,6 +79,39 @@ Run one of them on its own while you are working on the thing it checks; run
 `npm run verify` before you push. Adding a gate means adding it to `verify`, so
 that CI and the contributor cannot disagree about what green means.
 
+## Tools that do the remembering for you
+
+Two commands exist so that rules live in a program rather than in a brief.
+Neither is enforced by a gate, which is exactly why they are worth naming here.
+
+```bash
+npm run new-pack        # scaffold an era: flags are the contract, prompts fill the gaps
+npm run receipts        # re-verify quoted passages against the sources they came from
+```
+
+**`new-pack` before you create an era directory by hand.** It encodes the six
+things an author otherwise has to be told: that `idPrefix` is the directory
+name and not a bare year (ADR 0019 — the rule most easily got wrong, because
+the two oldest packs are grandfathered counter-examples), `status: "seed"` on a
+first pass, the border-year caveats (several are traps — 1931 is badly wrong
+for Russia, 1941 has no Manchukuo), the tile archive from the closed enum with
+its upload status, and pace bands only where the era needs them, cited, and
+never `march` (ADR 0020). It refuses what it can and asks about the rest, and
+its output validates clean immediately. Every field has a flag, so it works
+non-interactively for an agent as well as interactively for a person.
+
+**`receipts` is the only check on a quotation.** A `Document.excerpt` needs a
+`Receipt` whose `context` is retrieved text with the quotation inside it; the
+validator checks that containment, and `npm run receipts -- --fetch` re-runs it
+against the source. `-- --capture <url> --find "<phrase>"` prints the context to
+paste. It never runs in CI, because the network is not a build input. Build a
+receipt from bytes you fetched — never from a tool that summarises a page, which
+returns a model's rendering rather than the source, and is a paraphrase wearing
+the costume of a retrieval.
+
+The right answer to a source you cannot open is to stop quoting it and keep
+citing it. That path is the main road here, not an exception.
+
 `npm run visual:check` is deliberately **not** in it: every scene the design
 review walks, in two themes at two viewports (ADR 0011), about two and a half
 minutes, against a build, and needing a browser (`npx playwright install
