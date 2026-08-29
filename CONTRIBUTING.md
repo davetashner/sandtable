@@ -28,12 +28,14 @@ in, the sourcing rules, and the local friction worth knowing about in advance.
 
    ```bash
    npm ci
-   npm run lint && npm run format:check && npm run typecheck && npm test -- --run
-   npm run validate:content   # every pack, registry and media manifest
-   npm run build && npm run bundle:budget
+   npm run verify   # the gate list CI's `web` job runs, in fail-fast order
    ```
 
-   `npm run visual:check` as well if you changed anything visible.
+   `verify` is lint, format, typecheck, tests, the content validator, the
+   warning ceiling, the build and the bundle budget — defined once in
+   `package.json` so that CI and you cannot disagree about what green means
+   (ADR 0023). `npm run visual:check` as well if you changed anything visible;
+   it is a separate job because it needs a browser (ADR 0011).
 
    Infrastructure changes: `cd infra && npm ci && npm run typecheck && npm test && npx cdk synth`.
 

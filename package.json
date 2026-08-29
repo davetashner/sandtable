@@ -16,6 +16,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "validate:content": "bash scripts/check-content.sh && tsx scripts/build-front.ts --check && tsx scripts/validate-content.ts",
+    "warning:budget": "tsx scripts/warning-budget.ts",
+    "verify": "npm run lint && npm run format:check && npm run typecheck && npm test -- --run && npm run validate:content && npm run warning:budget && npm run build && npm run bundle:budget",
     "receipts": "tsx scripts/verify-receipts.ts",
     "visual:check": "node scripts/visual-check.mjs",
     "bundle:budget": "node scripts/bundle-budget.mjs",

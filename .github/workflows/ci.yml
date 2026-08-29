@@ -86,37 +86,21 @@ jobs:
         if: steps.app.outputs.present == 'true'
         run: npm ci
 
-      - name: lint
+      # One step, because there is one definition of green (ADR 0023). The
+      # gate list used to live here as eight named steps, in
+      # docs/agent-workflow.md as prose, and in contributors' habits — three
+      # copies free to drift, and they did. `verify` in package.json is now
+      # the list; this job runs it, the doc points at it, and a contributor
+      # runs the same command CI does. Each gate still names itself in the log:
+      # npm prints `> sandtable@0.1.0 typecheck` before running one.
+      #
+      # Order is fail-fast and load-bearing at one point: `bundle:budget` reads
+      # dist/ and must follow `build` (ADR 0016, sand-pmz.31). `visual:check`
+      # is not in it — it needs a browser and a cache, and it has a job of its
+      # own for that reason (ADR 0011).
+      - name: verify
         if: steps.app.outputs.present == 'true'
-        run: npm run lint --if-present
-
-      - name: format check
-        if: steps.app.outputs.present == 'true'
-        run: npm run format:check --if-present
-
-      - name: typecheck
-        if: steps.app.outputs.present == 'true'
-        run: npm run typecheck --if-present
-
-      - name: test
-        if: steps.app.outputs.present == 'true'
-        run: npm test --if-present -- --run
-
-      - name: validate content packs
-        if: steps.app.outputs.present == 'true'
-        run: npm run validate:content --if-present
-
-      - name: build
-        if: steps.app.outputs.present == 'true'
-        run: npm run build --if-present
-
-      # The one performance number that is a function of the source alone
-      # (ADR 0016). First map paint and frame rate are measured by
-      # `npm run perf` and reported, never gated: this runner rasterises
-      # through SwiftShader and answers a different question from a laptop.
-      - name: bundle budget
-        if: steps.app.outputs.present == 'true'
-        run: npm run bundle:budget --if-present
+        run: npm run verify --if-present
 
   visual:
     # The visual gate (ADR 0011): twenty-four scenes × two themes × desktop

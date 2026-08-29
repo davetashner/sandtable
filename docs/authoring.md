@@ -983,11 +983,19 @@ instruction.
 ## 11. Before you open the PR
 
 ```bash
-npm run validate:content        # errors must be zero
-npm test -- --run               # content tests run in the suite too
-npm run lint && npm run typecheck
+npm run verify                  # the whole gate list CI runs (ADR 0023)
 npm run receipts -- --fetch     # if you added or edited a quotation
 ```
+
+`verify` includes `validate:content` — errors must be zero — and
+`warning:budget`, which holds each **kind** of warning to a ceiling in
+`scripts/warning-budget.json` (ADR 0023). Two of those kinds bear on authoring.
+A source added ahead of the pack that will cite it warns, and there is headroom
+for that; a wave of works added and never cited runs the ceiling out, and the
+answer is to cite them or drop them rather than to raise the number. A warning
+of a **kind not listed at all** fails outright, and means either a validator
+rule you have just tripped for the first time or a message that was reworded —
+both want a sentence in that file saying what the right count is.
 
 Then the PR checklist: every date, number and position cites a Source;
 contested points are historiography; hypothetical branches are labelled;

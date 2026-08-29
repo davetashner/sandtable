@@ -66,11 +66,13 @@ Node 22 (`.nvmrc`). The app is Vite + TypeScript + React (ADR 0001).
 
 ```bash
 npm ci
+npm run verify           # every gate below that CI's `web` job runs, in fail-fast order — one definition of green (ADR 0023)
 npm run dev              # Vite dev server
 npm run lint             # ESLint (flat config)
 npm run typecheck        # tsc -b
 npm test -- --run        # Vitest, single pass
 npm run validate:content # scripts/check-content.sh + the pack validator (docs/content-model.md)
+npm run warning:budget   # the warning ceiling: one per kind against scripts/warning-budget.json (ADR 0023); a warning of no listed kind fails; -- --update records counts, never a ceiling
 npm run receipts         # quotation receipts: coverage; -- --fetch re-verifies against the live sources,
                          # -- --capture <url> --find "<phrase>" prints context to paste (ADR 0021). Never in CI
 npm run schema           # regenerate schema/*.schema.json from src/packs/schema (tests fail if stale)
@@ -112,7 +114,9 @@ is era-agnostic; the first pack is the Schlieffen Plan / 1914 campaign.
   under `.claude/worktrees/`, never on `main`. Sign off commits (`git commit -s`)
   and reference the bead ID in the message.
 - **Working practice:** `docs/agent-workflow.md` — how to make a worktree cheap
-  (symlink `node_modules`), the gate order that fails fastest, why you neither
+  (**copy** `node_modules`; a symlink destroys the main checkout on
+  `git worktree remove --force`), `npm run verify` and the gate order that
+  fails fastest, why you neither
   close your own bead nor merge your own PR, the **sourcing-integrity rules**
   (never a quotation you have not read, never a page number you have not seen,
   verify delegated research, open the item), and the known local friction
@@ -201,7 +205,10 @@ receipts -- --fetch` re-runs it against the source. Receipts live outside
   image binaries, and the generated `media`/`audio` `index.json` still covering
   every manifest — `scripts/media-index-backlog.txt` names the images that do
   not yet, `sand-shn.16`); `security` = gitleaks + dependency review; `web` =
-  npm lint/format:check/typecheck/test/validate:content/build/bundle:budget,
+  one step, `npm run verify`, which is
+  lint/format:check/typecheck/test/validate:content/warning:budget/build/bundle:budget
+  — the list lives in `package.json` and nowhere else, so CI, the workflow doc
+  and a contributor cannot mean different things by green (ADR 0023);
   self-activating once `package.json` exists; `visual` = `npm run visual:check` against a
   production-shaped build with the assets bucket stubbed, screenshots uploaded
   as an artifact (ADR 0011). CodeQL is added with the app scaffold.

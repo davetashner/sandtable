@@ -55,8 +55,14 @@ first (`rm node_modules`) and only then remove the worktree.
 
 ## Run the gates in the order that fails fastest
 
-CI runs all of these; running them locally in this order means the cheap
-failures surface in seconds rather than after a four-minute build.
+```bash
+npm run verify
+```
+
+That is the whole list, and it is the same one CI's `web` job runs — one
+definition of green rather than three that drift (ADR 0023). It is
+`package.json`'s to define; what it runs, in the order that surfaces the cheap
+failures in seconds rather than after a four-minute build:
 
 ```bash
 npm run lint            # ESLint; markdownlint and actionlint run in CI's lint job
@@ -64,21 +70,44 @@ npm run format:check    # Prettier — `npm run format` fixes it
 npm run typecheck       # tsc -b --noEmit
 npm test -- --run       # Vitest, single pass
 npm run validate:content
+npm run warning:budget  # the warning ceiling per kind — see below
 npm run build
 npm run bundle:budget   # must come after the build — see below
 ```
 
-Two more are not part of the default loop but are the two gates a contributor
-actually trips over:
+Run one of them on its own while you are working on the thing it checks; run
+`npm run verify` before you push. Adding a gate means adding it to `verify`, so
+that CI and the contributor cannot disagree about what green means.
 
-- `npm run visual:check` — every scene the design review walks, in two themes
-  at two viewports (ADR 0011), about two and a half minutes and against a build,
-  so run it after `npm run build`. Run it when you touched anything the eye can
-  see; `-- --update` rewrites the baseline once you have looked at what changed
-  and agree with it. It needs a browser once: `npx playwright install chromium`.
+`npm run visual:check` is deliberately **not** in it: every scene the design
+review walks, in two themes at two viewports (ADR 0011), about two and a half
+minutes, against a build, and needing a browser (`npx playwright install
+chromium`). It is a CI job of its own for those reasons, and `verify` is meant
+to be runnable on a machine that has never installed Chromium. Run it when you
+touched anything the eye can see, after `npm run build`; `-- --update` rewrites
+the baseline once you have looked at what changed and agree with it.
+
+The two budgets are the gates a contributor actually trips over, and both hold
+a stored number against a measured one:
+
 - `npm run bundle:budget` — the one number CI holds (ADR 0016). Content changes
   move it too, since a pack is fetched rather than bundled but still has a
-  ceiling of its own (ADR 0018).
+  ceiling of its own (ADR 0018). It is inside `verify`, and it must follow the
+  build, which is why the order above is not alphabetical.
+- `npm run warning:budget` — the other number nothing used to hold (ADR 0023).
+  `validate:content` prints warnings and fails on none of them; this holds each
+  **kind** of warning to a ceiling in `scripts/warning-budget.json`, with the
+  reason for the number written next to it. It is inside `verify` too, and it
+  needs no build.
+
+  A warning of a kind not in that file **fails**, which is deliberate: the
+  incident it exists for was a rule that had never fired starting to fire 254
+  times, and a budget that only counted the kinds already present would have
+  passed it. If you hit that, the answer is one entry with a `match`, a `max`
+  and a sentence — or, if you reworded a validator message, an update to that
+  kind's `match` in the same commit. Growing an existing kind is the same
+  conversation: raise the number and say in its `why` what makes the new one
+  right. `-- --update` records the counts and never touches a ceiling.
 
 If you changed the Zod schema under `src/packs/schema/`, run `npm run schema`;
 tests fail on a stale `schema/*.schema.json`.

@@ -32,6 +32,7 @@ is merged.
 | [0020](0020-pace-bands.md)               | The pack declares how fast its century moved, and cannot declare its way past physics     | `sand-lry.2`    | accepted                         |
 | [0021](0021-quotation-receipts.md)       | A quotation carries a receipt, and an unreadable source is not quoted                     | `sand-23b.57`   | accepted                         |
 | [0022](0022-per-entity-registries.md)    | One file per shared entity, because the conflict is the shape                             | `sand-shn.19`   | accepted                         |
+| [0023](0023-warning-ceiling.md)          | Warnings get a ceiling per kind, and green gets one definition                            | `sand-pmz.33`   | accepted                         |
 
 ## Template
 
