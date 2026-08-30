@@ -5,6 +5,7 @@ dateLabel: 'December 1941 – June 1942'
 from: 1941-12-11T00:00:00Z
 to: 1942-06-07T00:00:00Z
 focus: 1941-pearl-harbor:the-six-months
+media: media:person/tashner-john-charles-jr/portrait-chief-colorized
 links:
   people:
     [
@@ -12,6 +13,7 @@ links:
       'person:nagumo-chuichi',
       'person:nimitz-chester',
       'person:fuchida-mitsuo',
+      'person:tashner-john-charles-jr',
     ]
   places: ['place:midway', 'place:pearl-harbor']
   historiography: ['1941-pearl-harbor:historiography-the-third-wave']
@@ -21,6 +23,12 @@ sources:
   - source: source:morton-1962
     note: ch. VI and after
   - source: source:parshall-tully-2005
+  - source: source:tashner-service-record
+    note: >-
+      the Ballard entry, May–July 1942, quoted. Family-transcribed text; no
+      scan and no archive reference — the source entry carries the doubts
+  - source: source:tashner-john-2026
+    note: the hedge on Midway, quoted
 ---
 
 An epilogue, outside the campaign clock.
@@ -32,5 +40,7 @@ The six months were bought, more or less exactly. Between December and May the J
 The other half of the sentence arrived on schedule too. On the last day of December 1941 [Nimitz](person:nimitz-chester) took the Pacific Fleet and found that what the attack had left him was the part of it that mattered next: three carriers that had been at sea on the morning of the 7th, a submarine force, and a base at [Pearl Harbor](place:pearl-harbor) whose fuel, dry docks and workshops were undamaged.[^morton-1962] The battle line that had been sunk was the fleet the pre-war plans were written around, and it was not the fleet the war was fought with.
 
 Six months to the week after the striking force launched off Oahu, four of its six carriers burned in a morning at [Midway](place:midway) — under the same admiral, and losing, with them, the aircrew that could not be replaced.[^parshall-tully-2005]
+
+The pack's one participant voice was there for both ends of the six months. [Jay Tashner](person:tashner-john-charles-jr), the twenty-year-old radioman handed a rifle at Pearl Harbor, was a radioman second class aboard USS _Ballard_ by May 1942, and his service record gives him the battle in two lines: "Standing radio watches during battle of Midway and search of battle area", and then a line neither of his sons' accounts contains — "Participated in capture of 36 Japanese officers and men from sunken Japanese Carrier."[^tashner-service-record] The record does not name the carrier, and this pack has read nothing at rank that does. His eldest son, eighty-five years later, would go no further than "I need to check but I think he was at the battle of Midway as well" — and the hedge turned out to be the truth wearing a caution.[^tashner-john-2026]
 
 That is where this pack stops, and it is also where two of its threads meet. The [third-wave argument](1941-pearl-harbor:historiography-the-third-wave) is really an argument about whether Pearl Harbor could have been made unusable for those six months, because everything Nimitz did in them was run from it. And the reason the Midway story that most people know is wrong — the packed decks, the five fateful minutes — is the same reason this pack cites [Fuchida](person:fuchida-mitsuo) as a subject and never as an authority.[^parshall-tully-2005]

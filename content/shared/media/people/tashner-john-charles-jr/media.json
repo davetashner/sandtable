@@ -1,0 +1,29 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (sand-y0u.2).",
+  "id": "media:person/tashner-john-charles-jr/portrait-chief-colorized",
+  "person": "person:tashner-john-charles-jr",
+  "file": "portrait-chief-colorized.png",
+  "width": 1087,
+  "height": 1447,
+  "colorized": true,
+  "original": {
+    "description": "Studio portrait of John Charles Tashner Jr. in the dress blue uniform of a United States Navy chief petty officer: the chief's combination cap with the fouled-anchor-and-USN device, and aviation insignia above a ribbon bar. His service record lists Combat Aircrew Wings with Two Stars, and the family's research identifies the wings in this portrait as those. Undated; the chief's cap places it no earlier than his advancement to chief aviation radioman, which the record dates to 1944.",
+    "photographer": "unknown (studio portrait)",
+    "date": "undated — 1944 or later, by the uniform against the service record",
+    "archive": "Tashner family collection",
+    "original_dimensions": "1087 × 1447 (colorized scan; the project does not yet hold the un-colorized original)",
+    "licence": "private family photograph, Tashner family collection; supplied to this project by Jay Tashner's grandson in August 2026 with permission to publish, credited"
+  },
+  "colorization": {
+    "author": "Dave Tashner / Sandtable",
+    "method": "AI-assisted colorization from the family's original print, 2026",
+    "licence": "Sandtable project licence; underlying photograph Tashner family collection, used with permission",
+    "status": "ok — label 'colorized (AI-assisted)'. CAUTION, and it is the family's own caution as well as ADR 0007's: ribbon colours in a colorization are not historical evidence. The documented award list in source:tashner-service-record is the authority — Combat Aircrew Wings with Two Stars, American Defense Medal with Fleet Clasp, Good Conduct Medal, Asiatic Pacific Ribbon with three stars, American Area Campaign Ribbon, World War II Victory Medal."
+  },
+  "content_policy": "ok — portrait, no gore",
+  "caption": "John Charles Tashner Jr. — \"Jay\" (1920–1977), the Patrol Wing TWO radioman who is this pack's participant voice for 7 December 1941, photographed later in the war: the cap is a chief petty officer's, a rate his service record reaches in 1944, and the wings above the ribbons are his Combat Aircrew Wings. Colorized (AI-assisted) from a family photograph.",
+  "credit": "Original photograph: Tashner family collection, undated; published with the family's permission. Colorization: Sandtable, AI-assisted, 2026.",
+  "used_by": ["1941-pearl-harbor:beat-the-six-months"],
+  "focal_point": { "x": 0.5, "y": 0.3 },
+  "notes": "Supplied by the family (Dave Tashner, Jay's grandson) 2026-08-30. The identification of the sitter is the family's, consistent with the service record: the family's research dossier calls this 'the surviving uniform portrait' and matches its aviation insignia to the record's Combat Aircrew Wings (source:tashner-family-research-2026). The project holds only the colorized file; when the family digitizes the un-colorized print, add it as original.file so 'show original' can swap in place (ADR 0012). Not a period archive image — the one family-owned photograph the imagery policy has carried so far, admitted for the same reason the vignette was: a real participant, not a substitute for one."
+}
