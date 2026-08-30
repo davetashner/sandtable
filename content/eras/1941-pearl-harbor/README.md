@@ -104,6 +104,12 @@ Read in full, from this environment, and quoted:
 - **`source:combinedfleet`** — Parshall's own restatement of his _Naval War
   College Review_ argument, which is where the quoted sentences about Fuchida's
   1948 and 1963 interviews were read.
+- **`source:nhc-midway-rescue`** — the Naval Historical Center's Online
+  Library page on the rescue of _Hiryū_'s survivors, read via the ibiblio
+  mirror (history.navy.mil fails TLS from this environment, as it did for the
+  _Selfridge_ report). It is what lets the pack name the carrier in Jay
+  Tashner's _Ballard_ entry, and it holds the Navy's 80-G photographs of the
+  prisoners.
 
 Read as transcriptions, quoted, **without page numbers**:
 
@@ -199,16 +205,18 @@ turned out to be refusals to guess wrong.
    and destroyers; the other a career in naval aviation and electronics. The
    record holds a destroyer until July 1941 and aviation ever after, out to
    TBM-3W radar aircraft and an AEW/ASW rating by 1951.
-3. **Midway — now a fact here.** The better-informed account said "I need to
-   check but I think he was at the battle of Midway as well", and the pack
-   recorded the hedge as a hedge. The record checked it: radioman second class
-   aboard USS _Ballard_, "Standing radio watches during battle of Midway and
-   search of battle area", and "Participated in capture of 36 Japanese
-   officers and men from sunken Japanese Carrier." The record does not name
-   the carrier; the family's research points at _Hiryū_ and the reference
-   account of _Ballard_'s rescue says thirty-five men, not thirty-six — both
-   differences stand as written, a thread for the Midway pack (`sand-lry.6`).
-   The epilogue beat now carries him, and his portrait.
+3. **Midway — now a fact here.** The record puts him there: radioman second
+   class aboard USS _Ballard_, "Standing radio watches during battle of Midway
+   and search of battle area", and "Participated in capture of 36 Japanese
+   officers and men from sunken Japanese Carrier." The carrier the sheet does
+   not name is _Hiryū_: the Naval Historical Center's account of the rescue
+   (`source:nhc-midway-rescue`, read here) has the seaplane tender _Ballard_
+   directed on 19 June to an open boat holding "thirty-five Japanese navymen,
+   members of carrier Hiryu's engineering force", and the Navy photographed
+   the prisoners on her deck and ashore at Midway. The Center's thirty-five
+   and the record's thirty-six stand as written; _Ballard_'s war diary and
+   those photographs are threads for the Midway pack (`sand-lry.6`). The
+   epilogue beat now carries him, and his portrait.
 4. **Why he refused a commission — still open.** Two sons, different reasons.
    Both are given, and nothing in a duty record could settle a question like
    that anyway.
