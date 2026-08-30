@@ -160,35 +160,58 @@ not be flattened into one:
   NHHC's own copy at history.navy.mil fails TLS verification from this
   environment, which is why the transcription is what was read and why the
   registry entry records the two places the two copies differ.
-- **Duty entries from his service papers** (`source:tashner-service-record`) —
-  `primary` by form, and thin on provenance: supplied as text by the family,
-  with no scan and no archive reference. The entry says so at length. Filing
-  by form with the doubts in `notes` is `docs/sources.md` rule 2; filing by
-  confidence is what that rule forbids.
+- **His service record** (`source:tashner-service-record`) — `primary` by
+  form, and thin on provenance: supplied as text by the family, with no scan
+  and no archive reference. The entry says so at length. Filing by form with
+  the doubts in `notes` is `docs/sources.md` rule 2; filing by confidence is
+  what that rule forbids. The addition began with two duty entries — Betio and
+  Majuro; in late August 2026 the family supplied a transcription of the full
+  sheet (`sand-0e7`), October 1938 to January 1952, and the source entry now
+  carries the whole career, the schools, the medals, and the two places the
+  family's two transcriptions differ from each other.
 - **Two family accounts** (`source:tashner-family-2026`,
   `source:tashner-john-2026`) — two of Jay's sons, writing in 2026 about what
   their father told them. **This is what the new `testimony` rung is for**, and
   it was added to the hierarchy of evidence in the same change; the argument
   for it, and the line between it and `memoir`, are in `docs/sources.md`.
+  A fourth entry, `source:tashner-family-research-2026`, is the family's own
+  research dossier, cited only for what the record does not carry — the death
+  in September 1977, the wife's name, and a 1943 San Diego directory line this
+  project has not opened.
 
-**Four disagreements are preserved rather than resolved**, and they are the most
-historically interesting thing in the addition:
+**Four disagreements were preserved rather than resolved** when the voice first
+landed, and what happened to them since is the best advertisement this project
+has for preserving rather than resolving: the full record settled three of them
+without making any witness wrong, and the pack's earlier refusals to guess all
+turned out to be refusals to guess wrong.
 
-1. **Barracks or ship.** Both sons put him ashore in a barracks. The
-   _Selfridge_'s own report says "Nine officers and ninety-nine percent of the
-   crew were on board." Both can be true. The pack asserts neither that he was
-   aboard on the day nor that he was not, and notes that nothing it has read
-   names him at all.
-2. **Destroyers or aviation.** One son remembers carriers and destroyers; the
-   other describes a career in naval aviation and electronics. The duty entries
-   come down on the aviation side from a documentary direction — PBYs and B-24s
-   on Betio, the electronics division of a fleet plane pool at Majuro — without
-   making the destroyers wrong. A twenty-one-year career holds both.
-3. **Midway is not a fact here.** One account states it; the other, the
-   better-informed one, says "I need to check but I think he was at the battle
-   of Midway as well". It is recorded as a family recollection the family itself
-   flags as unconfirmed, which is the discipline this project exists to model.
-4. **Why he refused a commission.** Two sons, different reasons. Both are given.
+1. **Barracks or ship — dissolved.** Both sons put him ashore in a barracks;
+   the _Selfridge_'s own report says "Nine officers and ninety-nine percent of
+   the crew were on board", and an earlier version of this pack asserted
+   neither. The record answers it: he served aboard _Selfridge_ from April
+   1939, transferred into naval aviation with VP-23 in July 1941, and on
+   7 December was a radioman third class of Commander Patrol Wing TWO —
+   "Maintained watch of outlying islands and aircraft circuits - supervisor
+   radio watch." The ship the family remembers was his ship; the barracks is
+   where a patrol-wing radioman would be; the report that does not name him
+   had no reason to.
+2. **Destroyers or aviation — both, in sequence.** One son remembers carriers
+   and destroyers; the other a career in naval aviation and electronics. The
+   record holds a destroyer until July 1941 and aviation ever after, out to
+   TBM-3W radar aircraft and an AEW/ASW rating by 1951.
+3. **Midway — now a fact here.** The better-informed account said "I need to
+   check but I think he was at the battle of Midway as well", and the pack
+   recorded the hedge as a hedge. The record checked it: radioman second class
+   aboard USS _Ballard_, "Standing radio watches during battle of Midway and
+   search of battle area", and "Participated in capture of 36 Japanese
+   officers and men from sunken Japanese Carrier." The record does not name
+   the carrier; the family's research points at _Hiryū_ and the reference
+   account of _Ballard_'s rescue says thirty-five men, not thirty-six — both
+   differences stand as written, a thread for the Midway pack (`sand-lry.6`).
+   The epilogue beat now carries him, and his portrait.
+4. **Why he refused a commission — still open.** Two sons, different reasons.
+   Both are given, and nothing in a duty record could settle a question like
+   that anyway.
 
 Three smaller things handled the same way. His son's "a single shot M-1 rifle"
 is recorded as told and not corrected in the bio; the remark that the M1 Garand
@@ -203,10 +226,16 @@ the geography noted and no explanation asserted.
 
 **Betio, and a thread left for `sand-lry.8`.** The duty entries put him on Betio
 — the island of Tarawa — from October 1943, in charge of a maintenance crew
-detachment servicing aircraft. That is airfield work, and on Betio the airfield
-was the objective; the period given is a range, not a date. **Nothing here says
-he landed with the assault.** The Tarawa pack, when it is written, has a named
-man to pick up and a range to narrow.
+detachment servicing aircraft, and the first version of this section said,
+correctly for what had then been read, that nothing said he landed with the
+assault. The full sheet says more: "Made invasion landing on Tarawa - Serviced
+PB4Y-2 and Army B-24 aircraft - Emergency repair - in charge of maintenance
+crew detachment on island of Betio." The landing is now the record's own claim,
+quoted — but still not dated: the assault went in on 20 November 1943 and the
+entry opens in October. The Tarawa pack, when it is written, has a named man to
+pick up, a sentence to test, and a range to narrow. (The two transcriptions
+also differ over what he serviced — "PBY" in the first, "PB4Y-2" in the sheet —
+and the source entry carries both readings rather than choosing.)
 
 ADR 0007 is under pressure in the vignette and is not evaded. Both accounts say
 he spent 7 December and several days after it recovering the dead from the oily
@@ -236,7 +265,13 @@ photographs, and no detail the testimony does not give.
 - **No positions for the three American carriers.** They are in the order of
   battle with no concentration and no route, because nothing openable from here
   says where they were.
-- **No tech or science cards, no tour, no imagery.** Seed scope.
+- **No tech or science cards, no tour, and almost no imagery.** Seed scope.
+  The one image is Jay Tashner's uniform portrait (`sand-0e7`) — a family
+  photograph, not a period archive image, published with the family's
+  permission, colorized and labelled as such, and carried on the epilogue
+  beat. Its manifest records the family's own caution, which is also ADR
+  0007's: ribbon colours in a colorization are not evidence; the record's
+  award list is.
 
 ## Known engine limits this pack ran into
 

@@ -12,7 +12,19 @@
   "nationality": "US",
   "roles": [
     {
-      "title": "Enlisted sailor, United States Navy, Oahu"
+      "title": "Radioman, USS Selfridge (DD-357)",
+      "from": "1939-04",
+      "to": "1941-07"
+    },
+    {
+      "title": "Radioman, Commander Patrol Wing TWO, Pearl Harbor",
+      "from": "1941-11",
+      "to": "1942-05"
+    },
+    {
+      "title": "Radioman second class, USS Ballard, at Midway",
+      "from": "1942-05",
+      "to": "1942-07"
     },
     {
       "title": "In charge of a maintenance crew detachment, Betio, Tarawa Atoll",
@@ -25,27 +37,32 @@
       "to": "1945-04"
     }
   ],
-  "summary": "An enlisted sailor, twenty years old, at Pearl Harbor on the morning of 7 December 1941, and the first participant voice this project holds for that day. Born in Jersey City on 18 December 1920 and raised in Lynchburg, Virginia, by a mother who had left his father when he was three; he enlisted in the Navy out of high school at seventeen, and the family's own account of when contains a tension it does not resolve — enlistment on leaving school points at about 1938, retirement in 1958 after twenty-one years points at about 1937. Both his sons place him ashore in a barracks that Sunday morning, shaving, mustered out and handed a rifle; both say he spent the following days recovering bodies from the harbour. What came after is better evidenced than what he did that morning: duty entries transcribed from his service papers put him on Betio in Tarawa Atoll from October 1943 servicing PBY flying boats and Army B-24s, and at Majuro from May 1944 as a chief radioman running the electronics division of the fleet plane pool — aviation ground support and electronics, not deck service, which is how his eldest son describes the whole of his career. He married in 1943, refused a commission during the war for reasons his two sons remember differently, and retired in 1958 as a chief petty officer with four children to raise. The family names USS Selfridge (DD-357), a Porter-class destroyer commissioned in 1936 that was moored in Pearl Harbor that morning, and places him on the maiden voyage of the carrier USS Oriskany (CV-34), commissioned in September 1950; this project has verified that both ships existed and where they were, and not that he was aboard either.",
+  "summary": "A radioman of Patrol Wing TWO, twenty years old, at Pearl Harbor on the morning of 7 December 1941, and the first participant voice this project holds for that day. Born in Jersey City on 18 December 1920 and raised in Lynchburg, Virginia, by a mother who had left his father when he was three; his service record opens at the Naval Training Station, Norfolk, in October 1938, two months short of his eighteenth birthday, which settles on the later side a tension his family's account carries (enlistment on leaving school at seventeen points at 1938; retirement in 1958 after twenty-one years points at 1937). He served aboard the destroyer USS Selfridge (DD-357) from April 1939, deck force to radio striker to underwater sound operator, and transferred into naval aviation at Pearl Harbor in July 1941 — so the ship the family remembers and the barracks his sons put him in that Sunday morning were never in conflict: by December he belonged to Patrol Wing TWO's communications, maintaining watch of outlying-island and aircraft circuits, not to Selfridge's crew. Both sons say he was mustered out, handed a rifle, and spent the following days recovering bodies from the harbour. From May 1942 he was a radioman second class aboard the seaplane tender USS Ballard, standing radio watches through the Battle of Midway and the search of the battle area; the record credits him with participating in the capture of thirty-six Japanese officers and men from a sunken carrier it does not name. He became an in-flight radio instructor at San Diego, a designated combat aircrewman, made — the record's own words — the invasion landing on Tarawa with CASU-16 and ran a maintenance detachment on Betio, then as a chief radioman headed the electronics division of the fleet plane pool at Majuro, drawing two commendations in 1944. After the war he stayed with aviation electronics through the arrival of airborne radar, flying TBM-3S and TBM-3W aircraft as an operator-technician with anti-submarine squadron VS-22, rated by 1951 as an AEW/ASW operator technician. He refused a commission during the war for reasons his two sons remember differently, married Margaret Monroe Holston — a 1943 San Diego directory has them at 3724 Van Dyke Avenue — retired in 1958 as a chief petty officer with four children to raise, and died in September 1977.",
+  "media": ["media:person/tashner-john-charles-jr/portrait-chief-colorized"],
   "sources": [
     {
+      "source": "source:tashner-service-record",
+      "note": "the whole shape of the career: Norfolk from October 1938, Selfridge April 1939 – July 1941, VP-23 and Patrol Wing TWO at Pearl Harbor, Ballard at Midway and the thirty-six captured, the combat aircrewman designation, the Tarawa landing and Betio, Majuro and the 1944 commendations, and the postwar run to AEW/ASW. Supplied as a family transcription; no scan and no archive reference — the source entry carries the doubts and the two places the family's transcriptions differ"
+    },
+    {
       "source": "source:tashner-family-2026",
-      "note": "the birth date, Jersey City and Lynchburg, the enlistment at seventeen, the barracks and the rifle, the days in the harbour, the retirement in 1958 after twenty-one years as a chief petty officer, and the refused commission"
+      "note": "Jersey City and Lynchburg, the enlistment at seventeen, the barracks and the rifle, the days in the harbour, the retirement in 1958 after twenty-one years as a chief petty officer, and the refused commission"
     },
     {
       "source": "source:tashner-john-2026",
-      "note": "the morning as his father described it, the aviation squadrons and the electronics work, the chief's rate, the marriage in 1943 and the four children, and the Oriskany"
+      "note": "the morning as his father described it, the electronics work through the arrival of radio and radar, the marriage in 1943 and the four children, and the Oriskany"
     },
     {
-      "source": "source:tashner-service-record",
-      "note": "Betio from October 1943 and Majuro from May 1944; the PBYs and B-24s, the maintenance crew detachment and the chief radioman's billet. Supplied as text by the family; no scan and no archive reference — see the source entry"
+      "source": "source:tashner-family-research-2026",
+      "note": "the death in September 1977, the wife's full name, and the 1943 San Diego city directory line — a directory this project has not opened"
     },
     {
       "source": "source:selfridge-action-report-1942",
-      "note": "that Selfridge was in Pearl Harbor on 7 December 1941 and where she lay. The report says nothing about this man"
+      "note": "that Selfridge was in Pearl Harbor on 7 December 1941 and where she lay. The report says nothing about this man, and the record now explains why it need not: he had left her crew in July"
     },
     {
       "source": "source:wikipedia-en",
-      "note": "reference data only, per docs/sources.md §8: Selfridge as a Porter-class destroyer commissioned 25 November 1936; Oriskany commissioned 25 September 1950; Betio as an island of Tarawa Atoll in the Gilberts and Majuro as an atoll of the Marshalls"
+      "note": "reference data only, per docs/sources.md §8: Selfridge as a Porter-class destroyer commissioned 25 November 1936; Ballard as a Clemson-class destroyer converted to the seaplane tender AVD-10 in 1940; Oriskany commissioned 25 September 1950; Betio as an island of Tarawa Atoll in the Gilberts and Majuro as an atoll of the Marshalls"
     }
   ]
 }

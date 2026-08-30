@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29",
+  "generatedAt": "2026-08-30",
   "base": "/assets/media/",
   "entries": [
     {
@@ -1999,6 +1999,48 @@
       "present": true,
       "originalUrl": "https://commons.wikimedia.org/wiki/File:Horace_Smith-Dorrien.jpg",
       "person": "person:smith-dorrien-horace"
+    },
+    {
+      "id": "media:person/tashner-john-charles-jr/portrait-chief-colorized",
+      "dir": "people/tashner-john-charles-jr",
+      "original": {
+        "src": "people/tashner-john-charles-jr/portrait-chief-colorized.png",
+        "width": 1087,
+        "height": 1447,
+        "type": "image/png"
+      },
+      "variants": [
+        {
+          "src": "people/tashner-john-charles-jr/.derived/portrait-chief-colorized.w320.webp",
+          "width": 320,
+          "height": 426,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/tashner-john-charles-jr/.derived/portrait-chief-colorized.w640.webp",
+          "width": 640,
+          "height": 852,
+          "type": "image/webp"
+        },
+        {
+          "src": "people/tashner-john-charles-jr/.derived/portrait-chief-colorized.w1024.webp",
+          "width": 1024,
+          "height": 1363,
+          "type": "image/webp"
+        }
+      ],
+      "width": 1087,
+      "height": 1447,
+      "caption": "John Charles Tashner Jr. — \"Jay\" (1920–1977), the Patrol Wing TWO radioman who is this pack's participant voice for 7 December 1941, photographed later in the war: the cap is a chief petty officer's, a rate his service record reaches in 1944, and the wings above the ribbons are his Combat Aircrew Wings. Colorized (AI-assisted) from a family photograph.",
+      "credit": "Original photograph: Tashner family collection, undated; published with the family's permission. Colorization: Sandtable, AI-assisted, 2026.",
+      "licence": "private family photograph, Tashner family collection; supplied to this project by Jay Tashner's grandson in August 2026 with permission to publish, credited",
+      "colorized": true,
+      "present": true,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.3
+      },
+      "person": "person:tashner-john-charles-jr"
     },
     {
       "id": "media:person/wilhelm-german-crown-prince/portrait-c1912",

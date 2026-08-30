@@ -4,7 +4,7 @@
     "title": "“Go shoot the planes”",
     "at": "1941-12-07T18:25:00Z",
     "place": "place:pearl-harbor",
-    "voice": "John Charles Tashner Jr., twenty years old, as his sons tell it",
+    "voice": "John Charles Tashner Jr., radioman third class, Patrol Wing TWO, twenty years old, as his sons tell it",
     "kind": "memoir",
     "text": "He was shaving in his skivvies when the planes came over. He ran downstairs, and at the door somebody handed him a rifle and told him to go shoot at them.[^tashner-family-2026]\n\nHis eldest son heard it differently, and only once. His father said it was utter confusion: mustered out of the barracks several times, handed a rifle with no ammunition — the ammunition was locked up in another building, for safety — and then finally given bullets, with the rumour going round that the landings would come next.[^tashner-john-2026]\n\nThen the part both sons were told. He spent that day and several more on the water, recovering the dead out of the oil. He was twenty. The son who wrote that down, eighty-five years later, could get no closer to it than this: *you do what you must when necessity calls for it*. He was the quiet type, typical of his generation.[^tashner-family-2026] He spoke to his eldest son about that morning exactly once.[^tashner-john-2026]",
     "people": ["person:tashner-john-charles-jr"],
@@ -20,6 +20,10 @@
       {
         "source": "source:tashner-john-2026",
         "note": "the confusion, the musters, the rifle without ammunition and the ammunition locked elsewhere, the rumoured landing, and the days pulling bodies out of the oily water. This is the fuller of the two accounts and its author says his father spoke to him about the attack exactly once"
+      },
+      {
+        "source": "source:tashner-service-record",
+        "note": "not the morning itself, which the record compresses to a billet — but the billet: radioman third class, Commander Patrol Wing TWO, November 1941 to May 1942, “Maintained watch of outlying islands and aircraft circuits - supervisor radio watch.” A patrol-wing communications billet is shore duty, which is where both sons put him"
       }
     ]
   }
