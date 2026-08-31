@@ -109,7 +109,8 @@ Read in full, from this environment, and quoted:
   mirror (history.navy.mil fails TLS from this environment, as it did for the
   _Selfridge_ report). It is what lets the pack name the carrier in Jay
   Tashner's _Ballard_ entry, and it holds the Navy's 80-G photographs of the
-  prisoners.
+  prisoners — two of which the pack now publishes (see the imagery note
+  below).
 
 Read as transcriptions, quoted, **without page numbers**:
 
@@ -214,9 +215,11 @@ turned out to be refusals to guess wrong.
    directed on 19 June to an open boat holding "thirty-five Japanese navymen,
    members of carrier Hiryu's engineering force", and the Navy photographed
    the prisoners on her deck and ashore at Midway. The Center's thirty-five
-   and the record's thirty-six stand as written; _Ballard_'s war diary and
-   those photographs are threads for the Midway pack (`sand-lry.6`). The
-   epilogue beat now carries him, and his portrait.
+   and the record's thirty-six stand as written; _Ballard_'s war diary is a
+   thread for the Midway pack (`sand-lry.6`). The epilogue now carries him,
+   his portrait, and — in a closing beat of its own, `the-boat-from-hiryu`,
+   on an epilogue clock extended to 21 June — the Navy's photograph of the
+   prisoners on _Ballard_'s deck.
 4. **Why he refused a commission — still open.** Two sons, different reasons.
    Both are given, and nothing in a duty record could settle a question like
    that anyway.
@@ -274,12 +277,18 @@ photographs, and no detail the testimony does not give.
   battle with no concentration and no route, because nothing openable from here
   says where they were.
 - **No tech or science cards, no tour, and almost no imagery.** Seed scope.
-  The one image is Jay Tashner's uniform portrait (`sand-0e7`) — a family
+  Three images. Jay Tashner's uniform portrait (`sand-0e7`) — a family
   photograph, not a period archive image, published with the family's
   permission, colorized and labelled as such, and carried on the epilogue
-  beat. Its manifest records the family's own caution, which is also ADR
+  beat; its manifest records the family's own caution, which is also ADR
   0007's: ribbon colours in a colorization are not evidence; the record's
-  award list is.
+  award list is. And two official U.S. Navy photographs of _Hiryū_'s
+  captured survivors (`sand-sma`), public-domain 80-G images read from the
+  Online Library via ibiblio: 80-G-79974-1, the prisoners on _Ballard_'s
+  deck, is the hero of the closing beat; 80-G-79984-28, the prisoners under
+  guard ashore, is registered against the epilogue battle — ADR 0012 allows
+  a beat one picture — and waits for the Midway pack. Both are uncolorized
+  and their manifests say they should stay so.
 
 ## Known engine limits this pack ran into
 

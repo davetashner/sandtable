@@ -2,9 +2,15 @@
   {
     "id": "1941-pearl-harbor:oahu",
     "title": "Oahu, 7 December",
-    "timeRange": { "start": "1941-12-07T16:00:00Z", "end": "1941-12-07T22:00:00Z" },
+    "timeRange": {
+      "start": "1941-12-07T16:00:00Z",
+      "end": "1941-12-07T22:00:00Z"
+    },
     "region": [-158.35, 21.15, -157.55, 21.8],
-    "camera": { "center": [-157.96, 21.42], "zoom": 10 },
+    "camera": {
+      "center": [-157.96, 21.42],
+      "zoom": 10
+    },
     "place": "place:pearl-harbor",
     "summary": "Six hours over one island, from the take-off north of it to the last aircraft turning away. Nothing on this map moves except the two strike waves, which are on their campaign tracks: the fighting was done by aircraft against ships that were tied up and aircraft that were parked.\n\nWhat the map shows instead are the places — the moorings along Ford Island where the battle line lay, the two Army airfields whose aircraft were drawn up in rows, the naval air station on the windward side, and the radar set on the north shore that saw the first wave coming an hour out and was told not to worry.",
     "outcome": "Eight battleships, three light cruisers and three destroyers sunk or put out of action in under two hours; 92 naval aircraft destroyed and 31 damaged; 96 Army aircraft lost; 2,403 dead and 1,178 wounded. Japanese losses: about fifty aircraft and five midget submarines. The fuel tank farms, the repair yard and the submarine base were not touched, and the three carriers were at sea.",
@@ -41,9 +47,15 @@
   {
     "id": "1941-pearl-harbor:the-other-openings",
     "title": "The rest of the day",
-    "timeRange": { "start": "1941-12-07T16:00:00Z", "end": "1941-12-10T18:00:00Z" },
+    "timeRange": {
+      "start": "1941-12-07T16:00:00Z",
+      "end": "1941-12-10T18:00:00Z"
+    },
     "region": [99, -2, 168, 26],
-    "camera": { "center": [130, 12], "zoom": 3 },
+    "camera": {
+      "center": [130, 12],
+      "zoom": 3
+    },
     "summary": "The other half of 7 December, which happened on 8 December. West of the date line the calendar had already turned, so Malaya, Hong Kong, Guam, Wake and the Philippines were all attacked on “the 8th” while Hawaii was still living through the 7th — and the landings in Malaya went in before the first bomb fell on Oahu.\n\nThis chapter exists because a pack that shows only the harbour teaches the American memory of the day rather than the day. Nothing moves on this map either: the pack could not open a source giving a track for any of these forces, so what is here is a set of places and the hours at which each of them was attacked.",
     "outcome": "Within about seventy-two hours: a beachhead in Malaya, the Far East Air Force destroyed on the ground in the Philippines, Kai Tak bombed, Guam surrendered, Wake under daily attack, and two British capital ships on the bottom off Kuantan.",
     "links": {
@@ -75,24 +87,43 @@
         "source": "source:morton-1962",
         "note": "ch. VI — “Almost simultaneously the Japanese attacked Hawaii, the Philippines, Wake, Guam, Singapore, Hong Kong, Malaya and Thailand”, and the individual openings"
       },
-      { "source": "source:morton-1953", "note": "ch. 5 — the Philippines" },
-      { "source": "source:hough-ludwig-shaw-1958", "note": "chs. II and III — Guam and Wake" }
+      {
+        "source": "source:morton-1953",
+        "note": "ch. 5 — the Philippines"
+      },
+      {
+        "source": "source:hough-ludwig-shaw-1958",
+        "note": "chs. II and III — Guam and Wake"
+      }
     ]
   },
   {
     "id": "1941-pearl-harbor:the-six-months",
     "title": "The six months Yamamoto asked for",
-    "timeRange": { "start": "1941-12-11T00:00:00Z", "end": "1942-06-07T00:00:00Z" },
+    "timeRange": {
+      "start": "1941-12-11T00:00:00Z",
+      "end": "1942-06-21T00:00:00Z"
+    },
     "window": "outside",
     "region": [-180, -12, 180, 46],
-    "camera": { "center": [175, 15], "zoom": 2.2 },
-    "summary": "An epilogue, on its own clock, outside the campaign. Yamamoto's estimate was that he could run wild in the Pacific for six months or a year and had no confidence in what came after; the Hawaii operation was a bet on buying that time.\n\nThe six months are counted from December 1941. They ended, almost to the week, at Midway.",
+    "camera": {
+      "center": [175, 15],
+      "zoom": 2.2
+    },
+    "summary": "An epilogue, on its own clock, outside the campaign. Yamamoto's estimate was that he could run wild in the Pacific for six months or a year and had no confidence in what came after; the Hawaii operation was a bet on buying that time.\n\nThe six months are counted from December 1941. They ended, almost to the week, at Midway.\n\nThe clock runs two weeks past the battle, to 19–20 June 1942: the rescue of Hiryū's engineering force from an open boat by the seaplane tender Ballard, and the prisoners' landing at Midway — the last event this pack carries.",
     "sources": [
       {
         "source": "source:agawa-1979",
         "note": "the Yamamoto estimate, from the standard Japanese life of him in translation. Not read at page level from this environment; no pages are given and nothing is quoted"
       },
-      { "source": "source:morton-1962", "note": "ch. VI and after — the first months of the war" }
+      {
+        "source": "source:morton-1962",
+        "note": "ch. VI and after — the first months of the war"
+      },
+      {
+        "source": "source:nhc-midway-rescue",
+        "note": "the two-week coda on the clock: the PBY sighting on 14 June, Ballard directed to the boat on the 19th, and the landing at Midway — quoted on the source entry"
+      }
     ]
   }
 ]

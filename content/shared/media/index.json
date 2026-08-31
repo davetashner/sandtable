@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30",
+  "generatedAt": "2026-08-31",
   "base": "/assets/media/",
   "entries": [
     {
@@ -3712,6 +3712,78 @@
       "focalPoint": {
         "x": 0.5,
         "y": 0.5
+      }
+    },
+    {
+      "id": "media:scene/1942-midway-hiryu-survivors-ballard/hiryu-survivors-ballard-1942-06",
+      "dir": "scenes/1942-midway-hiryu-survivors-ballard",
+      "original": {
+        "src": "scenes/1942-midway-hiryu-survivors-ballard/hiryu-survivors-ballard-1942-06.jpg",
+        "width": 740,
+        "height": 476,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1942-midway-hiryu-survivors-ballard/.derived/hiryu-survivors-ballard-1942-06.w320.webp",
+          "width": 320,
+          "height": 206,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1942-midway-hiryu-survivors-ballard/.derived/hiryu-survivors-ballard-1942-06.w640.webp",
+          "width": 640,
+          "height": 412,
+          "type": "image/webp"
+        }
+      ],
+      "width": 740,
+      "height": 476,
+      "caption": "Survivors of Hiryū on the deck of USS Ballard, June 1942 — the engineering force left aboard when the carrier was abandoned on 5 June, taken from an open boat on the 19th after two weeks adrift. Jay Tashner's service record credits him with participating in their capture. Official U.S. Navy photograph 80-G-79974-1.",
+      "credit": "Official U.S. Navy photograph 80-G-79974-1, now in the collections of the National Archives; via the Naval Historical Center Online Library (ibiblio.org mirror). Public domain.",
+      "licence": "public domain — official U.S. Navy photograph, a work of the United States federal government (80-G series, National Archives)",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://www.ibiblio.org/hyperwar/OnlineLibrary/photos/events/wwii-pac/midway/mid-10l.htm",
+      "focalPoint": {
+        "x": 0.45,
+        "y": 0.4
+      }
+    },
+    {
+      "id": "media:scene/1942-midway-hiryu-survivors-guard/hiryu-survivors-guard-midway-1942-06",
+      "dir": "scenes/1942-midway-hiryu-survivors-guard",
+      "original": {
+        "src": "scenes/1942-midway-hiryu-survivors-guard/hiryu-survivors-guard-midway-1942-06.jpg",
+        "width": 740,
+        "height": 460,
+        "type": "image/jpeg"
+      },
+      "variants": [
+        {
+          "src": "scenes/1942-midway-hiryu-survivors-guard/.derived/hiryu-survivors-guard-midway-1942-06.w320.webp",
+          "width": 320,
+          "height": 199,
+          "type": "image/webp"
+        },
+        {
+          "src": "scenes/1942-midway-hiryu-survivors-guard/.derived/hiryu-survivors-guard-midway-1942-06.w640.webp",
+          "width": 640,
+          "height": 398,
+          "type": "image/webp"
+        }
+      ],
+      "width": 740,
+      "height": 460,
+      "caption": "Survivors of Hiryū under guard on Midway, June 1942, brought ashore from USS Ballard the day after their rescue and later shipped to Hawaii. Official U.S. Navy photograph 80-G-79984-28.",
+      "credit": "Official U.S. Navy photograph 80-G-79984-28, now in the collections of the National Archives; via the Naval Historical Center Online Library (ibiblio.org mirror). Public domain.",
+      "licence": "public domain — official U.S. Navy photograph, a work of the United States federal government (80-G series, National Archives)",
+      "colorized": false,
+      "present": true,
+      "originalUrl": "https://www.ibiblio.org/hyperwar/OnlineLibrary/photos/events/wwii-pac/midway/mid-10l.htm",
+      "focalPoint": {
+        "x": 0.45,
+        "y": 0.55
       }
     }
   ]
