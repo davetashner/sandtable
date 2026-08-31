@@ -1,0 +1,27 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (sand-y0u.2).",
+  "id": "media:scene/1942-midway-hiryu-survivors-guard/hiryu-survivors-guard-midway-1942-06",
+  "file": "hiryu-survivors-guard-midway-1942-06.jpg",
+  "width": 740,
+  "height": 460,
+  "colorized": false,
+  "original": {
+    "description": "Survivors of the Japanese carrier Hiryu under guard on Midway, June 1942, after being brought ashore from USS Ballard (AVD-10); a Marine sentry with a rifle stands behind the seated prisoners. Official U.S. Navy photograph 80-G-79984-28 (second image under that number in the Online Library record).",
+    "photographer": "U.S. Navy (photographer not named in the Online Library record)",
+    "date": "June 1942",
+    "archive": "Official U.S. Navy photograph 80-G-79984-28, now in the collections of the National Archives; Naval Historical Center Online Library, read via the ibiblio.org HyperWar mirror",
+    "archive_url": "https://www.ibiblio.org/hyperwar/OnlineLibrary/photos/events/wwii-pac/midway/mid-10l.htm",
+    "file_url": "https://www.ibiblio.org/hyperwar/OnlineLibrary/photos/images/g70000/g79984x.jpg",
+    "original_dimensions": "740 × 495 (Online Library scan; the printed caption strip along the top edge is cropped here, and nothing else is altered)",
+    "licence": "public domain — official U.S. Navy photograph, a work of the United States federal government (80-G series, National Archives)"
+  },
+  "colorization": {
+    "status": "not colorized, and this one should stay so: these are prisoners of war under guard, and the project publishes the record itself rather than a treatment of it"
+  },
+  "content_policy": "ok — living prisoners of war under guard, unwounded; no gore. Published as the Navy's own record of the rescue, with the men's circumstances stated plainly in the caption",
+  "caption": "Survivors of Hiryū under guard on Midway, June 1942, brought ashore from USS Ballard the day after their rescue and later shipped to Hawaii. Official U.S. Navy photograph 80-G-79984-28.",
+  "credit": "Official U.S. Navy photograph 80-G-79984-28, now in the collections of the National Archives; via the Naval Historical Center Online Library (ibiblio.org mirror). Public domain.",
+  "used_by": ["1941-pearl-harbor:the-six-months"],
+  "focal_point": { "x": 0.45, "y": 0.55 },
+  "notes": "Fetched 2026-08-30 from the Online Library page catalogued in source:nhc-midway-rescue. The scan carries the Library's printed caption strip along the top edge; the strip is cropped and nothing else is altered. The one-picture-per-beat rule (ADR 0012) gives the closing beat to 80-G-79974-1; this image is registered against the epilogue battle as the second photograph of the series, and is a candidate hero for the Midway pack (sand-lry.6), where a higher-resolution National Archives master should replace this 740px Library scan."
+}

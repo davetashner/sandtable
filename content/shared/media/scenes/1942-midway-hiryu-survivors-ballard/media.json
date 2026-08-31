@@ -1,0 +1,27 @@
+{
+  "$comment": "Provisional manifest — formalized by the Media entity schema (sand-y0u.2).",
+  "id": "media:scene/1942-midway-hiryu-survivors-ballard/hiryu-survivors-ballard-1942-06",
+  "file": "hiryu-survivors-ballard-1942-06.jpg",
+  "width": 740,
+  "height": 476,
+  "colorized": false,
+  "original": {
+    "description": "Survivors of the Japanese carrier Hiryu — her engineering force, taken from an open boat on 19 June 1942 after two weeks adrift — sitting on mats on the deck of USS Ballard (AVD-10). Official U.S. Navy photograph 80-G-79974-1.",
+    "photographer": "U.S. Navy (photographer not named in the Online Library record)",
+    "date": "June 1942",
+    "archive": "Official U.S. Navy photograph 80-G-79974-1, now in the collections of the National Archives; Naval Historical Center Online Library, read via the ibiblio.org HyperWar mirror",
+    "archive_url": "https://www.ibiblio.org/hyperwar/OnlineLibrary/photos/events/wwii-pac/midway/mid-10l.htm",
+    "file_url": "https://www.ibiblio.org/hyperwar/OnlineLibrary/photos/images/g70000/g79974.jpg",
+    "original_dimensions": "740 × 510 (Online Library scan; the printed caption strip along the bottom edge is cropped here, and nothing else is altered)",
+    "licence": "public domain — official U.S. Navy photograph, a work of the United States federal government (80-G series, National Archives)"
+  },
+  "colorization": {
+    "status": "not colorized, and this one should stay so: these are prisoners of war, photographed exhausted, and the project publishes the record itself rather than a treatment of it"
+  },
+  "content_policy": "ok — living prisoners of war, exhausted but unwounded; no gore. Published as the Navy's own record of the rescue, with the men's circumstances stated plainly in the caption",
+  "caption": "Survivors of Hiryū on the deck of USS Ballard, June 1942 — the engineering force left aboard when the carrier was abandoned on 5 June, taken from an open boat on the 19th after two weeks adrift. Jay Tashner's service record credits him with participating in their capture. Official U.S. Navy photograph 80-G-79974-1.",
+  "credit": "Official U.S. Navy photograph 80-G-79974-1, now in the collections of the National Archives; via the Naval Historical Center Online Library (ibiblio.org mirror). Public domain.",
+  "used_by": ["1941-pearl-harbor:beat-the-boat-from-hiryu"],
+  "focal_point": { "x": 0.45, "y": 0.4 },
+  "notes": "Fetched 2026-08-30 from the Online Library page catalogued in source:nhc-midway-rescue, which quotes the rescue account in full. The scan carries the Library's printed caption strip along the bottom edge; the strip is cropped and nothing else is altered. A higher-resolution master exists at the National Archives under 80-G-79974 for whoever fetches it for the Midway pack (sand-lry.6)."
+}
